@@ -10,7 +10,7 @@ Renkler sitenin `:root` tokenlarından alındı; logo ve favicon sitedeki SVG'le
 | Klasör | Kullanım | Ölçüler | Sınır |
 |---|---|---|---|
 | `out/duyarli-goruntulu/` | Duyarlı Görüntülü Reklam (RDA), Performance Max, Demand Gen görselleri | 1200×628 (1.91:1), 1200×1200 (1:1), 960×1200 (4:5) | ≤5 MB |
-| `out/logolar/` | Logo öğeleri | 1200×1200 (1:1), 1200×300 (4:1) | ≤5 MB |
+| `out/logolar/` | Logo öğeleri: α işareti (kare), "Fonα" yazılı kare (açık ve koyu), yatay | 1200×1200 (1:1), 1200×300 (4:1) | ≤5 MB |
 | `out/banner/` | Yüklenen görüntülü reklamlar (HTML5 değil, statik PNG) | 300×250, 336×280, 250×250, 200×200, 728×90, 970×90, 468×60, 320×50, 970×250, 320×100, 300×600, 160×600 | ≤150 KB |
 | `metinler.json` | RDA / PMax metin öğeleri | başlık ≤30, uzun başlık ≤90, açıklama ≤90 (ilki ≤60), işletme adı ≤25 | — |
 

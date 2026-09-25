@@ -251,6 +251,13 @@ function logoSquare() {
   return `<html><head><style>${fontCss}</style></head><body style="width:1200px;height:1200px;padding:180px;background:${C.accent}">
     <img src="${dataUri(favSvg)}" style="width:840px;height:840px;display:block"></body></html>`;
 }
+function logoSquareWordmark(dark) {
+  // "Fonα" kelime işaretinin kare sürümü. 900 px genişlik, Google'ın daire kırpmasında
+  // da tamamen görünür kalır (köşegen yarısı < 600 px).
+  const svg = fs.readFileSync(path.join(SRC, dark ? 'logo-dark.svg' : 'logo.svg'), 'utf8');
+  return `<html><head><style>${fontCss}</style></head><body style="width:1200px;height:1200px;display:flex;align-items:center;justify-content:center;background:${dark ? C.text : C.bg}">
+    <img src="${dataUri(svg)}" style="width:900px;display:block"></body></html>`;
+}
 function logoWide() {
   // 4:1 yatay logo, kelime işareti ortada, krem zemin.
   return `<html><head><style>${fontCss}</style></head><body style="width:1200px;height:300px;display:flex;align-items:center;justify-content:center;background:${C.bg}">
@@ -407,6 +414,10 @@ async function shoot(browser, html, W, H, file) {
   }
   const lk = path.join(OUT, 'logolar', 'logo-kare_1200x1200.png');
   report.push([path.relative(ROOT, lk), 1200, 1200, await shoot(browser, logoSquare(), 1200, 1200, lk)]);
+  const lkw = path.join(OUT, 'logolar', 'logo-kare-yazili_1200x1200.png');
+  report.push([path.relative(ROOT, lkw), 1200, 1200, await shoot(browser, logoSquareWordmark(false), 1200, 1200, lkw)]);
+  const lkd = path.join(OUT, 'logolar', 'logo-kare-yazili-koyu_1200x1200.png');
+  report.push([path.relative(ROOT, lkd), 1200, 1200, await shoot(browser, logoSquareWordmark(true), 1200, 1200, lkd)]);
   const lw = path.join(OUT, 'logolar', 'logo-yatay_1200x300.png');
   report.push([path.relative(ROOT, lw), 1200, 300, await shoot(browser, logoWide(), 1200, 300, lw)]);
 
