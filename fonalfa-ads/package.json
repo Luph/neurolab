@@ -1,0 +1,7 @@
+{
+  "name": "fonalfa-ads",
+  "private": true,
+  "description": "fonalfa.com için Google Ads görsel öğeleri üreticisi",
+  "scripts": { "render": "node render.js", "kontrol": "node metin-kontrol.js" },
+  "dependencies": { "playwright-core": "^1.55.0" }
+}

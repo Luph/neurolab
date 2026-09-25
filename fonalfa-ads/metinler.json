@@ -1,0 +1,23 @@
+{
+  "isletme_adi": "FonAlfa",
+  "kisa_basliklar": [
+    "Hangi fonlara para giriyor?",
+    "TEFAS fon para akışları",
+    "Günlük fon giriş çıkışları",
+    "Fon akışlarını gün gün izleyin",
+    "Fon, tür ve yönetici kırılımı"
+  ],
+  "uzun_basliklar": [
+    "Hangi fonlara para giriyor, hangilerinden çıkıyor? TEFAS akışlarını tek panelde izleyin",
+    "TEFAS fonlarının günlük net para giriş çıkışı: fon, tür ve yönetici bazında",
+    "Fon büyüklüğü haritası, net akış kırılımı ve alfa sıralamaları FonAlfa'da"
+  ],
+  "aciklamalar": [
+    "TEFAS fon akışlarını her iş günü izleyin.",
+    "Tip, tür, yönetici ve fon bazında net para giriş çıkışı; 1 gün, 1 hafta, 1 ay.",
+    "Fon büyüklüğü haritası: alan varlığı, renk akış oranını gösterir.",
+    "En çok giriş ve çıkış alan fonları, yatırımcı sayısı değişimiyle birlikte görün.",
+    "Kaynak TEFAS. Veriler her iş günü güncellenir. Yatırım tavsiyesi değildir."
+  ],
+  "harekete_gecirici": "Daha fazla bilgi"
+}
