@@ -15,7 +15,7 @@ from scipy.stats import spearmanr
 
 from mt.data import cost_native
 from mt.model import CrossAssetTransformer
-from mt.train import N_GROUPS, fair_batch, fixed_groups, folds
+from mt.train import N_GROUPS, _ridge_fit, _ridge_path, fair_batch, fixed_groups, folds
 
 OUT = os.environ.get("MT_OUT", "outputs")
 u, A = pickle.load(open(os.environ["MT_CACHE"], "rb"))
@@ -26,6 +26,7 @@ short = np.array([t.replace(" Index", "").replace(" Comdty", "").replace(" Curnc
 classes = sorted(set(u.cls))
 cls_ids = np.array([classes.index(c) for c in u.cls])
 groups = fixed_groups(N)
+A["groups"] = groups
 F = folds(u.dates)
 dates = u.dates
 
@@ -52,8 +53,10 @@ t0, t1 = test[0], test[-1]
 z = A["z"]
 sig = A["sig"]
 avail = A["avail"]
-trad = u.tradable
 cost_z = np.array([cost_native(t, c, k) for t, c, k in zip(tick, u.cls, u.kind)])[None] / sig  # cost in vol units
+# P&L universe: tradable instruments whose typical one-way cost is below 0.25 daily sigma
+med_cost = np.nanmedian(cost_z[dates.searchsorted(pd.Timestamp("2010-01-01")):], 0)
+trad = u.tradable & ~np.array([("OAS" in t) or t == "SPBDAL Index" for t in tick]) & (med_cost < 0.25)
 
 lines = []
 
@@ -106,22 +109,30 @@ def backtest(W, lag):
     zf = np.nan_to_num(np.clip(z, -6, 6))
     gross = np.zeros(T)
     tc = np.zeros(T)
-    for t in range(t0, min(t1, T - lag) + 1):
+    for t in range(t0, min(t1, T - 1 - lag) + 1):
         gross[t + lag] = (W[t] * zf[t + lag]).sum()
         tc[t + lag] = (np.abs(W[t] - W[t - 1]) * np.nan_to_num(cost_z[t])).sum()
-    idx = dates[t0 + lag: min(t1, T - lag) + lag + 1]
-    return pd.Series(gross[t0 + lag: min(t1, T - lag) + lag + 1], idx), pd.Series(tc[t0 + lag: min(t1, T - lag) + lag + 1], idx)
+    idx = dates[t0 + lag: min(t1, T - 1 - lag) + lag + 1]
+    return pd.Series(gross[t0 + lag: min(t1, T - 1 - lag) + lag + 1], idx), pd.Series(tc[t0 + lag: min(t1, T - 1 - lag) + lag + 1], idx)
 
 
 def stats(g, c):
     n = g - c
     sh = lambda x: x.mean() / x.std() * np.sqrt(252)
-    return dict(sharpe_gross=sh(g), sharpe_net=sh(n), ann_ret_net_volunits=n.mean() * 252,
+    return dict(sharpe_gross=sh(g), sharpe_net=sh(n), breakeven_cost_mult=g.sum() / max(c.sum(), 1e-9), ann_ret_net_volunits=n.mean() * 252,
                 maxdd=(n.cumsum() - n.cumsum().cummax()).min(), cost_share=c.sum() / max(g.sum(), 1e-9))
 
 
 def smooth(S, h):
     return pd.DataFrame(S).rolling(h, min_periods=1).mean().values
+
+
+def ewm_w(W, hl):
+    return pd.DataFrame(W).ewm(halflife=hl).mean().values
+
+
+def turnover(W):
+    return np.abs(np.diff(W[t0:t1], axis=0)).sum(1).mean()
 
 
 mask_all = avail.copy()
@@ -149,8 +160,10 @@ for name, P in (("transformer", P_tf), ("linear ridge", P_lin)):
     bt[(name, "t+1 close-to-close (NOT executable across time zones)")] = backtest(W1, 1)
     W2 = class_neutral_weights(P[..., 1], mask_tr)
     bt[(name, "t+2 one-day execution lag")] = backtest(W2, 2)
-    W5 = class_neutral_weights(smooth(P[..., 2], 5), mask_tr)
+    W5 = ewm_w(class_neutral_weights(P[..., 2], mask_tr), 5)
     bt[(name, "5d horizon, 1-day lag, 5d smoothing")] = backtest(W5, 2)
+    W20 = ewm_w(class_neutral_weights(P[..., 2], mask_tr), 20)
+    bt[(name, "5d horizon, 1-day lag, slow (hl=20d)")] = backtest(W20, 2)
     if name == "transformer":
         W_pred_last = W5[t1]
 rows = [dict(model=k[0], strategy=k[1], **stats(*v)) for k, v in bt.items()]
@@ -197,8 +210,9 @@ for name, Fa in (("transformer", Fa_tf), ("linear ridge", Fa_lin)):
     ic_p, ict_p = daily_ic(-S, A["y5"], mask_tr, step=5)
     W = class_neutral_weights(-S, mask_tr)
     g, c = backtest(W, 2)
-    Wsm = class_neutral_weights(-smooth(S, 3), mask_tr)
+    Wsm = ewm_w(W, 5)
     g2, c2 = backtest(Wsm, 2)
+    bt[(name, "mispricing reversion, 1-day lag, hl=5d")] = (g2, c2)
     bt[(name, "mispricing reversion, 1-day lag")] = (g, c)
     rev_rows.append(dict(model=name, ic_vs_future_residual=ic_r, t1=ict_r, ic_vs_future_return=ic_p, t2=ict_p,
                          **{k + "_lag1": v for k, v in stats(g, c).items() if k.startswith("sharpe")},
@@ -264,29 +278,51 @@ fig.savefig(f"{OUT}/fair_value_r2.png", dpi=140)
 # ----------------------------------------------------------------------------------------------
 say("\n## 3. Non-linear relationships (latest model, perturbation analysis on its OOS days)")
 lastk = len(F) - 1
-model = CrossAssetTransformer(N, len(classes), A["feat"].shape[2] + 2, 1)
+model = CrossAssetTransformer(N, len(classes), A["feat"].shape[2] + 3, 1)
 model.load_state_dict(torch.load(f"{OUT}/fair_fold{lastk}_seed0.pt"))
 model.eval()
+b = np.load(f"{OUT}/base_fold{lastk}.npz")
+A["base_fair"] = b["bf"]
 aid, cid = torch.arange(N), torch.as_tensor(cls_ids)
 rng = np.random.default_rng(0)
 days = np.sort(rng.choice(F[lastk]["test"], 60, replace=False))
 torch.set_num_threads(4)
 
+# linear part of the hybrid for the last fold (same fit that produced its test-period base)
+zz = np.nan_to_num(z)
+LW = {}
+fl = F[lastk]
+for g in range(N_GROUPS):
+    gm = groups == g
+    Xf = lambda idx, gm=gm: np.concatenate([zz[idx][:, ~gm], zz[idx - 1]], 1)
+    _, _, a = _ridge_path(Xf(fl["train"]), z[fl["train"]][:, gm], Xf(fl["val"]), z[fl["val"]][:, gm])
+    I = np.concatenate([fl["train"], fl["val"]])
+    LW[g] = _ridge_fit(Xf(I), z[I][:, gm], a)[1]   # (n_visible + N, n_group)
+
 
 @torch.no_grad()
-def fair_with(idx, g, j=None, v=0.0):
-    m = np.broadcast_to(groups == g, (len(idx), N))
+def fair_with(idx, g, j=None, v=0.0, nonlinear_only=False):
+    """Hybrid fair move of the hidden group g, optionally forcing driver j's same-day move to v (sigma)."""
+    gm = groups == g
+    m = np.broadcast_to(gm, (len(idx), N))
     x, _, pad = fair_batch(A, idx, m)
+    base = x[:, :, -1].copy()
     if j is not None:
-        x[:, j, -2] = v
-        x[:, j, -1] = 1.0
-    return model(torch.from_numpy(x), aid, cid, torch.from_numpy(pad)).numpy()[..., 0]
+        col = np.searchsorted(np.where(~gm)[0], j)
+        dz = v - x[:, j, -3]
+        base[:, gm] += dz[:, None] * LW[g][col][None]
+        x[:, j, -3] = v
+        x[:, j, -2] = 1.0
+        x[:, :, -1] = base
+    corr = model(torch.from_numpy(x), aid, cid, torch.from_numpy(pad)).numpy()[..., 0]
+    return corr if nonlinear_only else corr + base
 
 
 # slope (+-1 sigma) and convexity of every hidden target to every visible driver
 slope = np.zeros((N, N))       # [driver j, target i]
 convex = np.zeros((N, N))
 state_sd = np.zeros((N, N))
+nl_slope = np.zeros((N, N))
 base = {g: fair_with(days, g) for g in range(N_GROUPS)}
 for j in range(N):
     for g in range(N_GROUPS):
@@ -299,6 +335,10 @@ for j in range(N):
         if ok.sum() < 30:
             continue
         s_ = (up - dn)[ok][:, tg] / 3.0
+        # non-linear share: the transformer correction's own slope
+        up_n = fair_with(days, g, j, 1.5, True)
+        dn_n = fair_with(days, g, j, -1.5, True)
+        nl_slope[j, tg] = ((up_n - dn_n)[ok][:, tg] / 3.0).mean(0)
         slope[j, tg] = s_.mean(0)
         state_sd[j, tg] = s_.std(0)
         convex[j, tg] = ((up + dn - 2 * base[g]) / 2)[ok][:, tg].mean(0) / 1.5 ** 2
@@ -308,17 +348,17 @@ for j in range(N):
     for i in range(N):
         if i == j or groups[i] == groups[j] or slope[j, i] == 0:
             continue
-        rows.append((short[j], u.cls[j], short[i], u.cls[i], slope[j, i], state_sd[j, i], convex[j, i]))
-rel = pd.DataFrame(rows, columns=["driver", "driver_cls", "target", "target_cls", "slope", "slope_sd_across_days", "convexity"])
+        rows.append((short[j], u.cls[j], short[i], u.cls[i], slope[j, i], nl_slope[j, i], state_sd[j, i], convex[j, i]))
+rel = pd.DataFrame(rows, columns=["driver", "driver_cls", "target", "target_cls", "slope", "nonlinear_part", "slope_sd_across_days", "convexity"])
 rel["abs_slope"] = rel.slope.abs()
 rel["state_dependence"] = rel.slope_sd_across_days / (rel.abs_slope + 0.02)
 rel.to_csv(f"{OUT}/relationships_all.csv", index=False)
 cross = rel[rel.driver_cls != rel.target_cls]
 say("\nStrongest cross-asset-class links (d fair move / d driver move, both in vol units):")
-say(cross.sort_values("abs_slope", ascending=False).head(20)[["driver", "target", "slope", "slope_sd_across_days", "convexity"]].round(3).to_string(index=False))
+say(cross.sort_values("abs_slope", ascending=False).head(20)[["driver", "target", "slope", "nonlinear_part", "slope_sd_across_days", "convexity"]].round(3).to_string(index=False))
 strong = cross[cross.abs_slope > 0.05]
 say("\nMost regime-dependent cross-class links (sensitivity varies most across days, |slope|>0.05):")
-say(strong.sort_values("slope_sd_across_days", ascending=False).head(15)[["driver", "target", "slope", "slope_sd_across_days", "convexity"]].round(3).to_string(index=False))
+say(strong.sort_values("slope_sd_across_days", ascending=False).head(15)[["driver", "target", "slope", "nonlinear_part", "slope_sd_across_days", "convexity"]].round(3).to_string(index=False))
 say("\nMost asymmetric / convex cross-class links (response to a 1.5σ up vs down move differs):")
 say(strong.assign(ac=strong.convexity.abs()).sort_values("ac", ascending=False).head(15)[["driver", "target", "slope", "convexity"]].round(3).to_string(index=False))
 

@@ -42,10 +42,12 @@ def fixed_groups(n_assets, seed=0):
 # batch builders
 # ----------------------------------------------------------------------------------------------
 def predict_batch(A, idx):
-    x = A["feat"][idx]
-    y = np.stack([A["y1"][idx], A["y2"][idx], A["y5"][idx]], -1)
+    """Hybrid: the linear forecast is an input, and the target is what the linear model missed."""
+    base = np.nan_to_num(A["base_pred"][idx])
+    x = np.concatenate([A["feat"][idx], base], -1)
+    y = np.stack([A["y1"][idx], A["y2"][idx], A["y5"][idx]], -1) - base
     pad = ~A["avail"][idx]
-    return x, y, pad
+    return x.astype(np.float32), y.astype(np.float32), pad
 
 
 def fair_batch(A, idx, mask):
@@ -53,10 +55,16 @@ def fair_batch(A, idx, mask):
     hist = A["feat"][idx - 1]                           # history known before t
     zt = np.nan_to_num(A["z"][idx])
     vis = (~mask) & A["avail"][idx]
-    x = np.concatenate([hist, (zt * vis)[..., None], vis[..., None].astype(np.float32)], -1)
-    y = np.where(mask, A["z"][idx], np.nan)[..., None]
+    base = np.nan_to_num(A["base_fair"][idx])
+    x = np.concatenate([hist, (zt * vis)[..., None], vis[..., None].astype(np.float32), base[..., None]], -1)
+    y = np.where(mask, A["z"][idx] - base, np.nan)[..., None]
     pad = ~A["avail"][idx]
     return x.astype(np.float32), y.astype(np.float32), pad
+
+
+def nn_init_zero(model):
+    torch.nn.init.zeros_(model.head.weight)
+    torch.nn.init.zeros_(model.head.bias)
 
 
 def masked_mse(pred, y):
@@ -69,9 +77,10 @@ def train_model(kind, A, cls_ids, fold, seed, log, max_steps=2000, eval_every=10
     torch.manual_seed(seed)
     rng = np.random.default_rng(seed)
     N = A["z"].shape[1]
-    nf = A["feat"].shape[2] + (2 if kind == "fair" else 0)
+    nf = A["feat"].shape[2] + (3 if kind == "fair" else 3)
     nout = 3 if kind == "predict" else 1
     model = CrossAssetTransformer(N, int(cls_ids.max()) + 1, nf, nout)
+    nn_init_zero(model)  # start exactly at the linear model; early stopping keeps it there unless non-linearity helps
     opt = torch.optim.AdamW(model.parameters(), lr=lr, weight_decay=1e-2)
     sched = torch.optim.lr_scheduler.OneCycleLR(opt, lr, total_steps=max_steps, pct_start=0.1)
     aid = torch.arange(N)
@@ -80,7 +89,8 @@ def train_model(kind, A, cls_ids, fold, seed, log, max_steps=2000, eval_every=10
     def make(idx, r):
         if kind == "predict":
             return predict_batch(A, idx)
-        return fair_batch(A, idx, r.random((len(idx), N)) < 1 / N_GROUPS)
+        g = r.integers(0, N_GROUPS, len(idx))
+        return fair_batch(A, idx, A["groups"][None] == g[:, None])
 
     val_rng = np.random.default_rng(1234)
     vidx = fold["val"][:: max(1, len(fold["val"]) // 300)]
@@ -136,7 +146,7 @@ def infer_predict(model, A, cls_ids, idx, bs=64):
     for i in range(0, len(idx), bs):
         x, _, pad = predict_batch(A, idx[i:i + bs])
         out.append(model(torch.from_numpy(x), aid, cid, torch.from_numpy(pad)).numpy())
-    return np.concatenate(out)
+    return np.concatenate(out) + np.nan_to_num(A["base_pred"][idx])
 
 
 @torch.no_grad()
@@ -153,7 +163,7 @@ def infer_fair(model, A, cls_ids, idx, groups, bs=64):
             x, _, pad = fair_batch(A, sl, m)
             p = model(torch.from_numpy(x), aid, cid, torch.from_numpy(pad)).numpy()[..., 0]
             out[i:i + len(sl), gm] = p[:, gm]
-    return out
+    return out + np.nan_to_num(A["base_fair"][idx])
 
 
 # ----------------------------------------------------------------------------------------------
@@ -211,3 +221,52 @@ def linear_fair(A, fold, groups):
         mu, W, _ = _ridge_path(X(fold["train"]), Y[fold["train"]], X(fold["val"]), Y[fold["val"]])
         out[:, gm] = (X(fold["test"]) - mu) @ W
     return out
+
+
+# ----------------------------------------------------------------------------------------------
+# Cross-fitted linear bases for the hybrid models
+# ----------------------------------------------------------------------------------------------
+def _ridge_fit(X, Y, a):
+    mu = X.mean(0)
+    Xc = X - mu
+    G = Xc.T @ Xc + a * np.eye(X.shape[1])
+    return mu, np.linalg.solve(G, Xc.T @ np.nan_to_num(Y))
+
+
+def _crossfit(Xf, Y, fold, n_blocks=5):
+    """alpha picked train->val; in-window predictions are out-of-block (blocked K-fold with embargo);
+    test predictions come from a fit on the whole train+val window."""
+    tr, va, te = fold["train"], fold["val"], fold["test"]
+    _, _, a = _ridge_path(Xf(tr), Y[tr], Xf(va), Y[va])
+    I = np.concatenate([tr, va])
+    out = np.full((len(Y),) + Y.shape[1:], np.nan, np.float32)
+    for b in np.array_split(np.arange(len(I)), n_blocks):
+        lo, hi = I[b[0]], I[b[-1]]
+        keep = I[(I < lo - EMBARGO) | (I > hi + EMBARGO)]
+        mu, W = _ridge_fit(Xf(keep), Y[keep], a)
+        out[I[b]] = (Xf(I[b]) - mu) @ W
+    mu, W = _ridge_fit(Xf(I), Y[I], a)
+    out[te] = (Xf(te) - mu) @ W
+    return out, a
+
+
+def linear_bases(A, fold, groups):
+    f = A["feat"]
+    z = np.nan_to_num(A["z"])
+    T, N = z.shape
+
+    def Xp(idx):
+        return np.concatenate([f[idx, :, 0], f[idx, :, :5].sum(-1) / np.sqrt(5), f[idx, :, :20].sum(-1) / np.sqrt(20)], 1)
+
+    bp = np.full((T, N, 3), np.nan, np.float32)
+    for h, key in enumerate(("y1", "y2", "y5")):
+        bp[..., h], _ = _crossfit(Xp, A[key], fold)
+    bf = np.full((T, N), np.nan, np.float32)
+    for g in range(N_GROUPS):
+        gm = groups == g
+
+        def Xf(idx, gm=gm):
+            return np.concatenate([z[idx][:, ~gm], z[idx - 1]], 1)
+
+        bf[:, gm], _ = _crossfit(Xf, A["z"][:, gm], fold)
+    return bp, bf

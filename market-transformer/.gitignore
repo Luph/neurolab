@@ -4,3 +4,5 @@ __pycache__/
 *.pyc
 *.xlsx
 outputs/log_*.txt
+outputs/v1/
+outputs/base_fold*.npz
