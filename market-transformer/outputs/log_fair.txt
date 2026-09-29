@@ -1,0 +1,5 @@
+fold 0: train 2002-01-01..2008-09-23 val ..2009-12-17 test 2010-01-01..2013-12-31
+  [fair seed0] init val_mse=0.97011
+  [fair seed0] step100 val_mse=0.87008 50s
+  [fair seed0] step200 val_mse=0.81667 99s
+  [fair seed0] step300 val_mse=0.73912 153s
