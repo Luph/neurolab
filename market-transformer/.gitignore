@@ -3,3 +3,4 @@ outputs/*.out
 __pycache__/
 *.pyc
 *.xlsx
+outputs/log_*.txt
