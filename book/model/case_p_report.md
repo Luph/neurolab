@@ -6,21 +6,21 @@ Model: `model/case_p.py` (Python mirror, source of truth) and `model/Case_P_Mode
 
 | # | Scenario | Total funding | Senior debt | Min DSCR | Avg DSCR | LLCR (1st DS period) | Equity IRR | Project IRR | Lock-ups |
 |---|---|---|---|---|---|---|---|---|---|
-| 1 | FC base | 855.1 | 633.3 | 1.35x | 1.54x | 1.42x | 13.3% | 11.0% | 0 |
-| 2 | FC banking | 855.1 | 633.3 | 1.35x | 1.54x | 1.42x | 13.2% | 10.9% | 0 |
-| 3 | FC downside | 855.1 | 633.3 | 1.20x | 1.38x | 1.31x | 11.4% | 10.1% | 0 |
-| 4 | Sens: availability -3 points | 855.1 | 633.3 | 1.32x | 1.53x | 1.42x | 13.2% | 10.9% | 0 |
-| 5 | Sens: heat rate +2% | 855.1 | 633.3 | 1.30x | 1.49x | 1.38x | 12.5% | 10.6% | 0 |
-| 6 | Sens: fixed opex +10% | 855.1 | 633.3 | 1.32x | 1.51x | 1.40x | 12.8% | 10.7% | 0 |
-| 7 | Sens: capex +10% funded pro rata | 936.4 | 693.5 | 1.23x | 1.38x | 1.31x | 11.4% | 10.1% | 0 |
-| 8 | Sens: COD delay 6 months, no LDs | 888.2 | 657.7 | 1.25x | 1.45x | 1.35x | 12.1% | 10.4% | 0 |
-| 9 | Sens: base rate +200 bps (unhedged) | 855.1 | 633.3 | 1.30x | 1.51x | 1.40x | 12.9% | 11.0% | 0 |
-| 10 | Sens: KCR devaluation 40%, 90-day lag | 855.1 | 633.3 | 0.45x | 1.52x | 1.40x | 12.9% | 10.8% | 2 |
-| 11 | Sens: SEKA pays 120 days late for 12 months | 855.1 | 633.3 | 0.13x | 1.54x | 1.42x | 13.2% | 10.9% | 2 |
-| 12 | Sens: dispatch 50% | 855.1 | 633.3 | 1.34x | 1.53x | 1.41x | 13.1% | 10.9% | 0 |
-| 13 | Sens: gas price +30% | 855.1 | 633.3 | 1.35x | 1.54x | 1.42x | 13.3% | 11.0% | 0 |
-| 14 | COD re-forecast (2021 lenders case) | 887.9 | 633.3 | 1.28x | 1.50x | 1.34x | 12.4% | 10.1% | 0 |
-| 15 | Actual history | 885.6 | 633.3 | 0.92x | 1.50x | 1.47x | 12.5% | 10.1% | 4 |
+| 1 | FC base | 854.6 | 629.9 | 1.35x | 1.55x | 1.42x | 13.2% | 11.0% | 0 |
+| 2 | FC banking | 854.6 | 629.9 | 1.35x | 1.55x | 1.42x | 13.1% | 11.0% | 0 |
+| 3 | FC downside | 854.6 | 629.9 | 1.20x | 1.38x | 1.30x | 11.3% | 10.1% | 0 |
+| 4 | Sens: availability -3 points | 854.6 | 629.9 | 1.32x | 1.54x | 1.42x | 13.1% | 11.0% | 0 |
+| 5 | Sens: heat rate +2% | 854.6 | 629.9 | 1.30x | 1.50x | 1.38x | 12.4% | 10.6% | 0 |
+| 6 | Sens: fixed opex +10% | 854.6 | 629.9 | 1.32x | 1.52x | 1.40x | 12.7% | 10.7% | 0 |
+| 7 | Sens: capex +10% funded pro rata | 935.8 | 689.9 | 1.23x | 1.39x | 1.31x | 11.3% | 10.1% | 0 |
+| 8 | Sens: COD delay 6 months, no LDs | 887.5 | 654.2 | 1.25x | 1.45x | 1.35x | 12.0% | 10.4% | 0 |
+| 9 | Sens: base rate +200 bps (unhedged) | 854.6 | 629.9 | 1.30x | 1.52x | 1.40x | 12.8% | 11.0% | 0 |
+| 10 | Sens: KCR devaluation 40%, 90-day lag | 854.6 | 629.9 | 0.45x | 1.53x | 1.40x | 12.7% | 10.8% | 2 |
+| 11 | Sens: SEKA pays 120 days late for 12 months | 854.6 | 629.9 | 0.13x | 1.55x | 1.42x | 13.1% | 10.9% | 2 |
+| 12 | Sens: dispatch 50% | 854.6 | 629.9 | 1.34x | 1.54x | 1.41x | 13.0% | 10.9% | 0 |
+| 13 | Sens: gas price +30% | 854.6 | 629.9 | 1.35x | 1.55x | 1.42x | 13.2% | 11.0% | 0 |
+| 14 | COD re-forecast (2021 lenders case) | 887.4 | 629.9 | 1.28x | 1.51x | 1.34x | 12.3% | 10.1% | 0 |
+| 15 | Actual history | 885.2 | 629.9 | 0.91x | 1.50x | 1.47x | 12.4% | 10.1% | 4 |
 
 Senior debt is the committed amount of the four tranches. Scenarios 2 to 6 and 9 to 13 keep the FC base construction and the contractual debt (amount, repayment profile, swap notional); scenarios 7 and 8 re-gross the funding pro rata at the contract debt share. Scenario 14 is the lenders' COD re-forecast (actual construction, no crisis); scenario 15 is the actual history.
 
@@ -37,67 +37,67 @@ Senior debt is the committed amount of the four tranches. Scenarios 2 to 6 and 9
 | contingency | 38.40 |
 | initial working capital | 5.35 |
 | subtotal before financing | 710.99 |
-| idc loans | 60.99 |
+| idc loans | 60.68 |
 | swap net during construction | -0.78 |
-| pri premium | 3.69 |
-| commitment fees | 10.12 |
-| upfront fees | 9.95 |
-| eca premium | 20.61 |
+| pri premium | 3.67 |
+| commitment fees | 10.07 |
+| upfront fees | 9.90 |
+| eca premium | 20.50 |
 | agency fees | 0.74 |
 | vat facility interest | 1.52 |
 | dsra initial | 37.25 |
-| total | 855.09 |
+| total | 854.55 |
 
 | Source of funds | USD m |
 |---|---|
-| debt ECA | 189.98 |
-| debt A | 139.32 |
-| debt B | 63.33 |
-| debt COM | 240.64 |
-| debt total | 633.26 |
-| share capital | 44.37 |
-| shareholder loans | 177.47 |
-| equity total | 221.83 |
+| debt ECA | 188.98 |
+| debt A | 138.59 |
+| debt B | 62.99 |
+| debt COM | 239.38 |
+| debt total | 629.95 |
+| share capital | 44.92 |
+| shareholder loans | 179.68 |
+| equity total | 224.60 |
 | of which lntp credit | 14.20 |
-| total | 855.09 |
+| total | 854.55 |
 
-Binding constraint: **DSCR**. Candidates: gearing cap (75% of the total funding requirement at full gearing, closed form) 642.91; DSCR 1.35x capacity 633.26; downside 1.20x constraint 633.45 (downside minimum DSCR at the sized debt 1.2004x). Gearing achieved 74.1%. LLCR at close (incl. DSRA) 1.4191x, so the 1.40x LLCR test does not bind (excluding the DSRA it would be 1.3603x).
+Binding constraint: **DSCR**. Candidates: gearing cap (75% of the total funding requirement at full gearing, closed form) 643.08; DSCR 1.35x capacity 629.95; downside 1.20x constraint 630.14 (downside minimum DSCR at the sized debt 1.2004x). Gearing achieved 73.7%. LLCR at close (incl. DSRA) 1.4189x, so the 1.40x LLCR test does not bind (excluding the DSRA it would be 1.3598x).
 
-ECA tests (OECD project finance terms in force in 2018): repayment term from COD 13.16 years (max 14); WAL 7.18 years (max 7.25); largest installment 4.6% (max 25%); first repayment 8 months after COD (max 24). All pass. The Case Bible's "first repayment within six months of COD" is not an Arrangement rule (fact sheet t-oecd-pf-2018); it is dropped and the base first repayment stays December 31, 2021.
+ECA tests (OECD project finance terms in force in 2018): repayment term from COD 13.16 years (max 14); WAL 6.92 years (max 7.25); largest installment 3.8% (max 25%); first repayment 8 months after COD (max 24). All pass. The Case Bible's "first repayment within six months of COD" is not an Arrangement rule (fact sheet t-oecd-pf-2018); it is dropped and the base first repayment stays December 31, 2021.
 
 ## 3. Circularity resolution (for Chapters 40 and 42)
 
-* Construction gross-up (IDC, commitment and upfront fees, ECA premium, DSRA): Python iterates the total funding requirement to a tolerance of USD 1,000 (12 passes on the FC base). The workbook solves the same fixed point in closed form on the Funding sheet: each month's balance is carried as alpha_m + beta_m x T, and T = alpha_end / (g - beta_end). The ECA premium inside each month is removed algebraically: draw = g X / (1 - 10.85% x 30% x g). At the 75% gearing cap the closed form gives T = 857.21.
+* Construction gross-up (IDC, commitment and upfront fees, ECA premium, DSRA): Python iterates the total funding requirement to a tolerance of USD 1,000 (12 passes on the FC base). The workbook solves the same fixed point in closed form on the Funding sheet: each month's balance is carried as alpha_m + beta_m x T, and T = alpha_end / (g - beta_end). The ECA premium inside each month is removed algebraically: draw = g X / (1 - 10.85% x 30% x g). At the 75% gearing cap the closed form gives T = 857.44.
 * Sculpting with tax: CFADS depends on tax, which depends on interest and the shareholder-loan path. Python iterates profile -> model -> CFADS -> constant-DSCR re-sculpt to USD 1,000 on every installment: 11 passes at financial close, 4 for the COD re-sculpting, 5 for the 2025 bond. The workbook carries the converged profiles on the Inputs sheet as contractual schedules (after financial close they are contract terms) and recomputes the sculpted profile live on the Debt sheet; the Checks sheet reports live minus contract (0.000).
 * The workbook contains no circular reference and needs no iterative calculation or macro. A pasted-value Converge macro is the alternative the book may teach; it is not needed to run this workbook.
 
 ## 4. Actual history (scenario 15)
 
-Construction: hard-cost overrun 81.44 (39.27 Case Bible items plus 42.17 delay-related costs in seven named categories, P-C43); FX forward settlements (gain) 4.40. Total funding 885.63 against 855.09 at FC. Hard-cost overrun 39.27 against contingency 38.40; KCR depreciation reduced the onshore EPC cost by 6.72; loan interest, swap and PRI in construction 62.75 against 63.90 at FC. Undrawn senior commitment cancelled 0.00; standby drawn 9.99; contingent equity 3.33; delay LDs and DSU (17.22) applied to construction before the standby facility.
+Construction: hard-cost overrun 81.44 (39.27 Case Bible items plus 42.17 delay-related costs in seven named categories, P-C43); FX forward settlements (gain) 4.40. Total funding 885.21 against 854.55 at FC. Hard-cost overrun 39.27 against contingency 38.40; KCR depreciation reduced the onshore EPC cost by 6.72; loan interest, swap and PRI in construction 62.42 against 63.57 at FC. Undrawn senior commitment cancelled 0.00; standby drawn 10.08; contingent equity 3.36; delay LDs and DSU (17.22) applied to construction before the standby facility.
 
-Crisis: historic DSCR 1.13x at December 31, 2022 (lock-up), 0.96x at June 30, 2023 (event of default; DSRA drawn 3.28), waiver fee 1.44, margin uplift cost 4.48, deferred principal 10.82, lock-up released 2024H2.
-Refinancing June 30, 2025: prepaid 244.60; swap unwind receipt 6.30; bond face 245.77; transaction costs incl. OID 7.47; combined sculpted DSCR 1.59x.
-Sale: equity value at December 31, 2025 323.89 at 13.75% and 355.26 at 12.50%; price for 24% at completion 77.26; indirect transfer tax 5.57; Kilnworth IRR on the sold stake 9.7%.
+Crisis: historic DSCR 1.12x at December 31, 2022 (lock-up), 0.95x at June 30, 2023 (event of default; DSRA drawn 3.33), waiver fee 1.43, margin uplift cost 4.46, deferred principal 10.85, lock-up released 2024H2.
+Refinancing June 30, 2025: prepaid 252.44; swap unwind receipt 6.28; bond face 253.75; transaction costs incl. OID 7.59; combined sculpted DSCR 1.59x.
+Sale: equity value at December 31, 2025 325.02 at 13.75% and 356.46 at 12.50%; price for 24% at completion 77.52; indirect transfer tax 5.49; Kilnworth IRR on the sold stake 9.6%.
 
 ## 5. Returns, sensitivities and breakevens (FC base)
 
-Equity IRR 13.3% (project-company level from the LNTP date, before shareholder withholding; 13.6% including development spend and its reimbursement); project IRR 11.0% post-tax, 11.6% pre-tax; equity NPV at 16.0% -43.07; payback 2031-06-30.
+Equity IRR 13.2% (project-company level from the LNTP date, before shareholder withholding; 13.5% including development spend and its reimbursement); project IRR 11.0% post-tax, 11.6% pre-tax; equity NPV at 16.0% -45.31; payback 2031-06-30.
 
 | Case | Min DSCR | Avg DSCR | Equity IRR |
 |---|---|---|---|
-| FC base | 1.35x | 1.54x | 13.3% |
-| FC banking | 1.35x | 1.54x | 13.2% |
-| FC downside | 1.20x | 1.38x | 11.4% |
-| Sens: availability -3 points | 1.32x | 1.53x | 13.2% |
-| Sens: heat rate +2% | 1.30x | 1.49x | 12.5% |
-| Sens: fixed opex +10% | 1.32x | 1.51x | 12.8% |
-| Sens: capex +10% funded pro rata | 1.23x | 1.38x | 11.4% |
-| Sens: COD delay 6 months, no LDs | 1.25x | 1.45x | 12.1% |
-| Sens: base rate +200 bps (unhedged) | 1.30x | 1.51x | 12.9% |
-| Sens: KCR devaluation 40%, 90-day lag | 0.45x | 1.52x | 12.9% |
-| Sens: SEKA pays 120 days late for 12 months | 0.13x | 1.54x | 13.2% |
-| Sens: dispatch 50% | 1.34x | 1.53x | 13.1% |
-| Sens: gas price +30% | 1.35x | 1.54x | 13.3% |
+| FC base | 1.35x | 1.55x | 13.2% |
+| FC banking | 1.35x | 1.55x | 13.1% |
+| FC downside | 1.20x | 1.38x | 11.3% |
+| Sens: availability -3 points | 1.32x | 1.54x | 13.1% |
+| Sens: heat rate +2% | 1.30x | 1.50x | 12.4% |
+| Sens: fixed opex +10% | 1.32x | 1.52x | 12.7% |
+| Sens: capex +10% funded pro rata | 1.23x | 1.39x | 11.3% |
+| Sens: COD delay 6 months, no LDs | 1.25x | 1.45x | 12.0% |
+| Sens: base rate +200 bps (unhedged) | 1.30x | 1.52x | 12.8% |
+| Sens: KCR devaluation 40%, 90-day lag | 0.45x | 1.53x | 12.7% |
+| Sens: SEKA pays 120 days late for 12 months | 0.13x | 1.55x | 13.1% |
+| Sens: dispatch 50% | 1.34x | 1.54x | 13.0% |
+| Sens: gas price +30% | 1.35x | 1.55x | 13.2% |
 
 Breakevens (debt locked): availability -21.4 points below profile for a 1.00x minimum DSCR; capacity charge cut 25.0%; DSRA plus LC cover 3.0 months of zero SEKA payment if gas is paid, 8.1 months if gas payments are deferred.
 
@@ -105,7 +105,7 @@ Breakevens (debt locked): availability -21.4 points below profile for a 1.00x mi
 
 | # | Item | Old | New | Reason |
 |---|---|---|---|---|
-| A1 | Cash effect of SEKA arrears (actual history) | Not specified (read literally, the full overdue increase hits cash) | 80% of overdue amounts are energy-charge arrears matched by deferred payments to SNHK and GCK (state gas chain), formalized by the June 2023 netting agreement; 20% hits cash | Read literally the path gives a June 2023 historic DSCR near 0.0x and an event of default at December 2022, against the Bible design range of 0.80x to 1.00x for June 2023. With A1: 1.13x at December 2022 (lock-up), 0.96x at June 2023 (default), DSRA pays the June 2023 shortfall, as the storyline requires. Modeler calibration, pre-publication. |
+| A1 | Cash effect of SEKA arrears (actual history) | Not specified (read literally, the full overdue increase hits cash) | 80% of overdue amounts are energy-charge arrears matched by deferred payments to SNHK and GCK (state gas chain), formalized by the June 2023 netting agreement; 20% hits cash | Read literally the path gives a June 2023 historic DSCR near 0.0x and an event of default at December 2022, against the Bible design range of 0.80x to 1.00x for June 2023. With A1: 1.12x at December 2022 (lock-up), 0.95x at June 2023 (default), DSRA pays the June 2023 shortfall, as the storyline requires. Modeler calibration, pre-publication. |
 | A12 | Construction overrun (actual, P-C43, modeler assumption) | USD 39.27m hard-cost overrun; standby and contingent equity not drawn | Plus USD 42.17m delay-related costs in seven named categories (Section 8b), Months 34-40 | Editor ruling: Chapters 31 and 61 teach the standby facility; drawn about USD 10.0m with contingent equity about 3.3m after contingency, delay LDs, DSU and FX gains. |
 | A13 | Construction FX hedge (D-114) | None | Forwards with Castellan buying KCR for 75% of onshore EPC payments at covered-parity rates (13.5% vs FC LIBOR); actual run only (FC base budgets onshore at the FC spot) | Standards require currency hedging; P-F65, P-F66. The forwards gained (forward points about 10% a year against about 5% actual depreciation). |
 | A14 | SEKA LC amount (P-C44) | USD 33.8m in 2022; drawing USD 33.8m | USD 36.2m (2022 reset on the annex 1.1.5 formula); drawing February 2023 USD 36.6m (2023 reset) | Editor ruling: model value wins; the overdue path stays as given (already net of the drawing). |
@@ -156,7 +156,7 @@ Appended rows only; no existing address moved (verified cell by cell against the
 | R12 | Checks row 24 | MMRA window equals the input number of periods |
 | R8 | model/exercises/Case_P_Model_AuditExercise_reader.xlsx | Reader copy of the audit exercise without the AuditKey sheet (the other R8 files belong to the build agent) |
 
-Ledger extensions: P-F16 debt capacity at 1.35x by sensitivity (FC base 633.3; lowest 582.0, FC downside); P-F17 annual shadow sizing 614.3 against 633.3 (-18.9, the time-grain effect); P-F49 every Month 1 use itemized (sum 121.59 = total); P-F40 netting set-offs by month July 2023 to June 2025 (total 90.08, all within the 9.0 cap; half-year falls spread evenly because the model is semiannual); P-F63 prepayment cure 80.9 (pro rata, eq:51.3) and 79.9 (proportional, eq:37.4) for 1.10x; P-F65 every monthly forward listed (sum = KCR 32,204 million) with its schedule basis; P-F26 deferred consideration line (nil); labels for D-046 illustrative paths and the P-F02 reconversion proxy.
+Ledger extensions: P-F16 debt capacity at 1.35x by sensitivity (FC base 629.9; lowest 578.2, FC downside); P-F17 annual shadow sizing 615.3 against 629.9 (-14.7, the time-grain effect); P-F49 every Month 1 use itemized (sum 121.52 = total); P-F40 netting set-offs by month July 2023 to June 2025 (total 90.08, all within the 9.0 cap; half-year falls spread evenly because the model is semiannual); P-F63 prepayment cure 81.3 (pro rata, eq:51.3) and 80.2 (proportional, eq:37.4) for 1.10x; P-F65 every monthly forward listed (sum = KCR 32,204 million) with its schedule basis; P-F26 deferred consideration line (nil); labels for D-046 illustrative paths and the P-F02 reconversion proxy.
 
 Monte Carlo funding (P-F42): runs whose construction costs exceed the committed facilities now draw the standby facility and contingent equity 75:25, as the workbook does, instead of drawing senior debt above the commitment; P-F42 percentiles move by less than 0.0001 (no printed value changes).
 
@@ -164,20 +164,20 @@ Build-stage confirmation (Section 0.5 of the u09 brief): the Chapter 40 file mus
 
 ## 8b. Version 1.3 (editor fixes, October 3, 2026)
 
-P-F64 is now a sequential attribution from the reconstructed bid model (16.00%) to the FC base (13.27%), in the order shown; each step re-sizes the debt; the steps sum to -2.73 pp, the full gap, with no residual and no interaction line. The bid model's swapped base rate is the one undocumented bid input; it is solved at 3.44% flat so that the reconstruction returns 16.0% (modeler reconstruction, a conservative bid-stage rate). The 2016 indicative terms are annex 4.7 (margins 1.50/3.90/3.75/4.50, upfront fees ECA 1.25 and commercial 2.50, ECA premium 11.5%; A- and B-loan upfront fees as at FC).
+P-F64 is now a sequential attribution from the reconstructed bid model (16.00%) to the FC base (13.15%), in the order shown; each step re-sizes the debt; the steps sum to -2.85 pp, the full gap, with no residual and no interaction line. The bid model's swapped base rate is the one undocumented bid input; it is solved at 3.38% flat so that the reconstruction returns 16.0% (modeler reconstruction, a conservative bid-stage rate). The 2016 indicative terms are annex 4.7 (margins 1.50/3.90/3.75/4.50, upfront fees ECA 1.25 and commercial 2.50, ECA premium 11.5%; A- and B-loan upfront fees as at FC).
 
 | Step | Equity IRR | Change (pp) | Gearing |
 |---|---|---|---|
 | Kilnworth bid model, September 2016 (reconstructed; tariff USD 14.36/kW-month) | 16.00% | +0.00 | 75.0% |
-| Base rate: reconstructed bid-model swapped rate (flat) replaced by the FC forward curve and the 2.947% swap | 16.56% | +0.56 | 75.0% |
-| Debt terms: 2016 indicative margins, upfront fees and ECA premium (annex 4.7) replaced by the FC terms | 17.00% | +0.44 | 75.0% |
-| PRI cover on the commercial tranche and the 10% WHT gross-up, added in diligence | 16.14% | -0.86 | 75.0% |
-| Soft mini-perm cash sweep from 2027 (FC term sheet) | 16.01% | -0.14 | 75.0% |
-| Capex: bid-stage USD 655.0m before financing grows to the FC budget of USD 710.99m (owner's cost, resettlement, contingency) | 14.21% | -1.79 | 75.0% |
-| VAT facility interest (omitted from the bid model, annex Kunal Mehrotra) | 14.16% | -0.05 | 75.0% |
-| Tax: minimum turnover tax and thin-cap disallowance | 14.10% | -0.06 | 75.0% |
-| FX: KCR depreciation on the local tariff shares and costs (bid model held the KCR flat) | 13.31% | -0.79 | 74.1% |
-| IRR dating: measured from the February 2018 LNTP payment rather than from financial close | 13.27% | -0.05 | 74.1% |
+| Base rate: reconstructed bid-model swapped rate (flat) replaced by the FC forward curve and the 2.947% swap | 16.50% | +0.50 | 75.0% |
+| Debt terms: 2016 indicative margins, upfront fees and ECA premium (annex 4.7) replaced by the FC terms | 16.95% | +0.45 | 75.0% |
+| PRI cover on the commercial tranche and the 10% WHT gross-up, added in diligence | 16.06% | -0.89 | 75.0% |
+| Soft mini-perm cash sweep from 2027 (FC term sheet) | 15.93% | -0.13 | 75.0% |
+| Capex: bid-stage USD 655.0m before financing grows to the FC budget of USD 710.99m (owner's cost, resettlement, contingency) | 14.13% | -1.80 | 75.0% |
+| VAT facility interest (omitted from the bid model, annex Kunal Mehrotra) | 14.06% | -0.06 | 74.9% |
+| Tax: minimum turnover tax and thin-cap disallowance | 13.98% | -0.08 | 74.7% |
+| FX: KCR depreciation on the local tariff shares and costs (bid model held the KCR flat) | 13.20% | -0.79 | 73.7% |
+| IRR dating: measured from the February 2018 LNTP payment rather than from financial close | 13.15% | -0.04 | 73.7% |
 
 P-C43 is no longer a single calibration line: the USD 42.17m is split into named cost categories (modeler assumptions consistent with Chapter 61), each incurred evenly over Months 34 to 40, so every downstream figure is unchanged.
 

@@ -24,7 +24,7 @@ Rows A1 to A14 are the fixes of the first issue (2026-10-03) and remain in force
 |---|---|---|
 | A1 | Ch 86 brief declares "Exhibit 86.2a" (case table) and then "Exhibit 86.2" (tornado); credit-paper Part 10 has an unnumbered exhibit; Part 6 is "inside Exhibit 86.11 or a separate exhibit". | Renumber Ch 86 exhibits as listed under Chapter 86 below: case table becomes exh:86.2; every later exhibit moves up by one; Part 5 and Part 6 share exh:86.12; Part 10 gets exh:86.17; the 2026 hindsight table becomes exh:86.19. No letter suffixes (R-115). |
 | A2 | u14 (Ch 66 assumed list) cites `sec:6.x`, a placeholder. | Read `sec:6.8` (swaps) and `ssec:6.8.3` (valuing a swap and breaking it). |
-| A3 | Two equations define WAL (eq:6.2, eq:29.3, eq:36.5); two define bond price (eq:6.5, eq:30.1); YTM is eq:38.6 as well as Ch 6; levelization appears as eq:5.11, eq:47.1, eq:11.6, eq:83.1 and eq:88.2; minimum margin is eq:38.1 and eq:68.1; spark spread is eq:11.7 and eq:69.2; make-whole is eq:30.2 and eq:63.2; RAROC is eq:29.1 and eq:86.1. | Home equations: eq:6.2 (WAL), eq:6.5 (bond price and YTM), eq:5.11 (levelized price), eq:11.6 (LCOE as an instance of eq:5.11), eq:83.1 (LCOH), eq:38.1 (minimum margin), eq:11.7 (clean spark spread), eq:30.2 (make-whole), eq:29.1 (RAROC). The later labels keep their numbers (no renumbering) but are repurposed to the chapter-specific application named in the Note column (R-116). |
+| A3 | Two equations define WAL (eq:6.2, eq:29.3, eq:36.7); two define bond price (eq:6.5, eq:30.1); YTM is eq:38.6 as well as Ch 6; levelization appears as eq:5.11, eq:47.1, eq:11.6, eq:83.1 and eq:88.2; minimum margin is eq:38.1 and eq:68.1; spark spread is eq:11.7 and eq:69.2; make-whole is eq:30.2 and eq:63.2; RAROC is eq:29.1 and eq:86.1. | Home equations: eq:6.2 (WAL), eq:6.5 (bond price and YTM), eq:5.11 (levelized price), eq:11.6 (LCOE as an instance of eq:5.11), eq:83.1 (LCOH), eq:38.1 (minimum margin), eq:11.7 (clean spark spread), eq:30.2 (make-whole), eq:29.1 (RAROC). The later labels keep their numbers (no renumbering) but are repurposed to the chapter-specific application named in the Note column (R-116). |
 | A4 | Model-row equations restate owned formulas: eq:42.3, eq:42.4, eq:42.5, eq:43.1, eq:45.3, eq:45.5. | Captions changed to "... row, implementing eq:X"; the model chapter does not re-derive the formula. |
 | A5 | Headings duplicate home headings in later chapters: ssec:30.3.1 ("Coupon, price, and yield", duplicating ssec:6.7.1), ssec:30.3.2 and ssec:36.9.1 (WAL, duplicating ssec:6.3.2), sec:65.5 and ssec:65.5.2 ("Terminal value", duplicating ssec:46.4.3), ssec:68.5.1 ("The minimum margin", duplicating ssec:38.1.1), ssec:80.2.2 ("Single till and dual till", duplicating ssec:21.8.1), ssec:6.8.2 (credit and execution charge, owned by ssec:38.4.1). | Retitled as shown in the chapter tables (R-004, R-005, R-007, R-014, R-055, R-075). |
 | A6 | Framework names collide: Framework 87.3 "integrity check" against Framework 43.2 "integrity-check catalog" (model checks). | Framework 87.3 becomes "The integrity test", slug `fw:integrity-test` (R-118). |
@@ -2766,13 +2766,14 @@ Source brief: `briefs/u08.md`.
 | `exh:36.12` | Case P sizing constraints and binding constraint (Case P) |  |
 | `exh:36.13` | Case P sculpted repayment profile and ECA tests (Case P) |  |
 | `exh:36.14` | Case P debt at alternative DSCR targets and gearing caps (Case P; P-F36) |  |
+| `cl:36.1` | Refinancing test, term sheet (Illustrative) | added in chapter 36 round 1 revision (Solution 36.12) |
 | `eq:36.1` | Annuity sizing |  |
 | `eq:36.2` | Sculpted debt service |  |
 | `eq:36.3` | Debt as PV of sculpted debt service with cumulative discount factors |  |
 | `eq:36.4` | Lesser-of rule |  |
-| `eq:36.5` | Average-life constraint on a sculpted profile, citing eq:6.2 | repurposed, R-005 |
+| `eq:36.5` | Effective base-case target from a downside test | renumbered in order of appearance (was eq:36.7), chapter 36 round 1 revision |
 | `eq:36.6` | Bucket sculpting |  |
-| `eq:36.7` | Effective base-case target from a downside test |  |
+| `eq:36.7` | Average-life constraint on a sculpted profile, citing eq:6.2 | repurposed, R-005; renumbered in order of appearance (was eq:36.5), chapter 36 round 1 revision |
 | `fw:sizing-constraint-stack` | Framework 36.1 The sizing constraint stack | home ssec:36.3.2 |
 | `exr:36.1` to `exr:36.19` | Exercises (19) | range; cited only inside Ch 36 and by matter file 93 |
 

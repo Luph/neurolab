@@ -183,7 +183,7 @@ Brief-feedback items that are Case Bible flaws (BF) or fact-sheet requests (FS) 
 - Sources: CR-u08-1; self-detected (u02 Ch 6 item 5, u07 Ch 29 item 10, u07 Ch 30 item 9).
 - Concept: Weighted average life of a repayment profile.
 - Home: Ch 6, ssec:6.3.2 and eq:6.2 (definition and computation; glossary home).
-- Other chapters: Ch 29 (ssec:29.3.6) owns the OECD Arrangement average-life test and repurposes eq:29.3 to "ECA average-life test as a share of tenor". Ch 30 (ssec:30.3.2) covers amortizing bonds and sinking funds and cites ssec:6.3.2. Ch 36 (ssec:36.9.1) applies average-life limits as a sizing constraint and repurposes eq:36.5. Ch 37 states the effect of sweeps on WAL by cross-reference.
+- Other chapters: Ch 29 (ssec:29.3.6) owns the OECD Arrangement average-life test and repurposes eq:29.3 to "ECA average-life test as a share of tenor". Ch 30 (ssec:30.3.2) covers amortizing bonds and sinking funds and cites ssec:6.3.2. Ch 36 (ssec:36.9.1) applies average-life limits as a sizing constraint and repurposes eq:36.7. Ch 37 states the effect of sweeps on WAL by cross-reference.
 - Brief text that must change: Rejects the u08 proposal that Ch 36 be the home, because Ch 29 uses WAL first. Retitle ssec:30.3.2 "Amortizing bonds and sinking funds" and ssec:36.9.1 "Average-life limits as a sizing constraint". Delete "weighted average life" from the u07 and u08 glossaries.
 
 ### R-006. Swap valuation, close-out and hedge valuation pointers (Ch 6, 20, 37, 53, 63, 64)
@@ -1125,7 +1125,7 @@ Brief-feedback items that are Case Bible flaws (BF) or fact-sheet requests (FS) 
 - Sources: Self-detected (anchor registry pass).
 - Concept: WAL, bond price and YTM, levelized price, LCOE, LCOH, minimum margin, spark spread, make-whole, RAROC, DSRA target, toll revenue, availability deduction, LLCR and sculpting rows.
 - Home: Home equations: eq:6.2, eq:6.5, eq:5.11, eq:11.6, eq:83.1, eq:38.1, eq:11.7, eq:30.2, eq:29.1, eq:37.1, eq:12.4, eq:58.2, eq:35.3, eq:36.2, eq:36.3. A later chapter may display an owned formula only as a model row or a specialized application; its caption says so and cites the home equation.
-- Other chapters: Later labels keep their numbers and are repurposed: eq:29.3, eq:30.1, eq:36.5, eq:38.6, eq:42.3, eq:42.4, eq:42.5, eq:43.1, eq:45.3, eq:45.5, eq:47.1, eq:63.2, eq:68.1, eq:69.2, eq:86.1, eq:88.2 (captions in the anchor registry).
+- Other chapters: Later labels keep their numbers and are repurposed: eq:29.3, eq:30.1, eq:36.7, eq:38.6, eq:42.3, eq:42.4, eq:42.5, eq:43.1, eq:45.3, eq:45.5, eq:47.1, eq:63.2, eq:68.1, eq:69.2, eq:86.1, eq:88.2 (captions in the anchor registry).
 - Brief text that must change: Briefs' equation captions change as listed.
 
 ### R-117. Headings that duplicate a home heading

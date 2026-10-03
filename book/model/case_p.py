@@ -1208,7 +1208,8 @@ def sculpt(R, D, t_first, t_last, w):
     rho = np.zeros(NS); E = np.zeros(NS)
     for t in range(t_first, t_last + 1):
         base = mac_['base_s'][t]; dcf = S_DAYS[t] / 360
-        mg = np.array([MARGIN[0], MARGIN[1], MARGIN[2], com_margin(S_YEAR[t])])
+        up = 0.5 if (R['p']['waiver'] and tix('2023H2') <= t <= tix('2024H2')) else 0.0     # waiver margin uplift, as the Debt sheet rates
+        mg = np.array([MARGIN[0], MARGIN[1], MARGIN[2], com_margin(S_YEAR[t])]) + up
         rk = (base + mg) / 100 * (0.5 if 'E4' in ERRS else dcf) * GU
         rk[3] += PRI * S_DAYS[t] / 365
         rsb = sb_rate(mac_, t)
