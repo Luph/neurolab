@@ -376,7 +376,7 @@ def funding_fc(p, mac_, u, prof, N_m, N_s, D_fixed=None, mode='size'):
         rho, kap = month_rates(mac_, m)
         rr = (SHARE * rho).sum(); kk = (SHARE * kap).sum()
         const = (u['base_total'][m] + u['vat_int'][m] + 0.255 / 12
-                 + N_m[m] * (SWAP_FIX / 100 / 12 - mac_['base_m'][m] / 100 * M_DAYS[m] / 360)
+                 + N_m[m] * (SWAP_FIX / 100 / 12 - mac_['base_m'][m] / 100 * M_DAYS[m] / 360) * (-1 if 'E10' in ERRS else 1)
                  + SB_COMMIT * SB_CFEE / 100 * M_DAYS[m] / 360)
         cod_m = (m == nc)
         const += d0 if cod_m else 0.0

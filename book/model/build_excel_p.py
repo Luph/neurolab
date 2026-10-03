@@ -981,8 +981,8 @@ RT.row('llcr', 'LLCR = (PV CFADS + DSRA) / debt', 'x',
        lambda i: f"=IF({ref('Debt.bo', i)}>0.000000001,({ref('Ratios.pvl', i)}+{ref('Reserves.dsra_o', i)})/{ref('Debt.bo', i)},0)", fmt='0.0000', py='S.llcr_dsra')
 RT.row('llcr0', 'LLCR excluding DSRA', 'x', lambda i: f"=IF({ref('Debt.bo', i)}>0.000000001,{ref('Ratios.pvl', i)}/{ref('Debt.bo', i)},0)", fmt='0.0000', py='S.llcr')
 RT.row('plcr', 'PLCR = PV CFADS to expiry / debt', 'x', lambda i: f"=IF({ref('Debt.bo', i)}>0.000000001,{ref('Ratios.pvp', i)}/{ref('Debt.bo', i)},0)", fmt='0.0000', py='S.plcr')
-RT.scalar('min_dscr', 'Minimum DSCR', 'x', f"=MIN(IF({rng('Debt.ds')}>0.000000001,{rng('Waterfall.dscr')},999))", '0.0000')
-RT.scalar('avg_dscr', 'Average DSCR (debt-service weighted)', 'x', f"=SUM({rng('Waterfall.cfads')}*({rng('Debt.ds')}>0.000000001))/SUM({rng('Debt.ds')})", '0.0000')
+RT.scalar('min_dscr', 'Minimum DSCR', 'x', f"=_xlfn.MINIFS({rng('Waterfall.dscr')},{rng('Debt.ds')},\">0.000000001\")", '0.0000')
+RT.scalar('avg_dscr', 'Average DSCR (debt-service weighted)', 'x', f"=SUMIFS({rng('Waterfall.cfads')},{rng('Debt.ds')},\">0.000000001\")/SUM({rng('Debt.ds')})", '0.0000')
 RT.scalar('llcr_1', 'LLCR at first debt service period', 'x', f"=INDEX({rng('Ratios.llcr')},1,{V('Time.t1')})", '0.0000')
 RT.scalar('plcr_1', 'PLCR at first debt service period', 'x', f"=INDEX({rng('Ratios.plcr')},1,{V('Time.t1')})", '0.0000')
 
@@ -1190,8 +1190,49 @@ def rowmap():
             out[f"{name}.{d['key']}"] = (name, r, S.n if kind == 'row' else 0, d.get('py'))
     return out
 
+ERR_ROWS = {
+    'E1': ['Operations.avf'], 'E2': ['Operations.eoh'], 'E3': ['Operations.us_tar', 'Operations.kc_tar'],
+    'E4': ['Funding.rr', 'Funding.idc_E', 'Funding.idc_A', 'Funding.idc_B', 'Funding.idc_C', 'Funding.d1_E', 'Funding.d1_A', 'Funding.d1_B', 'Funding.d1_C', 'Debt.r_E', 'Debt.r_A', 'Debt.r_B', 'Debt.r_C'],
+    'E5': ['Tax.hol', 'Tax.red', 'Tax.dep_hol'], 'E6': ['Tax.pool'], 'E7': ['Funding.g', 'Funding.bdebt', 'Funding.bfund'],
+    'E8': ['Debt.pvc', 'Debt.sds'], 'E9': ['Operations.fuel_rev'],
+    'E10': ['Funding.const', 'Funding.swap', 'Funding.d0', 'Debt.swap', 'Debt.tgt', 'Debt.wrate'],
+}
+
+def build_audit(path):
+    """Chapter 44 exercise copy: the ten seeded errors E1-E10, contract terms from the erroneous sizing."""
+    from openpyxl import load_workbook
+    _, c, res = cp.audit_case(cp.ERR_LIST)
+    old = dict(cp.CONTRACT)
+    cp.CONTRACT.update(c); ERR.clear(); ERR.update(cp.ERR_LIST)
+    try:
+        build(path, 1)
+        rm = rowmap()
+    finally:
+        ERR.clear(); cp.CONTRACT.clear(); cp.CONTRACT.update(old)
+    wb = load_workbook(path)
+    ws = wb.create_sheet('AuditKey')
+    ws['A1'] = 'Audit exercise key (Chapter 44): sponsor model version 0.9 with ten seeded errors. Do not distribute with the exercise.'
+    ws['A1'].font = Font(bold=True)
+    ws['A2'] = 'Contract terms on the Inputs sheet come from sizing this erroneous model. Effects (P-F17) are from case_p.py: each error alone, re-sized.'
+    hdr = ['ID', 'Seeded error', 'Cells (sheet, row)', 'Senior debt (USD m)', 'Change vs correct', 'Min DSCR base', 'Min DSCR downside', 'Equity IRR', 'Binding']
+    for j, h in enumerate(hdr): ws.cell(4, 1 + j, h).font = BOLD
+    import json as _j
+    o = _j.load(open(os.path.join(HERE, 'outputs_case_p.json')))
+    R = o['figures']['P-F17']['results']
+    for r_, e in enumerate(['correct'] + cp.ERR_LIST + ['ALL']):
+        x = R[e]
+        cells = '; '.join(f"{k.split('.')[0]} row {rm[k][1]}" + (' (col F)' if rm[k][2] == 0 else '') for k in ERR_ROWS.get(e, [])) if e in ERR_ROWS else ('all of the above' if e == 'ALL' else '')
+        vals = [e, x.get('description', 'correct model'), cells, round(x['senior_debt'], 2), round(x.get('delta_senior_debt', 0.0), 2),
+                round(x['min_dscr_base'], 3), round(x['min_dscr_downside'], 3), round(x['equity_irr'] * 100, 2), x['binding']]
+        for j, v in enumerate(vals): ws.cell(5 + r_, 1 + j, v)
+    ws.column_dimensions['B'].width = 70; ws.column_dimensions['C'].width = 60
+    wb.save(path)
+    return c
+
 if __name__ == '__main__':
     p = os.path.join(HERE, 'Case_P_Model.xlsx')
     build(p, 1)
-    json.dump(rowmap(), open(os.path.join(HERE, 'recalc', 'rowmap.json') if os.path.isdir(os.path.join(HERE, 'recalc')) else os.path.join(HERE, '.rowmap.json'), 'w'))
     print('written', p)
+    if os.path.exists(os.path.join(HERE, 'outputs_case_p.json')):
+        build_audit(os.path.join(HERE, 'Case_P_Model_AuditExercise.xlsx'))
+        print('written audit exercise copy')

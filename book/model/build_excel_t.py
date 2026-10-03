@@ -790,7 +790,7 @@ def build(path, scenario=2, contribution_option=1):
     B.tr(S, "SP", "Scheduled principal (live)", "ARD m", "IF({Flag_Rep}=1,{SDS}-{SInt},0)", total=True)
     B.tr(S, "SBClose", "Scheduled balance: closing", "ARD m", "{SBOpen}-{SP}")
     B.sc(S, "Sdiv", "Sculpting divisor s (fixed point)", "x",
-         "IF({LiveOn.c}=1,IFERROR(MAX({Tol.c},SUMPRODUCT({CFADSL.r}*{DF.r}*{Flag_Rep.r}*(1-{SA.r}))/({Dsen.c}-SUMPRODUCT({SInt.r}*{DF.r}*{SA.r}))),{DSCR_T.c}),{DSCR_T.c})", fmt="0.000000")
+         "IF({LiveOn.c}=1,IFERROR(IF({Sdiv.c}<0.5,MAX({Tol.c},SUMPRODUCT({CFADSL.r}*{DF.r}*{Flag_Rep.r}*(1-{SA.r}))/({Dsen.c}-SUMPRODUCT({SInt.r}*{DF.r}*{SA.r}))),0.5*{Sdiv.c}+0.5*MAX({Tol.c},SUMPRODUCT({CFADSL.r}*{DF.r}*{Flag_Rep.r}*(1-{SA.r}))/({Dsen.c}-SUMPRODUCT({SInt.r}*{DF.r}*{SA.r})))),{DSCR_T.c}),{DSCR_T.c})", fmt="0.000000")
     B.tr(S, "RIALive", "Ramp-up interest account release (live)", "ARD m",
          "IF({Flag_RampUp}=1,MAX(0,{SInt}-{CFADSL}/{RIA_DSCR.c}),0)", total=True)
     B.tr(S, "RIA", "Ramp-up interest account release (applied)", "ARD m", "IF({LiveOn.c}=1,{RIALive},{Locked_RIA})", total=True)
@@ -852,7 +852,7 @@ def build(path, scenario=2, contribution_option=1):
     B.tr(S, "NSP", "Scheduled notes principal (live)", "ARD m", "IF({Flag_NotesRep}=1,{NSDS}-{NSInt},0)", total=True)
     B.tr(S, "NSBClose", "Scheduled notes balance: closing", "ARD m", "{NSBOpen}-{NSP}")
     B.sc(S, "SNdiv", "Notes sculpting divisor (fixed point)", "x",
-         "IF(AND({LiveROn.c}=1,{NotesFace.c}>0),IFERROR(MAX({Tol.c},SUMPRODUCT({CFADSL.r}*{NDF.r}*{Flag_NotesRep.r}*(1-{NSA.r}))/({NotesFace.c}-SUMPRODUCT({NSInt.r}*{NDF.r}*{NSA.r}))),{NotesDSCR.c}),{NotesDSCR.c})", fmt="0.000000")
+         "IF(AND({LiveROn.c}=1,{NotesFace.c}>0),IFERROR(IF({SNdiv.c}<0.5,MAX({Tol.c},SUMPRODUCT({CFADSL.r}*{NDF.r}*{Flag_NotesRep.r}*(1-{NSA.r}))/({NotesFace.c}-SUMPRODUCT({NSInt.r}*{NDF.r}*{NSA.r}))),0.5*{SNdiv.c}+0.5*MAX({Tol.c},SUMPRODUCT({CFADSL.r}*{NDF.r}*{Flag_NotesRep.r}*(1-{NSA.r}))/({NotesFace.c}-SUMPRODUCT({NSInt.r}*{NDF.r}*{NSA.r})))),{NotesDSCR.c}),{NotesDSCR.c})", fmt="0.000000")
     B.tr(S, "NotesPApp", "Scheduled notes principal (applied)", "ARD m", "IF({LiveROn.c}=1,{NSP},{Locked_NotesP})", total=True)
     B.head(S, "Restructured Senior Notes")
     B.tr(S, "NotesOpen", "Opening balance", "ARD m", "{NotesClose.p}")
@@ -881,7 +881,7 @@ def build(path, scenario=2, contribution_option=1):
     B.sc(S, "KB0", "Scheduled balance at the first NILO repayment period", "ARD m", "SUMPRODUCT({KBOpen.r},{Flag_NiloFirst.r})")
     B.sc(S, "KOn", "NILO live sculpting active", "flag", "IF({Ext.c}=1,{LiveROn.c},{LiveOn.c})")
     B.sc(S, "Kdiv", "NILO sculpting divisor (fixed point)", "x",
-         "IF({KOn.c}=1,IFERROR(MAX({Tol.c},SUMPRODUCT({Resid.r}*{KDF.r}*{Flag_NiloRep.r}*(1-{KA.r}))/({KB0.c}-SUMPRODUCT({KCash.r}*{KDF.r}*{KA.r}))),{DSCR_T.c}),{DSCR_T.c})", fmt="0.000000")
+         "IF({KOn.c}=1,IFERROR(IF({Kdiv.c}<0.5,MAX({Tol.c},SUMPRODUCT({Resid.r}*{KDF.r}*{Flag_NiloRep.r}*(1-{KA.r}))/({KB0.c}-SUMPRODUCT({KCash.r}*{KDF.r}*{KA.r}))),0.5*{Kdiv.c}+0.5*MAX({Tol.c},SUMPRODUCT({Resid.r}*{KDF.r}*{Flag_NiloRep.r}*(1-{KA.r}))/({KB0.c}-SUMPRODUCT({KCash.r}*{KDF.r}*{KA.r})))),{DSCR_T.c}),{DSCR_T.c})", fmt="0.000000")
     B.tr(S, "nPApp", "Scheduled NILO principal (applied)", "ARD m",
          "IF({KOn.c}=1,{KP},IF({Ext.c}=1,{Locked_nPr},{Locked_nP}))", total=True)
 
@@ -969,7 +969,7 @@ def build(path, scenario=2, contribution_option=1):
     B.tr(S, "EoD", "Event of default continuing", "flag",
          "IF(AND({Flag_Construction}=0,{Post}=0,OR({EoD.p}=1,{DefFail}=1)),1,0)")
     B.tr(S, "Lock", "Distributions blocked", "flag",
-         "IF(OR({Flag_Construction}=1,{Flag_Final}=1),0,IF(OR({Flag_PreFirst}=1,{LockFail}=1,{DSRAClose}<{DSRATarget}-{Tol.c},{EoD}=1,"
+         "IF(OR({Flag_Construction}=1,{Flag_Final}=1),0,IF(OR({Flag_PreFirst}=1,{LockFail}=1,{DSRAGap}>MAX(0,{A2})+{Tol.c},{EoD}=1,"
          "{Flag_Standstill}=1,{NiloShort}>{Tol.c},{ArrBankPre}+{ArrBondPre}>{Tol.c}),1,0))")
     B.tr(S, "Distr", "Distributions to equity", "ARD m", "IF({Lock}=1,0,MAX(0,{A6}))*(1-{Flag_Construction})", total=True)
     B.tr(S, "StateCash", "State reserve top-up received", "ARD m", "{StateRes.c}*{Flag_Restr}", total=True)

@@ -790,7 +790,8 @@ def one_pass(R, st, C, H, ext, scn):
         test_fail_lock = R["testdate"][t] and den > EPS and X["dscr_hist"][t] < LOCKUP
         test_fail_def = R["eodtest"][t] and den > EPS and X["dscr_hist"][t] < DEFAULT_DSCR
         X["eod"][t] = 1.0 if ((not R["post"][t]) and (X["eod"][t - 1] > 0 or test_fail_def)) else 0.0
-        lock = (R["prefirst"][t] or test_fail_lock or X["dsra_close"][t] < target - EPS or X["eod"][t] > 0
+        # DSRA test: distributions blocked when cash was insufficient to fill the DSRA to its target
+        lock = (R["prefirst"][t] or test_fail_lock or gap > max(0.0, A2) + EPS or X["eod"][t] > 0
                 or R["standstill"][t] or X["nilo_short"][t] > EPS
                 or X["arr_bank_close"][t] + X["arr_bond_close"][t] > EPS)
         X["lockup"][t] = 0.0 if R["final"][t] else (1.0 if lock else 0.0)
