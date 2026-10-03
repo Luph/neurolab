@@ -25,3 +25,4 @@
 - Done: dogger-bank, triple-point, t-reference-rates, t-pillar-two, t-interest-limitation, t-accounting, azura-edo, noor-ouarzazate, sarulla, moss-landing, northern-lights, neom-hydrogen.
 - Done: bujagali, vogtle, barakah.
 - Done: chile-solar, winter-storm-uri, lake-turkana (lake-turkana medium confidence on financing/PPA terms).
+- Done: t-market-norms (US-heavy; gaps: Middle East, Europe CfD/PPP, Australia, LatAm, Africa, thermal IPP, mining). QUEUED: t-market-norms-2 gap-filling researcher.
