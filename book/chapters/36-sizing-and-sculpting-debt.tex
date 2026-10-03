@@ -832,3 +832,79 @@ Base-case DSCR and gearing cap & \makecell[r]{Debt\\(USD m)} & Binding & \makece
 % V1.5: replace with regenerated P-F36 (all sizing tests applied).
 
 Kilnworth's finance team and Castellan used a table like \cref{exh:36.14} during the October 2017 negotiation, and the lenders reran it on the final base case. Read the 1.35\x{} rows. Moving the gearing cap from 75\% to 80\% adds no debt at all, because at 1.35\x{} the DSCR already binds below the 75\% cap; the cap matters only if the target falls. Kilnworth therefore stopped arguing about gearing once the 1.35\x{} target was settled. The 1.30\x{} rows show the other side: a lower base-case target is capped by the 1.20\x{} downside sizing test, so under the full constraint stack it buys almost nothing. The equity internal rate of return (IRR) row shows what the sponsor gives up for that discipline. % V1.5: rewrite against the regenerated P-F36 rows
+
+\section{Practitioner's notebook}\label{sec:36.13}
+
+\subsection*{Checklist}
+\begin{itemize}
+\item Name the sizing case and confirm it is the case the term sheet names, because a model sized on the sponsor's base case when the term sheet says banking case overstates the debt.
+\item List every DSCR test with its case, target and P-value basis (one-year or ten-year), so that no test is applied on the wrong uncertainty.
+\item Confirm debt service is held fixed across every tested case, because a resculpted downside always passes and proves nothing.
+\item State the gearing denominator and confirm that IDC, fees and DSRA funding in it are converged by the method of \cref{sec:40.5}, with no macro needed to reproduce the debt.
+\item Record tenor, first repayment date, final maturity and the tail to contract end, and check each against the term sheet and any ECA or DFI limit.
+\item Run the average-life and largest-installment tests on each covered tranche's own contractual schedule, and rerun them after every late change in CFADS.
+\item State the rate used to discount debt service, period by period: hedged rate plus margin, unhedged share at the forward curve, and margin step-ups.
+\item Record the binding constraint and the slack, in money, in every other constraint.
+\end{itemize}
+
+\subsection*{Red flags}
+\begin{itemize}
+\item No downside run at all in the credit paper, because sculpting converts any optimism in the sizing case into thin coverage in every year.
+\item Negative principal in any period, because it means the balance is growing and the lenders are capitalizing interest they did not agree to.
+\item A tail under two years on a contract with real renewal or volume risk, because there is then no contracted cash to restructure into.
+\item A balloon larger than the remaining contract could refinance at a conservative ratio and rate, because the refinancing test is then a hope rather than a test.
+\item A notional profile longer than the revenue contract, because the final notional years are then sized on merchant cash at contracted ratios.
+\item ECA tests reported on the whole debt or net of sweeps, because the ECA tests its own tranche's contractual schedule.
+\end{itemize}
+
+\subsection*{Rules of thumb and their limits}
+\begin{itemize}
+\item Debt is inversely proportional to the sculpting target, so each 0.10\x{} near 1.30\x{} moves debt by about 7\% to 8\%; the rule holds only while the DSCR binds and fails once gearing binds.
+\item Each extra year of tenor adds less debt than the last, because later years are discounted more heavily (\cref{ex:36.7}); each also costs the lenders tail and PLCR.
+\item Revenue divided by CFADS, times the percentage shortfall in generation, approximates the percentage shortfall in CFADS (the operating-leverage multiplier of \cref{eq:14.2}); use the multiplier of the binding year, and expect the approximation to fail when a large share of costs is variable, as with fuel in a merchant gas plant.
+\item Under pure sculpting with no reserve, LLCR at the start of repayment equals the target DSCR, so an LLCR covenant at or below the target cannot bind on the sizing case.
+\end{itemize}
+
+\subsection*{Common mistakes}
+\begin{itemize}
+\item Sculpting on cash after a sweep, which makes the profile circular and hides the true coverage.
+\item Discounting debt service at one rate while charging interest at another, which leaves a balance at maturity that analysts then plug.
+\item Resculpting each sensitivity, which makes every sensitivity show the target DSCR and turns the sensitivity table into a list of debt amounts nobody asked for.
+\item Forgetting that grace-period interest must be paid from somewhere, usually a reserve funded at close.
+\item Mixing one-year and ten-year P-values, for example applying a P99 floor to a ten-year uncertainty, which understates the bad-year risk.
+\item Quoting a mini-perm's notional profile as its tenor, which makes a seven-year loan look like a 20-year one.
+\end{itemize}
+
+\subsection*{Questions experts ask}
+\begin{itemize}
+\item Which constraint binds, and by how much is the next one slack?
+\item What happens to the profile and the ECA tests if COD slips six months?
+\item Who refinances the balloon or mini-perm, on what ratios, and what happens if they will not?
+\item What tail is left if the PPA is not renewed, and what could the lenders recover in it?
+\item What did the last three comparable deals size at, in which markets, and when?
+\end{itemize}
+
+\section{Judgment drill}\label{sec:36.14}
+
+\subsection*{The situation}
+You are the lead arranger on Shofirkon Sun Power LLC (fictional), a 300~MWac solar plant in Bukhara region, Uzbekistan, with a 25-year USD PPA from the state single buyer backed by a sovereign guarantee. The lender group is an ECA-covered tranche and two DFIs, and your indicative terms include a six-month DSRA. On October 5, 2026, three weeks before your credit committee, the sponsor's financial advisor asks for three changes to your indicative sizing: (a) a 1.25\x{} P50 sizing DSCR instead of 1.35\x; (b) an 18-year tenor after COD instead of 15, leaving a seven-year tail; and (c) a 12-month interest-only grace period after COD. CFADS is USD~61.4~million in year 1, 60\% of it indexed at 2.0\% a year, so $\mathrm{CFADS}_t = 61.4 \times (0.4 + 0.6 \times 1.02^{t-1})$; the all-in rate is 7.25\%; repayments are sculpted. You must reply by the end of the week.
+
+\subsection*{Reasoning it through}
+Start by pricing each request in money, separately and together. Your 1.35\x{} over 15 years gives USD~438.1~million. A 1.25\x{} target alone adds 8.0\% (USD~473.1~million). An 18-year tenor alone adds 11.6\% (USD~488.9~million). A 12-month grace followed by 15 years alone adds only 1.3\% (USD~443.6~million), and in the grace year CFADS is 1.91 times the interest due. All three together give USD~534.7~million, 22.1\% more.
+
+Then rank the requests by the risk each adds, not by its value. The tenor is the cheapest risk to grant. Eighteen years on a 25-year contract still leaves a seven-year tail, well above the two-to-three-year minimum and typical of a DFI- and ECA-led deal. Solar is a CCSU sector, so the ECA can go beyond 15 years, and a transaction over 15 years gets a WAL limit of 70\% of the term. On annual repayments from COD, the 18-year sculpted profile has a WAL of about 11.9 years against a limit of 12.6 years: a pass, but check it with the ECA, which may have its own appetite below the Arrangement's ceiling, and recheck it on the semiannual profile of the covered tranche.
+
+The 1.25\x{} target is the request to resist, but for the right reason. In Uzbekistan the main downside for a solar plant with a sovereign guarantee is payment, not resource: a late payment by the single buyer, or a delay converting soums into dollars. DSCR cushion is the wrong instrument for a payment stop, because a missed payment removes most of CFADS whatever the cushion; cushion helps only with partial or short delays. The tools for payment risk are liquidity and credit support: a larger DSRA, an offtaker letter of credit, a liquidity facility or political risk insurance. Your real counter to 1.25\x{} is 1.30\x{} plus 12 months of payment security, a 12-month DSRA or an offtaker letter of credit, which protects against the actual risk at a cost the sponsor can price. Add a one-year P99 floor at 1.00\x{} if you like, but recognize that it is nearly free on a solar resource and the sponsor will not value it as a concession: it binds only if one-year P99 CFADS falls below $1/1.30 = 76.9\%$ of P50 CFADS.
+
+The grace period is worth little to the sponsor (1.3\%) and costs the lenders more than it appears, because it pushes all repayment one year later and lifts the WAL by about a year. Combined with the 18-year tenor at 1.25\x, the WAL reaches 12.9 years against a 13.3-year limit on a 19-year term, leaving little room for a late change. Unless the independent engineer sees real risk that COD slips, there is no cash-flow reason for it.
+
+The answer a top arranger gives: grant (b), subject to the ECA's confirmation of the WAL test; counter (a) with 1.30\x{} and 12 months of payment security; decline (c), or offer six months at most if COD timing risk justifies it. Then explain it to the sponsor in money: 1.30\x{} over 18 years with no grace gives USD~507.7~million, 15.9\% more than your indicative terms and about 72\% of the uplift requested.
+
+\subsection*{What would change the answer}
+A DFI partial risk guarantee covering the single buyer's payment obligations (\cref{ch:34}) would move you toward 1.25\x, because it removes the payment risk the cushion and the liquidity are there for. A downgrade of Uzbekistan's sovereign rating or a record of payment arrears would move you away, toward 1.40\x{} and a shorter tenor. A tariff paid in local currency rather than USD would shorten the tenor you could offer, because local-currency risk compounds over time and the lenders' own funding is in dollars. Strong competition, with three other arrangers bidding for the mandate, would push you to grant more of the request; give ground on the target only in exchange for tighter lock-up and sweep triggers (\cref{sec:37.4}), which protect the lenders when the cushion is actually needed.
+
+\section{Sizing fixes the debt; the reserves decide whether it survives a bad year}\label{sec:36.15}
+
+Sizing turns a forecast into a number. Case P's lenders ran the whole stack in April 2018 and arrived at USD~633.3~million, with the base-case DSCR and the downside test binding together and the ECA tranche given its own schedule to stay inside the 2018 cover terms. % V1.5: debt figure
+
+Every number in that sizing rests on forecasts that will be wrong in some years. A profile sculpted at 1.35\x{} has CFADS 35\% above debt service in every period, so CFADS can fall about 26\% before it no longer covers debt service, and no further. Suppose the offtaker pays the December invoice four months late, as SEKA eventually would: in that half-year CFADS falls far more than 26\%, the debt service is still due on the sculpted schedule, and the sizing has nothing left to give. The cash to pay it has to be set aside before the bad half-year arrives, the sponsors' distributions have to stop before the money leaves the project, and the lenders need the right to act on a ratio that misses; the debt service reserve account, the lock-up and sweep, and the covenants of \cref{ch:37} are where those protections are sized.
