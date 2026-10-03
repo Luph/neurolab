@@ -37,3 +37,12 @@
 - Done: sydney-tunnels, dulles-greenway, metronet.
 - Done: t-loan-docs, t-insolvency, t-arbitration-treaties.
 - Done: ichthys, mozambique-lng, oyu-tolgoi.
+- Done: t-sustainable-finance, t-uk-cfd-rab, t-frontier-data.
+
+### Phase 1 Case Bible and models
+- Case Bible complete (case-bible.md ~23.5k words; inputs JSON for P, T, R; decisions D-101..D-112).
+- Models launched: Case P, Case T, Case R (Python mirror + Excel + verification + figure ledgers + case state by chapter).
+
+### Phase 1 briefs (units)
+- Launched: u01 (1-4), u02 (5-9), u03 (10-13), u04 (14-16), u05 (17-22), u06 (23-28), u07 (29-34), u08 (35-38), u09 (39-45), u10 (46-50), u11 (51-56), u12 (57-60), u13 (61-65), u14 (66-68, 84)
+- QUEUED: u15 (69-76), u16 (77-83), u17 (85-88 + matter plan)
