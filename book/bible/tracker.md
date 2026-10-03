@@ -49,3 +49,10 @@
 - Done: t-anticorruption-sanctions, t-insurance-market, t-ratings (PARTIAL: Fitch only; S&P and Moody's methodologies blocked). QUEUED: t-ratings-2 via headless Chromium browser fetch.
 - Done: t-contract-law, t-islamic, t-ppp-frameworks. All 74 planned fact sheets exist (t-ratings partial; t-market-norms-2 in progress).
 - Done: t-market-norms-2 (7 of 9 gap areas; Australian mini-perms and agency DSCR tables still unverified).
+- Briefs done: u02, u03, u04, u12, u14.
+### Fact sheets wave 2 (launched)
+- w2a: t-unsolicited-proposals, chile-concessions, t-pri-market, t-political-risk-theory, odebrecht-2016
+- w2b: t-tax-treaties-wht, t-transfer-pricing, t-accounting-2, t-basel-crm, solvency-qualifying-deal
+- w2c: t-power-tech-norms, t-electricity-market-design, t-reserves-codes, spreadsheet-errors, t-excel-versions
+- w2d: t-cyber-infrastructure, t-decommissioning-liabilities, t-risk-standards, t-us-cpi, t-capm-inputs
+- QUEUED wave 2: t-sustainable-finance-2, t-infra-asset-metrics, t-contract-law additions (Hadley, BGB, UNIDROIT, ICC 2020, NY), t-country-risk (in w2a as political-risk-theory), t-ratings-2 (running)
