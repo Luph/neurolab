@@ -111,3 +111,4 @@
 - Brief revision u05 DONE.
 - Brief revision u15 DONE.
 - Brief revision u16 DONE (open FS: operating WtE plant, subsea cable, SAF mandate, H2Global).
+- Brief revision u09 DONE. ALL 17 BRIEF UNITS REVISED (round 1).
