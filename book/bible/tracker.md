@@ -116,3 +116,4 @@
 - NEXT: build-along workbooks (after v1.4) + exercise workbooks; blueprint review round 2 (targeted re-check by fresh reviewers); Phase 2 pilot.
 - Done: wte-operating-pf (Dublin Poolbeg), subsea-cable-pf (EASSy), saf-mandates, h2global, kenya-steam-sales, t-decommissioning-accounting.
 - Done: t-repowering, t-fast-standard, t-energy-yield, t-battery-degradation, t-earned-value, t-sustainable-finance-2. All requested fact sheets delivered (172 files).
+- Consolidation part B DONE (Case Bible v1.2, model-requests-round1.md, capability-map.md, name register Part 5A with renames, D-116..D-123).

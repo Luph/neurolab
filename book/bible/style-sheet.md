@@ -843,9 +843,22 @@ The canonical tariff formulas are Chapter 18's eq:18.1 and eq:18.2; they replace
 
 `HR` without a superscript remains the plant's actual net heat rate.
 
-### A.6 Calendar rows live on the Time sheet (R-021)
+### A.5a Symbol canon additions: earned value (R-100, R-114; u13 request)
 
-Calendar-driven series that are not project inputs by period (reference base rates such as 6M Term SOFR, FX rates, CPI and other indices, the Kessaran policy rate) are entered in native periodicity on the Inputs sheet and mapped onto model periods in a block at the foot of the Time sheet, below the flags, one row per series, with units in column E. Calculation sheets link to those Time rows (green font) and never look up the Inputs series directly. The sheet order in Section 5.4 is unchanged. Chapter 39 teaches the block; Chapters 40 to 43 link to it.
+Add to the table in Section 5.2:
+
+| Symbol (LaTeX) | Meaning | Unit |
+|---|---|---|
+| `W^{\mathrm{earned}}_t` | earned value at month $t$: the budgeted cost of the work actually performed | currency |
+| `W^{\mathrm{planned}}_t` | planned value at month $t$: the budgeted cost of the work scheduled to date | currency |
+| `\mathrm{SPI}_t` | schedule performance index, $W^{\mathrm{earned}}_t / W^{\mathrm{planned}}_t$ | – |
+| `T_{\mathrm{plan}}`; `\hat{T}` | planned construction duration; forecast duration, $T_{\mathrm{plan}}/\mathrm{SPI}_t$ | months |
+
+Earned value and planned value are never written EV or PV, which R-114 reserves for enterprise value and present value. Chapter 61's eq:61.3 is the home equation (ssec:61.4.2).
+
+### A.6 Calendar rows in the model (R-021 as amended by D-047)
+
+Amended October 3, 2026 (consolidation A, D-047): the rows stay where the verified Case P workbook holds them. Calendar-driven series that are not project inputs by period (reference base rates such as 6M LIBOR and Term SOFR, FX rates, CPI and other indices, the Kessaran policy rate) are entered in native periodicity on the Inputs sheet and mapped once onto each timeline in a calendar block on that timeline's own sheet: for the semiannual timeline, the "Macro paths" block at the head of the Operations sheet (Case P: Operations rows 7 to 15, with the index rows 16 to 27 below it); for the monthly construction timeline, calendar rows on the Construction sheet (Case P: Construction rows 16 to 18). One block per timeline, one row per series, units in column E. Calculation rows link to those rows (green font) and never look up the Inputs series directly. The sheet order in Section 5.4 is unchanged. Chapter 39 teaches the principle and names the placement (ssec:39.3.4, ssec:39.5.4); Chapters 40 to 43 link to it. (Superseded text: "in a block at the foot of the Time sheet, below the flags".)
 
 ### A.7 Label scheme for front matter (R-107)
 

@@ -496,7 +496,7 @@ def funding_act(p, mac_, u, prof, N_m, N_s):
         cfee = ((Dk - bal) * CFEE / 100 * dcf).sum()
         sbf = (SB_COMMIT - sb) * SB_CFEE / 100 * dcf
         upf = (Dk * UPF / 100).sum() if m == 0 else 0.0
-        dsra = ((d1 * bal).sum() + sb * (prof[t1] / prof[t1:].sum() + rsb_t1) + d0) if m == nc else 0.0
+        dsra = (((d1 * Dk).sum() + d0) if p['constr'] == 'FC' else ((d1 * bal).sum() + sb * (prof[t1] / prof[t1:].sum() + rsb_t1) + d0)) if m == nc else 0.0
         X = (u['base_total'][m] + u['vat_int'][m] + idc_k.sum() + sbi + pri + swap + cfee + sbf
              + upf + 0.255 / 12 + dsra)
         HD = Dk.sum() - bal.sum()
@@ -505,7 +505,7 @@ def funding_act(p, mac_, u, prof, N_m, N_s):
         uses = X + prem
         bfund = bdebt / g
         R1 = uses - bfund
-        rec = (OVR['epc_delay_lds_usd_m'] + OVR['dsu_proceeds_usd_m']) if m == RECEIPT_M else 0.0
+        rec = (OVR['epc_delay_lds_usd_m'] + OVR['dsu_proceeds_usd_m']) if (m == RECEIPT_M and p['constr'] == 'ACT') else 0.0
         avail = pool + rec
         ldu = min(R1, avail); pool = avail - ldu
         R2 = R1 - ldu
@@ -569,7 +569,7 @@ def _run(p, prof, N_m, N_s, bond_prof, D_fixed):
     if bond_prof is None and p['refi']: bond_prof = np.array(CONTRACT['prof_BOND'])
     if p['constr'] == 'FC':
         mode = p.get('fund_mode') or ('regross' if (p['capex'] != 1.0 or p['cod_delay']) else 'contract')
-        f = funding_fc(p, mac_, u, prof, N_m, N_s, D_fixed, mode)
+        f = funding_act(p, mac_, u, prof, N_m, N_s) if (p.get('cascade') and mode == 'contract') else funding_fc(p, mac_, u, prof, N_m, N_s, D_fixed, mode)
     else:
         f = funding_act(p, mac_, u, prof, N_m, N_s)
     R['mac'] = mac_; R['u'] = u; R['f'] = f; R['prof'] = prof; R['N_m'] = N_m; R['N_s'] = N_s
@@ -1043,6 +1043,7 @@ def extras(R):
     cash = S['bs_cash']; cf['cf_dc'] = cash - np.concatenate([[0.0], cash[:-1]])
     cf['cf_chk'] = cf['cf_dc'] - cf['cf_net']
     S.update(cf)
+    S['pt_fuel'] = S['fuel_rev'] - S['fuel_cost']; S['pt_gta'] = S['gta_res'] + S['gta_com'] - (S['pass_cost'] - S['fuel_cost'] - S['top_pay'])
     # ECA tests on the selected profile (principal paid, all tranches), measured from the scenario's COD
     cod = cod_date(p); Pp = S['principal_total']; tot = Pp.sum()
     yrs = np.array([(S_END[t] - cod).days / 365.25 for t in range(NS)]); S['eca_yrs'] = yrs
@@ -1428,7 +1429,8 @@ def mc_draws(n=MC_RUNS, seed=MC_SEED):
     return out
 
 def mc_params(row):
-    return dict(avail_shock=row[:MC_NY], dispatch=float(row[MC_NY]), hr_nr=float(row[MC_NY + 1]), fx_d=float(row[MC_NY + 2]))
+    # cascade: committed facilities pro rata, then standby and contingent equity 75:25 (as the workbook's Funding sheet)
+    return dict(avail_shock=row[:MC_NY], dispatch=float(row[MC_NY]), hr_nr=float(row[MC_NY + 1]), fx_d=float(row[MC_NY + 2]), cascade=True)
 
 MC_RESULTS = None
 def monte_carlo(n=MC_RUNS, seed=MC_SEED):

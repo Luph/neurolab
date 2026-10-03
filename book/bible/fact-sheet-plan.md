@@ -253,7 +253,7 @@ Added by the central Bible editor after the blueprint review (D-042). One row pe
 
 ## Request mapping (brief requests against delivered sheets)
 
-Briefs requested some sheets under slugs that were delivered under other names, and some were never delivered. Writers read requested slugs through this table.
+Briefs requested some sheets under slugs that were delivered under other names, and some were never delivered. Writers read requested slugs through this table. Where a row here differs from the round 1 tables at the end of this file ("Request-to-slug mapping added in round 1" and "Open requests and their status"), the round 1 tables govern.
 
 | Requested slug | Status | Delivered slug or instruction |
 |---|---|---|
@@ -282,3 +282,336 @@ Briefs requested some sheets under slugs that were delivered under other names, 
 | t-thermal-ipp-terms | Not delivered | No fact sheet; state no market figure |
 | t-infra-asset-metrics | Not delivered | No fact sheet; state no market figure |
 | wte operating plant (unnamed request) | Not delivered; commission one project-financed operating EfW plant | Otherwise ssec:81.7.1 teaches WtE terms as D-011 ranges and names Willows (wte) as the landmark failure |
+
+
+## Round 1 placements (October 3, 2026, consolidation editor part B)
+
+Source: the "Revision log (round 1)" and "Central changes needed" sections of the seventeen revised briefs, and their fact-sheet sections. Placements below name the section where a reviser says a sheet is used. They add to the "Delivered fact sheets" table above and do not replace it; the automated scan at the end of this part refreshes the chapter column for every sheet in `facts/`.
+
+### Placements recorded by the revisers
+
+| Unit | Sheet | Placement (section, as stated in the revision log or brief) |
+|---|---|---|
+| u01 | h-production-payments, h-north-sea-field-finance, h-purpa-us-ipp, h-gfc-pf-markets | Chapter 3 sections rewritten from the sheets with their "Do not state" limits (h-gfc-pf-markets: ssec:3.6.1 honors the ban on claiming Japanese banks replaced European lenders) |
+| u01 | northvolt, lake-turkana | Chapter 3 wording corrected to the sheets (Lake Turkana: no deemed-energy formula) |
+| u02 | t-us-cpi | Chapter 5 (Example 5.15 on real CPI-U; October 2025 gap; LIBOR caution); Chapter 6 |
+| u02 | t-capm-inputs | Section 8.5, Example 8.7, Exercises 8.7 and 8.15; Example 46.2 (u10) |
+| u03 | t-capacity-ancillary-markets, t-electricity-market-design, t-power-tech-norms, t-storage-safety | Chapter 11, one-line lessons subordinate to the sector chapters |
+| u03 | t-reserves-codes, t-traffic-forecast-accuracy, t-airport-port-revenue, airport-concession, port-concession, ftth-altnet | Chapter 12, one-line lessons subordinate to the sector chapters |
+| u03 | t-contract-law, spreadsheet-errors, t-excel-versions | Chapters 10 and 13, restricted to verified facts (t-contract-law: UNIDROIT 6.2.1 to 6.2.3 and 7.4.13; no Hadley v Baxendale) |
+| u04 | t-cyber-infrastructure, t-decommissioning-liabilities, t-risk-standards | ssec:14.19.3, ssec:14.19.4 and Chapter 14 risk-standards sections (delivered against FS-u04-01 to FS-u04-03) |
+| u05 | t-ppp-frameworks | Chapter 17 |
+| u05 | t-cap-and-floor, t-eu-support-schemes | Chapter 19 |
+| u05 | t-corporate-ppa-market, t-capacity-ancillary-markets, t-electricity-market-design | Chapter 20 |
+| u05 | t-mining-offtake, t-airport-port-revenue | Chapter 21 (port-concession and airport-concession assigned to Chapter 80) |
+| u05 | t-construction-norms, t-contract-law | Chapter 22 |
+| u06 | t-contract-law | sec:23.7, sec:23.8 |
+| u06 | t-insurance-market | ssec:27.7.1, Example 27.5 |
+| u06 | oem-fleet-defects | sec:23.10, sec:24.3 |
+| u06 | t-om-ltsa-norms | sec:24.2, sec:24.3 |
+| u06 | t-construction-norms | sec:23.1, sec:23.4, sec:23.9, sec:23.10 |
+| u06 | wagp | ssec:25.2.7 |
+| u06 | t-cyber-infrastructure; t-pri-market; t-storage-safety | ssec:27.3.4; sec:27.5; ssec:27.3.3 and sec:27.4 |
+| u07 | t-ratings, t-ratings-2 | sec:30.5 (S&P SACP from t-ratings-2, Fitch from t-ratings; Exhibits 30.4 and 30.5) |
+| u07 | t-islamic; t-project-bonds | sec:33.1, sec:33.4; sec:30.2, ssec:30.3.3, ssec:30.5.4 |
+| u07 | t-oecd-pf-2018 | ssec:29.3.2, Exhibit 29.11 |
+| u07 | t-blended-finance; t-local-currency | sec:34.2, sec:34.3; sec:34.6 |
+| u07 | t-oecd-common-approaches; t-infra-debt-funds | ssec:29.3.7; ssec:29.7.1 |
+| u07 | t-market-norms-2; t-us-tax-credits | Chapters 29 and 34; Chapters 31 and 32 |
+| u08 | t-loan-syndication | Chapters 37 and 38 (replaces the requested t-flex-and-fees) |
+| u08 | t-reference-rates | Example 38.9 (SOFR 3.87% on October 1, 2026) |
+| u09 | t-traffic-forecast-accuracy, t-reserves-codes, t-mining-offtake | Chapter 45 |
+| u09 | spreadsheet-errors, t-excel-versions | Chapter 39 |
+| u10 | t-capm-inputs; t-infra-equity-returns | Example 46.2; Exhibit 46.2 |
+| u10 | t-ma-wi-insurance | Chapter 47 (W&I) |
+| u10 | cobre-panama | Chapter 50 (overall 87.7% and the reforestation non-compliances only; sheet corrected in round 1, see below) |
+| u11 | t-security-civil-law; t-arbitral-rules; t-loan-syndication; t-negotiation-sources | Chapter 52; Chapter 54; Chapters 51 and 55; Chapter 56 |
+| u11 | t-islamic | ssec:53.8 (optional) |
+| u12 | t-ppp-frameworks, t-unsolicited-proposals, t-accounting-2, t-market-norms-2 | Chapter 57 |
+| u12 | chile-concessions, t-ppp-frameworks, t-market-norms-2 | Chapter 58 |
+| u12 | t-political-risk-theory, t-ratings-2, t-local-currency | Chapter 59 |
+| u12 | t-pri-market, t-political-risk-theory, t-anticorruption-sanctions, odebrecht-2016, nam-theun-2 | Chapter 60 |
+| u13 | t-construction-norms | ssec:61.6.2, ssec:61.8.2 |
+| u13 | t-cyber-infrastructure; t-insurance-market; oem-fleet-defects | ssec:62.5.4; ssec:62.5.3; ssec:62.6.2 |
+| u13 | t-eu-support-schemes | ssec:62.8.1, ssec:65.4.1 |
+| u13 | t-project-bonds; t-ma-wi-insurance | ssec:63.1.2, ssec:63.5.1; ssec:63.6.2 |
+| u13 | covid-toll-roads | ssec:64.2.2 |
+| u13 | t-decommissioning-liabilities, t-upstream-decom-security, t-nuclear-decom-waste | sec:65.2 |
+| u14 | t-tax-treaties-wht, t-transfer-pricing | Chapter 67 |
+| u14 | t-accounting-2 | Chapter 66 (IPSAS 32 cross-referenced to t-ppp-frameworks) |
+| u14 | t-basel-crm; solvency-qualifying-deal | Chapter 68 (ssec:68.7.2 names no qualifying deal) |
+| u15 | fpso-financing | ssec:76.8.2 to 76.8.4 |
+| u15 | fsru-charters; coral-sul-flng | ssec:76.7.2; new ssec:76.8.5 and ssec:76.5.1 |
+| u15 | upstream-field-pf, t-rbl | Chapter 75 opening, ssec:75.3.1 to 75.3.5, ssec:75.6.1 |
+| u15 | commodity-prepay; tap-pipeline | ssec:75.3.5; ssec:75.5.1, ssec:75.6.2 |
+| u15 | t-cap-and-floor (Greenlink); pumped-storage | ssec:73.3.3, 73.5.2, 73.6.1, 73.6.2; ssec:73.3.3 |
+| u15 | geothermal-risk-facilities | ssec:72.5.2, ssec:72.5.5 |
+| u15 | vineyard-wind-2024; us-offshore-wind-2025 | ssec:71.4.3, 71.7.3; ssec:71.5.3, 71.7.3, 71.7.5 and the Case R installment |
+| u15 | t-storage-safety | ssec:73.2.3 and the walkthrough |
+| u15 | t-nuclear-liability, t-nuclear-decom-waste | Chapter 74 (Examples 74.4 and 74.5) |
+| u15 | t-thermal-exclusions, t-power-tech-norms, t-electricity-market-design, t-capacity-ancillary-markets, oem-fleet-defects, t-market-norms-2, t-om-ltsa-norms, t-construction-norms, t-corporate-ppa-market, t-decommissioning-liabilities, t-upstream-decom-security, t-reserves-codes, t-oecd-pf-2018, h-north-sea-field-finance | Chapters 69 to 76 (summary table in u15's unit status) |
+| u16 | refinery-pf, us-battery-doe | Chapter 77 |
+| u16 | t-critical-minerals-policy, t-untied-resource-finance, t-mining-offtake | Chapter 78 |
+| u16 | covid-toll-roads, chile-concessions, t-traffic-forecast-accuracy | Chapter 79 |
+| u16 | airport-concession | ssec:80.2.3, ssec:80.7.1 |
+| u16 | port-concession; t-airport-port-revenue | ssec:80.3.3, ssec:80.7.1; Chapter 80 |
+| u16 | municipal-water-concession; wte | ssec:81.2.2; ssec:81.4.3, ssec:81.5.1 (Willows as the landmark failure) |
+| u16 | t-digital-norms, tower-carveout, ftth-altnet | Chapter 82 |
+| u16 | t-hydrogen-support, saf-project, t-ccs-liability | Chapter 83 |
+| u17 | t-critical-minerals-policy | Chapter 85 (replaces the requested t-critical-minerals-finance) |
+| u17 | t-excel-versions | fm:model-builds (verification flag) |
+
+### Request-to-slug mapping added in round 1
+
+| Requested slug (unit) | Status | Delivered slug or instruction |
+|---|---|---|
+| FS-u04-01, FS-u04-02, FS-u04-03 (u04) | Delivered | t-cyber-infrastructure, t-decommissioning-liabilities, t-risk-standards |
+| t-flex-and-fees (u08) | Superseded | t-loan-syndication |
+| u08 request 1; request 2 | Superseded | t-oecd-pf-2018; t-market-norms-2 |
+| t-country-risk (u12) | Superseded | t-political-risk-theory and t-ratings-2 (closes the "commission or confirm" row above) |
+| t-oecd-arrangement-history (u07, u15) | Superseded | t-oecd-pf-2018 |
+| t-interconnector-cap-floor (u15) | Superseded | t-cap-and-floor |
+| t-reserves-classification (u15) | Superseded | t-reserves-codes |
+| chile-lpvr (u16) | Superseded | chile-concessions |
+| t-airport-regulation (u16) | Superseded | t-airport-port-revenue |
+| t-ppp-norms (u16) | Superseded | t-market-norms-2 (closes the "not delivered" row above) |
+| t-us-45q-45v (u16) | Superseded | t-ccs-liability and t-hydrogen-support |
+| t-critical-minerals-finance (u17) | Superseded | t-critical-minerals-policy |
+| t-decommissioning (u13) | Superseded | t-decommissioning-liabilities |
+| FR-1 to FR-5 (u14) | Delivered | t-tax-treaties-wht; t-transfer-pricing; t-accounting-2; t-basel-crm; solvency-qualifying-deal |
+| t-ratings (u07) | Delivered | t-ratings and t-ratings-2 |
+| Earned value management origins and ANSI/EIA-748 (u13, Chapter 61) | Requested | t-earned-value (in progress) |
+| An operating project-financed EfW plant (u16, Chapter 81) | Requested | wte-operating-pf (in progress) |
+| subsea-cable (u16, Chapter 82) | Requested | subsea-cable-pf (in progress) |
+| A specific SAF mandate (u16, Chapter 83) | Requested | saf-mandates (in progress) |
+| H2Global double-sided auctions (u16, Chapter 83) | Requested | h2global (in progress) |
+| kenya-steam-sales (u15, Chapter 72) | Requested | kenya-steam-sales (in progress) |
+
+### Open requests and their status
+
+"In progress" means a research agent is writing the sheet; a file with that name may already be in `facts/`, but writers cite it only after the editor marks it delivered in this table. Until then the fallback governs.
+
+| Slug | Requested by (chapters) | Status | Fallback until delivered |
+|---|---|---|---|
+| t-repowering | u13 (ssec:62.8.1, sec:65.4, sec:65.8); coverage defects 5(3) and 8 | In progress | Repowering as principle and Illustrative examples; no Case R repowering figure; no market practice beyond t-eu-support-schemes and t-us-tax-credits |
+| t-fast-standard | u09 (ssec:39.2.2) | In progress | Modeling-standard principles as the book's own conventions, naming no standard's rules |
+| t-energy-yield | u09 (Chapter 45) | In progress | No norm for uncertainty components, P-value conventions or degradation; every such input labeled Illustrative |
+| t-battery-degradation | u09 (Chapter 45) | In progress | Case R fade per Annex TR R.5; every other fade input labeled Illustrative |
+| t-earned-value | u13 (Chapter 61, eq:61.3) | In progress | Earned value taught as a method; its US defense origins and ANSI/EIA-748 not stated |
+| t-sustainable-finance-2 | u14 (ssec:84.3.1, 84.3.5, 84.6.4, 84.6.5, Example 84.5, Exhibit 84.2) | In progress | Non-EU taxonomies not named; EU gas thresholds, IPCC factor and NGFS vintage carry verification flags |
+| wte-operating-pf | u16 (ssec:81.7.1) | In progress | WtE terms as D-011 indicative ranges; Willows (wte) as the landmark failure |
+| subsea-cable-pf | u16 (ssec:82.3.4) | In progress | Example 82.3 (Illustrative); no real cable's terms |
+| saf-mandates | u16 (Chapter 83) | In progress | Mandates taught as a concept |
+| h2global | u16 (Chapter 83) | In progress | Double-sided auctions taught as a concept |
+| kenya-steam-sales | u15 (ssec:72.5.4, 72.5.5) | In progress | Steam sales taught as a category |
+| t-decommissioning-accounting | u14 (ssec:66.4.7 primary; Chapters 7 and 65) | In progress | Principle level with a verification flag; no paragraph references to IAS 16, IAS 37, IFRIC 1 or ASC 410-20 |
+| t-contract-law-2 | u03 (Chapter 10) | Optional, not commissioned | Remoteness and consequential loss stated as general rules; no case names beyond t-contract-law |
+| t-infra-asset-metrics | u03 (Chapter 12) | Optional, not commissioned | State no market figure (PUE, SWRO energy, crane productivity, berth utilization) |
+| t-power-tech-norms-2 | u03 (Chapter 11) | Optional, not commissioned | NREL ATB values, refueling intervals and degradation rates stated qualitatively |
+| t-mining-finance-norms | u03 (Chapter 12 drill) | Optional, not commissioned | No reserve-tail figure |
+| t-thermal-ipp-terms | u05 (Chapter 18) | Optional, not commissioned | Availability targets, LC months and heat-rate headroom as D-011 indicative ranges with market and period |
+| t-wrap-epcm-norms | u06 (Chapter 23) | Optional, not commissioned | No wrap premium or EPCM fee figures |
+| t-direct-agreement-norms | u06 (Chapter 28) | Optional, not commissioned | Case P and Case T periods as case inputs; no market norm |
+| t-vgf-schemes | u07 (sec:34.5) | Optional, not commissioned | Viability-gap funding taught as mechanism |
+| t-lcy-guarantee-facilities | u07 (ssec:34.6.2, 34.6.5) | Optional, not commissioned | Local-currency guarantee facilities taught as mechanism; no named facility's figures |
+| t-south-asia-hydro-terms | u08 (Exercise 36.19) | Optional, not commissioned | Exercise inputs labeled Illustrative |
+| t-legal-opinions | u10 (ssec:49.1.5) | Optional, not commissioned | Opinions taught from principle; no market figure |
+| t-development-hurdles | u10 (Exhibit 46.2) | Optional, not commissioned | Two development rungs as D-011 indicative ranges |
+| t-isda-project-hedging | u11 (ssec:51.1.4, 51.5.5) | Optional, not commissioned | Schedule elections taught as drafting practice; no market frequency |
+| t-procurement-law | u12 (ssec:58.2.2) | Optional, not commissioned | Competitive dialogue as a procedure; no directive article cited |
+| t-ppp-standard-forms | u12 (ssec:58.9.2) | Optional, not commissioned | Only the World Bank guidance families verified in t-ppp-frameworks |
+| t-psc-method-history | u12 (Chapter 57) | Optional, not commissioned | PSC method credited generically |
+| t-payment-security-norms | u12 (Chapter 59 notebook) | Optional, not commissioned | LC months as D-011 indicative with market and period |
+| t-operating-waivers | u13 (Chapter 62) | Not delivered | State no market figure for waiver fees or margin uplifts |
+| t-refi-repricing-norms | u13 (Chapter 63) | Not delivered | State no market figure for margin compression or soft-call conventions |
+| t-step-in-practice | u13 (Chapter 64) | Not delivered | No real step-in example or frequency |
+| hk-cross-harbour-tunnel | u13 (Chapter 65) | Not delivered | Not used |
+| petro-rabigh | u16 (Chapter 77) | Optional, not commissioned | Chapter taught without it |
+| ambatovy | u16 (Chapter 78) | Optional, not commissioned | Chapter taught without it |
+| rolling-stock | u16 (ssec:80.1.4) | Optional, not commissioned | Example 80.2 only |
+
+### Corrections to delivered sheets made in round 1
+
+| Sheet | Change |
+|---|---|
+| cobre-panama | The SGS audit item (19) no longer states "361 of 370 fulfilled, seven partial, three non-compliances": the counts sum to 371 and 361/370 (97.6%) does not match the reported 87.7%, which is a weighted component score. The sheet now gives the 87.73% overall score with its four component scores, notes that sources report both 370 and 371 commitments, and adds the split to "Do not state" (two secondary sources added). Writers print "about 370 commitments" and "overall compliance of about 87.7%" (u10 request) |
+| t-frontier-data | Item 20 aligned with t-cap-and-floor items 18, 20 and 21: 16 projects out of 73 assessed (77 eligible, four withdrew), durations 8 to 32 hours, consultation closed 14 August 2026; alignment note added; "Do not state" extended. Where the two sheets differ, t-cap-and-floor governs (u15 request) |
+
+### Fact-sheet citations in the revised briefs (automated scan, round 1)
+
+Every file in `facts/` with the chapters (or matter files, numbered 89 and above) whose revised brief cites its slug in the chapter sections, excluding the revision logs. Sheets with no citation yet are the in-progress sheets, which round 2 places.
+
+| Slug | Chapters citing it (round 1 briefs) |
+|---|---|
+| airport-concession | 12, 21, 80, 83, 94 |
+| argentina-2002 | 14, 54, 59, 60 |
+| azura-edo | 14, 16, 17, 18, 29, 31, 32, 34, 59, 60, 69, 87 |
+| barakah | 74 |
+| bujagali | 49, 50, 67, 72 |
+| carillion | 4, 7, 9, 14, 15, 16, 22, 23, 24, 28, 58, 61, 64, 81, 85, 87 |
+| chad-cameroon | 14, 50, 60, 75 |
+| chile-concessions | 58, 60, 79, 83 |
+| chile-solar | 9, 11, 14, 18, 19, 20, 25, 35, 45, 70, 73 |
+| cobre-panama | 12, 14, 21, 25, 50, 60, 67, 78, 85, 88 |
+| colombia-4g | 21, 29, 30, 34, 58, 79, 88 |
+| commodity-prepay | 75, 76 |
+| coral-sul-flng | 76 |
+| covid-toll-roads | 64, 79, 80, 83 |
+| covid-transport | 10, 14, 17, 27, 58, 64, 79, 80, 81 |
+| dabhol | 3, 14, 15, 17, 24, 25, 26, 54, 57, 59, 60, 69, 85 |
+| dogger-bank | 3, 4, 11, 19, 23, 32, 36, 71, 73 |
+| dulles-greenway | 14, 16, 21, 36, 37, 42, 45, 46, 48, 64, 79 |
+| eurotunnel | 3, 12, 14, 15, 48, 55, 64, 79, 80 |
+| fpso-financing | 76 |
+| fsru-charters | 76 |
+| ftth-altnet | 12, 82, 83 |
+| geothermal-risk-facilities | 72, 76 |
+| gulf-iwpp | 1, 3, 12, 18, 32, 33, 47, 56, 69, 81 |
+| h-gfc-pf-markets | 3, 4 |
+| h-north-sea-field-finance | 3, 4, 75, 76 |
+| h-production-payments | 3, 4, 75 |
+| h-purpa-us-ipp | 3, 4 |
+| h2global | none yet (round 2 placement) |
+| hinkley-sizewell | 5, 8, 9, 11, 19, 74, 88 |
+| hub-power | 3, 14, 16, 17, 18, 22, 33, 34, 54, 56, 60, 69 |
+| hyperion-meta | 2, 3, 4, 12, 20, 21, 29, 30, 32, 82, 88 |
+| ichthys | 14, 16, 22, 23, 26, 29, 30, 32, 61, 63, 76 |
+| indiana-toll-road | 6, 8, 9, 14, 16, 21, 36, 37, 46, 47, 52, 53, 64, 79 |
+| ivanpah | 3, 11, 14, 24, 29, 48, 49, 62, 65, 70, 86, 88 |
+| kenya-steam-sales | 72, 76 |
+| lake-turkana | 4, 11, 14, 15, 17, 18, 22, 25, 27, 28, 31, 45, 70, 73, 85 |
+| metronet | 4, 14, 15, 24, 57, 58, 80 |
+| moss-landing | 11, 14, 16, 27, 62, 65, 73 |
+| mozambique-lng | 12, 14, 16, 55, 60, 76, 85 |
+| mundra | 10, 14, 15, 18, 25, 41, 69 |
+| municipal-water-concession | 81, 83 |
+| nam-theun-2 | 11, 28, 50, 60, 72 |
+| neom-hydrogen | 31, 32, 33, 66, 83, 84, 88 |
+| noor-ouarzazate | 16, 32, 34, 70, 87 |
+| northern-lights | 83, 88 |
+| northvolt | 2, 4, 14, 77, 88 |
+| ocean-wind | 5, 6, 7, 9, 14, 16, 36, 38, 66, 71 |
+| odebrecht-2016 | 49, 50, 60 |
+| oem-fleet-defects | 23, 24, 28, 62, 69, 70, 71, 76 |
+| oyu-tolgoi | 12, 26, 45, 60, 67, 78, 88 |
+| paiton | 3, 14, 15, 17, 18, 56, 59, 64, 69 |
+| png-lng | 12, 26, 29, 31, 55, 76 |
+| port-concession | 12, 21, 80, 83 |
+| port-of-miami-tunnel | 12, 14, 15, 16, 21, 45, 58, 79 |
+| pumped-storage | 9, 11, 19, 72, 73, 76 |
+| purple-line | 14, 15, 23, 28, 58, 61, 80 |
+| refinery-pf | 77, 83 |
+| reipppp | 1, 3, 17, 19, 28, 47, 55, 56, 57, 58, 70 |
+| sabine-pass | 2, 3, 4, 12, 16, 21, 22, 45, 76, 87 |
+| sadara | 26, 30, 32, 33, 51, 53, 55, 56, 77 |
+| saf-mandates | none yet (round 2 placement) |
+| saf-project | 83 |
+| sanctions-2022 | 14, 49, 60, 75, 76 |
+| sarulla | 14, 16, 23, 48, 72 |
+| sh130 | 36, 52, 64, 79 |
+| solvency-qualifying-deal | 68 |
+| spain-renewables | 14, 17, 19, 54, 60, 70 |
+| spreadsheet-errors | 13, 39, 44, 45 |
+| subsea-cable-pf | none yet (round 2 placement) |
+| sunedison-terraform | 2, 14, 26, 31, 32, 47, 63, 66 |
+| sydney-tunnels | 9, 12, 14, 15, 27, 28, 35, 39, 43, 44, 45, 47, 48, 58, 64, 79, 86, 87 |
+| t-accounting | 7, 9, 66, 67 |
+| t-accounting-2 | 57, 66 |
+| t-adaptation-resilience | 84, 88, 94 |
+| t-airport-port-revenue | 12, 21, 80, 83 |
+| t-anticorruption-sanctions | 14, 16, 49, 60, 87 |
+| t-arbitral-rules | 54, 56 |
+| t-arbitration-treaties | 10, 54, 60, 94 |
+| t-basel | 3, 38, 68, 87 |
+| t-basel-crm | 68 |
+| t-battery-degradation | 45 |
+| t-blended-finance | 34 |
+| t-cap-and-floor | 19, 73, 76 |
+| t-capacity-ancillary-markets | 11, 20, 69, 73, 76 |
+| t-capm-inputs | 8, 9, 46, 50 |
+| t-ccs-liability | 83 |
+| t-conduct-regimes | 85, 87, 94 |
+| t-construction-norms | 22, 23, 28, 61, 65, 69, 76 |
+| t-contract-law | 10, 16, 22, 23, 28, 94 |
+| t-corporate-ppa-market | 20, 70, 76 |
+| t-critical-minerals-policy | 78, 83, 88, 94 |
+| t-cyber-infrastructure | 14, 16, 27, 28, 62, 82, 83 |
+| t-decommissioning-accounting | 66 |
+| t-decommissioning-liabilities | 14, 16, 65, 71, 76, 78, 83 |
+| t-dfis | 3, 4, 16, 29, 30, 34, 53, 59, 60, 68 |
+| t-digital-execution | 88, 94 |
+| t-digital-norms | 82, 83 |
+| t-earned-value | none yet (round 2 placement) |
+| t-electricity-market-design | 11, 20, 69, 70, 76 |
+| t-energy-investment-gap | 88, 94 |
+| t-energy-yield | 45 |
+| t-es-standards | 50, 84 |
+| t-eu-support-schemes | 19, 62, 65 |
+| t-excel-versions | 0, 13, 39 |
+| t-fast-standard | 39, 45 |
+| t-frontier-data | 3, 4, 12, 29, 61, 73, 74, 76, 77, 82, 83, 87, 88, 94 |
+| t-hydrogen-support | 83 |
+| t-infra-debt-funds | 29, 34 |
+| t-infra-equity-returns | 46, 47, 50 |
+| t-infra-fund-terms | 47, 50 |
+| t-insolvency | 10, 52, 64 |
+| t-insurance-market | 16, 27, 28, 49, 50, 62 |
+| t-interest-limitation | 7, 9, 41, 67 |
+| t-islamic | 33, 34, 53 |
+| t-judgment-research | 86, 87, 88, 94 |
+| t-loan-docs | 51, 53, 84, 87 |
+| t-loan-syndication | 38, 51, 55, 56 |
+| t-local-currency | 34, 59 |
+| t-ma-wi-insurance | 47, 50, 63 |
+| t-market-norms | 8, 9, 19, 20, 21, 29, 30, 31, 32, 35, 36, 37, 38, 51, 55, 56, 63, 69, 70, 71, 72, 73, 74, 75, 76, 78, 79, 80, 81, 82, 83, 84, 85, 87, 94 |
+| t-market-norms-2 | 12, 18, 29, 34, 35, 36, 37, 38, 57, 58, 69, 70, 71, 72, 76, 78, 79, 81, 83, 94 |
+| t-mining-offtake | 21, 45, 78, 83 |
+| t-negotiation-sources | 56 |
+| t-nuclear-decom-waste | 65, 74, 76 |
+| t-nuclear-liability | 74, 76 |
+| t-oecd-arrangement | 4, 29, 36, 38, 69, 72, 73, 74, 84, 87 |
+| t-oecd-common-approaches | 29, 34, 50 |
+| t-oecd-pf-2018 | 29, 34, 36, 38, 42, 69, 76 |
+| t-om-ltsa-norms | 24, 28, 69, 76 |
+| t-pillar-two | 67 |
+| t-political-risk-theory | 59, 60 |
+| t-power-tech-norms | 11, 13, 18, 69, 70, 71, 72, 73, 74, 76 |
+| t-ppp-frameworks | 17, 57, 58, 60 |
+| t-pri-market | 27, 28, 60 |
+| t-project-bonds | 30, 34, 63 |
+| t-ratings | 30, 34, 84, 87 |
+| t-ratings-2 | 30, 34, 36, 59, 60 |
+| t-rbl | 75, 76 |
+| t-reference-rates | 3, 6, 9, 38, 40 |
+| t-repowering | 62, 65 |
+| t-reserves-codes | 12, 45, 48, 50, 75, 76, 78, 83 |
+| t-risk-standards | 14, 15, 16 |
+| t-security-civil-law | 10, 49, 50, 52, 56 |
+| t-solvency | 3, 4, 68 |
+| t-storage-safety | 11, 27, 28, 73, 76 |
+| t-sustainable-finance | 30, 84, 87 |
+| t-sustainable-finance-2 | 84 |
+| t-tax-treaties-wht | 7, 9, 67 |
+| t-thermal-exclusions | 69, 76, 84 |
+| t-traffic-forecast-accuracy | 12, 45, 47, 48, 50, 79, 83, 85 |
+| t-transfer-pricing | 67 |
+| t-uk-cfd-rab | 19, 71, 74 |
+| t-unsolicited-proposals | 57, 60 |
+| t-untied-resource-finance | 78, 83 |
+| t-upstream-decom-security | 65, 75, 76 |
+| t-us-cpi | 5, 6, 9 |
+| t-us-tax-credits | 31, 32, 34, 62, 67, 70, 73, 77, 78, 83 |
+| tap-pipeline | 75, 76 |
+| tideway | 12, 14, 16, 19, 57, 68, 81, 84 |
+| tower-carveout | 82, 83 |
+| triple-point | 10, 22, 51 |
+| uk-pfi | 3, 8, 9, 12, 46, 57, 58, 63, 65, 66, 81 |
+| upstream-field-pf | 75, 76 |
+| us-battery-doe | 77, 83 |
+| us-offshore-wind-2025 | 71, 76 |
+| vineyard-wind-2024 | 71, 76 |
+| vogtle | 11, 14, 22, 23, 26, 61, 74 |
+| wagp | 25, 28 |
+| winter-storm-uri | 4, 9, 11, 14, 16, 20, 43, 45, 69, 70 |
+| wte | 81, 83, 94 |
+| wte-operating-pf | none yet (round 2 placement) |

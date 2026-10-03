@@ -80,9 +80,32 @@ def verify_audit():
     for x in sorted(bad, key=lambda x: -x[2])[:12]: print('   ', x)
     json.dump(dict(n=len(res), fails=len(bad), maxdiff=max(x[2] for x in res), checks=chk), open(os.path.join(RC, 'verify_audit.json'), 'w'), default=float)
 
+def verify_mc(runs=(1, 500, 1000)):
+    """Monte Carlo wiring: Scenario 1 with Inputs F311 = run k against the mirror's run k (P-F42 draw table)."""
+    DR = cp.mc_draws(); out = {}
+    for k in runs:
+        p = os.path.join(RC, f'mc{k:04d}.xlsx'); bx.build(p, 1, mc_run=k)
+        o = os.path.join(RC, 'out'); os.makedirs(o, exist_ok=True)
+        subprocess.run(['soffice', LOPROF, '--headless', '--calc', '--convert-to', 'xlsx', '--outdir', o, p], check=True, capture_output=True, timeout=600)
+        wb = load_workbook(os.path.join(o, f'mc{k:04d}.xlsx'), data_only=True)
+        orig = cp.scen
+        cp.scen = lambda i, **kw: orig(i, **dict(cp.mc_params(DR[k - 1]), **kw))
+        try:
+            R, res, chk = compare(1, wb)
+        finally:
+            cp.scen = orig
+        bad = [x for x in res if not (x[2] <= TOL)]
+        mr = cp.MC_RESULTS if cp.MC_RESULTS is not None else None
+        print(f"MC run {k}: {len(res)} compared, {len(bad)} fail, max diff {max(x[2] for x in res):.2e}, checks {chk}")
+        for x in sorted(bad, key=lambda x: -x[2])[:8]: print('   ', x)
+        out[k] = dict(n=len(res), fails=len(bad), maxdiff=max(x[2] for x in res), checks=chk)
+    json.dump(out, open(os.path.join(RC, 'verify_mc.json'), 'w'), default=float)
+
 if __name__ == '__main__':
     if sys.argv[1:] == ['audit']:
         verify_audit(); sys.exit()
+    if sys.argv[1:] == ['mc']:
+        verify_mc(); sys.exit()
     scns = [int(a) for a in sys.argv[1:]] or list(range(1, 16))
     allres = {}
     for s in scns:

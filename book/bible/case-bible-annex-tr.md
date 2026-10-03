@@ -1,6 +1,6 @@
 # Case Bible Annex TR: Case T and Case R resolutions, name register additions
 
-Version 1.1, October 3, 2026 (amended after the blueprint review: Case T counsel and lenders' technical adviser added in T.18; Callum's Chapter 79 date and T-C02 aligned in T.16; see `reviews/blueprint/central-fixes-log.md`). Owner: Case Bible editor, under the editor-in-chief. Binding on every writer, reviewer and modeler.
+Version 1.2, October 3, 2026 (round 1 consolidation: lenders' traffic advisor Elspeth Varga added in T.19; T.16 rows 45, 48, 64 and 79; Part F notes on T-F01 and T-F10; change-log rows T-C25 and T-C26; see `reviews/blueprint/consolidation-B-log.md`). Version 1.1, October 3, 2026 (amended after the blueprint review: Case T counsel and lenders' technical adviser added in T.18; Callum's Chapter 79 date and T-C02 aligned in T.16; see `reviews/blueprint/central-fixes-log.md`). Owner: Case Bible editor, under the editor-in-chief. Binding on every writer, reviewer and modeler.
 
 **Precedence.** Where this annex and `case-bible.md` differ, this annex governs. Where this annex is silent, `case-bible.md` governs. Model outputs still come only from the figure ledgers (`model/figure-ledger-case-r.md`; the Case T ledger when released). Every new number in this annex that a model must absorb is listed, with units and target figure IDs, in `bible/case-tr-input-requests.md`. Numbers marked **(book input)** are fixed facts of the story that no model needs; writers may print them as Case Bible inputs. Simple arithmetic shown in this annex is permitted under D-013 and was computed in Python on October 3, 2026.
 
@@ -309,6 +309,7 @@ Ardmore insurers are regulated by the Commonwealth's prudential regulator (never
 - Change log T-C02 (opening date May 6, 2019): the reader first learns it in Chapter 45 (2019 actuals), not Chapter 79; Chapters 64 and 79 restate it.
 - Part 6, rows 45 and 48: add T-F18 and T-F19 where the traffic shortfall is discussed.
 - Part 6, rows 80 and 81: T.13 and T.14 as inputs; Nerida Faulkes optional.
+- Round 1: Part 6, rows 45 and 48: add Elspeth Varga (Ridgeway's banking case against Pellow's); row 64: add Elspeth Varga (the 2023 restructuring case behind the plan valuation, ssec:64.14.1, alongside Rhys Tanaka-Bell); row 79: Elspeth Varga optional (Ridgeway's counts in the monitoring reports). Row 64 and Case Bible 2.8: the restructured notes' 1.30x is the plan's floor; the ledger outcome (minimum notes DSCR 2.00x, divisor 2.65x; T-F09, T-F10) is what writers print (T-C25).
 
 ## T.17 Traffic ratios and shortfall decomposition
 
@@ -351,6 +352,23 @@ Ardmorean, born 1971 in Port Ellery to a Welsh father and a Japanese mother. Par
 He wants reports he can defend in a courtroom, and data from the tolling system rather than forecasts. He fears signing off a ramp-up that is not happening. He does not negotiate; he writes reservations and dates them. Verbal habit: "Show me the gantry counts."
 
 Where he is wrong: his 2019 monitoring report attributes the first months' shortfall mostly to the tolling acceptance delay and normal ramp-up, and he does not flag the heavy-vehicle diversion until the 2020 H1 report (T.17). Arc: technical diligence (2014), construction certification and the tunnel fault-zone reports (2017), the ramp-up monitoring reports that feed the lenders' alarm (2019 to 2021, sec:79.14), and the technical and traffic evidence for the plan valuation (ssec:64.14.1).
+
+
+## T.19 The lenders' traffic advisor (added in round 1)
+
+Coverage review defect 10 and the u13 and u16 revisers asked for a lenders' traffic seat in Case T. Rhys Tanaka-Bell (T.18) is the lenders' technical and monitoring adviser and uses traffic data, but the lenders' traffic forecasts (the 2014 banking case and the 2023 restructuring case, Case Bible 2.6) come from Ridgeway Traffic Consultants, which had no named person. Elspeth Varga fills that seat. The name was web-checked on October 3, 2026 (no person of that name found; N.3). No character explains a concept the reader needs; narration does that.
+
+### Elspeth Varga (lenders' traffic advisor)
+
+Ardmorean, born 1973 in Port Ellery to a Hungarian father who emigrated in 1957 and a Scottish mother. Mathematics and statistics at the state university; master's in transport planning; eight years in the state roads agency's demand-modeling unit (1997 to 2005), where she built the agency's Coldwater Plains corridor counts; Ridgeway Traffic Consultants from 2005, director from 2011. Acts for the bank club, the BIFA bondholders' representative and NILO.
+
+She wants a case lenders can size on and that she can defend after the fact; her method is to start from the sponsor's model and haircut each driver with a documented reason. She fears being the second forecaster blamed for the same road. She does not negotiate; she sends tables of haircuts with a sentence of reasoning under each. Verbal habit: "Which year's survey is that?" (at most once per chapter).
+
+Where she is wrong: her 2014 banking case (mature 2019 level 52.6 thousand trips a day, slower ramp-up, lower growth; Case Bible 2.6) cuts Pellow's numbers but keeps Pellow's Coldwater Plains housing timetable without an independent check, so the banking case also overstates 2019 to 2022 traffic (T-F18; the housing delay is the largest single cause in T.17). She also accepts Pellow's heavy-vehicle share, which the 2019 counts contradict.
+
+Arc: reviews Pellow's forecast and delivers the banking case at bid stage (2014; Chapters 45 and 48); from opening, Ridgeway's gantry and screen-line counts feed Rhys Tanaka-Bell's monitoring reports (2019 to 2021; sec:79.14); in 2021 she revises the ramp-up for the standstill lenders; in 2023 she builds the Ridgeway 2023 restructuring case (start at the 2023 actual of 42.6, heavy-vehicle uplift from 2024; Case Bible 2.6) that the plan valuation uses and defends it in the evidence for the sanction hearing (ssec:64.14.1). She and Sasha Hrytsenko never appear in the same scene except in Chapter 48's comparison of the two studies, where they meet only through their reports.
+
+Relations: Rhys Tanaka-Bell (Calder Hartmann) relies on her counts and sometimes disputes her classification of vehicles; Lachlan Mereweather instructs her for the plan evidence; Pieter van Wijngaarden (Quarrington) presses her in 2022 for a downside she declines to call a forecast.
 
 ---
 
@@ -547,6 +565,7 @@ Check method: web search on October 3, 2026 (searches were available for this pa
 | Lachlan Mereweather | Lenders' counsel | T | Character; web check found no person of that name |
 | Anjali Thevarajah | Sponsors' counsel | T | Character; web check found no public figure (one private family tribute page uses the name); not meant to resemble a real person |
 | Rhys Tanaka-Bell | Lenders' IE and monitoring adviser | T | Character; web check found no person of that name |
+| Elspeth Varga | Lenders' traffic advisor, Ridgeway Traffic Consultants (round 1, T.19) | T | Character; web check on October 3, 2026 found no person of that name |
 | Ellery Crosstown Light Rail | 2024 PPP line | T | Clear (built from fictional Port Ellery) |
 | Port Ellery Northern Hospital; Ellery Health Infrastructure Partners | 2016 hospital PPP and its concessionaire | T | Clear (built from fictional Port Ellery) |
 | Marlowe Gulf Hydrogen LLC | Hydrogen developer | R | Clear (no company of that name found; Marlowe is a surname) |
@@ -571,6 +590,7 @@ Check method: web search on October 3, 2026 (searches were available for this pa
 | Lachlan Mereweather | T | Ardmorean | 1969 | Galbraith Stowe |
 | Anjali Thevarajah | T | Ardmorean | 1975 | Dunmore Pryor |
 | Rhys Tanaka-Bell | T | Ardmorean | 1971 | Calder Hartmann Engineering |
+| Elspeth Varga | T | Ardmorean | 1973 | Ridgeway Traffic Consultants (round 1) |
 
 ---
 
@@ -578,7 +598,8 @@ Check method: web search on October 3, 2026 (searches were available for this pa
 
 | ID | Figure | Scenario | Chapters |
 |---|---|---|---|
-| T-F01 (extended) | Adds VfM as a share of gross PSC cost and of net PSC, reference and winning bid, on the recalibrated PSC (T.9) | Inputs plus PV | 57, 58 |
+| T-F01 (extended) | Adds VfM as a share of gross PSC cost and of net PSC, reference and winning bid, on the recalibrated PSC (T.9). Round 1 request: the breakeven on retained toll revenue (the fall in the PSC's retained toll revenue at which VfM is nil, reference and winning bid), for Chapter 57; until it is in the ledger, chapters do not print it | Inputs plus PV | 57, 58 |
+| T-F10 (note, round 1) | Minimum notes DSCR 2.00x and the 2.65x sculpting divisor (T-F09) are the outcome; the 1.30x in Case Bible 2.8 is the plan's floor (T-C25) | Ridgeway 2023 case | 64 |
 | T-F02 (extended) | Adds the winning contribution's gap to the reference and to Northgate (T.2, ARD m and percent; arithmetic already in this annex) | Inputs | 47, 58 |
 | T-F09 (extended) | Plan equity value; state subscription at plan value and implied capital grant; price per percentage point for the state and creditors; recoveries by class (T.10, T.11) | Actual history | 64 |
 | T-F18 | Ratio of actual traffic to the Pellow, Ridgeway banking and downside cases, 2019 to 2026, plus ratio to Ridgeway 2023 from 2024 | Inputs | 45, 48, 79 |
@@ -616,4 +637,6 @@ Format as Case Bible Part 8. These rows are also appended to `case-bible.md` Par
 | R-C18 | 2024-03 to 2024-05 | 83 | R | Hydrogen developer offer | Unnamed | Marlowe Gulf Hydrogen; 12 years at USD 39.00/MWh; IC passes May 2024 | Annex R.3 |
 | N-C01 | n/a | 1, 89 | All | Name register | Unregistered | Part N entries | Annex N |
 | T-C23 | 2014 to 2023 | 58, 64, 79 | T | Case T cast | No lenders' counsel, sponsors' counsel or lenders' technical seat | Lachlan Mereweather, Anjali Thevarajah, Rhys Tanaka-Bell | Annex T.18 |
+| T-C25 | 2023-12-18 | 64 | T | Restructured notes DSCR wording (round 1) | "Sculpted ... at 1.30x minimum DSCR" | 1.30x is the plan floor; outcome per T-F09 and T-F10 (divisor 2.65x, minimum 2.00x) | T-F09, T-F10 |
+| T-C26 | 2014 to 2023 | 45, 48, 64, 79 | T | Lenders' traffic advisor (round 1) | Ridgeway unnamed | Elspeth Varga, director | Annex T.19 |
 | T-C24 | 2021 | 79 | T | Callum's Chapter 79 story date | "2021" here against "2019 to 2025" in Part 6 | Scene set in 2021; Part 6 row 79 states it | Annex T.16 |

@@ -1061,6 +1061,80 @@ Every name below is fictional. Each was checked by web search on October 3, 2026
 
 Names rejected during checking (do not use): Thornfield (UK energy companies), Arnstein (Canadian credit union), Halyard (private equity firms), Redbud (real power plants), Calvera (Spanish hydrogen company), Caliche (Houston storage developer), Sotol Energy (Texas oil operator), Tidewater (infrastructure companies), Kingsmere (UK rail and civils group), Fairhaven (US bank branches and savings bank), Daubeny (UK laboratory project), Sangora (town in Burkina Faso), Bassanga (Burkina Faso), Lusara (fiction).
 
+
+## 5A. Illustrative names introduced by the round 1 brief revisions (round 1)
+
+These names belong to illustrative examples, drills and exercises outside the three running cases. They are registered here so that no name is used for two different parties and so that every name has a check status. Status values: **Clear (date, by whom)**: a web search found no real organization, project or polity of that name in a related field; **Rename**: a real project, company or polity of the same or nearly the same name exists, so the writer replaces the name in the same style and reports the change; **Rename advised**: a near miss that a reader could take for a real party; **Internal clash**: the name collides with another fictional party in this book; **Not checked**: the writer runs the Part 5 check before drafting (instruction in every brief). Checks by the consolidation editor were run on October 3, 2026 for a risk-ranked sample (names built on real places and project-like names); the remaining names were not individually searched.
+
+### 5A.1 Fictional jurisdictions and currencies
+
+| Name | Use | Units | Check |
+|---|---|---|---|
+| Republic of Pasundra; Pasundran; Pasundran kati, code PSK | Fictional Southeast Asian republic with a dollar-tariff IPP crisis (Example 3.2, Chapter 3 drill) | u01 | Clear (u01 reviser, October 3, 2026: no country, place or currency of that name; PSK is not an ISO 4217 code) |
+| Lembaga Elektrik Pasundra (LEP) | Pasundra's state utility | u01 | Clear by construction (inherits Pasundra) |
+| Republic of Tavarra; Tavarran; Tavarran rupee, code TVR | Fictional lower-middle-income South Asian coastal republic, Chapters 85 to 87 only (u17 unit note 7) | u17 | Clear (u17 reviser, October 3, 2026: no place of that name; near misses Tavareh, Iran, and Tavares, Florida, never mentioned); TVR is not an ISO 4217 code |
+| Tavarra Power Purchasing Corporation (TPPC); Port Halvan | Tavarra's single buyer; plant site | u17 | Clear by construction (inherits Tavarra); Port Halvan not checked |
+| Republic of Corredana; ELNACOR | Chapter 1 illustrative deal (Annex TR N.1), reused in the Chapter 7 drill | u01, u02 | Clear (Annex TR N.1). Reuse recorded in Annex P 7.3: Chapter 7 may reuse Corredana and ELNACOR only consistently with Chapter 1 |
+| Valdoria | Fictional state in a u03 example | u03 | Not checked |
+
+### 5A.2 Names that must be replaced or should be
+
+| Name (unit) | Status | Finding (October 3, 2026) |
+|---|---|---|
+| Thar Surya Power (u03) | Rename | Thar Surya 1 is a real 300 MW solar project in Bikaner, Rajasthan (Enel Green Power India; IFC financing proposed 2021) |
+| Al Dhafra Sun Two (u03) | Rename | Al Dhafra PV2 is the real 2 GW Abu Dhabi solar plant (TAQA, Masdar, EDF Renewables, Jinko Power) |
+| Termoeléctrica del Sur SA (u02) | Rename | Planta Termoeléctrica del Sur is a real 480 MW combined-cycle plant in Tarija, Bolivia (ENDE) |
+| Seti Khola Hydropower (u03) | Rename | Seti Khola Hydropower is a real 22 MW run-of-river project in Kaski, Nepal |
+| Ocmulgee Valley Electric Membership Corporation (u03) | Rename | Ocmulgee EMC is a real Georgia electric cooperative (Eastman, Georgia) |
+| Calcasieu Point LNG (u03) | Rename | Too close to Calcasieu Pass LNG (Venture Global, Louisiana) and the Calcasieu LNG project |
+| Ras Gharib Wind SAE (u14) | Rename | Ras Ghareb Wind Energy SAE is the real 262.5 MW Engie, Toyota Tsusho/Eurus and Orascom wind IPP in Egypt |
+| Calatagan Power (u03) | Rename | Calatagan Solar Farm is a real 63.3 MW Solar Philippines plant in Batangas |
+| Noor Draa Solaire SA (u14) | Rename | "Noor" is the brand of Morocco's state solar program (Noor Ouarzazate, Noor Midelt); a "Noor" project company implies a real MASEN project (editor's knowledge; not searched) |
+| Bałtyk Wiatr; Bałtyk Północ Wiatr (u03) | Rename advised | Real Polish offshore wind projects carry the Bałtyk name (Bałtyk I to III; Bałtyk Północ was an earlier project name) (editor's knowledge; not searched) |
+| Mid North Wind (u03) | Rename advised | The Mid North of South Australia hosts many real wind farms (Hallett, Snowtown, Willogoleche); the name reads as a real regional project |
+| Darling Downs Storage Pty Ltd (u14) | Rename advised | Darling Downs Power Station (Origin) and Darling Downs Solar Farm (APA) are real Queensland assets |
+| Moorabool Peaking Partners (u14) | Rename advised | Moorabool Wind Farm is a real Victorian wind farm |
+| Thessaly Airports (u03) | Rename advised | Thessaly is a real Greek region with state airports; an "airports" concession under its name implies a real concession |
+| Autostrada Pedemontana Est SpA (u14) | Rename advised | The Pedemontana Lombarda and Pedemontana Veneta motorways are real PPPs (editor's knowledge; not searched) |
+| Ostrander Bank (u02) | Internal clash | Case R's vPPA buyer is Ostrander Data Systems Inc.; use another bank name |
+| Lindqvist Hydro Partners AB (u17) and Lindqvist Kraft AB (u14) | Internal clash | Two unrelated Swedish parties with the same root; rename one (u17's, which appears later) |
+| Calloway Materials Inc (u17) | Internal clash | Case R's asset R5 is Calloway Mesa Solar; rename |
+| Campiña Solar and Campiña Sur Solar (u03) | Internal clash | Two different u03 examples; rename one unless they are the same party |
+
+### 5A.3 Names checked clear in this pass
+
+| Name (unit) | Check (October 3, 2026, consolidation editor) |
+|---|---|
+| Elspeth Varga (Case T character; this version) | Clear: no person of that name found |
+| Aldermoor Bank plc (u17) | Clear |
+| Orrell Energy plc (u17) | Clear |
+| Kurrajong Ridge Energy (u17) | Clear (Kurrajong is a New South Wales locality; no energy company of the name found) |
+| Harlow Vantage Energy (u02) | Clear (near misses: Vantage Wind Energy, Washington; Vantage RE, UK; never mentioned) |
+| Coral Coast Peaking (u03) | Clear (Coral Coast is a tourism region name in Fiji and Western Australia) |
+| Vientos del Chubut (u03) | Clear as a company (Chubut is a real Argentine province; the example may name it as the place) |
+| Glasfaser Oberpfalz (u03) | Clear as a company; near miss Glasfaser Direkt (Amberg), a real Upper Palatinate fiber builder, never mentioned |
+| Mojave Flats Storage, Tehachapi Mesa Solar, Sangamon Sun (u03) | Clear (near miss: the decommissioned Tehachapi Energy Storage Project) |
+| Cholla Ridge Storage HoldCo LLC (u14) | Clear |
+
+### 5A.4 Names checked by the unit revisers
+
+| Names | Unit | Status |
+|---|---|---|
+| Selat Ombak Power Company; Tessaway Oil Company LLC; Halvergate Energy Credit LP (Halvergate is an English village); Mvuli Paa Energy Ltd | u01 | Clear (u01 reviser) |
+| Concesionaria Túnel Cordillera Norte SA; Generadora Litoral Andino SA; Parque Eólico Alto Huelén | u01 | Not individually checked ("Alto Huelén" returned no Chilean place; a real Biobío project, Pillancó, was avoided) |
+
+### 5A.5 Names not yet checked (writer runs the Part 5 check before drafting)
+
+| Unit | Names |
+|---|---|
+| u02 | Pampa Tamarugal Solar SpA; Bjerregaard Vind; other illustrative parties in Chapters 5 to 9 (the reviser listed these as examples, not a complete list) |
+| u03 | Satilla Bioenergy; Altamaha Pellet Company; Fenwick Marsh Power; Calder Turbine Services (shares "Calder" with the cross-case Calder Hartmann Engineering; confirm it is not meant to be the same group); Redmesa Infrastructure Fund; Saguaro Flats Solar; Copperline Renewables; Térmica Río Seco; Complexo Eólico Chapada Alta; Sorraia Gás Comercialização; Ribafria Energia; Central Térmica Valle Hondo; Bayu Rimba Power; Meseta Solar Holdings; Turan Energy; Leeward Islands Power Corporation; Ras Madrakah Power; Nordmark Erzeugung; Mojave Flats Storage (clear, 5A.3); Golfo Azul Energía; Mantaro Alto Generación; Corbeau Deep and Leeward Petroleum; Quebrada Honda Copper; Autocesta Slavonija Istok; Autocesta Posavina; Rio Grande Line; Terminal Bahía Azul; Lakehead Regional Hospital; Ras Mashat IWP; Iskandar DC Holdings; Volta Coast Power; Mount Gawler Copper; Caroni Ammonia; Kwahu Gold; Rocky Pass Iron; Parque Eólico Quebracho Alto; Austral Viento Holdings; Minera Sierra Peñón; Eólica Constructora del Pacífico; Northshore Connector Partners; Viento del Istmo |
+| u14 | Atacama Meridian Energía SA; Pampa Lagunas Solar SpA; Laurentide Pension Infrastructure; Rheinmark Infrastruktur Fonds; Polderwind Noord BV; Nordlys Kraft ASA; Caravela Previdência; Hospital Tejo Concessões SA; Autovía del Valle de Lecrín SA; Bayou Ridge Storage LLC; Coastal Prairie Energy Retail LLC; Desierto Alto Solar S. de R.L. de C.V.; Ankobra Power Ltd; Brindabella Energy Ltd; Weserland Energie AG; Halden Infra Partners; Lagune Solaire SA; Hoshino Trust Bank; Sumatra Panas Bumi; Vent du Rif SA; Termoelektrana Sava d.o.o.; Sagebrush Flats Solar Inc.; Soleil du Nord Kessara SA (uses the fictional Kessara: confirm it does not contradict Case P, which has no other IPP named before 2026); Comoé Hydro Partners; Elbtal Energie AG; Halvorsen Ports Capital; Banco Meseta; Viento de Páramo SL; Rheinland Kreditbank AG; Banque Lyonnaise du Rhône; Assicurazioni Laguna SpA; Meseta Sur Híbrido SL; Eléctrica del Duero SA; Sole Appennino Holding SpA; Ao Pradu Power Co. Ltd; Centrale Maasvlakte Oost BV; Kampot Rice Husk Power Co. Ltd; Pradera Verde Energía SA; Central Hidro Vilcanota SAC; Nordvest Vind ApS; Viento y Sol del Bajío SA de CV; Rio Mayo Hidro SA; Sol do Alentejo Lda. |
+| u17 | Vegasur Renovables SL; Via Tâmega Norte Concessões SA; Ventos do Seridó Energia SA; Seridó Renováveis Ltda; Hidro Quijos Alto SA; Minera Antapampa SAC; Tres Ríos Royalty Corp; Salud Meseta Concesiones SA; UTE Obras Meseta; Sugarland Run Data Campus LLC; Harbourline Infrastructure Debt; Tsiskari Hydro LLC; Thornbury Infrastructure Partners; Jarrah Flats Solar Pty Ltd; Bursztyn Wind Farm sp. z o.o.; Nordvik Renewables AS; Kestrel Lane Capital; Penrose Fairley Engineers; Mei Ling Tan (character name, Chapter 87); Brandywine Ridge Data Campus LLC; Loch Garvan Storage Ltd; Pampa Verde Hidrógeno SpA; Whitsunday Coast Motorway Pty Ltd; Halcyon Reactor Company; Northfork Power Partners; Brazos Mesa Data LLC; Rheinhafen Bank AG; Ostmarsch Speicher GmbH; Kahurangi Geothermal Ltd (Matter 90) |
+| u05 to u13, u15, u16 | Their revision logs do not list the names they introduced; each brief instructs the writer to run the Part 5 check on every invented party before drafting (u13 notes that its 28 examples are unchecked). The consistency checker compiles any new names from the drafts into this table |
+
+Rules: a renamed party keeps its nationality, sector and style; the writer reports the new name in the chapter status note, and the editor adds it here. No name in this part may be used for a running-case party.
+
 ---
 
 # Part 6. Storyline by chapter
@@ -1163,7 +1237,7 @@ Concept-ownership notes for writers:
 - Chapters 5 to 8 use flash-forwards and the FC base case; they never discuss DSCR (Chapter 35), reserves (Chapter 37), or the covenant breach (Chapter 62).
 - Chapter 7's 2022 accounts show trade receivables rising; the narrative names the cause (SEKA paying late) without teaching payment security (Chapter 59).
 - Chapter 20 introduces R1's fixed-volume swap and its Uri stress. Valuation method: ssec:6.8.3; close-out at principle level: Chapter 20; hedge value inside the A1 risk-bucket valuation: ssec:46.4.2 (R-006).
-- Cells marked "(Annex P)" or "(Annex TR)" merge the row amendments of Annex P 2.2 and Annex TR T.16; cells marked "(central fix 2026-10-03)" apply the blueprint review (`reviews/blueprint/central-fixes-log.md`). The annexes still govern where they differ.
+- Cells marked "(Annex P)" or "(Annex TR)" merge the row amendments of Annex P 2.2 and Annex TR T.16; cells marked "(central fix 2026-10-03)" apply the blueprint review (`reviews/blueprint/central-fixes-log.md`); text marked "(round 1)" merges the storyline requests in the revision logs of the round 1 briefs (`reviews/blueprint/consolidation-B-log.md`). The annexes still govern where they differ.
 - Chapter 31 shows the holdco loan's size and the cash it depends on, with a forward reference to Chapter 35 for the coverage ratio.
 - Chapter 59 may say that the DSRA was drawn (Chapter 37) but leaves the covenant breach and waiver to Chapter 62.
 - Chapter 61 tells the insurance claim using Chapter 27's covers; Chapter 28's "Who pays if...?" trace of the same kind of event is written in 2018 as a hypothetical and must not reveal that the event later happened.
@@ -1172,24 +1246,24 @@ Concept-ownership notes for writers:
 
 # Part 7. Figure register
 
-The modelers compute each figure below from the input files and record its values in the figure ledgers (`model/figure-ledger-case-p.md`, `model/figure-ledger-case-t.md` and `model/figure-ledger-case-r.md`; Case P ledger v1.2) under the same ID. Writers cite figures by ID in their status notes. "Scenario" names a scenario from Sections 1.10, 2.8 and 3.8. A figure marked "inputs" needs no model run; it is listed so that every running-case number in the book has an ID.
+The modelers compute each figure below from the input files and record its values in the figure ledgers (`model/figure-ledger-case-p.md`, `model/figure-ledger-case-t.md` and `model/figure-ledger-case-r.md`; Case P ledger at model v1.3) under the same ID. Writers cite figures by ID in their status notes. "Scenario" names a scenario from Sections 1.10, 2.8 and 3.8. A figure marked "inputs" needs no model run; it is listed so that every running-case number in the book has an ID.
 
 ## 7.1 Case P
 
 | ID | Figure | Scenario | Chapters |
 |---|---|---|---|
 | P-F01 | Development budget (USD 14.8 million approved 2015) against actual costs to close (USD 21.43 million), by year | Inputs (annual split: 2015 3.12, 2016 6.87, 2017 7.64, 2018 3.80) | 2, 4 |
-| P-F02 | Capacity charge, fixed O&M charge and VOM charge indexed to the January 2022 invoice; real versus nominal | Actual history indices | 5, 18 |
-| P-F03 | Indicative 2016 all-in floating cost by tranche (6M LIBOR at 2016 levels plus margins and fees annualized) | Inputs plus simple calculation | 6 |
+| P-F02 | Capacity charge, fixed O&M charge and VOM charge indexed to the January 2022 invoice; real versus nominal; reconversion rate: the ledger prints the 2022 H1 average KCR rate, the model's proxy for the invoice-date Central Bank mid rate of the contract (Annex P 1.1.5, P-C54); US CPI path illustrative (D-046) (round 1) | Actual history indices | 5, 18 |
+| P-F03 | Indicative 2016 all-in floating cost by tranche (6M LIBOR at 2016 levels plus margins and fees annualized); 6M LIBOR input approximate; Case P rate paths illustrative (D-046) (round 1) | Inputs plus simple calculation | 6 |
 | P-F04 | 2022 income statement, balance sheet and cash flow statement of Bélanou Power SA | Actual history | 7 |
 | P-F05 | Equity IRR at gearing of 60%, 65%, 70%, 75% and 80% (senior debt set at each gearing; Chapter 8 prints only the equity IRR and debt lines) | FC base | 8 |
 | P-F06 | Levelized tariff of the winning bid under the RFP evaluation formula; runner-up 4.6% higher | FC base inputs | 47 |
 | P-F07 | Sources and uses at financial close, including IDC, fees, ECA premium, DSRA; equity split between share capital and shareholder loans | FC base | 32, 40, 55 |
-| P-F08 | Senior debt by tranche; binding constraint; minimum and average DSCR on base, banking and downside; LLCR at close | FC base, banking, downside | 35, 36 |
-| P-F09 | Sculpted repayment profile; ECA weighted average life and largest installment tests | FC base | 36 |
-| P-F10 | CFADS build for the first full operating year | FC base | 35 |
-| P-F11a | DSRA initial balance (Annex P 8.3 split) | FC base | 37 |
-| P-F11b | MMRA accumulation schedule (Annex P 8.3 split) | FC base | 24, 37 |
+| P-F08 | Senior debt by tranche; binding constraint; minimum and average DSCR on base, banking and downside; LLCR at close | FC base, banking, downside | 35, 36, 42 (round 1) |
+| P-F09 | Sculpted repayment profile; ECA weighted average life and largest installment tests | FC base | 36, 42 (round 1) |
+| P-F10 | CFADS build for the first full operating year | FC base | 35, 41 (round 1) |
+| P-F11a | DSRA initial balance (Annex P 8.3 split) | FC base | 37, 42 (round 1) |
+| P-F11b | MMRA accumulation schedule (Annex P 8.3 split) | FC base | 24, 37, 42 (round 1) |
 | P-F12 | Swap notional profile; hedged and unhedged cost; all-in cost of debt by tranche including ECA premium | FC base | 37, 38 |
 | P-F13 | Monthly construction drawdown schedule and IDC | FC base | 40 |
 | P-F14 | Tax computation OY1 to OY10: holiday, deferred depreciation, minimum turnover tax | FC base | 41 |
@@ -1199,35 +1273,35 @@ The modelers compute each figure below from the input files and record its value
 | P-F18 | Actual construction sources and uses; overrun funding (contingency, LDs, DSU, FX forward gains, standby, contingent equity; both drawn in ledger v1.2, P-C43); IDC against FC base | Actual history | 31, 32, 61 |
 | P-F19 | Completion test results; performance LDs; effect of the prepayment and the 581.9 MW reset on projected DSCR | Actual history | 61 |
 | P-F20 | Arrears path; cash DSCR by period 2022 H1 to 2025 H1; DSRA drawing and replenishment; FX losses | Actual history | 59 |
-| P-F21 | Historic DSCR at June 30, 2023; waiver economics (fee, margin uplift, deferral) | Actual history | 62 |
-| P-F22 | Interest cost before and after the LIBOR switch; effect of the 0.42826% spread adjustment | Actual history | 6 |
-| P-F23 | 2025 bond size; transaction costs; swap unwind value; new combined profile and DSCR; NPV effect for equity | Actual history | 63 |
+| P-F21 | Historic DSCR at June 30, 2023; waiver economics (fee, margin uplift, deferral); ledger values (1.13x at December 31, 2022; 0.96x at June 30, 2023) govern any other note (round 1, P-C57) | Actual history | 62 |
+| P-F22 | Interest cost before and after the LIBOR switch; effect of the 0.42826% spread adjustment; Term SOFR and LIBOR inputs are Case P illustrative paths (D-046) (round 1) | Actual history | 6 |
+| P-F23 | 2025 bond size; transaction costs; swap unwind value; new combined profile and DSCR; NPV effect for equity; the combined DSCR is level by construction and is a model output (1.59x in the ledger); 1.35x was the Version 1.0 design floor (round 1, P-C51) | Actual history | 63 |
 | P-F24 | Equity value at December 31, 2025 at 13.75% and 12.50%; price for 24%; Kilnworth's realized IRR on the sold stake; indirect transfer tax | Actual history | 63 |
 | P-F25 | Termination compensation at June 30, 2023 under SEKA default, project company default and natural force majeure, against senior debt outstanding | Actual history | 17 (formula only), 59 |
-| P-F26 | Kilnworth's accounting: consolidation to September 30, 2026; remeasurement gain on loss of control; equity-method carrying value | Actual history | 66 |
+| P-F26 | Kilnworth's accounting: consolidation to September 30, 2026; remeasurement gain on loss of control; equity-method carrying value; the consideration line is the cash price and excludes the USD 4.0 million deferred consideration, measured at nil at completion; the parent share of the swap hedge reserve recycled (2.1) is reported outside the loss on loss of control (round 1, P-C56) | Actual history | 66 |
 | P-F27 | Withholding tax leakage on distributions and shareholder loan interest, treaty against domestic rates; commercial-tranche interest gross-up cost | FC base and actual | 67 |
-| P-F28 | Credit paper key metrics at close (definition in Annex P 8.3) | FC base, banking, downside | 86 |
+| P-F28 | Credit paper key metrics at close (definition in Annex P 8.3) | FC base, banking, downside | 43, 86 (round 1) |
 | P-F29 | Handback reserve accumulation and plant condition at transfer (assumption-based) | Actual history | 65 |
 | P-F30 | Insurance claim: EAR material damage and DSU computation | Inputs | 61 |
 | P-F31 | OY1 actual against the FC base case: availability, revenue, opex, CFADS | Actual history and FC base | 62 |
 | P-F32 | Example monthly invoice for January 2022: capacity, VOM and fuel charges | Actual history | 18, 41 |
-| P-F33 | Delay LD calibration: daily interest, fixed costs and PPA LDs at the scheduled COD, compared with USD 247,300 | FC base | 22 |
+| P-F33 | Delay LD calibration: daily interest, fixed costs and PPA LDs at the scheduled COD, compared with USD 247,300 | FC base | 22, 61 (round 1) |
 | P-F34 | Operating cost build OY1 to OY10, including LTSA fixed and variable fees | FC base | 24, 41 |
 | P-F35 | Annual gas volume against DCQ and the take-or-pay level at base, banking and downside dispatch | FC base | 25 |
 | P-F36 | Senior debt at DSCR targets of 1.30x, 1.35x and 1.40x and gearing caps of 70%, 75% and 80% | FC base | 36, 56 |
 | P-F37 | VAT on the onshore EPC portion: VAT paid, refunds, VAT facility balance and interest, peak VAT receivable and refund-lag cost; working capital balances OY1 to OY3 (Annex P 8.1) | FC base | 31, 41, 67 |
 | P-F38 | Thin capitalization computation and disallowed shareholder loan interest (Annex P 8.1) | FC base and actual | 41, 67 |
 | P-F39 | SEKA LC amount at COD under the two-plus-one and three-month formulas; reset values 2022 to 2025 (Annex P 8.1) | FC base and actual | 16, 18, 59, 86 |
-| P-F40 | FX losses, netting set-offs, settlement installments, guarantee demand-to-payment days, FX queue duration; the February 14, 2023 LC drawing (Annex P 8.1; P-C44) | Actual | 59 |
-| P-F41 | PLCR at close; period-by-period CFADS and DSCR on the three FC cases (Annex P 8.1) | FC cases | 35 |
+| P-F40 | FX losses, netting set-offs, settlement installments, guarantee demand-to-payment days, FX queue duration; the February 14, 2023 LC drawing (Annex P 8.1; P-C44); netting set-offs: the ledger gives the average per month for 2023 H2 and 2024 H1; a monthly series is requested (`bible/model-requests-round1.md`) (round 1) | Actual | 59 |
+| P-F41 | PLCR at close; period-by-period CFADS and DSCR on the three FC cases (Annex P 8.1) | FC cases | 35, 43 (round 1) |
 | P-F42 | Monte Carlo on availability and dispatch with locked debt (Annex P 8.1) | FC base | 43 |
 | P-F43 | Convergence log of the FC sizing; equity-first funding variant (Annex P 8.1) | FC base | 40 |
 | P-F44 | Revenue build OY1 to OY10 by component (Annex P 8.1) | FC base | 41 |
 | P-F45 | FC base financial statements OY1 to OY3 with balance check (Annex P 8.1) | FC base | 42 |
 | P-F46 | GTA charges 2022 and their pass-through; GCK's revenue from the Bélanou GTA (Annex P 8.2) | Actual | 21, 75 |
-| P-F47 | Heat-rate headroom as an annual fuel margin (Annex P 8.2) | FC base | 18, 48 |
+| P-F47 | Heat-rate headroom as an annual fuel margin (Annex P 8.2) | FC base | 18, 22, 41, 48 (round 1) |
 | P-F48 | LTSA run-out date by dispatch case (Annex P 8.2) | FC base, banking, low dispatch, actual | 24, 28, 65 |
-| P-F49 | Funds flow at financial close, July 17, 2018 (Annex P 8.2) | FC base | 55 |
+| P-F49 | Funds flow at financial close, July 17, 2018 (Annex P 8.2); itemization of every use in the month-1 total (USD 121.59 million) requested so that Exhibit 55.10 reconciles without a residual (round 1) | FC base | 55 |
 | P-F50 | PV of the 7.5 bps swap credit and execution charge; the 10 bps opening (Annex P 8.2) | FC base | 38, 56 |
 | P-F51 | PRI insured amount and premium by period (Annex P 8.2) | FC base and actual | 27, 60 |
 | P-F52 | Planned against actual EPC progress and payments by quarter (Annex P 8.2) | FC base, actual | 61 |
@@ -1239,18 +1313,18 @@ The modelers compute each figure below from the input files and record its value
 | P-F58 | Actual dispatch and gas burn, 2022 (Annex P 8.2) | Actual | 72 |
 | P-F59 | Halbeck RBL borrowing base, 2017 and 2023 (Illustrative; Annex P 8.2) | Illustrative inputs | 75 |
 | P-F60 | September 2016 bid-stage screen (Annex P 8.2) | Bid-stage inputs | 85 |
-| P-F61 | Sombé West reserve coverage (Annex P 8.2) | Inputs | 48 |
+| P-F61 | Sombé West reserve coverage (Annex P 8.2) | Inputs | 12, 48, 86 (round 1) |
 | P-F62 | Bid comparison: levelized tariffs of the four bids (Annex P 8.2) | Bid inputs | 47 |
-| P-F63 | Equity cure amount needed at June 30, 2023 (Annex P 8.2) | Actual | 62 |
-| P-F64 | Bid-to-close equity IRR bridge from the 16.0% bid-model IRR to the FC base (Annex P 8.2; D-037, formerly the second D-017) | FC base re-sized at each step | 8, 47 |
-| P-F65 | KCR forwards traded at financial close: share hedged, KCR notional, forward rates and USD equivalents by settlement date (D-114) | Contract (FC) | 37, 38, 40, 66 |
+| P-F63 | Equity cure amount needed at June 30, 2023 (Annex P 8.2); pro rata prepayment cure requested as an extension for Exercise 51.16 (round 1) | Actual | 51, 62 (round 1) |
+| P-F64 | Bid-to-close equity IRR bridge from the 16.0% bid-model IRR to the FC base (Annex P 8.2; D-037, formerly the second D-017) | FC base re-sized at each step | 8, 46, 47 (round 1) |
+| P-F65 | KCR forwards traded at financial close: share hedged, KCR notional, forward rates and USD equivalents by settlement date (D-114); one forward per monthly onshore EPC payment; the ledger prints every sixth month of the profile and the totals (round 1, P-C52) | Contract (FC) | 16 (preview), 22 (pointer), 37, 38, 40, 51, 53, 55, 59, 61, 66 (round 1) |
 | P-F66 | KCR forward settlements and mark-to-market to COD; unhedged comparison (D-114) | Actual | 59, 61, 66 |
 
 ## 7.2 Case T
 
 | ID | Figure | Scenario | Chapters |
 |---|---|---|---|
-| T-F01 | PSC and PPP present costs; value for money for the reference and the winning bid | Inputs plus PV | 57, 58 |
+| T-F01 | PSC and PPP present costs; value for money for the reference and the winning bid; retained-toll-revenue breakeven requested as an extension (round 1) | Inputs plus PV | 57, 58 |
 | T-F02 | Bid equity IRR at the ARD 287.4 million contribution; the contribution needed at 11.4% on the banking case | Bid base, banking | 47, 58 |
 | T-F03 | Sources and uses at close; senior, NILO and equity amounts; contribution bridge | Bid base and banking | 58 |
 | T-F04 | Traffic: Pellow, Ridgeway, downside and actual, 2019 to 2026 | Inputs | 45, 48, 79 |
@@ -1259,7 +1333,7 @@ The modelers compute each figure below from the input files and record its value
 | T-F07 | Senior DSCR history 2019 H2 to 2023 H2 against banking projections | Actual history | 64 |
 | T-F08 | Termination compensation under concessionaire default (estimated fair value) against senior claims at June 30, 2022 | Actual history | 64 |
 | T-F09 | Restructuring: claims, write-down, new notes, equity split, recoveries by class, NILO | Actual history | 64 |
-| T-F10 | Post-restructuring projections: DSCR, equity value, state revenue share | Ridgeway 2023 case | 64 |
+| T-F10 | Post-restructuring projections: DSCR, equity value, state revenue share; minimum notes DSCR 2.00x and sculpting divisor 2.65x (T-F09) are the outcome; 1.30x is the plan floor (round 1, T-C25) | Ridgeway 2023 case | 64 |
 | T-F11 | Senior sizing: capacity under each constraint, binding constraint, sculpting divisors (added by the modeler) | Banking | 58, 64 |
 | T-F12 | Ratio summary for bid base, banking and downside: DSCR, ramp-up DSCR, senior plus NILO DSCR, LLCR, PLCR (added by the modeler) | Bid base, banking, downside | 47, 58, 64 |
 | T-F13 | Sensitivities on the bid base: equity IRR, NPV, minimum DSCR (added by the modeler) | Bid base | 47, 79 |
@@ -1276,11 +1350,11 @@ The modelers compute each figure below from the input files and record its value
 
 | ID | Figure | Scenario | Chapters |
 |---|---|---|---|
-| R-F01 | P50, P90 and P99 (one-year and ten-year) by asset, uncertainty components, correlations, and correlated portfolio P50/P90/P99 | Yield model | 9 |
+| R-F01 | P50, P90 and P99 (one-year and ten-year) by asset, uncertainty components, correlations, and correlated portfolio P50/P90/P99 | Yield model | 9, 45 (round 1) |
 | R-F02 | Hedge book by year: volumes, prices, share of revenue contracted, hedged and merchant | Base | 20 |
 | R-F03 | Uri-type stress on R1's fixed-volume swap | Sensitivity | 20 |
 | R-F04 | A1 valuation by asset and risk bucket at bid; enterprise value against the USD 446.3 million price | Base, low, high | 46, 47 |
-| R-F05 | A1 sources and uses; opco term loan sizing by bucket; holdco TLB sizing | Base, P99 | 31 |
+| R-F05 | A1 sources and uses; opco term loan sizing by bucket; holdco TLB sizing | Base, P99 | 31, 47 (round 1) |
 | R-F06 | Capture price and revenue build by asset, 2022 to 2030 | Base and low | 45, 70 |
 | R-F07 | A2 and A3 valuation and funding; ITC transfer proceeds | Base | 73 |
 | R-F08 | 2025 refinancing: USPP size by series, blended coupon, swap unwinds, holdco repricing, distribution to the fund | Base | 63 |
@@ -1295,6 +1369,109 @@ The modelers compute each figure below from the input files and record its value
 | R-F17 | Repriced holdco balance and coverage profile (added by modeler) | Base | 63 |
 | R-F18 | R7 revenue floor: reference revenue, Galloway floor payments, premium, upside share by contract year 2024 to 2032 (Annex TR R.4) | Base, low, high | 20, 73 |
 | R-F19 | R6 and R7 usable energy, augmentation MWh and cost, revenue scaling by year (Annex TR R.5) | Base | 45, 73 |
+
+## 7.4 Figure mentions in the round 1 briefs (automated index; round 1)
+
+The Chapters column of 7.1 to 7.3 lists the chapters that print a figure. This index lists every chapter whose revised brief cites the ID in a line that is not a replacement, withdrawal or neighbor note (script scan of `bible/briefs/u01.md` to `u17.md`, October 3, 2026). It over-counts pointers and assumed-concept rows, so it is a checklist for the consistency checker, not a license to print: a chapter prints a figure only if the Chapters column or its storyline row lists it.
+
+| ID | Chapters whose brief cites it |
+|---|---|
+| P-F01 | 2, 4, 5, 32, 46 |
+| P-F02 | 5, 6, 9, 18, 22, 41, 85 |
+| P-F03 | 5, 6, 7, 9, 85 |
+| P-F04 | 6, 7, 8, 66 |
+| P-F05 | 7, 8, 9 |
+| P-F06 | 47 |
+| P-F07 | 26, 32, 34, 36, 38, 39, 40, 41, 55, 56, 86 |
+| P-F08 | 34, 35, 36, 38, 41, 42, 43, 44, 86 |
+| P-F09 | 36, 41, 42, 43, 45, 86 |
+| P-F10 | 34, 35, 38, 41, 51 |
+| P-F11 | 28, 37, 45 |
+| P-F11a | 24, 28, 37, 41, 42, 43, 45, 86 |
+| P-F11b | 24, 28, 37, 41, 42, 43, 45 |
+| P-F12 | 34, 37, 38, 39, 67, 86 |
+| P-F13 | 13, 39, 40, 41 |
+| P-F14 | 40, 41, 42 |
+| P-F15 | 41, 42, 43, 52 |
+| P-F16 | 35, 38, 42, 43, 44, 45, 46, 69, 86 |
+| P-F17 | 41, 43, 44, 45, 49 |
+| P-F18 | 40, 61, 86 |
+| P-F19 | 22, 61, 86 |
+| P-F20 | 59, 60, 86 |
+| P-F21 | 59, 62, 86 |
+| P-F22 | 5, 6, 7 |
+| P-F23 | 63, 66, 67, 84, 86 |
+| P-F24 | 63, 66, 67 |
+| P-F25 | 17, 59 |
+| P-F26 | 66 |
+| P-F27 | 41, 42, 43, 67 |
+| P-F28 | 43, 86, 88 |
+| P-F30 | 61 |
+| P-F31 | 62 |
+| P-F32 | 22, 40, 41, 59 |
+| P-F33 | 22, 61 |
+| P-F34 | 24, 40, 41, 42 |
+| P-F35 | 25 |
+| P-F36 | 36, 38, 56 |
+| P-F37 | 31, 34, 40, 41, 42, 45, 67 |
+| P-F38 | 40, 41, 42, 45, 49, 67 |
+| P-F39 | 16, 22, 34, 45, 59, 60, 86 |
+| P-F40 | 45, 59, 60, 86 |
+| P-F41 | 35, 38, 42, 43, 44, 45 |
+| P-F42 | 42, 43, 44, 45 |
+| P-F43 | 36, 39, 40, 41, 42, 45 |
+| P-F44 | 40, 41, 42, 45 |
+| P-F45 | 41, 42, 43, 45 |
+| P-F46 | 21, 22, 75 |
+| P-F47 | 11, 18, 22, 41, 48, 50 |
+| P-F48 | 24, 28, 65 |
+| P-F49 | 55, 56 |
+| P-F50 | 37, 38, 56 |
+| P-F51 | 27, 60 |
+| P-F52 | 61 |
+| P-F53 | 66, 86 |
+| P-F54 | 67 |
+| P-F55 | 68, 86, 88 |
+| P-F56 | 66 |
+| P-F57 | 69 |
+| P-F58 | 72 |
+| P-F59 | 75 |
+| P-F60 | 85, 88 |
+| P-F61 | 12, 25, 48, 50, 76, 77, 86 |
+| P-F62 | 47, 50, 58 |
+| P-F63 | 51, 56, 62, 65 |
+| P-F64 | 7, 8, 9, 32, 43, 45, 47, 50 |
+| P-F65 | 16, 22, 34, 37, 38, 39, 40, 41, 51, 55, 59, 66, 86 |
+| P-F66 | 38, 40, 59, 66 |
+| T-F01 | 34, 56, 57, 58, 60 |
+| T-F02 | 34, 47, 50, 58, 60, 85 |
+| T-F03 | 29, 58, 66, 68, 85, 86 |
+| T-F04 | 44, 48, 79 |
+| T-F05 | 21, 22 |
+| T-F06 | 44, 45, 79 |
+| T-F07 | 64 |
+| T-F08 | 64 |
+| T-F09 | 64, 65 |
+| T-F10 | 64 |
+| T-F11 | 45 |
+| T-F15 | 64 |
+| T-F16 | 64 |
+| T-F18 | 44, 48, 64, 79, 83 |
+| T-F19 | 44, 45, 48, 64, 79, 83 |
+| T-F20 | 58, 60, 64 |
+| T-F21 | 47, 50 |
+| R-F01 | 8, 9, 44, 45 |
+| R-F02 | 20, 22 |
+| R-F03 | 20, 22 |
+| R-F04 | 45, 46, 85, 86 |
+| R-F05 | 30, 31, 46, 86 |
+| R-F06 | 11, 44, 45, 70, 83 |
+| R-F07 | 73 |
+| R-F08 | 63, 84 |
+| R-F10 | 65 |
+| R-F11 | 45 |
+| R-F18 | 20, 22, 73 |
+| R-F19 | 44, 45, 73 |
 
 ---
 
@@ -1368,13 +1545,26 @@ Every change to a case after this version is logged here. "Date in story" is whe
 | P-C46 | 2017-10; 2023 | 75 | P | Halbeck RBL expected borrowing base (annex 4.13; editor ruling v1.3) | About USD 420 million at signing; about 360 million at the 2023 redetermination | USD 280.7 million at signing; USD 362.7 million in 2023 (model logic: sales capped at contracted SNHK demand, 40% reserve tail, completion-basis NPV; inputs unchanged) | P-F59 |
 | P-C47 | 2016-09 | 46, 47 | P | Kilnworth bid model reconstruction for the P-F64 bridge (modeler calibration, pre-publication) | Bid-model IRR 16.0% (annex 4.7); bid-model base rate not stated | Swapped base rate 3.44% flat, solved so that the reconstruction returns 16.0% with the annex 4.7 indicative terms, the 655 capex, no PRI or WHT gross-up, no mini-perm, no VAT facility interest, no minimum turnover tax or thin cap, KCR flat; the bridge to the FC base (13.3%) is sequential with no residual | P-F64 |
 | N-C01 | n/a | 1, 89 | All | Name register | Unregistered | Part N entries | Annex N |
-| P-C46 | 2017 | 8 | P | Chapter 8 scene premise (central fix) | "Committee wants 80% gearing to protect the 16.0% bid target" | No gearing up to 80% reaches 16.0% on the FC base (P-F05); the scene argues over downside for about 0.5 points, with the bid-to-close bridge P-F64; characters per Annex P 2.2 | P-F05, P-F64 |
-| P-C47 | 2016-07 | 6, 56 | P | Chapter 6 scene (central fix) | 2018 margin grid in a July 2016 scene; Pieter insists on an 80% hedge priced by Castellan | July 2016 indicative margins only (P-F03, Annex P 4.7); Pieter floats a hedging requirement without ratio or pricing; the 80% and execution-charge fight is staged once, September 2017 (Chapter 56, Annex P 1.15.2) | P-F03 |
+| P-C49 (was the second P-C46; renumbered round 1) | 2017 | 8 | P | Chapter 8 scene premise (central fix) | "Committee wants 80% gearing to protect the 16.0% bid target" | No gearing up to 80% reaches 16.0% on the FC base (P-F05); the scene argues over downside for about 0.5 points, with the bid-to-close bridge P-F64; characters per Annex P 2.2 | P-F05, P-F64 |
+| P-C50 (was the second P-C47; renumbered round 1) | 2016-07 | 6, 56 | P | Chapter 6 scene (central fix) | 2018 margin grid in a July 2016 scene; Pieter insists on an 80% hedge priced by Castellan | July 2016 indicative margins only (P-F03, Annex P 4.7); Pieter floats a hedging requirement without ratio or pricing; the 80% and execution-charge fight is staged once, September 2017 (Chapter 56, Annex P 1.15.2) | P-F03 |
 | P-C48 | 2017-11 | 12, 25 | P | Chapter 12 scene (central fix) | Félix argues for take-or-pay | Félix asks physical questions (offshore outages, plateau); take-or-pay is argued only in Chapter 25 | Inputs |
 | T-C23 | 2014 to 2023 | 58, 64, 79 | T | Case T cast (central fix; coverage review defect 10) | No lenders' counsel, sponsors' counsel or lenders' technical seat | Lachlan Mereweather (Galbraith Stowe), Anjali Thevarajah (Dunmore Pryor), Rhys Tanaka-Bell (Calder Hartmann) | Annex TR T.18 |
 | T-C24 | 2021 | 79 | T | Callum's Chapter 79 story date (central fix) | Annex TR "2021" against Part 6 "2019 to 2025" | Callum's Chapter 79 scene is set in 2021 within the row's 2019 to 2025 span | Annex TR T.16 |
 
-Rows T-C12 to T-C21, R-C11 to R-C18 and N-C01 are detailed in `bible/case-bible-annex-tr.md` (Annex TR, October 3, 2026), which takes precedence over this file where they differ.
+| P-C51 | 2025-06-30 | 63 | P | 2025 bond combined DSCR wording (round 1; ledger wins) | "Sculpted ... to a combined base-case minimum DSCR of 1.35x" | Level combined DSCR is a model output, 1.59x (P-F23); 1.35x was the design floor | P-F23 |
+| P-C52 | 2018-07-17 | 37, 40, 66 | P | KCR forward settlement profile and accounting (round 1) | "Seven semiannual settlement dates"; no hedge designation recorded | One forward per monthly onshore EPC payment (ledger profile); designated as cash flow hedges under IFRS 9, reserve removed into the cost of the construction asset | P-F65, P-F66 |
+| P-C53 | 2016-09-19 | 47 | P | Devesh Raval's "where wrong" (round 1) | The committee's higher tariff "would probably have lost the bid" | The committee tariff (USD 74.35/MWh levelized) would still have beaten the runner-up (USD 76.36/MWh); his error was dismissing the Gulf bidder's threat without measuring the margin | P-F62; Annex P 2.1 |
+| P-C54 | 2022-01 | 5, 18, 41 | P | Reconversion rate shown in P-F02 (round 1) | Contract: Central Bank mid rate on the invoice date | Contract term unchanged; the model and ledger use the 2022 H1 average rate as a proxy and say so | P-F02; Annex P 1.1.5 |
+| P-C55 | n/a | 5, 6, 18, 22 | P | US macro paths (round 1) | Unlabeled | Labeled "Case P index (illustrative)" (D-046); no model rerun | D-046 |
+| P-C56 | 2026-09-30 | 66 | P | P-F26 reading (round 1) | Deferred consideration and hedge-reserve recycling unstated | Consideration excludes the USD 4.0 million deferred consideration (nil at completion); recycling (2.1, swaps only) outside the 82.0 loss | P-F26 |
+| P-C57 | 2023-06-30 | 62 | P | Covenant-breach DSCRs in the modeler's case-state note (round 1) | 1.14x and 0.97x (`model/case-state-case-p.md`) | Ledger P-F21 governs: 1.13x (December 31, 2022) and 0.96x (June 30, 2023); case-state correction requested | P-F21 |
+| P-C58 | 2016-10 to 2017-05 | 14, 15, 16 | P | Additions to the P-C31 canon (round 1, u04) | No currency row; no forward proposal | KCR construction-cost row in register v1 and the March 2017 matrix; Pieter's May 2017 proposal of forwards for the KCR share of the EPC price | Annex P 9.1; D-114 |
+| P-C59 | 2018-07-17 | 26, 32 | P | Case Bible 1.5 ABDB entry text aligned with P-C24 (round 1) | "Pro rata to their stakes" | 10 points from Kilnworth, 5 from Talmé | Annex P 1.14.2 |
+| T-C25 | 2023-12-18 | 64 | T | Restructured notes DSCR wording (round 1; ledger wins) | "Sculpted ... at 1.30x minimum DSCR" | 1.30x is the plan floor; sculpting divisor 2.65x and minimum notes DSCR 2.00x are the outcome | T-F09, T-F10 |
+| T-C26 | 2014 to 2023 | 45, 48, 64, 79 | T | Lenders' traffic advisor character (round 1) | Ridgeway Traffic Consultants unnamed | Elspeth Varga, director, Ridgeway | Annex TR T.19 |
+| N-C02 | n/a | 1 to 88 | All | Name register for round 1 illustrative names (round 1) | Unregistered | Part 5A entries with check status | Part 5A |
+
+Rows T-C12 to T-C21, R-C11 to R-C18 and N-C01 are detailed in `bible/case-bible-annex-tr.md` (Annex TR, October 3, 2026), which takes precedence over this file where they differ. Change-log ID collision fixed in round 1: P-C46 and P-C47 were each used twice; the Halbeck RBL row (P-C46) and the bid-model reconstruction row (P-C47) keep their IDs, which D-115 and Annex P 4.13 cite, and the two central-fix scene rows become P-C49 (Chapter 8) and P-C50 (Chapter 6). Documents written before this version that cite "P-C46" for the Chapter 8 premise or "P-C47" for the Chapter 6 scene mean P-C49 and P-C50.
 
 Template for new entries:
 

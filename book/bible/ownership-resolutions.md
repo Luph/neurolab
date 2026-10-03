@@ -6,7 +6,7 @@ Governing rule (standards Section 11, Phase 1 item 2): every concept has exactly
 
 Each ruling states: the concept; its home (chapter, section label); what other chapters do (cross-reference, one-line preview, or forward reference); and the brief text that must change. "CR" codes refer to the unit issue lists at the end of each brief; "self-detected" marks conflicts found in this pass by comparing concepts-owned lists, tables of contents, glossaries and anchors.
 
-Number of rulings: 141 (R-122 to R-141 added October 3, 2026 after the blueprint review; Section N).
+Number of rulings: 148 (R-122 to R-141 added October 3, 2026 after the blueprint review, Section N; R-142 to R-148 added the same day by consolidation A from the round-1 brief revision logs, Section O; R-021 amended by D-047).
 
 ## Index of change requests and their rulings
 
@@ -310,13 +310,14 @@ Brief-feedback items that are Case Bible flaws (BF) or fact-sheet requests (FS) 
 - Brief text that must change: u09 glossary: delete "thin capitalization".
 - Amended by: R-136 (blueprint review, Section N).
 
-### R-021. Calendar rows on the Time sheet
+### R-021. Calendar rows in the model (amended by D-047)
 
-- Sources: CR-u09-4.
+- Sources: CR-u09-4; u09 revision log, central change 1; D-047.
 - Concept: Base rate, FX and index series in the model.
-- Home: Style sheet 5.4 addendum: calendar-driven rows (base rates, FX, CPI and other indices) live in a block at the foot of the Time sheet.
-- Other chapters: Ch 39 teaches it; Chapters 40 to 43 link to it.
-- Brief text that must change: Style sheet addendum (this date) and D-019.
+- Home (as amended October 3, 2026, consolidation A, under D-047): calendar-driven series stay where the verified Case P workbook holds them, and no row is moved. The series are entered in native periodicity on the Inputs sheet (rows 281 to 309). For the semiannual timeline they are mapped in a "Macro paths" block at the head of the Operations sheet (rows 7 to 15: base rate before and after the sensitivity shift, KCR per USD before and after the devaluation sensitivity, US and Kessaran CPI changes), with the index rows 16 to 27 below it. For the monthly construction timeline they sit on the Construction sheet (rows 16 to 18: KCR per USD, base rate, Kessaran policy rate). Each timeline has one block on its own sheet, one row per series, units in column E; calculation rows link to these rows (green font) and never look up the Inputs series directly. Style sheet Addendum A.6 states the same rule.
+- Other chapters: Ch 39 teaches the principle and names the placement (ssec:39.3.4, ssec:39.5.4); Chapters 40 to 43 link to the rows (Ch 40 builds Operations rows 7 to 15 and Construction rows 16 to 18; Ch 41 builds the index rows 16 to 27).
+- Brief text that must change: none in u09 (its Section 0.2 note now describes the ruled placement, not a deviation); style sheet Addendum A.6 amended the same day.
+- Amended by: D-047 (consolidation A, October 3, 2026). Original text, superseded: "calendar-driven rows (base rates, FX, CPI and other indices) live in a block at the foot of the Time sheet".
 
 ### R-022. Chapter 45 length and PPP deductions in Chapter 45
 
@@ -705,6 +706,7 @@ Brief-feedback items that are Case Bible flaws (BF) or fact-sheet requests (FS) 
 
 
 ## D. Sources of capital (Chapters 29 to 34)
+- Amended by: R-144 (consolidation A, Section O).
 
 ### R-069. DFI guarantees (Ch 16, 29, 34, 60)
 
@@ -745,6 +747,7 @@ Brief-feedback items that are Case Bible flaws (BF) or fact-sheet requests (FS) 
 - Home: Ch 32 (sec:32.9) owns tax equity, partnership flips and credit transfer mechanics. Ch 67 (sec:67.10) owns the 2025 deadlines, beginning-of-construction rules, prohibited foreign entity and material assistance tests as structuring constraints (glossary home of prohibited foreign entity, ssec:67.10.2). Ch 70 owns the sector consequences.
 - Other chapters: Ch 32 states in one dated paragraph that eligibility constraints exist and forward-references sec:67.10. Ch 73 and Ch 83 cite sec:67.10.
 - Brief text that must change: u07 Ch 32 brief: item 15 shrinks to the dated pointer; delete "prohibited foreign entity" from the u07 glossary.
+- Amended by: R-145 (consolidation A, Section O).
 
 ### R-074. OECD Arrangement as revised against Case P's 2018 terms
 
@@ -875,6 +878,7 @@ Brief-feedback items that are Case Bible flaws (BF) or fact-sheet requests (FS) 
 - Home: Ch 60 owns the law and the risk: anti-bribery regimes (sec:60.6, FCPA, UK Bribery Act, adequate procedures) and sanctions regimes (sec:60.7, OFAC lists and the 50 percent rule, secondary sanctions, EU and UK regimes, contract tools).
 - Other chapters: Ch 49 (sec:49.6, fw:ownership-trace) owns KYC, screening and anti-corruption diligence as process, applying the 50 percent rule and the adequate-procedures benchmark with one-sentence forward references to sec:60.7 and sec:60.6 (Example 49.6 is application, not teaching). Ch 87 owns ethics as personal conduct.
 - Brief text that must change: None beyond the forward references already in the u10 brief.
+- Amended by: R-146 (consolidation A, Section O).
 
 ### R-089. Parallel debt in the Chapter 49 installment
 
@@ -902,6 +906,7 @@ Brief-feedback items that are Case Bible flaws (BF) or fact-sheet requests (FS) 
 
 
 ## G. Finance documents and the deal process (Chapters 51 to 56)
+- Amended by: R-147 (consolidation A, Section O).
 
 ### R-092. Amendments, waivers and voting (Ch 51, 53, 62, 64)
 
@@ -910,7 +915,7 @@ Brief-feedback items that are Case Bible flaws (BF) or fact-sheet requests (FS) 
 - Home: Ch 51 (sec:51.7) owns thresholds inside a facility, entrenched matters, deemed consent, yank-the-bank and the waiver and amendment letter, and the glossary terms waiver, consent and amendment.
 - Other chapters: Ch 53 (sec:53.3) owns voting across classes. Ch 62 (sec:62.7, fw:waiver-request-ladder) owns running waivers in operations (glossary "waiver fee"). Ch 64 (sec:64.4) owns waivers and standstills in distress. Ch 30 owns bondholder consent solicitations.
 - Brief text that must change: u13 glossary: "waiver", "consent" and "amendment" move to sec:51.7.
-- Amended by: R-126 (blueprint review, Section N).
+- Amended by: R-126 (blueprint review, Section N); R-143 (consolidation A, Section O).
 
 ### R-093. Offshore accounts (Ch 52 vs Ch 59)
 
@@ -1208,6 +1213,7 @@ Rulings R-122 to R-141 resolve the double ownership, early-use and heading defec
 - Home: Ch 51 (ssec:51.7.3) owns the form of the waiver and amendment letter and is the glossary home of "reservation of rights". Any form clause with variants that a brief placed in Ch 62 moves to Ch 51 as an appended Clause 51.x.
 - Other chapters: Ch 62's ssec:62.7.4 is retitled "Applying the waiver letter to the Case P breach": the operative terms of the October 26, 2023 letter as an annotated Case P application citing the form in ssec:51.7.3 (Laurent's reservation of rights, Annex P 1.15.11).
 - Brief text that must change: u11 Ch 51 (new appended clause label); u13 Ch 62 (ssec:62.7.4 title, Clause 62.1 and variants recast or moved). Added to R-092's list.
+- Amended by: R-143 (consolidation A, Section O).
 
 ### R-127. Commitment fees in Ch 38
 
@@ -1287,6 +1293,7 @@ Rulings R-122 to R-141 resolve the double ownership, early-use and heading defec
 - Home: Ch 5 gains an owned subsection ssec:5.0 "A first spreadsheet" (about 1,500 words, placed before sec:5.1 so that no existing label moves), the glossary home of "relative reference" and "absolute reference". Ch 13 gains ssec:13.8.5 "Writing a macro from scratch" (appended), the glossary home of "macro", "Visual Basic for Applications (VBA)" and "macro-enabled workbook (.xlsm)". The book's supplied workbooks stay macro-free (D-113); macros are optional reader tools.
 - Other chapters: sec:13.2 cross-references ssec:5.0 and goes further. Ch 5's data-table step is a forward-referenced optional step with the answer given. Chapter 1's blank-workbook exercise moves to Ch 13's Tier 3 set. Chapters 40, 42 and 43 list "writing a macro, ssec:13.8.5" as assumed wherever an exercise uses one.
 - Brief text that must change: u02 Ch 5 (new subsection); u03 Ch 13 (new subsection, exercises); u01 Exercise 1.11; u09 Ch 40, 42, 43 assumed lists. If the revised u02 or u03 brief uses a different label, the registry regeneration adopts the brief's label and the canon follows it.
+- Amended by: R-142 (consolidation A, Section O).
 
 ### R-136. Tax rules that reach a project's cash, taught in Chapter 7 (amends R-020)
 
@@ -1295,6 +1302,7 @@ Rulings R-122 to R-141 resolve the double ownership, early-use and heading defec
 - Home: Ch 7 gains an owned subsection ssec:7.6.4 "The tax rules that reach a project's cash" (appended to sec:7.6, about 1,500 words with one worked example), the glossary home of "withholding tax", "thin capitalization", "earnings-based interest limitation" and "tax loss carryforward".
 - Other chapters: Ch 67 keeps treaty structuring, policy, interest-limitation regimes and grandfathering (sec:67.5), Pillar Two and the drafting and pricing of gross-ups. Ch 41 (ssec:41.5.3) computes thin capitalization and interest limitation citing ssec:7.6.4. Ch 32, 38, 41 and 42 assumed lists cite ssec:7.6.4. R-020 is amended accordingly: Ch 67 owns structuring and policy, not the first definitions.
 - Brief text that must change: u02 Ch 7; u07 Ch 32; u08 Ch 38; u09 Ch 41 and 42; u14 Ch 67 concepts lists.
+- Amended by: R-142 (consolidation A, Section O).
 
 ### R-137. Share purchase agreement in Ch 63 and the registry (extends R-084)
 
@@ -1335,3 +1343,69 @@ Rulings R-122 to R-141 resolve the double ownership, early-use and heading defec
 - Home: The retitles in the table of `reviews/blueprint/standards.md` defect 1 are adopted, label and number unchanged. The combined-case headings are split: sec:68.11 "Case P: Castellan grades Bélanou" (the Case T beat moves to its own subsection headed "Case T: ..."); sec:73.9 "Case R: battery tolls and floors" (Case P's 225 kV line as its own "Case P:" subsection); sec:84.12 "Case R: a green private placement" (Case P's bond as its own "Case P:" subsection). Framework 86.2 is renamed to match sec:86.3 "The risk, mitigant, and residual table". Duplicates: sec:43.5 "Implementing Monte Carlo in the model"; ssec:51.5.4 "Drafting the equity cure"; ssec:22.6.2 "Bonds, guarantees, and retention as contractor security" (the review's proposed "Contractor security: ..." form is not used because it is a colon subtitle); ssec:79.4.1 "Calibrating guarantees and revenue-sharing bands for toll roads". Every list heading takes the serial comma; American spelling ("Social license", "The catalog", "The standardized approach").
 - Other chapters: Revised briefs carry the new titles; the anchor registry adopts them at its regeneration and checks them against the briefs.
 - Brief text that must change: All briefs with the listed labels.
+
+## O. Consolidation rulings from the round-1 brief revisions (October 3, 2026)
+
+Rulings R-142 to R-148 record the ownership and label consequences of the round-1 brief revisions and of the cross-unit requests in their revision logs (consolidation A; `reviews/blueprint/consolidation-A-log.md`). They continue the series and take precedence over the briefs as the earlier rulings do. The unit revisers proposed no ruling that conflicts with an adopted one: u08's "proposed R-122" (sizing case at ssec:35.6.1) is identical to the adopted R-122 and is cited as R-122; its brief text was corrected, and no duplicate ruling is issued.
+
+### R-142. Placement of the R-135 and R-136 subsections (amends R-135 and R-136)
+
+- Sources: u02 revision log (capabilities defects 4 and 10), u01, u03, u07, u08, u09, u10, u13 and u14 cross-unit requests.
+- Concept: The spreadsheet primer and the tax rules that reach a project's cash.
+- Home: The spreadsheet primer is ssec:5.2.2 "Building a discount-factor table in a first spreadsheet" (a subsection before sec:5.1 would print as 5.0.1), glossary home of "relative reference" and "absolute reference". The tax rules are ssec:7.11.4 "The tax rules that reach a project's cash", with Example 7.12, appended after the last existing example so that Examples 7.7 to 7.11 keep their numbers; glossary home of "withholding tax", "thin capitalization", "earnings-based interest limitation" and "tax loss carryforward".
+- Other chapters: Every brief citation of ssec:5.0 now reads ssec:5.2.2 and every citation of ssec:7.6.4 reads ssec:7.11.4 (applied in the briefs by consolidation A); Ch 1 cites ssec:7.11.4 for its tax arithmetic. R-135's and R-136's labels ssec:5.0 and ssec:7.6.4 are not used.
+- Brief text that must change: done (u01, u03, u07, u08, u09, u10, u13, u14).
+
+### R-143. Waiver conditions and the Case P waiver letter (extends R-126 and R-092)
+
+- Sources: u11 central change 12; u13 central changes 2 and 7; R-126.
+- Concept: Drafting variants of waiver conditions and of the reservation of rights; the Case P letter of October 26, 2023.
+- Home: Ch 51 (ssec:51.7.3): Clause variants 51.8 (cl:51.8a sponsor-friendly, cl:51.8b lender-friendly) carry the reservation-of-rights variants and the drafting positions on the conditions attached to a waiver (remediation plan, reporting, lock-up release test, reserve priority, fee credit).
+- Other chapters: Ch 62's ssec:62.7.4 is "Applying the waiver letter to the Case P breach"; its Clause 62.1 is the operative provisions of the Case P letter, an annotated application of Clause 51.8 that places each provision between 51.8a and 51.8b. The former cl:62.1a and cl:62.1b (operating-waiver condition variants) and cl:62.2 (the Case P letter, now cl:62.1) are withdrawn; Walkthrough 62.10 narrates the Aydın negotiation positions in prose; Exercise 62.10's model answer follows Clause 51.8b; sec:62.11 cites Clause 62.1.
+- Brief text that must change: done (u11 ssec:51.7.3; u13 Ch 62 concepts item 12, ssec:62.7.4, ssec:62.11.4, Walkthrough 62.10, the clause paragraphs, Exercise 62.10, anchors and capability entries).
+
+### R-144. Acceleration of base and contingent equity (extends R-068)
+
+- Sources: u07 cross-unit request (Clause 32.2); u06 Clause 26.3.
+- Concept: Acceleration of undrawn base and contingent equity on an event of default.
+- Home: Ch 32 (ssec:32.3.3, Clause variants 32.2 a to c) owns the negotiated variants of acceleration of undrawn base and contingent equity.
+- Other chapters: Ch 26's Clause 26.3 is the base equity contribution undertaking and LC support (variants 26.3a and 26.3b cover conditions to contribution and LC replacement on downgrade); acceleration appears there as one operative sentence without variants; Exercise 26.12 follows. Ch 26 drafts no contingent-equity or acceleration variants.
+- Brief text that must change: done (u06 ssec:26.4.2, Exercise 26.12, anchors).
+
+### R-145. The US credit-dates exhibit (extends R-073)
+
+- Sources: u07 revision log (Exhibit 32.5 recaptioned); u07 cross-unit request to u14.
+- Concept: US clean-energy credit construction and placed-in-service deadlines and foreign-entity tests under the 2025 law.
+- Home: Ch 67, Exhibit 67.4 (`exh:67.4`, in ssec:67.10.1), "US wind, solar, and storage credit deadlines and foreign-entity tests (as of October 3, 2026)".
+- Other chapters: Ch 32 (ssec:32.9.4) cites Exhibit 67.4 and carries no credit-dates exhibit; Exhibit 32.5 is "Partnership flip and tax credit transfer compared, as of October 3, 2026".
+- Brief text that must change: done (u14 ssec:67.10.1; u07 ssec:32.9.4).
+
+### R-146. One entry for the 50 percent rule (extends R-088)
+
+- Sources: u10 central change 3.
+- Concept: The US rule that entities owned 50% or more by blocked persons are blocked.
+- Home: "50 percent rule", ssec:60.7.1 (Ch 60 owns sanctions law), with "OFAC 50 percent rule" recorded as a synonym.
+- Other chapters: Ch 49 (ssec:49.6.2) applies it in screening and ownership tracing, with a cross-reference; its glossary row is marked "applied".
+- Brief text that must change: done (u10 Ch 49 glossary row); canon entry "OFAC 50 percent rule" deleted.
+
+### R-147. One entry for transition risk (extends R-091)
+
+- Sources: u14 central change (glossary canon).
+- Concept: Transition risk.
+- Home: "transition risk", ssec:14.19.2, as R-091 does for physical climate risk.
+- Other chapters: Ch 84 (ssec:84.6.3) applies it to climate scenario analysis and disclosure; "transition climate risk" is not a separate term and its canon entry is deleted.
+- Brief text that must change: done (u14 Ch 84 glossary row).
+
+### R-148. Canon homes confirmed or corrected at consolidation
+
+- Sources: u06 central change 8, u13 central change 6, u16 central change 2, u12 central change 2, u15 central change 2.
+- Concept and home:
+  - Gross calorific value stays at ssec:25.2.6, where gas is priced on it; Ch 11 and Ch 18 use the same basis earlier as higher heating value with a forward reference.
+  - Yank-the-bank moves to ssec:51.7.2 (voting inside a facility is Ch 51's under R-092); Ch 63 (ssec:63.3.1) applies it.
+  - Anticipated repayment date is homed at ssec:82.7.3 (no earlier home exists) and is never abbreviated, because ARD is the Case T currency code (D-103).
+  - Optimism bias uplift is homed at ssec:57.2.3 (R-043); the concept stays at ssec:9.9.1.
+  - "Funded decommissioning program" is the canon spelling (ssec:74.4.1); the UK statutory arrangement keeps its proper name.
+  - "PF2" is a duplicate of "Private Finance 2" and is deleted; "financial adviser" is a duplicate of "financial advisor" and is deleted.
+- Other chapters: As in the canon notes.
+- Brief text that must change: u16 Ch 82 and u15 Ch 74 glossary rows (done).
+

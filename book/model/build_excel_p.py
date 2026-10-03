@@ -328,6 +328,27 @@ for k, lab, un in [('epc_fc', 'EPC payment profile, FC (33 months)', '%'), ('epc
                    ('N_m', 'Swap notional schedule, monthly (contract)', 'USD m')]:
     I.row('M_' + k, lab, un, None, inp=True)
 
+# ---- v1.4 appended blocks (u09 Section 0.7 R5 and R11): below the last used row, so no address moves
+I.gap()
+I.scalar('mc_run', 'Monte Carlo run number (0 = off; 1 to 1,000 reads that row of the draw table, Scenario 1 only)', 'index', 0, '0', inp=True)
+I.scalar('mc_on', 'Monte Carlo active (run number above 0 and Scenario 1)', 'flag', f"=IF(AND({V('Inputs.mc_run')}>0,{V('Inputs.Scenario')}=1),1,0)", '0')
+MC_R0 = I.r; MC_N = cp.MC_RUNS; MC_NY = cp.MC_NY
+I.r += MC_N            # draw table rows (written in build(): runs by 26 availability shocks, dispatch, heat-rate degradation, FX drift)
+I.gap()
+add_scalars('ECA test limits (OECD Arrangement, 2018 commitments) and constants for the appended rows', [
+    ('eca_tenor', 'ECA limit: repayment term from COD', 'years', 14.0),
+    ('eca_wal', 'ECA limit: weighted average life from COD', 'years', 7.25),
+    ('eca_max', 'ECA limit: largest installment', '% of principal', 25.0),
+    ('eca_m', 'ECA limit: months from COD to first repayment (and window for the minimum share)', 'months', 24.0),
+    ('eca_min', 'ECA limit: minimum share repaid within the window', '% of principal', 2.0),
+    ('day_yr', 'Days per year for life measures', 'days', 365.25),
+    ('mc_ny', 'Monte Carlo: operating years with an availability shock', 'years', float(cp.MC_NY)),
+])
+def _mcr(c0, c1):
+    return f"Inputs!${L(FC0 + c0)}${MC_R0}:${L(FC0 + c1)}${MC_R0 + MC_N - 1}"
+MC_SHK = _mcr(0, MC_NY - 1); MC_DISP = _mcr(MC_NY, MC_NY); MC_HNR = _mcr(MC_NY + 1, MC_NY + 1); MC_FXD = _mcr(MC_NY + 2, MC_NY + 2)
+MCON = lambda: V('Inputs.mc_on'); MCRUN = lambda: V('Inputs.mc_run')
+
 # ========================================================================================
 # TIME
 # ========================================================================================
@@ -344,7 +365,7 @@ tsc('tcod', 'Period containing COD (period number)', 'index', lambda: f"=MATCH({
 tsc('t1', 'First debt service period', 'index', f"={V('Time.tcod')}+1")
 tsc('fe', 'Last month of the funding period (month number)', 'index', lambda: f"=MATCH(INDEX({rng('Time.end')},1,{V('Time.tcod')}),{rng('Construction.end')},0)")
 tsc('lastop', 'Last operating period (period number)', 'index', None)
-tsc('fx_d', 'FC FX drift per year (Kessara / US CPI expectations)', 'factor', f"=(1+{V('Inputs.fc_k')}/100)/(1+{V('Inputs.fc_u')}/100)", '0.000000')
+tsc('fx_d', 'FC FX drift per year (Kessara / US CPI expectations; Monte Carlo draw when active)', 'factor', f"=IF({MCON()}=1,INDEX({MC_FXD},{MCRUN()}),(1+{V('Inputs.fc_k')}/100)/(1+{V('Inputs.fc_u')}/100))", '0.000000')
 tsc('tR', 'Refinancing period (period number)', 'index', lambda: f"=MATCH({V('Inputs.d_refi')},{rng('Time.end')},0)")
 tsc('t23', 'Deferral period (period number)', 'index', lambda: f"=MATCH({V('Inputs.d_test2')},{rng('Time.end')},0)")
 T.sec('Semiannual timeline')
@@ -440,8 +461,10 @@ O.sec('Plant')
 O.row('oya', 'Operating year at period start', 'OY', lambda i: f"=INT({ref('Time.oms', i)}/12)+1", fmt='0')
 O.row('ma', 'Months in that operating year', 'months', lambda i: f"=MIN({ref('Time.ome', i)},{ref('Operations.oya', i)}*12)-{ref('Time.oms', i)}", fmt='0')
 av8 = rng('Inputs.S_av8', 0, 7)
-O.row('avail_prof', 'Availability, profile (month-weighted)', '%',
-      lambda i: f"=IF({ref('Time.om', i)}>0,({ref('Operations.ma', i)}*INDEX({av8},1,MOD({ref('Operations.oya', i)}-1,{V('Inputs.av_cycle')})+1)+({ref('Time.om', i)}-{ref('Operations.ma', i)})*INDEX({av8},1,MOD({ref('Operations.oya', i)},{V('Inputs.av_cycle')})+1))/{ref('Time.om', i)},0)",
+O.row('avail_prof', 'Availability, profile (month-weighted; plus the Monte Carlo shock for the operating year when active)', '%',
+      lambda i: (f"=IF({ref('Time.om', i)}>0,({ref('Operations.ma', i)}*INDEX({av8},1,MOD({ref('Operations.oya', i)}-1,{V('Inputs.av_cycle')})+1)+({ref('Time.om', i)}-{ref('Operations.ma', i)})*INDEX({av8},1,MOD({ref('Operations.oya', i)},{V('Inputs.av_cycle')})+1))/{ref('Time.om', i)}"
+                 f"+IF({MCON()}=1,({ref('Operations.ma', i)}*INDEX({MC_SHK},{MCRUN()},{ref('Operations.oya', i)})+({ref('Time.om', i)}-{ref('Operations.ma', i)})"
+                 f"*IF({ref('Operations.oya', i)}+1<={V('Inputs.mc_ny')},INDEX({MC_SHK},{MCRUN()},{ref('Operations.oya', i)}+1),0))/{ref('Time.om', i)},0),0)"),
       py='S.avail_prof')
 O.row('avail', 'Availability', '%', lambda i: f"=IF({ref('Time.om', i)}>0,{ref('Operations.avail_prof', i)}+{V('Inputs.s_avail_d')},0)", py='S.avail')
 O.row('yrs', 'Years since COD (period mid-point)', 'years', lambda i: f"=IF({ref('Time.om', i)}>0,AVERAGE({ref('Time.oms', i)},{ref('Time.ome', i)})/12,0)", py='S.yrs')
@@ -450,12 +473,12 @@ O.scalar('HRg', 'Plant net heat rate, new and clean', 'kJ/kWh', f"=IF({V('Inputs
 O.row('of', 'Output degradation factor', 'factor',
       lambda i: f"=(1-{V('Inputs.o_nr')}/100*{ref('Operations.yrs', i)})*(1-{V('Inputs.o_rec')}/100)", py='S.out_factor')
 O.row('disp', 'Dispatch factor when available', '%',
-      lambda i: f"=IF(AND({V('Inputs.s_disp_path')}=1,{ref('Inputs.S_disp_act', i)}>0),{ref('Inputs.S_disp_act', i)},{V('Inputs.s_dispatch')})", py='S.dispatch')
+      lambda i: f"=IF({MCON()}=1,INDEX({MC_DISP},{MCRUN()}),IF(AND({V('Inputs.s_disp_path')}=1,{ref('Inputs.S_disp_act', i)}>0),{ref('Inputs.S_disp_act', i)},{V('Inputs.s_dispatch')}))", py='S.dispatch')
 O.row('energy', 'Net energy delivered', 'MWh',
       lambda i: f"={V('Operations.C')}*{V('Inputs.hrs_m')}*{ref('Time.om', i)}*{ref('Operations.avail', i)}/100*{ref('Operations.disp', i)}/100*{ref('Operations.of', i)}",
       fmt='#,##0', py='S.energy')
 O.row('hr_act', 'Plant net heat rate', 'kJ/kWh',
-      lambda i: f"={V('Operations.HRg')}*(1+{V('Inputs.h_nr')}/100*{ref('Operations.yrs', i)})*(1+{V('Inputs.h_rec')}/100)*(1+{V('Inputs.pl')}/100)*{V('Inputs.s_hr_f')}", py='S.hr_act')
+      lambda i: f"={V('Operations.HRg')}*(1+IF({MCON()}=1,INDEX({MC_HNR},{MCRUN()}),{V('Inputs.h_nr')})/100*{ref('Operations.yrs', i)})*(1+{V('Inputs.h_rec')}/100)*(1+{V('Inputs.pl')}/100)*{V('Inputs.s_hr_f')}", py='S.hr_act')
 O.row('hr_con', 'Contracted heat rate at dispatched load', 'kJ/kWh',
       lambda i: f"={V('Inputs.HR_c')}*(1+{V('Inputs.HR_cdeg')}/100*{ref('Operations.yrs', i)})*(1+{V('Inputs.pl')}/100)", py='S.hr_con')
 KG = f"(1000*{V('Inputs.hhv')}/{V('Inputs.kj')})"
@@ -550,6 +573,11 @@ O.row('nwc', 'Net working capital (excl. spares inventory)', 'USD m',
       lambda i: f"={ref('Operations.ar', i)}+{ref('Operations.over', i)}-{ref('Operations.pay_gas', i)}-{ref('Operations.pay_gta', i)}-{ref('Operations.pay_om', i)}-{ref('Operations.pay_oth', i)}-{ref('Operations.gas_arr', i)}", py='S.nwc')
 O.row('dnwc', 'Increase in net working capital', 'USD m', lambda i: f"={ref('Operations.nwc', i)}-{ref('Operations.nwc', i, -1)}", total=True, py='S.dnwc')
 O.row('inv_rel', 'Release of spares inventory at expiry', 'USD m', lambda i: f"={ref('Time.f_last', i)}*{V('Inputs.init_wc')}*{V('Inputs.s_capex')}", total=True, py='S.inv_release')
+# v1.4 appended pass-through tests (u09 R10)
+O.row('pt_fuel', 'Fuel pass-through test: fuel charge less gas purchases (= heat-rate headroom margin)', 'USD m',
+      lambda i: f"={ref('Operations.fuel_rev', i)}-{ref('Operations.fuel_cost', i)}", total=True, py='S.pt_fuel')
+O.row('pt_gta', 'GTA pass-through test (0 in every period)', 'USD m',
+      lambda i: f"={ref('Operations.gta_res', i)}+{ref('Operations.gta_com', i)}-({ref('Operations.pass', i)}-{ref('Operations.fuel_cost', i)}-{ref('Operations.top_pay', i)})", total=True, py='S.pt_gta')
 
 # ========================================================================================
 # CONSTRUCTION (monthly uses)
@@ -862,6 +890,18 @@ D_.row('sbal', 'Sculpted balance, opening', 'USD m',
 D_.row('sprin', 'Sculpted principal', 'USD m', lambda i: f"={ref('Debt.sds', i)}-{ref('Debt.sbal', i)}*{ref('Debt.wrate', i)}")
 D_.row('sdiff', 'Sculpted principal less contract principal (FC base)', 'USD m',
        lambda i: f"=IF({V('Inputs.Scenario')}=1,{ref('Debt.sprin', i)}-{fsc(i)}*{ref('Inputs.S_prof_fc', i)}*{V('Funding.D')},0)")
+# v1.4 appended ECA tests on the selected profile (u09 R11; values as P-F09)
+D_.gap()
+D_.row('eca_y', 'ECA tests: years from COD to period end', 'years', lambda i: f"=({ref('Time.end', i)}-{V('Time.cod')})/{V('Inputs.day_yr')}", fmt='0.0000', py='S.eca_yrs')
+D_.scalar('eca_wal', 'ECA test: weighted average life from COD', 'years', lambda: f"=SUMPRODUCT({rng('Debt.prin')},{rng('Debt.eca_y')})/SUM({rng('Debt.prin')})", '0.0000', py='R.eca_wal')
+D_.scalar('eca_max', 'ECA test: largest installment as a share of principal', 'fraction', lambda: f"=MAX({rng('Debt.prin')})/SUM({rng('Debt.prin')})", '0.0000', py='R.eca_max_share')
+D_.scalar('eca_ten', 'ECA test: repayment term from COD (to the last installment)', 'years',
+          lambda: f"=INDEX({rng('Debt.eca_y')},1,SUMPRODUCT(MAX(({rng('Debt.prin')}>{V('Inputs.eps')})*{rng('Time.t')})))", '0.0000', py='R.eca_tenor')
+D_.scalar('eca_fm', 'ECA test: months from COD to the first repayment', 'months',
+          lambda: (f"=(YEAR(INDEX({rng('Time.end')},1,_xlfn.MINIFS({rng('Time.t')},{rng('Debt.prin')},\">\"&{V('Inputs.eps')}))+1)-YEAR({V('Time.cod')}))*12"
+                   f"+MONTH(INDEX({rng('Time.end')},1,_xlfn.MINIFS({rng('Time.t')},{rng('Debt.prin')},\">\"&{V('Inputs.eps')}))+1)-MONTH({V('Time.cod')})"), '0', py='R.eca_first_m')
+D_.scalar('eca_24', 'ECA test: share of principal repaid within the window from COD', 'fraction',
+          lambda: f"=SUMIFS({rng('Debt.prin')},{rng('Time.end')},\"<=\"&(EDATE({V('Time.cod')},{V('Inputs.eca_m')})-1))/SUM({rng('Debt.prin')})", '0.0000', py='R.eca_24m_share')
 
 # ========================================================================================
 # TAX
@@ -1029,6 +1069,34 @@ FN.row('scap', 'Share capital', 'USD m', lambda i: f"={cum_m('Funding.sc', i)}",
 FN.row('reb', 'Retained earnings', 'USD m', lambda i: f"={ref('Waterfall.re', i)}", py='S.bs_re')
 FN.row('tle', 'Total liabilities and equity', 'USD m', lambda i: "=" + "+".join(ref('Financials.' + k, i) for k in ['debt', 'shl', 'pay', 'dtl', 'scap', 'reb']), py='S.bs_liab_eq')
 FN.row('chk', 'Balance check (assets less liabilities and equity)', 'USD m', lambda i: f"={ref('Financials.ta', i)}-{ref('Financials.tle', i)}", py='S.bs_check')
+# v1.4 appended cash flow statement (u09 R4): project accounts = row 'cash' above
+FN.gap()
+FN.sec('Cash flow statement (USD m; project accounts as in the cash row above)')
+FN.row('cf_ebitda', 'EBITDA', 'USD m', lambda i: f"={ref('Operations.ebitda', i)}", total=True, py='S.cf_ebitda')
+FN.row('cf_tax', 'Tax paid', 'USD m', lambda i: f"=-{ref('Tax.tax', i)}", total=True, py='S.cf_tax')
+FN.row('cf_wc', 'Working capital: increase (negative) and spares release', 'USD m', lambda i: f"=-{ref('Operations.dnwc', i)}+{ref('Operations.inv_rel', i)}", total=True, py='S.cf_wc')
+FN.row('cf_mm', 'MMRA net: releases for outlays less contributions', 'USD m', lambda i: f"={ref('Operations.mm', i)}-{ref('Reserves.mmc', i)}", total=True, py='S.cf_mm')
+FN.row('cf_cfads', 'CFADS', 'USD m', lambda i: "=" + "+".join(ref('Financials.' + k, i) for k in ['cf_ebitda', 'cf_tax', 'cf_wc', 'cf_mm']), total=True, py='S.cf_cfads')
+FN.row('cf_ds', 'Senior debt service and fees', 'USD m', lambda i: f"=-({ref('Debt.ds', i)}+{ref('Debt.wfee', i)})", total=True, py='S.cf_ds')
+FN.row('cf_ldin', 'Performance LDs received (Compensation Account)', 'USD m',
+       lambda i: f"={ref('Reserves.comp', i)}-{ref('Reserves.comp', i, -1)}+" + "+".join(ref('Debt.ld_' + k, i) for k in ['E', 'A', 'B', 'C', 'SB']), total=True, py='S.cf_ldin')
+FN.row('cf_ldp', 'Performance LD prepayment of senior debt', 'USD m', lambda i: "=-(" + "+".join(ref('Debt.ld_' + k, i) for k in ['E', 'A', 'B', 'C', 'SB']) + ")", total=True, py='S.cf_ldp')
+FN.row('cf_bond', 'Bond issued, net of refinancing costs', 'USD m', lambda i: f"={ref('Debt.Fn', i)}-{ref('Debt.refi_c', i)}", total=True, py='S.cf_bond')
+FN.row('cf_prep', 'Senior debt prepaid from bond proceeds', 'USD m', lambda i: f"=-{ref('Debt.prep', i)}", total=True, py='S.cf_prep')
+FN.row('cf_unw', 'Swap unwind receipt', 'USD m', lambda i: f"={ref('Debt.unwind', i)}", total=True, py='S.cf_unw')
+FN.row('cf_sw', 'Cash sweeps (lock-up and soft mini-perm)', 'USD m', lambda i: f"=-({ref('Waterfall.lusw', i)}+{ref('Waterfall.mpsw', i)})", total=True, py='S.cf_sw')
+FN.row('cf_shl', 'Shareholder loan interest and principal paid', 'USD m', lambda i: f"=-({ref('Waterfall.sip', i)}+{ref('Waterfall.spr', i)})", total=True, py='S.cf_shl')
+FN.row('cf_div', 'Dividends', 'USD m', lambda i: f"=-{ref('Waterfall.div', i)}", total=True, py='S.cf_div')
+FN.row('cf_dsra', 'DSRA initial funding from the construction budget (COD period)', 'USD m', lambda i: f"={ref('Time.f_cod', i)}*SUM({rng('Funding.dsra')})", total=True, py='S.cf_dsra')
+FN.row('cf_cld', 'Construction: delay LDs and DSU received less applied to uses', 'USD m',
+       lambda i: f"=SUMIFS({rng('Funding.ldrec')},{rng('Construction.per')},{tt(i)})-SUMIFS({rng('Funding.ldu')},{rng('Construction.per')},{tt(i)})", total=True, py='S.cf_cld')
+FN.row('cf_mmr', 'MMRA contributions less releases (held in the project accounts)', 'USD m', lambda i: f"={ref('Reserves.mmc', i)}-{ref('Operations.mm', i)}", total=True, py='S.cf_mmr')
+FN.row('cf_net', 'Net cash flow', 'USD m',
+       lambda i: "=" + "+".join(ref('Financials.' + k, i) for k in ['cf_cfads', 'cf_ds', 'cf_ldin', 'cf_ldp', 'cf_bond', 'cf_prep', 'cf_unw', 'cf_sw', 'cf_shl', 'cf_div', 'cf_dsra', 'cf_cld', 'cf_mmr']), total=True, py='S.cf_net')
+FN.row('cf_dsra_memo', 'Memo: DSRA top-ups less drawings and releases (transfers within the project accounts)', 'USD m',
+       lambda i: f"={ref('Reserves.dsra_t', i)}-{ref('Reserves.dsra_d', i)}-{ref('Reserves.dsra_r', i)}", total=True, py='S.cf_dsra_memo')
+FN.row('cf_dc', 'Change in project-account cash', 'USD m', lambda i: f"={ref('Financials.cash', i)}-{ref('Financials.cash', i, -1)}", total=True, py='S.cf_dc')
+FN.row('cf_chk', 'Cash check: change in cash less net cash flow (0)', 'USD m', lambda i: f"={ref('Financials.cf_dc', i)}-{ref('Financials.cf_net', i)}", py='S.cf_chk')
 
 # ========================================================================================
 # RATIOS
@@ -1051,6 +1119,12 @@ RT.scalar('min_dscr', 'Minimum DSCR', 'x', f"=_xlfn.MINIFS({rng('Waterfall.dscr'
 RT.scalar('avg_dscr', 'Average DSCR (debt-service weighted)', 'x', f"=SUMIFS({rng('Waterfall.cfads')},{rng('Debt.ds')},\">\"&{V('Inputs.eps')})/SUM({rng('Debt.ds')})", '0.0000')
 RT.scalar('llcr_1', 'LLCR at first debt service period', 'x', f"=INDEX({rng('Ratios.llcr')},1,{V('Time.t1')})", '0.0000')
 RT.scalar('plcr_1', 'PLCR at first debt service period', 'x', f"=INDEX({rng('Ratios.plcr')},1,{V('Time.t1')})", '0.0000')
+# v1.4 appended (u09 R3): report only, not wired into the waterfall
+RT.row('pdscr', 'Projected 12-month DSCR, next two periods (report only)', 'x',
+       lambda i: (f"=IF({ref('Debt.ds', i, 1)}>{V('Inputs.eps')},({ref('Waterfall.cfads', i, 1)}+IF({ref('Debt.ds', i, 2)}>{V('Inputs.eps')},{ref('Waterfall.cfads', i, 2)},0))"
+                  f"/({ref('Debt.ds', i, 1)}+{ref('Debt.ds', i, 2)}),0)"), fmt='0.0000', py='S.proj_dscr')
+RT.row('pflag', 'Projected 12-month DSCR below the lock-up level (flag)', 'flag',
+       lambda i: f"=IF(AND({ref('Ratios.pdscr', i)}>0,{ref('Ratios.pdscr', i)}<{V('Inputs.lu_dscr')}),1,0)", fmt='0', py='S.proj_flag')
 
 # ========================================================================================
 # RETURNS (combined dated strip: LNTP, 53 months, 57 half-years)
@@ -1080,13 +1154,13 @@ RET.scalar('npv16', 'Equity NPV at 16.0%, at financial close (2018-07-17)', 'USD
 CK = Sheet('Checks', None, 'Checks: every check shows 0 when passing')
 CHK = [
     ('c_su', 'Sources less uses (construction)', f"=IF(ABS(SUM({rng('Funding.debt_draw')})+SUM({rng('Funding.eq')})+SUM({rng('Funding.ldu')})-SUM({rng('Funding.uses')}))<={V('Inputs.eps_r')},0,SUM({rng('Funding.debt_draw')})+SUM({rng('Funding.eq')})+SUM({rng('Funding.ldu')})-SUM({rng('Funding.uses')}))"),
-    ('c_dc', 'Committed debt drawn in full (FC-type), USD m', f"=IF({V('Inputs.s_constr')}=1,IF(ABS(SUM({rng('Funding.bdebt')})-{V('Funding.D')})<={V('Inputs.eps_r')},0,SUM({rng('Funding.bdebt')})-{V('Funding.D')}),0)"),
+    ('c_dc', 'Committed debt drawn in full (FC-type, Monte Carlo off), USD m', f"=IF(AND({V('Inputs.s_constr')}=1,{MCON()}=0),IF(ABS(SUM({rng('Funding.bdebt')})-{V('Funding.D')})<={V('Inputs.eps_r')},0,SUM({rng('Funding.bdebt')})-{V('Funding.D')}),0)"),
     ('c_cf', 'Closed-form T less live T (re-grossed cases), USD m', f"=IF({V('Inputs.s_mode')}<>1,IF(ABS({V('Funding.T_aff')}-{V('Funding.T')})<={V('Inputs.eps_r')},0,{V('Funding.T_aff')}-{V('Funding.T')}),0)"),
     ('c_bs', 'Balance sheet balances (max abs difference)', f"=IF(MAX(MAX({rng('Financials.chk')}),-MIN({rng('Financials.chk')}))<={V('Inputs.eps_r')},0,MAX(MAX({rng('Financials.chk')}),-MIN({rng('Financials.chk')})))"),
     ('c_sf', 'No unpaid debt service after DSRA', f"=IF(ABS(SUM({rng('Waterfall.unpaid')}))<={V('Inputs.eps_r')},0,SUM({rng('Waterfall.unpaid')}))"),
     ('c_dr', 'Debt repaid by final maturity', f"=IF(ABS(INDEX({rng('Debt.bc')},1,COLUMNS({rng('Debt.bc')})))<={V('Inputs.eps_r')},0,INDEX({rng('Debt.bc')},1,COLUMNS({rng('Debt.bc')})))"),
-    ('c_sc', 'FC base: live sculpting equals contract profile (max abs, USD m)', f"=IF(MAX(MAX({rng('Debt.sdiff')}),-MIN({rng('Debt.sdiff')}))<={V('Inputs.tol_sc')},0,MAX(MAX({rng('Debt.sdiff')}),-MIN({rng('Debt.sdiff')})))"),
-    ('c_ds', 'FC base: debt not above DSCR capacity or gearing cap', f"=IF({V('Inputs.Scenario')}=1,IF({V('Funding.D')}<=MIN({V('Debt.capacity')},{V('Debt.gearcap')})+{V('Inputs.eps_r')},0,1),0)"),
+    ('c_sc', 'FC base: live sculpting equals contract profile (max abs, USD m)', f"=IF({MCON()}=1,0,IF(MAX(MAX({rng('Debt.sdiff')}),-MIN({rng('Debt.sdiff')}))<={V('Inputs.tol_sc')},0,MAX(MAX({rng('Debt.sdiff')}),-MIN({rng('Debt.sdiff')}))))"),
+    ('c_ds', 'FC base: debt not above DSCR capacity or gearing cap', f"=IF(AND({V('Inputs.Scenario')}=1,{MCON()}=0),IF({V('Funding.D')}<=MIN({V('Debt.capacity')},{V('Debt.gearcap')})+{V('Inputs.eps_r')},0,1),0)"),
     ('c_vat', 'VAT facility within limit', f"=IF(MAX({rng('Construction.vat_bal')})<={V('Inputs.vat_limit')},0,1)"),
     ('c_sb', 'Standby and contingent equity within commitments', f"=IF(AND(SUM({rng('Funding.sbd')})<={V('Inputs.sb_commit')}+{V('Inputs.eps_r')},SUM({rng('Funding.ced')})<={V('Inputs.ce')}+{V('Inputs.eps_r')}),0,1)"),
     ('c_eca', 'ECA tranche within cap', f"=IF({V('Inputs.sh_E')}*{V('Funding.D')}<={V('Inputs.eca_cap')},0,1)"),
@@ -1094,7 +1168,21 @@ CHK = [
 ]
 for k, lab, f_ in CHK:
     CK.scalar(k, lab, 'check', f_, '0.0000')
-CK.scalar('total', 'Sum of checks (0 = all pass)', 'check', "=" + "+".join(f"ABS({V('Checks.' + k)})" for k, _, _ in CHK), '0.0000')
+CHK2 = [   # v1.4 appended checks (u09 R1, R4, R11, R12, R6), rows 20 to 25
+    ('c_tom', 'Time: operating months sum to the PPA term', lambda: f"=SUM({rng('Time.om')})-{V('Time.ppam')}"),
+    ('c_tcm', 'Construction flags sum to construction months', lambda: f"=SUM({rng('Construction.f_con')})-{V('Time.nc')}"),
+    ('c_cash', 'Cash flow statement reconciles to project-account cash (max abs, USD m)',
+     lambda: f"=IF(MAX(MAX({rng('Financials.cf_chk')}),-MIN({rng('Financials.cf_chk')}))<={V('Inputs.eps_r')},0,MAX(MAX({rng('Financials.cf_chk')}),-MIN({rng('Financials.cf_chk')})))"),
+    ('c_ecat', 'ECA tests pass on the FC base (Scenario 1; number of failed tests)',
+     lambda: (f"=IF(AND({V('Inputs.Scenario')}=1,{MCON()}=0),"
+              f"({V('Debt.eca_ten')}>{V('Inputs.eca_tenor')})+({V('Debt.eca_wal')}>{V('Inputs.eca_wal')})+({V('Debt.eca_max')}>{V('Inputs.eca_max')}/100)"
+              f"+({V('Debt.eca_fm')}>{V('Inputs.eca_m')})+({V('Debt.eca_24')}<{V('Inputs.eca_min')}/100),0)")),
+    ('c_mmw', 'MMRA window equals the input number of periods', lambda: f"=COLUMNS(Operations!$K${SHEETS['Operations'].key['mm']}:$P${SHEETS['Operations'].key['mm']})-{V('Inputs.mmra_n')}"),
+    ('c_out', 'Outputs: live dashboard equals the pasted row of the selected scenario', lambda: f"={V('Outputs.o_cmp')}"),
+]
+CK.scalar('total', 'Sum of checks (0 = all pass)', 'check', lambda: "=" + "+".join(f"ABS({V('Checks.' + k)})" for k, _, _ in CHK + CHK2), '0.0000')
+for k, lab, f_ in CHK2:
+    CK.scalar(k, lab, 'check', f_, '0.0000')
 
 OUT = Sheet('Outputs', None, 'Outputs: dashboard for the selected scenario')
 OUTS = [
@@ -1119,6 +1207,36 @@ OUTS = [
 ]
 for k, lab, un, f_ in OUTS:
     OUT.scalar(k, lab, un, f_, '0.0000%' if un == '%' else '#,##0.0000')
+# v1.4 appended (u09 R6): fifteen-scenario results pasted from the mirror, and a compare row
+OUT.gap()
+OUT_STAMP = OUT.r; OUT.r += 1          # stamp line
+OUT_HDR = OUT.r; OUT.r += 1            # column headings
+OUT_T0 = OUT.r; OUT.r += 15            # scenarios 1 to 15
+OUT.gap()
+def _cmp():
+    terms = []
+    for j, (k, _, _, _) in enumerate(OUTS[:-1]):
+        col = L(FC0 + j)
+        terms.append(f"ABS({V('Outputs.' + k)}-INDEX(${col}${OUT_T0}:${col}${OUT_T0 + 14},{V('Inputs.Scenario')}))")
+    x = "MAX(" + ",".join(terms) + ")"
+    return f"=IF({MCON()}=1,0,IF({x}<={V('Inputs.eps_r')},0,{x}))"
+OUT.scalar('o_cmp', 'Live dashboard (rows above) less the pasted row of the selected scenario (max abs; 0 = match)', 'check', _cmp, '0.000000')
+
+def pasted_results():
+    out = []
+    for i in range(1, 16):
+        p = cp.scen(i, errs=set(ERR)) if ERR else cp.scen(i)
+        try:
+            R = cp.run(p)
+        except RuntimeError:
+            out.append([None] * (len(OUTS) - 1)); continue
+        f = R['f']; S = R['S']; st = cp.dscr_stats(R); sm = lambda k: float(np.sum(f[k])) if k in f else 0.0
+        out.append([float(f['T']), float(f['D']), sm('equity'), sm('debt_draw') / float(f['T']),
+                    sm('idc_ECA') + sm('idc_A') + sm('idc_B') + sm('idc_COM') + sm('sb_int') + sm('swap') + sm('pri'),
+                    sm('cfee') + sm('sb_cfee') + sm('upfront') + sm('agency'), sm('eca_prem'), sm('dsra'), sm('sb_draw'), sm('ce_draw'),
+                    st['min_dscr'], st['avg_dscr'], float(S['llcr_dsra'][R['t1']]), float(S['plcr'][R['t1']]),
+                    float(R['equity_irr']), float(R['project_irr']), float(R['equity_npv16_at_fc'])])
+    return out
 
 COVER = Sheet('Cover', None, 'Case P companion model')
 
@@ -1163,7 +1281,7 @@ def input_values():
     v['M_ovr'] = list(ovr); v['M_N_m'] = K['N_m']
     return v
 
-def build(path, scenario=1):
+def build(path, scenario=1, mc_run=0):
     wb = Workbook(); wb.remove(wb.active)
     vals = input_values()
     for name in ORDER:
@@ -1198,9 +1316,41 @@ def build(path, scenario=1):
                 'Checks sheet reports the difference (Python iterates the profile to convergence, tolerance USD 1,000).',
                 'Sheets: ' + ', '.join(ORDER),
                 'Sign convention: costs stored positive and subtracted explicitly.',
+                'Monte Carlo (Inputs F311): the draw table is pasted from case_p.py (seed 20180717, P-F42 parameters); the per-run results beside it are pasted from the mirror with a stamp (no native data table: one could not be generated and verified without macros).',
             ]
             for j, t_ in enumerate(lines):
                 ws.cell(5 + j, 4, t_)
+            # v1.4 (u09 R2): master check link in row 22
+            ws.cell(22, 4, 'Master check (0 = all pass)').font = BOLD
+            c = ws.cell(22, 6, f"=Checks!$F${SHEETS['Checks'].key['total']}"); c.number_format = '0.0000'
+            ws.conditional_formatting.add('F22', CellIsRule(operator='notEqual', formula=['0'], fill=RED))
+        if name == 'Inputs':
+            DR = cp.mc_draws()
+            ws.cell(MC_R0 - 1, FC0, 'Draw table: availability shocks OY1-OY26 (points), dispatch (%), heat-rate degradation (% a year), FX drift (factor)').font = BOLD
+            for rr in range(MC_N):
+                ws.cell(MC_R0 + rr, 4, f'Run {rr + 1}')
+                for j in range(MC_NY + 3):
+                    c = ws.cell(MC_R0 + rr, FC0 + j, float(DR[rr, j])); c.font = BLUE; c.fill = YEL
+            if cp.MC_RESULTS is None or len(cp.MC_RESULTS) != MC_N:
+                cp.monte_carlo()
+            c0 = FC0 + MC_NY + 4
+            ws.cell(MC_R0 - 2, c0, 'Per-run results pasted from case_p.py v1.4 (2026-10-03; P-F42), not live: min DSCR, min historic DSCR, equity IRR, historic DSCR < 1.20x, < 1.10x').font = BOLD
+            for j, h in enumerate(['Min DSCR', 'Min hist DSCR', 'Equity IRR', 'Lock-up (<1.20x)', 'Default (<1.10x)']):
+                ws.cell(MC_R0 - 1, c0 + j, h).font = BOLD
+            for rr in range(MC_N):
+                for j in range(5):
+                    c = ws.cell(MC_R0 + rr, c0 + j, float(cp.MC_RESULTS[rr, j])); c.font = BLUE; c.fill = YEL
+        if name == 'Outputs':
+            ws.cell(OUT_STAMP, 4, 'Fifteen-scenario results pasted from case_p.py (model version 1.4, run 2026-10-03); compare row below and Checks row 25').font = BOLD
+            for j, (k, lab, un, _) in enumerate(OUTS[:-1]):
+                ws.cell(OUT_HDR, FC0 + j, lab).font = BOLD
+            ws.cell(OUT_HDR, 4, 'Scenario').font = BOLD
+            for rr, vals_ in enumerate(pasted_results()):
+                ws.cell(OUT_T0 + rr, 4, f"{rr + 1}: {cp.SCENARIOS[rr + 1]['name']}")
+                for j, x in enumerate(vals_):
+                    if x is None: continue
+                    c = ws.cell(OUT_T0 + rr, FC0 + j, x); c.font = BLUE; c.fill = YEL
+                    c.number_format = '0.0000%' if OUTS[j][2] == '%' else '#,##0.0000'
         for kind, d, r in S.rows:
             if kind == 'sec':
                 ws.cell(r, 2, d).font = BOLD
@@ -1212,6 +1362,7 @@ def build(path, scenario=1):
                     val = d['value'] if d['key'] != 'Scenario' else scenario
                     if d['key'] == 'D_c': val = K['D']
                     if d['key'] == 'E_c': val = K['E']
+                    if d['key'] == 'mc_run': val = mc_run
                     c.value = val; c.font = BLUE; c.fill = YEL
                 elif d['value'] is None and d['key'].startswith('s_'):
                     tr = S.key[d['key'] + '_tbl']

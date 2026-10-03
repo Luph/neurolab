@@ -1,6 +1,6 @@
 # Case Bible Annex P: Case P terms, people, corrections and missing data
 
-Version 1.1, October 3, 2026 (amended after the blueprint review: SEKA LC values per P-C44, the construction currency hedge per D-114, P-F64 to P-F66 registered, RAROC per R-075, the model-audit condition of credit approval, the provisional figure-ID concordance in 8.4; see `reviews/blueprint/central-fixes-log.md`). Owner: Case Bible editor, under the editor-in-chief. Binding on every writer, reviewer and modeler.
+Version 1.2, October 3, 2026 (round 1 consolidation: 1.1.5 reconversion-rate note, 1.15.5 hedging basket reworded, Devesh Raval's "where wrong" rewritten against P-F62, 3.1 arrears sources, 8.3 readings of P-F02, P-F23, P-F26 and P-F65, 7.3 Corredana reuse; see `reviews/blueprint/consolidation-B-log.md`). Version 1.1, October 3, 2026 (amended after the blueprint review: SEKA LC values per P-C44, the construction currency hedge per D-114, P-F64 to P-F66 registered, RAROC per R-075, the model-audit condition of credit approval, the provisional figure-ID concordance in 8.4; see `reviews/blueprint/central-fixes-log.md`). Owner: Case Bible editor, under the editor-in-chief. Binding on every writer, reviewer and modeler.
 
 ## 0. Status and rules of use
 
@@ -76,7 +76,7 @@ Application to the June 9, 2021 grid event: the expert determination of February
 | Due date | 30 days after invoice; paid in KCR at the Central Bank mid rate on the business day before payment |
 | Index reset | January 1 and July 1, using the September and March index readings respectively (a three-month lag on the month of publication). The January 2022 invoice therefore uses the September 2021 readings |
 | Contracted capacity in January 2022 | 581.9 MW (reset by the November 2021 completion tests, effective at COD) |
-| Reconversion rate for local shares | The Central Bank mid rate on the invoice date |
+| Reconversion rate for local shares | The Central Bank mid rate on the invoice date (contract term). The reference model uses the 2022 H1 average KCR rate as a proxy, and P-F02 is labeled accordingly; chapters print the ledger value with the ledger's label and say it is the model's proxy for the invoice-date rate (round 1; P-C54) |
 | LC amount | 2 x estimated monthly capacity charges + 1 x estimated monthly energy charges, where capacity charges use contracted capacity, the indexed capacity charge for the contract year and 100% of the capacity payment, and energy charges (fuel, VOM and GTA pass-throughs) use contracted capacity x 730 hours x 90.0% availability x the dispatch factor in SEKA's annual dispatch plan (76.5% in the FC base) at that year's gas price and indices |
 | LC reset | At COD and each January 1 |
 | LC delivery | No later than 60 days before scheduled taking-over; a condition to COD |
@@ -496,7 +496,7 @@ The term sheet was agreed on October 27, 2017, after PPA signing on October 12, 
 | Basket | Limit |
 |---|---|
 | Senior facilities and the standby facility | As committed |
-| Hedging under the hedging strategy | Interest rate swaps within the 75% to 90% band; KCR forwards covering at least 75% of committed KCR construction payments, traded at close with Castellan (D-114, Case Bible 1.6; P-F65), matured by August 2021; no other FX or commodity hedging without consent |
+| Hedging under the hedging policy | Permitted hedging is any hedging under the common terms agreement's hedging policy: interest rate swaps within the 75% to 90% band, and the KCR forwards that the policy requires (at least 75% of committed KCR construction payments), traded at close with Castellan (D-114, Case Bible 1.6; P-F65) and matured with the last onshore EPC payment in 2021. FX or commodity hedging outside the hedging policy (for example, a post-COD FX hedge or a gas price hedge) needs the Majority Lenders' consent (round 1: reconciles this basket with D-114; the forwards were never a consent item) |
 | VAT facility (UBK) | KCR 7,900.0 million, repaid from VAT refunds |
 | Working capital facility (UBK, KCR or USD) | USD 15.0 million equivalent; undrawn through 2025 |
 | LC facility for GSA buyer credit support | USD 15.0 million equivalent |
@@ -595,7 +595,7 @@ In April 2023 a Dabakro heavy-lift transport firm, holding a disputed USD 0.4 mi
 Sheets for the characters with scenes:
 
 - Philippa Carrow. Former utility engineer turned chief executive. Wants a growing contracted portfolio without a write-off on her watch. Verbal habit: "What would make us walk away?" Where wrong: in September 2015 she asks for a development budget of USD 12 million and Tomasz talks her up to USD 14.8 million, still too little (P-F01).
-- Devesh Raval. Chartered accountant; rated BBB- balance sheet is his to protect. Wants non-recourse debt and a clean deconsolidation path. Verbal habit: "Show me the downside first." Where wrong: in 2016 he backs the pricing committee's higher tariff, which would probably have lost the bid (Section 4.7). Arc: CEO who signs the 2026 sale.
+- Devesh Raval. Chartered accountant; rated BBB- balance sheet is his to protect. Wants non-recourse debt and a clean deconsolidation path. Verbal habit: "Show me the downside first." Where wrong: in 2016 he backs the pricing committee's higher tariff (USD 15.05/kW-month) by dismissing the Gulf bidder's threat as a bluff, without measuring how much room the bid had. The higher tariff would in fact still have won (levelized USD 74.35/MWh against the runner-up's 76.36; P-F62), but by under 3%, a margin a bid as aggressive as Tomasz feared would have closed; he was right about the outcome for the wrong reason (Section 4.7; round 1 rewrite, P-C53; writers never say the higher tariff would have lost). Arc: CEO who signs the 2026 sale.
 - Imogen Thwaite. Former bank credit officer. Verbal habit: "Whose dollars, and when do they come back?" Where wrong: in 2023 she argues against the waiver fee as "paying lenders for SEKA's sins" and is overruled.
 - Joanna Sedley. Verbal habit: "Which standard, which paragraph?" Appears only as a narration anchor in Chapters 7 and 66.
 - Kunal Mehrotra. Quiet and exact; the modeler of the bid. Verbal habit: none (he answers questions with spreadsheets). Where wrong: his September 2016 bid model omits the VAT facility interest.
@@ -616,7 +616,7 @@ Approvals of brief proposals: Mariama Talmé may join Tomasz in Chapter 11's 201
 | 2 | Investment committee September 17, 2015; members Philippa Carrow (chair), Devesh Raval, Niall Brannigan, Tomasz presenting |
 | 4 | Development advisers named (2.3); the co-development agreement's conditional structure (1.14.1) |
 | 7 | Characters: Tomasz, Edwige Akakpo-Sodji, Joanna Sedley. Accounts on the lenders' reporting basis (5.1) |
-| 8 | Characters: Tomasz, Kunal Mehrotra, Devesh Raval. Premise: even 80% gearing leaves the FC base equity IRR below the 16.0% bid-model target (P-F05; bridge P-F64); the argument is over downside for about 0.5 points (P-C46) |
+| 8 | Characters: Tomasz, Kunal Mehrotra, Devesh Raval. Premise: even 80% gearing leaves the FC base equity IRR below the 16.0% bid-model target (P-F05; bridge P-F64); the argument is over downside for about 0.5 points (P-C49, formerly cited as the second P-C46) |
 | 15 | Gwen attends in the capacity of Castellan's pre-mandate technical reviewer (P-C18) |
 | 16 | Figures shown: "Inputs at financial close: LC formula (the amount under the 1.1.5 formula, P-F39, printed with its reset date: USD 36.2 million at the 2022 reset), Government Guarantee cap 1,250, PRG 41.5 (Board approval June 20, 2018; Thandeka proposes 30 in May 2017), PRI 90% at 1.15%, contingency 38.40, contingent equity 15.4, standby 46.0" (P-C17) |
 | 18 | SEKA's opening availability position 92.0% with bonus and malus (1.1.1); figures add P-F39, P-F47 |
@@ -701,7 +701,7 @@ After the February 2022 expert determination confirmed that the transformer fail
 
 ### 3.1 Thandeka's PRG statement
 
-Case Bible 4.1 says that in 2023 the USD 41.5 million PRG was "less than one quarter of the peak arrears". Peak overdue receivables were USD 112.6 million net of the LC drawing (June 30, 2023), or USD 149.2 million gross of the USD 36.6 million drawing (P-F40; P-C44); USD 41.5 million is about 37% and 28% of those. Corrected text: "in 2023 even that covers only about a third of the June 2023 peak arrears net of the LC drawing (less than 30% of the gross arrears)." (P-C16)
+Case Bible 4.1 says that in 2023 the USD 41.5 million PRG was "less than one quarter of the peak arrears". Peak overdue receivables were USD 112.6 million net of the LC drawing (June 30, 2023; ledger P-F20, 2023 H1), or USD 149.2 million gross of the USD 36.6 million drawing (P-F40; P-C44): 112.6 + 36.6 = 149.2 under D-013 (round 1: the superseded USD 146.4 million used the old USD 33.8 million drawing and is never printed). USD 41.5 million is about 37% and 28% of those. Corrected text: "in 2023 even that covers only about a third of the June 2023 peak arrears net of the LC drawing (less than 30% of the gross arrears)." (P-C16)
 
 ### 3.2 Chapter 16 row (May 2017)
 
@@ -994,7 +994,7 @@ Characters web-checked: Euan MacRitchie was rejected (a real finance professiona
 
 ### 7.3 Chapter 1 illustrative deal names (u01 BF-6)
 
-Recorded for the register, outside the running cases: Republic of Corredana and the Llano Pardo plateau (clear), Llano Pardo Solar SA, Tallisford Energy Partners (clear), Grupo Arismendi (clear as a company), Montajes Cordillera SA and Cordillera Servicios SA (clear), Cooperativa Agrícola de Llano Pardo, Electricidad Nacional de Corredana (ELNACOR: clear; near miss Elecnor, a Spanish electrical contractor, never mentioned). Cross-case table (Case Bible 4.4): Sterrenberg Bank NV and the ABDB also lend to the Chapter 1 illustrative deal in 2016; later chapters must not contradict that.
+Round 1: the Chapter 7 judgment drill (u02) reuses the Republic of Corredana and ELNACOR; the reuse is permitted if it stays consistent with Chapter 1 (fictional, dollarized, ELNACOR the state utility offtaker) and the drill's own facts are labeled Illustrative. Recorded for the register, outside the running cases: Republic of Corredana and the Llano Pardo plateau (clear), Llano Pardo Solar SA, Tallisford Energy Partners (clear), Grupo Arismendi (clear as a company), Montajes Cordillera SA and Cordillera Servicios SA (clear), Cooperativa Agrícola de Llano Pardo, Electricidad Nacional de Corredana (ELNACOR: clear; near miss Elecnor, a Spanish electrical contractor, never mentioned). Cross-case table (Case Bible 4.4): Sterrenberg Bank NV and the ABDB also lend to the Chapter 1 illustrative deal in 2016; later chapters must not contradict that.
 
 ---
 
@@ -1043,7 +1043,9 @@ Recorded for the register, outside the running cases: Republic of Corredana and 
 
 ### 8.3 Extensions and definitions of existing IDs
 
-- P-F02: state the index readings (September 2021), the reconversion rate (invoice date), contracted capacity 581.9 MW.
+- P-F02: state the index readings (September 2021), the reconversion rate, contracted capacity 581.9 MW. Round 1: the ledger states the reconversion rate as the 2022 H1 average (the model's proxy for the invoice-date rate, 1.1.5); the US CPI reading is a Case P illustrative index (D-046).
+- P-F23: the bond is sculpted with the remaining ECA and A-loan debt service to a level combined DSCR; the level is a model output (ledger 1.59x), because the bond amount is set by the prepaid principal; 1.35x is not printed as the outcome (round 1).
+- P-F65: one forward per monthly onshore EPC payment; the ledger prints the totals and every sixth month of the profile (round 1).
 - P-F03: computable from 4.7.
 - P-F06: winning levelized tariff; P-F62 holds the comparison.
 - P-F07: report equity by sponsor (60/25/15), by form (share capital and shareholder loans), with capitalized shareholder loan interest and the ECA premium amount shown separately.
@@ -1054,7 +1056,7 @@ Recorded for the register, outside the running cases: Republic of Corredana and 
 - P-F16: add Chapter 35 as a user for breakevens.
 - P-F20: unchanged; detailed crisis items go to P-F40.
 - P-F25: use the definitions in 1.1.7.
-- P-F26: include the fair value of the retained 36% (rule in the input requests file) and recycling of the hedge reserve; compute on IFRS (IFRIC 12) carrying amounts (P-F56).
+- P-F26: include the fair value of the retained 36% (rule in the input requests file) and recycling of the hedge reserve; compute on IFRS (IFRIC 12) carrying amounts (P-F56). Round 1 confirmation from `case_p.py`: the consideration line (77.3) is the cash price at completion and excludes the USD 4.0 million deferred consideration, which the model measures at nil because it is contingent on SEKA's overdue receivables staying at zero to June 30, 2027; the loss on loss of control (82.0, IFRS basis) is consideration plus fair value of the retained 36% less 60% of IFRS book equity and shareholder loans, and the parent share of the swap hedge reserve recycled to profit (2.1) is reported separately, outside that loss. A fair-value line for the deferred consideration is an optional model request.
 - P-F28: defined as: sources and uses (P-F07); senior debt by tranche and binding constraint (P-F08); minimum and average DSCR on base, banking and downside, LLCR at close, gearing; WAL and ECA tests (P-F09); all-in cost by tranche (P-F12); DSRA size (P-F11a); breakevens including months of zero SEKA payment covered by DSRA plus LC (P-F16); LC at COD under two-plus-one (P-F39); the swap rate (2.947%).
 - P-F31: unchanged; drought dispatch is P-F58.
 - D-013 covers, with no ID: days to the PPA delay LD cap; the 6,323 against 6,261 gap; the FC base first-period fraction; trigger-ladder percentages (1 − 1.20/1.35 and 1 − 1.10/1.35); the Chapter 28 hypothetical trace at the stated assumptions; base EOH per year (8,439).
@@ -1269,4 +1271,4 @@ Case T: u03 5, 7, 8; u06 BF-1; u10 BF-3; u12 1 to 5; u13 CBF-5, CBF-6; u14 BF-8;
 | P-C39 | 2017 to 2043 | 25, 28, 65, 76 | P | GSA and GTA term | 22 years from an unstated start | From COD to November 30, 2043; deliberate gap to PPA expiry | Annex 1.7.1 |
 | P-C40 | 2018 | 7, 66 | P | Accounting framework | Unstated | IFRS, USD functional, IFRIC 12 financial asset; lenders' basis fixed-asset model | Annex 4.6 |
 
-Rows P-C41 to P-C48 (model calibrations, the overrun funding, the LC value, the currency hedge and the Chapter 6, 8 and 12 scene fixes) are in Case Bible Part 8.
+Rows P-C41 to P-C48 (model calibrations, the overrun funding, the LC value, the currency hedge and the Chapter 6, 8 and 12 scene fixes) are in Case Bible Part 8, where the duplicated IDs were resolved in round 1 (the Chapter 8 and Chapter 6 scene rows are now P-C49 and P-C50); the round 1 rows P-C51 to P-C59 are also in Case Bible Part 8.
