@@ -81,3 +81,4 @@
 - Done: t-rbl, upstream-field-pf (Jubilee), commodity-prepay, tap-pipeline, fpso-financing, fsru-charters, coral-sul-flng (financing 2017, not 2020), t-upstream-decom-security.
 - Done: refinery-pf (Duqm), us-battery-doe, t-critical-minerals-policy, t-untied-resource-finance, covid-toll-roads, airport-concession (LGA Terminal B), port-concession (Lekki).
 - Case R model v1.2 rerun DONE (verification PASS; R-F18, R-F19).
+- Done: t-thermal-exclusions, t-nuclear-liability, t-nuclear-decom-waste, pumped-storage (Snowy 2.0), t-storage-safety, geothermal-risk-facilities, us-offshore-wind-2025, vineyard-wind-2024. ALL QUEUED FACT SHEETS COMPLETE (160 files).
