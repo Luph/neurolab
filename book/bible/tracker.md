@@ -97,3 +97,4 @@
 - Central Bible fixes DONE (case bible v1.1, concordance Annex P 8.4, R-122..R-141, glossary 1,784, D-036..D-045). RORAC→RAROC relabeled in Case P model files by editor.
 - Brief revision u01 DONE (central changes in revision log of u01.md).
 - Brief revision u04 DONE.
+- Brief revision u12 DONE (unit glossary files now superseded by glossary-canon.md).
