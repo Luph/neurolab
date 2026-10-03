@@ -26,3 +26,6 @@ For topic sheets (slugs starting "t-"), "Verified facts" must give current rules
 Aim for depth: a typical case sheet is 900–1,800 words; topic sheets may run longer. Accuracy beats length.
 
 Return only a short status: files written, any items with low confidence, notes.
+## Additional rules (added by the editor-in-chief)
+- Never put any personal email address or other personal identifier in request headers (e.g., a User-Agent for sec.gov). For SEC EDGAR, use a generic descriptive User-Agent such as "PF-Textbook-Research research-bot" without an email.
+- Do not try to bypass bot challenges, CAPTCHAs, logins, paywalls or certificate checks; if a site blocks access, use other public sources and record the gap under "Do not state".

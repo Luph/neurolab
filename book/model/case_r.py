@@ -142,8 +142,7 @@ def make_case(price="base", volume="p50", west_solar_capture_pts=0.0, battery="s
 
 
 PRICE_IDX = {"base": 1, "low": 2, "high": 3}
-VOL_KEY = {"p50": None, "p90_1yr": "p90_1yr_pct_of_p50", "p90_10yr": "p90_10yr_pct_of_p50",
-           "p99_1yr": "p99_1yr_pct_of_p50"}
+VOL_KEY = {"p50": None, "p90_1yr": "p90_1yr", "p90_10yr": "p90_10yr", "p99_1yr": "p99_1yr"}
 
 
 def capture_hub(bucket, price):
@@ -156,6 +155,56 @@ def capture_hub(bucket, price):
     elif price == "high":
         dec *= 0.5
     return np.maximum(floor, c["2022"] - dec * (YEARS - 2022))
+
+
+# --------------------------------------------------------------------------------------------
+# Yield statistics (editor-in-chief note, R-C09): normal distribution of annual net energy.
+# One-year sigma^2 = sigma_LT^2 + sigma_IAV^2; N-year sigma^2 = sigma_LT^2 + sigma_IAV^2 / N.
+# The Bible's P90 one-year and ten-year values (percent of P50) are the anchors; they imply
+# sigma_1 and sigma_10, from which sigma_IAV^2 = (sigma_1^2 - sigma_10^2) * 10/9 and
+# sigma_LT^2 = sigma_10^2 - sigma_IAV^2/10. P99 values are recomputed from these.
+# --------------------------------------------------------------------------------------------
+Z90, Z99 = 1.2816, 2.3263
+CORR = {  # inter-asset correlations (ERCOT sites, illustrative), applied as stated below
+    "iav_wind_west_west": 0.60,    # R1-R3 (West and Panhandle)
+    "iav_wind_west_coastal": 0.30,  # R1/R3-R2
+    "iav_solar_west_west": 0.85,   # R4-R5 (adjacent West sites)
+    "iav_solar_west_south": 0.50,  # R4/R5-R8
+    "iav_wind_solar": -0.10,       # any wind-solar pair
+    "lt_same_technology": 0.50,    # long-term (model and measurement) uncertainty
+    "lt_cross_technology": 0.00,
+}
+
+
+def yield_stats():
+    out = {}
+    for aid in GEN:
+        a = ASSETS[aid]
+        s1 = (1 - a["p90_1yr_pct_of_p50"] / 100.0) / Z90
+        s10 = (1 - a["p90_10yr_pct_of_p50"] / 100.0) / Z90
+        iav2 = (s1 ** 2 - s10 ** 2) * 10.0 / 9.0
+        lt2 = s10 ** 2 - iav2 / 10.0
+        out[aid] = dict(sigma_1yr=s1, sigma_10yr=s10, sigma_iav=iav2 ** 0.5, sigma_lt=lt2 ** 0.5,
+                        p90_1yr=100 * (1 - Z90 * s1), p90_10yr=100 * (1 - Z90 * s10),
+                        p99_1yr=100 * (1 - Z99 * s1), p99_10yr=100 * (1 - Z99 * s10))
+    return out
+
+
+def corr_pair(i, j, comp):
+    if i == j:
+        return 1.0
+    wind = {"R1", "R2", "R3"}
+    ti, tj = i in wind, j in wind
+    if comp == "lt":
+        return CORR["lt_same_technology"] if ti == tj else CORR["lt_cross_technology"]
+    if ti != tj:
+        return CORR["iav_wind_solar"]
+    if ti:
+        return CORR["iav_wind_west_coastal"] if "R2" in (i, j) else CORR["iav_wind_west_west"]
+    return CORR["iav_solar_west_south"] if "R8" in (i, j) else CORR["iav_solar_west_west"]
+
+
+YSTAT = yield_stats()
 
 
 # --------------------------------------------------------------------------------------------
@@ -194,7 +243,7 @@ def operations(case):
         mw = a["mw_ac"]
         if aid in GEN:
             bk = a["capture_bucket"]
-            vf = 1.0 if VOL_KEY[case["volume"]] is None else a[VOL_KEY[case["volume"]]] / 100.0
+            vf = 1.0 if VOL_KEY[case["volume"]] is None else YSTAT[aid][VOL_KEY[case["volume"]]] / 100.0
             r["vol_factor"] = np.full(NT, vf)
             ref = SUPP["p50_reference_year"][aid]
             r["deg"] = (1 - a["degradation_pct_pa"] / 100.0) ** np.maximum(0, YEARS - ref)
@@ -890,19 +939,26 @@ def debt_by_asset(base, S):
 
 
 def diversification():
-    z = 1.2816
-    out = {}
+    """Portfolio P50/P90/P99 (one-year and ten-year) with inter-asset correlations, plus the
+    fully correlated and independent bounds for comparison."""
+    out = {"assets": YSTAT, "correlations": CORR}
     for grp, ids in (("A1", A1), ("all_generation", GEN)):
         p50 = sum(ASSETS[a]["p50_gwh"] for a in ids)
         res = {"p50_gwh": p50}
-        for k, key in (("1yr", "p90_1yr_pct_of_p50"), ("10yr", "p90_10yr_pct_of_p50")):
-            sig = [ASSETS[a]["p50_gwh"] * (1 - ASSETS[a][key] / 100.0) / z for a in ids]
-            corr = sum(ASSETS[a]["p50_gwh"] * ASSETS[a][key] / 100.0 for a in ids)
-            ind = p50 - z * float(np.sqrt(sum(x * x for x in sig)))
-            res["p90_%s_correlated_gwh" % k] = corr
-            res["p90_%s_independent_gwh" % k] = ind
-            res["p90_%s_correlated_pct" % k] = 100 * corr / p50
-            res["p90_%s_independent_pct" % k] = 100 * ind / p50
+        vlt = sum(ASSETS[i]["p50_gwh"] * YSTAT[i]["sigma_lt"] * ASSETS[j]["p50_gwh"] * YSTAT[j]["sigma_lt"] * corr_pair(i, j, "lt") for i in ids for j in ids)
+        viav = sum(ASSETS[i]["p50_gwh"] * YSTAT[i]["sigma_iav"] * ASSETS[j]["p50_gwh"] * YSTAT[j]["sigma_iav"] * corr_pair(i, j, "iav") for i in ids for j in ids)
+        for k, n in (("1yr", 1.0), ("10yr", 10.0)):
+            sig = (vlt + viav / n) ** 0.5
+            res["sigma_%s_gwh" % k] = sig
+            for pk, z in (("p90", Z90), ("p99", Z99)):
+                res["%s_%s_gwh" % (pk, k)] = p50 - z * sig
+                res["%s_%s_pct" % (pk, k)] = 100 * (p50 - z * sig) / p50
+            sig_c = sum(ASSETS[a]["p50_gwh"] * YSTAT[a]["sigma_%s" % k] for a in ids)
+            sig_i = sum((ASSETS[a]["p50_gwh"] * YSTAT[a]["sigma_%s" % k]) ** 2 for a in ids) ** 0.5
+            res["p90_%s_correlated_gwh" % k] = p50 - Z90 * sig_c
+            res["p90_%s_independent_gwh" % k] = p50 - Z90 * sig_i
+            res["p90_%s_correlated_pct" % k] = 100 * (p50 - Z90 * sig_c) / p50
+            res["p90_%s_independent_pct" % k] = 100 * (p50 - Z90 * sig_i) / p50
         out[grp] = res
     return out
 

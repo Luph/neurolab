@@ -4,7 +4,7 @@ Model version R-1.1, inputs file version 1.1, generated 2026-10-03. All money US
 
 ## 1. Assumption changes (modeler calibration, pre-publication)
 
-The v1.0 inputs produce a base-case unlevered value for A1 of about USD 438 million against a USD 1,184.6 million price (high case about USD 611 million), a fund IRR below zero and opco debt of about USD 328 million against a 520 to 600 design range. Revenue per MW is realistic for ERCOT (West Texas wind about USD 100,000 per MW-year in 2025); the prices were not. The fix keeps every market, contract, asset and financing term and recalibrates the four acquisition prices to just above the model's base-case breakeven values, so the bids read as full auction prices. These are larger than 'small' changes and need editor-in-chief sign-off.
+The v1.0 inputs produce a base-case unlevered value for A1 of about USD 438 million against a USD 1,184.6 million price (high case about USD 611 million), a fund IRR below zero and opco debt of about USD 328 million against a 520 to 600 design range. Revenue per MW is realistic for ERCOT (West Texas wind about USD 100,000 per MW-year in 2025); the prices were not. The fix keeps every market, contract, asset and financing term and recalibrates the four acquisition prices (R-C04 to R-C08; R-C09 and R-C10 follow the editor-in-chief's yield note) to just above the model's base-case breakeven values, so the bids read as full auction prices. These are larger than 'small' changes and need editor-in-chief sign-off.
 
 | ID | Item | Old | New | Reason |
 |---|---|---|---|---|
@@ -13,6 +13,8 @@ The v1.0 inputs produce a base-case unlevered value for A1 of about USD 438 mill
 | R-C06 | A3 prices (Kerrigan R7, Barlow Gap R8) | [171.9, 168.3] | [87.4, 101.9] | v1.0 prices about 1.7-2.0x base-case value including ITC transfer proceeds; new prices slightly above base breakeven |
 | R-C07 | USPP series split | 30/40/30 fixed | outputs of sequential sculpted amortization by tenor | sculpted profile retires only about 63% of principal by 2037, so a 70% A+B share cannot be repaid within the B tenor |
 | R-C08 | expected debt ranges (design targets) | opco TL 520-600; holdco TLB 160-210; USPP 750-860 | superseded by model outputs (see ledger R-F05, R-F08) | ranges assumed revenue about 1.7x what the Bible inputs produce |
+| R-C09 | P99 one-year by asset | R1 81.2, R2 84.0, R3 80.1, R4 91.9, R5 91.4, R8 91.6 (% of P50) | R1 77.5, R2 80.4, R3 76.2, R4 90.2, R5 89.5, R8 89.8 (computed from the P90s under a normal distribution) | editor-in-chief note: v1.0 P99s were inconsistent with the normal distribution implied by the stated P90s |
+| R-C10 | yield uncertainty model and inter-asset correlations (new) | none | normal; sigma split into long-term and inter-annual components; ten-year P90/P99 and correlated portfolio P50/P90/P99 computed (R-F01) | editor-in-chief note |
 
 
 Supplementary assumptions where the Case Bible is silent (also on the workbook Inputs sheet):
@@ -23,6 +25,7 @@ Supplementary assumptions where the Case Bible is silent (also on the workbook I
 | R3 PTC rate 2026 to November 2029 | USD 30.00/MWh | held at the 2025 value; 99% to tax equity |
 | Curtailment 2023 and 2024 | linear between 2022 and 2025 values | West wind 5.0%, 5.5%; Panhandle 5.8%, 6.4%; West solar 2.5%, 3.0% |
 | Availability of wind and solar | P50 is net of long-term availability (factor 100%) | batteries: 97.5% applied to merchant revenue; toll paid in full above 97.0% |
+| Yield distribution | normal; sigma split into long-term and inter-annual components | P99s recomputed from P90s (R-C09); correlations added (R-C10) |
 | P50 reference year for degradation | 2022 (A1 assets), 2025 (R8) | degradation compounds from the reference year |
 | Battery augmentation cost | USD 41/kWh in 2025 prices, +2.5% a year | 6% of MWh in calendar year COD+5 and COD+9 |
 | Holdco coverage test years | 2023-2027 (2022 TLB); 2025-2027 (2024 incremental); 2026-2031 (2025 repricing) | full years before maturity |
@@ -47,17 +50,29 @@ There is no circular reference in the Case R model, so no iteration is needed an
 
 ## 3. Asset yield (R-F01, R-F06)
 
-| Asset | Name | MWac | P50 GWh | P90 1-yr | P90 10-yr | P99 1-yr | Net gen 2026 base (GWh) | Net gen 2026 P90 1-yr | Node capture 2026 | Node price 2026 (USD/MWh) |
-|---|---|---|---|---|---|---|---|---|---|---|
-| R1 | Thatcher Flats Wind | 201.6 | 695.8 | 87.6% | 92.9% | 81.2% | 648.8 | 568.4 | 0.68 | 29.18 |
-| R2 | Sandoval Hills Wind | 248.4 | 785.5 | 89.2% | 94.1% | 84.0% | 767.5 | 684.7 | 0.90 | 39.69 |
-| R3 | Ollie Creek Wind | 153.0 | 619.2 | 86.9% | 92.4% | 80.1% | 571.3 | 496.4 | 0.57 | 24.61 |
-| R4 | Peeler Draw Solar | 98.7 | 234.3 | 94.6% | 96.8% | 91.9% | 222.1 | 210.1 | 0.75 | 32.38 |
-| R5 | Calloway Mesa Solar | 182.4 | 452.2 | 94.2% | 96.5% | 91.4% | 428.6 | 403.7 | 0.75 | 32.38 |
-| R8 | Barlow Gap Solar | 120.0 | 290.1 | 94.4% | 96.6% | 91.6% | 283.7 | 267.8 | 0.81 | 35.71 |
+Distribution: annual net energy is normal. One-year sigma^2 = sigma_LT^2 + sigma_IAV^2 and ten-year sigma^2 = sigma_LT^2 + sigma_IAV^2/10, where sigma_LT is long-term (measurement, model, long-term resource) uncertainty and sigma_IAV inter-annual variability. The Bible's P90 one-year and ten-year values are the anchors; P99 values follow (z = 1.2816 for P90, 2.3263 for P99). Wind and solar P50s are net of long-term availability and gross of curtailment; degradation and curtailment apply on top.
+
+| Asset | Name | MWac | P50 GWh | sigma LT | sigma IAV | sigma 1-yr | sigma 10-yr | P90 1-yr | P90 10-yr | P99 1-yr | P99 10-yr | Net gen 2026 base (GWh) | Node capture 2026 | Node price 2026 (USD/MWh) |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| R1 | Thatcher Flats Wind | 201.6 | 695.8 | 4.9% | 8.4% | 9.7% | 5.5% | 87.6% | 92.9% | 77.5% | 87.1% | 648.8 | 0.68 | 29.18 |
+| R2 | Sandoval Hills Wind | 248.4 | 785.5 | 4.0% | 7.4% | 8.4% | 4.6% | 89.2% | 94.1% | 80.4% | 89.3% | 767.5 | 0.90 | 39.69 |
+| R3 | Ollie Creek Wind | 153.0 | 619.2 | 5.2% | 8.8% | 10.2% | 5.9% | 86.9% | 92.4% | 76.2% | 86.2% | 571.3 | 0.57 | 24.61 |
+| R4 | Peeler Draw Solar | 98.7 | 234.3 | 2.2% | 3.6% | 4.2% | 2.5% | 94.6% | 96.8% | 90.2% | 94.2% | 222.1 | 0.75 | 32.38 |
+| R5 | Calloway Mesa Solar | 182.4 | 452.2 | 2.5% | 3.8% | 4.5% | 2.7% | 94.2% | 96.5% | 89.5% | 93.6% | 428.6 | 0.75 | 32.38 |
+| R8 | Barlow Gap Solar | 120.0 | 290.1 | 2.4% | 3.7% | 4.4% | 2.7% | 94.4% | 96.6% | 89.8% | 93.8% | 283.7 | 0.81 | 35.71 |
 
 
-Portfolio diversification (A1 assets, P50 2787.0 GWh): P90 one-year 2495.9 GWh if fully correlated (89.6% of P50) and 2638.4 GWh if independent (94.7%); ten-year 94.0% and 97.0%.
+Correlations: iav_wind_west_west 0.60, iav_wind_west_coastal 0.30, iav_solar_west_west 0.85, iav_solar_west_south 0.50, iav_wind_solar -0.10, lt_same_technology 0.50, lt_cross_technology 0.00.
+
+
+Portfolio yield (correlated):
+
+| Group | Horizon | P50 GWh | sigma GWh | P90 GWh | P90 % of P50 | P99 GWh | P99 % of P50 | P90 if fully correlated | P90 if independent |
+|---|---|---|---|---|---|---|---|---|---|
+| A1 | 1yr | 2787.0 | 154.2 | 2589.4 | 92.9% | 2428.4 | 87.1% | 89.6% | 94.7% |
+| A1 | 10yr | 2787.0 | 90.9 | 2670.5 | 95.8% | 2575.6 | 92.4% | 94.0% | 97.0% |
+| all_generation | 1yr | 3077.1 | 154.7 | 2878.8 | 93.6% | 2717.1 | 88.3% | 90.0% | 95.1% |
+| all_generation | 10yr | 3077.1 | 91.8 | 2959.5 | 96.2% | 2863.6 | 93.1% | 94.3% | 97.2% |
 
 
 Revenue build by asset, base case (USD m, 100% of asset):
@@ -124,25 +139,25 @@ Opco term loan sizing: PV of debt-service capacity by bucket at the sizing rates
 
 | Year | Bucket capacity | P99 capacity | Sculpted DS | All-in rate | Opening balance |
 |---|---|---|---|---|---|
-| 2022 | 30.0 | 36.4 | 30.0 | 3.979% | 328.1 |
-| 2023 | 33.6 | 36.1 | 33.6 | 4.449% | 308.2 |
-| 2024 | 30.8 | 34.4 | 30.8 | 4.447% | 288.3 |
-| 2025 | 30.4 | 33.3 | 30.4 | 4.314% | 270.3 |
-| 2026 | 29.9 | 32.2 | 29.9 | 4.417% | 251.6 |
-| 2027 | 27.8 | 29.9 | 27.8 | 4.441% | 232.8 |
-| 2028 | 25.5 | 29.0 | 25.5 | 4.449% | 215.4 |
-| 2029 | 26.1 | 32.2 | 26.1 | 5.169% | 199.5 |
-| 2030 | 23.6 | 30.9 | 23.6 | 5.375% | 183.7 |
-| 2031 | 23.4 | 30.3 | 23.4 | 5.375% | 169.9 |
-| 2032 | 23.1 | 29.8 | 23.1 | 5.375% | 155.7 |
-| 2033 | 22.8 | 30.3 | 22.8 | 5.375% | 140.9 |
-| 2034 | 22.4 | 30.7 | 22.4 | 5.375% | 125.7 |
-| 2035 | 22.0 | 29.9 | 22.0 | 5.375% | 110.1 |
-| 2036 | 22.0 | 29.6 | 22.0 | 5.375% | 94.0 |
-| 2037 | 21.9 | 29.4 | 21.9 | 5.375% | 77.1 |
-| 2038 | 21.9 | 29.1 | 21.9 | 5.375% | 59.3 |
-| 2039 | 21.9 | 29.0 | 21.9 | 5.375% | 40.5 |
-| 2040 | 21.9 | 28.8 | 21.9 | 5.375% | 20.8 |
+| 2022 | 30.0 | 34.5 | 30.0 | 3.979% | 328.1 |
+| 2023 | 33.6 | 34.0 | 33.6 | 4.449% | 308.2 |
+| 2024 | 30.8 | 32.9 | 30.8 | 4.447% | 288.3 |
+| 2025 | 30.4 | 31.6 | 30.4 | 4.314% | 270.3 |
+| 2026 | 29.9 | 30.4 | 29.9 | 4.417% | 251.6 |
+| 2027 | 27.8 | 28.1 | 27.8 | 4.441% | 232.8 |
+| 2028 | 25.5 | 27.2 | 25.5 | 4.449% | 215.4 |
+| 2029 | 26.1 | 30.2 | 26.1 | 5.169% | 199.5 |
+| 2030 | 23.6 | 28.1 | 23.6 | 5.375% | 183.7 |
+| 2031 | 23.4 | 27.5 | 23.4 | 5.375% | 169.9 |
+| 2032 | 23.1 | 26.9 | 23.1 | 5.375% | 155.7 |
+| 2033 | 22.8 | 27.4 | 22.8 | 5.375% | 140.9 |
+| 2034 | 22.4 | 27.7 | 22.4 | 5.375% | 125.7 |
+| 2035 | 22.0 | 26.9 | 22.0 | 5.375% | 110.1 |
+| 2036 | 22.0 | 26.6 | 22.0 | 5.375% | 94.0 |
+| 2037 | 21.9 | 26.3 | 21.9 | 5.375% | 77.1 |
+| 2038 | 21.9 | 26.1 | 21.9 | 5.375% | 59.3 |
+| 2039 | 21.9 | 25.8 | 21.9 | 5.375% | 40.5 |
+| 2040 | 21.9 | 25.6 | 21.9 | 5.375% | 20.8 |
 
 
 Opco debt by asset (pro rata to PV of each asset's own debt-service capacity):
@@ -253,7 +268,7 @@ IRR impact (gross, fund level): lifetime IRR 11.33% with the refinancing against
 | high | 69.2 | 1.35 | 1.52 | 3.62 | 1.41 | 164.6 | 92.0 | 331.8 | 42.8% | 19.9% | 9.44 | 1 |
 | p90_1yr | 59.2 | 1.17 | 1.30 | 1.71 | 1.00 | 164.6 | 79.4 | 50.9 | -6.8% | 5.9% | 2.19 | 6 |
 | p90_10yr | 61.8 | 1.26 | 1.35 | 1.85 | 1.17 | 164.6 | 84.7 | 74.1 | 1.7% | 8.4% | 2.77 | 3 |
-| p99_1yr | 56.2 | 1.07 | 1.23 | 1.56 | 0.54 | 164.6 | 76.0 | 24.9 | -16.6% | 2.3% | 1.36 | 10 |
+| p99_1yr | 54.2 | 1.01 | 1.19 | 1.46 | 0.20 | 164.6 | 74.1 | 13.2 | -22.0% | -0.7% | 0.91 | 13 |
 | status_quo | 65.3 | 1.35 | n.m. | n.m. | 1.40 | 164.6 | 0.0 | 163.3 | 4.4% | 9.9% | 4.11 | 2 |
 | sens_west_solar_capture_m5 | 65.1 | 1.35 | 1.43 | 1.98 | 1.39 | 164.6 | 91.4 | 98.2 | 9.8% | 10.9% | 3.30 | 2 |
 | sens_battery_low | 65.3 | 1.35 | 1.43 | 1.87 | 1.40 | 164.6 | 91.7 | 86.8 | 7.6% | 10.1% | 3.12 | 2 |

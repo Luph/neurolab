@@ -46,7 +46,7 @@ def write_report(O, path):
     w("The v1.0 inputs produce a base-case unlevered value for A1 of about USD 438 million against a USD 1,184.6 million price "
       "(high case about USD 611 million), a fund IRR below zero and opco debt of about USD 328 million against a 520 to 600 "
       "design range. Revenue per MW is realistic for ERCOT (West Texas wind about USD 100,000 per MW-year in 2025); the prices "
-      "were not. The fix keeps every market, contract, asset and financing term and recalibrates the four acquisition prices "
+      "were not. The fix keeps every market, contract, asset and financing term and recalibrates the four acquisition prices (R-C04 to R-C08; R-C09 and R-C10 follow the editor-in-chief's yield note) "
       "to just above the model's base-case breakeven values, so the bids read as full auction prices. These are larger than "
       "'small' changes and need editor-in-chief sign-off.\n")
     rows = [[c["id"], c["item"], c["old"], c["new"], c["reason"]] for c in inp["calibration_log"]]
@@ -58,6 +58,7 @@ def write_report(O, path):
         ["R3 PTC rate 2026 to November 2029", "USD %.2f/MWh" % sp["ptc_after_2025_usd_per_mwh"], "held at the 2025 value; 99% to tax equity"],
         ["Curtailment 2023 and 2024", "linear between 2022 and 2025 values", "West wind 5.0%, 5.5%; Panhandle 5.8%, 6.4%; West solar 2.5%, 3.0%"],
         ["Availability of wind and solar", "P50 is net of long-term availability (factor 100%)", "batteries: 97.5% applied to merchant revenue; toll paid in full above 97.0%"],
+        ["Yield distribution", "normal; sigma split into long-term and inter-annual components", "P99s recomputed from P90s (R-C09); correlations added (R-C10)"],
         ["P50 reference year for degradation", "2022 (A1 assets), 2025 (R8)", "degradation compounds from the reference year"],
         ["Battery augmentation cost", "USD 41/kWh in 2025 prices, +2.5% a year", "6% of MWh in calendar year COD+5 and COD+9"],
         ["Holdco coverage test years", "2023-2027 (2022 TLB); 2025-2027 (2024 incremental); 2026-2031 (2025 repricing)", "full years before maturity"],
@@ -86,19 +87,31 @@ def write_report(O, path):
       "Interest is charged on opening balances, so cash sweeps and taxes do not feed back into interest.\n")
 
     w("## 3. Asset yield (R-F01, R-F06)\n")
+    w("Distribution: annual net energy is normal. One-year sigma^2 = sigma_LT^2 + sigma_IAV^2 and ten-year sigma^2 = sigma_LT^2 + sigma_IAV^2/10, "
+      "where sigma_LT is long-term (measurement, model, long-term resource) uncertainty and sigma_IAV inter-annual variability. "
+      "The Bible's P90 one-year and ten-year values are the anchors; P99 values follow (z = 1.2816 for P90, 2.3263 for P99). "
+      "Wind and solar P50s are net of long-term availability and gross of curtailment; degradation and curtailment apply on top.\n")
+    dv = O["diversification"]
+    ys = dv["assets"]
     rows = []
     for a in inp["assets"]:
         aid = a["id"]
-        if "p50_gwh" in a:
-            rows.append([aid, a["name"], "%.1f" % a["mw_ac"], "%.1f" % a["p50_gwh"], pct(a["p90_1yr_pct_of_p50"]), pct(a["p90_10yr_pct_of_p50"]),
-                         pct(a["p99_1yr_pct_of_p50"]), f1(Sb[aid + ".gen"][yi(2026)]), f1(O["scenarios"]["p90_1yr"]["series"][aid + ".gen"][yi(2026)]),
+        if aid in ys:
+            y = ys[aid]
+            rows.append([aid, a["name"], "%.1f" % a["mw_ac"], "%.1f" % a["p50_gwh"], pct(100 * y["sigma_lt"]), pct(100 * y["sigma_iav"]), pct(100 * y["sigma_1yr"]), pct(100 * y["sigma_10yr"]),
+                         pct(y["p90_1yr"]), pct(y["p90_10yr"]), pct(y["p99_1yr"]), pct(y["p99_10yr"]), f1(Sb[aid + ".gen"][yi(2026)]),
                          f2(Sb[aid + ".cap_node"][yi(2026)]), f2(Sb[aid + ".node_price"][yi(2026)])])
-    w(table(["Asset", "Name", "MWac", "P50 GWh", "P90 1-yr", "P90 10-yr", "P99 1-yr", "Net gen 2026 base (GWh)", "Net gen 2026 P90 1-yr", "Node capture 2026", "Node price 2026 (USD/MWh)"], rows))
-    dv = O["diversification"]
-    w("\nPortfolio diversification (A1 assets, P50 %.1f GWh): P90 one-year %.1f GWh if fully correlated (%.1f%% of P50) and %.1f GWh if independent (%.1f%%); "
-      "ten-year %.1f%% and %.1f%%.\n" % (dv["A1"]["p50_gwh"], dv["A1"]["p90_1yr_correlated_gwh"], dv["A1"]["p90_1yr_correlated_pct"],
-                                       dv["A1"]["p90_1yr_independent_gwh"], dv["A1"]["p90_1yr_independent_pct"],
-                                       dv["A1"]["p90_10yr_correlated_pct"], dv["A1"]["p90_10yr_independent_pct"]))
+    w(table(["Asset", "Name", "MWac", "P50 GWh", "sigma LT", "sigma IAV", "sigma 1-yr", "sigma 10-yr", "P90 1-yr", "P90 10-yr", "P99 1-yr", "P99 10-yr",
+             "Net gen 2026 base (GWh)", "Node capture 2026", "Node price 2026 (USD/MWh)"], rows))
+    w("\nCorrelations: " + ", ".join("%s %.2f" % (k, v) for k, v in dv["correlations"].items()) + ".\n")
+    rows = []
+    for grp in ("A1", "all_generation"):
+        g = dv[grp]
+        for k in ("1yr", "10yr"):
+            rows.append([grp, k, f1(g["p50_gwh"]), f1(g["sigma_%s_gwh" % k]), f1(g["p90_%s_gwh" % k]), pct(g["p90_%s_pct" % k]), f1(g["p99_%s_gwh" % k]), pct(g["p99_%s_pct" % k]),
+                         pct(g["p90_%s_correlated_pct" % k]), pct(g["p90_%s_independent_pct" % k])])
+    w("\nPortfolio yield (correlated):\n")
+    w(table(["Group", "Horizon", "P50 GWh", "sigma GWh", "P90 GWh", "P90 % of P50", "P99 GWh", "P99 % of P50", "P90 if fully correlated", "P90 if independent"], rows))
     for sc in ("base", "low"):
         Ss = O["scenarios"][sc]["series"]
         w("\nRevenue build by asset, %s case (USD m, 100%% of asset):\n" % sc)

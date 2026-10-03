@@ -58,3 +58,4 @@
 - QUEUED wave 2: t-sustainable-finance-2, t-infra-asset-metrics, t-contract-law additions (Hadley, BGB, UNIDROIT, ICC 2020, NY), t-country-risk (in w2a as political-risk-theory), t-ratings-2 (running)
 - Briefs done: u01, u06, u11. Fact wave 2 launched: w2e (oem-fleet-defects, t-om-ltsa-norms, t-construction-norms, wagp), w2f (h-production-payments, h-north-sea-field-finance, h-purpa-us-ipp, h-gfc-pf-markets), w2g (t-security-civil-law, t-arbitral-rules, t-loan-syndication, t-negotiation-sources).
 - Briefs done: u05, u08, u10, u13. Remaining: u07, u09, u15, u16, u17.
+- Done: t-ratings-2 (S&P full text via public Maalot PDFs; Moody's methodology medium via secondary; default studies).
