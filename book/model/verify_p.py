@@ -42,6 +42,7 @@ def compare(scn, wb):
             continue
         if n == 0:
             xv = ws.cell(r, 6).value
+            xv = np.nan if isinstance(xv, str) else xv
             pv_ = float(pv)
             if py.startswith('R.') and 'irr' in py:
                 d = abs((xv or 0) - pv_) * 100   # compare IRRs in percentage points
@@ -50,9 +51,9 @@ def compare(scn, wb):
             res.append((key, 'scalar', d, xv, pv_))
         else:
             pv = np.asarray(pv, dtype=float)
-            xv = np.array([ws.cell(r, 10 + i).value or 0 for i in range(n)], dtype=float)
+            xv = np.array([(lambda v: np.nan if isinstance(v, str) else (v or 0))(ws.cell(r, 10 + i).value) for i in range(n)], dtype=float)
             m = min(len(pv), n)
-            d = np.abs(xv[:m] - pv[:m])
+            d = np.abs(xv[:m] - pv[:m]); d = np.where(np.isnan(d), 1e9, d)
             j = int(d.argmax())
             res.append((key, 'row', float(d.max()), float(xv[j]), float(pv[j]), j))
     chk = wb['Checks']['F' + str(bx.SHEETS['Checks'].key['total'])].value
