@@ -35,12 +35,11 @@ add('P-F02', 'VOM charge, indexed (base 3.86)', f"{f['vom_charge_indexed']:.2f}"
 add('P-F02', 'VOM charge in November 2016 dollars (real)', f"{f['vom_real_nov2016_usd']:.2f}", 'USD/MWh', ACT, '2022-01-01')
 # P-F03
 f = P['P-F03']
-add('P-F03', '6M USD LIBOR assumed for July 2016 (approximate; fact-check)', f"{f['libor_6m_july_2016_pct']:.2f}%", '%', 'Inputs (modeler)', '2016-07')
-add('P-F03', 'Average life of the senior loans from financial close (fee annualization)', f"{f['average_life_years']:.2f}", 'years', FCB, '2016-07')
-for k, v in f['all_in_pct'].items(): add('P-F03', f'Indicative all-in floating cost, {k} tranche (incl. fees, ECA premium, PRI and gross-up)', f"{v:.2f}%", '% pa', 'Inputs plus calculation', '2016-07')
-for k, v in f['all_in_ex_pri_grossup_pct'].items():
-    if k == 'COM': add('P-F03', 'Indicative all-in floating cost, commercial tranche excl. PRI and WHT gross-up', f"{v:.2f}%", '% pa', 'Inputs plus calculation', '2016-07')
-add('P-F03', 'Indicative weighted all-in floating cost', f"{f['weighted_pct']:.2f}%", '% pa', 'Inputs plus calculation', '2016-07')
+add('P-F03', '6M USD LIBOR, July 2016 (approximate; fact-check)', f"{f['libor_6m_july_2016_pct']:.2f}%", '%', 'Annex 4.7 inputs', '2016-07')
+for k, v in f['margins_2016_pct'].items(): add('P-F03', f'Indicative 2016 margin, {k}', f"{v:.2f}%", '%', 'Annex 4.7 inputs', '2016-07')
+for k, v in f['all_in_pct'].items(): add('P-F03', f'Indicative all-in floating cost, {k} (LIBOR + margin + upfront fee over 7.0 years' + (' + ECA premium 11.5% over 7.0 years' if k == 'ECA' else '') + ')', f"{v:.2f}%", '% pa', 'Annex 4.7 inputs plus calculation', '2016-07')
+add('P-F03', 'Commercial tranche incl. PRI premium and WHT gross-up', f"{f['commercial_all_in_with_pri_and_grossup_pct']:.2f}%", '% pa', 'Annex 4.7 inputs plus calculation', '2016-07')
+add('P-F03', 'Indicative weighted all-in floating cost (30/22/10/38)', f"{f['weighted_pct']:.2f}%", '% pa', 'Annex 4.7 inputs plus calculation', '2016-07')
 # P-F04
 f = P['P-F04']
 for k, v in f['income_statement'].items(): add('P-F04', 'FY2022 income statement: ' + k.replace('_', ' '), m(v), 'USD m', ACT, '2022-12-31')
@@ -90,14 +89,16 @@ add('P-F09', 'Largest installment', p1(e['largest_installment_share']), '% of pr
 add('P-F09', 'Repayment term from COD', f"{e['tenor_years']:.2f}", 'years (limit 14)', FCB, FC)
 add('P-F09', 'First repayment after COD', str(e['first_repayment_months_after_cod']), 'months (limit 24)', FCB, FC)
 # P-F10
-f = P['P-F10']['build']
-for k, v in f.items(): add('P-F10', 'FY2022 ' + k.replace('_', ' '), r(v) if k == 'dscr' else m(v), 'x' if k == 'dscr' else 'USD m', FCB, 'FY2022 (first full calendar year)')
+for case, run in (('fc_base', FCB), ('actual', ACT)):
+    d = P['P-F10'][case]
+    for k, v in d['build'].items(): add('P-F10', f"{'FC base' if case == 'fc_base' else 'Actual'} first full operating year ({d['period']}): {k.replace('_', ' ')}", r(v) if k == 'dscr' else m(v), 'x' if k == 'dscr' else 'USD m', run, d['period'])
 # P-F11
 f = P['P-F11']
-add('P-F11', 'DSRA initial balance (funded at COD)', m(f['dsra_initial']), 'USD m', FCB, '2021-05-01')
+add('P-F11a', 'DSRA initial balance (funded at COD; next period debt service)', m(f['dsra_initial']), 'USD m', FCB, '2021-05-01')
+for k, v in list(P['P-F11a']['dsra_balance_by_period'].items())[:8]: add('P-F11a', f'DSRA balance {k}', m(v), 'USD m', FCB, k)
 for k, v in f['mmra_contributions'].items():
-    if int(k[:4]) <= 2030: add('P-F11', f'MMRA contribution {k}', m2(v), 'USD m', FCB, FC)
-for k, v in f['mm_spend'].items(): add('P-F11', f'Out-of-LTSA major maintenance spend {k}', m2(v), 'USD m', FCB, FC)
+    if int(k[:4]) <= 2030: add('P-F11b', f'MMRA contribution {k}', m2(v), 'USD m', FCB, k)
+for k, v in f['mm_spend'].items(): add('P-F11b', f'Out-of-LTSA major maintenance spend {k}', m2(v), 'USD m', FCB, k)
 # P-F12
 f = P['P-F12']
 add('P-F12', 'Swap fixed rate', f"{f['swap_fixed_pct']:.3f}%", '%', FCB, FC)
@@ -212,8 +213,8 @@ for k in ('senior_debt_outstanding', 'swap_mtm_to_project', 'equity_npv_distribu
     add('P-F25', k.replace('_', ' '), m(f[k]), 'USD m', ACT, '2023-06-30')
 # P-F26
 f = P['P-F26']
-for k in ('book_equity_at_completion', 'shl_at_completion', 'kilnworth_carrying_amount_60pct', 'consideration', 'fv_retained_36pct', 'remeasurement_and_disposal_gain', 'equity_method_carrying_value_36pct', 'indirect_transfer_tax'):
-    add('P-F26', k.replace('_', ' ') + ' (simplified; framework to be confirmed)', m(f[k]), 'USD m', ACT, '2026-09-30')
+for k in ('book_equity_lenders_basis', 'ifrs12_equity_adjustment_pretax', 'shl_at_completion', 'consideration', 'fv_retained_36pct', 'carrying_amount_60pct_lenders_basis', 'carrying_amount_60pct_ifrs', 'gain_on_loss_of_control_lenders_basis', 'gain_on_loss_of_control_ifrs', 'hedge_reserve_parent_share_recycled', 'equity_method_carrying_value_36pct', 'indirect_transfer_tax'):
+    add('P-F26', k.replace('_', ' '), m(f[k]), 'USD m', ACT, '2026-09-30')
 # P-F27
 for case, run in (('fc_base', FCB), ('actual', ACT)):
     for k, v in P['P-F27'][case].items(): add('P-F27', f'{case.replace("_", " ")}: {k.replace("_", " ")} (life total)', m(v), 'USD m', run, '2018-2046')
@@ -270,8 +271,9 @@ for case in ('fc_base', 'actual'):
     add('P-F38', f'Thin cap {case.replace("_", " ")}: SHL interest total / deductible / disallowed', f"{d['shl_interest_total']:.1f} / {d['deductible']:.1f} / {d['disallowed']:.1f}", 'USD m', FCB if case == 'fc_base' else ACT, 'life')
     add('P-F38', f'Thin cap {case.replace("_", " ")}: deductible share in the COD period', p1(d['first_period_fraction']), '%', FCB if case == 'fc_base' else ACT, 'COD')
 f = P['P-F39']
-add('P-F39', 'LC size on the PPA formula, FC base (2021H2 rates)', m(f['fc_base_2021H2']), 'USD m', FCB, '2021-05-01')
-add('P-F39', 'LC size on the PPA formula, actual (2022H1 rates)', m(f['actual_2022H1']), 'USD m', ACT, '2021-12-01')
+for nm, d in (('FC base at COD (588.4 MW)', f['fc_base_at_cod']), ('Actual at COD (581.9 MW)', f['actual_at_cod'])):
+    add('P-F39', f'LC {nm}: two-plus-one / three-month', f"{d['two_plus_one']:.1f} / {d['three_month']:.1f}", 'USD m', FCB if 'FC' in nm else ACT, '2021-05-01' if 'FC' in nm else '2021-12-01')
+for y, d in f['actual_resets'].items(): add('P-F39', f'LC reset January 1, {y}: two-plus-one / three-month', f"{d['two_plus_one']:.1f} / {d['three_month']:.1f}", 'USD m', ACT, f'{y}-01-01')
 f = P['P-F40']
 add('P-F40', 'FX conversion losses total (2022H2-2024H1)', m2(f['fx_losses_total']), 'USD m', 'Inputs', '2024-03-29')
 add('P-F40', 'Energy-charge arrears matched by deferred SNHK/GCK payables, peak (2023-06-30)', m(max(f['energy_charge_arrears_matched_by_snhk_gck_deferral'].values())), 'USD m', ACT, '2023-06-30')
@@ -279,9 +281,11 @@ add('P-F40', 'Overdue reduction 2024H1 / 2024H2 / 2025H1', f"{f['overdue_reducti
 add('P-F40', 'Implied monthly settlement installment 2024H2 / 2025H1', f"{f['settlement_installment_implied_monthly_2024H2']:.2f} / {f['settlement_installment_implied_monthly_2025H1']:.2f}", 'USD m', 'Inputs', '2025-06-30')
 add('P-F40', 'Late payment interest received / waived', f"{f['lpi_received']:.2f} / {f['lpi_waived']:.2f}", 'USD m', ACT, '2025-06-30')
 f = P['P-F41']
-add('P-F41', 'PLCR at close', r(f['plcr_at_close']), 'x', FCB, FC)
-add('P-F41', 'LLCR at close (incl. DSRA)', r(f['llcr_at_close']), 'x', FCB, FC)
-for k, v in f['fc_base_profile'].items(): add('P-F41', f'FC base {k}: CFADS / DS / DSCR', f"{v['cfads']:.1f} / {v['ds']:.1f} / {v['dscr']:.2f}x", 'USD m, x', FCB, k)
+for k in ('base', 'banking', 'downside'):
+    add('P-F41', f'PLCR at close, {k}', r(f['plcr_at_close'][k]), 'x', {'base': FCB, 'banking': FCK, 'downside': FCD}[k], FC)
+    add('P-F41', f'LLCR at close (incl. DSRA), {k}', r(f['llcr_at_close'][k]), 'x', {'base': FCB, 'banking': FCK, 'downside': FCD}[k], FC)
+for case in ('base', 'banking', 'downside'):
+    for k, v in f['profiles'][case].items(): add('P-F41', f'FC {case} {k}: CFADS / DS / DSCR', f"{v['cfads']:.1f} / {v['ds']:.1f} / {v['dscr']:.2f}x", 'USD m, x', {'base': FCB, 'banking': FCK, 'downside': FCD}[case], k)
 for k, v in f['actual_profile'].items():
     if k <= '2026H2': add('P-F41', f'Actual {k}: CFADS / DS / DSCR', f"{v['cfads']:.1f} / {v['ds']:.1f} / {v['dscr']:.2f}x", 'USD m, x', ACT, k)
 f = P['P-F42']
@@ -299,20 +303,96 @@ add('P-F43', 'Pro rata: total funding / debt / IDC incl. swap and PRI', f"{f['pr
 ef = f['equity_first']
 add('P-F43', 'Equity first: total funding / debt / equity / IDC / commitment fees', f"{ef['T']:.1f} / {ef['D']:.1f} / {ef['E']:.1f} / {ef['idc']:.1f} / {ef['commitment_fees']:.1f}", 'USD m', FCB + ' variant', FC)
 f = P['P-F44']
-for k, v in f.items():
+for oy, d in f['by_operating_year'].items():
+    add('P-F44', f'{oy} revenue: capacity / VOM / fuel / GTA / take-or-pay / total', f"{d['cap_pay']:.1f} / {d['vom']:.1f} / {d['fuel_rev']:.1f} / {d['gta_res'] + d['gta_com']:.1f} / {d['top_pay']:.1f} / {d['revenue']:.1f}", 'USD m', FCB, oy)
+for k, v in f['sample_2022H1'].items():
     if k != 'period': add('P-F44', f'2022H1 revenue build: {k}', f"{v:,.2f}", 'see model row', FCB, '2022H1')
 f = P['P-F45']
-for nm in ('balance_sheet_2018_12_31', 'balance_sheet_at_cod_period_end'):
-    for k, v in f[nm].items():
-        if k != 'date': add('P-F45', f"{nm.replace('_', ' ')}: {k.replace('_', ' ')}", m(v), 'USD m', FCB, f[nm]['date'])
-for part in ('income_statement', 'cash_flow'):
-    for k, v in f['fy2022'][part].items(): add('P-F45', f'FY2022 {part.replace("_", " ")}: {k.replace("_", " ")}', m(v), 'USD m', FCB, 'FY2022')
+for oy, d in f['by_operating_year'].items():
+    for k, v in d.items(): add('P-F45', f'{oy} {k.replace("_", " ")} (lenders basis)', m(v), 'USD m', FCB, oy)
+for per, bs in f['balance_sheets'].items():
+    for k, v in bs.items():
+        if k != 'date': add('P-F45', f'Balance sheet {bs["date"]}: {k.replace("_", " ")}', m(v), 'USD m', FCB, bs['date'])
+# P-F37 working capital extension
+for per, d in P['P-F37']['working_capital_fc_base'].items():
+    add('P-F37', f'Working capital {per}: receivables / gas / GTA / O&M-LTSA / other payables / net', f"{d['receivables']:.1f} / {d['gas_payables']:.1f} / {d['gta_payables']:.1f} / {d['om_ltsa_payables']:.1f} / {d['other_payables']:.1f} / {d['net_working_capital']:.1f}", 'USD m', FCB, per)
+# P-F40 extension
+f = P['P-F40']
+add('P-F40', 'Netting set-off per month 2023H2 / 2024H1 (fall in deferred SNHK/GCK payables)', f"{f['netting_setoff_monthly_2023H2']:.2f} / {f['netting_setoff_monthly_2024H1']:.2f}", 'USD m', ACT, '2024-03-31')
+for g in f['guarantee_demands']: add('P-F40', f"Guarantee demand {g['date']} (USD {g['amount']} m): paid {g['paid']}", str(g['days']), 'days', 'Inputs', g['date'])
+add('P-F40', 'FX queue duration (2022-11-07 to 2024-03-29)', str(f['fx_queue_days']), 'days', 'Inputs', '2024-03-29')
+# P-F09 extension
+e = P['P-F09']['eca_tests']; ea = P['P-F09']['eca_tests_actual']
+add('P-F09', 'Share of principal repaid within 24 months of COD (FC base; minimum 2%)', p1(e['repaid_within_24_months_share']), '%', FCB, FC)
+add('P-F09', 'Actual: WAL / tenor / first repayment / repaid within 24 months', f"{ea['wal_years']:.2f} y / {ea['tenor_years']:.2f} y / {ea['first_repayment_months_after_cod']} months / {ea['repaid_within_24_months_share'] * 100:.1f}%", 'years, months, %', ACT, '2021-12-01')
+# P-F07 extension
+for nm, d in P['P-F07']['equity_by_sponsor'].items():
+    add('P-F07', f'Equity at close by sponsor: {nm} ({d["share_pct"]}%): share capital / SHL / total', f"{d['share_capital']:.2f} / {d['shareholder_loans']:.2f} / {d['total']:.2f}", 'USD m', FCB, FC)
+# P-F46 to P-F63
+f = P['P-F46']
+add('P-F46', 'GTA 2022: reservation / commodity / total passed to SEKA (= GCK revenue from Belanou)', f"{f['reservation']:.1f} / {f['commodity']:.1f} / {f['total_passed_to_seka']:.1f}", 'USD m', ACT, '2022-12-31')
+add('P-F46', 'Gas burned 2022', f"{f['gas_mmbtu'] / 1e6:.2f}", 'million MMBtu', ACT, '2022-12-31')
+f = P['P-F47']
+for k, v in f['by_oy'].items(): add('P-F47', f'Fuel margin from heat-rate headroom, {k}', m2(v), 'USD m', FCB, k)
+add('P-F47', 'Contracted / plant heat rate, 2021H2 (incl. part-load 2.3%)', f"{f['contracted_hr_oy1']:,.0f} / {f['plant_hr_oy1']:,.0f}", 'kJ/kWh', FCB, '2021H2')
+f = P['P-F48']
+for k in ('base', 'banking', 'low_dispatch_58', 'actual'):
+    add('P-F48', f'LTSA 128,000 EOH run-out, {k}', f"{f[k]['date']} ({f[k]['eoh_per_gt_year']:,.0f} EOH/yr; {f[k]['years_from_cod']:.1f} years)", 'date', k, f[k]['date'])
+add('P-F48', '16-year LTSA date (FC base / actual)', f"{f['sixteen_year_date_fc']} / {f['sixteen_year_date_actual']}", 'date', 'Inputs', '2037')
+f = P['P-F49']
+for k, v in f['first_utilization'].items(): add('P-F49', f'First utilization, {k}', m2(v), 'USD m', FCB, '2018-07-17')
+for k in ('first_utilization_total', 'equity_at_close', 'of_which_lntp_credit', 'equity_cash_at_close', 'epc_advance_gross', 'epc_advance_cash_net_of_lntp', 'upfront_fees', 'first_eca_premium', 'advisers_at_close', 'insurance_at_close', 'idc_month1', 'total_uses_month1'):
+    add('P-F49', k.replace('_', ' '), m2(f[k]), 'USD m', FCB, '2018-07-17')
+for grp in ('development_cost_reimbursement', 'development_fee', 'abdb_fund_premium_paid_by_fund'):
+    for k, v in f[grp].items(): add('P-F49', f'{grp.replace("_", " ")}: {k}', f"{v:.4f}" if grp.startswith('abdb') else m2(v), 'USD m', 'Annex 1.14', '2018-07-17')
+for k, v in f['sponsor_development_receipts'].items(): add('P-F49', f'Total development receipts at close, {k}', m2(v), 'USD m', 'Annex 1.14', '2018-07-17')
+f = P['P-F50']
+add('P-F50', 'PV of the 7.5 bps swap charge / at 10 bps / difference', f"{f['pv_7_5bps']:.2f} / {f['pv_10bps']:.2f} / {f['saving']:.2f}", 'USD m', FCB, '2018-07-17')
+f = P['P-F51']
+for k, v in f['actual'].items(): add('P-F51', f'PRI premium {k} (insured amount {v["insured_amount"]:.1f})', m2(v['premium']), 'USD m', ACT, k)
+add('P-F51', 'PRI premium total to cancellation (actual)', m2(f['actual_total']), 'USD m', ACT, '2025-06-30')
+f = P['P-F52']
+for k in f['actual_cum_pct']:
+    add('P-F52', f'EPC cumulative progress {k}: planned / actual', f"{f['planned_cum_pct'].get(k, 100.0):.1f}% / {f['actual_cum_pct'][k]:.1f}%", '% of contract price', 'FC base / actual', k)
+f = P['P-F53']
+for k, v in f['ecl'].items(): add('P-F53', f'ECL allowance {k} (normal / 1-90 / 91-180 / >180 days aged)', f"{v['ecl']:.2f} ({v['normal_receivables']:.1f} / {v['overdue_1_90']:.1f} / {v['overdue_91_180']:.1f} / {v['overdue_over_180']:.1f})", 'USD m', ACT, k)
+for k, v in f['swap_mtm'].items(): add('P-F53', f'Swap MTM to project (= hedge reserve, pre-tax), {k}', m2(v), 'USD m', ACT, k[:10])
+f = P['P-F54']
+for y, d in f['estimate'].items(): add('P-F54', f'{y} estimate: GloBE income / covered taxes / SBIE / UK top-up on Kilnworth share', f"{d['globe_income']:.1f} / {d['covered_taxes']:.2f} / {d['sbie']:.1f} / {d['uk_top_up_estimate']:.2f}", 'USD m', ACT, f'{y}-12-31')
+f = P['P-F55']
+add('P-F55', 'Underwritten at mandate (ECA-covered + commercial) / final holds commercial / ECA-covered', f"{f['underwritten_at_mandate']:.1f} / {f['final_hold_commercial']:.1f} / {f['final_hold_eca']:.1f}", 'USD m', FCB, '2018-07-17')
+for ph in ('construction_2020H1', 'operations_2022H1'):
+    d = f[ph]; add('P-F55', f'Castellan {ph}: RWA / capital / net income (annual) / RORAC', f"{d['rwa']:.1f} / {d['capital']:.2f} / {d['net_income']:.2f} / {d['rorac'] * 100:.1f}%", 'USD m, %', FCB, ph[-6:])
+f = P['P-F56']
+add('P-F56', 'IFRIC 12 financial asset at COD / effective interest rate', f"{f['asset_at_cod']:.1f} / {f['effective_interest_rate_annual'] * 100:.2f}% a year", 'USD m, %', ACT, '2021-12-01')
+for y, d in f['by_year'].items():
+    add('P-F56', f'{y}: financial asset / PP&E (lenders) / finance income / capital charge collected / PBT difference / cumulative equity difference', f"{d['financial_asset']:.1f} / {d['ppe_lenders_basis']:.1f} / {d['finance_income']:.1f} / {d['capital_charge_collected']:.1f} / {d['pbt_difference']:.1f} / {d['cumulative_equity_difference_pretax']:.1f}", 'USD m', ACT, f'{y}-12-31')
+f = P['P-F57']
+for k, d in f['technologies'].items():
+    add('P-F57', f'{k}: annualized fixed cost / fuel cost / cost at 30%, 50%, 70%, 90% CF', f"{d['annualized_usd_per_kw_year']:.1f} USD/kW-yr / {d['fuel_usd_per_mwh']:.1f} / {d['usd_per_mwh_by_cf']['30%']:.1f}, {d['usd_per_mwh_by_cf']['50%']:.1f}, {d['usd_per_mwh_by_cf']['70%']:.1f}, {d['usd_per_mwh_by_cf']['90%']:.1f}", 'USD/MWh (2015)', 'Annex 4.12 inputs', '2015')
+f = P['P-F58']
+for k in f['gas_burn_actual']:
+    add('P-F58', f'{k}: dispatch / gas burn actual / at 76.5% / fuel charge actual / at 76.5%', f"{f['dispatch'][k]:.1f}% / {f['gas_burn_actual'][k] / 1e6:.2f} / {f['gas_burn_at_76_5'][k] / 1e6:.2f} million MMBtu / {f['fuel_charge_actual'][k]:.1f} / {f['fuel_charge_at_76_5'][k]:.1f}", '%, MMBtu, USD m', ACT + ' vs ' + RF, k)
+f = P['P-F59']
+for k in ('at_signing_2017', 'at_2023_redetermination'):
+    d = f[k]; add('P-F59', f'Halbeck RBL {k}: NPV10 (net, after remaining capex) / borrowing base; before remaining capex', f"{d['npv10_p50_net']:.1f} / {d['borrowing_base']:.1f}; {d['npv10_before_remaining_capex']:.1f} / {d['borrowing_base_before_remaining_capex']:.1f}", 'USD m', 'Illustrative (annex 4.13)', k[-4:])
+f = P['P-F60']
+add('P-F60', 'Bid screen: cost / capacity + FOM revenue / fixed costs / CFADS proxy', f"{f['project_cost']:.1f} / {f['capacity_and_fom_revenue']:.1f} / {f['fixed_costs_2018_prices']:.1f} / {f['cfads_proxy']:.1f}", 'USD m', 'Annex 4.7 inputs', '2016-09')
+add('P-F60', 'Bid screen: debt capacity at 1.35x over 13 years / debt at 75% gearing / capacity payments share of SEKA revenue', f"{f['debt_capacity_dscr_1_35']:.1f} / {f['debt_at_75pct_gearing']:.1f} / {f['capacity_share_of_seka_revenue_2016'] * 100:.1f}%", 'USD m, %', 'Annex 4.7 inputs', '2016-09')
+f = P['P-F61']
+add('P-F61', '2P reserves / Belanou GSA / SEKA contract / coverage', f"{f['reserves_2p_bcf']:.0f} / {f['belanou_bcf']:.0f} / {f['seka_existing_bcf']:.0f} bcf / {f['coverage_ratio']:.2f}x", 'bcf, x', 'Annex 1.7.4 inputs', '2017')
+f = P['P-F62']
+add('P-F62', 'Levelized tariffs: winner / runner-up / third / fourth', f"{f['winner']:.2f} / {f['runner_up']:.2f} / {f['third']:.2f} / {f['fourth']:.2f}", 'USD/MWh (2016)', 'Bid inputs', '2016-09-27')
+add('P-F62', 'Pricing committee tariff at USD 15.05/kW-month (bid-model IRR 17.6%) vs submitted (16.0%)', f"{f['pricing_committee_tariff_at_15_05']:.2f} vs {f['winner']:.2f}", 'USD/MWh', 'Bid inputs', '2016-09-19')
+f = P['P-F63']
+add('P-F63', 'June 30, 2023: 12-month CFADS / debt service / historic DSCR', f"{f['cfads_12m']:.1f} / {f['debt_service_12m']:.1f} / {f['historic_dscr']:.2f}x", 'USD m, x', ACT, '2023-06-30')
+add('P-F63', 'Equity cure needed for 1.10x / 1.20x', f"{f['cure_to_1_10']:.1f} / {f['cure_to_1_20']:.1f}", 'USD m', ACT, '2023-06-30')
 
 L = ['# Figure ledger: Case P (Bélanou Combined Cycle Power Project)', '',
      'Source: `model/outputs_case_p.json`, produced by `model/case_p.py` (Case P model v1.0; story as of October 3, 2026); formatted by '
      '`model/ledger_p.py` (no computation). Amounts in USD million, nominal, unless stated. Scenario numbers are the workbook scenario switch '
      '(1 FC base, 2 FC banking, 3 FC downside, 4-13 sensitivities, 14 COD re-forecast, 15 actual history). P-F01 to P-F36 are the Case Bible '
-     'register; P-F37 to P-F45 are new (editor-in-chief assignments). Writers cite the ID; print values in the style-sheet format.', '',
+     'register; P-F37 to P-F45 are editor assignments and P-F46 to P-F63 come from case-bible-annex-p.md (P-F11 is split into P-F11a DSRA and P-F11b MMRA). Model version 1.1 (annex absorbed). Writers cite the ID; print values in the style-sheet format.', '',
      'Definitions used throughout: DSCR = CFADS / (interest incl. WHT gross-up + swap net + PRI premium + PCG fee + scheduled principal); '
      'average DSCR = sum of CFADS / sum of debt service over the loan life; LLCR = (PV of CFADS to final maturity at the period all-in senior '
      'cost + DSRA balance) / senior debt, at the start of the first repayment period; gearing = senior debt / total funding requirement; '

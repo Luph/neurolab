@@ -138,7 +138,7 @@ FX_FC0, FX_D = 519.4, 1.075 / 1.022
 BASE = dict(macro='FC', constr='FC', cod_delay=0, capex=1.0, avail_d=0.0, dispatch=76.5,
             hr_f=1.0, fo_f=1.0, gas_f=1.0, rate_shift=0.0, deval=0.0, lag_days=0,
             delay_days=0, crisis=0, ins_step=0, profile='FC', ld_prep=0, waiver=0, refi=0,
-            cap_charge_f=1.0, shl_share=EQ_SHL, miniperm=1)
+            cap_charge_f=1.0, shl_share=EQ_SHL, miniperm=1, disp_path=0)
 SCENARIOS = {
     1: dict(name='FC base'),
     2: dict(name='FC banking', dispatch=72.0),
@@ -155,13 +155,14 @@ SCENARIOS = {
     13: dict(name='Sens: gas price +30%', gas_f=1.30),
     14: dict(name='COD re-forecast (2021 lenders case)', macro='CODRF', constr='ACT',
              profile='COD', ld_prep=1),
-    15: dict(name='Actual history', macro='ACT', constr='ACT', profile='COD', ld_prep=1,
+    15: dict(name='Actual history', macro='ACT', constr='ACT', profile='COD', ld_prep=1, disp_path=1,
              crisis=1, ins_step=1, waiver=1, refi=1),
 }
 def scen(i, **over):
     p = dict(BASE); p.update(SCENARIOS[i]); p.update(over); p['id'] = i
     return p
-SHOCK_T0 = tix('2022H1')      # start of devaluation / payment-delay sensitivities (2 periods)
+SHOCK_T0 = tix('2022H1')
+ACT_DISPATCH = {'2022H1': 84.0, '2022H2': 81.5}   # annex 4.11 (drought year)      # start of devaluation / payment-delay sensitivities (2 periods)
 
 # ----------------------------------------------------------------------------------------
 # Contract (post-close fixed terms) -- produced by the sizing runs, then held fixed
@@ -582,7 +583,11 @@ def _run(p, prof, N_m, N_s, bond_prof, D_fixed):
     HRg = p.get('HR_override') or (6286 if act else 6261)
     OF = (1 - 0.0015 * yrs) * 0.99
     HRF = (1 + p.get('hr_nr', 0.12) / 100 * yrs) * 1.008
-    E = C * 730 * om * A / 100 * p['dispatch'] / 100 * OF          # MWh
+    # dispatch factor when available: scenario value; actual history uses the 2022 drought dispatch (annex 4.11)
+    disp = np.full(NS, float(p['dispatch']))
+    if p.get('disp_path'):
+        for lab, v in ACT_DISPATCH.items(): disp[tix(lab)] = v
+    E = C * 730 * om * A / 100 * disp / 100 * OF          # MWh
     HRa = HRg * HRF * 1.023 * p['hr_f']
     HRc = 6323 * (1 + 0.001 * yrs) * 1.023
     yrf = np.array(S_YEAR) - 2018
@@ -596,7 +601,7 @@ def _run(p, prof, N_m, N_s, bond_prof, D_fixed):
     esc = 1.015 ** yrf
     gta_res = 96500 * opdays * 0.62 * esc / 1e6
     gta_com = gas * 0.19 * esc / 1e6
-    S.update(avail=A, avail_prof=Ap, yrs=yrs, out_factor=OF, energy=E, hr_act=HRa, hr_con=HRc,
+    S.update(dispatch=disp, avail=A, avail_prof=Ap, yrs=yrs, out_factor=OF, energy=E, hr_act=HRa, hr_con=HRc,
              gas_price=pgas, gas_mmbtu=gas, fuel_rev=fuel_rev, fuel_cost=fuel_cost,
              top_vol=top_vol, top_short=top_short, top_pay=top_pay, gta_res=gta_res, gta_com=gta_com)
     # ---- tariff
@@ -621,7 +626,7 @@ def _run(p, prof, N_m, N_s, bond_prof, D_fixed):
     om_fix = 7.92 * (0.65 * us_cf + 0.35 * kc_cf * 516.8 / fx) * mf * fo
     om_inc = 0.60 * np.clip((A - 92) / 3, -1, 1) * us_cf * mf * (om > 0)
     ltsa_fix = 2.64 * us_cf * mf * fo
-    eoh = (1 if 'E2' in ERRS else 2) * (8059 * np.divide(A, Ap, out=np.zeros(NS), where=Ap > 0) + 38 * 10) * mf
+    eoh = (1 if 'E2' in ERRS else 2) * (8059 * np.divide(A, Ap, out=np.zeros(NS), where=Ap > 0) * disp / 76.5 + 38 * 10) * mf
     ltsa_var = eoh * 486 * us_cf / 1e6
     step = np.array([1.18 if (p['ins_step'] and t >= tix('2022H2')) else 1.0 for t in range(NS)])
     insur = 4.37 * us_cf * mf * step * fo
@@ -1449,6 +1454,7 @@ def compute_all():
     F['summary'] = {i: summary(RS[i]) for i in RS}
     F['scenario_names'] = {i: SCENARIOS[i]['name'] for i in SCENARIOS}
     figures(F, RS, R1, R14, R15)
+    figures_annex(F, RS, R1, R14, R15)
     return F, RS, R1, R14, R15
 
 def figures(F, RS, R1, R14, R15):
@@ -1930,6 +1936,391 @@ def figures(F, RS, R1, R14, R15):
     P['P-F36'] = dict(note='Sized on DSCR target and gearing cap only (downside shown as a test)', grid=grid)
     F['figures'] = P
 
+
+
+# ========================================================================================
+# ANNEX P FIGURES (case-bible-annex-p.md and case-p-input-requests.md, October 3, 2026)
+# ========================================================================================
+def swap_mtm(N_s, t0, rate_pct, share=1.0):
+    """MTM to the project (fixed payer at 2.947%) at the end of period t0, flat par rate, semiannual."""
+    v = 0.0
+    for s_ in range(t0 + 1, NS):
+        v += share * N_s[s_] * (rate_pct - SWAP_FIX) / 100 * 0.5 / (1 + rate_pct / 200) ** (s_ - t0)
+    return v
+
+def figures_annex(F, RS, R1, R14, R15):
+    P = F['figures']
+    Rb, Rk, Rd, Ra, Rr = RS[1], RS[2], RS[3], RS[15], RS[14]
+    Sb, Sa = Rb['S'], Ra['S']; fb, fa = Rb['f'], Ra['f']
+    cod_fc, cod_act = date(2021, 5, 1), date(2021, 12, 1)
+    # ---- P-F03 (annex 4.7 inputs)
+    lib = 0.95; al = 7.0
+    mg = {'ECA': 1.50, 'A': 3.90, 'B': 3.75, 'COM': 4.50}; up = {'ECA': 1.25, 'A': 1.25, 'B': 1.50, 'COM': 2.50}
+    allin = {k: lib + mg[k] + up[k] / al + (11.5 / al if k == 'ECA' else 0) for k in mg}
+    allin_full = dict(allin); allin_full['COM'] = allin['COM'] + (lib + mg['COM']) * (1 / 0.9 - 1) + 1.15 * 0.9
+    P['P-F03'] = dict(libor_6m_july_2016_pct=lib, libor_note='approximate; fact-check before printing (annex 4.7)',
+                      margins_2016_pct=mg, upfront_fees_2016_pct=up, eca_premium_2016_pct=11.5, annualization_years=al,
+                      note='A-loan and B-loan upfront fees not given for 2016; close-level fees used (1.25%, 1.50%)',
+                      all_in_pct=allin, commercial_all_in_with_pri_and_grossup_pct=allin_full['COM'],
+                      weighted_pct=float(sum(SHARE[j] * allin[k] for j, k in enumerate(['ECA', 'A', 'B', 'COM']))))
+    # ---- P-F07 equity by sponsor
+    eq = P['P-F07']['sources']
+    P['P-F07']['equity_by_sponsor'] = {nm: dict(share_pct=sh, share_capital=eq['share_capital'] * sh / 100,
+                                                shareholder_loans=eq['shareholder_loans'] * sh / 100,
+                                                total=eq['equity_total'] * sh / 100)
+                                       for nm, sh in (('Kilnworth', 60), ('Talme', 25), ('ABDB fund', 15))}
+    # ---- P-F09 ECA tests (24 months, >= 2% repaid by then)
+    def eca24(R, cod):
+        S = R['S']; P_ = S['principal_total']; tot = P_.sum()
+        lim = add_months(cod, 24) - timedelta(days=1)
+        rep = sum(P_[t] for t in range(NS) if S_END[t] <= lim)
+        return dict(repaid_within_24_months_share=float(rep / tot), pass_2pct_by_24_months=bool(rep / tot >= 0.02))
+    P['P-F09']['eca_tests'].update(eca24(Rb, cod_fc))
+    P['P-F09']['eca_tests_actual'] = dict(ECA_tests(Ra, cod_act), **eca24(Ra, cod_act))
+    P['P-F09']['eca_rules'] = 'OECD Arrangement project finance terms for 2018 commitments (t-oecd-pf-2018; annex 3.6): repayment term <= 14 years; first repayment <= 24 months after COD with at least 2% repaid by then; WAL <= 7.25 years; <= 25% of principal in any six months'
+    # ---- P-F10 first full operating year per annex 4.15
+    from_build = lambda R, ts: {k: v for k, v in _cfads_build(R, ts).items()}
+    P['P-F10'] = dict(fc_base=dict(period='2021-07-01 to 2022-06-30 (annex 4.15)', build=_cfads_build(Rb, [tix('2021H2'), tix('2022H1')])),
+                      actual=dict(period='calendar 2022', build=_cfads_build(Ra, [tix('2022H1'), tix('2022H2')])),
+                      cfads_definition='revenue - operating costs - tax paid - increase in working capital - MMRA contributions + MMRA releases; MMRA inside; DSRA flows and DSRA interest excluded (nil); DSU and BI proceeds included when received; performance LDs excluded (they prepay debt); late payment interest received included')
+    # ---- P-F11a / P-F11b
+    P['P-F11a'] = dict(dsra_initial=P['P-F11']['dsra_initial'], dsra_balance_by_period=P['P-F11']['dsra_balance_by_period'])
+    P['P-F11b'] = dict(mmra_contributions=P['P-F11']['mmra_contributions'], mm_spend=P['P-F11']['mm_spend'], mmra_balance=P['P-F11']['mmra_balance'])
+    # ---- P-F37 working capital OY1-OY3 (FC base period ends)
+    P['P-F37']['working_capital_fc_base'] = {S_LABEL[t]: dict(receivables=float(Sb['ar'][t]), gas_payables=float(Sb['pay_gas'][t]),
+                                              gta_payables=float(Sb['pay_gta'][t]), om_ltsa_payables=float(Sb['pay_om'][t]),
+                                              other_payables=float(Sb['pay_oth'][t]), net_working_capital=float(Sb['nwc'][t]), spares=5.35)
+                                              for t in range(tix('2021H1'), tix('2024H1') + 1)}
+    # ---- P-F39 LC (two-plus-one and three-month) at COD and January resets
+    def lc(R, t, C):
+        S = R['S']; cap_m = C * 1000 * (S['cap_charge'][t] + S['fom_charge'][t]) / 1e6
+        e_m = C * 730 * 0.90 * 0.765                                    # MWh per month at 90% x dispatch plan
+        fuel = e_m * S['hr_con'][t] * K_GAS * S['gas_price'][t] / 1e6
+        vom = e_m * S['vom_rate'][t] / 1e6
+        gas = e_m * S['hr_act'][t] * K_GAS
+        esc = 1.015 ** (S_YEAR[t] - 2018)
+        gta = (96500 * 365 / 12 * 0.62 * esc + gas * 0.19 * esc) / 1e6
+        en = fuel + vom + gta
+        return dict(monthly_capacity=cap_m, monthly_energy=en, two_plus_one=2 * cap_m + en, three_month=3 * (cap_m + en))
+    P['P-F39'] = dict(rule='annex 1.1.5: capacity charges at 100% on contracted capacity; energy charges at contracted capacity x 730 h x 90% x 76.5% dispatch plan; that period\'s indices and gas price',
+                      fc_base_at_cod=lc(Rb, tix('2021H1'), 588.4), actual_at_cod=lc(Ra, tix('2021H2'), 581.9),
+                      actual_resets={str(y): lc(Ra, tix(f'{y}H1'), 581.9) for y in (2022, 2023, 2024, 2025)},
+                      case_bible_2022=33.8)
+    # ---- P-F40 extensions
+    gd = Sa['gas_arrears']
+    P['P-F40'].update(netting_setoff_monthly_2023H2=float((gd[tix('2023H1')] - gd[tix('2023H2')]) / 6),
+                      netting_setoff_monthly_2024H1=float((gd[tix('2023H2')] - gd[tix('2024H1')]) / 6),
+                      guarantee_demands=[dict(date='2023-04-18', amount=21.6, paid='2023-07-26', days=99),
+                                         dict(date='2023-07-12', amount=18.9, paid='2023-11-30', days=141),
+                                         dict(date='2023-10-09', amount=17.4, paid='folded into the 2024-03-21 settlement', days=164)],
+                      fx_queue_days=(date(2024, 3, 29) - date(2022, 11, 7)).days, lc_drawing=33.8)
+    # ---- P-F41 PLCR on the three FC cases and profiles
+    P['P-F41'] = dict(plcr_at_close={k: float(R['S']['plcr'][R['t1']]) for k, R in (('base', Rb), ('banking', Rk), ('downside', Rd))},
+                      llcr_at_close={k: float(R['S']['llcr_dsra'][R['t1']]) for k, R in (('base', Rb), ('banking', Rk), ('downside', Rd))},
+                      profiles={k: {S_LABEL[t]: dict(cfads=float(R['S']['cfads'][t]), ds=float(R['S']['ds'][t]), dscr=float(R['S']['dscr'][t]))
+                                    for t in range(NS) if R['S']['ds'][t] > 1e-9} for k, R in (('base', Rb), ('banking', Rk), ('downside', Rd))},
+                      actual_profile=P['P-F41']['actual_profile'])
+    # ---- P-F44 revenue build OY1-OY10 (and the 2022H1 sample period kept)
+    keys = ['cap_pay', 'vom', 'fuel_rev', 'gta_res', 'gta_com', 'top_pay', 'revenue', 'energy', 'gas_mmbtu']
+    P['P-F44'] = dict(sample_2022H1=P['P-F44'], by_operating_year={f'OY{k}': {kk: oy_sum(Rb, Sb[kk], k) for kk in keys} for k in range(1, 11)})
+    # ---- P-F45 OY1-OY3 statements (lenders' basis)
+    def oy_stats(R, k):
+        S = R['S']; o = lambda key: oy_sum(R, S[key], k)
+        return dict(revenue=o('revenue'), operating_costs=o('opex'), ebitda=o('ebitda'), depreciation=o('book_dep'),
+                    finance_costs=o('int_exp'), current_tax=o('tax'), deferred_tax=o('dt_exp'), net_income=o('ni'),
+                    cfads=o('cfads'), debt_service=o('ds'), distributions=o('equity_dist'))
+    P['P-F45'] = dict(basis="lenders' reporting basis (fixed-asset model, annex 4.6)",
+                      by_operating_year={f'OY{k}': oy_stats(Rb, k) for k in (1, 2, 3)},
+                      balance_sheets={S_LABEL[t]: statements(Rb, [t])['balance_sheet'] for t in (tix('2021H1'), tix('2022H1'), tix('2023H1'), tix('2024H1'))},
+                      balance_sheet_2018_12_31=statements(Rb, [0])['balance_sheet'])
+    # ---- P-F46 GTA 2022 (actual)
+    ts22 = [tix('2022H1'), tix('2022H2')]
+    P['P-F46'] = dict(reservation=float(sum(Sa['gta_res'][t] for t in ts22)), commodity=float(sum(Sa['gta_com'][t] for t in ts22)),
+                      total_passed_to_seka=float(sum(Sa['gta_res'][t] + Sa['gta_com'][t] for t in ts22)),
+                      gck_revenue_from_belanou=float(sum(Sa['gta_res'][t] + Sa['gta_com'][t] for t in ts22)),
+                      gas_mmbtu=float(sum(Sa['gas_mmbtu'][t] for t in ts22)), year=2022)
+    # ---- P-F47 heat-rate headroom
+    margin = Sb['fuel_rev'] - Sb['fuel_cost']
+    P['P-F47'] = dict(oy1_fuel_margin=oy_sum(Rb, margin, 1), by_oy={f'OY{k}': oy_sum(Rb, margin, k) for k in (1, 2, 5, 10, 15, 20, 25)},
+                      contracted_hr_oy1=float(Sb['hr_con'][tix('2021H2')]), plant_hr_oy1=float(Sb['hr_act'][tix('2021H2')]),
+                      note='FC base; contracted 6,323 kJ/kWh (+0.10%/yr) vs plant 6,261 x (1+0.12%/yr) x 1.008 recoverable; both x 1.023 part load; the margin turns negative when plant degradation overtakes the allowance')
+    # ---- P-F48 LTSA run-out
+    def runout(d, cod):
+        eoh = 8059 * d / 76.5 + 380
+        yrs = 128000 / eoh
+        return dict(eoh_per_gt_year=eoh, years_from_cod=yrs, date=(cod + timedelta(days=yrs * 365.25)).isoformat())
+    P['P-F48'] = dict(base=runout(76.5, cod_fc), banking=runout(72.0, cod_fc), low_dispatch_58=runout(58.0, cod_fc),
+                      actual=runout(76.5, cod_act), sixteen_year_date_fc='2037-04-30', sixteen_year_date_actual='2037-11-30',
+                      ppa_expiry_actual='2046-11-30', bank_maturity='2034-06-30', bond_maturity='2037-06-30',
+                      note='EOH = 8,059 hours x dispatch/76.5 + 38 starts x 10; the actual run-out uses base dispatch after 2022 (2022 drought adds about 8% to that year)')
+    # ---- P-F49 funds flow at close (Month 1, FC base)
+    dev_k = 1.5 + 0.7 * (21.43 - 1.5); dev_t = 21.43 - dev_k
+    m0 = 0
+    P['P-F49'] = dict(date='2018-07-17 (Month 1)',
+                      first_utilization={TR[k]: float(fb['draw_' + TR[k]][m0]) for k in range(4)},
+                      first_utilization_total=float(fb['debt_draw'][m0]),
+                      equity_at_close=float(fb['equity'][m0]), of_which_lntp_credit=LNTP, equity_cash_at_close=float(fb['equity_cash'][m0]),
+                      epc_advance_gross=float(Rb['u']['epc'][m0]), epc_advance_cash_net_of_lntp=float(Rb['u']['epc'][m0] - LNTP),
+                      development_cost_reimbursement=dict(Kilnworth=dev_k, Talme=dev_t, total=21.43),
+                      development_fee=dict(Kilnworth=7.84, Talme=3.36, total=11.20),
+                      abdb_fund_premium_paid_by_fund=dict(Kilnworth=3.2333, Talme=1.6167, total=4.85),
+                      upfront_fees=float(fb['upfront'][m0]), first_eca_premium=float(fb['eca_prem'][m0]),
+                      advisers_at_close=0.7 * 8.97, insurance_at_close=0.85 * 7.62, idc_month1=float(fb['idc'][m0]),
+                      total_uses_month1=float(fb['uses'][m0]),
+                      note='Development cost reimbursement split per annex 1.14.1: Phase 1 USD 1.5 million Kilnworth, remainder 70:30 with Talme in-kind credit included; the ABDB fund premium is paid by the fund to the selling sponsors, outside the project company')
+    # ---- P-F50 swap charge PV
+    def pv_charge(bps):
+        v = 0.0
+        for m in range(NM):
+            if CONTRACT['N_m'][m] > 0:
+                yrs = (M_START[m] - date(2018, 7, 17)).days / 365.25 + 1 / 12
+                v += CONTRACT['N_m'][m] * bps / 1e4 / 12 / (1 + 0.02872 / 2) ** (2 * yrs)
+        for t in range(NS):
+            if CONTRACT['N_s'][t] > 0:
+                yrs = (S_END[t] - date(2018, 7, 17)).days / 365.25
+                v += CONTRACT['N_s'][t] * bps / 1e4 * 0.5 / (1 + 0.02872 / 2) ** (2 * yrs)
+        return v
+    P['P-F50'] = dict(pv_7_5bps=pv_charge(7.5), pv_10bps=pv_charge(10.0), saving=pv_charge(10.0) - pv_charge(7.5), discount_rate_pct=2.872)
+    # ---- P-F51 PRI
+    def pri(R):
+        f = R['f']; S = R['S']
+        out = {}
+        for t in range(NS):
+            v = sum(f['pri'][m] for m in range(NM) if M_PER[m] == t) + S['pri'][t]
+            if v > 1e-9: out[S_LABEL[t]] = dict(premium=float(v), insured_amount=float(0.9 * (S['bal_open_COM'][t] if S['bal_open_COM'][t] > 0 else f['bal_COM'][max(m for m in range(NM) if M_PER[m] == min(t, M_PER[NM - 1]))])))
+        return out
+    P['P-F51'] = dict(fc_base=pri(Rb), actual=pri(Ra), actual_total=float(Ra['f']['pri'].sum() + Sa['pri'].sum()),
+                      rule='1.15% a year on 90% of the commercial balance; model accrues with each period (annex: semiannually in advance); cancelled 2025-06-30')
+    # ---- P-F52 EPC progress quarterly
+    def q(pcts, n):
+        out = {}; cum = 0.0
+        for m in range(n):
+            cum += pcts[m]
+            d = M_START[m]
+            if d.month in (9, 12, 3, 6) or m == n - 1:
+                out[f"{d.year}-Q{(d.month - 1) // 3 + 1}"] = cum
+        return out
+    P['P-F52'] = dict(planned_cum_pct=q(EPC_FC, 33), actual_cum_pct=q(EPC_ACT, 40),
+                      planned_cum_usd=({k: v * 5.7184 for k, v in q(EPC_FC, 33).items()}),
+                      actual_cum_usd_at_contract_rate={k: v * 5.7184 for k, v in q(EPC_ACT, 40).items()})
+    # ---- P-F53 ECL and swap MTM
+    def ecl_at(lab):
+        t = tix(lab); over = Sa['overdue']
+        incs = []   # FIFO layers (period, amount)
+        for s_ in range(t + 1):
+            d = over[s_] - (over[s_ - 1] if s_ else 0.0)
+            if d > 0: incs.append([s_, d])
+            else:
+                red = -d
+                while red > 1e-12 and incs:
+                    x = min(red, incs[0][1]); incs[0][1] -= x; red -= x
+                    if incs[0][1] <= 1e-12: incs.pop(0)
+        b1 = b2 = b3 = 0.0
+        for s_, a in incs:
+            if s_ == t: b1 += a / 2; b2 += a / 2
+            else: b3 += a
+        normal = Sa['ar'][t]
+        ecl = normal * 0.002 + b1 * 0.015 + b2 * 0.04 + b3 * 0.10
+        return dict(normal_receivables=float(normal), overdue_1_90=b1, overdue_91_180=b2, overdue_over_180=b3, ecl=float(ecl))
+    Ns = np.array(CONTRACT['N_s'])
+    P['P-F53'] = dict(ecl={lab: ecl_at(lab) for lab in ('2022H2', '2023H1', '2023H2')},
+                      ecl_note='ages each half-year increase as half 1-90 days and half 91-180 days at its period end, older layers over 180 days; reductions first-in first-out',
+                      swap_mtm={'2018-07-17 (2.872%)': swap_mtm(Ns, tix('2018H2') - 1 if False else 0, 2.872) if False else float(sum(
+                                    (CONTRACT['N_s'][s_] * (2.872 - SWAP_FIX) / 100 * 0.5 / (1 + 0.02872 / 2) ** (2 * ((S_END[s_] - date(2018, 7, 17)).days / 365.25))) for s_ in range(NS))
+                                    + sum(CONTRACT['N_m'][m] * (2.872 - SWAP_FIX) / 100 / 12 / (1 + 0.02872 / 2) ** (2 * ((M_END[m] - date(2018, 7, 17)).days / 365.25)) for m in range(NM))),
+                                '2022-12-31 (4.05%)': swap_mtm(Ns, tix('2022H2'), 4.05),
+                                '2023-06-30 (4.35%)': swap_mtm(Ns, tix('2023H1'), 4.35),
+                                '2025-06-30 before termination (3.68%)': swap_mtm(Ns, tix('2025H1'), 3.68),
+                                '2025-06-30 after termination (52%)': swap_mtm(Ns, tix('2025H1'), 3.68, 0.52),
+                                '2026-09-30 (3.40%, approximate)': swap_mtm(Ns, tix('2026H1'), 3.40, 0.52) * (1 + 0.034 / 2) ** 0.5},
+                      hedge_reserve_note='cash flow hedge assumed fully effective: hedge reserve = swap MTM (before deferred tax); at close the MTM is the negative value of the 7.5 bps charge')
+    # ---- P-F56 IFRIC 12 (actual history)
+    t0 = Ra['t_cod']; C_ = 581.9
+    stream = np.array([C_ * 1000 * Sa['om'][t] * Sa['cap_charge'][t] / 1e6 for t in range(NS)])   # capital charge at 100%
+    asset0 = Ra['capcost']
+    tl = Ra['last_op']
+    def pv(r):
+        return sum(stream[t] / (1 + r) ** (t - t0 + (Sa['om'][t0] / 6 if False else 0)) for t in range(t0, tl + 1))
+    lo_, hi_ = 0.0, 0.2
+    for _ in range(100):
+        mid = (lo_ + hi_) / 2
+        if pv(mid) > asset0: lo_ = mid
+        else: hi_ = mid
+    eir = (lo_ + hi_) / 2
+    asset = np.zeros(NS); fin = np.zeros(NS); bal = asset0
+    for t in range(t0, NS):
+        fin[t] = bal * eir if t > t0 else 0.0
+        bal = bal + fin[t] - stream[t]
+        asset[t] = bal
+    # first-period convention: stream in the COD period discounted at t0 (no finance income in the COD period)
+    pbt_diff = fin - stream + Sa['book_dep']
+    cum_diff = np.cumsum(pbt_diff)
+    keys_ = {}
+    for y in range(2021, 2027):
+        tY = [t for t in range(NS) if S_YEAR[t] == y][-1]
+        keys_[str(y)] = dict(financial_asset=float(asset[tY]), ppe_lenders_basis=float(Sa['ppe'][tY]),
+                             finance_income=float(sum(fin[t] for t in range(NS) if S_YEAR[t] == y)),
+                             capital_charge_collected=float(sum(stream[t] for t in range(NS) if S_YEAR[t] == y)),
+                             depreciation_lenders=float(sum(Sa['book_dep'][t] for t in range(NS) if S_YEAR[t] == y)),
+                             pbt_difference=float(sum(pbt_diff[t] for t in range(NS) if S_YEAR[t] == y)),
+                             cumulative_equity_difference_pretax=float(cum_diff[tY]))
+    P['P-F56'] = dict(scenario='Actual history', asset_at_cod=float(asset0), effective_interest_rate_per_half=float(eir),
+                      effective_interest_rate_annual=float((1 + eir) ** 2 - 1), by_year=keys_,
+                      note='Financial asset at cost at COD = capitalized cost on the lenders basis; receivable stream = capital charge component at 100% availability on 581.9 MW; EIR fixed at COD (semiannual, stream at period end, no finance income in the COD period); IFRIC 12 profit before tax = lenders basis + finance income - capital charge collected + depreciation; deferred tax not remeasured')
+    _diff_at = lambda d: float(np.interp((d - S_END[0]).days, [(S_END[t] - S_END[0]).days for t in range(NS)], cum_diff))
+    # ---- P-F26 revised (annex 8.3, input 42)
+    comp = date(2026, 9, 30); p24 = P['P-F24']
+    fv36 = p24['price_at_completion'] / 24 * 36
+    be_ = interp_bs(Ra, 'bs_sc', comp) + interp_bs(Ra, 'bs_re', comp); shl_ = interp_bs(Ra, 'bs_shl', comp)
+    ifrs_adj = _diff_at(comp)
+    hedge = P['P-F53']['swap_mtm']['2026-09-30 (3.40%, approximate)']
+    carrying60_l = 0.60 * (be_ + shl_)
+    carrying60_i = 0.60 * (be_ + ifrs_adj + shl_)
+    P['P-F26'] = dict(completion='2026-09-30', book_equity_lenders_basis=float(be_), ifrs12_equity_adjustment_pretax=ifrs_adj,
+                      shl_at_completion=float(shl_), consideration=float(p24['price_at_completion']), fv_retained_36pct=float(fv36),
+                      carrying_amount_60pct_lenders_basis=float(carrying60_l), carrying_amount_60pct_ifrs=float(carrying60_i),
+                      gain_on_loss_of_control_lenders_basis=float(p24['price_at_completion'] + fv36 - carrying60_l),
+                      gain_on_loss_of_control_ifrs=float(p24['price_at_completion'] + fv36 - carrying60_i),
+                      hedge_reserve_parent_share_recycled=float(0.60 * hedge),
+                      equity_method_carrying_value_36pct=float(fv36), indirect_transfer_tax=p24['indirect_transfer_tax'],
+                      basis='IFRS 10 loss of control: gain = consideration + fair value of the retained 36% (price per point x 36) - 60% of (book equity + shareholder loans) at completion, IFRS basis per P-F56 (pre-tax adjustment); the parent share of the hedge reserve (swap MTM at 3.40%) is recycled to profit; balances interpolated to September 30, 2026')
+    # ---- P-F54 Pillar Two estimate
+    sbie_r = {2024: (0.098, 0.078), 2025: (0.096, 0.076), 2026: (0.094, 0.074)}
+    p54 = {}
+    for y in (2024, 2025, 2026):
+        tsY = [t for t in range(NS) if S_YEAR[t] == y]
+        pbt_l = sum(Sa['ni'][t] + Sa['tax'][t] + Sa['dt_exp'][t] for t in tsY)
+        globe = pbt_l + sum(pbt_diff[t] for t in tsY)
+        covered = sum(Sa['tax'][t] for t in tsY)
+        etr = covered / globe if globe > 0 else 0.0
+        payroll = sum(0.6 * Sa['om_fixed'][t] + 0.5 * Sa['ga'][t] for t in tsY)
+        tang = float(Sa['ppe'][tsY[-1]])
+        sbie = payroll * sbie_r[y][0] + tang * sbie_r[y][1]
+        share = 0.60 * (9 / 12 if y == 2026 else 1.0)
+        topup = max(0.0, 0.15 - etr) * max(0.0, globe - sbie) * share
+        p54[str(y)] = dict(globe_income=float(globe), covered_taxes=float(covered), etr=float(etr), payroll=float(payroll),
+                           tangible_assets=tang, sbie=float(sbie), kilnworth_share=share, uk_top_up_estimate=float(topup))
+    P['P-F54'] = dict(estimate=p54, label='estimate; simplified basis per input request 43; 2026 to September 30 at 60% (consolidated period)')
+    # ---- P-F55 Castellan RORAC (FC base)
+    def rorac(t, phase):
+        bal = {k: (Sb['bal_open_' + k][t] if Sb['bal_open_' + k][t] > 0 else fb['bal_' + k][max(m for m in range(NM) if M_PER[m] == t)]) for k in ('ECA', 'COM')}
+        exp_c = 0.34 * bal['COM']; exp_e = 0.40 * bal['ECA']
+        rw = 1.15 if phase == 'construction' else 0.90
+        rwa = exp_c * rw + exp_e * 0.05 * rw
+        cap = 0.135 * rwa
+        income = exp_c * (4.10 + 2.15 / avg_life_from_fc(Rb)) / 100 + exp_e * (1.35 + 1.10 / avg_life_from_fc(Rb)) / 100
+        pd_ = 0.016 if phase == 'construction' else 0.009
+        el = pd_ * (exp_c * 0.35 + exp_e * 0.05)
+        cost = (exp_c + exp_e) * (0.0045 + 0.0015)
+        net = (income - el - cost) * (1 - 0.19)
+        return dict(exposure_commercial=exp_c, exposure_eca=exp_e, rwa=rwa, capital=cap, net_income=net, rorac=net / cap)
+    P['P-F55'] = dict(underwritten_at_mandate=float(fb['Dk'][0] + fb['Dk'][3]), final_hold_commercial=float(0.34 * fb['Dk'][3]),
+                      final_hold_eca=float(0.40 * fb['Dk'][0]), standby_commitment_share=0.34 * 0.6 * 46.0,
+                      swap_notional_share_peak=float(0.34 * max(CONTRACT['N_s'])),
+                      construction_2020H1=rorac(tix('2020H1'), 'construction'), operations_2022H1=rorac(tix('2022H1'), 'operations'),
+                      note='annual RORAC on loan holds (swap line not risk-weighted: exposure measure not specified); slotting construction 115%, operations 90%; ECA-covered 95% at 0%; PRI not recognized; 13.5% capital; funding premium 0.45%; opex 0.15%; tax 19%; hurdle 12%')
+    # ---- P-F57 technology screening
+    tech = {'OCGT': (650, 10300, 'gas', 14, 4.0, 25), 'CCGT': (1050, 6350, 'gas', 22, 3.5, 25),
+            'Coal': (2100, 9700, 'coal', 45, 4.5, 30), 'HFO': (1100, 8450, 'hfo', 30, 9.0, 25)}
+    def fuel_mwh(hr, f):
+        if f == 'gas': return hr * 1000 / 1055056 * 1.108 * 5.50
+        if f == 'coal': return hr * 1000 / 25.1e6 * 75
+        return hr * 1000 / 40.5e6 * 300
+    out = {}
+    for k, (oc, hr, f, fom, vom, life) in tech.items():
+        crf = 0.10 / (1 - 1.10 ** -life)
+        ann = oc * crf + fom
+        out[k] = dict(annualized_usd_per_kw_year=ann, fuel_usd_per_mwh=fuel_mwh(hr, f),
+                      usd_per_mwh_by_cf={f'{cf}%': ann / (8.76 * cf / 100) + vom + fuel_mwh(hr, f) for cf in range(10, 100, 10)})
+    P['P-F57'] = dict(technologies=out, note='2015 USD, 10% discount rate, flat costs; HHV/LHV 1.108 for gas')
+    # ---- P-F58 actual 2022 dispatch
+    P['P-F58'] = dict(dispatch={'2022H1': 84.0, '2022H2': 81.5}, base=76.5,
+                      gas_burn_actual={S_LABEL[t]: float(Sa['gas_mmbtu'][t]) for t in ts22},
+                      gas_burn_at_76_5={S_LABEL[t]: float(Rr['S']['gas_mmbtu'][t]) for t in ts22},
+                      energy_actual={S_LABEL[t]: float(Sa['energy'][t]) for t in ts22},
+                      fuel_charge_actual={S_LABEL[t]: float(Sa['fuel_rev'][t]) for t in ts22},
+                      fuel_charge_at_76_5={S_LABEL[t]: float(Rr['S']['fuel_rev'][t]) for t in ts22},
+                      note='comparison at 76.5% uses the COD re-forecast run (same plant and COD, FC-style macro after 2021)')
+    # ---- P-F59 Halbeck RBL (Illustrative)
+    def rbl(start_year, brent_deck, t0date):
+        cfs = []; cum = 0.0
+        for y in range(2017, 2060):
+            if y <= 2019: prod = 0.0
+            elif y <= 2032: prod = 150.0
+            else: prod = 150.0 * 0.92 ** (y - 2032)
+            prod = min(prod, max(0.0, (1140.0 - cum) * 1000 / 365))       # cap cumulative output at 2P reserves (bcf)
+            cum += prod * 365 / 1000
+            if y > 2019 and prod <= 0: break
+            mmbtu = prod * 1e6 * 1040 / 1e6 * 365                         # MMBtu per year (gross)
+            gas_rev = mmbtu * 3.60 * 1.02 ** (y - 2018) / 1e6
+            cond = prod * 18 * 365 * (brent_deck - 4) / 1e6
+            capex = {2017: 0.30, 2018: 0.40, 2019: 0.30}.get(y, 0.0) * 1450
+            opex = (85 + 0.35 * mmbtu / 1e6) if prod > 0 else 0.0
+            roy = 0.10 * gas_rev + 0.125 * cond
+            dep = 1450 / 10 if 2020 <= y <= 2029 else 0.0
+            ebit = gas_rev + cond - roy - opex - dep
+            tax = 0.35 * max(0.0, ebit)
+            ncf = (gas_rev + cond - roy - opex - tax - capex) * 0.65
+            if prod > 0 and gas_rev + cond - roy - opex < 0: break
+            cfs.append((y, ncf))
+        npv = sum(c / 1.10 ** (y + 0.5 - t0date) for y, c in cfs if y >= start_year)
+        capex_rem = sum({2017: 0.30, 2018: 0.40, 2019: 0.30}.get(y, 0.0) * 1450 * 0.65 / 1.10 ** (y + 0.5 - t0date) for y in range(start_year, 2020))
+        return dict(npv10_p50_net=npv, borrowing_base=min(600.0, npv / 1.30),
+                    npv10_before_remaining_capex=npv + capex_rem, borrowing_base_before_remaining_capex=min(600.0, (npv + capex_rem) / 1.30))
+    P['P-F59'] = dict(at_signing_2017=rbl(2018, 60.0, 2018.0), at_2023_redetermination=rbl(2023, 70.0, 2023.5),
+                      note='Illustrative; capex 30/40/30 over 2017-2019 (signing values exclude 2017 spend); tax depreciation 10 years straight line; cumulative output capped at 1,140 bcf 2P; production stops when netback turns negative; P90 test not modeled (P90 case undefined); annex 4.13 expects about 420 (2017) and 360 (2023): see report')
+    # ---- P-F60 bid-stage screen
+    cap_rev = (14.36 + 2.31) * 588.4 * 12 / 1000
+    fixed = 7.92 + 2.64 + 4.37 + 3.18
+    cf_ = cap_rev - fixed
+    r_ = P['P-F03']['weighted_pct'] / 100
+    ann_f = (1 - (1 + r_) ** -13) / r_
+    debt_dscr = cf_ / 1.35 * ann_f
+    P['P-F60'] = dict(project_cost=655.0, capacity_and_fom_revenue=cap_rev, fixed_costs_2018_prices=fixed, cfads_proxy=cf_,
+                      rate_used_pct=r_ * 100, annuity_factor_13y=ann_f, debt_capacity_dscr_1_35=debt_dscr,
+                      debt_at_75pct_gearing=0.75 * 655.0, capacity_share_of_seka_revenue_2016=cap_rev / 1810.0,
+                      note='annuity shortcut on capacity and fixed O&M revenue less fixed costs (energy margin ignored), 13 years at the 2016 indicative weighted all-in cost (P-F03)')
+    # ---- P-F61 reserves coverage
+    bel = 72400 * 365 * 22 / 1040 / 1e3; seka = 38000 * 365 * 20 / 1040 / 1e3
+    P['P-F61'] = dict(reserves_2p_bcf=1140, belanou_bcf=bel, seka_existing_bcf=seka, total_bcf=bel + seka,
+                      coverage_ratio=1140 / (bel + seka), headroom_bcf=1140 - bel - seka)
+    # ---- P-F62 bid comparison
+    lev = P['P-F06']['levelized_tariff_usd_per_mwh']
+    E_bid = 588.4 * 8760 * 0.70
+    lev_pc = lev + (15.05 - 14.36) * 588.4 * 1000 * 12 / E_bid
+    P['P-F62'] = dict(winner=lev, runner_up=lev * 1.046, third=lev * 1.098, fourth=lev * 1.131,
+                      pricing_committee_tariff_at_15_05=lev_pc, bid_model_irr_at_15_05=0.176, bid_model_irr_at_14_36=0.160,
+                      note='bid-model IRRs are Kilnworth 2016 bid-model inputs (annex 4.7), not reference-model outputs')
+    # ---- P-F63 equity cure
+    t23 = tix('2023H1')
+    cf12 = Sa['cfads'][t23] + Sa['cfads'][t23 - 1]; ds12 = Sa['ds'][t23] + Sa['ds'][t23 - 1]
+    P['P-F63'] = dict(cfads_12m=float(cf12), debt_service_12m=float(ds12), historic_dscr=float(cf12 / ds12),
+                      cure_to_1_10=float(max(0, 1.10 * ds12 - cf12)), cure_to_1_20=float(max(0, 1.20 * ds12 - cf12)))
+    # ---- sponsor-level development economics (items 19 to 21)
+    P['P-F49']['sponsor_development_receipts'] = dict(Kilnworth=dev_k + 7.84 + 3.2333, Talme=dev_t + 3.36 + 1.6167)
+    # ---- P-F28 compilation per annex 8.3
+    P['P-F28'].update(dsra=P['P-F11']['dsra_initial'], lc_two_plus_one_at_cod=P['P-F39']['fc_base_at_cod']['two_plus_one'],
+                      swap_rate_pct=SWAP_FIX, breakeven_availability_points=P['P-F16']['breakeven_availability_shift_points'],
+                      breakeven_capacity_charge_cut_pct=P['P-F16']['breakeven_capacity_charge_cut_pct'],
+                      months_zero_payment_covered=P['P-F16']['months_zero_payment_covered_paying_gas'],
+                      weighted_all_in_cost_pct=P['P-F12']['weighted_all_in_pct'], eca_tests=P['P-F09']['eca_tests'])
+    # ---- P-F29 handback test check at OY25 (actual)
+    y25 = 24.5
+    P['P-F29'].update(output_at_oy25_mw=581.9 * (1 - 0.0015 * y25) * 0.99, output_threshold_mw=523.7,
+                      heat_rate_at_oy25=6286 * (1 + 0.0012 * y25) * 1.008, heat_rate_threshold=6789,
+                      handback_test_passes_on_average_degradation=True)
+
+def _cfads_build(R, ts):
+    S = R['S']; sm = lambda k: float(sum(S[k][t] for t in ts))
+    return dict(capacity_payments=sm('cap_pay'), vom=sm('vom'), fuel_and_transport_pass_through=sm('fuel_rev') + sm('gta_res') + sm('gta_com') + sm('top_pay'),
+                total_revenue=sm('revenue'), fuel_and_transport_costs=sm('pass_cost'), om_fixed=sm('om_fixed'),
+                om_incentive=sm('om_incentive'), ltsa_fixed=sm('ltsa_fixed'), ltsa_variable=sm('ltsa_var'),
+                insurance=sm('insurance'), g_and_a=sm('ga'), land=sm('land'), community_and_levy=sm('community_levy'),
+                consumables=sm('consumables'), agency=sm('agency'), prg_fee=sm('prg_fee'), vat_interest=sm('vat_int_ops'),
+                fx_losses=sm('fx_loss'), late_payment_interest=sm('lpi_received'),
+                major_maintenance=sm('mm_spend'), ebitda=sm('ebitda'), tax=sm('tax'), increase_in_working_capital=sm('dnwc'),
+                mmra_contribution=sm('mm_contr'), mmra_release=sm('mm_spend'), cfads=sm('cfads'), debt_service=sm('ds'),
+                dscr=sm('cfads') / sm('ds'))
 
 # ========================================================================================
 # OUTPUTS

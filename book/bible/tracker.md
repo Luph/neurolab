@@ -83,3 +83,4 @@
 - Case R model v1.2 rerun DONE (verification PASS; R-F18, R-F19).
 - Done: t-thermal-exclusions, t-nuclear-liability, t-nuclear-decom-waste, pumped-storage (Snowy 2.0), t-storage-safety, geothermal-risk-facilities, us-offshore-wind-2025, vineyard-wind-2024. ALL QUEUED FACT SHEETS COMPLETE (160 files).
 - Case Bible annex P DONE (case-bible-annex-p.md; 44 input requests; P-F46..P-F63). Sent to Case P modeler.
+- Case P model v1.1 DONE (15 scenarios PASS); v1.2 fixes requested (D-017).

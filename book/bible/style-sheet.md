@@ -770,3 +770,90 @@ Add to `latex/pfbook.sty` (before the hyperref/cleveref block unless noted; the 
 ```
 
 With the `\crefname{pfclausevar}` line in the preamble after cleveref, `\cref{cl:18.3a}` printed "Clause 18.3a" in the test; the numbered framework printed "Framework 28.1" and resolved through `\cref`; `\xl{}` inside a `tabularx` cell compiled and rendered.
+
+## Addendum 2026-10-03
+
+Issued by the architecture editor with `bible/ownership-resolutions.md` (rulings cited in parentheses). Where this addendum and an earlier section differ, the addendum wins.
+
+### A.1 USD thousands for small illustrative deals (R-110)
+
+- Exhibits for a small illustrative deal (total project cost under about USD 100 million: the Chapter 1 Llano Pardo deal, the Chapter 4 examples that reuse it, and similar deals elsewhere) may be stated in USD thousands, whole numbers, with the table header "USD k". Cells hold bare whole numbers with the thousands comma: 48,809.
+- Prose keeps the house format: "USD 48.8 million", or "USD 28,700 a day" for amounts below one million. Never write "USD 48,809k" or "USDk" in prose.
+- One exhibit uses one unit. Running cases (P, T, R) always use USD m (or the case currency in millions) and never USD k.
+- In LaTeX the header is typed `USD k`; no macro is needed.
+
+### A.2 Chapter 1 previews terms without bolding (R-110)
+
+Chapter 1 introduces about forty terms intuitively. It sets none in bold and uses no `\term{}`; each term gets one sentence of plain meaning and, at first use, a `\cref` to its home chapter. The bold home definition stays with the owning chapter (`bible/glossary-canon.md`). Reviewers do not flag Chapter 1 for undefined terms, nor later chapters for re-teaching a term Chapter 1 previewed.
+
+### A.3 Canonical forms and reserved abbreviations (R-059, R-114)
+
+Add to the table in Section 8.2:
+
+| Canonical form | Acronym | Not |
+|---|---|---|
+| equity contribution agreement | – (never abbreviated) | ECA, ECA agreement, equity agreement |
+| export credit agency | ECA | – (ECA means only this) |
+| share purchase agreement | – | SPA (SPA is reserved for the commodity sale and purchase agreement, sec:21.2) |
+| partial credit guarantee | PCG | – |
+| parent company guarantee | – | PCG |
+| public sector comparator | PSC | – |
+| production sharing contract | – | PSC |
+| mandated lead arranger | MLA | – |
+| master lease agreement | – | MLA |
+| erection all risks | EAR | – |
+| effective annual rate | – | EAR |
+| enterprise value; present value | EV; PV | – |
+| earned value; planned value | – | EV; PV |
+| force majeure | FM | – ("hard FM" and "soft FM" are allowed only as compounds for facilities management) |
+| turbine supply agreement | TSA | – |
+| transmission service agreement | – | TSA |
+| unitary charge | – | UC |
+| risk-free rate (reference-rate sense: SOFR, SONIA, €STR) | RFR | – |
+| risk-free rate (finance sense, CAPM input) | – (symbol $r_f$) | RFR |
+| risk-adjusted return on capital | RAROC | RORAC |
+| trapped cash | – | cash trap (accepted synonym in quotations of documents only) |
+| financial completion | – | lenders' completion and project completion are synonyms; prefer "financial completion" |
+| financial advisor | – | financial adviser |
+
+### A.4 Lock-in against lock-up (R-060)
+
+- "Lock-up" means only a block on distributions when a distribution condition fails (Chapter 37, ssec:37.4.1). Cash held as a result is "trapped cash" (ssec:37.4.3).
+- "Lock-in" means only a restriction on transferring shares or a requirement to keep a minimum holding for a period, whether in a shareholders' agreement, a concession or the finance documents (Chapter 26, ssec:26.3.3).
+- Never "share lock-up", "equity lock-up" or "distribution lock-in".
+
+### A.5 Symbol canon additions (R-049)
+
+Add to the table in Section 5.2:
+
+| Symbol (LaTeX) | Meaning | Unit |
+|---|---|---|
+| `A^{*}` | target (contracted) availability against which the capacity payment is capped, as in $\min(1, A_t/A^{*})$ | % |
+| `\mathrm{HR}^{\mathrm{c}}` | contracted heat rate at which the PPA pays for fuel (net, LHV) | kJ/kWh |
+| `k_{\mathrm{HHV/LHV}}` | ratio of higher to lower heating value used to convert an LHV heat rate to the GCV basis of gas pricing (Case P: 1.108) | – |
+| `\mathrm{EP}^{\mathrm{fuel}}_t` | fuel (energy) payment under eq:18.2 | currency |
+
+The canonical tariff formulas are Chapter 18's eq:18.1 and eq:18.2; they replace the display in Section 5.2:
+
+```latex
+\mathrm{CP}_t = C \times 1{,}000 \times \mathrm{cpr} \times \mathrm{IF}_t \times \min(1, A_t/A^{*}) \times m_t
+\qquad
+\mathrm{EP}^{\mathrm{fuel}}_t = E^{\mathrm{del}}_t \times \mathrm{HR}^{\mathrm{c}} \times k_{\mathrm{HHV/LHV}} \times \frac{p^{\mathrm{fuel}}_t}{1{,}055.06}
+```
+
+`HR` without a superscript remains the plant's actual net heat rate.
+
+### A.6 Calendar rows live on the Time sheet (R-021)
+
+Calendar-driven series that are not project inputs by period (reference base rates such as 6M Term SOFR, FX rates, CPI and other indices, the Kessaran policy rate) are entered in native periodicity on the Inputs sheet and mapped onto model periods in a block at the foot of the Time sheet, below the flags, one row per series, with units in column E. Calculation sheets link to those Time rows (green font) and never look up the Inputs series directly. The sheet order in Section 5.4 is unchanged. Chapter 39 teaches the block; Chapters 40 to 43 link to it.
+
+### A.7 Label scheme for front matter (R-107)
+
+- Front matter (file 00) uses unnumbered `\chapter*` and `\section*` headings with labels `fm:slug`, from the anchor registry: `fm:how-built`, `fm:running-cases`, `fm:conventions`, `fm:routes`, `fm:study-plan`, `fm:exercises`, `fm:model-builds`, `fm:caveat`.
+- Front-matter exhibits are labeled `exh:fm.1` to `exh:fm.3` and print as Exhibit FM.1 to FM.3.
+- Chapters 89 to 94 use the chapter scheme of Section 3.2.
+- `\cref` to an `fm:` label prints the section name, not a number.
+
+### A.8 Formulas owned elsewhere (R-116)
+
+A chapter that displays a formula owned by another chapter does so only as a model row or a specialized application. Its equation caption names the application and the text cites the home equation ("implementing eq:37.1"). The anchor registry lists the repurposed captions.

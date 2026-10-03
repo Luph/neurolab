@@ -1,6 +1,6 @@
 # Figure ledger: Case P (Bélanou Combined Cycle Power Project)
 
-Source: `model/outputs_case_p.json`, produced by `model/case_p.py` (Case P model v1.0; story as of October 3, 2026); formatted by `model/ledger_p.py` (no computation). Amounts in USD million, nominal, unless stated. Scenario numbers are the workbook scenario switch (1 FC base, 2 FC banking, 3 FC downside, 4-13 sensitivities, 14 COD re-forecast, 15 actual history). P-F01 to P-F36 are the Case Bible register; P-F37 to P-F45 are new (editor-in-chief assignments). Writers cite the ID; print values in the style-sheet format.
+Source: `model/outputs_case_p.json`, produced by `model/case_p.py` (Case P model v1.0; story as of October 3, 2026); formatted by `model/ledger_p.py` (no computation). Amounts in USD million, nominal, unless stated. Scenario numbers are the workbook scenario switch (1 FC base, 2 FC banking, 3 FC downside, 4-13 sensitivities, 14 COD re-forecast, 15 actual history). P-F01 to P-F36 are the Case Bible register; P-F37 to P-F45 are editor assignments and P-F46 to P-F63 come from case-bible-annex-p.md (P-F11 is split into P-F11a DSRA and P-F11b MMRA). Model version 1.1 (annex absorbed). Writers cite the ID; print values in the style-sheet format.
 
 Definitions used throughout: DSCR = CFADS / (interest incl. WHT gross-up + swap net + PRI premium + PCG fee + scheduled principal); average DSCR = sum of CFADS / sum of debt service over the loan life; LLCR = (PV of CFADS to final maturity at the period all-in senior cost + DSRA balance) / senior debt, at the start of the first repayment period; gearing = senior debt / total funding requirement; CFADS = revenue - operating costs - tax paid - increase in working capital - MMRA contributions + MMRA releases. Equity IRR is at project-company level from the LNTP date (February 5, 2018), before shareholder withholding tax.
 
@@ -23,54 +23,57 @@ Definitions used throughout: DSCR = CFADS / (interest incl. WHT gross-up + swap 
 | P-F02 | Total capacity charge in November 2016 dollars (real) | 15.43 | USD/kW-month | Actual history (15) | 2022-01-01 |
 | P-F02 | VOM charge, indexed (base 3.86) | 4.24 | USD/MWh | Actual history (15) | 2022-01-01 |
 | P-F02 | VOM charge in November 2016 dollars (real) | 3.80 | USD/MWh | Actual history (15) | 2022-01-01 |
-| P-F03 | 6M USD LIBOR assumed for July 2016 (approximate; fact-check) | 0.95% | % | Inputs (modeler) | 2016-07 |
-| P-F03 | Average life of the senior loans from financial close (fee annualization) | 8.74 | years | FC base (1) | 2016-07 |
-| P-F03 | Indicative all-in floating cost, ECA tranche (incl. fees, ECA premium, PRI and gross-up) | 3.67% | % pa | Inputs plus calculation | 2016-07 |
-| P-F03 | Indicative all-in floating cost, A tranche (incl. fees, ECA premium, PRI and gross-up) | 4.74% | % pa | Inputs plus calculation | 2016-07 |
-| P-F03 | Indicative all-in floating cost, B tranche (incl. fees, ECA premium, PRI and gross-up) | 4.52% | % pa | Inputs plus calculation | 2016-07 |
-| P-F03 | Indicative all-in floating cost, COM tranche (incl. fees, ECA premium, PRI and gross-up) | 6.89% | % pa | Inputs plus calculation | 2016-07 |
-| P-F03 | Indicative all-in floating cost, commercial tranche excl. PRI and WHT gross-up | 5.30% | % pa | Inputs plus calculation | 2016-07 |
-| P-F03 | Indicative weighted all-in floating cost | 5.22% | % pa | Inputs plus calculation | 2016-07 |
-| P-F04 | FY2022 income statement: revenue | 319.5 | USD m | Actual history (15) | 2022-12-31 |
+| P-F03 | 6M USD LIBOR, July 2016 (approximate; fact-check) | 0.95% | % | Annex 4.7 inputs | 2016-07 |
+| P-F03 | Indicative 2016 margin, ECA | 1.50% | % | Annex 4.7 inputs | 2016-07 |
+| P-F03 | Indicative 2016 margin, A | 3.90% | % | Annex 4.7 inputs | 2016-07 |
+| P-F03 | Indicative 2016 margin, B | 3.75% | % | Annex 4.7 inputs | 2016-07 |
+| P-F03 | Indicative 2016 margin, COM | 4.50% | % | Annex 4.7 inputs | 2016-07 |
+| P-F03 | Indicative all-in floating cost, ECA (LIBOR + margin + upfront fee over 7.0 years + ECA premium 11.5% over 7.0 years) | 4.27% | % pa | Annex 4.7 inputs plus calculation | 2016-07 |
+| P-F03 | Indicative all-in floating cost, A (LIBOR + margin + upfront fee over 7.0 years) | 5.03% | % pa | Annex 4.7 inputs plus calculation | 2016-07 |
+| P-F03 | Indicative all-in floating cost, B (LIBOR + margin + upfront fee over 7.0 years) | 4.91% | % pa | Annex 4.7 inputs plus calculation | 2016-07 |
+| P-F03 | Indicative all-in floating cost, COM (LIBOR + margin + upfront fee over 7.0 years) | 5.81% | % pa | Annex 4.7 inputs plus calculation | 2016-07 |
+| P-F03 | Commercial tranche incl. PRI premium and WHT gross-up | 7.45% | % pa | Annex 4.7 inputs plus calculation | 2016-07 |
+| P-F03 | Indicative weighted all-in floating cost (30/22/10/38) | 5.09% | % pa | Annex 4.7 inputs plus calculation | 2016-07 |
+| P-F04 | FY2022 income statement: revenue | 333.9 | USD m | Actual history (15) | 2022-12-31 |
 | P-F04 | FY2022 income statement: late payment interest | 0.0 | USD m | Actual history (15) | 2022-12-31 |
-| P-F04 | FY2022 income statement: operating costs | 222.6 | USD m | Actual history (15) | 2022-12-31 |
-| P-F04 | FY2022 income statement: of which fuel and transport | 184.4 | USD m | Actual history (15) | 2022-12-31 |
-| P-F04 | FY2022 income statement: ebitda | 96.9 | USD m | Actual history (15) | 2022-12-31 |
+| P-F04 | FY2022 income statement: operating costs | 236.9 | USD m | Actual history (15) | 2022-12-31 |
+| P-F04 | FY2022 income statement: of which fuel and transport | 197.5 | USD m | Actual history (15) | 2022-12-31 |
+| P-F04 | FY2022 income statement: ebitda | 97.0 | USD m | Actual history (15) | 2022-12-31 |
 | P-F04 | FY2022 income statement: depreciation | 32.1 | USD m | Actual history (15) | 2022-12-31 |
 | P-F04 | FY2022 income statement: finance costs | 58.7 | USD m | Actual history (15) | 2022-12-31 |
 | P-F04 | FY2022 income statement: of which shareholder loan interest | 19.3 | USD m | Actual history (15) | 2022-12-31 |
 | P-F04 | FY2022 income statement: current tax | 0.0 | USD m | Actual history (15) | 2022-12-31 |
 | P-F04 | FY2022 income statement: deferred tax | -9.6 | USD m | Actual history (15) | 2022-12-31 |
-| P-F04 | FY2022 income statement: net income | 15.8 | USD m | Actual history (15) | 2022-12-31 |
-| P-F04 | FY2022 cash flow: ebitda | 96.9 | USD m | Actual history (15) | 2022-12-31 |
+| P-F04 | FY2022 income statement: net income | 15.9 | USD m | Actual history (15) | 2022-12-31 |
+| P-F04 | FY2022 cash flow: ebitda | 97.0 | USD m | Actual history (15) | 2022-12-31 |
 | P-F04 | FY2022 cash flow: tax paid | 0.0 | USD m | Actual history (15) | 2022-12-31 |
-| P-F04 | FY2022 cash flow: increase in working capital | 13.8 | USD m | Actual history (15) | 2022-12-31 |
+| P-F04 | FY2022 cash flow: increase in working capital | 13.9 | USD m | Actual history (15) | 2022-12-31 |
 | P-F04 | FY2022 cash flow: mmra net | 0.9 | USD m | Actual history (15) | 2022-12-31 |
-| P-F04 | FY2022 cash flow: cfads | 82.1 | USD m | Actual history (15) | 2022-12-31 |
+| P-F04 | FY2022 cash flow: cfads | 82.2 | USD m | Actual history (15) | 2022-12-31 |
 | P-F04 | FY2022 cash flow: senior interest and fees | 39.4 | USD m | Actual history (15) | 2022-12-31 |
 | P-F04 | FY2022 cash flow: senior principal | 32.5 | USD m | Actual history (15) | 2022-12-31 |
 | P-F04 | FY2022 cash flow: ld prepayment | 18.5 | USD m | Actual history (15) | 2022-12-31 |
 | P-F04 | FY2022 cash flow: sweeps | 0.0 | USD m | Actual history (15) | 2022-12-31 |
-| P-F04 | FY2022 cash flow: dsra topup less release | 2.2 | USD m | Actual history (15) | 2022-12-31 |
+| P-F04 | FY2022 cash flow: dsra topup less release | 2.3 | USD m | Actual history (15) | 2022-12-31 |
 | P-F04 | FY2022 cash flow: shl interest paid | 9.8 | USD m | Actual history (15) | 2022-12-31 |
 | P-F04 | FY2022 cash flow: shl principal repaid | 7.9 | USD m | Actual history (15) | 2022-12-31 |
 | P-F04 | FY2022 cash flow: dividends | 0.0 | USD m | Actual history (15) | 2022-12-31 |
 | P-F04 | Balance sheet at 2022-12-31: plant | 766.7 | USD m | Actual history (15) | 2022-12-31 |
-| P-F04 | Balance sheet at 2022-12-31: cash in project accounts | 38.2 | USD m | Actual history (15) | 2022-12-31 |
-| P-F04 | Balance sheet at 2022-12-31: of which dsra | 37.3 | USD m | Actual history (15) | 2022-12-31 |
-| P-F04 | Balance sheet at 2022-12-31: receivables | 108.0 | USD m | Actual history (15) | 2022-12-31 |
+| P-F04 | Balance sheet at 2022-12-31: cash in project accounts | 38.3 | USD m | Actual history (15) | 2022-12-31 |
+| P-F04 | Balance sheet at 2022-12-31: of which dsra | 37.4 | USD m | Actual history (15) | 2022-12-31 |
+| P-F04 | Balance sheet at 2022-12-31: receivables | 109.4 | USD m | Actual history (15) | 2022-12-31 |
 | P-F04 | Balance sheet at 2022-12-31: of which overdue | 68.9 | USD m | Actual history (15) | 2022-12-31 |
 | P-F04 | Balance sheet at 2022-12-31: inventory | 5.3 | USD m | Actual history (15) | 2022-12-31 |
 | P-F04 | Balance sheet at 2022-12-31: deferred tax asset | 10.4 | USD m | Actual history (15) | 2022-12-31 |
-| P-F04 | Balance sheet at 2022-12-31: total assets | 928.6 | USD m | Actual history (15) | 2022-12-31 |
+| P-F04 | Balance sheet at 2022-12-31: total assets | 930.1 | USD m | Actual history (15) | 2022-12-31 |
 | P-F04 | Balance sheet at 2022-12-31: senior debt | 575.9 | USD m | Actual history (15) | 2022-12-31 |
 | P-F04 | Balance sheet at 2022-12-31: shareholder loans | 208.7 | USD m | Actual history (15) | 2022-12-31 |
-| P-F04 | Balance sheet at 2022-12-31: payables | 79.6 | USD m | Actual history (15) | 2022-12-31 |
+| P-F04 | Balance sheet at 2022-12-31: payables | 80.9 | USD m | Actual history (15) | 2022-12-31 |
 | P-F04 | Balance sheet at 2022-12-31: deferred tax liability | 0.0 | USD m | Actual history (15) | 2022-12-31 |
 | P-F04 | Balance sheet at 2022-12-31: share capital | 43.9 | USD m | Actual history (15) | 2022-12-31 |
-| P-F04 | Balance sheet at 2022-12-31: retained earnings | 20.5 | USD m | Actual history (15) | 2022-12-31 |
-| P-F04 | Balance sheet at 2022-12-31: total liabilities and equity | 928.6 | USD m | Actual history (15) | 2022-12-31 |
-| P-F04 | Balance sheet at 2022-12-31: balance check | -0.0 | USD m | Actual history (15) | 2022-12-31 |
+| P-F04 | Balance sheet at 2022-12-31: retained earnings | 20.6 | USD m | Actual history (15) | 2022-12-31 |
+| P-F04 | Balance sheet at 2022-12-31: total liabilities and equity | 930.1 | USD m | Actual history (15) | 2022-12-31 |
+| P-F04 | Balance sheet at 2022-12-31: balance check | 0.0 | USD m | Actual history (15) | 2022-12-31 |
 | P-F04 | Financing costs capitalized during construction (IDC, fees, ECA premium, VAT interest) | 107.5 | USD m | Actual history (15) | 2021-12-01 |
 | P-F04 | Shareholder-loan interest capitalized to COD | 29.8 | USD m | Actual history (15) | 2021-12-01 |
 | P-F05 | Equity IRR at 60% gearing | 12.3% | % nominal post-tax | FC base (1), debt set at gearing | 2017 |
@@ -136,8 +139,8 @@ Definitions used throughout: DSCR = CFADS / (interest incl. WHT gross-up + swap 
 | P-F08 | Debt meeting the 1.20x downside | 633.4 | USD m | FC downside (3) | 2018-07-17 |
 | P-F08 | Minimum DSCR, base | 1.35x | x | FC base (1) | 2018-07-17 |
 | P-F08 | Average DSCR (debt-service weighted), base | 1.54x | x | FC base (1) | 2018-07-17 |
-| P-F08 | Minimum DSCR, banking | 1.34x | x | FC banking (2) | 2018-07-17 |
-| P-F08 | Average DSCR (debt-service weighted), banking | 1.53x | x | FC banking (2) | 2018-07-17 |
+| P-F08 | Minimum DSCR, banking | 1.35x | x | FC banking (2) | 2018-07-17 |
+| P-F08 | Average DSCR (debt-service weighted), banking | 1.54x | x | FC banking (2) | 2018-07-17 |
 | P-F08 | Minimum DSCR, downside | 1.20x | x | FC downside (3) | 2018-07-17 |
 | P-F08 | Average DSCR (debt-service weighted), downside | 1.38x | x | FC downside (3) | 2018-07-17 |
 | P-F08 | LLCR at close (PV CFADS + DSRA over debt; first repayment period) | 1.42x | x | FC base (1) | 2018-07-17 |
@@ -173,54 +176,92 @@ Definitions used throughout: DSCR = CFADS / (interest incl. WHT gross-up + swap 
 | P-F09 | Largest installment | 4.6% | % of principal (limit 25%) | FC base (1) | 2018-07-17 |
 | P-F09 | Repayment term from COD | 13.16 | years (limit 14) | FC base (1) | 2018-07-17 |
 | P-F09 | First repayment after COD | 8 | months (limit 24) | FC base (1) | 2018-07-17 |
-| P-F10 | FY2022 capacity payments | 121.6 | USD m | FC base (1) | FY2022 (first full calendar year) |
-| P-F10 | FY2022 vom | 15.4 | USD m | FC base (1) | FY2022 (first full calendar year) |
-| P-F10 | FY2022 fuel and transport pass through | 184.8 | USD m | FC base (1) | FY2022 (first full calendar year) |
-| P-F10 | FY2022 total revenue | 321.8 | USD m | FC base (1) | FY2022 (first full calendar year) |
-| P-F10 | FY2022 fuel and transport costs | 184.6 | USD m | FC base (1) | FY2022 (first full calendar year) |
-| P-F10 | FY2022 om fixed | 8.6 | USD m | FC base (1) | FY2022 (first full calendar year) |
-| P-F10 | FY2022 om incentive | 0.3 | USD m | FC base (1) | FY2022 (first full calendar year) |
-| P-F10 | FY2022 ltsa fixed | 2.9 | USD m | FC base (1) | FY2022 (first full calendar year) |
-| P-F10 | FY2022 ltsa variable | 8.9 | USD m | FC base (1) | FY2022 (first full calendar year) |
-| P-F10 | FY2022 insurance | 4.8 | USD m | FC base (1) | FY2022 (first full calendar year) |
-| P-F10 | FY2022 g and a | 3.5 | USD m | FC base (1) | FY2022 (first full calendar year) |
-| P-F10 | FY2022 land | 0.8 | USD m | FC base (1) | FY2022 (first full calendar year) |
-| P-F10 | FY2022 community and levy | 0.8 | USD m | FC base (1) | FY2022 (first full calendar year) |
-| P-F10 | FY2022 consumables | 4.3 | USD m | FC base (1) | FY2022 (first full calendar year) |
-| P-F10 | FY2022 agency | 0.3 | USD m | FC base (1) | FY2022 (first full calendar year) |
-| P-F10 | FY2022 prg fee | 0.3 | USD m | FC base (1) | FY2022 (first full calendar year) |
-| P-F10 | FY2022 vat interest | 0.0 | USD m | FC base (1) | FY2022 (first full calendar year) |
-| P-F10 | FY2022 major maintenance | 0.0 | USD m | FC base (1) | FY2022 (first full calendar year) |
-| P-F10 | FY2022 ebitda | 101.9 | USD m | FC base (1) | FY2022 (first full calendar year) |
-| P-F10 | FY2022 tax | 0.0 | USD m | FC base (1) | FY2022 (first full calendar year) |
-| P-F10 | FY2022 increase in working capital | 0.1 | USD m | FC base (1) | FY2022 (first full calendar year) |
-| P-F10 | FY2022 mmra contribution | 0.8 | USD m | FC base (1) | FY2022 (first full calendar year) |
-| P-F10 | FY2022 mmra release | 0.0 | USD m | FC base (1) | FY2022 (first full calendar year) |
-| P-F10 | FY2022 cfads | 101.0 | USD m | FC base (1) | FY2022 (first full calendar year) |
-| P-F10 | FY2022 debt service | 74.8 | USD m | FC base (1) | FY2022 (first full calendar year) |
-| P-F10 | FY2022 dscr | 1.35x | x | FC base (1) | FY2022 (first full calendar year) |
-| P-F11 | DSRA initial balance (funded at COD) | 37.2 | USD m | FC base (1) | 2021-05-01 |
-| P-F11 | MMRA contribution 2021H2 | 0.42 | USD m | FC base (1) | 2018-07-17 |
-| P-F11 | MMRA contribution 2022H1 | 0.42 | USD m | FC base (1) | 2018-07-17 |
-| P-F11 | MMRA contribution 2022H2 | 0.42 | USD m | FC base (1) | 2018-07-17 |
-| P-F11 | MMRA contribution 2023H1 | 0.42 | USD m | FC base (1) | 2018-07-17 |
-| P-F11 | MMRA contribution 2023H2 | 0.42 | USD m | FC base (1) | 2018-07-17 |
-| P-F11 | MMRA contribution 2024H1 | 0.42 | USD m | FC base (1) | 2018-07-17 |
-| P-F11 | MMRA contribution 2025H2 | 1.97 | USD m | FC base (1) | 2018-07-17 |
-| P-F11 | MMRA contribution 2026H1 | 1.97 | USD m | FC base (1) | 2018-07-17 |
-| P-F11 | MMRA contribution 2026H2 | 1.97 | USD m | FC base (1) | 2018-07-17 |
-| P-F11 | MMRA contribution 2027H1 | 1.97 | USD m | FC base (1) | 2018-07-17 |
-| P-F11 | MMRA contribution 2027H2 | 1.97 | USD m | FC base (1) | 2018-07-17 |
-| P-F11 | MMRA contribution 2028H1 | 1.97 | USD m | FC base (1) | 2018-07-17 |
-| P-F11 | MMRA contribution 2029H2 | 0.50 | USD m | FC base (1) | 2018-07-17 |
-| P-F11 | MMRA contribution 2030H1 | 0.50 | USD m | FC base (1) | 2018-07-17 |
-| P-F11 | MMRA contribution 2030H2 | 0.50 | USD m | FC base (1) | 2018-07-17 |
-| P-F11 | Out-of-LTSA major maintenance spend 2024H2 | 2.50 | USD m | FC base (1) | 2018-07-17 |
-| P-F11 | Out-of-LTSA major maintenance spend 2028H2 | 11.84 | USD m | FC base (1) | 2018-07-17 |
-| P-F11 | Out-of-LTSA major maintenance spend 2032H2 | 2.97 | USD m | FC base (1) | 2018-07-17 |
-| P-F11 | Out-of-LTSA major maintenance spend 2036H2 | 14.09 | USD m | FC base (1) | 2018-07-17 |
-| P-F11 | Out-of-LTSA major maintenance spend 2040H2 | 3.54 | USD m | FC base (1) | 2018-07-17 |
-| P-F11 | Out-of-LTSA major maintenance spend 2044H2 | 16.77 | USD m | FC base (1) | 2018-07-17 |
+| P-F10 | FC base first full operating year (2021-07-01 to 2022-06-30 (annex 4.15)): capacity payments | 121.1 | USD m | FC base (1) | 2021-07-01 to 2022-06-30 (annex 4.15) |
+| P-F10 | FC base first full operating year (2021-07-01 to 2022-06-30 (annex 4.15)): vom | 15.3 | USD m | FC base (1) | 2021-07-01 to 2022-06-30 (annex 4.15) |
+| P-F10 | FC base first full operating year (2021-07-01 to 2022-06-30 (annex 4.15)): fuel and transport pass through | 183.9 | USD m | FC base (1) | 2021-07-01 to 2022-06-30 (annex 4.15) |
+| P-F10 | FC base first full operating year (2021-07-01 to 2022-06-30 (annex 4.15)): total revenue | 320.3 | USD m | FC base (1) | 2021-07-01 to 2022-06-30 (annex 4.15) |
+| P-F10 | FC base first full operating year (2021-07-01 to 2022-06-30 (annex 4.15)): fuel and transport costs | 183.6 | USD m | FC base (1) | 2021-07-01 to 2022-06-30 (annex 4.15) |
+| P-F10 | FC base first full operating year (2021-07-01 to 2022-06-30 (annex 4.15)): om fixed | 8.5 | USD m | FC base (1) | 2021-07-01 to 2022-06-30 (annex 4.15) |
+| P-F10 | FC base first full operating year (2021-07-01 to 2022-06-30 (annex 4.15)): om incentive | 0.4 | USD m | FC base (1) | 2021-07-01 to 2022-06-30 (annex 4.15) |
+| P-F10 | FC base first full operating year (2021-07-01 to 2022-06-30 (annex 4.15)): ltsa fixed | 2.8 | USD m | FC base (1) | 2021-07-01 to 2022-06-30 (annex 4.15) |
+| P-F10 | FC base first full operating year (2021-07-01 to 2022-06-30 (annex 4.15)): ltsa variable | 8.9 | USD m | FC base (1) | 2021-07-01 to 2022-06-30 (annex 4.15) |
+| P-F10 | FC base first full operating year (2021-07-01 to 2022-06-30 (annex 4.15)): insurance | 4.7 | USD m | FC base (1) | 2021-07-01 to 2022-06-30 (annex 4.15) |
+| P-F10 | FC base first full operating year (2021-07-01 to 2022-06-30 (annex 4.15)): g and a | 3.4 | USD m | FC base (1) | 2021-07-01 to 2022-06-30 (annex 4.15) |
+| P-F10 | FC base first full operating year (2021-07-01 to 2022-06-30 (annex 4.15)): land | 0.8 | USD m | FC base (1) | 2021-07-01 to 2022-06-30 (annex 4.15) |
+| P-F10 | FC base first full operating year (2021-07-01 to 2022-06-30 (annex 4.15)): community and levy | 0.8 | USD m | FC base (1) | 2021-07-01 to 2022-06-30 (annex 4.15) |
+| P-F10 | FC base first full operating year (2021-07-01 to 2022-06-30 (annex 4.15)): consumables | 4.3 | USD m | FC base (1) | 2021-07-01 to 2022-06-30 (annex 4.15) |
+| P-F10 | FC base first full operating year (2021-07-01 to 2022-06-30 (annex 4.15)): agency | 0.3 | USD m | FC base (1) | 2021-07-01 to 2022-06-30 (annex 4.15) |
+| P-F10 | FC base first full operating year (2021-07-01 to 2022-06-30 (annex 4.15)): prg fee | 0.3 | USD m | FC base (1) | 2021-07-01 to 2022-06-30 (annex 4.15) |
+| P-F10 | FC base first full operating year (2021-07-01 to 2022-06-30 (annex 4.15)): vat interest | 0.1 | USD m | FC base (1) | 2021-07-01 to 2022-06-30 (annex 4.15) |
+| P-F10 | FC base first full operating year (2021-07-01 to 2022-06-30 (annex 4.15)): fx losses | 0.0 | USD m | FC base (1) | 2021-07-01 to 2022-06-30 (annex 4.15) |
+| P-F10 | FC base first full operating year (2021-07-01 to 2022-06-30 (annex 4.15)): late payment interest | 0.0 | USD m | FC base (1) | 2021-07-01 to 2022-06-30 (annex 4.15) |
+| P-F10 | FC base first full operating year (2021-07-01 to 2022-06-30 (annex 4.15)): major maintenance | 0.0 | USD m | FC base (1) | 2021-07-01 to 2022-06-30 (annex 4.15) |
+| P-F10 | FC base first full operating year (2021-07-01 to 2022-06-30 (annex 4.15)): ebitda | 101.5 | USD m | FC base (1) | 2021-07-01 to 2022-06-30 (annex 4.15) |
+| P-F10 | FC base first full operating year (2021-07-01 to 2022-06-30 (annex 4.15)): tax | 0.0 | USD m | FC base (1) | 2021-07-01 to 2022-06-30 (annex 4.15) |
+| P-F10 | FC base first full operating year (2021-07-01 to 2022-06-30 (annex 4.15)): increase in working capital | 0.3 | USD m | FC base (1) | 2021-07-01 to 2022-06-30 (annex 4.15) |
+| P-F10 | FC base first full operating year (2021-07-01 to 2022-06-30 (annex 4.15)): mmra contribution | 0.8 | USD m | FC base (1) | 2021-07-01 to 2022-06-30 (annex 4.15) |
+| P-F10 | FC base first full operating year (2021-07-01 to 2022-06-30 (annex 4.15)): mmra release | 0.0 | USD m | FC base (1) | 2021-07-01 to 2022-06-30 (annex 4.15) |
+| P-F10 | FC base first full operating year (2021-07-01 to 2022-06-30 (annex 4.15)): cfads | 100.4 | USD m | FC base (1) | 2021-07-01 to 2022-06-30 (annex 4.15) |
+| P-F10 | FC base first full operating year (2021-07-01 to 2022-06-30 (annex 4.15)): debt service | 74.4 | USD m | FC base (1) | 2021-07-01 to 2022-06-30 (annex 4.15) |
+| P-F10 | FC base first full operating year (2021-07-01 to 2022-06-30 (annex 4.15)): dscr | 1.35x | x | FC base (1) | 2021-07-01 to 2022-06-30 (annex 4.15) |
+| P-F10 | Actual first full operating year (calendar 2022): capacity payments | 120.3 | USD m | Actual history (15) | calendar 2022 |
+| P-F10 | Actual first full operating year (calendar 2022): vom | 16.4 | USD m | Actual history (15) | calendar 2022 |
+| P-F10 | Actual first full operating year (calendar 2022): fuel and transport pass through | 197.1 | USD m | Actual history (15) | calendar 2022 |
+| P-F10 | Actual first full operating year (calendar 2022): total revenue | 333.9 | USD m | Actual history (15) | calendar 2022 |
+| P-F10 | Actual first full operating year (calendar 2022): fuel and transport costs | 197.5 | USD m | Actual history (15) | calendar 2022 |
+| P-F10 | Actual first full operating year (calendar 2022): om fixed | 8.8 | USD m | Actual history (15) | calendar 2022 |
+| P-F10 | Actual first full operating year (calendar 2022): om incentive | 0.4 | USD m | Actual history (15) | calendar 2022 |
+| P-F10 | Actual first full operating year (calendar 2022): ltsa fixed | 3.0 | USD m | Actual history (15) | calendar 2022 |
+| P-F10 | Actual first full operating year (calendar 2022): ltsa variable | 10.0 | USD m | Actual history (15) | calendar 2022 |
+| P-F10 | Actual first full operating year (calendar 2022): insurance | 5.4 | USD m | Actual history (15) | calendar 2022 |
+| P-F10 | Actual first full operating year (calendar 2022): g and a | 3.5 | USD m | Actual history (15) | calendar 2022 |
+| P-F10 | Actual first full operating year (calendar 2022): land | 0.8 | USD m | Actual history (15) | calendar 2022 |
+| P-F10 | Actual first full operating year (calendar 2022): community and levy | 0.8 | USD m | Actual history (15) | calendar 2022 |
+| P-F10 | Actual first full operating year (calendar 2022): consumables | 4.7 | USD m | Actual history (15) | calendar 2022 |
+| P-F10 | Actual first full operating year (calendar 2022): agency | 0.3 | USD m | Actual history (15) | calendar 2022 |
+| P-F10 | Actual first full operating year (calendar 2022): prg fee | 0.3 | USD m | Actual history (15) | calendar 2022 |
+| P-F10 | Actual first full operating year (calendar 2022): vat interest | 0.1 | USD m | Actual history (15) | calendar 2022 |
+| P-F10 | Actual first full operating year (calendar 2022): fx losses | 1.3 | USD m | Actual history (15) | calendar 2022 |
+| P-F10 | Actual first full operating year (calendar 2022): late payment interest | 0.0 | USD m | Actual history (15) | calendar 2022 |
+| P-F10 | Actual first full operating year (calendar 2022): major maintenance | 0.0 | USD m | Actual history (15) | calendar 2022 |
+| P-F10 | Actual first full operating year (calendar 2022): ebitda | 97.0 | USD m | Actual history (15) | calendar 2022 |
+| P-F10 | Actual first full operating year (calendar 2022): tax | 0.0 | USD m | Actual history (15) | calendar 2022 |
+| P-F10 | Actual first full operating year (calendar 2022): increase in working capital | 13.9 | USD m | Actual history (15) | calendar 2022 |
+| P-F10 | Actual first full operating year (calendar 2022): mmra contribution | 0.9 | USD m | Actual history (15) | calendar 2022 |
+| P-F10 | Actual first full operating year (calendar 2022): mmra release | 0.0 | USD m | Actual history (15) | calendar 2022 |
+| P-F10 | Actual first full operating year (calendar 2022): cfads | 82.2 | USD m | Actual history (15) | calendar 2022 |
+| P-F10 | Actual first full operating year (calendar 2022): debt service | 71.9 | USD m | Actual history (15) | calendar 2022 |
+| P-F10 | Actual first full operating year (calendar 2022): dscr | 1.14x | x | Actual history (15) | calendar 2022 |
+| P-F11a | DSRA initial balance (funded at COD; next period debt service) | 37.2 | USD m | FC base (1) | 2021-05-01 |
+| P-F11a | DSRA balance 2021H1 | 37.2 | USD m | FC base (1) | 2021H1 |
+| P-F11a | DSRA balance 2021H2 | 37.2 | USD m | FC base (1) | 2021H2 |
+| P-F11a | DSRA balance 2022H1 | 37.6 | USD m | FC base (1) | 2022H1 |
+| P-F11a | DSRA balance 2022H2 | 37.3 | USD m | FC base (1) | 2022H2 |
+| P-F11a | DSRA balance 2023H1 | 37.8 | USD m | FC base (1) | 2023H1 |
+| P-F11a | DSRA balance 2023H2 | 37.6 | USD m | FC base (1) | 2023H2 |
+| P-F11a | DSRA balance 2024H1 | 38.3 | USD m | FC base (1) | 2024H1 |
+| P-F11a | DSRA balance 2024H2 | 38.0 | USD m | FC base (1) | 2024H2 |
+| P-F11b | MMRA contribution 2021H2 | 0.42 | USD m | FC base (1) | 2021H2 |
+| P-F11b | MMRA contribution 2022H1 | 0.42 | USD m | FC base (1) | 2022H1 |
+| P-F11b | MMRA contribution 2022H2 | 0.42 | USD m | FC base (1) | 2022H2 |
+| P-F11b | MMRA contribution 2023H1 | 0.42 | USD m | FC base (1) | 2023H1 |
+| P-F11b | MMRA contribution 2023H2 | 0.42 | USD m | FC base (1) | 2023H2 |
+| P-F11b | MMRA contribution 2024H1 | 0.42 | USD m | FC base (1) | 2024H1 |
+| P-F11b | MMRA contribution 2025H2 | 1.97 | USD m | FC base (1) | 2025H2 |
+| P-F11b | MMRA contribution 2026H1 | 1.97 | USD m | FC base (1) | 2026H1 |
+| P-F11b | MMRA contribution 2026H2 | 1.97 | USD m | FC base (1) | 2026H2 |
+| P-F11b | MMRA contribution 2027H1 | 1.97 | USD m | FC base (1) | 2027H1 |
+| P-F11b | MMRA contribution 2027H2 | 1.97 | USD m | FC base (1) | 2027H2 |
+| P-F11b | MMRA contribution 2028H1 | 1.97 | USD m | FC base (1) | 2028H1 |
+| P-F11b | MMRA contribution 2029H2 | 0.50 | USD m | FC base (1) | 2029H2 |
+| P-F11b | MMRA contribution 2030H1 | 0.50 | USD m | FC base (1) | 2030H1 |
+| P-F11b | MMRA contribution 2030H2 | 0.50 | USD m | FC base (1) | 2030H2 |
+| P-F11b | Out-of-LTSA major maintenance spend 2024H2 | 2.50 | USD m | FC base (1) | 2024H2 |
+| P-F11b | Out-of-LTSA major maintenance spend 2028H2 | 11.84 | USD m | FC base (1) | 2028H2 |
+| P-F11b | Out-of-LTSA major maintenance spend 2032H2 | 2.97 | USD m | FC base (1) | 2032H2 |
+| P-F11b | Out-of-LTSA major maintenance spend 2036H2 | 14.09 | USD m | FC base (1) | 2036H2 |
+| P-F11b | Out-of-LTSA major maintenance spend 2040H2 | 3.54 | USD m | FC base (1) | 2040H2 |
+| P-F11b | Out-of-LTSA major maintenance spend 2044H2 | 16.77 | USD m | FC base (1) | 2044H2 |
 | P-F12 | Swap fixed rate | 2.947% | % | FC base (1) | 2018-07-17 |
 | P-F12 | Swap notional peak during construction | 504.4 | USD m | FC base (1) | 2018-07-17 |
 | P-F12 | Swap notional 2021H2 | 506.6 | USD m | FC base (1) | 2018-07-17 |
@@ -380,7 +421,7 @@ Definitions used throughout: DSCR = CFADS / (interest incl. WHT gross-up + swap 
 | P-F16 | Equity NPV at 16.0% at financial close | -43.1 | USD m | FC base (1) | 2018-07-17 |
 | P-F16 | Equity payback (cumulative equity cash flow turns positive) | 2031-06-30 | date | FC base (1) | 2018-07-17 |
 | P-F16 | FC base: minimum DSCR / average DSCR / equity IRR | 1.35x / 1.54x / 13.3% | x, x, % | Sensitivity (debt locked) | 2018-07-17 |
-| P-F16 | FC banking: minimum DSCR / average DSCR / equity IRR | 1.34x / 1.53x / 13.1% | x, x, % | Sensitivity (debt locked) | 2018-07-17 |
+| P-F16 | FC banking: minimum DSCR / average DSCR / equity IRR | 1.35x / 1.54x / 13.2% | x, x, % | Sensitivity (debt locked) | 2018-07-17 |
 | P-F16 | FC downside: minimum DSCR / average DSCR / equity IRR | 1.20x / 1.38x / 11.4% | x, x, % | Sensitivity (debt locked) | 2018-07-17 |
 | P-F16 | Sens: availability -3 points: minimum DSCR / average DSCR / equity IRR | 1.32x / 1.53x / 13.2% | x, x, % | Sensitivity (debt locked) | 2018-07-17 |
 | P-F16 | Sens: heat rate +2%: minimum DSCR / average DSCR / equity IRR | 1.30x / 1.49x / 12.5% | x, x, % | Sensitivity (debt locked) | 2018-07-17 |
@@ -390,24 +431,24 @@ Definitions used throughout: DSCR = CFADS / (interest incl. WHT gross-up + swap 
 | P-F16 | Sens: base rate +200 bps (unhedged): minimum DSCR / average DSCR / equity IRR | 1.30x / 1.51x / 12.9% | x, x, % | Sensitivity (debt locked) | 2018-07-17 |
 | P-F16 | Sens: KCR devaluation 40%, 90-day lag: minimum DSCR / average DSCR / equity IRR | 0.45x / 1.52x / 12.9% | x, x, % | Sensitivity (debt locked) | 2018-07-17 |
 | P-F16 | Sens: SEKA pays 120 days late for 12 months: minimum DSCR / average DSCR / equity IRR | 0.13x / 1.54x / 13.2% | x, x, % | Sensitivity (debt locked) | 2018-07-17 |
-| P-F16 | Sens: dispatch 50%: minimum DSCR / average DSCR / equity IRR | 1.29x / 1.48x / 12.4% | x, x, % | Sensitivity (debt locked) | 2018-07-17 |
+| P-F16 | Sens: dispatch 50%: minimum DSCR / average DSCR / equity IRR | 1.34x / 1.53x / 13.1% | x, x, % | Sensitivity (debt locked) | 2018-07-17 |
 | P-F16 | Sens: gas price +30%: minimum DSCR / average DSCR / equity IRR | 1.35x / 1.54x / 13.3% | x, x, % | Sensitivity (debt locked) | 2018-07-17 |
 | P-F16 | Breakeven availability shift for 1.00x minimum DSCR | -21.4 | points below profile | FC base (1) | 2018-07-17 |
 | P-F16 | Breakeven capacity charge cut for 1.00x minimum DSCR | 25.0% | % | FC base (1) | 2018-07-17 |
 | P-F16 | Months of zero SEKA payment covered by DSRA plus LC (gas paid) | 3.0 | months | FC base (1) | 2022H1 |
 | P-F16 | Months covered if gas payments are deferred | 8.2 | months | FC base (1) | 2022H1 |
-| P-F17 | correct: correct model | debt 633.3 (+0.0), DSCR; min DSCR 1.35x; avg 1.54x; downside 1.20x; banking 1.34x; LLCR 1.42x; equity IRR 13.3% | USD m, x, % | FC base, sponsor model v0.9 | 2018-06 |
-| P-F17 | E1: Capacity payment without the availability cap (A/90% not capped at 1) | debt 641.9 (+8.7), downside; min DSCR 1.37x; avg 1.56x; downside 1.20x; banking 1.36x; LLCR 1.44x; equity IRR 14.1% | USD m, x, % | FC base, sponsor model v0.9 | 2018-06 |
+| P-F17 | correct: correct model | debt 633.3 (+0.0), DSCR; min DSCR 1.35x; avg 1.54x; downside 1.20x; banking 1.35x; LLCR 1.42x; equity IRR 13.3% | USD m, x, % | FC base, sponsor model v0.9 | 2018-06 |
+| P-F17 | E1: Capacity payment without the availability cap (A/90% not capped at 1) | debt 641.9 (+8.7), downside; min DSCR 1.37x; avg 1.56x; downside 1.20x; banking 1.37x; LLCR 1.44x; equity IRR 14.1% | USD m, x, % | FC base, sponsor model v0.9 | 2018-06 |
 | P-F17 | E2: LTSA variable fee on one gas turbine instead of two | debt 643.1 (+9.9), gearing; min DSCR 1.38x; avg 1.57x; downside 1.23x; banking 1.37x; LLCR 1.45x; equity IRR 14.4% | USD m, x, % | FC base, sponsor model v0.9 | 2018-06 |
-| P-F17 | E3: Tariff indexation reads the index at period end instead of the lagged (Sep/Mar) reading | debt 640.1 (+6.8), DSCR; min DSCR 1.35x; avg 1.54x; downside 1.20x; banking 1.34x; LLCR 1.42x; equity IRR 13.6% | USD m, x, % | FC base, sponsor model v0.9 | 2018-06 |
-| P-F17 | E4: Senior loan interest on 30/360 instead of ACT/360 | debt 636.0 (+2.8), DSCR; min DSCR 1.35x; avg 1.54x; downside 1.20x; banking 1.34x; LLCR 1.42x; equity IRR 13.4% | USD m, x, % | FC base, sponsor model v0.9 | 2018-06 |
-| P-F17 | E5: Full tax exemption applied to OY1-OY8 (15% band ignored) | debt 639.9 (+6.6), DSCR; min DSCR 1.35x; avg 1.54x; downside 1.20x; banking 1.34x; LLCR 1.42x; equity IRR 13.7% | USD m, x, % | FC base, sponsor model v0.9 | 2018-06 |
-| P-F17 | E6: Deferred holiday depreciation lost (pool never credited) | debt 614.2 (-19.1), DSCR; min DSCR 1.35x; avg 1.54x; downside 1.20x; banking 1.34x; LLCR 1.42x; equity IRR 12.5% | USD m, x, % | FC base, sponsor model v0.9 | 2018-06 |
-| P-F17 | E7: DSRA initial funding drawn 100% from senior debt instead of pro rata | debt 633.3 (+0.1), DSCR; min DSCR 1.35x; avg 1.54x; downside 1.20x; banking 1.34x; LLCR 1.42x; equity IRR 13.2% | USD m, x, % | FC base, sponsor model v0.9 | 2018-06 |
-| P-F17 | E8: Sculpting on CFADS before tax | debt 641.2 (+8.0), DSCR; min DSCR 1.34x; avg 1.51x; downside 1.20x; banking 1.33x; LLCR 1.40x; equity IRR 13.4% | USD m, x, % | FC base, sponsor model v0.9 | 2018-06 |
-| P-F17 | E9: Fuel-charge revenue uses a typed 76.5% dispatch instead of the live dispatch | debt 633.3 (+0.0), DSCR; min DSCR 1.35x; avg 1.54x; downside 1.20x; banking 1.46x; LLCR 1.42x; equity IRR 13.3% | USD m, x, % | FC base, sponsor model v0.9 | 2018-06 |
-| P-F17 | E10: Swap net settlement with legs reversed | debt 623.4 (-9.9), DSCR; min DSCR 1.35x; avg 1.54x; downside 1.20x; banking 1.34x; LLCR 1.42x; equity IRR 12.9% | USD m, x, % | FC base, sponsor model v0.9 | 2018-06 |
-| P-F17 | ALL: all ten errors together | debt 654.6 (+21.4), gearing; min DSCR 1.44x; avg 1.53x; downside 1.26x; banking 1.54x; LLCR 1.43x; equity IRR 15.2% | USD m, x, % | FC base, sponsor model v0.9 | 2018-06 |
+| P-F17 | E3: Tariff indexation reads the index at period end instead of the lagged (Sep/Mar) reading | debt 640.1 (+6.8), DSCR; min DSCR 1.35x; avg 1.54x; downside 1.20x; banking 1.35x; LLCR 1.42x; equity IRR 13.6% | USD m, x, % | FC base, sponsor model v0.9 | 2018-06 |
+| P-F17 | E4: Senior loan interest on 30/360 instead of ACT/360 | debt 636.0 (+2.8), DSCR; min DSCR 1.35x; avg 1.54x; downside 1.20x; banking 1.35x; LLCR 1.42x; equity IRR 13.4% | USD m, x, % | FC base, sponsor model v0.9 | 2018-06 |
+| P-F17 | E5: Full tax exemption applied to OY1-OY8 (15% band ignored) | debt 639.9 (+6.6), DSCR; min DSCR 1.35x; avg 1.54x; downside 1.20x; banking 1.35x; LLCR 1.42x; equity IRR 13.7% | USD m, x, % | FC base, sponsor model v0.9 | 2018-06 |
+| P-F17 | E6: Deferred holiday depreciation lost (pool never credited) | debt 614.2 (-19.1), DSCR; min DSCR 1.35x; avg 1.54x; downside 1.20x; banking 1.35x; LLCR 1.42x; equity IRR 12.5% | USD m, x, % | FC base, sponsor model v0.9 | 2018-06 |
+| P-F17 | E7: DSRA initial funding drawn 100% from senior debt instead of pro rata | debt 633.3 (+0.1), DSCR; min DSCR 1.35x; avg 1.54x; downside 1.20x; banking 1.35x; LLCR 1.42x; equity IRR 13.2% | USD m, x, % | FC base, sponsor model v0.9 | 2018-06 |
+| P-F17 | E8: Sculpting on CFADS before tax | debt 641.2 (+8.0), DSCR; min DSCR 1.34x; avg 1.51x; downside 1.20x; banking 1.34x; LLCR 1.40x; equity IRR 13.4% | USD m, x, % | FC base, sponsor model v0.9 | 2018-06 |
+| P-F17 | E9: Fuel-charge revenue uses a typed 76.5% dispatch instead of the live dispatch | debt 633.3 (+0.0), DSCR; min DSCR 1.35x; avg 1.54x; downside 1.20x; banking 1.47x; LLCR 1.42x; equity IRR 13.3% | USD m, x, % | FC base, sponsor model v0.9 | 2018-06 |
+| P-F17 | E10: Swap net settlement with legs reversed | debt 623.4 (-9.9), DSCR; min DSCR 1.35x; avg 1.54x; downside 1.20x; banking 1.35x; LLCR 1.42x; equity IRR 12.9% | USD m, x, % | FC base, sponsor model v0.9 | 2018-06 |
+| P-F17 | ALL: all ten errors together | debt 654.6 (+21.4), gearing; min DSCR 1.44x; avg 1.53x; downside 1.26x; banking 1.55x; LLCR 1.43x; equity IRR 15.2% | USD m, x, % | FC base, sponsor model v0.9 | 2018-06 |
 | P-F18 | Actual use: epc | 565.12 | USD m | Actual history (15) | 2021-12-01 |
 | P-F18 | Actual use: epc fx gain on onshore | 6.72 | USD m | Actual history (15) | 2021-12-01 |
 | P-F18 | Actual use: owners costs incl extension | 53.11 | USD m | Actual history (15) | 2021-12-01 |
@@ -447,8 +488,8 @@ Definitions used throughout: DSCR = CFADS / (interest incl. WHT gross-up + swap 
 | P-F19 | Projected average DSCR after the prepayment | 1.55x | x | COD re-forecast (14) | 2022-06-30 |
 | P-F19 | Projected minimum DSCR without the prepayment | 1.31x | x | COD re-forecast (14) variant | 2022-06-30 |
 | P-F20 | 2022H1: overdue / deferred SNHK-GCK payables / CFADS / debt service / DSCR / DSRA draw / DSRA balance | 18.4 / 14.7 / 44.8 / 35.1 / 1.28x / 0.0 / 36.8 | USD m, x | Actual history (15) | 2022H1 |
-| P-F20 | 2022H2: overdue / deferred SNHK-GCK payables / CFADS / debt service / DSCR / DSRA draw / DSRA balance | 68.9 / 55.1 / 37.3 / 36.8 / 1.01x / 0.0 / 37.3 | USD m, x | Actual history (15) | 2022H2 |
-| P-F20 | 2023H1: overdue / deferred SNHK-GCK payables / CFADS / debt service / DSCR / DSRA draw / DSRA balance | 112.6 / 90.1 / 35.7 / 38.2 / 0.94x / 2.5 / 34.8 | USD m, x | Actual history (15) | 2023H1 |
+| P-F20 | 2022H2: overdue / deferred SNHK-GCK payables / CFADS / debt service / DSCR / DSRA draw / DSRA balance | 68.9 / 55.1 / 37.4 / 36.8 / 1.02x / 0.0 / 37.4 | USD m, x | Actual history (15) | 2022H2 |
+| P-F20 | 2023H1: overdue / deferred SNHK-GCK payables / CFADS / debt service / DSCR / DSRA draw / DSRA balance | 112.6 / 90.1 / 35.8 / 38.2 / 0.94x / 2.4 / 35.0 | USD m, x | Actual history (15) | 2023H1 |
 | P-F20 | 2023H2: overdue / deferred SNHK-GCK payables / CFADS / debt service / DSCR / DSRA draw / DSRA balance | 71.8 / 57.4 / 56.2 / 29.7 / 1.89x / 0.0 / 43.1 | USD m, x | Actual history (15) | 2023H2 |
 | P-F20 | 2024H1: overdue / deferred SNHK-GCK payables / CFADS / debt service / DSCR / DSRA draw / DSRA balance | 34.6 / 27.7 / 57.4 / 43.1 / 1.33x / 0.0 / 43.3 | USD m, x | Actual history (15) | 2024H1 |
 | P-F20 | 2024H2: overdue / deferred SNHK-GCK payables / CFADS / debt service / DSCR / DSRA draw / DSRA balance | 12.3 / 9.8 / 56.7 / 43.3 / 1.31x / 0.0 / 41.3 | USD m, x | Actual history (15) | 2024H2 |
@@ -457,9 +498,9 @@ Definitions used throughout: DSCR = CFADS / (interest incl. WHT gross-up + swap 
 | P-F20 | Late payment interest accrued / received (60%) | 8.7 / 5.2 | USD m | Actual history (15) | 2025-06-30 |
 | P-F20 | Lock-up periods (distribution test failed) | 2022H2, 2023H1, 2023H2, 2024H1 | periods | Actual history (15) | 2024-12-31 |
 | P-F21 | Historic DSCR at December 31, 2022 | 1.14x | x | Actual history (15) | 2022-12-31 |
-| P-F21 | Historic DSCR at June 30, 2023 (event of default below 1.10x) | 0.97x | x | Actual history (15) | 2023-06-30 |
+| P-F21 | Historic DSCR at June 30, 2023 (event of default below 1.10x) | 0.98x | x | Actual history (15) | 2023-06-30 |
 | P-F21 | Period DSCR 2023H1 | 0.94x | x | Actual history (15) | 2023-06-30 |
-| P-F21 | DSRA drawing at June 30, 2023 | 2.46 | USD m | Actual history (15) | 2023-06-30 |
+| P-F21 | DSRA drawing at June 30, 2023 | 2.41 | USD m | Actual history (15) | 2023-06-30 |
 | P-F21 | Waiver fee (0.25% of senior debt) | 1.40 | USD m | Actual history (15) | 2023-10-26 |
 | P-F21 | Margin uplift cost, 2023H2-2024H2 | 4.35 | USD m | Actual history (15) | 2024-12-31 |
 | P-F21 | Principal deferred from December 31, 2023 (60%) | 10.77 | USD m | Actual history (15) | 2023-12-31 |
@@ -483,8 +524,8 @@ Definitions used throughout: DSCR = CFADS / (interest incl. WHT gross-up + swap 
 | P-F23 | transaction costs total | 7.29 | USD m | Actual history (15) | 2025-06-30 |
 | P-F23 | remaining eca | 145.62 | USD m | Actual history (15) | 2025-06-30 |
 | P-F23 | remaining a loan | 106.79 | USD m | Actual history (15) | 2025-06-30 |
-| P-F23 | equity pv gain at 13 75pct | 13.97 | USD m | Actual history (15) | 2025-06-30 |
-| P-F23 | equity pv gain at 12 50pct | 10.06 | USD m | Actual history (15) | 2025-06-30 |
+| P-F23 | equity pv gain at 13 75pct | 13.98 | USD m | Actual history (15) | 2025-06-30 |
+| P-F23 | equity pv gain at 12 50pct | 10.07 | USD m | Actual history (15) | 2025-06-30 |
 | P-F23 | prepaid B | 48.54 | USD m | Actual history (15) | 2025-06-30 |
 | P-F23 | prepaid COM | 184.46 | USD m | Actual history (15) | 2025-06-30 |
 | P-F23 | prepaid SB | 0.00 | USD m | Actual history (15) | 2025-06-30 |
@@ -503,38 +544,42 @@ Definitions used throughout: DSCR = CFADS / (interest incl. WHT gross-up + swap 
 | P-F23 | Bond amortization 2034H2 | 20.85 | USD m | Actual history (15) | 2025-06-30 |
 | P-F23 | Bond amortization 2035H2 | 22.43 | USD m | Actual history (15) | 2025-06-30 |
 | P-F23 | Bond amortization 2036H2 | 24.05 | USD m | Actual history (15) | 2025-06-30 |
-| P-F24 | equity value 100pct at 13 75 | 327.37 | USD m | Actual history (15) | 2025-12-31 (locked box); 2026-09-30 (completion) |
-| P-F24 | equity value 100pct at 12 50 | 358.72 | USD m | Actual history (15) | 2025-12-31 (locked box); 2026-09-30 (completion) |
+| P-F24 | equity value 100pct at 13 75 | 327.36 | USD m | Actual history (15) | 2025-12-31 (locked box); 2026-09-30 (completion) |
+| P-F24 | equity value 100pct at 12 50 | 358.71 | USD m | Actual history (15) | 2025-12-31 (locked box); 2026-09-30 (completion) |
 | P-F24 | value 24pct at 13 75 | 78.57 | USD m | Actual history (15) | 2025-12-31 (locked box); 2026-09-30 (completion) |
 | P-F24 | value 24pct at 12 50 | 86.09 | USD m | Actual history (15) | 2025-12-31 (locked box); 2026-09-30 (completion) |
 | P-F24 | leakage h1 2026 distribution 24pct | 4.39 | USD m | Actual history (15) | 2025-12-31 (locked box); 2026-09-30 (completion) |
 | P-F24 | price at completion | 78.00 | USD m | Actual history (15) | 2025-12-31 (locked box); 2026-09-30 (completion) |
 | P-F24 | kilnworth reserve price 24pct | 85.89 | USD m | Actual history (15) | 2025-12-31 (locked box); 2026-09-30 (completion) |
 | P-F24 | deferred consideration | 4.00 | USD m | Actual history (15) | 2025-12-31 (locked box); 2026-09-30 (completion) |
-| P-F24 | cost basis 24pct | 33.90 | USD m | Actual history (15) | 2025-12-31 (locked box); 2026-09-30 (completion) |
-| P-F24 | seller gain | 44.10 | USD m | Actual history (15) | 2025-12-31 (locked box); 2026-09-30 (completion) |
+| P-F24 | cost basis 24pct | 33.86 | USD m | Actual history (15) | 2025-12-31 (locked box); 2026-09-30 (completion) |
+| P-F24 | seller gain | 44.13 | USD m | Actual history (15) | 2025-12-31 (locked box); 2026-09-30 (completion) |
 | P-F24 | indirect transfer tax | 6.62 | USD m | Actual history (15) | 2025-12-31 (locked box); 2026-09-30 (completion) |
 | P-F24 | Locked-box ticker factor (6.5% simple, 273 days) | 1.0486 | factor | Actual history (15) | 2026-09-30 |
 | P-F24 | Kilnworth's IRR on the sold 24% (after transfer tax) | 11.5% | % | Actual history (15) | 2026-09-30 |
 | P-F24 | Same including the USD 4.0 million deferred consideration (taxed) | 12.0% | % | Actual history (15) | 2027-06-30 |
 | P-F25 | senior debt outstanding | 558.8 | USD m | Actual history (15) | 2023-06-30 |
 | P-F25 | swap mtm to project | 30.4 | USD m | Actual history (15) | 2023-06-30 |
-| P-F25 | equity npv distributions 14 5 | 291.9 | USD m | Actual history (15) | 2023-06-30 |
-| P-F25 | equity contributed compounded less distributions | 326.5 | USD m | Actual history (15) | 2023-06-30 |
-| P-F25 | equity amount | 326.5 | USD m | Actual history (15) | 2023-06-30 |
+| P-F25 | equity npv distributions 14 5 | 292.0 | USD m | Actual history (15) | 2023-06-30 |
+| P-F25 | equity contributed compounded less distributions | 326.6 | USD m | Actual history (15) | 2023-06-30 |
+| P-F25 | equity amount | 326.6 | USD m | Actual history (15) | 2023-06-30 |
 | P-F25 | seka default compensation | 854.9 | USD m | Actual history (15) | 2023-06-30 |
 | P-F25 | project default compensation | 558.8 | USD m | Actual history (15) | 2023-06-30 |
 | P-F25 | natural fm compensation | 760.7 | USD m | Actual history (15) | 2023-06-30 |
 | P-F25 | equity contributed | 219.6 | USD m | Actual history (15) | 2023-06-30 |
 | P-F25 | distributions received | 17.7 | USD m | Actual history (15) | 2023-06-30 |
-| P-F26 | book equity at completion (simplified; framework to be confirmed) | 134.0 | USD m | Actual history (15) | 2026-09-30 |
-| P-F26 | shl at completion (simplified; framework to be confirmed) | 163.8 | USD m | Actual history (15) | 2026-09-30 |
-| P-F26 | kilnworth carrying amount 60pct (simplified; framework to be confirmed) | 178.7 | USD m | Actual history (15) | 2026-09-30 |
-| P-F26 | consideration (simplified; framework to be confirmed) | 78.0 | USD m | Actual history (15) | 2026-09-30 |
-| P-F26 | fv retained 36pct (simplified; framework to be confirmed) | 123.6 | USD m | Actual history (15) | 2026-09-30 |
-| P-F26 | remeasurement and disposal gain (simplified; framework to be confirmed) | 22.9 | USD m | Actual history (15) | 2026-09-30 |
-| P-F26 | equity method carrying value 36pct (simplified; framework to be confirmed) | 123.6 | USD m | Actual history (15) | 2026-09-30 |
-| P-F26 | indirect transfer tax (simplified; framework to be confirmed) | 6.6 | USD m | Actual history (15) | 2026-09-30 |
+| P-F26 | book equity lenders basis | 134.2 | USD m | Actual history (15) | 2026-09-30 |
+| P-F26 | ifrs12 equity adjustment pretax | 139.6 | USD m | Actual history (15) | 2026-09-30 |
+| P-F26 | shl at completion | 163.7 | USD m | Actual history (15) | 2026-09-30 |
+| P-F26 | consideration | 78.0 | USD m | Actual history (15) | 2026-09-30 |
+| P-F26 | fv retained 36pct | 117.0 | USD m | Actual history (15) | 2026-09-30 |
+| P-F26 | carrying amount 60pct lenders basis | 178.7 | USD m | Actual history (15) | 2026-09-30 |
+| P-F26 | carrying amount 60pct ifrs | 262.5 | USD m | Actual history (15) | 2026-09-30 |
+| P-F26 | gain on loss of control lenders basis | 16.3 | USD m | Actual history (15) | 2026-09-30 |
+| P-F26 | gain on loss of control ifrs | -67.5 | USD m | Actual history (15) | 2026-09-30 |
+| P-F26 | hedge reserve parent share recycled | 2.1 | USD m | Actual history (15) | 2026-09-30 |
+| P-F26 | equity method carrying value 36pct | 117.0 | USD m | Actual history (15) | 2026-09-30 |
+| P-F26 | indirect transfer tax | 6.6 | USD m | Actual history (15) | 2026-09-30 |
 | P-F27 | fc base: dividends (life total) | 1,005.3 | USD m | FC base (1) | 2018-2046 |
 | P-F27 | fc base: shl interest (life total) | 184.7 | USD m | FC base (1) | 2018-2046 |
 | P-F27 | fc base: wht dividends treaty 7 5 (life total) | 75.4 | USD m | FC base (1) | 2018-2046 |
@@ -542,8 +587,8 @@ Definitions used throughout: DSCR = CFADS / (interest incl. WHT gross-up + swap 
 | P-F27 | fc base: wht shl interest treaty 5 (life total) | 9.2 | USD m | FC base (1) | 2018-2046 |
 | P-F27 | fc base: wht shl interest domestic 10 (life total) | 18.5 | USD m | FC base (1) | 2018-2046 |
 | P-F27 | fc base: commercial grossup cost (life total) | 16.3 | USD m | FC base (1) | 2018-2046 |
-| P-F27 | actual: dividends (life total) | 1,008.4 | USD m | Actual history (15) | 2018-2046 |
-| P-F27 | actual: shl interest (life total) | 104.5 | USD m | Actual history (15) | 2018-2046 |
+| P-F27 | actual: dividends (life total) | 1,008.6 | USD m | Actual history (15) | 2018-2046 |
+| P-F27 | actual: shl interest (life total) | 104.4 | USD m | Actual history (15) | 2018-2046 |
 | P-F27 | actual: wht dividends treaty 7 5 (life total) | 75.6 | USD m | Actual history (15) | 2018-2046 |
 | P-F27 | actual: wht dividends domestic 15 (life total) | 151.3 | USD m | Actual history (15) | 2018-2046 |
 | P-F27 | actual: wht shl interest treaty 5 (life total) | 5.2 | USD m | Actual history (15) | 2018-2046 |
@@ -552,7 +597,7 @@ Definitions used throughout: DSCR = CFADS / (interest incl. WHT gross-up + swap 
 | P-F28 | Senior debt / total funding / gearing | 633.3 / 855.1 / 74.1% | USD m, % | FC base (1) | 2018-05 |
 | P-F28 | Tenor from COD / WAL | 13.2 / 7.18 | years | FC base (1) | 2018-05 |
 | P-F28 | base: min DSCR / avg DSCR / LLCR | 1.35x / 1.54x / 1.42x | x | FC base (1) | 2018-05 |
-| P-F28 | banking: min DSCR / avg DSCR / LLCR | 1.34x / 1.53x / 1.41x | x | FC banking (2) | 2018-05 |
+| P-F28 | banking: min DSCR / avg DSCR / LLCR | 1.35x / 1.54x / 1.42x | x | FC banking (2) | 2018-05 |
 | P-F28 | downside: min DSCR / avg DSCR / LLCR | 1.20x / 1.38x / 1.31x | x | FC downside (3) | 2018-05 |
 | P-F28 | Equity IRR / project IRR (base) | 13.3% / 11.0% | % | FC base (1) | 2018-05 |
 | P-F29 | Handback reserve contribution 2040 | 0.28 | USD m | Actual history (15) | 2040 |
@@ -566,9 +611,9 @@ Definitions used throughout: DSCR = CFADS / (interest incl. WHT gross-up + swap 
 | P-F30 | EAR loss / deductible / paid to EPC contractor | 6.84 / 1.00 / 5.84 | USD m | Inputs | 2021-06-09 |
 | P-F30 | DSU: 76 days delay less 45-day deductible = 31 days x USD 228,400 | 7.08 | USD m | Inputs | 2021-11 |
 | P-F31 | OY1 availability pct: actual (Dec 2021-Nov 2022) / FC base (May 2021-Apr 2022) | 93.7 / 93.7 | % or USD m | Actual history (15) / FC base (1) | 2022-11-30 |
-| P-F31 | OY1 revenue: actual (Dec 2021-Nov 2022) / FC base (May 2021-Apr 2022) | 319.2 / 319.7 | % or USD m | Actual history (15) / FC base (1) | 2022-11-30 |
-| P-F31 | OY1 operating costs: actual (Dec 2021-Nov 2022) / FC base (May 2021-Apr 2022) | 222.0 / 218.2 | % or USD m | Actual history (15) / FC base (1) | 2022-11-30 |
-| P-F31 | OY1 ebitda: actual (Dec 2021-Nov 2022) / FC base (May 2021-Apr 2022) | 97.2 / 101.5 | % or USD m | Actual history (15) / FC base (1) | 2022-11-30 |
+| P-F31 | OY1 revenue: actual (Dec 2021-Nov 2022) / FC base (May 2021-Apr 2022) | 332.6 / 319.7 | % or USD m | Actual history (15) / FC base (1) | 2022-11-30 |
+| P-F31 | OY1 operating costs: actual (Dec 2021-Nov 2022) / FC base (May 2021-Apr 2022) | 235.3 / 218.2 | % or USD m | Actual history (15) / FC base (1) | 2022-11-30 |
+| P-F31 | OY1 ebitda: actual (Dec 2021-Nov 2022) / FC base (May 2021-Apr 2022) | 97.3 / 101.5 | % or USD m | Actual history (15) / FC base (1) | 2022-11-30 |
 | P-F31 | OY1 cfads: actual (Dec 2021-Nov 2022) / FC base (May 2021-Apr 2022) | 69.6 / 85.6 | % or USD m | Actual history (15) / FC base (1) | 2022-11-30 |
 | P-F31 | OY1 overdue change: actual (Dec 2021-Nov 2022) / FC base (May 2021-Apr 2022) | 26.8 / 15.2 | % or USD m | Actual history (15) / FC base (1) | 2022-11-30 |
 | P-F32 | January 2022 invoice: energy mwh | 307,515 | MWh | Actual history (15) formulas | 2022-01-31 |
@@ -699,17 +744,25 @@ Definitions used throughout: DSCR = CFADS / (interest incl. WHT gross-up + swap 
 | P-F37 | VAT actual: last refund month | 2022-08 | month | Actual history (15) | 2018-2022 |
 | P-F38 | Thin cap fc base: SHL interest total / deductible / disallowed | 189.8 / 186.0 / 3.8 | USD m | FC base (1) | life |
 | P-F38 | Thin cap fc base: deductible share in the COD period | 66.0% | % | FC base (1) | COD |
-| P-F38 | Thin cap actual: SHL interest total / deductible / disallowed | 146.8 / 139.4 / 7.4 | USD m | Actual history (15) | life |
+| P-F38 | Thin cap actual: SHL interest total / deductible / disallowed | 146.7 / 139.4 / 7.3 | USD m | Actual history (15) | life |
 | P-F38 | Thin cap actual: deductible share in the COD period | 64.1% | % | Actual history (15) | COD |
-| P-F39 | LC size on the PPA formula, FC base (2021H2 rates) | 36.6 | USD m | FC base (1) | 2021-05-01 |
-| P-F39 | LC size on the PPA formula, actual (2022H1 rates) | 36.6 | USD m | Actual history (15) | 2021-12-01 |
+| P-F39 | LC FC base at COD (588.4 MW): two-plus-one / three-month | 36.1 / 78.2 | USD m | FC base (1) | 2021-05-01 |
+| P-F39 | LC Actual at COD (581.9 MW): two-plus-one / three-month | 35.8 / 77.5 | USD m | Actual history (15) | 2021-12-01 |
+| P-F39 | LC reset January 1, 2022: two-plus-one / three-month | 36.2 / 78.6 | USD m | Actual history (15) | 2022-01-01 |
+| P-F39 | LC reset January 1, 2023: two-plus-one / three-month | 36.6 / 79.6 | USD m | Actual history (15) | 2023-01-01 |
+| P-F39 | LC reset January 1, 2024: two-plus-one / three-month | 37.6 / 81.7 | USD m | Actual history (15) | 2024-01-01 |
+| P-F39 | LC reset January 1, 2025: two-plus-one / three-month | 38.6 / 83.8 | USD m | Actual history (15) | 2025-01-01 |
 | P-F40 | FX conversion losses total (2022H2-2024H1) | 6.54 | USD m | Inputs | 2024-03-29 |
 | P-F40 | Energy-charge arrears matched by deferred SNHK/GCK payables, peak (2023-06-30) | 90.1 | USD m | Actual history (15) | 2023-06-30 |
 | P-F40 | Overdue reduction 2024H1 / 2024H2 / 2025H1 | 37.2 / 22.3 / 12.3 | USD m | Inputs | 2025-06-30 |
 | P-F40 | Implied monthly settlement installment 2024H2 / 2025H1 | 3.72 / 2.05 | USD m | Inputs | 2025-06-30 |
 | P-F40 | Late payment interest received / waived | 5.22 / 3.48 | USD m | Actual history (15) | 2025-06-30 |
-| P-F41 | PLCR at close | 1.86x | x | FC base (1) | 2018-07-17 |
-| P-F41 | LLCR at close (incl. DSRA) | 1.42x | x | FC base (1) | 2018-07-17 |
+| P-F41 | PLCR at close, base | 1.86x | x | FC base (1) | 2018-07-17 |
+| P-F41 | LLCR at close (incl. DSRA), base | 1.42x | x | FC base (1) | 2018-07-17 |
+| P-F41 | PLCR at close, banking | 1.86x | x | FC banking (2) | 2018-07-17 |
+| P-F41 | LLCR at close (incl. DSRA), banking | 1.42x | x | FC banking (2) | 2018-07-17 |
+| P-F41 | PLCR at close, downside | 1.72x | x | FC downside (3) | 2018-07-17 |
+| P-F41 | LLCR at close (incl. DSRA), downside | 1.31x | x | FC downside (3) | 2018-07-17 |
 | P-F41 | FC base 2021H2: CFADS / DS / DSCR | 50.3 / 37.2 / 1.35x | USD m, x | FC base (1) | 2021H2 |
 | P-F41 | FC base 2022H1: CFADS / DS / DSCR | 50.2 / 37.2 / 1.35x | USD m, x | FC base (1) | 2022H1 |
 | P-F41 | FC base 2022H2: CFADS / DS / DSCR | 50.8 / 37.6 / 1.35x | USD m, x | FC base (1) | 2022H2 |
@@ -736,9 +789,61 @@ Definitions used throughout: DSCR = CFADS / (interest incl. WHT gross-up + swap 
 | P-F41 | FC base 2033H1: CFADS / DS / DSCR | 52.5 / 23.6 / 2.23x | USD m, x | FC base (1) | 2033H1 |
 | P-F41 | FC base 2033H2: CFADS / DS / DSCR | 42.4 / 19.1 / 2.22x | USD m, x | FC base (1) | 2033H2 |
 | P-F41 | FC base 2034H1: CFADS / DS / DSCR | 41.5 / 18.9 / 2.20x | USD m, x | FC base (1) | 2034H1 |
+| P-F41 | FC banking 2021H2: CFADS / DS / DSCR | 50.2 / 37.2 / 1.35x | USD m, x | FC banking (2) | 2021H2 |
+| P-F41 | FC banking 2022H1: CFADS / DS / DSCR | 50.1 / 37.2 / 1.35x | USD m, x | FC banking (2) | 2022H1 |
+| P-F41 | FC banking 2022H2: CFADS / DS / DSCR | 50.7 / 37.6 / 1.35x | USD m, x | FC banking (2) | 2022H2 |
+| P-F41 | FC banking 2023H1: CFADS / DS / DSCR | 50.3 / 37.3 / 1.35x | USD m, x | FC banking (2) | 2023H1 |
+| P-F41 | FC banking 2023H2: CFADS / DS / DSCR | 50.9 / 37.8 / 1.35x | USD m, x | FC banking (2) | 2023H2 |
+| P-F41 | FC banking 2024H1: CFADS / DS / DSCR | 50.6 / 37.6 / 1.35x | USD m, x | FC banking (2) | 2024H1 |
+| P-F41 | FC banking 2024H2: CFADS / DS / DSCR | 51.6 / 38.3 / 1.35x | USD m, x | FC banking (2) | 2024H2 |
+| P-F41 | FC banking 2025H1: CFADS / DS / DSCR | 51.3 / 38.0 / 1.35x | USD m, x | FC banking (2) | 2025H1 |
+| P-F41 | FC banking 2025H2: CFADS / DS / DSCR | 49.8 / 36.9 / 1.35x | USD m, x | FC banking (2) | 2025H2 |
+| P-F41 | FC banking 2026H1: CFADS / DS / DSCR | 49.3 / 36.6 / 1.35x | USD m, x | FC banking (2) | 2026H1 |
+| P-F41 | FC banking 2026H2: CFADS / DS / DSCR | 49.7 / 36.9 / 1.35x | USD m, x | FC banking (2) | 2026H2 |
+| P-F41 | FC banking 2027H1: CFADS / DS / DSCR | 49.3 / 36.6 / 1.35x | USD m, x | FC banking (2) | 2027H1 |
+| P-F41 | FC banking 2027H2: CFADS / DS / DSCR | 49.9 / 36.4 / 1.37x | USD m, x | FC banking (2) | 2027H2 |
+| P-F41 | FC banking 2028H1: CFADS / DS / DSCR | 49.7 / 35.4 / 1.40x | USD m, x | FC banking (2) | 2028H1 |
+| P-F41 | FC banking 2028H2: CFADS / DS / DSCR | 51.6 / 36.0 / 1.43x | USD m, x | FC banking (2) | 2028H2 |
+| P-F41 | FC banking 2029H1: CFADS / DS / DSCR | 51.7 / 35.0 / 1.47x | USD m, x | FC banking (2) | 2029H1 |
+| P-F41 | FC banking 2029H2: CFADS / DS / DSCR | 51.8 / 34.0 / 1.53x | USD m, x | FC banking (2) | 2029H2 |
+| P-F41 | FC banking 2030H1: CFADS / DS / DSCR | 51.5 / 32.3 / 1.60x | USD m, x | FC banking (2) | 2030H1 |
+| P-F41 | FC banking 2030H2: CFADS / DS / DSCR | 52.1 / 31.0 / 1.68x | USD m, x | FC banking (2) | 2030H2 |
+| P-F41 | FC banking 2031H1: CFADS / DS / DSCR | 51.7 / 28.7 / 1.80x | USD m, x | FC banking (2) | 2031H1 |
+| P-F41 | FC banking 2031H2: CFADS / DS / DSCR | 52.3 / 26.5 / 1.97x | USD m, x | FC banking (2) | 2031H2 |
+| P-F41 | FC banking 2032H1: CFADS / DS / DSCR | 52.1 / 23.0 / 2.26x | USD m, x | FC banking (2) | 2032H1 |
+| P-F41 | FC banking 2032H2: CFADS / DS / DSCR | 53.2 / 23.7 / 2.24x | USD m, x | FC banking (2) | 2032H2 |
+| P-F41 | FC banking 2033H1: CFADS / DS / DSCR | 52.8 / 23.6 / 2.24x | USD m, x | FC banking (2) | 2033H1 |
+| P-F41 | FC banking 2033H2: CFADS / DS / DSCR | 42.4 / 19.1 / 2.22x | USD m, x | FC banking (2) | 2033H2 |
+| P-F41 | FC banking 2034H1: CFADS / DS / DSCR | 41.5 / 18.9 / 2.20x | USD m, x | FC banking (2) | 2034H1 |
+| P-F41 | FC downside 2021H2: CFADS / DS / DSCR | 46.8 / 37.2 / 1.26x | USD m, x | FC downside (3) | 2021H2 |
+| P-F41 | FC downside 2022H1: CFADS / DS / DSCR | 46.5 / 37.2 / 1.25x | USD m, x | FC downside (3) | 2022H1 |
+| P-F41 | FC downside 2022H2: CFADS / DS / DSCR | 46.7 / 37.6 / 1.24x | USD m, x | FC downside (3) | 2022H2 |
+| P-F41 | FC downside 2023H1: CFADS / DS / DSCR | 46.4 / 37.3 / 1.24x | USD m, x | FC downside (3) | 2023H1 |
+| P-F41 | FC downside 2023H2: CFADS / DS / DSCR | 47.3 / 37.8 / 1.25x | USD m, x | FC downside (3) | 2023H2 |
+| P-F41 | FC downside 2024H1: CFADS / DS / DSCR | 46.5 / 37.6 / 1.24x | USD m, x | FC downside (3) | 2024H1 |
+| P-F41 | FC downside 2024H2: CFADS / DS / DSCR | 46.0 / 38.3 / 1.20x | USD m, x | FC downside (3) | 2024H2 |
+| P-F41 | FC downside 2025H1: CFADS / DS / DSCR | 45.8 / 38.0 / 1.21x | USD m, x | FC downside (3) | 2025H1 |
+| P-F41 | FC downside 2025H2: CFADS / DS / DSCR | 45.8 / 36.9 / 1.24x | USD m, x | FC downside (3) | 2025H2 |
+| P-F41 | FC downside 2026H1: CFADS / DS / DSCR | 45.5 / 36.6 / 1.24x | USD m, x | FC downside (3) | 2026H1 |
+| P-F41 | FC downside 2026H2: CFADS / DS / DSCR | 45.5 / 36.9 / 1.23x | USD m, x | FC downside (3) | 2026H2 |
+| P-F41 | FC downside 2027H1: CFADS / DS / DSCR | 45.1 / 36.6 / 1.23x | USD m, x | FC downside (3) | 2027H1 |
+| P-F41 | FC downside 2027H2: CFADS / DS / DSCR | 46.1 / 36.6 / 1.26x | USD m, x | FC downside (3) | 2027H2 |
+| P-F41 | FC downside 2028H1: CFADS / DS / DSCR | 44.9 / 35.9 / 1.25x | USD m, x | FC downside (3) | 2028H1 |
+| P-F41 | FC downside 2028H2: CFADS / DS / DSCR | 45.1 / 36.8 / 1.23x | USD m, x | FC downside (3) | 2028H2 |
+| P-F41 | FC downside 2029H1: CFADS / DS / DSCR | 45.1 / 36.3 / 1.24x | USD m, x | FC downside (3) | 2029H1 |
+| P-F41 | FC downside 2029H2: CFADS / DS / DSCR | 47.4 / 35.8 / 1.32x | USD m, x | FC downside (3) | 2029H2 |
+| P-F41 | FC downside 2030H1: CFADS / DS / DSCR | 47.5 / 34.6 / 1.37x | USD m, x | FC downside (3) | 2030H1 |
+| P-F41 | FC downside 2030H2: CFADS / DS / DSCR | 47.7 / 33.9 / 1.40x | USD m, x | FC downside (3) | 2030H2 |
+| P-F41 | FC downside 2031H1: CFADS / DS / DSCR | 47.3 / 32.3 / 1.46x | USD m, x | FC downside (3) | 2031H1 |
+| P-F41 | FC downside 2031H2: CFADS / DS / DSCR | 48.3 / 31.1 / 1.56x | USD m, x | FC downside (3) | 2031H2 |
+| P-F41 | FC downside 2032H1: CFADS / DS / DSCR | 47.5 / 28.6 / 1.66x | USD m, x | FC downside (3) | 2032H1 |
+| P-F41 | FC downside 2032H2: CFADS / DS / DSCR | 47.0 / 26.0 / 1.81x | USD m, x | FC downside (3) | 2032H2 |
+| P-F41 | FC downside 2033H1: CFADS / DS / DSCR | 46.9 / 23.6 / 1.99x | USD m, x | FC downside (3) | 2033H1 |
+| P-F41 | FC downside 2033H2: CFADS / DS / DSCR | 46.6 / 19.1 / 2.43x | USD m, x | FC downside (3) | 2033H2 |
+| P-F41 | FC downside 2034H1: CFADS / DS / DSCR | 46.4 / 18.9 / 2.45x | USD m, x | FC downside (3) | 2034H1 |
 | P-F41 | Actual 2022H1: CFADS / DS / DSCR | 44.8 / 35.1 / 1.28x | USD m, x | Actual history (15) | 2022H1 |
-| P-F41 | Actual 2022H2: CFADS / DS / DSCR | 37.3 / 36.8 / 1.01x | USD m, x | Actual history (15) | 2022H2 |
-| P-F41 | Actual 2023H1: CFADS / DS / DSCR | 35.7 / 38.2 / 0.94x | USD m, x | Actual history (15) | 2023H1 |
+| P-F41 | Actual 2022H2: CFADS / DS / DSCR | 37.4 / 36.8 / 1.02x | USD m, x | Actual history (15) | 2022H2 |
+| P-F41 | Actual 2023H1: CFADS / DS / DSCR | 35.8 / 38.2 / 0.94x | USD m, x | Actual history (15) | 2023H1 |
 | P-F41 | Actual 2023H2: CFADS / DS / DSCR | 56.2 / 29.7 / 1.89x | USD m, x | Actual history (15) | 2023H2 |
 | P-F41 | Actual 2024H1: CFADS / DS / DSCR | 57.4 / 43.1 / 1.33x | USD m, x | Actual history (15) | 2024H1 |
 | P-F41 | Actual 2024H2: CFADS / DS / DSCR | 56.7 / 43.3 / 1.31x | USD m, x | Actual history (15) | 2024H2 |
@@ -747,16 +852,26 @@ Definitions used throughout: DSCR = CFADS / (interest incl. WHT gross-up + swap 
 | P-F41 | Actual 2026H1: CFADS / DS / DSCR | 49.1 / 30.4 / 1.62x | USD m, x | Actual history (15) | 2026H1 |
 | P-F41 | Actual 2026H2: CFADS / DS / DSCR | 49.9 / 30.8 / 1.62x | USD m, x | Actual history (15) | 2026H2 |
 | P-F42 | Monte Carlo inputs | availability_shock: per operating year, normal(0, 2.0 points), truncated to -10/+5 points, independent across years; dispatch: one draw per run, triangular(55.0%, 76.5%, 85.0%); heat_rate_degradation: non-recoverable rate per year, normal(0.12%, 0.04%), floored at 0; fx: KCR depreciation drift per year, normal(5.19%, 3.0%) applied to the FC FX path; debt: locked at the FC base contract (amount and repayment profile); 1000 runs, seed 20180717 | text | FC base (1), debt locked | 2018-07-17 |
-| P-F42 | Minimum DSCR P10 / P50 / P90 | 1.31x / 1.33x / 1.36x | x | FC base (1) | 2018-07-17 |
-| P-F42 | Equity IRR P10 / P50 / P90 | 12.7% / 13.1% / 13.7% | % | FC base (1) | 2018-07-17 |
+| P-F42 | Minimum DSCR P10 / P50 / P90 | 1.32x / 1.34x / 1.35x | x | FC base (1) | 2018-07-17 |
+| P-F42 | Equity IRR P10 / P50 / P90 | 12.9% / 13.2% / 13.7% | % | FC base (1) | 2018-07-17 |
 | P-F42 | Probability of a historic DSCR below 1.20x / 1.10x in any test | 0.0% / 0.0% | % | FC base (1) | 2018-07-17 |
-| P-F42 | Minimum DSCR histogram (bins 1.0,1.1,1.2,1.25,1.3,1.35,1.4,1.5,+) | 0, 0, 1, 64, 763, 172, 0, 0 | runs | FC base (1) | 2018-07-17 |
+| P-F42 | Minimum DSCR histogram (bins 1.0,1.1,1.2,1.25,1.3,1.35,1.4,1.5,+) | 0, 0, 0, 25, 769, 206, 0, 0 | runs | FC base (1) | 2018-07-17 |
 | P-F43 | Sizing passes to USD 1,000 tolerance (profile, debt, notional) | 11 | passes | FC base (1) | 2018-07-17 |
 | P-F43 | Sizing residuals by pass | 529.5, 529.5, 628.6, 11.76, 3.726, 0.09861, 0.07889, 0.001761, 0.0004971, 3.45e-05, 3.53e-06 | USD m | FC base (1) | 2018-07-17 |
 | P-F43 | Construction fixed-point passes (Python) | 12 | passes | FC base (1) | 2018-07-17 |
 | P-F43 | Closed-form total funding at the 75% gearing cap | 857.2 | USD m | FC base (1) | 2018-07-17 |
 | P-F43 | Pro rata: total funding / debt / IDC incl. swap and PRI | 855.1 / 633.3 / 63.9 | USD m | FC base (1) | 2018-07-17 |
 | P-F43 | Equity first: total funding / debt / equity / IDC / commitment fees | 840.5 / 630.4 / 210.1 / 47.2 / 12.6 | USD m | FC base (1) variant | 2018-07-17 |
+| P-F44 | OY1 revenue: capacity / VOM / fuel / GTA / take-or-pay / total | 121.0 / 15.3 / 155.5 / 27.9 / 0.0 / 319.7 | USD m | FC base (1) | OY1 |
+| P-F44 | OY2 revenue: capacity / VOM / fuel / GTA / take-or-pay / total | 121.9 / 15.5 / 157.5 / 28.3 / 0.0 / 323.1 | USD m | FC base (1) | OY2 |
+| P-F44 | OY3 revenue: capacity / VOM / fuel / GTA / take-or-pay / total | 122.7 / 15.8 / 161.0 / 28.8 / 0.0 / 328.4 | USD m | FC base (1) | OY3 |
+| P-F44 | OY4 revenue: capacity / VOM / fuel / GTA / take-or-pay / total | 123.7 / 15.8 / 160.6 / 29.1 / 0.0 / 329.1 | USD m | FC base (1) | OY4 |
+| P-F44 | OY5 revenue: capacity / VOM / fuel / GTA / take-or-pay / total | 124.6 / 16.5 / 167.3 / 29.6 / 0.0 / 338.0 | USD m | FC base (1) | OY5 |
+| P-F44 | OY6 revenue: capacity / VOM / fuel / GTA / take-or-pay / total | 125.6 / 16.8 / 170.2 / 30.0 / 0.0 / 342.5 | USD m | FC base (1) | OY6 |
+| P-F44 | OY7 revenue: capacity / VOM / fuel / GTA / take-or-pay / total | 126.5 / 17.1 / 173.5 / 30.5 / 0.0 / 347.7 | USD m | FC base (1) | OY7 |
+| P-F44 | OY8 revenue: capacity / VOM / fuel / GTA / take-or-pay / total | 126.6 / 16.9 / 170.7 / 30.7 / 0.0 / 344.9 | USD m | FC base (1) | OY8 |
+| P-F44 | OY9 revenue: capacity / VOM / fuel / GTA / take-or-pay / total | 128.6 / 17.8 / 180.4 / 31.4 / 0.0 / 358.1 | USD m | FC base (1) | OY9 |
+| P-F44 | OY10 revenue: capacity / VOM / fuel / GTA / take-or-pay / total | 129.6 / 18.2 / 183.8 / 31.8 / 0.0 / 363.4 | USD m | FC base (1) | OY10 |
 | P-F44 | 2022H1 revenue build: om | 6.00 | see model row | FC base (1) | 2022H1 |
 | P-F44 | 2022H1 revenue build: avail | 93.50 | see model row | FC base (1) | 2022H1 |
 | P-F44 | 2022H1 revenue build: energy | 1,822,457.67 | see model row | FC base (1) | 2022H1 |
@@ -779,61 +894,228 @@ Definitions used throughout: DSCR = CFADS / (interest incl. WHT gross-up + swap 
 | P-F44 | 2022H1 revenue build: top_pay | 0.00 | see model row | FC base (1) | 2022H1 |
 | P-F44 | 2022H1 revenue build: revenue | 160.94 | see model row | FC base (1) | 2022H1 |
 | P-F44 | 2022H1 revenue build: fuel_cost | 78.47 | see model row | FC base (1) | 2022H1 |
-| P-F45 | balance sheet 2018 12 31: plant | 139.1 | USD m | FC base (1) | 2018-12-31 |
-| P-F45 | balance sheet 2018 12 31: cash in project accounts | 0.0 | USD m | FC base (1) | 2018-12-31 |
-| P-F45 | balance sheet 2018 12 31: of which dsra | 0.0 | USD m | FC base (1) | 2018-12-31 |
-| P-F45 | balance sheet 2018 12 31: receivables | 0.0 | USD m | FC base (1) | 2018-12-31 |
-| P-F45 | balance sheet 2018 12 31: of which overdue | 0.0 | USD m | FC base (1) | 2018-12-31 |
-| P-F45 | balance sheet 2018 12 31: inventory | 0.0 | USD m | FC base (1) | 2018-12-31 |
-| P-F45 | balance sheet 2018 12 31: deferred tax asset | 0.0 | USD m | FC base (1) | 2018-12-31 |
-| P-F45 | balance sheet 2018 12 31: total assets | 139.1 | USD m | FC base (1) | 2018-12-31 |
-| P-F45 | balance sheet 2018 12 31: senior debt | 102.4 | USD m | FC base (1) | 2018-12-31 |
-| P-F45 | balance sheet 2018 12 31: shareholder loans | 29.5 | USD m | FC base (1) | 2018-12-31 |
-| P-F45 | balance sheet 2018 12 31: payables | 0.0 | USD m | FC base (1) | 2018-12-31 |
-| P-F45 | balance sheet 2018 12 31: deferred tax liability | 0.0 | USD m | FC base (1) | 2018-12-31 |
-| P-F45 | balance sheet 2018 12 31: share capital | 7.2 | USD m | FC base (1) | 2018-12-31 |
-| P-F45 | balance sheet 2018 12 31: retained earnings | 0.0 | USD m | FC base (1) | 2018-12-31 |
-| P-F45 | balance sheet 2018 12 31: total liabilities and equity | 139.1 | USD m | FC base (1) | 2018-12-31 |
-| P-F45 | balance sheet 2018 12 31: balance check | -0.0 | USD m | FC base (1) | 2018-12-31 |
-| P-F45 | balance sheet at cod period end: plant | 831.1 | USD m | FC base (1) | 2021-06-30 |
-| P-F45 | balance sheet at cod period end: cash in project accounts | 39.1 | USD m | FC base (1) | 2021-06-30 |
-| P-F45 | balance sheet at cod period end: of which dsra | 37.2 | USD m | FC base (1) | 2021-06-30 |
-| P-F45 | balance sheet at cod period end: receivables | 39.1 | USD m | FC base (1) | 2021-06-30 |
-| P-F45 | balance sheet at cod period end: of which overdue | 0.0 | USD m | FC base (1) | 2021-06-30 |
-| P-F45 | balance sheet at cod period end: inventory | 5.3 | USD m | FC base (1) | 2021-06-30 |
-| P-F45 | balance sheet at cod period end: deferred tax asset | 1.7 | USD m | FC base (1) | 2021-06-30 |
-| P-F45 | balance sheet at cod period end: total assets | 916.4 | USD m | FC base (1) | 2021-06-30 |
-| P-F45 | balance sheet at cod period end: senior debt | 633.3 | USD m | FC base (1) | 2021-06-30 |
-| P-F45 | balance sheet at cod period end: shareholder loans | 204.9 | USD m | FC base (1) | 2021-06-30 |
-| P-F45 | balance sheet at cod period end: payables | 24.1 | USD m | FC base (1) | 2021-06-30 |
-| P-F45 | balance sheet at cod period end: deferred tax liability | 0.0 | USD m | FC base (1) | 2021-06-30 |
-| P-F45 | balance sheet at cod period end: share capital | 44.4 | USD m | FC base (1) | 2021-06-30 |
-| P-F45 | balance sheet at cod period end: retained earnings | 9.8 | USD m | FC base (1) | 2021-06-30 |
-| P-F45 | balance sheet at cod period end: total liabilities and equity | 916.4 | USD m | FC base (1) | 2021-06-30 |
-| P-F45 | balance sheet at cod period end: balance check | 0.0 | USD m | FC base (1) | 2021-06-30 |
-| P-F45 | FY2022 income statement: revenue | 321.8 | USD m | FC base (1) | FY2022 |
-| P-F45 | FY2022 income statement: late payment interest | 0.0 | USD m | FC base (1) | FY2022 |
-| P-F45 | FY2022 income statement: operating costs | 219.9 | USD m | FC base (1) | FY2022 |
-| P-F45 | FY2022 income statement: of which fuel and transport | 184.6 | USD m | FC base (1) | FY2022 |
-| P-F45 | FY2022 income statement: ebitda | 101.9 | USD m | FC base (1) | FY2022 |
-| P-F45 | FY2022 income statement: depreciation | 33.5 | USD m | FC base (1) | FY2022 |
-| P-F45 | FY2022 income statement: finance costs | 60.5 | USD m | FC base (1) | FY2022 |
-| P-F45 | FY2022 income statement: of which shareholder loan interest | 18.8 | USD m | FC base (1) | FY2022 |
-| P-F45 | FY2022 income statement: current tax | 0.0 | USD m | FC base (1) | FY2022 |
-| P-F45 | FY2022 income statement: deferred tax | -10.0 | USD m | FC base (1) | FY2022 |
-| P-F45 | FY2022 income statement: net income | 17.9 | USD m | FC base (1) | FY2022 |
-| P-F45 | FY2022 cash flow: ebitda | 101.9 | USD m | FC base (1) | FY2022 |
-| P-F45 | FY2022 cash flow: tax paid | 0.0 | USD m | FC base (1) | FY2022 |
-| P-F45 | FY2022 cash flow: increase in working capital | 0.1 | USD m | FC base (1) | FY2022 |
-| P-F45 | FY2022 cash flow: mmra net | 0.8 | USD m | FC base (1) | FY2022 |
-| P-F45 | FY2022 cash flow: cfads | 101.0 | USD m | FC base (1) | FY2022 |
-| P-F45 | FY2022 cash flow: senior interest and fees | 41.7 | USD m | FC base (1) | FY2022 |
-| P-F45 | FY2022 cash flow: senior principal | 33.1 | USD m | FC base (1) | FY2022 |
-| P-F45 | FY2022 cash flow: ld prepayment | 0.0 | USD m | FC base (1) | FY2022 |
-| P-F45 | FY2022 cash flow: sweeps | 0.0 | USD m | FC base (1) | FY2022 |
-| P-F45 | FY2022 cash flow: dsra topup less release | 0.2 | USD m | FC base (1) | FY2022 |
-| P-F45 | FY2022 cash flow: shl interest paid | 18.8 | USD m | FC base (1) | FY2022 |
-| P-F45 | FY2022 cash flow: shl principal repaid | 7.2 | USD m | FC base (1) | FY2022 |
-| P-F45 | FY2022 cash flow: dividends | 0.0 | USD m | FC base (1) | FY2022 |
+| P-F45 | OY1 revenue (lenders basis) | 319.7 | USD m | FC base (1) | OY1 |
+| P-F45 | OY1 operating costs (lenders basis) | 218.2 | USD m | FC base (1) | OY1 |
+| P-F45 | OY1 ebitda (lenders basis) | 101.5 | USD m | FC base (1) | OY1 |
+| P-F45 | OY1 depreciation (lenders basis) | 33.5 | USD m | FC base (1) | OY1 |
+| P-F45 | OY1 finance costs (lenders basis) | 55.0 | USD m | FC base (1) | OY1 |
+| P-F45 | OY1 current tax (lenders basis) | 0.0 | USD m | FC base (1) | OY1 |
+| P-F45 | OY1 deferred tax (lenders basis) | -10.0 | USD m | FC base (1) | OY1 |
+| P-F45 | OY1 net income (lenders basis) | 23.0 | USD m | FC base (1) | OY1 |
+| P-F45 | OY1 cfads (lenders basis) | 85.6 | USD m | FC base (1) | OY1 |
+| P-F45 | OY1 debt service (lenders basis) | 62.0 | USD m | FC base (1) | OY1 |
+| P-F45 | OY1 distributions (lenders basis) | 23.4 | USD m | FC base (1) | OY1 |
+| P-F45 | OY2 revenue (lenders basis) | 323.1 | USD m | FC base (1) | OY2 |
+| P-F45 | OY2 operating costs (lenders basis) | 221.1 | USD m | FC base (1) | OY2 |
+| P-F45 | OY2 ebitda (lenders basis) | 102.0 | USD m | FC base (1) | OY2 |
+| P-F45 | OY2 depreciation (lenders basis) | 33.5 | USD m | FC base (1) | OY2 |
+| P-F45 | OY2 finance costs (lenders basis) | 59.5 | USD m | FC base (1) | OY2 |
+| P-F45 | OY2 current tax (lenders basis) | 0.0 | USD m | FC base (1) | OY2 |
+| P-F45 | OY2 deferred tax (lenders basis) | -10.0 | USD m | FC base (1) | OY2 |
+| P-F45 | OY2 net income (lenders basis) | 19.1 | USD m | FC base (1) | OY2 |
+| P-F45 | OY2 cfads (lenders basis) | 101.1 | USD m | FC base (1) | OY2 |
+| P-F45 | OY2 debt service (lenders basis) | 74.9 | USD m | FC base (1) | OY2 |
+| P-F45 | OY2 distributions (lenders basis) | 26.1 | USD m | FC base (1) | OY2 |
+| P-F45 | OY3 revenue (lenders basis) | 328.4 | USD m | FC base (1) | OY3 |
+| P-F45 | OY3 operating costs (lenders basis) | 225.9 | USD m | FC base (1) | OY3 |
+| P-F45 | OY3 ebitda (lenders basis) | 102.5 | USD m | FC base (1) | OY3 |
+| P-F45 | OY3 depreciation (lenders basis) | 33.5 | USD m | FC base (1) | OY3 |
+| P-F45 | OY3 finance costs (lenders basis) | 56.5 | USD m | FC base (1) | OY3 |
+| P-F45 | OY3 current tax (lenders basis) | 0.0 | USD m | FC base (1) | OY3 |
+| P-F45 | OY3 deferred tax (lenders basis) | -10.0 | USD m | FC base (1) | OY3 |
+| P-F45 | OY3 net income (lenders basis) | 22.5 | USD m | FC base (1) | OY3 |
+| P-F45 | OY3 cfads (lenders basis) | 101.6 | USD m | FC base (1) | OY3 |
+| P-F45 | OY3 debt service (lenders basis) | 75.2 | USD m | FC base (1) | OY3 |
+| P-F45 | OY3 distributions (lenders basis) | 25.9 | USD m | FC base (1) | OY3 |
+| P-F45 | Balance sheet 2021-06-30: plant | 831.1 | USD m | FC base (1) | 2021-06-30 |
+| P-F45 | Balance sheet 2021-06-30: cash in project accounts | 39.1 | USD m | FC base (1) | 2021-06-30 |
+| P-F45 | Balance sheet 2021-06-30: of which dsra | 37.2 | USD m | FC base (1) | 2021-06-30 |
+| P-F45 | Balance sheet 2021-06-30: receivables | 39.1 | USD m | FC base (1) | 2021-06-30 |
+| P-F45 | Balance sheet 2021-06-30: of which overdue | 0.0 | USD m | FC base (1) | 2021-06-30 |
+| P-F45 | Balance sheet 2021-06-30: inventory | 5.3 | USD m | FC base (1) | 2021-06-30 |
+| P-F45 | Balance sheet 2021-06-30: deferred tax asset | 1.7 | USD m | FC base (1) | 2021-06-30 |
+| P-F45 | Balance sheet 2021-06-30: total assets | 916.4 | USD m | FC base (1) | 2021-06-30 |
+| P-F45 | Balance sheet 2021-06-30: senior debt | 633.3 | USD m | FC base (1) | 2021-06-30 |
+| P-F45 | Balance sheet 2021-06-30: shareholder loans | 204.9 | USD m | FC base (1) | 2021-06-30 |
+| P-F45 | Balance sheet 2021-06-30: payables | 24.1 | USD m | FC base (1) | 2021-06-30 |
+| P-F45 | Balance sheet 2021-06-30: deferred tax liability | 0.0 | USD m | FC base (1) | 2021-06-30 |
+| P-F45 | Balance sheet 2021-06-30: share capital | 44.4 | USD m | FC base (1) | 2021-06-30 |
+| P-F45 | Balance sheet 2021-06-30: retained earnings | 9.8 | USD m | FC base (1) | 2021-06-30 |
+| P-F45 | Balance sheet 2021-06-30: total liabilities and equity | 916.4 | USD m | FC base (1) | 2021-06-30 |
+| P-F45 | Balance sheet 2021-06-30: balance check | 0.0 | USD m | FC base (1) | 2021-06-30 |
+| P-F45 | Balance sheet 2022-06-30: plant | 797.6 | USD m | FC base (1) | 2022-06-30 |
+| P-F45 | Balance sheet 2022-06-30: cash in project accounts | 38.5 | USD m | FC base (1) | 2022-06-30 |
+| P-F45 | Balance sheet 2022-06-30: of which dsra | 37.6 | USD m | FC base (1) | 2022-06-30 |
+| P-F45 | Balance sheet 2022-06-30: receivables | 40.0 | USD m | FC base (1) | 2022-06-30 |
+| P-F45 | Balance sheet 2022-06-30: of which overdue | 0.0 | USD m | FC base (1) | 2022-06-30 |
+| P-F45 | Balance sheet 2022-06-30: inventory | 5.3 | USD m | FC base (1) | 2022-06-30 |
+| P-F45 | Balance sheet 2022-06-30: deferred tax asset | 11.7 | USD m | FC base (1) | 2022-06-30 |
+| P-F45 | Balance sheet 2022-06-30: total assets | 893.2 | USD m | FC base (1) | 2022-06-30 |
+| P-F45 | Balance sheet 2022-06-30: senior debt | 601.6 | USD m | FC base (1) | 2022-06-30 |
+| P-F45 | Balance sheet 2022-06-30: shareholder loans | 196.5 | USD m | FC base (1) | 2022-06-30 |
+| P-F45 | Balance sheet 2022-06-30: payables | 24.7 | USD m | FC base (1) | 2022-06-30 |
+| P-F45 | Balance sheet 2022-06-30: deferred tax liability | 0.0 | USD m | FC base (1) | 2022-06-30 |
+| P-F45 | Balance sheet 2022-06-30: share capital | 44.4 | USD m | FC base (1) | 2022-06-30 |
+| P-F45 | Balance sheet 2022-06-30: retained earnings | 25.9 | USD m | FC base (1) | 2022-06-30 |
+| P-F45 | Balance sheet 2022-06-30: total liabilities and equity | 893.2 | USD m | FC base (1) | 2022-06-30 |
+| P-F45 | Balance sheet 2022-06-30: balance check | 0.0 | USD m | FC base (1) | 2022-06-30 |
+| P-F45 | Balance sheet 2023-06-30: plant | 764.2 | USD m | FC base (1) | 2023-06-30 |
+| P-F45 | Balance sheet 2023-06-30: cash in project accounts | 39.4 | USD m | FC base (1) | 2023-06-30 |
+| P-F45 | Balance sheet 2023-06-30: of which dsra | 37.8 | USD m | FC base (1) | 2023-06-30 |
+| P-F45 | Balance sheet 2023-06-30: receivables | 40.5 | USD m | FC base (1) | 2023-06-30 |
+| P-F45 | Balance sheet 2023-06-30: of which overdue | 0.0 | USD m | FC base (1) | 2023-06-30 |
+| P-F45 | Balance sheet 2023-06-30: inventory | 5.3 | USD m | FC base (1) | 2023-06-30 |
+| P-F45 | Balance sheet 2023-06-30: deferred tax asset | 21.8 | USD m | FC base (1) | 2023-06-30 |
+| P-F45 | Balance sheet 2023-06-30: total assets | 871.2 | USD m | FC base (1) | 2023-06-30 |
+| P-F45 | Balance sheet 2023-06-30: senior debt | 567.2 | USD m | FC base (1) | 2023-06-30 |
+| P-F45 | Balance sheet 2023-06-30: shareholder loans | 188.9 | USD m | FC base (1) | 2023-06-30 |
+| P-F45 | Balance sheet 2023-06-30: payables | 25.2 | USD m | FC base (1) | 2023-06-30 |
+| P-F45 | Balance sheet 2023-06-30: deferred tax liability | 0.0 | USD m | FC base (1) | 2023-06-30 |
+| P-F45 | Balance sheet 2023-06-30: share capital | 44.4 | USD m | FC base (1) | 2023-06-30 |
+| P-F45 | Balance sheet 2023-06-30: retained earnings | 45.5 | USD m | FC base (1) | 2023-06-30 |
+| P-F45 | Balance sheet 2023-06-30: total liabilities and equity | 871.2 | USD m | FC base (1) | 2023-06-30 |
+| P-F45 | Balance sheet 2023-06-30: balance check | 0.0 | USD m | FC base (1) | 2023-06-30 |
+| P-F45 | Balance sheet 2024-06-30: plant | 730.7 | USD m | FC base (1) | 2024-06-30 |
+| P-F45 | Balance sheet 2024-06-30: cash in project accounts | 40.8 | USD m | FC base (1) | 2024-06-30 |
+| P-F45 | Balance sheet 2024-06-30: of which dsra | 38.3 | USD m | FC base (1) | 2024-06-30 |
+| P-F45 | Balance sheet 2024-06-30: receivables | 40.8 | USD m | FC base (1) | 2024-06-30 |
+| P-F45 | Balance sheet 2024-06-30: of which overdue | 0.0 | USD m | FC base (1) | 2024-06-30 |
+| P-F45 | Balance sheet 2024-06-30: inventory | 5.3 | USD m | FC base (1) | 2024-06-30 |
+| P-F45 | Balance sheet 2024-06-30: deferred tax asset | 31.8 | USD m | FC base (1) | 2024-06-30 |
+| P-F45 | Balance sheet 2024-06-30: total assets | 849.4 | USD m | FC base (1) | 2024-06-30 |
+| P-F45 | Balance sheet 2024-06-30: senior debt | 530.2 | USD m | FC base (1) | 2024-06-30 |
+| P-F45 | Balance sheet 2024-06-30: shareholder loans | 180.9 | USD m | FC base (1) | 2024-06-30 |
+| P-F45 | Balance sheet 2024-06-30: payables | 25.4 | USD m | FC base (1) | 2024-06-30 |
+| P-F45 | Balance sheet 2024-06-30: deferred tax liability | 0.0 | USD m | FC base (1) | 2024-06-30 |
+| P-F45 | Balance sheet 2024-06-30: share capital | 44.4 | USD m | FC base (1) | 2024-06-30 |
+| P-F45 | Balance sheet 2024-06-30: retained earnings | 68.6 | USD m | FC base (1) | 2024-06-30 |
+| P-F45 | Balance sheet 2024-06-30: total liabilities and equity | 849.4 | USD m | FC base (1) | 2024-06-30 |
+| P-F45 | Balance sheet 2024-06-30: balance check | 0.0 | USD m | FC base (1) | 2024-06-30 |
+| P-F37 | Working capital 2021H1: receivables / gas / GTA / O&M-LTSA / other payables / net | 39.1 / 19.0 / 2.3 / 1.7 / 1.2 / 15.0 | USD m | FC base (1) | 2021H1 |
+| P-F37 | Working capital 2021H2: receivables / gas / GTA / O&M-LTSA / other payables / net | 39.0 / 18.9 / 2.3 / 1.7 / 1.2 / 15.0 | USD m | FC base (1) | 2021H2 |
+| P-F37 | Working capital 2022H1: receivables / gas / GTA / O&M-LTSA / other payables / net | 40.0 / 19.5 / 2.3 / 1.7 / 1.2 / 15.3 | USD m | FC base (1) | 2022H1 |
+| P-F37 | Working capital 2022H2: receivables / gas / GTA / O&M-LTSA / other payables / net | 39.3 / 19.1 / 2.3 / 1.7 / 1.2 / 15.1 | USD m | FC base (1) | 2022H2 |
+| P-F37 | Working capital 2023H1: receivables / gas / GTA / O&M-LTSA / other payables / net | 40.5 / 19.8 / 2.4 / 1.7 / 1.2 / 15.4 | USD m | FC base (1) | 2023H1 |
+| P-F37 | Working capital 2023H2: receivables / gas / GTA / O&M-LTSA / other payables / net | 40.1 / 19.6 / 2.3 / 1.7 / 1.2 / 15.2 | USD m | FC base (1) | 2023H2 |
+| P-F37 | Working capital 2024H1: receivables / gas / GTA / O&M-LTSA / other payables / net | 40.8 / 20.0 / 2.4 / 1.8 / 1.2 / 15.4 | USD m | FC base (1) | 2024H1 |
+| P-F40 | Netting set-off per month 2023H2 / 2024H1 (fall in deferred SNHK/GCK payables) | 5.44 / 4.96 | USD m | Actual history (15) | 2024-03-31 |
+| P-F40 | Guarantee demand 2023-04-18 (USD 21.6 m): paid 2023-07-26 | 99 | days | Inputs | 2023-04-18 |
+| P-F40 | Guarantee demand 2023-07-12 (USD 18.9 m): paid 2023-11-30 | 141 | days | Inputs | 2023-07-12 |
+| P-F40 | Guarantee demand 2023-10-09 (USD 17.4 m): paid folded into the 2024-03-21 settlement | 164 | days | Inputs | 2023-10-09 |
+| P-F40 | FX queue duration (2022-11-07 to 2024-03-29) | 508 | days | Inputs | 2024-03-29 |
+| P-F09 | Share of principal repaid within 24 months of COD (FC base; minimum 2%) | 9.0% | % | FC base (1) | 2018-07-17 |
+| P-F09 | Actual: WAL / tenor / first repayment / repaid within 24 months | 8.73 y / 15.58 y / 7 months / 8.2% | years, months, % | Actual history (15) | 2021-12-01 |
+| P-F07 | Equity at close by sponsor: Kilnworth (60%): share capital / SHL / total | 26.62 / 106.48 / 133.10 | USD m | FC base (1) | 2018-07-17 |
+| P-F07 | Equity at close by sponsor: Talme (25%): share capital / SHL / total | 11.09 / 44.37 / 55.46 | USD m | FC base (1) | 2018-07-17 |
+| P-F07 | Equity at close by sponsor: ABDB fund (15%): share capital / SHL / total | 6.66 / 26.62 / 33.28 | USD m | FC base (1) | 2018-07-17 |
+| P-F46 | GTA 2022: reservation / commodity / total passed to SEKA (= GCK revenue from Belanou) | 23.2 / 5.4 / 28.5 | USD m | Actual history (15) | 2022-12-31 |
+| P-F46 | Gas burned 2022 | 26.64 | million MMBtu | Actual history (15) | 2022-12-31 |
+| P-F47 | Fuel margin from heat-rate headroom, OY1 | 0.28 | USD m | FC base (1) | OY1 |
+| P-F47 | Fuel margin from heat-rate headroom, OY2 | 0.25 | USD m | FC base (1) | OY2 |
+| P-F47 | Fuel margin from heat-rate headroom, OY5 | 0.17 | USD m | FC base (1) | OY5 |
+| P-F47 | Fuel margin from heat-rate headroom, OY10 | 0.00 | USD m | FC base (1) | OY10 |
+| P-F47 | Fuel margin from heat-rate headroom, OY15 | -0.20 | USD m | FC base (1) | OY15 |
+| P-F47 | Fuel margin from heat-rate headroom, OY20 | -0.42 | USD m | FC base (1) | OY20 |
+| P-F47 | Fuel margin from heat-rate headroom, OY25 | -0.71 | USD m | FC base (1) | OY25 |
+| P-F47 | Contracted / plant heat rate, 2021H2 (incl. part-load 2.3%) | 6,471 / 6,459 | kJ/kWh | FC base (1) | 2021H2 |
+| P-F48 | LTSA 128,000 EOH run-out, base | 2036-06-30 (8,439 EOH/yr; 15.2 years) | date | base | 2036-06-30 |
+| P-F48 | LTSA 128,000 EOH run-out, banking | 2037-05-26 (7,965 EOH/yr; 16.1 years) | date | banking | 2037-05-26 |
+| P-F48 | LTSA 128,000 EOH run-out, low_dispatch_58 | 2041-01-19 (6,490 EOH/yr; 19.7 years) | date | low_dispatch_58 | 2041-01-19 |
+| P-F48 | LTSA 128,000 EOH run-out, actual | 2037-01-30 (8,439 EOH/yr; 15.2 years) | date | actual | 2037-01-30 |
+| P-F48 | 16-year LTSA date (FC base / actual) | 2037-04-30 / 2037-11-30 | date | Inputs | 2037 |
+| P-F49 | First utilization, ECA | 27.01 | USD m | FC base (1) | 2018-07-17 |
+| P-F49 | First utilization, A | 19.81 | USD m | FC base (1) | 2018-07-17 |
+| P-F49 | First utilization, B | 9.00 | USD m | FC base (1) | 2018-07-17 |
+| P-F49 | First utilization, COM | 34.22 | USD m | FC base (1) | 2018-07-17 |
+| P-F49 | first utilization total | 90.05 | USD m | FC base (1) | 2018-07-17 |
+| P-F49 | equity at close | 31.54 | USD m | FC base (1) | 2018-07-17 |
+| P-F49 | of which lntp credit | 14.20 | USD m | FC base (1) | 2018-07-17 |
+| P-F49 | equity cash at close | 17.34 | USD m | FC base (1) | 2018-07-17 |
+| P-F49 | epc advance gross | 57.18 | USD m | FC base (1) | 2018-07-17 |
+| P-F49 | epc advance cash net of lntp | 42.98 | USD m | FC base (1) | 2018-07-17 |
+| P-F49 | upfront fees | 9.95 | USD m | FC base (1) | 2018-07-17 |
+| P-F49 | first eca premium | 2.93 | USD m | FC base (1) | 2018-07-17 |
+| P-F49 | advisers at close | 6.28 | USD m | FC base (1) | 2018-07-17 |
+| P-F49 | insurance at close | 6.48 | USD m | FC base (1) | 2018-07-17 |
+| P-F49 | idc month1 | 0.00 | USD m | FC base (1) | 2018-07-17 |
+| P-F49 | total uses month1 | 121.59 | USD m | FC base (1) | 2018-07-17 |
+| P-F49 | development cost reimbursement: Kilnworth | 15.45 | USD m | Annex 1.14 | 2018-07-17 |
+| P-F49 | development cost reimbursement: Talme | 5.98 | USD m | Annex 1.14 | 2018-07-17 |
+| P-F49 | development cost reimbursement: total | 21.43 | USD m | Annex 1.14 | 2018-07-17 |
+| P-F49 | development fee: Kilnworth | 7.84 | USD m | Annex 1.14 | 2018-07-17 |
+| P-F49 | development fee: Talme | 3.36 | USD m | Annex 1.14 | 2018-07-17 |
+| P-F49 | development fee: total | 11.20 | USD m | Annex 1.14 | 2018-07-17 |
+| P-F49 | abdb fund premium paid by fund: Kilnworth | 3.2333 | USD m | Annex 1.14 | 2018-07-17 |
+| P-F49 | abdb fund premium paid by fund: Talme | 1.6167 | USD m | Annex 1.14 | 2018-07-17 |
+| P-F49 | abdb fund premium paid by fund: total | 4.8500 | USD m | Annex 1.14 | 2018-07-17 |
+| P-F49 | Total development receipts at close, Kilnworth | 26.52 | USD m | Annex 1.14 | 2018-07-17 |
+| P-F49 | Total development receipts at close, Talme | 10.96 | USD m | Annex 1.14 | 2018-07-17 |
+| P-F50 | PV of the 7.5 bps swap charge / at 10 bps / difference | 2.85 / 3.80 / 0.95 | USD m | FC base (1) | 2018-07-17 |
+| P-F51 | PRI premium 2018H2 (insured amount 34.4) | 0.12 | USD m | Actual history (15) | 2018H2 |
+| P-F51 | PRI premium 2019H1 (insured amount 50.6) | 0.23 | USD m | Actual history (15) | 2019H1 |
+| P-F51 | PRI premium 2019H2 (insured amount 82.3) | 0.36 | USD m | Actual history (15) | 2019H2 |
+| P-F51 | PRI premium 2020H1 (insured amount 122.4) | 0.57 | USD m | Actual history (15) | 2020H1 |
+| P-F51 | PRI premium 2020H2 (insured amount 159.3) | 0.80 | USD m | Actual history (15) | 2020H2 |
+| P-F51 | PRI premium 2021H1 (insured amount 183.3) | 0.97 | USD m | Actual history (15) | 2021H1 |
+| P-F51 | PRI premium 2021H2 (insured amount 214.4) | 1.10 | USD m | Actual history (15) | 2021H2 |
+| P-F51 | PRI premium 2022H1 (insured amount 214.4) | 1.22 | USD m | Actual history (15) | 2022H1 |
+| P-F51 | PRI premium 2022H2 (insured amount 202.6) | 1.17 | USD m | Actual history (15) | 2022H2 |
+| P-F51 | PRI premium 2023H1 (insured amount 197.0) | 1.12 | USD m | Actual history (15) | 2023H1 |
+| P-F51 | PRI premium 2023H2 (insured amount 191.1) | 1.11 | USD m | Actual history (15) | 2023H2 |
+| P-F51 | PRI premium 2024H1 (insured amount 188.6) | 1.08 | USD m | Actual history (15) | 2024H1 |
+| P-F51 | PRI premium 2024H2 (insured amount 181.4) | 1.05 | USD m | Actual history (15) | 2024H2 |
+| P-F51 | PRI premium 2025H1 (insured amount 173.9) | 0.99 | USD m | Actual history (15) | 2025H1 |
+| P-F51 | PRI premium total to cancellation (actual) | 11.91 | USD m | Actual history (15) | 2025-06-30 |
+| P-F52 | EPC cumulative progress 2018-Q3: planned / actual | 10.0% / 10.0% | % of contract price | FC base / actual | 2018-Q3 |
+| P-F52 | EPC cumulative progress 2018-Q4: planned / actual | 11.1% / 10.7% | % of contract price | FC base / actual | 2018-Q4 |
+| P-F52 | EPC cumulative progress 2019-Q1: planned / actual | 15.5% / 13.6% | % of contract price | FC base / actual | 2019-Q1 |
+| P-F52 | EPC cumulative progress 2019-Q2: planned / actual | 24.1% / 19.1% | % of contract price | FC base / actual | 2019-Q2 |
+| P-F52 | EPC cumulative progress 2019-Q3: planned / actual | 36.6% / 27.3% | % of contract price | FC base / actual | 2019-Q3 |
+| P-F52 | EPC cumulative progress 2019-Q4: planned / actual | 51.2% / 37.7% | % of contract price | FC base / actual | 2019-Q4 |
+| P-F52 | EPC cumulative progress 2020-Q1: planned / actual | 65.9% / 49.3% | % of contract price | FC base / actual | 2020-Q1 |
+| P-F52 | EPC cumulative progress 2020-Q2: planned / actual | 78.4% / 61.1% | % of contract price | FC base / actual | 2020-Q2 |
+| P-F52 | EPC cumulative progress 2020-Q3: planned / actual | 87.0% / 71.9% | % of contract price | FC base / actual | 2020-Q3 |
+| P-F52 | EPC cumulative progress 2020-Q4: planned / actual | 91.4% / 80.9% | % of contract price | FC base / actual | 2020-Q4 |
+| P-F52 | EPC cumulative progress 2021-Q1: planned / actual | 92.5% / 87.4% | % of contract price | FC base / actual | 2021-Q1 |
+| P-F52 | EPC cumulative progress 2021-Q2: planned / actual | 100.0% / 91.1% | % of contract price | FC base / actual | 2021-Q2 |
+| P-F52 | EPC cumulative progress 2021-Q3: planned / actual | 100.0% / 92.4% | % of contract price | FC base / actual | 2021-Q3 |
+| P-F52 | EPC cumulative progress 2021-Q4: planned / actual | 100.0% / 100.0% | % of contract price | FC base / actual | 2021-Q4 |
+| P-F53 | ECL allowance 2022H2 (normal / 1-90 / 91-180 / >180 days aged) | 3.31 (40.5 / 25.2 / 25.2 / 18.4) | USD m | Actual history (15) | 2022H2 |
+| P-F53 | ECL allowance 2023H1 (normal / 1-90 / 91-180 / >180 days aged) | 8.17 (40.0 / 21.9 / 21.9 / 68.9) | USD m | Actual history (15) | 2023H1 |
+| P-F53 | ECL allowance 2023H2 (normal / 1-90 / 91-180 / >180 days aged) | 7.26 (39.8 / 0.0 / 0.0 / 71.8) | USD m | Actual history (15) | 2023H2 |
+| P-F53 | Swap MTM to project (= hedge reserve, pre-tax), 2018-07-17 (2.872%) | -2.85 | USD m | Actual history (15) | 2018-07-17 |
+| P-F53 | Swap MTM to project (= hedge reserve, pre-tax), 2022-12-31 (4.05%) | 29.06 | USD m | Actual history (15) | 2022-12-31 |
+| P-F53 | Swap MTM to project (= hedge reserve, pre-tax), 2023-06-30 (4.35%) | 34.04 | USD m | Actual history (15) | 2023-06-30 |
+| P-F53 | Swap MTM to project (= hedge reserve, pre-tax), 2025-06-30 before termination (3.68%) | 13.12 | USD m | Actual history (15) | 2025-06-30 |
+| P-F53 | Swap MTM to project (= hedge reserve, pre-tax), 2025-06-30 after termination (52%) | 6.82 | USD m | Actual history (15) | 2025-06-30 |
+| P-F53 | Swap MTM to project (= hedge reserve, pre-tax), 2026-09-30 (3.40%, approximate) | 3.52 | USD m | Actual history (15) | 2026-09-30 |
+| P-F54 | 2024 estimate: GloBE income / covered taxes / SBIE / UK top-up on Kilnworth share | 36.1 / 0.00 / 55.6 / 0.00 | USD m | Actual history (15) | 2024-12-31 |
+| P-F54 | 2025 estimate: GloBE income / covered taxes / SBIE / UK top-up on Kilnworth share | 44.4 / 0.00 / 51.8 / 0.00 | USD m | Actual history (15) | 2025-12-31 |
+| P-F54 | 2026 estimate: GloBE income / covered taxes / SBIE / UK top-up on Kilnworth share | 51.3 / 0.06 / 48.1 / 0.21 | USD m | Actual history (15) | 2026-12-31 |
+| P-F55 | Underwritten at mandate (ECA-covered + commercial) / final holds commercial / ECA-covered | 430.6 / 81.8 / 76.0 | USD m | FC base (1) | 2018-07-17 |
+| P-F55 | Castellan construction_2020H1: RWA / capital / net income (annual) / RORAC | 71.9 / 9.70 / 1.90 / 19.6% | USD m, % | FC base (1) | 2020H1 |
+| P-F55 | Castellan operations_2022H1: RWA / capital / net income (annual) / RORAC | 75.2 / 10.15 / 2.72 / 26.8% | USD m, % | FC base (1) | 2022H1 |
+| P-F56 | IFRIC 12 financial asset at COD / effective interest rate | 801.4 / 13.53% a year | USD m, % | Actual history (15) | 2021-12-01 |
+| P-F56 | 2021: financial asset / PP&E (lenders) / finance income / capital charge collected / PBT difference / cumulative equity difference | 792.9 / 798.7 / 0.0 / 8.5 / -5.8 / -5.8 | USD m | Actual history (15) | 2021-12-31 |
+| P-F56 | 2022: financial asset / PP&E (lenders) / finance income / capital charge collected / PBT difference / cumulative equity difference | 793.9 / 766.7 / 104.0 / 102.9 / 33.1 / 27.2 | USD m | Actual history (15) | 2022-12-31 |
+| P-F56 | 2023: financial asset / PP&E (lenders) / finance income / capital charge collected / PBT difference / cumulative equity difference | 793.4 / 734.6 / 104.0 / 104.6 / 31.5 / 58.8 | USD m | Actual history (15) | 2023-12-31 |
+| P-F56 | 2024: financial asset / PP&E (lenders) / finance income / capital charge collected / PBT difference / cumulative equity difference | 791.7 / 702.6 / 103.9 / 105.6 / 30.3 / 89.1 | USD m | Actual history (15) | 2024-12-31 |
+| P-F56 | 2025: financial asset / PP&E (lenders) / finance income / capital charge collected / PBT difference / cumulative equity difference | 788.9 / 670.5 / 103.7 / 106.4 / 29.3 / 118.4 | USD m | Actual history (15) | 2025-12-31 |
+| P-F56 | 2026: financial asset / PP&E (lenders) / finance income / capital charge collected / PBT difference / cumulative equity difference | 785.1 / 638.4 / 103.3 / 107.1 / 28.2 / 146.6 | USD m | Actual history (15) | 2026-12-31 |
+| P-F57 | OCGT: annualized fixed cost / fuel cost / cost at 30%, 50%, 70%, 90% CF | 85.6 USD/kW-yr / 59.5 / 96.1, 83.0, 77.5, 74.4 | USD/MWh (2015) | Annex 4.12 inputs | 2015 |
+| P-F57 | CCGT: annualized fixed cost / fuel cost / cost at 30%, 50%, 70%, 90% CF | 137.7 USD/kW-yr / 36.7 / 92.6, 71.6, 62.6, 57.6 | USD/MWh (2015) | Annex 4.12 inputs | 2015 |
+| P-F57 | Coal: annualized fixed cost / fuel cost / cost at 30%, 50%, 70%, 90% CF | 267.8 USD/kW-yr / 29.0 / 135.4, 94.6, 77.2, 67.4 | USD/MWh (2015) | Annex 4.12 inputs | 2015 |
+| P-F57 | HFO: annualized fixed cost / fuel cost / cost at 30%, 50%, 70%, 90% CF | 151.2 USD/kW-yr / 62.6 / 129.1, 106.1, 96.2, 90.8 | USD/MWh (2015) | Annex 4.12 inputs | 2015 |
+| P-F58 | 2022H1: dispatch / gas burn actual / at 76.5% / fuel charge actual / at 76.5% | 84.0% / 13.53 / 12.32 million MMBtu / 85.7 / 78.0 | %, MMBtu, USD m | Actual history (15) vs COD re-forecast (14) | 2022H1 |
+| P-F58 | 2022H2: dispatch / gas burn actual / at 76.5% / fuel charge actual / at 76.5% | 81.5% / 13.11 / 12.30 million MMBtu / 82.9 / 77.9 | %, MMBtu, USD m | Actual history (15) vs COD re-forecast (14) | 2022H2 |
+| P-F59 | Halbeck RBL at_signing_2017: NPV10 (net, after remaining capex) / borrowing base; before remaining capex | 51.0 / 39.2; 655.5 / 504.3 | USD m | Illustrative (annex 4.13) | 2017 |
+| P-F59 | Halbeck RBL at_2023_redetermination: NPV10 (net, after remaining capex) / borrowing base; before remaining capex | 810.3 / 600.0; 810.3 / 600.0 | USD m | Illustrative (annex 4.13) | tion |
+| P-F60 | Bid screen: cost / capacity + FOM revenue / fixed costs / CFADS proxy | 655.0 / 117.7 / 18.1 / 99.6 | USD m | Annex 4.7 inputs | 2016-09 |
+| P-F60 | Bid screen: debt capacity at 1.35x over 13 years / debt at 75% gearing / capacity payments share of SEKA revenue | 689.4 / 491.2 / 6.5% | USD m, % | Annex 4.7 inputs | 2016-09 |
+| P-F61 | 2P reserves / Belanou GSA / SEKA contract / coverage | 1140 / 559 / 267 bcf / 1.38x | bcf, x | Annex 1.7.4 inputs | 2017 |
+| P-F62 | Levelized tariffs: winner / runner-up / third / fourth | 73.00 / 76.36 / 80.16 / 82.57 | USD/MWh (2016) | Bid inputs | 2016-09-27 |
+| P-F62 | Pricing committee tariff at USD 15.05/kW-month (bid-model IRR 17.6%) vs submitted (16.0%) | 74.35 vs 73.00 | USD/MWh | Bid inputs | 2016-09-19 |
+| P-F63 | June 30, 2023: 12-month CFADS / debt service / historic DSCR | 73.1 / 75.0 / 0.98x | USD m, x | Actual history (15) | 2023-06-30 |
+| P-F63 | Equity cure needed for 1.10x / 1.20x | 9.3 / 16.8 | USD m | Actual history (15) | 2023-06-30 |
 
 Values outside Case Bible design ranges (reported to the editor-in-chief): standby facility and contingent equity drawing 0.0 (range 5 to 15); FC base equity IRR below the 16.0% bid target. See `model/case_p_report.md` Section 6.

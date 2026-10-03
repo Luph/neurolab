@@ -1,6 +1,6 @@
 # Anchor registry
 
-Status: canonical, 2026-10-03. Compiled by the architecture editor from the anchors, tables of contents, worked-example, exhibit, clause and equation specifications of the 17 unit briefs (`bible/briefs/u01.md` to `u17.md`), with the fixes ordered in `bible/ownership-resolutions.md` (rulings R-128 to R-136 and the label consequences of other rulings). Rulings take precedence over briefs.
+Status: canonical, 2026-10-03. Compiled by the architecture editor from the anchors, tables of contents, worked-example, exhibit, clause and equation specifications of the 17 unit briefs (`bible/briefs/u01.md` to `u17.md`), with the fixes ordered in `bible/ownership-resolutions.md` (Part M rulings R-114 to R-121 and the label consequences of other rulings). Rulings take precedence over briefs.
 
 Totals: 5240 labels (91 ch, 1384 sec, 2038 ssec, 572 ex, 589 exh, 159 cl including clause variants, 254 eq, 153 fw), plus 8 front-matter labels.
 
@@ -11,27 +11,27 @@ Totals: 5240 labels (91 ch, 1384 sec, 2038 ssec, 572 ex, 589 exh, 159 cl includi
 3. Examples, exhibits, clauses and equations are numbered in order of appearance within the chapter. Where the Note column says "implied", the brief describes the object without declaring a label; the writer assigns the label shown, in order of appearance, and reports the final list.
 4. Clause variants (`cl:N.Ka`, `cl:N.Kb`, ...) exist only inside a `clausevariants` group whose parent is `cl:N.K`. No other label carries a letter suffix.
 5. Exercise labels (`exr:N.K`) run from 1 in each chapter and are not listed individually; they may be cited only inside their own chapter and by matter file 93 (checklists and templates).
-6. A later chapter may display a formula owned elsewhere only as a model row or a specialized application; its equation caption says so and cites the home equation (ruling R-133). Repurposed captions are marked in the Note column.
+6. A later chapter may display a formula owned elsewhere only as a model row or a specialized application; its equation caption says so and cites the home equation (ruling R-116). Repurposed captions are marked in the Note column.
 7. Frameworks are numbered within their home chapter (Framework 28.2). Only the home chapter sets the `framework` box; others `\cref` it.
-8. Front matter uses unnumbered headings with `fm:` labels (ruling R-106); matter Chapters 89 to 94 use the chapter scheme.
+8. Front matter uses unnumbered headings with `fm:` labels (ruling R-107); matter Chapters 89 to 94 use the chapter scheme.
 
 ## 2. Duplicates, collisions and fixes
 
 | # | Problem found | Fix (binding) |
 |---|---|---|
-| A1 | Ch 86 brief declares "Exhibit 86.2a" (case table) and then "Exhibit 86.2" (tornado); credit-paper Part 10 has an unnumbered exhibit; Part 6 is "inside Exhibit 86.11 or a separate exhibit". | Renumber Ch 86 exhibits as listed under Chapter 86 below: case table becomes exh:86.2; every later exhibit moves up by one; Part 5 and Part 6 share exh:86.12; Part 10 gets exh:86.17; the 2026 hindsight table becomes exh:86.19. No letter suffixes (R-130). |
+| A1 | Ch 86 brief declares "Exhibit 86.2a" (case table) and then "Exhibit 86.2" (tornado); credit-paper Part 10 has an unnumbered exhibit; Part 6 is "inside Exhibit 86.11 or a separate exhibit". | Renumber Ch 86 exhibits as listed under Chapter 86 below: case table becomes exh:86.2; every later exhibit moves up by one; Part 5 and Part 6 share exh:86.12; Part 10 gets exh:86.17; the 2026 hindsight table becomes exh:86.19. No letter suffixes (R-115). |
 | A2 | u14 (Ch 66 assumed list) cites `sec:6.x`, a placeholder. | Read `sec:6.8` (swaps) and `ssec:6.8.3` (valuing a swap and breaking it). |
-| A3 | Two equations define WAL (eq:6.2, eq:29.3, eq:36.5); two define bond price (eq:6.5, eq:30.1); YTM is eq:38.6 as well as Ch 6; levelization appears as eq:5.11, eq:47.1, eq:11.6, eq:83.1 and eq:88.2; minimum margin is eq:38.1 and eq:68.1; spark spread is eq:11.7 and eq:69.2; make-whole is eq:30.2 and eq:63.2; RAROC is eq:29.1 and eq:86.1. | Home equations: eq:6.2 (WAL), eq:6.5 (bond price and YTM), eq:5.11 (levelized price), eq:11.6 (LCOE as an instance of eq:5.11), eq:83.1 (LCOH), eq:38.1 (minimum margin), eq:11.7 (clean spark spread), eq:30.2 (make-whole), eq:29.1 (RAROC). The later labels keep their numbers (no renumbering) but are repurposed to the chapter-specific application named in the Note column (R-133). |
+| A3 | Two equations define WAL (eq:6.2, eq:29.3, eq:36.5); two define bond price (eq:6.5, eq:30.1); YTM is eq:38.6 as well as Ch 6; levelization appears as eq:5.11, eq:47.1, eq:11.6, eq:83.1 and eq:88.2; minimum margin is eq:38.1 and eq:68.1; spark spread is eq:11.7 and eq:69.2; make-whole is eq:30.2 and eq:63.2; RAROC is eq:29.1 and eq:86.1. | Home equations: eq:6.2 (WAL), eq:6.5 (bond price and YTM), eq:5.11 (levelized price), eq:11.6 (LCOE as an instance of eq:5.11), eq:83.1 (LCOH), eq:38.1 (minimum margin), eq:11.7 (clean spark spread), eq:30.2 (make-whole), eq:29.1 (RAROC). The later labels keep their numbers (no renumbering) but are repurposed to the chapter-specific application named in the Note column (R-116). |
 | A4 | Model-row equations restate owned formulas: eq:42.3, eq:42.4, eq:42.5, eq:43.1, eq:45.3, eq:45.5. | Captions changed to "... row, implementing eq:X"; the model chapter does not re-derive the formula. |
-| A5 | Headings duplicate home headings in later chapters: ssec:30.3.1 ("Coupon, price, and yield", duplicating ssec:6.7.1), ssec:30.3.2 and ssec:36.9.1 (WAL, duplicating ssec:6.3.2), sec:65.5 and ssec:65.5.2 ("Terminal value", duplicating ssec:46.4.3), ssec:68.5.1 ("The minimum margin", duplicating ssec:38.1.1), ssec:80.2.2 ("Single till and dual till", duplicating ssec:21.8.1), ssec:6.8.2 (credit and execution charge, owned by ssec:38.4.1). | Retitled as shown in the chapter tables (R-004, R-005, R-007, R-014, R-050, R-076). |
-| A6 | Framework names collide: Framework 87.3 "integrity check" against Framework 43.2 "integrity-check catalogue" (model checks). | Framework 87.3 becomes "The integrity test", slug `fw:integrity-test` (R-129). |
-| A7 | Framework 79.1 (`fw:demand-risk-menu`) teaches instruments owned by Ch 57 and Ch 58. | Kept as a sector selection tool, renamed "Demand-risk sharing menu for toll roads"; it cites ssec:57.5.1 and ssec:58.1.3 for mechanics (R-047). |
+| A5 | Headings duplicate home headings in later chapters: ssec:30.3.1 ("Coupon, price, and yield", duplicating ssec:6.7.1), ssec:30.3.2 and ssec:36.9.1 (WAL, duplicating ssec:6.3.2), sec:65.5 and ssec:65.5.2 ("Terminal value", duplicating ssec:46.4.3), ssec:68.5.1 ("The minimum margin", duplicating ssec:38.1.1), ssec:80.2.2 ("Single till and dual till", duplicating ssec:21.8.1), ssec:6.8.2 (credit and execution charge, owned by ssec:38.4.1). | Retitled as shown in the chapter tables (R-004, R-005, R-007, R-014, R-055, R-075). |
+| A6 | Framework names collide: Framework 87.3 "integrity check" against Framework 43.2 "integrity-check catalogue" (model checks). | Framework 87.3 becomes "The integrity test", slug `fw:integrity-test` (R-118). |
+| A7 | Framework 79.1 (`fw:demand-risk-menu`) teaches instruments owned by Ch 57 and Ch 58. | Kept as a sector selection tool, renamed "Demand-risk sharing menu for toll roads"; it cites ssec:57.5.1 and ssec:58.1.3 for mechanics (R-052). |
 | A8 | New subsections required by rulings. | `ssec:27.3.4` Cyber cover for operating assets; `ssec:62.5.4` Operational-technology cyber controls and reporting; `ssec:66.4.7` Decommissioning provisions and asset retirement obligations. Each is appended after the last existing subsection, so no existing label moves. |
 | A9 | Briefs for Chapters 5 to 9, 15, 67, 68, 84 and 86 describe some exhibits and clauses without declaring labels (for example "Exhibit 5.3", "Exhibit 7.1", "Clause 15.1", "Clause 67.1"). | Listed below as implied labels; writers assign them in order of appearance. |
 | A10 | Placeholder strings in briefs (`cl:N.K`, `eq:N.K`, `sec:N.M`, `ch:NN`, `fm:slug`, `ex:89.K`, `exh:89.K`) and range notation (`ex:1.1 to ex:1.10`, `sec:39.1 to sec:39.14`). | Placeholders are not labels. Ranges were expanded against the brief's own TOC and example lists; the expanded labels appear below. |
-| A11 | `eq:85.1` (annuity screening shortcut) could be cited for sizing. | Registered as a screening approximation only; sizing cites eq:36.1 to eq:36.3 (R-108). |
+| A11 | `eq:85.1` (annuity screening shortcut) could be cited for sizing. | Registered as a screening approximation only; sizing cites eq:36.1 to eq:36.3 (R-109). |
 | A12 | `fw:deal-on-a-page` (Ch 1) and `fw:loss-trace` (Ch 3) are reused by later chapters. | Ch 85 (sec:85.2) cites `fw:deal-on-a-page` for the first screen block; Ch 28 (sec:28.6) and Ch 64 cite `fw:loss-trace` alongside `fw:who-pays-if` (R-111). |
-| A13 | Risk templates for matter file 93. | Matter 93 reproduces `exh:14.6` (risk register) and `exh:15.3` (allocation matrix) (R-031). |
+| A13 | Risk templates for matter file 93. | Matter 93 reproduces `exh:14.6` (risk register) and `exh:15.3` (allocation matrix) (R-039). |
 | A14 | Book-wide uniqueness check. | No label is declared by two briefs; no section, subsection, example, exhibit or equation number is declared twice with different content within a chapter except those fixed in A1 to A5; framework numbers are unique within each chapter. |
 
 ## 3. Frameworks, book-wide
@@ -2010,7 +2010,7 @@ Source brief: `briefs/u06.md`.
 | `ssec:27.3.1` | Operational property damage and machinery breakdown |  |
 | `ssec:27.3.2` | Business interruption |  |
 | `ssec:27.3.3` | Limits and the maximum foreseeable loss |  |
-| `ssec:27.3.4` | Cyber cover for operating assets (new, R-029) | new label |
+| `ssec:27.3.4` | Cyber cover for operating assets (new, R-037) | new label |
 | `sec:27.4` | Moss Landing and the gap between insured and economic loss |  |
 | `sec:27.5` | Political risk and credit insurance |  |
 | `sec:27.6` | What lenders require |  |
@@ -4267,7 +4267,7 @@ Source brief: `briefs/u13.md`.
 | `ssec:62.5.1` | Planned outages against availability targets |  |
 | `ssec:62.5.2` | Major maintenance, LTSA claims and spares |  |
 | `ssec:62.5.3` | Insurance renewals in operation |  |
-| `ssec:62.5.4` | Operational-technology cyber controls and reporting (new, R-029) | new label |
+| `ssec:62.5.4` | Operational-technology cyber controls and reporting (new, R-037) | new label |
 | `sec:62.6` | Performance management |  |
 | `ssec:62.6.1` | The KPIs that matter by asset type |  |
 | `ssec:62.6.2` | Managing the O&M operator and LTSA provider |  |
@@ -4372,7 +4372,7 @@ Source brief: `briefs/u13.md`.
 | `exh:63.8` | Case R 2025 private placement by series and holdco repricing |  |
 | `cl:63.1` | Minimum holding covenant, common terms agreement (in the solution to Exercise 63.11; Illustrative) |  |
 | `eq:63.1` | Refinancing gain on an identical profile |  |
-| `eq:63.2` | Make-whole premium | ruling: Make-whole cost at the refinancing settlement date, applying eq:30.2 (repurposed, R-095) |
+| `eq:63.2` | Make-whole premium | ruling: Make-whole cost at the refinancing settlement date, applying eq:30.2 (repurposed, R-078) |
 | `fw:refinancing-gain-bridge` | Framework 63.1 Refinancing gain bridge | home ssec:63.2.1 |
 | `fw:stake-sale-consent-map` | Framework 63.2 Stake-sale consent map | home ssec:63.6.3 |
 
@@ -4712,7 +4712,7 @@ Source brief: `briefs/u14.md`.
 | `ssec:68.4.3` | The US proposals of March 2026 |  |
 | `ssec:68.4.4` | Why the same loan carries different capital in London, Frankfurt and New York |  |
 | `sec:68.5` | From capital to price |  |
-| `ssec:68.5.1` | The minimum margin | ruling: The capital charge under each route (retitled, R-076) |
+| `ssec:68.5.1` | The minimum margin | ruling: The capital charge under each route (retitled, R-075) |
 | `ssec:68.5.2` | What the bridge shows |  |
 | `ssec:68.5.3` | Regulatory expected loss and accounting provisions |  |
 | `sec:68.6` | Credit risk mitigation in project lending |  |
@@ -4752,7 +4752,7 @@ Source brief: `briefs/u14.md`.
 | `exh:68.6` | Solvency II qualifying infrastructure checklist (Illustrative) |  |
 | `exh:68.7` | Slotting scorecard template (Illustrative) |  |
 | `cl:68.1` | (caption not stated in brief; writer supplies) | implied by the brief text; writer assigns this label in order of appearance |
-| `eq:68.1` | Minimum margin from capital | ruling: Capital charge per unit of exposure, feeding eq:38.1 (repurposed, R-076) |
+| `eq:68.1` | Minimum margin from capital | ruling: Capital charge per unit of exposure, feeding eq:38.1 (repurposed, R-075) |
 | `eq:68.2` | Output floor: $RWA} = (RWA}_{IRB}}, x RWA}_{SA}})$ |  |
 | `fw:capital-to-price-bridge` | Framework 68.1 Capital-to-price bridge | home ssec:68.5.2 |
 
@@ -4821,7 +4821,7 @@ Source brief: `briefs/u15.md`.
 | `exh:69.7` | Bélanou sensitivities as a thermal reference (Case P) |  |
 | `cl:69.1` | Carbon-cost pass-through, tolling agreement (sponsor-, lender-, offtaker-friendly) |  |
 | `eq:69.1` | Cost per MWh at a capacity factor (screening curve) |  |
-| `eq:69.2` | Spark spread and clean spark spread | ruling: Merchant gross margin from the spark spread over dispatched hours, citing eq:11.7 (repurposed, R-101) |
+| `eq:69.2` | Spark spread and clean spark spread | ruling: Merchant gross margin from the spark spread over dispatched hours, citing eq:11.7 (repurposed, R-024) |
 | `fw:fuel-chain-trace` | Framework 69.1 Fuel-chain trace | home sec:69.4 |
 
 ### Chapter 70: Onshore wind and solar
@@ -5470,7 +5470,7 @@ Source brief: `briefs/u16.md`.
 | `ssec:80.1.4` | Rolling stock finance |  |
 | `sec:80.2` | Airports |  |
 | `ssec:80.2.1` | Two businesses under one roof |  |
-| `ssec:80.2.2` | Single till and dual till | ruling: Choosing a till and a price cap (retitled, R-050) |
+| `ssec:80.2.2` | Single till and dual till | ruling: Choosing a till and a price cap (retitled, R-055) |
 | `ssec:80.2.3` | Privatizations, concessions and terminal PPPs |  |
 | `sec:80.3` | Ports |  |
 | `ssec:80.3.1` | Landlord, tool and service ports |  |
@@ -5855,7 +5855,7 @@ Source brief: `briefs/u17.md`.
 | `exh:85.6` | Completed screen note for the wind farm teaser (Illustrative) |  |
 | `exh:85.7` | Pieter's screen note on Bélanou, September 2016 (Case P) |  |
 | `exh:85.8` | Quick screens of the Merrick Link (2014) and Mesa Corta A1 (2021) (Case T, Case R) |  |
-| `eq:85.1` | Screening debt capacity by annuity | ruling: Screening debt capacity by annuity (screening approximation only; never cited for sizing, R-108) |
+| `eq:85.1` | Screening debt capacity by annuity | ruling: Screening debt capacity by annuity (screening approximation only; never cited for sizing, R-109) |
 | `eq:85.2` | Breakeven revenue for a DSCR test |  |
 | `fw:one-hour-deal-screen` | Framework 85.1 One-hour deal screen | home sec:85.2 |
 | `fw:deal-questions` | Framework 85.2 Questions to ask on any deal | home ssec:85.4.1 |
@@ -5910,26 +5910,26 @@ Source brief: `briefs/u17.md`.
 | `ex:86.3` | Sensitivities in order of impact (Illustrative) |  |
 | `ex:86.4` | The profitability box (Illustrative) |  |
 | `ex:86.5` | The returns bridge from sponsor case to IC case (Illustrative) |  |
-| `exh:86.1` | Credit papers, IC memos, DFI board papers, ECA memos and government papers compared (Illustrative) | renumbered, R-130 |
-| `exh:86.2` | Sponsor case against bank case: adjustments and sources (Illustrative) (was "Exhibit 86.2a") | renumbered, R-130 |
-| `exh:86.3` | Sensitivities ordered by impact on DSCR (Illustrative) (was exh:86.2) | renumbered, R-130 |
-| `exh:86.4` | Conditions of approval, well and badly drafted (Illustrative) (was exh:86.3) | renumbered, R-130 |
-| `exh:86.5` | A risk–mitigant–residual row and its rewrite (Illustrative) (was exh:86.4) | renumbered, R-130 |
-| `exh:86.6` | Returns bridge from sponsor case to IC case (USD m, %) (Illustrative) (was exh:86.5) | renumbered, R-130 |
-| `exh:86.7` | One-page annual review summary (Illustrative) (was exh:86.6) | renumbered, R-130 |
-| `exh:86.8` | Castellan credit paper, Part 1: recommendation and request (Case P) | renumbered, R-130 |
-| `exh:86.9` | Castellan credit paper, Part 2: transaction summary and sources and uses (Case P) | renumbered, R-130 |
-| `exh:86.10` | Castellan credit paper, Part 3: sponsors and equity (Case P) | renumbered, R-130 |
-| `exh:86.11` | Castellan credit paper, Part 4: country, offtaker and government support (Case P) | renumbered, R-130 |
-| `exh:86.12` | Castellan credit paper, Parts 5 and 6: project, construction and gas supply chain (Case P) | renumbered, R-130 |
-| `exh:86.13` | Castellan credit paper, Part 7: risk–mitigant–residual table (Case P) | renumbered, R-130 |
-| `exh:86.14` | Castellan credit paper, Part 8: financial analysis, key metrics (Case P) | renumbered, R-130 |
-| `exh:86.15` | Castellan credit paper, Part 8: case table and sensitivities (Case P) | renumbered, R-130 |
-| `exh:86.16` | Castellan credit paper, Part 9: structure and terms (Case P) | renumbered, R-130 |
-| `exh:86.17` | Castellan credit paper, Part 10: E&S, legal and integrity (Case P) | renumbered, R-130 |
-| `exh:86.18` | Castellan credit paper, Part 11: pricing, profitability and hold (Case P) | renumbered, R-130 |
-| `exh:86.19` | The 2018 risk–mitigant–residual table read in 2026 (Case P) (was exh:86.17) | renumbered, R-130 |
-| `eq:86.1` | Return on risk-adjusted capital for a facility hold | ruling: Facility profitability box: post-tax RAROC on the hold, applying eq:29.1 (repurposed, R-076) |
+| `exh:86.1` | Credit papers, IC memos, DFI board papers, ECA memos and government papers compared (Illustrative) | renumbered, R-115 |
+| `exh:86.2` | Sponsor case against bank case: adjustments and sources (Illustrative) (was "Exhibit 86.2a") | renumbered, R-115 |
+| `exh:86.3` | Sensitivities ordered by impact on DSCR (Illustrative) (was exh:86.2) | renumbered, R-115 |
+| `exh:86.4` | Conditions of approval, well and badly drafted (Illustrative) (was exh:86.3) | renumbered, R-115 |
+| `exh:86.5` | A risk–mitigant–residual row and its rewrite (Illustrative) (was exh:86.4) | renumbered, R-115 |
+| `exh:86.6` | Returns bridge from sponsor case to IC case (USD m, %) (Illustrative) (was exh:86.5) | renumbered, R-115 |
+| `exh:86.7` | One-page annual review summary (Illustrative) (was exh:86.6) | renumbered, R-115 |
+| `exh:86.8` | Castellan credit paper, Part 1: recommendation and request (Case P) | renumbered, R-115 |
+| `exh:86.9` | Castellan credit paper, Part 2: transaction summary and sources and uses (Case P) | renumbered, R-115 |
+| `exh:86.10` | Castellan credit paper, Part 3: sponsors and equity (Case P) | renumbered, R-115 |
+| `exh:86.11` | Castellan credit paper, Part 4: country, offtaker and government support (Case P) | renumbered, R-115 |
+| `exh:86.12` | Castellan credit paper, Parts 5 and 6: project, construction and gas supply chain (Case P) | renumbered, R-115 |
+| `exh:86.13` | Castellan credit paper, Part 7: risk–mitigant–residual table (Case P) | renumbered, R-115 |
+| `exh:86.14` | Castellan credit paper, Part 8: financial analysis, key metrics (Case P) | renumbered, R-115 |
+| `exh:86.15` | Castellan credit paper, Part 8: case table and sensitivities (Case P) | renumbered, R-115 |
+| `exh:86.16` | Castellan credit paper, Part 9: structure and terms (Case P) | renumbered, R-115 |
+| `exh:86.17` | Castellan credit paper, Part 10: E&S, legal and integrity (Case P) | renumbered, R-115 |
+| `exh:86.18` | Castellan credit paper, Part 11: pricing, profitability and hold (Case P) | renumbered, R-115 |
+| `exh:86.19` | The 2018 risk–mitigant–residual table read in 2026 (Case P) (was exh:86.17) | renumbered, R-115 |
+| `eq:86.1` | Return on risk-adjusted capital for a facility hold | ruling: Facility profitability box: post-tax RAROC on the hold, applying eq:29.1 (repurposed, R-075) |
 | `fw:credit-paper-structure` | Framework 86.1 Credit paper structure | home sec:86.2 |
 | `fw:risk-mitigant-residual` | Framework 86.2 Risk–mitigant–residual table | home ssec:86.2.4 |
 | `fw:committee-pre-mortem` | Framework 86.3 Committee pre-mortem | home ssec:86.5.3 |

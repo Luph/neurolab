@@ -136,6 +136,7 @@ SCN_PARAMS = [  # key, label, unit, function of scenario dict
     ('s_miniperm', 'Soft mini-perm sweep (1 = on)', 'flag', lambda p: p['miniperm']),
     ('s_shl', 'Shareholder loan share of equity', 'fraction', lambda p: p['shl_share']),
     ('s_capf', 'Capital charge factor', 'factor', lambda p: p['cap_charge_f']),
+    ('s_disp_path', 'Actual 2022 dispatch path (1 = on)', 'flag', lambda p: p['disp_path']),
 ]
 for k, lab, un, fn in SCN_PARAMS:
     I.row(k + '_tbl', lab + ' [table]', un, None, inp=True)
@@ -204,7 +205,7 @@ add_scalars('Plant and PPA', [
     ('kj', 'kJ per MMBtu', 'kJ', 1055056), ('o_nr', 'Output degradation, non-recoverable', '% pa', 0.15),
     ('o_rec', 'Output degradation, recoverable average', '%', 1.0), ('h_nr', 'Heat-rate degradation, non-recoverable', '% pa', 0.12),
     ('h_rec', 'Heat-rate degradation, recoverable average', '%', 0.8), ('gt_hours', 'GT operating hours per year', 'h', 8059),
-    ('gt_starts', 'GT starts per year', 'starts', 38), ('eoh_start', 'EOH per start', 'h', 10),
+    ('gt_starts', 'GT starts per year', 'starts', 38), ('disp_base', 'Base dispatch for GT hours', '%', 76.5), ('eoh_start', 'EOH per start', 'h', 10),
     ('a_target', 'PPA availability target', '%', 90.0),
     ('cap_chg', 'Capital charge (Nov 2016 prices)', 'USD/kW-month', 14.36), ('cap_idx', 'Capital charge indexed share', 'fraction', 0.20),
     ('fom_chg', 'Fixed O&M charge', 'USD/kW-month', 2.31), ('fom_us', 'Fixed O&M US CPI share', 'fraction', 0.62),
@@ -278,7 +279,8 @@ for k, lab, un in [('base_fc', '6M LIBOR forward curve at FC', '%'),
                    ('prof_cod', 'COD re-sculpted repayment profile (share of debt at COD)', 'fraction'),
                    ('prof_bond', 'Bond amortization profile (share of face)', 'fraction'),
                    ('N_s', 'Swap notional schedule, semiannual (contract)', 'USD m'),
-                   ('av8', 'Availability profile by OY (8-year cycle, cols J-Q)', '%')]:
+                   ('av8', 'Availability profile by OY (8-year cycle, cols J-Q)', '%'),
+                   ('disp_act', 'Actual dispatch when available, 2022 drought (annex 4.11)', '%')]:
     I.row('S_' + k, lab, un, None, inp=True)
 I.sec('Monthly inputs (column J = Aug 2018 ... BJ = Dec 2022)')
 for k, lab, un in [('epc_fc', 'EPC payment profile, FC (33 months)', '%'), ('epc_act', 'EPC payment profile, actual (40 months)', '%'),
@@ -385,8 +387,10 @@ O.scalar('C', 'Contracted capacity', 'MW', f"=IF({V('Inputs.s_constr')}=2,{V('In
 O.scalar('HRg', 'Plant net heat rate, new and clean', 'kJ/kWh', f"=IF({V('Inputs.s_constr')}=2,{V('Inputs.HR_t')},{V('Inputs.HR_g')})", '0')
 O.row('of', 'Output degradation factor', 'factor',
       lambda i: f"=(1-{V('Inputs.o_nr')}/100*{ref('Operations.yrs', i)})*(1-{V('Inputs.o_rec')}/100)", py='S.out_factor')
+O.row('disp', 'Dispatch factor when available', '%',
+      lambda i: f"=IF(AND({V('Inputs.s_disp_path')}=1,{ref('Inputs.S_disp_act', i)}>0),{ref('Inputs.S_disp_act', i)},{V('Inputs.s_dispatch')})", py='S.dispatch')
 O.row('energy', 'Net energy delivered', 'MWh',
-      lambda i: f"={V('Operations.C')}*730*{ref('Time.om', i)}*{ref('Operations.avail', i)}/100*{V('Inputs.s_dispatch')}/100*{ref('Operations.of', i)}",
+      lambda i: f"={V('Operations.C')}*730*{ref('Time.om', i)}*{ref('Operations.avail', i)}/100*{ref('Operations.disp', i)}/100*{ref('Operations.of', i)}",
       fmt='#,##0', py='S.energy')
 O.row('hr_act', 'Plant net heat rate', 'kJ/kWh',
       lambda i: f"={V('Operations.HRg')}*(1+{V('Inputs.h_nr')}/100*{ref('Operations.yrs', i)})*(1+{V('Inputs.h_rec')}/100)*(1+{V('Inputs.pl')}/100)*{V('Inputs.s_hr_f')}", py='S.hr_act')
@@ -432,7 +436,7 @@ O.row('om_inc', 'O&M availability incentive', 'USD m',
       lambda i: f"=IF({ref('Time.om', i)}>0,{V('Inputs.om_inc')}*MAX(-1,MIN(1,({ref('Operations.avail', i)}-92)/3))*{ref('Operations.us_cf', i)}*{mf(i)},0)", total=True, py='S.om_incentive')
 O.row('ltsa_fix', 'LTSA fixed fee', 'USD m', lambda i: f"={V('Inputs.ltsa_fix')}*{ref('Operations.us_cf', i)}*{mf(i)}*{fo}", total=True, py='S.ltsa_fixed')
 O.row('eoh', 'Equivalent operating hours (2 GTs)', 'EOH',
-      lambda i: f"=IF({ref('Operations.avail_prof', i)}>0,{'1' if 'E2' in ERR else '2'}*({V('Inputs.gt_hours')}*{ref('Operations.avail', i)}/{ref('Operations.avail_prof', i)}+{V('Inputs.gt_starts')}*{V('Inputs.eoh_start')})*{mf(i)},0)", fmt='#,##0', py='S.eoh')
+      lambda i: f"=IF({ref('Operations.avail_prof', i)}>0,{'1' if 'E2' in ERR else '2'}*({V('Inputs.gt_hours')}*{ref('Operations.avail', i)}/{ref('Operations.avail_prof', i)}*{ref('Operations.disp', i)}/{V('Inputs.disp_base')}+{V('Inputs.gt_starts')}*{V('Inputs.eoh_start')})*{mf(i)},0)", fmt='#,##0', py='S.eoh')
 O.row('ltsa_var', 'LTSA variable fee', 'USD m', lambda i: f"={ref('Operations.eoh', i)}*{V('Inputs.ltsa_var')}*{ref('Operations.us_cf', i)}/1000000", total=True, py='S.ltsa_var')
 O.row('insur', 'Operational insurance', 'USD m',
       lambda i: f"={V('Inputs.ins_o')}*{ref('Operations.us_cf', i)}*{mf(i)}*(1+{V('Inputs.ins_step')}*{V('Inputs.s_ins_step')}*IF({ref('Time.t', i)}>=9,1,0))*{fo}", total=True, py='S.insurance')
@@ -1088,6 +1092,7 @@ def input_values():
     v['S_lpi_sh'] = ls
     v['S_prof_fc'] = K['prof_FC']; v['S_prof_cod'] = K['prof_COD']; v['S_prof_bond'] = K['prof_BOND']
     v['S_N_s'] = K['N_s']
+    v['S_disp_act'] = [cp.ACT_DISPATCH.get(cp.S_LABEL[t], 0.0) for t in range(NS)]
     v['S_av8'] = cp.INP['plant']['availability_profile_pct_by_operating_year_cycle']['values']
     v['M_epc_fc'] = cp.EPC_FC; v['M_epc_act'] = cp.EPC_ACT; v['M_own_fc'] = cp.OWN_FC
     ovr = np.zeros(NM)

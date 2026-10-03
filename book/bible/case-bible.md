@@ -1305,11 +1305,8 @@ Every change to a case after this version is logged here. "Date in story" is whe
 | R-C16 | 2026-02-17 | 88 | R | Data-center offer terms | Tenor only | Ketterman Digital Campuses; options A and B; repowering parameters | Annex R.8 |
 | R-C17 | 2020-03; 2024-11 | 20, 82 | R | Ostrander profile and vPPA credit support | Absent | Profile; thresholds 10.0 and 15.0; LC 5.0 | Annex R.2 |
 | R-C18 | 2024-03 to 2024-05 | 83 | R | Hydrogen developer offer | Unnamed | Marlowe Gulf Hydrogen; 12 years at USD 39.00/MWh; IC passes May 2024 | Annex R.3 |
-| P-C16 | 2022-06 to 2025-06 | 59, 62 | P | Cash effect of SEKA arrears (modeler calibration, pre-publication) | Not specified (full overdue increase hits cash) | 80% of overdue amounts are energy-charge arrears matched by deferred payments to SNHK and GCK (formalized by the June 2023 netting agreement); 20% hits cash | Assumption; P-F20, P-F21, P-F40 |
-| P-C17 | 2017 | 25, 36, 43 | P | FC downside dispatch (modeler calibration, pre-publication) | 58.0% listed in 1.2; definition in 1.10 silent | FC downside uses base dispatch 76.5% (1.10 definition); 58.0% not used | Assumption; P-F08 |
-| P-C18 | 2017 | 41, 67 | P | Thin capitalization rule (modeler calibration, pre-publication) | 3:1, application undefined | Shareholder loans are related-party debt; equity = share capital + positive retained earnings; deductible share = min(1, 3 x equity / SHL) | Assumption; P-F38 |
-| P-C19 | 2018 | 36, 42 | P | ECA first-repayment test (modeler calibration, pre-publication) | Within 6 months of COD | Within 24 months of the starting point (OECD project finance terms in force in 2018, fact sheet t-oecd-pf-2018); first repayment stays 2021-12-31 | P-F09 |
-| P-C20 | 2016-07 | 6 | P | 6M USD LIBOR, July 2016 (modeler input, pre-publication) | Not in inputs | 0.95%, approximate, fact-check before printing | P-F03 |
+| P-C41 | 2022-06 to 2025-06 | 59, 62 | P | Cash effect of SEKA arrears (modeler calibration, pre-publication) | Not specified (full overdue increase hits cash) | 80% of overdue amounts are energy-charge arrears matched by deferred payments to SNHK and GCK (formalized by the June 2023 netting agreement); 20% hits cash | Assumption; P-F20, P-F21, P-F40 |
+| P-C42 | 2021 onward | 24, 41 | P | LTSA equivalent operating hours (modeler rule, pre-publication) | Hours fixed at 8,059 a year | Hours scale with availability and with dispatch relative to 76.5% (8,439 EOH a year per unit at base) | Annex 1.5; P-F48 |
 | N-C01 | n/a | 1, 89 | All | Name register | Unregistered | Part N entries | Annex N |
 
 Rows T-C12 to T-C21, R-C11 to R-C18 and N-C01 are detailed in `bible/case-bible-annex-tr.md` (Annex TR, October 3, 2026), which takes precedence over this file where they differ.
