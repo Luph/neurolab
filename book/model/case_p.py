@@ -1064,7 +1064,7 @@ def extras(R):
     S.update(cf)
     S['pt_fuel'] = S['fuel_rev'] - S['fuel_cost']; S['pt_gta'] = S['gta_res'] + S['gta_com'] - (S['pass_cost'] - S['fuel_cost'] - S['top_pay'])
     # ECA tests on the selected profile (principal paid, all tranches), measured from the scenario's COD
-    cod = cod_date(p); Pp = S['principal_total']; tot = Pp.sum()
+    cod = cod_date(p); Pp = S['prof_eca']; tot = Pp.sum()      # ECA-covered tranche, contractual schedule (D-128)
     yrs = np.array([(S_END[t] - cod).days / 365.25 for t in range(NS)]); S['eca_yrs'] = yrs
     if tot > 1e-9:
         first = min(t for t in range(NS) if Pp[t] > 1e-9); last = max(t for t in range(NS) if Pp[t] > 1e-9)
@@ -1076,7 +1076,7 @@ def extras(R):
     # live debt capacity at the sizing DSCR (Debt F130)
     tl = max(t for t in range(NS) if S_END[t] <= date(2034, 6, 30))
     try:
-        pv = sculpt(R, f['D'], R['t1'], tl, SHARE_W())[2]
+        _sc = sculpt(R, f['D'], R['t1'], tl, SHARE_W()); pv = _sc[2]; R['sculpt_dscr_live'] = float(_sc[1])
     except Exception:
         pv = float('nan')
     R['capacity_live'] = float(pv / 1.35)
@@ -1376,7 +1376,8 @@ def tidx_end(d):
     return [t for t in range(NS) if S_END[t] == d][0]
 
 def ECA_tests(R, cod):
-    S = R['S']; P = S['principal_total']; tot = P.sum()
+    """OECD Annex VII tests on the ECA-covered tranche's own contractual schedule (D-128)."""
+    S = R['S']; P = S['prof_eca'] * float(R['f']['Dk'][0] if 'Dk' in R['f'] else 1.0); tot = P.sum()
     yrs = np.array([(S_END[t] - cod).days / 365.25 for t in range(NS)])
     wal = float((P * yrs).sum() / tot)
     first = min(t for t in range(NS) if P[t] > 1e-9); last = max(t for t in range(NS) if P[t] > 1e-9)
@@ -1708,7 +1709,13 @@ def figures(F, RS, R1, R14, R15):
                                        llcr='(PV of CFADS to final maturity at the period all-in senior cost + DSRA balance) / senior debt outstanding, at the start of the first repayment period',
                                        gearing='senior debt / total funding requirement (all uses incl. IDC, fees, ECA premium and DSRA)'))
     # ---------------- P-F09 sculpted profile and ECA tests
+    _yrs = np.array([(S_END[t] - cod_fc).days / 365.25 for t in range(NS)])
+    _pall = Sb['prof_eca'] * SHARE[0] + Rb['prof'] * (1 - SHARE[0])
     P['P-F09'] = dict(profile_share={S_LABEL[t]: float(Rb['prof'][t]) for t in range(NS) if Rb['prof'][t] > 0},
+                      profile_basis='profile_share: sculpted contract profile of the A-loan, B-loan and commercial tranches (share of their amount); the ECA-covered tranche repays in equal installments (D-128)',
+                      eca_installment_share={S_LABEL[t]: float(Sb['prof_eca'][t]) for t in range(NS) if Sb['prof_eca'][t] > 0},
+                      contractual_wal_all_tranches_from_cod=float((_pall * _yrs).sum() / _pall.sum()),
+                      contractual_wal_other_tranches_from_cod=float((Rb['prof'] * _yrs).sum() / Rb['prof'].sum()),
                       principal_usd_m={S_LABEL[t]: float(Sb['principal_total'][t]) for t in range(NS) if Sb['principal_total'][t] > 1e-9},
                       eca_tests=ECA_tests(Rb, cod_fc),
                       eca_rules='OECD Arrangement project finance terms in force 2018: repayment term <= 14 years; first repayment <= 24 months after the starting point; WAL <= 7.25 years; no installment > 25% of principal (fact sheet t-oecd-pf-2018)')
@@ -2111,7 +2118,7 @@ def figures_annex(F, RS, R1, R14, R15):
                                        for nm, sh in (('Kilnworth', 60), ('Talme', 25), ('ABDB fund', 15))}
     # ---- P-F09 ECA tests (24 months, >= 2% repaid by then)
     def eca24(R, cod):
-        S = R['S']; P_ = S['principal_total']; tot = P_.sum()
+        S = R['S']; P_ = S['prof_eca']; tot = P_.sum()
         lim = add_months(cod, 24) - timedelta(days=1)
         rep = sum(P_[t] for t in range(NS) if S_END[t] <= lim)
         return dict(repaid_within_24_months_share=float(rep / tot), pass_2pct_by_24_months=bool(rep / tot >= 0.02))
