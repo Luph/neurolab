@@ -1,0 +1,823 @@
+{
+ "meta": {
+  "case_id": "R",
+  "name": "Mesa Corta Renewables portfolio (Case R)",
+  "file_version": "1.0",
+  "as_of": "2026-10-03",
+  "source_document": "book/bible/case-bible.md, Part 3",
+  "market": "ERCOT (Texas), a real energy-only market. Assets, owners, counterparties and all prices are fictional and ILLUSTRATIVE; price paths are of the same order of magnitude as published hub averages but are not ERCOT settlement data or a forecast.",
+  "currency": "USD nominal",
+  "periodicity": "annual (calendar years 2022-2059); acquisitions at stated dates use day-weighted first-year fractions; debt service semiannual aggregated to annual; refinancing applied at 2025-12-31",
+  "units_convention": "_usd_m USD millions; _usd_per_mwh; _usd_per_kw_month; _usd_per_kw_yr; _gwh; _pct percent; _x ratio"
+ },
+ "owner": {
+  "gp": "Lattimer Infrastructure Partners",
+  "fund": "Lattimer Energy Transition Fund II",
+  "fund_commitments_usd_m": 2380.0,
+  "vintage": 2021,
+  "management_fee_pct_on_commitments_investment_period": 1.4,
+  "carry_pct": 15.0,
+  "preferred_return_pct": 8.0,
+  "fund_term_years": "10 + 2",
+  "platform": "Mesa Corta Renewables LLC (holdco: Mesa Corta HoldCo LLC; opco: Mesa Corta OpCo LLC)",
+  "asset_management_cost_usd_m_pa_2022": 3.2
+ },
+ "timeline": {
+  "a1_signing": "2021-12-09",
+  "a1_closing": "2022-03-22",
+  "a2_signing": "2023-06-02",
+  "a2_closing": "2023-08-31",
+  "a3_signing_and_deposit": "2024-02-15",
+  "kerrigan_cod_and_payment": "2024-04-02",
+  "barlow_cod_and_payment": "2024-12-19",
+  "refinancing_pricing": "2025-10-21",
+  "refinancing_funding": "2025-12-16"
+ },
+ "acquisitions": {
+  "A1": {
+   "target": "Mesa Corta Renewables LLC (assets R1-R5, sponsor interests; tax equity remains in R3 and R5)",
+   "seller": "Hollenbeck Energy North America",
+   "enterprise_value_usd_m": 1184.6,
+   "funding": "new opco term loan + holdco term loan + fund equity",
+   "transaction_costs_usd_m": 14.9,
+   "w_and_i": "buy-side policy USD 118.0m limit"
+  },
+  "A2": {
+   "target": "Redfern Storage LLC",
+   "seller": "Tolliver Energy Development LLC",
+   "enterprise_value_usd_m": 132.4,
+   "funding": "Redfern term loan + fund equity",
+   "transaction_costs_usd_m": 2.6,
+   "itc": "claimed by seller (placed in service before closing)"
+  },
+  "A3": {
+   "target": "Kerrigan Storage LLC and Barlow Gap Solar LLC",
+   "seller": "Tolliver Energy Development LLC",
+   "kerrigan_price_usd_m": 171.9,
+   "barlow_price_usd_m": 168.3,
+   "barlow_deposit_pct": 20.0,
+   "funding": "holdco incremental term loan + fund equity; ITC transfer proceeds",
+   "transaction_costs_usd_m": 4.4,
+   "completion_risk": "seller bears construction risk; price payable at COD; long-stop 2025-06-30"
+  }
+ },
+ "assets": [
+  {
+   "id": "R1",
+   "name": "Thatcher Flats Wind",
+   "technology": "onshore wind",
+   "mw_ac": 201.6,
+   "turbines": "96 x 2.1 MW",
+   "cod": "2014-12-15",
+   "zone_hub": "West Hub",
+   "p50_ncf_pct": 39.4,
+   "p50_gwh": 695.8,
+   "p90_1yr_pct_of_p50": 87.6,
+   "p90_10yr_pct_of_p50": 92.9,
+   "p99_1yr_pct_of_p50": 81.2,
+   "degradation_pct_pa": 0.2,
+   "useful_life_end": "2044-12-31",
+   "acquired": "A1",
+   "revenue_contract": "merchant plus fixed-volume swap",
+   "capture_bucket": "west_wind"
+  },
+  {
+   "id": "R2",
+   "name": "Sandoval Hills Wind",
+   "technology": "onshore wind (coastal)",
+   "mw_ac": 248.4,
+   "turbines": "108 x 2.3 MW",
+   "cod": "2017-06-30",
+   "zone_hub": "South Hub",
+   "p50_ncf_pct": 36.1,
+   "p50_gwh": 785.5,
+   "p90_1yr_pct_of_p50": 89.2,
+   "p90_10yr_pct_of_p50": 94.1,
+   "p99_1yr_pct_of_p50": 84.0,
+   "degradation_pct_pa": 0.2,
+   "useful_life_end": "2047-06-30",
+   "acquired": "A1",
+   "revenue_contract": "physical as-generated PPA to 2029-06-30, merchant after",
+   "capture_bucket": "coastal_wind"
+  },
+  {
+   "id": "R3",
+   "name": "Ollie Creek Wind",
+   "technology": "onshore wind (Panhandle)",
+   "mw_ac": 153.0,
+   "turbines": "51 x 3.0 MW",
+   "cod": "2019-11-20",
+   "zone_hub": "West Hub (Panhandle node)",
+   "p50_ncf_pct": 46.2,
+   "p50_gwh": 619.2,
+   "p90_1yr_pct_of_p50": 86.9,
+   "p90_10yr_pct_of_p50": 92.4,
+   "p99_1yr_pct_of_p50": 80.1,
+   "degradation_pct_pa": 0.2,
+   "useful_life_end": "2049-11-30",
+   "acquired": "A1",
+   "revenue_contract": "proxy revenue swap to 2029-12-31",
+   "capture_bucket": "panhandle_wind",
+   "tax_equity": {
+    "investor": "Castellan Bank (US tax equity desk)",
+    "type": "PTC partnership flip",
+    "pre_flip_cash_to_te_pct": 40.0,
+    "pre_flip_tax_to_te_pct": 99.0,
+    "expected_flip": "2029-12-31",
+    "post_flip_cash_and_tax_to_te_pct": 5.0,
+    "buyout_option_after_flip_pct_of_fmv": 100.0
+   }
+  },
+  {
+   "id": "R4",
+   "name": "Peeler Draw Solar",
+   "technology": "single-axis tracking PV",
+   "mw_ac": 98.7,
+   "mw_dc": 131.3,
+   "cod": "2020-10-09",
+   "zone_hub": "West Hub",
+   "p50_ncf_pct": 27.1,
+   "p50_gwh": 234.3,
+   "p90_1yr_pct_of_p50": 94.6,
+   "p90_10yr_pct_of_p50": 96.8,
+   "p99_1yr_pct_of_p50": 91.9,
+   "degradation_pct_pa": 0.45,
+   "useful_life_end": "2055-10-31",
+   "acquired": "A1",
+   "revenue_contract": "fixed-shape solar hedge 2022-2026, merchant after",
+   "capture_bucket": "west_solar"
+  },
+  {
+   "id": "R5",
+   "name": "Calloway Mesa Solar",
+   "technology": "single-axis tracking PV",
+   "mw_ac": 182.4,
+   "mw_dc": 241.0,
+   "cod": "2021-06-28",
+   "zone_hub": "West Hub",
+   "p50_ncf_pct": 28.3,
+   "p50_gwh": 452.2,
+   "p90_1yr_pct_of_p50": 94.2,
+   "p90_10yr_pct_of_p50": 96.5,
+   "p99_1yr_pct_of_p50": 91.4,
+   "degradation_pct_pa": 0.45,
+   "useful_life_end": "2056-06-30",
+   "acquired": "A1",
+   "revenue_contract": "virtual PPA to 2033-06-30",
+   "capture_bucket": "west_solar",
+   "tax_equity": {
+    "investor": "Castellan Bank (US tax equity desk)",
+    "type": "ITC partnership flip",
+    "pre_flip_cash_to_te_pct": 20.0,
+    "pre_flip_tax_to_te_pct": 99.0,
+    "expected_flip": "2027-06-30",
+    "post_flip_cash_and_tax_to_te_pct": 5.0
+   }
+  },
+  {
+   "id": "R6",
+   "name": "Redfern Storage",
+   "technology": "lithium-ion BESS (LFP), 2-hour",
+   "mw_ac": 100.0,
+   "mwh": 200.0,
+   "cod": "2023-07-14",
+   "zone_hub": "North Hub",
+   "round_trip_efficiency_pct": 86.0,
+   "availability_pct": 97.5,
+   "augmentation": {
+    "years_after_cod": [
+     5,
+     9
+    ],
+    "pct_of_mwh": 6.0,
+    "cost_usd_per_kwh_2025": 41.0
+   },
+   "useful_life_end": "2043-07-31",
+   "acquired": "A2",
+   "revenue_contract": "7-year toll to 2030-07-13, merchant after"
+  },
+  {
+   "id": "R7",
+   "name": "Kerrigan Storage",
+   "technology": "lithium-ion BESS (LFP), 2-hour",
+   "mw_ac": 150.0,
+   "mwh": 300.0,
+   "cod": "2024-04-02",
+   "zone_hub": "Houston Hub",
+   "round_trip_efficiency_pct": 86.5,
+   "availability_pct": 97.5,
+   "augmentation": {
+    "years_after_cod": [
+     5,
+     9
+    ],
+    "pct_of_mwh": 6.0,
+    "cost_usd_per_kwh_2025": 41.0
+   },
+   "useful_life_end": "2044-03-31",
+   "acquired": "A3",
+   "revenue_contract": "merchant with 8-year revenue floor"
+  },
+  {
+   "id": "R8",
+   "name": "Barlow Gap Solar",
+   "technology": "single-axis tracking PV",
+   "mw_ac": 120.0,
+   "mw_dc": 162.0,
+   "cod": "2024-12-19",
+   "zone_hub": "South Hub",
+   "p50_ncf_pct": 27.6,
+   "p50_gwh": 290.1,
+   "p90_1yr_pct_of_p50": 94.4,
+   "p90_10yr_pct_of_p50": 96.6,
+   "p99_1yr_pct_of_p50": 91.6,
+   "degradation_pct_pa": 0.4,
+   "useful_life_end": "2059-12-31",
+   "acquired": "A3",
+   "revenue_contract": "fixed-shape hedge for 60% of P50 2025-2034",
+   "capture_bucket": "south_solar"
+  }
+ ],
+ "prices": {
+  "label": "ILLUSTRATIVE ERCOT North Hub around-the-clock annual average, USD/MWh nominal. 2022-2025 are stylized history; 2026+ are scenario curves.",
+  "north_hub_atc_base": {
+   "2022": 74.6,
+   "2023": 61.2,
+   "2024": 30.1,
+   "2025": 39.8,
+   "2026": 44.6,
+   "2027": 47.3,
+   "2028": 49.1,
+   "2029": 50.4,
+   "2030": 51.8,
+   "2031": 52.84,
+   "2032": 53.9,
+   "2033": 54.98,
+   "2034": 56.08,
+   "2035": 57.2,
+   "2036": 58.34,
+   "2037": 59.51,
+   "2038": 60.7,
+   "2039": 61.91,
+   "2040": 63.15,
+   "2041": 64.41,
+   "2042": 65.7,
+   "2043": 67.01,
+   "2044": 68.35,
+   "2045": 69.72,
+   "2046": 71.11,
+   "2047": 72.53,
+   "2048": 73.98,
+   "2049": 75.46,
+   "2050": 76.97,
+   "2051": 78.51,
+   "2052": 80.08,
+   "2053": 81.68,
+   "2054": 83.31,
+   "2055": 84.98,
+   "2056": 86.68,
+   "2057": 88.41,
+   "2058": 90.18,
+   "2059": 91.98
+  },
+  "north_hub_atc_low": {
+   "2022": 74.6,
+   "2023": 61.2,
+   "2024": 30.1,
+   "2025": 39.8,
+   "2026": 35.2,
+   "2027": 36.4,
+   "2028": 37.3,
+   "2029": 38.0,
+   "2030": 38.6,
+   "2031": 38.99,
+   "2032": 39.38,
+   "2033": 39.77,
+   "2034": 40.17,
+   "2035": 40.57,
+   "2036": 40.98,
+   "2037": 41.39,
+   "2038": 41.8,
+   "2039": 42.22,
+   "2040": 42.64,
+   "2041": 43.07,
+   "2042": 43.5,
+   "2043": 43.94,
+   "2044": 44.38,
+   "2045": 44.82,
+   "2046": 45.27,
+   "2047": 45.72,
+   "2048": 46.18,
+   "2049": 46.64,
+   "2050": 47.11,
+   "2051": 47.58,
+   "2052": 48.06,
+   "2053": 48.54,
+   "2054": 49.03,
+   "2055": 49.52,
+   "2056": 50.02,
+   "2057": 50.52,
+   "2058": 51.03,
+   "2059": 51.54
+  },
+  "north_hub_atc_high": {
+   "2022": 74.6,
+   "2023": 61.2,
+   "2024": 30.1,
+   "2025": 39.8,
+   "2026": 56.3,
+   "2027": 60.4,
+   "2028": 63.2,
+   "2029": 65.1,
+   "2030": 66.9,
+   "2031": 68.77,
+   "2032": 70.7,
+   "2033": 72.68,
+   "2034": 74.72,
+   "2035": 76.81,
+   "2036": 78.96,
+   "2037": 81.17,
+   "2038": 83.44,
+   "2039": 85.78,
+   "2040": 88.18,
+   "2041": 90.65,
+   "2042": 93.19,
+   "2043": 95.8,
+   "2044": 98.48,
+   "2045": 101.24,
+   "2046": 104.07,
+   "2047": 106.98,
+   "2048": 109.98,
+   "2049": 113.06,
+   "2050": 116.23,
+   "2051": 119.48,
+   "2052": 122.83,
+   "2053": 126.27,
+   "2054": 129.81,
+   "2055": 133.44,
+   "2056": 137.18,
+   "2057": 141.02,
+   "2058": 144.97,
+   "2059": 149.03
+  },
+  "hub_ratio_to_north": {
+   "West Hub": 0.968,
+   "South Hub": 0.991,
+   "Houston Hub": 1.012
+  },
+  "capture_ratio_to_own_hub_atc": {
+   "west_wind": {
+    "2022": 0.74,
+    "decline_pts_pa": 0.6,
+    "floor": 0.62
+   },
+   "panhandle_wind": {
+    "2022": 0.66,
+    "decline_pts_pa": 0.5,
+    "floor": 0.58,
+    "note": "node-to-West-Hub basis included"
+   },
+   "coastal_wind": {
+    "2022": 0.92,
+    "decline_pts_pa": 0.3,
+    "floor": 0.85
+   },
+   "west_solar": {
+    "2022": 0.86,
+    "decline_pts_pa": 2.0,
+    "floor": 0.6
+   },
+   "south_solar": {
+    "2022": 0.9,
+    "decline_pts_pa": 1.8,
+    "floor": 0.64
+   },
+   "low_case_rule": "declines 1.5x faster, floors 0.04 lower",
+   "high_case_rule": "declines 0.5x as fast, floors unchanged"
+  },
+  "hub_capture_vs_node_capture_for_hedge_settlement": "Hedges and vPPA settle at hub; node capture = hub capture minus basis: West wind 0.04, Panhandle 0.07, West solar 0.03, South solar 0.02, coastal wind 0.01 (as share of hub ATC)",
+  "curtailment_pct": {
+   "west_wind": {
+    "2022": 4.5,
+    "2025_onward": 6.0
+   },
+   "panhandle_wind": {
+    "2022": 5.2,
+    "2025_onward": 7.0
+   },
+   "coastal_wind": {
+    "all": 1.5
+   },
+   "west_solar": {
+    "2022": 2.0,
+    "2025_onward": 3.5
+   },
+   "south_solar": {
+    "all": 1.8
+   }
+  },
+  "battery_merchant_revenue_usd_per_kw_yr": {
+   "base": {
+    "2023": 142.5,
+    "2024": 61.8,
+    "2025": 52.4,
+    "2026": 57.9,
+    "2027": 58.77,
+    "2028": 59.65,
+    "2029": 60.54,
+    "2030": 61.45,
+    "2031": 62.37,
+    "2032": 63.31,
+    "2033": 64.26,
+    "2034": 65.22,
+    "2035": 66.2,
+    "2036": 67.19,
+    "2037": 68.2,
+    "2038": 69.22,
+    "2039": 70.26,
+    "2040": 71.31,
+    "2041": 72.38,
+    "2042": 73.47,
+    "2043": 74.57,
+    "2044": 75.69,
+    "2045": 76.83,
+    "2046": 77.98,
+    "2047": 79.15,
+    "2048": 80.34,
+    "2049": 81.55,
+    "2050": 82.77,
+    "2051": 84.01,
+    "2052": 85.27,
+    "2053": 86.55,
+    "2054": 87.85,
+    "2055": 89.17,
+    "2056": 90.51,
+    "2057": 91.87,
+    "2058": 93.25,
+    "2059": 94.65
+   },
+   "low": {
+    "2023": 142.5,
+    "2024": 61.8,
+    "2025": 52.4,
+    "2026": 39.0,
+    "2027": 39.19,
+    "2028": 39.39,
+    "2029": 39.59,
+    "2030": 39.79,
+    "2031": 39.99,
+    "2032": 40.19,
+    "2033": 40.39,
+    "2034": 40.59,
+    "2035": 40.79,
+    "2036": 40.99,
+    "2037": 41.19,
+    "2038": 41.4,
+    "2039": 41.61,
+    "2040": 41.82,
+    "2041": 42.03,
+    "2042": 42.24,
+    "2043": 42.45,
+    "2044": 42.66,
+    "2045": 42.87,
+    "2046": 43.08,
+    "2047": 43.3,
+    "2048": 43.52,
+    "2049": 43.74,
+    "2050": 43.96,
+    "2051": 44.18,
+    "2052": 44.4,
+    "2053": 44.62,
+    "2054": 44.84,
+    "2055": 45.06,
+    "2056": 45.29,
+    "2057": 45.52,
+    "2058": 45.75,
+    "2059": 45.98
+   },
+   "high": {
+    "2023": 142.5,
+    "2024": 61.8,
+    "2025": 52.4,
+    "2026": 84.5,
+    "2027": 86.61,
+    "2028": 88.78,
+    "2029": 91.0,
+    "2030": 93.27,
+    "2031": 95.6,
+    "2032": 97.99,
+    "2033": 100.44,
+    "2034": 102.95,
+    "2035": 105.52,
+    "2036": 108.16,
+    "2037": 110.86,
+    "2038": 113.63,
+    "2039": 116.47,
+    "2040": 119.38,
+    "2041": 122.36,
+    "2042": 125.42,
+    "2043": 128.56,
+    "2044": 131.77,
+    "2045": 135.06,
+    "2046": 138.44,
+    "2047": 141.9,
+    "2048": 145.45,
+    "2049": 149.09,
+    "2050": 152.82,
+    "2051": 156.64,
+    "2052": 160.56,
+    "2053": 164.57,
+    "2054": 168.68,
+    "2055": 172.9,
+    "2056": 177.22,
+    "2057": 181.65,
+    "2058": 186.19,
+    "2059": 190.84
+   },
+   "note": "2-hour system, energy arbitrage plus ancillary services, ILLUSTRATIVE"
+  }
+ },
+ "hedges": {
+  "R1_fixed_volume_swap": {
+   "counterparty": "Castellan Bank (commodities desk)",
+   "volume_mw_atc": 40.0,
+   "price_usd_per_mwh": 48.25,
+   "settlement_hub": "West Hub",
+   "start": "2023-01-01",
+   "end": "2027-12-31",
+   "note": "7x24 fixed volume; project short the swap volume in low-wind hours"
+  },
+  "R2_physical_ppa": {
+   "counterparty": "Orchard Power Retail LLC",
+   "price_usd_per_mwh": 31.4,
+   "escalation": "none",
+   "volume": "as generated",
+   "end": "2029-06-30"
+  },
+  "R3_proxy_revenue_swap": {
+   "counterparty": "Galloway Risk Solutions",
+   "fixed_payment_usd_m_pa": 25.84,
+   "start": "2020-01-01",
+   "end": "2029-12-31",
+   "settlement": "project pays proxy revenue = proxy generation x West Hub hourly price; model approximation: net = fixed payment + generation x (node capture - hub capture) x West Hub ATC",
+   "credit_support": "USD 12.0m LC posted by project"
+  },
+  "R4_fixed_shape_hedge": {
+   "counterparty": "Castellan Bank (commodities desk)",
+   "annual_volume_gwh": 168.4,
+   "shape": "solar shape 08:00-18:00",
+   "price_usd_per_mwh": 44.1,
+   "settlement_hub": "West Hub",
+   "start": "2022-01-01",
+   "end": "2026-12-31",
+   "model_approximation": "settlement = volume x (strike - West Hub ATC x 0.86 shape factor declining with west_solar capture)"
+  },
+  "R5_virtual_ppa": {
+   "counterparty": "Ostrander Data Systems Inc.",
+   "strike_usd_per_mwh": 27.85,
+   "volume": "as generated",
+   "settlement_hub": "West Hub",
+   "end": "2033-06-30",
+   "rec_transfer": true
+  },
+  "R6_toll": {
+   "counterparty": "Orchard Power Retail LLC",
+   "toll_usd_per_kw_month": 9.15,
+   "escalation": "none",
+   "start": "2023-07-14",
+   "end": "2030-07-13",
+   "availability_guarantee_pct": 97.0,
+   "capacity_maintenance": "owner augments to maintain 200 MWh"
+  },
+  "R7_revenue_floor": {
+   "counterparty": "Galloway Risk Solutions",
+   "floor_usd_per_kw_yr": 74.0,
+   "premium_usd_per_kw_yr": 5.8,
+   "upside_share_pct_above_140_usd_per_kw_yr": 20.0,
+   "start": "2024-04-02",
+   "end": "2032-04-01"
+  },
+  "R8_fixed_shape_hedge": {
+   "counterparty": "Castellan Bank (commodities desk)",
+   "share_of_p50_pct": 60.0,
+   "annual_volume_gwh": 174.1,
+   "price_usd_per_mwh": 38.9,
+   "settlement_hub": "South Hub",
+   "start": "2025-01-01",
+   "end": "2034-12-31"
+  },
+  "collateral": "Castellan hedges secured pari passu in the opco security package (first-lien hedge), no cash collateral; Galloway contracts backed by LCs from the opco LC facility"
+ },
+ "opex": {
+  "unit": "USD per kW-ac per year, 2022 prices, escalating 2.5% pa; includes O&M, land, insurance, property tax, utilities, site staff",
+  "wind_pre_2018": 41.5,
+  "wind_post_2018": 37.2,
+  "solar": 18.4,
+  "storage": 14.6,
+  "storage_augmentation": "see assets",
+  "land_lease_wind_pct_of_revenue": 4.0,
+  "insurance_step_up_2023_pct": 22.0,
+  "decommissioning_net_of_salvage_usd_per_kw_2022": {
+   "wind": 62.0,
+   "solar": 38.0,
+   "storage": 21.0
+  },
+  "decommissioning_security": "surety bonds; cost in opex at 0.6% of bonded amount pa"
+ },
+ "tax": {
+  "federal_rate_pct": 21.0,
+  "texas_margin_tax": "0.75% on 70% of revenue (deemed taxable margin)",
+  "acquisition_basis": "asset (disregarded LLC) purchase: purchase price allocated 85% to 5-year MACRS property, 10% to 15-year, 5% to land and non-depreciable",
+  "bonus_depreciation_pct_by_placed_in_service_or_acquired_year": {
+   "2022": 100,
+   "2023": 80,
+   "2024": 60,
+   "2025_before_jan20": 40,
+   "2025_after_jan19": 100
+  },
+  "law_dependent_flag": "US tax items (bonus depreciation, PTC, ITC, transferability, energy community adder) are law-dependent; writers must date them and cite the fact sheet",
+  "ptc_r3_usd_per_mwh": {
+   "2022": 26.0,
+   "2023": 27.5,
+   "2024": 30.0,
+   "2025": 30.0,
+   "note": "allocated 99% to tax equity pre-flip; illustrative inflation-adjusted values to be verified"
+  },
+  "itc_r7_pct": 30.0,
+  "itc_r7_eligible_basis_pct_of_price": 92.0,
+  "itc_r8_pct": 30.0,
+  "itc_r8_eligible_basis_pct_of_price": 94.0,
+  "itc_transfer_price_per_usd_of_credit": 0.925,
+  "energy_community_adder": "not assumed",
+  "nol": "indefinite carryforward, 80% of taxable income limit"
+ },
+ "debt": {
+  "opco_term_loan_2022": {
+   "borrower": "Mesa Corta OpCo LLC",
+   "date": "2022-03-22",
+   "lenders": "Castellan Bank, Kaito Pacific Bank, Sterrenberg Bank NV, Penhallow Bank (US branch)",
+   "maturity": "2029-03-22",
+   "margin_pct": {
+    "to_2026-03-22": 1.625,
+    "after": 1.875
+   },
+   "base": "Term SOFR 3M (no CAS)",
+   "upfront_fee_pct": 1.5,
+   "sizing_dscr_x_by_revenue_bucket": {
+    "contracted": 1.3,
+    "hedged": 1.4,
+    "merchant": 2.0
+   },
+   "p99_1yr_dscr_min_x": 1.0,
+   "notional_amortization_to": "2040-12-31",
+   "cash_sweep": {
+    "2026-2027": 50,
+    "2028_onward": 100
+   },
+   "hedge": {
+    "ratio_pct": 85.0,
+    "fixed_pct": 2.41,
+    "to": "2029-03-22"
+   },
+   "dsra_months": 6,
+   "dsra_form": "LC from opco LC facility",
+   "expected_range_usd_m": [
+    520,
+    600
+   ]
+  },
+  "holdco_term_loan_2022": {
+   "borrower": "Mesa Corta HoldCo LLC",
+   "date": "2022-03-22",
+   "lenders": "institutional term loan B investors, arranged by Castellan Bank",
+   "maturity": "2028-03-22",
+   "margin_pct": 4.75,
+   "sofr_floor_pct": 0.5,
+   "oid_pct": 98.0,
+   "amortization_pct_pa": 1.0,
+   "excess_cash_sweep_pct": 50.0,
+   "sizing": "holdco distribution coverage >= 1.75x on P50 base distributions from opco; holdco debt <= 45% of opco equity value",
+   "expected_range_usd_m": [
+    160,
+    210
+   ]
+  },
+  "redfern_loan_2023": {
+   "borrower": "Redfern Storage LLC",
+   "date": "2023-08-31",
+   "lender": "Penhallow Bank (US branch)",
+   "margin_pct": 2.1,
+   "upfront_fee_pct": 1.4,
+   "maturity": "2030-06-30",
+   "sizing": "1.35x on toll cash flow only; fully amortizing",
+   "hedge": {
+    "ratio_pct": 75.0,
+    "fixed_pct": 4.38
+   }
+  },
+  "holdco_incremental_2024": {
+   "date": "2024-02-15",
+   "margin_pct": 4.25,
+   "oid_pct": 99.0,
+   "maturity": "2028-03-22",
+   "sizing": "1.75x on incremental P50 distributions from R7 and R8"
+  },
+  "refinancing_2025": {
+   "date_modeled": "2025-12-31",
+   "uspp_notes": {
+    "issuer": "Mesa Corta OpCo LLC",
+    "rating": "BBB- (one agency)",
+    "series": {
+     "A": {
+      "tenor_years": 7,
+      "coupon_pct": 5.71,
+      "share_pct": 30.0
+     },
+     "B": {
+      "tenor_years": 12,
+      "coupon_pct": 6.08,
+      "share_pct": 40.0
+     },
+     "C": {
+      "tenor_years": 18,
+      "coupon_pct": 6.39,
+      "share_pct": 30.0
+     }
+    },
+    "sizing_dscr_x_by_revenue_bucket": {
+     "contracted": 1.35,
+     "hedged": 1.5,
+     "merchant": 2.25
+    },
+    "p99_1yr_dscr_min_x": 1.05,
+    "make_whole": "Treasury + 50 bp",
+    "uses": "repay opco term loan and Redfern loan; fund distribution to holdco to the extent sizing allows",
+    "expected_range_usd_m": [
+     750,
+     860
+    ],
+    "swap_unwind": "opco swap terminated at MTM using SOFR swap rate 3.55% (receivable to opco); Redfern swap at 3.55% (payable by Redfern)",
+    "transaction_costs_pct": 1.1
+   },
+   "holdco_repricing": {
+    "new_margin_pct": 3.5,
+    "new_maturity": "2031-12-31",
+    "oid_pct": 99.5,
+    "sizing": "1.75x on post-refinancing distributions"
+   }
+  },
+  "sofr_3m_annual_avg_pct": {
+   "2022": 2.04,
+   "2023": 5.17,
+   "2024": 5.16,
+   "2025": 4.27,
+   "2026": 3.66,
+   "2027": 3.45,
+   "2028_onward": 3.5
+  },
+  "sofr_note": "approximate annual averages; fact-check before printing"
+ },
+ "valuation": {
+  "discount_rates_nominal_post_tax_pct": {
+   "unlevered": {
+    "contracted": 6.75,
+    "hedged": 7.75,
+    "merchant": 9.25,
+    "storage_merchant": 10.25,
+    "terminal_post_2040": 10.5
+   },
+   "levered_equity": {
+    "contracted": 8.25,
+    "hedged": 9.5,
+    "merchant": 11.5,
+    "storage_merchant": 12.5
+   }
+  },
+  "terminal_value_rule": "no terminal value beyond useful life; repowering option for R1 valued separately at USD 0 in base",
+  "fund_target_net_irr_pct": [
+   11.0,
+   13.0
+  ],
+  "valuation_dates": [
+   "2022-03-22 (A1 bid)",
+   "2023-08-31 (A2)",
+   "2024-02-15 (A3)",
+   "2025-12-31 (refinancing and fund NAV)"
+  ]
+ },
+ "scenarios": {
+  "base": "base price curve, base captures, P50",
+  "low": "low price curve and low captures",
+  "high": "high price curve and captures",
+  "p90_1yr": "P90 one-year volumes",
+  "p99_1yr": "P99 one-year volumes for sizing tests",
+  "sensitivities": [
+   "West solar capture -5 points",
+   "battery revenue low case",
+   "curtailment +3 points",
+   "opex +10%",
+   "SOFR +100 bp unhedged",
+   "R1 hedge volume shortfall in a Uri-type scarcity event: 72 hours at USD 5,000/MWh with 15% availability"
+  ]
+ }
+}

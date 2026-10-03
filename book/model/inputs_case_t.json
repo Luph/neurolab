@@ -1,0 +1,505 @@
+{
+ "meta": {
+  "case_id": "T",
+  "name": "Merrick Link toll road PPP (Case T)",
+  "file_version": "1.0",
+  "as_of": "2026-10-03",
+  "source_document": "book/bible/case-bible.md, Part 2",
+  "status_note": "Assumptions only; outputs computed by the reference model and recorded in the figure ledger.",
+  "currency": {
+   "code": "ARD",
+   "name": "Ardmore dollar",
+   "usd_per_ard_illustrative": {
+    "2012": 0.81,
+    "2015": 0.76,
+    "2019": 0.7,
+    "2020": 0.69,
+    "2023": 0.67,
+    "2025": 0.66
+   },
+   "note": "USD equivalents for cross-case comparison only; the model runs in ARD"
+  },
+  "periodicity": {
+   "construction": "quarterly, first stub 2015-05-27 to 2015-06-30, then calendar quarters to 2019-03-31 (base) / 2019-06-30 (actual, opening 2019-05-06)",
+   "operations": "semiannual, periods ending 30 June and 31 December",
+   "day_count": "ACT/365 for ARD loans and bonds coupons 30/360"
+  },
+  "units_convention": "_ard_m = ARD millions; _k_per_day = thousand vehicle trips per day; _pct percent; _x ratio; prices labelled _2014 or _2015 are base-date prices before indexation"
+ },
+ "jurisdiction": {
+  "country": "Commonwealth of Ardmore (federal, common law, OECD member)",
+  "state": "State of Brannock",
+  "state_capital": "Port Ellery",
+  "contracting_authority": "Brannock Roads and Transport Authority (BRTA), with Partnerships Brannock as procuring agency within Brannock Treasury",
+  "federal_lender": "National Infrastructure Lending Office (NILO), Commonwealth Infrastructure Credit Program",
+  "conduit_bond_issuer": "Brannock Infrastructure Finance Authority (BIFA)",
+  "insolvency_regime": "Companies Act (Ardmore) Part 9 restructuring plan with cross-class cram-down, modeled on common-law practice"
+ },
+ "timeline": {
+  "cabinet_business_case_approval": "2012-03-20",
+  "business_case_and_psc_completed": "2012-11-08",
+  "cabinet_decision_to_procure_ppp": "2012-12-04",
+  "eoi_rfq_issued": "2013-02-18",
+  "shortlist_announced": "2013-06-10",
+  "rfp_issued": "2013-09-02",
+  "bids_received": "2014-03-27",
+  "bafo_requested": "2014-07-01",
+  "bafo_received": "2014-08-15",
+  "preferred_bidder": "2014-09-23",
+  "concession_deed_and_financial_close": "2015-05-27",
+  "construction_months_base": 46,
+  "scheduled_opening": "2019-03-31",
+  "actual_opening": "2019-05-06",
+  "opening_delay_days": 36,
+  "first_senior_dscr_test": "2019-12-31",
+  "covid_restrictions_start": "2020-03-23",
+  "senior_event_of_default_test": "2020-12-31",
+  "standstill_agreement": "2021-03-26",
+  "quarrington_appointed_by_lenders": "2022-01-17",
+  "bank_mini_perm_original_maturity": "2022-05-27",
+  "amend_and_extend_bank_maturity_to": "2023-12-31",
+  "lock_up_and_restructuring_term_sheet": "2023-06-14",
+  "restructuring_plan_sanction_hearing": "2023-11-30",
+  "restructuring_effective_date": "2023-12-18",
+  "model_restructuring_date": "2023-12-31",
+  "concession_expiry_original": "2053-05-26",
+  "concession_expiry_extended": "2059-05-26"
+ },
+ "macro": {
+  "ardmore_cpi_annual_avg_change_pct": {
+   "2012": 2.0,
+   "2013": 2.4,
+   "2014": 2.5,
+   "2015": 1.6,
+   "2016": 1.4,
+   "2017": 1.9,
+   "2018": 1.9,
+   "2019": 1.6,
+   "2020": 0.9,
+   "2021": 3.4,
+   "2022": 7.1,
+   "2023": 5.4,
+   "2024": 3.3,
+   "2025": 2.7,
+   "2026": 2.6,
+   "2027_onward": 2.5
+  },
+  "cpi_index_base": "Index = 100.0 at June 2014 (toll base date)",
+  "abbr_6m_pct_semiannual_fixing": {
+   "2015H1": 2.31,
+   "2015H2": 2.18,
+   "2016H1": 2.02,
+   "2016H2": 1.84,
+   "2017H1": 1.79,
+   "2017H2": 1.77,
+   "2018H1": 1.94,
+   "2018H2": 1.98,
+   "2019H1": 1.66,
+   "2019H2": 0.92,
+   "2020H1": 0.41,
+   "2020H2": 0.11,
+   "2021H1": 0.06,
+   "2021H2": 0.07,
+   "2022H1": 0.95,
+   "2022H2": 3.06,
+   "2023H1": 3.96,
+   "2023H2": 4.38,
+   "2024H1": 4.41,
+   "2024H2": 4.37,
+   "2025H1": 4.02,
+   "2025H2": 3.7,
+   "2026H1": 3.62,
+   "2026H2": 3.58,
+   "2027_onward": 3.5
+  },
+  "abbr_note": "ABBR = Ardmore Bank Bill Rate (fictional 6-month bank bill benchmark)",
+  "swap_rates_pct": {
+   "2015-05-27_20y_amortizing": 3.48,
+   "2023-12-31_market_for_mtm": 4.36
+  },
+  "commonwealth_30y_bond_yield_pct": {
+   "2015-05-27": 3.05
+  }
+ },
+ "road": {
+  "length_km": 41.3,
+  "lanes": "2+2, structures sized for 3+3",
+  "interchanges": 7,
+  "tunnel": {
+   "name": "Merrick Ridge Tunnel",
+   "twin_bore_length_km": 1.9
+  },
+  "major_bridge": {
+   "name": "Merrick River viaduct",
+   "length_m": 620
+  },
+  "tolling": "free-flow electronic, distance-based, transponder and video",
+  "corridor": "Port Ellery northern ring road to Holloway Junction freight hub via the Coldwater Plains growth area",
+  "competing_free_route": "State Route 14, 47.6 km, signalized through four town centers"
+ },
+ "capex_ard_m": {
+  "dc_contract_price": 1684.3,
+  "dc_includes_tolling_system": 48.6,
+  "development_and_bid_costs_reimbursed": 41.2,
+  "spv_costs_during_construction": 37.8,
+  "insurance_during_construction": 12.6,
+  "independent_certifier_spv_share": 3.4,
+  "lenders_advisors_and_legal": 9.7,
+  "spv_contingency": 52.4,
+  "subtotal_before_financing": 1841.4,
+  "land_provided_by_state_ard_m": 212.5,
+  "computed_by_model": [
+   "IDC on bank, bonds (net of escrow earnings) and contribution bridge",
+   "fees",
+   "DSRA initial funding at opening",
+   "NILO interest capitalized (not funded)"
+  ],
+  "dc_payment_profile_pct_by_quarter": {
+   "2015Q2": 0.1632,
+   "2015Q3": 1.2858,
+   "2015Q4": 3.0959,
+   "2016Q1": 5.2023,
+   "2016Q2": 7.2788,
+   "2016Q3": 9.0645,
+   "2016Q4": 10.3637,
+   "2017Q1": 11.0459,
+   "2017Q2": 11.0457,
+   "2017Q3": 10.3637,
+   "2017Q4": 9.0645,
+   "2018Q1": 7.2788,
+   "2018Q2": 5.2023,
+   "2018Q3": 3.0959,
+   "2018Q4": 1.2858,
+   "2019Q1": 0.1632
+  },
+  "dc_retention_release": {
+   "at_completion_pct": 2.5,
+   "end_of_defects_period_24_months_pct": 2.5
+  },
+  "other_costs_timing": "development costs 100% at close; SPV costs, certifier and advisors flat over construction; insurance 80% at close and 20% at 2017Q2; contingency drawn pro rata with D&C",
+  "dc_terms": {
+   "contractor": "Holbrook-Daneshill Joint Venture (Holbrook Civil 60%, Daneshill Construction 40%), joint and several",
+   "delay_ld_ard_per_day": 285000,
+   "delay_ld_cap_pct_of_price": 20.0,
+   "performance_security_pct": 10.0,
+   "parent_guarantees": true,
+   "defects_period_months": 24,
+   "actual_delay_lds_ard_m": 10.26
+  }
+ },
+ "state_contribution": {
+  "amount_ard_m": 287.4,
+  "paid_at": "completion (opening)",
+  "bid_variable": true,
+  "psc_shadow_bid_expected_ard_m": 410.0,
+  "bridge": {
+   "name": "Contribution Bridge Facility",
+   "amount_ard_m": 287.4,
+   "lenders": "bank club pro rata",
+   "margin_pct": 1.6,
+   "upfront_fee_pct": 1.0,
+   "draw": "pro rata with senior bank facility in the last 6 construction quarters",
+   "repaid": "in full from the contribution"
+  }
+ },
+ "tolls": {
+  "car_toll_ard_per_km_2014": 0.1525,
+  "class_multipliers_original": {
+   "car": 1.0,
+   "light_commercial": 1.6,
+   "heavy_vehicle": 2.85
+  },
+  "class_multipliers_after_2024-01-01": {
+   "car": 1.0,
+   "light_commercial": 1.6,
+   "heavy_vehicle": 2.4
+  },
+  "vehicle_mix_pct_original": {
+   "car": 79.4,
+   "light_commercial": 9.0,
+   "heavy_vehicle": 11.6
+  },
+  "vehicle_mix_pct_from_2024": {
+   "car": 77.6,
+   "light_commercial": 8.6,
+   "heavy_vehicle": 13.8
+  },
+  "average_trip_length_km": 23.8,
+  "escalation_rule_original": "each 1 July: max(CPI, 3.0%) to 2030-06-30, CPI thereafter; tolls rounded to ARD 0.0001/km",
+  "escalation_rule_after_restructuring": "CPI only from 2024-07-01",
+  "maximum_toll_regime": "Concession sets maximum tolls; concessionaire may discount",
+  "revenue_leakage_pct": 1.8,
+  "first_toll_indexation": "2015-07-01"
+ },
+ "traffic_k_trips_per_day": {
+  "definition": "average daily vehicle trips on the road; revenue = trips x 365 (or days in period) x average trip length x car toll per km x weighted class multiplier",
+  "sponsor_base_pellow": {
+   "mature_level_2019": 58.4,
+   "ramp_up_factors": {
+    "2019": 0.8,
+    "2020": 0.9,
+    "2021": 0.96,
+    "2022_onward": 1.0
+   },
+   "growth_pct": {
+    "2020-2030": 3.4,
+    "2031-2040": 2.3,
+    "2041_onward": 1.2
+   }
+  },
+  "banking_ridgeway": {
+   "mature_level_2019": 52.6,
+   "ramp_up_factors": {
+    "2019": 0.72,
+    "2020": 0.84,
+    "2021": 0.93,
+    "2022": 0.98,
+    "2023_onward": 1.0
+   },
+   "growth_pct": {
+    "2020-2030": 2.9,
+    "2031-2040": 2.0,
+    "2041_onward": 1.0
+   }
+  },
+  "downside": {
+   "mature_level_2019": 46.7,
+   "ramp_up_factors": {
+    "2019": 0.65,
+    "2020": 0.78,
+    "2021": 0.88,
+    "2022": 0.95,
+    "2023_onward": 1.0
+   },
+   "growth_pct": {
+    "2020-2030": 2.2,
+    "2031-2040": 1.6,
+    "2041_onward": 0.8
+   }
+  },
+  "actual_semiannual": {
+   "2019H1_from_2019-05-06": 28.1,
+   "2019H2": 31.1,
+   "2020H1": 21.4,
+   "2020H2": 30.0,
+   "2021H1": 31.8,
+   "2021H2": 36.0,
+   "2022H1": 39.1,
+   "2022H2": 41.3,
+   "2023H1": 41.9,
+   "2023H2": 43.3,
+   "2024H1": 43.9,
+   "2024H2": 45.5,
+   "2025H1": 45.8,
+   "2025H2": 46.8,
+   "2026H1": 47.1
+  },
+  "actual_annual": {
+   "2019_May-Dec": 30.4,
+   "2020": 25.7,
+   "2021": 33.9,
+   "2022": 40.2,
+   "2023": 42.6,
+   "2024": 44.7,
+   "2025": 46.3
+  },
+  "covid_detail": "April 2020 traffic 62% below February 2020",
+  "restructuring_case_ridgeway_2023": {
+   "base_2023": 42.6,
+   "heavy_vehicle_uplift_total_trips_pct_from_2024": 2.4,
+   "growth_pct": {
+    "2024-2030": 2.6,
+    "2031-2040": 1.8,
+    "2041_onward": 0.9
+   }
+  },
+  "forecast_vs_actual_check": "2019: base 46.72 vs actual 30.4 (-34.9%); 2022: base 64.56 vs actual 40.2 (-37.7%)"
+ },
+ "opex_ard_m_2015_prices": {
+  "om_fixed_corvus_pa": 11.84,
+  "om_fee_change_after_restructuring_pct": -8.0,
+  "tolling_back_office_pct_of_toll_revenue": 6.2,
+  "tolling_back_office_fixed_pa": 2.15,
+  "insurance_pa": 3.36,
+  "spv_costs_pa": 2.71,
+  "indexation": "Ardmore CPI",
+  "lifecycle": {
+   "pavement_resurfacing_oy12_oy24_oy36": 42.6,
+   "tunnel_m_and_e_oy15_oy30": 31.9,
+   "tolling_its_replacement_every_8_years_from_oy8": 14.7
+  },
+  "handback_reserve": "funded over the last 5 years of the concession to the IE-certified handback works estimate",
+  "restructuring_costs_2022_2023": 21.6
+ },
+ "working_capital": {
+  "toll_receivable_days": 14,
+  "payable_days": 30
+ },
+ "tax": {
+  "corporate_tax_rate_pct": 30.0,
+  "concession_asset_amortization": "straight line from opening over remaining concession term (intangible asset model)",
+  "loss_carryforward": "indefinite, subject to continuity of ownership or same business test (same business test satisfied in 2023)",
+  "debt_forgiveness_rule": "forgiven commercial debt reduces carried-forward losses first, then the tax cost base of the concession asset",
+  "interest_withholding_pct": 10.0,
+  "bond_interest_exempt_for_holders": true,
+  "shareholder_loan_rate_pct": 10.25
+ },
+ "financing_at_close": {
+  "equity": {
+   "sponsors_pct": {
+    "Holbrook Infrastructure": 40.0,
+    "Wexcombe Infrastructure Fund III": 35.0,
+    "Corvus Toll Roads": 25.0
+   },
+   "target_share_of_funding_net_of_state_contribution_pct": 22.0,
+   "minimum_pct": 20.0,
+   "form": {
+    "share_capital_pct": 15.0,
+    "shareholder_loans_pct": 85.0
+   },
+   "funding_mode": "equity first",
+   "bid_target_equity_irr_nominal_post_tax_pct": 11.4
+  },
+  "senior_sizing": {
+   "min_dscr_banking_x": 1.5,
+   "min_dscr_downside_x": 1.15,
+   "min_llcr_banking_x": 1.55,
+   "gearing_cap_senior_pct_of_funding_net_of_contribution": 55.0,
+   "tenor_final": "2048-12-31",
+   "first_repayment": "2021-06-30",
+   "sculpted": true
+  },
+  "senior_split_pct": {
+   "bank_mini_perm": 45.0,
+   "bonds": 55.0
+  },
+  "bank_mini_perm": {
+   "lenders": "Castellan Bank, Penhallow Bank, Kaito Pacific Bank, Sterrenberg Bank NV",
+   "maturity": "2022-05-27",
+   "margin_pct": {
+    "to_2020-05-27": 2.35,
+    "2020-05-27_to_maturity": 2.6
+   },
+   "upfront_fee_pct": 1.85,
+   "commitment_fee_pct_pa": 0.95,
+   "base_case_refinancing_assumption": "refinanced at maturity on the same sculpted profile at ABBR + 2.25% with 1.25% fees",
+   "hedging": "100% of bank facility notional and assumed refinancing to 2035-06-30, fixed 3.48%"
+  },
+  "bonds": {
+   "name": "Brannock Infrastructure Revenue Bonds, Series 2015 (issuer BIFA, on-lent to the concessionaire)",
+   "coupon_pct": 4.85,
+   "issue_price_pct": 100.0,
+   "funding": "fully funded at close; proceeds in escrow earning 2.10% until used",
+   "amortization": "sculpted 2021-06-30 to 2048-12-31 pro rata with bank profile",
+   "issue_costs_pct": 1.2,
+   "tax_status": "Qualified Infrastructure Bond: interest exempt from Commonwealth income tax for holders",
+   "call": "par call from 2025-05-27"
+  },
+  "nilo_loan": {
+   "program": "Commonwealth Infrastructure Credit Program",
+   "rate_pct": 3.06,
+   "rate_basis": "Commonwealth 30-year bond yield at close + 0.01%",
+   "max_pct_of_eligible_costs": 33.0,
+   "sizing": "remainder after senior and 22.0% equity; check combined senior+NILO min DSCR >= 1.25x banking and <= 33% eligible costs",
+   "draw": "pro rata with senior after equity is fully contributed",
+   "interest": "capitalized until 2024-03-31 (5 years after scheduled opening)",
+   "repayment": "sculpted 2024-06-30 to 2052-12-31",
+   "ranking": "subordinated in payment; springing lien to pari passu with senior on a bankruptcy or insolvency event",
+   "application_fee_pct": 0.1
+  },
+  "reserves": {
+   "dsra_months_senior": 6,
+   "nilo_reserve": "none",
+   "mmra": "6-period forward accumulation for lifecycle items",
+   "handback": "see opex"
+  },
+  "covenants": {
+   "lock_up_dscr_x": 1.2,
+   "default_dscr_x": 1.05,
+   "test": "historic 12 months, semiannual",
+   "distributions": "subject to lock-up, DSRA full, no default"
+  }
+ },
+ "psc_and_vfm_ard_m_pv_2012": {
+  "discount_rate_nominal_pct": 6.85,
+  "psc": {
+   "raw_capex": 1478.6,
+   "om_and_lifecycle": 486.2,
+   "toll_revenue_retained": -1821.4,
+   "construction_risk": 221.7,
+   "traffic_revenue_risk": 274.0,
+   "operating_risk": 41.3,
+   "competitive_neutrality": 38.4
+  },
+  "ppp_shadow_bid": {
+   "state_contribution_pv_of_410.0_paid_2019": "computed by model at 6.85% from 2019-03-31 to 2012-12-31",
+   "retained_risks": 52.8,
+   "contract_management": 21.6
+  },
+  "ppp_actual_bid": {
+   "state_contribution_pv_of_287.4_paid_2019": "computed",
+   "retained_risks": 52.8,
+   "contract_management": 21.6
+  },
+  "land_excluded_as_common": 212.5
+ },
+ "termination_regime": {
+  "authority_default_or_voluntary": "senior debt outstanding including breakage + NILO outstanding + equity compensation = NPV of base-case distributions to equity at the base-case equity IRR (11.4%)",
+  "concessionaire_default": "retendering procedure: compensation = adjusted highest compliant tender price less retendering costs; if no liquid market, estimated fair value; no debt floor",
+  "relief_event_and_fm": "COVID-19 treated as a Relief Event (relief from termination and KPI deductions, no compensation). Prolonged uninsurable FM > 270 days: senior debt + NILO + equity contributed less distributions",
+  "lender_step_in": "90 days, extendable to 180, under the Financiers' Direct Deed"
+ },
+ "events": {
+  "sponsor_support_2021_ard_m": {
+   "2021H1": 22.5,
+   "2021H2": 22.5,
+   "form": "subordinated shareholder loans"
+  },
+  "standstill_terms": "interest paid as cash allows, principal deferred, 100% cash sweep, no enforcement; bank maturity extended to 2023-12-31 by A&E signed 2022-05-20 with fee 0.50% and margin 3.25%",
+  "restructuring": {
+   "senior_claims_basis": "bank principal + bond principal + accrued unpaid interest at 2023-12-31; swap terminated at MTM (positive to concessionaire) and set off",
+   "write_down_pct": 24.0,
+   "cancelled_pct_points": 14.0,
+   "converted_to_equity_pct_points": 10.0,
+   "senior_creditor_share_of_new_equity_pct": 85.0,
+   "restructured_senior_notes": {
+    "share_of_claims_pct": 76.0,
+    "coupon_pct": 5.1,
+    "amortization": "sculpted semiannual 2024-06-30 to 2052-12-31 to min DSCR 1.30x on Ridgeway 2023 case",
+    "cash_sweep": "50% of excess cash to 2030-12-31"
+   },
+   "nilo": {
+    "write_down": "none",
+    "interest_pik_pct_to_2030-12-31": 1.0,
+    "interest_cash_pct_from_2031": 3.06,
+    "maturity": "2058-12-31",
+    "ranking": "unchanged"
+   },
+   "state_new_money_ard_m": 120.0,
+   "state_share_of_new_equity_pct": 15.0,
+   "state_new_money_use": {
+    "holloway_junction_interchange_upgrade_2024_2025": 78.3,
+    "reserve_top_up": 41.7
+   },
+   "original_equity": "shares cancelled, shareholder loans including 2021 support written off; Wexcombe and Corvus receive warrants over 3% of new equity, exercisable if senior notes are repaid in full",
+   "concession_extension_years": 6,
+   "state_revenue_share": "30% of annual toll revenue above ARD 260.0m (2023 prices, CPI-indexed)",
+   "restructuring_case_traffic": "traffic_k_trips_per_day.restructuring_case_ridgeway_2023"
+  }
+ },
+ "scenarios": {
+  "bid_base": "Pellow traffic; financing at close",
+  "banking": "Ridgeway traffic",
+  "downside": "downside traffic",
+  "actual_history": "actual traffic and events through 2026H1, Ridgeway 2023 case afterwards",
+  "sensitivities": [
+   "traffic -10%",
+   "ramp-up one year slower",
+   "toll escalation CPI only",
+   "opex +10%",
+   "lifecycle +20%",
+   "interest +100 bp on refinancing",
+   "heavy vehicle share -2 points"
+  ]
+ }
+}

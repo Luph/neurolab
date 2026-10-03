@@ -1,0 +1,103 @@
+# Vogtle Units 3 and 4 (Georgia, USA): cost overruns, DOE loan guarantees and the Westinghouse bankruptcy
+
+As of: 2026-10-03 (latest event covered: Southern Company Form 10-K for 2024, filed 20 February 2025, reporting final capital cost figures after Unit 4 entered service on 29 April 2024)
+
+## Summary
+
+Vogtle Units 3 and 4 are two Westinghouse AP1000 pressurized water reactors (approximately 1,100 MW each) built beside the two existing units at Plant Vogtle near Waynesboro, Georgia. They were the first new reactors completed in the United States in decades and the first AP1000s in the country. The plant is owned under joint ownership agreements by Georgia Power (45.7 percent, a Southern Company subsidiary), Oglethorpe Power Corporation (30 percent), the Municipal Electric Authority of Georgia (MEAG Power, 22.7 percent) and the City of Dalton (1.6 percent), and operated by Southern Nuclear. This is utility balance-sheet finance in a regulated rate base, not non-recourse project finance. The Georgia PSC certified the project in 2009, a 2009 state law let Georgia Power recover financing costs from customers during construction, and the U.S. Department of Energy guaranteed up to USD 12 billion of Federal Financing Bank loans to the three larger owners. A "substantially fixed price" EPC contract signed in 2008 with Westinghouse and Stone & Webster did not protect the owners: after years of delay and disputes, Westinghouse filed for Chapter 11 on 29 March 2017. Its parent Toshiba settled its parent guarantee for USD 3.68 billion, Southern Nuclear took over management, and Bechtel was hired on a cost-reimbursable-plus-fee basis. Units 3 and 4 entered commercial operation on 31 July 2023 and 29 April 2024, roughly seven years later than planned. Press reports put total owner cost at about USD 31 billion including financing, or about USD 35 billion counting Toshiba's payment, against an original estimate of about USD 14 billion. In December 2023 the Georgia PSC allowed Georgia Power to put USD 7.562 billion of capital cost into rates, against the roughly USD 10.75 billion it expected to have spent.
+
+## Verified facts
+
+1. Units 3 and 4 are AP1000 Generation III+ pressurized water reactors with electric generating capacity of approximately 1,100 MW each (Southern Company); DOE gives total capacity as 2,200 MW. Unit 3 is described as 1,117 MW. They are the first AP1000s deployed in the United States. [confidence: high] [source: 1, 4, 8]
+2. Ownership of Units 3 and 4: Georgia Power 45.7 percent, Oglethorpe Power 30 percent, MEAG Power 22.7 percent, City of Dalton 1.6 percent. Southern Nuclear operates the plant on behalf of the co-owners. [confidence: high] [source: 2, 3, 9]
+3. In 2008 Georgia Power, for itself and as agent for the other owners, entered into an engineering, procurement and construction agreement (the "Vogtle 3 and 4 Agreement") with the EPC contractor (Westinghouse and its affiliate, later named WECTEC Global Project Services, formerly Stone & Webster) to design, engineer, procure, construct and test the units. Southern Company describes it as a "substantially fixed price" agreement. [confidence: high] [source: 1]
+4. In 2009 the Georgia PSC certified construction of Units 3 and 4 with a certified capital cost of USD 4.418 billion for Georgia Power's share, approved including the related construction work in progress (CWIP) in rate base, and Georgia enacted the Georgia Nuclear Energy Financing Act, allowing Georgia Power to recover financing costs for nuclear construction during construction. Recovery through the Nuclear Construction Cost Recovery (NCCR) tariff began in 2011. [confidence: high] [source: 1]
+5. Under Georgia law, once a resource is certified, the lesser of actual or certified construction costs is recoverable through rates, and certified costs may be excluded only for fraud, concealment, failure to disclose a material fact, imprudence or criminal misconduct. [confidence: high as stated by Southern Company] [source: 1]
+6. In 2010 Georgia Power projected its total construction cost at approximately USD 6.1 billion, including USD 1.7 billion of financing costs to be collected during construction. [confidence: high as reported] [source: 5]
+7. DOE offered conditional loan guarantee commitments in February 2010. On 20 February 2014 DOE issued guarantees of USD 6.5 billion to Georgia Power (USD 3.46 billion) and Oglethorpe Power (approximately USD 3.07 billion). Loans are funded by the Federal Financing Bank. In June 2015 DOE issued USD 1.8 billion of guarantees to three MEAG Power subsidiaries, for USD 8.3 billion in total. [confidence: high] [source: 4, 5, 6, 7]
+8. After the Westinghouse bankruptcy, DOE offered additional guarantees in September 2017 and reached financial close on them on 22 March 2019: up to USD 1.67 billion to Georgia Power, up to USD 1.6 billion to Oglethorpe and up to USD 415 million to the MEAG subsidiaries (up to USD 3.7 billion). Total guarantees came to up to USD 12 billion: Georgia Power USD 5.1 billion, Oglethorpe USD 4.7 billion and MEAG USD 2.2 billion, under DOE's Title XVII program. [confidence: high] [source: 4, 7, 10]
+9. The NRC issued combined construction and operating licenses for Units 3 and 4 in 2012, which allowed full construction to begin. [confidence: high] [source: 1]
+10. On 31 December 2015 the owners and Westinghouse signed the Contractor Settlement Agreement resolving disputes under the original EPC agreement. [confidence: high] [source: 1]
+11. On 29 March 2017 Westinghouse filed for Chapter 11 bankruptcy protection. An Interim Assessment Agreement allowed work to continue until 27 July 2017, when a services agreement took effect transferring construction management to Southern Nuclear, with Westinghouse remaining responsible for design and engineering. [confidence: high] [source: 1]
+12. On 9 June 2017 the owners and Toshiba (Westinghouse's parent and guarantor of certain EPC payment obligations) agreed that Toshiba's guarantee obligation was USD 3.68 billion (Georgia Power's share approximately USD 1.7 billion), payable on a schedule from October 2017 to January 2021. After an amendment, Toshiba paid the remaining balance in full on 14 December 2017. [confidence: high] [source: 1, 11]
+13. In August 2017 Georgia Power's 17th Vogtle Construction Monitoring report recommended completing the project with Southern Nuclear as project manager and Bechtel as primary construction contractor. The Bechtel agreement (effective 23 October 2017) is cost-reimbursable plus a base fee and an at-risk fee adjusted for performance against cost and schedule targets. [confidence: high] [source: 1]
+14. On 2 November 2017 the owners amended the joint ownership agreements: holders of at least 90 percent of ownership interests must vote to continue if certain adverse events occur, including a construction budget increase of more than USD 1 billion or a schedule extension of more than one year relative to the 17th monitoring report. [confidence: high] [source: 1]
+15. On 21 December 2017 (order issued 11 January 2018) the Georgia PSC approved continuing construction. It found that none of the USD 3.3 billion spent through 2015 should be disallowed as imprudent, presumed capital costs up to USD 5.680 billion reasonable, found a revised capital cost forecast of USD 7.3 billion reasonable (net of Toshiba payments and customer refunds; USD 8.8 billion gross), and approved in-service dates of November 2021 and November 2022. It stated that the forecast was not a cost cap and reduced the return on equity used in the NCCR tariff in steps from 10.95 percent to as low as 5.30 percent from 2021. [confidence: high] [source: 1]
+16. Unit 3 entered commercial operation on 31 July 2023 and Unit 4 on 29 April 2024. When the project was approved, the planned in-service dates were 2016 and 2017 respectively. [confidence: high] [source: 2, 3, 8, 12]
+17. On 19 December 2023 the Georgia PSC unanimously approved an agreement between its staff and Georgia Power limiting the ratepayers' share of capital costs to USD 7.562 billion, against approximately USD 10.75 billion Georgia Power expected to have spent. If Unit 4 was not operating by 31 March 2024, the ROE on construction costs would fall to zero until it was. [confidence: high] [source: 13]
+18. As of 31 December 2024, Georgia Power's total project capital cost forecast for its share was USD 10,732 million, net of USD 1.7 billion from Toshiba and approximately USD 188 million in related customer refunds. This includes approximately USD 1.2 billion not shared with the other owners and excludes approximately USD 440 million of capitalized AFUDC. Georgia Power's financing costs for construction totaled approximately USD 3.53 billion, of which USD 3.08 billion had been recovered by Unit 4's in-service date. [confidence: high] [source: 14]
+19. Georgia Power settled disputes with MEAG Power, Oglethorpe and Dalton over the cost-sharing and tender provisions of the amended joint ownership agreements. It will reimburse approximately USD 91 million (MEAG), USD 99 million (Oglethorpe) and USD 5.3 million (Dalton) of their construction costs at the then-current forecast, and recorded pre-tax charges of USD 567 million through 2023 for these provisions. [confidence: high] [source: 14]
+20. The Associated Press reported in April 2024 that the project was projected to cost Georgia Power and the three other owners USD 31 billion, nearing USD 35 billion including the USD 3.7 billion Westinghouse (Toshiba) payment, against an original projection of USD 14 billion. [confidence: medium; press aggregation of figures, not a company disclosure] [source: 12]
+
+## Timeline
+
+- 2008: EPC agreement with Westinghouse and Stone & Webster. [source: 1]
+- 2009: Georgia PSC certifies Units 3 and 4 (USD 4.418 billion for Georgia Power's share); Georgia Nuclear Energy Financing Act enacted; construction begins. [source: 1, 11]
+- February 2010: DOE conditional loan guarantee commitments. [source: 6]
+- 2011: Georgia Power begins recovering financing costs through the NCCR tariff. [source: 1]
+- 2012: NRC issues combined licenses. [source: 1]
+- 20 February 2014: DOE issues USD 6.5 billion of guarantees to Georgia Power and Oglethorpe. [source: 6]
+- June 2015: USD 1.8 billion of guarantees to MEAG subsidiaries. [source: 7]
+- 31 December 2015: Contractor Settlement Agreement with Westinghouse. [source: 1]
+- 29 March 2017: Westinghouse files for Chapter 11. [source: 1]
+- 9 June 2017: Toshiba guarantee settlement (USD 3.68 billion). [source: 1, 11]
+- 27 July 2017: Southern Nuclear assumes construction management. [source: 1]
+- 23 October 2017: Bechtel construction completion agreement effective. [source: 1]
+- 2 November 2017: joint ownership agreements amended (90 percent continuation votes). [source: 1]
+- 14 December 2017: Toshiba pays the remaining guarantee balance. [source: 1]
+- 21 December 2017: Georgia PSC votes to continue construction. [source: 1]
+- 22 March 2019: financial close of USD 3.7 billion of additional DOE guarantees (total USD 12 billion). [source: 10]
+- 31 July 2023: Unit 3 commercial operation. [source: 8]
+- 19 December 2023: Georgia PSC approves the USD 7.562 billion prudence agreement. [source: 13]
+- 29 April 2024: Unit 4 commercial operation. [source: 2, 3]
+
+## Financing and structure details
+
+- **Ownership model:** undivided joint ownership by four public-power and investor-owned utilities; each owner finances its own share on its own balance sheet. This is corporate and municipal finance, not a project company. [source: 1, 2]
+- **Georgia Power:** regulated rate-base recovery; CWIP in rate base and financing costs recovered during construction (NCCR tariff); DOE-guaranteed FFB loans up to USD 5.1 billion; Toshiba guarantee proceeds about USD 1.7 billion credited against its share of cost. [source: 1, 4, 14]
+- **Oglethorpe Power (electric cooperative):** DOE-guaranteed FFB loans up to USD 4.7 billion. [source: 4]
+- **MEAG Power:** DOE guarantees up to USD 2.2 billion to three MEAG subsidiaries. [source: 4, 7]
+- **DOE terms:** Title XVII loan guarantees with loans funded by the Federal Financing Bank. Southern Company estimated in 2014 that Georgia Power's USD 3.46 billion guarantee would cut its present-value financing costs by up to USD 250 million. [source: 4, 5]
+- **Contractor risk transfer:** "substantially fixed price" EPC backed by a Toshiba parent guarantee; after bankruptcy, the guarantee was crystallized at USD 3.68 billion, and the replacement contract (Bechtel) was cost-reimbursable plus incentive fee, so cost risk moved back to the owners. [source: 1, 11]
+
+## What went wrong or right, and why
+
+- **Contract structure did not hold (Southern Company 10-K):** the fixed-price EPC was only as strong as the contractor's balance sheet. After Westinghouse's bankruptcy, the owners collected the USD 3.68 billion Toshiba guarantee but had to complete the project under a cost-reimbursable arrangement, taking on cost and schedule risk that the original contract had assigned to the contractor. [source: 1]
+- **Regulatory design shifted risk to customers, and then partly back (Georgia PSC; Southern Company 10-K):** certification, CWIP in rate base and the Nuclear Energy Financing Act let Georgia Power recover financing costs during construction and protected certified costs except for imprudence. The PSC's 2017 decision kept the project going while cutting the construction ROE, and the 2023 settlement capped ratepayer capital cost at USD 7.562 billion, with Georgia Power absorbing roughly USD 3 billion of its expected capital spend. [source: 1, 13]
+- **Co-owner governance (Southern Company 10-K):** the 2017 amendments gave minority owners continuation votes tied to budget and schedule triggers; the resulting cost-sharing and tender disputes were settled with Georgia Power bearing part of the other owners' overruns (USD 567 million of pre-tax charges through 2023). [source: 1, 14]
+- **Industry-level analysis (MIT, Joule 2020):** the MIT study of U.S. nuclear cost escalation found rising indirect ("soft") costs such as engineering, procurement, planning, scheduling, estimating and cost control to be the main driver, along with late design changes for site conditions and changing regulations. The press summary does not discuss Vogtle specifically, so present this as industry context, not a Vogtle finding. [source: 15]
+- **Right:** both units were completed and in service, which Georgia Power and the Georgia PSC present as the first newly constructed U.S. nuclear units in more than 30 years, with an expected 60–80 year life. [source: 2, 13]
+
+## Teaching angles by chapter
+
+- **Chapter 74 (Nuclear power):** Vogtle is the reference case for why first-of-a-kind nuclear struggles to be project-financed. No lender took construction risk; the risk sat with regulated utilities, their customers (through CWIP and the NCCR tariff) and the federal government (USD 12 billion of DOE guarantees). Teach the 2008 EPC as an illustration of "fixed price" versus "fixed price from a creditworthy counterparty": when the contractor fails, the parent guarantee caps recovery and the owner inherits completion risk. The cost waterfall (USD 4.418 billion certified for Georgia Power's share in 2009, USD 7.3 billion net forecast in 2017, USD 10.73 billion actual) shows how estimates drift on a first build.
+- **Chapter 74, regulatory and governance angle:** use the 2017 continuation vote and the 2023 prudence settlement to teach how cost recovery regimes allocate overrun risk between shareholders and ratepayers, and how co-owner agreements (90 percent continuation thresholds, tender and cost-sharing provisions) behave under stress. Contrast this with Barakah's government-funded model in the same chapter.
+
+## Do not state
+
+- Do not state a precise "total project cost" as a single verified number; USD 31 billion and about USD 35 billion are press aggregations across four owners, mixing capital and financing costs. Use Georgia Power's own figures (USD 10.73 billion capital for its share, about USD 3.53 billion financing) for precision.
+- Do not state the original "USD 14 billion" estimate as a company figure; it is the AP's characterization of the original projection for all owners.
+- Do not state the size of Toshiba's write-downs or losses attributed to Vogtle and V.C. Summer, or that Vogtle alone caused the Westinghouse bankruptcy; not verified here.
+- Do not state the date or details of V.C. Summer's abandonment; not verified here.
+- Do not state the interest rates on the FFB loans, whether a credit subsidy fee was charged, or whether any owner has prepaid or refinanced its DOE-guaranteed debt; not verified.
+- Do not state the percentage of eligible costs covered by the guarantees as a single figure: 2010 reporting said up to 70 percent of Georgia Power's eligible project costs, and 2014 reporting said up to 80 percent of projected construction financing costs.
+- Do not state the exact NRC combined-license issue date (commonly given as February 2012) without checking NRC records; only "2012" is verified here.
+- Do not quote officials beyond the exact words in the PSC release and the WNN article.
+
+## Sources
+
+1. Southern Company, Annual Report on Form 10-K for the fiscal year ended 31 December 2017 (filed February 2018), sections on Plant Vogtle Units 3 and 4. https://www.sec.gov/Archives/edgar/data/92122/000009212218000012/so_10-kx12312017.htm
+2. "Vogtle Unit 4 enters commercial operation", Georgia Power press release, 29 April 2024. https://www.georgiapower.com/news-hub/press-releases/vogtle-unit-4-enters-commercial-operation.html
+3. "Plant Vogtle Unit 4 begins commercial operation", U.S. Energy Information Administration, Today in Energy, 2024. https://www.eia.gov/todayinenergy/detail.php?id=61963
+4. "Vogtle" project page, U.S. Department of Energy Loan Programs Office. https://www.energy.gov/lpo/vogtle
+5. "Georgia Power accepts Vogtle loan guarantee", World Nuclear News, 2010. https://www.world-nuclear-news.org/Articles/Georgia-Power-accepts-Vogtle-loan-guarantee
+6. "Issuance of Vogtle loan guarantees", World Nuclear News, 20 February 2014. https://www.world-nuclear-news.org/Articles/Issuance-of-Vogtle-loan-guarantees
+7. "Financing Vogtle: A Major Achievement for the Loan Programs Office", U.S. Department of Energy, 24 June 2015. https://www.energy.gov/edf/articles/financing-vogtle-major-achievement-loan-programs-office
+8. "Vogtle Unit 3 goes into operation", Southern Company / Georgia Power press release, 31 July 2023. https://southerncompany.mediaroom.com/2023-07-31-Vogtle-Unit-3-goes-into-operation ; see also NucNet, "Vogtle Unit 3 at Georgia nuclear power station begins commercial operation". https://www.nucnet.org/news/vogtle-unit-3-at-georgia-nuclear-power-station-begins-commercial-operation
+9. "Issuance of Vogtle loan guarantees" (ownership shares incl. Dalton 1.6 percent), World Nuclear News, 20 February 2014 (as source 6).
+10. "Secretary Perry Announces Financial Close on Additional Loan Guarantees During Trip to Vogtle Advanced Nuclear Energy Project", U.S. Department of Energy, 22 March 2019. https://www.energy.gov/articles/secretary-perry-announces-financial-close-additional-loan-guarantees-during-trip-vogtle
+11. "Toshiba Agrees to $3.68 Billion Deal to Aid Vogtle Nuclear Construction", POWER Magazine, June 2017. https://www.powermag.com/toshiba-agrees-to-3-68-billion-deal-to-aid-vogtle-nuclear-construction/
+12. "A second new nuclear reactor is completed in Georgia. The carbon-free power comes at a high price", Associated Press via Georgia Public Broadcasting, 29 April 2024. https://www.gpb.org/news/2024/04/29/second-new-nuclear-reactor-completed-in-georgia-the-carbon-free-power-comes-at-high
+13. "Commissioners Approve Agreement for Vogtle Construction Costs", Georgia Public Service Commission media advisory, 19 December 2023. https://psc.ga.gov/site/assets/files/7846/media_advisory_12_19_23_vogtle_prudency_agreement.pdf
+14. Southern Company, Annual Report on Form 10-K for the fiscal year ended 31 December 2024 (filed 20 February 2025), Note 2, "Georgia Power – Nuclear Construction". https://www.sec.gov/Archives/edgar/data/92122/000009212225000018/so-20241231.htm
+15. "Study identifies reasons for soaring nuclear plant cost overruns in the U.S.", MIT News, 18 November 2020, summarizing Eash-Gates, Klemun, Kavlak, McNerney, Buongiorno and Trancik, "Sources of Cost Overrun in Nuclear Power Plant Construction Call for a New Approach to Engineering Design", Joule, 2020. https://news.mit.edu/2020/reasons-nuclear-overruns-1118
