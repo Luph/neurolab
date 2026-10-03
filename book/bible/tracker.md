@@ -102,3 +102,4 @@
 - Brief revision u17 DONE (capability map FM.1; study plan 642 h; capstone 107 h; exam 46 h; exercise workbooks requested: model/exercises/ex85_12, ex86_13; capstone and exam model files).
 - Brief revision u07 DONE (cross-unit requests: u14 Ch67 US credit-dates exhibit; u06 Ch26 no contingent-equity acceleration variants; u08 Ex36.18 cite Fw 30.2/Exh 30.5).
 - Brief revision u11 DONE (ledger: P-F49 itemization gap; Annex P 1.15.5 FX hedging consent conflict).
+- Brief revision u02 DONE (tax subsection at ssec:7.11.4; Excel primer ssec:5.2.2).
