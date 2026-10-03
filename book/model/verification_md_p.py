@@ -9,7 +9,7 @@ L=[]
 a=L.append
 a('# Case P workbook verification')
 a('')
-a('Model version 1.4. Method. `model/verify_p.py` builds `Case_P_Model.xlsx` with the scenario selector set to each of the 15 scenarios, recalculates every copy with LibreOffice 24.2 headless using a private user profile (`soffice -env:UserInstallation=file:///tmp/lo_profile_case_p --headless --calc --convert-to xlsx`) into `model/recalc_p/out/`, reads the recalculated values with openpyxl (`data_only=True`) and compares them with the Python mirror (`case_p.py`) row by row: every mapped calculation row over all its columns (monthly or semiannual) and every mapped scalar. Tolerance: 0.01 in displayed units (USD m for amounts, x for ratios, percentage points for IRRs). The workbook has no circular references and no macros; iterative calculation is off.')
+a('Model version 1.5. Method. `model/verify_p.py` builds `Case_P_Model.xlsx` with the scenario selector set to each of the 15 scenarios, recalculates every copy with LibreOffice 24.2 headless using a private user profile (`soffice -env:UserInstallation=file:///tmp/lo_profile_case_p --headless --calc --convert-to xlsx`) into `model/recalc_p/out/`, reads the recalculated values with openpyxl (`data_only=True`) and compares them with the Python mirror (`case_p.py`) row by row: every mapped calculation row over all its columns (monthly or semiannual) and every mapped scalar. Tolerance: 0.01 in displayed units (USD m for amounts, x for ratios, percentage points for IRRs). The workbook has no circular references and no macros; iterative calculation is off.')
 a('')
 a('## Results by scenario')
 a('')
@@ -20,7 +20,7 @@ for line in log:
         p=line.split()
         i=p[1].rstrip(':'); n=p[2]; fails=p[4]; md=p[8].rstrip(','); chk=p[10]
         a(f"| {i} | {o['meta']['scenarios'][i]} | {n} | {fails} | {md} | {chk} | {'PASS' if fails=='0' and chk=='0' else 'FAIL'} |")
-a(f"| audit copy | Case_P_Model_AuditExercise.xlsx (FC base, errors E1-E10 seeded) | {au['n']} | {au['fails']} | {au['maxdiff']:.2e} | {au['checks']} | PASS (the failing checks are intended audit clues: F14 debt above the correct gearing cap and F23 the ECA tests, which the seeded errors also breach) |")
+a(f"| audit copy | Case_P_Model_AuditExercise.xlsx (FC base, errors E1-E10 seeded) | {au['n']} | {au['fails']} | {au['maxdiff']:.2e} | {au['checks']} | PASS (the one failing check is the intended audit clue: F14, debt above the correct gearing cap) |")
 a('')
 mc=json.load(open(f'{H}/recalc_p/verify_mc.json'))
 a('')

@@ -84,10 +84,32 @@ add('P-F08', 'Does the 1.40x LLCR test bind?', 'No' if not f['llcr_test_1_40_bin
 # P-F09
 f = P['P-F09']; e = f['eca_tests']
 for k, v in f['principal_usd_m'].items(): add('P-F09', f'Scheduled principal {k}', m(v), 'USD m', FCB, FC)
-add('P-F09', 'Weighted average life of repayment from COD', f"{e['wal_years']:.2f}", 'years (limit 7.25)', FCB, FC)
-add('P-F09', 'Largest installment', p1(e['largest_installment_share']), '% of principal (limit 25%)', FCB, FC)
-add('P-F09', 'Repayment term from COD', f"{e['tenor_years']:.2f}", 'years (limit 14)', FCB, FC)
-add('P-F09', 'First repayment after COD', str(e['first_repayment_months_after_cod']), 'months (limit 24)', FCB, FC)
+add('P-F09', 'Repayment structure', 'ECA-covered tranche: equal semiannual installments 2021H2 to 2034H1 (26); A-loan, B-loan and commercial: sculpted so that total scheduled debt service = CFADS / 1.35 (D-128)', 'text', FCB, FC)
+for k, v in f['eca_installment_share'].items(): add('P-F09', f'ECA-covered tranche installment {k}', f"{v * 100:.4f}%", '% of the ECA amount', FCB, k)
+for k, v in f['profile_share'].items(): add('P-F09', f'Sculpted profile, A-loan, B-loan and commercial, {k}', f"{v * 100:.4f}%", '% of their amount', FCB, k)
+add('P-F09', 'ECA-covered tranche (contractual schedule): weighted average life from COD', f"{e['wal_years']:.4f}", 'years (limit 7.25)', FCB, FC)
+add('P-F09', 'ECA-covered tranche: largest installment', p1(e['largest_installment_share']), '% of principal (limit 25%)', FCB, FC)
+add('P-F09', 'ECA-covered tranche: repayment term from COD', f"{e['tenor_years']:.4f}", 'years (limit 14)', FCB, FC)
+add('P-F09', 'ECA-covered tranche: first repayment after COD', str(e['first_repayment_months_after_cod']), 'months (limit 24)', FCB, FC)
+add('P-F09', 'Contractual WAL from COD, all tranches / A, B and commercial (no OECD limit)', f"{f['contractual_wal_all_tranches_from_cod']:.4f} / {f['contractual_wal_other_tranches_from_cod']:.4f}", 'years', FCB, FC)
+rc = f['reconciliation']
+add('P-F09', 'Scheduled principal total (unrounded)', f"{rc['scheduled_principal_total']:.6f}", 'USD m', FCB, '2021-2034')
+add('P-F09', 'Cash sweep prepayment total (soft mini-perm, commercial tranche, unrounded)', f"{rc['cash_sweep_prepayment_total']:.6f}", 'USD m', FCB, '2027-2031')
+add('P-F09', 'Scheduled principal + cash sweep = senior debt', f"{rc['scheduled_principal_total'] + rc['cash_sweep_prepayment_total']:.6f} = {rc['debt']:.6f}", 'USD m', FCB, FC)
+add('P-F09', 'Periods with DSCR exactly 1.35x on scheduled debt service', ', '.join(rc['periods_at_1_35']), 'periods', FCB, FC)
+add('P-F09', 'Average DSCR on scheduled debt service (term-sheet basis) / including the sweep in the denominator / minimum including the sweep', f"{rc['avg_dscr_scheduled']:.4f} / {rc['avg_dscr_incl_sweep']:.4f} / {rc['min_dscr_incl_sweep']:.4f}", 'x', FCB, FC)
+nc_ = rc['no_sweep_counterfactual']
+add('P-F09', 'Counterfactual without the mini-perm sweep: average / minimum / maximum DSCR', f"{nc_['avg_dscr']:.4f} / {nc_['min_dscr']:.4f} / {nc_['max_dscr']:.4f}", 'x', FCB + ' without sweep', FC)
+add('P-F09', 'Why the average exceeds 1.35x', rc['explanation'], 'text', FCB, FC)
+for k, v in rc['by_period'].items():
+    add('P-F09', f'{k}: CFADS / scheduled DS / scheduled principal / sweep / DSCR scheduled / DSCR incl. sweep / commercial opening', f"{v['cfads']:.3f} / {v['scheduled_ds']:.3f} / {v['scheduled_principal']:.3f} / {v['sweep']:.3f} / {v['dscr_scheduled']:.4f} / {v['dscr_incl_sweep']:.4f} / {v['commercial_opening']:.3f}", 'USD m, x', FCB, k)
+sl = P['P-F08']['sizing_slack']
+add('P-F08', 'Sizing slack (unrounded): downside test 1.20x', f"{sl['downside_slack_usd_m']:.6f} USD m; ratio {sl['downside_min_dscr']:.6f}x ({sl['downside_ratio_slack_x']:+.6f})", 'USD m, x', FCD, FC)
+add('P-F08', 'Sizing slack (unrounded): 75% gearing cap', f"{sl['gearing_slack_usd_m_closed_form']:.6f} USD m to the closed-form cap {sl['gearing_cap_debt_closed_form']:.6f} ({sl['gearing_slack_usd_m_at_current_T']:.6f} at the current total funding); gearing {sl['gearing'] * 100:.4f}%", 'USD m, %', FCB, FC)
+add('P-F08', 'Sizing slack (unrounded): LLCR 1.40x', f"{sl['llcr_slack_usd_m']:.6f} USD m; LLCR {sl['llcr_at_first_repayment']:.6f}x ({sl['llcr_ratio_slack_x']:+.6f})", 'USD m, x', FCB, FC)
+add('P-F08', 'ECA room (unrounded): WAL / tenor', f"{sl['eca_wal_room_days']:.2f} days ({sl['eca_wal_years']:.6f} years vs 7.25) / {sl['eca_tenor_room_days']:.2f} days ({sl['eca_tenor_years']:.6f} years vs 14)", 'days', FCB, FC)
+for nm_, key_ in (('FC base repayment dates', 'equal_installment_wal_fc_dates'), ('actual repayment dates incl. the 2025 bond', 'equal_installment_wal_actual_dates'), ('actual bank repayment dates to 2034', 'equal_installment_wal_actual_bank_dates_to_2034')):
+    d_ = sl[key_]; add('P-F08', f'Equal-installment WAL from COD on the {nm_} ({d_["first"]} to {d_["last"]}, {d_["installments"]} installments)', f"{d_['wal_years']:.6f}", 'years', FCB if 'FC' in nm_ else ACT, FC)
 # P-F10
 for case, run in (('fc_base', FCB), ('actual', ACT)):
     d = P['P-F10'][case]
@@ -162,7 +184,7 @@ for k, v in f['fc_base_comparison'].items(): add('P-F18', k.replace('_', ' '), m
 f = P['P-F19']
 add('P-F19', 'Tested net output / heat rate', '581.9 MW / 6,286 kJ/kWh', 'inputs', 'Inputs', '2021-11-30')
 add('P-F19', 'Output LDs / heat-rate LDs / total', '13.975 / 4.510 / 18.485', 'USD m', 'Inputs', '2021-11-30')
-add('P-F19', 'COD re-sculpted constant DSCR (before the LD prepayment)', r(f['cod_resculpted_dscr']), 'x', RF, '2021-12-01')
+add('P-F19', 'COD re-sculpted constant DSCR (before the LD prepayment; debt drawn at COD and final maturity June 30, 2034 held, so the level DSCR is the output, not a re-sculpt to 1.35x; ECA tranche in equal installments)', r(f['cod_resculpted_dscr']) + f" ({f['cod_resculpted_dscr']:.6f})", 'x', RF, '2021-12-01')
 add('P-F19', 'Same, had capacity and heat rate stayed at 588.4 MW / 6,261', r(f['cod_resculpted_dscr_if_no_reset']), 'x', RF + ' variant', '2021-12-01')
 add('P-F19', 'Projected minimum DSCR after the June 2022 LD prepayment', r(f['projected_min_dscr_after_prepayment']), 'x', RF, '2022-06-30')
 add('P-F19', 'Projected average DSCR after the prepayment', r(f['projected_avg_dscr_after_prepayment']), 'x', RF, '2022-06-30')
@@ -264,7 +286,9 @@ for nm in ('base', 'banking', 'downside', 'dispatch_50'):
 add('P-F35', 'Annual contract quantity / take-or-pay level', f"{f['base']['acq'] / 1e6:.2f} / {f['base']['top_level'] / 1e6:.2f}", 'million MMBtu', 'Inputs', '2022')
 # P-F36
 for k, v in P['P-F36']['grid'].items():
-    add('P-F36', k, f"debt {v['senior_debt']:.1f} ({v['binding']}); downside min {v['downside_min_dscr']:.2f}x; equity IRR {v['equity_irr'] * 100:.1f}%", 'USD m, x, %', FCB, '2017-10')
+    c_ = v['candidates']
+    add('P-F36', k + ' (all four sizing tests applied)', f"debt {v['senior_debt']:.2f} (binding: {v['binding']}); candidates gearing {c_['gearing']:.2f} / DSCR {c_['DSCR']:.2f} / downside {c_['downside']:.2f} / LLCR {c_['LLCR']:.2f}; base min/avg DSCR {v['base_min_dscr']:.2f}x/{v['base_avg_dscr']:.2f}x; downside min {v['downside_min_dscr']:.3f}x; LLCR {v['llcr_at_first_repayment']:.3f}x; equity IRR {v['equity_irr'] * 100:.1f}%", 'USD m, x, %', FCB, '2017-10')
+add('P-F36', 'Basis', P['P-F36']['note'], 'text', FCB, '2017-10')
 # P-F37 to P-F45
 f = P['P-F37']
 for case in ('fc_base', 'actual'):
@@ -328,8 +352,8 @@ for g in f['guarantee_demands']: add('P-F40', f"Guarantee demand {g['date']} (US
 add('P-F40', 'FX queue duration (2022-11-07 to 2024-03-29)', str(f['fx_queue_days']), 'days', 'Inputs', '2024-03-29')
 # P-F09 extension
 e = P['P-F09']['eca_tests']; ea = P['P-F09']['eca_tests_actual']
-add('P-F09', 'Share of principal repaid within 24 months of COD (FC base; minimum 2%)', p1(e['repaid_within_24_months_share']), '%', FCB, FC)
-add('P-F09', 'Actual: WAL / tenor / first repayment / repaid within 24 months', f"{ea['wal_years']:.2f} y / {ea['tenor_years']:.2f} y / {ea['first_repayment_months_after_cod']} months / {ea['repaid_within_24_months_share'] * 100:.1f}%", 'years, months, %', ACT, '2021-12-01')
+add('P-F09', 'ECA-covered tranche: share of principal repaid within 24 months of COD (FC base; minimum 2%)', p1(e['repaid_within_24_months_share']), '%', FCB, FC)
+add('P-F09', 'ECA-covered tranche, actual (equal installments from 2022H1): WAL / tenor / first repayment / repaid within 24 months', f"{ea['wal_years']:.2f} y / {ea['tenor_years']:.2f} y / {ea['first_repayment_months_after_cod']} months / {ea['repaid_within_24_months_share'] * 100:.1f}%", 'years, months, %', ACT, '2021-12-01')
 # P-F07 extension
 for nm, d in P['P-F07']['equity_by_sponsor'].items():
     add('P-F07', f'Equity at close by sponsor: {nm} ({d["share_pct"]}%): share capital / SHL / total', f"{d['share_capital']:.2f} / {d['shareholder_loans']:.2f} / {d['total']:.2f}", 'USD m', FCB, FC)
@@ -425,10 +449,10 @@ add('P-F66', 'Unhedged KCR depreciation saving on the onshore EPC (for compariso
 add('P-F40', 'SEKA LC drawing, February 14, 2023 (2023 reset value; P-C44)', m(P['P-F40']['lc_drawing']), 'USD m', ACT, '2023-02-14')
 
 L = ['# Figure ledger: Case P (Bélanou Combined Cycle Power Project)', '',
-     'Source: `model/outputs_case_p.json`, produced by `model/case_p.py` (Case P model v1.4; story as of October 3, 2026); formatted by '
+     'Source: `model/outputs_case_p.json`, produced by `model/case_p.py` (Case P model v1.5; story as of October 3, 2026); formatted by '
      '`model/ledger_p.py` (no computation). Amounts in USD million, nominal, unless stated. Scenario numbers are the workbook scenario switch '
      '(1 FC base, 2 FC banking, 3 FC downside, 4-13 sensitivities, 14 COD re-forecast, 15 actual history). P-F01 to P-F36 are the Case Bible '
-     'register; P-F37 to P-F45 are editor assignments and P-F46 to P-F63 come from case-bible-annex-p.md (P-F11 is split into P-F11a DSRA and P-F11b MMRA). Model version 1.4 (u09 requests R1 to R12 and ledger extensions absorbed; annex absorbed; editor rulings of October 3, 2026: delay-related overrun categories P-C43, FX hedge D-114, P-F64 to P-F66, sequential P-F64 bridge, RBL expectation revised P-C46). Writers cite the ID; print values in the style-sheet format.', '',
+     'register; P-F37 to P-F45 are editor assignments and P-F46 to P-F63 come from case-bible-annex-p.md (P-F11 is split into P-F11a DSRA and P-F11b MMRA). Model version 1.5 (ECA-covered tranche in equal installments, D-128; u09 requests R1 to R12 and ledger extensions absorbed; annex absorbed; editor rulings of October 3, 2026: delay-related overrun categories P-C43, FX hedge D-114, P-F64 to P-F66, sequential P-F64 bridge, RBL expectation revised P-C46). Writers cite the ID; print values in the style-sheet format.', '',
      'Definitions used throughout: DSCR = CFADS / (interest incl. WHT gross-up + swap net + PRI premium + PCG fee + scheduled principal); '
      'average DSCR = sum of CFADS / sum of debt service over the loan life; LLCR = (PV of CFADS to final maturity at the period all-in senior '
      'cost + DSRA balance) / senior debt, at the start of the first repayment period; gearing = senior debt / total funding requirement; '

@@ -1,6 +1,6 @@
 # Case state by chapter: Case P (Bélanou)
 
-Model version 1.4 (Case Bible annex P absorbed; editor rulings, v1.3 fixes and the u09 round 1 requests applied) (`model/case_p.py`, `model/Case_P_Model.xlsx`); story as of October 3, 2026. For every chapter of Case Bible Part 6 that features Case P: the state of the case at the start and end of the installment (Bible storyline plus modeled state) and the ledger figure IDs (`model/figure-ledger-case-p.md`) the chapter may print. "Inputs" means Case Bible Part 1 values after the change log.
+Model version 1.5 (ECA-covered tranche in equal installments, D-128; Case Bible annex P absorbed; editor rulings, v1.3 fixes and the u09 round 1 requests applied) (`model/case_p.py`, `model/Case_P_Model.xlsx`); story as of October 3, 2026. For every chapter of Case Bible Part 6 that features Case P: the state of the case at the start and end of the installment (Bible storyline plus modeled state) and the ledger figure IDs (`model/figure-ledger-case-p.md`) the chapter may print. "Inputs" means Case Bible Part 1 values after the change log.
 
 | Ch | Story date | State at start | State at end | Figure IDs the chapter shows | Notes for the writer |
 |---|---|---|---|---|---|
@@ -36,7 +36,7 @@ Model version 1.4 (Case Bible annex P absorbed; editor rulings, v1.3 fixes and t
 | 33 | Early 2025 | – | – | None |  |
 | 34 | 2017 | – | PRG proposed at USD 30 million (ABDB management, November 2017); Board approves USD 41.5 million on June 20, 2018 (Annex P) | Inputs: PRG 41.5, fee 0.75% |  |
 | 35 | 2018 (FC base) | – | – | P-F10, P-F08, P-F41, P-F16 (breakevens) | First full operating year: FC base July 1, 2021 to June 30, 2022; actual calendar 2022 (annex 4.15). LLCR includes the DSRA. |
-| 36 | April 2018 | Term sheet agreed | Debt sized | P-F08, P-F09, P-F36 | DSCR (1.35x) binds at USD 633.3 million; gearing cap would allow 642.9; downside 1.20x gives 633.4 (all within 1.5%). ECA first repayment tested at 24 months (2018 OECD terms). |
+| 36 | April 2018 | Term sheet agreed | Debt sized | P-F08, P-F09, P-F36 | DSCR (1.35x) binds at USD 629.9 million; gearing cap would allow 643.1; downside 1.20x gives 630.1; LLCR 1.42x against 1.40x. Print slack only from the unrounded P-F08 slack rows. The ECA-covered tranche repays in equal installments (WAL 6.92 years against 7.25, D-128); the A-loan, B-loan and commercial tranches are sculpted so that total scheduled debt service is CFADS / 1.35. The 1.55x average DSCR is CFADS over scheduled debt service; the mini-perm sweep (P-F09 cash sweep total) lowers later installments, so periods from 2027H2 sit above 1.35x (P-F09 reconciliation). P-F36 rows each apply all four sizing tests and name the binding one. |
 | 37 | 2018 | – | Reserve and hedge structure set | P-F11a, P-F11b, P-F12, P-F65 | Swap notional accretes with the FC drawdown and amortizes with the contract profile. |
 | 38 | 2018 | – | – | P-F12, P-F50, P-F65 | Show all-in cost variants with and without PRI, WHT gross-up and financed ECA premium. |
 | 39 | Model build | – | – | None |  |
@@ -58,7 +58,7 @@ Model version 1.4 (Case Bible annex P absorbed; editor rulings, v1.3 fixes and t
 | 59 | 2022 to 2024 | Plant operating | Settlement signed | P-F20, P-F25, P-F40, P-F39, P-F66 | 2022 dispatch was 84.0% / 81.5% (drought). The LC drawn in February 2023 is the 2023 reset value (P-F40, P-C44). 80% of the overdue amounts are energy-charge arrears matched by deferred SNHK/GCK payables (modeler calibration A1). The DSRA is drawn only at June 30, 2023 (USD 3.3 million, P-F21). Leave the breach and waiver to Chapter 62. |
 | 60 | 2018; 2022 to 2023 | – | – | Inputs: PRI premium 1.15%; P-F51 (Annex P) |  |
 | 61 | August 2018 to November 2021 | Financial close | COD December 1, 2021 | P-F18, P-F19, P-F30, P-F52, P-F66 | Overrun includes the calibrated delay-related EPC acceleration and owner cost escalation (P-C43). Funding order: contingency (base facilities), delay LDs, DSU, then standby (about USD 10.0 million) and contingent equity (about 3.3 million). The FX forwards gained for the project. |
-| 62 | 2022 to 2024 | Operating | Waiver in force | P-F21, P-F31, P-F63 | Historic DSCR 1.13x at December 31, 2022 (lock-up only) and 0.96x at June 30, 2023 (default); release in 2024H2 (ledger P-F21 governs, P-C57). |
+| 62 | 2022 to 2024 | Operating | Waiver in force | P-F21, P-F31, P-F63 | Historic DSCR 1.12x at December 31, 2022 (lock-up only) and 0.95x at June 30, 2023 (default); release in 2024H2 (ledger P-F21 governs, P-C57). |
 | 63 | 2025 to 2026; 2025 | Pre-refinancing | Refinanced; stake sold | P-F23, P-F24 |  |
 | 65 | 2026 looking to 2046; 2026 | – | – | P-F29, P-F48 |  |
 | 66 | 2018 to 2026 | – | – | P-F26, P-F53, P-F56, P-F66 | IFRS basis is IFRIC 12 (annex 4.6): on IFRS carrying amounts the loss of control gives a loss, on the lenders basis a gain (both in P-F26); fair value of the retained 36% = sale price per point x 36; hedge reserve recycled. |
@@ -81,13 +81,13 @@ State of Case P at key dates (for chapters that refer back):
 
 | Date | State | Figures |
 |---|---|---|
-| 2018-07-17 | Financial close: senior debt USD 633.3 million (DSCR-bound), total funding USD 855.1 million, gearing 74.1% | P-F07, P-F08 |
+| 2018-07-17 | Financial close: senior debt USD 629.9 million (DSCR-bound), total funding USD 854.6 million, gearing 73.7% | P-F07, P-F08 |
 | 2021-05-01 | Scheduled COD (FC base); DSRA USD 37.2 million | P-F11 |
 | 2021-12-01 | Actual COD; capacity reset to 581.9 MW; standby not drawn | P-F18, P-F19 |
 | 2022-06-30 | First repayment; USD 18.485 million LD prepayment | P-F19, P-F20 |
-| 2022-12-31 | Historic DSCR 1.13x: lock-up | P-F20, P-F21 |
-| 2023-06-30 | Historic DSCR 0.96x: event of default; DSRA drawn | P-F21, P-F25 |
+| 2022-12-31 | Historic DSCR 1.12x: lock-up | P-F20, P-F21 |
+| 2023-06-30 | Historic DSCR 0.95x: event of default; DSRA drawn | P-F21, P-F25 |
 | 2023-10-26 | Waiver and amendment | P-F21 |
 | 2024-12-31 | Lock-up released (2024H2) | P-F20 |
-| 2025-06-30 | Bond USD 245.8 million; commercial, B-loan and standby prepaid | P-F23 |
-| 2026-09-30 | 24% sold at USD 77.3 million; Kilnworth 36% | P-F24, P-F26 |
+| 2025-06-30 | Bond USD 253.8 million; commercial, B-loan and standby prepaid | P-F23 |
+| 2026-09-30 | 24% sold at USD 77.5 million; Kilnworth 36% | P-F24, P-F26 |

@@ -55,3 +55,16 @@ File: `chapters/02-what-project-finance-is.tex` (label `ch:2`). Date: 2026-10-03
 - `bash scripts/build_chapter.sh chapters/02-what-project-finance-is.tex`: BUILD OK, 46 pages. Overfull boxes: 1 (0.27pt, under the 5pt limit). Undefined references: cross-chapter only (ch:1, 3, 4, 8, 13, 15, 17, 21, 22, 26, 28, 30, 32, 38, 47, 51, 52, 57, 59, 60, 61, 62, 64, 66, 76, 77, 82; ex:1.9; exh:1.1, 1.3, 1.4, 1.10; sec:18.1, 31.3, 37.4, 75.3; ssec:6.3.2, 7.3.1, 8.2.1, 14.18.1, 36.1.1, 82.7.2). All cited labels exist in the anchor registry (scripted check).
 - `python3 scripts/scan_prose.py`: 0 hits. Em dashes (`---`): 0. Manual sweep done for vague This/That openers, false contrasts, zingers, rule-of-three cadence, colon reveals and character tics; fixes applied.
 - All numbers recomputed in Python (`scratchpad/ch02/nums.py`): 4.94x, 4.02x, 3.33x, 127.8, 30.4, 54.5, 58.4, 444.1, 151.9, 155.8, 13.83 (3.55%), 2.35, 50.4/6.4 bps, 104.0/106.6 bps, USD 3.0/3.1 million, 2.6 bps agency, drill 2.7 bps waiver / 162.7 / 85 bps / USD 2.5 million / 50.5 headroom, rooftops 15.6%, 55 kWp, USD 86,900, Exercise 2.14 thresholds 257.2 / 215.9 / 33.5.
+
+## Round 1 revision (2026-10-03)
+
+See `reviews/02/r1-revision.md` for the defect-by-defect log.
+
+- **Build and scan.** BUILD OK, 51 pages, one 0.27pt overfull box; scan 0 hits; 0 em dashes.
+- **Words.** About 17,100 in the body, 3,800 in exercises and solutions, 540 in sources.
+- **Superseded items above.**
+  - Units now follow D-126.
+  - `\raggedright` is removed.
+  - The separateness undertaking is now canon and bolded.
+  - Deviation 3 is confirmed by the numbers and domain reviewers.
+- **New structure.** The board paper recommends a 7.5% overrun cap (USD 29.2 million) plus a USD 29.2 million project-level standby facility, because the lenders' 15% ask would breach GLA's covenant (3.65x).

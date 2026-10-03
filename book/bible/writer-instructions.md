@@ -54,3 +54,4 @@ Never put personal identifiers in any web request header; never bypass bot block
 - Do not restate in prose the numbers an exhibit already shows; say what the reader should notice.
 - British spellings (cancelled, panellist, programme, licence) are errors.
 - Illustrative parties: never place them in a specific identifiable real procurement or auction round (D-129); real program types only, consistent with how the program works.
+- When citing an earlier chapter that already exists in chapters/, read the chapter file (not its brief) for labels, figures and framework wording (D-140).
