@@ -106,3 +106,4 @@
 - Brief revision u13 DONE (ledger vs bible conflicts: 2025 bond combined DSCR 1.59x vs bible 1.35x; Case T notes min DSCR 2.00x vs bible 1.30x; case-state 1.14/0.97 vs P-F21 1.13/0.96 — ledger wins). Fact sheet wave 4 launched (t-repowering, t-fast-standard, t-energy-yield, t-battery-degradation, t-earned-value, t-sustainable-finance-2).
 - Brief revision u03 DONE (needs: Ch13 refs ssec:5.0 → ssec:5.2.2 per u02; model/exercises/ch13 files; ~60 name checks).
 - Brief revision u14 DONE (cross-unit: ssec:7.6.4 references → ssec:7.11.4 per u02; t-decommissioning-accounting requested).
+- Brief revision u06 DONE (cross-unit: u03 Ch12 remove Félix take-or-pay ask).
