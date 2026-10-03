@@ -1,0 +1,2286 @@
+{
+"series": {
+"portfolio.north_atc": [
+"Operations",
+52
+],
+"portfolio.west_atc": [
+"Operations",
+53
+],
+"portfolio.south_atc": [
+"Operations",
+54
+],
+"portfolio.houston_atc": [
+"Operations",
+55
+],
+"portfolio.batt_rate": [
+"Operations",
+56
+],
+"portfolio.cap_hub_west_wind": [
+"Operations",
+57
+],
+"portfolio.cap_hub_panhandle_wind": [
+"Operations",
+58
+],
+"portfolio.cap_hub_west_solar": [
+"Operations",
+59
+],
+"portfolio.cap_hub_south_solar": [
+"Operations",
+60
+],
+"portfolio.cap_hub_coastal_wind": [
+"Operations",
+61
+],
+"R1.op_frac": [
+"Operations",
+63
+],
+"R1.own_share": [
+"Operations",
+65
+],
+"R1.hub_atc": [
+"Operations",
+66
+],
+"R1.deg": [
+"Operations",
+68
+],
+"R1.curt": [
+"Operations",
+69
+],
+"R1.gen_full": [
+"Operations",
+70
+],
+"R1.gen": [
+"Operations",
+71
+],
+"R1.cap_hub": [
+"Operations",
+72
+],
+"R1.cap_node": [
+"Operations",
+73
+],
+"R1.node_price": [
+"Operations",
+74
+],
+"R1.con_frac": [
+"Operations",
+75
+],
+"R1.con_vol": [
+"Operations",
+76
+],
+"R1.settle": [
+"Operations",
+77
+],
+"R1.mkt_gen": [
+"Operations",
+78
+],
+"R1.rev_contracted": [
+"Operations",
+79
+],
+"R1.rev_hedged": [
+"Operations",
+80
+],
+"R1.mkt_rev": [
+"Operations",
+81
+],
+"R1.revenue": [
+"Operations",
+82
+],
+"R1.rev_merchant": [
+"Operations",
+83
+],
+"R1.opex": [
+"Operations",
+84
+],
+"R1.land": [
+"Operations",
+85
+],
+"R1.bond": [
+"Operations",
+86
+],
+"R1.margin_tax": [
+"Operations",
+87
+],
+"R1.ebitda": [
+"Operations",
+88
+],
+"R1.aug": [
+"Operations",
+89
+],
+"R1.decom": [
+"Operations",
+90
+],
+"R1.cf": [
+"Operations",
+91
+],
+"R1.te_cash": [
+"Operations",
+92
+],
+"R1.mesa_tax_share": [
+"Operations",
+93
+],
+"R1.mesa_cf": [
+"Operations",
+94
+],
+"R1.mesa_taxable": [
+"Operations",
+95
+],
+"R1.s_contracted": [
+"Operations",
+97
+],
+"R1.s_hedged": [
+"Operations",
+98
+],
+"R1.s_merchant": [
+"Operations",
+99
+],
+"R1.mesa_rev": [
+"Operations",
+103
+],
+"R2.op_frac": [
+"Operations",
+105
+],
+"R2.own_share": [
+"Operations",
+107
+],
+"R2.hub_atc": [
+"Operations",
+108
+],
+"R2.deg": [
+"Operations",
+110
+],
+"R2.curt": [
+"Operations",
+111
+],
+"R2.gen_full": [
+"Operations",
+112
+],
+"R2.gen": [
+"Operations",
+113
+],
+"R2.cap_hub": [
+"Operations",
+114
+],
+"R2.cap_node": [
+"Operations",
+115
+],
+"R2.node_price": [
+"Operations",
+116
+],
+"R2.con_frac": [
+"Operations",
+117
+],
+"R2.con_vol": [
+"Operations",
+118
+],
+"R2.settle": [
+"Operations",
+119
+],
+"R2.mkt_gen": [
+"Operations",
+120
+],
+"R2.rev_contracted": [
+"Operations",
+121
+],
+"R2.rev_hedged": [
+"Operations",
+122
+],
+"R2.mkt_rev": [
+"Operations",
+123
+],
+"R2.revenue": [
+"Operations",
+124
+],
+"R2.rev_merchant": [
+"Operations",
+125
+],
+"R2.opex": [
+"Operations",
+126
+],
+"R2.land": [
+"Operations",
+127
+],
+"R2.bond": [
+"Operations",
+128
+],
+"R2.margin_tax": [
+"Operations",
+129
+],
+"R2.ebitda": [
+"Operations",
+130
+],
+"R2.aug": [
+"Operations",
+131
+],
+"R2.decom": [
+"Operations",
+132
+],
+"R2.cf": [
+"Operations",
+133
+],
+"R2.te_cash": [
+"Operations",
+134
+],
+"R2.mesa_tax_share": [
+"Operations",
+135
+],
+"R2.mesa_cf": [
+"Operations",
+136
+],
+"R2.mesa_taxable": [
+"Operations",
+137
+],
+"R2.s_contracted": [
+"Operations",
+139
+],
+"R2.s_hedged": [
+"Operations",
+140
+],
+"R2.s_merchant": [
+"Operations",
+141
+],
+"R2.mesa_rev": [
+"Operations",
+145
+],
+"R3.op_frac": [
+"Operations",
+147
+],
+"R3.own_share": [
+"Operations",
+149
+],
+"R3.hub_atc": [
+"Operations",
+150
+],
+"R3.deg": [
+"Operations",
+152
+],
+"R3.curt": [
+"Operations",
+153
+],
+"R3.gen_full": [
+"Operations",
+154
+],
+"R3.gen": [
+"Operations",
+155
+],
+"R3.cap_hub": [
+"Operations",
+156
+],
+"R3.cap_node": [
+"Operations",
+157
+],
+"R3.node_price": [
+"Operations",
+158
+],
+"R3.con_frac": [
+"Operations",
+159
+],
+"R3.con_vol": [
+"Operations",
+160
+],
+"R3.settle": [
+"Operations",
+161
+],
+"R3.mkt_gen": [
+"Operations",
+162
+],
+"R3.rev_contracted": [
+"Operations",
+163
+],
+"R3.rev_hedged": [
+"Operations",
+164
+],
+"R3.mkt_rev": [
+"Operations",
+165
+],
+"R3.revenue": [
+"Operations",
+166
+],
+"R3.rev_merchant": [
+"Operations",
+167
+],
+"R3.opex": [
+"Operations",
+168
+],
+"R3.land": [
+"Operations",
+169
+],
+"R3.bond": [
+"Operations",
+170
+],
+"R3.margin_tax": [
+"Operations",
+171
+],
+"R3.ebitda": [
+"Operations",
+172
+],
+"R3.aug": [
+"Operations",
+173
+],
+"R3.decom": [
+"Operations",
+174
+],
+"R3.cf": [
+"Operations",
+175
+],
+"R3.te_cash": [
+"Operations",
+177
+],
+"R3.mesa_tax_share": [
+"Operations",
+178
+],
+"R3.mesa_cf": [
+"Operations",
+179
+],
+"R3.mesa_taxable": [
+"Operations",
+180
+],
+"R3.s_contracted": [
+"Operations",
+182
+],
+"R3.s_hedged": [
+"Operations",
+183
+],
+"R3.s_merchant": [
+"Operations",
+184
+],
+"R3.mesa_rev": [
+"Operations",
+188
+],
+"R3.ptc_total": [
+"Operations",
+189
+],
+"R4.op_frac": [
+"Operations",
+191
+],
+"R4.own_share": [
+"Operations",
+193
+],
+"R4.hub_atc": [
+"Operations",
+194
+],
+"R4.deg": [
+"Operations",
+196
+],
+"R4.curt": [
+"Operations",
+197
+],
+"R4.gen_full": [
+"Operations",
+198
+],
+"R4.gen": [
+"Operations",
+199
+],
+"R4.cap_hub": [
+"Operations",
+200
+],
+"R4.cap_node": [
+"Operations",
+201
+],
+"R4.node_price": [
+"Operations",
+202
+],
+"R4.con_frac": [
+"Operations",
+203
+],
+"R4.con_vol": [
+"Operations",
+204
+],
+"R4.settle": [
+"Operations",
+205
+],
+"R4.mkt_gen": [
+"Operations",
+206
+],
+"R4.rev_contracted": [
+"Operations",
+207
+],
+"R4.rev_hedged": [
+"Operations",
+208
+],
+"R4.mkt_rev": [
+"Operations",
+209
+],
+"R4.revenue": [
+"Operations",
+210
+],
+"R4.rev_merchant": [
+"Operations",
+211
+],
+"R4.opex": [
+"Operations",
+212
+],
+"R4.land": [
+"Operations",
+213
+],
+"R4.bond": [
+"Operations",
+214
+],
+"R4.margin_tax": [
+"Operations",
+215
+],
+"R4.ebitda": [
+"Operations",
+216
+],
+"R4.aug": [
+"Operations",
+217
+],
+"R4.decom": [
+"Operations",
+218
+],
+"R4.cf": [
+"Operations",
+219
+],
+"R4.te_cash": [
+"Operations",
+220
+],
+"R4.mesa_tax_share": [
+"Operations",
+221
+],
+"R4.mesa_cf": [
+"Operations",
+222
+],
+"R4.mesa_taxable": [
+"Operations",
+223
+],
+"R4.s_contracted": [
+"Operations",
+225
+],
+"R4.s_hedged": [
+"Operations",
+226
+],
+"R4.s_merchant": [
+"Operations",
+227
+],
+"R4.mesa_rev": [
+"Operations",
+231
+],
+"R5.op_frac": [
+"Operations",
+233
+],
+"R5.own_share": [
+"Operations",
+235
+],
+"R5.hub_atc": [
+"Operations",
+236
+],
+"R5.deg": [
+"Operations",
+238
+],
+"R5.curt": [
+"Operations",
+239
+],
+"R5.gen_full": [
+"Operations",
+240
+],
+"R5.gen": [
+"Operations",
+241
+],
+"R5.cap_hub": [
+"Operations",
+242
+],
+"R5.cap_node": [
+"Operations",
+243
+],
+"R5.node_price": [
+"Operations",
+244
+],
+"R5.con_frac": [
+"Operations",
+245
+],
+"R5.con_vol": [
+"Operations",
+246
+],
+"R5.settle": [
+"Operations",
+247
+],
+"R5.mkt_gen": [
+"Operations",
+248
+],
+"R5.rev_contracted": [
+"Operations",
+249
+],
+"R5.rev_hedged": [
+"Operations",
+250
+],
+"R5.mkt_rev": [
+"Operations",
+251
+],
+"R5.revenue": [
+"Operations",
+252
+],
+"R5.rev_merchant": [
+"Operations",
+253
+],
+"R5.opex": [
+"Operations",
+254
+],
+"R5.land": [
+"Operations",
+255
+],
+"R5.bond": [
+"Operations",
+256
+],
+"R5.margin_tax": [
+"Operations",
+257
+],
+"R5.ebitda": [
+"Operations",
+258
+],
+"R5.aug": [
+"Operations",
+259
+],
+"R5.decom": [
+"Operations",
+260
+],
+"R5.cf": [
+"Operations",
+261
+],
+"R5.te_cash": [
+"Operations",
+263
+],
+"R5.mesa_tax_share": [
+"Operations",
+264
+],
+"R5.mesa_cf": [
+"Operations",
+265
+],
+"R5.mesa_taxable": [
+"Operations",
+266
+],
+"R5.s_contracted": [
+"Operations",
+268
+],
+"R5.s_hedged": [
+"Operations",
+269
+],
+"R5.s_merchant": [
+"Operations",
+270
+],
+"R5.mesa_rev": [
+"Operations",
+274
+],
+"R6.op_frac": [
+"Operations",
+276
+],
+"R6.own_share": [
+"Operations",
+278
+],
+"R6.hub_atc": [
+"Operations",
+279
+],
+"R6.con_frac": [
+"Operations",
+280
+],
+"R6.settle": [
+"Operations",
+281
+],
+"R6.stor_rev": [
+"Operations",
+282
+],
+"R6.rev_contracted": [
+"Operations",
+283
+],
+"R6.rev_hedged": [
+"Operations",
+284
+],
+"R6.revenue": [
+"Operations",
+285
+],
+"R6.rev_merchant": [
+"Operations",
+286
+],
+"R6.opex": [
+"Operations",
+287
+],
+"R6.land": [
+"Operations",
+288
+],
+"R6.bond": [
+"Operations",
+289
+],
+"R6.margin_tax": [
+"Operations",
+290
+],
+"R6.ebitda": [
+"Operations",
+291
+],
+"R6.aug": [
+"Operations",
+292
+],
+"R6.decom": [
+"Operations",
+293
+],
+"R6.cf": [
+"Operations",
+294
+],
+"R6.te_cash": [
+"Operations",
+295
+],
+"R6.mesa_tax_share": [
+"Operations",
+296
+],
+"R6.mesa_cf": [
+"Operations",
+297
+],
+"R6.mesa_taxable": [
+"Operations",
+298
+],
+"R6.s_contracted": [
+"Operations",
+300
+],
+"R6.s_hedged": [
+"Operations",
+301
+],
+"R6.s_merchant": [
+"Operations",
+302
+],
+"R6.mesa_rev": [
+"Operations",
+306
+],
+"R7.op_frac": [
+"Operations",
+308
+],
+"R7.own_share": [
+"Operations",
+310
+],
+"R7.hub_atc": [
+"Operations",
+311
+],
+"R7.con_frac": [
+"Operations",
+312
+],
+"R7.settle": [
+"Operations",
+314
+],
+"R7.stor_rev": [
+"Operations",
+315
+],
+"R7.rev_contracted": [
+"Operations",
+316
+],
+"R7.rev_hedged": [
+"Operations",
+317
+],
+"R7.revenue": [
+"Operations",
+318
+],
+"R7.rev_merchant": [
+"Operations",
+319
+],
+"R7.opex": [
+"Operations",
+320
+],
+"R7.land": [
+"Operations",
+321
+],
+"R7.bond": [
+"Operations",
+322
+],
+"R7.margin_tax": [
+"Operations",
+323
+],
+"R7.ebitda": [
+"Operations",
+324
+],
+"R7.aug": [
+"Operations",
+325
+],
+"R7.decom": [
+"Operations",
+326
+],
+"R7.cf": [
+"Operations",
+327
+],
+"R7.te_cash": [
+"Operations",
+328
+],
+"R7.mesa_tax_share": [
+"Operations",
+329
+],
+"R7.mesa_cf": [
+"Operations",
+330
+],
+"R7.mesa_taxable": [
+"Operations",
+331
+],
+"R7.s_contracted": [
+"Operations",
+333
+],
+"R7.s_hedged": [
+"Operations",
+334
+],
+"R7.s_merchant": [
+"Operations",
+335
+],
+"R7.mesa_rev": [
+"Operations",
+339
+],
+"R8.op_frac": [
+"Operations",
+341
+],
+"R8.own_share": [
+"Operations",
+343
+],
+"R8.hub_atc": [
+"Operations",
+344
+],
+"R8.deg": [
+"Operations",
+346
+],
+"R8.curt": [
+"Operations",
+347
+],
+"R8.gen_full": [
+"Operations",
+348
+],
+"R8.gen": [
+"Operations",
+349
+],
+"R8.cap_hub": [
+"Operations",
+350
+],
+"R8.cap_node": [
+"Operations",
+351
+],
+"R8.node_price": [
+"Operations",
+352
+],
+"R8.con_frac": [
+"Operations",
+353
+],
+"R8.con_vol": [
+"Operations",
+354
+],
+"R8.settle": [
+"Operations",
+355
+],
+"R8.mkt_gen": [
+"Operations",
+356
+],
+"R8.rev_contracted": [
+"Operations",
+357
+],
+"R8.rev_hedged": [
+"Operations",
+358
+],
+"R8.mkt_rev": [
+"Operations",
+359
+],
+"R8.revenue": [
+"Operations",
+360
+],
+"R8.rev_merchant": [
+"Operations",
+361
+],
+"R8.opex": [
+"Operations",
+362
+],
+"R8.land": [
+"Operations",
+363
+],
+"R8.bond": [
+"Operations",
+364
+],
+"R8.margin_tax": [
+"Operations",
+365
+],
+"R8.ebitda": [
+"Operations",
+366
+],
+"R8.aug": [
+"Operations",
+367
+],
+"R8.decom": [
+"Operations",
+368
+],
+"R8.cf": [
+"Operations",
+369
+],
+"R8.te_cash": [
+"Operations",
+370
+],
+"R8.mesa_tax_share": [
+"Operations",
+371
+],
+"R8.mesa_cf": [
+"Operations",
+372
+],
+"R8.mesa_taxable": [
+"Operations",
+373
+],
+"R8.s_contracted": [
+"Operations",
+375
+],
+"R8.s_hedged": [
+"Operations",
+376
+],
+"R8.s_merchant": [
+"Operations",
+377
+],
+"R8.mesa_rev": [
+"Operations",
+381
+],
+"portfolio.am_cost": [
+"Operations",
+384
+],
+"portfolio.mesa_rev_contracted_a1": [
+"Operations",
+386
+],
+"portfolio.mesa_rev_hedged_a1": [
+"Operations",
+387
+],
+"portfolio.mesa_rev_merchant_a1": [
+"Operations",
+388
+],
+"portfolio.mesa_rev_a1": [
+"Operations",
+389
+],
+"portfolio.mesa_rev_contracted_all": [
+"Operations",
+391
+],
+"portfolio.mesa_rev_hedged_all": [
+"Operations",
+392
+],
+"portfolio.mesa_rev_merchant_all": [
+"Operations",
+393
+],
+"portfolio.mesa_rev_all": [
+"Operations",
+394
+],
+"portfolio.cfads_a1": [
+"Operations",
+400
+],
+"portfolio.cfads_all": [
+"Operations",
+401
+],
+"portfolio.cfads_a3": [
+"Operations",
+402
+],
+"portfolio.share_contracted_a1": [
+"Operations",
+403
+],
+"portfolio.share_hedged_a1": [
+"Operations",
+404
+],
+"portfolio.share_merchant_a1": [
+"Operations",
+405
+],
+"portfolio.share_contracted_all": [
+"Operations",
+409
+],
+"portfolio.share_hedged_all": [
+"Operations",
+410
+],
+"portfolio.share_merchant_all": [
+"Operations",
+411
+],
+"finance.dep": [
+"Tax",
+24
+],
+"finance.taxable_ops": [
+"Tax",
+25
+],
+"sz.tl_f": [
+"Funding",
+8
+],
+"sz.tl_rate": [
+"Funding",
+12
+],
+"sz.tl_cap_bucket": [
+"Funding",
+13
+],
+"sz.tl_cap_p99": [
+"Funding",
+14
+],
+"sz.tl_ds": [
+"Funding",
+15
+],
+"sz.tl_df": [
+"Funding",
+16
+],
+"sz.tl_sched_open": [
+"Funding",
+22
+],
+"sz.tl_sched_int": [
+"Funding",
+23
+],
+"sz.tl_sched_prin": [
+"Funding",
+24
+],
+"sz.dist_a1_base": [
+"Funding",
+26
+],
+"sz.hc_k": [
+"Funding",
+33
+],
+"sz.hc_cap_vec": [
+"Funding",
+35
+],
+"sz.rf_f": [
+"Funding",
+44
+],
+"sz.rf_cf": [
+"Funding",
+46
+],
+"sz.rf_ds": [
+"Funding",
+47
+],
+"sz.rf_rate": [
+"Funding",
+48
+],
+"sz.rf_sched_open": [
+"Funding",
+51
+],
+"sz.rf_sched_prin": [
+"Funding",
+52
+],
+"sz.hi_k": [
+"Funding",
+60
+],
+"sz.hi_cap_vec": [
+"Funding",
+62
+],
+"sz.u_f": [
+"Funding",
+69
+],
+"sz.u_cap_bucket": [
+"Funding",
+71
+],
+"sz.u_cap_p99": [
+"Funding",
+72
+],
+"sz.u_ds": [
+"Funding",
+73
+],
+"sz.u_prin": [
+"Funding",
+74
+],
+"sz.u_open": [
+"Funding",
+78
+],
+"sz.u_int": [
+"Funding",
+79
+],
+"sz.hn_k": [
+"Funding",
+99
+],
+"sz.dist_post_base": [
+"Funding",
+101
+],
+"sz.hn_cap_vec": [
+"Funding",
+102
+],
+"finance.tl_open": [
+"Debt",
+14
+],
+"finance.tl_int": [
+"Debt",
+15
+],
+"finance.tl_prin": [
+"Debt",
+16
+],
+"finance.tl_prepay": [
+"Debt",
+17
+],
+"finance.tl_ds": [
+"Debt",
+18
+],
+"finance.rf_open": [
+"Debt",
+23
+],
+"finance.rf_int": [
+"Debt",
+24
+],
+"finance.rf_prin": [
+"Debt",
+25
+],
+"finance.rf_prepay": [
+"Debt",
+26
+],
+"finance.rf_ds": [
+"Debt",
+27
+],
+"finance.u_open": [
+"Debt",
+31
+],
+"finance.u_int": [
+"Debt",
+32
+],
+"finance.u_prin": [
+"Debt",
+33
+],
+"finance.u_ds": [
+"Debt",
+34
+],
+"finance.hc1_open": [
+"Debt",
+46
+],
+"finance.hc1_int": [
+"Debt",
+47
+],
+"finance.hc1_amort": [
+"Debt",
+48
+],
+"finance.hc1_sweep": [
+"Debt",
+49
+],
+"finance.hc1_repay": [
+"Debt",
+51
+],
+"finance.hc2_open": [
+"Debt",
+53
+],
+"finance.hc2_int": [
+"Debt",
+54
+],
+"finance.hc2_amort": [
+"Debt",
+55
+],
+"finance.hc2_sweep": [
+"Debt",
+56
+],
+"finance.hc2_repay": [
+"Debt",
+58
+],
+"finance.hc3_open": [
+"Debt",
+60
+],
+"finance.hc3_int": [
+"Debt",
+61
+],
+"finance.hc3_amort": [
+"Debt",
+62
+],
+"finance.hc3_sweep": [
+"Debt",
+63
+],
+"finance.hc_ds": [
+"Debt",
+67
+],
+"finance.taxable_income": [
+"Tax",
+29
+],
+"finance.nol_open": [
+"Tax",
+30
+],
+"finance.nol_used": [
+"Tax",
+31
+],
+"finance.tax": [
+"Tax",
+32
+],
+"finance.nol_close": [
+"Tax",
+33
+],
+"finance.opco_ds": [
+"Waterfall",
+9
+],
+"finance.opco_dist": [
+"Waterfall",
+10
+],
+"finance.recap_opco": [
+"Waterfall",
+11
+],
+"finance.hc_excess": [
+"Waterfall",
+16
+],
+"finance.fund_dist_ops": [
+"Waterfall",
+19
+],
+"finance.recap_hold": [
+"Waterfall",
+20
+],
+"finance.recap_total": [
+"Waterfall",
+21
+],
+"finance.fund_dist": [
+"Waterfall",
+22
+],
+"finance.dscr_tl": [
+"Ratios",
+8
+],
+"finance.dscr_rf": [
+"Ratios",
+9
+],
+"finance.dscr_u": [
+"Ratios",
+10
+],
+"finance.dscr_opco": [
+"Ratios",
+11
+],
+"finance.hc_cov": [
+"Ratios",
+12
+],
+"finance.nav_df": [
+"Returns",
+96
+]
+},
+"scalars": {
+"ys.R1.sigma_1yr": [
+"Operations",
+"F8"
+],
+"ys.R1.sigma_10yr": [
+"Operations",
+"F9"
+],
+"ys.R1.sigma_iav": [
+"Operations",
+"F10"
+],
+"ys.R1.sigma_lt": [
+"Operations",
+"F11"
+],
+"ys.R1.p99_1yr": [
+"Operations",
+"F12"
+],
+"ys.R1.p99_10yr": [
+"Operations",
+"F13"
+],
+"ys.R2.sigma_1yr": [
+"Operations",
+"F14"
+],
+"ys.R2.sigma_10yr": [
+"Operations",
+"F15"
+],
+"ys.R2.sigma_iav": [
+"Operations",
+"F16"
+],
+"ys.R2.sigma_lt": [
+"Operations",
+"F17"
+],
+"ys.R2.p99_1yr": [
+"Operations",
+"F18"
+],
+"ys.R2.p99_10yr": [
+"Operations",
+"F19"
+],
+"ys.R3.sigma_1yr": [
+"Operations",
+"F20"
+],
+"ys.R3.sigma_10yr": [
+"Operations",
+"F21"
+],
+"ys.R3.sigma_iav": [
+"Operations",
+"F22"
+],
+"ys.R3.sigma_lt": [
+"Operations",
+"F23"
+],
+"ys.R3.p99_1yr": [
+"Operations",
+"F24"
+],
+"ys.R3.p99_10yr": [
+"Operations",
+"F25"
+],
+"ys.R4.sigma_1yr": [
+"Operations",
+"F26"
+],
+"ys.R4.sigma_10yr": [
+"Operations",
+"F27"
+],
+"ys.R4.sigma_iav": [
+"Operations",
+"F28"
+],
+"ys.R4.sigma_lt": [
+"Operations",
+"F29"
+],
+"ys.R4.p99_1yr": [
+"Operations",
+"F30"
+],
+"ys.R4.p99_10yr": [
+"Operations",
+"F31"
+],
+"ys.R5.sigma_1yr": [
+"Operations",
+"F32"
+],
+"ys.R5.sigma_10yr": [
+"Operations",
+"F33"
+],
+"ys.R5.sigma_iav": [
+"Operations",
+"F34"
+],
+"ys.R5.sigma_lt": [
+"Operations",
+"F35"
+],
+"ys.R5.p99_1yr": [
+"Operations",
+"F36"
+],
+"ys.R5.p99_10yr": [
+"Operations",
+"F37"
+],
+"ys.R8.sigma_1yr": [
+"Operations",
+"F38"
+],
+"ys.R8.sigma_10yr": [
+"Operations",
+"F39"
+],
+"ys.R8.sigma_iav": [
+"Operations",
+"F40"
+],
+"ys.R8.sigma_lt": [
+"Operations",
+"F41"
+],
+"ys.R8.p99_1yr": [
+"Operations",
+"F42"
+],
+"ys.R8.p99_10yr": [
+"Operations",
+"F43"
+],
+"uri.gen_mwh": [
+"Operations",
+"F1159"
+],
+"uri.swap_mwh": [
+"Operations",
+"F1160"
+],
+"uri.shortfall_mwh": [
+"Operations",
+"F1161"
+],
+"uri.swap_payment": [
+"Operations",
+"F1162"
+],
+"uri.physical_revenue": [
+"Operations",
+"F1163"
+],
+"uri.net_cash": [
+"Operations",
+"F1164"
+],
+"uri.net_vs_fully_covered": [
+"Operations",
+"F1165"
+],
+"div.A1.p50_gwh": [
+"Operations",
+"F1168"
+],
+"div.A1.sigma_1yr_gwh": [
+"Operations",
+"F1171"
+],
+"div.A1.p90_1yr_gwh": [
+"Operations",
+"F1172"
+],
+"div.A1.p99_1yr_gwh": [
+"Operations",
+"F1173"
+],
+"div.A1.p90_1yr_correlated_gwh": [
+"Operations",
+"F1174"
+],
+"div.A1.p90_1yr_independent_gwh": [
+"Operations",
+"F1175"
+],
+"div.A1.sigma_10yr_gwh": [
+"Operations",
+"F1176"
+],
+"div.A1.p90_10yr_gwh": [
+"Operations",
+"F1177"
+],
+"div.A1.p99_10yr_gwh": [
+"Operations",
+"F1178"
+],
+"div.A1.p90_10yr_correlated_gwh": [
+"Operations",
+"F1179"
+],
+"div.A1.p90_10yr_independent_gwh": [
+"Operations",
+"F1180"
+],
+"div.all_generation.p50_gwh": [
+"Operations",
+"F1181"
+],
+"div.all_generation.sigma_1yr_gwh": [
+"Operations",
+"F1184"
+],
+"div.all_generation.p90_1yr_gwh": [
+"Operations",
+"F1185"
+],
+"div.all_generation.p99_1yr_gwh": [
+"Operations",
+"F1186"
+],
+"div.all_generation.p90_1yr_correlated_gwh": [
+"Operations",
+"F1187"
+],
+"div.all_generation.p90_1yr_independent_gwh": [
+"Operations",
+"F1188"
+],
+"div.all_generation.sigma_10yr_gwh": [
+"Operations",
+"F1189"
+],
+"div.all_generation.p90_10yr_gwh": [
+"Operations",
+"F1190"
+],
+"div.all_generation.p99_10yr_gwh": [
+"Operations",
+"F1191"
+],
+"div.all_generation.p90_10yr_correlated_gwh": [
+"Operations",
+"F1192"
+],
+"div.all_generation.p90_10yr_independent_gwh": [
+"Operations",
+"F1193"
+],
+"val.A3.itc7": [
+"Tax",
+"F8"
+],
+"val.A3.itc8": [
+"Tax",
+"F9"
+],
+"sz.tl_debt": [
+"Funding",
+"F17"
+],
+"sz.tl_pv_cap_contracted": [
+"Funding",
+"F18"
+],
+"sz.tl_pv_cap_hedged": [
+"Funding",
+"F19"
+],
+"sz.tl_pv_cap_merchant": [
+"Funding",
+"F20"
+],
+"sz.tl_p99_binds_years": [
+"Funding",
+"F21"
+],
+"sz.hc_face_cov": [
+"Funding",
+"F36"
+],
+"sz.opco_eq_val_2022": [
+"Funding",
+"F39"
+],
+"sz.hc_face_cap": [
+"Funding",
+"F40"
+],
+"sz.hc_face": [
+"Funding",
+"F41"
+],
+"sz.rf_debt": [
+"Funding",
+"F50"
+],
+"sz.hi_face": [
+"Funding",
+"F63"
+],
+"sz.u_series_size.A": [
+"Funding",
+"F80"
+],
+"sz.u_series_size.B": [
+"Funding",
+"F81"
+],
+"sz.u_series_size.C": [
+"Funding",
+"F82"
+],
+"sz.u_size": [
+"Funding",
+"F83"
+],
+"sz.u_series_share.A": [
+"Funding",
+"F84"
+],
+"sz.u_series_share.B": [
+"Funding",
+"F85"
+],
+"sz.u_series_share.C": [
+"Funding",
+"F86"
+],
+"sz.u_coupon": [
+"Funding",
+"F87"
+],
+"sz.u_pv_cap_contracted": [
+"Funding",
+"F89"
+],
+"sz.u_pv_cap_hedged": [
+"Funding",
+"F90"
+],
+"sz.u_pv_cap_merchant": [
+"Funding",
+"F91"
+],
+"sz.u_p99_binds_years": [
+"Funding",
+"F92"
+],
+"sz.hn_face": [
+"Funding",
+"F103"
+],
+"dba.opco_tl_2022.R1": [
+"Funding",
+"F116"
+],
+"dba.opco_tl_2022.R2": [
+"Funding",
+"F117"
+],
+"dba.opco_tl_2022.R3": [
+"Funding",
+"F118"
+],
+"dba.opco_tl_2022.R4": [
+"Funding",
+"F119"
+],
+"dba.opco_tl_2022.R5": [
+"Funding",
+"F120"
+],
+"dba.uspp_2025.R1": [
+"Funding",
+"F137"
+],
+"dba.uspp_2025.R2": [
+"Funding",
+"F138"
+],
+"dba.uspp_2025.R3": [
+"Funding",
+"F139"
+],
+"dba.uspp_2025.R4": [
+"Funding",
+"F140"
+],
+"dba.uspp_2025.R5": [
+"Funding",
+"F141"
+],
+"dba.uspp_2025.R6": [
+"Funding",
+"F142"
+],
+"dba.uspp_2025.R7": [
+"Funding",
+"F143"
+],
+"dba.uspp_2025.R8": [
+"Funding",
+"F144"
+],
+"su.A1.opco_fee": [
+"Funding",
+"F147"
+],
+"su.A1.holdco_oid": [
+"Funding",
+"F148"
+],
+"su.A1.uses": [
+"Funding",
+"F149"
+],
+"su.A1.equity": [
+"Funding",
+"F150"
+],
+"su.A2.fee": [
+"Funding",
+"F151"
+],
+"su.A2.uses": [
+"Funding",
+"F152"
+],
+"su.A2.equity": [
+"Funding",
+"F153"
+],
+"su.A3.r8_deposit": [
+"Funding",
+"F154"
+],
+"su.A3.oid": [
+"Funding",
+"F155"
+],
+"su.A3.itc7_proceeds": [
+"Funding",
+"F156"
+],
+"su.A3.itc8_proceeds": [
+"Funding",
+"F157"
+],
+"su.A3.eq_signing": [
+"Funding",
+"F159"
+],
+"su.A3.carry": [
+"Funding",
+"F160"
+],
+"su.A3.eq_r7": [
+"Funding",
+"F162"
+],
+"su.A3.carry2": [
+"Funding",
+"F163"
+],
+"su.A3.eq_r8": [
+"Funding",
+"F165"
+],
+"su.A3.cash_left_after_r8": [
+"Funding",
+"F166"
+],
+"su.A3.uses": [
+"Funding",
+"F167"
+],
+"su.A3.equity": [
+"Funding",
+"F168"
+],
+"refi.mtm_opco_receivable": [
+"Funding",
+"F174"
+],
+"refi.mtm_redfern_payable": [
+"Funding",
+"F175"
+],
+"refi.costs": [
+"Funding",
+"F176"
+],
+"refi.tl_repay": [
+"Funding",
+"F177"
+],
+"refi.rf_repay": [
+"Funding",
+"F178"
+],
+"refi.opco_net": [
+"Funding",
+"F179"
+],
+"sc.tl_dscr_min_2022_2025": [
+"Ratios",
+"F15"
+],
+"sc.tl_dscr_avg_2022_2025": [
+"Ratios",
+"F16"
+],
+"sc.uspp_dscr_min_2026_2043": [
+"Ratios",
+"F17"
+],
+"sc.uspp_dscr_avg_2026_2043": [
+"Ratios",
+"F18"
+],
+"sc.rf_dscr_min": [
+"Ratios",
+"F19"
+],
+"sc.rf_dscr_avg": [
+"Ratios",
+"F20"
+],
+"sc.holdco_cov_min_2023_2031": [
+"Ratios",
+"F21"
+],
+"sc.holdco_cov_avg_2023_2031": [
+"Ratios",
+"F22"
+],
+"val.A1.by_asset.R1.contracted": [
+"Returns",
+"F31"
+],
+"val.A1.by_asset.R1.hedged": [
+"Returns",
+"F32"
+],
+"val.A1.by_asset.R1.merchant": [
+"Returns",
+"F33"
+],
+"val.A1.by_asset.R1.total": [
+"Returns",
+"F34"
+],
+"val.A1.by_asset.R2.contracted": [
+"Returns",
+"F35"
+],
+"val.A1.by_asset.R2.hedged": [
+"Returns",
+"F36"
+],
+"val.A1.by_asset.R2.merchant": [
+"Returns",
+"F37"
+],
+"val.A1.by_asset.R2.total": [
+"Returns",
+"F38"
+],
+"val.A1.by_asset.R3.contracted": [
+"Returns",
+"F39"
+],
+"val.A1.by_asset.R3.hedged": [
+"Returns",
+"F40"
+],
+"val.A1.by_asset.R3.merchant": [
+"Returns",
+"F41"
+],
+"val.A1.by_asset.R3.total": [
+"Returns",
+"F42"
+],
+"val.A1.by_asset.R4.contracted": [
+"Returns",
+"F43"
+],
+"val.A1.by_asset.R4.hedged": [
+"Returns",
+"F44"
+],
+"val.A1.by_asset.R4.merchant": [
+"Returns",
+"F45"
+],
+"val.A1.by_asset.R4.total": [
+"Returns",
+"F46"
+],
+"val.A1.by_asset.R5.contracted": [
+"Returns",
+"F47"
+],
+"val.A1.by_asset.R5.hedged": [
+"Returns",
+"F48"
+],
+"val.A1.by_asset.R5.merchant": [
+"Returns",
+"F49"
+],
+"val.A1.by_asset.R5.total": [
+"Returns",
+"F50"
+],
+"val.A1.by_asset.Platform costs.contracted": [
+"Returns",
+"F52"
+],
+"val.A1.by_asset.Platform costs.hedged": [
+"Returns",
+"F53"
+],
+"val.A1.by_asset.Platform costs.merchant": [
+"Returns",
+"F54"
+],
+"val.A1.by_asset.Platform costs.total": [
+"Returns",
+"F55"
+],
+"val.A1.by_bucket.contracted": [
+"Returns",
+"F56"
+],
+"val.A1.by_bucket.hedged": [
+"Returns",
+"F57"
+],
+"val.A1.by_bucket.merchant": [
+"Returns",
+"F58"
+],
+"val.A1.pre_shield": [
+"Returns",
+"F59"
+],
+"val.A1.pv_dep_per_usd": [
+"Returns",
+"F60"
+],
+"val.A1.shield_at_price": [
+"Returns",
+"F61"
+],
+"val.A1.ev": [
+"Returns",
+"F62"
+],
+"val.A1.npv_vs_price": [
+"Returns",
+"F63"
+],
+"val.A1.breakeven_price": [
+"Returns",
+"F64"
+],
+"val.A2.R6.contracted": [
+"Returns",
+"F67"
+],
+"val.A2.R6.hedged": [
+"Returns",
+"F68"
+],
+"val.A2.R6.merchant": [
+"Returns",
+"F69"
+],
+"val.A2.R6.total": [
+"Returns",
+"F70"
+],
+"val.A2.shield_at_price": [
+"Returns",
+"F72"
+],
+"val.A2.ev": [
+"Returns",
+"F73"
+],
+"val.A2.npv_vs_price": [
+"Returns",
+"F74"
+],
+"val.A2.breakeven_price": [
+"Returns",
+"F75"
+],
+"val.A3.R7.contracted": [
+"Returns",
+"F78"
+],
+"val.A3.R7.hedged": [
+"Returns",
+"F79"
+],
+"val.A3.R7.merchant": [
+"Returns",
+"F80"
+],
+"val.A3.R7.total": [
+"Returns",
+"F81"
+],
+"val.A3.R8.contracted": [
+"Returns",
+"F82"
+],
+"val.A3.R8.hedged": [
+"Returns",
+"F83"
+],
+"val.A3.R8.merchant": [
+"Returns",
+"F84"
+],
+"val.A3.R8.total": [
+"Returns",
+"F85"
+],
+"val.A3.itc_pv": [
+"Returns",
+"F88"
+],
+"val.A3.shield": [
+"Returns",
+"F89"
+],
+"val.A3.ev": [
+"Returns",
+"F90"
+],
+"val.A3.price_pv": [
+"Returns",
+"F91"
+],
+"val.A3.npv_vs_price": [
+"Returns",
+"F92"
+],
+"sc.fund_nav_2025": [
+"Returns",
+"F98"
+],
+"sc.fund_contributions": [
+"Returns",
+"F99"
+],
+"sc.fund_distributions_life": [
+"Returns",
+"F100"
+],
+"sc.fund_distributions_to_2025": [
+"Returns",
+"F101"
+],
+"sc.fund_moic_life_x": [
+"Returns",
+"F102"
+],
+"sc.fund_moic_2025_x": [
+"Returns",
+"F103"
+],
+"sc.fund_irr_life_pct": [
+"Returns",
+"F150"
+],
+"sc.fund_irr_2025_pct": [
+"Returns",
+"F151"
+]
+}
+}

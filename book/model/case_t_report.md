@@ -18,18 +18,18 @@ Merrick Link toll road PPP (Brannock, Commonwealth of Ardmore). Model version 1.
 | PSC: raw capex | 1,478.6 |
 | PSC: om and lifecycle | 486.2 |
 | PSC: toll revenue retained | -1,821.4 |
-| PSC: construction risk | 221.7 |
-| PSC: traffic revenue risk | 274.0 |
-| PSC: operating risk | 41.3 |
-| PSC: competitive neutrality | 38.4 |
-| **PSC total** | 718.8 |
+| PSC: construction risk | 115.3 |
+| PSC: traffic revenue risk | 87.4 |
+| PSC: operating risk | 18.5 |
+| PSC: competitive neutrality | 19.6 |
+| **PSC total** | 384.2 |
 | PPP reference: contribution ARD 410.0 m at 2019-03-31 (DF 0.660966) | 271.0 |
 | PPP reference: retained risks plus contract management | 74.4 |
 | **PPP reference total** | 345.4 |
-| **Value for money, reference** | 373.4 (51.9%) |
+| **Value for money, reference** | 38.8 (10.1%) |
 | PPP winning bid: contribution ARD 287.4 m PV | 190.0 |
 | **PPP bid total** | 264.4 |
-| **Value for money, winning bid** | 454.4 (63.2%) |
+| **Value for money, winning bid** | 119.8 (31.2%) |
 
 ## 3. Financing at close (T-F03)
 
@@ -149,7 +149,7 @@ Traffic in thousand trips per day (2019 averaged over operating days); revenue =
 
 | Period | CFADS actual | Sched. DS | DSCR period | DSCR 12m | Banking DSCR 12m | Lock-up | EoD | DSRA | Arrears |
 |---|---|---|---|---|---|---|---|---|---|
-| 2019H2 | 17.1 | 15.4 | 1.11x | 1.41x | 1.50x | 1 | 0 | 19.3 | 0.0 |
+| 2019H2 | 17.1 | 15.4 | 1.11x | 1.11x | 1.50x | 1 | 0 | 19.3 | 0.0 |
 | 2020H1 | 9.0 | 19.3 | 0.47x | 0.75x | 1.50x | 1 | 0 | 11.9 | 0.0 |
 | 2020H2 | 16.5 | 20.6 | 0.80x | 0.64x | 1.50x | 1 | 1 | 7.7 | 0.0 |
 | 2021H1 | 18.0 | 23.7 | 0.76x | 0.78x | 1.50x | 1 | 1 | 23.9 | 0.0 |
@@ -199,24 +199,36 @@ Traffic in thousand trips per day (2019 averaged over operating days); revenue =
 | accrued interest | 0.0 |
 | bank claim net | 347.0 |
 | bond claim net | 462.1 |
-| equity value total | 363.0 |
-| warrant value | 1.2 |
-| equity value creditors | 307.5 |
-| equity value state | 54.3 |
+| equity value total | 275.7 |
+| warrant value | 0.6 |
+| equity value creditors | 233.8 |
+| equity value state | 41.3 |
 | state new money | 120.0 |
-| state npv at 11.4 | -65.7 |
+| state npv at plan rate | -78.7 |
 | notes repaid from | 2050-12-31 |
-| senior value received | 922.5 |
-| senior recovery pct net claims | 114.0% |
-| senior recovery pct gross claims incl setoff | 113.5% |
+| notes market value | 499.7 |
+| notes price pct | 81.3% |
+| senior value at par | 848.7 |
+| senior recovery pct at par | 104.9% |
+| senior value received | 733.5 |
+| plan value per 1pct | 275.0% |
+| state subscription at plan value | 41.3 |
+| state capital grant implied | 78.7 |
+| state price per 1pct | 800.0% |
+| creditor conversion per 1pct | 95.2% |
+| creditor give up per 1pct | 228.5% |
+| senior recovery pct net claims | 90.7% |
+| senior recovery pct gross claims incl setoff | 91.0% |
 | bank notes | 263.7 |
-| bank equity value | 131.9 |
+| bank equity value | 100.2 |
 | bank cancelled | 48.6 |
-| bank recovery pct | 114.0% |
+| bank notes market | 214.3 |
+| bank recovery pct | 90.7% |
 | bond notes | 351.2 |
-| bond equity value | 175.7 |
+| bond equity value | 133.5 |
 | bond cancelled | 64.7 |
-| bond recovery pct | 114.0% |
+| bond notes market | 285.4 |
+| bond recovery pct | 90.7% |
 | nilo claim | 563.9 |
 | nilo pv at 3.06 | 491.3 |
 | nilo recovery pv pct | 87.1% |
@@ -224,7 +236,7 @@ Traffic in thousand trips per day (2019 averaged over operating days); revenue =
 | nilo final payment | 2058-12-31 |
 | original equity invested | 424.7 |
 | original equity distributions | 0.0 |
-| original equity warrants | 1.2 |
+| original equity warrants | 0.6 |
 | shl written off | 771.2 |
 | forgiveness to losses | 642.7 |
 | forgiveness to cost base | 241.8 |
@@ -237,7 +249,7 @@ Traffic in thousand trips per day (2019 averaged over operating days); revenue =
 
 ## 11. Post-restructuring projections (T-F10)
 
-Minimum notes DSCR -112,345,276,410,327,312.00x; average -7,952,079,949,439,366.00x; cash sweep total 167.2; first distribution 2024-06-30; equity value at 11.4% 363.0; state revenue share total 0.0 (2030 revenue is 44.8% of the threshold; final full year 62.9%).
+Minimum notes DSCR 2.00x; average 3.27x; cash sweep total 167.2; first distribution 2024-06-30; equity value at 11.4% 275.7; state revenue share total 0.0 (2030 revenue is 44.8% of the threshold; final full year 62.9%).
 
 ## 12. Assumption changes
 

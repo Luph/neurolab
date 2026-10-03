@@ -174,7 +174,8 @@ WARRANT = 0.03
 REV_SHARE = 0.30
 REV_SHARE_THRESH = 260.0
 RIA_DSCR = MA["ramp_up_interest_account"]["target_dscr_x"]
-EQV_RATE = MA["equity_valuation_rate_pct"] / 100.0
+EQV_RATE = MA["plan_valuation"]["equity_discount_rate_pct"] / 100.0
+NOTES_YIELD = MA["plan_valuation"]["notes_market_yield_pct"] / 100.0
 FV_RATE = MA["fair_value_2022"]["pre_tax_discount_rate_pct"] / 100.0
 RETENDER_COST = MA["fair_value_2022"]["retendering_costs_ard_m"]
 BID_CPI = MA["bid_date_cpi_pct"]["value"]
@@ -777,7 +778,7 @@ def one_pass(R, st, C, H, ext, scn):
         # covenant ratios
         X["dscr_den"][t] = X["ds_sched"][t]
         X["dscr"][t] = X["cfads"][t] / X["ds_sched"][t] if X["ds_sched"][t] > 1e-9 else 0.0
-        if R["notesfirst"][t]:
+        if R["notesfirst"][t] or not R["testdate"][t - 1]:
             num, den = X["cfads"][t], X["ds_sched"][t]
         else:
             num, den = X["cfads"][t] + X["cfads"][t - 1], X["ds_sched"][t] + X["ds_sched"][t - 1]
@@ -957,8 +958,9 @@ def size_senior(R, X, st, C, down_cfads):
     st["cand"] = cand
     st["binding"] = min(cand, key=cand.get)
     st["D"] = D
-    st["E"] = EQ_SHARE * X["Fnet"]
-    st["N"] = X["Fnet"] - st["E"] - D
+    # NILO = remainder after senior and 22% equity, capped at 33% of eligible costs; equity tops up
+    st["N"] = min(X["Fnet"] - EQ_SHARE * X["Fnet"] - D, NILO_MAX * X["total_uses"])
+    st["E"] = X["Fnet"] - D - st["N"]
     st["pv_cfads"] = pv
     st["df"] = df
     first = 16
@@ -1371,9 +1373,21 @@ def derived(runs, out):
     r["equity_value_creditors"] = CRED_EQ * (eqv - w)
     r["equity_value_state"] = STATE_EQ * (eqv - w)
     r["state_new_money"] = STATE_MONEY
-    r["state_npv_at_11.4"] = r["equity_value_state"] - STATE_MONEY
+    r["state_npv_at_plan_rate"] = r["equity_value_state"] - STATE_MONEY
     r["notes_repaid_from"] = ENDS[notes_repaid[0]].isoformat() if notes_repaid else None
-    r["senior_value_received"] = r["notes_issue"] + r["equity_value_creditors"]
+    notes_cf = [X5["int_paid"][i] + X5["notes_P_paid"][i] + X5["sweep2"][i] for i in after]
+    r["notes_market_value"] = xnpv(NOTES_YIELD, notes_cf, dates, RESTR_DATE)
+    r["notes_price_pct"] = r["notes_market_value"] / r["notes_issue"]
+    r["senior_value_at_par"] = r["notes_issue"] + r["equity_value_creditors"]
+    r["senior_recovery_pct_at_par"] = r["senior_value_at_par"] / r["claims_net"]
+    r["senior_value_received"] = r["notes_market_value"] + r["equity_value_creditors"]
+    # equity allocation: price per 1% of new equity
+    r["plan_value_per_1pct"] = (eqv - w) / 100.0
+    r["state_subscription_at_plan_value"] = r["equity_value_state"]
+    r["state_capital_grant_implied"] = STATE_MONEY - r["equity_value_state"]
+    r["state_price_per_1pct"] = STATE_MONEY / (100 * STATE_EQ)
+    r["creditor_conversion_per_1pct"] = r["conv_eq"] / (100 * CRED_EQ)
+    r["creditor_give_up_per_1pct"] = (r["conv_eq"] + r["cancelled"]) / (100 * CRED_EQ)
     r["senior_recovery_pct_net_claims"] = r["senior_value_received"] / r["claims_net"]
     r["senior_recovery_pct_gross_claims_incl_setoff"] = (r["senior_value_received"] + r["swap_mtm"]) / r["claims_gross"]
     for cls, gross in (("bank", cl["bank"]), ("bond", cl["bond"])):
@@ -1382,7 +1396,8 @@ def derived(runs, out):
         r[f"{cls}_notes"] = r["notes_issue"] * share
         r[f"{cls}_equity_value"] = r["equity_value_creditors"] * share
         r[f"{cls}_cancelled"] = r["cancelled"] * share
-        r[f"{cls}_recovery_pct"] = (r[f"{cls}_notes"] + r[f"{cls}_equity_value"]) / netc
+        r[f"{cls}_notes_market"] = r["notes_market_value"] * share
+        r[f"{cls}_recovery_pct"] = (r[f"{cls}_notes_market"] + r[f"{cls}_equity_value"]) / netc
     nilo_claim = float(X5["nilo_close"][T_RESTR])
     nilo_cf = [X5["nilo_paid"][i] for i in after]
     r["nilo_claim"] = nilo_claim
@@ -1411,6 +1426,7 @@ def derived(runs, out):
     # T-F10 post-restructuring projections
     nrep = X5["notesrep"] == 1
     nds = X5["ds_sched"]
+    nrep = nrep & (nds > 1e-9)
     p = {"min_notes_dscr": float(np.min(X5["cfads"][nrep] / nds[nrep])),
          "avg_notes_dscr": float(np.mean(X5["cfads"][nrep] / nds[nrep])),
          "notes_dscr_by_period": {f"{ENDS[i].year}H{1 if ENDS[i].month <= 6 else 2}": float(X5["cfads"][i] / nds[i])

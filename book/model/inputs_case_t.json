@@ -426,10 +426,10 @@
    "raw_capex": 1478.6,
    "om_and_lifecycle": 486.2,
    "toll_revenue_retained": -1821.4,
-   "construction_risk": 221.7,
-   "traffic_revenue_risk": 274.0,
-   "operating_risk": 41.3,
-   "competitive_neutrality": 38.4
+   "construction_risk": 115.3,
+   "traffic_revenue_risk": 87.4,
+   "operating_risk": 18.5,
+   "competitive_neutrality": 19.6
   },
   "ppp_shadow_bid": {
    "state_contribution_pv_of_410.0_paid_2019": "computed by model at 6.85% from 2019-03-31 to 2012-12-31",
@@ -532,13 +532,60 @@
   "state_new_money_booking": "at 2023-12-31: ARD 78.3 million to an upgrade account spent evenly over 2024H1-2025H2 (capitalized); ARD 41.7 million to the cash account available to the 2024H1 waterfall",
   "revenue_share_period_threshold": "threshold of ARD 260.0 million a year (2023 prices) applied per period pro rata to operating days and indexed by Ardmore CPI from 2023",
   "tax_conventions": "tax cost base = capitalized construction costs (including IDC, fees, capitalized NILO and shareholder-loan interest) less the state contribution, plus later capital additions; lifecycle and handback works deducted when spent; debt converted to equity treated as issued at face (no forgiveness); forgiven amount = cancelled senior claims plus written-off shareholder loans",
-  "equity_valuation_rate_pct": 11.4,
+  "equity_valuation_rate_pct": 14.0,
   "fair_value_2022": {
    "valuation_date": "2022-06-30",
    "pre_tax_discount_rate_pct": 9.0,
    "retendering_costs_ard_m": 12.5,
    "traffic": "Ridgeway 2023 case without the heavy-vehicle uplift (2023 = 42.6, back-cast to 2022H2 at 2.6%), original toll regime and term"
   },
-  "swap_mtm": "remaining notional = original scheduled bank balance 2024H1-2035H1; discounted at the 4.36% market swap rate per period (ACT/365)"
+  "swap_mtm": "remaining notional = original scheduled bank balance 2024H1-2035H1; discounted at the 4.36% market swap rate per period (ACT/365)",
+  "psc_recalibration": {
+   "reason": "editor-in-chief review: risk adjustments of ARD 575.4m against a raw net PSC of ARD 143.4m gave a reference VfM of 52% of the risk-adjusted PSC, outside published PSC practice; recalibrated to about 12% of gross PSC costs so that reference VfM is about 10%",
+   "old_values": {
+    "construction_risk": 221.7,
+    "traffic_revenue_risk": 274.0,
+    "operating_risk": 41.3,
+    "competitive_neutrality": 38.4
+   },
+   "new_basis": "construction 7.8% of raw capex; traffic revenue 4.8% of retained toll revenue; operating 3.8% of O&M and lifecycle; competitive neutrality 1.0% of gross costs"
+  },
+  "plan_valuation": {
+   "equity_discount_rate_pct": 14.0,
+   "notes_market_yield_pct": 7.5,
+   "nilo_discount_rate_pct": 3.06,
+   "reason": "restructuring plan valuation of post-restructuring securities: new equity of a just-restructured demand-risk toll road at 14.0%; Restructured Senior Notes (5.10% coupon) at a 7.50% market yield; NILO at its contract rate to show the economic concession"
+  },
+  "state_money_allocation": "state ARD 120.0m = subscription for 15% of new equity at plan value plus a capital grant (the remainder) toward the Holloway Junction interchange upgrade, a public asset the state wanted; creditors receive 85% for converting 10 points of claims",
+  "plan_classes_and_votes": {
+   "note": "story assumptions for Chapter 64 (court-sanctioned Part 9 restructuring plan)",
+   "classes": [
+    {
+     "class": "1 Senior bank lenders (Castellan, Penhallow, Kaito Pacific, Sterrenberg)",
+     "vote_for_pct_by_value": 100.0,
+     "result": "approves"
+    },
+    {
+     "class": "2 Bondholders (BIFA Series 2015, via the bondholders' representative)",
+     "turnout_pct_by_value": 88.6,
+     "vote_for_pct_by_value_of_those_voting": 91.4,
+     "result": "approves"
+    },
+    {
+     "class": "3 NILO (federal subordinated lender)",
+     "vote_for_pct_by_value": 100.0,
+     "result": "approves"
+    },
+    {
+     "class": "4 Shareholders and shareholder lenders (Holbrook 40%, Wexcombe 35%, Corvus 25%)",
+     "vote_for_pct_by_value": 60.0,
+     "result": "dissents (Holbrook votes against; 75% threshold not met); crammed down under cross-class cram-down: in the relevant alternative (termination for concessionaire default, figure T-F08) shareholders recover nothing, so they are no worse off"
+    }
+   ],
+   "threshold": "75% by value of those voting in each class",
+   "state": "not a plan creditor; party to the restructuring support agreement and the Concession Deed amendments"
+  },
+  "nilo_eligible_cost_cap_applied": "NILO = remainder after senior and 22% equity, capped at 33% of eligible costs (total uses); any excess is funded by additional equity",
+  "first_dscr_test": "the first test at 2019-12-31 covers the six months to that date (the preceding period was the opening stub); later tests use the historic 12 months"
  }
 }

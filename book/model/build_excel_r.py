@@ -220,7 +220,9 @@ def build(scenario="base", out=None):
     inp("dpy", "Days per year for discounting (unit conversion)", "days", 365)
     inp("big", "Large number for MIN tests", "number", SUPP["large_number"])
     inp("thr", "Debt service below which ratios are not shown", "USD m", SUPP["ratio_threshold_usd_m"])
-    inp("z90", "Standard normal z for P90", "number", 1.2816)
+    inp("z90", "Standard normal z for P90", "number", M.Z90)
+    inp("z99", "Standard normal z for P99", "number", M.Z99)
+    inp("n10", "Years in the long-horizon P-value", "years", 10)
 
     ip.section("Prices and capture (Illustrative)")
     for h, v in P["hub_ratio_to_north"].items():
@@ -271,7 +273,6 @@ def build(scenario="base", out=None):
             inp(aid + "_p50", aid + " P50", "GWh/yr", a["p50_gwh"])
             inp(aid + "_p901", aid + " P90 one-year", "% of P50", a["p90_1yr_pct_of_p50"])
             inp(aid + "_p9010", aid + " P90 ten-year", "% of P50", a["p90_10yr_pct_of_p50"])
-            inp(aid + "_p99", aid + " P99 one-year", "% of P50", a["p99_1yr_pct_of_p50"])
             inp(aid + "_deg", aid + " degradation", "% pa", a["degradation_pct_pa"])
             inp(aid + "_ref", aid + " P50 reference year", "year", SUPP["p50_reference_year"][aid])
         else:
@@ -281,6 +282,8 @@ def build(scenario="base", out=None):
             inp(aid + "_aug2", aid + " augmentation year 2 after COD year", "years", a["augmentation"]["years_after_cod"][1])
             inp(aid + "_augpct", aid + " augmentation share of MWh", "%", a["augmentation"]["pct_of_mwh"])
             inp(aid + "_augcost", aid + " augmentation cost (2025 prices)", "USD/kWh", a["augmentation"]["cost_usd_per_kwh_2025"])
+    for ck_, cv_ in M.CORR.items():
+        inp("rho_" + ck_, "Yield correlation: " + ck_, "rho", cv_)
     inp("avail_gen", "Wind and solar availability relative to P50 basis", "%", SUPP["availability_factor_vs_p50_pct"])
     inp("aug_y0", "Augmentation cost base year", "year", 2025)
     inp("aug_esc", "Augmentation cost escalation", "% pa", SUPP["augmentation_escalation_from_2025_pct"])
@@ -474,7 +477,7 @@ def build(scenario="base", out=None):
             op.series(k("hub_atc"), aid + " own hub ATC", "USD/MWh", lambda c: "=" + hubref(c), fmt="p", pykey=pk("hub_atc"))
             if aid in M.GEN:
                 bk = a["capture_bucket"]
-                op.series(k("vf"), aid + " volume factor", "factor", lambda c: "=CHOOSE(%s,1,%s/100,%s/100,%s/100)" % (B.C(tag + ".vidx"), I(aid + "_p901"), I(aid + "_p9010"), I(aid + "_p99")), fmt="f")
+                op.series(k("vf"), aid + " volume factor", "factor", lambda c: "=CHOOSE(%s,1,%s/100,%s/100,%s/100)" % (B.C(tag + ".vidx"), I(aid + "_p901"), I(aid + "_p9010"), B.C("ys_%s_p99_1yr" % aid)), fmt="f")
                 op.series(k("deg"), aid + " degradation factor", "factor", lambda c: "=(1-%s/100)^MAX(0,%s-%s)" % (I(aid + "_deg"), T("year", c), I(aid + "_ref")), fmt="f", pykey=pk("deg"))
                 op.series(k("curt"), aid + " curtailment", "fraction", lambda c: "=(IF(%s>=%s,%s,%s+(%s-%s)*(%s-%s)/(%s-%s))+%s)/100" % (
                     T("year", c), I("curt_full_year"), I("curt1_" + bk), I("curt0_" + bk), I("curt1_" + bk), I("curt0_" + bk), T("year", c), I("y0"), I("curt_full_year"), I("y0"), B.C(tag + ".curt")), fmt="f", pykey=pk("curt"))
@@ -596,6 +599,16 @@ def build(scenario="base", out=None):
             for bk in M.BUCKETS:
                 op.series(pre + "cfads_%s_%s" % (grp, bk), "CFADS allocated to %s, %s" % (bk, grp), "USD m", lambda c, grp=grp, bk=bk: "=%s*%s" % (B.R(pre + "cfads_" + grp, c), B.R(pre + "sh_%s_%s" % (bk, grp), c)))
 
+    op.section("Yield statistics (normal; sigma_1^2 = sigma_LT^2 + sigma_IAV^2; sigma_10^2 = sigma_LT^2 + sigma_IAV^2/10)")
+    for aid in M.GEN:
+        yk = lambda f: "ys_%s_%s" % (aid, f)
+        op.scalar(yk("s1"), aid + " sigma one-year", "fraction of P50", "=(1-%s/100)/%s" % (I(aid + "_p901"), I("z90")), fmt="f", pykey="ys.%s.sigma_1yr" % aid)
+        op.scalar(yk("s10"), aid + " sigma ten-year", "fraction of P50", "=(1-%s/100)/%s" % (I(aid + "_p9010"), I("z90")), fmt="f", pykey="ys.%s.sigma_10yr" % aid)
+        op.scalar(yk("iav"), aid + " sigma inter-annual variability", "fraction of P50", "=SQRT((%s^2-%s^2)*%s/(%s-1))" % (B.C(yk("s1")), B.C(yk("s10")), I("n10"), I("n10")), fmt="f", pykey="ys.%s.sigma_iav" % aid)
+        op.scalar(yk("lt"), aid + " sigma long-term", "fraction of P50", "=SQRT(%s^2-%s^2/%s)" % (B.C(yk("s10")), B.C(yk("iav")), I("n10")), fmt="f", pykey="ys.%s.sigma_lt" % aid)
+        op.scalar(yk("p99_1yr"), aid + " P99 one-year", "% of P50", "=100*(1-%s*%s)" % (I("z99"), B.C(yk("s1"))), fmt="pct", pykey="ys.%s.p99_1yr" % aid)
+        op.scalar(yk("p99_10yr"), aid + " P99 ten-year", "% of P50", "=100*(1-%s*%s)" % (I("z99"), B.C(yk("s10"))), fmt="pct", pykey="ys.%s.p99_10yr" % aid)
+
     block("L", I("scen"), I("volcase"), I("s_wsc"), I("s_curt"), I("s_opex"), I("s_batt"), True)
     block("B", I("sz_price"), I("sz_vol"), I("zero"), I("zero"), I("one"), I("zero"), False)
     block("Q", I("sz_price"), I("sz_vol99"), I("zero"), I("zero"), I("one"), I("zero"), False)
@@ -609,15 +622,35 @@ def build(scenario="base", out=None):
     op.scalar("uri_phys", "Physical revenue", "USD m", "=%s*%s/1000000" % (B.C("uri_gen"), I("uri_p")), pykey="uri.physical_revenue")
     op.scalar("uri_net", "Net cash over the event", "USD m", "=%s-%s" % (B.C("uri_phys"), B.C("uri_pay")), pykey="uri.net_cash")
     op.scalar("uri_vs", "Net cash versus normal hedged revenue for the same hours", "USD m", "=%s-%s*%s/1000000" % (B.C("uri_net"), B.C("uri_swap"), I("R1_hk")), pykey="uri.net_vs_fully_covered")
-    op.section("Portfolio diversification of yield (R-F01 support)")
+    op.section("Portfolio yield with inter-asset correlations (R-F01)")
+    wind = {"R1", "R2", "R3"}
+
+    def rho(i, j, comp):
+        if i == j:
+            return "1"
+        ti, tj = i in wind, j in wind
+        if comp == "lt":
+            return I("rho_lt_same_technology") if ti == tj else I("rho_lt_cross_technology")
+        if ti != tj:
+            return I("rho_iav_wind_solar")
+        if ti:
+            return I("rho_iav_wind_west_coastal") if "R2" in (i, j) else I("rho_iav_wind_west_west")
+        return I("rho_iav_solar_west_south") if "R8" in (i, j) else I("rho_iav_solar_west_west")
     for grp, ids in (("A1", M.A1), ("all_generation", M.GEN)):
         p50 = "+".join(I(a + "_p50") for a in ids)
         op.scalar("dv_%s_p50" % grp, "P50, %s" % grp, "GWh", "=" + p50, pykey="div.%s.p50_gwh" % grp)
-        for kk, key in (("1yr", "_p901"), ("10yr", "_p9010")):
-            corr = "+".join("%s*%s/100" % (I(a + "_p50"), I(a + key)) for a in ids)
-            sq = "+".join("(%s*(1-%s/100)/%s)^2" % (I(a + "_p50"), I(a + key), I("z90")) for a in ids)
-            op.scalar("dv_%s_%s_c" % (grp, kk), "P90 %s, fully correlated, %s" % (kk, grp), "GWh", "=" + corr, pykey="div.%s.p90_%s_correlated_gwh" % (grp, kk))
-            op.scalar("dv_%s_%s_i" % (grp, kk), "P90 %s, independent, %s" % (kk, grp), "GWh", "=%s-%s*SQRT(%s)" % (B.C("dv_%s_p50" % grp), I("z90"), sq), pykey="div.%s.p90_%s_independent_gwh" % (grp, kk))
+        for comp in ("lt", "iav"):
+            terms = "+".join("%s*%s*%s*%s*%s" % (I(i + "_p50"), B.C("ys_%s_%s" % (i, comp)), I(j + "_p50"), B.C("ys_%s_%s" % (j, comp)), rho(i, j, comp)) for i in ids for j in ids)
+            op.scalar("dv_%s_v%s" % (grp, comp), "Variance, %s component, %s" % (comp, grp), "GWh^2", "=" + terms, fmt="m")
+        for kk, nexp in (("1yr", "1"), ("10yr", I("n10"))):
+            op.scalar("dv_%s_s%s" % (grp, kk), "Portfolio sigma %s, %s" % (kk, grp), "GWh", "=SQRT(%s+%s/%s)" % (B.C("dv_%s_vlt" % grp), B.C("dv_%s_viav" % grp), nexp), pykey="div.%s.sigma_%s_gwh" % (grp, kk))
+            for pk, z in (("p90", "z90"), ("p99", "z99")):
+                op.scalar("dv_%s_%s_%s" % (grp, pk, kk), "Portfolio %s %s, %s" % (pk.upper(), kk, grp), "GWh", "=%s-%s*%s" % (B.C("dv_%s_p50" % grp), I(z), B.C("dv_%s_s%s" % (grp, kk))), pykey="div.%s.%s_%s_gwh" % (grp, pk, kk))
+            sk = "s1" if kk == "1yr" else "s10"
+            corr = "+".join("%s*%s" % (I(a + "_p50"), B.C("ys_%s_%s" % (a, sk))) for a in ids)
+            ind = "+".join("(%s*%s)^2" % (I(a + "_p50"), B.C("ys_%s_%s" % (a, sk))) for a in ids)
+            op.scalar("dv_%s_%s_c" % (grp, kk), "P90 %s if fully correlated, %s" % (kk, grp), "GWh", "=%s-%s*(%s)" % (B.C("dv_%s_p50" % grp), I("z90"), corr), pykey="div.%s.p90_%s_correlated_gwh" % (grp, kk))
+            op.scalar("dv_%s_%s_i" % (grp, kk), "P90 %s if independent, %s" % (kk, grp), "GWh", "=%s-%s*SQRT(%s)" % (B.C("dv_%s_p50" % grp), I("z90"), ind), pykey="div.%s.p90_%s_independent_gwh" % (grp, kk))
 
     # ---------------------------------------------------------------- Tax (depreciation part first; income tax rows added after Debt)
     tx = B.sheet("Tax", "Tax: depreciation of purchase prices, taxable income, NOL and cash tax")
@@ -906,7 +939,7 @@ def build(scenario="base", out=None):
     yr = "Time!$%s$4:$%s$4" % (FC, LC)
     for key, row, y0, y1, pk in (("tl", "dscr_tl", 2022, 2025, "tl_dscr_%s_2022_2025"), ("u", "dscr_u", 2026, 2043, "uspp_dscr_%s_2026_2043"),
                                  ("rf", "dscr_rf", 2024, 2029, "rf_dscr_%s"), ("hc", "hc_cov", 2023, 2031, "holdco_cov_%s_2023_2031")):
-        ra.scalar("min_" + key, "Minimum %s, %d-%d" % (row, y0, y1), "x", '=IFERROR(MINIFS(%s,%s,">="&%d,%s,"<="&%d),"")' % (B.RR(row), yr, y0, yr, y1), fmt="x", pykey="sc." + pk % "min")
+        ra.scalar("min_" + key, "Minimum %s, %d-%d" % (row, y0, y1), "x", '=IFERROR(_xlfn.MINIFS(%s,%s,">="&%d,%s,"<="&%d),"")' % (B.RR(row), yr, y0, yr, y1), fmt="x", pykey="sc." + pk % "min")
         ra.scalar("avg_" + key, "Average %s, %d-%d" % (row, y0, y1), "x", '=IFERROR(AVERAGEIFS(%s,%s,">="&%d,%s,"<="&%d),"")' % (B.RR(row), yr, y0, yr, y1), fmt="x", pykey="sc." + pk % "avg")
 
     # ---------------------------------------------------------------- Returns: valuations and fund returns
