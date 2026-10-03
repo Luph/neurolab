@@ -21,6 +21,8 @@ Four rules govern use.
 
 Story dates and book order differ. The book teaches in concept order, so a reader meets the 2022 operating accounts of Case P in Chapter 7, before the 2018 financial close is narrated in Chapter 55. Each storyline row in Section 6 states the story date, and a writer whose installment jumps forward or back in time says so in the first sentence of the installment ("Four years after financial close, ..."). The concept-ownership rule applies to the installment, not to the story: a Chapter 7 installment may show the 2022 accounts because Chapter 7 teaches accounts, but it may not explain the DSCR covenant breach, because DSCR is taught in Chapter 35.
 
+Annex TR (`bible/case-bible-annex-tr.md`) resolves the Case T and Case R gaps raised by the brief writers and adds name-register entries; it takes precedence over this file where they differ. New model inputs it creates are listed in `bible/case-tr-input-requests.md`.
+
 Style for every number printed from this file follows `bible/style-sheet.md`: USD 412.6 million in prose, "USD m" in table headers, ratios to two decimals with "x", dates as October 3, 2026 in prose and ISO in tables.
 
 ---
@@ -1278,6 +1280,29 @@ Every change to a case after this version is logged here. "Date in story" is whe
 | R-C08 | n/a | n/a | R | Expected debt ranges, design targets only (modeler calibration, pre-publication) | Opco TL 520-600; holdco TLB 160-210; USPP 750-860 (USD m) | Superseded by model outputs | R-F05, R-F08 |
 | R-C09 | 2021-12 | 9 | R | P99 one-year by asset (modeler calibration, pre-publication; editor-in-chief note) | R1 81.2%, R2 84.0%, R3 80.1%, R4 91.9%, R5 91.4%, R8 91.6% | R1 77.5%, R2 80.4%, R3 76.2%, R4 90.2%, R5 89.5%, R8 89.8% (normal, from the P90s) | Assumption (3.3); R-F01 |
 | R-C10 | 2021-12 | 9 | R | Yield uncertainty model and inter-asset correlations (modeler calibration, pre-publication; new) | None | Normal; long-term and inter-annual components; IAV correlations wind-wind 0.60 (West/Panhandle), 0.30 (with coastal), solar-solar 0.85 (West), 0.50 (West-South), wind-solar -0.10; long-term 0.50 within technology, 0 across | Assumption (3.3); R-F01 |
+
+| T-C05 | 2012-11-08 | 57, 58 | T | PSC risk adjustments (modeler recalibration, adopted) | Construction 221.7; traffic 274.0; operating 41.3; competitive neutrality 38.4 | 7.8% of raw capex; 4.8% of retained toll revenue; 3.8% of O&M and lifecycle; 1.0% of gross costs (values in inputs and T-F01) | Annex T.9; T-F01 |
+| T-C06 | 2013-09-02 to 2015-05-27 | 47, 58 | T | Procurement terms | Unspecified | Three-stage evaluation; ARD 20.0m bid security; committed-finance rules; Northgate traffic basis; third consortium's reason | Annex T.2 (book inputs) |
+| T-C07 | 2015-05-27 | 23, 58 | T | Performance regime | "KPI deductions" only | Lane charges, KPI points, ARD 2,400 per point, 2.5% cap, thresholds 300/500/800 | Annex T.1 |
+| T-C08 | 2019 to 2025 | 58, 64 | T | Actual performance payments | None | 2019 0.38 to 2025 0.07 (ARD m) by half-year | Annex T.1; T-F13 |
+| T-C09 | 2015-05-27 | 23 | T | D&C cap, interface agreement, tolling subcontract | Unspecified | 60% aggregate cap; Interface Agreement; Quillfield subcontract; acceptance test | Annex T.4 |
+| T-C10 | 2019-02 to 2019-05-06 | 23, 79 | T | Cause of the 36-day delay | Unspecified | Tolling acceptance test failure; JV recovers ARD 3.42m from Quillfield | Annex T.4 |
+| T-C11 | 2016 to 2017 | 12, 23 | T | Tunnel ground and method | Unspecified | Sandstone/siltstone with fault zone; sequential excavation; JV absorbs overrun | Annex T.6 |
+| T-C12 | 2059-05-26 | 58, 65 | T | Handback requirements | Reserve only | Schedule 15 requirements; surveys at 60 and 24 months | Annex T.8 |
+| T-C13 | 2023-12-11 | 64 | T | Plan classes, votes, judgment date | Unspecified | Four classes; class 4 dissents and is crammed down; judgment December 11, 2023 | Annex T.10 |
+| T-C14 | 2023-12-18 | 64 | T | State's ARD 120.0m characterization | 15% of equity | Subscription at plan value plus capital grant | Annex T.11; T-F09 |
+| T-C15 | n/a | 57 | T | Owen Reddaway's career dates | Undated | Fiscal Risks Unit director 2009 to 2015 | Annex T.12 |
+| R-C11 | 2021-08 to 2022-03-22 | 47 | R | A1 process and price mechanism | Price only | Locked box at 2021-09-30; headline 436.0 plus 5.00% ticker; total 446.3 unchanged; W&I terms; bids 421.5 and 409.0 | Annex R.1 |
+| R-C12 | 2024-04-02 | 20, 73 | R | R7 floor reference and settlement | Floor terms only | Benchmark index times availability; quarterly with annual true-up | Annex R.4; R-F18 |
+| R-C13 | 2023-07-14 and 2024-04-02 | 45, 73 | R | Battery overbuild and fade | Augmentation only | 8% overbuild; fade 2.0 / 1.5 / 1.0 points a year | Annex R.5; R-F19 |
+| R-C14 | 2025-10 | 84 | R | Green USPP framework | Label only | Framework, Quenby SPO, reporting, no greenium | Annex R.6 |
+| R-C15 | n/a | 46 | R | Terminal value wording | "Terminal (after 2040)" and "no terminal value" | Post-2040 tail rate within useful life; no TV beyond life; no post-2040 levered rate | Annex R.7 |
+| R-C16 | 2026-02-17 | 88 | R | Data-center offer terms | Tenor only | Ketterman Digital Campuses; options A and B; repowering parameters | Annex R.8 |
+| R-C17 | 2020-03; 2024-11 | 20, 82 | R | Ostrander profile and vPPA credit support | Absent | Profile; thresholds 10.0 and 15.0; LC 5.0 | Annex R.2 |
+| R-C18 | 2024-03 to 2024-05 | 83 | R | Hydrogen developer offer | Unnamed | Marlowe Gulf Hydrogen; 12 years at USD 39.00/MWh; IC passes May 2024 | Annex R.3 |
+| N-C01 | n/a | 1, 89 | All | Name register | Unregistered | Part N entries | Annex N |
+
+Rows T-C05 to T-C15, R-C11 to R-C18 and N-C01 are detailed in `bible/case-bible-annex-tr.md` (Annex TR, October 3, 2026), which takes precedence over this file where they differ.
 
 Template for new entries:
 
