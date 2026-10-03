@@ -2,7 +2,7 @@
  "meta": {
   "case_id": "R",
   "name": "Mesa Corta Renewables portfolio (Case R)",
-  "file_version": "1.0",
+  "file_version": "1.1",
   "as_of": "2026-10-03",
   "source_document": "book/bible/case-bible.md, Part 3",
   "market": "ERCOT (Texas), a real energy-only market. Assets, owners, counterparties and all prices are fictional and ILLUSTRATIVE; price paths are of the same order of magnitude as published hub averages but are not ERCOT settlement data or a forecast.",
@@ -37,7 +37,7 @@
   "A1": {
    "target": "Mesa Corta Renewables LLC (assets R1-R5, sponsor interests; tax equity remains in R3 and R5)",
    "seller": "Hollenbeck Energy North America",
-   "enterprise_value_usd_m": 1184.6,
+   "enterprise_value_usd_m": 446.3,
    "funding": "new opco term loan + holdco term loan + fund equity",
    "transaction_costs_usd_m": 14.9,
    "w_and_i": "buy-side policy USD 118.0m limit"
@@ -45,7 +45,7 @@
   "A2": {
    "target": "Redfern Storage LLC",
    "seller": "Tolliver Energy Development LLC",
-   "enterprise_value_usd_m": 132.4,
+   "enterprise_value_usd_m": 63.7,
    "funding": "Redfern term loan + fund equity",
    "transaction_costs_usd_m": 2.6,
    "itc": "claimed by seller (placed in service before closing)"
@@ -53,8 +53,8 @@
   "A3": {
    "target": "Kerrigan Storage LLC and Barlow Gap Solar LLC",
    "seller": "Tolliver Energy Development LLC",
-   "kerrigan_price_usd_m": 171.9,
-   "barlow_price_usd_m": 168.3,
+   "kerrigan_price_usd_m": 87.4,
+   "barlow_price_usd_m": 101.9,
    "barlow_deposit_pct": 20.0,
    "funding": "holdco incremental term loan + fund equity; ITC transfer proceeds",
    "transaction_costs_usd_m": 4.4,
@@ -681,7 +681,7 @@
    },
    "dsra_months": 6,
    "dsra_form": "LC from opco LC facility",
-   "expected_range_usd_m": [
+   "expected_range_usd_m_v1_0_superseded": [
     520,
     600
    ]
@@ -697,7 +697,7 @@
    "amortization_pct_pa": 1.0,
    "excess_cash_sweep_pct": 50.0,
    "sizing": "holdco distribution coverage >= 1.75x on P50 base distributions from opco; holdco debt <= 45% of opco equity value",
-   "expected_range_usd_m": [
+   "expected_range_usd_m_v1_0_superseded": [
     160,
     210
    ]
@@ -731,17 +731,17 @@
      "A": {
       "tenor_years": 7,
       "coupon_pct": 5.71,
-      "share_pct": 30.0
+      "launch_share_pct_v1_0": 30.0
      },
      "B": {
       "tenor_years": 12,
       "coupon_pct": 6.08,
-      "share_pct": 40.0
+      "launch_share_pct_v1_0": 40.0
      },
      "C": {
       "tenor_years": 18,
       "coupon_pct": 6.39,
-      "share_pct": 30.0
+      "launch_share_pct_v1_0": 30.0
      }
     },
     "sizing_dscr_x_by_revenue_bucket": {
@@ -752,12 +752,13 @@
     "p99_1yr_dscr_min_x": 1.05,
     "make_whole": "Treasury + 50 bp",
     "uses": "repay opco term loan and Redfern loan; fund distribution to holdco to the extent sizing allows",
-    "expected_range_usd_m": [
+    "swap_unwind": "opco swap terminated at MTM using SOFR swap rate 3.55% (receivable to opco); Redfern swap at 3.55% (payable by Redfern)",
+    "transaction_costs_pct": 1.1,
+    "expected_range_usd_m_v1_0_superseded": [
      750,
      860
     ],
-    "swap_unwind": "opco swap terminated at MTM using SOFR swap rate 3.55% (receivable to opco); Redfern swap at 3.55% (payable by Redfern)",
-    "transaction_costs_pct": 1.1
+    "series_sizing_rule": "sequential amortization by tenor: sculpted principal in 2026-2032 retires Series A, 2033-2037 Series B, 2038-2043 Series C; series sizes and blended coupon are model outputs (R-C07)"
    },
    "holdco_repricing": {
     "new_margin_pct": 3.5,
@@ -819,5 +820,48 @@
    "SOFR +100 bp unhedged",
    "R1 hedge volume shortfall in a Uri-type scarcity event: 72 hours at USD 5,000/MWh with 15% availability"
   ]
- }
+ },
+ "calibration_log": [
+  {
+   "id": "R-C04",
+   "item": "A1 enterprise value (bid price)",
+   "old": 1184.6,
+   "new": 446.3,
+   "reason": "v1.0 price was 2.7x the base-case breakeven value (USD 438.2m) and 1.9x the high-case breakeven (USD 611.1m) given the Bible revenue, opex and discount-rate inputs; new price is about 1.9% above the base-case breakeven (full auction price)"
+  },
+  {
+   "id": "R-C05",
+   "item": "A2 price (Redfern Storage)",
+   "old": 132.4,
+   "new": 63.7,
+   "reason": "v1.0 price was 2.1x base-case value of a 100 MW/200 MWh toll asset earning USD 10.98m/yr; new price slightly above base breakeven"
+  },
+  {
+   "id": "R-C06",
+   "item": "A3 prices (Kerrigan R7, Barlow Gap R8)",
+   "old": [
+    171.9,
+    168.3
+   ],
+   "new": [
+    87.4,
+    101.9
+   ],
+   "reason": "v1.0 prices about 1.7-2.0x base-case value including ITC transfer proceeds; new prices slightly above base breakeven"
+  },
+  {
+   "id": "R-C07",
+   "item": "USPP series split",
+   "old": "30/40/30 fixed",
+   "new": "outputs of sequential sculpted amortization by tenor",
+   "reason": "sculpted profile retires only about 63% of principal by 2037, so a 70% A+B share cannot be repaid within the B tenor"
+  },
+  {
+   "id": "R-C08",
+   "item": "expected debt ranges (design targets)",
+   "old": "opco TL 520-600; holdco TLB 160-210; USPP 750-860",
+   "new": "superseded by model outputs (see ledger R-F05, R-F08)",
+   "reason": "ranges assumed revenue about 1.7x what the Bible inputs produce"
+  }
+ ]
 }
