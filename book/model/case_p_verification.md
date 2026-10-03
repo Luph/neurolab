@@ -1,27 +1,50 @@
 # Case P workbook verification
 
-Model version 1.3. Method. `model/verify_p.py` builds `Case_P_Model.xlsx` with the scenario selector set to each of the 15 scenarios, recalculates every copy with LibreOffice 24.2 headless using a private user profile (`soffice -env:UserInstallation=file:///tmp/lo_profile_case_p --headless --calc --convert-to xlsx`) into `model/recalc_p/out/`, reads the recalculated values with openpyxl (`data_only=True`) and compares them with the Python mirror (`case_p.py`) row by row: every mapped calculation row over all its columns (monthly or semiannual) and every mapped scalar. Tolerance: 0.01 in displayed units (USD m for amounts, x for ratios, percentage points for IRRs). The workbook has no circular references and no macros; iterative calculation is off.
+Model version 1.4. Method. `model/verify_p.py` builds `Case_P_Model.xlsx` with the scenario selector set to each of the 15 scenarios, recalculates every copy with LibreOffice 24.2 headless using a private user profile (`soffice -env:UserInstallation=file:///tmp/lo_profile_case_p --headless --calc --convert-to xlsx`) into `model/recalc_p/out/`, reads the recalculated values with openpyxl (`data_only=True`) and compares them with the Python mirror (`case_p.py`) row by row: every mapped calculation row over all its columns (monthly or semiannual) and every mapped scalar. Tolerance: 0.01 in displayed units (USD m for amounts, x for ratios, percentage points for IRRs). The workbook has no circular references and no macros; iterative calculation is off.
 
 ## Results by scenario
 
 | Scenario | Name | Rows and scalars compared | Failures | Largest absolute difference | Workbook checks (0 = pass) | Result |
 |---|---|---|---|---|---|---|
-| 1 | FC base | 281 | 0 | 5.03e-08 | 0 | PASS |
-| 2 | FC banking | 281 | 0 | 4.84e-08 | 0 | PASS |
-| 3 | FC downside | 281 | 0 | 5.22e-08 | 0 | PASS |
-| 4 | Sens: availability -3 points | 281 | 0 | 5.03e-08 | 0 | PASS |
-| 5 | Sens: heat rate +2% | 281 | 0 | 5.22e-08 | 0 | PASS |
-| 6 | Sens: fixed opex +10% | 281 | 0 | 5.03e-08 | 0 | PASS |
-| 7 | Sens: capex +10% funded pro rata | 281 | 0 | 5.03e-08 | 0 | PASS |
-| 8 | Sens: COD delay 6 months, no LDs | 281 | 0 | 5.03e-08 | 0 | PASS |
-| 9 | Sens: base rate +200 bps (unhedged) | 281 | 0 | 5.03e-08 | 0 | PASS |
-| 10 | Sens: KCR devaluation 40%, 90-day lag | 281 | 0 | 5.03e-08 | 0 | PASS |
-| 11 | Sens: SEKA pays 120 days late for 12 months | 281 | 0 | 5.03e-08 | 0 | PASS |
-| 12 | Sens: dispatch 50% | 281 | 0 | 6.52e-09 | 0 | PASS |
-| 13 | Sens: gas price +30% | 281 | 0 | 5.03e-08 | 0 | PASS |
-| 14 | COD re-forecast (2021 lenders case) | 280 | 0 | 4.84e-08 | 0 | PASS |
-| 15 | Actual history | 280 | 0 | 4.84e-08 | 0 | PASS |
-| audit copy | Case_P_Model_AuditExercise.xlsx (FC base, errors E1-E10 seeded) | 281 | 0 | 5.03e-08 | 1 | PASS (the one failing check is the intended audit clue: debt above the correct gearing cap) |
+| 1 | FC base | 312 | 0 | 5.03e-08 | 0 | PASS |
+| 2 | FC banking | 312 | 0 | 4.84e-08 | 0 | PASS |
+| 3 | FC downside | 312 | 0 | 5.22e-08 | 0 | PASS |
+| 4 | Sens: availability -3 points | 312 | 0 | 5.03e-08 | 0 | PASS |
+| 5 | Sens: heat rate +2% | 312 | 0 | 5.22e-08 | 0 | PASS |
+| 6 | Sens: fixed opex +10% | 312 | 0 | 5.03e-08 | 0 | PASS |
+| 7 | Sens: capex +10% funded pro rata | 312 | 0 | 5.03e-08 | 0 | PASS |
+| 8 | Sens: COD delay 6 months, no LDs | 312 | 0 | 5.03e-08 | 0 | PASS |
+| 9 | Sens: base rate +200 bps (unhedged) | 312 | 0 | 5.03e-08 | 0 | PASS |
+| 10 | Sens: KCR devaluation 40%, 90-day lag | 312 | 0 | 5.03e-08 | 0 | PASS |
+| 11 | Sens: SEKA pays 120 days late for 12 months | 312 | 0 | 5.03e-08 | 0 | PASS |
+| 12 | Sens: dispatch 50% | 312 | 0 | 6.52e-09 | 0 | PASS |
+| 13 | Sens: gas price +30% | 312 | 0 | 5.03e-08 | 0 | PASS |
+| 14 | COD re-forecast (2021 lenders case) | 311 | 0 | 4.84e-08 | 0 | PASS |
+| 15 | Actual history | 311 | 0 | 4.84e-08 | 0 | PASS |
+| audit copy | Case_P_Model_AuditExercise.xlsx (FC base, errors E1-E10 seeded) | 312 | 0 | 5.03e-08 | 2 | PASS (the failing checks are intended audit clues: F14 debt above the correct gearing cap and F23 the ECA tests, which the seeded errors also breach) |
+
+
+## Monte Carlo wiring (u09 R5)
+
+Scenario 1 with Inputs F311 set to a run number; the workbook reads that row of the pasted draw table (availability shocks by operating year, dispatch, heat-rate degradation, FX drift) and is compared with the mirror run with the same draws (P-F42 generator, seed 20180717).
+
+| Run | Rows and scalars compared | Failures | Largest absolute difference | Workbook checks |
+|---|---|---|---|---|
+| 1 | 311 | 0 | 4.84e-08 | 0 |
+| 500 | 311 | 0 | 5.03e-08 | 0 |
+| 1000 | 311 | 0 | 5.40e-08 | 0 |
+
+## Build-stage reconciliation on Scenario 1 (u09 Section 0.5; confirmation for the build agent)
+
+For each stage the companion workbook was cut to the rows the u09 Section 0.4 row map assigns to Chapters 39 up to that chapter (v1.4 appended rows assigned as in `model/case_p_report.md` Section 8c), the provisional rows were pasted as FC base values, the master check was restated over the checks present, and the file was recalculated with LibreOffice. Every remaining numeric cell was compared with the full model. A script also confirmed that no formula in a stage refers to a row not yet built (Checks F19 excepted, which each stage restates).
+
+| Stage | Numeric cells compared | Largest absolute difference | Provisional rows pasted | Master check |
+|---|---|---|---|---|
+| Ch 39 | 36530 | 0.0e+00 | none | 0 |
+| Ch 40 | 42271 | 0.0e+00 | Construction 38 | 0 |
+| Ch 41 | 48230 | 1.0e-12 | Debt 103, Debt 104, Debt 110, Debt 112, Waterfall 33, Waterfall 43 | 0 |
+| Ch 42 | 59190 | 0.0e+00 | none | 0 |
+| Ch 43 | 60437 | 0.0e+00 | none | 0 |
 
 ## Key outputs, Python against workbook (selected scenarios)
 
@@ -61,5 +84,5 @@ Compared rows include: the Time sheet operating months and days; every Construct
 
 ## Known deviations from the style sheet (not verification failures)
 
-* FAST check (v1.2): `model/scan_hardcodes_p.py` lists every numeric literal inside calculation formulas other than 0, 1, 12 and the unit conversions 100, 1,000 and 1,000,000. Result for Case_P_Model.xlsx: 0. Event dates, period lengths, operating-year bands, day bases, shares and tolerances are named inputs on the Inputs sheet; event flags (Flag_LDPrepayment, Flag_WaiverDeferral, Flag_Refinancing and others) sit on the Time sheet; every calculation row uses one formula copied across (the first column reads the blank column I as the prior period). The audit exercise copy keeps only its deliberate seeded errors (E4 uses 0.5 and 1/12, E9 types 0.765).
+* FAST check (v1.4): `model/scan_hardcodes_p.py` lists every numeric literal inside calculation formulas other than 0, 1, 12 and the unit conversions 100, 1,000 and 1,000,000. Result for Case_P_Model.xlsx: 0. Event dates, period lengths, operating-year bands, day bases, shares and tolerances are named inputs on the Inputs sheet; event flags (Flag_LDPrepayment, Flag_WaiverDeferral, Flag_Refinancing and others) sit on the Time sheet; every calculation row uses one formula copied across (the first column reads the blank column I as the prior period). The audit exercise copy keeps only its deliberate seeded errors (E4 uses 0.5 and 1/12, E9 types 0.765).
 * The Inputs sheet holds time-series inputs on the model timelines (semiannual and monthly blocks), not on a separate date header.
