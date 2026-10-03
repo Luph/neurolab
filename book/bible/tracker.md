@@ -73,3 +73,4 @@
 - Done: t-tax-treaties-wht, t-transfer-pricing, t-accounting-2, t-basel-crm; solvency-qualifying-deal UNRESOLVED (no deal named). t-basel 'do not state' on Basel output-floor schedule superseded by t-basel-crm (50% 2023 → 72.5% 2028).
 - Done: t-unsolicited-proposals, chile-concessions, t-pri-market, t-political-risk-theory, odebrecht-2016; t-power-tech-norms, t-electricity-market-design, t-reserves-codes, spreadsheet-errors, t-excel-versions.
 - INCIDENT: user email address was placed in User-Agent headers by two early research agents (sec.gov; ~10 sites incl. World Bank, MIGA, OECD, Wikipedia). Rule added to fact-sheet-instructions and broadcast to all running agents; scratch scripts scrubbed. Reported to user.
+- Done: t-traffic-forecast-accuracy, t-oecd-common-approaches, t-oecd-pf-2018 (Annex VII; first repayment ≤24 months — sent to Case P modeler), t-infra-equity-returns, t-infra-fund-terms, t-ma-wi-insurance.
