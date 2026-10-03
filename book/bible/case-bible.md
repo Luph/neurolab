@@ -1115,6 +1115,8 @@ These names belong to illustrative examples, drills and exercises outside the th
 | Glasfaser Oberpfalz (u03) | Clear as a company; near miss Glasfaser Direkt (Amberg), a real Upper Palatinate fiber builder, never mentioned |
 | Mojave Flats Storage, Tehachapi Mesa Solar, Sangamon Sun (u03) | Clear (near miss: the decommissioned Tehachapi Energy Storage Project) |
 | Cholla Ridge Storage HoldCo LLC (u14) | Clear |
+| Himkiran Hydro (u09 Exercise 39.9; replaces "Kali Gandaki Hydro", round 2, D-134) | Clear (web check October 3, 2026: no company or project of the name; Himachal Pradesh results only) |
+| Tamsarit Hydro Pvt Ltd (u08 Exercise 36.19; replaces "Kali Gandaki Hydro Pvt Ltd", round 2, D-134) | Clear (web check October 3, 2026: no company or project of the name; near misses Tamor, Tamakoshi, never mentioned) |
 
 ### 5A.4 Names checked by the unit revisers
 
