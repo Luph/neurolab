@@ -28,3 +28,4 @@
 - Done: t-market-norms (US-heavy; gaps: Middle East, Europe CfD/PPP, Australia, LatAm, Africa, thermal IPP, mining). QUEUED: t-market-norms-2 gap-filling researcher.
 - Done: t-solvency, t-es-standards, t-us-tax-credits.
 - Done: ivanpah, sunedison-terraform, northvolt.
+- Done: t-oecd-arrangement, t-dfis, t-basel.
