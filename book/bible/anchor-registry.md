@@ -314,7 +314,7 @@ Source brief: `briefs/u01.md`.
 | `sec:2.4` | Project finance and its neighbors |  |
 | `ssec:2.4.1` | Corporate finance |  |
 | `ssec:2.4.2` | Asset finance and leasing |  |
-| `ssec:2.4.3` | Reserve-based lending compared with project finance | retitled in Ch 2 round 1 revision (line edit: sibling headings) |
+| `ssec:2.4.3` | Reserve-based lending compared with project finance | title restored in Ch 2 round 2 revision |
 | `ssec:2.4.4` | Acquisition finance |  |
 | `ssec:2.4.5` | Securitization and structured finance |  |
 | `sec:2.5` | What sponsors, lenders, and governments gain from project finance |  |
