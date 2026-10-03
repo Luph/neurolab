@@ -42,3 +42,9 @@ Key: CR transport contract split Ch 21 (pipeline tariff/ship-or-pay) vs Ch 25 (s
 BF: Case P contract terms missing (LTSA start/EOH/cap/intervals; O&M start/renewal/cap/replacement; GSA start date vs PPA term mismatch, governing law, FM, gas spec, supplier credit, CIL; permits; governance/JVA terms, dev fee split, ECA acceleration; direct agreement cure/step-in periods; SEKA risk event = time and/or money); Case T D&C interface/tolling subcontractor/caps; P-F11 DSRA vs MMRA split by chapter.
 FS: oem-fleet-defects, t-om-ltsa-norms, t-construction-norms, wagp.
 ACTION PLANNED: a Case Bible "contract terms annex" agent after all briefs report, defining all missing contractual terms for P, T, R in one pass.
+
+## u01 (1-4) — done (~25k words, 64 terms). Lists at end of briefs/u01.md.
+Ch 1 deal: Llano Pardo Solar, 50 MWac, Republic of Corredana (fictional, dollarized), PPA USD 58.20/MWh with ELNACOR; debt USD 48,809k, gearing binds at 75%.
+CRs: allow USD thousands for small illustrative deals (style sheet); Ch 1 bolds no terms, previews with forward refs; Ch 2 owns basic sponsor/offtaker definitions, Ch 4 typology; Ch 3.2 home of IPP; Ch 4 owns stage-level definitions of financial close/completion/COD; anchors fw:deal-on-a-page, fw:loss-trace cited by Ch 85, 28, 64; architecture file names .md→.tex (DONE).
+BF: Kilnworth IC members unnamed; Case P development advisers unnamed; co-development agreement (Jun 2015) before dev budget approval (Sep 2015); P-F01 overrun cause; Ch 1 phone call date (assumed early Apr 2015 London); register new names (Corredana, Llano Pardo, Tallisford, Grupo Arismendi, Montajes Cordillera, ELNACOR unchecked; Sterrenberg and ABDB as 2016 lenders in cross-case table).
+FS: h-production-payments, h-north-sea-field-finance, h-purpa-us-ipp, h-gfc-pf-markets.
