@@ -130,3 +130,4 @@
 - Case P model v1.5 DONE (D-128 ECA equal-installment tranche; debt 629.95; 443 ledger values changed, list in model/figure-ledger-case-p-changes-v1.5.md). Build-along regeneration + u09 map update, and v1.5 value propagation across briefs/Bible, launched.
 - BLUEPRINT PASSED (round 3 verification, reviews/blueprint/r3-verification.md). Phase 1 complete pending v1.5 value propagation and R3-1 name-clash fixes.
 - Build-along workbooks regenerated for v1.5 and re-verified (Ch43 = master across 64,874 cells). Ch2 round 3: facts PASS; five narrow FAILs → final fix list sent. Ch36 round 2 reviews running.
+- R3-1 name clashes FIXED (16 renames, all web-checked clear; reviews/blueprint/r3-1-name-fixes.md).
