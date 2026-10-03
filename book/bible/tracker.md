@@ -29,3 +29,4 @@
 - Done: t-solvency, t-es-standards, t-us-tax-credits.
 - Done: ivanpah, sunedison-terraform, northvolt.
 - Done: t-oecd-arrangement, t-dfis, t-basel.
+- Done: gulf-iwpp (weakest), sabine-pass, png-lng.
