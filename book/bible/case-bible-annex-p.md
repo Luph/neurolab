@@ -1010,7 +1010,7 @@ Round 1: the Chapter 7 judgment drill (u02) reuses the Republic of Corredana and
 | P-F39 | LC amount at COD under the two-plus-one formula and the three-month formula; annual reset values 2022 to 2025 | FC base and actual | 18, 59, 86 | u05, u12, u17 |
 | P-F40 | FX losses (total of the four inputs), netting set-offs by month, settlement installments, guarantee demand-to-payment days, FX queue duration | Actual | 59 | u12 |
 | P-F41 | PLCR at close (base, banking, downside); period-by-period CFADS and DSCR on the three FC cases | FC cases | 35 | u08 |
-| P-F42 | Monte Carlo on availability and dispatch with locked debt | FC base | 43 | u09 |
+| P-F42 | Monte Carlo on availability, dispatch, heat-rate degradation and FX drift with locked debt (D-125) | FC base | 43 | u09 |
 | P-F43 | Convergence log of the FC sizing; equity-first funding variant | FC base | 40 | u09 |
 | P-F44 | Revenue build OY1 to OY10 by component | FC base | 41 | u09 |
 | P-F45 | FC base financial statements OY1 to OY3 with balance check (lenders' reporting basis) | FC base | 42 | u09 |
@@ -1045,7 +1045,7 @@ Round 1: the Chapter 7 judgment drill (u02) reuses the Republic of Corredana and
 
 - P-F02: state the index readings (September 2021), the reconversion rate, contracted capacity 581.9 MW. Round 1: the ledger states the reconversion rate as the 2022 H1 average (the model's proxy for the invoice-date rate, 1.1.5); the US CPI reading is a Case P illustrative index (D-046).
 - P-F23: the bond is sculpted with the remaining ECA and A-loan debt service to a level combined DSCR; the level is a model output (ledger 1.59x), because the bond amount is set by the prepaid principal; 1.35x is not printed as the outcome (round 1).
-- P-F65: one forward per monthly onshore EPC payment; the ledger prints the totals and every sixth month of the profile (round 1).
+- P-F65: one forward per monthly onshore EPC payment, August 2018 to November 2021; the ledger lists all 40 monthly forwards and the totals (P-C61, model v1.4); exhibits may print a selection (every sixth month and the last) with the totals (round 2).
 - P-F03: computable from 4.7.
 - P-F06: winning levelized tariff; P-F62 holds the comparison.
 - P-F07: report equity by sponsor (60/25/15), by form (share capital and shareholder loans), with capitalized shareholder loan interest and the ECA premium amount shown separately.
@@ -1075,7 +1075,7 @@ Each brief requested its own "P-F37 onward", and those provisional meanings coll
 | u08 | 35 | P-F37 | PLCR at close; period-by-period CFADS and DSCR on base, banking and downside | P-F41 |
 | u08 | 35 | P-F38 | Case P breakevens for 1.00x minimum DSCR | P-F16 (Chapter 35 added as a user) |
 | u08 | 37 | P-F39 | Trigger-ladder CFADS falls to lock-up and default | No ID: D-013 arithmetic (8.3) |
-| u09 | 43 | P-F37 | Monte Carlo on availability and dispatch with locked debt | P-F42 |
+| u09 | 43 | P-F37 | Monte Carlo on availability, dispatch, heat-rate degradation and FX drift with locked debt (D-125) | P-F42 |
 | u09 | 40 | P-F38 | Convergence log of the FC sizing; equity-first variant | P-F43 |
 | u09 | 41 | P-F39 | Revenue build OY1 to OY10 by component | P-F44 |
 | u09 | 41 | P-F40 | Construction VAT, refunds, VAT facility; working capital OY1 to OY3 | P-F37 |
@@ -1169,7 +1169,7 @@ The ledger itself carries P-F37 and P-F40 extension rows (working capital 2021H1
 | u09 | F-12 PRI base | 1.11.2 |
 | u09 | F-15 style sheet 1.108 note | Forwarded to the style editor |
 | u09 | F-16 policy rates; VAT facility interest | 4.5; placement as in the model (funded use before COD, operating cost after) |
-| u09 | F-21 Monte Carlo inputs | Adopted as proposed (input requests file) |
+| u09 | F-21 Monte Carlo inputs | Adopted as proposed (input requests file); extended in model v1.4 to four drivers (availability, dispatch, heat-rate degradation, FX drift; D-125); the ledger's P-F42 inputs row governs |
 | u09 | F-22 Case R | Forwarded |
 | u09 | F-23 characters in modeling chapters | Approved: Castellan, Kilnworth (Kunal Mehrotra) and Pieter may frame drills without scenes |
 | u10 | BF-2 bid numbers | 4.7; P-F62 |

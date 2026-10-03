@@ -120,7 +120,7 @@
 
 % Sources list with hanging indent
 \newenvironment{sources}{\begin{list}{}{\setlength{\leftmargin}{1.5em}%
-  \setlength{\itemindent}{-1.5em}\setlength{\itemsep}{3pt}\small}}{\end{list}}
+  \setlength{\itemindent}{-1.5em}\setlength{\itemsep}{3pt}\small}\raggedright}{\end{list}}
 
 % Long tables numbered as exhibits
 \def\LTcaptype{exhibit}
@@ -176,6 +176,7 @@
 
 % Hyperlinks and cross-references (load last)
 \RequirePackage[hidelinks,bookmarksnumbered]{hyperref}
+\RequirePackage{xurl}
 \RequirePackage[capitalise,noabbrev,nameinlink]{cleveref}
 \crefname{pfexample}{Example}{Examples}
 \crefname{pfclause}{Clause}{Clauses}
