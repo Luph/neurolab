@@ -32,8 +32,12 @@ def connect(port):
     raise RuntimeError("cannot connect to soffice")
 
 
-def recalc(src, dst, scenario=None, contrib=None, port=2002, max_passes=400, tol=1e-9):
-    proc = subprocess.Popen(["soffice", "--headless", "--invisible", "--nologo", "--norestore",
+PROFILE = "file:///tmp/claude-0/lo_profile_case_t"   # private profile: no clash with other soffice users
+
+
+def recalc(src, dst, scenario=None, contrib=None, port=28173, max_passes=3000, tol=1e-9):
+    proc = subprocess.Popen(["soffice", f"-env:UserInstallation={PROFILE}", "--headless", "--invisible",
+                             "--nologo", "--norestore",
                              f"--accept=socket,host=localhost,port={port};urp;"],
                             stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
     try:

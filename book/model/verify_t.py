@@ -101,7 +101,7 @@ def scalar_pairs(X, scn, d):
 
 
 def main():
-    os.makedirs(os.path.join(HERE, "recalc"), exist_ok=True)
+    os.makedirs(os.path.join(HERE, "recalc_t"), exist_ok=True)
     B = BX.build(os.path.join(HERE, "Case_T_Model.xlsx"))
     runs, out = M.main()
     d = out["derived"]
@@ -111,7 +111,7 @@ def main():
     summary = []
     cases = [(s, 1) for s in range(1, 14)] + [(2, 2)]
     for scn, co in cases:
-        dst = os.path.join(HERE, "recalc", f"Case_T_s{scn}_c{co}.xlsx")
+        dst = os.path.join(HERE, "recalc_t", f"Case_T_s{scn}_c{co}.xlsx")
         passes = recalc(os.path.join(HERE, "Case_T_Model.xlsx"), dst, scn, co)
         wb = openpyxl.load_workbook(dst, data_only=True)
         if co == 2:
