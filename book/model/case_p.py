@@ -329,6 +329,21 @@ def first_ds_period(p):
     t_cod = [t for t in range(NS) if S_START[t] <= cod <= S_END[t]][0]
     return t_cod, t_cod + 1
 
+ECA_EQUAL = True        # v1.5 (D-128): the ECA-covered tranche repays in equal semiannual installments (OECD Annex VII)
+MATURITY = date(2034, 6, 30)
+def eca_window(p):
+    _, t1 = first_ds_period(p)
+    return t1, max(t for t in range(NS) if S_END[t] <= MATURITY)
+
+def prof_matrix(p, prof):
+    """Contract profiles by bank tranche (ECA, A, B, COM, SB): the ECA-covered tranche in equal installments from the first
+    repayment period to final maturity; the other tranches on the sculpted profile `prof` (share of their original amount)."""
+    PM = np.tile(np.asarray(prof, dtype=float), (5, 1))
+    if ECA_EQUAL:
+        t1, tl = eca_window(p)
+        pe = np.zeros(NS); pe[t1:tl + 1] = 1.0 / (tl - t1 + 1); PM[0] = pe
+    return PM
+
 def fund_end_month(p):
     t_cod, _ = first_ds_period(p)
     return max(m for m in range(NM) if M_PER[m] == t_cod)
@@ -345,7 +360,8 @@ def dsra_coeffs(p, mac_, prof, N_s):
     """DSRA at COD = d1 . balances + d0 (next-period debt service on fully drawn balances)."""
     _, t1 = first_ds_period(p)
     r = ds_rate_vector(p, mac_, t1)
-    d1 = prof[t1] / prof[t1:].sum() + r
+    PM = prof_matrix(p, prof)
+    d1 = np.array([PM[k, t1] / PM[k, t1:].sum() for k in range(len(r))]) + r
     d0 = N_s[t1] * (SWAP_FIX / 100 * 0.5 - mac_['base_s'][t1] / 100 * S_DAYS[t1] / 360) * (-1 if 'E10' in ERRS else 1)
     return d1, d0
 
@@ -756,7 +772,9 @@ def _run(p, prof, N_m, N_s, bond_prof, D_fixed):
     ]}
     rr = rows
     # schedule helpers
+    PM = prof_matrix(p, prof)
     def rem(t): return prof[t:].sum()
+    def remk(k, t): return PM[k, t:].sum()
     shl = f['shl_bal'][fe]; sc_bal = f['sc_contrib'].sum()
     pool = 0.0; loss = 0.0; dsra = 0.0; mmra = 0.0; hb = 0.0; lu = 0.0
     trap = 0.0; re_ = 0.0; comp = 0.0; prev_lock = 0; released = 0.0; dt_prev = 0.0
@@ -792,8 +810,9 @@ def _run(p, prof, N_m, N_s, bond_prof, D_fixed):
         if t > t_cod:
             I[:, t] = Bo[:, t] * r
             # scheduled principal (pro rata to remaining contractual profile)
-            if rem(t) > 1e-12:
-                SCH[:5, t] = (Bo[:5, t] - DFo[:5, t]) * prof[t] / rem(t)
+            for k in range(5):
+                if remk(k, t) > 1e-12:
+                    SCH[k, t] = (Bo[k, t] - DFo[k, t]) * PM[k, t] / remk(k, t)
             if p['waiver'] and t == t23:
                 DFn[:5, t] = 0.6 * SCH[:5, t]; deferred23 = DFn[:, t].copy()
             if p['waiver'] and tix('2024H1') <= t <= tix('2025H2'):
@@ -898,7 +917,7 @@ def _run(p, prof, N_m, N_s, bond_prof, D_fixed):
             DFn_next = DFc[:, t]
             for k in range(5):
                 if Bn[k] > 1e-9:
-                    sched = (Bn[k] - DFn_next[k]) * prof[t + 1] / rem(t + 1) if rem(t + 1) > 1e-12 else 0.0
+                    sched = (Bn[k] - DFn_next[k]) * PM[k, t + 1] / remk(k, t + 1) if remk(k, t + 1) > 1e-12 else 0.0
                     drep = min(deferred23[k] / 4, DFn_next[k]) if (p['waiver'] and tix('2024H1') <= t + 1 <= tix('2025H2')) else 0.0
                     tgt += sched + drep + Bn[k] * r1[k]
             if Bn[5] > 1e-9:
@@ -1007,7 +1026,7 @@ def _run(p, prof, N_m, N_s, bond_prof, D_fixed):
         S['sweep_' + nm] = SW[k]; S['sched_' + nm] = SCH[k]; S['deferred_' + nm] = DFc[k]
         S['deferred_new_' + nm] = DFn[k]; S['deferred_repay_' + nm] = DFr[k]
     S.update(rr)
-    S['flag_ds'] = flag_ds; S['prof'] = prof; S['N_s'] = N_s * swap_share
+    S['flag_ds'] = flag_ds; S['prof'] = prof; S['prof_eca'] = PM[0]; S['N_s'] = N_s * swap_share
     S['debt_close'] = B.sum(0); S['debt_open'] = Bo.sum(0)
     R['S'] = S; R['last_op'] = last_op; R['t_cod'] = t_cod; R['t1'] = t1; R['fe'] = fe
     R['bond_F'] = bond_F; R['p'] = p
@@ -1176,20 +1195,43 @@ def sculpt_rates(R, w, D, prof):
     return r
 
 def sculpt(R, D, t_first, t_last, w):
-    """Constant-DSCR sculpting: DS_t = CFADS_t / DSCR*, DSCR* = PV(CFADS)/D."""
-    S = R['S']; prof = R['prof']
-    r = sculpt_rates(R, w, D, prof)
+    """Constant-DSCR sculpting of total senior debt service: DS_t = CFADS_t / DSCR*. With ECA_EQUAL the ECA-covered tranche
+    (weight w[0]) repays in equal installments over [t_first, t_last]; the other tranches (A, B, COM, SB) take the sculpted
+    residual. Returns (profile of the other tranches as a share of their amount, DSCR*, D x DSCR* (= PV of CFADS in the
+    single-profile case), per-period rate on the other tranches' scheduled balance, debt service)."""
+    S = R['S']; prof = R['prof']; mac_ = R['mac']; N_s = R['N_s']
     cf = S['cfads'] + (S['tax'] if 'E8' in ERRS else 0)
-    pv = 0.0
+    w = np.asarray(w, dtype=float)
+    wE = w[0] if ECA_EQUAL else 0.0
+    wo = w[1:] / w[1:].sum() if wE > 0 else None
+    n = t_last - t_first + 1
+    rho = np.zeros(NS); E = np.zeros(NS)
+    for t in range(t_first, t_last + 1):
+        base = mac_['base_s'][t]; dcf = S_DAYS[t] / 360
+        mg = np.array([MARGIN[0], MARGIN[1], MARGIN[2], com_margin(S_YEAR[t])])
+        rk = (base + mg) / 100 * (0.5 if 'E4' in ERRS else dcf) * GU
+        rk[3] += PRI * S_DAYS[t] / 365
+        rsb = sb_rate(mac_, t)
+        remE = (t_last - t + 1) / n; remO = prof[t:].sum()
+        bs = D * (wE * remE + (1 - wE) * remO) if wE > 0 else D * remO
+        sw = (N_s[t] / bs) * (SWAP_FIX / 100 * 0.5 - base / 100 * dcf) * (-1 if 'E10' in ERRS else 1) if bs > 1e-9 else 0.0
+        if wE > 0:
+            rho[t] = (wo[:3] * rk[1:]).sum() + wo[3] * rsb + sw
+            BE = D * wE * remE
+            E[t] = D * wE / n + BE * (rk[0] + sw)
+        else:
+            rho[t] = (w[:4] * rk).sum() + w[4] * rsb + sw
+    DO = D * (1 - wE)
+    pvc = 0.0; pvE = 0.0
     for t in range(t_last, t_first - 1, -1):
-        pv = (cf[t] + pv) / (1 + r[t])
-    dscr = pv / D
-    bal = D; newp = np.zeros(NS); ds = np.zeros(NS)
+        pvc = (cf[t] + pvc) / (1 + rho[t]); pvE = (E[t] + pvE) / (1 + rho[t])
+    dscr = pvc / (DO + pvE)
+    bal = DO; newp = np.zeros(NS); ds = np.zeros(NS)
     for t in range(t_first, t_last + 1):
         ds[t] = cf[t] / dscr
-        prin = ds[t] - bal * r[t]
-        newp[t] = prin / D; bal -= prin
-    return newp, dscr, pv, r, ds
+        prin = ds[t] - E[t] - bal * rho[t]
+        newp[t] = prin / DO; bal -= prin
+    return newp, dscr, D * dscr, rho, ds
 
 def size_fc(p, gearing=0.75, dscr_target=1.35, down_target=1.20, verbose=False, max_it=200, only_gearing=False, llcr_target=1.40):
     """FC sizing: iterate (profile, notional, debt) -> model -> CFADS -> re-sculpt to convergence.
@@ -1214,8 +1256,9 @@ def size_fc(p, gearing=0.75, dscr_target=1.35, down_target=1.20, verbose=False, 
         fe = R['fe']; bal_m = sum(R['f']['bal_' + k] for k in TR)
         newNm = np.zeros(NM); newNm[1:fe + 1] = 0.8 * bal_m[:fe]
         newNs = np.zeros(NS)
+        PMn = prof_matrix(p, newp); wS = SHARE_W()
         for t in range(t1, NS):
-            newNs[t] = 0.8 * D * newp[t:].sum()
+            newNs[t] = 0.8 * D * ((wS[0] * PMn[0, t:].sum() + (1 - wS[0]) * newp[t:].sum()) if ECA_EQUAL else newp[t:].sum())
         llcr_now = float(R['S']['llcr_dsra'][t1])
         cands = {'gearing': gearing * T, 'DSCR': cap_, 'downside': cap_down if down_target else 1e9,
                  'LLCR': D * llcr_now / llcr_target if llcr_target else 1e9}

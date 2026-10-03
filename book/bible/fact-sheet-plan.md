@@ -449,26 +449,26 @@ Source: the "Revision log (round 1)" and "Central changes needed" sections of th
 | cobre-panama | The SGS audit item (19) no longer states "361 of 370 fulfilled, seven partial, three non-compliances": the counts sum to 371 and 361/370 (97.6%) does not match the reported 87.7%, which is a weighted component score. The sheet now gives the 87.73% overall score with its four component scores, notes that sources report both 370 and 371 commitments, and adds the split to "Do not state" (two secondary sources added). Writers print "about 370 commitments" and "overall compliance of about 87.7%" (u10 request) |
 | t-frontier-data | Item 20 aligned with t-cap-and-floor items 18, 20 and 21: 16 projects out of 73 assessed (77 eligible, four withdrew), durations 8 to 32 hours, consultation closed 14 August 2026; alignment note added; "Do not state" extended. Where the two sheets differ, t-cap-and-floor governs (u15 request) |
 
-### Fact-sheet citations in the revised briefs (automated scan, round 1)
+### Fact-sheet citations in the revised briefs (automated scan, regenerated in round 2)
 
-Every file in `facts/` with the chapters (or matter files, numbered 89 and above) whose revised brief cites its slug in the chapter sections, excluding the revision logs. Sheets with no citation yet are the in-progress sheets, which round 2 places.
+Every file in `facts/` (172) with the chapters (or matter files, numbered 89 and above) whose brief cites its slug in the chapter sections, excluding the revision logs and unit-level notes. Regenerated on October 3, 2026 after the round 2 placements (D-127); a sheet with no citation is listed as "none".
 
-| Slug | Chapters citing it (round 1 briefs) |
+| Slug | Chapters citing it (round 2 briefs) |
 |---|---|
-| airport-concession | 12, 21, 80, 83, 94 |
+| airport-concession | 12, 21, 80, 88 |
 | argentina-2002 | 14, 54, 59, 60 |
 | azura-edo | 14, 16, 17, 18, 29, 31, 32, 34, 59, 60, 69, 87 |
 | barakah | 74 |
 | bujagali | 49, 50, 67, 72 |
-| carillion | 4, 7, 9, 14, 15, 16, 22, 23, 24, 28, 58, 61, 64, 81, 85, 87 |
+| carillion | 4, 7, 14, 15, 16, 22, 23, 24, 28, 58, 61, 64, 81, 85, 87 |
 | chad-cameroon | 14, 50, 60, 75 |
-| chile-concessions | 58, 60, 79, 83 |
+| chile-concessions | 58, 60, 79 |
 | chile-solar | 9, 11, 14, 18, 19, 20, 25, 35, 45, 70, 73 |
 | cobre-panama | 12, 14, 21, 25, 50, 60, 67, 78, 85, 88 |
 | colombia-4g | 21, 29, 30, 34, 58, 79, 88 |
-| commodity-prepay | 75, 76 |
+| commodity-prepay | 75 |
 | coral-sul-flng | 76 |
-| covid-toll-roads | 64, 79, 80, 83 |
+| covid-toll-roads | 64, 79, 80 |
 | covid-transport | 10, 14, 17, 27, 58, 64, 79, 80, 81 |
 | dabhol | 3, 14, 15, 17, 24, 25, 26, 54, 57, 59, 60, 69, 85 |
 | dogger-bank | 3, 4, 11, 19, 23, 32, 36, 71, 73 |
@@ -476,154 +476,154 @@ Every file in `facts/` with the chapters (or matter files, numbered 89 and above
 | eurotunnel | 3, 12, 14, 15, 48, 55, 64, 79, 80 |
 | fpso-financing | 76 |
 | fsru-charters | 76 |
-| ftth-altnet | 12, 82, 83 |
-| geothermal-risk-facilities | 72, 76 |
+| ftth-altnet | 12, 82 |
+| geothermal-risk-facilities | 72 |
 | gulf-iwpp | 1, 3, 12, 18, 32, 33, 47, 56, 69, 81 |
-| h-gfc-pf-markets | 3, 4 |
-| h-north-sea-field-finance | 3, 4, 75, 76 |
-| h-production-payments | 3, 4, 75 |
-| h-purpa-us-ipp | 3, 4 |
-| h2global | none yet (round 2 placement) |
-| hinkley-sizewell | 5, 8, 9, 11, 19, 74, 88 |
+| h-gfc-pf-markets | 3 |
+| h-north-sea-field-finance | 3, 75 |
+| h-production-payments | 3, 75 |
+| h-purpa-us-ipp | 3 |
+| h2global | 83 |
+| hinkley-sizewell | 5, 8, 11, 19, 74, 88 |
 | hub-power | 3, 14, 16, 17, 18, 22, 33, 34, 54, 56, 60, 69 |
 | hyperion-meta | 2, 3, 4, 12, 20, 21, 29, 30, 32, 82, 88 |
 | ichthys | 14, 16, 22, 23, 26, 29, 30, 32, 61, 63, 76 |
-| indiana-toll-road | 6, 8, 9, 14, 16, 21, 36, 37, 46, 47, 52, 53, 64, 79 |
+| indiana-toll-road | 6, 8, 14, 16, 21, 36, 37, 46, 47, 52, 53, 64, 79 |
 | ivanpah | 3, 11, 14, 24, 29, 48, 49, 62, 65, 70, 86, 88 |
-| kenya-steam-sales | 72, 76 |
+| kenya-steam-sales | 72 |
 | lake-turkana | 4, 11, 14, 15, 17, 18, 22, 25, 27, 28, 31, 45, 70, 73, 85 |
 | metronet | 4, 14, 15, 24, 57, 58, 80 |
 | moss-landing | 11, 14, 16, 27, 62, 65, 73 |
 | mozambique-lng | 12, 14, 16, 55, 60, 76, 85 |
 | mundra | 10, 14, 15, 18, 25, 41, 69 |
-| municipal-water-concession | 81, 83 |
+| municipal-water-concession | 81 |
 | nam-theun-2 | 11, 28, 50, 60, 72 |
 | neom-hydrogen | 31, 32, 33, 66, 83, 84, 88 |
 | noor-ouarzazate | 16, 32, 34, 70, 87 |
 | northern-lights | 83, 88 |
 | northvolt | 2, 4, 14, 77, 88 |
-| ocean-wind | 5, 6, 7, 9, 14, 16, 36, 38, 66, 71 |
-| odebrecht-2016 | 49, 50, 60 |
-| oem-fleet-defects | 23, 24, 28, 62, 69, 70, 71, 76 |
+| ocean-wind | 5, 6, 7, 14, 16, 36, 38, 66, 71 |
+| odebrecht-2016 | 49, 60 |
+| oem-fleet-defects | 23, 24, 62, 69, 70, 71 |
 | oyu-tolgoi | 12, 26, 45, 60, 67, 78, 88 |
 | paiton | 3, 14, 15, 17, 18, 56, 59, 64, 69 |
 | png-lng | 12, 26, 29, 31, 55, 76 |
-| port-concession | 12, 21, 80, 83 |
+| port-concession | 12, 21, 80 |
 | port-of-miami-tunnel | 12, 14, 15, 16, 21, 45, 58, 79 |
-| pumped-storage | 9, 11, 19, 72, 73, 76 |
+| pumped-storage | 9, 11, 19, 72, 73 |
 | purple-line | 14, 15, 23, 28, 58, 61, 80 |
-| refinery-pf | 77, 83 |
+| refinery-pf | 77 |
 | reipppp | 1, 3, 17, 19, 28, 47, 55, 56, 57, 58, 70 |
 | sabine-pass | 2, 3, 4, 12, 16, 21, 22, 45, 76, 87 |
 | sadara | 26, 30, 32, 33, 51, 53, 55, 56, 77 |
-| saf-mandates | none yet (round 2 placement) |
+| saf-mandates | 83 |
 | saf-project | 83 |
 | sanctions-2022 | 14, 49, 60, 75, 76 |
 | sarulla | 14, 16, 23, 48, 72 |
 | sh130 | 36, 52, 64, 79 |
 | solvency-qualifying-deal | 68 |
 | spain-renewables | 14, 17, 19, 54, 60, 70 |
-| spreadsheet-errors | 13, 39, 44, 45 |
-| subsea-cable-pf | none yet (round 2 placement) |
+| spreadsheet-errors | 13, 39, 44 |
+| subsea-cable-pf | 82 |
 | sunedison-terraform | 2, 14, 26, 31, 32, 47, 63, 66 |
 | sydney-tunnels | 9, 12, 14, 15, 27, 28, 35, 39, 43, 44, 45, 47, 48, 58, 64, 79, 86, 87 |
-| t-accounting | 7, 9, 66, 67 |
+| t-accounting | 7, 66, 67 |
 | t-accounting-2 | 57, 66 |
-| t-adaptation-resilience | 84, 88, 94 |
-| t-airport-port-revenue | 12, 21, 80, 83 |
+| t-adaptation-resilience | 84, 88 |
+| t-airport-port-revenue | 12, 21, 80 |
 | t-anticorruption-sanctions | 14, 16, 49, 60, 87 |
-| t-arbitral-rules | 54, 56 |
-| t-arbitration-treaties | 10, 54, 60, 94 |
+| t-arbitral-rules | 54 |
+| t-arbitration-treaties | 10, 54, 60, 88 |
 | t-basel | 3, 38, 68, 87 |
 | t-basel-crm | 68 |
 | t-battery-degradation | 45 |
 | t-blended-finance | 34 |
-| t-cap-and-floor | 19, 73, 76 |
-| t-capacity-ancillary-markets | 11, 20, 69, 73, 76 |
-| t-capm-inputs | 8, 9, 46, 50 |
+| t-cap-and-floor | 19, 73 |
+| t-capacity-ancillary-markets | 11, 20, 69, 73 |
+| t-capm-inputs | 8, 46 |
 | t-ccs-liability | 83 |
-| t-conduct-regimes | 85, 87, 94 |
-| t-construction-norms | 22, 23, 28, 61, 65, 69, 76 |
-| t-contract-law | 10, 16, 22, 23, 28, 94 |
-| t-corporate-ppa-market | 20, 70, 76 |
-| t-critical-minerals-policy | 78, 83, 88, 94 |
-| t-cyber-infrastructure | 14, 16, 27, 28, 62, 82, 83 |
-| t-decommissioning-accounting | 66 |
-| t-decommissioning-liabilities | 14, 16, 65, 71, 76, 78, 83 |
+| t-conduct-regimes | 85, 87 |
+| t-construction-norms | 22, 23, 61, 69, 76 |
+| t-contract-law | 10, 16, 22, 23, 88 |
+| t-corporate-ppa-market | 20, 70 |
+| t-critical-minerals-policy | 78, 88 |
+| t-cyber-infrastructure | 14, 16, 27, 62, 82 |
+| t-decommissioning-accounting | 7, 65, 66 |
+| t-decommissioning-liabilities | 14, 16, 65, 71, 78 |
 | t-dfis | 3, 4, 16, 29, 30, 34, 53, 59, 60, 68 |
-| t-digital-execution | 88, 94 |
-| t-digital-norms | 82, 83 |
-| t-earned-value | none yet (round 2 placement) |
-| t-electricity-market-design | 11, 20, 69, 70, 76 |
-| t-energy-investment-gap | 88, 94 |
+| t-digital-execution | 88 |
+| t-digital-norms | 82 |
+| t-earned-value | 61 |
+| t-electricity-market-design | 11, 20, 69, 70 |
+| t-energy-investment-gap | 88 |
 | t-energy-yield | 45 |
 | t-es-standards | 50, 84 |
 | t-eu-support-schemes | 19, 62, 65 |
-| t-excel-versions | 0, 13, 39 |
-| t-fast-standard | 39, 45 |
-| t-frontier-data | 3, 4, 12, 29, 61, 73, 74, 76, 77, 82, 83, 87, 88, 94 |
+| t-excel-versions | 13, 39, 88 |
+| t-fast-standard | 39, 44 |
+| t-frontier-data | 3, 4, 12, 29, 61, 73, 74, 77, 82, 83, 87, 88 |
 | t-hydrogen-support | 83 |
-| t-infra-debt-funds | 29, 34 |
-| t-infra-equity-returns | 46, 47, 50 |
-| t-infra-fund-terms | 47, 50 |
+| t-infra-debt-funds | 29 |
+| t-infra-equity-returns | 46, 47 |
+| t-infra-fund-terms | 47 |
 | t-insolvency | 10, 52, 64 |
-| t-insurance-market | 16, 27, 28, 49, 50, 62 |
-| t-interest-limitation | 7, 9, 41, 67 |
-| t-islamic | 33, 34, 53 |
-| t-judgment-research | 86, 87, 88, 94 |
+| t-insurance-market | 16, 27, 49, 62 |
+| t-interest-limitation | 7, 41, 67 |
+| t-islamic | 33, 53 |
+| t-judgment-research | 86, 87, 88 |
 | t-loan-docs | 51, 53, 84, 87 |
 | t-loan-syndication | 38, 51, 55, 56 |
 | t-local-currency | 34, 59 |
-| t-ma-wi-insurance | 47, 50, 63 |
-| t-market-norms | 8, 9, 19, 20, 21, 29, 30, 31, 32, 35, 36, 37, 38, 51, 55, 56, 63, 69, 70, 71, 72, 73, 74, 75, 76, 78, 79, 80, 81, 82, 83, 84, 85, 87, 94 |
-| t-market-norms-2 | 12, 18, 29, 34, 35, 36, 37, 38, 57, 58, 69, 70, 71, 72, 76, 78, 79, 81, 83, 94 |
-| t-mining-offtake | 21, 45, 78, 83 |
+| t-ma-wi-insurance | 47, 63 |
+| t-market-norms | 8, 9, 19, 20, 21, 29, 30, 31, 32, 35, 36, 37, 38, 51, 55, 56, 63, 69, 70, 71, 72, 73, 74, 75, 76, 78, 79, 80, 81, 82, 83, 84, 85, 87, 88 |
+| t-market-norms-2 | 12, 18, 29, 34, 35, 36, 37, 38, 57, 58, 69, 70, 71, 72, 78, 79, 81, 88 |
+| t-mining-offtake | 21, 45, 78 |
 | t-negotiation-sources | 56 |
-| t-nuclear-decom-waste | 65, 74, 76 |
-| t-nuclear-liability | 74, 76 |
+| t-nuclear-decom-waste | 65, 74 |
+| t-nuclear-liability | 74 |
 | t-oecd-arrangement | 4, 29, 36, 38, 69, 72, 73, 74, 84, 87 |
-| t-oecd-common-approaches | 29, 34, 50 |
-| t-oecd-pf-2018 | 29, 34, 36, 38, 42, 69, 76 |
-| t-om-ltsa-norms | 24, 28, 69, 76 |
+| t-oecd-common-approaches | 29, 50 |
+| t-oecd-pf-2018 | 29, 36, 38, 42, 69 |
+| t-om-ltsa-norms | 24, 69 |
 | t-pillar-two | 67 |
 | t-political-risk-theory | 59, 60 |
-| t-power-tech-norms | 11, 13, 18, 69, 70, 71, 72, 73, 74, 76 |
+| t-power-tech-norms | 11, 18, 69, 70, 71, 72, 73, 74 |
 | t-ppp-frameworks | 17, 57, 58, 60 |
-| t-pri-market | 27, 28, 60 |
-| t-project-bonds | 30, 34, 63 |
-| t-ratings | 30, 34, 84, 87 |
-| t-ratings-2 | 30, 34, 36, 59, 60 |
-| t-rbl | 75, 76 |
-| t-reference-rates | 3, 6, 9, 38, 40 |
+| t-pri-market | 27, 60 |
+| t-project-bonds | 30, 63 |
+| t-ratings | 30, 84, 87 |
+| t-ratings-2 | 30, 36, 59, 60 |
+| t-rbl | 75 |
+| t-reference-rates | 3, 6, 38, 40 |
 | t-repowering | 62, 65 |
-| t-reserves-codes | 12, 45, 48, 50, 75, 76, 78, 83 |
+| t-reserves-codes | 12, 45, 48, 75, 78 |
 | t-risk-standards | 14, 15, 16 |
-| t-security-civil-law | 10, 49, 50, 52, 56 |
+| t-security-civil-law | 10, 49, 52 |
 | t-solvency | 3, 4, 68 |
-| t-storage-safety | 11, 27, 28, 73, 76 |
+| t-storage-safety | 11, 27, 73 |
 | t-sustainable-finance | 30, 84, 87 |
 | t-sustainable-finance-2 | 84 |
-| t-tax-treaties-wht | 7, 9, 67 |
-| t-thermal-exclusions | 69, 76, 84 |
-| t-traffic-forecast-accuracy | 12, 45, 47, 48, 50, 79, 83, 85 |
+| t-tax-treaties-wht | 7, 67 |
+| t-thermal-exclusions | 69, 84 |
+| t-traffic-forecast-accuracy | 12, 45, 47, 48, 79, 85 |
 | t-transfer-pricing | 67 |
 | t-uk-cfd-rab | 19, 71, 74 |
 | t-unsolicited-proposals | 57, 60 |
-| t-untied-resource-finance | 78, 83 |
-| t-upstream-decom-security | 65, 75, 76 |
-| t-us-cpi | 5, 6, 9 |
-| t-us-tax-credits | 31, 32, 34, 62, 67, 70, 73, 77, 78, 83 |
-| tap-pipeline | 75, 76 |
+| t-untied-resource-finance | 78 |
+| t-upstream-decom-security | 65, 75 |
+| t-us-cpi | 5, 6 |
+| t-us-tax-credits | 31, 32, 67, 70, 73, 77, 78, 83 |
+| tap-pipeline | 75 |
 | tideway | 12, 14, 16, 19, 57, 68, 81, 84 |
-| tower-carveout | 82, 83 |
+| tower-carveout | 82 |
 | triple-point | 10, 22, 51 |
-| uk-pfi | 3, 8, 9, 12, 46, 57, 58, 63, 65, 66, 81 |
+| uk-pfi | 3, 8, 12, 46, 57, 58, 63, 65, 66, 81 |
 | upstream-field-pf | 75, 76 |
-| us-battery-doe | 77, 83 |
-| us-offshore-wind-2025 | 71, 76 |
-| vineyard-wind-2024 | 71, 76 |
+| us-battery-doe | 77 |
+| us-offshore-wind-2025 | 71 |
+| vineyard-wind-2024 | 71 |
 | vogtle | 11, 14, 22, 23, 26, 61, 74 |
-| wagp | 25, 28 |
+| wagp | 25 |
 | winter-storm-uri | 4, 9, 11, 14, 16, 20, 43, 45, 69, 70 |
-| wte | 81, 83, 94 |
-| wte-operating-pf | none yet (round 2 placement) |
+| wte | 81, 88 |
+| wte-operating-pf | 81 |
