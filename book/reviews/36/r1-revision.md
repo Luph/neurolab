@@ -162,3 +162,46 @@ Note for the coordinator: your v1.5 note gives scheduled principal 535.287 and s
 | 19 | GIIA n.d. |
 | 20 | `\x` taken out of math; \cref casing fixed; "note" instead of "footnote". |
 | 21 | Close fixed; Port Arthur repeat cut. |
+
+## Round 2
+
+Build OK (55 pages, 0 overfull boxes); scan 0 hits.
+
+| Report | Item | Fix |
+|---|---|---|
+| Domain | 1 | Tail: "no demand or price risk" and "demand, price or renewal risk". Red flag in 36.13 changed to match. |
+| Domain | 2 | COD-delay sentence now says the DSCR stays below 1.35x even after resculpting to a level profile, citing ssec:36.2.4. |
+| Domain | 3 | Close: "falls by a third or more, well past the 26% the cushion absorbs". |
+| Domain | 4 | Country driver now states its direction for the DSCR (weaker credit pushes the target up), citing sec:36.14. |
+| Facts | 1 | Same fix as Domain 1. |
+| Facts | 2 | The mini-perm claim is limited to the US bank clubs that financed LNG export plants in 2023. |
+| Facts | 3 | Exh 36.6 note: "up to 22 years depending on the sector listed in its Appendix I". |
+| Facts | 4 | Solution 36.18: "This book has no verified worst-year record...". |
+| Facts | PF2 | Checked against facts/uk-pfi.md item 8. The "launched at 75:25" wording is replaced with the accurate statement: PF2 planned 20% to 25% equity, but all six projects closed at about 10:90 (NAO 2018). |
+| Numbers | 1 | Exh 36.14 downside minima corrected to 1.27x and 1.24x. |
+| Numbers | 2 | Sweep runs 2027 to mid-2032; memo line reads 2027–2032; narration adds that the sweep repays the tranche by June 30, 2032. |
+| Numbers | 3 | Ex 36.11 shows 4.50, with a rounding note; Step 2 uses 4.50. |
+| Numbers | 4 | Exh 36.13 note: printed figures add to 630.0 because of rounding (530.46 + 99.49 = 629.95). |
+| Numbers | 5 | Bucket block moved to rows 40–43. Solution 36.15 aligned: F27–F29, MIN in F32, F30 unused. |
+| Numbers | Note | Downside slack now "less than four ten-thousandths". |
+| Novice | 1 | Same fix as Numbers 5. "Column of constants" is reworded: F27 links to F16, and F28 holds the downside formula. |
+| Novice | 2 | "before any sweep" added. Narration explains that sweeps are applied pro rata against remaining installments, so the installments after 2027 are already net of the forecast sweep. |
+| Line | 1 | "in our experience" cut. |
+| Line | 2 | Orphan stage line replaced with "Tomasz said". |
+| Line | 3 | "the concession Pieter had spent credit to win". |
+| Line | 4 | Six-month-rule sentence moved to ssec:36.6.1. |
+| Line | 5 | "base-case funding requirement of USD 854.6 million", in the body and in Solution 36.13. |
+| Line | 6 | LNG gearing sentence deleted. |
+| Line | 7 | Filler cut. |
+| Line | 8 | ", and no further" cut; trailing space removed. |
+| Line | 9 | Tail paragraph now opens with the claim; the D-011 label moves to its own closing sentence. |
+| Consistency | 1 | Same fix as Numbers 5. |
+| Consistency | 2 | Same fix as Numbers 2. |
+| Consistency | 3 | Pieter van Wijngaarden (Castellan's lead arranger), Tomasz Wierzbicki and Kilnworth Power International (lead sponsor) introduced by role before the scene. |
+| Consistency | 4 | Climate Change Sector Understanding (CCSU) expanded at first use (Exh 36.6 note) and abbreviated afterward. "Indexed to the consumer price index" replaces CPI-indexed. |
+| Consistency | 5 | "borrower" changed to "the project company". |
+| Consistency | C1 | u08 brief lines 404 and 723 renumbered. |
+
+Not changed by the writer:
+- C2: Case Bible 1.6 repayment row, Annex P 3.6 and the Ch 42 brief, flagged for the editor.
+- C3: the ledger label, which the coordinator reports is now corrected.
