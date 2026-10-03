@@ -1445,6 +1445,10 @@ def build_audit(path):
         for j, v in enumerate(vals): ws.cell(5 + r_, 1 + j, v)
     ws.column_dimensions['B'].width = 70; ws.column_dimensions['C'].width = 60
     wb.save(path)
+    # reader copy without the key (u09 R8, Chapter 44)
+    wb.remove(wb['AuditKey'])
+    os.makedirs(os.path.join(HERE, 'exercises'), exist_ok=True)
+    wb.save(os.path.join(HERE, 'exercises', 'Case_P_Model_AuditExercise_reader.xlsx'))
     return c
 
 if __name__ == '__main__':

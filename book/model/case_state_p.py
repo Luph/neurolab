@@ -24,13 +24,13 @@ extra={  # additional figure IDs and notes per chapter
  '40':('P-F07, P-F13, P-F37, P-F43','Closed-form gross-up (alpha/beta) is the workbook method; Python iterates.'),
  '41':('P-F14, P-F32, P-F34, P-F37, P-F38, P-F44','Thin cap per P-F38 rule.'),
  '42':('P-F15, P-F41','Without shareholder loans, up to USD 172.8 million would be trapped.'),
- '43':('P-F16, P-F42','Breakevens and Monte Carlo are Python outputs.'),
- '44':('P-F17','Exercise workbook Case_P_Model_AuditExercise.xlsx carries the ten errors; E9 shows only off the 76.5% dispatch (banking case).'),
+ '43':('P-F16, P-F41, P-F42','Breakevens are Python outputs. Monte Carlo: the workbook runs any single draw (Inputs F311, run 1 to 1,000, verified against the mirror); the 1,000-run results are pasted from the mirror with a stamp. P-F16 now lists debt capacity at 1.35x (Debt F130) under every sensitivity (Exercise 43.13). Projected 12-month DSCR on Ratios rows 20 and 21; fifteen-scenario table pasted on Outputs rows 26 to 42 with the compare row F44.'),
+ '44':('P-F17','Exercise workbook Case_P_Model_AuditExercise.xlsx carries the ten errors (reader copy without the key: model/exercises/Case_P_Model_AuditExercise_reader.xlsx); E9 shows only off the 76.5% dispatch (banking case). In the seeded copy two checks flag: Checks F14 (debt above the gearing cap) and the new ECA-test check F23. P-F17 adds the annual shadow sizing (Exercise 44.12).'),
  '55':('P-F07','Funds flow at July 17, 2018: Month 1 uses in P-F13.'),
  '56':('P-F36',''),
- '59':('P-F20, P-F25, P-F40','2022 dispatch was 84.0% / 81.5% (drought). The LC drawn in February 2023 is the 2023 reset value (P-F40, P-C44). 80% of the overdue amounts are energy-charge arrears matched by deferred SNHK/GCK payables (modeler calibration A1). The DSRA is drawn only at June 30, 2023 (USD 2.5 million). Leave the breach and waiver to Chapter 62.'),
+ '59':('P-F20, P-F25, P-F40','2022 dispatch was 84.0% / 81.5% (drought). The LC drawn in February 2023 is the 2023 reset value (P-F40, P-C44). 80% of the overdue amounts are energy-charge arrears matched by deferred SNHK/GCK payables (modeler calibration A1). The DSRA is drawn only at June 30, 2023 (USD '+f"{P['P-F21']['dsra_draw_2023_06_30']:.1f}"+' million, P-F21). Leave the breach and waiver to Chapter 62.'),
  '61':('P-F18, P-F19, P-F30, P-F52, P-F66','Overrun includes the calibrated delay-related EPC acceleration and owner cost escalation (P-C43). Funding order: contingency (base facilities), delay LDs, DSU, then standby (about USD 10.0 million) and contingent equity (about 3.3 million). The FX forwards gained for the project.'),
- '62':('P-F21, P-F31','Historic DSCR 1.14x at December 31, 2022 (lock-up only) and 0.97x at June 30, 2023 (default); release in 2024H2.'),
+ '62':('P-F21, P-F31',f"Historic DSCR {P['P-F21']['historic_dscr_2022_12_31']:.2f}x at December 31, 2022 (lock-up only) and {P['P-F21']['historic_dscr_2023_06_30']:.2f}x at June 30, 2023 (default); release in {P['P-F21']['release_period']} (ledger P-F21 governs, P-C57)."),
  '63':('P-F23, P-F24',''),
  '65':('P-F29',''),
  '66':('P-F26','IFRS basis is IFRIC 12 (annex 4.6): on IFRS carrying amounts the loss of control gives a loss, on the lenders basis a gain (both in P-F26); fair value of the retained 36% = sale price per point x 36; hedge reserve recycled.'),
@@ -41,12 +41,12 @@ extra={  # additional figure IDs and notes per chapter
  '17':('P-F25 (formula only)',''),
 }
 L=['# Case state by chapter: Case P (Bélanou)','',
- 'Model version 1.3 (Case Bible annex P absorbed; editor rulings and v1.3 fixes applied) (`model/case_p.py`, `model/Case_P_Model.xlsx`); story as of October 3, 2026. For every chapter of Case Bible Part 6 that features Case P: the state of the case at the start and end of the installment (Bible storyline plus modeled state) and the ledger figure IDs (`model/figure-ledger-case-p.md`) the chapter may print. "Inputs" means Case Bible Part 1 values after the change log.','',
+ 'Model version 1.4 (Case Bible annex P absorbed; editor rulings, v1.3 fixes and the u09 round 1 requests applied) (`model/case_p.py`, `model/Case_P_Model.xlsx`); story as of October 3, 2026. For every chapter of Case Bible Part 6 that features Case P: the state of the case at the start and end of the installment (Bible storyline plus modeled state) and the ledger figure IDs (`model/figure-ledger-case-p.md`) the chapter may print. "Inputs" means Case Bible Part 1 values after the change log.','',
  '| Ch | Story date | State at start | State at end | Figure IDs the chapter shows | Notes for the writer |','|---|---|---|---|---|---|']
 ADD={'21':['P-F46'],'75':['P-F46','P-F59'],'18':['P-F47'],'48':['P-F47','P-F61'],'24':['P-F48'],'28':['P-F48'],'65':['P-F48'],
  '55':['P-F49'],'38':['P-F50', 'P-F65'],'56':['P-F50'],'27':['P-F51'],'60':['P-F51'],'61':['P-F52'],'66':['P-F53','P-F56','P-F66'],'67':['P-F54','P-F37'],
  '68':['P-F55'],'86':['P-F55','P-F39'],'7':['P-F56 (one-line note)'],'69':['P-F57'],'72':['P-F58'],'85':['P-F60'],'47':['P-F62', 'P-F64'],'46':['P-F64'],'59':['P-F39', 'P-F66'],'62':['P-F63'],
- '31':['P-F37'],'35':['P-F16 (breakevens)'],'43':['P-F42'],'40':['P-F43', 'P-F65'],'41':['P-F44'],'42':['P-F45'],'37':['P-F11a', 'P-F65'],'24b':[]}
+ '31':['P-F37'],'35':['P-F16 (breakevens)'],'43':['P-F42', 'P-F16 (debt capacity by sensitivity)'],'44':['P-F17 (incl. annual shadow sizing)'],'51':['P-F63 (incl. prepayment cure)'],'40':['P-F43', 'P-F65'],'41':['P-F44'],'42':['P-F45'],'37':['P-F11a', 'P-F65'],'24b':[]}
 for c in rows:
     ch,case,dt,scene,chars,figs,st,en=c[:8]
     ids,note=extra.get(ch,(figs,''))

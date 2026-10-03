@@ -1081,25 +1081,25 @@ These names belong to illustrative examples, drills and exercises outside the th
 
 | Name (unit) | Status | Finding (October 3, 2026) |
 |---|---|---|
-| Thar Surya Power (u03) | Rename | Thar Surya 1 is a real 300 MW solar project in Bikaner, Rajasthan (Enel Green Power India; IFC financing proposed 2021) |
-| Al Dhafra Sun Two (u03) | Rename | Al Dhafra PV2 is the real 2 GW Abu Dhabi solar plant (TAQA, Masdar, EDF Renewables, Jinko Power) |
-| Termoeléctrica del Sur SA (u02) | Rename | Planta Termoeléctrica del Sur is a real 480 MW combined-cycle plant in Tarija, Bolivia (ENDE) |
-| Seti Khola Hydropower (u03) | Rename | Seti Khola Hydropower is a real 22 MW run-of-river project in Kaski, Nepal |
-| Ocmulgee Valley Electric Membership Corporation (u03) | Rename | Ocmulgee EMC is a real Georgia electric cooperative (Eastman, Georgia) |
-| Calcasieu Point LNG (u03) | Rename | Too close to Calcasieu Pass LNG (Venture Global, Louisiana) and the Calcasieu LNG project |
-| Ras Gharib Wind SAE (u14) | Rename | Ras Ghareb Wind Energy SAE is the real 262.5 MW Engie, Toyota Tsusho/Eurus and Orascom wind IPP in Egypt |
-| Calatagan Power (u03) | Rename | Calatagan Solar Farm is a real 63.3 MW Solar Philippines plant in Batangas |
-| Noor Draa Solaire SA (u14) | Rename | "Noor" is the brand of Morocco's state solar program (Noor Ouarzazate, Noor Midelt); a "Noor" project company implies a real MASEN project (editor's knowledge; not searched) |
-| Bałtyk Wiatr; Bałtyk Północ Wiatr (u03) | Rename advised | Real Polish offshore wind projects carry the Bałtyk name (Bałtyk I to III; Bałtyk Północ was an earlier project name) (editor's knowledge; not searched) |
-| Mid North Wind (u03) | Rename advised | The Mid North of South Australia hosts many real wind farms (Hallett, Snowtown, Willogoleche); the name reads as a real regional project |
-| Darling Downs Storage Pty Ltd (u14) | Rename advised | Darling Downs Power Station (Origin) and Darling Downs Solar Farm (APA) are real Queensland assets |
-| Moorabool Peaking Partners (u14) | Rename advised | Moorabool Wind Farm is a real Victorian wind farm |
-| Thessaly Airports (u03) | Rename advised | Thessaly is a real Greek region with state airports; an "airports" concession under its name implies a real concession |
-| Autostrada Pedemontana Est SpA (u14) | Rename advised | The Pedemontana Lombarda and Pedemontana Veneta motorways are real PPPs (editor's knowledge; not searched) |
-| Ostrander Bank (u02) | Internal clash | Case R's vPPA buyer is Ostrander Data Systems Inc.; use another bank name |
-| Lindqvist Hydro Partners AB (u17) and Lindqvist Kraft AB (u14) | Internal clash | Two unrelated Swedish parties with the same root; rename one (u17's, which appears later) |
-| Calloway Materials Inc (u17) | Internal clash | Case R's asset R5 is Calloway Mesa Solar; rename |
-| Campiña Solar and Campiña Sur Solar (u03) | Internal clash | Two different u03 examples; rename one unless they are the same party |
+| Thar Surya Power (u03) | Renamed (round 1) to Kesarvan Solar Power Pvt Ltd; not web-checked (consolidation A) | Thar Surya 1 is a real 300 MW solar project in Bikaner, Rajasthan (Enel Green Power India; IFC financing proposed 2021) |
+| Al Dhafra Sun Two (u03) | Renamed (round 1) to Rimal Sabkha Solar PJSC; not web-checked (consolidation A) | Al Dhafra PV2 is the real 2 GW Abu Dhabi solar plant (TAQA, Masdar, EDF Renewables, Jinko Power) |
+| Termoeléctrica del Sur SA (u02) | Renamed (round 1) to Termoeléctrica Cerro Guanaco SA; not web-checked (consolidation A) | Planta Termoeléctrica del Sur is a real 480 MW combined-cycle plant in Tarija, Bolivia (ENDE) |
+| Seti Khola Hydropower (u03) | Renamed (round 1) to Tallo Bhir Hydropower Ltd (u03 and u10); not web-checked (consolidation A) | Seti Khola Hydropower is a real 22 MW run-of-river project in Kaski, Nepal |
+| Ocmulgee Valley Electric Membership Corporation (u03) | Renamed (round 1) to Sandhill Fall Line Electric Membership Corporation; not web-checked (consolidation A) | Ocmulgee EMC is a real Georgia electric cooperative (Eastman, Georgia) |
+| Calcasieu Point LNG (u03) | Renamed (round 1) to Mermentau Shoals LNG; not web-checked (consolidation A) | Too close to Calcasieu Pass LNG (Venture Global, Louisiana) and the Calcasieu LNG project |
+| Ras Gharib Wind SAE (u14) | Renamed (round 1) to Abu Nakhla Wind SAE; not web-checked (consolidation A) | Ras Ghareb Wind Energy SAE is the real 262.5 MW Engie, Toyota Tsusho/Eurus and Orascom wind IPP in Egypt |
+| Calatagan Power (u03) | Renamed (round 1) to Tulay Bato Power Corp.; not web-checked (consolidation A) | Calatagan Solar Farm is a real 63.3 MW Solar Philippines plant in Batangas |
+| Noor Draa Solaire SA (u14) | Renamed (round 1) to Ksar Amellal Solaire SA; not web-checked (consolidation A) | "Noor" is the brand of Morocco's state solar program (Noor Ouarzazate, Noor Midelt); a "Noor" project company implies a real MASEN project (editor's knowledge; not searched) |
+| Bałtyk Wiatr; Bałtyk Północ Wiatr (u03) | Renamed (round 1) to Bursztynowa Ławica Wiatr and Jantarowy Brzeg Wiatr (u03); the u06 drill party (formerly also "Bałtyk Wiatr Holdings") is Pomorskie Wzgórza Wiatr Holdings; not web-checked (consolidation A) | Real Polish offshore wind projects carry the Bałtyk name (Bałtyk I to III; Bałtyk Północ was an earlier project name) (editor's knowledge; not searched) |
+| Mid North Wind (u03) | Renamed (round 1) to Yarrowie Gap Wind Pty Ltd; not web-checked (consolidation A) | The Mid North of South Australia hosts many real wind farms (Hallett, Snowtown, Willogoleche); the name reads as a real regional project |
+| Darling Downs Storage Pty Ltd (u14) | Renamed (round 1) to Condamine Bend Storage Pty Ltd; not web-checked (consolidation A) | Darling Downs Power Station (Origin) and Darling Downs Solar Farm (APA) are real Queensland assets |
+| Moorabool Peaking Partners (u14) | Renamed (round 1) to Lerderderg Peaking Partners; not web-checked (consolidation A) | Moorabool Wind Farm is a real Victorian wind farm |
+| Thessaly Airports (u03) | Renamed (round 1) to Pagasitikos Airports S.A.; not web-checked (consolidation A) | Thessaly is a real Greek region with state airports; an "airports" concession under its name implies a real concession |
+| Autostrada Pedemontana Est SpA (u14) | Renamed (round 1) to Autostrada Colli Berici Est SpA; not web-checked (consolidation A) | The Pedemontana Lombarda and Pedemontana Veneta motorways are real PPPs (editor's knowledge; not searched) |
+| Ostrander Bank (u02) | Renamed (round 1) to Kettleby Bank; not web-checked (consolidation A) | Case R's vPPA buyer is Ostrander Data Systems Inc.; use another bank name |
+| Lindqvist Hydro Partners AB (u17) and Lindqvist Kraft AB (u14) | Renamed (round 1) to Forsberga Hydro Partners AB (u17); Lindqvist Kraft AB (u14) is kept; not web-checked (consolidation A) | Two unrelated Swedish parties with the same root; rename one (u17's, which appears later) |
+| Calloway Materials Inc (u17) | Renamed (round 1) to Ashwicken Materials Inc; not web-checked (consolidation A) | Case R's asset R5 is Calloway Mesa Solar; rename |
+| Campiña Solar and Campiña Sur Solar (u03) | Renamed (round 1) to u03 Exercise 10.11: Marchenilla Fotovoltaica S.L.; u03 Exercise 13.9: Haza del Lirio Solar S.L.; u02 Example 9.4 and Exercise 9.7 (also "Campiña Solar SL"): Cerro Albarizo Solar SL; u11 Example 52.3 (also "Campiña Solar S.L."): Cañada Rosalejo Solar S.L.; not web-checked (consolidation A) | Two different u03 examples; rename one unless they are the same party |
 
 ### 5A.3 Names checked clear in this pass
 

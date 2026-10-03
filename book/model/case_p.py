@@ -2292,6 +2292,8 @@ def figures_annex(F, RS, R1, R14, R15):
                       gain_on_loss_of_control_lenders_basis=float(p24['price_at_completion'] + fv36 - carrying60_l),
                       gain_on_loss_of_control_ifrs=float(p24['price_at_completion'] + fv36 - carrying60_i),
                       hedge_reserve_parent_share_recycled=float(0.60 * hedge),
+                      deferred_consideration_face=4.0, deferred_consideration_fair_value_at_completion=0.0,
+                      deferred_consideration_note='USD 4.0m deferred consideration measured at nil at completion (Annex P 8.3, P-C56); excluded from the consideration line',
                       equity_method_carrying_value_36pct=float(fv36), indirect_transfer_tax=p24['indirect_transfer_tax'],
                       basis='IFRS 10 loss of control: gain = consideration + fair value of the retained 36% (price per point x 36) - 60% of (book equity + shareholder loans) at completion, IFRS basis per P-F56 (pre-tax adjustment); the parent share of the hedge reserve (swap MTM at 3.40%) is recycled to profit; balances interpolated to September 30, 2026')
     # ---- P-F54 Pillar Two estimate
@@ -2433,6 +2435,9 @@ def figures_annex(F, RS, R1, R14, R15):
                       hedge_share=FXH_SHARE, spot_at_trade=FX_FC0, pricing='covered interest parity: 519.4 x ((1 + 13.5%) / (1 + FC forward 6M LIBOR))^(years to settlement)',
                       total_kcr_m=float(K.sum()), total_usd_at_forward=float((K / ua['fx_fwd']).sum()), total_usd_at_fc_spot=float(K.sum() / FX_FC0),
                       average_forward=float(K.sum() / (K / ua['fx_fwd']).sum()), schedule=sched,
+                      schedule_basis=('one forward per monthly onshore EPC payment; forward rates fixed at financial close by covered interest parity; settlement months follow the actual payment '
+                                      'certificates (August 2018 to November 2021, 40 months), because the forwards were re-dated without cost as certificates slipped '
+                                      '(modeler simplification; under the FC schedule the last payment would have been April 2021)'),
                       vat_note='The KCR VAT facility is not hedged: it is matched by the KCR VAT refund receivable (natural hedge); only the facility interest is exposed')
     mtm = {}
     for m in range(nact):

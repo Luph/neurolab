@@ -1,21 +1,24 @@
 # Anchor registry
 
-Status: canonical, 2026-10-03. Compiled by the architecture editor from the anchors, tables of contents, worked-example, exhibit, clause and equation specifications of the 17 unit briefs (`bible/briefs/u01.md` to `u17.md`), with the fixes ordered in `bible/ownership-resolutions.md` (Part M rulings R-114 to R-121 and the label consequences of other rulings). Rulings take precedence over briefs.
+Status: canonical, regenerated October 3, 2026 (consolidation A) from the revised unit briefs (`bible/briefs/u01.md` to `u17.md`, round 1), which are now authoritative, with the rulings in `bible/ownership-resolutions.md` (including R-142 to R-148) and decisions D-048 to D-055. The first issue of 2026-10-03 (5,240 labels) is superseded. The build report is Section 6.
 
-Totals: 5240 labels (91 ch, 1384 sec, 2038 ssec, 572 ex, 589 exh, 159 cl including clause variants, 254 eq, 153 fw), plus 8 front-matter labels.
+Totals: 5558 labels (94 ch, 1425 sec, 2053 ssec, 584 ex, 624 exh, 371 cl including clause variants, 254 eq, 153 fw), plus 1391 exercise labels registered as 89 range rows (`exr:`, Chapters 1 to 88 and 90), 8 front-matter labels (`fm:`) and 3 front-matter exhibits (`exh:fm.1` to `exh:fm.3`).
 
 ## 1. How to use this registry
 
 1. Cite only labels listed here (style sheet 3.4). A label of another chapter prints "??" in a standalone build; that is expected. A label missing from this registry is reported in the status note, never invented.
 2. Section and subsection titles are the briefs' locked TOC headings. Writers may polish wording but must keep numbering; any change of number is a registry change and goes through the editor-in-chief.
-3. Examples, exhibits, clauses and equations are numbered in order of appearance within the chapter. Where the Note column says "implied", the brief describes the object without declaring a label; the writer assigns the label shown, in order of appearance, and reports the final list.
+3. Examples, exhibits, clauses and equations are numbered in order of appearance within the chapter. A caption marked "carried from the 2026-10-03 registry" was not restated in the revised brief; the writer may refine it and reports the final caption.
 4. Clause variants (`cl:N.Ka`, `cl:N.Kb`, ...) exist only inside a `clausevariants` group whose parent is `cl:N.K`. No other label carries a letter suffix.
-5. Exercise labels (`exr:N.K`) run from 1 in each chapter and are not listed individually; they may be cited only inside their own chapter and by matter file 93 (checklists and templates).
-6. A later chapter may display a formula owned elsewhere only as a model row or a specialized application; its equation caption says so and cites the home equation (ruling R-116). Repurposed captions are marked in the Note column.
+5. Exercise labels (`exr:N.K`) run from 1 in each chapter and are registered as one range row per chapter; they may be cited only inside their own chapter and by matter file 93 (checklists and templates).
+6. A later chapter may display a formula owned elsewhere only as a model row or a specialized application; its equation caption says so and cites the home equation (ruling R-116).
 7. Frameworks are numbered within their home chapter (Framework 28.2). Only the home chapter sets the `framework` box; others `\cref` it.
 8. Front matter uses unnumbered headings with `fm:` labels (ruling R-107); matter Chapters 89 to 94 use the chapter scheme.
+9. "new label" in the Note column marks a label absent from the first issue; "was ..." marks a label whose number now names a different object.
 
 ## 2. Duplicates, collisions and fixes
+
+Rows A1 to A14 are the fixes of the first issue (2026-10-03) and remain in force. Rows B1 to B12 are the fixes applied at the regeneration from the revised briefs (consolidation A).
 
 | # | Problem found | Fix (binding) |
 |---|---|---|
@@ -24,7 +27,7 @@ Totals: 5240 labels (91 ch, 1384 sec, 2038 ssec, 572 ex, 589 exh, 159 cl includi
 | A3 | Two equations define WAL (eq:6.2, eq:29.3, eq:36.5); two define bond price (eq:6.5, eq:30.1); YTM is eq:38.6 as well as Ch 6; levelization appears as eq:5.11, eq:47.1, eq:11.6, eq:83.1 and eq:88.2; minimum margin is eq:38.1 and eq:68.1; spark spread is eq:11.7 and eq:69.2; make-whole is eq:30.2 and eq:63.2; RAROC is eq:29.1 and eq:86.1. | Home equations: eq:6.2 (WAL), eq:6.5 (bond price and YTM), eq:5.11 (levelized price), eq:11.6 (LCOE as an instance of eq:5.11), eq:83.1 (LCOH), eq:38.1 (minimum margin), eq:11.7 (clean spark spread), eq:30.2 (make-whole), eq:29.1 (RAROC). The later labels keep their numbers (no renumbering) but are repurposed to the chapter-specific application named in the Note column (R-116). |
 | A4 | Model-row equations restate owned formulas: eq:42.3, eq:42.4, eq:42.5, eq:43.1, eq:45.3, eq:45.5. | Captions changed to "... row, implementing eq:X"; the model chapter does not re-derive the formula. |
 | A5 | Headings duplicate home headings in later chapters: ssec:30.3.1 ("Coupon, price, and yield", duplicating ssec:6.7.1), ssec:30.3.2 and ssec:36.9.1 (WAL, duplicating ssec:6.3.2), sec:65.5 and ssec:65.5.2 ("Terminal value", duplicating ssec:46.4.3), ssec:68.5.1 ("The minimum margin", duplicating ssec:38.1.1), ssec:80.2.2 ("Single till and dual till", duplicating ssec:21.8.1), ssec:6.8.2 (credit and execution charge, owned by ssec:38.4.1). | Retitled as shown in the chapter tables (R-004, R-005, R-007, R-014, R-055, R-075). |
-| A6 | Framework names collide: Framework 87.3 "integrity check" against Framework 43.2 "integrity-check catalogue" (model checks). | Framework 87.3 becomes "The integrity test", slug `fw:integrity-test` (R-118). |
+| A6 | Framework names collide: Framework 87.3 "integrity check" against Framework 43.2 "integrity-check catalog" (model checks). | Framework 87.3 becomes "The integrity test", slug `fw:integrity-test` (R-118). |
 | A7 | Framework 79.1 (`fw:demand-risk-menu`) teaches instruments owned by Ch 57 and Ch 58. | Kept as a sector selection tool, renamed "Demand-risk sharing menu for toll roads"; it cites ssec:57.5.1 and ssec:58.1.3 for mechanics (R-052). |
 | A8 | New subsections required by rulings. | `ssec:27.3.4` Cyber cover for operating assets; `ssec:62.5.4` Operational-technology cyber controls and reporting; `ssec:66.4.7` Decommissioning provisions and asset retirement obligations. Each is appended after the last existing subsection, so no existing label moves. |
 | A9 | Briefs for Chapters 5 to 9, 15, 67, 68, 84 and 86 describe some exhibits and clauses without declaring labels (for example "Exhibit 5.3", "Exhibit 7.1", "Clause 15.1", "Clause 67.1"). | Listed below as implied labels; writers assign them in order of appearance. |
@@ -33,6 +36,18 @@ Totals: 5240 labels (91 ch, 1384 sec, 2038 ssec, 572 ex, 589 exh, 159 cl includi
 | A12 | `fw:deal-on-a-page` (Ch 1) and `fw:loss-trace` (Ch 3) are reused by later chapters. | Ch 85 (sec:85.2) cites `fw:deal-on-a-page` for the first screen block; Ch 28 (sec:28.6) and Ch 64 cite `fw:loss-trace` alongside `fw:who-pays-if` (R-111). |
 | A13 | Risk templates for matter file 93. | Matter 93 reproduces `exh:14.6` (risk register) and `exh:15.3` (allocation matrix) (R-039). |
 | A14 | Book-wide uniqueness check. | No label is declared by two briefs; no section, subsection, example, exhibit or equation number is declared twice with different content within a chapter except those fixed in A1 to A5; framework numbers are unique within each chapter. |
+| B1 | The revised briefs, not the first issue, are authoritative. | Every label was re-extracted from the revised briefs' anchor sections, locked tables of contents and worked-example lists; captions follow the locked TOC for sections and subsections and the anchor tables for other labels. Captions not stated in any revised brief are carried from the first issue and marked in the Note column. |
+| B2 | R-135 and R-136 named ssec:5.0 and ssec:7.6.4; the revised u02 brief placed the primer at ssec:5.2.2 and the tax rules at ssec:7.11.4 (with ex:7.12). | ssec:5.2.2 and ssec:7.11.4 are registered; ssec:5.0 and ssec:7.6.4 do not exist. Every brief reference was rewritten (R-142, D-048). |
+| B3 | Clause variant groups were missing or held parse debris (sequencing defect 21, standards defect 12). | Every group is written as one row per letter, captioned "<parent caption> (Illustrative, <party>-friendly)". Groups declared only as "(a, b, c)" in u05 were generated with a sponsor-, b lender- and c the counterparty named in u05's clause variant inventory. The debris rows cl:35.2 "with" and cl:35.2c are gone (cl:35.2 has a and b only). |
+| B4 | Clauses renumbered in order of appearance by u05 (Ch 21), u06 (Ch 26 to 28), u13 (Ch 63) and examples, exhibits and equations relabeled by u15 and u16. | The revised numbering is registered; the Note column records "was ..." where a label changed meaning. A label that changed meaning must not be cited with its old sense. |
+| B5 | Ch 62 drafted waiver-condition and reservation-of-rights variants that R-126 gives to Ch 51. | cl:62.1a, cl:62.1b and cl:62.2 are withdrawn; cl:62.1 is the Case P letter applying Clause 51.8; ssec:62.7.4 is "Applying the waiver letter to the Case P breach" (R-143). |
+| B6 | Combined-case headings sec:31.11, sec:68.11, sec:73.9 and sec:84.12. | Single-case headings with case-headed subsections: ssec:31.11.1 and 31.11.2, ssec:68.11.1 and 68.11.2, ssec:84.12.1 to 84.12.3; sec:73.9 keeps Case P's 225 kV line as narration (u15). |
+| B7 | Framework homes moved by the revised briefs. | Framework 6.2 home ssec:6.5.4; Framework 8.1 home ssec:8.3.3; Framework 28.1 home sec:28.5. Framework 43.2 is spelled "integrity-check catalog" (slug unchanged); Framework 86.2 matches sec:86.3 and its home is ssec:86.3.1 (the box; ssec:86.2.4 only points forward). |
+| B8 | Exercise labels were registered nowhere individually. | One range row per chapter (`exr:N.1` to `exr:N.K`), K taken from the brief's exercise set and checked against its anchor table and exercise list; Ch 90 questions run `exr:90.1` to `exr:90.68`. |
+| B9 | Matter labels (sequencing defect 33). | sec:89.1 to sec:89.29, exh:89.1 to exh:89.3, sec:90.1 to sec:90.12, exh:90.1, ch:91 to ch:94 and exh:91.1 registered with the u17 captions; further capstone exhibits from exh:89.4 are assigned by the writer and reported. |
+| B10 | Placement notes inside captions (for example "(Illustrative; ssec:23.1.1)"). | Placement moved to the Note column; the caption keeps only its status label. |
+| B11 | Equations restated outside their home (R-116). | The revised captions say "implementing eq:X", "applying eq:X" or "citing eq:X"; the Note column keeps any further application note from the brief. |
+| B12 | Chapter titles. | Every `ch:` caption and chapter heading below is the architecture.md title verbatim (R-113, D-040); matter titles come from the u17 headers. |
 
 ## 3. Frameworks, book-wide
 
@@ -47,9 +62,9 @@ Totals: 5240 labels (91 ch, 1384 sec, 2038 ssec, 572 ex, 589 exh, 159 cl includi
 | 5.1 | `fw:irr-four-questions` | Four questions before trusting an IRR | Ch 5 | ssec:5.6.5 |
 | 5.2 | `fw:indexation-audit` | Indexation audit | Ch 5 | ssec:5.10.4 |
 | 6.1 | `fw:loan-hedge-tieout` | Loan-and-hedge tie-out | Ch 6 | sec:6.10 |
-| 6.2 | `fw:rate-quote-decoder` | Rate quote decoder | Ch 6 | sec:6.2 |
+| 6.2 | `fw:rate-quote-decoder` | Rate quote decoder | Ch 6 | ssec:6.5.4 |
 | 7.1 | `fw:project-accounts-read` | First read of project company accounts | Ch 7 | ssec:7.11.1 |
-| 8.1 | `fw:leverage-ledger` | Leverage ledger | Ch 8 | sec:8.11 |
+| 8.1 | `fw:leverage-ledger` | Leverage ledger | Ch 8 | ssec:8.3.3 |
 | 9.1 | `fw:pvalue-reading` | P-value reading checklist | Ch 9 | sec:9.10 |
 | 9.2 | `fw:uncertainty-tool-choice` | Choosing the uncertainty tool | Ch 9 | ssec:9.8.4 |
 | 10.1 | `fw:clause-consequence-test` | Clause consequence test | Ch 10 | ssec:10.2.4 |
@@ -57,7 +72,7 @@ Totals: 5240 labels (91 ch, 1384 sec, 2038 ssec, 572 ex, 589 exh, 159 cl includi
 | 11.1 | `fw:megawatt-to-revenue` | Megawatt-to-revenue chain | Ch 11 | sec:11.14 |
 | 12.1 | `fw:physical-chain-map` | Physical chain map | Ch 12 | sec:12.12 |
 | 13.1 | `fw:formula-robustness-test` | Formula robustness test | Ch 13 | sec:13.5 |
-| 14.1 | `fw:risk-card` | The risk card | Ch 14 | ssec:14.1.2 |
+| 14.1 | `fw:risk-card` | Risk card | Ch 14 | ssec:14.1.2 |
 | 14.2 | `fw:phase-risk-map` | Phase-by-category risk map | Ch 14 | ssec:14.2.4 |
 | 15.1 | `fw:risk-cycle` | Risk management cycle | Ch 15 | ssec:15.1.1 |
 | 15.2 | `fw:allocation-test` | Allocation test | Ch 15 | ssec:15.5.1 |
@@ -82,7 +97,7 @@ Totals: 5240 labels (91 ch, 1384 sec, 2038 ssec, 572 ex, 589 exh, 159 cl includi
 | 25.1 | `fw:input-chain-alignment` | Input chain alignment grid | Ch 25 | sec:25.9 |
 | 26.1 | `fw:sponsor-support-spectrum` | Sponsor support spectrum | Ch 26 | ssec:26.5.1 |
 | 27.1 | `fw:insurance-adequacy-test` | Insurance program adequacy test | Ch 27 | sec:27.8 |
-| 28.1 | `fw:contract-gap-scan` | Contract gap scan | Ch 28 | sec:28.2 |
+| 28.1 | `fw:contract-gap-scan` | Contract gap scan | Ch 28 | sec:28.5 |
 | 28.2 | `fw:who-pays-if` | "Who pays if...?" trace | Ch 28 | ssec:28.6.1 |
 | 29.1 | `fw:lender-fit-map` | Lender-fit map | Ch 29 | sec:29.8 |
 | 29.2 | `fw:eca-cover-build` | ECA cover build | Ch 29 | ssec:29.3.7 |
@@ -94,11 +109,11 @@ Totals: 5240 labels (91 ch, 1384 sec, 2038 ssec, 572 ex, 589 exh, 159 cl includi
 | 33.2 | `fw:islamic-parity-check` | Islamic and conventional parity check | Ch 33 | ssec:33.5.2 |
 | 34.1 | `fw:blending-decision-test` | Blending decision test | Ch 34 | ssec:34.3.2 |
 | 34.2 | `fw:local-currency-route-map` | Local-currency route map | Ch 34 | ssec:34.6.5 |
-| 35.1 | `fw:four-ratio-read` | Four-ratio read | Ch 35 | ssec:35.6.3 |
-| 36.1 | `fw:sizing-constraint-stack` | Sizing constraint stack | Ch 36 | ssec:36.3.2 |
-| 37.1 | `fw:trigger-ladder` | Trigger ladder | Ch 37 | ssec:37.5.1 |
-| 37.2 | `fw:hedge-fit-test` | Hedge fit test | Ch 37 | ssec:37.7.2 |
-| 38.1 | `fw:all-in-cost-build` | All-in cost build | Ch 38 | sec:38.6 |
+| 35.1 | `fw:four-ratio-read` | The four-ratio read | Ch 35 | ssec:35.6.3 |
+| 36.1 | `fw:sizing-constraint-stack` | The sizing constraint stack | Ch 36 | ssec:36.3.2 |
+| 37.1 | `fw:trigger-ladder` | The trigger ladder | Ch 37 | ssec:37.5.1 |
+| 37.2 | `fw:hedge-fit-test` | The hedge fit test | Ch 37 | ssec:37.7.2 |
+| 38.1 | `fw:all-in-cost-build` | The all-in cost build | Ch 38 | sec:38.6 |
 | 39.1 | `fw:model-blueprint` | The model blueprint | Ch 39 | ssec:39.1.3 |
 | 40.1 | `fw:circularity-ladder` | The circularity ladder | Ch 40 | ssec:40.5.5 |
 | 41.1 | `fw:tariff-to-row-map` | The tariff-to-row map | Ch 41 | ssec:41.4.4 |
@@ -106,7 +121,7 @@ Totals: 5240 labels (91 ch, 1384 sec, 2038 ssec, 572 ex, 589 exh, 159 cl includi
 | 42.1 | `fw:waterfall-tier` | The four-row waterfall tier | Ch 42 | ssec:42.1.2 |
 | 42.2 | `fw:dividend-trap-test` | The dividend trap test | Ch 42 | ssec:42.5.3 |
 | 43.1 | `fw:locked-debt-test-protocol` | The locked-debt test protocol | Ch 43 | sec:43.2 |
-| 43.2 | `fw:integrity-check-catalogue` | The integrity-check catalogue | Ch 43 | ssec:43.7.1 |
+| 43.2 | `fw:integrity-check-catalogue` | The integrity-check catalog | Ch 43 | ssec:43.7.1 |
 | 44.1 | `fw:seven-pass-review` | The seven-pass model review | Ch 44 | sec:44.2 |
 | 44.2 | `fw:finding-severity` | Finding severity grades | Ch 44 | ssec:44.2.8 |
 | 45.1 | `fw:revenue-driver-decomposition` | Revenue driver decomposition | Ch 45 | sec:45.1 |
@@ -150,7 +165,7 @@ Totals: 5240 labels (91 ch, 1384 sec, 2038 ssec, 572 ex, 589 exh, 159 cl includi
 | 63.1 | `fw:refinancing-gain-bridge` | Refinancing gain bridge | Ch 63 | ssec:63.2.1 |
 | 63.2 | `fw:stake-sale-consent-map` | Stake-sale consent map | Ch 63 | ssec:63.6.3 |
 | 64.1 | `fw:distress-dashboard` | Distress early-warning dashboard | Ch 64 | ssec:64.2.3 |
-| 64.2 | `fw:restructure-sell-enforce-terminate` | Restructure, sell, enforce or terminate | Ch 64 | ssec:64.6.3 |
+| 64.2 | `fw:restructure-sell-enforce-terminate` | Restructure, sell, enforce, or terminate | Ch 64 | ssec:64.6.3 |
 | 65.1 | `fw:handback-readiness-timeline` | Handback readiness timeline | Ch 65 | ssec:65.3.2 |
 | 65.2 | `fw:end-of-life-option-tree` | End-of-life option tree | Ch 65 | ssec:65.4.2 |
 | 66.1 | `fw:accounting-outcome-map` | Accounting outcome map | Ch 66 | ssec:66.8.5 |
@@ -180,17 +195,17 @@ Totals: 5240 labels (91 ch, 1384 sec, 2038 ssec, 572 ex, 589 exh, 159 cl includi
 | 83.1 | `fw:market-risk-trace` | Market-risk holder trace | Ch 83 | ssec:83.5.1 |
 | 84.1 | `fw:label-test` | Three-question label test | Ch 84 | ssec:84.1.2 |
 | 84.2 | `fw:project-climate-screen` | Project climate risk screen | Ch 84 | ssec:84.6.6 |
-| 85.1 | `fw:one-hour-deal-screen` | One-hour deal screen | Ch 85 | sec:85.2 |
-| 85.2 | `fw:deal-questions` | Questions to ask on any deal | Ch 85 | ssec:85.4.1 |
+| 85.1 | `fw:one-hour-deal-screen` | The one-hour deal screen | Ch 85 | sec:85.2 |
+| 85.2 | `fw:deal-questions` | The questions to ask on any deal | Ch 85 | ssec:85.4.1 |
 | 85.3 | `fw:data-room-reading-order` | Data room reading order | Ch 85 | ssec:85.5.2 |
 | 86.1 | `fw:credit-paper-structure` | Credit paper structure | Ch 86 | sec:86.2 |
-| 86.2 | `fw:risk-mitigant-residual` | Risk–mitigant–residual table | Ch 86 | ssec:86.2.4 |
-| 86.3 | `fw:committee-pre-mortem` | Committee pre-mortem | Ch 86 | ssec:86.5.3 |
-| 87.1 | `fw:advisor-cycle` | Advisor management cycle | Ch 87 | ssec:87.1.3 |
-| 87.2 | `fw:judgment-plan` | Judgment-building plan | Ch 87 | ssec:87.8.7 |
+| 86.2 | `fw:risk-mitigant-residual` | The risk, mitigant, and residual table | Ch 86 | ssec:86.3.1 |
+| 86.3 | `fw:committee-pre-mortem` | The committee pre-mortem | Ch 86 | ssec:86.5.3 |
+| 87.1 | `fw:advisor-cycle` | The advisor management cycle | Ch 87 | ssec:87.1.3 |
+| 87.2 | `fw:judgment-plan` | The judgment-building plan | Ch 87 | ssec:87.8.7 |
 | 87.3 | `fw:integrity-test` | The integrity test | Ch 87 | ssec:87.5.2 |
-| 88.1 | `fw:new-structure-test` | New-structure test | Ch 88 | ssec:88.2.1 |
-| 88.2 | `fw:foak-ladder` | First-of-a-kind financing ladder | Ch 88 | ssec:88.3.1 |
+| 88.1 | `fw:new-structure-test` | The new-structure test | Ch 88 | ssec:88.2.1 |
+| 88.2 | `fw:foak-ladder` | The first-of-a-kind financing ladder | Ch 88 | ssec:88.3.1 |
 
 Established frameworks credited in prose next to their home box: critical path method (Framework 55.2), pre-mortem technique (Framework 86.3 and the pre-mortem in ssec:15.1.3), FAST standard (cited in Ch 39, not a numbered framework), EP4 scope rules (Framework 50.2 is original but built on them), IFC Performance Standards and OECD Arrangement rules (Framework 29.2 is original procedure built on the Arrangement). All other frameworks are original to this book.
 
@@ -206,8 +221,11 @@ Established frameworks credited in prose next to their home box: critical path m
 | `fm:exercises` | How to work the exercises |
 | `fm:model-builds` | How to work the model builds |
 | `fm:caveat` | The general caveat |
+| `exh:fm.1` | Capability map |
+| `exh:fm.2` | Cast list |
+| `exh:fm.3` | Study plan |
 
-Front-matter exhibits are labeled `exh:fm.1` to `exh:fm.3` (capability map, cast list, study plan) and print as Exhibit FM.1 to FM.3.
+Front-matter exhibits print as Exhibit FM.1 to FM.3 (style sheet A.7).
 
 ## 5. Labels by chapter
 
@@ -221,16 +239,16 @@ Source brief: `briefs/u01.md`.
 | `sec:1.1` | Llano Pardo Solar on one page |  |
 | `ssec:1.1.1` | The plant, the place, and the parties |  |
 | `ssec:1.1.2` | The deal on a page |  |
-| `sec:1.2` | Development: from an option on grazing land to a winning bid |  |
+| `sec:1.2` | From an option on grazing land to a winning bid |  |
 | `ssec:1.2.1` | Land, sunlight, and the measurement record |  |
 | `ssec:1.2.2` | Permits and the grid connection |  |
 | `ssec:1.2.3` | The tender and the bid tariff |  |
 | `sec:1.3` | The contracts that make the cash flow predictable |  |
 | `ssec:1.3.1` | The power purchase agreement |  |
-| `ssec:1.3.2` | The EPC contract |  |
+| `ssec:1.3.2` | Montajes Cordillera's fixed-price EPC contract |  |
 | `ssec:1.3.3` | Operations, land, and insurance |  |
 | `ssec:1.3.4` | How the contracts lock together |  |
-| `sec:1.4` | The model: from sunlight to cash for lenders |  |
+| `sec:1.4` | Modeling sunlight into cash for lenders |  |
 | `ssec:1.4.1` | One year of cash flow |  |
 | `ssec:1.4.2` | Twenty years in one table |  |
 | `sec:1.5` | Sizing the debt |  |
@@ -238,8 +256,8 @@ Source brief: `briefs/u01.md`.
 | `ssec:1.5.2` | Two tests, and the smaller one wins |  |
 | `ssec:1.5.3` | Testing the bad years |  |
 | `sec:1.6` | Walkthrough: the Llano Pardo term sheet |  |
-| `sec:1.7` | Financial close |  |
-| `sec:1.8` | Construction |  |
+| `sec:1.7` | Financial close on November 29, 2016 |  |
+| `sec:1.8` | Thirteen months of construction |  |
 | `sec:1.9` | Operations and repayment |  |
 | `ssec:1.9.1` | The first year comes in 7.5% short |  |
 | `ssec:1.9.2` | The waterfall every December |  |
@@ -264,15 +282,16 @@ Source brief: `briefs/u01.md`.
 | `ex:1.10` | What the sponsors earned |  |
 | `exh:1.1` | Llano Pardo contract map (Illustrative) |  |
 | `exh:1.2` | Llano Pardo on one page (Illustrative) |  |
-| `exh:1.3` | Llano Pardo operating costs in Operating Year 1 (USD thousands) (Illustrative) |  |
-| `exh:1.4` | Llano Pardo base-case projection, 2018 to 2037 (USD thousands) (Illustrative) |  |
-| `exh:1.5` | CFADS and debt service, 2018 to 2037 (USD thousands) (Illustrative) |  |
+| `exh:1.3` | Llano Pardo operating costs in Operating Year 1 (USD k) (Illustrative) |  |
+| `exh:1.4` | Llano Pardo base-case projection, 2018 to 2037 (USD k) (Illustrative) |  |
+| `exh:1.5` | CFADS and debt service, 2018 to 2037 (USD k) (Illustrative) |  |
 | `exh:1.6` | Llano Pardo term sheet, August 2016 (Illustrative) |  |
-| `exh:1.7` | Sources and uses at financial close (USD thousands) (Illustrative) |  |
-| `exh:1.8` | Construction drawdowns by quarter (USD thousands) (Illustrative) |  |
+| `exh:1.7` | Sources and uses at financial close (USD k) (Illustrative) |  |
+| `exh:1.8` | Construction drawdowns by quarter (USD k) (Illustrative) |  |
 | `exh:1.9` | Llano Pardo from land option to decommissioning (Illustrative) |  |
 | `exh:1.10` | The Llano Pardo cash waterfall (Illustrative) |  |
 | `fw:deal-on-a-page` | Framework 1.1 The deal on a page | home ssec:1.1.2 |
+| `exr:1.1` to `exr:1.14` | Exercises (14) | range; cited only inside Ch 1 and by matter file 93 |
 
 ### Chapter 2: What project finance is, and when to use it
 
@@ -284,27 +303,27 @@ Source brief: `briefs/u01.md`.
 | `sec:2.1` | The project company and its ring-fence |  |
 | `ssec:2.1.1` | A company with one asset and no history |  |
 | `ssec:2.1.2` | What the ring-fence keeps in and keeps out |  |
-| `ssec:2.1.3` | SunEdison and TerraForm: a ring-fence tested |  |
-| `sec:2.2` | Recourse: what lenders can reach |  |
+| `ssec:2.1.3` | SunEdison, TerraForm, and a ring-fence under test |  |
+| `sec:2.2` | What lenders can reach |  |
 | `ssec:2.2.1` | Non-recourse, limited recourse, full recourse |  |
 | `ssec:2.2.2` | Where limited recourse sits in practice |  |
 | `sec:2.3` | The contractual web |  |
 | `ssec:2.3.1` | Contracts in place of a balance sheet |  |
 | `ssec:2.3.2` | Giving each risk to the party best able to manage it |  |
-| `ssec:2.3.3` | Sabine Pass: contracts that made a plant financeable |  |
+| `ssec:2.3.3` | How contracts made Sabine Pass financeable |  |
 | `sec:2.4` | Project finance and its neighbors |  |
 | `ssec:2.4.1` | Corporate finance |  |
 | `ssec:2.4.2` | Asset finance and leasing |  |
-| `ssec:2.4.3` | Reserve-based lending |  |
+| `ssec:2.4.3` | Reserve-based lending compared with project finance |  |
 | `ssec:2.4.4` | Acquisition finance |  |
 | `ssec:2.4.5` | Securitization and structured finance |  |
-| `sec:2.5` | Why sponsors, lenders, and governments choose it |  |
+| `sec:2.5` | What sponsors, lenders, and governments gain from project finance |  |
 | `ssec:2.5.1` | Risk isolation and debt capacity |  |
 | `ssec:2.5.2` | Governance and agency costs |  |
 | `ssec:2.5.3` | Partnering and political deterrence |  |
 | `ssec:2.5.4` | What the host government gets |  |
 | `sec:2.6` | What project finance costs |  |
-| `ssec:2.6.1` | Money and time |  |
+| `ssec:2.6.1` | Transaction costs and time to close |  |
 | `ssec:2.6.2` | Rigidity, information, and control |  |
 | `sec:2.7` | When project finance is the wrong tool |  |
 | `sec:2.8` | Walkthrough: a board paper choosing between corporate debt and project finance |  |
@@ -316,15 +335,16 @@ Source brief: `briefs/u01.md`.
 | `sec:2.14` | Solutions to exercises |  |
 | `ex:2.1` | Two ways to fund a wind farm |  |
 | `ex:2.2` | Climbing the recourse ladder |  |
-| `ex:2.3` | Who should carry module soiling at Llano Pardo? |  |
+| `ex:2.3` | Assigning the 2018 soiling loss at Llano Pardo |  |
 | `ex:2.4` | What project finance costs on the wind farm |  |
 | `ex:2.5` | Too small for project finance |  |
 | `exh:2.1` | Project finance and its six neighbors |  |
-| `exh:2.2` | Board paper summary: corporate route against project finance (USD m) (Illustrative) |  |
-| `exh:2.3` | if it teaches |  |
+| `exh:2.2` | Board paper summary of the corporate route against project finance (USD m) (Illustrative) |  |
+| `exh:2.3` | The two directions of ring-fencing (Illustrative) |  |
 | `cl:2.1` | Single-purpose and separateness undertaking, common terms agreement (Illustrative) |  |
 | `fw:recourse-ladder` | Framework 2.1 The recourse ladder | home ssec:2.2.2 |
 | `fw:pf-fit-test` | Framework 2.2 The project finance fit test | home sec:2.7 |
+| `exr:2.1` to `exr:2.14` | Exercises (14) | range; cited only inside Ch 2 and by matter file 93 |
 
 ### Chapter 3: How project finance evolved
 
@@ -339,16 +359,16 @@ Source brief: `briefs/u01.md`.
 | `sec:3.2` | Independent power in the United States |  |
 | `sec:3.3` | The emerging-market IPP wave |  |
 | `ssec:3.3.1` | Hub Power and the sovereign support package |  |
-| `ssec:3.3.2` | Dabhol: a contract cannot make power affordable |  |
+| `ssec:3.3.2` | Dabhol and the limits of a contract on affordability |  |
 | `ssec:3.3.3` | Paiton I and the Asian crisis |  |
 | `ssec:3.3.4` | Multilateral institutions as lenders and shields |  |
 | `sec:3.4` | Megaprojects and the debt trap |  |
 | `sec:3.5` | The PFI and PPP era |  |
-| `sec:3.6` | After 2008: banks retreat, rules change, new lenders arrive |  |
+| `sec:3.6` | Bank retreat, new rules, and new lenders after 2008 |  |
 | `ssec:3.6.1` | The crisis and the banks |  |
 | `ssec:3.6.2` | Basel and the price of a project loan |  |
-| `ssec:3.6.3` | Insurers, pension funds and debt funds |  |
-| `sec:3.7` | Public credit for new technology: Ivanpah |  |
+| `ssec:3.6.3` | Insurers, pension funds, and debt funds |  |
+| `sec:3.7` | Ivanpah and public credit for new technology |  |
 | `sec:3.8` | The energy transition at scale |  |
 | `sec:3.9` | Digital infrastructure and the new frontier |  |
 | `sec:3.10` | What each era taught |  |
@@ -366,6 +386,7 @@ Source brief: `briefs/u01.md`.
 | `exh:3.1` | Project finance eras, 1930s to 2026 |  |
 | `exh:3.2` | What each era taught |  |
 | `fw:loss-trace` | Framework 3.1 The loss trace | home sec:3.10 |
+| `exr:3.1` to `exr:3.10` | Exercises (10) | range; cited only inside Ch 3 and by matter file 93 |
 
 ### Chapter 4: The parties and the project lifecycle
 
@@ -382,18 +403,18 @@ Source brief: `briefs/u01.md`.
 | `sec:4.2` | The project company and its management |  |
 | `sec:4.3` | Lenders |  |
 | `ssec:4.3.1` | Commercial banks and the arranger |  |
-| `ssec:4.3.2` | Export credit agencies |  |
-| `ssec:4.3.3` | Development finance institutions |  |
-| `ssec:4.3.4` | Bondholders, institutional investors and private credit |  |
+| `ssec:4.3.2` | Export credit agencies and the exports they support |  |
+| `ssec:4.3.3` | Development finance institutions and their mandates |  |
+| `ssec:4.3.4` | Bondholders, institutional investors, and private credit |  |
 | `ssec:4.3.5` | Lenders under stress |  |
-| `sec:4.4` | Offtakers |  |
-| `sec:4.5` | Host governments, contracting authorities and regulators |  |
-| `sec:4.6` | Builders, equipment suppliers and operators |  |
+| `sec:4.4` | Offtakers under contract and under stress |  |
+| `sec:4.5` | Host governments, contracting authorities, and regulators |  |
+| `sec:4.6` | Builders, equipment suppliers, and operators |  |
 | `ssec:4.6.1` | EPC contractors and OEMs |  |
 | `ssec:4.6.2` | O&M operators and long-term service providers |  |
 | `ssec:4.6.3` | A contractor fails mid-construction |  |
-| `sec:4.7` | Input suppliers, insurers and hedge providers |  |
-| `sec:4.8` | Advisors, agents, trustees and rating agencies |  |
+| `sec:4.7` | Input suppliers, insurers, and hedge providers |  |
+| `sec:4.8` | Advisors, agents, trustees, and rating agencies |  |
 | `sec:4.9` | Reading the whole cast |  |
 | `sec:4.10` | The project lifecycle |  |
 | `ssec:4.10.1` | Origination |  |
@@ -404,7 +425,7 @@ Source brief: `briefs/u01.md`.
 | `ssec:4.10.6` | Refinancing and sale |  |
 | `ssec:4.10.7` | Decommissioning or handback |  |
 | `sec:4.11` | Walkthrough: a development budget and team plan |  |
-| `sec:4.12` | Case P: a partnership, a budget and a team |  |
+| `sec:4.12` | Case P: a partnership, a budget, and a team |  |
 | `sec:4.13` | Practitioner's notebook |  |
 | `sec:4.14` | Judgment drill |  |
 | `sec:4.15` | Every party has a price; the first one to name is the price of money over time |  |
@@ -412,16 +433,17 @@ Source brief: `briefs/u01.md`.
 | `sec:4.17` | Solutions to exercises |  |
 | `ex:4.1` | Where Llano Pardo's revenue went |  |
 | `ex:4.2` | Money at risk through development |  |
-| `ex:4.3` | A six-month construction delay: who pays |  |
+| `ex:4.3` | Who pays for a six-month construction delay |  |
 | `ex:4.4` | ELNACOR pays 60 days late |  |
 | `exh:4.1` | Llano Pardo party map (Illustrative) |  |
-| `exh:4.2` | Llano Pardo lifecycle gates (USD thousands) (Illustrative) |  |
-| `exh:4.3` | Where Llano Pardo's revenue went, 2018 to 2037 (USD thousands) (Illustrative) |  |
-| `exh:4.4` | Llano Pardo development budget and appointments (USD thousands) (Illustrative) |  |
+| `exh:4.2` | Llano Pardo lifecycle gates (USD k) (Illustrative) |  |
+| `exh:4.3` | Where Llano Pardo's revenue went, 2018 to 2037 (USD k) (Illustrative) |  |
+| `exh:4.4` | Llano Pardo development budget and appointments (USD k) (Illustrative) |  |
 | `exh:4.5` | Case P lifecycle, 2015 to 2046 (Case P) |  |
 | `exh:4.6` | Case P development budget against actual costs to financial close (USD m) (Case P) |  |
 | `fw:party-map` | Framework 4.1 The party map | home sec:4.9 |
 | `fw:lifecycle-gates` | Framework 4.2 The lifecycle gates | home sec:4.10 |
+| `exr:4.1` to `exr:4.12` | Exercises (12) | range; cited only inside Ch 4 and by matter file 93 |
 
 ### Chapter 5: Money and time
 
@@ -436,9 +458,9 @@ Source brief: `briefs/u02.md`.
 | `ssec:5.1.3` | The rule of 72 and when it fails |  |
 | `sec:5.2` | Discounting and present value |  |
 | `ssec:5.2.1` | Present value of a single future amount |  |
-| `ssec:5.2.2` | The discount-factor table |  |
+| `ssec:5.2.2` | Building a discount-factor table in a first spreadsheet |  |
 | `ssec:5.2.3` | What the discount rate stands for |  |
-| `sec:5.3` | Annuities, perpetuities and levelized prices |  |
+| `sec:5.3` | Annuities, perpetuities, and levelized prices |  |
 | `ssec:5.3.1` | Level annuities |  |
 | `ssec:5.3.2` | Growing annuities and perpetuities |  |
 | `ssec:5.3.3` | Levelized cost and levelized tariff |  |
@@ -455,8 +477,8 @@ Source brief: `briefs/u02.md`.
 | `ssec:5.6.3` | Scale and incremental IRR |  |
 | `ssec:5.6.4` | Timing and the crossover rate |  |
 | `ssec:5.6.5` | Four questions before trusting an IRR |  |
-| `sec:5.7` | Irregular dates: XNPV and XIRR |  |
-| `ssec:5.7.1` | Why period counting breaks |  |
+| `sec:5.7` | XNPV and XIRR for irregular dates |  |
+| `ssec:5.7.1` | Period counting fails on real dates |  |
 | `ssec:5.7.2` | Computing XIRR |  |
 | `ssec:5.7.3` | Annualizing periodic returns |  |
 | `sec:5.8` | Payback and discounted payback |  |
@@ -466,8 +488,8 @@ Source brief: `briefs/u02.md`.
 | `ssec:5.9.2` | Real and nominal cash flows |  |
 | `ssec:5.9.3` | Inflation in a project's cash flows |  |
 | `sec:5.10` | Indexation in long-term contracts |  |
-| `ssec:5.10.1` | Full, partial and fixed-escalator indexation |  |
-| `ssec:5.10.2` | Lags, resets and caps |  |
+| `ssec:5.10.1` | Full, partial, and fixed-escalator indexation |  |
+| `ssec:5.10.2` | Lags, resets, and caps |  |
 | `ssec:5.10.3` | Local-currency shares and reconversion |  |
 | `ssec:5.10.4` | Indexation audit |  |
 | `sec:5.11` | Walkthrough: building an NPV and IRR sheet in a blank workbook |  |
@@ -488,7 +510,7 @@ Source brief: `briefs/u02.md`.
 | `ex:5.8` | The Excel NPV first-period trap |  |
 | `ex:5.9` | A mine with a reclamation bill |  |
 | `ex:5.10` | Reinvestment and MIRR |  |
-| `ex:5.11` | Scale: the smaller project with the higher IRR |  |
+| `ex:5.11` | The smaller project with the higher IRR |  |
 | `ex:5.12` | Timing and the crossover rate |  |
 | `ex:5.13` | XIRR on an equity investor's dated cash flows |  |
 | `ex:5.14` | Payback and discounted payback |  |
@@ -498,7 +520,7 @@ Source brief: `briefs/u02.md`.
 | `ex:5.18` | A local-currency share under parity and under overshoot |  |
 | `exh:5.1` | Discount factors at 9.25% |  |
 | `exh:5.2` | NPV profile of the gas-engine life extension |  |
-| `exh:5.3` | pgfplots line chart of the same | implied by the brief text; writer assigns this label in order of appearance |
+| `exh:5.3` | NPV of the gas-engine life extension against the discount rate |  |
 | `exh:5.4` | Two NPV profiles that cross |  |
 | `exh:5.5` | Nominal and real paths of a partially indexed charge |  |
 | `exh:5.6` | Layout of an NPV and IRR sheet |  |
@@ -514,9 +536,10 @@ Source brief: `briefs/u02.md`.
 | `eq:5.8` | XNPV with Actual/365 year fractions |  |
 | `eq:5.9` | Fisher relation |  |
 | `eq:5.10` | Partial indexation |  |
-| `eq:5.11` | Levelized price |  |
+| `eq:5.11` | Levelized price | home equation, R-001, R-116 |
 | `fw:irr-four-questions` | Framework 5.1 Four questions before trusting an IRR | home ssec:5.6.5 |
 | `fw:indexation-audit` | Framework 5.2 Indexation audit | home ssec:5.10.4 |
+| `exr:5.1` to `exr:5.17` | Exercises (17) | range; cited only inside Ch 5 and by matter file 93 |
 
 ### Chapter 6: Debt and interest rates
 
@@ -526,13 +549,13 @@ Source brief: `briefs/u02.md`.
 |---|---|---|
 | `ch:6` | Debt and interest rates |  |
 | `sec:6.1` | What a loan is |  |
-| `ssec:6.1.1` | Principal, interest and fees |  |
+| `ssec:6.1.1` | Principal, interest, and fees |  |
 | `ssec:6.1.2` | Fees on commitments and drawings |  |
 | `sec:6.2` | Interest periods and day counts |  |
 | `ssec:6.2.1` | Interest periods and payment dates |  |
 | `ssec:6.2.2` | Day-count conventions |  |
 | `sec:6.3` | Repayment profiles |  |
-| `ssec:6.3.1` | Bullet, annuity and straight-line |  |
+| `ssec:6.3.1` | Bullet, annuity, and straight-line |  |
 | `ssec:6.3.2` | Weighted average life |  |
 | `ssec:6.3.3` | Sculpted repayment in outline |  |
 | `sec:6.4` | Fixed and floating rates |  |
@@ -543,17 +566,17 @@ Source brief: `briefs/u02.md`.
 | `ssec:6.5.2` | The risk-free rates |  |
 | `ssec:6.5.3` | Term rates and compounding in arrears |  |
 | `ssec:6.5.4` | Credit adjustment spreads and fallbacks |  |
-| `sec:6.6` | The yield curve, forward rates and discount factors |  |
+| `sec:6.6` | The yield curve, forward rates, and discount factors |  |
 | `ssec:6.6.1` | Zero rates and discount factors |  |
 | `ssec:6.6.2` | Forward rates |  |
-| `sec:6.7` | Bonds in one section |  |
-| `ssec:6.7.1` | Coupon, price and yield |  |
-| `ssec:6.7.2` | Bonds against loans in one paragraph |  |
+| `sec:6.7` | Bond pricing and yield |  |
+| `ssec:6.7.1` | Coupon, price, and yield |  |
+| `ssec:6.7.2` | Bonds compared with loans |  |
 | `sec:6.8` | Interest rate swaps |  |
 | `ssec:6.8.1` | How a swap turns floating into fixed |  |
-| `ssec:6.8.2` | The swap rate and the credit and execution charge | ruling: The par swap rate (retitled, R-007) |
+| `ssec:6.8.2` | The par swap rate |  |
 | `ssec:6.8.3` | Valuing a swap and breaking it |  |
-| `ssec:6.8.4` | Amortizing, accreting and mismatched swaps |  |
+| `ssec:6.8.4` | Amortizing, accreting, and mismatched swaps |  |
 | `ssec:6.8.5` | Caps and collars |  |
 | `sec:6.9` | Walkthrough: reading the interest clause of a facility agreement |  |
 | `sec:6.10` | Walkthrough: reading a swap confirmation's economic terms |  |
@@ -571,29 +594,30 @@ Source brief: `briefs/u02.md`.
 | `ex:6.6` | Compounding SOFR in arrears |  |
 | `ex:6.7` | Day count equivalence |  |
 | `ex:6.8` | A LIBOR fallback and floor parity |  |
-| `ex:6.9` | Building discount factors, forwards and a swap rate from a curve |  |
+| `ex:6.9` | Building discount factors, forwards, and a swap rate from a curve |  |
 | `ex:6.10` | Pricing a bond at three yields |  |
 | `ex:6.11` | Four swap settlements |  |
 | `ex:6.12` | Marking a swap to market |  |
 | `exh:6.1` | Day-count conventions by market |  |
 | `exh:6.2` | Annuity repayment schedule |  |
-| `exh:6.3` | pgfplots chart of the three balances | implied by the brief text; writer assigns this label in order of appearance |
+| `exh:6.3` | Outstanding balance under bullet, annuity, and straight-line repayment |  |
 | `exh:6.4` | Reference rates at a glance |  |
-| `exh:6.5` | curve table | implied by the brief text; writer assigns this label in order of appearance |
+| `exh:6.5` | Zero rates, discount factors, and forward rates from an illustrative curve |  |
 | `exh:6.6` | How a payer swap fixes a floating loan |  |
 | `exh:6.7` | Economic terms of a swap confirmation |  |
 | `exh:6.8` | Case P indicative 2016 cost by tranche |  |
 | `exh:6.9` | Case P interest cost before and after the LIBOR switch |  |
 | `cl:6.1` | Interest rate and fallback, facility agreement (Illustrative) |  |
 | `eq:6.1` | Interest with a day-count fraction |  |
-| `eq:6.2` | Weighted average life |  |
+| `eq:6.2` | Weighted average life (home equation) |  |
 | `eq:6.3` | Compounded rate in arrears |  |
 | `eq:6.4` | Forward rate from discount factors |  |
-| `eq:6.5` | Bond price |  |
+| `eq:6.5` | Bond price (home equation) |  |
 | `eq:6.6` | Par swap rate |  |
 | `eq:6.7` | Value of a payer swap |  |
 | `fw:loan-hedge-tieout` | Framework 6.1 Loan-and-hedge tie-out | home sec:6.10 |
-| `fw:rate-quote-decoder` | Framework 6.2 Rate quote decoder | home sec:6.2 |
+| `fw:rate-quote-decoder` | Framework 6.2 Rate quote decoder | home ssec:6.5.4 |
+| `exr:6.1` to `exr:6.16` | Exercises (16) | range; cited only inside Ch 6 and by matter file 93 |
 
 ### Chapter 7: Accounting from zero
 
@@ -602,40 +626,41 @@ Source brief: `briefs/u02.md`.
 | Label | Caption or title | Note |
 |---|---|---|
 | `ch:7` | Accounting from zero |  |
-| `sec:7.1` | Why a financier reads accounts |  |
+| `sec:7.1` | Four uses of accounts in a financing |  |
 | `sec:7.2` | The accounting equation and double entry |  |
-| `ssec:7.2.1` | Assets, liabilities and equity |  |
+| `ssec:7.2.1` | Assets, liabilities, and equity |  |
 | `ssec:7.2.2` | A project company's first transactions |  |
 | `sec:7.3` | The income statement |  |
 | `ssec:7.3.1` | From revenue to net income |  |
-| `ssec:7.3.2` | Accruals: earned is not received |  |
+| `ssec:7.3.2` | Earned is not received |  |
 | `sec:7.4` | The balance sheet |  |
 | `ssec:7.4.1` | Assets of a project company |  |
 | `ssec:7.4.2` | Liabilities and equity |  |
 | `sec:7.5` | The cash flow statement and the three-way link |  |
 | `ssec:7.5.1` | Indirect method |  |
 | `ssec:7.5.2` | Linking the three statements |  |
-| `sec:7.6` | Depreciation, amortization and impairment |  |
+| `sec:7.6` | Depreciation, amortization, and impairment |  |
 | `ssec:7.6.1` | Spreading the cost of a long-lived asset |  |
 | `ssec:7.6.2` | Book depreciation versus tax depreciation |  |
 | `ssec:7.6.3` | Impairment |  |
 | `sec:7.7` | Capitalized interest during construction |  |
-| `ssec:7.7.1` | Why construction interest becomes part of the asset |  |
+| `ssec:7.7.1` | Construction interest as part of the asset's cost |  |
 | `ssec:7.7.2` | What capitalization does later |  |
 | `sec:7.8` | Deferred tax |  |
 | `ssec:7.8.1` | Temporary differences |  |
 | `ssec:7.8.2` | Accelerated tax depreciation and the deferred tax liability |  |
-| `ssec:7.8.3` | Tax holidays, losses and deferred tax assets |  |
+| `ssec:7.8.3` | Tax holidays, losses, and deferred tax assets |  |
 | `sec:7.9` | Working capital |  |
-| `ssec:7.9.1` | Receivables, payables and inventory |  |
+| `ssec:7.9.1` | Receivables, payables, and inventory |  |
 | `ssec:7.9.2` | When the offtaker pays late |  |
 | `sec:7.10` | Provisions and contingent liabilities |  |
 | `ssec:7.10.1` | Decommissioning and handback provisions |  |
 | `ssec:7.10.2` | Onerous contracts and contingent liabilities |  |
 | `sec:7.11` | Reading a project company's accounts |  |
 | `ssec:7.11.1` | A disciplined first read |  |
-| `ssec:7.11.2` | When the accounts do not show the plant |  |
+| `ssec:7.11.2` | The lenders' reporting basis and the statutory accounts | repurposed, R-016 |
 | `ssec:7.11.3` | Distributions and the accounts |  |
+| `ssec:7.11.4` | The tax rules that reach a project's cash | new label |
 | `sec:7.12` | Walkthrough: linking three statements in a blank workbook |  |
 | `sec:7.13` | Case P: Bélanou Power's 2022 accounts |  |
 | `sec:7.14` | Practitioner's notebook |  |
@@ -654,12 +679,13 @@ Source brief: `briefs/u02.md`.
 | `ex:7.9` | A tax holiday with deferred depreciation |  |
 | `ex:7.10` | An offtaker that pays at 120 days |  |
 | `ex:7.11` | A decommissioning provision |  |
-| `exh:7.1` | balance sheet after each | implied by the brief text; writer assigns this label in order of appearance |
+| `ex:7.12` | What the tax rules do to Pampa Tamarugal's cash | new label |
+| `exh:7.1` | Balance sheet after each of five first transactions |  |
 | `exh:7.2` | Three linked statements for one year |  |
 | `exh:7.3` | How the three statements link |  |
-| `exh:7.4` | seven-year table | implied by the brief text; writer assigns this label in order of appearance |
+| `exh:7.4` | Temporary difference and deferred tax liability, years 1 to 7 |  |
 | `exh:7.5` | Abridged accounts of a solar project company |  |
-| `exh:7.6` | (caption not stated in brief; writer supplies) | implied by the brief text; writer assigns this label in order of appearance |
+| `exh:7.6` | Layout of a three-statement sheet |  |
 | `exh:7.7` | Bélanou Power income statement, 2022 |  |
 | `exh:7.8` | Bélanou Power balance sheet, December 31, 2022 |  |
 | `exh:7.9` | Bélanou Power cash flow statement, 2022 |  |
@@ -667,14 +693,15 @@ Source brief: `briefs/u02.md`.
 | `eq:7.2` | Deferred tax on a temporary difference |  |
 | `eq:7.3` | Receivables from days |  |
 | `fw:project-accounts-read` | Framework 7.1 First read of project company accounts | home ssec:7.11.1 |
+| `exr:7.1` to `exr:7.17` | Exercises (17) | range; cited only inside Ch 7 and by matter file 93 |
 
-### Chapter 8: Leverage, risk and the cost of capital
+### Chapter 8: Leverage, risk, and the cost of capital
 
 Source brief: `briefs/u02.md`.
 
 | Label | Caption or title | Note |
 |---|---|---|
-| `ch:8` | Leverage, risk and the cost of capital |  |
+| `ch:8` | Leverage, risk, and the cost of capital |  |
 | `sec:8.1` | Debt and equity as claims on one project |  |
 | `ssec:8.1.1` | Who gets paid first |  |
 | `ssec:8.1.2` | What each claimant wants |  |
@@ -683,9 +710,9 @@ Source brief: `briefs/u02.md`.
 | `ssec:8.2.2` | Leverage over a project's life |  |
 | `ssec:8.2.3` | Leverage widens the spread |  |
 | `sec:8.3` | The Modigliani-Miller intuition |  |
-| `ssec:8.3.1` | Why leverage alone creates no value in a perfect market |  |
+| `ssec:8.3.1` | Leverage alone creates no value in a perfect market |  |
 | `ssec:8.3.2` | What breaks the result |  |
-| `ssec:8.3.3` | Why project finance can carry so much debt |  |
+| `ssec:8.3.3` | How project finance carries 70% to 90% debt |  |
 | `sec:8.4` | Risk and the required return |  |
 | `ssec:8.4.1` | Diversifiable and systematic risk |  |
 | `ssec:8.4.2` | Which risks a project's investors are paid for |  |
@@ -698,10 +725,10 @@ Source brief: `briefs/u02.md`.
 | `ssec:8.6.2` | After-tax cost of debt |  |
 | `sec:8.7` | WACC and APV |  |
 | `ssec:8.7.1` | Weighted average cost of capital |  |
-| `ssec:8.7.2` | Why a constant WACC misfits amortizing project debt |  |
+| `ssec:8.7.2` | A constant WACC against amortizing project debt |  |
 | `ssec:8.7.3` | Adjusted present value |  |
 | `ssec:8.7.4` | Which method to use when |  |
-| `sec:8.8` | Real case: the same reactor at two costs of capital |  |
+| `sec:8.8` | The same reactor at two costs of capital |  |
 | `sec:8.9` | Walkthrough: building a gearing-versus-return table |  |
 | `sec:8.10` | Case P: how much debt Kilnworth wanted |  |
 | `sec:8.11` | Practitioner's notebook |  |
@@ -718,12 +745,12 @@ Source brief: `briefs/u02.md`.
 | `ex:8.7` | Cost of equity from a listed comparable |  |
 | `ex:8.8` | Adding a country risk premium |  |
 | `ex:8.9` | After-tax cost of debt |  |
-| `ex:8.10` | A WACC |  |
+| `ex:8.10` | A WACC at 75% gearing |  |
 | `ex:8.11` | APV against a constant WACC |  |
-| `exh:8.1` | pgfplots payoff lines: debt capped, equity residual | implied by the brief text; writer assigns this label in order of appearance |
+| `exh:8.1` | Payoffs to debt and equity by project value |  |
 | `exh:8.2` | Equity IRR by gearing, base and downside |  |
 | `exh:8.3` | Equity IRR against gearing |  |
-| `exh:8.4` | (caption not stated in brief; writer supplies) | implied by the brief text; writer assigns this label in order of appearance |
+| `exh:8.4` | Layout of a gearing-versus-return sheet |  |
 | `exh:8.5` | Case P equity IRR by gearing |  |
 | `eq:8.1` | Leverage equation for the return on equity |  |
 | `eq:8.2` | Modigliani-Miller Proposition II |  |
@@ -733,7 +760,8 @@ Source brief: `briefs/u02.md`.
 | `eq:8.6` | Relevered equity beta |  |
 | `eq:8.7` | Weighted average cost of capital |  |
 | `eq:8.8` | Adjusted present value |  |
-| `fw:leverage-ledger` | Framework 8.1 Leverage ledger | home sec:8.11 |
+| `fw:leverage-ledger` | Framework 8.1 Leverage ledger | home ssec:8.3.3 |
+| `exr:8.1` to `exr:8.15` | Exercises (15) | range; cited only inside Ch 8 and by matter file 93 |
 
 ### Chapter 9: Probability and uncertainty
 
@@ -745,7 +773,7 @@ Source brief: `briefs/u02.md`.
 | `sec:9.1` | Outcomes as distributions |  |
 | `ssec:9.1.1` | From a data series to a histogram |  |
 | `ssec:9.1.2` | Discrete and continuous distributions |  |
-| `sec:9.2` | Expected value, median and mode |  |
+| `sec:9.2` | Expected value, median, and mode |  |
 | `ssec:9.2.1` | Expected value of a discrete outcome |  |
 | `ssec:9.2.2` | Skewed outcomes |  |
 | `sec:9.3` | Measuring spread |  |
@@ -754,9 +782,9 @@ Source brief: `briefs/u02.md`.
 | `sec:9.4` | The normal distribution and its limits |  |
 | `ssec:9.4.1` | Percentiles of a normal distribution |  |
 | `ssec:9.4.2` | Lognormal outcomes and fat tails |  |
-| `sec:9.5` | Exceedance levels: P50, P90 and P99 |  |
+| `sec:9.5` | Exceedance levels P50, P90, and P99 |  |
 | `ssec:9.5.1` | Defining exceedance |  |
-| `ssec:9.5.2` | Why lenders look at P90 |  |
+| `ssec:9.5.2` | Lenders' use of P90 and P99 |  |
 | `sec:9.6` | One-year and ten-year P-values |  |
 | `ssec:9.6.1` | Two kinds of uncertainty |  |
 | `ssec:9.6.2` | Computing one-year and ten-year P90 |  |
@@ -765,7 +793,7 @@ Source brief: `briefs/u02.md`.
 | `ssec:9.7.1` | Covariance and the correlation coefficient |  |
 | `ssec:9.7.2` | Diversification across assets |  |
 | `ssec:9.7.3` | When price and volume move together |  |
-| `sec:9.8` | Sensitivity, scenario and Monte Carlo analysis |  |
+| `sec:9.8` | Sensitivity, scenario, and Monte Carlo analysis |  |
 | `ssec:9.8.1` | Sensitivity analysis and the tornado chart |  |
 | `ssec:9.8.2` | Scenarios that hang together |  |
 | `ssec:9.8.3` | Monte Carlo simulation |  |
@@ -786,19 +814,19 @@ Source brief: `briefs/u02.md`.
 | `ex:9.4` | Comparing spreads |  |
 | `ex:9.5` | P-values from a mean and a standard deviation |  |
 | `ex:9.6` | Why lenders size on P90 |  |
-| `ex:9.7` | One-year, ten-year and twenty-year P90 |  |
+| `ex:9.7` | One-year, ten-year, and twenty-year P90 |  |
 | `ex:9.8` | Two wind farms in one portfolio |  |
 | `ex:9.9` | Price and volume that move together |  |
 | `ex:9.10` | A sensitivity table and tornado |  |
 | `ex:9.11` | A coherent downside scenario |  |
 | `ex:9.12` | A Monte Carlo simulation |  |
-| `exh:9.1` | data and bins table | implied by the brief text; writer assigns this label in order of appearance |
-| `exh:9.2` | pgfplots histogram | implied by the brief text; writer assigns this label in order of appearance |
+| `exh:9.1` | Twenty years of annual output and histogram bins |  |
+| `exh:9.2` | Histogram of twenty years of annual output |  |
 | `exh:9.3` | Standard normal z-values for common exceedance levels |  |
 | `exh:9.4` | P90 and P99 by averaging period |  |
 | `exh:9.5` | Tornado chart of annual cash |  |
-| `exh:9.6` | results table | implied by the brief text; writer assigns this label in order of appearance |
-| `exh:9.7` | histogram of simulated cash | implied by the brief text; writer assigns this label in order of appearance |
+| `exh:9.6` | Monte Carlo results with and without price-output correlation |  |
+| `exh:9.7` | Distribution of simulated annual cash |  |
 | `exh:9.8` | Summary of an energy yield assessment |  |
 | `exh:9.9` | Case R exceedance levels by asset |  |
 | `eq:9.1` | Expected value |  |
@@ -811,6 +839,7 @@ Source brief: `briefs/u02.md`.
 | `eq:9.8` | Variance of a sum of two outcomes |  |
 | `fw:pvalue-reading` | Framework 9.1 P-value reading checklist | home sec:9.10 |
 | `fw:uncertainty-tool-choice` | Framework 9.2 Choosing the uncertainty tool | home ssec:9.8.4 |
+| `exr:9.1` to `exr:9.15` | Exercises (15) | range; cited only inside Ch 9 and by matter file 93 |
 
 ### Chapter 10: Law for financiers
 
@@ -832,9 +861,9 @@ Source brief: `briefs/u03.md`.
 | `ssec:10.3.1` | Indemnities and how they differ from damages |  |
 | `ssec:10.3.2` | Liability caps, sub-caps, and carve-outs |  |
 | `ssec:10.3.3` | Excluding indirect and consequential loss |  |
-| `ssec:10.3.4` | What each party asks for |  |
+| `ssec:10.3.4` | Caps and carve-outs from each party's side |  |
 | `sec:10.4` | Liquidated damages and the rule against penalties |  |
-| `ssec:10.4.1` | Why parties agree damages in advance |  |
+| `ssec:10.4.1` | Agreeing damages in advance |  |
 | `ssec:10.4.2` | The penalty rule in English law |  |
 | `ssec:10.4.3` | Penalty clauses in civil law |  |
 | `ssec:10.4.4` | LDs, caps, and termination |  |
@@ -852,7 +881,7 @@ Source brief: `briefs/u03.md`.
 | `sec:10.8` | Security and insolvency in principle |  |
 | `ssec:10.8.1` | What security is |  |
 | `ssec:10.8.2` | What insolvency does |  |
-| `ssec:10.8.3` | Why project lenders take security over everything |  |
+| `ssec:10.8.3` | Security over everything as a means of control |  |
 | `sec:10.9` | Governing law, courts, and arbitration |  |
 | `ssec:10.9.1` | Choosing a governing law |  |
 | `ssec:10.9.2` | Courts versus arbitration |  |
@@ -878,13 +907,17 @@ Source brief: `briefs/u03.md`.
 | `exh:10.3` | Choosing between courts and arbitration (Illustrative) |  |
 | `exh:10.4` | Clause map of an O&M agreement (Illustrative) |  |
 | `exh:10.5` | Case P draft PPA provisions under review (Case P) |  |
-| `cl:10.1` | Representations and warranties of the Operator, O&M agreement |  |
-| `cl:10.2` | Limitation of liability, O&M agreement |  |
-| `cl:10.3` | Delay liquidated damages, PPA |  |
-| `cl:10.4` | Force majeure, PPA |  |
-| `cl:10.5` | Governing law and arbitration, offtake contract |  |
+| `cl:10.1` | Representations and warranties of the Operator, O&M agreement | caption carried from the 2026-10-03 registry; the brief gives none |
+| `cl:10.2` | Limitation of liability, O&M agreement | caption carried from the 2026-10-03 registry; the brief gives none |
+| `cl:10.3` | Delay liquidated damages, PPA | caption carried from the 2026-10-03 registry; the brief gives none |
+| `cl:10.4` | Force majeure, PPA | caption carried from the 2026-10-03 registry; the brief gives none |
+| `cl:10.4a` | Force majeure, PPA (Illustrative, sponsor-friendly) | new label |
+| `cl:10.4b` | Force majeure, PPA (Illustrative, lender-friendly) | new label |
+| `cl:10.4c` | Force majeure, PPA (Illustrative, government-friendly) | new label |
+| `cl:10.5` | Governing law and arbitration, offtake contract | caption carried from the 2026-10-03 registry; the brief gives none |
 | `fw:clause-consequence-test` | Framework 10.1 Clause consequence test | home ssec:10.2.4 |
 | `fw:excuse-ladder` | Framework 10.2 Excuse ladder | home ssec:10.5.5 |
+| `exr:10.1` to `exr:10.15` | Exercises (15) | range; cited only inside Ch 10 and by matter file 93 |
 
 ### Chapter 11: How power assets and electricity markets work
 
@@ -915,7 +948,7 @@ Source brief: `briefs/u03.md`.
 | `ssec:11.5.3` | Hydrology and the dry year |  |
 | `sec:11.6` | Nuclear |  |
 | `ssec:11.6.1` | How a reactor makes power |  |
-| `ssec:11.6.2` | Why nuclear economics are about capital and time |  |
+| `ssec:11.6.2` | Capital and construction time in nuclear economics |  |
 | `sec:11.7` | Batteries |  |
 | `ssec:11.7.1` | Power, energy, and duration |  |
 | `ssec:11.7.2` | Round-trip efficiency, cycles, degradation, and augmentation |  |
@@ -976,14 +1009,15 @@ Source brief: `briefs/u03.md`.
 | `eq:11.8` | Capture price |  |
 | `eq:11.9` | Capture ratio |  |
 | `fw:megawatt-to-revenue` | Framework 11.1 Megawatt-to-revenue chain | home sec:11.14 |
+| `exr:11.1` to `exr:11.17` | Exercises (17) | range; cited only inside Ch 11 and by matter file 93 |
 
-### Chapter 12: How resource, transport, social and digital assets work
+### Chapter 12: How resource, transport, social, and digital assets work
 
 Source brief: `briefs/u03.md`.
 
 | Label | Caption or title | Note |
 |---|---|---|
-| `ch:12` | How resource, transport, social and digital assets work |  |
+| `ch:12` | How resource, transport, social, and digital assets work |  |
 | `sec:12.1` | Oil and gas from reservoir to market |  |
 | `ssec:12.1.1` | Reservoirs, resources, and reserves |  |
 | `ssec:12.1.2` | Build-up, plateau, and decline in production |  |
@@ -1026,7 +1060,7 @@ Source brief: `briefs/u03.md`.
 | `ex:12.3` | From ore to copper concentrate |  |
 | `ex:12.4` | Toll revenue through ramp-up |  |
 | `ex:12.5` | Farebox recovery on a light rail line |  |
-| `ex:12.6` | An airport's revenue under single and dual till |  |
+| `ex:12.6` | An airport's aeronautical and commercial revenue |  |
 | `ex:12.7` | Container terminal capacity and utilization |  |
 | `ex:12.8` | A hospital's hard FM and lifecycle profile |  |
 | `ex:12.9` | The cost of a cubic meter of desalinated water |  |
@@ -1045,6 +1079,7 @@ Source brief: `briefs/u03.md`.
 | `eq:12.5` | Facility power from IT load and PUE |  |
 | `eq:12.6` | Desalination energy cost |  |
 | `fw:physical-chain-map` | Framework 12.1 Physical chain map | home sec:12.12 |
+| `exr:12.1` to `exr:12.16` | Exercises (16) | range; cited only inside Ch 12 and by matter file 93 |
 
 ### Chapter 13: Excel for project finance
 
@@ -1069,16 +1104,17 @@ Source brief: `briefs/u03.md`.
 | `ssec:13.4.4` | Logic without nested IFs |  |
 | `ssec:13.4.5` | Excel's finance functions and their traps |  |
 | `sec:13.5` | Fragile formulas and how to replace them |  |
-| `sec:13.6` | Range names and the one exception |  |
+| `sec:13.6` | Range names and the Scenario exception |  |
 | `sec:13.7` | Data tables and goal seek |  |
 | `ssec:13.7.1` | One-way and two-way data tables |  |
 | `ssec:13.7.2` | Goal seek |  |
-| `ssec:13.7.3` | Limits of both tools |  |
+| `ssec:13.7.3` | Limits of data tables and goal seek |  |
 | `sec:13.8` | Circular references |  |
 | `ssec:13.8.1` | Where circularity comes from in project models |  |
 | `ssec:13.8.2` | Iterative calculation and why lenders dislike it |  |
 | `ssec:13.8.3` | The copy-paste macro |  |
 | `ssec:13.8.4` | Closed-form solutions |  |
+| `ssec:13.8.5` | Writing a macro from scratch | new label |
 | `sec:13.9` | Error checks |  |
 | `sec:13.10` | Walkthrough: building a practice workbook cell by cell |  |
 | `sec:13.11` | Case P: Bélanou's construction timeline in a practice workbook |  |
@@ -1105,6 +1141,7 @@ Source brief: `briefs/u03.md`.
 | `eq:13.3` | Capped cumulative accrual |  |
 | `eq:13.4` | Closed-form debt with IDC |  |
 | `fw:formula-robustness-test` | Framework 13.1 Formula robustness test | home sec:13.5 |
+| `exr:13.1` to `exr:13.17` | Exercises (17) | range; cited only inside Ch 13 and by matter file 93 |
 
 ### Chapter 14: The risk taxonomy
 
@@ -1116,59 +1153,59 @@ Source brief: `briefs/u04.md`.
 | `sec:14.1` | What counts as a project risk |  |
 | `ssec:14.1.1` | Risk as variation that someone must absorb |  |
 | `ssec:14.1.2` | The risk card |  |
-| `ssec:14.1.3` | Why classification decides who pays |  |
+| `ssec:14.1.3` | Classification decides who pays |  |
 | `sec:14.2` | How the risk profile changes over the project's life |  |
-| `ssec:14.2.1` | Development: high probability, small money |  |
-| `ssec:14.2.2` | Construction and commissioning: the peak |  |
+| `ssec:14.2.1` | Development risk with high probability and small money |  |
+| `ssec:14.2.2` | Construction and commissioning as the risk peak |  |
 | `ssec:14.2.3` | Ramp-up and steady operations |  |
 | `ssec:14.2.4` | End of life |  |
 | `sec:14.3` | Development and permitting risk |  |
 | `ssec:14.3.1` | What kills projects before financial close |  |
-| `ssec:14.3.2` | Permits that are challenged after they are granted |  |
-| `sec:14.4` | Construction risk: cost, time and performance |  |
+| `ssec:14.3.2` | The Purple Line and a permit challenged after grant |  |
+| `sec:14.4` | Construction cost, time, and performance risk |  |
 | `ssec:14.4.1` | Cost overrun |  |
 | `ssec:14.4.2` | Delay and what a day costs |  |
 | `ssec:14.4.3` | Performance shortfall |  |
-| `ssec:14.4.4` | When the fixed price does not hold |  |
+| `ssec:14.4.4` | Vogtle 3 and 4 and a fixed price that did not hold |  |
 | `sec:14.5` | Technology risk |  |
-| `ssec:14.5.1` | Proven, scaled-up and first-of-a-kind |  |
-| `ssec:14.5.2` | A plant that runs but does not deliver the contracted output |  |
-| `ssec:14.5.3` | Manufacturing scale-up as technology risk |  |
+| `ssec:14.5.1` | Proven, scaled-up, first-of-a-kind, and nth-of-a-kind technology |  |
+| `ssec:14.5.2` | Ivanpah and contracted output a plant could not deliver |  |
+| `ssec:14.5.3` | Northvolt and manufacturing scale-up as technology risk |  |
 | `sec:14.6` | Resource and reserves risk |  |
 | `ssec:14.6.1` | Resource uncertainty by asset type |  |
 | `ssec:14.6.2` | Resource risk after completion |  |
-| `sec:14.7` | Demand, volume, price and market risk |  |
+| `sec:14.7` | Demand, volume, price, and market risk |  |
 | `ssec:14.7.1` | Demand and volume risk |  |
 | `ssec:14.7.2` | Price and market risk |  |
 | `ssec:14.7.3` | Curtailment as volume risk created by the grid |  |
 | `sec:14.8` | Input supply risk |  |
-| `ssec:14.8.1` | Quantity, quality, price and delivery |  |
+| `ssec:14.8.1` | Quantity, quality, price, and delivery |  |
 | `ssec:14.8.2` | The fuel price the bid assumed |  |
 | `sec:14.9` | Operating risk |  |
-| `ssec:14.9.1` | Availability, performance and cost |  |
-| `ssec:14.9.2` | Catastrophic loss and the size of insurance limits |  |
+| `ssec:14.9.1` | Availability, performance, and cost |  |
+| `ssec:14.9.2` | Catastrophic loss at Moss Landing |  |
 | `sec:14.10` | Counterparty credit risk |  |
 | `ssec:14.10.1` | Every counterparty is a credit |  |
-| `ssec:14.10.2` | The offtaker that cannot pay |  |
-| `ssec:14.10.3` | The contractor that fails mid-build |  |
-| `ssec:14.10.4` | Concentration |  |
+| `ssec:14.10.2` | Offtaker credit at Dabhol |  |
+| `ssec:14.10.3` | Carillion and the contractor that fails mid-build |  |
+| `ssec:14.10.4` | Counterparty concentration at Thames Tideway |  |
 | `sec:14.11` | Interface risk |  |
 | `ssec:14.11.1` | Where one party's work meets another's |  |
-| `ssec:14.11.2` | A wind farm with no line to the market |  |
-| `sec:14.12` | Interest rate, inflation, refinancing and liquidity risk |  |
+| `ssec:14.11.2` | Lake Turkana, a wind farm with no line to the market |  |
+| `sec:14.12` | Interest rate, inflation, refinancing, and liquidity risk |  |
 | `ssec:14.12.1` | Interest rate risk |  |
 | `ssec:14.12.2` | Inflation risk and indexation mismatch |  |
 | `ssec:14.12.3` | Refinancing risk |  |
 | `ssec:14.12.4` | Liquidity risk |  |
-| `sec:14.13` | Currency risk: devaluation, convertibility and transfer |  |
+| `sec:14.13` | Devaluation, convertibility, and transfer risk |  |
 | `ssec:14.13.1` | Devaluation and the currency mismatch |  |
 | `ssec:14.13.2` | Convertibility and transfer |  |
 | `sec:14.14` | Political risk |  |
 | `ssec:14.14.1` | Expropriation, direct and creeping |  |
 | `ssec:14.14.2` | Political violence |  |
-| `ssec:14.14.3` | Breach of contract, change in law and non-honoring |  |
+| `ssec:14.14.3` | Breach of contract, change in law, and non-honoring |  |
 | `ssec:14.14.4` | Sanctions |  |
-| `sec:14.15` | Regulatory, legal and enforceability risk |  |
+| `sec:14.15` | Regulatory, legal, and enforceability risk |  |
 | `ssec:14.15.1` | Regulatory risk |  |
 | `ssec:14.15.2` | Legal validity and enforceability |  |
 | `sec:14.16` | Environmental and social risk |  |
@@ -1177,8 +1214,8 @@ Source brief: `briefs/u04.md`.
 | `ssec:14.17.1` | Natural and political force majeure |  |
 | `ssec:14.17.2` | Prolonged force majeure and pandemic relief |  |
 | `sec:14.18` | Sponsor risk |  |
-| `ssec:14.18.1` | Sponsor credit, commitment and conflicts |  |
-| `sec:14.19` | Climate, cyber and decommissioning risk |  |
+| `ssec:14.18.1` | Sponsor credit, commitment, and conflicts |  |
+| `sec:14.19` | Climate, cyber, and decommissioning risk |  |
 | `ssec:14.19.1` | Physical climate risk |  |
 | `ssec:14.19.2` | Transition risk |  |
 | `ssec:14.19.3` | Cyber risk |  |
@@ -1202,29 +1239,30 @@ Source brief: `briefs/u04.md`.
 | `ex:14.7` | A local-currency tariff and a dollar loan (Illustrative) |  |
 | `exh:14.1` | The risk card template (Illustrative) |  |
 | `exh:14.2` | One event, four labels, four bearers (Illustrative, built on the Mundra fact pattern) |  |
-| `exh:14.3` | Money at risk across a project's life (Illustrative) |  |
-| `exh:14.4` | Phase-by-category risk map for a contracted thermal IPP (Illustrative) |  |
+| `exh:14.3` | Money at risk across the life of a 640 MW gas-fired IPP in Ghana (Illustrative) |  |
+| `exh:14.4` | Phase-by-category risk map for a 640 MW gas-fired IPP in Ghana (Illustrative) |  |
 | `exh:14.5` | How a devaluation triggers a cluster of risks (Illustrative) |  |
-| `exh:14.6` | Risk register for a 140 MW run-of-river hydropower project (Illustrative) |  |
+| `exh:14.6` | Risk register for a 140 MW run-of-river hydropower project in Nepal (Illustrative) |  |
 | `exh:14.7` | Case P risk register v1, October 2016 (Case P) |  |
 | `eq:14.1` | Daily cost of delay |  |
 | `eq:14.2` | Operating leverage multiplier |  |
 | `eq:14.3` | FX breakeven rate |  |
-| `fw:risk-card` | Framework 14.1 The risk card | home ssec:14.1.2 |
+| `fw:risk-card` | Framework 14.1 Risk card | home ssec:14.1.2 |
 | `fw:phase-risk-map` | Framework 14.2 Phase-by-category risk map | home ssec:14.2.4 |
+| `exr:14.1` to `exr:14.14` | Exercises (14) | range; cited only inside Ch 14 and by matter file 93 |
 
-### Chapter 15: Analyzing, allocating and pricing risk
+### Chapter 15: Analyzing, allocating, and pricing risk
 
 Source brief: `briefs/u04.md`.
 
 | Label | Caption or title | Note |
 |---|---|---|
-| `ch:15` | Analyzing, allocating and pricing risk |  |
+| `ch:15` | Analyzing, allocating, and pricing risk |  |
 | `sec:15.1` | The risk management cycle on a project |  |
 | `ssec:15.1.1` | Seven steps and what each produces |  |
 | `ssec:15.1.2` | Who runs the cycle at each stage |  |
 | `ssec:15.1.3` | Finding the risks nobody listed |  |
-| `sec:15.2` | Analyzing a risk: from trigger to cash flow |  |
+| `sec:15.2` | Tracing a risk from trigger to cash flow |  |
 | `ssec:15.2.1` | Mechanism and drivers |  |
 | `ssec:15.2.2` | Which risks deserve numbers |  |
 | `sec:15.3` | Quantifying risk |  |
@@ -1238,13 +1276,13 @@ Source brief: `briefs/u04.md`.
 | `ssec:15.4.3` | What heat maps hide |  |
 | `sec:15.5` | Allocating risk |  |
 | `ssec:15.5.1` | From principle to a working test |  |
-| `ssec:15.5.2` | Pass-through to the offtaker, users or the state |  |
+| `ssec:15.5.2` | Pass-through to the offtaker, users, or the state |  |
 | `ssec:15.5.3` | Back-to-back with contractors and suppliers |  |
-| `ssec:15.5.4` | Risks no private party can carry: retention and sharing bands |  |
-| `sec:15.6` | Residual risk: what equity and debt are left holding |  |
+| `ssec:15.5.4` | Retention and sharing bands for risks no private party can carry |  |
+| `sec:15.6` | What equity and debt are left holding |  |
 | `ssec:15.6.1` | Payoff shapes |  |
 | `ssec:15.6.2` | Residual risk after allocation |  |
-| `sec:15.7` | Why lenders watch the downside and sponsors the upside |  |
+| `sec:15.7` | The downside lenders watch and the upside sponsors want |  |
 | `ssec:15.7.1` | What volatility does to each claim |  |
 | `ssec:15.7.2` | Behaviors the asymmetry explains |  |
 | `sec:15.8` | Pricing risk |  |
@@ -1269,19 +1307,22 @@ Source brief: `briefs/u04.md`.
 | `sec:15.17` | Exercises |  |
 | `sec:15.18` | Solutions to exercises |  |
 | `ex:15.1` | Sizing a cost-overrun risk from three estimates (Illustrative) |  |
-| `ex:15.2` | A risk matrix for a desalination plant, and what it hides (Illustrative) |  |
+| `ex:15.2` | A risk matrix for a desalination plant in Egypt, and what it hides (Illustrative) |  |
 | `ex:15.3` | Residual risk and the asymmetry of debt and equity (Illustrative) |  |
 | `ex:15.4` | Paying a contractor to take construction risk, or keeping it (Illustrative) |  |
 | `ex:15.5` | A back-to-back that is not (Illustrative) |  |
 | `ex:15.6` | What a delay-LD promise is worth (Illustrative) |  |
 | `exh:15.1` | The risk management cycle (Illustrative) |  |
-| `exh:15.2` | Heat map for the desalination plant (Illustrative) |  |
+| `exh:15.2` | Heat map for the Safaga desalination plant (Illustrative) |  |
 | `exh:15.3` | Allocation matrix template (Illustrative) |  |
 | `exh:15.4` | Debt and equity payoffs against project value (Illustrative) |  |
 | `exh:15.5` | The bankability ladder (Illustrative) |  |
-| `exh:15.6` | Allocation matrix for the 140 MW run-of-river hydropower project (Illustrative) |  |
+| `exh:15.6` | Allocation matrix for the 140 MW run-of-river hydropower project in Nepal (Illustrative) |  |
 | `exh:15.7` | Case P risk matrix, March 2017 (Case P) |  |
-| `cl:15.1` | (caption not stated in brief; writer supplies) | implied by the brief text; writer assigns this label in order of appearance |
+| `cl:15.1` | Pass-through of availability deductions, O&M agreement (Illustrative) |  |
+| `cl:15.1a` | Pass-through of availability deductions, O&M agreement (Illustrative, sponsor-friendly) | new label |
+| `cl:15.1b` | Pass-through of availability deductions, O&M agreement (Illustrative, lender-friendly) | new label |
+| `cl:15.1c` | Pass-through of availability deductions, O&M agreement (Illustrative, operator-friendly) | new label |
 | `eq:15.1` | Expected loss |  |
 | `eq:15.2` | Debt payoff |  |
 | `eq:15.3` | Equity payoff |  |
@@ -1290,6 +1331,7 @@ Source brief: `briefs/u04.md`.
 | `fw:risk-cycle` | Framework 15.1 Risk management cycle | home ssec:15.1.1 |
 | `fw:allocation-test` | Framework 15.2 Allocation test | home ssec:15.5.1 |
 | `fw:bankability-ladder` | Framework 15.3 Bankability ladder | home ssec:15.9.2 |
+| `exr:15.1` to `exr:15.16` | Exercises (16) | range; cited only inside Ch 15 and by matter file 93 |
 
 ### Chapter 16: The mitigation toolkit
 
@@ -1299,7 +1341,7 @@ Source brief: `briefs/u04.md`.
 |---|---|---|
 | `ch:16` | The mitigation toolkit |  |
 | `sec:16.1` | What mitigation does to a risk |  |
-| `ssec:16.1.1` | Avoid, reduce, transfer, absorb |  |
+| `ssec:16.1.1` | Avoid, reduce, transfer, or absorb |  |
 | `ssec:16.1.2` | Eight tool families and the risks they serve |  |
 | `sec:16.2` | Contracts as mitigation |  |
 | `ssec:16.2.1` | Revenue contracts that remove market risk |  |
@@ -1312,22 +1354,22 @@ Source brief: `briefs/u04.md`.
 | `ssec:16.4.1` | Who guarantees what |  |
 | `ssec:16.4.2` | Layered payment security |  |
 | `sec:16.5` | Reserves and liquidity |  |
-| `ssec:16.5.1` | Contingency, reserve accounts and standby facilities |  |
+| `ssec:16.5.1` | Contingency, reserve accounts, and standby facilities |  |
 | `ssec:16.5.2` | What a reserve costs |  |
 | `sec:16.6` | Hedges |  |
-| `ssec:16.6.1` | Interest rate, currency and commodity hedges |  |
+| `ssec:16.6.1` | Interest rate, currency, and commodity hedges |  |
 | `ssec:16.6.2` | The price of currency cover |  |
 | `ssec:16.6.3` | Hedges that create risk |  |
 | `sec:16.7` | Structural features |  |
-| `ssec:16.7.1` | Leverage, tenor and repayment shape |  |
-| `ssec:16.7.2` | Cash traps, sweeps, covenants and control |  |
+| `ssec:16.7.1` | Leverage, tenor, and repayment shape |  |
+| `ssec:16.7.2` | Lock-ups, sweeps, covenants, and control |  |
 | `sec:16.8` | Sponsor support |  |
 | `ssec:16.8.1` | Completion support and contingent equity |  |
 | `ssec:16.8.2` | How much support before non-recourse is lost |  |
 | `sec:16.9` | Credit enhancement |  |
-| `ssec:16.9.1` | Third-party wraps, guarantees and subordinated public money |  |
+| `ssec:16.9.1` | Third-party wraps, guarantees, and subordinated public money |  |
 | `ssec:16.9.2` | State support for tail risks |  |
-| `sec:16.10` | Combining tools: the layered loss stack |  |
+| `sec:16.10` | Combining tools in a layered loss stack |  |
 | `ssec:16.10.1` | Order of loss absorption |  |
 | `ssec:16.10.2` | Tracing a construction overrun through the stack |  |
 | `sec:16.11` | Choosing tools |  |
@@ -1335,7 +1377,7 @@ Source brief: `briefs/u04.md`.
 | `ssec:16.11.2` | Testing whether a mitigant is worth its price |  |
 | `sec:16.12` | How mitigation fails |  |
 | `ssec:16.12.1` | Common-mode failure and collectability |  |
-| `ssec:16.12.2` | Basis, gaps and small security |  |
+| `ssec:16.12.2` | Basis, gaps, and small security |  |
 | `sec:16.13` | Walkthrough: writing a mitigation plan for a risk matrix |  |
 | `sec:16.14` | Case P: the mitigation plan |  |
 | `sec:16.15` | Practitioner's notebook |  |
@@ -1351,8 +1393,8 @@ Source brief: `briefs/u04.md`.
 | `exh:16.1` | Tool families, the responses they provide and who pays (Illustrative) |  |
 | `exh:16.2` | The layered loss stack (Illustrative) |  |
 | `exh:16.3` | Construction overrun through the loss stack (USD m) (Illustrative) |  |
-| `exh:16.4` | Selection grid applied to the desalination plant's risks (Illustrative) |  |
-| `exh:16.5` | Mitigation plan for the desalination plant (Illustrative) |  |
+| `exh:16.4` | Selection grid applied to the Safaga desalination plant's risks (Illustrative) |  |
+| `exh:16.5` | Mitigation plan for the Safaga desalination plant (Illustrative) |  |
 | `exh:16.6` | Case P mitigation plan, May 2017 proposal against terms at financial close (Case P) |  |
 | `eq:16.1` | Carrying cost of a cash reserve |  |
 | `eq:16.2` | Forward exchange rate from the interest differential |  |
@@ -1360,25 +1402,26 @@ Source brief: `briefs/u04.md`.
 | `fw:mitigation-grid` | Framework 16.1 Mitigation selection grid | home ssec:16.11.1 |
 | `fw:loss-stack` | Framework 16.2 Layered loss stack | home ssec:16.10.1 |
 | `fw:mitigation-test` | Framework 16.3 Mitigation cost-benefit test | home ssec:16.11.2 |
+| `exr:16.1` to `exr:16.14` | Exercises (14) | range; cited only inside Ch 16 and by matter file 93 |
 
-### Chapter 17: Concessions, implementation agreements and government support
+### Chapter 17: Concessions, implementation agreements, and government support
 
 Source brief: `briefs/u05.md`.
 
 | Label | Caption or title | Note |
 |---|---|---|
-| `ch:17` | Concessions, implementation agreements and government support |  |
+| `ch:17` | Concessions, implementation agreements, and government support |  |
 | `sec:17.1` | What the state signs and why |  |
-| `ssec:17.1.1` | Concessions, project agreements and implementation agreements |  |
+| `ssec:17.1.1` | Concessions, project agreements, and implementation agreements |  |
 | `ssec:17.1.2` | Where the government agreement sits in the contractual web |  |
 | `ssec:17.1.3` | Administrative contracts and economic equilibrium |  |
 | `sec:17.2` | Granting the rights |  |
-| `ssec:17.2.1` | Grant, term and exclusivity |  |
+| `ssec:17.2.1` | Grant, term, and exclusivity |  |
 | `ssec:17.2.2` | Undertakings that make a project financeable |  |
 | `ssec:17.2.3` | What the project company gives up |  |
 | `sec:17.3` | Allocating government risk during the term |  |
 | `ssec:17.3.1` | Change in law |  |
-| `ssec:17.3.2` | Compensation events, MAGA and relief events |  |
+| `ssec:17.3.2` | Compensation events, MAGA, and relief events |  |
 | `ssec:17.3.3` | Force majeure in a government contract |  |
 | `sec:17.4` | Termination and what the state pays |  |
 | `ssec:17.4.1` | Termination events and cure |  |
@@ -1393,7 +1436,7 @@ Source brief: `briefs/u05.md`.
 | `ssec:17.5.4` | Testing an instrument's strength |  |
 | `ssec:17.5.5` | What support costs the state |  |
 | `sec:17.6` | Hub Power and the implementation agreement as enabling legislation |  |
-| `sec:17.7` | Guarantee chains that paid and one that did not: Lake Turkana, REIPPPP and Dabhol |  |
+| `sec:17.7` | Guarantee chains at Lake Turkana, REIPPPP, and Dabhol |  |
 | `sec:17.8` | Walkthrough: marking up an implementation agreement's termination schedule |  |
 | `sec:17.9` | Case P: the tender, the implementation agreement and the guarantee |  |
 | `sec:17.10` | Practitioner's notebook |  |
@@ -1405,7 +1448,7 @@ Source brief: `briefs/u05.md`.
 | `ex:17.2` | Restoring economic equilibrium by term extension or by tariff |  |
 | `ex:17.3` | Termination compensation for a 320 MW gas-fired IPP under three termination grounds |  |
 | `ex:17.4` | Sizing a sovereign guarantee cap |  |
-| `exh:17.1` | Concessions, project agreements and implementation agreements compared |  |
+| `exh:17.1` | Concessions, project agreements, and implementation agreements compared |  |
 | `exh:17.2` | The government agreement in the contractual web (diagram) |  |
 | `exh:17.3` | Termination compensation matrix for an emerging-market IPP and an OECD user-pay concession |  |
 | `exh:17.4` | Government support instruments compared |  |
@@ -1414,15 +1457,28 @@ Source brief: `briefs/u05.md`.
 | `exh:17.7` | Case P termination compensation regime |  |
 | `cl:17.1` | Grant of rights, implementation agreement |  |
 | `cl:17.2` | Convertibility and transfer undertaking, implementation agreement |  |
+| `cl:17.2a` | Convertibility and transfer undertaking, implementation agreement (Illustrative, sponsor-friendly) | new label; variant row generated from the brief's (a, b, c) group |
+| `cl:17.2b` | Convertibility and transfer undertaking, implementation agreement (Illustrative, lender-friendly) | new label; variant row generated from the brief's (a, b, c) group |
+| `cl:17.2c` | Convertibility and transfer undertaking, implementation agreement (Illustrative, government-friendly) | new label; variant row generated from the brief's (a, b, c) group |
 | `cl:17.3` | Change in law, implementation agreement |  |
+| `cl:17.3a` | Change in law, implementation agreement (Illustrative, sponsor-friendly) | new label; variant row generated from the brief's (a, b, c) group |
+| `cl:17.3b` | Change in law, implementation agreement (Illustrative, lender-friendly) | new label; variant row generated from the brief's (a, b, c) group |
+| `cl:17.3c` | Change in law, implementation agreement (Illustrative, government-friendly) | new label; variant row generated from the brief's (a, b, c) group |
 | `cl:17.4` | Termination amount on project company default, implementation agreement |  |
+| `cl:17.4a` | Termination amount on project company default, implementation agreement (Illustrative, sponsor-friendly) | new label; variant row generated from the brief's (a, b, c) group |
+| `cl:17.4b` | Termination amount on project company default, implementation agreement (Illustrative, lender-friendly) | new label; variant row generated from the brief's (a, b, c) group |
+| `cl:17.4c` | Termination amount on project company default, implementation agreement (Illustrative, government-friendly) | new label; variant row generated from the brief's (a, b, c) group |
 | `cl:17.5` | Put option on offtaker payment default, implementation agreement |  |
 | `cl:17.6` | Demand under a sovereign guarantee |  |
+| `cl:17.6a` | Demand under a sovereign guarantee (Illustrative, sponsor-friendly) | new label; variant row generated from the brief's (a, b, c) group |
+| `cl:17.6b` | Demand under a sovereign guarantee (Illustrative, lender-friendly) | new label; variant row generated from the brief's (a, b, c) group |
+| `cl:17.6c` | Demand under a sovereign guarantee (Illustrative, government-friendly) | new label; variant row generated from the brief's (a, b, c) group |
 | `cl:17.7` | Letter of support from a finance ministry |  |
-| `eq:17.1` | Equity compensation, greater-of formula: $E^{comp}} = (_{k} Dist}_{k}/(1+r_E)^{k},\ E_0(1+r_E)^{} - Dist}^{rec}})$ |  |
-| `eq:17.2` | Termination amount on government default: $TA} = D + SB} + E^{comp}}$ |  |
+| `eq:17.1` | Equity compensation, greater-of formula: $E^{\mathrm{comp}} = \max\left(\sum_{k} \mathrm{Dist}_{k}/(1+r_E)^{k},\ E_0(1+r_E)^{\tau} - \sum \mathrm{Dist}^{\mathrm{rec}}\right)$ |  |
+| `eq:17.2` | Termination amount on government default: $\mathrm{TA} = D + \mathrm{SB} + E^{\mathrm{comp}}$ |  |
 | `fw:termination-compensation-matrix` | Framework 17.1 Termination compensation matrix | home ssec:17.4.2 |
 | `fw:support-strength-test` | Framework 17.2 Support instrument strength test | home ssec:17.5.4 |
+| `exr:17.1` to `exr:17.14` | Exercises (14) | range; cited only inside Ch 17 and by matter file 93 |
 
 ### Chapter 18: Power purchase and tolling agreements
 
@@ -1434,16 +1490,16 @@ Source brief: `briefs/u05.md`.
 | `sec:18.1` | What a power purchase agreement pays for |  |
 | `ssec:18.1.1` | The two-part tariff |  |
 | `ssec:18.1.2` | Single-part tariffs for wind and solar |  |
-| `ssec:18.1.3` | Term, conditions precedent and the required commercial operation date |  |
+| `ssec:18.1.3` | Term, conditions precedent, and the required commercial operation date |  |
 | `sec:18.2` | Capacity payments and availability |  |
 | `ssec:18.2.1` | Contracted capacity and capacity tests |  |
 | `ssec:18.2.2` | Availability and the capacity payment |  |
 | `ssec:18.2.3` | Deemed availability and offtaker risk events |  |
-| `sec:18.3` | Energy payments, dispatch and fuel pass-through |  |
+| `sec:18.3` | Energy payments, dispatch, and fuel pass-through |  |
 | `ssec:18.3.1` | Dispatch |  |
 | `ssec:18.3.2` | The fuel charge and the contracted heat rate |  |
 | `ssec:18.3.3` | Other pass-throughs |  |
-| `sec:18.4` | Volume risk: take-or-pay, deemed energy and curtailment |  |
+| `sec:18.4` | Take-or-pay, deemed energy, and curtailment |  |
 | `ssec:18.4.1` | Take-or-pay in an offtake contract |  |
 | `ssec:18.4.2` | Deemed energy |  |
 | `ssec:18.4.3` | Curtailment |  |
@@ -1452,7 +1508,7 @@ Source brief: `briefs/u05.md`.
 | `ssec:18.5.2` | Denomination and payment currency |  |
 | `ssec:18.5.3` | Tariff reviews and regulatory approval |  |
 | `sec:18.6` | Getting paid |  |
-| `ssec:18.6.1` | Invoicing, disputes and late payment |  |
+| `ssec:18.6.1` | Invoicing, disputes, and late payment |  |
 | `ssec:18.6.2` | Payment security in outline |  |
 | `ssec:18.6.3` | PPA termination |  |
 | `sec:18.7` | Tolling agreements |  |
@@ -1469,7 +1525,7 @@ Source brief: `briefs/u05.md`.
 | `sec:18.15` | Exercises |  |
 | `sec:18.16` | Solutions to exercises |  |
 | `ex:18.1` | Capacity payment at three availability levels |  |
-| `ex:18.2` | Fuel charge, heat-rate headroom and the project company's fuel margin |  |
+| `ex:18.2` | Fuel charge, heat-rate headroom, and the project company's fuel margin |  |
 | `ex:18.3` | Part-load dispatch and who pays for it |  |
 | `ex:18.4` | Deemed energy for a wind farm whose grid connection is late |  |
 | `ex:18.5` | Sizing an offtaker letter of credit |  |
@@ -1484,22 +1540,32 @@ Source brief: `briefs/u05.md`.
 | `cl:18.1` | Capacity payment, PPA |  |
 | `cl:18.2` | Fuel charge and contracted heat rate, PPA |  |
 | `cl:18.3` | Deemed energy, PPA |  |
+| `cl:18.3a` | Deemed energy, PPA (Illustrative, sponsor-friendly) | new label; variant row generated from the brief's (a, b, c) group |
+| `cl:18.3b` | Deemed energy, PPA (Illustrative, lender-friendly) | new label; variant row generated from the brief's (a, b, c) group |
+| `cl:18.3c` | Deemed energy, PPA (Illustrative, offtaker-friendly) | new label; variant row generated from the brief's (a, b, c) group |
 | `cl:18.4` | Curtailment compensation, PPA |  |
+| `cl:18.4a` | Curtailment compensation, PPA (Illustrative, sponsor-friendly) | new label; variant row generated from the brief's (a, b, c) group |
+| `cl:18.4b` | Curtailment compensation, PPA (Illustrative, lender-friendly) | new label; variant row generated from the brief's (a, b, c) group |
+| `cl:18.4c` | Curtailment compensation, PPA (Illustrative, offtaker-friendly) | new label; variant row generated from the brief's (a, b, c) group |
 | `cl:18.5` | Letter of credit replenishment and cure, PPA |  |
+| `cl:18.5a` | Letter of credit replenishment and cure, PPA (Illustrative, sponsor-friendly) | new label; variant row generated from the brief's (a, b, c) group |
+| `cl:18.5b` | Letter of credit replenishment and cure, PPA (Illustrative, lender-friendly) | new label; variant row generated from the brief's (a, b, c) group |
+| `cl:18.5c` | Letter of credit replenishment and cure, PPA (Illustrative, offtaker-friendly) | new label; variant row generated from the brief's (a, b, c) group |
 | `cl:18.6` | Fuel supply and conversion efficiency, tolling agreement |  |
-| `eq:18.1` | Capacity payment: $CP}_t = C 1{,}000 cpr} IF}_t (1, A_t/A^{*}) m_t$ |  |
-| `eq:18.2` | Fuel charge: $EP}^{fuel}}_t = E^{del}}_t HR}^{c}} k_{HHV/LHV}} p^{fuel}}_t / 1{,}055.06$ |  |
-| `eq:18.3` | Variable O&M charge: $VOM}_t = E^{del}}_t vom} IF}^{VOM}}_t$ |  |
+| `eq:18.1` | Capacity payment: $\mathrm{CP}_t = C \times 1{,}000 \times \mathrm{cpr} \times \mathrm{IF}_t \times \min(1, A_t/A^{*}) \times m_t$ |  |
+| `eq:18.2` | Fuel charge: $\mathrm{EP}^{\mathrm{fuel}}_t = E^{\mathrm{del}}_t \times \mathrm{HR}^{\mathrm{c}} \times k_{\mathrm{HHV/LHV}} \times p^{\mathrm{fuel}}_t / 1{,}055.06$ |  |
+| `eq:18.3` | Variable O&M charge: $\mathrm{VOM}_t = E^{\mathrm{del}}_t \times \mathrm{vom} \times \mathrm{IF}^{\mathrm{VOM}}_t$ |  |
 | `fw:tariff-to-cost-match` | Framework 18.1 Tariff-to-cost match test | home ssec:18.1.1 |
 | `fw:volume-risk-checklist` | Framework 18.2 Volume risk allocation checklist | home ssec:18.4.1 |
+| `exr:18.1` to `exr:18.15` | Exercises (15) | range; cited only inside Ch 18 and by matter file 93 |
 
-### Chapter 19: Feed-in tariffs, contracts for difference and regulated asset base models
+### Chapter 19: Feed-in tariffs, contracts for difference, and regulated asset base models
 
 Source brief: `briefs/u05.md`.
 
 | Label | Caption or title | Note |
 |---|---|---|
-| `ch:19` | Feed-in tariffs, contracts for difference and regulated asset base models |  |
+| `ch:19` | Feed-in tariffs, contracts for difference, and regulated asset base models |  |
 | `sec:19.1` | Supporting a project without an offtaker |  |
 | `ssec:19.1.1` | The financing problem a support scheme solves |  |
 | `ssec:19.1.2` | Five designs on one axis |  |
@@ -1512,10 +1578,10 @@ Source brief: `briefs/u05.md`.
 | `ssec:19.4.1` | The two-sided CfD |  |
 | `ssec:19.4.2` | What the reference price leaves behind |  |
 | `ssec:19.4.3` | Negative prices and curtailment |  |
-| `ssec:19.4.4` | Milestones, start dates and long-stops |  |
+| `ssec:19.4.4` | Milestones, start dates, and long-stops |  |
 | `ssec:19.4.5` | Change in law inside a CfD |  |
 | `ssec:19.4.6` | Financing a CfD project |  |
-| `ssec:19.4.7` | Allocation rounds, budgets and administrative strike prices |  |
+| `ssec:19.4.7` | Allocation rounds, budgets, and administrative strike prices |  |
 | `sec:19.5` | Hinkley Point C and construction risk under a CfD |  |
 | `sec:19.6` | Cap-and-floor regimes |  |
 | `ssec:19.6.1` | How cap-and-floor works |  |
@@ -1525,7 +1591,7 @@ Source brief: `briefs/u05.md`.
 | `ssec:19.7.2` | Paying during construction and sharing overruns |  |
 | `ssec:19.7.3` | Government support for tail risks |  |
 | `ssec:19.7.4` | What the RAB leaves with investors and consumers |  |
-| `sec:19.8` | Thames Tideway and Sizewell C: paid from the first day of construction |  |
+| `sec:19.8` | Thames Tideway and Sizewell C, paid from the first day of construction |  |
 | `sec:19.9` | Walkthrough: comparing four support offers for one project |  |
 | `sec:19.10` | Case P: a capacity tariff and a contract for difference |  |
 | `sec:19.11` | Practitioner's notebook |  |
@@ -1547,29 +1613,42 @@ Source brief: `briefs/u05.md`.
 | `exh:19.5` | Four support offers compared |  |
 | `cl:19.1` | Difference amount, contract for difference |  |
 | `cl:19.2` | Negative pricing, contract for difference |  |
+| `cl:19.2a` | Negative pricing, contract for difference (Illustrative, sponsor-friendly) | new label; variant row generated from the brief's (a, b, c) group |
+| `cl:19.2b` | Negative pricing, contract for difference (Illustrative, lender-friendly) | new label; variant row generated from the brief's (a, b, c) group |
+| `cl:19.2c` | Negative pricing, contract for difference (Illustrative, government-friendly) | new label; variant row generated from the brief's (a, b, c) group |
 | `cl:19.3` | Milestone requirement and long-stop date, contract for difference |  |
+| `cl:19.3a` | Milestone requirement and long-stop date, contract for difference (Illustrative, sponsor-friendly) | new label; variant row generated from the brief's (a, b, c) group |
+| `cl:19.3b` | Milestone requirement and long-stop date, contract for difference (Illustrative, lender-friendly) | new label; variant row generated from the brief's (a, b, c) group |
+| `cl:19.3c` | Milestone requirement and long-stop date, contract for difference (Illustrative, government-friendly) | new label; variant row generated from the brief's (a, b, c) group |
 | `cl:19.4` | Qualifying change in law, contract for difference |  |
-| `cl:19.5` | Cap and floor adjustment, interconnector licence |  |
-| `cl:19.6` | Cost sharing above the baseline, RAB licence |  |
-| `eq:19.1` | CfD difference amount: $DA}_t = (K - P^{ref}}_t) E^{del}}_t$ |  |
-| `eq:19.2` | RAB allowed revenue: $AR}_t = RAB}_{t-1} WACC} + Dep}_t + Opex}^{allow}}_t$, indexed |  |
+| `cl:19.4a` | Qualifying change in law, contract for difference (Illustrative, sponsor-friendly) | new label; variant row generated from the brief's (a, b, c) group |
+| `cl:19.4b` | Qualifying change in law, contract for difference (Illustrative, lender-friendly) | new label; variant row generated from the brief's (a, b, c) group |
+| `cl:19.4c` | Qualifying change in law, contract for difference (Illustrative, government-friendly) | new label; variant row generated from the brief's (a, b, c) group |
+| `cl:19.5` | Cap and floor adjustment, interconnector license |  |
+| `cl:19.6` | Cost sharing above the baseline, RAB license |  |
+| `cl:19.6a` | Cost sharing above the baseline, RAB license (Illustrative, sponsor-friendly) | new label; variant row generated from the brief's (a, b, c) group |
+| `cl:19.6b` | Cost sharing above the baseline, RAB license (Illustrative, lender-friendly) | new label; variant row generated from the brief's (a, b, c) group |
+| `cl:19.6c` | Cost sharing above the baseline, RAB license (Illustrative, government-friendly) | new label; variant row generated from the brief's (a, b, c) group |
+| `eq:19.1` | CfD difference amount: $\mathrm{DA}_t = (K - P^{\mathrm{ref}}_t) \times E^{\mathrm{del}}_t$ |  |
+| `eq:19.2` | RAB allowed revenue: $\mathrm{AR}_t = \mathrm{RAB}_{t-1} \times \mathrm{WACC} + \mathrm{Dep}_t + \mathrm{Opex}^{\mathrm{allow}}_t$, indexed |  |
 | `fw:support-scheme-risk-map` | Framework 19.1 Support scheme risk map | home ssec:19.1.2 |
 | `fw:support-durability-test` | Framework 19.2 Statute-or-contract durability test | home sec:19.3 |
+| `exr:19.1` to `exr:19.13` | Exercises (13) | range; cited only inside Ch 19 and by matter file 93 |
 
-### Chapter 20: Merchant revenue, corporate PPAs and hedges
+### Chapter 20: Merchant revenue, corporate PPAs, and hedges
 
 Source brief: `briefs/u05.md`.
 
 | Label | Caption or title | Note |
 |---|---|---|
-| `ch:20` | Merchant revenue, corporate PPAs and hedges |  |
+| `ch:20` | Merchant revenue, corporate PPAs, and hedges |  |
 | `sec:20.1` | Selling into a market without a buyer |  |
 | `ssec:20.1.1` | Four risks in one revenue line |  |
 | `ssec:20.1.2` | Who buys long-term power |  |
 | `sec:20.2` | Corporate power purchase agreements |  |
 | `ssec:20.2.1` | Physical corporate PPAs |  |
 | `ssec:20.2.2` | Virtual PPAs |  |
-| `ssec:20.2.3` | Term, termination and the buyer's credit |  |
+| `ssec:20.2.3` | Term, termination, and the buyer's credit |  |
 | `sec:20.3` | Hedges with fixed volumes and fixed shapes |  |
 | `ssec:20.3.1` | Fixed-volume swaps |  |
 | `ssec:20.3.2` | Fixed-shape hedges |  |
@@ -1577,10 +1656,10 @@ Source brief: `briefs/u05.md`.
 | `sec:20.4` | Hedges that move volume risk |  |
 | `ssec:20.4.1` | As-produced hedges |  |
 | `ssec:20.4.2` | Proxy revenue swaps |  |
-| `sec:20.5` | Floors, puts and collars |  |
+| `sec:20.5` | Floors, puts, and collars |  |
 | `ssec:20.5.1` | Revenue floors and puts |  |
 | `ssec:20.5.2` | Collars |  |
-| `sec:20.6` | Storage revenue: tolls, capacity and ancillary services |  |
+| `sec:20.6` | Storage tolls, capacity, and ancillary-service revenue |  |
 | `ssec:20.6.1` | Battery tolls |  |
 | `ssec:20.6.2` | Capacity revenues |  |
 | `ssec:20.6.3` | Ancillary-service revenues and stacking |  |
@@ -1602,23 +1681,30 @@ Source brief: `briefs/u05.md`.
 | `ex:20.4` | A year under a proxy revenue swap |  |
 | `ex:20.5` | A battery revenue floor with upside sharing |  |
 | `ex:20.6` | A battery toll with an availability shortfall |  |
-| `ex:20.7` | Stacking capacity, ancillary and arbitrage revenue |  |
+| `ex:20.7` | Stacking capacity, ancillary, and arbitrage revenue |  |
 | `exh:20.1` | Which instrument fixes which risk |  |
-| `exh:20.2` | vPPA settlement over six hours (USD) |  |
+| `exh:20.2` | VPPA settlement over six hours (USD) |  |
 | `exh:20.3` | Fixed-shape hedge on a mild day and a scarcity day (USD) |  |
 | `exh:20.4` | Illustrative monthly hedge book settlement |  |
 | `exh:20.5` | Case R hedge book by year (Case R) |  |
 | `exh:20.6` | Uri-type stress on R1's fixed-volume swap (Case R) |  |
 | `cl:20.1` | Settlement amount, virtual PPA |  |
 | `cl:20.2` | Contract quantity and force majeure, fixed-volume hedge |  |
+| `cl:20.2a` | Contract quantity and force majeure, fixed-volume hedge (Illustrative, sponsor-friendly) | new label; variant row generated from the brief's (a, b, c) group |
+| `cl:20.2b` | Contract quantity and force majeure, fixed-volume hedge (Illustrative, lender-friendly) | new label; variant row generated from the brief's (a, b, c) group |
+| `cl:20.2c` | Contract quantity and force majeure, fixed-volume hedge (Illustrative, hedge-provider-friendly) | new label; variant row generated from the brief's (a, b, c) group |
 | `cl:20.3` | Proxy generation, proxy revenue swap |  |
 | `cl:20.4` | Availability and capacity maintenance, battery toll |  |
 | `cl:20.5` | Credit support, power hedge |  |
-| `eq:20.1` | vPPA settlement: $S_t = (K - P^{hub}}_t) E^{del}}_t$ |  |
-| `eq:20.2` | Fixed-volume swap settlement: $S_t = (K - P^{hub}}_t) Q_t$ |  |
-| `eq:20.3` | Realized price decomposition: $p^{real}} = K - _t (P^{hub}}_t - P^{node}}_t)E_t / _t E_t$ (vPPA case) |  |
+| `cl:20.5a` | Credit support, power hedge (Illustrative, sponsor-friendly) | new label; variant row generated from the brief's (a, b, c) group |
+| `cl:20.5b` | Credit support, power hedge (Illustrative, lender-friendly) | new label; variant row generated from the brief's (a, b, c) group |
+| `cl:20.5c` | Credit support, power hedge (Illustrative, hedge-provider-friendly) | new label; variant row generated from the brief's (a, b, c) group |
+| `eq:20.1` | VPPA settlement: $S_t = (K - P^{\mathrm{hub}}_t) \times E^{\mathrm{del}}_t$ |  |
+| `eq:20.2` | Fixed-volume swap settlement: $S_t = (K - P^{\mathrm{hub}}_t) \times Q_t$ |  |
+| `eq:20.3` | Realized price decomposition: $p^{\mathrm{real}} = K - \sum_t (P^{\mathrm{hub}}_t - P^{\mathrm{node}}_t)E_t / \sum_t E_t$ (vPPA case) |  |
 | `fw:four-risk-decomposition` | Framework 20.1 Four-risk decomposition of merchant revenue | home ssec:20.1.1 |
 | `fw:scarcity-stress` | Framework 20.2 Scarcity stress for a hedge book | home sec:20.8 |
+| `exr:20.1` to `exr:20.14` | Exercises (14) | range; cited only inside Ch 20 and by matter file 93 |
 
 ### Chapter 21: Revenue contracts beyond power
 
@@ -1637,7 +1723,7 @@ Source brief: `briefs/u05.md`.
 | `ssec:21.2.4` | What lenders need from an LNG offtake book |  |
 | `sec:21.3` | Pipeline transportation and ship-or-pay |  |
 | `ssec:21.3.1` | Reserved capacity and ship-or-pay |  |
-| `ssec:21.3.2` | Shippers, credit and regulation |  |
+| `ssec:21.3.2` | Shippers, credit, and regulation |  |
 | `sec:21.4` | Mining offtake |  |
 | `ssec:21.4.1` | How a concentrate is paid for |  |
 | `ssec:21.4.2` | Offtake as a financing tool |  |
@@ -1645,7 +1731,7 @@ Source brief: `briefs/u05.md`.
 | `ssec:21.5.1` | Royalties |  |
 | `ssec:21.5.2` | Streams |  |
 | `sec:21.6` | Availability payments |  |
-| `ssec:21.6.1` | The contract form |  |
+| `ssec:21.6.1` | The availability payment as a contract form |  |
 | `sec:21.7` | User tolls and tariffs |  |
 | `ssec:21.7.1` | Maximum tolls and escalation |  |
 | `ssec:21.7.2` | Regulated tolls and upfront fees |  |
@@ -1653,7 +1739,7 @@ Source brief: `briefs/u05.md`.
 | `ssec:21.8.1` | Airport charges |  |
 | `ssec:21.8.2` | Port concessions |  |
 | `sec:21.9` | Data-center leases |  |
-| `ssec:21.9.1` | The lease |  |
+| `ssec:21.9.1` | The data-center lease |  |
 | `ssec:21.9.2` | Short leases and residual value guarantees |  |
 | `sec:21.10` | Sabine Pass and the fee that survived a cargo glut |  |
 | `sec:21.11` | Walkthrough: applying the fixed-fee test to a port terminal term sheet |  |
@@ -1676,21 +1762,39 @@ Source brief: `briefs/u05.md`.
 | `exh:21.1` | Revenue contract classification grid |  |
 | `exh:21.2` | Sabine Pass fixed fees by buyer (Real case) |  |
 | `exh:21.3` | Concentrate invoice build per dry metric tonne |  |
-| `exh:21.4` | Illustrative container terminal concession term sheet |  |
+| `exh:21.4` | Illustrative container terminal concession term sheet (Tema, hypothetical) |  |
 | `exh:21.5` | Merrick Link maximum tolls by class (Case T) |  |
 | `exh:21.6` | Bélanou gas transportation charges (Case P) |  |
 | `cl:21.1` | Fixed fee and cargo cancellation, LNG SPA |  |
+| `cl:21.1a` | Fixed fee and cargo cancellation, LNG SPA (Illustrative, sponsor-friendly) | new label; variant row generated from the brief's (a, b, c) group |
+| `cl:21.1b` | Fixed fee and cargo cancellation, LNG SPA (Illustrative, lender-friendly) | new label; variant row generated from the brief's (a, b, c) group |
+| `cl:21.1c` | Fixed fee and cargo cancellation, LNG SPA (Illustrative, buyer-friendly) | new label; variant row generated from the brief's (a, b, c) group |
 | `cl:21.2` | Reservation charge and ship-or-pay, gas transportation agreement |  |
 | `cl:21.3` | Payable metals and deductions, concentrate offtake agreement |  |
-| `cl:21.4` | Delivery obligation, precious metals stream agreement |  |
-| `cl:21.5` | Availability deductions, availability-based PPP agreement |  |
-| `cl:21.6` | Toll setting and escalation, concession agreement |  |
-| `cl:21.7` | Rent commencement and power delivery, data-center lease |  |
-| `eq:21.1` | LNG SPA price: $p^{LNG}}_t = 1.15 HH}_t + F$ (Sabine-type) |  |
+| `cl:21.4` | Net smelter return royalty and permitted deductions, royalty agreement |  |
+| `cl:21.4a` | Net smelter return royalty and permitted deductions, royalty agreement (Illustrative, sponsor-friendly) | new label; variant row generated from the brief's (a, b, c) group |
+| `cl:21.4b` | Net smelter return royalty and permitted deductions, royalty agreement (Illustrative, lender-friendly) | new label; variant row generated from the brief's (a, b, c) group |
+| `cl:21.4c` | Net smelter return royalty and permitted deductions, royalty agreement (Illustrative, royalty-holder-friendly) | new label; variant row generated from the brief's (a, b, c) group |
+| `cl:21.5` | Delivery obligation, precious metals stream agreement | was cl:21.4 |
+| `cl:21.6` | Availability deductions, availability-based PPP agreement | was cl:21.5 |
+| `cl:21.7` | Toll setting and escalation, concession agreement | was cl:21.6 |
+| `cl:21.7a` | Toll setting and escalation, concession agreement (Illustrative, sponsor-friendly) | new label; variant row generated from the brief's (a, b, c) group |
+| `cl:21.7b` | Toll setting and escalation, concession agreement (Illustrative, lender-friendly) | new label; variant row generated from the brief's (a, b, c) group |
+| `cl:21.7c` | Toll setting and escalation, concession agreement (Illustrative, government-friendly) | new label; variant row generated from the brief's (a, b, c) group |
+| `cl:21.8` | Minimum annual guarantee and throughput fee, port concession agreement | new label |
+| `cl:21.8a` | Minimum annual guarantee and throughput fee, port concession agreement (Illustrative, sponsor-friendly) | new label; variant row generated from the brief's (a, b, c) group |
+| `cl:21.8b` | Minimum annual guarantee and throughput fee, port concession agreement (Illustrative, lender-friendly) | new label; variant row generated from the brief's (a, b, c) group |
+| `cl:21.8c` | Minimum annual guarantee and throughput fee, port concession agreement (Illustrative, government-friendly) | new label; variant row generated from the brief's (a, b, c) group |
+| `cl:21.9` | Rent commencement and power delivery, data-center lease | new label; was cl:21.7 |
+| `cl:21.9a` | Rent commencement and power delivery, data-center lease (Illustrative, sponsor-friendly) | new label; variant row generated from the brief's (a, b, c) group |
+| `cl:21.9b` | Rent commencement and power delivery, data-center lease (Illustrative, lender-friendly) | new label; variant row generated from the brief's (a, b, c) group |
+| `cl:21.9c` | Rent commencement and power delivery, data-center lease (Illustrative, tenant-friendly) | new label; variant row generated from the brief's (a, b, c) group |
+| `eq:21.1` | LNG SPA price: $p^{\mathrm{LNG}}_t = 1.15 \times \mathrm{HH}_t + F$ (Sabine-type) |  |
 | `eq:21.2` | Net smelter return per dmt: payable value of each metal less TC, RCs and penalties |  |
-| `eq:21.3` | Availability payment: $AP}_t = AP}^{}_t - AD}_t - PD}_t$ |  |
+| `eq:21.3` | Availability payment: $\mathrm{AP}_t = \mathrm{AP}^{\max}_t - \mathrm{AD}_t - \mathrm{PD}_t$ |  |
 | `fw:fixed-fee-test` | Framework 21.1 Fixed-fee test | home ssec:21.1.1 |
 | `fw:revenue-contract-grid` | Framework 21.2 Revenue contract classification grid | home ssec:21.1.2 |
+| `exr:21.1` to `exr:21.17` | Exercises (17) | range; cited only inside Ch 21 and by matter file 93 |
 
 ### Chapter 22: The EPC contract
 
@@ -1704,29 +1808,29 @@ Source brief: `briefs/u05.md`.
 | `ssec:22.1.2` | Scope and fitness for purpose |  |
 | `ssec:22.1.3` | What stays with the owner |  |
 | `sec:22.2` | Price and payment |  |
-| `ssec:22.2.1` | Milestones, advance and currency |  |
+| `ssec:22.2.1` | Milestones, advance, and currency |  |
 | `sec:22.3` | Delay liquidated damages |  |
 | `ssec:22.3.1` | What delay LDs must pay for |  |
 | `ssec:22.3.2` | The cap and its adequacy |  |
 | `ssec:22.3.3` | Drafting delay LDs |  |
 | `sec:22.4` | Performance guarantees and testing |  |
-| `ssec:22.4.1` | Guarantees, minimum levels and buy-down LDs |  |
-| `ssec:22.4.2` | Tests, taking-over and acceptance |  |
-| `sec:22.5` | Changes, time and claims |  |
+| `ssec:22.4.1` | Guarantees, minimum levels, and buy-down LDs |  |
+| `ssec:22.4.2` | Tests, taking-over, and acceptance |  |
+| `sec:22.5` | Changes, time, and claims |  |
 | `ssec:22.5.1` | Variations |  |
 | `ssec:22.5.2` | Extension of time and concurrent delay |  |
-| `ssec:22.5.3` | Notices, time bars and claims |  |
-| `sec:22.6` | Liability, security and the contractor's credit |  |
-| `ssec:22.6.1` | Caps, sub-caps and carve-outs |  |
-| `ssec:22.6.2` | The security package |  |
+| `ssec:22.5.3` | Notices, time bars, and claims |  |
+| `sec:22.6` | Liability, security, and the contractor's credit |  |
+| `ssec:22.6.1` | Caps, sub-caps, and carve-outs |  |
+| `ssec:22.6.2` | Bonds, guarantees, and retention as contractor security |  |
 | `ssec:22.6.3` | When the contractor fails |  |
 | `sec:22.7` | Defects liability and warranties |  |
-| `ssec:22.7.1` | Defects, latent defects and serial defects |  |
+| `ssec:22.7.1` | Defects, latent defects, and serial defects |  |
 | `sec:22.8` | How the EPC contract fits the rest of the web |  |
 | `ssec:22.8.1` | Back to back with the PPA |  |
 | `ssec:22.8.2` | Insurance and the EPC |  |
-| `ssec:22.8.3` | Beyond the single EPC contract |  |
-| `sec:22.9` | Sabine Pass, Vogtle and Carillion: three fixed prices, three outcomes |  |
+| `ssec:22.8.3` | When one EPC contract is not enough |  |
+| `sec:22.9` | Three fixed prices at Sabine Pass, Vogtle, and Carillion |  |
 | `sec:22.10` | Triple Point and liquidated damages after termination |  |
 | `sec:22.11` | Walkthrough: calibrating and marking up an EPC liability package |  |
 | `sec:22.12` | Case P: negotiating the Bélanou EPC contract |  |
@@ -1736,10 +1840,10 @@ Source brief: `briefs/u05.md`.
 | `sec:22.16` | Exercises |  |
 | `sec:22.17` | Solutions to exercises |  |
 | `ex:22.1` | Calibrating the delay LD rate |  |
-| `ex:22.2` | How many days does the cap cover? |  |
+| `ex:22.2` | Days of delay the cap covers |  |
 | `ex:22.3` | Pricing performance LDs as the NPV of lost margin |  |
 | `ex:22.4` | Extension of time under three concurrency rules |  |
-| `ex:22.5` | What the security package covers when the contractor fails |  |
+| `ex:22.5` | What the contractor's security covers when the contractor fails |  |
 | `exh:22.1` | The four EPC promises and the remedy behind each |  |
 | `exh:22.2` | Delay LD calibration stack for a 342 MW CCGT (USD per day) |  |
 | `exh:22.3` | EPC security stack at contractor failure (USD m) |  |
@@ -1748,28 +1852,38 @@ Source brief: `briefs/u05.md`.
 | `exh:22.6` | Case P EPC risk package (Case P) |  |
 | `cl:22.1` | Scope and fitness for purpose, EPC contract |  |
 | `cl:22.2` | Delay liquidated damages, EPC contract |  |
+| `cl:22.2a` | Delay liquidated damages, EPC contract (Illustrative, sponsor-friendly) | new label; variant row generated from the brief's (a, b, c) group |
+| `cl:22.2b` | Delay liquidated damages, EPC contract (Illustrative, lender-friendly) | new label; variant row generated from the brief's (a, b, c) group |
+| `cl:22.2c` | Delay liquidated damages, EPC contract (Illustrative, contractor-friendly) | new label; variant row generated from the brief's (a, b, c) group |
 | `cl:22.3` | Performance liquidated damages, EPC contract |  |
 | `cl:22.4` | Taking-over and completion tests, EPC contract |  |
 | `cl:22.5` | Extension of time and concurrent delay, EPC contract |  |
+| `cl:22.5a` | Extension of time and concurrent delay, EPC contract (Illustrative, sponsor-friendly) | new label; variant row generated from the brief's (a, b, c) group |
+| `cl:22.5b` | Extension of time and concurrent delay, EPC contract (Illustrative, lender-friendly) | new label; variant row generated from the brief's (a, b, c) group |
+| `cl:22.5c` | Extension of time and concurrent delay, EPC contract (Illustrative, contractor-friendly) | new label; variant row generated from the brief's (a, b, c) group |
 | `cl:22.6` | Limitation of liability, EPC contract |  |
+| `cl:22.6a` | Limitation of liability, EPC contract (Illustrative, sponsor-friendly) | new label; variant row generated from the brief's (a, b, c) group |
+| `cl:22.6b` | Limitation of liability, EPC contract (Illustrative, lender-friendly) | new label; variant row generated from the brief's (a, b, c) group |
+| `cl:22.6c` | Limitation of liability, EPC contract (Illustrative, contractor-friendly) | new label; variant row generated from the brief's (a, b, c) group |
 | `cl:22.7` | Call on the performance bond, EPC contract |  |
 | `cl:22.8` | Defects liability, EPC contract |  |
-| `eq:22.1` | Daily delay cost: $c^{delay}} = D i/365 + c^{fix}} + LD}^{PPA}} (+ P/days} + E^{dist}}/365)$ |  |
-| `eq:22.2` | Performance LD rate per kW: $LD}^{kW}} = 12 cpr} [1-(1+r)^{-n}]/r$ |  |
+| `eq:22.1` | Daily delay cost: $c^{\mathrm{delay}} = D \times i/365 + c^{\mathrm{fix}} + \mathrm{LD}^{\mathrm{PPA}} (+ P/\mathrm{days} + E^{\mathrm{dist}}/365)$ |  |
+| `eq:22.2` | Performance LD rate per kW: $\mathrm{LD}^{\mathrm{kW}} = 12 \times \mathrm{cpr} \times \left[1-(1+r)^{-n}\right]/r$ |  |
 | `eq:22.3` | Heat-rate LD rate per kJ/kWh: annual extra fuel cost per kJ/kWh times the annuity factor |  |
 | `fw:delay-ld-calibration` | Framework 22.1 Delay LD calibration stack | home ssec:22.3.1 |
 | `fw:epc-security-stack` | Framework 22.2 EPC security stack | home ssec:22.6.2 |
+| `exr:22.1` to `exr:22.17` | Exercises (17) | range; cited only inside Ch 22 and by matter file 93 |
 
-### Chapter 23: Construction structures beyond the single EPC
+### Chapter 23: Construction structures beyond the single EPC contract
 
 Source brief: `briefs/u06.md`.
 
 | Label | Caption or title | Note |
 |---|---|---|
-| `ch:23` | Construction structures beyond the single EPC |  |
+| `ch:23` | Construction structures beyond the single EPC contract |  |
 | `sec:23.1` | What a single EPC contract buys |  |
 | `ssec:23.1.1` | One point of responsibility and its price |  |
-| `ssec:23.1.2` | Why sponsors break the wrap |  |
+| `ssec:23.1.2` | Five reasons sponsors break the wrap |  |
 | `ssec:23.1.3` | What lenders ask for in exchange |  |
 | `sec:23.2` | Split and multi-contract structures |  |
 | `ssec:23.2.1` | The onshore and offshore split |  |
@@ -1780,25 +1894,25 @@ Source brief: `briefs/u06.md`.
 | `ssec:23.3.2` | How one late handover cascades |  |
 | `ssec:23.3.3` | Drafting the interface agreement |  |
 | `sec:23.4` | Wraps |  |
-| `ssec:23.4.1` | Full, partial and performance wraps |  |
+| `ssec:23.4.1` | Full, partial, and performance wraps |  |
 | `ssec:23.4.2` | Wrap caps and the sum-of-caps problem |  |
 | `ssec:23.4.3` | Who can give a wrap |  |
 | `sec:23.5` | EPCM and owner-managed delivery |  |
 | `ssec:23.5.1` | How EPCM works |  |
 | `ssec:23.5.2` | Pricing the risk the owner keeps |  |
-| `ssec:23.5.3` | Cost-reimbursable, target-cost and alliance contracts |  |
+| `ssec:23.5.3` | Cost-reimbursable, target-cost, and alliance contracts |  |
 | `sec:23.6` | Design and construction contracts in PPPs and the joint-venture contractor |  |
 | `ssec:23.6.1` | Back-to-back D&C contracts under a concession |  |
 | `ssec:23.6.2` | Joint and several liability and the JV agreement |  |
-| `sec:23.7` | FIDIC, NEC and other standard forms |  |
+| `sec:23.7` | FIDIC, NEC, and other standard forms |  |
 | `ssec:23.7.1` | The FIDIC family and how each book allocates risk |  |
 | `ssec:23.7.2` | NEC4 and the process-driven contract |  |
-| `ssec:23.7.3` | Why lenders amend standard forms |  |
+| `ssec:23.7.3` | The amendments lenders make to standard forms |  |
 | `sec:23.8` | Walkthrough: marking up a standard-form contract for a project financing |  |
 | `sec:23.9` | Supply-chain risk |  |
-| `ssec:23.9.1` | Concentration, lead times and logistics |  |
+| `ssec:23.9.1` | Concentration, lead times, and logistics |  |
 | `ssec:23.9.2` | Price adjustment clauses |  |
-| `ssec:23.9.3` | Origin, trade and sanctions constraints |  |
+| `ssec:23.9.3` | Origin, trade, and sanctions constraints |  |
 | `sec:23.10` | Equipment-supplier credit |  |
 | `ssec:23.10.1` | What the owner relies on after delivery |  |
 | `ssec:23.10.2` | Measuring supplier credit exposure |  |
@@ -1816,16 +1930,24 @@ Source brief: `briefs/u06.md`.
 | `ex:23.3` | EPCM against lump-sum turnkey for a copper concentrator |  |
 | `ex:23.4` | A steel price adjustment with a band and sharing |  |
 | `ex:23.5` | A battery supplier's credit exposure over ten years |  |
-| `exh:23.1` | Delivery structures compared: single EPC, split, multi-contract, EPCM (who carries interface, price and schedule risk) (Illustrative) |  |
-| `exh:23.2` | Interface matrix for a split hydro contract (Illustrative) |  |
-| `exh:23.3` | FIDIC books and their risk allocation (source) |  |
-| `exh:23.4` | Offshore wind package map (TikZ diagram, Illustrative) |  |
-| `exh:23.5` | Supplier exposure against security by year (Illustrative) |  |
-| `exh:23.6` | Case T D&C and tolling interface map (Case T) |  |
+| `exh:23.1` | Single EPC, split, multi-contract, and EPCM delivery compared by who carries interface, price, and schedule risk (Illustrative) | placed in ssec:23.1.1 |
+| `exh:23.2` | Offshore wind package map (TikZ diagram, Illustrative) | placed in ssec:23.2.2 |
+| `exh:23.3` | Interface matrix for a split hydro contract (Illustrative) | placed in ssec:23.3.1 |
+| `exh:23.4` | FIDIC books and their risk allocation |  |
+| `exh:23.5` | Supplier exposure against security by year (Illustrative) | placed in ssec:23.10.2 |
+| `exh:23.6` | Case T D&C and tolling interface map (Case T) | placed in sec:23.12 |
 | `cl:23.1` | Interface agreement, core obligations |  |
 | `cl:23.2` | Wrap guarantee liability cap |  |
+| `cl:23.2a` | Wrap guarantee liability cap (Illustrative, sponsor-friendly) | new label |
+| `cl:23.2b` | Wrap guarantee liability cap (Illustrative, lender-friendly) | new label |
+| `cl:23.2c` | Wrap guarantee liability cap (Illustrative, contractor-friendly) | new label |
+| `cl:23.3` | EPCM contractor's standard of care and liability cap | new label |
+| `cl:23.3a` | EPCM contractor's standard of care and liability cap (Illustrative, sponsor-friendly) | new label |
+| `cl:23.3b` | EPCM contractor's standard of care and liability cap (Illustrative, lender-friendly) | new label |
+| `cl:23.3c` | EPCM contractor's standard of care and liability cap (Illustrative, EPCM-contractor-friendly) | new label |
 | `eq:23.1` | Price adjustment formula |  |
 | `fw:construction-structure-selector` | Framework 23.1 Construction structure selector | home ssec:23.1.3 |
+| `exr:23.1` to `exr:23.17` | Exercises (17) | range; cited only inside Ch 23 and by matter file 93 |
 
 ### Chapter 24: Operations and maintenance contracts
 
@@ -1838,68 +1960,80 @@ Source brief: `briefs/u06.md`.
 | `ssec:24.1.1` | The operating cost line and the revenue at risk |  |
 | `ssec:24.1.2` | Who does what after COD |  |
 | `sec:24.2` | The O&M agreement |  |
-| `ssec:24.2.1` | Scope, standards and the operating budget |  |
-| `ssec:24.2.2` | Fixed fee, cost-plus and hybrids |  |
+| `ssec:24.2.1` | Scope, standards, and the operating budget |  |
+| `ssec:24.2.2` | Fixed fee, cost-plus, and hybrids |  |
 | `ssec:24.2.3` | Performance regimes and liability caps |  |
-| `ssec:24.2.4` | Mobilization, term, termination and replacement |  |
+| `ssec:24.2.4` | Mobilization, term, termination, and replacement |  |
 | `ssec:24.2.5` | Affiliated operators and conflicts |  |
 | `sec:24.3` | Long-term service agreements |  |
 | `ssec:24.3.1` | What the OEM sells and why |  |
-| `ssec:24.3.2` | Equivalent operating hours, starts and fees |  |
-| `ssec:24.3.3` | OEM availability, performance and parts guarantees |  |
+| `ssec:24.3.2` | Equivalent operating hours, starts, and fees |  |
+| `ssec:24.3.3` | OEM availability, performance, and parts guarantees |  |
 | `ssec:24.3.4` | Term, the end-of-agreement cliff, and termination |  |
 | `sec:24.4` | Asset management agreements |  |
 | `sec:24.5` | Planning and paying for major maintenance |  |
 | `ssec:24.5.1` | Cycles by technology |  |
 | `ssec:24.5.2` | Smoothing a lumpy cost |  |
 | `ssec:24.5.3` | Lifecycle risk in PPPs |  |
-| `sec:24.6` | Designing incentives that work |  |
+| `sec:24.6` | Aligning operator incentives with the offtake contract |  |
 | `sec:24.7` | Walkthrough: reading an LTSA fee schedule against a dispatch forecast |  |
 | `sec:24.8` | Metronet and the tied supply chain |  |
 | `sec:24.9` | Case P: the Bergmark LTSA and the Kilnworth O&M agreement |  |
 | `sec:24.10` | Practitioner's notebook |  |
 | `sec:24.11` | Judgment drill |  |
-| `sec:24.12` | A plant that runs needs fuel, water, a grid and land it can keep |  |
+| `sec:24.12` | A plant that runs needs fuel, water, a grid, and land it can keep |  |
 | `sec:24.13` | Exercises |  |
 | `sec:24.14` | Solutions to exercises |  |
 | `ex:24.1` | Fixed fee or cost-plus for a geothermal plant |  |
 | `ex:24.2` | How much of an availability shortfall the operator bears |  |
 | `ex:24.3` | LTSA cost per MWh for a peaker and a baseload unit |  |
 | `ex:24.4` | Smoothing an inverter replacement |  |
-| `exh:24.1` | Who does what after COD (diagram, Illustrative) |  |
-| `exh:24.2` | Fee structures compared (Illustrative) |  |
-| `exh:24.3` | Major maintenance cycles by technology (Illustrative, with Case P and Case T inputs flagged) |  |
-| `exh:24.4` | LTSA fees under peaking and baseload duty (Illustrative) |  |
-| `exh:24.5` | Case P operating cost build OY1 to OY10 (Case P, P-F34) |  |
+| `exh:24.1` | Who does what after COD (diagram, Illustrative) | placed in ssec:24.1.2 |
+| `exh:24.2` | Fee structures compared (Illustrative) | placed in ssec:24.2.2 |
+| `exh:24.3` | LTSA fees under peaking and baseload duty (Illustrative) | placed in ssec:24.3.2 |
+| `exh:24.4` | Major maintenance cycles by technology (Illustrative, with Case P and Case T inputs flagged) | placed in ssec:24.5.1 |
+| `exh:24.5` | Case P operating cost build OY1 to OY10 (Case P, P-F34) | placed in sec:24.9 |
 | `cl:24.1` | O&M availability guarantee and cap |  |
-| `eq:24.1` | Equivalent operating hours |  |
+| `cl:24.1a` | O&M availability guarantee and cap (Illustrative, sponsor-friendly) | new label |
+| `cl:24.1b` | O&M availability guarantee and cap (Illustrative, lender-friendly) | new label |
+| `cl:24.1c` | O&M availability guarantee and cap (Illustrative, operator-friendly) | new label |
+| `cl:24.2` | LTSA fees and guarantees | new label |
+| `cl:24.2a` | LTSA fees and guarantees (Illustrative, sponsor-friendly) | new label |
+| `cl:24.2b` | LTSA fees and guarantees (Illustrative, lender-friendly) | new label |
+| `cl:24.2c` | LTSA fees and guarantees (Illustrative, OEM-friendly) | new label |
+| `cl:24.3` | Asset management agreement scope and termination for underperformance | new label |
+| `cl:24.3a` | Asset management agreement scope and termination for underperformance (Illustrative, sponsor-friendly) | new label |
+| `cl:24.3b` | Asset management agreement scope and termination for underperformance (Illustrative, lender-friendly) | new label |
+| `cl:24.3c` | Asset management agreement scope and termination for underperformance (Illustrative, manager-friendly) | new label |
+| `eq:24.1` | Equivalent operating hours under an LTSA counting rule (application of the Ch 11 definition) |  |
 | `fw:operating-incentive-alignment` | Framework 24.1 Operating incentive alignment test | home sec:24.6 |
+| `exr:24.1` to `exr:24.17` | Exercises (17) | range; cited only inside Ch 24 and by matter file 93 |
 
-### Chapter 25: Inputs and access: fuel, water, grid, land and permits
+### Chapter 25: Securing fuel, water, grid access, land, and permits
 
 Source brief: `briefs/u06.md`.
 
 | Label | Caption or title | Note |
 |---|---|---|
-| `ch:25` | Inputs and access: fuel, water, grid, land and permits |  |
+| `ch:25` | Securing fuel, water, grid access, land, and permits |  |
 | `sec:25.1` | Inputs the project company cannot control |  |
 | `sec:25.2` | Fuel and feedstock supply agreements |  |
 | `ssec:25.2.1` | Matching the fuel contract to the offtake contract |  |
 | `ssec:25.2.2` | Contract quantities and nominations |  |
-| `ssec:25.2.3` | Take-or-pay, make-up and carry-forward |  |
+| `ssec:25.2.3` | Take-or-pay, make-up, and carry-forward |  |
 | `ssec:25.2.4` | Deliver-or-pay and supply shortfalls |  |
-| `ssec:25.2.5` | Price, indexation and pass-through |  |
-| `ssec:25.2.6` | Quality, measurement and the delivery point |  |
+| `ssec:25.2.5` | Price, indexation, and pass-through |  |
+| `ssec:25.2.6` | Quality, measurement, and the delivery point |  |
 | `ssec:25.2.7` | Supplier credit and reserves |  |
-| `ssec:25.2.8` | Coal, LNG, biomass and other feedstocks |  |
+| `ssec:25.2.8` | Coal, LNG, biomass, and other feedstocks |  |
 | `sec:25.3` | Transportation from the shipper's side |  |
 | `ssec:25.3.1` | Reserving capacity |  |
 | `ssec:25.3.2` | Lining up the gas chain end to end |  |
 | `sec:25.4` | Water |  |
 | `ssec:25.4.1` | Cooling and process water |  |
-| `ssec:25.4.2` | Water rights, permits and drought |  |
+| `ssec:25.4.2` | Water rights, permits, and drought |  |
 | `sec:25.5` | Grid connection and interconnection |  |
-| `ssec:25.5.1` | Connection agreements, use-of-system and who builds what |  |
+| `ssec:25.5.1` | Connection agreements, use-of-system, and who builds what |  |
 | `ssec:25.5.2` | Late connection and deemed energy |  |
 | `ssec:25.5.3` | Firm and non-firm access and curtailment |  |
 | `sec:25.6` | Lake Turkana and the line that came late |  |
@@ -1909,7 +2043,7 @@ Source brief: `briefs/u06.md`.
 | `ssec:25.7.3` | Linear rights for pipelines, lines and roads |  |
 | `sec:25.8` | Permits and their transferability |  |
 | `ssec:25.8.1` | The permit register |  |
-| `ssec:25.8.2` | Transferability, change of control and enforcement |  |
+| `ssec:25.8.2` | Transferability, change of control, and enforcement |  |
 | `sec:25.9` | Testing the input chain |  |
 | `sec:25.10` | Mundra and the limits of a fuel contract |  |
 | `sec:25.11` | Walkthrough: building a permits and inputs register for a lender |  |
@@ -1924,19 +2058,36 @@ Source brief: `briefs/u06.md`.
 | `ex:25.3` | When the PPA does not pass take-or-pay through |  |
 | `ex:25.4` | Fourteen months waiting for the grid |  |
 | `ex:25.5` | Does the land lease outlast the debt |  |
-| `exh:25.1` | The input chain of a gas-fired IPP (diagram, Illustrative) |  |
-| `exh:25.2` | Gas chain alignment by dimension (Illustrative, with Case P input column) |  |
-| `exh:25.3` | Make-up account over four years (Illustrative) |  |
-| `exh:25.4` | Permits and inputs register template (Illustrative) |  |
-| `exh:25.5` | Input chain alignment grid applied to an OCGT (Illustrative) |  |
-| `exh:25.6` | Case P gas volumes against DCQ and take-or-pay (Case P, P-F35) |  |
+| `exh:25.1` | The input chain of a gas-fired IPP (diagram, Illustrative) | placed in sec:25.1 |
+| `exh:25.2` | Make-up account over four years (Illustrative) | placed in ssec:25.2.3 |
+| `exh:25.3` | Gas chain alignment by dimension (Illustrative, with Case P input column) | placed in ssec:25.3.2 |
+| `exh:25.4` | Permits and inputs register template (Illustrative) | placed in ssec:25.8.1 |
+| `exh:25.5` | Input chain alignment grid applied to an OCGT (Illustrative) | placed in sec:25.9 |
+| `exh:25.6` | Case P gas volumes against ACQ and take-or-pay (Case P, P-F35) | placed in sec:25.12 |
 | `cl:25.1` | Take-or-pay and make-up, gas sale agreement |  |
-| `cl:25.1a` | buyer-friendly |  |
-| `cl:25.1b` | lender-friendly |  |
-| `cl:25.1c` | seller-friendly) Take-or-pay and make-up, gas sale agreement |  |
+| `cl:25.1a` | Take-or-pay and make-up, gas sale agreement (Illustrative, buyer-friendly) |  |
+| `cl:25.1b` | Take-or-pay and make-up, gas sale agreement (Illustrative, lender-friendly) |  |
+| `cl:25.1c` | Take-or-pay and make-up, gas sale agreement (Illustrative, seller-friendly) |  |
+| `cl:25.2` | Reserved capacity and alignment, gas transportation agreement | new label |
+| `cl:25.2a` | Reserved capacity and alignment, gas transportation agreement (Illustrative, shipper-friendly) | new label |
+| `cl:25.2b` | Reserved capacity and alignment, gas transportation agreement (Illustrative, lender-friendly) | new label |
+| `cl:25.2c` | Reserved capacity and alignment, gas transportation agreement (Illustrative, transporter-friendly) | new label |
+| `cl:25.3` | Water abstraction quantity and curtailment priority | new label |
+| `cl:25.3a` | Water abstraction quantity and curtailment priority (Illustrative, sponsor-friendly) | new label |
+| `cl:25.3b` | Water abstraction quantity and curtailment priority (Illustrative, lender-friendly) | new label |
+| `cl:25.3c` | Water abstraction quantity and curtailment priority (Illustrative, government-friendly) | new label |
+| `cl:25.4` | Connection date and late-energization remedy, grid connection agreement | new label |
+| `cl:25.4a` | Connection date and late-energization remedy, grid connection agreement (Illustrative, sponsor-friendly) | new label |
+| `cl:25.4b` | Connection date and late-energization remedy, grid connection agreement (Illustrative, lender-friendly) | new label |
+| `cl:25.4c` | Connection date and late-energization remedy, grid connection agreement (Illustrative, government-friendly) | new label |
+| `cl:25.5` | Lender-protection provisions, land lease | new label |
+| `cl:25.5a` | Lender-protection provisions, land lease (Illustrative, lessee-friendly) | new label |
+| `cl:25.5b` | Lender-protection provisions, land lease (Illustrative, lender-friendly) | new label |
+| `cl:25.5c` | Lender-protection provisions, land lease (Illustrative, landowner-friendly) | new label |
 | `eq:25.1` | Daily fuel requirement |  |
 | `eq:25.2` | Deficiency payment |  |
 | `fw:input-chain-alignment` | Framework 25.1 Input chain alignment grid | home sec:25.9 |
+| `exr:25.1` to `exr:25.18` | Exercises (18) | range; cited only inside Ch 25 and by matter file 93 |
 
 ### Chapter 26: Sponsor and shareholder documents
 
@@ -1947,24 +2098,24 @@ Source brief: `briefs/u06.md`.
 | `ch:26` | Sponsor and shareholder documents |  |
 | `sec:26.1` | The documents that bind the owners |  |
 | `sec:26.2` | Development and co-development agreements |  |
-| `ssec:26.2.1` | Exclusivity, cost sharing and decision-making |  |
+| `ssec:26.2.1` | Exclusivity, cost sharing, and decision-making |  |
 | `ssec:26.2.2` | Funding defaults and dilution |  |
 | `ssec:26.2.3` | Development fees and reimbursement at financial close |  |
-| `ssec:26.2.4` | Withdrawal, deadlock and break-up |  |
+| `ssec:26.2.4` | Withdrawal, deadlock, and break-up |  |
 | `sec:26.3` | The shareholders' agreement |  |
-| `ssec:26.3.1` | Boards, quorum and reserved matters |  |
+| `ssec:26.3.1` | Boards, quorum, and reserved matters |  |
 | `ssec:26.3.2` | Funding obligations and defaulting shareholders |  |
 | `ssec:26.3.3` | Transfer restrictions and exit rights |  |
 | `ssec:26.3.4` | Related-party contracts and conflicts |  |
 | `ssec:26.3.5` | How the shareholders' agreement sits under the finance documents |  |
 | `sec:26.4` | Equity contribution agreements |  |
 | `ssec:26.4.1` | The commitment and its conditions |  |
-| `ssec:26.4.2` | Acceleration, LC support and contingent equity |  |
+| `ssec:26.4.2` | Acceleration, LC support, and contingent equity |  |
 | `sec:26.5` | Sponsor support and completion guarantees |  |
 | `ssec:26.5.1` | The sponsor support spectrum |  |
 | `ssec:26.5.2` | Financial completion |  |
-| `ssec:26.5.3` | Capped, several and joint guarantees |  |
-| `ssec:26.5.4` | Cost-overrun undertakings, keepwells and other support |  |
+| `ssec:26.5.3` | Capped, several, and joint guarantees |  |
+| `ssec:26.5.4` | Cost-overrun undertakings, keepwells, and other support |  |
 | `sec:26.6` | Completion guarantees in the LNG and petrochemical mega-projects |  |
 | `sec:26.7` | Walkthrough: negotiating a reserved-matters schedule |  |
 | `sec:26.8` | Case P: the shareholders' agreement among Kilnworth, Talmé and the ABDB fund |  |
@@ -1977,18 +2128,29 @@ Source brief: `briefs/u06.md`.
 | `ex:26.2` | Who can block a reserved matter |  |
 | `ex:26.3` | An equity commitment backed by letters of credit |  |
 | `ex:26.4` | A capped, several completion guarantee |  |
-| `exh:26.1` | The sponsor documents from development to release (timeline, Illustrative) |  |
-| `exh:26.2` | Transfer rights compared: lock-in, ROFR, ROFO, tag-along, drag-along (Illustrative) |  |
-| `exh:26.3` | The sponsor support spectrum (diagram, Illustrative) |  |
-| `exh:26.4` | Completion support in three mega-projects (Real case: Ichthys, PNG LNG, Sadara) |  |
-| `exh:26.5` | Case P shareholdings before close, at close and the governance map (Case P, inputs) |  |
-| `cl:26.1` | Right of first refusal, shareholders' agreement |  |
-| `cl:26.1a` | majority-sponsor-friendly |  |
-| `cl:26.1b` | lender-friendly |  |
-| `cl:26.1c` | minority-friendly) Right of first refusal, shareholders' agreement |  |
-| `cl:26.2` | Financial completion definition, common terms agreement or completion guarantee |  |
+| `exh:26.1` | The sponsor documents from development to release |  |
+| `exh:26.2` | Lock-in, ROFR, ROFO, tag-along, and drag-along rights compared (Illustrative) | placed in ssec:26.3.3 |
+| `exh:26.3` | The sponsor support spectrum (diagram, Illustrative) | placed in ssec:26.5.1 |
+| `exh:26.4` | Completion support in three mega-projects (Real case: Ichthys, PNG LNG, Sadara) | placed in sec:26.6 |
+| `exh:26.5` | Case P shareholdings before close, at close and the governance map (Case P, inputs) | placed in sec:26.8 |
+| `cl:26.1` | Funding default and dilution, co-development agreement |  |
+| `cl:26.1a` | Funding default and dilution, co-development agreement (Illustrative, majority-developer-friendly) |  |
+| `cl:26.1b` | Funding default and dilution, co-development agreement (Illustrative, lender-friendly) |  |
+| `cl:26.1c` | Funding default and dilution, co-development agreement (Illustrative, minority-friendly) |  |
+| `cl:26.2` | Right of first refusal, shareholders' agreement |  |
+| `cl:26.2a` | Right of first refusal, shareholders' agreement (Illustrative, majority-sponsor-friendly) | new label |
+| `cl:26.2b` | Right of first refusal, shareholders' agreement (Illustrative, lender-friendly) | new label |
+| `cl:26.2c` | Right of first refusal, shareholders' agreement (Illustrative, minority-friendly) | new label |
+| `cl:26.3` | Equity contribution undertaking and LC support, equity contribution agreement | new label |
+| `cl:26.3a` | Equity contribution undertaking and LC support, equity contribution agreement (Illustrative, sponsor-friendly) | new label |
+| `cl:26.3b` | Equity contribution undertaking and LC support, equity contribution agreement (Illustrative, lender-friendly) | new label |
+| `cl:26.4` | Financial completion definition, common terms agreement or completion guarantee | new label |
+| `cl:26.5` | Guarantor's obligation and release, completion guarantee | new label |
+| `cl:26.5a` | Guarantor's obligation and release, completion guarantee (Illustrative, sponsor-friendly) | new label |
+| `cl:26.5b` | Guarantor's obligation and release, completion guarantee (Illustrative, lender-friendly) | new label |
 | `eq:26.1` | Dilution on a funding default |  |
 | `fw:sponsor-support-spectrum` | Framework 26.1 Sponsor support spectrum | home ssec:26.5.1 |
+| `exr:26.1` to `exr:26.17` | Exercises (17) | range; cited only inside Ch 26 and by matter file 93 |
 
 ### Chapter 27: Insurance
 
@@ -2000,7 +2162,7 @@ Source brief: `briefs/u06.md`.
 | `sec:27.1` | How project insurance works |  |
 | `ssec:27.1.1` | Insurable and uninsurable risk |  |
 | `ssec:27.1.2` | The vocabulary of a policy |  |
-| `ssec:27.1.3` | Insurers, brokers, reinsurers and fronting |  |
+| `ssec:27.1.3` | Insurers, brokers, reinsurers, and fronting |  |
 | `sec:27.2` | Construction covers |  |
 | `ssec:27.2.1` | Construction and erection all risks |  |
 | `ssec:27.2.2` | Delay in start-up |  |
@@ -2010,13 +2172,13 @@ Source brief: `briefs/u06.md`.
 | `ssec:27.3.1` | Operational property damage and machinery breakdown |  |
 | `ssec:27.3.2` | Business interruption |  |
 | `ssec:27.3.3` | Limits and the maximum foreseeable loss |  |
-| `ssec:27.3.4` | Cyber cover for operating assets (new, R-037) | new label |
+| `ssec:27.3.4` | Cyber cover for operating assets |  |
 | `sec:27.4` | Moss Landing and the gap between insured and economic loss |  |
 | `sec:27.5` | Political risk and credit insurance |  |
 | `sec:27.6` | What lenders require |  |
-| `ssec:27.6.1` | Loss payee, non-vitiation and waiver of subrogation |  |
-| `ssec:27.6.2` | Local fronting, cut-through and assignment of reinsurance |  |
-| `ssec:27.6.3` | Insurer security, brokers' undertakings and cancellation |  |
+| `ssec:27.6.1` | Loss payee, non-vitiation, and waiver of subrogation |  |
+| `ssec:27.6.2` | Local fronting, cut-through, and assignment of reinsurance |  |
+| `ssec:27.6.3` | Insurer security, brokers' undertakings, and cancellation |  |
 | `ssec:27.6.4` | Applying insurance proceeds |  |
 | `sec:27.7` | When cover is unavailable or unaffordable |  |
 | `ssec:27.7.1` | The insurance market cycle |  |
@@ -2034,16 +2196,20 @@ Source brief: `briefs/u06.md`.
 | `ex:27.3` | Limit adequacy at Moss Landing |  |
 | `ex:27.4` | Reinstate or prepay |  |
 | `ex:27.5` | A hard-market renewal |  |
-| `exh:27.1` | Covers by project phase (Illustrative) |  |
-| `exh:27.2` | DSU indemnity bases compared (Illustrative) |  |
-| `exh:27.3` | Moss Landing disclosed losses against limits (Real case: Moss Landing, 2025--2026) |  |
-| `exh:27.4` | Lenders' insurance requirements checklist (Illustrative) |  |
-| `exh:27.5` | Case P insurance program (Case P, inputs) |  |
-| `cl:27.1` | Application of insurance proceeds |  |
-| `cl:27.2` | Loss payee and non-vitiation, lenders' insurance endorsement |  |
+| `exh:27.1` | Covers by project phase (Illustrative) | placed in sec:27.2 |
+| `exh:27.2` | DSU indemnity bases compared (Illustrative) | placed in ssec:27.2.2 |
+| `exh:27.3` | Moss Landing disclosed losses against limits (Real case: Moss Landing, 2025--2026) | placed in sec:27.4 |
+| `exh:27.4` | Lenders' insurance requirements checklist (Illustrative) | placed in sec:27.6 |
+| `exh:27.5` | Case P insurance program (Case P, inputs) | placed in sec:27.10 |
+| `cl:27.1` | Loss payee and non-vitiation, lenders' insurance endorsement |  |
+| `cl:27.2` | Application of insurance proceeds |  |
+| `cl:27.2a` | Application of insurance proceeds (Illustrative, sponsor-friendly) | new label |
+| `cl:27.2b` | Application of insurance proceeds (Illustrative, lender-friendly) | new label |
+| `cl:27.2c` | Application of insurance proceeds (Illustrative, government-friendly) | new label |
 | `eq:27.1` | DSU daily indemnity (debt service plus fixed costs basis) |  |
 | `eq:27.2` | DSU or BI claim with a time deductible |  |
 | `fw:insurance-adequacy-test` | Framework 27.1 Insurance program adequacy test | home sec:27.8 |
+| `exr:27.1` to `exr:27.17` | Exercises (17) | range; cited only inside Ch 27 and by matter file 93 |
 
 ### Chapter 28: Direct agreements and the contract map as a system
 
@@ -2056,8 +2222,8 @@ Source brief: `briefs/u06.md`.
 | `ssec:28.1.1` | Drawing the map |  |
 | `ssec:28.1.2` | Reading the map as a system |  |
 | `sec:28.2` | Direct agreements |  |
-| `ssec:28.2.1` | Why lenders need their own contract with each counterparty |  |
-| `ssec:28.2.2` | Parties, form and the consent to security |  |
+| `ssec:28.2.1` | Privity and the limits of an assignment by way of security |  |
+| `ssec:28.2.2` | Parties, form, and the consent to security |  |
 | `ssec:28.2.3` | Notice and cure periods |  |
 | `ssec:28.2.4` | Step-in and step-out |  |
 | `ssec:28.2.5` | Novation and substitution |  |
@@ -2070,11 +2236,11 @@ Source brief: `briefs/u06.md`.
 | `ssec:28.5.2` | Scoring and fixing gaps |  |
 | `ssec:28.5.3` | A gap scan on a solar-plus-storage project |  |
 | `sec:28.6` | Tracing who pays when something goes wrong |  |
-| `ssec:28.6.1` | The steps |  |
+| `ssec:28.6.1` | Following one event through the contracts step by step |  |
 | `ssec:28.6.2` | A trace in numbers |  |
 | `ssec:28.6.3` | Lake Turkana traced to the taxpayer |  |
 | `sec:28.7` | The Purple Line and back-to-back termination rights |  |
-| `sec:28.8` | Case P: the contract map, the gap scan and a trace |  |
+| `sec:28.8` | Case P: the contract map, the gap scan, and a trace |  |
 | `sec:28.9` | Practitioner's notebook |  |
 | `sec:28.10` | Judgment drill |  |
 | `sec:28.11` | The contracts allocate the risk; the lenders still have to decide whose money carries what is left |  |
@@ -2083,16 +2249,23 @@ Source brief: `briefs/u06.md`.
 | `ex:28.1` | How long a cure period must be |  |
 | `ex:28.2` | A gap scan on a solar-plus-storage project |  |
 | `ex:28.3` | Who pays when a wind farm's main transformer fails |  |
-| `exh:28.1` | Case P contract map (Case P) |  |
-| `exh:28.2` | Direct agreement structure (diagram, Illustrative) |  |
-| `exh:28.3` | Contract gap scan grid (template, Illustrative) |  |
-| `exh:28.4` | Term mismatches against debt and PPA (chart and table, Illustrative) |  |
-| `exh:28.5` | Loss allocation in a transformer failure (Illustrative) |  |
-| `exh:28.6` | Case P gap log, June 2018 (Case P, inputs) |  |
-| `cl:28.1` | Step-in, direct agreement with a state-owned offtaker |  |
-| `cl:28.2` | Cure period and standstill, direct agreement |  |
-| `fw:contract-gap-scan` | Framework 28.1 Contract gap scan | home sec:28.2 |
+| `ex:28.4` | Who pays when a hospital's chiller plant fails | new label |
+| `ex:28.5` | Matched and unmatched exit rights in a light-rail PPP | new label |
+| `exh:28.1` | Case P contract map (Case P) | placed in ssec:28.1.1 |
+| `exh:28.2` | Direct agreement structure (diagram, Illustrative) | placed in ssec:28.2.2 |
+| `exh:28.3` | Contract gap scan grid |  |
+| `exh:28.4` | Term mismatches against debt and PPA |  |
+| `exh:28.5` | Loss allocation in a transformer failure (Illustrative) | placed in ssec:28.6.2 |
+| `exh:28.6` | Case P gap log, June 2018 (Case P, inputs) | placed in sec:28.8 |
+| `cl:28.1` | Cure period and standstill, direct agreement |  |
+| `cl:28.2` | Step-in, direct agreement with a state-owned offtaker |  |
+| `cl:28.2a` | Step-in, direct agreement with a state-owned offtaker (Illustrative, sponsor-friendly) | new label |
+| `cl:28.2b` | Step-in, direct agreement with a state-owned offtaker (Illustrative, lender-friendly) | new label |
+| `cl:28.2c` | Step-in, direct agreement with a state-owned offtaker (Illustrative, government-friendly) | new label |
+| `cl:28.3` | Direct agreement excerpts, state-owned offtaker | new label |
+| `fw:contract-gap-scan` | Framework 28.1 Contract gap scan | home sec:28.5 |
 | `fw:who-pays-if` | Framework 28.2 "Who pays if...?" trace | home ssec:28.6.1 |
+| `exr:28.1` to `exr:28.18` | Exercises (18) | range; cited only inside Ch 28 and by matter file 93 |
 
 ### Chapter 29: The lenders
 
@@ -2102,16 +2275,16 @@ Source brief: `briefs/u07.md`.
 |---|---|---|
 | `ch:29` | The lenders |  |
 | `sec:29.1` | Six questions that separate one lender from another |  |
-| `ssec:29.1.1` | What a lender is really selling |  |
+| `ssec:29.1.1` | What a lender sells |  |
 | `ssec:29.1.2` | How the mix of lenders has moved since 2008 |  |
 | `sec:29.2` | Commercial banks |  |
 | `ssec:29.2.1` | How a bank earns its return on a project loan |  |
-| `ssec:29.2.2` | Why banks lend short and floating |  |
+| `ssec:29.2.2` | Bank funding and the preference for short, floating-rate loans |  |
 | `ssec:29.2.3` | Appetite, limits, and the credit committee |  |
 | `ssec:29.2.4` | The roles banks take in a deal |  |
 | `ssec:29.2.5` | Local banks |  |
 | `sec:29.3` | Export credit agencies |  |
-| `ssec:29.3.1` | Why governments lend to buyers of their exports |  |
+| `ssec:29.3.1` | Export promotion as the reason governments lend |  |
 | `ssec:29.3.2` | The OECD Arrangement as the outer boundary |  |
 | `ssec:29.3.3` | Pure cover, direct lending, and the percentage of cover |  |
 | `ssec:29.3.4` | Content rules and why mega-projects use several ECAs |  |
@@ -2119,7 +2292,7 @@ Source brief: `briefs/u07.md`.
 | `ssec:29.3.6` | Repayment-profile limits and the average-life test |  |
 | `ssec:29.3.7` | What an ECA checks before it commits |  |
 | `sec:29.4` | Development finance institutions |  |
-| `ssec:29.4.1` | Who the DFIs are |  |
+| `ssec:29.4.1` | Multilateral and bilateral development finance institutions |  |
 | `ssec:29.4.2` | Mandate and additionality |  |
 | `ssec:29.4.3` | Preferred creditor status |  |
 | `ssec:29.4.4` | A/B loans and parallel loans |  |
@@ -2136,6 +2309,8 @@ Source brief: `briefs/u07.md`.
 | `sec:29.9` | PNG LNG and Ichthys as mega-financings built from ECA layers |  |
 | `sec:29.10` | Walkthrough: reading an ECA cover term sheet |  |
 | `sec:29.11` | Case P: forming the lender group |  |
+| `ssec:29.11.1` | Case P: Castellan assembles Bélanou's lenders | new label |
+| `ssec:29.11.2` | Case T: NILO's credit application | new label |
 | `sec:29.12` | Practitioner's notebook |  |
 | `sec:29.13` | Judgment drill |  |
 | `sec:29.14` | Lenders hold loans; investors buy bonds |  |
@@ -2156,12 +2331,14 @@ Source brief: `briefs/u07.md`.
 | `exh:29.8` | Ichthys LNG sources of debt, December 2012 (USD bn) |  |
 | `exh:29.9` | Case P lender group at financial close, by tranche |  |
 | `exh:29.10` | Case P lender structure |  |
+| `exh:29.11` | OECD Arrangement project finance terms of 2017 against the January 2026 text | new label |
 | `cl:29.1` | Participation and lender of record, B-loan participation agreement |  |
 | `eq:29.1` | Risk-adjusted return on allocated capital |  |
 | `eq:29.2` | Covered loan with a financed premium |  |
-| `eq:29.3` | Weighted average life of a repayment profile | ruling: ECA average-life test as a share of tenor, citing eq:6.2 (repurposed, R-005) |
+| `eq:29.3` | ECA average-life test as a share of tenor, citing eq:6.2 | repurposed, R-005, R-116 |
 | `fw:lender-fit-map` | Framework 29.1 Lender-fit map | home sec:29.8 |
 | `fw:eca-cover-build` | Framework 29.2 ECA cover build | home ssec:29.3.7 |
+| `exr:29.1` to `exr:29.15` | Exercises (15) | range; cited only inside Ch 29 and by matter file 93 |
 
 ### Chapter 30: Project bonds and ratings
 
@@ -2180,8 +2357,8 @@ Source brief: `briefs/u07.md`.
 | `ssec:30.2.4` | Green, social, and sustainability labels on project bonds |  |
 | `ssec:30.2.5` | Sukuk in brief |  |
 | `sec:30.3` | Bond arithmetic |  |
-| `ssec:30.3.1` | Coupon, price, and yield | ruling: Bond market conventions: bond-equivalent yield, accrued interest and issue discount (retitled, R-004) |
-| `ssec:30.3.2` | Amortization and average life | ruling: Amortizing bonds and sinking funds (retitled, R-005) |
+| `ssec:30.3.1` | Bond-equivalent yield, accrued interest, and issue discount |  |
+| `ssec:30.3.2` | Amortizing bonds and sinking funds |  |
 | `ssec:30.3.3` | Negative carry |  |
 | `ssec:30.3.4` | Call protection and the make-whole |  |
 | `sec:30.4` | Choosing between bonds and loans |  |
@@ -2206,24 +2383,31 @@ Source brief: `briefs/u07.md`.
 | `ex:30.1` | Pricing an amortizing project bond at issue |  |
 | `ex:30.2` | The cost of negative carry on a pre-funded bond |  |
 | `ex:30.3` | A make-whole on a private placement prepayment |  |
-| `ex:30.4` | Breakeven availability in a rating case |  |
+| `ex:30.4` | Rating a contracted plant in operation |  |
+| `ex:30.5` | Construction funding ratios for a hospital PPP bond | new label |
+| `ex:30.6` | Settlement price and accrued interest on a secondary trade | new label |
 | `exh:30.1` | Project bond and project loan compared |  |
 | `exh:30.2` | Escrow balance of a pre-funded bond during construction (USD m) |  |
 | `exh:30.3` | Pacífico 3 and Puerta de Hierro bonds compared |  |
+| `exh:30.4` | How S&P, Fitch, and Moody's rate one project in construction and in operation | new label |
+| `exh:30.5` | S&P preliminary operations-phase SACP by OPBA and minimum DSCR | new label |
 | `cl:30.1` | Make-whole redemption, indenture |  |
-| `cl:30.2` | Permitted additional senior debt, indenture (variants 30.2a issuer-friendly, 30.2b bondholder-friendly) |  |
-| `eq:30.1` | Price of a bond as the present value of its scheduled payments | ruling: Price of an amortizing bond on a semiannual bond-equivalent basis, citing eq:6.5 (repurposed, R-004) |
+| `cl:30.2` | Permitted additional senior debt, indenture |  |
+| `cl:30.2a` | Permitted additional senior debt, indenture (Illustrative, issuer-friendly) | new label |
+| `cl:30.2b` | Permitted additional senior debt, indenture (Illustrative, bondholder-friendly) | new label |
+| `eq:30.1` | Price of an amortizing bond on a semiannual bond-equivalent basis, citing eq:6.5 | repurposed, R-004, R-116 |
 | `eq:30.2` | Make-whole amount |  |
 | `fw:bond-or-loan-test` | Framework 30.1 Bond-or-loan test | home ssec:30.4.4 |
 | `fw:rating-stress-ladder` | Framework 30.2 Rating-case stress ladder | home ssec:30.5.5 |
+| `exr:30.1` to `exr:30.16` | Exercises (16) | range; cited only inside Ch 30 and by matter file 93 |
 
-### Chapter 31: Mezzanine, holdco and ancillary facilities
+### Chapter 31: Mezzanine, holdco, and ancillary facilities
 
 Source brief: `briefs/u07.md`.
 
 | Label | Caption or title | Note |
 |---|---|---|
-| `ch:31` | Mezzanine, holdco and ancillary facilities |  |
+| `ch:31` | Mezzanine, holdco, and ancillary facilities |  |
 | `sec:31.1` | The capital stack below and beside the senior debt |  |
 | `sec:31.2` | Mezzanine debt |  |
 | `ssec:31.2.1` | What mezzanine fills and who provides it |  |
@@ -2243,7 +2427,9 @@ Source brief: `briefs/u07.md`.
 | `sec:31.8` | Testing any junior or ancillary facility |  |
 | `sec:31.9` | Azura-Edo's DFI mezzanine and a lender-provided gas LC |  |
 | `sec:31.10` | Walkthrough: a holdco term sheet line by line |  |
-| `sec:31.11` | Case R: the holdco loan behind A1, and Case P's standby and VAT facilities |  |
+| `sec:31.11` | Case R: the holdco loan behind A1 |  |
+| `ssec:31.11.1` | Case R: Lattimer sizes the A1 holdco loan | new label |
+| `ssec:31.11.2` | Case P: Bélanou's standby and VAT facilities | new label |
 | `sec:31.12` | Practitioner's notebook |  |
 | `sec:31.13` | Judgment drill |  |
 | `sec:31.14` | What counts as equity |  |
@@ -2260,9 +2446,13 @@ Source brief: `briefs/u07.md`.
 | `exh:31.3` | VAT facility balance by quarter (USD m) |  |
 | `exh:31.4` | Azura-Edo financing layers and pricing |  |
 | `exh:31.5` | Case R A1 sources and uses and holdco sizing (USD m) |  |
-| `cl:31.1` | Payment blockage and standstill, subordination agreement (variants 31.1a sponsor-friendly, 31.1b senior-lender-friendly, 31.1c mezzanine-lender-friendly) |  |
+| `cl:31.1` | Payment blockage and standstill, subordination agreement |  |
+| `cl:31.1a` | Payment blockage and standstill, subordination agreement (Illustrative, sponsor-friendly) | new label |
+| `cl:31.1b` | Payment blockage and standstill, subordination agreement (Illustrative, senior-lender-friendly) | new label |
+| `cl:31.1c` | Payment blockage and standstill, subordination agreement (Illustrative, mezzanine-lender-friendly) | new label |
 | `eq:31.1` | Accretion of a PIK balance |  |
 | `fw:subordination-stack` | Framework 31.1 Subordination stack test | home sec:31.8 |
+| `exr:31.1` to `exr:31.14` | Exercises (14) | range; cited only inside Ch 31 and by matter file 93 |
 
 ### Chapter 32: Equity
 
@@ -2293,7 +2483,7 @@ Source brief: `briefs/u07.md`.
 | `sec:32.7` | Listed vehicles and yieldcos |  |
 | `sec:32.8` | SunEdison and TerraForm Power |  |
 | `sec:32.9` | US tax equity and the sale of tax credits |  |
-| `ssec:32.9.1` | Why tax equity exists |  |
+| `ssec:32.9.1` | The tax-capacity mismatch behind tax equity |  |
 | `ssec:32.9.2` | The partnership flip |  |
 | `ssec:32.9.3` | Transferability, hybrids, and direct sales |  |
 | `ssec:32.9.4` | The 2025 law changes and what a lender must check |  |
@@ -2314,12 +2504,17 @@ Source brief: `briefs/u07.md`.
 | `exh:32.2` | Equity IRR and lender exposure under three contribution timings |  |
 | `exh:32.3` | TerraForm Power ownership and control, early 2016 |  |
 | `exh:32.4` | Partnership flip allocations before and after the flip |  |
-| `exh:32.5` | US federal credit dates for wind, solar and storage, as of October 3, 2026 |  |
+| `exh:32.5` | Partnership flip and tax credit transfer compared, as of October 3, 2026 |  |
 | `exh:32.6` | Case P equity at financial close by sponsor and form (USD m) |  |
 | `cl:32.1` | Equity letter of credit replacement, equity contribution agreement |  |
+| `cl:32.2` | Acceleration of undrawn base and contingent equity, equity contribution agreement | new label |
+| `cl:32.2a` | Acceleration of undrawn base and contingent equity, equity contribution agreement (Illustrative, sponsor-friendly) | new label |
+| `cl:32.2b` | Acceleration of undrawn base and contingent equity, equity contribution agreement (Illustrative, lender-friendly) | new label |
+| `cl:32.2c` | Acceleration of undrawn base and contingent equity, equity contribution agreement (Illustrative, minority-sponsor-friendly) | new label |
 | `eq:32.1` | Development premium for a stake sold at financial close |  |
 | `eq:32.2` | Cost of equity of a growing yieldco |  |
 | `fw:equity-commitment-ladder` | Framework 32.1 Equity commitment ladder | home sec:32.10 |
+| `exr:32.1` to `exr:32.16` | Exercises (16) | range; cited only inside Ch 32 and by matter file 93 |
 
 ### Chapter 33: Islamic project finance
 
@@ -2328,7 +2523,7 @@ Source brief: `briefs/u07.md`.
 | Label | Caption or title | Note |
 |---|---|---|
 | `ch:33` | Islamic project finance |  |
-| `sec:33.1` | Why some capital will not take interest |  |
+| `sec:33.1` | The prohibitions that shape Islamic finance |  |
 | `ssec:33.1.1` | Riba, gharar, and maysir |  |
 | `ssec:33.1.2` | Sharia boards, fatwas, and standard-setters |  |
 | `sec:33.2` | The contracts project finance uses |  |
@@ -2345,7 +2540,7 @@ Source brief: `briefs/u07.md`.
 | `sec:33.5` | Sitting beside conventional lenders |  |
 | `ssec:33.5.1` | Matching economics and sharing losses |  |
 | `ssec:33.5.2` | Where the structures diverge |  |
-| `sec:33.6` | Choosing a structure |  |
+| `sec:33.6` | Choosing an Islamic structure for each financing phase |  |
 | `sec:33.7` | Sadara's project sukuk beside ECA and bank debt |  |
 | `sec:33.8` | Walkthrough: tracing one rental payment through an istisna'a and ijara tranche |  |
 | `sec:33.9` | Case P: the ijara proposal that did not fit |  |
@@ -2365,15 +2560,16 @@ Source brief: `briefs/u07.md`.
 | `eq:33.1` | Rental for a period under an ijara |  |
 | `fw:sharia-structure-selector` | Framework 33.1 Sharia structure selector | home sec:33.6 |
 | `fw:islamic-parity-check` | Framework 33.2 Islamic and conventional parity check | home ssec:33.5.2 |
+| `exr:33.1` to `exr:33.12` | Exercises (12) | range; cited only inside Ch 33 and by matter file 93 |
 
-### Chapter 34: Blended, concessional and local-currency finance
+### Chapter 34: Blended, concessional, and local-currency finance
 
 Source brief: `briefs/u07.md`.
 
 | Label | Caption or title | Note |
 |---|---|---|
-| `ch:34` | Blended, concessional and local-currency finance |  |
-| `sec:34.1` | Why commercial money is sometimes not enough |  |
+| `ch:34` | Blended, concessional, and local-currency finance |  |
+| `sec:34.1` | Four gaps that commercial money leaves |  |
 | `sec:34.2` | Concessional finance |  |
 | `ssec:34.2.1` | What makes a loan concessional |  |
 | `ssec:34.2.2` | Climate funds and concessional windows |  |
@@ -2382,14 +2578,14 @@ Source brief: `briefs/u07.md`.
 | `sec:34.3` | First-loss capital and the limits of blending |  |
 | `ssec:34.3.1` | First-loss capital |  |
 | `ssec:34.3.2` | Minimum concessionality and crowding out |  |
-| `sec:34.4` | Guarantees |  |
+| `sec:34.4` | Partial risk and partial credit guarantees |  |
 | `ssec:34.4.1` | Partial risk guarantees |  |
 | `ssec:34.4.2` | Partial credit guarantees |  |
 | `ssec:34.4.3` | The indemnity behind the guarantee |  |
 | `ssec:34.4.4` | Guarantees and political risk insurance compared |  |
 | `sec:34.5` | Viability-gap funding |  |
 | `sec:34.6` | Local-currency solutions |  |
-| `ssec:34.6.1` | Why dollar debt fails local-currency projects |  |
+| `ssec:34.6.1` | Dollar debt against local-currency revenue |  |
 | `ssec:34.6.2` | Local banks, development banks, and debt funds |  |
 | `ssec:34.6.3` | Local and inflation-linked bonds |  |
 | `ssec:34.6.4` | Currency hedges from specialist funds |  |
@@ -2420,6 +2616,7 @@ Source brief: `briefs/u07.md`.
 | `eq:34.1` | Grant element of a loan |  |
 | `fw:blending-decision-test` | Framework 34.1 Blending decision test | home ssec:34.3.2 |
 | `fw:local-currency-route-map` | Framework 34.2 Local-currency route map | home ssec:34.6.5 |
+| `exr:34.1` to `exr:34.15` | Exercises (15) | range; cited only inside Ch 34 and by matter file 93 |
 
 ### Chapter 35: Cash flow available for debt service and the cover ratios
 
@@ -2428,7 +2625,7 @@ Source brief: `briefs/u08.md`.
 | Label | Caption or title | Note |
 |---|---|---|
 | `ch:35` | Cash flow available for debt service and the cover ratios |  |
-| `sec:35.1` | What lenders are paid from: cash flow available for debt service |  |
+| `sec:35.1` | Cash flow available for debt service |  |
 | `ssec:35.1.1` | Building CFADS from revenue down |  |
 | `ssec:35.1.2` | Cash, not accruals |  |
 | `ssec:35.1.3` | The items lenders and sponsors argue about |  |
@@ -2436,24 +2633,24 @@ Source brief: `briefs/u08.md`.
 | `sec:35.2` | The debt service cover ratio |  |
 | `ssec:35.2.1` | One period, one ratio |  |
 | `ssec:35.2.2` | Minimum and average DSCR |  |
-| `ssec:35.2.3` | Looking back and looking forward: historic and projected DSCR |  |
+| `ssec:35.2.3` | Historic and projected DSCR |  |
 | `ssec:35.2.4` | Sizing ratios and covenant ratios |  |
 | `sec:35.3` | The loan life cover ratio |  |
 | `ssec:35.3.1` | Definition, discount rate, and the DSRA |  |
 | `ssec:35.3.2` | LLCR as an average DSCR in present-value terms |  |
 | `ssec:35.3.3` | What LLCR adds that DSCR cannot |  |
 | `sec:35.4` | The project life cover ratio and the tail |  |
-| `ssec:35.4.1` | Definition |  |
+| `ssec:35.4.1` | The PLCR defined |  |
 | `ssec:35.4.2` | Reading the gap between PLCR and LLCR |  |
 | `sec:35.5` | Gearing |  |
 | `ssec:35.5.1` | Gearing on the funding requirement |  |
-| `ssec:35.5.2` | Why gearing still matters when DSCR sizes the debt |  |
+| `ssec:35.5.2` | Gearing as a cap when DSCR sizes the debt |  |
 | `sec:35.6` | Base, banking, downside, and break-even cases |  |
 | `ssec:35.6.1` | Who owns which case |  |
 | `ssec:35.6.2` | Downside cases |  |
 | `ssec:35.6.3` | Break-even cases and headroom |  |
-| `ssec:35.6.4` | Whose forecast: optimism in the base case |  |
-| `sec:35.7` | Chile's northern solar defaults: when produced energy is not cash |  |
+| `ssec:35.6.4` | Optimism in the sponsor's base case |  |
+| `sec:35.7` | Chile's northern solar defaults and energy that never became cash |  |
 | `sec:35.8` | Walkthrough: reading the CFADS and ratio definitions in a common terms agreement |  |
 | `sec:35.9` | Walkthrough: auditing a ratio summary table |  |
 | `sec:35.10` | Case P: CFADS and the ratios at financial close |  |
@@ -2477,21 +2674,23 @@ Source brief: `briefs/u08.md`.
 | `exh:35.5` | Ratios on base, banking, downside, and break-even cases for a run-of-river hydro plant (Illustrative) |  |
 | `exh:35.6` | A ratio summary with five errors (Illustrative) |  |
 | `exh:35.7` | Case P CFADS for the first full operating year (USD m) (Case P) |  |
-| `exh:35.8` | Case P ratios at financial close on base, banking, and downside (Case P) |  |
-| `exh:35.9` | Case P CFADS and DSCR profile (chart) (Case P) |  |
+| `exh:35.8` | Case P ratios at financial close on base, banking, and downside (Case P; P-F08, P-F41, P-F16) |  |
+| `exh:35.9` | Case P CFADS and DSCR profile (chart) (Case P; P-F41) |  |
 | `cl:35.1` | Ratio definitions, common terms agreement (Illustrative) |  |
-| `cl:35.2` | with |  |
-| `cl:35.2c` | if required) CFADS definition variants |  |
+| `cl:35.2` | CFADS definition variants, common terms agreement |  |
+| `cl:35.2a` | CFADS definition variants, common terms agreement (Illustrative, sponsor-friendly) | new label |
+| `cl:35.2b` | CFADS definition variants, common terms agreement (Illustrative, lender-friendly) | new label |
 | `eq:35.1` | DSCR |  |
 | `eq:35.2` | CFADS |  |
 | `eq:35.3` | LLCR |  |
 | `eq:35.4` | LLCR as PV-weighted DSCR |  |
 | `eq:35.5` | PLCR |  |
-| `eq:35.6` | weighted average DSCR |  |
-| `eq:35.7` | historic DSCR |  |
-| `eq:35.8` | projected DSCR |  |
-| `eq:35.9` | gearing |  |
-| `fw:four-ratio-read` | Framework 35.1 Four-ratio read | home ssec:35.6.3 |
+| `eq:35.6` | Weighted average DSCR |  |
+| `eq:35.7` | Historic DSCR |  |
+| `eq:35.8` | Projected DSCR |  |
+| `eq:35.9` | Gearing |  |
+| `fw:four-ratio-read` | Framework 35.1 The four-ratio read | home ssec:35.6.3 |
+| `exr:35.1` to `exr:35.15` | Exercises (15) | range; cited only inside Ch 35 and by matter file 93 |
 
 ### Chapter 36: Sizing and sculpting debt
 
@@ -2502,7 +2701,7 @@ Source brief: `briefs/u08.md`.
 | `ch:36` | Sizing and sculpting debt |  |
 | `sec:36.1` | From a ratio to a debt amount |  |
 | `ssec:36.1.1` | Debt capacity of a flat cash flow |  |
-| `ssec:36.1.2` | Why level repayment wastes capacity |  |
+| `ssec:36.1.2` | Level repayment wastes debt capacity |  |
 | `sec:36.2` | Sculpting |  |
 | `ssec:36.2.1` | The two sculpting equations |  |
 | `ssec:36.2.2` | Building the schedule period by period |  |
@@ -2513,11 +2712,11 @@ Source brief: `briefs/u08.md`.
 | `ssec:36.3.2` | Gearing caps and when they bind |  |
 | `ssec:36.3.3` | How much debt a tenth of a turn costs |  |
 | `sec:36.4` | Sizing on P90 and P99 |  |
-| `ssec:36.4.1` | Why one P-value is not enough |  |
+| `ssec:36.4.1` | One P-value is not enough |  |
 | `ssec:36.4.2` | Running four tests on one wind farm |  |
 | `sec:36.5` | Tenor and tail |  |
 | `ssec:36.5.1` | Tenor against contract and asset life |  |
-| `ssec:36.5.2` | Why lenders want a tail and how long |  |
+| `ssec:36.5.2` | The tail lenders require and its length |  |
 | `sec:36.6` | Grace periods, ramp-up, and the first repayment |  |
 | `ssec:36.6.1` | Grace periods |  |
 | `ssec:36.6.2` | Sizing through a ramp-up |  |
@@ -2527,8 +2726,8 @@ Source brief: `briefs/u08.md`.
 | `sec:36.8` | Merchant tails and sizing by revenue bucket |  |
 | `ssec:36.8.1` | The bucket method |  |
 | `ssec:36.8.2` | Merchant tails after the contract |  |
-| `sec:36.9` | Repayment-profile rules: weighted average life and installment limits |  |
-| `ssec:36.9.1` | Weighted average life | ruling: Average-life limits as a sizing constraint (retitled, R-005) |
+| `sec:36.9` | Average-life and installment limits on the repayment profile |  |
+| `ssec:36.9.1` | Average-life limits as a sizing constraint |  |
 | `ssec:36.9.2` | Testing and repairing a sculpted profile |  |
 | `sec:36.10` | How sizing parameters vary by sector, contract, market, and cycle |  |
 | `ssec:36.10.1` | The four drivers ranked |  |
@@ -2565,23 +2764,24 @@ Source brief: `briefs/u08.md`.
 | `exh:36.11` | A lender's sizing printout (Illustrative) |  |
 | `exh:36.12` | Case P sizing constraints and binding constraint (Case P) |  |
 | `exh:36.13` | Case P sculpted repayment profile and ECA tests (Case P) |  |
-| `exh:36.14` | Case P debt at alternative DSCR targets and gearing caps (Case P, if P-F36 released) |  |
-| `eq:36.1` | annuity sizing |  |
-| `eq:36.2` | sculpted debt service |  |
-| `eq:36.3` | debt as PV of sculpted debt service with cumulative discount factors |  |
-| `eq:36.4` | lesser-of rule |  |
-| `eq:36.5` | weighted average life | ruling: Average-life constraint on a sculpted profile, citing eq:6.2 (repurposed, R-005) |
-| `eq:36.6` | bucket sculpting |  |
-| `eq:36.7` | effective base-case target from a downside test |  |
-| `fw:sizing-constraint-stack` | Framework 36.1 Sizing constraint stack | home ssec:36.3.2 |
+| `exh:36.14` | Case P debt at alternative DSCR targets and gearing caps (Case P; P-F36) |  |
+| `eq:36.1` | Annuity sizing |  |
+| `eq:36.2` | Sculpted debt service |  |
+| `eq:36.3` | Debt as PV of sculpted debt service with cumulative discount factors |  |
+| `eq:36.4` | Lesser-of rule |  |
+| `eq:36.5` | Average-life constraint on a sculpted profile, citing eq:6.2 | repurposed, R-005 |
+| `eq:36.6` | Bucket sculpting |  |
+| `eq:36.7` | Effective base-case target from a downside test |  |
+| `fw:sizing-constraint-stack` | Framework 36.1 The sizing constraint stack | home ssec:36.3.2 |
+| `exr:36.1` to `exr:36.19` | Exercises (19) | range; cited only inside Ch 36 and by matter file 93 |
 
-### Chapter 37: Reserves, sweeps, covenants and hedging
+### Chapter 37: Reserves, sweeps, covenants, and hedging
 
 Source brief: `briefs/u08.md`.
 
 | Label | Caption or title | Note |
 |---|---|---|
-| `ch:37` | Reserves, sweeps, covenants and hedging |  |
+| `ch:37` | Reserves, sweeps, covenants, and hedging |  |
 | `sec:37.1` | The debt service reserve account |  |
 | `ssec:37.1.1` | What the DSRA buys |  |
 | `ssec:37.1.2` | Sizing the DSRA |  |
@@ -2605,7 +2805,7 @@ Source brief: `briefs/u08.md`.
 | `ssec:37.6.1` | What each covenant protects |  |
 | `ssec:37.6.2` | Design choices and their costs |  |
 | `sec:37.7` | Hedging requirements and hedge profiles |  |
-| `ssec:37.7.1` | Why lenders require hedges |  |
+| `ssec:37.7.1` | Hedging requirements and the rate the sizing assumed |  |
 | `ssec:37.7.2` | Matching the hedge to the debt profile |  |
 | `ssec:37.7.3` | Currency and inflation hedging requirements |  |
 | `ssec:37.7.4` | Hedge counterparties in the structure |  |
@@ -2635,18 +2835,27 @@ Source brief: `briefs/u08.md`.
 | `exh:37.7` | Minimum DSCR by hedge ratio after a rate shock (Illustrative) |  |
 | `exh:37.8` | Hedge notional against debt after a prepayment (USD m) (Illustrative) |  |
 | `exh:37.9` | Term sheet extract: reserves, covenants, hedging (Illustrative) |  |
-| `exh:37.10` | Case P DSRA and MMRA (Case P) |  |
+| `exh:37.10` | Case P DSRA and MMRA (Case P; P-F11a, P-F11b) |  |
 | `exh:37.11` | Case P trigger ladder (Case P) |  |
-| `exh:37.12` | Case P swap notional and hedge ratio (Case P) |  |
-| `cl:37.1` | DSRA letter of credit substitution (Illustrative) (used in the Exercise 37.11 solution) |  |
+| `exh:37.12` | Case P swap notional and hedge ratio (Case P; P-F12) |  |
+| `exh:37.13` | Case P construction-period FX forwards (Case P; P-F65) | new label |
+| `cl:37.1` | DSRA letter of credit substitution, common terms agreement (Illustrative) |  |
+| `cl:37.2` | Cash sweep keyed to LLCR and the tail, common terms agreement | new label |
+| `cl:37.2a` | Cash sweep keyed to LLCR and the tail, common terms agreement (Illustrative, sponsor-friendly) | new label |
+| `cl:37.2b` | Cash sweep keyed to LLCR and the tail, common terms agreement (Illustrative, lender-friendly) | new label |
+| `cl:37.3` | Distribution conditions and release of trapped cash, common terms agreement | new label |
+| `cl:37.3a` | Distribution conditions and release of trapped cash, common terms agreement (Illustrative, sponsor-friendly) | new label |
+| `cl:37.3b` | Distribution conditions and release of trapped cash, common terms agreement (Illustrative, lender-friendly) | new label |
+| `cl:37.3c` | Distribution conditions and release of trapped cash, common terms agreement (Illustrative, government-friendly) | new label |
 | `eq:37.1` | DSRA target |  |
 | `eq:37.2` | MMRA accrual |  |
-| `eq:37.3` | sweep amount |  |
-| `eq:37.4` | equity cure amounts |  |
-| `eq:37.5` | hedge ratio |  |
+| `eq:37.3` | Sweep amount |  |
+| `eq:37.4` | Equity cure amounts |  |
+| `eq:37.5` | Hedge ratio |  |
 | `eq:37.6` | CFADS fall to a trigger |  |
-| `fw:trigger-ladder` | Framework 37.1 Trigger ladder | home ssec:37.5.1 |
-| `fw:hedge-fit-test` | Framework 37.2 Hedge fit test | home ssec:37.7.2 |
+| `fw:trigger-ladder` | Framework 37.1 The trigger ladder | home ssec:37.5.1 |
+| `fw:hedge-fit-test` | Framework 37.2 The hedge fit test | home ssec:37.7.2 |
+| `exr:37.1` to `exr:37.15` | Exercises (15) | range; cited only inside Ch 37 and by matter file 93 |
 
 ### Chapter 38: Pricing project debt
 
@@ -2657,14 +2866,14 @@ Source brief: `briefs/u08.md`.
 | `ch:38` | Pricing project debt |  |
 | `sec:38.1` | What a lender has to earn |  |
 | `ssec:38.1.1` | The four building blocks of a margin |  |
-| `ssec:38.1.2` | Why the price is not the cost |  |
+| `ssec:38.1.2` | Ancillary income, mandates, and prices below the building-block margin |  |
 | `sec:38.2` | Margins and ratchets |  |
 | `ssec:38.2.1` | Construction and operating margins |  |
 | `ssec:38.2.2` | Step-ups over the tenor |  |
 | `ssec:38.2.3` | Ratchets down |  |
 | `sec:38.3` | Fees |  |
 | `ssec:38.3.1` | Upfront fees and who earns them |  |
-| `ssec:38.3.2` | Commitment fees |  |
+| `ssec:38.3.2` | Commitment fee levels and conventions |  |
 | `ssec:38.3.3` | Agency, security agent, and account bank fees |  |
 | `sec:38.4` | The cost of hedging |  |
 | `ssec:38.4.1` | Credit and execution charges |  |
@@ -2694,7 +2903,7 @@ Source brief: `briefs/u08.md`.
 | `ex:38.1` | Building a minimum margin (Illustrative) |  |
 | `ex:38.2` | The weighted average margin of a step-up schedule (Illustrative) |  |
 | `ex:38.3` | Fee economics of a syndicate (Illustrative) |  |
-| `ex:38.4` | Commitment fees on an S-curve (Illustrative) |  |
+| `ex:38.4` | Commitment fees in the all-in cost of an S-curve drawdown |  |
 | `ex:38.5` | The cost of a swap execution charge (Illustrative) |  |
 | `ex:38.6` | Covered against uncovered: the ECA premium in the all-in cost (Illustrative) |  |
 | `ex:38.7` | Grossing up for withholding tax (Illustrative) |  |
@@ -2704,7 +2913,7 @@ Source brief: `briefs/u08.md`.
 | `exh:38.1` | Minimum margin by risk weight (bps) (Illustrative) |  |
 | `exh:38.2` | Step-up schedule and weighted margin (Illustrative) |  |
 | `exh:38.3` | Syndicate fee flows (USD m) (Illustrative) |  |
-| `exh:38.4` | Commitment fees on an S-curve (USD m) (Illustrative) |  |
+| `exh:38.4` | Commitment fees in the all-in cost of an S-curve drawdown (USD m) (Illustrative) |  |
 | `exh:38.5` | Covered against uncovered tranche cash flows and all-in cost (USD m) (Illustrative) |  |
 | `exh:38.6` | All-in cost build for a construction-plus-term loan (USD m) (Illustrative) |  |
 | `exh:38.7` | Bond yield against coupon (Real case: Applied Digital notes, 2025) |  |
@@ -2713,34 +2922,39 @@ Source brief: `briefs/u08.md`.
 | `exh:38.10` | Four financing offers on one basis (Illustrative) |  |
 | `exh:38.11` | Case P pricing terms by tranche (Case P) |  |
 | `exh:38.12` | Case P all-in cost by tranche (Case P) |  |
-| `cl:38.1` | Margin step-up and ratchet (Illustrative), used in the Exercise 38.10 solution |  |
-| `eq:38.1` | minimum margin |  |
-| `eq:38.2` | all-in cost as IRR |  |
-| `eq:38.3` | all-in approximation |  |
-| `eq:38.4` | withholding gross-up |  |
-| `eq:38.5` | financed premium principal |  |
-| `eq:38.6` | yield to maturity | ruling: All-in cost of a bond from issue price, fees and coupons, citing eq:6.5 (repurposed, R-004) |
-| `fw:all-in-cost-build` | Framework 38.1 All-in cost build | home sec:38.6 |
+| `cl:38.1` | Margin step-up and ratchet, facility agreement (Illustrative) |  |
+| `cl:38.2` | Market flex, mandate letter | new label |
+| `cl:38.2a` | Market flex, mandate letter (Illustrative, sponsor-friendly) | new label |
+| `cl:38.2b` | Market flex, mandate letter (Illustrative, arranger-friendly) | new label |
+| `cl:38.2c` | Market flex, mandate letter (Illustrative, government-friendly) | new label |
+| `eq:38.1` | Minimum margin |  |
+| `eq:38.2` | All-in cost as IRR |  |
+| `eq:38.3` | All-in approximation |  |
+| `eq:38.4` | Withholding gross-up |  |
+| `eq:38.5` | Financed premium principal |  |
+| `eq:38.6` | All-in cost of a bond from issue price, fees and coupons, citing eq:6.5 | repurposed, R-004 |
+| `fw:all-in-cost-build` | Framework 38.1 The all-in cost build | home sec:38.6 |
+| `exr:38.1` to `exr:38.13` | Exercises (13) | range; cited only inside Ch 38 and by matter file 93 |
 
-### Chapter 39: Model architecture, standards and timing
+### Chapter 39: Model architecture, standards, and timing
 
 Source brief: `briefs/u09.md`.
 
 | Label | Caption or title | Note |
 |---|---|---|
-| `ch:39` | Model architecture, standards and timing |  |
+| `ch:39` | Model architecture, standards, and timing |  |
 | `sec:39.1` | What a project finance model is for |  |
 | `ssec:39.1.1` | Decisions a model serves |  |
-| `ssec:39.1.2` | Bid, financial-close and operating models |  |
+| `ssec:39.1.2` | Bid, financial-close, and operating models |  |
 | `ssec:39.1.3` | The model blueprint |  |
 | `sec:39.2` | Standards for a model other people must trust |  |
-| `ssec:39.2.1` | Why standards exist |  |
+| `ssec:39.2.1` | What standards prevent |  |
 | `ssec:39.2.2` | The FAST standard |  |
 | `ssec:39.2.3` | The house rules of this book's model |  |
 | `ssec:39.2.4` | Where modelers disagree |  |
 | `sec:39.3` | Sheet structure and the flow of a model |  |
 | `ssec:39.3.1` | The fifteen sheets |  |
-| `ssec:39.3.2` | The standard header and column layout |  |
+| `ssec:39.3.2` | Header rows and column layout |  |
 | `ssec:39.3.3` | The corkscrew |  |
 | `ssec:39.3.4` | One source for every number |  |
 | `sec:39.4` | Building the timeline |  |
@@ -2771,7 +2985,7 @@ Source brief: `briefs/u09.md`.
 | `sec:39.14` | Solutions to exercises |  |
 | `ex:39.1` | The Case P model blueprint |  |
 | `ex:39.2` | A reserve corkscrew |  |
-| `ex:39.3` | Counting columns for three periodicity choices |  |
+| `ex:39.3` | Counting columns for four periodicity choices |  |
 | `ex:39.4` | One stub, three day counts |  |
 | `ex:39.5` | The off-by-one operations flag |  |
 | `ex:39.6` | Mapping annual inflation onto semiannual periods and a lagged reading |  |
@@ -2780,10 +2994,12 @@ Source brief: `briefs/u09.md`.
 | `exh:39.2` | Color and format key |  |
 | `exh:39.3` | Case P Time sheet, selected columns |  |
 | `exh:39.4` | Defects in an illustrative sponsor model |  |
+| `exh:39.5` | Case P inputs entered in Chapter 39 | new label |
 | `eq:39.1` | Period end rule (mixed timeline) |  |
 | `eq:39.2` | Band overlap of operating months |  |
 | `eq:39.3` | Year fraction rows (ACT/360, ACT/365, 30/360) |  |
 | `fw:model-blueprint` | Framework 39.1 The model blueprint | home ssec:39.1.3 |
+| `exr:39.1` to `exr:39.14` | Exercises (14) | range; cited only inside Ch 39 and by matter file 93 |
 
 ### Chapter 40: Modeling construction and funding
 
@@ -2794,7 +3010,7 @@ Source brief: `briefs/u09.md`.
 | `ch:40` | Modeling construction and funding |  |
 | `sec:40.1` | The construction budget in the model |  |
 | `ssec:40.1.1` | From a budget table to monthly costs |  |
-| `ssec:40.1.2` | Timing rules for owner's costs, insurance, development costs and advisors |  |
+| `ssec:40.1.2` | Timing rules for owner's costs, insurance, development costs, and advisors |  |
 | `ssec:40.1.3` | Contingency |  |
 | `ssec:40.1.4` | Local-currency costs |  |
 | `sec:40.2` | Sources and uses |  |
@@ -2802,20 +3018,20 @@ Source brief: `briefs/u09.md`.
 | `ssec:40.2.2` | Sources |  |
 | `ssec:40.2.3` | Total funding requirement and gearing |  |
 | `sec:40.3` | Drawdown order |  |
-| `ssec:40.3.1` | Equity first, pro rata, debt first |  |
+| `ssec:40.3.1` | Equity first, pro rata, and debt first |  |
 | `ssec:40.3.2` | Pro rata with letter-of-credit backing in Case P |  |
-| `ssec:40.3.3` | Share capital, shareholder loans and capitalized interest |  |
+| `ssec:40.3.3` | Share capital, shareholder loans, and capitalized interest |  |
 | `ssec:40.3.4` | Standby facility and contingent equity |  |
 | `sec:40.4` | Interest during construction and fees |  |
 | `ssec:40.4.1` | IDC by tranche |  |
 | `ssec:40.4.2` | Commitment fees |  |
-| `ssec:40.4.3` | Upfront fees, agency fees, PRI premium and gross-up |  |
+| `ssec:40.4.3` | Upfront fees, agency fees, PRI premium, and gross-up |  |
 | `ssec:40.4.4` | The financed ECA premium |  |
 | `sec:40.5` | The funding circularity and clean ways to resolve it |  |
 | `ssec:40.5.1` | Where the loops are |  |
 | `ssec:40.5.2` | Iterative calculation with a circuit breaker |  |
 | `ssec:40.5.3` | Closed-form algebra |  |
-| `ssec:40.5.4` | Pasted values and the converge macro |  |
+| `ssec:40.5.4` | Pasted values and the converge loop |  |
 | `ssec:40.5.5` | The method this book uses |  |
 | `sec:40.6` | Walkthrough: one month of Case P funding |  |
 | `sec:40.7` | Case P: the Funding sheet |  |
@@ -2832,27 +3048,30 @@ Source brief: `briefs/u09.md`.
 | `ex:40.6` | One month's commitment fee |  |
 | `ex:40.7` | One month of IDC with a swap |  |
 | `exh:40.1` | The funding loops (diagram) |  |
-| `exh:40.2` | Construction cost timing rules for Case P (table of Inputs H rules) |  |
+| `exh:40.2` | Construction cost timing rules for Case P |  |
 | `exh:40.3` | Month 1 of Case P funding |  |
 | `exh:40.4` | Case P sources and uses at financial close |  |
 | `exh:40.5` | Case P monthly drawdown schedule |  |
+| `exh:40.6` | Case P construction FX forwards | new label |
+| `exh:40.7` | Case P inputs entered in Chapter 40 | new label |
 | `eq:40.1` | IDC by tranche |  |
 | `eq:40.2` | Commitment fee |  |
 | `eq:40.3` | Financed premium gross-up |  |
-| `eq:40.4` | Lagged receipt by date (the SUMIFS device, used in Chapter 41) |  |
+| `eq:40.4` | Lagged receipt by period number (the SUMIFS device used in Chapter 41's VAT refunds, Construction row 36) |  |
 | `eq:40.5` | Total funding requirement |  |
 | `eq:40.6` | Pro rata drawdown |  |
 | `eq:40.7` | Affine solution for the total funding requirement |  |
 | `fw:circularity-ladder` | Framework 40.1 The circularity ladder | home ssec:40.5.5 |
+| `exr:40.1` to `exr:40.15` | Exercises (15) | range; cited only inside Ch 40 and by matter file 93 |
 
-### Chapter 41: Modeling operations, tax and working capital
+### Chapter 41: Modeling operations, tax, and working capital
 
 Source brief: `briefs/u09.md`.
 
 | Label | Caption or title | Note |
 |---|---|---|
-| `ch:41` | Modeling operations, tax and working capital |  |
-| `sec:41.1` | Technical drivers: availability, dispatch, degradation and energy |  |
+| `ch:41` | Modeling operations, tax, and working capital |  |
+| `sec:41.1` | Availability, dispatch, degradation, and energy |  |
 | `ssec:41.1.1` | Availability by operating year |  |
 | `ssec:41.1.2` | Dispatch and energy delivered |  |
 | `ssec:41.1.3` | Degradation and heat-rate headroom |  |
@@ -2896,7 +3115,7 @@ Source brief: `briefs/u09.md`.
 | `ex:41.6` | Thin capitalization at 3:1 |  |
 | `ex:41.7` | Interest limitation with carryforward and reactivation |  |
 | `ex:41.8` | Working capital from days of flow |  |
-| `ex:41.9` | Construction VAT and a VAT facility |  |
+| `ex:41.9` | Construction VAT rows and a VAT facility |  |
 | `ex:41.10` | An LTSA variable fee |  |
 | `exh:41.1` | Case P availability cycle and operating-year mapping |  |
 | `exh:41.2` | Case P tariff-to-row map |  |
@@ -2905,22 +3124,24 @@ Source brief: `briefs/u09.md`.
 | `exh:41.5` | Case P operating cost build OY1 to OY10 |  |
 | `exh:41.6` | Case P tax computation OY1 to OY10 |  |
 | `exh:41.7` | Case P construction VAT and working capital |  |
-| `eq:41.1` | Capacity charge with partial indexation and local share |  |
-| `eq:41.2` | Fuel charge on HHV |  |
+| `exh:41.8` | Case P inputs entered in Chapter 41 | new label |
+| `eq:41.1` | Capacity charge row with partial indexation and local share, implementing eq:18.1 |  |
+| `eq:41.2` | Fuel charge row on the GCV basis, implementing eq:18.2 |  |
 | `eq:41.3` | Energy delivered |  |
 | `eq:41.4` | Working capital balance from days |  |
 | `eq:41.5` | Loss expiry under FIFO |  |
 | `eq:41.6` | Interest limitation with reactivation |  |
 | `fw:tariff-to-row-map` | Framework 41.1 The tariff-to-row map | home ssec:41.4.4 |
 | `fw:tax-computation-stack` | Framework 41.2 The tax computation stack | home ssec:41.5.6 |
+| `exr:41.1` to `exr:41.16` | Exercises (16) | range; cited only inside Ch 41 and by matter file 93 |
 
-### Chapter 42: Modeling the waterfall, debt and reserves
+### Chapter 42: Modeling the waterfall, debt, and reserves
 
 Source brief: `briefs/u09.md`.
 
 | Label | Caption or title | Note |
 |---|---|---|
-| `ch:42` | Modeling the waterfall, debt and reserves |  |
+| `ch:42` | Modeling the waterfall, debt, and reserves |  |
 | `sec:42.1` | From EBITDA to CFADS in the model |  |
 | `ssec:42.1.1` | The CFADS row |  |
 | `ssec:42.1.2` | The waterfall as tiers |  |
@@ -2937,7 +3158,7 @@ Source brief: `briefs/u09.md`.
 | `ssec:42.3.1` | The DSRA |  |
 | `ssec:42.3.2` | The MMRA |  |
 | `ssec:42.3.3` | Handback reserve and the lock-up account |  |
-| `sec:42.4` | Distribution tests, lock-ups and sweeps |  |
+| `sec:42.4` | Distribution tests, lock-ups, and sweeps |  |
 | `ssec:42.4.1` | The distribution test in rows |  |
 | `ssec:42.4.2` | Lock-up cash and the two-consecutive rule |  |
 | `ssec:42.4.3` | The soft mini-perm sweep |  |
@@ -2951,7 +3172,7 @@ Source brief: `briefs/u09.md`.
 | `ssec:42.6.2` | Balance sheet and the balance check |  |
 | `ssec:42.6.3` | Cash flow statement and the cash check |  |
 | `sec:42.7` | Walkthrough: one period through the Case P waterfall |  |
-| `sec:42.8` | Case P: the waterfall, sculpting and reserves |  |
+| `sec:42.8` | Case P: the waterfall, sculpting, and reserves |  |
 | `sec:42.9` | Practitioner's notebook |  |
 | `sec:42.10` | Judgment drill |  |
 | `sec:42.11` | A model that works but has not been tested |  |
@@ -2975,57 +3196,58 @@ Source brief: `briefs/u09.md`.
 | `exh:42.8` | Case P financial statements OY1 to OY3 |  |
 | `eq:42.1` | CFADS row |  |
 | `eq:42.2` | All-in cost factor |  |
-| `eq:42.3` | Debt capacity | ruling: Debt capacity row, implementing eq:36.3 (model row) |
-| `eq:42.4` | Sculpted principal | ruling: Sculpted principal row, implementing eq:36.2 (model row) |
-| `eq:42.5` | DSRA target | ruling: DSRA target row with look-ahead, implementing eq:37.1 (model row) |
+| `eq:42.3` | Debt capacity row, implementing eq:36.3 |  |
+| `eq:42.4` | Sculpted principal row, implementing eq:36.2 |  |
+| `eq:42.5` | DSRA target row with look-ahead, implementing eq:37.1 |  |
 | `eq:42.6` | MMRA contribution |  |
 | `eq:42.7` | Distributable reserves |  |
 | `fw:waterfall-tier` | Framework 42.1 The four-row waterfall tier | home ssec:42.1.2 |
 | `fw:dividend-trap-test` | Framework 42.2 The dividend trap test | home ssec:42.5.3 |
+| `exr:42.1` to `exr:42.17` | Exercises (17) | range; cited only inside Ch 42 and by matter file 93 |
 
-### Chapter 43: Returns, ratios, scenarios and outputs
+### Chapter 43: Returns, ratios, scenarios, and outputs
 
 Source brief: `briefs/u09.md`.
 
 | Label | Caption or title | Note |
 |---|---|---|
-| `ch:43` | Returns, ratios, scenarios and outputs |  |
-| `sec:43.1` | Ratios in the model |  |
-| `ssec:43.1.1` | Period, historic and projected DSCR |  |
+| `ch:43` | Returns, ratios, scenarios, and outputs |  |
+| `sec:43.1` | Ratios in the model | RANGE: (sec:43.5 "Implementing Monte Carlo in the model", R-141; sec:43.9 "Case P: returns, ratios, and ou |
+| `ssec:43.1.1` | Period, historic, and projected DSCR |  |
 | `ssec:43.1.2` | LLCR and PLCR as rows |  |
 | `ssec:43.1.3` | Summary statistics |  |
-| `sec:43.2` | Returns |  |
+| `sec:43.2` | Returns | RANGE: (sec:43.5 "Implementing Monte Carlo in the model", R-141; sec:43.9 "Case P: returns, ratios, and ou |
 | `ssec:43.2.1` | Equity cash flows |  |
-| `ssec:43.2.2` | XIRR and XNPV on mixed periods |  |
+| `ssec:43.2.2` | XIRR and XNPV on dated flows |  |
 | `ssec:43.2.3` | Project IRR |  |
-| `ssec:43.2.4` | Payback, multiple and cash yield |  |
-| `sec:43.3` | Scenarios |  |
+| `ssec:43.2.4` | Payback, multiple, and cash yield rows |  |
+| `sec:43.3` | Scenarios | RANGE: (sec:43.5 "Implementing Monte Carlo in the model", R-141; sec:43.9 "Case P: returns, ratios, and ou |
 | `ssec:43.3.1` | Sizing cases and test cases |  |
-| `ssec:43.3.2` | Running scenarios by macro |  |
+| `ssec:43.3.2` | Running scenarios with one selector |  |
 | `ssec:43.3.3` | Scenarios that move the timeline |  |
-| `sec:43.4` | Sensitivities and breakevens |  |
+| `sec:43.4` | Sensitivities and breakevens | RANGE: (sec:43.5 "Implementing Monte Carlo in the model", R-141; sec:43.9 "Case P: returns, ratios, and ou |
 | `ssec:43.4.1` | Wiring the ten Case P sensitivities |  |
 | `ssec:43.4.2` | Tornado presentation |  |
 | `ssec:43.4.3` | Breakevens |  |
-| `sec:43.5` | Monte Carlo simulation |  |
+| `sec:43.5` | Implementing Monte Carlo in the model | RANGE: (sec:43.5 "Implementing Monte Carlo in the model", R-141; sec:43.9 "Case P: returns, ratios, and ou |
 | `ssec:43.5.1` | Choosing what to simulate |  |
-| `ssec:43.5.2` | Implementing it |  |
+| `ssec:43.5.2` | The draw table, run index, and results |  |
 | `ssec:43.5.3` | Reading the results |  |
 | `ssec:43.5.4` | What simulation misses |  |
-| `sec:43.6` | Outputs and dashboards |  |
+| `sec:43.6` | Outputs and dashboards | RANGE: (sec:43.5 "Implementing Monte Carlo in the model", R-141; sec:43.9 "Case P: returns, ratios, and ou |
 | `ssec:43.6.1` | What a committee reads |  |
 | `ssec:43.6.2` | Charts that carry information |  |
 | `ssec:43.6.3` | Live outputs and pasted results |  |
-| `sec:43.7` | Integrity checks |  |
-| `ssec:43.7.1` | The catalogue |  |
+| `sec:43.7` | Integrity checks | RANGE: (sec:43.5 "Implementing Monte Carlo in the model", R-141; sec:43.9 "Case P: returns, ratios, and ou |
+| `ssec:43.7.1` | The Case P check catalog |  |
 | `ssec:43.7.2` | Errors and warnings |  |
-| `sec:43.8` | Walkthrough: reading the Case P scenario and sensitivity table |  |
-| `sec:43.9` | Case P: returns, ratios and outputs |  |
-| `sec:43.10` | Practitioner's notebook |  |
-| `sec:43.11` | Judgment drill |  |
-| `sec:43.12` | A model its builder trusts |  |
-| `sec:43.13` | Exercises |  |
-| `sec:43.14` | Solutions to exercises |  |
+| `sec:43.8` | Walkthrough: reading the Case P scenario and sensitivity table | RANGE: (sec:43.5 "Implementing Monte Carlo in the model", R-141; sec:43.9 "Case P: returns, ratios, and ou |
+| `sec:43.9` | Case P: returns, ratios, and outputs | RANGE: (sec:43.5 "Implementing Monte Carlo in the model", R-141; sec:43.9 "Case P: returns, ratios, and ou |
+| `sec:43.10` | Practitioner's notebook | RANGE: (sec:43.5 "Implementing Monte Carlo in the model", R-141; sec:43.9 "Case P: returns, ratios, and ou |
+| `sec:43.11` | Judgment drill | RANGE: (sec:43.5 "Implementing Monte Carlo in the model", R-141; sec:43.9 "Case P: returns, ratios, and ou |
+| `sec:43.12` | A model its builder trusts | RANGE: (sec:43.5 "Implementing Monte Carlo in the model", R-141; sec:43.9 "Case P: returns, ratios, and ou |
+| `sec:43.13` | Exercises | RANGE: (sec:43.5 "Implementing Monte Carlo in the model", R-141; sec:43.9 "Case P: returns, ratios, and ou |
+| `sec:43.14` | Solutions to exercises | RANGE: (sec:43.5 "Implementing Monte Carlo in the model", R-141; sec:43.9 "Case P: returns, ratios, and ou |
 | `ex:43.1` | XIRR against IRR on uneven periods |  |
 | `ex:43.2` | A tornado for one period |  |
 | `ex:43.3` | Breakeven by goal seek and by algebra |  |
@@ -3038,13 +3260,15 @@ Source brief: `briefs/u09.md`.
 | `exh:43.5` | Case P ratios by case |  |
 | `exh:43.6` | Case P returns and breakevens |  |
 | `exh:43.7` | Case P Monte Carlo results |  |
-| `eq:43.1` | LLCR row at a period end | ruling: LLCR row at a period end, implementing eq:35.3 (model row) |
+| `exh:43.8` | Exercise 43.17 term sheet and inputs | new label |
+| `eq:43.1` | LLCR row at a period end, implementing eq:35.3 |  |
 | `eq:43.2` | PLCR row |  |
 | `eq:43.3` | XIRR condition |  |
 | `eq:43.4` | Expected capped payment factor |  |
 | `eq:43.5` | Months-of-zero-payment breakeven |  |
 | `fw:locked-debt-test-protocol` | Framework 43.1 The locked-debt test protocol | home sec:43.2 |
-| `fw:integrity-check-catalogue` | Framework 43.2 The integrity-check catalogue | home ssec:43.7.1 |
+| `fw:integrity-check-catalogue` | Framework 43.2 The integrity-check catalog | home ssec:43.7.1 |
+| `exr:43.1` to `exr:43.17` | Exercises (17) | range; cited only inside Ch 43 and by matter file 93 |
 
 ### Chapter 44: Auditing a model
 
@@ -3054,8 +3278,8 @@ Source brief: `briefs/u09.md`.
 |---|---|---|
 | `ch:44` | Auditing a model |  |
 | `sec:44.1` | What a model audit is for |  |
-| `ssec:44.1.1` | Why lenders require it and what they rely on |  |
-| `ssec:44.1.2` | Audit, review, shadow model and reperformance |  |
+| `ssec:44.1.1` | What lenders rely on in a model audit |  |
+| `ssec:44.1.2` | Audit, review, shadow model, and reperformance |  |
 | `sec:44.2` | The audit process |  |
 | `ssec:44.2.1` | Scoping |  |
 | `ssec:44.2.2` | Structural review |  |
@@ -3096,6 +3320,7 @@ Source brief: `briefs/u09.md`.
 | `exh:44.4` | The two-day review plan |  |
 | `fw:seven-pass-review` | Framework 44.1 The seven-pass model review | home sec:44.2 |
 | `fw:finding-severity` | Framework 44.2 Finding severity grades | home ssec:44.2.8 |
+| `exr:44.1` to `exr:44.14` | Exercises (14) | range; cited only inside Ch 44 and by matter file 93 |
 
 ### Chapter 45: Sector-specific modeling
 
@@ -3112,10 +3337,10 @@ Source brief: `briefs/u09.md`.
 | `ssec:45.2.4` | Case R's inputs as rows |  |
 | `sec:45.3` | Degradation and augmentation |  |
 | `ssec:45.3.1` | Wind and solar degradation rows |  |
-| `ssec:45.3.2` | Battery fade, state of health and augmentation |  |
+| `ssec:45.3.2` | Battery fade, state of health, and augmentation |  |
 | `ssec:45.3.3` | Case R's augmentation inputs |  |
 | `sec:45.4` | Availability and curtailment |  |
-| `ssec:45.4.1` | Technical and contractual availability; deemed energy |  |
+| `ssec:45.4.1` | Technical availability, contractual availability, and compensated energy |  |
 | `ssec:45.4.2` | Curtailment and capture prices |  |
 | `ssec:45.4.3` | Merchant revenue with hedges as rows |  |
 | `sec:45.5` | Traffic ramp-up |  |
@@ -3123,14 +3348,14 @@ Source brief: `briefs/u09.md`.
 | `ssec:45.5.2` | Ramp-up and growth |  |
 | `ssec:45.5.3` | Elasticity and toll changes |  |
 | `ssec:45.5.4` | Tracking forecast against actual |  |
-| `sec:45.6` | Mining reserves, grades and recoveries |  |
-| `ssec:45.6.1` | From reserve statement to mine plan rows |  |
-| `ssec:45.6.2` | Recovery, concentrate and net smelter return |  |
+| `sec:45.6` | Mining reserves, grades, and recoveries |  |
+| `ssec:45.6.1` | From reserve statement to mine-plan rows |  |
+| `ssec:45.6.2` | Recovery, concentrate, and net smelter return |  |
 | `ssec:45.6.3` | Grade decline and the reserve tail |  |
 | `sec:45.7` | LNG and commodity-linked revenue |  |
 | `ssec:45.7.1` | Tolling-style LNG sales |  |
 | `ssec:45.7.2` | Oil-linked and hybrid pricing |  |
-| `ssec:45.7.3` | Price decks |  |
+| `ssec:45.7.3` | Price-deck rows in the model |  |
 | `sec:45.8` | PPP payment mechanisms and deductions |  |
 | `ssec:45.8.1` | Unitary charge and deductions in rows |  |
 | `ssec:45.8.2` | Deductions in the financial model |  |
@@ -3153,16 +3378,17 @@ Source brief: `briefs/u09.md`.
 | `exh:45.1` | Sector module interfaces |  |
 | `exh:45.2` | Illustrative wind yield assessment summary |  |
 | `exh:45.3` | Case T traffic: forecasts and actuals |  |
-| `exh:45.4` | Case T revenue ramp-up against actual |  |
+| `exh:45.4` | Case T revenue ramp-up against actual and the shortfall by cause |  |
 | `exh:45.5` | Case R P-values by asset |  |
 | `exh:45.6` | Case R capture and revenue build |  |
-| `exh:45.7` | Case R battery capacity and augmentation (pending R-F11) |  |
+| `exh:45.7` | Case R battery capacity and augmentation (R-F19) |  |
 | `eq:45.1` | Combined uncertainty |  |
 | `eq:45.2` | P-value from P50 and sigma |  |
-| `eq:45.3` | Toll revenue | ruling: Toll revenue row by vehicle class with leakage, implementing eq:12.4 (model row) |
+| `eq:45.3` | Toll revenue row by vehicle class with leakage, implementing eq:12.4 |  |
 | `eq:45.4` | Net smelter return |  |
-| `eq:45.5` | Availability deduction | ruling: Availability deduction row for a supplied mechanism, implementing eq:58.2 (model row, forward reference) |
+| `eq:45.5` | Availability deduction row for a supplied mechanism, implementing eq:58.2 |  |
 | `fw:revenue-driver-decomposition` | Framework 45.1 Revenue driver decomposition | home sec:45.1 |
+| `exr:45.1` to `exr:45.18` | Exercises (18) | range; cited only inside Ch 45 and by matter file 93 |
 
 ### Chapter 46: Equity returns and valuation through the project's life
 
@@ -3172,7 +3398,7 @@ Source brief: `briefs/u10.md`.
 |---|---|---|
 | `ch:46` | Equity returns and valuation through the project's life |  |
 | `sec:46.1` | Four measures of what equity earns |  |
-| `ssec:46.1.1` | Project IRR and equity IRR |  |
+| `ssec:46.1.1` | Project IRR and equity IRR as investment measures |  |
 | `ssec:46.1.2` | NPV at a hurdle rate, and why IRR is not a price |  |
 | `ssec:46.1.3` | Cash yield and payback |  |
 | `ssec:46.1.4` | Money multiples and the IRR-multiple tension |  |
@@ -3180,7 +3406,7 @@ Source brief: `briefs/u10.md`.
 | `sec:46.2` | The cost of equity and hurdle rates by stage |  |
 | `ssec:46.2.1` | From CAPM to a project hurdle |  |
 | `ssec:46.2.2` | Stage premia and what each point pays for |  |
-| `ssec:46.2.3` | Country, currency and contract-quality premia |  |
+| `ssec:46.2.3` | Country, currency, and contract-quality premia |  |
 | `ssec:46.2.4` | Hurdles in practice, from committee targets to bid and hold rates |  |
 | `sec:46.3` | Development economics and where value is created |  |
 | `ssec:46.3.1` | The development budget as an option premium |  |
@@ -3190,7 +3416,7 @@ Source brief: `briefs/u10.md`.
 | `sec:46.4` | Valuing an operating project |  |
 | `ssec:46.4.1` | Unlevered and levered DCF, and the equity bridge |  |
 | `ssec:46.4.2` | Valuation by risk bucket |  |
-| `ssec:46.4.3` | Finite lives, tails and residual value |  |
+| `ssec:46.4.3` | Terminal value, finite lives, and residual value |  |
 | `ssec:46.4.4` | Multiples as cross-checks, and why they mislead |  |
 | `ssec:46.4.5` | A sensitivity hierarchy for operating-asset value |  |
 | `sec:46.5` | What secondary sales reveal about equity value in UK PFI |  |
@@ -3209,41 +3435,42 @@ Source brief: `briefs/u10.md`.
 | `ex:46.3` | The value staircase for a wind project |  |
 | `ex:46.4` | Pricing a 30% stake sold at financial close |  |
 | `ex:46.5` | Valuing an operating asset by risk bucket |  |
-| `ex:46.6` | Why EV/EBITDA misleads for finite-life assets |  |
+| `ex:46.6` | EV/EBITDA against remaining life for two solar plants |  |
 | `exh:46.1` | Return metrics compared on one project (Illustrative) |  |
-| `exh:46.2` | Indicative hurdle rates by project stage (Illustrative; indicative ranges) |  |
+| `exh:46.2` | Hurdle rates and required returns by project stage, sourced anchors and indicative development rungs (Illustrative; indicative ranges) |  |
 | `exh:46.3` | The value staircase (chart) (Illustrative) |  |
 | `exh:46.4` | Valuation by risk bucket against a single blended rate (USD m) (Illustrative) |  |
 | `exh:46.5` | Case R A1 valuation by asset and risk bucket at bid (USD m) (Case R) |  |
 | `exh:46.6` | Disclosed PF2 equity returns (Real case: UK PF2, 2012--2021) |  |
-| `eq:46.1` | Equity IRR definition (equity cash flows including shareholder loans) | ruling: Equity cash flow convention for IRR measurement (conventions owned here; definition ssec:8.2.1, R-013) |
+| `eq:46.1` | Equity cash flow convention for IRR measurement |  |
 | `eq:46.2` | Milestone value roll-back |  |
 | `eq:46.3` | Equity bridge |  |
 | `fw:value-staircase` | Framework 46.1 The value staircase | home ssec:46.3.2 |
 | `fw:risk-bucket-valuation` | Framework 46.2 Risk-bucket valuation | home ssec:46.4.2 |
+| `exr:46.1` to `exr:46.15` | Exercises (15) | range; cited only inside Ch 46 and by matter file 93 |
 
-### Chapter 47: Bidding, acquisitions and infrastructure funds
+### Chapter 47: Bidding, acquisitions, and infrastructure funds
 
 Source brief: `briefs/u10.md`.
 
 | Label | Caption or title | Note |
 |---|---|---|
-| `ch:47` | Bidding, acquisitions and infrastructure funds |  |
+| `ch:47` | Bidding, acquisitions, and infrastructure funds |  |
 | `sec:47.1` | How competitive tenders set the price |  |
 | `ssec:47.1.1` | Bid variables and how bidders read an evaluation formula |  |
 | `ssec:47.1.2` | Building the bid tariff from a target return |  |
 | `ssec:47.1.3` | What sits behind a record tariff |  |
-| `ssec:47.1.4` | Bid costs, bid security and committed finance |  |
+| `ssec:47.1.4` | Bid costs, bid security, and committed finance |  |
 | `sec:47.2` | The winner's curse |  |
-| `ssec:47.2.1` | Why the winner is the most optimistic bidder |  |
+| `ssec:47.2.1` | The winner as the most optimistic bidder |  |
 | `ssec:47.2.2` | Where optimism hides in a bid |  |
 | `ssec:47.2.3` | Bid shading and the expected-value bid |  |
 | `ssec:47.2.4` | The bid discipline check |  |
 | `ssec:47.2.5` | Indiana Toll Road and a winning bid financed to the limit |  |
 | `sec:47.3` | Buying and selling operating assets |  |
 | `ssec:47.3.1` | The auction process from teaser to completion |  |
-| `ssec:47.3.2` | Bilateral deals, pre-emption rights and consents |  |
-| `ssec:47.3.3` | The sale and purchase agreement |  |
+| `ssec:47.3.2` | Bilateral deals, pre-emption rights, and consents |  |
+| `ssec:47.3.3` | The share purchase agreement |  |
 | `ssec:47.3.4` | Locked box versus completion accounts |  |
 | `ssec:47.3.5` | Warranty and indemnity insurance |  |
 | `ssec:47.3.6` | Buying a construction-stage asset |  |
@@ -3251,13 +3478,13 @@ Source brief: `briefs/u10.md`.
 | `ssec:47.4.1` | Diversifying cash yield |  |
 | `ssec:47.4.2` | Concentration limits and correlation in stress |  |
 | `ssec:47.4.3` | Platforms versus single assets |  |
-| `sec:47.5` | How infrastructure funds think, invest and are paid |  |
+| `sec:47.5` | How infrastructure funds think, invest, and are paid |  |
 | `ssec:47.5.1` | Fund structures and strategies |  |
-| `ssec:47.5.2` | Fees, preferred return and carried interest |  |
+| `ssec:47.5.2` | Fees, preferred return, and carried interest |  |
 | `ssec:47.5.3` | Gross and net returns, and what investors actually earn |  |
 | `ssec:47.5.4` | How fund economics shape behavior |  |
 | `sec:47.6` | Walkthrough: the bid committee pack for a tariff tender |  |
-| `sec:47.7` | Walkthrough: a locked-box SPA, clause by clause |  |
+| `sec:47.7` | Walkthrough: a locked-box share purchase agreement, clause by clause |  |
 | `sec:47.8` | Case P: the 2016 tariff bid |  |
 | `sec:47.9` | Case T: the BAFO that won the Merrick Link |  |
 | `sec:47.10` | Case R: the A1 auction |  |
@@ -3277,29 +3504,34 @@ Source brief: `briefs/u10.md`.
 | `exh:47.2` | Expected bias of the winning estimate by number of bidders (Illustrative) |  |
 | `exh:47.3` | Expected NPV of a bid by tariff (USD m) (Illustrative) |  |
 | `exh:47.4` | An auction sale process and its timeline (Illustrative) |  |
-| `exh:47.5` | SPA terms: seller, buyer and market positions (Illustrative; indicative ranges) |  |
+| `exh:47.5` | Share purchase agreement terms: seller, buyer, and market positions (Illustrative; indicative ranges) |  |
 | `exh:47.6` | Fund distribution waterfall by year (USD m) (Illustrative) |  |
 | `exh:47.7` | Case P bid evaluation basis and tariff components (Case P) |  |
 | `exh:47.8` | Case T BAFO contributions against the reference (ARD m) (Case T) |  |
 | `exh:47.9` | Case R A1 bid against valuation (USD m) (Case R) |  |
-| `cl:47.1` | Permitted leakage and leakage indemnity, share purchase agreement |  |
+| `exh:47.10` | Buy-side acquisition due diligence request list for an operating project company (Illustrative) | new label |
+| `cl:47.1` | Permitted leakage and leakage indemnity, share purchase agreement (clausevariants parent) |  |
+| `cl:47.1a` | Permitted leakage and leakage indemnity, share purchase agreement (clausevariants parent) (Illustrative, seller-friendly) | new label |
+| `cl:47.1b` | Permitted leakage and leakage indemnity, share purchase agreement (clausevariants parent) (Illustrative, lender-friendly) | new label |
+| `cl:47.1c` | Permitted leakage and leakage indemnity, share purchase agreement (clausevariants parent) (Illustrative, buyer-friendly) | new label |
 | `cl:47.2` | Limitation of seller liability where a W&I policy is in place, share purchase agreement |  |
-| `eq:47.1` | Levelized tariff | ruling: Bid tariff solved for a target equity IRR, citing eq:5.11 (repurposed, R-001) |
+| `eq:47.1` | Bid tariff solved for a target equity IRR, citing eq:5.11 | repurposed, R-001, R-116 |
 | `eq:47.2` | Expected error of the winning estimate |  |
 | `eq:47.3` | Expected NPV of a bid |  |
 | `eq:47.4` | Locked-box price with ticker and leakage |  |
 | `fw:bid-discipline-check` | Framework 47.1 The bid discipline check | home ssec:47.2.4 |
 | `fw:pricing-mechanism-choice` | Framework 47.2 Choosing the price mechanism | home ssec:47.3.4 |
+| `exr:47.1` to `exr:47.16` | Exercises (16) | range; cited only inside Ch 47 and by matter file 93 |
 
-### Chapter 48: Technical, resource and market diligence
+### Chapter 48: Technical, resource, and market diligence
 
 Source brief: `briefs/u10.md`.
 
 | Label | Caption or title | Note |
 |---|---|---|
-| `ch:48` | Technical, resource and market diligence |  |
+| `ch:48` | Technical, resource, and market diligence |  |
 | `sec:48.1` | How diligence is organized and who relies on whom |  |
-| `ssec:48.1.1` | Advisors, reliance and duty of care |  |
+| `ssec:48.1.1` | Advisors, reliance, and duty of care |  |
 | `ssec:48.1.2` | Scoping a diligence program |  |
 | `ssec:48.1.3` | The report challenge protocol |  |
 | `sec:48.2` | The independent engineer |  |
@@ -3316,13 +3548,13 @@ Source brief: `briefs/u10.md`.
 | `ssec:48.3.4` | Fuel and feedstock supply adequacy |  |
 | `sec:48.4` | Market and price-curve diligence |  |
 | `ssec:48.4.1` | How a market advisor builds a price curve |  |
-| `ssec:48.4.2` | Capture prices, cannibalization and basis in the curve |  |
+| `ssec:48.4.2` | Capture prices, cannibalization, and basis in the curve |  |
 | `ssec:48.4.3` | Comparing two advisors' curves |  |
 | `ssec:48.4.4` | Commodity markets beyond power |  |
 | `ssec:48.4.5` | Which curve the lenders size on |  |
 | `sec:48.5` | Traffic and demand studies |  |
 | `ssec:48.5.1` | How a traffic study is built |  |
-| `ssec:48.5.2` | Value of time, elasticity and diversion |  |
+| `ssec:48.5.2` | Value of time, elasticity, and diversion |  |
 | `ssec:48.5.3` | Ramp-up and land-use assumptions |  |
 | `ssec:48.5.4` | Sydney's Cross City and Lane Cove tunnels and the winning forecast |  |
 | `ssec:48.5.5` | Demand studies beyond roads |  |
@@ -3334,7 +3566,7 @@ Source brief: `briefs/u10.md`.
 | `sec:48.11` | Engineering reports measure physical risk, and documents hide the rest |  |
 | `sec:48.12` | Exercises |  |
 | `sec:48.13` | Solutions to exercises |  |
-| `ex:48.1` | Is the contingency enough? (Illustrative) |  |
+| `ex:48.1` | Testing a hydro contingency with three-point estimates (Illustrative) |  |
 | `ex:48.2` | What a delay distribution costs (Illustrative) |  |
 | `ex:48.3` | Challenging a wind yield report (Illustrative) |  |
 | `ex:48.4` | Reserve life against loan tenor (Illustrative) |  |
@@ -3342,54 +3574,59 @@ Source brief: `briefs/u10.md`.
 | `ex:48.6` | Value of time and diversion (Illustrative) |  |
 | `exh:48.1` | Diligence scope matrix for an onshore wind financing (Illustrative) |  |
 | `exh:48.2` | Three-point capex estimates and contingency confidence (USD m) (Illustrative) |  |
-| `exh:48.3` | Delay bands, cost and LD recovery (USD m) (Illustrative) |  |
+| `exh:48.3` | Delay bands, cost, and LD recovery (USD m) (Illustrative) |  |
 | `exh:48.4` | Energy yield loss chain and uncertainty, sponsor against lenders' consultant (Illustrative) |  |
 | `exh:48.5` | Two price curves and merchant-tail value (EUR m) (Illustrative) |  |
 | `exh:48.6` | Diversion share against value of time (chart) (Illustrative) |  |
 | `exh:48.7` | Cross City Tunnel forecasts against actual traffic (Real case: Cross City Tunnel, 2002--2006) |  |
 | `exh:48.8` | Case T traffic cases and actuals (thousand trips a day) (Case T) |  |
-| `exh:48.9` | Case P technical inputs reviewed by the IE (Case P) |  |
+| `exh:48.9` | Case P technical inputs and the IE's findings (Case P) |  |
+| `exh:48.10` | Technical due diligence request list for the independent engineer (Illustrative) | new label |
+| `exh:48.11` | Resource and reserves due diligence request list (Illustrative) | new label |
+| `exh:48.12` | Market and price-curve due diligence request list (Illustrative) | new label |
+| `exh:48.13` | Traffic and demand due diligence request list (Illustrative) | new label |
 | `eq:48.1` | PERT mean and standard deviation |  |
 | `eq:48.2` | Net energy from gross through the loss chain |  |
-| `eq:48.3` | Reserve tail |  |
+| `eq:48.3` | Reserve tail against final maturity |  |
 | `eq:48.4` | Binary logit diversion |  |
 | `fw:dd-scope-matrix` | Framework 48.1 The diligence scope matrix | home ssec:48.1.2 |
 | `fw:report-challenge` | Framework 48.2 The report challenge protocol | home ssec:48.1.3 |
+| `exr:48.1` to `exr:48.17` | Exercises (17) | range; cited only inside Ch 48 and by matter file 93 |
 
-### Chapter 49: Legal, insurance, model, tax and integrity diligence
+### Chapter 49: Legal, insurance, model, tax, and integrity diligence
 
 Source brief: `briefs/u10.md`.
 
 | Label | Caption or title | Note |
 |---|---|---|
-| `ch:49` | Legal, insurance, model, tax and integrity diligence |  |
+| `ch:49` | Legal, insurance, model, tax, and integrity diligence |  |
 | `sec:49.1` | Legal and regulatory due diligence |  |
 | `ssec:49.1.1` | What lenders' counsel reviews and why |  |
 | `ssec:49.1.2` | The legal due diligence report and its red-flag grid |  |
-| `ssec:49.1.3` | Permits, licenses and land against the loan's life |  |
+| `ssec:49.1.3` | Permits, licenses, and land against the loan's life |  |
 | `ssec:49.1.4` | Reviewing the project contracts |  |
 | `ssec:49.1.5` | Legal opinions and their qualifications |  |
 | `ssec:49.1.6` | Regulatory diligence |  |
 | `sec:49.2` | Insurance due diligence |  |
 | `ssec:49.2.1` | The lenders' insurance advisor's mandate |  |
-| `ssec:49.2.2` | Testing the program against the losses that matter |  |
-| `ssec:49.2.3` | Insurer security, fronting and reinsurance |  |
+| `ssec:49.2.2` | Testing cover against debt service, spare lead times, and deductibles |  |
+| `ssec:49.2.3` | Insurer security, fronting, and reinsurance |  |
 | `ssec:49.2.4` | The broker's letter of undertaking and the insurance CPs |  |
 | `sec:49.3` | Model audit engagement |  |
 | `ssec:49.3.1` | Scope of a model audit engagement |  |
 | `ssec:49.3.2` | Materiality and sign-off |  |
-| `ssec:49.3.3` | Reliance, liability caps and the bring-down |  |
+| `ssec:49.3.3` | Reliance, liability caps, and the bring-down |  |
 | `sec:49.4` | Tax and accounting due diligence |  |
 | `ssec:49.4.1` | Reviewing project-level tax |  |
 | `ssec:49.4.2` | Quantifying leakage |  |
-| `ssec:49.4.3` | Tax opinions, rulings and indemnities |  |
+| `ssec:49.4.3` | Tax opinions, rulings, and indemnities |  |
 | `ssec:49.4.4` | Accounting diligence |  |
 | `sec:49.5` | Counterparty credit diligence |  |
-| `ssec:49.5.1` | Which counterparties matter and how much |  |
+| `ssec:49.5.1` | Ranking counterparties by exposure and replaceability |  |
 | `ssec:49.5.2` | Analyzing a state-owned offtaker |  |
-| `ssec:49.5.3` | Contractor, supplier and hedge counterparty credit |  |
+| `ssec:49.5.3` | Contractor, supplier, and hedge counterparty credit |  |
 | `ssec:49.5.4` | The counterparty credit card |  |
-| `sec:49.6` | KYC, sanctions and anti-corruption diligence |  |
+| `sec:49.6` | KYC, sanctions, and anti-corruption diligence |  |
 | `ssec:49.6.1` | Know your customer and beneficial ownership |  |
 | `ssec:49.6.2` | Sanctions screening and ownership tracing |  |
 | `ssec:49.6.3` | Anti-corruption diligence |  |
@@ -3403,23 +3640,30 @@ Source brief: `briefs/u10.md`.
 | `sec:49.12` | Exercises |  |
 | `sec:49.13` | Solutions to exercises |  |
 | `ex:49.1` | Testing permits and land against the loan (Illustrative) |  |
-| `ex:49.2` | Does the delay and business interruption cover pay the debt? (Illustrative) |  |
-| `ex:49.3` | How material is a model error? (Illustrative) |  |
+| `ex:49.2` | Business interruption cover against debt service and spare lead time (Illustrative) |  |
+| `ex:49.3` | A model error measured in debt capacity (Illustrative) |  |
 | `ex:49.4` | Quantifying tax leakage (Illustrative) |  |
-| `ex:49.5` | Can the utility pay? (Illustrative) |  |
+| `ex:49.5` | A state utility's cash available for IPPs (Illustrative) |  |
 | `ex:49.6` | Tracing ownership through a sanctions screen (Illustrative) |  |
 | `exh:49.1` | A red-flag grid for an IPP financing (Illustrative) |  |
 | `exh:49.2` | Permit and land schedule against the loan (Illustrative) |  |
 | `exh:49.3` | BI cover against debt service and spare lead times (USD m) (Illustrative) |  |
 | `exh:49.4` | Utility cash available for IPPs (USD m per month) (Illustrative) |  |
 | `exh:49.5` | Ownership chart and sanctions test (Illustrative) |  |
-| `exh:49.6` | Case P legal DD findings graded (Case P) |  |
+| `exh:49.6` | Case P lenders' legal due diligence findings graded (Case P) |  |
+| `exh:49.7` | Legal and regulatory due diligence request list (Illustrative) | new label |
+| `exh:49.8` | Insurance due diligence request list for the lenders' insurance advisor (Illustrative) | new label |
+| `exh:49.9` | Model audit request list (Illustrative) | new label |
+| `exh:49.10` | Tax and accounting due diligence request list (Illustrative) | new label |
+| `exh:49.11` | Counterparty credit due diligence request list (Illustrative) | new label |
+| `exh:49.12` | KYC, sanctions, and integrity due diligence request list (Illustrative) | new label |
 | `cl:49.1` | Opinion paragraph on enforceability with qualifications, local-law legal opinion |  |
 | `eq:49.1` | Required BI daily indemnity |  |
 | `eq:49.2` | Withholding tax gross-up cost |  |
 | `fw:red-flag-grid` | Framework 49.1 The red-flag grid | home ssec:49.1.2 |
 | `fw:counterparty-credit-card` | Framework 49.2 The counterparty credit card | home ssec:49.5.4 |
 | `fw:ownership-trace` | Framework 49.3 The ownership trace | home ssec:49.6.2 |
+| `exr:49.1` to `exr:49.17` | Exercises (17) | range; cited only inside Ch 49 and by matter file 93 |
 
 ### Chapter 50: Environmental and social risk and standards
 
@@ -3428,7 +3672,7 @@ Source brief: `briefs/u10.md`.
 | Label | Caption or title | Note |
 |---|---|---|
 | `ch:50` | Environmental and social risk and standards |  |
-| `sec:50.1` | Why environmental and social failure is credit risk |  |
+| `sec:50.1` | Environmental and social failure as credit risk |  |
 | `ssec:50.1.1` | How E&S failure reaches the lenders |  |
 | `ssec:50.1.2` | Pricing an E&S delay |  |
 | `ssec:50.1.3` | Cobre Panamá and compliance without legitimacy |  |
@@ -3450,17 +3694,17 @@ Source brief: `briefs/u10.md`.
 | `ssec:50.5.1` | PS5 principles |  |
 | `ssec:50.5.2` | Building a resettlement budget |  |
 | `ssec:50.5.3` | Resettlement and the construction schedule |  |
-| `sec:50.6` | Indigenous peoples and free, prior and informed consent |  |
+| `sec:50.6` | Indigenous peoples and free, prior, and informed consent |  |
 | `ssec:50.6.1` | When PS7 applies |  |
 | `ssec:50.6.2` | What FPIC requires and what it does not |  |
 | `ssec:50.6.3` | FPIC in high-income countries under EP4 |  |
 | `sec:50.7` | Biodiversity |  |
 | `ssec:50.7.1` | Habitat classification and critical habitat |  |
-| `ssec:50.7.2` | Offsets, no net loss and net gain |  |
+| `ssec:50.7.2` | Offsets, no net loss, and net gain |  |
 | `ssec:50.7.3` | Bujagali and an offset undone by the host government's own project |  |
-| `sec:50.8` | Labor, safety, security and human rights |  |
+| `sec:50.8` | Labor, safety, security, and human rights |  |
 | `ssec:50.8.1` | Labor and working conditions |  |
-| `ssec:50.8.2` | Community health, safety and security |  |
+| `ssec:50.8.2` | Community health, safety, and security |  |
 | `ssec:50.8.3` | Human rights due diligence |  |
 | `ssec:50.8.4` | Cultural heritage |  |
 | `sec:50.9` | Compliance certified and outcome failed in Chad and Cameroon |  |
@@ -3472,7 +3716,7 @@ Source brief: `briefs/u10.md`.
 | `sec:50.15` | Exercises |  |
 | `sec:50.16` | Solutions to exercises |  |
 | `ex:50.1` | What a community blockade costs (Illustrative) |  |
-| `ex:50.2` | Does EP4 apply? (Illustrative) |  |
+| `ex:50.2` | EP4 scope tests on six transactions (Illustrative) |  |
 | `ex:50.3` | Emissions thresholds for a gas plant (Illustrative) |  |
 | `ex:50.4` | A resettlement budget at full replacement cost (Illustrative) |  |
 | `ex:50.5` | Testing a biodiversity offset (Illustrative) |  |
@@ -3481,10 +3725,12 @@ Source brief: `briefs/u10.md`.
 | `exh:50.3` | Resettlement budget at full replacement cost (USD) (Illustrative) |  |
 | `exh:50.4` | EP4 applicability decisions for six transactions (Illustrative) |  |
 | `exh:50.5` | Case P resettlement and E&S cost items (USD m) (Case P) |  |
+| `exh:50.6` | Environmental and social due diligence request list (Illustrative) | new label |
 | `cl:50.1` | Environmental and social covenant with ESAP compliance and cure period, common terms agreement |  |
 | `eq:50.1` | Habitat units and offset gain |  |
 | `fw:es-credit-map` | Framework 50.1 The E&S-to-credit transmission map | home ssec:50.1.1 |
 | `fw:es-applicability` | Framework 50.2 The E&S applicability tree | home ssec:50.2.2 |
+| `exr:50.1` to `exr:50.16` | Exercises (16) | range; cited only inside Ch 50 and by matter file 93 |
 
 ### Chapter 51: The finance documents
 
@@ -3495,10 +3741,10 @@ Source brief: `briefs/u11.md`.
 | `ch:51` | The finance documents |  |
 | `sec:51.1` | The document set and how it flows |  |
 | `ssec:51.1.1` | From mandate letter to financial close |  |
-| `ssec:51.1.2` | Mandate letters, commitment letters and fee letters |  |
+| `ssec:51.1.2` | Mandate letters, commitment letters, and fee letters |  |
 | `ssec:51.1.3` | The common terms agreement and the facility agreements |  |
 | `ssec:51.1.4` | Hedging documents under the ISDA framework |  |
-| `ssec:51.1.5` | Working with LMA, LSTA and APLMA forms |  |
+| `ssec:51.1.5` | Working with LMA, LSTA, and APLMA forms |  |
 | `sec:51.2` | Conditions precedent |  |
 | `ssec:51.2.1` | What conditions precedent are for |  |
 | `ssec:51.2.2` | The initial conditions precedent list |  |
@@ -3511,19 +3757,20 @@ Source brief: `briefs/u11.md`.
 | `ssec:51.4.1` | Information covenants |  |
 | `ssec:51.4.2` | Positive and negative covenants |  |
 | `ssec:51.4.3` | Financial covenants as drafted |  |
-| `ssec:51.4.4` | Permitted debt, permitted security and permitted disposals |  |
+| `ssec:51.4.4` | Permitted debt, permitted security, and permitted disposals |  |
 | `ssec:51.4.5` | Distributions and restricted payments as drafted |  |
 | `sec:51.5` | Events of default and remedies |  |
-| `ssec:51.5.1` | The standard list and the project list |  |
-| `ssec:51.5.2` | Grace periods, materiality and thresholds |  |
+| `ssec:51.5.1` | Standard and project-specific events of default |  |
+| `ssec:51.5.2` | Grace periods, materiality, and thresholds |  |
 | `ssec:51.5.3` | Remedies and why project lenders rarely accelerate |  |
-| `ssec:51.5.4` | Equity cures |  |
+| `ssec:51.5.4` | Drafting the equity cure |  |
+| `ssec:51.5.5` | Hedge termination events linked to the loans | new label |
 | `sec:51.6` | Change of control and transfers |  |
 | `ssec:51.6.1` | Change of control and sponsor lock-in |  |
 | `ssec:51.6.2` | Lender transfers |  |
-| `sec:51.7` | Amendments, waivers and voting |  |
+| `sec:51.7` | Amendments, waivers, and voting |  |
 | `ssec:51.7.1` | Decision thresholds inside a facility |  |
-| `ssec:51.7.2` | Defaulting lenders, deemed consent and replacing a holdout |  |
+| `ssec:51.7.2` | Defaulting lenders, deemed consent, and replacing a holdout |  |
 | `ssec:51.7.3` | The waiver and amendment letter |  |
 | `sec:51.8` | Walkthrough: reading a common terms agreement in one sitting |  |
 | `sec:51.9` | Case P: the common terms agreement |  |
@@ -3533,48 +3780,65 @@ Source brief: `briefs/u11.md`.
 | `sec:51.13` | Exercises |  |
 | `sec:51.14` | Solutions to exercises |  |
 | `ex:51.1` | Sorting terms between the common terms agreement and the facility agreements |  |
-| `ex:51.2` | A cost-to-complete test on a drawdown request |  |
+| `ex:51.2` | Whose estimate a cost-to-complete condition uses |  |
 | `ex:51.3` | An incurrence test for additional senior debt |  |
 | `ex:51.4` | Testing a distribution request |  |
-| `ex:51.5` | Equity cure arithmetic |  |
+| `ex:51.5` | Three drafting choices and the cost of one cure |  |
 | `ex:51.6` | Voting arithmetic in a seven-bank club |  |
 | `exh:51.1` | The project finance document set (diagram) |  |
-| `exh:51.2` | Finance documents: parties, governing law, purpose and drafter |  |
-| `exh:51.3` | Chassis, adapted and bespoke clauses in a common terms agreement |  |
+| `exh:51.2` | Parties, governing law, purpose, and drafter of each finance document |  |
+| `exh:51.3` | Chassis, adapted, and bespoke clauses in a common terms agreement |  |
 | `exh:51.4` | Initial conditions precedent checklist template |  |
 | `exh:51.5` | Reporting calendar in construction and operations |  |
-| `exh:51.6` | Event of default severity grid, twelve events of default |  |
+| `exh:51.6` | Event of default severity grid for twelve events of default |  |
 | `exh:51.7` | Reading order for a common terms agreement |  |
-| `exh:51.8` | Case P common terms agreement covenant and cure terms |  |
+| `exh:51.8` | Case P common terms agreement covenant, cure, permitted debt, and hedging terms |  |
 | `cl:51.1` | Clear market undertaking, mandate letter |  |
 | `cl:51.2` | Conditions to each utilisation in construction, common terms agreement |  |
 | `cl:51.3` | Information and projections representation, common terms agreement |  |
+| `cl:51.3a` | Information and projections representation, common terms agreement (Illustrative, sponsor-friendly) | new label |
+| `cl:51.3b` | Information and projections representation, common terms agreement (Illustrative, lender-friendly) | new label |
+| `cl:51.3c` | Information and projections representation, common terms agreement (Illustrative, DFI-friendly) | new label |
 | `cl:51.4` | Historic DSCR and supporting definitions, common terms agreement |  |
 | `cl:51.5` | Material project document event of default, common terms agreement |  |
+| `cl:51.5a` | Material project document event of default, common terms agreement (Illustrative, sponsor-friendly) | new label |
+| `cl:51.5b` | Material project document event of default, common terms agreement (Illustrative, lender-friendly) | new label |
+| `cl:51.5c` | Material project document event of default, common terms agreement (Illustrative, offtaker-friendly) | new label |
 | `cl:51.6` | Equity cure, common terms agreement |  |
+| `cl:51.6a` | Equity cure, common terms agreement (Illustrative, sponsor-friendly) | new label |
+| `cl:51.6b` | Equity cure, common terms agreement (Illustrative, lender-friendly) | new label |
+| `cl:51.6c` | Equity cure, common terms agreement (Illustrative, ECA-friendly) | new label |
+| `cl:51.7` | Additional termination events, ISDA schedule | new label |
+| `cl:51.7a` | Additional termination events, ISDA schedule (Illustrative, sponsor-friendly) | new label |
+| `cl:51.7b` | Additional termination events, ISDA schedule (Illustrative, lender-friendly) | new label |
+| `cl:51.7c` | Additional termination events, ISDA schedule (Illustrative, hedge-bank-friendly) | new label |
+| `cl:51.8` | Waiver and reservation of rights, waiver and amendment letter | new label |
+| `cl:51.8a` | Waiver and reservation of rights, waiver and amendment letter (Illustrative, sponsor-friendly) | new label |
+| `cl:51.8b` | Waiver and reservation of rights, waiver and amendment letter (Illustrative, lender-friendly) | new label |
 | `eq:51.1` | Maximum additional senior debt under an incurrence test |  |
-| `eq:51.2` | CFADS cure amount |  |
-| `eq:51.3` | Prepayment cure amount, pro rata application |  |
+| `eq:51.2` | CFADS cure amount as drafted, applying eq:37.4 |  |
+| `eq:51.3` | Prepayment cure amount under pro rata application deemed at the start of the test period, applying eq:37.4 |  |
 | `fw:boilerplate-or-bargain` | Framework 51.1 Boilerplate-or-bargain sort | home ssec:51.1.5 |
 | `fw:eod-severity-grid` | Framework 51.2 Event of default severity grid | home ssec:51.5.2 |
+| `exr:51.1` to `exr:51.17` | Exercises (17) | range; cited only inside Ch 51 and by matter file 93 |
 
-### Chapter 52: Security, accounts and the cash waterfall
+### Chapter 52: Security, accounts, and the cash waterfall
 
 Source brief: `briefs/u11.md`.
 
 | Label | Caption or title | Note |
 |---|---|---|
-| `ch:52` | Security, accounts and the cash waterfall |  |
+| `ch:52` | Security, accounts, and the cash waterfall |  |
 | `sec:52.1` | What security is for in project finance |  |
-| `ssec:52.1.1` | Control, protection and leverage |  |
+| `ssec:52.1.1` | Control, protection, and leverage |  |
 | `ssec:52.1.2` | The security package |  |
 | `sec:52.2` | Common-law and civil-law security |  |
 | `ssec:52.2.1` | Charges and the security trust in common law |  |
-| `ssec:52.2.2` | Pledges, the accessory principle and parallel debt in civil law |  |
-| `ssec:52.2.3` | Security agents, security trustees and statutory regimes |  |
+| `ssec:52.2.2` | Pledges, the accessory principle, and parallel debt in civil law |  |
+| `ssec:52.2.3` | Security agents, security trustees, and statutory regimes |  |
 | `sec:52.3` | Perfection and priority |  |
 | `ssec:52.3.1` | Perfecting security |  |
-| `ssec:52.3.2` | What security does not beat |  |
+| `ssec:52.3.2` | Claims that rank ahead of security |  |
 | `sec:52.4` | Enforcement as a going concern |  |
 | `ssec:52.4.1` | The enforcement routes |  |
 | `ssec:52.4.2` | What constrains enforcement |  |
@@ -3588,28 +3852,33 @@ Source brief: `briefs/u11.md`.
 | `ssec:52.6.3` | Special flows |  |
 | `ssec:52.6.4` | Drafting the priority of payments |  |
 | `sec:52.7` | Walkthrough: tracing a dollar through an accounts agreement |  |
-| `sec:52.8` | Case P: the accounts agreement, parallel debt and the business pledge |  |
+| `sec:52.8` | Case P: the accounts agreement, parallel debt, and the business pledge |  |
 | `sec:52.9` | Practitioner's notebook |  |
 | `sec:52.10` | Judgment drill |  |
 | `sec:52.11` | Security binds the project company; it does not settle the lenders' disputes with each other |  |
 | `sec:52.12` | Exercises |  |
 | `sec:52.13` | Solutions to exercises |  |
-| `ex:52.1` | Going-concern versus liquidation recovery |  |
+| `ex:52.1` | Going-concern against liquidation recovery |  |
 | `ex:52.2` | Parallel debt and the distribution of enforcement proceeds |  |
 | `ex:52.3` | One semiannual period through the waterfall |  |
-| `ex:52.4` | Insurance proceeds and the reinstatement test |  |
+| `ex:52.4` | Routing insurance proceeds through the accounts |  |
+| `ex:52.5` | Where the sweep sits: one period under two drafts | new label |
 | `exh:52.1` | The security package by asset class |  |
 | `exh:52.2` | Perfection checklist by asset class |  |
 | `exh:52.3` | Enforcement routes compared |  |
 | `exh:52.4` | Account map of an operating project (diagram) |  |
 | `exh:52.5` | Operating cash waterfall (diagram) |  |
 | `exh:52.6` | Tracing a dollar through the accounts agreement |  |
-| `exh:52.7` | Case P accounts and flows |  |
+| `exh:52.7` | Case P accounts and priority of payments |  |
 | `cl:52.1` | Parallel debt undertaking, intercreditor agreement |  |
 | `cl:52.2` | Priority of payments, accounts agreement |  |
+| `cl:52.3` | Cash sweep and distribution steps, accounts agreement | new label |
+| `cl:52.3a` | Cash sweep and distribution steps, accounts agreement (Illustrative, sponsor-friendly) | new label |
+| `cl:52.3b` | Cash sweep and distribution steps, accounts agreement (Illustrative, lender-friendly) | new label |
 | `eq:52.1` | Pro rata distribution of net enforcement proceeds |  |
 | `fw:security-control-test` | Framework 52.1 Security package control test | home ssec:52.1.2 |
 | `fw:trace-a-dollar` | Framework 52.2 Trace-a-dollar test | home sec:52.7 |
+| `exr:52.1` to `exr:52.15` | Exercises (15) | range; cited only inside Ch 52 and by matter file 93 |
 
 ### Chapter 53: Intercreditor arrangements
 
@@ -3618,10 +3887,10 @@ Source brief: `briefs/u11.md`.
 | Label | Caption or title | Note |
 |---|---|---|
 | `ch:53` | Intercreditor arrangements |  |
-| `sec:53.1` | Why lenders need an agreement among themselves |  |
-| `sec:53.2` | Ranking, sharing and turnover |  |
+| `sec:53.1` | What each creditor needs from the others after a default |  |
+| `sec:53.2` | Ranking, sharing, and turnover |  |
 | `ssec:53.2.1` | Pari passu ranking and pro rata sharing |  |
-| `ssec:53.2.2` | Subordinated, mezzanine and shareholder debt |  |
+| `ssec:53.2.2` | Subordinated, mezzanine, and shareholder debt |  |
 | `sec:53.3` | Voting and decision-making |  |
 | `ssec:53.3.1` | Who votes and how votes are counted |  |
 | `ssec:53.3.2` | Entrenched rights and the decision matrix |  |
@@ -3633,7 +3902,7 @@ Source brief: `briefs/u11.md`.
 | `ssec:53.5.1` | Ranking and voting of hedge claims |  |
 | `ssec:53.5.2` | Hedges through prepayments and refinancings |  |
 | `sec:53.6` | Standstills and the conduct of enforcement |  |
-| `ssec:53.6.1` | Acceleration, enforcement instructions and standstills |  |
+| `ssec:53.6.1` | Acceleration, enforcement instructions, and standstills |  |
 | `ssec:53.6.2` | Applying enforcement proceeds |  |
 | `sec:53.7` | Adding creditors after financial close |  |
 | `sec:53.8` | Conventional and Islamic tranches in one intercreditor agreement |  |
@@ -3654,24 +3923,28 @@ Source brief: `briefs/u11.md`.
 | `exh:53.2` | Intercreditor decision matrix for a four-tranche financing |  |
 | `exh:53.3` | Case P creditor classes and voting mechanics |  |
 | `cl:53.1` | Instructing group for waivers of financial covenant events of default, intercreditor agreement |  |
+| `cl:53.1a` | Instructing group for waivers of financial covenant events of default, intercreditor agreement (Illustrative, sponsor-friendly) | new label |
+| `cl:53.1b` | Instructing group for waivers of financial covenant events of default, intercreditor agreement (Illustrative, lender-friendly) | new label |
+| `cl:53.1c` | Instructing group for waivers of financial covenant events of default, intercreditor agreement (Illustrative, ECA-friendly) | new label |
 | `cl:53.2` | Application of enforcement proceeds, intercreditor agreement |  |
 | `eq:53.1` | Pro rata sharing of a recovery |  |
 | `eq:53.2` | Expected value of enforcement after a standstill |  |
 | `fw:intercreditor-matrix` | Framework 53.1 Intercreditor decision matrix | home ssec:53.3.2 |
+| `exr:53.1` to `exr:53.14` | Exercises (14) | range; cited only inside Ch 53 and by matter file 93 |
 
-### Chapter 54: Governing law, disputes and investment protection
+### Chapter 54: Governing law, disputes, and investment protection
 
 Source brief: `briefs/u11.md`.
 
 | Label | Caption or title | Note |
 |---|---|---|
-| `ch:54` | Governing law, disputes and investment protection |  |
+| `ch:54` | Governing law, disputes, and investment protection |  |
 | `sec:54.1` | Choosing governing law |  |
 | `ssec:54.1.1` | What the parties can choose and what local law decides anyway |  |
 | `ssec:54.1.2` | Governing law across the contract web |  |
 | `sec:54.2` | Courts or arbitration |  |
 | `ssec:54.2.1` | Litigation and jurisdiction clauses |  |
-| `ssec:54.2.2` | Seat, rules and tribunal in arbitration |  |
+| `ssec:54.2.2` | Seat, rules, and tribunal in arbitration |  |
 | `ssec:54.2.3` | Multi-tier clauses and multi-contract disputes |  |
 | `ssec:54.2.4` | Choosing the forum by working backwards from enforcement |  |
 | `sec:54.3` | Enforcing awards |  |
@@ -3683,16 +3956,16 @@ Source brief: `briefs/u11.md`.
 | `ssec:54.4.2` | What the 2026 decisions changed |  |
 | `ssec:54.4.3` | Drafting the waiver |  |
 | `sec:54.5` | Stabilization and economic-equilibrium clauses |  |
-| `ssec:54.5.1` | Freezing, equilibrium and hybrid clauses |  |
+| `ssec:54.5.1` | Freezing, equilibrium, and hybrid clauses |  |
 | `ssec:54.5.2` | Pricing a change in law |  |
 | `ssec:54.5.3` | What Spain teaches about statute and contract |  |
 | `sec:54.6` | Investment treaties |  |
 | `ssec:54.6.1` | What treaties protect and whom |  |
 | `ssec:54.6.2` | Defenses and how tribunals split |  |
 | `ssec:54.6.3` | Structuring for treaty protection |  |
-| `ssec:54.6.4` | Winning and collecting |  |
+| `ssec:54.6.4` | Winning an award and collecting on it |  |
 | `sec:54.7` | Walkthrough: drafting the dispute clauses for a project's contract set |  |
-| `sec:54.8` | Case P: dispute clauses, treaty protection and the immunity waiver |  |
+| `sec:54.8` | Case P: dispute clauses, treaty protection, and the immunity waiver |  |
 | `sec:54.9` | Practitioner's notebook |  |
 | `sec:54.10` | Judgment drill |  |
 | `sec:54.11` | Rights on paper become a financing only when the documents are signed and funded |  |
@@ -3702,16 +3975,22 @@ Source brief: `briefs/u11.md`.
 | `ex:54.2` | Award value with interest |  |
 | `ex:54.3` | Pricing a change in law under an equilibrium clause |  |
 | `ex:54.4` | Treaty timing and the sunset clause |  |
+| `ex:54.5` | Three ways to turn an award into cash | new label |
+| `ex:54.6` | The cost of a forum mismatch between a PPA and its guarantee | new label |
 | `exh:54.1` | Governing law and forum across an illustrative contract web |  |
 | `exh:54.2` | Arbitral institutions and rule sets compared |  |
 | `exh:54.3` | Case P dispute map |  |
 | `cl:54.1` | Waiver of immunity, implementation agreement |  |
+| `cl:54.1a` | Waiver of immunity, implementation agreement (Illustrative, sponsor-friendly) | new label |
+| `cl:54.1b` | Waiver of immunity, implementation agreement (Illustrative, lender-friendly) | new label |
+| `cl:54.1c` | Waiver of immunity, implementation agreement (Illustrative, government-friendly) | new label |
 | `cl:54.2` | Economic equilibrium clause, implementation agreement |  |
 | `cl:54.3` | Arbitration agreement with ICSID consent and UNCITRAL fallback, implementation agreement |  |
 | `eq:54.1` | Expected recovery of a claim in a forum |  |
 | `eq:54.2` | Grossed-up tariff uplift for a revenue levy |  |
 | `fw:enforcement-first-forum` | Framework 54.1 Enforcement-first forum choice | home ssec:54.2.4 |
 | `fw:treaty-protection-test` | Framework 54.2 Treaty protection test | home ssec:54.6.3 |
+| `exr:54.1` to `exr:54.14` | Exercises (14) | range; cited only inside Ch 54 and by matter file 93 |
 
 ### Chapter 55: Running a financing to close
 
@@ -3721,29 +4000,29 @@ Source brief: `briefs/u11.md`.
 |---|---|---|
 | `ch:55` | Running a financing to close |  |
 | `sec:55.1` | Choosing the financing strategy |  |
-| `ssec:55.1.1` | Club, underwritten or best efforts |  |
-| `ssec:55.1.2` | Bank, bond or both |  |
+| `ssec:55.1.1` | Club, underwritten, or best efforts |  |
+| `ssec:55.1.2` | Bank, bond, or both |  |
 | `ssec:55.1.3` | Financing in a competitive tender |  |
 | `sec:55.2` | Advisors and arrangers |  |
 | `ssec:55.2.1` | The financial advisor |  |
-| `ssec:55.2.2` | Arrangers, bookrunners and coordinating roles |  |
+| `ssec:55.2.2` | Arrangers, bookrunners, and coordinating roles |  |
 | `sec:55.3` | Information memorandum and lender presentation |  |
 | `ssec:55.3.1` | What the information memorandum contains |  |
-| `ssec:55.3.2` | Lender presentation, site visit and questions |  |
+| `ssec:55.3.2` | Lender presentation, site visit, and questions |  |
 | `sec:55.4` | Credit approval inside a bank |  |
 | `ssec:55.4.1` | From deal team to committee |  |
 | `ssec:55.4.2` | What makes a committee say yes |  |
 | `sec:55.5` | Syndication and sell-down |  |
 | `ssec:55.5.1` | General syndication and allocation |  |
-| `ssec:55.5.2` | Sub-underwriting, sell-down and the secondary market |  |
+| `ssec:55.5.2` | Sub-underwriting, sell-down, and the secondary market |  |
 | `sec:55.6` | Managing the documentation |  |
-| `ssec:55.6.1` | Who drafts what |  |
-| `ssec:55.6.2` | Issues lists, versions and all-party meetings |  |
+| `ssec:55.6.1` | Drafting responsibilities by document |  |
+| `ssec:55.6.2` | Issues lists, versions, and all-party meetings |  |
 | `sec:55.7` | Satisfying conditions precedent |  |
 | `ssec:55.7.1` | The CP tracker |  |
-| `ssec:55.7.2` | Legal opinions, certificates and the last mile |  |
-| `sec:55.8` | Signing, financial close and funds flow |  |
-| `ssec:55.8.1` | Signing versus financial close |  |
+| `ssec:55.7.2` | Legal opinions, certificates, and the last mile |  |
+| `sec:55.8` | Signing, financial close, and funds flow |  |
+| `ssec:55.8.1` | Signing against financial close |  |
 | `ssec:55.8.2` | The closing memorandum and the funds flow |  |
 | `sec:55.9` | Timelines and critical paths |  |
 | `ssec:55.9.1` | Building the timetable |  |
@@ -3769,13 +4048,14 @@ Source brief: `briefs/u11.md`.
 | `exh:55.7` | Critical path to close (Gantt chart) |  |
 | `exh:55.8` | Closing call script and checklist |  |
 | `exh:55.9` | Case P sources and uses at financial close |  |
-| `exh:55.10` | Case P closing-day funds flow (conditional on P-F37) |  |
+| `exh:55.10` | Case P closing-day funds flow (P-F49) |  |
 | `exh:55.11` | Case P timeline from mandate to financial close |  |
 | `cl:55.1` | CP satisfaction notice, common terms agreement schedule (single clause with annotations; used as the model answer format for Exercise 55.11) |  |
 | `eq:55.1` | Arranger's retained fees under an underwriting |  |
 | `eq:55.2` | Float of a task on the critical path |  |
 | `fw:financing-strategy-selector` | Framework 55.1 Financing strategy selector | home ssec:55.1.2 |
 | `fw:critical-path-to-close` | Framework 55.2 Critical path to close | home ssec:55.9.1 |
+| `exr:55.1` to `exr:55.15` | Exercises (15) | range; cited only inside Ch 55 and by matter file 93 |
 
 ### Chapter 56: Negotiating project finance
 
@@ -3786,27 +4066,27 @@ Source brief: `briefs/u11.md`.
 | `ch:56` | Negotiating project finance |  |
 | `sec:56.1` | What market means and why it moves |  |
 | `ssec:56.1.1` | The evidence for a market term |  |
-| `ssec:56.1.2` | Why norms differ by sector, region and contract quality |  |
+| `ssec:56.1.2` | Norms differ by sector, region, and contract quality |  |
 | `sec:56.2` | The levers each side holds |  |
 | `sec:56.3` | Converting terms into money |  |
 | `ssec:56.3.1` | A common currency for trades |  |
 | `ssec:56.3.2` | Small terms with large prices |  |
-| `sec:56.4` | The trade-offs on each key term |  |
-| `ssec:56.4.1` | Debt size, tenor and profile |  |
-| `ssec:56.4.2` | Pricing, fees and flex |  |
-| `ssec:56.4.3` | Hedging, reserves, sweeps and lock-ups |  |
-| `ssec:56.4.4` | Covenants, events of default, CPs and sponsor support |  |
+| `sec:56.4` | The trade-offs on each main financing term |  |
+| `ssec:56.4.1` | Debt size, tenor, and profile |  |
+| `ssec:56.4.2` | Pricing, fees, and flex |  |
+| `ssec:56.4.3` | Hedging, reserves, sweeps, and lock-ups |  |
+| `ssec:56.4.4` | Covenants, events of default, CPs, and sponsor support |  |
 | `ssec:56.4.5` | The trade-off ledger |  |
-| `sec:56.5` | Tactics, sequencing and escalation |  |
-| `ssec:56.5.1` | Alternatives, reservation points and the zone of agreement |  |
-| `ssec:56.5.2` | Anchors, packages and concession patterns |  |
+| `sec:56.5` | Tactics, sequencing, and escalation |  |
+| `ssec:56.5.1` | Alternatives, reservation points, and the zone of agreement |  |
+| `ssec:56.5.2` | Anchors, packages, and concession patterns |  |
 | `ssec:56.5.3` | Sequencing and the issues list |  |
 | `ssec:56.5.4` | Escalation and deadlock |  |
 | `sec:56.6` | How terms move with the market cycle |  |
-| `sec:56.7` | Negotiating with governments, contractors and offtakers |  |
-| `ssec:56.7.1` | Governments |  |
-| `ssec:56.7.2` | Contractors |  |
-| `ssec:56.7.3` | Offtakers |  |
+| `sec:56.7` | Negotiating with governments, contractors, and offtakers |  |
+| `ssec:56.7.1` | Negotiating with a host government |  |
+| `ssec:56.7.2` | Negotiating with an EPC contractor |  |
+| `ssec:56.7.3` | Negotiating with an offtaker |  |
 | `sec:56.8` | Walkthrough: marking up a term sheet |  |
 | `sec:56.9` | Case P: the term sheet negotiation, July to October 2017 |  |
 | `sec:56.10` | Practitioner's notebook |  |
@@ -3814,21 +4094,23 @@ Source brief: `briefs/u11.md`.
 | `sec:56.12` | When the counterparty is the state, the negotiation starts with the public case |  |
 | `sec:56.13` | Exercises |  |
 | `sec:56.14` | Solutions to exercises |  |
-| `ex:56.1` | A 0.05x DSCR change in debt, equity IRR and tariff |  |
+| `ex:56.1` | A 0.05x DSCR change in debt, equity IRR, and tariff |  |
 | `ex:56.2` | The present value of a swap execution charge |  |
 | `ex:56.3` | The lock-up level and the chance of trapped cash |  |
 | `ex:56.4` | Ranking concessions with a trade-off ledger |  |
 | `ex:56.5` | The zone of agreement on a margin |  |
 | `exh:56.1` | US project finance DSCR and spread ranges, 2024 to 2026 |  |
 | `exh:56.2` | Negotiating levers by party |  |
-| `exh:56.3` | Key terms: what each side asks for and how they trade |  |
-| `exh:56.4` | Term sheet markup: draft, markup, response and landing |  |
+| `exh:56.3` | Main financing terms, what each side asks for, and how they trade |  |
+| `exh:56.4` | Draft, markup, response, and landing for each term of an illustrative term sheet |  |
 | `exh:56.5` | Case P senior debt at alternative DSCR targets and gearing caps |  |
+| `exh:56.6` | A full senior-debt term sheet in headings, with drafting notes and market and negotiable points | new label |
 | `eq:56.1` | Probability that a DSCR test falls below a lock-up level |  |
 | `eq:56.2` | Zone of possible agreement on a margin |  |
 | `fw:market-check` | Framework 56.1 Market check | home ssec:56.1.1 |
 | `fw:trade-off-ledger` | Framework 56.2 Trade-off ledger | home ssec:56.4.5 |
 | `fw:escalation-ladder` | Framework 56.3 Escalation ladder | home ssec:56.5.4 |
+| `exr:56.1` to `exr:56.17` | Exercises (17) | range; cited only inside Ch 56 and by matter file 93 |
 
 ### Chapter 57: The public-sector case for PPPs
 
@@ -3838,7 +4120,7 @@ Source brief: `briefs/u12.md`.
 |---|---|---|
 | `ch:57` | The public-sector case for PPPs |  |
 | `sec:57.1` | What a government buys with a PPP |  |
-| `ssec:57.1.1` | Whole-life cost, risk transfer and private due diligence |  |
+| `ssec:57.1.1` | Whole-life cost, risk transfer, and private due diligence |  |
 | `ssec:57.1.2` | The financing premium |  |
 | `ssec:57.1.3` | The critiques at full strength |  |
 | `ssec:57.1.4` | When PPP is the right tool |  |
@@ -3848,26 +4130,26 @@ Source brief: `briefs/u12.md`.
 | `ssec:57.2.3` | Pricing risk as an expected value |  |
 | `ssec:57.2.4` | The discount rate decides more than it should |  |
 | `ssec:57.2.5` | The value-for-money flip test |  |
-| `ssec:57.2.6` | Gaming, timing and the limits of the number |  |
+| `ssec:57.2.6` | Gaming, timing, and the limits of the number |  |
 | `sec:57.3` | Affordability |  |
 | `ssec:57.3.1` | Affordable is a different question from good value |  |
 | `ssec:57.3.2` | Budget envelopes and program ceilings |  |
 | `ssec:57.3.3` | Affordability when users pay |  |
 | `sec:57.4` | Fiscal and statistical treatment |  |
-| `ssec:57.4.1` | Why the accounting treatment drives the choice |  |
+| `ssec:57.4.1` | How the accounting treatment drives the choice |  |
 | `ssec:57.4.2` | The classification tests |  |
 | `ssec:57.4.3` | Designing for the accounts versus designing for value |  |
 | `sec:57.5` | Contingent liabilities |  |
 | `ssec:57.5.1` | What the state still owes after signing |  |
-| `ssec:57.5.2` | Measuring them |  |
-| `ssec:57.5.3` | Managing them |  |
+| `ssec:57.5.2` | Measuring contingent liabilities |  |
+| `ssec:57.5.3` | Managing contingent liabilities with ceilings, reserves, and disclosure |  |
 | `ssec:57.5.4` | Metronet and the guarantee that took the risk back |  |
 | `sec:57.6` | PPP units and programs |  |
 | `ssec:57.6.1` | What a PPP unit does |  |
 | `ssec:57.6.2` | Programs rather than deals |  |
 | `ssec:57.6.3` | Managing contracts for 30 years |  |
 | `sec:57.7` | Unsolicited proposals |  |
-| `ssec:57.7.1` | Why governments receive them and what can go wrong |  |
+| `ssec:57.7.1` | How unsolicited proposals arise and what can go wrong |  |
 | `ssec:57.7.2` | Three ways to introduce competition |  |
 | `ssec:57.7.3` | Paying for ideas without paying for influence |  |
 | `sec:57.8` | The UK PFI and the price of buying risk transfer with private capital |  |
@@ -3889,20 +4171,21 @@ Source brief: `briefs/u12.md`.
 | `ex:57.6` | An unsolicited proposal under a Swiss challenge and a bonus system (Illustrative) |  |
 | `ex:57.7` | What the NAO's PF2 numbers say about the financing premium (Real case: UK PFI and PF2, 1992–2018) |  |
 | `ex:57.8` | Paying for risk transfer the guarantee took back (Real case: Metronet, 2003–2009) |  |
-| `exh:57.1` | Who carries each risk under conventional procurement, design-build and DBFOM (Illustrative) |  |
+| `exh:57.1` | Who carries each risk under conventional procurement, design-build, and DBFOM (Illustrative) |  |
 | `exh:57.2` | Public sector comparator and PPP cost build for the justice center (CAD m, PV at 6.0%) (Illustrative) |  |
 | `exh:57.3` | Value for money against the discount rate (CAD m) (Illustrative) |  |
 | `exh:57.4` | Design choices that move statistical classification and what each costs (Illustrative) |  |
 | `exh:57.5` | Contingent liabilities a PPP leaves with the state: trigger and measure (Illustrative) |  |
 | `exh:57.6` | Three regimes for unsolicited proposals compared (Illustrative) |  |
 | `exh:57.7` | The UK PFI and PF2, 1989–2048 (Real case: UK PFI and PF2, 1989–2048) |  |
-| `exh:57.8` | Brannock public sector comparator and value for money for the reference project (ARD m, PV 2012) (Case T) |  |
+| `exh:57.8` | Brannock public sector comparator and value for money for the reference project (ARD m, PV at December 31, 2012) (Case T) |  |
 | `exh:57.9` | Brannock's decision to procure, 2012 (Case T) |  |
-| `eq:57.1` | VfM = PSC − PPP risk-adjusted present cost |  |
+| `eq:57.1` | VfM = PSC − PPP risk-adjusted present cost (eq:57.1 is the home equation) |  |
 | `eq:57.2` | PSC = raw cost + competitive neutrality + transferable risk + retained risk |  |
 | `eq:57.3` | Expected guarantee payout: E[max(0, G − R_t)] = Σ p_s max(0, G − R_s) |  |
 | `fw:vfm-flip` | Framework 57.1 Value-for-money flip test | home ssec:57.2.5 |
 | `fw:ppp-gateway` | Framework 57.2 PPP decision gateway | home sec:57.6 |
+| `exr:57.1` to `exr:57.14` | Exercises (14) | range; cited only inside Ch 57 and by matter file 93 |
 
 ### Chapter 58: Procuring and designing PPPs
 
@@ -3919,22 +4202,22 @@ Source brief: `briefs/u12.md`.
 | `sec:58.2` | Running the procurement |  |
 | `ssec:58.2.1` | The stages from market sounding to financial close |  |
 | `ssec:58.2.2` | Competitive dialogue and what must stay fixed |  |
-| `ssec:58.2.3` | Bid security, committed finance and funding competitions |  |
+| `ssec:58.2.3` | Bid security, committed finance, and funding competitions |  |
 | `ssec:58.2.4` | Designing the evaluation |  |
 | `ssec:58.2.5` | From preferred bidder to financial close |  |
 | `sec:58.3` | Payment mechanisms and deduction regimes |  |
-| `ssec:58.3.1` | The unitary charge |  |
+| `ssec:58.3.1` | Structuring the unitary charge |  |
 | `ssec:58.3.2` | Availability deductions |  |
 | `ssec:58.3.3` | Performance deductions |  |
 | `ssec:58.3.4` | Calibrating deductions against the debt |  |
 | `ssec:58.3.5` | Performance regimes when users pay |  |
-| `sec:58.4` | Change, benchmarking and market testing |  |
+| `sec:58.4` | Change, benchmarking, and market testing |  |
 | `ssec:58.4.1` | Change protocols |  |
 | `ssec:58.4.2` | Benchmarking and market testing of soft services |  |
 | `ssec:58.4.3` | Relief events and compensation events |  |
 | `sec:58.5` | Termination regimes and compensation formulas |  |
 | `ssec:58.5.1` | The grounds and the logic of compensating each |  |
-| `ssec:58.5.2` | The formulas |  |
+| `ssec:58.5.2` | Compensation formulas by termination ground |  |
 | `ssec:58.5.3` | Keeping the formula honest after a refinancing |  |
 | `ssec:58.5.4` | The extended-delay exit |  |
 | `sec:58.6` | Refinancing gain sharing |  |
@@ -3947,8 +4230,8 @@ Source brief: `briefs/u12.md`.
 | `ssec:58.8.1` | Risk bands and caps |  |
 | `ssec:58.8.2` | The Port of Miami Tunnel geotechnical band |  |
 | `sec:58.9` | Standard contracts and program documents |  |
-| `ssec:58.9.1` | Why standardize and what to leave open |  |
-| `ssec:58.9.2` | The main families of guidance |  |
+| `ssec:58.9.1` | Standardizing documents and what to leave open |  |
+| `ssec:58.9.2` | The main families of PPP contract guidance |  |
 | `sec:58.10` | Lessons from PPP successes and failures |  |
 | `ssec:58.10.1` | The PPP design failure map |  |
 | `ssec:58.10.2` | What the successes have in common |  |
@@ -3985,33 +4268,37 @@ Source brief: `briefs/u12.md`.
 | `exh:58.11` | Merrick Link sources and uses at financial close (ARD m) (Case T) |  |
 | `exh:58.12` | PPP design failure map (Illustrative) |  |
 | `cl:58.1` | Availability deduction, project agreement (Illustrative) |  |
-| `cl:58.2` | Compensation on contractor default, project agreement (variants) |  |
+| `cl:58.2` | Compensation on contractor default, project agreement |  |
 | `cl:58.2a` | Compensation on contractor default, project agreement (Illustrative, sponsor-friendly) |  |
 | `cl:58.2b` | Compensation on contractor default, project agreement (Illustrative, lender-friendly) |  |
 | `cl:58.2c` | Compensation on contractor default, project agreement (Illustrative, government-friendly) |  |
-| `cl:58.3` | Refinancing gain share, project agreement (Illustrative) |  |
+| `cl:58.3` | Refinancing gain share, project agreement |  |
+| `cl:58.3a` | Refinancing gain share, project agreement (Illustrative, sponsor-friendly) | new label |
+| `cl:58.3b` | Refinancing gain share, project agreement (Illustrative, lender-friendly) | new label |
+| `cl:58.3c` | Refinancing gain share, project agreement (Illustrative, government-friendly) | new label |
 | `cl:58.4` | Handback requirements and retention, project agreement (Illustrative) |  |
 | `eq:58.1` | LPVR term condition: smallest T with Σ_{t≤T} Rev_t / (1+r)^t ≥ LPVR |  |
-| `eq:58.2` | Availability deduction = monthly UC × area weight × units share × days share × multiplier |  |
+| `eq:58.2` | Availability deduction = monthly unitary charge × area weight × units share × days share × multiplier | home equation, R-116 |
 | `eq:58.3` | Termination compensation by ground (authority default; force majeure; contractor default) |  |
 | `eq:58.4` | Refinancing gain = PV(post-refinancing distributions) − PV(pre-refinancing distributions) at the base-case equity IRR |  |
 | `fw:deduction-calibration` | Framework 58.1 Deduction calibration test | home ssec:58.3.4 |
 | `fw:ppp-failure-map` | Framework 58.2 PPP design failure map | home ssec:58.10.1 |
+| `exr:58.1` to `exr:58.18` | Exercises (18) | range; cited only inside Ch 58 and by matter file 93 |
 
-### Chapter 59: Country, currency and payment risk
+### Chapter 59: Country, currency, and payment risk
 
 Source brief: `briefs/u12.md`.
 
 | Label | Caption or title | Note |
 |---|---|---|
-| `ch:59` | Country, currency and payment risk |  |
+| `ch:59` | Country, currency, and payment risk |  |
 | `sec:59.1` | Country risk and sovereign risk |  |
 | `ssec:59.1.1` | Four risks that travel together |  |
 | `ssec:59.1.2` | Reading a country |  |
 | `ssec:59.1.3` | The country risk scorecard |  |
 | `ssec:59.1.4` | How country risk shapes the deal |  |
 | `sec:59.2` | Currency risk taken apart |  |
-| `ssec:59.2.1` | Devaluation, convertibility and transfer |  |
+| `ssec:59.2.1` | Devaluation, convertibility, transfer, and the FX queue |  |
 | `ssec:59.2.2` | Finding the mismatch |  |
 | `ssec:59.2.3` | Stressing a project for devaluation |  |
 | `ssec:59.2.4` | Where the risk lands when the currency falls |  |
@@ -4023,19 +4310,19 @@ Source brief: `briefs/u12.md`.
 | `ssec:59.3.5` | Sizing debt for a devaluation |  |
 | `sec:59.4` | Payment risk from weak offtakers |  |
 | `ssec:59.4.1` | How a state utility runs out of cash |  |
-| `ssec:59.4.2` | Liquidity, credit and termination |  |
+| `ssec:59.4.2` | Liquidity, credit, and termination layers |  |
 | `sec:59.5` | Payment security instruments |  |
 | `ssec:59.5.1` | Standby letters of credit |  |
 | `ssec:59.5.2` | Escrow and receivables accounts |  |
 | `ssec:59.5.3` | Government guarantees as a payment backstop |  |
 | `ssec:59.5.4` | Liquidity facilities and partial risk guarantees behind the LC |  |
-| `ssec:59.5.5` | Netting, set-off and fuel-supply links |  |
+| `ssec:59.5.5` | Netting, set-off, and fuel-supply links |  |
 | `ssec:59.5.6` | Sizing the stack in months of runway |  |
 | `sec:59.6` | Dabhol and the guarantee chain that rested on one fiscal capacity |  |
 | `sec:59.7` | Paiton and the exchange-rate-indexed tariff in a crisis |  |
 | `sec:59.8` | Argentina 2002 and the indexation that was legislated away |  |
 | `sec:59.9` | Walkthrough: following one SEKA invoice from issue to the offshore debt service account |  |
-| `sec:59.10` | Case P: arrears, the FX queue and the settlement, 2022 to 2024 |  |
+| `sec:59.10` | Case P: arrears, the FX queue, and the settlement, 2022 to 2024 |  |
 | `sec:59.11` | Practitioner's notebook |  |
 | `sec:59.12` | Judgment drill |  |
 | `sec:59.13` | Contracts can move currency and credit risk, but only a state can take political risk away |  |
@@ -4051,16 +4338,17 @@ Source brief: `briefs/u12.md`.
 | `ex:59.8` | Tracing a gas netting set-off (Case P) |  |
 | `exh:59.1` | Country risk scorecard for two countries (Illustrative) |  |
 | `exh:59.2` | Three currency risks and the instruments that answer them (Illustrative) |  |
-| `exh:59.3` | DSCR under devaluation and indexation (USD m) (Illustrative) |  |
+| `exh:59.3` | DSCR under devaluation and indexation, Kajiado Hills Wind (USD m) (Illustrative) |  |
 | `exh:59.4` | The payment security stack (Illustrative) |  |
 | `exh:59.5` | Choosing payment security (Illustrative) |  |
 | `exh:59.6` | Bélanou Power's onshore and offshore accounts (Case P) |  |
 | `exh:59.7` | Kessara macro indicators and sovereign rating, 2015–2025 (Case P) |  |
 | `exh:59.8` | SEKA overdue receivables, 2021–2025 (USD m) (Case P) |  |
 | `exh:59.9` | The payment crisis, November 2022 to March 2024 (Case P) |  |
-| `exh:59.10` | Arrears, cash DSCR, DSRA and FX losses, 2022 H1 to 2025 H1 (Case P) |  |
+| `exh:59.10` | Arrears, cash DSCR, DSRA, and FX losses, 2022 H1 to 2025 H1 (Case P) |  |
 | `exh:59.11` | Termination compensation at June 30, 2023 by ground (USD m) (Case P) |  |
-| `cl:59.1` | LC replenishment and cure, PPA (variants) |  |
+| `exh:59.12` | Construction-period FX forwards and their settlements, 2018–2021 (USD m) (Case P) | new label |
+| `cl:59.1` | LC replenishment and cure, PPA |  |
 | `cl:59.1a` | LC replenishment and cure, PPA (Illustrative, sponsor-friendly) |  |
 | `cl:59.1b` | LC replenishment and cure, PPA (Illustrative, lender-friendly) |  |
 | `cl:59.1c` | LC replenishment and cure, PPA (Illustrative, offtaker-friendly) |  |
@@ -4072,6 +4360,7 @@ Source brief: `briefs/u12.md`.
 | `eq:59.4` | Conversion-lag loss = invoice × (1 − 1/(1 + δ)^(lag/30.4)) |  |
 | `fw:country-scorecard` | Framework 59.1 Country risk scorecard | home ssec:59.1.3 |
 | `fw:payment-stack` | Framework 59.2 Payment security stack | home ssec:59.4.2 |
+| `exr:59.1` to `exr:59.16` | Exercises (16) | range; cited only inside Ch 59 and by matter file 93 |
 
 ### Chapter 60: Political risk and its protection
 
@@ -4085,26 +4374,26 @@ Source brief: `briefs/u12.md`.
 | `ssec:60.1.2` | Sudden events and creeping pressure |  |
 | `ssec:60.1.3` | When the risk comes from home |  |
 | `sec:60.2` | The obsolescing bargain |  |
-| `ssec:60.2.1` | Why bargaining power moves to the host after construction |  |
-| `ssec:60.2.2` | The record |  |
+| `ssec:60.2.1` | Bargaining power moves to the host after construction |  |
+| `ssec:60.2.2` | The obsolescing bargain in five disputes |  |
 | `ssec:60.2.3` | Structuring against it |  |
 | `sec:60.3` | Host-government relations and local content |  |
 | `ssec:60.3.1` | Mapping the state |  |
 | `ssec:60.3.2` | The local partner |  |
 | `ssec:60.3.3` | Local content |  |
 | `sec:60.4` | Political risk insurance |  |
-| `ssec:60.4.1` | Who sells it |  |
+| `ssec:60.4.1` | Who sells political risk insurance |  |
 | `ssec:60.4.2` | What each cover pays for and when |  |
 | `ssec:60.4.3` | Pricing and the economics of buying cover |  |
 | `ssec:60.4.4` | How a claim works |  |
-| `ssec:60.4.5` | PRI, ECA cover and DFI guarantees compared |  |
+| `ssec:60.4.5` | PRI, ECA cover, and DFI guarantees compared |  |
 | `sec:60.5` | The multilateral halo |  |
 | `ssec:60.5.1` | What deters a host |  |
 | `ssec:60.5.2` | Where the halo fails |  |
 | `sec:60.6` | Corruption risk and anti-bribery law |  |
-| `ssec:60.6.1` | Why bribery is a credit risk |  |
+| `ssec:60.6.1` | Bribery as a credit risk |  |
 | `ssec:60.6.2` | The FCPA and the UK Bribery Act |  |
-| `ssec:60.6.3` | Intermediaries, agents and local partners |  |
+| `ssec:60.6.3` | Intermediaries, agents, and local partners |  |
 | `sec:60.7` | Sanctions |  |
 | `ssec:60.7.1` | How sanctions regimes reach a project |  |
 | `ssec:60.7.2` | Nord Stream 2 and Arctic LNG 2 |  |
@@ -4131,23 +4420,26 @@ Source brief: `briefs/u12.md`.
 | `exh:60.1` | Political risk instrument map (Illustrative) |  |
 | `exh:60.2` | Who bears each slice of a tariff cut after construction (USD m) (Illustrative) |  |
 | `exh:60.3` | MIGA covers and what triggers each (Real case: MIGA products, 2026) |  |
-| `exh:60.4` | PRI, ECA cover and DFI guarantees compared (Illustrative) |  |
+| `exh:60.4` | PRI, ECA cover, and DFI guarantees compared (Illustrative) |  |
 | `exh:60.5` | The sequence of a political risk insurance claim (Illustrative) |  |
 | `exh:60.6` | Sanctions and two Russian gas projects, 2022–2026 (Real case: Nord Stream 2 and Arctic LNG 2, 2022–2026) |  |
 | `exh:60.7` | Expected value of a treaty claim (USD m) (Illustrative) |  |
 | `exh:60.8` | Bélanou's political risk protection at financial close (Case P) |  |
 | `exh:60.9` | Crisis events against PRI waiting periods, 2022–2024 (Case P) |  |
 | `cl:60.1` | Anti-corruption representation and covenant, facility agreement (Illustrative) |  |
-| `cl:60.2` | Local content undertaking, implementation agreement (variants) |  |
+| `cl:60.2` | Local content undertaking, implementation agreement |  |
 | `cl:60.2a` | Local content undertaking, implementation agreement (Illustrative, sponsor-friendly) |  |
 | `cl:60.2b` | Local content undertaking, implementation agreement (Illustrative, lender-friendly) |  |
 | `cl:60.2c` | Local content undertaking, implementation agreement (Illustrative, government-friendly) |  |
-| `cl:60.3` | Sanctions covenant, facility agreement (Illustrative) |  |
+| `cl:60.3` | Sanctions covenant, facility agreement |  |
+| `cl:60.3a` | Sanctions covenant, facility agreement (Illustrative, sponsor-friendly) | new label |
+| `cl:60.3b` | Sanctions covenant, facility agreement (Illustrative, lender-friendly) | new label |
 | `eq:60.1` | Extractable revenue share before shutdown = (Rev − Opex) / Rev |  |
 | `eq:60.2` | Implied annual loss probability = premium rate / loss given claim |  |
 | `eq:60.3` | Expected PV of a claim = C × p_win × a × (1 − p_annul) × p_collect / (1 + r)^n − PV(costs) |  |
 | `fw:pr-instrument-map` | Framework 60.1 Political risk instrument map | home ssec:60.1.1 |
 | `fw:bargain-clock` | Framework 60.2 Obsolescing bargain clock | home ssec:60.2.3 |
+| `exr:60.1` to `exr:60.15` | Exercises (15) | range; cited only inside Ch 60 and by matter file 93 |
 
 ### Chapter 61: Construction to completion
 
@@ -4170,7 +4462,7 @@ Source brief: `briefs/u13.md`.
 | `ssec:61.3.2` | Testing contingency adequacy |  |
 | `ssec:61.3.3` | When contingency runs out |  |
 | `sec:61.4` | Monitoring progress and reading the warning signs |  |
-| `ssec:61.4.1` | Schedule, critical path and float |  |
+| `ssec:61.4.1` | Schedule, critical path, and float |  |
 | `ssec:61.4.2` | Earned value for lenders |  |
 | `ssec:61.4.3` | Red flags in monthly reports |  |
 | `sec:61.5` | Change orders and claims in practice |  |
@@ -4187,26 +4479,26 @@ Source brief: `briefs/u13.md`.
 | `ssec:61.7.3` | Subrogation inside the contractual web |  |
 | `sec:61.8` | Contractor distress and replacement |  |
 | `ssec:61.8.1` | Early signs of contractor distress |  |
-| `ssec:61.8.2` | The toolkit |  |
+| `ssec:61.8.2` | Bonds, guarantees, retention, and step-in against a failing contractor |  |
 | `ssec:61.8.3` | Pricing a replacement contractor |  |
 | `sec:61.9` | Carillion's hospitals and the loss of a contractor mid-build |  |
 | `sec:61.10` | Purple Line and Vogtle when a contractor walks away |  |
 | `sec:61.11` | Completion tests |  |
-| `ssec:61.11.1` | Three completions |  |
-| `ssec:61.11.2` | What a lenders' completion test contains |  |
+| `ssec:61.11.1` | EPC taking-over, PPA COD, and financial completion |  |
+| `ssec:61.11.2` | What a financial completion test contains |  |
 | `ssec:61.11.3` | Performance shortfalls and buy-down LDs |  |
 | `ssec:61.11.4` | Ichthys LNG and the 90-day completion test |  |
 | `sec:61.12` | Releasing sponsor support |  |
 | `ssec:61.12.1` | What falls away at completion |  |
 | `ssec:61.12.2` | When completion does not come |  |
 | `sec:61.13` | Walkthrough: an independent engineer's monthly report and drawdown certificate |  |
-| `sec:61.14` | Walkthrough: the lenders' completion package |  |
+| `sec:61.14` | Walkthrough: the financial completion package |  |
 | `sec:61.15` | Case P: from notice to proceed to commercial operation |  |
 | `ssec:61.15.1` | Drawdowns and the failed foundation, 2018 to 2019 |  |
 | `ssec:61.15.2` | COVID-19 force majeure and the variation order, 2020 |  |
 | `ssec:61.15.3` | The transformer surge and the insurance claim, 2021 |  |
 | `ssec:61.15.4` | Funding the overrun |  |
-| `ssec:61.15.5` | Completion tests and the performance LD prepayment |  |
+| `ssec:61.15.5` | Completion tests, the performance LD prepayment, and Project Completion |  |
 | `sec:61.16` | Practitioner's notebook |  |
 | `sec:61.17` | Judgment drill |  |
 | `sec:61.18` | Completion hands the lenders an operating credit they now have to watch |  |
@@ -4222,15 +4514,15 @@ Source brief: `briefs/u13.md`.
 | `ex:61.8` | Case P's completion tests and performance LDs |  |
 | `exh:61.1` | Construction-phase control map |  |
 | `exh:61.2` | One monthly drawdown cycle |  |
-| `exh:61.3` | Planned value, earned value and certified payments on a desalination EPC |  |
-| `exh:61.4` | How LDs, DSU proceeds and PPA LDs move through the accounts |  |
+| `exh:61.3` | Planned value, earned value, and certified payments on a desalination EPC |  |
+| `exh:61.4` | How LDs, DSU proceeds, and PPA LDs move through the accounts |  |
 | `exh:61.5` | Three completions compared |  |
 | `exh:61.6` | Delay cost against LDs at four delay lengths |  |
 | `exh:61.7` | Anatomy of an independent engineer's monthly report |  |
-| `exh:61.8` | Case P construction timeline, August 2018 to December 2021 |  |
+| `exh:61.8` | Case P construction timeline and planned against actual EPC progress, August 2018 to December 2021 |  |
 | `exh:61.9` | Case P hard-cost overrun and its funding |  |
-| `exh:61.10` | Lenders' completion package checklist |  |
-| `cl:61.1` | Lenders' completion financial test, common terms agreement (in the solution to Exercise 61.11; Illustrative) |  |
+| `exh:61.10` | Financial completion package checklist |  |
+| `cl:61.1` | Financial completion ratio test, common terms agreement (in the solution to Exercise 61.11; Illustrative) |  |
 | `eq:61.1` | Funding shortfall under the cost-to-complete test |  |
 | `eq:61.2` | Risk-weighted contingency exposure |  |
 | `eq:61.3` | Schedule performance index and forecast duration |  |
@@ -4238,6 +4530,7 @@ Source brief: `briefs/u13.md`.
 | `fw:delay-cash-bridge` | Framework 61.1 Delay cash bridge | home ssec:61.6.3 |
 | `fw:contractor-distress-ladder` | Framework 61.2 Contractor distress ladder | home ssec:61.8.3 |
 | `fw:completion-test-matrix` | Framework 61.3 Completion test matrix | home ssec:61.11.2 |
+| `exr:61.1` to `exr:61.16` | Exercises (16) | range; cited only inside Ch 61 and by matter file 93 |
 
 ### Chapter 62: Operating the project as owner and lender
 
@@ -4253,7 +4546,7 @@ Source brief: `briefs/u13.md`.
 | `ssec:62.2.1` | The operating report |  |
 | `ssec:62.2.2` | The compliance certificate |  |
 | `ssec:62.2.3` | Updating the banking case |  |
-| `ssec:62.2.4` | Environmental, social and permit compliance in operation |  |
+| `ssec:62.2.4` | Environmental, social, and permit compliance in operation |  |
 | `sec:62.3` | Budgets |  |
 | `ssec:62.3.1` | The annual operating budget |  |
 | `ssec:62.3.2` | Variance rules and the default budget |  |
@@ -4261,29 +4554,29 @@ Source brief: `briefs/u13.md`.
 | `sec:62.4` | Ratio testing and distributions |  |
 | `ssec:62.4.1` | Test dates and calculation periods |  |
 | `ssec:62.4.2` | Running the distribution test |  |
-| `ssec:62.4.3` | Lock-up, trapped cash and its release |  |
+| `ssec:62.4.3` | Lock-up, trapped cash, and its release |  |
 | `ssec:62.4.4` | Equity cures in practice |  |
 | `sec:62.5` | Maintenance and availability management |  |
 | `ssec:62.5.1` | Planned outages against availability targets |  |
-| `ssec:62.5.2` | Major maintenance, LTSA claims and spares |  |
+| `ssec:62.5.2` | Major maintenance, LTSA claims, and spares |  |
 | `ssec:62.5.3` | Insurance renewals in operation |  |
-| `ssec:62.5.4` | Operational-technology cyber controls and reporting (new, R-037) | new label |
+| `ssec:62.5.4` | Operational-technology cyber controls and reporting |  |
 | `sec:62.6` | Performance management |  |
-| `ssec:62.6.1` | The KPIs that matter by asset type |  |
+| `ssec:62.6.1` | The KPIs lenders test by asset type |  |
 | `ssec:62.6.2` | Managing the O&M operator and LTSA provider |  |
 | `ssec:62.6.3` | Ivanpah and an output guarantee that the plant could not meet |  |
 | `sec:62.7` | Waivers and amendments |  |
-| `ssec:62.7.1` | Waiver, consent or amendment |  |
+| `ssec:62.7.1` | Waiver, consent, or amendment |  |
 | `ssec:62.7.2` | Writing the request |  |
 | `ssec:62.7.3` | Pricing a waiver |  |
-| `ssec:62.7.4` | The waiver letter |  |
+| `ssec:62.7.4` | Applying the waiver letter to the Case P breach |  |
 | `sec:62.8` | Optimizing the asset during the debt life |  |
-| `ssec:62.8.1` | Uprates, repowering and hybridization |  |
+| `ssec:62.8.1` | Uprates, repowering, and hybridization |  |
 | `ssec:62.8.2` | Financing an optimization inside an existing financing |  |
 | `ssec:62.8.3` | The optimization gate |  |
 | `sec:62.9` | Walkthrough: a semiannual compliance certificate, line by line |  |
 | `sec:62.10` | Walkthrough: a waiver request from first call to signed letter |  |
-| `sec:62.11` | Case P: two years of operation, a breach and a waiver |  |
+| `sec:62.11` | Case P: two years of operation, a breach, and a waiver |  |
 | `ssec:62.11.1` | The first operating year against the financial close base case |  |
 | `ssec:62.11.2` | The June 30, 2023 test |  |
 | `ssec:62.11.3` | Negotiating the waiver |  |
@@ -4299,31 +4592,31 @@ Source brief: `briefs/u13.md`.
 | `ex:62.4` | What a waiver costs and what a cure costs |  |
 | `ex:62.5` | Adding a battery to a solar plant inside an existing financing |  |
 | `exh:62.1` | The operating covenant calendar for one year |  |
-| `exh:62.2` | Test, calculation, payment and distribution dates for a semiannual borrower |  |
+| `exh:62.2` | Test, calculation, payment, and distribution dates for a semiannual borrower |  |
 | `exh:62.3` | A semiannual compliance certificate |  |
 | `exh:62.4` | Case P operating year 1 against the financial close base case |  |
 | `exh:62.5` | Case P waiver and amendment terms, October 2023 |  |
-| `cl:62.1` | Waiver and amendment letter, operative provisions |  |
-| `cl:62.2` | Reservation of rights in a waiver letter (variants 62.2a sponsor-friendly, 62.2b lender-friendly) |  |
+| `cl:62.1` | Case P waiver and amendment letter of October 26, 2023, operative provisions, applying Clause 51.8 (Case P) |  |
 | `fw:operating-covenant-calendar` | Framework 62.1 Operating covenant calendar | home ssec:62.1.2 |
 | `fw:waiver-request-ladder` | Framework 62.2 Waiver request ladder | home ssec:62.7.1 |
 | `fw:optimization-gate` | Framework 62.3 Optimization gate | home ssec:62.8.3 |
+| `exr:62.1` to `exr:62.16` | Exercises (16) | range; cited only inside Ch 62 and by matter file 93 |
 
-### Chapter 63: Refinancing, repricing and secondary sales
+### Chapter 63: Refinancing, repricing, and secondary sales
 
 Source brief: `briefs/u13.md`.
 
 | Label | Caption or title | Note |
 |---|---|---|
-| `ch:63` | Refinancing, repricing and secondary sales |  |
-| `sec:63.1` | Why projects refinance |  |
+| `ch:63` | Refinancing, repricing, and secondary sales |  |
+| `sec:63.1` | Four reasons projects refinance |  |
 | `ssec:63.1.1` | The de-risking dividend |  |
 | `ssec:63.1.2` | Planned refinancings and mini-perms |  |
 | `ssec:63.1.3` | Opportunistic refinancings |  |
 | `ssec:63.1.4` | Who gains and who must agree |  |
 | `sec:63.2` | The economics of a refinancing |  |
 | `ssec:63.2.1` | Measuring the gain |  |
-| `ssec:63.2.2` | Breaking loans, swaps and bonds early |  |
+| `ssec:63.2.2` | Breaking loans, swaps, and bonds early |  |
 | `ssec:63.2.3` | Tax and accounting frictions |  |
 | `sec:63.3` | Repricing without refinancing |  |
 | `ssec:63.3.1` | Margin step-downs and repricing amendments |  |
@@ -4336,19 +4629,19 @@ Source brief: `briefs/u13.md`.
 | `ssec:63.5.2` | Timetable and settlement mechanics |  |
 | `ssec:63.5.3` | Consents from the lenders who stay |  |
 | `sec:63.6` | Selling a stake in an operating project |  |
-| `ssec:63.6.1` | Why sponsors sell and who buys |  |
+| `ssec:63.6.1` | Capital recycling and the buyers of operating stakes |  |
 | `ssec:63.6.2` | Pricing a stake in a project-financed company |  |
 | `ssec:63.6.3` | The consent map |  |
 | `ssec:63.6.4` | Sequencing a refinancing and a sale |  |
 | `sec:63.7` | Holdco leverage in practice |  |
 | `ssec:63.7.1` | Distribution coverage and the opco lock-up |  |
 | `ssec:63.7.2` | Leverage on listed shares |  |
-| `ssec:63.7.3` | SunEdison, TerraForm Power and a margin loan on yieldco shares |  |
+| `ssec:63.7.3` | SunEdison, TerraForm Power, and a margin loan on yieldco shares |  |
 | `sec:63.8` | Walkthrough: building a refinancing gain calculation in the model |  |
 | `sec:63.9` | Walkthrough: selling a stake in a project-financed company, from teaser to completion |  |
 | `sec:63.10` | Case P: the 2025 bond and the 2026 sale |  |
-| `ssec:63.10.1` | Why refinance in 2025 |  |
-| `ssec:63.10.2` | The bond, the guarantee and the swap unwind |  |
+| `ssec:63.10.1` | The case for refinancing in 2025 |  |
+| `ssec:63.10.2` | The bond, the guarantee, and the swap unwind |  |
 | `ssec:63.10.3` | Selling 24% to Coldharbour |  |
 | `sec:63.11` | Case R: the 2025 private placement and the holdco repricing |  |
 | `sec:63.12` | Practitioner's notebook |  |
@@ -4357,7 +4650,7 @@ Source brief: `briefs/u13.md`.
 | `sec:63.15` | Exercises |  |
 | `sec:63.16` | Solutions to exercises |  |
 | `ex:63.1` | Measuring a refinancing gain on a contracted wind farm |  |
-| `ex:63.2` | A make-whole on fixed-rate notes |  |
+| `ex:63.2` | The make-whole cost of refinancing fixed-rate notes |  |
 | `ex:63.3` | Re-gearing after completion |  |
 | `ex:63.4` | Pricing a 30% stake in a project company |  |
 | `ex:63.5` | Holdco coverage when the opco locks up |  |
@@ -4368,27 +4661,32 @@ Source brief: `briefs/u13.md`.
 | `exh:63.4` | Consent map for the sale of a stake in a project-financed company |  |
 | `exh:63.5` | Stake sale steps and indicative durations |  |
 | `exh:63.6` | Case P 2025 refinancing bridge |  |
-| `exh:63.7` | Case P 2026 sale: price, consents and consideration |  |
+| `exh:63.7` | Price, consents, and consideration in the Case P 2026 sale |  |
 | `exh:63.8` | Case R 2025 private placement by series and holdco repricing |  |
-| `cl:63.1` | Minimum holding covenant, common terms agreement (in the solution to Exercise 63.11; Illustrative) |  |
+| `cl:63.1` | Voluntary prepayment and refinancing provisions, facility agreement |  |
+| `cl:63.1a` | Voluntary prepayment and refinancing provisions, facility agreement (Illustrative, sponsor-friendly) | new label |
+| `cl:63.1b` | Voluntary prepayment and refinancing provisions, facility agreement (Illustrative, lender-friendly) | new label |
+| `cl:63.1c` | Voluntary prepayment and refinancing provisions, facility agreement (Illustrative, hedge-counterparty-friendly) | new label |
+| `cl:63.2` | Minimum holding covenant, common terms agreement | new label; in the solution to Exercise 63.11; Illustrative; renumbered from cl:63.1, round 1 |
 | `eq:63.1` | Refinancing gain on an identical profile |  |
-| `eq:63.2` | Make-whole premium | ruling: Make-whole cost at the refinancing settlement date, applying eq:30.2 (repurposed, R-078) |
+| `eq:63.2` | Make-whole cost at the refinancing settlement date, applying eq:30.2 | repurposed, R-078 |
 | `fw:refinancing-gain-bridge` | Framework 63.1 Refinancing gain bridge | home ssec:63.2.1 |
 | `fw:stake-sale-consent-map` | Framework 63.2 Stake-sale consent map | home ssec:63.6.3 |
+| `exr:63.1` to `exr:63.16` | Exercises (16) | range; cited only inside Ch 63 and by matter file 93 |
 
-### Chapter 64: Distress, restructuring and enforcement
+### Chapter 64: Distress, restructuring, and enforcement
 
 Source brief: `briefs/u13.md`.
 
 | Label | Caption or title | Note |
 |---|---|---|
-| `ch:64` | Distress, restructuring and enforcement |  |
+| `ch:64` | Distress, restructuring, and enforcement |  |
 | `sec:64.1` | How projects get into trouble |  |
 | `ssec:64.1.1` | Four routes into distress |  |
-| `ssec:64.1.2` | Why distress in project finance looks different from corporate distress |  |
+| `ssec:64.1.2` | How project finance distress differs from corporate distress |  |
 | `sec:64.2` | Early warning signs |  |
 | `ssec:64.2.1` | Financial indicators |  |
-| `ssec:64.2.2` | Operational, counterparty and market indicators |  |
+| `ssec:64.2.2` | Operational, counterparty, and market indicators |  |
 | `ssec:64.2.3` | The distress early-warning dashboard |  |
 | `sec:64.3` | The first ninety days |  |
 | `ssec:64.3.1` | Reservation of rights and information |  |
@@ -4400,16 +4698,16 @@ Source brief: `briefs/u13.md`.
 | `ssec:64.4.3` | Cash sweeps and cash control in distress |  |
 | `ssec:64.4.4` | Dulles Greenway and deferring debt service into the future |  |
 | `sec:64.5` | Sponsor support in distress |  |
-| `ssec:64.5.1` | Why sponsors put money in and why they stop |  |
+| `ssec:64.5.1` | When sponsors put money in and when they stop |  |
 | `ssec:64.5.2` | Forms of sponsor support |  |
 | `sec:64.6` | Valuing the alternatives |  |
 | `ssec:64.6.1` | Enterprise value and the relevant alternative |  |
 | `ssec:64.6.2` | The recovery waterfall |  |
-| `ssec:64.6.3` | Restructure, sell, enforce or terminate |  |
+| `ssec:64.6.3` | Restructure, sell, enforce, or terminate |  |
 | `sec:64.7` | Restructuring the debt |  |
 | `ssec:64.7.1` | Sizing sustainable debt |  |
 | `ssec:64.7.2` | Debt-for-equity swaps and allocating the new equity |  |
-| `ssec:64.7.3` | New money, PIK and DIP financing |  |
+| `ssec:64.7.3` | New money, PIK, and DIP financing |  |
 | `ssec:64.7.4` | Hedge close-outs in restructurings |  |
 | `sec:64.8` | Distressed sales |  |
 | `ssec:64.8.1` | Selling a distressed project |  |
@@ -4429,15 +4727,15 @@ Source brief: `briefs/u13.md`.
 | `ssec:64.11.1` | Termination compensation as the floor, or no floor |  |
 | `ssec:64.11.2` | The contracting authority's levers and limits |  |
 | `ssec:64.11.3` | Eurotunnel and the serial restructuring of a concession |  |
-| `sec:64.12` | The role of the state |  |
+| `sec:64.12` | What the state does in a project restructuring |  |
 | `ssec:64.12.1` | The state as stabilizer |  |
 | `ssec:64.12.2` | The state as creditor |  |
-| `ssec:64.12.3` | The state as regulator, grantor and shareholder |  |
+| `ssec:64.12.3` | The state as regulator, grantor, and shareholder |  |
 | `sec:64.13` | Walkthrough: a restructuring term sheet, clause by clause |  |
 | `sec:64.14` | Case T: the Merrick Link from lock-up to restructuring plan |  |
 | `ssec:64.14.1` | Warnings and default, 2019 to 2020 |  |
 | `ssec:64.14.2` | Standstill and sponsor support, 2021 |  |
-| `ssec:64.14.3` | Advisers and the amend-and-extend, 2022 |  |
+| `ssec:64.14.3` | Advisors and the amend-and-extend, 2022 |  |
 | `ssec:64.14.4` | The alternatives on the table |  |
 | `ssec:64.14.5` | The restructuring support agreement and the plan, 2023 |  |
 | `ssec:64.14.6` | The restructured Merrick Link |  |
@@ -4455,35 +4753,38 @@ Source brief: `briefs/u13.md`.
 | `exh:64.1` | Routes into distress in eight real cases |  |
 | `exh:64.2` | Distress early-warning dashboard thresholds |  |
 | `exh:64.3` | Recoveries by class under four alternatives |  |
-| `exh:64.4` | Restructure, sell, enforce or terminate decision tree |  |
+| `exh:64.4` | Restructure, sell, enforce, or terminate decision tree |  |
 | `exh:64.5` | Allocation of restructuring surplus |  |
-| `exh:64.6` | Restructuring tools compared: Chapter 11, Part 26 and 26A, StaRUG, WHOA, French accelerated safeguard |  |
+| `exh:64.6` | Chapter 11, Part 26 and Part 26A, StaRUG, WHOA, and French accelerated safeguard compared |  |
 | `exh:64.7` | A restructuring term sheet |  |
 | `exh:64.8` | Case T timeline, December 2019 to December 2023 |  |
 | `exh:64.9` | Case T restructuring terms by class |  |
 | `cl:64.1` | Standstill agreement, operative provisions |  |
-| `cl:64.2` | Standstill termination events (variants 64.2a sponsor-friendly, 64.2b lender-friendly) |  |
+| `cl:64.2` | Standstill termination events |  |
+| `cl:64.2a` | Standstill termination events (Illustrative, sponsor-friendly) | new label; variant row generated from the brief's (a, b, c) group |
+| `cl:64.2b` | Standstill termination events (Illustrative, lender-friendly) | new label; variant row generated from the brief's (a, b, c) group |
 | `eq:64.1` | Liquidity runway |  |
 | `eq:64.2` | Recovery of a class in a priority waterfall |  |
 | `eq:64.3` | Sustainable debt |  |
 | `fw:distress-dashboard` | Framework 64.1 Distress early-warning dashboard | home ssec:64.2.3 |
-| `fw:restructure-sell-enforce-terminate` | Framework 64.2 Restructure, sell, enforce or terminate | home ssec:64.6.3 |
+| `fw:restructure-sell-enforce-terminate` | Framework 64.2 Restructure, sell, enforce, or terminate | home ssec:64.6.3 |
+| `exr:64.1` to `exr:64.20` | Exercises (20) | range; cited only inside Ch 64 and by matter file 93 |
 
-### Chapter 65: Decommissioning, handback and end-of-life value
+### Chapter 65: Decommissioning, handback, and end-of-life value
 
 Source brief: `briefs/u13.md`.
 
 | Label | Caption or title | Note |
 |---|---|---|
-| `ch:65` | Decommissioning, handback and end-of-life value |  |
+| `ch:65` | Decommissioning, handback, and end-of-life value |  |
 | `sec:65.1` | How a project ends |  |
-| `ssec:65.1.1` | Contract end, technical end and economic end |  |
+| `ssec:65.1.1` | Contract end, technical end, and economic end |  |
 | `ssec:65.1.2` | What each party wants at the end |  |
 | `sec:65.2` | Decommissioning obligations |  |
 | `ssec:65.2.1` | Where the obligation comes from |  |
 | `ssec:65.2.2` | Estimating the cost |  |
 | `ssec:65.2.3` | Securing the obligation |  |
-| `ssec:65.2.4` | Decommissioning, the waterfall and the lenders' tail |  |
+| `ssec:65.2.4` | Decommissioning, the waterfall, and the lenders' tail |  |
 | `ssec:65.2.5` | Moss Landing and remediation costs that outran the estimate |  |
 | `sec:65.3` | Handback in practice |  |
 | `ssec:65.3.1` | Handback conditions and how they are measured |  |
@@ -4492,12 +4793,12 @@ Source brief: `briefs/u13.md`.
 | `ssec:65.3.4` | UK PFI contract expiry |  |
 | `sec:65.4` | Life extension economics |  |
 | `ssec:65.4.1` | What extends a plant's life |  |
-| `ssec:65.4.2` | Extend, repower or retire |  |
+| `ssec:65.4.2` | Extend, repower, or retire |  |
 | `ssec:65.4.3` | Financing at the end of the original debt |  |
-| `sec:65.5` | Terminal value and end-of-life value | ruling: End-of-life value in bids and lending (retitled, R-014) |
+| `sec:65.5` | End-of-life value in bids and lending |  |
 | `ssec:65.5.1` | How much value sits in the tail |  |
-| `ssec:65.5.2` | Terminal value conventions | ruling: Tail conventions at contract end and asset end (retitled, R-014) |
-| `ssec:65.5.3` | Tail value in bids and lending |  |
+| `ssec:65.5.2` | Tail conventions at contract end and asset end |  |
+| `ssec:65.5.3` | How tail assumptions move bids, debt sizing, and value today |  |
 | `sec:65.6` | Walkthrough: reading a decommissioning cost estimate and security plan |  |
 | `sec:65.7` | Case P: planning Bélanou's handback to SEKA |  |
 | `sec:65.8` | Case R: repower or retire Thatcher Flats, and the portfolio's decommissioning obligations |  |
@@ -4509,20 +4810,21 @@ Source brief: `briefs/u13.md`.
 | `ex:65.1` | Estimating a wind farm's decommissioning cost |  |
 | `ex:65.2` | Sinking fund or surety bond |  |
 | `ex:65.3` | Funding a toll road's handback works |  |
-| `ex:65.4` | Extend, repower or retire a 20-year-old wind farm |  |
+| `ex:65.4` | Extend, repower, or retire a 20-year-old wind farm |  |
 | `ex:65.5` | How much of the value is in the tail |  |
 | `exh:65.1` | Decommissioning cost estimate for a 48-turbine wind farm |  |
 | `exh:65.2` | Sinking fund against surety bond |  |
 | `exh:65.3` | Handback readiness timeline |  |
 | `exh:65.4` | Handback reserve schedule for a toll road |  |
-| `exh:65.5` | Extend, repower or retire: cash flows and NPV |  |
+| `exh:65.5` | Cash flows and NPV of extending, repowering, or retiring a wind farm |  |
 | `exh:65.6` | Annotated decommissioning estimate and security plan |  |
-| `exh:65.7` | Case P contract, debt and land end dates to 2046 |  |
+| `exh:65.7` | Case P contract, debt, land, and license end dates to 2046 |  |
 | `exh:65.8` | Case R useful lives and decommissioning obligations by asset |  |
 | `cl:65.1` | Handback survey and works, concession agreement (in the solution to Exercise 65.9; Illustrative) |  |
 | `eq:65.1` | Sinking-fund contribution |  |
 | `fw:handback-readiness-timeline` | Framework 65.1 Handback readiness timeline | home ssec:65.3.2 |
 | `fw:end-of-life-option-tree` | Framework 65.2 End-of-life option tree | home ssec:65.4.2 |
+| `exr:65.1` to `exr:65.12` | Exercises (12) | range; cited only inside Ch 65 and by matter file 93 |
 
 ### Chapter 66: Accounting for projects and sponsors
 
@@ -4543,8 +4845,8 @@ Source brief: `briefs/u14.md`.
 | `ssec:66.2.4` | Shareholder loans in the investor's books |  |
 | `sec:66.3` | Partial sales and loss of control |  |
 | `ssec:66.3.1` | Selling a minority while keeping control |  |
-| `ssec:66.3.2` | Losing control, remeasuring the retained stake and recognizing a gain |  |
-| `ssec:66.3.3` | Recycled reserves, deferred consideration and transaction costs |  |
+| `ssec:66.3.2` | Losing control, remeasuring the retained stake, and recognizing a gain |  |
+| `ssec:66.3.3` | Recycled reserves, deferred consideration, and transaction costs |  |
 | `sec:66.4` | Service concessions under IFRIC 12 and ASC 853 |  |
 | `ssec:66.4.1` | The scope test |  |
 | `ssec:66.4.2` | The financial asset model |  |
@@ -4552,13 +4854,13 @@ Source brief: `briefs/u14.md`.
 | `ssec:66.4.4` | What the model choice does to covenants and ratings |  |
 | `ssec:66.4.5` | ASC 853 and US practice |  |
 | `ssec:66.4.6` | Testing whether an IPP is a concession, with Bélanou as the case |  |
-| `ssec:66.4.7` | Decommissioning provisions and asset retirement obligations (new, R-015) | new label |
+| `ssec:66.4.7` | Decommissioning provisions and asset retirement obligations |  |
 | `sec:66.5` | Leases hidden in offtake contracts |  |
-| `ssec:66.5.1` | The lease test applied to PPAs, tolls and battery contracts |  |
+| `ssec:66.5.1` | The lease test applied to PPAs, tolls, and battery contracts |  |
 | `ssec:66.5.2` | Classifying the lease from the project company's side |  |
 | `ssec:66.5.3` | What changes for the offtaker |  |
 | `sec:66.6` | Hedge accounting for project hedges |  |
-| `ssec:66.6.1` | Why hedge accounting matters to a project and its sponsors |  |
+| `ssec:66.6.1` | What hedge accounting changes for a project and its sponsors |  |
 | `ssec:66.6.2` | Cash flow hedge mechanics |  |
 | `ssec:66.6.3` | De-designation when drawdowns slip |  |
 | `ssec:66.6.4` | Power purchase agreements and virtual PPAs |  |
@@ -4590,15 +4892,16 @@ Source brief: `briefs/u14.md`.
 | `ex:66.6` | Classifying a battery toll as a lease (Illustrative) |  |
 | `ex:66.7` | A project swap under cash flow hedge accounting (Illustrative) |  |
 | `ex:66.8` | Expected credit loss on offtaker arrears (Illustrative) |  |
-| `ex:66.9` | Kilnworth's gain on loss of control (Case P) |  |
+| `ex:66.9` | Kilnworth's loss on loss of control (Case P) |  |
 | `exh:66.1` | Reserved matters in a project shareholders' agreement, classified (Illustrative) |  |
-| `exh:66.2` | Classifying a project's main asset: IFRIC 12, lease or plant (Illustrative) |  |
+| `exh:66.2` | Classifying a project's main asset as a concession, a lease, or plant (Illustrative) |  |
 | `exh:66.3` | Sponsor metrics under consolidation and equity accounting (USD m) (Illustrative) |  |
 | `exh:66.4` | Kilnworth's accounting for Bélanou Power, 2018 to 2026 (USD m) (Case P) |  |
 | `cl:66.1` | Accounting principles and changes in accounting standards, common terms agreement (Illustrative) |  |
 | `eq:66.1` | Gain on loss of control |  |
 | `eq:66.2` | Cash flow hedge reserve (lower-of rule) |  |
 | `fw:accounting-outcome-map` | Framework 66.1 Accounting outcome map | home ssec:66.8.5 |
+| `exr:66.1` to `exr:66.15` | Exercises (15) | range; cited only inside Ch 66 and by matter file 93 |
 
 ### Chapter 67: Tax structuring
 
@@ -4611,7 +4914,7 @@ Source brief: `briefs/u14.md`.
 | `ssec:67.1.1` | Five taxing points on one stream of cash |  |
 | `ssec:67.1.2` | Measuring leakage |  |
 | `sec:67.2` | Holding structures and tax treaties |  |
-| `ssec:67.2.1` | Why projects are held through holding companies |  |
+| `ssec:67.2.1` | Five reasons projects are held through holding companies |  |
 | `ssec:67.2.2` | What a double tax treaty changes |  |
 | `ssec:67.2.3` | Anti-abuse rules and substance |  |
 | `ssec:67.2.4` | The host government's view |  |
@@ -4621,14 +4924,14 @@ Source brief: `briefs/u14.md`.
 | `ssec:67.3.3` | Exemptions for development and officially supported lenders |  |
 | `ssec:67.3.4` | Drafting the gross-up and tax indemnity |  |
 | `sec:67.4` | Shareholder loans and thin capitalization |  |
-| `ssec:67.4.1` | Why sponsors lend instead of subscribing for shares |  |
+| `ssec:67.4.1` | Lending instead of subscribing for shares |  |
 | `ssec:67.4.2` | Thin capitalization ratios |  |
 | `ssec:67.4.3` | Recharacterization and the treaty mismatch |  |
 | `sec:67.5` | Earnings-based interest limitation |  |
-| `ssec:67.5.1` | The OECD design |  |
+| `ssec:67.5.1` | The OECD design under BEPS Action 4 |  |
 | `ssec:67.5.2` | The EU rule in ATAD Article 4 |  |
 | `ssec:67.5.3` | The UK corporate interest restriction and the public infrastructure exemption |  |
-| `ssec:67.5.4` | US section 163(j) after OBBBA |  |
+| `ssec:67.5.4` | US section 163(j) after the 2025 law |  |
 | `ssec:67.5.5` | What a 30% cap does to a project's profile |  |
 | `ssec:67.5.6` | Grandfathering and refinancing |  |
 | `sec:67.6` | Transfer pricing inside a project |  |
@@ -4644,22 +4947,22 @@ Source brief: `briefs/u14.md`.
 | `ssec:67.8.2` | What a holiday is worth |  |
 | `ssec:67.8.3` | Holidays and tariffs |  |
 | `sec:67.9` | Pillar Two and the global minimum tax |  |
-| `ssec:67.9.1` | Who is in scope |  |
+| `ssec:67.9.1` | Which groups are in scope |  |
 | `ssec:67.9.2` | The top-up calculation |  |
-| `ssec:67.9.3` | Who collects |  |
+| `ssec:67.9.3` | Who collects the top-up |  |
 | `ssec:67.9.4` | The Side-by-Side Package of January 5, 2026 |  |
 | `ssec:67.9.5` | Tax credits under GloBE |  |
 | `ssec:67.9.6` | The Pillar Two screen |  |
 | `sec:67.10` | US clean-energy credits as structuring constraints |  |
-| `ssec:67.10.1` | The deadlines |  |
+| `ssec:67.10.1` | The 2025 law's construction and placed-in-service deadlines |  |
 | `ssec:67.10.2` | Prohibited foreign entities in the cap table and the debt stack |  |
 | `ssec:67.10.3` | What lenders and tax equity investors now ask for |  |
 | `sec:67.11` | Taxes on exit |  |
 | `ssec:67.11.1` | Capital gains on a project sale |  |
 | `ssec:67.11.2` | Indirect transfer taxes |  |
-| `sec:67.12` | Oyu Tolgoi, Cobre Panamá and Bujagali and the host's power to reopen fiscal terms |  |
+| `sec:67.12` | Fiscal reopeners at Oyu Tolgoi, Cobre Panamá, and Bujagali |  |
 | `sec:67.13` | Walkthrough: the tax structure paper for a cross-border project |  |
-| `sec:67.14` | Case P: holding structure, gross-up, grandfathering and exit tax |  |
+| `sec:67.14` | Case P: holding structure, gross-up, grandfathering, and exit tax |  |
 | `sec:67.15` | Practitioner's notebook |  |
 | `sec:67.16` | Judgment drill |  |
 | `sec:67.17` | The rules that decide who may lend |  |
@@ -4678,16 +4981,20 @@ Source brief: `briefs/u14.md`.
 | `ex:67.11` | An indirect transfer tax on a stake sale (Illustrative) |  |
 | `ex:67.12` | Case P withholding leakage and gross-up cost (Case P) |  |
 | `exh:67.1` | Where tax leaks from a cross-border project (Illustrative) |  |
-| `exh:67.2` | Interest limitation regimes compared: OECD, EU, UK, US (as of October 3, 2026) |  |
-| `exh:67.3` | Pillar Two: who collects the top-up (Illustrative) |  |
-| `exh:67.4` | US wind, solar and storage credit deadlines and foreign-entity tests (as of October 3, 2026) |  |
+| `exh:67.2` | Interest limitation regimes compared across the OECD, EU, UK, and US (as of October 3, 2026) |  |
+| `exh:67.3` | Who collects the Pillar Two top-up (Illustrative) |  |
+| `exh:67.4` | US wind, solar, and storage credit deadlines and foreign-entity tests (as of October 3, 2026) |  |
 | `exh:67.5` | Case P withholding rates and exemptions (Case P) |  |
-| `cl:67.1` | (caption not stated in brief; writer supplies) | implied by the brief text; writer assigns this label in order of appearance |
+| `cl:67.1` | Tax gross-up and indemnity, facility agreement |  |
+| `cl:67.1a` | Tax gross-up and indemnity, facility agreement (Illustrative, sponsor-friendly) | new label |
+| `cl:67.1b` | Tax gross-up and indemnity, facility agreement (Illustrative, lender-friendly) | new label |
+| `cl:67.1c` | Tax gross-up and indemnity, facility agreement (Illustrative, government-friendly) | new label |
 | `eq:67.1` | Pillar Two top-up |  |
-| `eq:67.2` | Gross-up payment, $P = I/(1-w)$ |  |
-| `eq:67.3` | Earnings-based cap: deductible interest $= (NI}_t, 0.30 EBITDA}^{tax}}_t + CF}^{used}}_t)$ (writer finalizes notation consistent with Chapter 41) |  |
+| `eq:67.2` | Gross-up payment, $P = I/(1-w)$, applying eq:38.4 |  |
+| `eq:67.3` | Earnings-based cap: deductible interest $= \min(\mathrm{NI}_t + \mathrm{CF}_{t-1}, 0.30 \times \mathrm{EBITDA}^{\mathrm{tax}}_t)$, with $\mathrm{CF}_t = \mathrm{CF}_{t-1} + \mathrm{NI}_t - \text{deductible}_t$ |  |
 | `fw:tax-leakage-map` | Framework 67.1 Tax leakage map | home ssec:67.1.2 |
 | `fw:pillar-two-screen` | Framework 67.2 Pillar Two screen | home ssec:67.9.6 |
+| `exr:67.1` to `exr:67.16` | Exercises (16) | range; cited only inside Ch 67 and by matter file 93 |
 
 ### Chapter 68: Capital rules for banks and insurers
 
@@ -4696,49 +5003,51 @@ Source brief: `briefs/u14.md`.
 | Label | Caption or title | Note |
 |---|---|---|
 | `ch:68` | Capital rules for banks and insurers |  |
-| `sec:68.1` | Why capital rules decide who lends |  |
+| `sec:68.1` | Capital rules decide who lends |  |
 | `ssec:68.1.1` | Capital as a cost of lending |  |
 | `ssec:68.1.2` | Two regulated balance sheets, two logics |  |
 | `sec:68.2` | Three routes to bank capital |  |
-| `ssec:68.2.1` | The standardised approach |  |
+| `ssec:68.2.1` | The standardized approach |  |
 | `ssec:68.2.2` | Internal ratings |  |
 | `ssec:68.2.3` | Supervisory slotting |  |
 | `sec:68.3` | The Basel III project finance ladder and the output floor |  |
-| `ssec:68.3.1` | The standardised ladder |  |
+| `ssec:68.3.1` | The standardized ladder for project finance |  |
 | `ssec:68.3.2` | The output floor |  |
 | `sec:68.4` | Three jurisdictions, three answers |  |
 | `ssec:68.4.1` | The EU rules in CRR3 |  |
 | `ssec:68.4.2` | The UK Basel 3.1 rules |  |
 | `ssec:68.4.3` | The US proposals of March 2026 |  |
-| `ssec:68.4.4` | Why the same loan carries different capital in London, Frankfurt and New York |  |
+| `ssec:68.4.4` | One loan, three capital charges in Frankfurt, London, and New York |  |
 | `sec:68.5` | From capital to price |  |
-| `ssec:68.5.1` | The minimum margin | ruling: The capital charge under each route (retitled, R-075) |
-| `ssec:68.5.2` | What the bridge shows |  |
+| `ssec:68.5.1` | The capital charge under each route |  |
+| `ssec:68.5.2` | What the capital-to-price bridge shows |  |
 | `ssec:68.5.3` | Regulatory expected loss and accounting provisions |  |
 | `sec:68.6` | Credit risk mitigation in project lending |  |
 | `ssec:68.6.1` | ECA cover and sovereign substitution |  |
-| `ssec:68.6.2` | MDBs, A/B loans and preferred creditor treatment |  |
+| `ssec:68.6.2` | MDBs, A/B loans, and preferred creditor treatment |  |
 | `ssec:68.6.3` | Insurance as credit protection |  |
 | `sec:68.7` | Insurers and Solvency II |  |
 | `ssec:68.7.1` | The standard formula in one page |  |
 | `ssec:68.7.2` | Qualifying infrastructure investments |  |
 | `ssec:68.7.3` | Qualifying infrastructure corporates |  |
-| `ssec:68.7.4` | The 2025 to 2027 review |  |
+| `ssec:68.7.4` | The 2025 to 2027 Solvency II review |  |
 | `ssec:68.7.5` | Solvency UK and the matching adjustment |  |
 | `ssec:68.7.6` | What the charges mean in spread |  |
-| `sec:68.8` | Banks, insurers and the life of a project |  |
+| `sec:68.8` | Banks, insurers, and the life of a project |  |
 | `ssec:68.8.1` | Who holds construction risk and who holds operating risk |  |
 | `ssec:68.8.2` | Designing for capital |  |
 | `ssec:68.8.3` | Who pays for a change in capital rules |  |
 | `sec:68.9` | IFC's B-loans and preferred creditor treatment in bank capital |  |
 | `sec:68.10` | Walkthrough: the capital section of a bank's credit application |  |
-| `sec:68.11` | Case P and Case T: Castellan grades Bélanou, and the Merrick Link's insurer bondholders |  |
+| `sec:68.11` | Case P: Castellan grades Bélanou |  |
+| `ssec:68.11.1` | Case P: the commercial tranche on Castellan's books, 2018 to 2024 | new label |
+| `ssec:68.11.2` | Case T: the Merrick Link's insurer bondholders | new label |
 | `sec:68.12` | Practitioner's notebook |  |
 | `sec:68.13` | Judgment drill |  |
 | `sec:68.14` | Capital prices the debt; the market decides what to build |  |
 | `sec:68.15` | Exercises |  |
 | `sec:68.16` | Solutions to exercises |  |
-| `ex:68.1` | Capital and the minimum margin under each route (Illustrative) |  |
+| `ex:68.1` | Capital and the margin under each route (Illustrative) |  |
 | `ex:68.2` | The EU output floor on a project book (Illustrative) |  |
 | `ex:68.3` | Capital on a bank's share of a multi-tranche deal (Illustrative) |  |
 | `ex:68.4` | What Solvency II infrastructure qualification is worth to an insurer (Illustrative) |  |
@@ -4748,13 +5057,16 @@ Source brief: `briefs/u14.md`.
 | `exh:68.2` | EU slotting expected-loss rates by category and remaining maturity |  |
 | `exh:68.3` | EU high-quality project finance criteria and the project features that meet them |  |
 | `exh:68.4` | EU output floor phase-in, 2025 to 2030 |  |
-| `exh:68.5` | One operational project loan under EU, UK and US rules (EUR m) (Illustrative) |  |
+| `exh:68.5` | One operational project loan under EU, UK, and US rules (EUR m) (Illustrative) |  |
 | `exh:68.6` | Solvency II qualifying infrastructure checklist (Illustrative) |  |
 | `exh:68.7` | Slotting scorecard template (Illustrative) |  |
-| `cl:68.1` | (caption not stated in brief; writer supplies) | implied by the brief text; writer assigns this label in order of appearance |
-| `eq:68.1` | Minimum margin from capital | ruling: Capital charge per unit of exposure, feeding eq:38.1 (repurposed, R-075) |
-| `eq:68.2` | Output floor: $RWA} = (RWA}_{IRB}}, x RWA}_{SA}})$ |  |
+| `cl:68.1` | Increased costs and changes in capital rules, facility agreement |  |
+| `cl:68.1a` | Increased costs and changes in capital rules, facility agreement (Illustrative, sponsor-friendly) | new label |
+| `cl:68.1b` | Increased costs and changes in capital rules, facility agreement (Illustrative, lender-friendly) | new label |
+| `eq:68.1` | Capital charge per unit of exposure, $K = k \times \mathrm{RW}$, feeding eq:38.1 | repurposed, R-075 |
+| `eq:68.2` | Output floor: $\mathrm{RWA} = \max(\mathrm{RWA}_{\mathrm{IRB}}, x \times \mathrm{RWA}_{\mathrm{SA}})$ |  |
 | `fw:capital-to-price-bridge` | Framework 68.1 Capital-to-price bridge | home ssec:68.5.2 |
+| `exr:68.1` to `exr:68.12` | Exercises (12) | range; cited only inside Ch 68 and by matter file 93 |
 
 ### Chapter 69: Thermal power
 
@@ -4767,25 +5079,25 @@ Source brief: `briefs/u15.md`.
 | `ssec:69.1.1` | Capital-heavy and fuel-heavy plants |  |
 | `ssec:69.1.2` | The screening curve |  |
 | `ssec:69.1.3` | System roles and what they pay |  |
-| `sec:69.2` | What a financier needs from the engineering |  |
-| `ssec:69.2.1` | Heat rate, degradation and recovery |  |
-| `ssec:69.2.2` | Starts, hours and maintenance intervals |  |
+| `sec:69.2` | Heat rate, starts, and fuel flexibility as credit variables |  |
+| `ssec:69.2.1` | Heat rate, degradation, and recovery |  |
+| `ssec:69.2.2` | Starts, hours, and maintenance intervals |  |
 | `ssec:69.2.3` | Fuel flexibility and fuel-chain lock-in |  |
 | `sec:69.3` | Revenue models for thermal plants |  |
 | `ssec:69.3.1` | The single-buyer capacity-plus-energy PPA |  |
 | `ssec:69.3.2` | Tolling and the IWPP |  |
 | `ssec:69.3.3` | Merchant energy and scarcity pricing |  |
 | `ssec:69.3.4` | Capacity markets and hybrid revenue |  |
-| `sec:69.4` | Risks that decide thermal deals |  |
-| `ssec:69.4.1` | Fuel supply, price and deliverability |  |
+| `sec:69.4` | Fuel, dispatch, and transition risk in thermal deals |  |
+| `ssec:69.4.1` | Fuel supply, price, and deliverability |  |
 | `ssec:69.4.2` | Heat rate and performance |  |
 | `ssec:69.4.3` | Dispatch and affordability |  |
-| `ssec:69.4.4` | Transition, permits and stranding |  |
-| `ssec:69.4.5` | Water, emissions and site |  |
-| `sec:69.5` | The thermal contract set |  |
-| `ssec:69.5.1` | The set and its interlocks |  |
+| `ssec:69.4.4` | Transition, permits, and stranding |  |
+| `ssec:69.4.5` | Water, emissions, and site |  |
+| `sec:69.5` | How PPA, fuel, and maintenance contracts interlock in a gas IPP |  |
+| `ssec:69.5.1` | The contract map of a gas IPP |  |
 | `ssec:69.5.2` | Where thermal contracts leave gaps |  |
-| `ssec:69.5.3` | A sector clause: carbon-cost pass-through in a tolling agreement |  |
+| `ssec:69.5.3` | Carbon-cost pass-through in a tolling agreement |  |
 | `sec:69.6` | Financing terms for thermal plants |  |
 | `ssec:69.6.1` | Contracted IPPs in emerging and Gulf markets |  |
 | `ssec:69.6.2` | Merchant and capacity-backed thermal in liberalized markets |  |
@@ -4799,7 +5111,7 @@ Source brief: `briefs/u15.md`.
 | `ssec:69.8.1` | Dabhol and the plant too big for its buyer |  |
 | `ssec:69.8.2` | Paiton I and zero dispatch |  |
 | `ssec:69.8.3` | Mundra and the fuel chain that broke |  |
-| `ssec:69.8.4` | Hub Power, Azura-Edo and the Gulf programs |  |
+| `ssec:69.8.4` | Hub Power, Azura-Edo, and the Gulf programs |  |
 | `sec:69.9` | Walkthrough: reading a thermal plant's dispatch and fuel model |  |
 | `sec:69.10` | Case P: why Kessara chose a CCGT |  |
 | `sec:69.11` | Practitioner's notebook |  |
@@ -4807,22 +5119,26 @@ Source brief: `briefs/u15.md`.
 | `sec:69.13` | A thermal plant is repaid by its buyer and its fuel chain |  |
 | `sec:69.14` | Exercises |  |
 | `sec:69.15` | Solutions to exercises |  |
-| `ex:69.1` | Screening four technologies for a coastal single-buyer system |  |
-| `ex:69.2` | Merchant gross margin of a CCGT in an energy-only market |  |
-| `ex:69.3` | Heat-rate headroom under a fuel pass-through |  |
-| `ex:69.4` | Take-or-pay exposure when dispatch falls |  |
-| `ex:69.5` | What starts cost a cycling plant |  |
+| `ex:69.1` | Screening four technologies for Bangladesh's single-buyer system in 2015 |  |
+| `ex:69.2` | What starts cost a cycling CCGT in England | renumbered from ex:69.5 in round 1 |
+| `ex:69.3` | Merchant gross margin of a Texas CCGT in an energy-only market | was ex:69.2 |
+| `ex:69.4` | Take-or-pay exposure at an Ivorian CCGT when dispatch falls |  |
+| `ex:69.5` | Heat-rate headroom at a Pakistani CCGT | was ex:69.3 |
 | `exh:69.1` | Technology cost inputs for screening (Illustrative) |  |
 | `exh:69.2` | Screening curves for four thermal technologies (Illustrative) |  |
 | `exh:69.3` | Thermal revenue models compared |  |
 | `exh:69.4` | Contract map of a gas-fired IPP (Illustrative) |  |
-| `exh:69.5` | Financing terms for thermal plants by segment |  |
+| `exh:69.5` | Financing terms and lender universe for thermal plants |  |
 | `exh:69.6` | Extract of a lender's dispatch and fuel model (Illustrative) |  |
-| `exh:69.7` | Bélanou sensitivities as a thermal reference (Case P) |  |
-| `cl:69.1` | Carbon-cost pass-through, tolling agreement (sponsor-, lender-, offtaker-friendly) |  |
+| `exh:69.7` | MEH's 2015 technology screening and Bélanou's sensitivities (Case P) |  |
+| `cl:69.1` | Carbon-cost pass-through, tolling agreement (Illustrative) |  |
+| `cl:69.1a` | Carbon-cost pass-through, tolling agreement (Illustrative, sponsor-friendly) | new label |
+| `cl:69.1b` | Carbon-cost pass-through, tolling agreement (Illustrative, lender-friendly) | new label |
+| `cl:69.1c` | Carbon-cost pass-through, tolling agreement (Illustrative, offtaker-friendly) | new label |
 | `eq:69.1` | Cost per MWh at a capacity factor (screening curve) |  |
-| `eq:69.2` | Spark spread and clean spark spread | ruling: Merchant gross margin from the spark spread over dispatched hours, citing eq:11.7 (repurposed, R-024) |
+| `eq:69.2` | Merchant gross margin from the spark spread over dispatched hours, citing eq:11.7 |  |
 | `fw:fuel-chain-trace` | Framework 69.1 Fuel-chain trace | home sec:69.4 |
+| `exr:69.1` to `exr:69.13` | Exercises (13) | range; cited only inside Ch 69 and by matter file 93 |
 
 ### Chapter 70: Onshore wind and solar
 
@@ -4834,61 +5150,65 @@ Source brief: `briefs/u15.md`.
 | `sec:70.1` | The economics of plants with no fuel bill |  |
 | `ssec:70.1.1` | Cost falls, revenue risk rises |  |
 | `ssec:70.1.2` | Scale and portfolios |  |
-| `sec:70.2` | What a financier needs from the engineering |  |
-| `ssec:70.2.1` | Wind: turbines, availability and cold weather |  |
-| `ssec:70.2.2` | Solar: modules, inverters, trackers and clipping |  |
-| `ssec:70.2.3` | Hybrids |  |
-| `sec:70.3` | Revenue models |  |
-| `ssec:70.3.1` | Auctions, CfDs and utility PPAs |  |
+| `sec:70.2` | Turbine, module, and hybrid design choices that move revenue |  |
+| `ssec:70.2.1` | Wind turbines, availability, and cold weather |  |
+| `ssec:70.2.2` | Solar modules, inverters, trackers, and clipping |  |
+| `ssec:70.2.3` | Co-located storage as revenue protection |  |
+| `sec:70.3` | Auction, corporate, and merchant revenue for wind and solar |  |
+| `ssec:70.3.1` | Auctions, CfDs, and utility PPAs |  |
 | `ssec:70.3.2` | Corporate offtake and hedges |  |
 | `ssec:70.3.3` | Merchant revenue and capture |  |
-| `sec:70.4` | Risks that decide wind and solar deals |  |
+| `sec:70.4` | Resource, congestion, grid, and policy risk in wind and solar |  |
 | `ssec:70.4.1` | Resource and performance |  |
-| `ssec:70.4.2` | Congestion, curtailment and basis |  |
+| `ssec:70.4.2` | Congestion, curtailment, and basis |  |
 | `ssec:70.4.3` | Grid connection and evacuation |  |
 | `ssec:70.4.4` | Policy dependence |  |
 | `ssec:70.4.5` | Weather extremes and hedge volume |  |
-| `sec:70.5` | The wind and solar contract set |  |
-| `ssec:70.5.1` | Wind: turbine supply, balance of plant and the full-service agreement |  |
-| `ssec:70.5.2` | Solar: modules, EPC and warranties |  |
-| `ssec:70.5.3` | Interconnection, land and permits |  |
-| `ssec:70.5.4` | A sector clause: the turbine availability guarantee |  |
+| `sec:70.5` | Turbine, module, interconnection, and land contracts |  |
+| `ssec:70.5.1` | Wind turbine supply, balance of plant, and the full-service agreement |  |
+| `ssec:70.5.2` | Solar modules, EPC, and warranties |  |
+| `ssec:70.5.3` | Interconnection, land, and permits |  |
+| `ssec:70.5.4` | The turbine availability guarantee |  |
 | `sec:70.6` | Financing terms for onshore wind and solar |  |
 | `ssec:70.6.1` | The US ladder by revenue quality |  |
 | `ssec:70.6.2` | Tax-credit bridges and back-leverage |  |
-| `ssec:70.6.3` | Other markets |  |
+| `ssec:70.6.3` | DFI-led and auction markets outside the US |  |
 | `ssec:70.6.4` | When the ladder breaks |  |
 | `sec:70.7` | Modeling wind and solar |  |
 | `ssec:70.7.1` | From P50 to cash |  |
-| `ssec:70.7.2` | Clipping, hybrids and augmentation hooks |  |
+| `ssec:70.7.2` | Clipping, hybrids, and augmentation hooks |  |
 | `ssec:70.7.3` | Hedge settlement and liquidity |  |
 | `ssec:70.7.4` | Tax-credit and tax-equity cash |  |
-| `sec:70.8` | Real cases in wind and solar |  |
+| `sec:70.8` | REIPPPP, northern Chile, Lake Turkana, and concentrated solar |  |
 | `ssec:70.8.1` | REIPPPP and the bankable standard document |  |
 | `ssec:70.8.2` | Northern Chile and the price of the wrong node |  |
 | `ssec:70.8.3` | Lake Turkana and the line that was not there |  |
-| `ssec:70.8.4` | CSP: Ivanpah and Noor Ouarzazate I |  |
+| `ssec:70.8.4` | Concentrated solar at Ivanpah and Noor Ouarzazate I |  |
 | `sec:70.9` | Walkthrough: building the resource-to-revenue bridge for a solar plant |  |
-| `sec:70.10` | Case R: capture, curtailment and credits at Mesa Corta |  |
+| `sec:70.10` | Case R: capture, curtailment, and credits at Mesa Corta |  |
 | `sec:70.11` | Practitioner's notebook |  |
 | `sec:70.12` | Judgment drill |  |
 | `sec:70.13` | The megawatt-hour is worth what the node pays for it |  |
 | `sec:70.14` | Exercises |  |
 | `sec:70.15` | Solutions to exercises |  |
-| `ex:70.1` | Capture decline on a merchant solar plant |  |
-| `ex:70.2` | One cash flow, two debt amounts |  |
-| `ex:70.3` | A fixed-price contract at the wrong node |  |
-| `ex:70.4` | Choosing the inverter loading ratio |  |
-| `ex:70.5` | What the investment tax credit is worth to a solar project in 2026 |  |
+| `ex:70.1` | Choosing the inverter loading ratio in Rajasthan | renumbered from ex:70.4 in round 1 |
+| `ex:70.2` | Capture decline on a merchant solar plant in Spain | was ex:70.1 |
+| `ex:70.3` | A fixed-price contract at the wrong node in northern Chile |  |
+| `ex:70.4` | What the investment tax credit is worth to an Arizona solar project in 2026 | was ex:70.5 |
+| `ex:70.5` | One Arizona solar cash flow, two debt amounts | was ex:70.2 |
 | `exh:70.1` | Cost structure of a wind farm and a solar plant (Illustrative) |  |
 | `exh:70.2` | Revenue models and what each leaves with the project company |  |
 | `exh:70.3` | Contract map of a split-contracted wind farm (Illustrative) |  |
 | `exh:70.4` | Financing terms for onshore wind and solar, 2023 to 2026 |  |
-| `exh:70.5` | Resource-to-revenue bridge for a 150 MWac solar plant (Illustrative) |  |
+| `exh:70.5` | Resource-to-revenue bridge for a 150 MWac solar plant in New South Wales (Illustrative) |  |
 | `exh:70.6` | Mesa Corta capture price and revenue build, 2022 to 2030 (Case R) |  |
-| `cl:70.1` | Turbine availability guarantee, full-service agreement (sponsor-, lender-, OEM-friendly) |  |
+| `cl:70.1` | Turbine availability guarantee, full-service agreement (Illustrative) |  |
+| `cl:70.1a` | Turbine availability guarantee, full-service agreement (Illustrative, sponsor-friendly) | new label |
+| `cl:70.1b` | Turbine availability guarantee, full-service agreement (Illustrative, lender-friendly) | new label |
+| `cl:70.1c` | Turbine availability guarantee, full-service agreement (Illustrative, OEM-friendly) | new label |
 | `eq:70.1` | Captured revenue: energy after curtailment times hub price times capture ratio |  |
 | `fw:resource-revenue-bridge` | Framework 70.1 Resource-to-revenue bridge | home sec:70.9 |
+| `exr:70.1` to `exr:70.14` | Exercises (14) | range; cited only inside Ch 70 and by matter file 93 |
 
 ### Chapter 71: Offshore wind
 
@@ -4899,36 +5219,36 @@ Source brief: `briefs/u15.md`.
 | `ch:71` | Offshore wind |  |
 | `sec:71.1` | The economics of building at sea |  |
 | `ssec:71.1.1` | Where the money goes |  |
-| `ssec:71.1.2` | Scale, supply chain and the vessel bottleneck |  |
+| `ssec:71.1.2` | Scale, supply chain, and the vessel bottleneck |  |
 | `sec:71.2` | How an offshore wind farm works for a financier |  |
 | `ssec:71.2.1` | From turbine to onshore grid |  |
-| `ssec:71.2.2` | Access, availability and losses |  |
-| `sec:71.3` | Revenue models |  |
+| `ssec:71.2.2` | Access, availability, and losses |  |
+| `sec:71.3` | CfDs, certificates, and corporate offtake offshore |  |
 | `ssec:71.3.1` | Two-sided CfDs |  |
 | `ssec:71.3.2` | Certificate contracts and fixed escalators |  |
 | `ssec:71.3.3` | Corporate offtake and merchant tails |  |
 | `sec:71.4` | Construction risk at sea |  |
-| `ssec:71.4.1` | Weather, vessels and the installation season |  |
+| `ssec:71.4.1` | Weather, vessels, and the installation season |  |
 | `ssec:71.4.2` | Interfaces in a multi-contract build |  |
 | `ssec:71.4.3` | Serial defects and cables |  |
 | `ssec:71.4.4` | Dogger Bank A's delays |  |
 | `sec:71.5` | Pre-FID exposure and the Ocean Wind cancellation |  |
 | `ssec:71.5.1` | The exposure clock |  |
 | `ssec:71.5.2` | Ocean Wind 1 and 2 |  |
-| `ssec:71.5.3` | What later solicitations changed |  |
+| `ssec:71.5.3` | Indexation, longer contracts, and US political risk after 2023 |  |
 | `sec:71.6` | The offshore wind contract set |  |
 | `ssec:71.6.1` | Packages and their interfaces |  |
 | `ssec:71.6.2` | The marine warranty surveyor and insurers |  |
-| `ssec:71.6.3` | A sector clause: weather downtime in a transport and installation contract |  |
+| `ssec:71.6.3` | Weather downtime in a transport and installation contract |  |
 | `sec:71.7` | Financing offshore wind |  |
 | `ssec:71.7.1` | Phase ring-fencing and two-part gearing |  |
-| `ssec:71.7.2` | ECAs, DFIs and new markets |  |
-| `ssec:71.7.3` | US offshore wind and tax credits |  |
+| `ssec:71.7.2` | ECAs, DFIs, and new markets |  |
+| `ssec:71.7.3` | US offshore wind under tax credits and federal stop orders |  |
 | `ssec:71.7.4` | Sell-downs and equity recycling |  |
-| `ssec:71.7.5` | Typical terms |  |
+| `ssec:71.7.5` | Offshore wind tenor, gearing, and cover ranges, 2020 to 2026 |  |
 | `sec:71.8` | Modeling offshore wind |  |
-| `ssec:71.8.1` | Yield, availability and access |  |
-| `ssec:71.8.2` | Construction schedule, delay and revenue start |  |
+| `ssec:71.8.1` | Yield, availability, and access |  |
+| `ssec:71.8.2` | Construction schedule, delay, and revenue start |  |
 | `ssec:71.8.3` | The OFTO sale in the model |  |
 | `sec:71.9` | Walkthrough: reading an offshore wind construction risk register |  |
 | `sec:71.10` | Case R: Lattimer declines an offshore stake |  |
@@ -4937,18 +5257,22 @@ Source brief: `briefs/u15.md`.
 | `sec:71.13` | Offshore, the price is fixed early and the cost is fixed late |  |
 | `sec:71.14` | Exercises |  |
 | `sec:71.15` | Solutions to exercises |  |
-| `ex:71.1` | Two-part gearing for a 1.2 GW phase |  |
-| `ex:71.2` | A fixed price meets cost inflation and higher rates |  |
-| `ex:71.3` | The cost of a lost installation season |  |
-| `ex:71.4` | From gross to net energy offshore |  |
+| `ex:71.1` | From gross to net energy off Taiwan |  |
+| `ex:71.2` | The cost of a lost installation season off Scotland |  |
+| `ex:71.3` | A New Jersey fixed price meets cost inflation and higher rates |  |
+| `ex:71.4` | Two-part gearing for a 1.2 GW North Sea phase |  |
 | `exh:71.1` | Capex breakdown of a 1.2 GW offshore phase (Illustrative) |  |
 | `exh:71.2` | Offshore wind farm from turbine to grid (Illustrative) |  |
 | `exh:71.3` | Pre-FID exposure timeline (Illustrative) |  |
 | `exh:71.4` | Contract map of a multi-contract offshore wind phase (Illustrative) |  |
-| `exh:71.5` | Offshore wind financings and terms, 2020 to 2025 |  |
+| `exh:71.5` | Offshore wind financings and terms, 2020 to 2026 |  |
 | `exh:71.6` | Extract of an offshore construction risk register (Illustrative) |  |
-| `cl:71.1` | Weather downtime, transport and installation contract (sponsor-, lender-, contractor-friendly) |  |
+| `cl:71.1` | Weather downtime, transport and installation contract (Illustrative) |  |
+| `cl:71.1a` | Weather downtime, transport and installation contract (Illustrative, sponsor-friendly) | new label |
+| `cl:71.1b` | Weather downtime, transport and installation contract (Illustrative, lender-friendly) | new label |
+| `cl:71.1c` | Weather downtime, transport and installation contract (Illustrative, contractor-friendly) | new label |
 | `fw:pre-fid-exposure-clock` | Framework 71.1 Pre-FID exposure clock | home ssec:71.5.1 |
+| `exr:71.1` to `exr:71.12` | Exercises (12) | range; cited only inside Ch 71 and by matter file 93 |
 
 ### Chapter 72: Hydropower and geothermal
 
@@ -4961,21 +5285,21 @@ Source brief: `briefs/u15.md`.
 | `ssec:72.1.1` | Capital now, energy for a century |  |
 | `ssec:72.1.2` | Plant types as cash-flow profiles |  |
 | `sec:72.2` | Hydrology risk and who carries it |  |
-| `ssec:72.2.1` | Energy tariffs, capacity tariffs and tiers |  |
+| `ssec:72.2.1` | Energy tariffs, capacity tariffs, and tiers |  |
 | `ssec:72.2.2` | The hydrology allocation test |  |
-| `ssec:72.2.3` | Droughts, climate and cascades |  |
+| `ssec:72.2.3` | Droughts, climate, and cascades |  |
 | `sec:72.3` | Ground risk and the hydro construction contract |  |
-| `ssec:72.3.1` | Why a fixed price does not fix ground risk |  |
-| `ssec:72.3.2` | Baselines, sharing and contingency |  |
+| `ssec:72.3.1` | A fixed price that does not fix ground risk |  |
+| `ssec:72.3.2` | Baselines, sharing, and contingency |  |
 | `ssec:72.3.3` | E&S on the critical path |  |
 | `sec:72.4` | Financing hydropower |  |
 | `ssec:72.4.1` | DFI-led packages and political risk cover |  |
 | `ssec:72.4.2` | Currency matching |  |
-| `ssec:72.4.3` | Tenor, refinancing and the long-life mismatch |  |
-| `ssec:72.4.4` | Typical terms |  |
+| `ssec:72.4.3` | Tenor, refinancing, and the long-life mismatch |  |
+| `ssec:72.4.4` | Hydro tenor and cover ranges and their drivers |  |
 | `sec:72.5` | Geothermal power |  |
 | `ssec:72.5.1` | From exploration to power plant |  |
-| `ssec:72.5.2` | Drilling risk |  |
+| `ssec:72.5.2` | Drilling risk and public risk-sharing facilities |  |
 | `ssec:72.5.3` | Reservoir decline and make-up wells |  |
 | `ssec:72.5.4` | Contract structures for geothermal |  |
 | `ssec:72.5.5` | Financing geothermal |  |
@@ -4983,7 +5307,7 @@ Source brief: `briefs/u15.md`.
 | `ssec:72.6.1` | Hydrology series to energy |  |
 | `ssec:72.6.2` | Tiered tariffs in the model |  |
 | `ssec:72.6.3` | Geothermal wells and decline |  |
-| `sec:72.7` | Nam Theun 2, Bujagali and Sarulla |  |
+| `sec:72.7` | Nam Theun 2, Bujagali, and Sarulla |  |
 | `ssec:72.7.1` | Nam Theun 2 and the export hydro template |  |
 | `ssec:72.7.2` | Bujagali and the second attempt |  |
 | `ssec:72.7.3` | Sarulla and resource risk after COD |  |
@@ -4994,38 +5318,43 @@ Source brief: `briefs/u15.md`.
 | `sec:72.12` | Underground and upstream risk must sit with someone who can carry it |  |
 | `sec:72.13` | Exercises |  |
 | `sec:72.14` | Solutions to exercises |  |
-| `ex:72.1` | Who carries the dry year |  |
-| `ex:72.2` | What tenor does to a hydro tariff |  |
-| `ex:72.3` | How many wells to prove the steam |  |
-| `ex:72.4` | Make-up wells to hold output |  |
+| `ex:72.1` | Who carries the dry year on a Nepali river |  |
+| `ex:72.2` | What tenor does to a hydro tariff in Cameroon |  |
+| `ex:72.3` | How many wells to prove the steam in Kenya's Rift Valley |  |
+| `ex:72.4` | Make-up wells to hold output in North Sumatra |  |
 | `exh:72.1` | Hydro plant types and their cash-flow profiles |  |
 | `exh:72.2` | Hydrology allocation under three tariff forms (Illustrative) |  |
 | `exh:72.3` | Hydropower financings compared |  |
 | `exh:72.4` | Geothermal spend against resource confidence by stage (Illustrative) |  |
-| `exh:72.5` | Summary of a hydrology report for a run-of-river plant (Illustrative) |  |
-| `cl:72.1` | Unforeseen ground conditions, hydro EPC contract (sponsor-, lender-, contractor-friendly) |  |
+| `exh:72.5` | Summary of a hydrology report for a run-of-river plant in Nepal (Illustrative) |  |
+| `exh:72.6` | Bélanou's 2022 drought dispatch, gas burn, and fuel charge (Case P) | new label |
+| `cl:72.1` | Unforeseen ground conditions, hydro civil works contract (Illustrative) |  |
+| `cl:72.1a` | Unforeseen ground conditions, hydro civil works contract (Illustrative, sponsor-friendly) | new label |
+| `cl:72.1b` | Unforeseen ground conditions, hydro civil works contract (Illustrative, lender-friendly) | new label |
+| `cl:72.1c` | Unforeseen ground conditions, hydro civil works contract (Illustrative, contractor-friendly) | new label |
 | `cl:72.2` | Steam supply shortfall, geothermal steam supply arrangement (Illustrative) |  |
 | `fw:hydrology-allocation` | Framework 72.1 Hydrology allocation test | home ssec:72.2.2 |
 | `fw:geothermal-staging` | Framework 72.2 Geothermal resource staging | home ssec:72.5.5 |
+| `exr:72.1` to `exr:72.14` | Exercises (14) | range; cited only inside Ch 72 and by matter file 93 |
 
-### Chapter 73: Storage, transmission and interconnectors
+### Chapter 73: Storage, transmission, and interconnectors
 
 Source brief: `briefs/u15.md`.
 
 | Label | Caption or title | Note |
 |---|---|---|
-| `ch:73` | Storage, transmission and interconnectors |  |
+| `ch:73` | Storage, transmission, and interconnectors |  |
 | `sec:73.1` | The economics of storage |  |
-| `ssec:73.1.1` | Power, energy and duration |  |
+| `ssec:73.1.1` | Power, energy, and duration |  |
 | `ssec:73.1.2` | Revenues that shrink as fleets grow |  |
 | `sec:73.2` | Battery technology and safety risk |  |
-| `ssec:73.2.1` | Cells, integrators and warranties |  |
-| `ssec:73.2.2` | Degradation, augmentation and overbuild |  |
-| `ssec:73.2.3` | Fire, propagation and clean-up |  |
+| `ssec:73.2.1` | Cells, integrators, and warranties |  |
+| `ssec:73.2.2` | Degradation, augmentation, and overbuild |  |
+| `ssec:73.2.3` | Fire, propagation, and clean-up |  |
 | `sec:73.3` | Storage revenue models and how lenders size them |  |
 | `ssec:73.3.1` | The revenue stack |  |
 | `ssec:73.3.2` | Sizing by revenue quality |  |
-| `ssec:73.3.3` | Long-duration storage and pumped hydro |  |
+| `ssec:73.3.3` | Long-duration storage, pumped hydro, and Snowy 2.0 |  |
 | `sec:73.4` | Transmission revenue models |  |
 | `ssec:73.4.1` | Regulated transmission |  |
 | `ssec:73.4.2` | Competitive transmission and availability payments |  |
@@ -5034,9 +5363,9 @@ Source brief: `briefs/u15.md`.
 | `ssec:73.4.5` | Merchant lines |  |
 | `sec:73.5` | Interconnectors |  |
 | `ssec:73.5.1` | How an interconnector earns |  |
-| `ssec:73.5.2` | Cap and floor for interconnectors |  |
+| `ssec:73.5.2` | Cap and floor for interconnectors and Greenlink |  |
 | `ssec:73.5.3` | Two regulators, two governments |  |
-| `sec:73.6` | Financing storage, transmission and interconnectors |  |
+| `sec:73.6` | Financing storage, transmission, and interconnectors |  |
 | `ssec:73.6.1` | Storage terms |  |
 | `ssec:73.6.2` | Transmission and interconnector terms |  |
 | `sec:73.7` | Modeling storage and transmission |  |
@@ -5044,27 +5373,31 @@ Source brief: `briefs/u15.md`.
 | `ssec:73.7.2` | Transmission in the model |  |
 | `ssec:73.7.3` | Interconnector revenue with a cap and floor |  |
 | `sec:73.8` | Walkthrough: reading a battery storage technical due diligence report |  |
-| `sec:73.9` | Case R and Case P: tolls, floors and a 225 kV line |  |
+| `sec:73.9` | Case R: battery tolls and floors |  |
 | `sec:73.10` | Practitioner's notebook |  |
 | `sec:73.11` | Judgment drill |  |
 | `sec:73.12` | Assets that earn from a difference must contract the difference or price it |  |
 | `sec:73.13` | Exercises |  |
 | `sec:73.14` | Solutions to exercises |  |
-| `ex:73.1` | The same battery under a toll and under a floor |  |
-| `ex:73.2` | Overbuild or augment |  |
-| `ex:73.3` | An availability deduction on a transmission line |  |
-| `ex:73.4` | An interconnector under a cap and floor |  |
-| `exh:73.1` | Storage durations, costs and revenue lines (Illustrative) |  |
+| `ex:73.1` | Overbuild or augment at a Chilean battery | was ex:73.2 |
+| `ex:73.2` | The same California battery under a toll and under a floor | was ex:73.1 |
+| `ex:73.3` | An availability deduction on a Brazilian transmission line |  |
+| `ex:73.4` | A GB interconnector under a cap and floor |  |
+| `exh:73.1` | Storage durations, costs, and revenue lines (Illustrative) |  |
 | `exh:73.2` | Battery revenue path in an energy-only market (Case R, Illustrative prices) |  |
 | `exh:73.3` | Storage revenue stack and sizing buckets (Illustrative) |  |
 | `exh:73.4` | Transmission and interconnector revenue models compared |  |
 | `exh:73.5` | Financing terms and anchors for storage and transmission |  |
 | `exh:73.6` | Contents of a battery technical due diligence report (Illustrative) |  |
-| `exh:73.7` | A2 and A3 valuation, funding and ITC proceeds (Case R) |  |
-| `cl:73.1` | Capacity maintenance, battery toll (sponsor-, lender-, offtaker-friendly) |  |
+| `exh:73.7` | A2 and A3 valuation, funding, ITC proceeds, and battery capacity (Case R) |  |
+| `cl:73.1` | Capacity maintenance, battery toll (Illustrative) |  |
+| `cl:73.1a` | Capacity maintenance, battery toll (Illustrative, sponsor-friendly) | new label |
+| `cl:73.1b` | Capacity maintenance, battery toll (Illustrative, lender-friendly) | new label |
+| `cl:73.1c` | Capacity maintenance, battery toll (Illustrative, offtaker-friendly) | new label |
 | `cl:73.2` | Availability deduction, transmission service agreement (Illustrative) |  |
 | `fw:storage-stack-screen` | Framework 73.1 Storage revenue stack screen | home ssec:73.3.1 |
 | `fw:transmission-revenue-selector` | Framework 73.2 Transmission revenue model selector | home sec:73.4 |
+| `exr:73.1` to `exr:73.13` | Exercises (13) | range; cited only inside Ch 73 and by matter file 93 |
 
 ### Chapter 74: Nuclear power
 
@@ -5074,22 +5407,22 @@ Source brief: `briefs/u15.md`.
 |---|---|---|
 | `ch:74` | Nuclear power |  |
 | `sec:74.1` | The economics of nuclear power |  |
-| `ssec:74.1.1` | Overnight cost, time and money |  |
+| `ssec:74.1.1` | Overnight cost, time, and money |  |
 | `ssec:74.1.2` | First-of-a-kind and the learning curve |  |
 | `ssec:74.1.3` | Long life and low marginal cost |  |
-| `sec:74.2` | Why lenders avoid nuclear construction risk |  |
-| `ssec:74.2.1` | Size, duration and contractor capacity |  |
-| `ssec:74.2.2` | Licensing, politics and shutdown risk |  |
+| `sec:74.2` | What keeps commercial lenders out of nuclear construction |  |
+| `ssec:74.2.1` | Size, duration, and contractor capacity |  |
+| `ssec:74.2.2` | Licensing, politics, and shutdown risk |  |
 | `ssec:74.2.3` | Liability and insurance |  |
 | `sec:74.3` | Five ways nuclear plants have been financed |  |
-| `ssec:74.3.1` | Sponsor balance sheets under a CfD: Hinkley Point C |  |
-| `ssec:74.3.2` | A nuclear RAB: Sizewell C |  |
-| `ssec:74.3.3` | Regulated utilities and federal guarantees: Vogtle 3 and 4 |  |
-| `ssec:74.3.4` | A sovereign lends to itself: Barakah |  |
+| `ssec:74.3.1` | Hinkley Point C on sponsor balance sheets under a CfD |  |
+| `ssec:74.3.2` | Sizewell C under a nuclear RAB |  |
+| `ssec:74.3.3` | Vogtle 3 and 4 under rate regulation and federal guarantees |  |
+| `ssec:74.3.4` | Barakah and a sovereign lending to itself |  |
 | `ssec:74.3.5` | SMRs and state sponsors |  |
-| `sec:74.4` | Decommissioning, waste and the long tail |  |
+| `sec:74.4` | Decommissioning, waste, and the long tail |  |
 | `ssec:74.4.1` | Funded decommissioning |  |
-| `ssec:74.4.2` | Waste |  |
+| `ssec:74.4.2` | Waste transfer pricing and the state as long-term holder |  |
 | `sec:74.5` | Financing terms and ECA support for nuclear |  |
 | `ssec:74.5.1` | What the market shows |  |
 | `ssec:74.5.2` | ECAs and the Nuclear Sector Understanding |  |
@@ -5104,79 +5437,89 @@ Source brief: `briefs/u15.md`.
 | `sec:74.11` | In nuclear, the state chooses how much risk to keep before anyone else can lend |  |
 | `sec:74.12` | Exercises |  |
 | `sec:74.13` | Solutions to exercises |  |
-| `ex:74.1` | How much of a nuclear plant's cost is money |  |
-| `ex:74.2` | Who pays for an overrun under a RAB with sharing |  |
-| `ex:74.3` | Funding decommissioning over the operating life |  |
+| `ex:74.1` | How much of a Dutch nuclear plant's cost is money |  |
+| `ex:74.2` | Who pays for an overrun under a GB nuclear RAB with sharing |  |
+| `ex:74.3` | Funding decommissioning for a Finnish unit over its operating life |  |
+| `ex:74.4` | What the waste transfer cap costs per MWh | new label |
+| `ex:74.5` | Who pays for a nuclear accident in a Paris and Brussels state | new label |
 | `exh:74.1` | Five nuclear financing models compared |  |
-| `exh:74.2` | Nuclear financings, sources and terms |  |
+| `exh:74.2` | Nuclear financings, sources, and terms |  |
 | `exh:74.3` | A nuclear government support package (Illustrative) |  |
-| `cl:74.1` | Political shutdown compensation, nuclear support agreement (sponsor-, lender-, government-friendly) |  |
+| `cl:74.1` | Political shutdown compensation, nuclear support agreement (Illustrative) |  |
+| `cl:74.1a` | Political shutdown compensation, nuclear support agreement (Illustrative, sponsor-friendly) | new label |
+| `cl:74.1b` | Political shutdown compensation, nuclear support agreement (Illustrative, lender-friendly) | new label |
+| `cl:74.1c` | Political shutdown compensation, nuclear support agreement (Illustrative, government-friendly) | new label |
 | `eq:74.1` | Cost at COD from an even spend profile and a financing rate |  |
 | `fw:nuclear-risk-bearer` | Framework 74.1 Nuclear risk-bearer map | home sec:74.3 |
+| `exr:74.1` to `exr:74.12` | Exercises (12) | range; cited only inside Ch 74 and by matter file 93 |
 
-### Chapter 75: Upstream and midstream oil and gas (incl. reserve-based lending)
+### Chapter 75: Upstream and midstream oil and gas, including reserve-based lending
 
 Source brief: `briefs/u15.md`.
 
 | Label | Caption or title | Note |
 |---|---|---|
-| `ch:75` | Upstream and midstream oil and gas (incl. reserve-based lending) |  |
+| `ch:75` | Upstream and midstream oil and gas, including reserve-based lending |  |
 | `sec:75.1` | The economics of oil and gas fields |  |
 | `ssec:75.1.1` | Phases and who funds them |  |
-| `ssec:75.1.2` | Decline, price and the shape of field cash flow |  |
+| `ssec:75.1.2` | Decline, price, and the shape of field cash flow |  |
 | `sec:75.2` | Fiscal regimes and the state's share |  |
-| `ssec:75.2.1` | Concessions, royalties and taxes |  |
+| `ssec:75.2.1` | Concessions, royalties, and taxes |  |
 | `ssec:75.2.2` | Production sharing contracts |  |
 | `ssec:75.2.3` | Fiscal terms and lenders |  |
 | `sec:75.3` | Reserve-based lending |  |
-| `ssec:75.3.1` | What an RBL is |  |
+| `ssec:75.3.1` | How a reserve-based loan differs from project finance |  |
 | `ssec:75.3.2` | Computing the borrowing base |  |
 | `ssec:75.3.3` | Redetermination and deficiency |  |
-| `ssec:75.3.4` | Hedging, LCs and decommissioning security |  |
-| `ssec:75.3.5` | Other upstream financing |  |
+| `ssec:75.3.4` | Hedging, LCs, and decommissioning security |  |
+| `ssec:75.3.5` | Field development finance, prepayments, and streams |  |
 | `sec:75.4` | Midstream assets and how they are paid |  |
-| `ssec:75.4.1` | Pipelines, processing and storage |  |
-| `ssec:75.4.2` | Ship-or-pay, cost of service and negotiated tariffs |  |
+| `ssec:75.4.1` | Pipelines, processing, and storage |  |
+| `ssec:75.4.2` | Ship-or-pay, cost of service, and negotiated tariffs |  |
 | `ssec:75.4.3` | The throughput credit test |  |
 | `sec:75.5` | Cross-border pipelines |  |
-| `ssec:75.5.1` | Two states, one asset |  |
-| `ssec:75.5.2` | Chad–Cameroon: an equity-funded upstream and a project-financed export system |  |
-| `ssec:75.5.3` | Sanctions on a pipeline: Nord Stream 2 |  |
+| `ssec:75.5.1` | Two states, one asset, and the TAP financing |  |
+| `ssec:75.5.2` | The Chad–Cameroon pipeline as a project-financed export system |  |
+| `ssec:75.5.3` | Nord Stream 2 and sanctions on a pipeline |  |
 | `sec:75.6` | Financing terms for upstream and midstream |  |
-| `ssec:75.6.1` | RBL terms |  |
-| `ssec:75.6.2` | Midstream terms |  |
+| `ssec:75.6.1` | RBL terms in US and international facilities |  |
+| `ssec:75.6.2` | Midstream and pipeline financing terms |  |
 | `sec:75.7` | Modeling upstream and midstream |  |
-| `ssec:75.7.1` | Production, prices and the fiscal regime |  |
+| `ssec:75.7.1` | Production, prices, and the fiscal regime |  |
 | `ssec:75.7.2` | The borrowing-base model |  |
 | `ssec:75.7.3` | Pipeline throughput and tariff models |  |
 | `sec:75.8` | Walkthrough: a borrowing-base redetermination from reserves report to new commitment |  |
 | `sec:75.9` | Case P: Sombé West's lenders and the GCK pipeline |  |
 | `sec:75.10` | Practitioner's notebook |  |
 | `sec:75.11` | Judgment drill |  |
-| `sec:75.12` | Upstream debt follows reserves and price and midstream debt follows shippers |  |
+| `sec:75.12` | Upstream debt follows reserves and price, and midstream debt follows shippers |  |
 | `sec:75.13` | Exercises |  |
 | `sec:75.14` | Solutions to exercises |  |
-| `ex:75.1` | Computing a borrowing base |  |
-| `ex:75.2` | A redetermination after the price deck falls |  |
-| `ex:75.3` | Who takes what under a production sharing contract |  |
-| `ex:75.4` | A cost-of-service pipeline tariff |  |
-| `exh:75.1` | Upstream phases, risks and typical capital |  |
+| `ex:75.1` | Who takes what under a production sharing contract in Equatorial Guinea | was ex:75.3 |
+| `ex:75.2` | Computing a borrowing base for a West African producer | was ex:75.1 |
+| `ex:75.3` | Cape Coast Oil's spring 2025 redetermination after the price deck falls | was ex:75.2 |
+| `ex:75.4` | A cost-of-service tariff on a US Gulf Coast pipeline |  |
+| `exh:75.1` | Upstream phases, risks, and typical capital |  |
 | `exh:75.2` | An oil and gas chain and its contracts (Illustrative) |  |
 | `exh:75.3` | Upstream and midstream financing structures compared |  |
-| `exh:75.4` | Redetermination timetable and documents (Illustrative) |  |
-| `cl:75.1` | Borrowing-base redetermination and deficiency cure, RBL facility (sponsor-friendly, lender-friendly) |  |
+| `exh:75.4` | Redetermination timetable and documents (Illustrative, with verified US equivalents) |  |
+| `exh:75.5` | Halbeck's borrowing base and GCK's revenue from Bélanou (Case P) | new label |
+| `cl:75.1` | Borrowing-base redetermination and deficiency cure, RBL facility (Illustrative) |  |
+| `cl:75.1a` | Borrowing-base redetermination and deficiency cure, RBL facility (Illustrative, sponsor-friendly) | new label |
+| `cl:75.1b` | Borrowing-base redetermination and deficiency cure, RBL facility (Illustrative, lender-friendly) | new label |
 | `eq:75.1` | Borrowing base as the minimum of the cover-ratio tests |  |
 | `eq:75.2` | Cost-of-service revenue requirement |  |
 | `fw:borrowing-base-walk` | Framework 75.1 Borrowing base walk | home ssec:75.3.2 |
 | `fw:throughput-credit-test` | Framework 75.2 Throughput credit test | home ssec:75.4.3 |
+| `exr:75.1` to `exr:75.13` | Exercises (13) | range; cited only inside Ch 75 and by matter file 93 |
 
-### Chapter 76: LNG liquefaction, regasification and FPSOs
+### Chapter 76: LNG liquefaction, regasification, and FPSOs
 
 Source brief: `briefs/u15.md`.
 
 | Label | Caption or title | Note |
 |---|---|---|
-| `ch:76` | LNG liquefaction, regasification and FPSOs |  |
+| `ch:76` | LNG liquefaction, regasification, and FPSOs |  |
 | `sec:76.1` | The economics of LNG |  |
 | `ssec:76.1.1` | The chain and where the money goes |  |
 | `ssec:76.1.2` | How LNG is priced |  |
@@ -5186,29 +5529,30 @@ Source brief: `briefs/u15.md`.
 | `ssec:76.2.2` | Tolling and merchant liquefaction |  |
 | `ssec:76.2.3` | The US fixed-fee model |  |
 | `sec:76.3` | The SPA portfolio as collateral |  |
-| `ssec:76.3.1` | Fixed fees, buyers and tenor |  |
+| `ssec:76.3.1` | Fixed fees, buyers, and tenor |  |
 | `ssec:76.3.2` | Cancellation rights and lenders |  |
 | `ssec:76.3.3` | The LNG chain credit map |  |
 | `sec:76.4` | Building an LNG plant |  |
 | `ssec:76.4.1` | LSTK contracts and the few contractors who sign them |  |
 | `ssec:76.4.2` | Cost growth and its anatomy |  |
 | `ssec:76.4.3` | Completion guarantees and financial completion |  |
-| `sec:76.5` | Country, security and sanctions risk |  |
-| `ssec:76.5.1` | Mozambique LNG: force majeure, restart and re-documentation |  |
-| `ssec:76.5.2` | Sanctions and LNG: Arctic LNG 2 |  |
+| `sec:76.5` | Country, security, and sanctions risk |  |
+| `ssec:76.5.1` | Force majeure, restart, and re-documentation at Mozambique LNG |  |
+| `ssec:76.5.2` | Arctic LNG 2 under sanctions |  |
 | `sec:76.6` | Financing LNG |  |
 | `ssec:76.6.1` | ECA-led mega-financings |  |
 | `ssec:76.6.2` | US Gulf Coast bank mini-perms |  |
 | `ssec:76.6.3` | Refinancing after completion |  |
 | `sec:76.7` | Regasification terminals and FSRUs |  |
 | `ssec:76.7.1` | Onshore terminals and terminal use agreements |  |
-| `ssec:76.7.2` | FSRUs |  |
+| `ssec:76.7.2` | FSRU charters and their financing |  |
 | `ssec:76.7.3` | Import-terminal credit |  |
 | `sec:76.8` | FPSOs |  |
 | `ssec:76.8.1` | What an FPSO is and who owns it |  |
 | `ssec:76.8.2` | Day rates and the charter as collateral |  |
 | `ssec:76.8.3` | Early termination and the lenders |  |
 | `ssec:76.8.4` | The charter-backed credit test |  |
+| `ssec:76.8.5` | Floating LNG at Coral Sul | new label |
 | `sec:76.9` | Modeling LNG and floating assets |  |
 | `ssec:76.9.1` | SPA revenue and coverage tests |  |
 | `ssec:76.9.2` | Completion timing and the guarantee release |  |
@@ -5220,25 +5564,29 @@ Source brief: `briefs/u15.md`.
 | `sec:76.14` | LNG debt rests on contracts signed before the first concrete |  |
 | `sec:76.15` | Exercises |  |
 | `sec:76.16` | Solutions to exercises |  |
-| `ex:76.1` | Fixed-fee coverage of a liquefaction project |  |
-| `ex:76.2` | How much must be contracted before FID |  |
-| `ex:76.3` | Financing an FPSO on its charter |  |
-| `ex:76.4` | FSRU or onshore regasification |  |
+| `ex:76.1` | Fixed-fee coverage of a Louisiana liquefaction project |  |
+| `ex:76.2` | How much Calcasieu Bend must contract before FID |  |
+| `ex:76.3` | FSRU or onshore regasification for a Vietnamese importer | was ex:76.4 |
+| `ex:76.4` | Financing a Brazilian FPSO on its charter | was ex:76.3 |
 | `exh:76.1` | The LNG chain and its contracts (Illustrative) |  |
 | `exh:76.2` | Three LNG project structures compared |  |
 | `exh:76.3` | LNG financings compared |  |
 | `exh:76.4` | Completion test schedule for an integrated LNG project (Illustrative) |  |
-| `cl:76.1` | Early termination fee, FPSO lease-and-operate contract (sponsor-, lender-, charterer-friendly) |  |
+| `cl:76.1` | Early termination fee, FPSO lease-and-operate contract (Illustrative) |  |
+| `cl:76.1a` | Early termination fee, FPSO lease-and-operate contract (Illustrative, sponsor-friendly) | new label |
+| `cl:76.1b` | Early termination fee, FPSO lease-and-operate contract (Illustrative, lender-friendly) | new label |
+| `cl:76.1c` | Early termination fee, FPSO lease-and-operate contract (Illustrative, charterer-friendly) | new label |
 | `fw:lng-chain-credit` | Framework 76.1 LNG chain credit map | home ssec:76.3.3 |
 | `fw:charter-credit-test` | Framework 76.2 Charter-backed credit test | home ssec:76.8.4 |
+| `exr:76.1` to `exr:76.13` | Exercises (13) | range; cited only inside Ch 76 and by matter file 93 |
 
-### Chapter 77: Refining, petrochemicals and manufacturing (gigafactory) finance
+### Chapter 77: Refining, petrochemicals, and manufacturing finance
 
 Source brief: `briefs/u16.md`.
 
 | Label | Caption or title | Note |
 |---|---|---|
-| `ch:77` | Refining, petrochemicals and manufacturing (gigafactory) finance |  |
+| `ch:77` | Refining, petrochemicals, and manufacturing finance |  |
 | `sec:77.1` | Plants that earn a spread |  |
 | `ssec:77.1.1` | Revenue that is a difference between two prices |  |
 | `ssec:77.1.2` | Three plant types and what they share |  |
@@ -5252,33 +5600,33 @@ Source brief: `briefs/u16.md`.
 | `ssec:77.3.2` | Integration and co-products |  |
 | `ssec:77.3.3` | The capacity-wave cycle |  |
 | `sec:77.4` | Factory economics |  |
-| `ssec:77.4.1` | Throughput, yield and scrap |  |
+| `ssec:77.4.1` | Throughput, yield, and scrap |  |
 | `ssec:77.4.2` | Learning curves against price deflation |  |
 | `ssec:77.4.3` | Customer contracts and the difference between orders and take-or-pay |  |
 | `sec:77.5` | Protecting the margin |  |
 | `ssec:77.5.1` | The margin protection ladder |  |
 | `ssec:77.5.2` | Processing fees against merchant margins |  |
 | `ssec:77.5.3` | Who pays for protection |  |
-| `sec:77.6` | Key risks |  |
+| `sec:77.6` | Completion, feedstock, technology, and market risk in process plants |  |
 | `ssec:77.6.1` | Completion and ramp-up in multi-unit plants |  |
-| `ssec:77.6.2` | Feedstock and utilities |  |
+| `ssec:77.6.2` | Feedstock, utilities, and associated facilities |  |
 | `ssec:77.6.3` | Technology and licensing |  |
-| `ssec:77.6.4` | Market, customer and policy risk |  |
+| `ssec:77.6.4` | Market, customer, and policy risk |  |
 | `ssec:77.6.5` | Supply chain and geopolitics |  |
-| `sec:77.7` | The contract set |  |
+| `sec:77.7` | Licenses, feedstock, marketing, and construction contracts for a process complex |  |
 | `ssec:77.7.1` | The industrial contract map |  |
 | `ssec:77.7.2` | Technology license and process guarantee |  |
-| `ssec:77.7.3` | Feedstock supply, marketing and lifting agreements |  |
-| `ssec:77.7.4` | Construction for a complex: EPC packages, EPCM and the wrap |  |
+| `ssec:77.7.3` | Feedstock supply, marketing, and lifting agreements |  |
+| `ssec:77.7.4` | EPC packages, EPCM, and the wrap for a process complex |  |
 | `ssec:77.7.5` | Sponsor completion support for industrial plants |  |
-| `sec:77.8` | Typical financing terms |  |
-| `ssec:77.8.1` | Verified anchors |  |
-| `ssec:77.8.2` | Indicative ranges and their drivers |  |
-| `ssec:77.8.3` | Covenants that matter more here |  |
+| `sec:77.8` | How industrial plants have been financed |  |
+| `ssec:77.8.1` | Financing terms at Sadara, Northvolt Ett, Duqm, and the DOE battery plants |  |
+| `ssec:77.8.2` | Tenor, gearing, and ECA ranges for sponsor-backed process plants |  |
+| `ssec:77.8.3` | Completion-release, sweep, liquidity, and hedging covenants |  |
 | `sec:77.9` | Modeling an industrial plant |  |
 | `ssec:77.9.1` | Joint price decks and margin correlation |  |
 | `ssec:77.9.2` | Throughput and yield ramp curves |  |
-| `ssec:77.9.3` | Working capital, turnarounds and maintenance capex |  |
+| `ssec:77.9.3` | Working capital, turnarounds, and maintenance capex |  |
 | `sec:77.10` | Sadara and the limits of sponsor support |  |
 | `sec:77.11` | Northvolt Ett and the factory financed like a power plant |  |
 | `sec:77.12` | Walkthrough: testing a petrochemical complex for completion |  |
@@ -5290,12 +5638,12 @@ Source brief: `briefs/u16.md`.
 | `sec:77.18` | Solutions to exercises |  |
 | `ex:77.1` | Crack spread and refinery EBITDA |  |
 | `ex:77.2` | Ethane against naphtha cracker margins |  |
-| `ex:77.3` | Processing fee against merchant sale for a urea plant |  |
-| `ex:77.4` | Gigafactory ramp, yield and breakeven |  |
+| `ex:77.3` | Gigafactory ramp, yield, and breakeven | was ex:77.4 |
+| `ex:77.4` | Processing fee against merchant sale for a urea plant | was ex:77.3 |
 | `ex:77.5` | Reading a reliability-run result against a three-envelope completion test |  |
 | `exh:77.1` | Refinery process flow (Illustrative) |  |
 | `exh:77.2` | Contract map for an integrated petrochemical complex (Illustrative) |  |
-| `exh:77.3` | Verified financing terms for industrial project financings |  |
+| `exh:77.3` | Verified financing terms for industrial project financings (Real cases: Sadara, Northvolt Ett, Duqm, DOE battery plants) |  |
 | `exh:77.4` | Northvolt capital structure at the Chapter 11 petition date (Real case) |  |
 | `cl:77.1` | Process performance guarantee and remedy, technology license agreement (Illustrative) |  |
 | `cl:77.2` | Project completion test schedule for a multi-unit complex (Illustrative) |  |
@@ -5303,124 +5651,126 @@ Source brief: `briefs/u16.md`.
 | `eq:77.2` | Cash cost per good unit |  |
 | `eq:77.3` | Breakeven yield |  |
 | `fw:margin-ladder` | Framework 77.1 Margin protection ladder | home ssec:77.5.1 |
+| `exr:77.1` to `exr:77.13` | Exercises (13) | range; cited only inside Ch 77 and by matter file 93 |
 
-### Chapter 78: Mining, metals and critical minerals
+### Chapter 78: Mining, metals, and critical minerals
 
 Source brief: `briefs/u16.md`.
 
 | Label | Caption or title | Note |
 |---|---|---|
-| `ch:78` | Mining, metals and critical minerals |  |
+| `ch:78` | Mining, metals, and critical minerals |  |
 | `sec:78.1` | How mines make and lose money |  |
 | `ssec:78.1.1` | Price takers on a cost curve |  |
-| `ssec:78.1.2` | Grade, strip ratio and recovery |  |
-| `ssec:78.1.3` | Cycles, capital intensity and who borrows non-recourse |  |
-| `sec:78.2` | Critical minerals |  |
+| `ssec:78.1.2` | Grade, strip ratio, and recovery |  |
+| `ssec:78.1.3` | Cycles, capital intensity, and who borrows non-recourse |  |
+| `sec:78.2` | Critical minerals as a finance category |  |
 | `ssec:78.2.1` | What makes a mineral critical for a lender |  |
 | `ssec:78.2.2` | Pricing without a deep terminal market |  |
 | `ssec:78.2.3` | Processing plants as manufacturing credits |  |
 | `ssec:78.2.4` | Public money in critical minerals |  |
 | `sec:78.3` | What a lender needs to know about the mine itself |  |
 | `ssec:78.3.1` | From deposit to payable metal |  |
-| `ssec:78.3.2` | Infrastructure, power and water |  |
-| `ssec:78.3.3` | Tailings, closure and care and maintenance |  |
+| `ssec:78.3.2` | Infrastructure, power, and water |  |
+| `ssec:78.3.3` | Tailings, closure, and care and maintenance |  |
 | `sec:78.4` | Revenue models and funding from the offtake side |  |
-| `ssec:78.4.1` | Concentrate, cathode and metal sales |  |
+| `ssec:78.4.1` | Concentrate, cathode, and metal sales |  |
 | `ssec:78.4.2` | Offtake-linked finance and prepayments |  |
 | `ssec:78.4.3` | Streams and royalties as construction capital |  |
-| `sec:78.5` | Key risks |  |
+| `sec:78.5` | Geological, metallurgical, price, fiscal, legal, and social risk in mines |  |
 | `ssec:78.5.1` | Geology and geotechnics |  |
 | `ssec:78.5.2` | Metallurgy and ramp-up |  |
-| `ssec:78.5.3` | Price, by-products and currency |  |
+| `ssec:78.5.3` | Price, by-products, and currency |  |
 | `ssec:78.5.4` | Fiscal terms and resource nationalism |  |
 | `ssec:78.5.5` | The legal foundation of the right to mine |  |
-| `ssec:78.5.6` | Social licence |  |
-| `sec:78.6` | The contract set |  |
+| `ssec:78.5.6` | The social license to operate |  |
+| `sec:78.6` | Host agreements, carried interests, and the mine contract map |  |
 | `ssec:78.6.1` | Host agreements and stability |  |
 | `ssec:78.6.2` | State carried interests and who funds them |  |
-| `ssec:78.6.3` | EPCM, owner's team and construction packages |  |
-| `ssec:78.6.4` | Offtake, stream, infrastructure access and closure bonding |  |
+| `ssec:78.6.3` | EPCM, owner's team, and construction packages |  |
+| `ssec:78.6.4` | Offtake, stream, infrastructure access, and closure bonding |  |
 | `sec:78.7` | Structuring and sizing mining debt |  |
-| `ssec:78.7.1` | Bank price decks |  |
+| `ssec:78.7.1` | Applying the bank price deck to a mine |  |
 | `ssec:78.7.2` | Reserve tail and tenor |  |
 | `ssec:78.7.3` | The four-part completion test |  |
 | `ssec:78.7.4` | Multi-source structures and debt caps |  |
-| `ssec:78.7.5` | Indicative terms and their drivers |  |
+| `ssec:78.7.5` | Tenor, gearing, and cover in limited-recourse mining debt |  |
 | `sec:78.8` | Modeling a mine |  |
 | `ssec:78.8.1` | The mine-plan chain |  |
-| `ssec:78.8.2` | Price decks, by-products and FX in the model |  |
-| `ssec:78.8.3` | Closure, sustaining capex and royalty variants |  |
+| `ssec:78.8.2` | Price decks, by-products, TC/RCs, and FX in the model |  |
+| `ssec:78.8.3` | Closure, sustaining capex, and royalty variants |  |
 | `sec:78.9` | Oyu Tolgoi and multi-source mining finance under a demanding host |  |
 | `sec:78.10` | Cobre Panamá and the mine that lost its legal foundation |  |
 | `sec:78.11` | Walkthrough: marking up a mining completion test |  |
-| `sec:78.12` | Case P: a bauxite developer asks for power |  |
+| `sec:78.12` | Case P: Hautes-Moraba Bauxite asks Bélanou for power |  |
 | `sec:78.13` | Practitioner's notebook |  |
 | `sec:78.14` | Judgment drill |  |
 | `sec:78.15` | A mine is a wasting asset with a political half-life |  |
 | `sec:78.16` | Exercises |  |
 | `sec:78.17` | Solutions to exercises |  |
 | `ex:78.1` | C1 and AISC for a copper-gold mine |  |
-| `ex:78.2` | Reserve tail and maximum tenor |  |
+| `ex:78.2` | The cost of a gold stream as construction capital | was ex:78.4 |
 | `ex:78.3` | Sizing on a bank price deck and testing a downside |  |
-| `ex:78.4` | The cost of a gold stream as construction capital |  |
+| `ex:78.4` | Reserve tail and maximum tenor | was ex:78.2 |
 | `ex:78.5` | Testing a completion result |  |
 | `exh:78.1` | Industry cost curve with the example mine (Illustrative) |  |
 | `exh:78.2` | From deposit to payable metal (Illustrative) |  |
 | `exh:78.3` | Contract map of a limited-recourse copper-gold mine (Illustrative) |  |
 | `exh:78.4` | Oyu Tolgoi reported tranche structure, December 2015 (Real case) |  |
-| `cl:78.1` | Fiscal stability, mining investment agreement (variants cl:78.1a sponsor-friendly, cl:78.1b lender-friendly, cl:78.1c government-friendly) |  |
-| `cl:78.1a` | sponsor-friendly, cl:78.1b lender-friendly, cl:78.1c government-friendly |  |
-| `cl:78.1b` | lender-friendly, cl:78.1c government-friendly |  |
-| `cl:78.1c` | government-friendly |  |
+| `cl:78.1` | Fiscal stability, mining investment agreement |  |
+| `cl:78.1a` | Fiscal stability, mining investment agreement (Illustrative, sponsor-friendly) |  |
+| `cl:78.1b` | Fiscal stability, mining investment agreement (Illustrative, lender-friendly) |  |
+| `cl:78.1c` | Fiscal stability, mining investment agreement (Illustrative, government-friendly) |  |
 | `cl:78.2` | Completion test schedule, mining facility agreement (Illustrative) |  |
-| `eq:78.1` | Maximum tenor from reserve tail |  |
-| `eq:78.2` | C1 cash cost per pound |  |
-| `eq:78.3` | All-in sustaining cost per pound |  |
+| `eq:78.1` | C1 cash cost per pound | was eq:78.2 |
+| `eq:78.2` | All-in sustaining cost per pound | was eq:78.3 |
+| `eq:78.3` | Maximum tenor from reserve tail | was eq:78.1 |
 | `fw:four-part-completion` | Framework 78.1 Four-part completion test | home ssec:78.7.3 |
 | `fw:deck-tail-test` | Framework 78.2 Deck-tail-test triangle | home ssec:78.7.3 |
+| `exr:78.1` to `exr:78.13` | Exercises (13) | range; cited only inside Ch 78 and by matter file 93 |
 
-### Chapter 79: Toll roads, bridges and tunnels (Case T ramp-up)
+### Chapter 79: Toll roads, bridges, and tunnels
 
 Source brief: `briefs/u16.md`.
 
 | Label | Caption or title | Note |
 |---|---|---|
-| `ch:79` | Toll roads, bridges and tunnels (Case T ramp-up) |  |
+| `ch:79` | Toll roads, bridges, and tunnels |  |
 | `sec:79.1` | What a toll road sells |  |
 | `ssec:79.1.1` | Value of time and willingness to pay |  |
 | `ssec:79.1.2` | Elasticity and the revenue-maximizing toll |  |
 | `ssec:79.1.3` | Greenfield and brownfield |  |
-| `ssec:79.1.4` | Networks, free alternatives and promised public works |  |
+| `ssec:79.1.4` | Networks, free alternatives, and promised public works |  |
 | `sec:79.2` | Bridges and tunnels |  |
 | `ssec:79.2.1` | Monopoly crossings and captive demand |  |
 | `ssec:79.2.2` | Ground risk and how to share it |  |
-| `ssec:79.2.3` | Safety systems, lifecycle and regulation after close |  |
+| `ssec:79.2.3` | Safety systems, lifecycle, and regulation after close |  |
 | `sec:79.3` | How roads earn revenue |  |
-| `ssec:79.3.1` | Real tolls, shadow tolls, availability and hybrids |  |
+| `ssec:79.3.1` | Real tolls, shadow tolls, availability, and hybrids |  |
 | `ssec:79.3.2` | Managed lanes and dynamic pricing |  |
-| `ssec:79.3.3` | Free-flow tolling, class mix and leakage |  |
+| `ssec:79.3.3` | Free-flow tolling, class mix, and leakage |  |
 | `sec:79.4` | Sharing demand risk |  |
-| `ssec:79.4.1` | Minimum revenue guarantees and revenue-sharing bands |  |
-| `ssec:79.4.2` | Flexible-term concessions |  |
+| `ssec:79.4.1` | Calibrating guarantees and revenue-sharing bands for toll roads |  |
+| `ssec:79.4.2` | Flexible-term concessions in Chile |  |
 | `ssec:79.4.3` | Rebalancing and term extension |  |
-| `ssec:79.4.4` | Choosing a structure |  |
+| `ssec:79.4.4` | Choosing a demand-risk structure for a road |  |
 | `sec:79.5` | Ramp-up and how it fails |  |
 | `ssec:79.5.1` | Timing shortfalls and structural shortfalls |  |
 | `ssec:79.5.2` | Catch-up arithmetic |  |
-| `ssec:79.5.3` | The record |  |
-| `sec:79.6` | The contract set |  |
+| `ssec:79.5.3` | The forecasting record and five toll-road failures |  |
+| `sec:79.6` | Concession deed, D&C contract, and tolling-system contract for a toll road |  |
 | `ssec:79.6.1` | The road contract map |  |
 | `ssec:79.6.2` | Competing facilities and network change |  |
-| `ssec:79.6.3` | Toll regime, tolling back office and enforcement |  |
+| `ssec:79.6.3` | Toll regime, tolling back office, and enforcement |  |
 | `ssec:79.6.4` | Relief events and pandemic outcomes |  |
-| `sec:79.7` | Typical financing terms |  |
-| `ssec:79.7.1` | Verified anchors |  |
-| `ssec:79.7.2` | Indicative ranges and their drivers |  |
+| `sec:79.7` | How toll roads have been financed |  |
+| `ssec:79.7.1` | Financing terms from SH 130 to the US managed lanes |  |
+| `ssec:79.7.2` | Cover and gearing ranges for user-pay roads, 2010 to 2025 |  |
 | `ssec:79.7.3` | Structures that turn traffic risk into refinancing risk |  |
 | `sec:79.8` | Modeling a road for lenders |  |
 | `ssec:79.8.1` | From trips to toll revenue |  |
 | `ssec:79.8.2` | Linking tolls to traffic |  |
-| `ssec:79.8.3` | Lifecycle, handback and tunnel systems |  |
+| `ssec:79.8.3` | Lifecycle, handback, and tunnel systems |  |
 | `sec:79.9` | SH 130 and the Indiana Toll Road, two roads to Chapter 11 |  |
 | `sec:79.10` | Sydney's tunnels and the outlier forecast |  |
 | `sec:79.11` | Eurotunnel and the Greenway, when the market is smaller than the forecast |  |
@@ -5434,207 +5784,214 @@ Source brief: `briefs/u16.md`.
 | `sec:79.19` | Solutions to exercises |  |
 | `ex:79.1` | Willingness to pay and diversion |  |
 | `ex:79.2` | A toll cut at two elasticities |  |
-| `ex:79.3` | Minimum revenue guarantee with a revenue-sharing band |  |
-| `ex:79.4` | Least present value of revenue |  |
-| `ex:79.5` | Revenue build and the cost of losing trucks |  |
+| `ex:79.3` | Revenue build and the cost of losing trucks | was ex:79.5 |
+| `ex:79.4` | Calibrating a minimum revenue guarantee with a revenue-sharing band | was ex:79.3 |
+| `ex:79.5` | A least-present-value-of-revenue concession | was ex:79.4 |
 | `ex:79.6` | Catch-up arithmetic |  |
 | `exh:79.1` | Port of Miami Tunnel geotechnical risk-sharing band (Real case) |  |
 | `exh:79.2` | Toll-road ramp-up failures compared (Real cases) |  |
 | `exh:79.3` | Contract map of a user-pay road concession (Illustrative) |  |
-| `exh:79.4` | Verified financing terms for toll roads and tunnels |  |
+| `exh:79.4` | Verified financing terms for toll roads and tunnels (Real cases) |  |
 | `exh:79.5` | First-year transaction data against the banking case (Illustrative) |  |
-| `exh:79.6` | Merrick Link traffic, forecast and actual (Case T, T-F04) |  |
+| `exh:79.6` | Merrick Link traffic, forecast and actual, with ratios to each case (Case T, T-F04 and T-F18) |  |
 | `exh:79.7` | Merrick Link traffic ramp-up chart (Case T, T-F04) |  |
 | `exh:79.8` | Merrick Link revenue ramp-up, forecast against actual (Case T, T-F06) |  |
-| `cl:79.1` | Competing facilities, concession deed (variants cl:79.1a sponsor-friendly, cl:79.1b lender-friendly, cl:79.1c government-friendly) |  |
-| `cl:79.1a` | sponsor-friendly, cl:79.1b lender-friendly, cl:79.1c government-friendly |  |
-| `cl:79.1b` | lender-friendly, cl:79.1c government-friendly |  |
-| `cl:79.1c` | government-friendly |  |
+| `exh:79.9` | Merrick Link traffic shortfall by cause, 2019 to 2022 (Case T, T-F19) | new label |
+| `cl:79.1` | Competing facilities, concession deed |  |
+| `cl:79.1a` | Competing facilities, concession deed (Illustrative, sponsor-friendly) |  |
+| `cl:79.1b` | Competing facilities, concession deed (Illustrative, lender-friendly) |  |
+| `cl:79.1c` | Competing facilities, concession deed (Illustrative, government-friendly) |  |
 | `eq:79.1` | Binary logit share of the tolled route |  |
-| `eq:79.2` | Years for actual traffic to converge with forecast |  |
-| `eq:79.3` | Constant-elasticity traffic response to a toll change |  |
+| `eq:79.2` | Constant-elasticity traffic response to a toll change | was eq:79.3 |
+| `eq:79.3` | Years for actual traffic to converge with forecast | was eq:79.2 |
 | `fw:demand-risk-menu` | Framework 79.1 Demand-risk sharing menu for toll roads | home ssec:79.4.4 |
 | `fw:ramp-up-diagnosis` | Framework 79.2 Ramp-up diagnosis | home ssec:79.5.1 |
+| `exr:79.1` to `exr:79.13` | Exercises (13) | range; cited only inside Ch 79 and by matter file 93 |
 
-### Chapter 80: Rail, urban transit, airports and ports
+### Chapter 80: Rail, urban transit, airports, and ports
 
 Source brief: `briefs/u16.md`.
 
 | Label | Caption or title | Note |
 |---|---|---|
-| `ch:80` | Rail, urban transit, airports and ports |  |
+| `ch:80` | Rail, urban transit, airports, and ports |  |
 | `sec:80.1` | Who pays for a train |  |
 | `ssec:80.1.1` | Farebox recovery and the public budget |  |
 | `ssec:80.1.2` | Four ways to contract a railway |  |
 | `ssec:80.1.3` | Interfaces that break rail projects |  |
 | `ssec:80.1.4` | Rolling stock finance |  |
-| `sec:80.2` | Airports |  |
+| `sec:80.2` | Airport economics and regulation |  |
 | `ssec:80.2.1` | Two businesses under one roof |  |
-| `ssec:80.2.2` | Single till and dual till | ruling: Choosing a till and a price cap (retitled, R-055) |
-| `ssec:80.2.3` | Privatizations, concessions and terminal PPPs |  |
-| `sec:80.3` | Ports |  |
-| `ssec:80.3.1` | Landlord, tool and service ports |  |
+| `ssec:80.2.2` | Choosing a till and a price cap |  |
+| `ssec:80.2.3` | Privatizations, concessions, and terminal PPPs |  |
+| `sec:80.3` | Port economics and terminal concessions |  |
+| `ssec:80.3.1` | Landlord, tool, and service ports |  |
 | `ssec:80.3.2` | Terminals and the shipping lines that choose them |  |
 | `ssec:80.3.3` | Concession fees and the minimum annual guarantee |  |
 | `sec:80.4` | Footloose demand |  |
 | `ssec:80.4.1` | The footloose-demand test |  |
 | `ssec:80.4.2` | What lenders do with a footloose score |  |
-| `sec:80.5` | Key risks |  |
+| `sec:80.5` | Demand shocks, interfaces, supply chains, and regulatory resets |  |
 | `ssec:80.5.1` | Demand shocks |  |
 | `ssec:80.5.2` | Construction interfaces and cost growth |  |
 | `ssec:80.5.3` | Supply-chain governance |  |
 | `ssec:80.5.4` | Regulatory resets and counterparty concentration |  |
-| `sec:80.6` | The contract set |  |
-| `ssec:80.6.1` | Transit availability PPP |  |
-| `ssec:80.6.2` | Airport concession |  |
-| `ssec:80.6.3` | Port terminal concession |  |
-| `sec:80.7` | Typical financing terms |  |
-| `ssec:80.7.1` | What the verified record shows |  |
-| `ssec:80.7.2` | Indicative ranges and their drivers |  |
-| `ssec:80.7.3` | Structures that match the sector |  |
-| `sec:80.8` | Modeling specifics |  |
-| `ssec:80.8.1` | Passengers, yield and commercial revenue |  |
-| `ssec:80.8.2` | Throughput, MAG and fees |  |
+| `sec:80.6` | Transit, airport, and port concession contracts |  |
+| `ssec:80.6.1` | Contracts for a transit availability PPP |  |
+| `ssec:80.6.2` | Contracts for an airport concession or terminal lease |  |
+| `ssec:80.6.3` | Contracts for a port terminal concession |  |
+| `sec:80.7` | How rail, airport, and port assets have been financed |  |
+| `ssec:80.7.1` | Financing terms at Metronet, the Purple Line, Terminal B, and Lekki |  |
+| `ssec:80.7.2` | Gearing and cover ranges for transit, airports, and terminals, 2015 to 2025 |  |
+| `ssec:80.7.3` | Public credit, airport bonds, and ring-fenced terminal debt |  |
+| `sec:80.8` | Modeling passengers, throughput, and rail performance |  |
+| `ssec:80.8.1` | Passengers, yield, and commercial revenue |  |
+| `ssec:80.8.2` | Throughput, MAG, and fees |  |
 | `ssec:80.8.3` | Rail performance regimes and fleet lifecycle |  |
 | `sec:80.9` | Metronet and Tube Lines, same contract and different supply chains |  |
 | `sec:80.10` | The Purple Line and the 365-day exit |  |
 | `sec:80.11` | Rail contracts in the pandemic and the end of revenue risk |  |
 | `sec:80.12` | Walkthrough: reading a container terminal concession agreement |  |
-| `sec:80.13` | Case T: Brannock procures a light-rail line |  |
+| `sec:80.13` | Case T: Brannock procures the Ellery Crosstown Light Rail |  |
 | `sec:80.14` | Practitioner's notebook |  |
 | `sec:80.15` | Judgment drill |  |
 | `sec:80.16` | Demand that belongs to someone else's network |  |
 | `sec:80.17` | Exercises |  |
 | `sec:80.18` | Solutions to exercises |  |
-| `ex:80.1` | Single till against dual till |  |
-| `ex:80.2` | A container terminal's minimum annual guarantee |  |
-| `ex:80.3` | Farebox recovery of a light-rail line |  |
-| `ex:80.4` | Leasing a fleet with a residual value |  |
+| `ex:80.1` | Farebox recovery of a light-rail line | was ex:80.3 |
+| `ex:80.2` | Leasing a fleet with a residual value | was ex:80.4 |
+| `ex:80.3` | Single, dual, and hybrid till | was ex:80.1 |
+| `ex:80.4` | A container terminal's minimum annual guarantee | was ex:80.2 |
 | `ex:80.5` | An airport through a passenger shock |  |
 | `exh:80.1` | Four ways to contract a railway and who carries each risk (Illustrative) |  |
 | `exh:80.2` | Footloose-demand scores for five transport assets (Illustrative) |  |
-| `exh:80.3` | Term sheet of a container terminal concession (Illustrative) |  |
-| `cl:80.1` | Minimum annual guarantee, port terminal concession agreement (variants cl:80.1a sponsor-friendly, cl:80.1b lender-friendly, cl:80.1c port-authority-friendly) |  |
-| `cl:80.1a` | sponsor-friendly, cl:80.1b lender-friendly, cl:80.1c port-authority-friendly |  |
-| `cl:80.1b` | lender-friendly, cl:80.1c port-authority-friendly |  |
-| `cl:80.1c` | port-authority-friendly |  |
-| `eq:80.1` | Single-till charge per passenger |  |
-| `eq:80.2` | Dual-till aeronautical charge per passenger |  |
-| `eq:80.3` | Farebox recovery ratio |  |
+| `exh:80.3` | Verified financing terms for rail, airport, and port assets (Real cases: Metronet, Purple Line, LaGuardia Terminal B, Lekki, Heathrow's notional structure) | new meaning, revision round 1 |
+| `exh:80.4` | Term sheet of a container terminal concession (Illustrative) | new label; was exh:80.3 |
+| `cl:80.1` | Minimum annual guarantee, port terminal concession agreement |  |
+| `cl:80.1a` | Minimum annual guarantee, port terminal concession agreement (Illustrative, sponsor-friendly) |  |
+| `cl:80.1b` | Minimum annual guarantee, port terminal concession agreement (Illustrative, lender-friendly) |  |
+| `cl:80.1c` | Minimum annual guarantee, port terminal concession agreement (Illustrative, port-authority-friendly) |  |
+| `eq:80.1` | Farebox recovery ratio | applies the sec:12.5 term; was eq:80.3 |
+| `eq:80.2` | Single-till charge per passenger | specialized application of ssec:21.8.1; was eq:80.1 |
+| `eq:80.3` | Dual-till aeronautical charge per passenger | specialized application of ssec:21.8.1; was eq:80.2 |
 | `fw:footloose-demand` | Framework 80.1 Footloose-demand test | home ssec:80.4.1 |
+| `exr:80.1` to `exr:80.13` | Exercises (13) | range; cited only inside Ch 80 and by matter file 93 |
 
-### Chapter 81: Social infrastructure, water, desalination and waste-to-energy
+### Chapter 81: Social infrastructure, water, desalination, and waste-to-energy
 
 Source brief: `briefs/u16.md`.
 
 | Label | Caption or title | Note |
 |---|---|---|
-| `ch:81` | Social infrastructure, water, desalination and waste-to-energy |  |
+| `ch:81` | Social infrastructure, water, desalination, and waste-to-energy |  |
 | `sec:81.1` | What the state buys when it buys a building |  |
 | `ssec:81.1.1` | Accommodation and services, not outcomes |  |
-| `ssec:81.1.2` | Why availability credit carries high gearing and thin cover |  |
-| `ssec:81.1.3` | Hard FM, soft FM, lifecycle and equipment |  |
+| `ssec:81.1.2` | High gearing and thin cover on availability credit |  |
+| `ssec:81.1.3` | Hard FM, soft FM, lifecycle, and equipment |  |
 | `ssec:81.1.4` | The thin-equity problem |  |
-| `sec:81.2` | Water and wastewater |  |
-| `ssec:81.2.1` | Concessions, treatment-plant BOTs and regulated utilities |  |
-| `ssec:81.2.2` | Tariffs, affordability, collection and non-revenue water |  |
+| `sec:81.2` | Water and wastewater concessions and carve-outs |  |
+| `ssec:81.2.1` | Concessions, treatment-plant BOTs, and regulated utilities |  |
+| `ssec:81.2.2` | Tariffs, affordability, collection, and non-revenue water |  |
 | `ssec:81.2.3` | Carving a project out of a utility |  |
-| `sec:81.3` | Desalination |  |
-| `ssec:81.3.1` | Reverse osmosis, thermal plants and energy |  |
+| `sec:81.3` | Desalination plants and water purchase agreements |  |
+| `ssec:81.3.1` | Reverse osmosis, thermal plants, and energy |  |
 | `ssec:81.3.2` | The water purchase agreement |  |
 | `ssec:81.3.3` | Decoupling water from power |  |
-| `sec:81.4` | Waste-to-energy |  |
+| `sec:81.4` | Waste-to-energy economics |  |
 | `ssec:81.4.1` | Three revenue lines and two cost lines |  |
 | `ssec:81.4.2` | Waste supply and calorific value |  |
-| `ssec:81.4.3` | Technology, emissions and permits |  |
+| `ssec:81.4.3` | Technology, emissions, and planning consent |  |
 | `sec:81.5` | Risks that remain when payment is certain |  |
 | `ssec:81.5.1` | The payment-chain trace |  |
 | `ssec:81.5.2` | Construction and contractor credit |  |
-| `ssec:81.5.3` | Performance, deductions and passdown |  |
+| `ssec:81.5.3` | Performance, deductions, and passdown |  |
 | `ssec:81.5.4` | Pandemic and payment continuity |  |
-| `ssec:81.5.5` | Political and affordability risk in water |  |
-| `sec:81.6` | The contract set |  |
+| `ssec:81.5.5` | Political, affordability, and currency risk in water |  |
+| `sec:81.6` | Project agreements, water purchase agreements, and waste contracts |  |
 | `ssec:81.6.1` | Social infrastructure project agreement and subcontracts |  |
 | `ssec:81.6.2` | Water purchase and energy supply agreements |  |
-| `ssec:81.6.3` | Waste supply, power sale and residue contracts |  |
-| `sec:81.7` | Typical financing terms |  |
-| `ssec:81.7.1` | Verified anchors |  |
-| `ssec:81.7.2` | Indicative ranges and their drivers |  |
+| `ssec:81.6.3` | Waste supply, power sale, and residue contracts |  |
+| `sec:81.7` | How social infrastructure, water, and waste plants have been financed |  |
+| `ssec:81.7.1` | Financing terms from Taweelah, UK PFI, Tideway, and Canadian P3s |  |
+| `ssec:81.7.2` | Gearing and cover ranges for availability, water, and waste projects |  |
 | `ssec:81.7.3` | Refinancing and gain sharing |  |
-| `sec:81.8` | Modeling specifics |  |
+| `sec:81.8` | Modeling lifecycle, water volumes, and waste tonnage |  |
 | `ssec:81.8.1` | Lifecycle and deductions |  |
-| `ssec:81.8.2` | Water volumes, availability and energy |  |
-| `ssec:81.8.3` | Waste tonnage, calorific value and thermal capacity |  |
+| `ssec:81.8.2` | Water volumes, availability, and energy |  |
+| `ssec:81.8.3` | Waste tonnage, calorific value, and thermal capacity |  |
 | `sec:81.9` | Carillion's hospitals and the limits of risk transfer |  |
 | `sec:81.10` | Thames Tideway and the carve-out from a utility |  |
 | `sec:81.11` | Gulf desalination and the price of competition |  |
 | `sec:81.12` | Walkthrough: a desalination water purchase agreement tariff schedule |  |
-| `sec:81.13` | Case T: Brannock's availability hospital |  |
+| `sec:81.13` | Case T: the Port Ellery Northern Hospital |  |
 | `sec:81.14` | Practitioner's notebook |  |
 | `sec:81.15` | Judgment drill |  |
-| `sec:81.16` | Certain payment moves risk; it does not remove it |  |
+| `sec:81.16` | Certain payment moves risk and does not remove it |  |
 | `sec:81.17` | Exercises |  |
 | `sec:81.18` | Solutions to exercises |  |
 | `ex:81.1` | Gearing and cover in a hospital availability PPP |  |
-| `ex:81.2` | Building a desalination tariff |  |
-| `ex:81.3` | A waste-to-energy plant's revenue stack |  |
-| `ex:81.4` | Non-revenue water and cash revenue |  |
+| `ex:81.2` | Non-revenue water and cash revenue | was ex:81.4 |
+| `ex:81.3` | Building a desalination tariff | was ex:81.2 |
+| `ex:81.4` | A waste-to-energy plant's revenue stack | was ex:81.3 |
 | `ex:81.5` | Cost to complete after a contractor fails |  |
 | `exh:81.1` | Water sector models and who carries each risk (Illustrative) |  |
 | `exh:81.2` | Saudi independent water project tariffs, 2009 to 2026 (Real case: Sharakat program) |  |
 | `exh:81.3` | Payment-chain traces for four assets (Illustrative) |  |
 | `exh:81.4` | Contract map of an availability hospital PPP (Illustrative) |  |
-| `exh:81.5` | Tariff schedule of a reverse-osmosis water purchase agreement (Illustrative) |  |
+| `exh:81.5` | Verified financing terms for social infrastructure and water projects (Real cases) | new meaning, revision round 1 |
+| `exh:81.6` | Tariff schedule of a reverse-osmosis water purchase agreement (Illustrative) | new label; was exh:81.5 |
 | `cl:81.1` | Capacity charge and availability, water purchase agreement (Illustrative) |  |
-| `cl:81.2` | Put-or-pay, waste supply agreement (variants cl:81.2a sponsor-friendly, cl:81.2b lender-friendly, cl:81.2c municipality-friendly) |  |
-| `cl:81.2a` | sponsor-friendly, cl:81.2b lender-friendly, cl:81.2c municipality-friendly |  |
-| `cl:81.2b` | lender-friendly, cl:81.2c municipality-friendly |  |
-| `cl:81.2c` | municipality-friendly |  |
-| `eq:81.1` | Desalination tariff as capacity charge plus output charge |  |
+| `cl:81.2` | Put-or-pay, waste supply agreement |  |
+| `cl:81.2a` | Put-or-pay, waste supply agreement (Illustrative, sponsor-friendly) |  |
+| `cl:81.2b` | Put-or-pay, waste supply agreement (Illustrative, lender-friendly) |  |
+| `cl:81.2c` | Put-or-pay, waste supply agreement (Illustrative, municipality-friendly) |  |
+| `eq:81.1` | Desalination tariff as capacity charge plus output charge (specialized application of eq:5.11) |  |
 | `eq:81.2` | WtE electricity output from tonnage, calorific value and efficiency |  |
 | `eq:81.3` | Tonnage cap from thermal capacity |  |
 | `fw:payment-chain` | Framework 81.1 Payment-chain trace | home ssec:81.5.1 |
+| `exr:81.1` to `exr:81.13` | Exercises (13) | range; cited only inside Ch 81 and by matter file 93 |
 
-### Chapter 82: Telecoms, fiber, towers and data centers
+### Chapter 82: Telecoms, fiber, towers, and data centers
 
 Source brief: `briefs/u16.md`.
 
 | Label | Caption or title | Note |
 |---|---|---|
-| `ch:82` | Telecoms, fiber, towers and data centers |  |
+| `ch:82` | Telecoms, fiber, towers, and data centers |  |
 | `sec:82.1` | Infrastructure that ages like technology |  |
 | `ssec:82.1.1` | What makes digital assets financeable |  |
 | `ssec:82.1.2` | Four asset types and their payers |  |
-| `sec:82.2` | Towers |  |
+| `sec:82.2` | Tower economics |  |
 | `ssec:82.2.1` | Tenancy and the economics of sharing |  |
 | `ssec:82.2.2` | Master lease agreements and carve-outs |  |
-| `ssec:82.2.3` | Consolidation, network sharing and technology |  |
-| `sec:82.3` | Fiber |  |
-| `ssec:82.3.1` | Backbone, metro and FTTH |  |
-| `ssec:82.3.2` | Penetration, ARPU and overbuild |  |
+| `ssec:82.2.3` | Consolidation, network sharing, and technology |  |
+| `sec:82.3` | Fiber and subsea networks |  |
+| `ssec:82.3.1` | Backbone, metro, and FTTH |  |
+| `ssec:82.3.2` | Penetration, ARPU, and overbuild |  |
 | `ssec:82.3.3` | Wholesale open access and subsidy programs |  |
-| `sec:82.4` | Data centers |  |
-| `ssec:82.4.1` | Hyperscale, colocation and edge |  |
-| `ssec:82.4.2` | Power is the constraint |  |
-| `ssec:82.4.3` | Leases, tenants and tenor |  |
+| `ssec:82.3.4` | Subsea cables and capacity pre-sales | new label |
+| `sec:82.4` | Data-center economics and leases |  |
+| `ssec:82.4.1` | Hyperscale, colocation, and edge |  |
+| `ssec:82.4.2` | Power as the binding constraint |  |
+| `ssec:82.4.3` | Leases, tenants, and tenor |  |
 | `ssec:82.4.4` | Lending against compute |  |
-| `sec:82.5` | Key risks |  |
+| `sec:82.5` | Tenant concentration, power supply, and obsolescence risk in digital assets |  |
 | `ssec:82.5.1` | The lease-life gap test |  |
 | `ssec:82.5.2` | Tenant concentration and credit |  |
-| `ssec:82.5.3` | Power, cooling and water |  |
+| `ssec:82.5.3` | Power, cooling, and water |  |
 | `ssec:82.5.4` | Overbuild and residual value |  |
-| `sec:82.6` | The contract set |  |
-| `ssec:82.6.1` | Towers and fiber contracts |  |
+| `sec:82.6` | Leases, access agreements, and guarantees for digital assets |  |
+| `ssec:82.6.1` | Tower and fiber contracts |  |
 | `ssec:82.6.2` | Data-center contracts |  |
-| `ssec:82.6.3` | Residual value guarantee clause |  |
-| `sec:82.7` | Typical financing terms |  |
-| `ssec:82.7.1` | Verified anchors |  |
-| `ssec:82.7.2` | Towers and fiber |  |
-| `ssec:82.7.3` | Securitization and whole-business structures |  |
-| `sec:82.8` | Modeling specifics |  |
+| `ssec:82.6.3` | The residual value guarantee clause |  |
+| `sec:82.7` | How digital infrastructure is financed |  |
+| `ssec:82.7.1` | Data-center loans, notes, and lease-backed bonds, 2024 to 2026 |  |
+| `ssec:82.7.2` | Tower and fiber securitizations and bank debt |  |
+| `ssec:82.7.3` | How a digital securitization traps cash and steps up interest |  |
+| `sec:82.8` | Modeling lease-up, penetration, and residual value |  |
 | `ssec:82.8.1` | Lease-up and tenancy curves |  |
-| `ssec:82.8.2` | Penetration, churn and ARPU |  |
-| `ssec:82.8.3` | Power pass-through, refresh capex and residual value |  |
+| `ssec:82.8.2` | Penetration, churn, and ARPU |  |
+| `ssec:82.8.3` | Power pass-through, refresh capex, and residual value |  |
 | `sec:82.9` | Hyperion and the short lease with a long guarantee |  |
 | `sec:82.10` | Walkthrough: reading a hyperscale data-center lease for lenders |  |
 | `sec:82.11` | Case R: Ostrander Data Systems as a power buyer |  |
@@ -5645,62 +6002,64 @@ Source brief: `briefs/u16.md`.
 | `sec:82.16` | Solutions to exercises |  |
 | `ex:82.1` | Tower margins as tenancy rises |  |
 | `ex:82.2` | An FTTH network through its penetration ramp |  |
-| `ex:82.3` | Sizing data-center debt against a long lease and against a short lease with an RVG |  |
-| `ex:82.4` | Power cost and PUE |  |
+| `ex:82.3` | Capacity pre-sales as construction funding for a subsea cable |  |
+| `ex:82.4` | Sizing data-center debt against a long lease and against a short lease with an RVG | was ex:82.3 |
+| `ex:82.5` | Power cost and PUE | new label; was ex:82.4; new label |
 | `exh:82.1` | Four digital asset types and their payers (Illustrative) |  |
 | `exh:82.2` | Lease-life gap timelines for four assets (Illustrative) |  |
 | `exh:82.3` | Contract map of a hyperscale build-to-suit joint venture (Illustrative) |  |
-| `exh:82.4` | Verified data-center financing terms, 2024 to 2026 |  |
+| `exh:82.4` | Verified digital financing terms, 2022 to 2026 (Real cases: data-center loans, notes and ABS; tower and fiber securitizations; IHS South Africa; CityFibre) |  |
 | `exh:82.5` | Summary of a hyperscale data-center lease (Illustrative) |  |
 | `cl:82.1` | Residual value guarantee, data-center lease (Illustrative) |  |
 | `eq:82.1` | Tenancy ratio and tower EBITDA |  |
 | `eq:82.2` | Data-center energy use from IT load, load factor and PUE |  |
 | `eq:82.3` | Maximum debt with a balloon capped by an RVG |  |
 | `fw:lease-life-gap` | Framework 82.1 Lease-life gap test | home ssec:82.5.1 |
+| `exr:82.1` to `exr:82.13` | Exercises (13) | range; cited only inside Ch 82 and by matter file 93 |
 
-### Chapter 83: Hydrogen and derivatives, carbon capture and storage, sustainable fuels
+### Chapter 83: Hydrogen and its derivatives, carbon capture and storage, and sustainable fuels
 
 Source brief: `briefs/u16.md`.
 
 | Label | Caption or title | Note |
 |---|---|---|
-| `ch:83` | Hydrogen and derivatives, carbon capture and storage, sustainable fuels |  |
+| `ch:83` | Hydrogen and its derivatives, carbon capture and storage, and sustainable fuels |  |
 | `sec:83.1` | Selling a product that has no market price |  |
 | `ssec:83.1.1` | Policy-made demand |  |
-| `ssec:83.1.2` | Where the market stands |  |
+| `ssec:83.1.2` | The hydrogen market in 2024 and 2025 |  |
 | `sec:83.2` | Hydrogen and its derivatives |  |
 | `ssec:83.2.1` | Electrolysis and the levelized cost of hydrogen |  |
-| `ssec:83.2.2` | Ammonia, methanol and fuels as carriers |  |
-| `ssec:83.2.3` | Revenue models for hydrogen |  |
+| `ssec:83.2.2` | Ammonia, methanol, and fuels as carriers |  |
+| `ssec:83.2.3` | Offtakes, CfDs, auctions, and tax credits for hydrogen |  |
 | `ssec:83.2.4` | Power supply and shape |  |
-| `sec:83.3` | Carbon capture and storage |  |
+| `sec:83.3` | The CCS chain and its business models |  |
 | `ssec:83.3.1` | The chain and its interfaces |  |
 | `ssec:83.3.2` | Who pays to store carbon |  |
 | `ssec:83.3.3` | Three business models |  |
-| `ssec:83.3.4` | Storage liability |  |
+| `ssec:83.3.4` | Long-term storage liability and its transfer to the state |  |
 | `sec:83.4` | Sustainable fuels |  |
 | `ssec:83.4.1` | Pathways and feedstocks |  |
-| `ssec:83.4.2` | The revenue stack |  |
-| `ssec:83.4.3` | Feedstock contracts and offtake by airlines |  |
+| `ssec:83.4.2` | The SAF revenue stack and its policy credits |  |
+| `ssec:83.4.3` | Feedstock contracts, airline offtake, and a DOE-financed SAF plant |  |
 | `sec:83.5` | Who holds the market risk |  |
 | `ssec:83.5.1` | The market-risk holder trace |  |
 | `ssec:83.5.2` | Role concentration |  |
 | `ssec:83.5.3` | First-of-a-kind and cost risk |  |
-| `sec:83.6` | The contract set |  |
+| `sec:83.6` | Offtake, electrolyzer, and CO2 storage contracts |  |
 | `ssec:83.6.1` | Molecule offtake agreements |  |
-| `ssec:83.6.2` | Power, electrolyzer and integration contracts |  |
+| `ssec:83.6.2` | Power, electrolyzer, and integration contracts |  |
 | `ssec:83.6.3` | CO2 transport and storage agreements and government support contracts |  |
-| `sec:83.7` | Typical financing terms |  |
-| `ssec:83.7.1` | What the verified deals show |  |
-| `ssec:83.7.2` | Why there are no market norms yet |  |
-| `sec:83.8` | Modeling specifics |  |
+| `sec:83.7` | How molecule projects have been financed |  |
+| `ssec:83.7.1` | Financing terms at NEOM, Northern Lights, and Montana Renewables |  |
+| `ssec:83.7.2` | Contracted offtake and state support in place of market norms |  |
+| `sec:83.8` | Modeling electrolyzers, conversion, and support payments |  |
 | `ssec:83.8.1` | Power profile and electrolyzer utilization |  |
-| `ssec:83.8.2` | Degradation, stack replacement and conversion |  |
-| `ssec:83.8.3` | Support payments, credits and chain volumes |  |
+| `ssec:83.8.2` | Degradation, stack replacement, and conversion |  |
+| `ssec:83.8.3` | Support payments, credits, and chain volumes |  |
 | `sec:83.9` | NEOM Green Hydrogen and the offtaker as the credit |  |
 | `sec:83.10` | Northern Lights and the state as chain integrator |  |
 | `sec:83.11` | Walkthrough: marking up a hydrogen offtake term sheet |  |
-| `sec:83.12` | Case R: Lattimer passes on a hydrogen offtake |  |
+| `sec:83.12` | Case R: Lattimer passes on Marlowe Gulf Hydrogen |  |
 | `sec:83.13` | Practitioner's notebook |  |
 | `sec:83.14` | Judgment drill |  |
 | `sec:83.15` | Someone must agree to pay before anyone can lend |  |
@@ -5708,22 +6067,23 @@ Source brief: `briefs/u16.md`.
 | `sec:83.17` | Solutions to exercises |  |
 | `ex:83.1` | Levelized cost of hydrogen |  |
 | `ex:83.2` | From hydrogen to ammonia |  |
-| `ex:83.3` | A hydrogen CfD and volume risk |  |
+| `ex:83.3` | A Low Carbon Hydrogen Agreement and volume risk |  |
 | `ex:83.4` | Cross-chain stranding in CCS |  |
 | `ex:83.5` | A SAF plant's revenue stack |  |
 | `exh:83.1` | The CCS chain (Illustrative) |  |
-| `exh:83.2` | Market-risk holder traces for four projects (Illustrative and Real cases, labeled by column) |  |
+| `exh:83.2` | Market-risk holder traces for five projects (Real cases and Illustrative, labeled by column) |  |
 | `exh:83.3` | Contract map of a UK-style CCS cluster (Illustrative) |  |
-| `exh:83.4` | Verified financing facts for NEOM Green Hydrogen and Northern Lights (Real cases) |  |
+| `exh:83.4` | Verified financing facts for NEOM Green Hydrogen, Northern Lights, and Montana Renewables (Real cases) |  |
 | `exh:83.5` | Term sheet of a green ammonia offtake (Illustrative) |  |
-| `cl:83.1` | Offtake obligation, ammonia sale agreement (variants cl:83.1a producer-friendly, cl:83.1b lender-friendly, cl:83.1c offtaker-friendly) |  |
-| `cl:83.1a` | producer-friendly, cl:83.1b lender-friendly, cl:83.1c offtaker-friendly |  |
-| `cl:83.1b` | lender-friendly, cl:83.1c offtaker-friendly |  |
-| `cl:83.1c` | offtaker-friendly |  |
-| `eq:83.1` | Levelized cost of hydrogen |  |
+| `cl:83.1` | Offtake obligation, ammonia sale agreement |  |
+| `cl:83.1a` | Offtake obligation, ammonia sale agreement (Illustrative, producer-friendly) |  |
+| `cl:83.1b` | Offtake obligation, ammonia sale agreement (Illustrative, lender-friendly) |  |
+| `cl:83.1c` | Offtake obligation, ammonia sale agreement (Illustrative, offtaker-friendly) |  |
+| `eq:83.1` | Levelized cost of hydrogen (home equation, instance of eq:5.11) |  |
 | `eq:83.2` | Hydrogen output from electrolyzer capacity, capacity factor and efficiency |  |
-| `eq:83.3` | CfD difference payment on sold volume |  |
+| `eq:83.3` | CfD difference payment on qualifying volume with a floored reference price |  |
 | `fw:market-risk-trace` | Framework 83.1 Market-risk holder trace | home ssec:83.5.1 |
+| `exr:83.1` to `exr:83.13` | Exercises (13) | range; cited only inside Ch 83 and by matter file 93 |
 
 ### Chapter 84: Sustainable finance and climate risk
 
@@ -5740,26 +6100,27 @@ Source brief: `briefs/u14.md`.
 | `ssec:84.2.1` | The four core components |  |
 | `ssec:84.2.2` | Making a project financing green |  |
 | `ssec:84.2.3` | Mixed portfolios and allocation |  |
-| `ssec:84.2.4` | Social, sustainability, blue and nature labels |  |
+| `ssec:84.2.4` | Social, sustainability, blue, and nature labels |  |
 | `sec:84.3` | The EU Taxonomy and the European Green Bond Standard |  |
-| `ssec:84.3.1` | How the Taxonomy defines "environmentally sustainable" |  |
+| `ssec:84.3.1` | How the Taxonomy defines "environmentally sustainable |  |
 | `ssec:84.3.2` | The 2026 simplification |  |
 | `ssec:84.3.3` | The European Green Bond |  |
 | `ssec:84.3.4` | When a project should use the EuGB label |  |
+| `ssec:84.3.5` | Other taxonomies and interoperability | new label |
 | `sec:84.4` | Sustainability-linked loans and bonds |  |
 | `ssec:84.4.1` | How the instruments work |  |
 | `ssec:84.4.2` | Choosing KPIs and setting targets |  |
 | `ssec:84.4.3` | The economics of a margin ratchet |  |
-| `ssec:84.4.4` | Why sustainability-linked structures fit platforms better than single projects |  |
+| `ssec:84.4.4` | Sustainability-linked structures fit platforms better than single projects |  |
 | `sec:84.5` | Transition finance |  |
 | `ssec:84.5.1` | The problem transition labels address |  |
 | `ssec:84.5.2` | The Climate Transition Bond Guidelines |  |
 | `ssec:84.5.3` | Transition loans |  |
 | `ssec:84.5.4` | Export credit and transition |  |
 | `sec:84.6` | Climate risk in the credit case |  |
-| `ssec:84.6.1` | Physical risk as hazard, exposure and vulnerability |  |
+| `ssec:84.6.1` | Physical risk as hazard, exposure, and vulnerability |  |
 | `ssec:84.6.2` | Chronic risk in operating numbers |  |
-| `ssec:84.6.3` | Transition risk from policy, technology, markets and reputation |  |
+| `ssec:84.6.3` | Transition risk from policy, technology, markets, and reputation |  |
 | `ssec:84.6.4` | Scenarios and the downside case |  |
 | `ssec:84.6.5` | Climate disclosure from TCFD to ISSB |  |
 | `ssec:84.6.6` | The project climate risk screen |  |
@@ -5771,11 +6132,14 @@ Source brief: `briefs/u14.md`.
 | `sec:84.8` | Greenwashing risk |  |
 | `ssec:84.8.1` | How a label fails |  |
 | `ssec:84.8.2` | Contractual consequences |  |
-| `ssec:84.8.3` | Regulatory, reputational and refinancing consequences |  |
-| `sec:84.9` | Labeled project financings at NEOM, Tideway and Baltic Power |  |
+| `ssec:84.8.3` | Regulatory, reputational, and refinancing consequences |  |
+| `sec:84.9` | Labeled project financings at NEOM, Tideway, and Baltic Power |  |
 | `sec:84.10` | The ICVCM's renewable decision and the first Article 6.4 credits |  |
 | `sec:84.11` | Walkthrough: reading a green financing framework and its second-party opinion |  |
-| `sec:84.12` | Case R and Case P: a green private placement and a bond that could not be green |  |
+| `sec:84.12` | Case R: a green private placement |  |
+| `ssec:84.12.1` | Case R: Mesa Corta's green notes | new label |
+| `ssec:84.12.2` | Case P: the 2025 bond that could not be green | new label |
+| `ssec:84.12.3` | Case P: heat and flood at the Bélanou site | new label |
 | `sec:84.13` | Practitioner's notebook |  |
 | `sec:84.14` | Judgment drill |  |
 | `sec:84.15` | Labels describe the debt; the screen decides the deal |  |
@@ -5787,18 +6151,22 @@ Source brief: `briefs/u14.md`.
 | `ex:84.4` | Cooling-water temperature and a coastal CCGT's output (Illustrative) |  |
 | `ex:84.5` | What a carbon price does to a CCGT's costs (Illustrative) |  |
 | `ex:84.6` | Carbon credit revenue under Article 6.4 (Illustrative) |  |
-| `ex:84.7` | Case R's green notes and Case P's unlabeled bond (Case R, Case P) |  |
+| `ex:84.7` | Case R's green notes against Case P's unlabeled bond (Case R) |  |
 | `exh:84.1` | Five sustainable debt labels under the three-question test (as of October 3, 2026) |  |
-| `exh:84.2` | EU Taxonomy tests applied to a wind farm, a battery and a CCGT (Illustrative) |  |
+| `exh:84.2` | EU Taxonomy tests applied to a wind farm, a battery, and a CCGT (Illustrative) |  |
 | `exh:84.3` | Loss-exceedance curve for a coastal plant, today and in 2050 (USD m) (Illustrative) |  |
 | `exh:84.4` | Carbon cost for a CCGT at three carbon prices (Illustrative) |  |
 | `exh:84.5` | Article 6.2 and 6.4 compared |  |
-| `cl:84.1` | (caption not stated in brief; writer supplies) | implied by the brief text; writer assigns this label in order of appearance |
-| `eq:84.1` | Expected annual loss, $EAL} = L(p)\,dp$ approximated by trapezoids |  |
-| `eq:84.2` | Emissions intensity, $e = HR} EF}$ |  |
-| `eq:84.3` | Net Article 6.4 credits, $N = ER} (1 - s - o)$ |  |
+| `cl:84.1` | Green loan provisions, facility agreement |  |
+| `cl:84.1a` | Green loan provisions, facility agreement (Illustrative, sponsor-friendly) | new label |
+| `cl:84.1b` | Green loan provisions, facility agreement (Illustrative, lender-friendly) | new label |
+| `cl:84.1c` | Green loan provisions, facility agreement (Illustrative, investor-friendly) | new label |
+| `eq:84.1` | Expected annual loss, $\mathrm{EAL} = \int L(p)\,dp$ approximated by trapezoids |  |
+| `eq:84.2` | Emissions intensity, $e = \mathrm{HR} \times \mathrm{EF}$ |  |
+| `eq:84.3` | Net Article 6.4 credits, $N = \mathrm{ER} \times (1 - s - o)$ |  |
 | `fw:label-test` | Framework 84.1 Three-question label test | home ssec:84.1.2 |
 | `fw:project-climate-screen` | Framework 84.2 Project climate risk screen | home ssec:84.6.6 |
+| `exr:84.1` to `exr:84.16` | Exercises (16) | range; cited only inside Ch 84 and by matter file 93 |
 
 ### Chapter 85: Screening deals and reading data rooms
 
@@ -5847,19 +6215,24 @@ Source brief: `briefs/u17.md`.
 | `ex:85.2` | How far traffic can fall before debt service is missed (Illustrative) |  |
 | `ex:85.3` | An affordability ratio for a single-buyer utility (Illustrative) |  |
 | `ex:85.4` | One EPC price, three documents (Illustrative) |  |
-| `exh:85.1` | Fatal flaws, priced risks and conditions across six sectors (Illustrative) |  |
+| `exh:85.1` | Fatal flaws, priced risks, and conditions across six sectors (Illustrative) |  |
 | `exh:85.2` | The one-page screen note template (Illustrative) |  |
 | `exh:85.3` | The questions that matter most by sector (Illustrative) |  |
 | `exh:85.4` | Tracing the EPC price through the data room (USD m) (Illustrative) |  |
-| `exh:85.5` | Teaser for a 220 MW wind farm in north-eastern Brazil (Illustrative) |  |
+| `exh:85.5` | Teaser for a 220.5 MW wind farm in north-eastern Brazil (Illustrative) |  |
 | `exh:85.6` | Completed screen note for the wind farm teaser (Illustrative) |  |
 | `exh:85.7` | Pieter's screen note on Bélanou, September 2016 (Case P) |  |
-| `exh:85.8` | Quick screens of the Merrick Link (2014) and Mesa Corta A1 (2021) (Case T, Case R) |  |
-| `eq:85.1` | Screening debt capacity by annuity | ruling: Screening debt capacity by annuity (screening approximation only; never cited for sizing, R-109) |
+| `exh:85.8` | Quick screen of the Merrick Link, August 2014 (Case T) |  |
+| `exh:85.9` | Quick screen of Mesa Corta A1, December 2021 (Case R) | new label |
+| `exh:85.10` | Teaser for a copper-concentrate mine in southern Peru (Illustrative) | new label |
+| `exh:85.11` | Teaser for an availability-based hospital PPP in Castilla-La Mancha (Illustrative) | new label |
+| `exh:85.12` | Teaser for a 150 MW data center in Loudoun County, Virginia (Illustrative) | new label |
+| `eq:85.1` | Screening debt capacity by annuity |  |
 | `eq:85.2` | Breakeven revenue for a DSCR test |  |
-| `fw:one-hour-deal-screen` | Framework 85.1 One-hour deal screen | home sec:85.2 |
-| `fw:deal-questions` | Framework 85.2 Questions to ask on any deal | home ssec:85.4.1 |
+| `fw:one-hour-deal-screen` | Framework 85.1 The one-hour deal screen | home sec:85.2 |
+| `fw:deal-questions` | Framework 85.2 The questions to ask on any deal | home ssec:85.4.1 |
 | `fw:data-room-reading-order` | Framework 85.3 Data room reading order | home ssec:85.5.2 |
+| `exr:85.1` to `exr:85.17` | Exercises (17) | range; cited only inside Ch 85 and by matter file 93 |
 
 ### Chapter 86: Credit papers and investment committees
 
@@ -5879,12 +6252,12 @@ Source brief: `briefs/u17.md`.
 | `ssec:86.2.4` | Risk analysis |  |
 | `ssec:86.2.5` | Financial analysis |  |
 | `ssec:86.2.6` | Structure and terms |  |
-| `ssec:86.2.7` | E&S, legal and integrity |  |
-| `ssec:86.2.8` | Pricing, profitability and hold |  |
+| `ssec:86.2.7` | E&S, legal, and integrity |  |
+| `ssec:86.2.8` | Pricing, profitability, and hold |  |
 | `ssec:86.2.9` | Conditions of approval and monitoring triggers |  |
-| `sec:86.3` | The risk–mitigant–residual table |  |
+| `sec:86.3` | The risk, mitigant, and residual table |  |
 | `ssec:86.3.1` | Building the rows |  |
-| `ssec:86.3.2` | Residual risk: whose, and how much |  |
+| `ssec:86.3.2` | Who holds the residual risk, and how much |  |
 | `ssec:86.3.3` | How tables mislead |  |
 | `sec:86.4` | Writing the investment committee memo |  |
 | `ssec:86.4.1` | What an equity committee asks |  |
@@ -5892,13 +6265,13 @@ Source brief: `briefs/u17.md`.
 | `ssec:86.4.3` | The bid number and the walk-away number |  |
 | `ssec:86.4.4` | DFI and government papers |  |
 | `sec:86.5` | Presenting to a committee |  |
-| `ssec:86.5.1` | Twenty minutes |  |
-| `ssec:86.5.2` | Answering questions |  |
+| `ssec:86.5.1` | The twenty-minute presentation |  |
+| `ssec:86.5.2` | Answering the committee's questions |  |
 | `ssec:86.5.3` | The committee pre-mortem |  |
-| `ssec:86.5.4` | Conditions, declines and the second visit |  |
+| `ssec:86.5.4` | Conditions, declines, and the second visit |  |
 | `sec:86.6` | The paper after approval |  |
 | `sec:86.7` | Sydney's Cross City Tunnel and the forecast nobody tabled |  |
-| `sec:86.8` | Case P: Castellan's credit paper for Bélanou, May 2018 |  |
+| `sec:86.8` | Walkthrough: Castellan's credit paper for Bélanou, May 2018 |  |
 | `sec:86.9` | Case P: reading the 2018 paper in 2026 |  |
 | `sec:86.10` | Practitioner's notebook |  |
 | `sec:86.11` | Judgment drill |  |
@@ -5910,29 +6283,33 @@ Source brief: `briefs/u17.md`.
 | `ex:86.3` | Sensitivities in order of impact (Illustrative) |  |
 | `ex:86.4` | The profitability box (Illustrative) |  |
 | `ex:86.5` | The returns bridge from sponsor case to IC case (Illustrative) |  |
-| `exh:86.1` | Credit papers, IC memos, DFI board papers, ECA memos and government papers compared (Illustrative) | renumbered, R-115 |
-| `exh:86.2` | Sponsor case against bank case: adjustments and sources (Illustrative) (was "Exhibit 86.2a") | renumbered, R-115 |
-| `exh:86.3` | Sensitivities ordered by impact on DSCR (Illustrative) (was exh:86.2) | renumbered, R-115 |
-| `exh:86.4` | Conditions of approval, well and badly drafted (Illustrative) (was exh:86.3) | renumbered, R-115 |
-| `exh:86.5` | A risk–mitigant–residual row and its rewrite (Illustrative) (was exh:86.4) | renumbered, R-115 |
-| `exh:86.6` | Returns bridge from sponsor case to IC case (USD m, %) (Illustrative) (was exh:86.5) | renumbered, R-115 |
-| `exh:86.7` | One-page annual review summary (Illustrative) (was exh:86.6) | renumbered, R-115 |
-| `exh:86.8` | Castellan credit paper, Part 1: recommendation and request (Case P) | renumbered, R-115 |
-| `exh:86.9` | Castellan credit paper, Part 2: transaction summary and sources and uses (Case P) | renumbered, R-115 |
-| `exh:86.10` | Castellan credit paper, Part 3: sponsors and equity (Case P) | renumbered, R-115 |
-| `exh:86.11` | Castellan credit paper, Part 4: country, offtaker and government support (Case P) | renumbered, R-115 |
-| `exh:86.12` | Castellan credit paper, Parts 5 and 6: project, construction and gas supply chain (Case P) | renumbered, R-115 |
-| `exh:86.13` | Castellan credit paper, Part 7: risk–mitigant–residual table (Case P) | renumbered, R-115 |
-| `exh:86.14` | Castellan credit paper, Part 8: financial analysis, key metrics (Case P) | renumbered, R-115 |
-| `exh:86.15` | Castellan credit paper, Part 8: case table and sensitivities (Case P) | renumbered, R-115 |
-| `exh:86.16` | Castellan credit paper, Part 9: structure and terms (Case P) | renumbered, R-115 |
-| `exh:86.17` | Castellan credit paper, Part 10: E&S, legal and integrity (Case P) | renumbered, R-115 |
-| `exh:86.18` | Castellan credit paper, Part 11: pricing, profitability and hold (Case P) | renumbered, R-115 |
-| `exh:86.19` | The 2018 risk–mitigant–residual table read in 2026 (Case P) (was exh:86.17) | renumbered, R-115 |
-| `eq:86.1` | Return on risk-adjusted capital for a facility hold | ruling: Facility profitability box: post-tax RAROC on the hold, applying eq:29.1 (repurposed, R-075) |
+| `exh:86.1` | Credit papers, IC memos, DFI board papers, ECA memos, and government papers compared (Illustrative) |  |
+| `exh:86.2` | Sponsor case against bank case: adjustments and sources (Illustrative) |  |
+| `exh:86.3` | Sensitivities ordered by impact on DSCR (Illustrative) |  |
+| `exh:86.4` | Conditions of approval, well and badly drafted (Illustrative) |  |
+| `exh:86.5` | A risk, mitigant, and residual row and its rewrite (Illustrative) |  |
+| `exh:86.6` | Returns bridge from sponsor case to IC case (AUD m, %) (Illustrative) |  |
+| `exh:86.7` | One-page annual review summary (Illustrative) |  |
+| `exh:86.8` | Castellan credit paper, Part 1: recommendation and request (Case P) |  |
+| `exh:86.9` | Castellan credit paper, Part 2: transaction summary and sources and uses (Case P) |  |
+| `exh:86.10` | Castellan credit paper, Part 3: sponsors and equity (Case P) |  |
+| `exh:86.11` | Castellan credit paper, Part 4: country, offtaker, and government support (Case P) |  |
+| `exh:86.12` | Castellan credit paper, Parts 5 and 6: project, construction, and gas supply chain (Case P) |  |
+| `exh:86.13` | Castellan credit paper, Part 7: risk, mitigant, and residual table (Case P) |  |
+| `exh:86.14` | Castellan credit paper, Part 8: financial analysis, key metrics (Case P) |  |
+| `exh:86.15` | Castellan credit paper, Part 8: case table and sensitivities (Case P) |  |
+| `exh:86.16` | Castellan credit paper, Part 9: structure and terms (Case P) |  |
+| `exh:86.17` | Castellan credit paper, Part 10: E&S, legal, and integrity (Case P) |  |
+| `exh:86.18` | Castellan credit paper, Part 11: pricing, profitability, and hold (Case P) |  |
+| `exh:86.19` | The 2018 risk, mitigant, and residual table read in 2026 (Case P) |  |
+| `exh:86.20` | Data pack for a 139.5 MW wind farm in northern Poland (Illustrative) | new label |
+| `exh:86.21` | Model credit paper for the Bursztyn wind farm, annotated (Illustrative) | new label |
+| `exh:86.22` | Model investment committee memo for the Bursztyn equity, annotated (Illustrative) | new label |
+| `eq:86.1` | Facility profitability box: post-tax RAROC on the hold, applying eq:29.1 | repurposed, R-075, R-116 |
 | `fw:credit-paper-structure` | Framework 86.1 Credit paper structure | home sec:86.2 |
-| `fw:risk-mitigant-residual` | Framework 86.2 Risk–mitigant–residual table | home ssec:86.2.4 |
-| `fw:committee-pre-mortem` | Framework 86.3 Committee pre-mortem | home ssec:86.5.3 |
+| `fw:risk-mitigant-residual` | Framework 86.2 The risk, mitigant, and residual table | home ssec:86.3.1 |
+| `fw:committee-pre-mortem` | Framework 86.3 The committee pre-mortem | home ssec:86.5.3 |
+| `exr:86.1` to `exr:86.16` | Exercises (16) | range; cited only inside Ch 86 and by matter file 93 |
 
 ### Chapter 87: The practitioner's craft and career
 
@@ -5949,13 +6326,13 @@ Source brief: `briefs/u17.md`.
 | `ssec:87.1.5` | Challenging without capturing |  |
 | `sec:87.2` | Leading a deal team |  |
 | `ssec:87.2.1` | Roles on a sponsor team and a bank team |  |
-| `ssec:87.2.2` | The issues list |  |
+| `ssec:87.2.2` | The issues list as the team's operating system |  |
 | `ssec:87.2.3` | Review discipline |  |
 | `ssec:87.2.4` | Fatigue and quality |  |
 | `sec:87.3` | Running a timetable to close |  |
 | `ssec:87.3.1` | The weekly cadence |  |
 | `ssec:87.3.2` | The cost of a week |  |
-| `ssec:87.3.3` | Escalation |  |
+| `ssec:87.3.3` | When and how to escalate |  |
 | `ssec:87.3.4` | Holding a date or moving it |  |
 | `sec:87.4` | Relationships and reputation |  |
 | `ssec:87.4.1` | A small market with long memories |  |
@@ -5963,16 +6340,16 @@ Source brief: `briefs/u17.md`.
 | `ssec:87.4.3` | Governments and communities |  |
 | `sec:87.5` | Ethics and integrity |  |
 | `ssec:87.5.1` | The situations that arise |  |
-| `ssec:87.5.2` | The integrity check |  |
+| `ssec:87.5.2` | The integrity test |  |
 | `ssec:87.5.3` | Reporting and protection |  |
 | `ssec:87.5.4` | Pressure on the numbers |  |
 | `sec:87.6` | Career-limiting mistakes |  |
 | `sec:87.7` | Career paths |  |
-| `ssec:87.7.1` | The seats |  |
+| `ssec:87.7.1` | Career seats and the judgment each builds |  |
 | `ssec:87.7.2` | Moving between seats |  |
 | `ssec:87.7.3` | Specialist or generalist |  |
 | `sec:87.8` | A deliberate plan for building judgment |  |
-| `ssec:87.8.1` | Why deals teach slowly |  |
+| `ssec:87.8.1` | Few repetitions, late feedback, and outcome bias |  |
 | `ssec:87.8.2` | The deal log and the decision journal |  |
 | `ssec:87.8.3` | Scoring your own forecasts |  |
 | `ssec:87.8.4` | Reference classes from your own record |  |
@@ -5981,9 +6358,9 @@ Source brief: `briefs/u17.md`.
 | `ssec:87.8.7` | The 24-month plan |  |
 | `sec:87.9` | Staying current |  |
 | `ssec:87.9.1` | What changes and how fast |  |
-| `ssec:87.9.2` | The sources that matter |  |
+| `ssec:87.9.2` | Sources to watch and what each updates |  |
 | `ssec:87.9.3` | Updating a market norm |  |
-| `ssec:87.9.4` | A routine |  |
+| `ssec:87.9.4` | A monthly, quarterly, and annual routine |  |
 | `sec:87.10` | Carillion and the counterparty everyone knew |  |
 | `sec:87.11` | Walkthrough: challenging an independent engineer's draft report |  |
 | `sec:87.12` | Case P: three careers and a phone call |  |
@@ -6003,17 +6380,18 @@ Source brief: `briefs/u17.md`.
 | `exh:87.5` | A 24-month judgment-building plan (Illustrative) |  |
 | `exh:87.6` | Sources for staying current and what each updates (Illustrative) |  |
 | `eq:87.1` | Brier score |  |
-| `fw:advisor-cycle` | Framework 87.1 Advisor management cycle | home ssec:87.1.3 |
-| `fw:judgment-plan` | Framework 87.2 Judgment-building plan | home ssec:87.8.7 |
-| `fw:integrity-test` | Framework 87.3 The integrity test (renamed; slug fw:integrity-test) | home ssec:87.5.2 |
+| `fw:advisor-cycle` | Framework 87.1 The advisor management cycle | home ssec:87.1.3 |
+| `fw:judgment-plan` | Framework 87.2 The judgment-building plan | home ssec:87.8.7 |
+| `fw:integrity-test` | Framework 87.3 The integrity test | home ssec:87.5.2 |
+| `exr:87.1` to `exr:87.12` | Exercises (12) | range; cited only inside Ch 87 and by matter file 93 |
 
-### Chapter 88: The frontier: evaluating new structures
+### Chapter 88: Evaluating new structures at the frontier
 
 Source brief: `briefs/u17.md`.
 
 | Label | Caption or title | Note |
 |---|---|---|
-| `ch:88` | The frontier: evaluating new structures |  |
+| `ch:88` | Evaluating new structures at the frontier |  |
 | `sec:88.1` | What makes a structure new |  |
 | `ssec:88.1.1` | Five kinds of new |  |
 | `ssec:88.1.2` | The evidence gap |  |
@@ -6047,28 +6425,60 @@ Source brief: `briefs/u17.md`.
 | `sec:88.10` | Exercises |  |
 | `sec:88.11` | Solutions to exercises |  |
 | `ex:88.1` | Pricing first-of-a-kind cost risk (Illustrative) |  |
-| `ex:88.2` | A short lease, long debt and a residual value guarantee (Illustrative) |  |
+| `ex:88.2` | A short lease, long debt, and a residual value guarantee (Illustrative) |  |
 | `ex:88.3` | Debt on a floor versus debt on a merchant forecast (Illustrative) |  |
 | `ex:88.4` | The cost gap for green hydrogen (Illustrative) |  |
+| `ex:88.5` | Who pays for a sea wall? (Illustrative) | new label |
 | `exh:88.1` | Eleven frontiers classified by what is new (Illustrative) |  |
 | `exh:88.2` | Technologies on the first-of-a-kind financing ladder, October 2026 (Illustrative) |  |
 | `exh:88.3` | The new-structure test applied to the SMR proposal (Illustrative) |  |
 | `exh:88.4` | The new-structure test applied to the R1 data-center offer (Case R) |  |
 | `eq:88.1` | Cost at a chosen percentile under a lognormal overrun |  |
-| `eq:88.2` | Levelized cost of hydrogen (if not owned by Chapter 83) | ruling: Cost gap and implied subsidy per kilogram, citing eq:83.1 (repurposed, R-002) |
-| `fw:new-structure-test` | Framework 88.1 New-structure test | home ssec:88.2.1 |
-| `fw:foak-ladder` | Framework 88.2 First-of-a-kind financing ladder | home ssec:88.3.1 |
+| `eq:88.2` | Cost gap and implied subsidy per kilogram, citing eq:83.1 | repurposed, R-002 |
+| `fw:new-structure-test` | Framework 88.1 The new-structure test | home ssec:88.2.1 |
+| `fw:foak-ladder` | Framework 88.2 The first-of-a-kind financing ladder | home ssec:88.3.1 |
+| `exr:88.1` to `exr:88.14` | Exercises (14) | range; cited only inside Ch 88 and by matter file 93 |
 
-### Chapter 89: Capstone deal simulation
+### Chapter 89: The Punta Garúa desalination concession from screen to sale
 
 Source brief: `briefs/u17.md`.
 
 | Label | Caption or title | Note |
 |---|---|---|
-| `ch:89` | Capstone deal simulation |  |
-| `exh:89.1` | (caption not stated in brief; writer supplies) | implied by the brief text; writer assigns this label in order of appearance |
-| `exh:89.2` | (caption not stated in brief; writer supplies) | implied by the brief text; writer assigns this label in order of appearance |
-| `exh:89.3` | (caption not stated in brief; writer supplies) | implied by the brief text; writer assigns this label in order of appearance |
+| `ch:89` | The Punta Garúa desalination concession from screen to sale |  |
+| `sec:89.1` | How to use the capstone | new label |
+| `sec:89.2` | The deal and the data room index | new label |
+| `sec:89.3` | Task 1, screening the teaser | new label |
+| `sec:89.4` | Task 2, value for money, affordability, and procurement design | new label |
+| `sec:89.5` | Task 3, the contract gap scan | new label |
+| `sec:89.6` | Task 4, the model build and audit | new label |
+| `sec:89.7` | Task 5, debt sizing and instruments | new label |
+| `sec:89.8` | Task 6, the term-sheet markup | new label |
+| `sec:89.9` | Task 7, due-diligence scoping and challenge | new label |
+| `sec:89.10` | Task 8, the credit paper | new label |
+| `sec:89.11` | Task 9, financial close | new label |
+| `sec:89.12` | Task 10, the intake collapse | new label |
+| `sec:89.13` | Task 11, the mine's suspension and the standstill | new label |
+| `sec:89.14` | Task 12, refinancing and the 49% sale | new label |
+| `sec:89.15` | Task 13, the expansion under the new-structure test | new label |
+| `sec:89.16` | Solution to Task 1, screening the teaser | new label |
+| `sec:89.17` | Solution to Task 2, value for money, affordability, and procurement design | new label |
+| `sec:89.18` | Solution to Task 3, the contract gap scan | new label |
+| `sec:89.19` | Solution to Task 4, the model build and audit | new label |
+| `sec:89.20` | Solution to Task 5, debt sizing and instruments | new label |
+| `sec:89.21` | Solution to Task 6, the term-sheet markup | new label |
+| `sec:89.22` | Solution to Task 7, due-diligence scoping and challenge | new label |
+| `sec:89.23` | Solution to Task 8, the credit paper | new label |
+| `sec:89.24` | Solution to Task 9, financial close | new label |
+| `sec:89.25` | Solution to Task 10, the intake collapse | new label |
+| `sec:89.26` | Solution to Task 11, the mine's suspension and the standstill | new label |
+| `sec:89.27` | Solution to Task 12, refinancing and the 49% sale | new label |
+| `sec:89.28` | Solution to Task 13, the expansion under the new-structure test | new label |
+| `sec:89.29` | Assessment rubric | new label |
+| `exh:89.1` | Capability map for the capstone tasks |  |
+| `exh:89.2` | Data room index |  |
+| `exh:89.3` | Assessment rubric |  |
+| `exr:89.K` | Not used: capstone tasks are sections | – |
 
 ### Chapter 90: Final examination
 
@@ -6077,7 +6487,20 @@ Source brief: `briefs/u17.md`.
 | Label | Caption or title | Note |
 |---|---|---|
 | `ch:90` | Final examination |  |
-| `exh:90.1` | compiled and checked mechanically in Phase 7 | implied by the brief text; writer assigns this label in order of appearance |
+| `sec:90.1` | Rules and how to sit the examination | new label |
+| `sec:90.2` | Paper 1, concepts and calculation | new label |
+| `sec:90.3` | Paper 2, documents and calculation | new label |
+| `sec:90.4` | Paper 3, cases and judgment | new label |
+| `sec:90.5` | Paper 4A, the take-home model build | new label |
+| `sec:90.6` | Paper 4B, the model audit and the credit paper | new label |
+| `sec:90.7` | Worked answers to Paper 1 | new label |
+| `sec:90.8` | Worked answers to Paper 2 | new label |
+| `sec:90.9` | Worked answers to Paper 3 | new label |
+| `sec:90.10` | Worked answers to Paper 4A | new label |
+| `sec:90.11` | Worked answers to Paper 4B | new label |
+| `sec:90.12` | Marking and coverage | new label |
+| `exh:90.1` | Coverage of the fifteen capabilities and the coverage map by question |  |
+| `exr:90.1` to `exr:90.68` | Examination questions in paper order (68) | range; answers are `solution` environments keyed to them |
 
 ### Chapter 91: Glossary
 
@@ -6086,4 +6509,40 @@ Source brief: `briefs/u17.md`.
 | Label | Caption or title | Note |
 |---|---|---|
 | `ch:91` | Glossary |  |
-| `exh:91.1` | (caption not stated in brief; writer supplies) | implied by the brief text; writer assigns this label in order of appearance |
+| `exh:91.1` | Acronym list | matter 91-2 |
+
+### Chapter 92: Formula sheet
+
+Source brief: `briefs/u17.md`.
+
+| Label | Caption or title | Note |
+|---|---|---|
+| `ch:92` | Formula sheet |  |
+
+### Chapter 93: Checklists and templates
+
+Source brief: `briefs/u17.md`.
+
+| Label | Caption or title | Note |
+|---|---|---|
+| `ch:93` | Checklists and templates |  |
+
+### Chapter 94: Index of real cases
+
+Source brief: `briefs/u17.md`.
+
+| Label | Caption or title | Note |
+|---|---|---|
+| `ch:94` | Index of real cases |  |
+
+## 6. Registry build report (consolidation A, October 3, 2026)
+
+Method. A script read every anchor section of the seventeen revised briefs (tables, inline lists and range notation such as `sec:39.1` to `sec:39.14`), every locked table of contents (section and subsection titles with their labels) and every worked-example list, kept only labels declared for a chapter the unit owns, expanded ranges, and merged the sources. Captions: locked-TOC title for `sec:`/`ssec:` (3434 labels); anchor-table caption for other labels (1472); worked-example headings where the anchor table gave "titles as in item 6" (156); architecture.md for the 88 `ch:` titles; hand-set captions (20: matter solutions and answer sections, exh:89.3, exh:90.1); first-issue captions only where no revised brief states one (5: cl:10.1 to cl:10.5, which u03 lists as "as in 10.7" without captions). Clause variant captions were normalized to "<parent caption> (Illustrative, <party>-friendly)" (158 from brief rows, 65 generated from u05 "(a, b, c)" groups and u13's cl:64.2 group). The script and its intermediate files are kept in the consolidation scratchpad; the hand fixes are listed below.
+
+Counts. 5558 labels: 94 ch, 1425 sec, 2053 ssec, 584 ex, 624 exh, 371 cl, 254 eq, 153 fw; plus 1391 exercises in 89 range rows, 8 fm labels and 3 fm exhibits. Against the first issue (5,240 including fw): 317 labels are new (ssec 15, ex 12, cl 214, exh 35, sec 41); 981 captions changed (retitles applied by the revisers, R-141 and the ruling retitles of central-fixes log item 9, recaptions of fragment captions, serial commas, American spelling, clause-variant captions).
+
+Hand fixes. (1) Excluded as non-declarations: `cl:35.2c` (u08 declares "no cl:35.2c"), `exh:89.K` and `exh:89.4` (writer-assigned capstone exhibits). (2) Withdrawn with the u13 recast under R-143: `cl:62.1a`, `cl:62.1b`, `cl:62.2`. (3) Captions set by hand: sec:89.16 to sec:89.28 ("Solution to Task N, ..."), sec:90.7 to sec:90.11 ("Worked answers to Paper N"), exh:89.3 "Assessment rubric", exh:90.1 (from 90-6). (4) Placement references moved from captions to notes (u06 exhibits). (5) Framework homes from the revised TOCs (Section 2, B7); every other framework home was confirmed against the TOC line that names the framework, except nine whose TOC lines do not name the framework (4.2, 20.2, 38.1, 43.1, 57.2, 69.1, 70.1, 73.2, 74.1), which keep their first-issue homes. (6) ch:89's title is the u17 header ("The Punta Garúa desalination concession from screen to sale"); architecture.md gives no title for matter chapters.
+
+Verification. (a) Duplicates: none; every label appears once. (b) Chapter titles: all 88 `ch:` captions equal architecture.md verbatim, and every brief's chapter header and `ch:` anchor row matches it. (c) Numbering: sections, subsections (within each section), examples, exhibits, clauses, equations and clause variant letters run without gaps from 1 (or a) in every chapter; every subsection has its parent section. (d) Cross-references: every label token in the body of every brief and unit glossary file (revision logs excluded) resolves to this registry, except eight deliberate non-labels: the placeholder `ch:N` (u02, u15 conventions), `cl:35.2c` (stated as absent), `cl:62.1a`, `cl:62.1b`, `cl:62.2`, `cl:62.2a`, `cl:62.2b` (named only as withdrawn, in u11 ssec:51.7.3 and u13's Clause 62.1 paragraph) and `exh:89.4` (the first writer-assigned capstone exhibit). (e) Glossary: every home label in `bible/glossary-canon.md` resolves here.
+
+Unresolved (for the editor-in-chief and the Phase 3 writers). (1) Eight caption pairs repeat across chapters in the revised briefs and were not retitled here because the briefs are authoritative and the overlap is a heading choice, not a label conflict: sec:7.9 and sec:41.6 "Working capital"; ssec:10.2.1 and sec:51.3 "Representations and warranties"; ssec:10.2.2 and sec:51.4 "Covenants"; ssec:11.7.1 and ssec:73.1.1 "Power, energy, and duration"; ssec:11.11.3 and ssec:18.4.3 "Curtailment"; ssec:14.14.4 and sec:60.7 "Sanctions"; ex:21.6 and ex:45.7 "An availability payment with deductions"; exh:40.4 and exh:55.9 "Case P sources and uses at financial close" (two exhibits of the same table; the Ch 55 writer should cite exh:40.4 or caption exh:55.9 as the closing-day view). Under R-117 the later chapter's writer retitles on drafting and reports. (2) Equation captions keep the briefs' formulas; the writer may shorten a caption to its name. (3) cl:10.1 to cl:10.5 carry first-issue captions; the Ch 10 writer confirms them.

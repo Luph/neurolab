@@ -1,6 +1,6 @@
 # Figure ledger: Case P (Bélanou Combined Cycle Power Project)
 
-Source: `model/outputs_case_p.json`, produced by `model/case_p.py` (Case P model v1.3; story as of October 3, 2026); formatted by `model/ledger_p.py` (no computation). Amounts in USD million, nominal, unless stated. Scenario numbers are the workbook scenario switch (1 FC base, 2 FC banking, 3 FC downside, 4-13 sensitivities, 14 COD re-forecast, 15 actual history). P-F01 to P-F36 are the Case Bible register; P-F37 to P-F45 are editor assignments and P-F46 to P-F63 come from case-bible-annex-p.md (P-F11 is split into P-F11a DSRA and P-F11b MMRA). Model version 1.3 (annex absorbed; editor rulings of October 3, 2026: delay-related overrun categories P-C43, FX hedge D-114, P-F64 to P-F66, sequential P-F64 bridge, RBL expectation revised P-C46). Writers cite the ID; print values in the style-sheet format.
+Source: `model/outputs_case_p.json`, produced by `model/case_p.py` (Case P model v1.4; story as of October 3, 2026); formatted by `model/ledger_p.py` (no computation). Amounts in USD million, nominal, unless stated. Scenario numbers are the workbook scenario switch (1 FC base, 2 FC banking, 3 FC downside, 4-13 sensitivities, 14 COD re-forecast, 15 actual history). P-F01 to P-F36 are the Case Bible register; P-F37 to P-F45 are editor assignments and P-F46 to P-F63 come from case-bible-annex-p.md (P-F11 is split into P-F11a DSRA and P-F11b MMRA). Model version 1.4 (u09 requests R1 to R12 and ledger extensions absorbed; annex absorbed; editor rulings of October 3, 2026: delay-related overrun categories P-C43, FX hedge D-114, P-F64 to P-F66, sequential P-F64 bridge, RBL expectation revised P-C46). Writers cite the ID; print values in the style-sheet format.
 
 Definitions used throughout: DSCR = CFADS / (interest incl. WHT gross-up + swap net + PRI premium + PCG fee + scheduled principal); average DSCR = sum of CFADS / sum of debt service over the loan life; LLCR = (PV of CFADS to final maturity at the period all-in senior cost + DSRA balance) / senior debt, at the start of the first repayment period; gearing = senior debt / total funding requirement; CFADS = revenue - operating costs - tax paid - increase in working capital - MMRA contributions + MMRA releases. Equity IRR is at project-company level from the LNTP date (February 5, 2018), before shareholder withholding tax.
 
@@ -13,9 +13,9 @@ Definitions used throughout: DSCR = CFADS / (interest incl. WHT gross-up + swap 
 | P-F01 | Development costs incurred 2018 | 3.80 | USD m | Inputs | 2018-07-17 |
 | P-F01 | Development costs to financial close | 21.43 | USD m | Inputs | 2018-07-17 |
 | P-F01 | Overrun against the 2015 budget | 6.63 | USD m | Inputs | 2018-07-17 |
-| P-F02 | US CPI index reading for the January 2022 reset (September 2021; Nov 2016 = 100) | 111.60 | index | Actual history (15) | 2022-01-01 |
+| P-F02 | US CPI index reading for the January 2022 reset (September 2021; Nov 2016 = 100; illustrative path, D-046) | 111.60 | index | Actual history (15) | 2022-01-01 |
 | P-F02 | Kessara CPI index reading (September 2021; Nov 2016 = 100) | 149.74 | index | Actual history (15) | 2022-01-01 |
-| P-F02 | FX used to reconvert local shares (2022H1 average) | 654.9 | KCR/USD | Actual history (15) | 2022-01-01 |
+| P-F02 | FX used to reconvert local shares (2022H1 average; proxy for the invoice-date Central Bank mid rate, P-C54) | 654.9 | KCR/USD | Actual history (15) | 2022-01-01 |
 | P-F02 | Contracted capacity applying in January 2022 (reset at completion tests) | 581.9 | MW | Actual history (15) | 2022-01-01 |
 | P-F02 | Capital charge, indexed (base 14.36) | 14.69 | USD/kW-month | Actual history (15) | 2022-01-01 |
 | P-F02 | Fixed O&M charge, indexed (base 2.31) | 2.53 | USD/kW-month | Actual history (15) | 2022-01-01 |
@@ -23,7 +23,7 @@ Definitions used throughout: DSCR = CFADS / (interest incl. WHT gross-up + swap 
 | P-F02 | Total capacity charge in November 2016 dollars (real) | 15.43 | USD/kW-month | Actual history (15) | 2022-01-01 |
 | P-F02 | VOM charge, indexed (base 3.86) | 4.24 | USD/MWh | Actual history (15) | 2022-01-01 |
 | P-F02 | VOM charge in November 2016 dollars (real) | 3.80 | USD/MWh | Actual history (15) | 2022-01-01 |
-| P-F03 | 6M USD LIBOR, July 2016 (approximate; fact-check) | 0.95% | % | Annex 4.7 inputs | 2016-07 |
+| P-F03 | 6M USD LIBOR, July 2016 (approximate; illustrative path, D-046) | 0.95% | % | Annex 4.7 inputs | 2016-07 |
 | P-F03 | Indicative 2016 margin, ECA | 1.50% | % | Annex 4.7 inputs | 2016-07 |
 | P-F03 | Indicative 2016 margin, A | 3.90% | % | Annex 4.7 inputs | 2016-07 |
 | P-F03 | Indicative 2016 margin, B | 3.75% | % | Annex 4.7 inputs | 2016-07 |
@@ -516,8 +516,8 @@ Definitions used throughout: DSCR = CFADS / (interest incl. WHT gross-up + swap 
 | P-F21 | Each of four deferred repayments (2024H1-2025H2) | 2.71 | USD m | Actual history (15) | 2024-06-30 |
 | P-F21 | Historic DSCR at December 31, 2023 (waived test) | 1.32x | x | Actual history (15) | 2023-12-31 |
 | P-F21 | Lock-up released (two tests >= 1.25x and DSRA full) | 2024H2 | period | Actual history (15) | 2024-12-31 |
-| P-F22 | Base rate 2022H2 (6M LIBOR) | 2.94% | % | Actual history (15) | 2022-07 |
-| P-F22 | Base rate 2023H1 (6M Term SOFR 4.86% + 0.42826%) | 5.29% | % | Actual history (15) | 2023-01 |
+| P-F22 | Base rate 2022H2 (6M LIBOR; illustrative path, D-046) | 2.94% | % | Actual history (15) | 2022-07 |
+| P-F22 | Base rate 2023H1 (6M Term SOFR 4.86%, approximate, illustrative path D-046, + 0.42826%) | 5.29% | % | Actual history (15) | 2023-01 |
 | P-F22 | Senior financing cost 2022H2 / 2023H1 | 20.8 / 21.8 | USD m | Actual history (15) | 2023-06-30 |
 | P-F22 | All-in senior cost 2022H2 / 2023H1 | 6.70% / 7.33% | % pa | Actual history (15) | 2023-06-30 |
 | P-F22 | Unhedged balance 2023H1 (debt less swap notional) | 124.4 | USD m | Actual history (15) | 2023-01 |
@@ -589,6 +589,7 @@ Definitions used throughout: DSCR = CFADS / (interest incl. WHT gross-up + swap 
 | P-F26 | hedge reserve parent share recycled | 2.1 | USD m | Actual history (15) | 2026-09-30 |
 | P-F26 | equity method carrying value 36pct | 115.9 | USD m | Actual history (15) | 2026-09-30 |
 | P-F26 | indirect transfer tax | 5.6 | USD m | Actual history (15) | 2026-09-30 |
+| P-F26 | Deferred consideration: face / fair value at completion (measured at nil, Annex P 8.3; outside the consideration line) | 4.0 / 0.0 | USD m | Actual history (15) | 2026-09-30 |
 | P-F27 | fc base: dividends (life total) | 1,005.3 | USD m | FC base (1) | 2018-2046 |
 | P-F27 | fc base: shl interest (life total) | 184.7 | USD m | FC base (1) | 2018-2046 |
 | P-F27 | fc base: wht dividends treaty 7 5 (life total) | 75.4 | USD m | FC base (1) | 2018-2046 |
@@ -1048,6 +1049,19 @@ Definitions used throughout: DSCR = CFADS / (interest incl. WHT gross-up + swap 
 | P-F49 | insurance at close | 6.48 | USD m | FC base (1) | 2018-07-17 |
 | P-F49 | idc month1 | 0.00 | USD m | FC base (1) | 2018-07-17 |
 | P-F49 | total uses month1 | 121.59 | USD m | FC base (1) | 2018-07-17 |
+| P-F49 | Use in Month 1 (itemized): EPC advance (10% of the EPC price; includes the USD 14.20m LNTP already paid by equity) | 57.184 | USD m | FC base (1) | 2018-07-17 |
+| P-F49 | Use in Month 1 (itemized): Owner's costs, Month 1 | 5.542 | USD m | FC base (1) | 2018-07-17 |
+| P-F49 | Use in Month 1 (itemized): Insurance at close (85% of the construction premium) | 6.477 | USD m | FC base (1) | 2018-07-17 |
+| P-F49 | Use in Month 1 (itemized): Development cost reimbursement | 21.430 | USD m | FC base (1) | 2018-07-17 |
+| P-F49 | Use in Month 1 (itemized): Development fee | 11.200 | USD m | FC base (1) | 2018-07-17 |
+| P-F49 | Use in Month 1 (itemized): Lenders' advisers and legal at close (70%) | 6.279 | USD m | FC base (1) | 2018-07-17 |
+| P-F49 | Use in Month 1 (itemized): Upfront fees | 9.955 | USD m | FC base (1) | 2018-07-17 |
+| P-F49 | Use in Month 1 (itemized): First ECA premium installment | 2.931 | USD m | FC base (1) | 2018-07-17 |
+| P-F49 | Use in Month 1 (itemized): Commitment fees, Month 1 (senior tranches) | 0.550 | USD m | FC base (1) | 2018-07-17 |
+| P-F49 | Use in Month 1 (itemized): Standby facility commitment fee, Month 1 | 0.024 | USD m | FC base (1) | 2018-07-17 |
+| P-F49 | Use in Month 1 (itemized): Agency fees, Month 1 | 0.021 | USD m | FC base (1) | 2018-07-17 |
+| P-F49 | Use in Month 1 (itemized): Interest during construction, Month 1 (no balance outstanding before the first utilization) | 0.000 | USD m | FC base (1) | 2018-07-17 |
+| P-F49 | Uses in Month 1, sum of the itemized lines (= total uses month 1; sources: first utilization + equity at close) | 121.592 | USD m | FC base (1) | 2018-07-17 |
 | P-F49 | development cost reimbursement: Kilnworth | 15.45 | USD m | Annex 1.14 | 2018-07-17 |
 | P-F49 | development cost reimbursement: Talme | 5.98 | USD m | Annex 1.14 | 2018-07-17 |
 | P-F49 | development cost reimbursement: total | 21.43 | USD m | Annex 1.14 | 2018-07-17 |
@@ -1127,6 +1141,62 @@ Definitions used throughout: DSCR = CFADS / (interest incl. WHT gross-up + swap 
 | P-F62 | Pricing committee tariff at USD 15.05/kW-month (bid-model IRR 17.6%) vs submitted (16.0%) | 74.35 vs 73.00 | USD/MWh | Bid inputs | 2016-09-19 |
 | P-F63 | June 30, 2023: 12-month CFADS / debt service / historic DSCR | 73.1 / 76.5 / 0.96x | USD m, x | Actual history (15) | 2023-06-30 |
 | P-F63 | Equity cure needed for 1.10x / 1.20x | 11.0 / 18.7 | USD m | Actual history (15) | 2023-06-30 |
+| P-F63 | Pro rata prepayment cure (eq:51.3, deemed at July 1, 2022) for 1.10x / 1.20x | 80.9 / 125.6 | USD m | Actual history (15) | 2023-06-30 |
+| P-F63 | Proportional prepayment cure (eq:37.4, x D/DS) for 1.10x / 1.20x | 79.9 / 124.0 | USD m | Actual history (15) | 2023-06-30 |
+| P-F63 | Prepayment-cure inputs: scheduled principal 12m / senior debt at July 1, 2022 / all-in rate a year | 33.9 / 608.7 / 6.85% | USD m, % | Actual history (15) | 2022-07-01 |
+| P-F40 | Netting set-off under the June 29, 2023 agreement, 2023-07 (half-year fall spread evenly) | 5.44 | USD m | Actual history (15) | 2023-07 |
+| P-F40 | Netting set-off under the June 29, 2023 agreement, 2023-08 (half-year fall spread evenly) | 5.44 | USD m | Actual history (15) | 2023-08 |
+| P-F40 | Netting set-off under the June 29, 2023 agreement, 2023-09 (half-year fall spread evenly) | 5.44 | USD m | Actual history (15) | 2023-09 |
+| P-F40 | Netting set-off under the June 29, 2023 agreement, 2023-10 (half-year fall spread evenly) | 5.44 | USD m | Actual history (15) | 2023-10 |
+| P-F40 | Netting set-off under the June 29, 2023 agreement, 2023-11 (half-year fall spread evenly) | 5.44 | USD m | Actual history (15) | 2023-11 |
+| P-F40 | Netting set-off under the June 29, 2023 agreement, 2023-12 (half-year fall spread evenly) | 5.44 | USD m | Actual history (15) | 2023-12 |
+| P-F40 | Netting set-off under the June 29, 2023 agreement, 2024-01 (half-year fall spread evenly) | 4.96 | USD m | Actual history (15) | 2024-01 |
+| P-F40 | Netting set-off under the June 29, 2023 agreement, 2024-02 (half-year fall spread evenly) | 4.96 | USD m | Actual history (15) | 2024-02 |
+| P-F40 | Netting set-off under the June 29, 2023 agreement, 2024-03 (half-year fall spread evenly) | 4.96 | USD m | Actual history (15) | 2024-03 |
+| P-F40 | Netting set-off under the June 29, 2023 agreement, 2024-04 (half-year fall spread evenly) | 4.96 | USD m | Actual history (15) | 2024-04 |
+| P-F40 | Netting set-off under the June 29, 2023 agreement, 2024-05 (half-year fall spread evenly) | 4.96 | USD m | Actual history (15) | 2024-05 |
+| P-F40 | Netting set-off under the June 29, 2023 agreement, 2024-06 (half-year fall spread evenly) | 4.96 | USD m | Actual history (15) | 2024-06 |
+| P-F40 | Netting set-off under the June 29, 2023 agreement, 2024-07 (half-year fall spread evenly) | 2.97 | USD m | Actual history (15) | 2024-07 |
+| P-F40 | Netting set-off under the June 29, 2023 agreement, 2024-08 (half-year fall spread evenly) | 2.97 | USD m | Actual history (15) | 2024-08 |
+| P-F40 | Netting set-off under the June 29, 2023 agreement, 2024-09 (half-year fall spread evenly) | 2.97 | USD m | Actual history (15) | 2024-09 |
+| P-F40 | Netting set-off under the June 29, 2023 agreement, 2024-10 (half-year fall spread evenly) | 2.97 | USD m | Actual history (15) | 2024-10 |
+| P-F40 | Netting set-off under the June 29, 2023 agreement, 2024-11 (half-year fall spread evenly) | 2.97 | USD m | Actual history (15) | 2024-11 |
+| P-F40 | Netting set-off under the June 29, 2023 agreement, 2024-12 (half-year fall spread evenly) | 2.97 | USD m | Actual history (15) | 2024-12 |
+| P-F40 | Netting set-off under the June 29, 2023 agreement, 2025-01 (half-year fall spread evenly) | 1.64 | USD m | Actual history (15) | 2025-01 |
+| P-F40 | Netting set-off under the June 29, 2023 agreement, 2025-02 (half-year fall spread evenly) | 1.64 | USD m | Actual history (15) | 2025-02 |
+| P-F40 | Netting set-off under the June 29, 2023 agreement, 2025-03 (half-year fall spread evenly) | 1.64 | USD m | Actual history (15) | 2025-03 |
+| P-F40 | Netting set-off under the June 29, 2023 agreement, 2025-04 (half-year fall spread evenly) | 1.64 | USD m | Actual history (15) | 2025-04 |
+| P-F40 | Netting set-off under the June 29, 2023 agreement, 2025-05 (half-year fall spread evenly) | 1.64 | USD m | Actual history (15) | 2025-05 |
+| P-F40 | Netting set-off under the June 29, 2023 agreement, 2025-06 (half-year fall spread evenly) | 1.64 | USD m | Actual history (15) | 2025-06 |
+| P-F40 | Netting set-offs, total July 2023 to June 2025 (all within the USD 9.0m monthly cap) | 90.08 | USD m | Actual history (15) | 2025-06-30 |
+| P-F16 | Debt capacity at 1.35x (Debt F130), FC base | 633.26 | USD m | Debt locked | 2018-07-17 |
+| P-F16 | Debt capacity at 1.35x (Debt F130), FC banking | 632.45 | USD m | Debt locked | 2018-07-17 |
+| P-F16 | Debt capacity at 1.35x (Debt F130), FC downside | 582.01 | USD m | Debt locked | 2018-07-17 |
+| P-F16 | Debt capacity at 1.35x (Debt F130), Sens: availability -3 points | 632.43 | USD m | Debt locked | 2018-07-17 |
+| P-F16 | Debt capacity at 1.35x (Debt F130), Sens: heat rate +2% | 617.51 | USD m | Debt locked | 2018-07-17 |
+| P-F16 | Debt capacity at 1.35x (Debt F130), Sens: fixed opex +10% | 622.82 | USD m | Debt locked | 2018-07-17 |
+| P-F16 | Debt capacity at 1.35x (Debt F130), Sens: capex +10% funded pro rata | 638.29 | USD m | Debt locked | 2018-07-17 |
+| P-F16 | Debt capacity at 1.35x (Debt F130), Sens: COD delay 6 months, no LDs | 624.32 | USD m | Debt locked | 2018-07-17 |
+| P-F16 | Debt capacity at 1.35x (Debt F130), Sens: base rate +200 bps (unhedged) | 620.04 | USD m | Debt locked | 2018-07-17 |
+| P-F16 | Debt capacity at 1.35x (Debt F130), Sens: KCR devaluation 40%, 90-day lag | 624.35 | USD m | Debt locked | 2018-07-17 |
+| P-F16 | Debt capacity at 1.35x (Debt F130), Sens: SEKA pays 120 days late for 12 months | 631.40 | USD m | Debt locked | 2018-07-17 |
+| P-F16 | Debt capacity at 1.35x (Debt F130), Sens: dispatch 50% | 628.94 | USD m | Debt locked | 2018-07-17 |
+| P-F16 | Debt capacity at 1.35x (Debt F130), Sens: gas price +30% | 633.43 | USD m | Debt locked | 2018-07-17 |
+| P-F17 | Annual shadow sizing 2021: CFADS / all-in rate / discount factor (1 half-years) | 50.28 / 3.533% / 0.96588 | USD m, %, factor | FC base (1) | 2021 |
+| P-F17 | Annual shadow sizing 2022: CFADS / all-in rate / discount factor (2 half-years) | 100.96 / 7.204% / 0.90097 | USD m, %, factor | FC base (1) | 2022 |
+| P-F17 | Annual shadow sizing 2023: CFADS / all-in rate / discount factor (2 half-years) | 101.36 / 7.223% / 0.84028 | USD m, %, factor | FC base (1) | 2023 |
+| P-F17 | Annual shadow sizing 2024: CFADS / all-in rate / discount factor (2 half-years) | 102.41 / 7.231% / 0.78361 | USD m, %, factor | FC base (1) | 2024 |
+| P-F17 | Annual shadow sizing 2025: CFADS / all-in rate / discount factor (2 half-years) | 101.18 / 7.223% / 0.73082 | USD m, %, factor | FC base (1) | 2025 |
+| P-F17 | Annual shadow sizing 2026: CFADS / all-in rate / discount factor (2 half-years) | 99.15 / 7.442% / 0.68020 | USD m, %, factor | FC base (1) | 2026 |
+| P-F17 | Annual shadow sizing 2027: CFADS / all-in rate / discount factor (2 half-years) | 99.33 / 7.442% / 0.63309 | USD m, %, factor | FC base (1) | 2027 |
+| P-F17 | Annual shadow sizing 2028: CFADS / all-in rate / discount factor (2 half-years) | 101.41 / 7.450% / 0.58919 | USD m, %, factor | FC base (1) | 2028 |
+| P-F17 | Annual shadow sizing 2029: CFADS / all-in rate / discount factor (2 half-years) | 103.65 / 7.442% / 0.54838 | USD m, %, factor | FC base (1) | 2029 |
+| P-F17 | Annual shadow sizing 2030: CFADS / all-in rate / discount factor (2 half-years) | 103.75 / 7.661% / 0.50936 | USD m, %, factor | FC base (1) | 2030 |
+| P-F17 | Annual shadow sizing 2031: CFADS / all-in rate / discount factor (2 half-years) | 104.20 / 7.661% / 0.47312 | USD m, %, factor | FC base (1) | 2031 |
+| P-F17 | Annual shadow sizing 2032: CFADS / all-in rate / discount factor (2 half-years) | 105.44 / 7.669% / 0.43942 | USD m, %, factor | FC base (1) | 2032 |
+| P-F17 | Annual shadow sizing 2033: CFADS / all-in rate / discount factor (2 half-years) | 94.89 / 7.661% / 0.40815 | USD m, %, factor | FC base (1) | 2033 |
+| P-F17 | Annual shadow sizing 2034: CFADS / all-in rate / discount factor (1 half-years) | 41.53 / 3.748% / 0.39341 | USD m, %, factor | FC base (1) | 2034 |
+| P-F17 | Annual shadow sizing: PV of CFADS / shadow debt at 1.35x / model debt / difference | 829.4 / 614.3 / 633.3 / -18.9 | USD m | FC base (1) | 2018-07-17 |
 | P-F64 | Bid-to-close IRR bridge (sequential, in this order): Kilnworth bid model, September 2016 (reconstructed; tariff USD 14.36/kW-month) | 16.00% (+0.00 pp) | % (cumulative) | FC base (1) re-sized at each step | 2016-09 to 2018-07 |
 | P-F64 | Bid-to-close IRR bridge (sequential, in this order): Base rate: reconstructed bid-model swapped rate (flat) replaced by the FC forward curve and the 2.947% swap | 16.56% (+0.56 pp) | % (cumulative) | FC base (1) re-sized at each step | 2016-09 to 2018-07 |
 | P-F64 | Bid-to-close IRR bridge (sequential, in this order): Debt terms: 2016 indicative margins, upfront fees and ECA premium (annex 4.7) replaced by the FC terms | 17.00% (+0.44 pp) | % (cumulative) | FC base (1) re-sized at each step | 2016-09 to 2018-07 |
@@ -1140,13 +1210,48 @@ Definitions used throughout: DSCR = CFADS / (interest incl. WHT gross-up + swap 
 | P-F64 | Bridge total: bid model to FC base / sum of steps (no residual) | -2.73 pp / -2.73 pp | pp | FC base (1) | 2016-09 to 2018-07 |
 | P-F64 | Reconstructed bid-model swapped base rate (modeler reconstruction, solved to the 16.0% bid IRR) | 3.44% | % flat | Modeler reconstruction | 2016-09 |
 | P-F65 | FX forwards (Castellan, traded 2018-07-17): share hedged / KCR notional / USD at forward / USD at FC spot / average forward | 75% / 32,204 / 52.6 / 62.0 / 612.6 | %, KCR m, USD m, KCR/USD | Contract (FC) | 2018-07-17 |
-| P-F65 | Forward 2018-08: KCR notional / forward rate / USD | 3,220.4 / 526.0 / 6.12 | KCR m, KCR/USD, USD m | Contract (FC) | 2018-08 |
-| P-F65 | Forward 2019-02: KCR notional / forward rate / USD | 299.9 / 552.3 / 0.54 | KCR m, KCR/USD, USD m | Contract (FC) | 2019-02 |
-| P-F65 | Forward 2019-08: KCR notional / forward rate / USD | 883.6 / 579.6 / 1.52 | KCR m, KCR/USD, USD m | Contract (FC) | 2019-08 |
-| P-F65 | Forward 2020-02: KCR notional / forward rate / USD | 1,250.6 / 607.8 / 2.06 | KCR m, KCR/USD, USD m | Contract (FC) | 2020-02 |
-| P-F65 | Forward 2020-08: KCR notional / forward rate / USD | 1,172.1 / 637.7 / 1.84 | KCR m, KCR/USD, USD m | Contract (FC) | 2020-08 |
-| P-F65 | Forward 2021-02: KCR notional / forward rate / USD | 693.8 / 668.4 / 1.04 | KCR m, KCR/USD, USD m | Contract (FC) | 2021-02 |
-| P-F65 | Forward 2021-08: KCR notional / forward rate / USD | 136.4 / 701.6 / 0.19 | KCR m, KCR/USD, USD m | Contract (FC) | 2021-08 |
+| P-F65 | Forward settling 2018-08 (one per monthly onshore EPC payment): KCR notional / forward rate / USD at forward | 3,220.41 / 525.96 / 6.123 | KCR m, KCR/USD, USD m | Rates fixed at FC; settlement months on the actual payment schedule | 2018-08 |
+| P-F65 | Forward settling 2018-09 (one per monthly onshore EPC payment): KCR notional / forward rate / USD at forward | 3.28 / 530.37 / 0.006 | KCR m, KCR/USD, USD m | Rates fixed at FC; settlement months on the actual payment schedule | 2018-09 |
+| P-F65 | Forward settling 2018-10 (one per monthly onshore EPC payment): KCR notional / forward rate / USD at forward | 27.95 / 534.98 / 0.052 | KCR m, KCR/USD, USD m | Rates fixed at FC; settlement months on the actual payment schedule | 2018-10 |
+| P-F65 | Forward settling 2018-11 (one per monthly onshore EPC payment): KCR notional / forward rate / USD at forward | 73.55 / 539.47 / 0.136 | KCR m, KCR/USD, USD m | Rates fixed at FC; settlement months on the actual payment schedule | 2018-11 |
+| P-F65 | Forward settling 2018-12 (one per monthly onshore EPC payment): KCR notional / forward rate / USD at forward | 136.38 / 544.15 / 0.251 | KCR m, KCR/USD, USD m | Rates fixed at FC; settlement months on the actual payment schedule | 2018-12 |
+| P-F65 | Forward settling 2019-01 (one per monthly onshore EPC payment): KCR notional / forward rate / USD at forward | 212.93 / 548.09 / 0.389 | KCR m, KCR/USD, USD m | Rates fixed at FC; settlement months on the actual payment schedule | 2019-01 |
+| P-F65 | Forward settling 2019-02 (one per monthly onshore EPC payment): KCR notional / forward rate / USD at forward | 299.92 / 552.27 / 0.543 | KCR m, KCR/USD, USD m | Rates fixed at FC; settlement months on the actual payment schedule | 2019-02 |
+| P-F65 | Forward settling 2019-03 (one per monthly onshore EPC payment): KCR notional / forward rate / USD at forward | 394.24 / 556.94 / 0.708 | KCR m, KCR/USD, USD m | Rates fixed at FC; settlement months on the actual payment schedule | 2019-03 |
+| P-F65 | Forward settling 2019-04 (one per monthly onshore EPC payment): KCR notional / forward rate / USD at forward | 493.08 / 561.50 / 0.878 | KCR m, KCR/USD, USD m | Rates fixed at FC; settlement months on the actual payment schedule | 2019-04 |
+| P-F65 | Forward settling 2019-05 (one per monthly onshore EPC payment): KCR notional / forward rate / USD at forward | 593.75 / 566.24 / 1.049 | KCR m, KCR/USD, USD m | Rates fixed at FC; settlement months on the actual payment schedule | 2019-05 |
+| P-F65 | Forward settling 2019-06 (one per monthly onshore EPC payment): KCR notional / forward rate / USD at forward | 693.84 / 570.88 / 1.215 | KCR m, KCR/USD, USD m | Rates fixed at FC; settlement months on the actual payment schedule | 2019-06 |
+| P-F65 | Forward settling 2019-07 (one per monthly onshore EPC payment): KCR notional / forward rate / USD at forward | 791.09 / 574.83 / 1.376 | KCR m, KCR/USD, USD m | Rates fixed at FC; settlement months on the actual payment schedule | 2019-07 |
+| P-F65 | Forward settling 2019-08 (one per monthly onshore EPC payment): KCR notional / forward rate / USD at forward | 883.55 / 579.62 / 1.524 | KCR m, KCR/USD, USD m | Rates fixed at FC; settlement months on the actual payment schedule | 2019-08 |
+| P-F65 | Forward settling 2019-09 (one per monthly onshore EPC payment): KCR notional / forward rate / USD at forward | 969.34 / 584.29 / 1.659 | KCR m, KCR/USD, USD m | Rates fixed at FC; settlement months on the actual payment schedule | 2019-09 |
+| P-F65 | Forward settling 2019-10 (one per monthly onshore EPC payment): KCR notional / forward rate / USD at forward | 1,046.92 / 589.16 / 1.777 | KCR m, KCR/USD, USD m | Rates fixed at FC; settlement months on the actual payment schedule | 2019-10 |
+| P-F65 | Forward settling 2019-11 (one per monthly onshore EPC payment): KCR notional / forward rate / USD at forward | 1,114.87 / 593.90 / 1.877 | KCR m, KCR/USD, USD m | Rates fixed at FC; settlement months on the actual payment schedule | 2019-11 |
+| P-F65 | Forward settling 2019-12 (one per monthly onshore EPC payment): KCR notional / forward rate / USD at forward | 1,172.10 / 598.85 / 1.957 | KCR m, KCR/USD, USD m | Rates fixed at FC; settlement months on the actual payment schedule | 2019-12 |
+| P-F65 | Forward settling 2020-01 (one per monthly onshore EPC payment): KCR notional / forward rate / USD at forward | 1,217.57 / 603.12 / 2.019 | KCR m, KCR/USD, USD m | Rates fixed at FC; settlement months on the actual payment schedule | 2020-01 |
+| P-F65 | Forward settling 2020-02 (one per monthly onshore EPC payment): KCR notional / forward rate / USD at forward | 1,250.58 / 607.78 / 2.058 | KCR m, KCR/USD, USD m | Rates fixed at FC; settlement months on the actual payment schedule | 2020-02 |
+| P-F65 | Forward settling 2020-03 (one per monthly onshore EPC payment): KCR notional / forward rate / USD at forward | 1,270.61 / 612.80 / 2.073 | KCR m, KCR/USD, USD m | Rates fixed at FC; settlement months on the actual payment schedule | 2020-03 |
+| P-F65 | Forward settling 2020-04 (one per monthly onshore EPC payment): KCR notional / forward rate / USD at forward | 1,277.21 / 617.70 / 2.068 | KCR m, KCR/USD, USD m | Rates fixed at FC; settlement months on the actual payment schedule | 2020-04 |
+| P-F65 | Forward settling 2020-05 (one per monthly onshore EPC payment): KCR notional / forward rate / USD at forward | 1,270.61 / 622.80 / 2.040 | KCR m, KCR/USD, USD m | Rates fixed at FC; settlement months on the actual payment schedule | 2020-05 |
+| P-F65 | Forward settling 2020-06 (one per monthly onshore EPC payment): KCR notional / forward rate / USD at forward | 1,250.58 / 627.78 / 1.992 | KCR m, KCR/USD, USD m | Rates fixed at FC; settlement months on the actual payment schedule | 2020-06 |
+| P-F65 | Forward settling 2020-07 (one per monthly onshore EPC payment): KCR notional / forward rate / USD at forward | 1,217.57 / 632.46 / 1.925 | KCR m, KCR/USD, USD m | Rates fixed at FC; settlement months on the actual payment schedule | 2020-07 |
+| P-F65 | Forward settling 2020-08 (one per monthly onshore EPC payment): KCR notional / forward rate / USD at forward | 1,172.10 / 637.67 / 1.838 | KCR m, KCR/USD, USD m | Rates fixed at FC; settlement months on the actual payment schedule | 2020-08 |
+| P-F65 | Forward settling 2020-09 (one per monthly onshore EPC payment): KCR notional / forward rate / USD at forward | 1,114.87 / 642.75 / 1.735 | KCR m, KCR/USD, USD m | Rates fixed at FC; settlement months on the actual payment schedule | 2020-09 |
+| P-F65 | Forward settling 2020-10 (one per monthly onshore EPC payment): KCR notional / forward rate / USD at forward | 1,046.92 / 648.03 / 1.616 | KCR m, KCR/USD, USD m | Rates fixed at FC; settlement months on the actual payment schedule | 2020-10 |
+| P-F65 | Forward settling 2020-11 (one per monthly onshore EPC payment): KCR notional / forward rate / USD at forward | 969.34 / 653.19 / 1.484 | KCR m, KCR/USD, USD m | Rates fixed at FC; settlement months on the actual payment schedule | 2020-11 |
+| P-F65 | Forward settling 2020-12 (one per monthly onshore EPC payment): KCR notional / forward rate / USD at forward | 883.55 / 658.57 / 1.342 | KCR m, KCR/USD, USD m | Rates fixed at FC; settlement months on the actual payment schedule | 2020-12 |
+| P-F65 | Forward settling 2021-01 (one per monthly onshore EPC payment): KCR notional / forward rate / USD at forward | 791.09 / 663.50 / 1.192 | KCR m, KCR/USD, USD m | Rates fixed at FC; settlement months on the actual payment schedule | 2021-01 |
+| P-F65 | Forward settling 2021-02 (one per monthly onshore EPC payment): KCR notional / forward rate / USD at forward | 693.84 / 668.41 / 1.038 | KCR m, KCR/USD, USD m | Rates fixed at FC; settlement months on the actual payment schedule | 2021-02 |
+| P-F65 | Forward settling 2021-03 (one per monthly onshore EPC payment): KCR notional / forward rate / USD at forward | 593.75 / 673.90 / 0.881 | KCR m, KCR/USD, USD m | Rates fixed at FC; settlement months on the actual payment schedule | 2021-03 |
+| P-F65 | Forward settling 2021-04 (one per monthly onshore EPC payment): KCR notional / forward rate / USD at forward | 493.08 / 679.24 / 0.726 | KCR m, KCR/USD, USD m | Rates fixed at FC; settlement months on the actual payment schedule | 2021-04 |
+| P-F65 | Forward settling 2021-05 (one per monthly onshore EPC payment): KCR notional / forward rate / USD at forward | 394.24 / 684.82 / 0.576 | KCR m, KCR/USD, USD m | Rates fixed at FC; settlement months on the actual payment schedule | 2021-05 |
+| P-F65 | Forward settling 2021-06 (one per monthly onshore EPC payment): KCR notional / forward rate / USD at forward | 299.92 / 690.25 / 0.435 | KCR m, KCR/USD, USD m | Rates fixed at FC; settlement months on the actual payment schedule | 2021-06 |
+| P-F65 | Forward settling 2021-07 (one per monthly onshore EPC payment): KCR notional / forward rate / USD at forward | 212.93 / 695.92 / 0.306 | KCR m, KCR/USD, USD m | Rates fixed at FC; settlement months on the actual payment schedule | 2021-07 |
+| P-F65 | Forward settling 2021-08 (one per monthly onshore EPC payment): KCR notional / forward rate / USD at forward | 136.38 / 701.63 / 0.194 | KCR m, KCR/USD, USD m | Rates fixed at FC; settlement months on the actual payment schedule | 2021-08 |
+| P-F65 | Forward settling 2021-09 (one per monthly onshore EPC payment): KCR notional / forward rate / USD at forward | 73.55 / 707.19 / 0.104 | KCR m, KCR/USD, USD m | Rates fixed at FC; settlement months on the actual payment schedule | 2021-09 |
+| P-F65 | Forward settling 2021-10 (one per monthly onshore EPC payment): KCR notional / forward rate / USD at forward | 27.95 / 713.00 / 0.039 | KCR m, KCR/USD, USD m | Rates fixed at FC; settlement months on the actual payment schedule | 2021-10 |
+| P-F65 | Forward settling 2021-11 (one per monthly onshore EPC payment): KCR notional / forward rate / USD at forward | 2,418.59 / 718.66 / 3.365 | KCR m, KCR/USD, USD m | Rates fixed at FC; settlement months on the actual payment schedule | 2021-11 |
+| P-F65 | Sum of the monthly forwards: KCR notional / USD at forward (equals the totals above) | 32,204.1 / 52.57 | KCR m, USD m | Rates fixed at FC | 2018-07-17 |
+| P-F65 | Schedule basis | one forward per monthly onshore EPC payment; forward rates fixed at financial close by covered interest parity; settlement months follow the actual payment certificates (August 2018 to November 2021, 40 months), because the forwards were re-dated without cost as certificates slipped (modeler simplification; under the FC schedule the last payment would have been April 2021) | text | Rates fixed at FC | 2018-07-17 |
 | P-F66 | FX forward settlement 2018H2 (gain to project) | 0.03 | USD m | Actual history (15) | 2018H2 |
 | P-F66 | FX forward settlement 2019H1 (gain to project) | 0.20 | USD m | Actual history (15) | 2019H1 |
 | P-F66 | FX forward settlement 2019H2 (gain to project) | 0.67 | USD m | Actual history (15) | 2019H2 |

@@ -110,7 +110,7 @@ def write(o, path):
     a(table([
         ['A1', 'Cash effect of SEKA arrears (actual history)', 'Not specified (read literally, the full overdue increase hits cash)',
          '80% of overdue amounts are energy-charge arrears matched by deferred payments to SNHK and GCK (state gas chain), formalized by the June 2023 netting agreement; 20% hits cash',
-         'Read literally the path gives a June 2023 historic DSCR near 0.0x and an event of default at December 2022, against the Bible design range of 0.80x to 1.00x for June 2023. With A1: 1.14x at December 2022 (lock-up), 0.97x at June 2023 (default), DSRA pays the June 2023 shortfall, as the storyline requires. Modeler calibration, pre-publication.'],
+         'Read literally the path gives a June 2023 historic DSCR near 0.0x and an event of default at December 2022, against the Bible design range of 0.80x to 1.00x for June 2023. With A1: ' + f"{P['P-F21']['historic_dscr_2022_12_31']:.2f}x at December 2022 (lock-up), {P['P-F21']['historic_dscr_2023_06_30']:.2f}x at June 2023 (default)" + ', DSRA pays the June 2023 shortfall, as the storyline requires. Modeler calibration, pre-publication.'],
         ['A12', 'Construction overrun (actual, P-C43, modeler assumption)', 'USD 39.27m hard-cost overrun; standby and contingent equity not drawn',
          f"Plus USD {P['P-F18']['uses']['of_which_delay_related_added']:.2f}m delay-related costs in seven named categories (Section 8b), Months 34-40", 'Editor ruling: Chapters 31 and 61 teach the standby facility; drawn about USD 10.0m with contingent equity about 3.3m after contingency, delay LDs, DSU and FX gains.'],
         ['A13', 'Construction FX hedge (D-114)', 'None', 'Forwards with Castellan buying KCR for 75% of onshore EPC payments at covered-parity rates (13.5% vs FC LIBOR); actual run only (FC base budgets onshore at the FC spot)', 'Standards require currency hedging; P-F65, P-F66. The forwards gained (forward points about 10% a year against about 5% actual depreciation).'],
@@ -152,6 +152,30 @@ def write(o, path):
         'Swap floating leg equal to the loan base rate (LIBOR to 2022, Term SOFR + 0.42826% from 2023); LIBOR/SOFR basis in H1 2023 ignored.',
     ]:
         a('* ' + t_)
+    a('')
+    a('## 8c. Version 1.4 (u09 round 1 requests and ledger extensions, October 3, 2026)')
+    a('')
+    a('Appended rows only; no existing address moved (verified cell by cell against the v1.3 workbook: every v1.3 cell keeps its address and content except Time F16 and Operations rows 31, 37 and 39, which gained a Monte Carlo branch that is inert while Inputs F311 = 0, Checks F8, F13 and F14, suspended while a run is active, Checks F19, extended to the new checks, and four labels). Calendar rows stay where they are (D-047).')
+    a('')
+    a(table([
+        ['R1', 'Checks rows 20, 21', 'Operating months sum to the PPA term; construction flags sum to construction months; both in master check F19'],
+        ['R2', 'Cover row 22', 'Master check link to Checks F19, red fill when not 0'],
+        ['R3', 'Ratios rows 20, 21', 'Projected 12-month DSCR on the next two periods (report only) and a below-lock-up flag'],
+        ['R4', 'Financials rows 31 to 52; Checks row 22', 'Cash flow statement (EBITDA to change in project-account cash, with the MMRA, Compensation Account, bond, unwind, DSRA initial funding and construction LD lines) and the cash check, 0 in every period and scenario'],
+        ['R5', 'Inputs F311 (run), F312 (active flag), rows 313 to 1312 (draw table, columns J to AL), per-run results pasted in AN to AR; Inputs F1321 (26 shock years)', 'Hooks: Time F16 (FX drift), Operations rows 31 (availability profile; the shock enters here so the EOH scaling matches P-F42), 37 (dispatch) and 39 (heat rate, degradation term). No native data table (stamped paste, noted on the Cover row 29). Checks F8, F13, F14 are suspended while a run is active'],
+        ['R6', 'Outputs rows 26 to 42 (pasted table), F44 (compare row); Checks row 25', 'Row 24 of Outputs is the existing all-checks line, so the table starts at row 26'],
+        ['R10', 'Operations rows 98, 99', 'Fuel pass-through test (= P-F47 margin) and GTA pass-through test (0)'],
+        ['R11', 'Debt rows 137 to 142; Inputs rows 1315 to 1320 (limits); Checks row 23', 'WAL, largest installment, term, months to first repayment, share repaid within 24 months from COD; the check applies to Scenario 1 (FC base), where P-F09 is defined; sweeps in other scenarios move the paid profile (Scenario 3: WAL 7.28 years)'],
+        ['R12', 'Checks row 24', 'MMRA window equals the input number of periods'],
+        ['R8', 'model/exercises/Case_P_Model_AuditExercise_reader.xlsx', 'Reader copy of the audit exercise without the AuditKey sheet (the other R8 files belong to the build agent)'],
+    ], ['Request', 'Rows', 'Content']))
+    a('')
+    p16 = P['P-F16']['debt_capacity_at_1_35']; sh = P['P-F17']['annual_shadow_sizing']; p63 = P['P-F63']; p40 = P['P-F40']
+    a(f"Ledger extensions: P-F16 debt capacity at 1.35x by sensitivity (FC base {p16['FC base']:.1f}; lowest {min(p16.values()):.1f}, FC downside); P-F17 annual shadow sizing {sh['shadow_debt']:.1f} against {sh['model_debt']:.1f} ({sh['difference']:+.1f}, the time-grain effect); P-F49 every Month 1 use itemized (sum {P['P-F49']['uses_month1_itemized_sum']:.2f} = total); P-F40 netting set-offs by month July 2023 to June 2025 (total {p40['netting_setoffs_total']:.2f}, all within the 9.0 cap; half-year falls spread evenly because the model is semiannual); P-F63 prepayment cure {p63['prepayment_cure_pro_rata_to_1_10']:.1f} (pro rata, eq:51.3) and {p63['prepayment_cure_proportional_to_1_10']:.1f} (proportional, eq:37.4) for 1.10x; P-F65 every monthly forward listed (sum = KCR {P['P-F65']['total_kcr_m']:,.0f} million) with its schedule basis; P-F26 deferred consideration line (nil); labels for D-046 illustrative paths and the P-F02 reconversion proxy.")
+    a('')
+    a('Monte Carlo funding (P-F42): runs whose construction costs exceed the committed facilities now draw the standby facility and contingent equity 75:25, as the workbook does, instead of drawing senior debt above the commitment; P-F42 percentiles move by less than 0.0001 (no printed value changes).')
+    a('')
+    a("Build-stage confirmation (Section 0.5 of the u09 brief): the Chapter 40 file must paste Construction row 38 only; the Chapter 41 file must paste Debt rows 103, 104, 110, 112 and Waterfall rows 33 and 43 only; Chapters 39, 42 and 43 paste nothing. With those rows pasted every stage reconciles to the full model on Scenario 1 (largest difference 1e-12; `case_p_verification.md`). Assignment of the v1.4 rows for the build files: Ch 39 Checks 20, 21, Cover 22, Inputs F311, F312 and F1321 (run 0, inert until the draw table is pasted); Ch 41 Operations 98, 99; Ch 42 Financials 30 to 52, Debt 136 to 142, Inputs 1314 to 1320, Checks 22 to 24; Ch 43 Inputs draw table and pasted results (rows 313 to 1312), Ratios 20, 21, Outputs 25 to 44, Checks 25. Inputs row 226 (months per period) is needed in Ch 39 by Time row 21; the u09 row map lists it under both Ch 39 and Ch 41 and should keep Ch 39.")
     a('')
     a('## 8b. Version 1.3 (editor fixes, October 3, 2026)')
     a('')

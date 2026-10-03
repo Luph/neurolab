@@ -51,7 +51,7 @@ Priority: A = changes an existing output or is needed for a ledger figure a chap
 | 41 | Swap valuation curve points (P-F53) | Flat par swap rate for the remaining profile: 2018-07-17 2.872; 2022-12-31 4.05; 2023-06-30 4.35; 2025-06-30 3.68 (existing input); 2026-09-30 3.40 (approximate, fact-check before printing exact market levels) | % | 8.2 | P-F53, P-F26 | B |
 | 42 | Retained 36% fair value (P-F26) | Price per percentage point of the 24% sale (P-F24) x 36, no control premium or discount; recycle the parent's share of the cash flow hedge reserve on loss of control | – | 8.3 | P-F26 | A |
 | 43 | Pillar Two estimate (P-F54) | Kilnworth in scope; no Kessaran QDMTT through 2026; UK MTT top-up = max(0, 15% - jurisdictional ETR) x max(0, GloBE income - SBIE) x 60%, with GloBE income = IFRS profit before tax (IFRIC 12 basis, P-F56), covered taxes = current tax + minimum turnover tax; SBIE carve-out rates 2024: payroll 9.8%, tangible assets 7.8%; 2025: 9.6%, 7.6%; 2026: 9.4%, 7.4%; payroll = O&M fee labor share 60% of the fixed O&M fee plus project company staff costs 50% of G&A; tangible assets = carrying value of PP&E on the lenders' basis (flagged simplification); calendar years 2024 to 2026; label "estimate" | % | 4.15 | P-F54 | B |
-| 44 | Castellan RORAC and capital (P-F55) | Holds: commercial 34%, ECA-covered 40%, standby (commercial share) 34% of 60%, swap 34% of notional; underwriting at mandate 100% of commercial and ECA-covered tranches; slotting risk weights (UK CRR): construction Satisfactory 115%, operations Good 90%, Weak 250% (June 2023 to June 2024); ECA-covered part: 95% substituted to an AA-or-better sovereign at 0%; ABDB 0%; PRI not recognized; capital 13.5% of RWA; funding premium 0.45% a year; PD 1.6% (construction), 0.9% (operations); LGD 35% (commercial), 5% (covered part); operating cost 0.15% of exposure a year; tax 19%; hurdle RORAC 12% after tax | as stated | 4.16, 5.6 | P-F55 | B |
+| 44 | Castellan RAROC and capital (P-F55) | Holds: commercial 34%, ECA-covered 40%, standby (commercial share) 34% of 60%, swap 34% of notional; underwriting at mandate 100% of commercial and ECA-covered tranches; slotting risk weights (UK CRR): construction Satisfactory 115%, operations Good 90%, Weak 250% (June 2023 to June 2024); ECA-covered part: 95% substituted to an AA-or-better sovereign at 0%; ABDB 0%; PRI not recognized; capital 13.5% of RWA; funding premium 0.45% a year; PD 1.6% (construction), 0.9% (operations); LGD 35% (commercial), 5% (covered part); operating cost 0.15% of exposure a year; tax 19%; hurdle RAROC 12% after tax | as stated | 4.16, 5.6 | P-F55 | B |
 
 ## 2. Figure IDs and chapter mapping
 
@@ -70,7 +70,7 @@ New IDs from this annex:
 | P-F52 | Planned against actual EPC progress and certified payments, quarterly | 61 | 35 |
 | P-F53 | ECL allowance on SEKA receivables; swap MTM and hedge reserve | 66 | 40, 41 |
 | P-F54 | Estimated UK top-up tax on Kilnworth's share, 2024 to 2026 | 67 | 43 |
-| P-F55 | Castellan holds, slotting, RWA, capital, RORAC | 68, 86 | 44 |
+| P-F55 | Castellan holds, slotting, RWA, capital, RAROC | 68, 86 | 44 |
 | P-F56 | IFRIC 12 presentation and reconciliation to the lenders' basis | 7 (note), 66 | 39 |
 | P-F57 | Kessara 2015 technology screening curves | 69 | 31 |
 | P-F58 | Actual 2022 dispatch and gas burn against 76.5% | 72 | 6 |

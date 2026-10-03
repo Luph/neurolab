@@ -1,0 +1,60 @@
+{
+ "39": {
+  "cells": 36530,
+  "maxdiff": 0,
+  "where": "None",
+  "pasted": [],
+  "master": 0
+ },
+ "40": {
+  "cells": 42271,
+  "maxdiff": 0,
+  "where": "None",
+  "pasted": [
+   [
+    "Construction",
+    38
+   ]
+  ],
+  "master": 0
+ },
+ "41": {
+  "cells": 48230,
+  "maxdiff": 1.0089706847793423e-12,
+  "where": "('Tax', 21, 'AH21', 116.094387356722, 116.094387356723)",
+  "pasted": [
+   [
+    "Debt",
+    103
+   ],
+   [
+    "Debt",
+    104
+   ],
+   [
+    "Debt",
+    110
+   ],
+   [
+    "Debt",
+    112
+   ],
+   [
+    "Waterfall",
+    33
+   ],
+   [
+    "Waterfall",
+    43
+   ]
+  ],
+  "master": 0
+ },
+ "42": {
+  "cells": 59190,
+  "maxdiff": 0,
+  "where": "None",
+  "pasted": [],
+  "master": 0
+ }
+}

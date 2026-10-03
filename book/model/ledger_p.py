@@ -23,9 +23,9 @@ add('P-F01', 'Development costs to financial close', m2(f['actual_total']), 'USD
 add('P-F01', 'Overrun against the 2015 budget', m2(f['overrun_vs_budget']), 'USD m', 'Inputs', FC)
 # P-F02
 f = P['P-F02']
-add('P-F02', 'US CPI index reading for the January 2022 reset (September 2021; Nov 2016 = 100)', f"{f['us_cpi_index']:.2f}", 'index', ACT, '2022-01-01')
+add('P-F02', 'US CPI index reading for the January 2022 reset (September 2021; Nov 2016 = 100; illustrative path, D-046)', f"{f['us_cpi_index']:.2f}", 'index', ACT, '2022-01-01')
 add('P-F02', 'Kessara CPI index reading (September 2021; Nov 2016 = 100)', f"{f['kessara_cpi_index']:.2f}", 'index', ACT, '2022-01-01')
-add('P-F02', 'FX used to reconvert local shares (2022H1 average)', f"{f['fx_for_reconversion_kcr_per_usd']:.1f}", 'KCR/USD', ACT, '2022-01-01')
+add('P-F02', 'FX used to reconvert local shares (2022H1 average; proxy for the invoice-date Central Bank mid rate, P-C54)', f"{f['fx_for_reconversion_kcr_per_usd']:.1f}", 'KCR/USD', ACT, '2022-01-01')
 add('P-F02', 'Contracted capacity applying in January 2022 (reset at completion tests)', '581.9', 'MW', ACT, '2022-01-01')
 add('P-F02', 'Capital charge, indexed (base 14.36)', f"{f['capital_charge_indexed']:.2f}", 'USD/kW-month', ACT, '2022-01-01')
 add('P-F02', 'Fixed O&M charge, indexed (base 2.31)', f"{f['fixed_om_charge_indexed']:.2f}", 'USD/kW-month', ACT, '2022-01-01')
@@ -35,7 +35,7 @@ add('P-F02', 'VOM charge, indexed (base 3.86)', f"{f['vom_charge_indexed']:.2f}"
 add('P-F02', 'VOM charge in November 2016 dollars (real)', f"{f['vom_real_nov2016_usd']:.2f}", 'USD/MWh', ACT, '2022-01-01')
 # P-F03
 f = P['P-F03']
-add('P-F03', '6M USD LIBOR, July 2016 (approximate; fact-check)', f"{f['libor_6m_july_2016_pct']:.2f}%", '%', 'Annex 4.7 inputs', '2016-07')
+add('P-F03', '6M USD LIBOR, July 2016 (approximate; illustrative path, D-046)', f"{f['libor_6m_july_2016_pct']:.2f}%", '%', 'Annex 4.7 inputs', '2016-07')
 for k, v in f['margins_2016_pct'].items(): add('P-F03', f'Indicative 2016 margin, {k}', f"{v:.2f}%", '%', 'Annex 4.7 inputs', '2016-07')
 for k, v in f['all_in_pct'].items(): add('P-F03', f'Indicative all-in floating cost, {k} (LIBOR + margin + upfront fee over 7.0 years' + (' + ECA premium 11.5% over 7.0 years' if k == 'ECA' else '') + ')', f"{v:.2f}%", '% pa', 'Annex 4.7 inputs plus calculation', '2016-07')
 add('P-F03', 'Commercial tranche incl. PRI premium and WHT gross-up', f"{f['commercial_all_in_with_pri_and_grossup_pct']:.2f}%", '% pa', 'Annex 4.7 inputs plus calculation', '2016-07')
@@ -189,8 +189,8 @@ add('P-F21', 'Historic DSCR at December 31, 2023 (waived test)', r(f['historic_d
 add('P-F21', 'Lock-up released (two tests >= 1.25x and DSRA full)', f['release_period'], 'period', ACT, '2024-12-31')
 # P-F22
 f = P['P-F22']
-add('P-F22', 'Base rate 2022H2 (6M LIBOR)', f"{f['base_2022H2_libor_pct']:.2f}%", '%', ACT, '2022-07')
-add('P-F22', 'Base rate 2023H1 (6M Term SOFR 4.86% + 0.42826%)', f"{f['base_2023H1_sofr_plus_cas_pct']:.2f}%", '%', ACT, '2023-01')
+add('P-F22', 'Base rate 2022H2 (6M LIBOR; illustrative path, D-046)', f"{f['base_2022H2_libor_pct']:.2f}%", '%', ACT, '2022-07')
+add('P-F22', 'Base rate 2023H1 (6M Term SOFR 4.86%, approximate, illustrative path D-046, + 0.42826%)', f"{f['base_2023H1_sofr_plus_cas_pct']:.2f}%", '%', ACT, '2023-01')
 add('P-F22', 'Senior financing cost 2022H2 / 2023H1', f"{f['interest_cost_2022H2']:.1f} / {f['interest_cost_2023H1']:.1f}", 'USD m', ACT, '2023-06-30')
 add('P-F22', 'All-in senior cost 2022H2 / 2023H1', f"{f['allin_rate_2022H2_pct_pa']:.2f}% / {f['allin_rate_2023H1_pct_pa']:.2f}%", '% pa', ACT, '2023-06-30')
 add('P-F22', 'Unhedged balance 2023H1 (debt less swap notional)', m(f['unhedged_balance_2023H1']), 'USD m', ACT, '2023-01')
@@ -219,6 +219,7 @@ for k in ('senior_debt_outstanding', 'swap_mtm_to_project', 'equity_npv_distribu
 f = P['P-F26']
 for k in ('book_equity_lenders_basis', 'ifrs12_equity_adjustment_pretax', 'shl_at_completion', 'consideration', 'fv_retained_36pct', 'carrying_amount_60pct_lenders_basis', 'carrying_amount_60pct_ifrs', 'gain_on_loss_of_control_lenders_basis', 'gain_on_loss_of_control_ifrs', 'hedge_reserve_parent_share_recycled', 'equity_method_carrying_value_36pct', 'indirect_transfer_tax'):
     add('P-F26', k.replace('_', ' '), m(f[k]), 'USD m', ACT, '2026-09-30')
+add('P-F26', 'Deferred consideration: face / fair value at completion (measured at nil, Annex P 8.3; outside the consideration line)', f"{f['deferred_consideration_face']:.1f} / {f['deferred_consideration_fair_value_at_completion']:.1f}", 'USD m', ACT, '2026-09-30')
 # P-F27
 for case, run in (('fc_base', FCB), ('actual', ACT)):
     for k, v in P['P-F27'][case].items(): add('P-F27', f'{case.replace("_", " ")}: {k.replace("_", " ")} (life total)', m(v), 'USD m', run, '2018-2046')
@@ -347,6 +348,8 @@ f = P['P-F49']
 for k, v in f['first_utilization'].items(): add('P-F49', f'First utilization, {k}', m2(v), 'USD m', FCB, '2018-07-17')
 for k in ('first_utilization_total', 'equity_at_close', 'of_which_lntp_credit', 'equity_cash_at_close', 'epc_advance_gross', 'epc_advance_cash_net_of_lntp', 'upfront_fees', 'first_eca_premium', 'advisers_at_close', 'insurance_at_close', 'idc_month1', 'total_uses_month1'):
     add('P-F49', k.replace('_', ' '), m2(f[k]), 'USD m', FCB, '2018-07-17')
+for k, v in f['uses_month1_itemized'].items(): add('P-F49', f'Use in Month 1 (itemized): {k}', f"{v:.3f}", 'USD m', FCB, '2018-07-17')
+add('P-F49', 'Uses in Month 1, sum of the itemized lines (= total uses month 1; sources: first utilization + equity at close)', f"{f['uses_month1_itemized_sum']:.3f}", 'USD m', FCB, '2018-07-17')
 for grp in ('development_cost_reimbursement', 'development_fee', 'abdb_fund_premium_paid_by_fund'):
     for k, v in f[grp].items(): add('P-F49', f'{grp.replace("_", " ")}: {k}', f"{v:.4f}" if grp.startswith('abdb') else m2(v), 'USD m', 'Annex 1.14', '2018-07-17')
 for k, v in f['sponsor_development_receipts'].items(): add('P-F49', f'Total development receipts at close, {k}', m2(v), 'USD m', 'Annex 1.14', '2018-07-17')
@@ -392,6 +395,17 @@ add('P-F62', 'Pricing committee tariff at USD 15.05/kW-month (bid-model IRR 17.6
 f = P['P-F63']
 add('P-F63', 'June 30, 2023: 12-month CFADS / debt service / historic DSCR', f"{f['cfads_12m']:.1f} / {f['debt_service_12m']:.1f} / {f['historic_dscr']:.2f}x", 'USD m, x', ACT, '2023-06-30')
 add('P-F63', 'Equity cure needed for 1.10x / 1.20x', f"{f['cure_to_1_10']:.1f} / {f['cure_to_1_20']:.1f}", 'USD m', ACT, '2023-06-30')
+add('P-F63', 'Pro rata prepayment cure (eq:51.3, deemed at July 1, 2022) for 1.10x / 1.20x', f"{f['prepayment_cure_pro_rata_to_1_10']:.1f} / {f['prepayment_cure_pro_rata_to_1_20']:.1f}", 'USD m', ACT, '2023-06-30')
+add('P-F63', 'Proportional prepayment cure (eq:37.4, x D/DS) for 1.10x / 1.20x', f"{f['prepayment_cure_proportional_to_1_10']:.1f} / {f['prepayment_cure_proportional_to_1_20']:.1f}", 'USD m', ACT, '2023-06-30')
+add('P-F63', 'Prepayment-cure inputs: scheduled principal 12m / senior debt at July 1, 2022 / all-in rate a year', f"{f['scheduled_principal_12m']:.1f} / {f['debt_open_2022_07_01']:.1f} / {f['all_in_rate_12m'] * 100:.2f}%", 'USD m, %', ACT, '2022-07-01')
+f = P['P-F40']
+for k, v in f['netting_setoffs_by_month'].items(): add('P-F40', f'Netting set-off under the June 29, 2023 agreement, {k} (half-year fall spread evenly)', m2(v), 'USD m', ACT, k)
+add('P-F40', 'Netting set-offs, total July 2023 to June 2025 (all within the USD 9.0m monthly cap)', m2(f['netting_setoffs_total']), 'USD m', ACT, '2025-06-30')
+f = P['P-F16']
+for k, v in f['debt_capacity_at_1_35'].items(): add('P-F16', f'Debt capacity at 1.35x (Debt F130), {k}', m2(v), 'USD m', 'Debt locked', FC)
+f = P['P-F17']['annual_shadow_sizing']
+for d in f['by_year']: add('P-F17', f"Annual shadow sizing {d['year']}: CFADS / all-in rate / discount factor ({d['periods']} half-years)", f"{d['cfads']:.2f} / {d['annual_all_in_rate'] * 100:.3f}% / {d['discount_factor']:.5f}", 'USD m, %, factor', FCB, str(d['year']))
+add('P-F17', 'Annual shadow sizing: PV of CFADS / shadow debt at 1.35x / model debt / difference', f"{f['pv_cfads']:.1f} / {f['shadow_debt']:.1f} / {f['model_debt']:.1f} / {f['difference']:+.1f}", 'USD m', FCB, FC)
 
 # P-F64 to P-F66 (v1.2)
 for st in P['P-F64']['steps']:
@@ -400,7 +414,9 @@ add('P-F64', 'Bridge total: bid model to FC base / sum of steps (no residual)', 
 add('P-F64', 'Reconstructed bid-model swapped base rate (modeler reconstruction, solved to the 16.0% bid IRR)', f"{P['P-F64']['reconstructed_bid_swapped_rate_pct']:.2f}%", '% flat', 'Modeler reconstruction', '2016-09')
 f = P['P-F65']
 add('P-F65', 'FX forwards (Castellan, traded 2018-07-17): share hedged / KCR notional / USD at forward / USD at FC spot / average forward', f"{f['hedge_share'] * 100:.0f}% / {f['total_kcr_m']:,.0f} / {f['total_usd_at_forward']:.1f} / {f['total_usd_at_fc_spot']:.1f} / {f['average_forward']:.1f}", '%, KCR m, USD m, KCR/USD', 'Contract (FC)', '2018-07-17')
-for k, v in list(f['schedule'].items())[::6]: add('P-F65', f'Forward {k}: KCR notional / forward rate / USD', f"{v['kcr_m']:,.1f} / {v['forward']:.1f} / {v['usd_at_forward']:.2f}", 'KCR m, KCR/USD, USD m', 'Contract (FC)', k)
+for k, v in f['schedule'].items(): add('P-F65', f'Forward settling {k} (one per monthly onshore EPC payment): KCR notional / forward rate / USD at forward', f"{v['kcr_m']:,.2f} / {v['forward']:.2f} / {v['usd_at_forward']:.3f}", 'KCR m, KCR/USD, USD m', 'Rates fixed at FC; settlement months on the actual payment schedule', k)
+add('P-F65', 'Sum of the monthly forwards: KCR notional / USD at forward (equals the totals above)', f"{sum(v['kcr_m'] for v in f['schedule'].values()):,.1f} / {sum(v['usd_at_forward'] for v in f['schedule'].values()):.2f}", 'KCR m, USD m', 'Rates fixed at FC', '2018-07-17')
+add('P-F65', 'Schedule basis', f['schedule_basis'], 'text', 'Rates fixed at FC', '2018-07-17')
 f = P['P-F66']
 for k, v in f['settlements_by_half'].items(): add('P-F66', f'FX forward settlement {k} (gain to project)', m2(v), 'USD m', ACT, k)
 add('P-F66', 'FX forward settlements, total', m2(f['settlements_total']), 'USD m', ACT, '2021-11-30')
@@ -409,10 +425,10 @@ add('P-F66', 'Unhedged KCR depreciation saving on the onshore EPC (for compariso
 add('P-F40', 'SEKA LC drawing, February 14, 2023 (2023 reset value; P-C44)', m(P['P-F40']['lc_drawing']), 'USD m', ACT, '2023-02-14')
 
 L = ['# Figure ledger: Case P (Bélanou Combined Cycle Power Project)', '',
-     'Source: `model/outputs_case_p.json`, produced by `model/case_p.py` (Case P model v1.3; story as of October 3, 2026); formatted by '
+     'Source: `model/outputs_case_p.json`, produced by `model/case_p.py` (Case P model v1.4; story as of October 3, 2026); formatted by '
      '`model/ledger_p.py` (no computation). Amounts in USD million, nominal, unless stated. Scenario numbers are the workbook scenario switch '
      '(1 FC base, 2 FC banking, 3 FC downside, 4-13 sensitivities, 14 COD re-forecast, 15 actual history). P-F01 to P-F36 are the Case Bible '
-     'register; P-F37 to P-F45 are editor assignments and P-F46 to P-F63 come from case-bible-annex-p.md (P-F11 is split into P-F11a DSRA and P-F11b MMRA). Model version 1.3 (annex absorbed; editor rulings of October 3, 2026: delay-related overrun categories P-C43, FX hedge D-114, P-F64 to P-F66, sequential P-F64 bridge, RBL expectation revised P-C46). Writers cite the ID; print values in the style-sheet format.', '',
+     'register; P-F37 to P-F45 are editor assignments and P-F46 to P-F63 come from case-bible-annex-p.md (P-F11 is split into P-F11a DSRA and P-F11b MMRA). Model version 1.4 (u09 requests R1 to R12 and ledger extensions absorbed; annex absorbed; editor rulings of October 3, 2026: delay-related overrun categories P-C43, FX hedge D-114, P-F64 to P-F66, sequential P-F64 bridge, RBL expectation revised P-C46). Writers cite the ID; print values in the style-sheet format.', '',
      'Definitions used throughout: DSCR = CFADS / (interest incl. WHT gross-up + swap net + PRI premium + PCG fee + scheduled principal); '
      'average DSCR = sum of CFADS / sum of debt service over the loan life; LLCR = (PV of CFADS to final maturity at the period all-in senior '
      'cost + DSRA balance) / senior debt, at the start of the first repayment period; gearing = senior debt / total funding requirement; '
