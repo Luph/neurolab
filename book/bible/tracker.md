@@ -98,3 +98,4 @@
 - Brief revision u01 DONE (central changes in revision log of u01.md).
 - Brief revision u04 DONE.
 - Brief revision u12 DONE (unit glossary files now superseded by glossary-canon.md).
+- Brief revision u08 DONE (targets Ch36 16,000, Ch37 14,800, Ch38 11,500).
