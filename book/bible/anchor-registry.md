@@ -4376,7 +4376,7 @@ Source brief: `briefs/u12.md`.
 | `sec:60.2` | The obsolescing bargain |  |
 | `ssec:60.2.1` | Bargaining power moves to the host after construction |  |
 | `ssec:60.2.2` | The obsolescing bargain in five disputes |  |
-| `ssec:60.2.3` | Structuring against it |  |
+| `ssec:60.2.3` | Structuring a project against the obsolescing bargain |  |
 | `sec:60.3` | Host-government relations and local content |  |
 | `ssec:60.3.1` | Mapping the state |  |
 | `ssec:60.3.2` | The local partner |  |

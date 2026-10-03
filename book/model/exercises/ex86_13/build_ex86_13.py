@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
-"""Exercise 86.13 (bible/briefs/u17.md): tornado chart from Example 86.3's sensitivity table (Tsiskari
-hydro, Illustrative), bars ordered automatically by absolute impact.  Writes ex86_13_solution.xlsx
+"""Exercise 86.13 (bible/briefs/u17.md): tornado chart from Example 86.3's sensitivity table
+(Illustrative), bars ordered automatically by absolute impact.  Writes ex86_13_solution.xlsx
 (macro-free).
 
 Sheet Tornado:
