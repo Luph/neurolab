@@ -53,3 +53,4 @@ Never put personal identifiers in any web request header; never bypass bot block
 - NEVER let production apparatus reach the reader: no figure IDs (P-F08, T-F10, R-F01), decision numbers (D-013), ruling numbers (R-xxx), fact-sheet slugs (t-market-norms), "Case Bible", "Annex P", "ledger", "brief", "draft", or any reference to the book's production. Cite running-case figures as plain numbers; keep IDs only in % LaTeX comments if you want traceability (e.g., "USD 633.3 million % P-F07").
 - Do not restate in prose the numbers an exhibit already shows; say what the reader should notice.
 - British spellings (cancelled, panellist, programme, licence) are errors.
+- Illustrative parties: never place them in a specific identifiable real procurement or auction round (D-127); real program types only, consistent with how the program works.
