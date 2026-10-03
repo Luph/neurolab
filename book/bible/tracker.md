@@ -131,3 +131,8 @@
 - BLUEPRINT PASSED (round 3 verification, reviews/blueprint/r3-verification.md). Phase 1 complete pending v1.5 value propagation and R3-1 name-clash fixes.
 - Build-along workbooks regenerated for v1.5 and re-verified (Ch43 = master across 64,874 cells). Ch2 round 3: facts PASS; five narrow FAILs → final fix list sent. Ch36 round 2 reviews running.
 - R3-1 name clashes FIXED (16 renames, all web-checked clear; reviews/blueprint/r3-1-name-fixes.md).
+
+### Phase 2 pilot
+- Ch 2: final verification PASS (reviews/02/final-verification.md). Pre-print flag: reported Chilean bill to amend Ley 18.046 art. 79 unanimity rule unverified; recheck before print (OPEN-01).
+- Ch 36: round-2 fixes done; final verifier running.
+- v1.5 propagation complete (139 edits; reviews/blueprint/v15-propagation-log.md).
