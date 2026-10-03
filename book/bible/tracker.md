@@ -23,3 +23,4 @@
 - Done: tideway, hinkley-sizewell, ocean-wind. sustainable-fin group launched.
 - NOTE: session-wide WebSearch budget (~200 searches) reported exhausted; later research and fact-check agents must fall back to WebFetch/curl of known official URLs.
 - Done: dogger-bank, triple-point, t-reference-rates, t-pillar-two, t-interest-limitation, t-accounting, azura-edo, noor-ouarzazate, sarulla, moss-landing, northern-lights, neom-hydrogen.
+- Done: bujagali, vogtle, barakah.

@@ -1,0 +1,106 @@
+# Cobre Panama closure (2023): social license and contract invalidation
+
+As of: 2026-10-03 (latest event covered: 30 September 2026, the delivery of Panama's inter-ministerial commission report to President Mulino and First Quantum's response the same day)
+
+## Summary
+
+Cobre Panamá is a large open-pit copper mine in Panama's Colón province. It is owned by Minera Panamá S.A. (MPSA), in which First Quantum Minerals (FQM) holds 90% and Korea Mine Rehabilitation and Mineral Resources Corporation (KOMIR) holds 10% indirectly. The concession rested on Contract-Law No. 9 of 26 February 1997. In a ruling that became public in September 2018, Panama's Supreme Court found Law 9 unconstitutional. The court held that the National Assembly had approved the contract without checking that the concession had been put out to tender, as the law then in force required. The mine nonetheless started commercial production on 1 September 2019, and by 2022 it produced about 350,000 tonnes of copper a year, roughly 39% of FQM's revenue. The government then demanded a new contract with a much larger state take. After a December 2022 deadline lapsed and port loading was halted, the parties agreed a draft in March 2023. It set a minimum annual payment to the state of USD 375 million and a profit-based royalty of 12–16%. The National Assembly approved the revised contract as Law 406 on 20 October 2023, after only three days of debate. Mass nationwide protests followed. Road and port blockades cut off supplies to the mine's power plant, and the Assembly passed Law 407, an indefinite moratorium on new metal-mining concessions. On 28 November 2023 the Supreme Court unanimously declared Law 406 unconstitutional in its entirety. The mine has been in "Preservation and Safe Management" since November 2023. FQM began ICC and free-trade-agreement arbitrations, claiming about USD 20 billion. In March 2025 it discontinued the ICC case and suspended the FTA case so that talks with the new Mulino government could open. In 2026 the government authorized processing of stockpiled ore. A SGS audit found 361 of 370 environmental commitments fulfilled. On 30 September 2026 a ministerial commission recommended negotiating a new arrangement under which limited operation would fund an orderly closure at no cost to the state. As of the as-of date, no decision on the mine's future had been announced.
+
+## Verified facts
+
+1. MPSA was granted the mineral concession on 9 February 1997 under Contract-Law No. 9 of 26 February 1997 (Law 9). On 30 December 2016 the government extended the concession for a second 20-year term, from 1 March 2017 to 28 February 2037. [confidence: high] [source: 1]
+2. Under Law 9, MPSA paid a 2% royalty on "Negotiable Gross Production", against 5% for copper under Panama's general mining code. Corporate income tax at 25% was exempt while project construction debt was outstanding. [confidence: high] [source: 1]
+3. FQM acquired an indirect 80% interest in MPSA in 2013 through its acquisition of Inmet Mining. In November 2017 it raised its effective ownership to 90% by buying LS-Nikko's 50% of Korea Panamá Mining Corp (KPMC) for USD 664 million, payable in six instalments over five years. KOMIR holds the other 10% indirectly through KPMC. [confidence: high] [source: 1]
+4. Franco-Nevada precious-metals stream. MPSA signed a stream agreement with a Franco-Nevada subsidiary in August 2012, amended and restated on 2 November 2015. The subsidiary provided a USD 1 billion deposit toward construction capital costs, funded pro rata at 1:3 with FQM's own contributions. The first instalment came in November 2015, and the full deposit had been received by 31 December 2018. In March 2018 a further stream covering the 20% KPMC interest brought in a USD 356 million deposit. From January 2018 Franco-Nevada's streams covered 100% of Cobre Panamá. [confidence: high] [source: 1, 6]
+5. Sometime before 24 September 2018, Panama's Supreme Court ruled Law 9 unconstitutional. The challenge had been brought in 2009 by the Panamanian NGO Centro de Incidencia Ambiental (CIAM). FQM said it "became aware" of the ruling in September 2018. FQM's account is that the court found the Assembly had failed to check that Law 9 complied with Cabinet Decree 267 of 1969, which required a request for proposals before a concession was awarded. FQM also says the ruling did not declare the concession contract itself annulled. [confidence: high] [source: 1, 3]
+6. Cobre Panamá made its first concentrate sales in June 2019 and reached commercial production on 1 September 2019. [confidence: high] [source: 1, 4]
+7. In 2022 Cobre Panamá produced 350,438 tonnes of copper, a record, and generated 38.8% of FQM's revenue. [confidence: high] [source: 1]
+8. Negotiations with the government missed a 14 December 2022 deadline. On 21 December 2022 the Ministry of Commerce and Industries (MICI) notified MPSA that it must submit, within 10 working days, a plan to suspend commercial operations and put the mine on care and maintenance. Talks resumed on 26 December 2022. [confidence: high] [source: 1]
+9. On 26 January 2023 the Panama Maritime Authority (AMP) ordered concentrate loading at the mine's port, Punta Rincón, suspended until the port scale was recertified. Ore processing was suspended on 23 February 2023. Both resumed on 8 March 2023, the day the parties announced agreement on a draft "refreshed" concession contract. [confidence: high] [source: 1]
+10. Under the March 2023 draft, MPSA would pay USD 375 million plus USD 20 million to cover taxes and royalties up to the end of 2022. From 2023 it would pay a minimum of USD 375 million a year, made up of corporate income tax, withholding taxes and a profit-based royalty of 12% to 16%. The contract had an initial 20-year term with a 20-year extension option and possible further extensions for the life of the mine. It required a 30-day public consultation and approval by the Cabinet, the Comptroller General and the National Assembly. [confidence: high] [source: 1, 7]
+11. The National Assembly approved the revised contract as Law 406 of 20 October 2023. [confidence: high] [source: 2, 4, 6]
+12. On 16 November 2023 MPSA paid USD 567 million in taxes and royalties for the period December 2021 to October 2023. [confidence: high] [source: 4]
+13. On 3 November 2023 the National Assembly approved Law 407, declaring a mining moratorium of indefinite duration, and President Laurentino Cortizo signed it. It bars new concessions for metal mining. [confidence: high] [source: 6, 8]
+14. A blockade of small boats at Punta Rincón stopped supplies reaching the mine's power plant. By 20 November 2023 the mine had ramped down to one ore-processing train. FQM then suspended commercial production and placed the site under a program of "Preservation and Safe Maintenance", later called Preservation and Safe Management (P&SM). [confidence: high] [source: 2, 4, 5]
+15. On 28 November 2023 the Supreme Court announced that it had unanimously declared Law 406 unconstitutional in its entirety. Franco-Nevada's filing dates the ruling 27 November 2023 and records the court as stating that the revised concession contract "purportedly no longer exists". [confidence: high] [source: 2, 6, 9]
+16. Franco-Nevada recognized a full impairment of USD 1,169.2 million on its Cobre Panamá stream for 2023. [confidence: high] [source: 6]
+17. FQM started ICC arbitration in November 2023 and a separate claim under the Canada–Panama Free Trade Agreement. The amount commonly reported is about USD 20 billion. On 31 March 2025, after engaging with the government's legal counsel, FQM said it would discontinue the ICC proceeding and suspend the FTA arbitration. President José Raúl Mulino had made dropping the arbitrations a condition of talks. [confidence: high for the procedural steps; medium for the USD 20 billion figure] [source: 10, 11]
+18. On 7 April 2026, by Resolution No. 27, the government authorized the removal, processing and export of stockpiled ore. The stated purpose was to reduce the environmental and operational risks of long-term storage on site. The first of three milling circuits was commissioned in May 2026 and produced 3,216 tonnes of copper in concentrate that quarter. The stockpile was estimated at about 38 million tonnes of ore containing about 70,000 tonnes of recoverable copper. FQM guided 30,000–40,000 tonnes of copper from stockpile processing in 2026. Site employment rose from about 2,350 in early April to about 3,000 by end-June 2026. [confidence: high] [source: 5]
+19. On 19 June 2026 the Ministry of Environment (MiAmbiente) published the final integral audit by SGS. It found 361 of 370 environmental commitments fulfilled (overall 87.7%), seven partial compliances and three non-compliances. The non-compliances related to reforestation programs suspended since 2023. [confidence: high] [source: 5, 12]
+20. On 30 September 2026 an inter-ministerial commission delivered its final report to President Mulino. Its members were the Ministers of Commerce and Industries (Julio Moltó), Economy and Finance (Felipe Chapman) and Environment (Juan Carlos Navarro). The report contains 17 recommendations and six criteria; Mulino adopted the criteria and called them non-negotiable. The central recommendation is to open negotiations with First Quantum / Cobre Panamá on a new agreement. That agreement would provide an "orderly closure" with a definite end date, financed by the project at no fiscal cost to the state, and would end the pending arbitrations. The report estimates a full closure from the current state at USD 2.6–3.4 billion over 17–19 years. It puts arbitration claims against Panama at a minimum of USD 27 billion. [confidence: high for the delivery, the ministers, the 17/6 structure and the core recommendation; medium for the cost and claim figures, taken from the government summary and press] [source: 12, 13]
+21. On 30 September 2026 FQM said it would engage "constructively and in good faith" and was awaiting the government's guidance on next steps. [confidence: high] [source: 14]
+
+## Timeline
+
+- 9 Feb 1997: MPSA concession granted. 26 Feb 1997: Law 9 approves the contract.
+- 2009: CIAM files a constitutional challenge to Law 9.
+- Aug 2012: Franco-Nevada stream signed with Inmet/MPSA (amended Nov 2015).
+- 2013: FQM acquires Inmet and with it 80% of MPSA.
+- 30 Dec 2016: Concession extended to 28 Feb 2037.
+- Nov 2017: FQM raises its stake to 90% (KPMC purchase from LS-Nikko).
+- Sept 2018: Supreme Court ruling on Law 9 becomes known. Construction continues.
+- 1 Sept 2019: Commercial production.
+- Jan 2022: Government sets out its objectives for a new contract (revenue, environment, labour).
+- 14 Dec 2022: Negotiation deadline missed. 21 Dec 2022: MICI orders a suspension plan.
+- 26 Jan – 8 Mar 2023: Port loading halted; processing suspended 23 Feb.
+- 8 Mar 2023: Draft refreshed contract agreed; operations resume.
+- 20 Oct 2023: Law 406 enacted. Mass protests begin within days.
+- 3 Nov 2023: Law 407 moratorium.
+- Mid-Nov 2023: Port blockade; production suspended; P&SM begins.
+- 28 Nov 2023: Supreme Court strikes down Law 406.
+- 31 Mar 2025: FQM discontinues the ICC case and suspends the FTA case.
+- Aug 2025: MiAmbiente launches the integral audit process.
+- 7 Apr 2026: Resolution No. 27 authorizes stockpile processing. May 2026: first concentrate.
+- 19 Jun 2026: SGS audit published.
+- 30 Sept 2026: Commission report and FQM response.
+
+## Financing and structure details
+
+- Owner/borrower: Minera Panamá S.A. (FQM 90%, KOMIR 10% via KPMC). [source: 1]
+- Construction funding: FQM corporate funding plus the Franco-Nevada precious-metals stream (USD 1 billion deposit funded 1:3 alongside FQM, plus USD 356 million in 2018 for the KPMC share). Deliveries were linked to copper in concentrate shipped and, on the original stream, approximated 86% of payable precious metals attributable to the 80% interest under the original 31-year Inmet mine plan. [source: 1]
+- Fiscal regime under Law 9: 2% royalty on negotiable gross production; corporate income tax holiday while construction debt was outstanding. [source: 1]
+- Proposed 2023 regime (never effective): minimum USD 375 million a year, 12–16% profit-based royalty, 20+20-year term. [source: 1, 7]
+- The stream holder carried full concession risk without recourse to the state: Franco-Nevada wrote its stream down to zero in 2023. [source: 6]
+
+## What went wrong or right, and why
+
+- Legal foundation risk (FQM's own disclosure): the 2018 ruling on Law 9 turned on how the contract had been approved in 1997, not on how the mine was operated. A defect in the legislative approval process left the concession open to attack for more than two decades. Building a USD multi-billion asset on a contested legal base left the project dependent on reaching a new political settlement. [source: 1]
+- Process and legitimacy: Law 406 passed in three days and was followed by the country's largest protests in years. The government's own commission now sets as its first criterion compliance with the Supreme Court ruling and Law 407. Its other criteria stress state leadership, national ownership of the deposits and "verifiable" transparency. This is the government's own diagnosis of what the 2023 contract lacked. [source: 12, 13]
+- Fiscal take as a flashpoint: the government's January 2022 objectives, and the jump from a 2% royalty to a USD 375 million floor, show that renegotiation of the state's share drove events. A large tax payment (USD 567 million in November 2023) did not secure acceptance. [source: 1, 4]
+- Operational resilience to blockade: the mine depended on its own port for supplies to its power plant, so a small-boat blockade was enough to stop production. [source: 4]
+- Arbitration as leverage and as an obstacle: FQM's claims gave it leverage, but the Mulino government refused to negotiate while they were pending. FQM suspended or discontinued them to get to the table. [source: 10, 11]
+
+## Teaching angles by chapter
+
+- Ch 50 (Environmental and social risk): Use Cobre Panamá to show that E&S and social-license failure is credit risk. A mine that a later independent audit rated broadly compliant on its environmental commitments (87.7%) was still shut by national protest and a constitutional ruling. Distinguish technical compliance with ESIA/ESMP commitments from legitimacy. Stress that public consultation was formally scheduled (30 days) but did not secure consent.
+- Ch 60 (Political risk and its protection): A case of the obsolescing bargain and of creeping-then-sudden expropriation-type risk. The sequence ran: renegotiation demands, administrative pressure (port scale certification), a new contract, legislative reversal, and judicial annulment. Discuss what PRI, treaty claims (Canada–Panama FTA) and ICC arbitration can and cannot do. Note how arbitrations became a bargaining chip that had to be suspended before talks could start. Contrast legal protection with the legitimacy of the contract-approval process itself.
+- Ch 78 (Mining and critical minerals): Show stream finance as construction capital (USD 1 billion deposit funded 1:3 alongside the sponsor) and the stream holder's full exposure to concession risk (USD 1.17 billion impairment). Use the fiscal-regime contrast (2% royalty vs 12–16% profit royalty with a USD 375 million floor) to teach resource nationalism and fiscal stability. The 2026 stockpile-processing permit and the "restart to fund closure" proposal are a lesson in closure liabilities, care-and-maintenance cost (USD 51 million negative EBITDA in Q2 2026) and asset optionality.
+
+## Do not state
+
+- That the 2018 Supreme Court ruling "annulled the concession". FQM's position is that it did not, and the legal effect was contested. Say "declared Law 9 unconstitutional".
+- An exact date for the Law 9 ruling. Sources variously cite December 2017 for the decision, September 2018 for public knowledge and 2021 for a final ruling. Use "made public in September 2018".
+- Death tolls, protest sizes or names of individuals involved in the 2023 protests. Reports vary; at most, say that several people died during the protests.
+- That the referendum Cortizo announced (for 17 December 2023) took place. It did not proceed as planned; avoid detail unless separately verified.
+- Precise total capital cost of the mine. A figure of about USD 6.7 billion is widely reported but was not confirmed from a primary source here.
+- That Cobre Panamá was financed with a non-recourse bank project-finance package. This was not verified; FQM corporate funding and the stream are verified.
+- The exact amount claimed in arbitration. About USD 20 billion is widely reported for FQM, and at least USD 27 billion is the commission's aggregate across claimants; do not merge the two.
+- That the government has decided to restart the mine, or the terms of any new arrangement (e.g., reported JV stakes of 60–65%). As of 3 October 2026 these were press reports and recommendations, not decisions.
+- That the mine accounted for "5% of GDP" or similar macro figures. These were not verified here. "About 1.5% of global copper supply in 2022" (Mining Technology) is medium confidence at best.
+
+## Sources
+
+1. First Quantum Minerals Ltd., Annual Information Form as at 31 December 2022 (March 2023). https://minedocs.com/24/First-Quantum-AIF-12312022.pdf
+2. First Quantum Minerals, News Release 23-35, "First Quantum provides update on Cobre Panama", 28 November 2023. https://www.first-quantum.com/wp-content/uploads/2025/08/NR-23-35-Cobre-Panama-Update-FINAL.pdf
+3. MiningWatch Canada / CIAM, "Environmental Victory in Panama: Supreme Court declares Law 9 from February 26, 1997 unconstitutional", 24 September 2018. https://miningwatch.ca/news/2018/9/24/environmental-victory-panama-supreme-court-declares-law-9-february-26-1997
+4. First Quantum Minerals, "First Quantum Provides Update on Cobre Panama Operations", November 2023. https://www.first-quantum.com/news/first-quantum-provides-update-on-cobre-panama-operations/
+5. First Quantum Minerals, News Release 26-17, "First Quantum Minerals Reports Second Quarter 2026 Results", 28 July 2026. https://www.first-quantum.com/wp-content/uploads/2026/07/NR-26-17-2026-Q2-FQM-News-Release-Final.pdf
+6. Franco-Nevada Corporation, Annual Information Form / Form 40-F for 2023 (exhibit 99.1), filed March 2024. https://www.sec.gov/Archives/edgar/data/1456346/000155837024003443/fnv-20231231xex99d1.htm
+7. Mining Technology, "First Quantum and Panama agree on draft concession deal on copper project", March 2023. https://www.mining-technology.com/news/first-quantum-panama-concession/
+8. UNCTAD Investment Policy Monitor, "Panama – Adopts a moratorium on new mining concessions", 2023. https://investmentpolicy.unctad.org/investment-policy-monitor/measures/4483/panama-adopts-a-moratorium-on-new-mining-concessions
+9. Mining Technology, "Panama's Supreme Court rules First Quantum copper contract unconstitutional", 28 November 2023. https://www.mining-technology.com/news/the-supreme-court-in-panama-rules-first-quantums-contract-unconstitutional/
+10. First Quantum Minerals (GlobeNewswire via The Manila Times), "First Quantum Provides Update on Arbitration Proceedings in Panama", 31 March / 1 April 2025. https://www.manilatimes.net/2025/04/01/tmt-newswire/globenewswire/first-quantum-provides-update-on-arbitration-proceedings-in-panama/2083833
+11. Mining Weekly, "First Quantum to discontinue two Cobre Panama arbitration proceedings", 1 April 2025. https://www.miningweekly.com/article/first-quantum-to-discontinue-two-cobre-panama-arbitration-proceedings-2025-04-01
+12. Ministerio de Comercio e Industrias (MICI), Panama, "Comisión Interministerial entregó el informe final sobre el sitio minero Cobre Panamá", 30 September 2026. https://mici.gob.pa/2026/09/30/comision-interministerial-entrego-el-informe-final-sobre-el-sitio-minero-cobre-panama/
+13. Rio Times, "Cobre Panamá Report Asks Panama to Negotiate a Restart That Ends in Closure", 30 September 2026 (secondary; used for the six criteria and cost figures, cross-checked against source 12). https://www.riotimesonline.com/panama-advisers-recommend-full-cobre-mine-closure-2026
+14. First Quantum Minerals (GlobeNewswire via The Manila Times), "First Quantum Provides Update on Cobre Panamá", 30 September / 1 October 2026. https://www.manilatimes.net/2026/10/01/tmt-newswire/globenewswire/first-quantum-provides-update-on-cobre-panam/2436531/amp
