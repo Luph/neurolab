@@ -127,3 +127,4 @@
 - Build-along workbooks DONE (model/build/Ch39..Ch43; Ch43 = Case_P_Model.xlsx except cover notes; scripted via build_stages.py). Exercise workbooks: ch13 (3 files), ex43_14, ex43_17, ex85_12, ex86_13 built; spec gaps: ch39_sponsor_solar_layout.xlsx (brief lacks inputs), ch13 Quebracho Alto cost profile. MUST RE-RUN build_stages.py and verification after Case P v1.5 (ECA profile). Audit reader copy MC results to regenerate with keyed copy.
 - Blueprint round-2 fixes DONE (r2-fix-log.md; D-129..D-139). Quebrada Honda in u10 renamed Loma Cobrecita.
 - Ch 2 revised (r1); round-2 reviews dispatched to the same six reviewers.
+- Case P model v1.5 DONE (D-128 ECA equal-installment tranche; debt 629.95; 443 ledger values changed, list in model/figure-ledger-case-p-changes-v1.5.md). Build-along regeneration + u09 map update, and v1.5 value propagation across briefs/Bible, launched.

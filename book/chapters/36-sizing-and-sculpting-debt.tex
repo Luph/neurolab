@@ -520,7 +520,7 @@ Losing distributions is what drives the sponsor to refinance. A soft mini-perm d
 
 Port Arthur LNG, the opening case, is a hard mini-perm by maturity (Sempra 2023). Rio Grande LNG Phase 1, which reached its final investment decision on July 12, 2023, used the same pattern: its main bank credit agreement matures seven years from closing, alongside USD~700~million of 6.67\% senior secured notes due 2033 (NextDecade 2023). LNG lenders accept the structure because a train with 20-year take-or-pay contracts from creditworthy buyers will almost certainly be refinanceable once it is operating, and because the bank market is where construction risk can be priced.
 
-The extreme case is a loan with no amortization at all. When the Indiana Toll Road concession closed in June 2006, the concessionaire financed its USD~3.8~billion upfront payment largely with a nine-year, interest-only bullet bank loan hedged by a 20-year accreting interest rate swap, on approximately USD~3.4~billion of initial debt (GIIA n.d.; \cref{ssec:14.12.3}). By June 2014 the company reported debt of about USD~4.4~billion, of which about USD~3.9~billion had to be refinanced within 12 months (Indianapolis Business Journal 2014). It filed a prepackaged Chapter 11 in September 2014, a filing whose restructuring plan the main creditors had agreed in advance (\cref{ssec:64.8.2}), with swap liabilities of about USD~2.15~billion on top of the loans; \cref{ch:37} returns to the swap.
+The extreme case is a loan with no amortization at all. When the Indiana Toll Road concession closed in June 2006, the concessionaire financed its USD~3.8~billion upfront payment largely with a nine-year, interest-only bullet bank loan hedged by a 20-year accreting interest rate swap, on approximately USD~3.4~billion of initial debt (GIIA n.d.; \cref{ssec:14.12.3}). By June 2014 the company reported debt of about USD~4.4~billion, of which about USD~3.9~billion had to be refinanced within 12 months (Indianapolis Business Journal 2014). It filed a prepackaged Chapter 11 in September 2014, a filing whose restructuring plan the main creditors had agreed in advance (\cref{ssec:64.8.2}), with swap liabilities of about USD~2.15~billion on top of the loans (Bond Buyer 2014); \cref{ch:37} returns to the swap.
 
 \section{Merchant tails and sizing by revenue bucket}\label{sec:36.8}
 
@@ -710,3 +710,125 @@ Step 5. Read the LLCR. At 1.37\x{} including the DSRA, the LLCR clears 1.35\x. W
 Step 6. Write the questions for the modeling bank. Where is the ten-year P90 test? The printout has a one-year P99 floor but no solvency test against a resource study that proves systematically optimistic, so ask what debt a ten-year P90 at the term sheet's ratio allows. Is the downside availability haircut of four points from the independent engineer's report, or the sponsor's? And since gearing and downside are within USD~0.2~million of each other, what is the debt if the total funding requirement rises by USD~2~million from a contingency increase?
 
 The order of these steps is \cref{fw:sizing-constraint-stack} read backward: start from the answer, then check that each step that produced it was done right.
+
+\section{Case P: the lenders size the debt}\label{sec:36.12}
+
+Castellan Bank's draft term sheet of July 14, 2017 had asked for a 1.45\x{} base-case DSCR, 70\% gearing and a 2032 final maturity. After 15 weeks of negotiation the term sheet agreed on October 27, 2017 set 1.35\x, 75\% and June 30, 2034. By April 2018 the commercial negotiation was over and the numbers had to be run on the financial close base case, the sponsor's best-estimate projection at financial close, for credit committee. The lender group combined an ECA-covered tranche, an A loan and a B loan from the Atlantic Basin Development Bank (ABDB), a DFI (\cref{ssec:29.4.4}), and an uncovered commercial tranche.
+% V1.5: all Case P figures in this section to be refreshed from the regenerated ledger (P-F07, P-F08, P-F09, P-F19, P-F36, P-F43).
+
+\begin{casescene}{Case P}{Castellan Bank, London, April 2018}
+``Six-three-three. Point three.'' Tomasz turned the printout the right way up. ``The gearing line says six-four-two-point-nine.''
+
+``The gearing line is what seventy-five percent would give you. You don't get it. The one-thirty-five binds.''
+
+``So we're under our own cap.''
+
+``By nine-point-seven million. Which you'd only get if the cash flows were better than your own base case says. And the one-twenty downside lets you borrow six-three-three-point-four. Not quite two hundred thousand dollars of room.''
+
+``That's two tests binding.''
+
+``That's a well-sized deal.''
+
+Tomasz turned to the profile page. ``There are two schedules here.''
+
+``Exportgarant won't cover the common profile. On the sculpted shape its tranche's average life comes out over seven and a quarter years. So the covered tranche repays faster, and the A loan, the B loan and the commercial banks carry the back end.''
+
+``And charge us for it.''
+
+``Same margins. I had to spend some credit to get that.''
+
+``June twenty thirty-four. In 2016 you told me thirty-six.''
+
+``Exportgarant stops at fourteen years from COD. Your COD is May 2021.''
+
+``What does it cost us per kilowatt-month if the engineer moves COD back six months?''
+
+``Nothing on the tariff. Everything on the schedule. Ask me again when the engineer gives you a date.''
+\end{casescene}
+
+Pieter was wrong in 2016 and right in 2018. A 2036 maturity would have meant a repayment term of more than 15 years from a May 2021 COD, beyond the 14 years Exportgarant's cover allowed. Tomasz's last question was a profile question, not a tariff one: with the final maturity fixed at June 30, 2034, a six-month delay squeezes the same principal into fewer periods unless the lenders resculpt, and every period's DSCR then falls below 1.35\x.
+
+\Cref{exh:36.12} is the lenders' constraint table, applying \cref{fw:sizing-constraint-stack} to the financial close base case.
+
+\begin{exhibit}[H]
+\caption{Case P sizing constraints and binding constraint \casep}\label{exh:36.12}
+\small
+\begin{tabularx}{\linewidth}{@{}L rrl@{}}
+\toprule
+Constraint & Test & Debt allowed (USD m) & Result\\
+\midrule
+Base-case DSCR, sculpted & 1.35x & 633.3 & Binds\\
+Downside DSCR, debt service fixed & 1.20x & 633.4 & Slack 0.2\\
+Gearing cap on total funding requirement & 75\% & 642.9 & Slack 9.7\\
+LLCR at close (with DSRA) & 1.40x & n/a & 1.42x; does not bind\\
+\midrule
+Senior debt & n/a & 633.3 & n/a\\
+\quad ECA-covered tranche (30\%) & n/a & 190.0 & n/a\\
+\quad ABDB A loan (22\%) & n/a & 139.3 & n/a\\
+\quad ABDB B loan (10\%) & n/a & 63.3 & n/a\\
+\quad Commercial tranche (38\%) & n/a & 240.6 & n/a\\
+Gearing at financial close & n/a & 74.1\% & n/a\\
+\bottomrule
+\end{tabularx}
+\exhibitsource{Case P reference model, financial close base case and downside case.}
+\exhibitnote{Tranches add to 633.2 because of rounding. The ECA-covered tranche is below its USD 224.1 million cap. Slack is computed on unrounded figures.}
+\end{exhibit}
+% V1.5 sources: P-F07 (gearing, funding), P-F08 (debt, tranches, slack rows, LLCR), P-F43 (857.2 closed-form funding at cap)
+
+The DSCR binds, and the downside test is slack by only about USD~0.2~million: the lenders' downside (availability 6.5 points below profile in every year, a heat rate 1.5\% higher and fixed operating costs 10\% higher, run with debt service fixed) produces a minimum DSCR of almost exactly 1.20\x{} at the sized debt. In effect two tests bind together, which is what a lead arranger wants to show a credit committee: the base-case target and the downside test agree on the debt.
+
+The gearing cap allows USD~642.9~million, so the sponsors are USD~9.7~million below their own cap. The USD~642.9~million is not 75\% of the base-case total funding requirement of USD~855.1~million, which would be USD~641.3~million. The funding requirement itself rises with the debt, because more debt means more IDC, commitment fees and ECA premium; at the 75\% cap the total funding requirement is USD~857.2~million, and 75\% of that is 642.9. The modeling bank converged the IDC, fees and DSRA funding in the funding requirement, and they are taken as given here (\cref{sec:40.5} shows how).
+
+The 1.40\x{} LLCR test does not bind. The LLCR at close is 1.42\x{} including the DSRA and 1.36\x{} excluding it. The common terms agreement, the agreement holding the terms common to all tranches (\cref{ssec:51.1.3}), defines LLCR with the DSRA cash balance in the numerator, the book's convention from \cref{ssec:35.3.1}. Under the other definition the test would have failed by 0.04\x. LLCR without the reserve is 1.36\x{} rather than exactly the 1.35\x{} target because the LLCR discounts at the weighted all-in senior rate while the sculpting used each period's own rates. % V1.5: confirm explanation against model
+
+\begin{exhibit}[H]
+\caption{Case P sculpted repayment profile and ECA tests \casep}\label{exh:36.13}
+\small
+\begin{tabularx}{\linewidth}{@{}L rrr@{}}
+\toprule
+ECA test on the ECA-covered tranche's own schedule (2018 cover terms) & Limit & Case P & Room\\
+\midrule
+Repayment term from COD (years) & 14.00 & -- & --\\
+Weighted average life from COD (years) & 7.25 & -- & --\\
+Largest installment (\% of tranche principal) & 25.0 & -- & --\\
+First repayment after COD (months) & 24 & -- & --\\
+Principal repaid within 24 months of COD (\%) & at least 2.0 & -- & --\\
+\midrule
+Memo: all tranches & & & \\
+\quad Scheduled principal, all tranches (USD m) & n/a & -- & n/a\\
+\quad Forecast cash sweep of the commercial tranche (USD m) & n/a & -- & n/a\\
+\quad Senior debt at financial close (USD m) & n/a & 633.3 & n/a\\
+\bottomrule
+\end{tabularx}
+\exhibitsource{Case P reference model, financial close base case; COD May 1, 2021 and PPA expiry April 30, 2046 from the Case P terms.}
+\exhibitnote{ECA tests apply to the covered tranche's contractual schedule; prepayments, including sweeps of other tranches, are ignored. Scheduled principal plus the forecast sweep equals the debt at close.}
+\end{exhibit}
+% V1.5: fill from regenerated P-F09 (ECA tranche schedule, tests, explicit cash-sweep row); add ECA tranche installments by period if the ledger prints them.
+
+The ECA tranche's own schedule is what Exportgarant tests. Sculpted on the common profile, the covered tranche's WAL would have exceeded 7.25 years, because Case P's indexed capacity payments make CFADS rise and the sculpted principal back-ended. The lenders therefore gave the ECA-covered tranche a front-loaded schedule that meets every 2018 test, and sculpted the other tranches so that total debt service still meets the 1.35\x{} base-case target in every period. The commercial banks and the ABDB accepted more back-ended repayment than the ECA, at unchanged margins; that was the real negotiation in the scene above. The first repayment on December 31, 2021, eight months after COD, sits inside the 24-month limit. Under the 2017 text, credits outside the project finance terms had to start repaying within six months of the starting point (the current text allows one year); a first repayment eight months after COD would have failed that rule.
+
+Two other features of the debt sit outside the sculpting. The tail from the June 30, 2034 maturity to the April 30, 2046 PPA expiry in the base case is about 11.8 years: long, as a by-product of the 14-year ECA cap rather than a lender requirement. Its cost to the sponsor is debt capacity left unused, visible in the gap between PLCR and LLCR, and it later gave the lenders room to defer and reschedule when Case P ran into trouble (\cref{ch:62,ch:63}). And the commercial tranche carries soft mini-perm features although it amortizes fully on its schedule: its margin steps up from 4.10\% to 4.60\% in 2026 and to 5.10\% in 2030, and from January 2027 50\% of distributable cash sweeps it (pricing detail in \cref{sec:38.11}). In the base case the sweep prepays part of the commercial tranche, so scheduled principal adds to less than the debt (the memo lines in \cref{exh:36.13}), and the shrinking later debt service lifts the debt-service-weighted average DSCR to 1.54\x{} against a minimum of 1.35\x. % V1.5: 1.54x average and memo lines from regenerated P-F08/P-F09
+
+\begin{exhibit}[H]
+\caption{Case P debt at alternative DSCR targets and gearing caps \casep}\label{exh:36.14}
+\small
+\begin{tabularx}{\linewidth}{@{}L rrrr@{}}
+\toprule
+Base-case DSCR and gearing cap & \makecell[r]{Debt\\(USD m)} & Binding & \makecell[r]{Downside min\\DSCR (x)} & \makecell[r]{Equity\\IRR (\%)}\\
+\midrule
+1.30x, 70\% & 592.3 & Gearing & 1.28 & 12.9\\
+1.30x, 75\% & 642.9 & Gearing & 1.18 & 13.4\\
+1.30x, 80\% & 658.1 & DSCR & 1.19 & 13.5\\
+1.35x, 70\% & 592.3 & Gearing & 1.28 & 12.9\\
+1.35x, 75\% & 633.3 & DSCR & 1.20 & 13.3\\
+1.35x, 80\% & 633.3 & DSCR & 1.20 & 13.3\\
+1.40x, 70\% & 592.3 & Gearing & 1.28 & 12.9\\
+1.40x, 75\% & 610.1 & DSCR & 1.24 & 13.1\\
+1.40x, 80\% & 610.1 & DSCR & 1.24 & 13.1\\
+\bottomrule
+\end{tabularx}
+\exhibitsource{Case P reference model, financial close base case.}
+\end{exhibit}
+% V1.5: replace with regenerated P-F36 (all sizing tests applied).
+
+Kilnworth's finance team and Castellan used a table like \cref{exh:36.14} during the October 2017 negotiation, and the lenders reran it on the final base case. Read the 1.35\x{} rows. Moving the gearing cap from 75\% to 80\% adds no debt at all, because at 1.35\x{} the DSCR already binds below the 75\% cap; the cap matters only if the target falls. Kilnworth therefore stopped arguing about gearing once the 1.35\x{} target was settled. The 1.30\x{} rows show the other side: a lower base-case target is capped by the 1.20\x{} downside sizing test, so under the full constraint stack it buys almost nothing. The equity internal rate of return (IRR) row shows what the sponsor gives up for that discipline. % V1.5: rewrite against the regenerated P-F36 rows
