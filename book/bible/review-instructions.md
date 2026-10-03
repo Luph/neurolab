@@ -1,0 +1,18 @@
+# Chapter review instructions (Phase 4)
+
+You are one of six independent reviewers of a drafted chapter of the textbook defined in /home/user/neurolab/book/standards.md. You did not write it. Read standards.md in full, bible/style-sheet.md (with Addendum), bible/decisions.md, the chapter's brief (bible/briefs/uNN.md, "Chapter N"), bible/ownership-resolutions.md rulings naming the chapter, and the chapter file chapters/NN-*.tex. Then apply YOUR ROLE below.
+
+Write your report to reviews/NN/rK-<role>.md (K = review round). Format:
+- Verdict: PASS or FAIL. FAIL if any defect remains that a top publisher's editor would not let through.
+- Numbered defects: location (section/label/line), the defect, the exact required fix. Concrete; no vague advice. No praise section.
+Return only a short status note: verdict, number of defects, report path.
+
+## Roles
+1. domain — Domain expert in the chapter's subject (veteran test, standards §12.3). Accuracy, currency, depth, non-triviality; are market positions, practices and judgment calls right? Would a 25-year practitioner learn something? Does it cover everything the brief and coverage map require (completeness test §12.1)? Are the four lenses (sponsor, lender, government, contractor) present where the topic needs them?
+2. novice — A smart reader who knows only what Chapters 1..N-1 teach (novice test §12.2). Read straight through; flag every step you could not follow, every term used before definition, every jump in a worked example, every concept assumed but not taught earlier (check the brief's "assumed" list and the glossary canon home labels).
+3. numbers — Numbers auditor (§12.4). Recompute EVERY figure, table, example, formula application and exercise solution with Python (save scripts to /tmp/claude-0/-home-user-neurolab/a8d2e1e2-d243-5cdc-b359-eb0b0ebba7b3/scratchpad/review-NN/). Check every running-case number against model/figure-ledger-case-*.md and model/outputs_case_*.json. Check Excel formulas implement the math shown. List each discrepancy with the correct value.
+4. facts — Fact-checker (§12.6). Check every real-world statement (cases, laws, institutions, dates, market data) against facts/ sheets ("Do not state" lists binding) or fresh primary sources (WebFetch/curl; generic User-Agent; no bot-block bypass). Check illustrative material is labeled. Check D-011 indicative ranges are labeled with market and period. Check the Sources section.
+5. line — Line editor (§8, prose test §12.7). Run `python3 scripts/scan_prose.py <file>` and then read every paragraph for ALL patterns in standards §8, including those a script cannot catch (false contrasts, rule of three, zingers, summary sandwiches, monotone rhythm, rhetorical stacks, vague "This"/"That" openers, elegant variation, decorative metaphor, analogy on autopilot, scene and character tics, dash limit, colon reveals, headings). Check opening pull, closing pull, rhythm, voice per style sheet. Quote each offending passage with a rewrite direction.
+6. consistency — Consistency checker. Terminology vs bible/glossary-canon.md; labels and cross-references vs bible/anchor-registry.md (every \cref target must exist in the registry); concept ownership (no re-teaching of concepts owned elsewhere; no use before home without forward reference); running-case continuity vs case-bible + annexes + case-state (dates, names, who is in the room, story order); style-sheet conventions (number formats, status labels, environments). Also compile with `bash scripts/build_chapter.sh <file>` and report any errors or overfull boxes.
+
+Never put personal identifiers in any web request header; never bypass bot blocks. Do not edit the chapter.

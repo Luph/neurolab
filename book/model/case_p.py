@@ -232,6 +232,7 @@ EPC_ACT = list(PROF['epc_payment_pct_by_month_actual'].values())
 OWN_FC = list(PROF['owners_costs_pct_by_month_base'].values())
 OVR = INP['events']['construction_overrun']
 # timing of actual overrun items (modeler timing assumptions; amounts from the Case Bible)
+CAL_OVERRUN = 37.33        # v1.2 calibration (P-C43): standby drawn about USD 10m, contingent equity about USD 3m
 OVERRUN_TIMING = [   # (name, amount, first month index (0 = Aug 2018), number of months)
     ('COVID variation order', OVR['covid_variation_order_usd_m'], 26, 6),       # Oct20-Mar21
     ('Grid-event prolongation settlement', OVR['grid_event_prolongation_settlement_usd_m'], 39, 1),
@@ -242,6 +243,9 @@ OVERRUN_TIMING = [   # (name, amount, first month index (0 = Aug 2018), number o
     ('Additional start-up fuel, net', OVR['additional_start_up_fuel_net_usd_m'], 38, 2),
     ('EAR deductible', OVR['ear_deductible_borne_usd_m'], 35, 1),
     ('Additional lenders advisor costs', OVR['additional_lenders_advisor_costs_usd_m'], 33, 7),
+    # v1.2 modeler calibration (editor ruling): EPC acceleration and delay costs under the COVID and grid-event
+    # variations and the extended owner's team, beyond the Bible's 39.27, sized so that the standby facility is drawn
+    ('Delay-related EPC acceleration and owner cost escalation (calibration)', CAL_OVERRUN, 33, 7),
 ]
 EXT_OWNERS = OVR['extended_owners_costs_usd_m']     # months 34-40 (index 33-39)
 RECEIPT_M = 39                                       # Nov 2021: taking-over
