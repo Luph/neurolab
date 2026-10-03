@@ -692,8 +692,10 @@ Swapping a banned word for a synonym is the same failure (`standards.md` Section
 
 The reference for tone and density, as LaTeX source. It compiles as shown.
 
+Format sample only (D-129): this passage is not Example 9.6 and carries no label. Chapter 9's Example 9.6 follows its structure with its own located inputs (u02 brief). Its figures are barred as inputs by A.11.
+
 ```latex
-\begin{example}{Why lenders size on P90 \illustrative}\label{ex:9.6}
+\begin{example}{Why lenders size on P90 \illustrative}
 Take a 120~MW wind farm whose consultant forecasts 380.0~GWh a year at \term{P50},
 the output level the farm is expected to beat in half of all years. At a tariff of
 USD~52.40/MWh, that is revenue of \USDm{19.9}. Operating costs are \USDm{6.1}, so

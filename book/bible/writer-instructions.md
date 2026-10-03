@@ -35,3 +35,18 @@ Never put personal identifiers in any web request header; never bypass bot block
 - Spell out every abbreviation at first use in each chapter, even if defined earlier in the book.
 - Exercises may require only what the chapter and earlier chapters teach; exercise solutions may not introduce new terms.
 - In drafted clauses, explain the capitalized defined-term convention the first time a chapter shows a clause, and gloss defined terms the reader has not met.
+
+## Pilot lessons: patterns the line editor rejected (avoid all)
+- Ending paragraphs on a cross-reference pointer ("Chapter N teaches…"). Put cross-references mid-paragraph where the concept is used, never as the paragraph's last sentence.
+- Announcing counts before lists ("three ways", "two things"). Just present the items.
+- Italic run-in labels as structure inside examples or walkthrough steps; use plain prose or the environments in pfbook.sty.
+- Strings of "Label: yes." or "Verdict: …" paragraphs; reason in prose.
+- Repeating a sentence formula across consecutive paragraphs or steps (e.g., every step ending "A director asks: …").
+- Restating the opening's facts later in the chapter; cross-reference instead.
+- Aphoristic one-line paragraph endings (zingers).
+- Promising a precise answer and not giving it; every "the answer is…" must show the number.
+- Presenting the four lenses as four parallel sentences; show the parties' positions colliding in a negotiation.
+- Ending the chapter on a rhetorical question plus "Chapter N+1 answers that question"; close on the open problem stated concretely.
+- Reusing phrases or gestures from the style sheet's sample passages.
+- Typing "Chapter 1", "the next section" by hand: always \cref.
+- Words for numbers 10 and above; "USD 412 thousand" in prose (D-126); bare "the government" (use "host government" or the named body); varying names for the same agent or party; unexpanded abbreviations.
