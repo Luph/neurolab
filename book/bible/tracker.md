@@ -118,3 +118,4 @@
 - Done: t-repowering, t-fast-standard, t-energy-yield, t-battery-degradation, t-earned-value, t-sustainable-finance-2. All requested fact sheets delivered (172 files).
 - Consolidation part B DONE (Case Bible v1.2, model-requests-round1.md, capability-map.md, name register Part 5A with renames, D-116..D-123).
 - Consolidation part A DONE (registry 5,558 labels; glossary 1,793; R-142..R-148; D-048..D-055; renames applied).
+- Blueprint review round 2 launched (4 fresh reviewers). Phase 2 pilot launched in parallel: Ch 2 (narrative) and Ch 36 (calculation).
