@@ -314,7 +314,7 @@ Source brief: `briefs/u01.md`.
 | `sec:2.4` | Project finance and its neighbors |  |
 | `ssec:2.4.1` | Corporate finance |  |
 | `ssec:2.4.2` | Asset finance and leasing |  |
-| `ssec:2.4.3` | Reserve-based lending compared with project finance |  |
+| `ssec:2.4.3` | Reserve-based lending | retitled in Ch 2 round 1 revision (line edit: sibling headings) |
 | `ssec:2.4.4` | Acquisition finance |  |
 | `ssec:2.4.5` | Securitization and structured finance |  |
 | `sec:2.5` | What sponsors, lenders, and governments gain from project finance |  |
@@ -333,15 +333,16 @@ Source brief: `briefs/u01.md`.
 | `sec:2.12` | The structure is old; its rules were learned one failure at a time |  |
 | `sec:2.13` | Exercises |  |
 | `sec:2.14` | Solutions to exercises |  |
-| `ex:2.1` | Two ways to fund a wind farm |  |
-| `ex:2.2` | Climbing the recourse ladder |  |
-| `ex:2.3` | Assigning the 2018 soiling loss at Llano Pardo |  |
+| `ex:2.1` | Climbing the recourse ladder | was ex:2.2 (renumbered to print order, Ch 2 round 1) |
+| `ex:2.2` | Assigning the 2018 soiling loss at Llano Pardo | was ex:2.3 (renumbered to print order, Ch 2 round 1) |
+| `ex:2.3` | Two ways to fund a wind farm | was ex:2.1 (renumbered to print order, Ch 2 round 1) |
 | `ex:2.4` | What project finance costs on the wind farm |  |
 | `ex:2.5` | Too small for project finance |  |
-| `exh:2.1` | Project finance and its six neighbors |  |
-| `exh:2.2` | Board paper summary of the corporate route against project finance (USD m) (Illustrative) |  |
-| `exh:2.3` | The two directions of ring-fencing (Illustrative) |  |
+| `exh:2.1` | The two directions of ring-fencing (Illustrative) | was exh:2.3 (renumbered to print order, Ch 2 round 1) |
+| `exh:2.2` | Project finance and its six neighbors (Illustrative) | was exh:2.1 (renumbered to print order, Ch 2 round 1) |
+| `exh:2.3` | Board paper summary of the corporate route against project finance (USD m) (Illustrative) | was exh:2.2 (renumbered to print order, Ch 2 round 1) |
 | `cl:2.1` | Single-purpose and separateness undertaking, common terms agreement (Illustrative) |  |
+| `cl:2.2` | Single-purpose and separateness undertaking, Llano Pardo common terms agreement (Illustrative) | new label; model answer to Exercise 2.10 (Ch 2 round 1) |
 | `fw:recourse-ladder` | Framework 2.1 The recourse ladder | home ssec:2.2.2 |
 | `fw:pf-fit-test` | Framework 2.2 The project finance fit test | home sec:2.7 |
 | `exr:2.1` to `exr:2.14` | Exercises (14) | range; cited only inside Ch 2 and by matter file 93 |

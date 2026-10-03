@@ -2073,6 +2073,28 @@ def figures_annex(F, RS, R1, R14, R15):
         rep = sum(P_[t] for t in range(NS) if S_END[t] <= lim)
         return dict(repaid_within_24_months_share=float(rep / tot), pass_2pct_by_24_months=bool(rep / tot >= 0.02))
     P['P-F09']['eca_tests'].update(eca24(Rb, cod_fc))
+    # v1.5 sizing slack, unrounded (Chapter 36 review addendum)
+    cz = F['sizing']['candidates']; D0 = float(CONTRACT['D']); et = P['P-F09']['eca_tests']
+    def eq_wal(Rx, cod, to=date(2046, 12, 31)):
+        ts = [t for t in range(NS) if Rx['S']['principal_total'][t] > 1e-9 and S_END[t] <= to]
+        y = [(S_END[t] - cod).days / 365.25 for t in ts]
+        return dict(first=S_LABEL[ts[0]], last=S_LABEL[ts[-1]], installments=len(ts), wal_years=float(np.mean(y)))
+    P['P-F08']['sizing_slack'] = dict(
+        senior_debt=D0, binding='DSCR',
+        downside_slack_usd_m=float(cz['downside'] - D0), downside_min_dscr=float(F['sizing']['downside_min_dscr']),
+        downside_ratio_slack_x=float(F['sizing']['downside_min_dscr'] - 1.20),
+        gearing_slack_usd_m_closed_form=float(F['sizing']['gearing_cap_debt_closed_form'] - D0),
+        gearing_cap_debt_closed_form=float(F['sizing']['gearing_cap_debt_closed_form']),
+        gearing_slack_usd_m_at_current_T=float(cz['gearing'] - D0), gearing=float(F['sizing']['gearing']),
+        llcr_at_first_repayment=float(F['sizing']['llcr_at_close_incl_dsra']), llcr_ratio_slack_x=float(F['sizing']['llcr_at_close_incl_dsra'] - 1.40),
+        llcr_slack_usd_m=float(cz['LLCR'] - D0),
+        eca_wal_years=float(et['wal_years']), eca_wal_room_days=float((7.25 - et['wal_years']) * 365.25),
+        eca_tenor_years=float(et['tenor_years']), eca_tenor_room_days=float((14.0 - et['tenor_years']) * 365.25),
+        equal_installment_wal_fc_dates=eq_wal(Rb, cod_fc), equal_installment_wal_actual_dates=eq_wal(Ra, cod_act), equal_installment_wal_actual_bank_dates_to_2034=eq_wal(Ra, cod_act, date(2034, 6, 30)),
+        note=('Slack = candidate debt amount for the test less the senior debt (USD m), or ratio less the test level; unrounded. The gearing slack uses the '
+              'closed-form debt at the 75% cap (Debt F131), whose total funding includes the fees and IDC on the larger debt; the candidate at the '
+              'current total funding is also shown. ECA room in days = (limit - value) x 365.25. Equal-installment WAL: equal principal on each '
+              'repayment date of the run, measured from that run\'s COD.'))
     # v1.5 reconciliation of the sculpted profile, the soft mini-perm sweep and the average DSCR (Chapter 36 review)
     nm6 = ['ECA', 'A', 'B', 'COM', 'SB', 'BOND']
     swp = sum(Sb['sweep_' + k] for k in nm6)

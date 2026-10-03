@@ -1546,6 +1546,7 @@ Entries: 1793 (recounted October 3, 2026 after consolidation A, which applied th
 | single-buyer model | – | A market design in which one state entity buys all generation under long-term contracts. | ssec:11.10.1 |  |
 | single point responsibility | – | The principle that one contractor is liable for the whole of design, procurement and construction, so that the owner need not prove which party caused a defect. | ssec:22.1.1 |  |
 | single-purpose undertaking | – | A covenant by the project company to carry on no business other than the project. | ssec:2.1.2 |  |
+| separateness undertaking | – | A covenant by the project company to keep its own books, bank accounts and decisions separate from its owners' and to deal with them only on arm's-length terms. | ssec:2.1.2 | Added after Ch 2 round 1 review (coordinator instruction). |
 | single till | – | Airport regulation that counts commercial revenue against the revenue requirement, lowering aeronautical charges. | ssec:21.8.1 | Ruling R-055. Ch 12 previews in one line; Ch 80 (ssec:80.2.2) applies it to airport regulation. Also entered by Ch 12, Ch 80: those chapters cross-reference this home. |
 | sinking fund | – | A reserve built by periodic contributions that, with interest, reaches a target amount on a stated date. | ssec:65.2.3 |  |
 | sizing case | – | The scenario on which the debt amount and repayment profile are computed. | ssec:35.6.1 | Ruling R-122. Ch 36 and Ch 37 use it; Ch 43 (ssec:43.3.1) owns test cases and the mechanics of running both cases in the model. |
