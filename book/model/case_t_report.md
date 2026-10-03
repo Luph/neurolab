@@ -84,7 +84,7 @@ Binding constraint: **interest_cover**. Sculpting divisor s = 2.6629x; NILO divi
 | Equity IRR, banking case | 10.04% |
 | Equity IRR, downside | 6.44% |
 | Contribution for 11.4% on the banking case | 537.7 |
-| Contribution for 11.4% on the bid base | 150.0 |
+| Contribution for 11.4% on the bid base | 68.3 |
 | Project IRR post-tax, bid base | 7.78% |
 | Project IRR post-tax, banking | 6.84% |
 
@@ -249,7 +249,7 @@ Traffic in thousand trips per day (2019 averaged over operating days); revenue =
 
 ## 11. Post-restructuring projections (T-F10)
 
-Minimum notes DSCR 2.00x; average 3.27x; cash sweep total 167.2; first distribution 2024-06-30; equity value at 11.4% 275.7; state revenue share total 0.0 (2030 revenue is 44.8% of the threshold; final full year 62.9%).
+Minimum notes DSCR 2.00x; average 3.27x; cash sweep total 167.2; first distribution 2024-06-30; equity value at the plan rate (14.0%) 275.7; state revenue share total 0.0 (2030 revenue is 44.8% of the threshold; final full year 62.9%).
 
 ## 12. Assumption changes
 

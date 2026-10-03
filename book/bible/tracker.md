@@ -63,3 +63,9 @@
 - Model Case R DONE (verification PASS, 12 scenarios; R-F11..R-F17 added).
 - Done: h-production-payments, h-north-sea-field-finance (Forties single source), h-purpa-us-ipp, h-gfc-pf-markets.
 - Done: t-security-civil-law, t-arbitral-rules, t-loan-syndication, t-negotiation-sources.
+- Done: t-project-bonds, t-blended-finance, t-local-currency, t-infra-debt-funds.
+### Phase 1 central resolution (launched)
+- Architecture editor: ownership-resolutions.md, glossary-canon.md, anchor-registry.md, architecture.md title/ownership updates, style-sheet addendum, decisions D-015+.
+- Case Bible annex P (case-bible-annex-p.md + case-p-input-requests.md).
+- Case Bible annex T/R/Ch1/capstone names (case-bible-annex-tr.md + case-tr-input-requests.md).
+- NEXT: models absorb input requests → blueprint review panel → Phase 2 pilot (two chapters).
