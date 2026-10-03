@@ -150,86 +150,86 @@ Traffic in thousand trips per day (2019 averaged over operating days); revenue =
 
 | Period | CFADS actual | Sched. DS | DSCR period | DSCR 12m | Banking DSCR 12m | Lock-up | EoD | DSRA | Arrears |
 |---|---|---|---|---|---|---|---|---|---|
-| 2019H2 | 17.1 | 15.4 | 1.11x | 1.11x | 1.50x | 1 | 0 | 19.3 | 0.0 |
-| 2020H1 | 9.0 | 19.3 | 0.47x | 0.75x | 1.50x | 1 | 0 | 11.9 | 0.0 |
-| 2020H2 | 16.5 | 20.6 | 0.80x | 0.64x | 1.50x | 1 | 1 | 7.7 | 0.0 |
+| 2019H2 | 16.9 | 15.4 | 1.10x | 1.10x | 1.50x | 1 | 0 | 19.3 | 0.0 |
+| 2020H1 | 9.0 | 19.3 | 0.46x | 0.74x | 1.50x | 1 | 0 | 11.5 | 0.0 |
+| 2020H2 | 16.5 | 20.6 | 0.80x | 0.64x | 1.50x | 1 | 1 | 7.3 | 0.0 |
 | 2021H1 | 18.0 | 23.7 | 0.76x | 0.78x | 1.50x | 1 | 1 | 23.9 | 0.0 |
-| 2021H2 | 23.1 | 23.9 | 0.96x | 0.86x | 1.54x | 1 | 1 | 24.0 | 0.0 |
-| 2022H1 | 19.7 | 23.4 | 0.84x | 0.90x | 1.66x | 1 | 1 | 18.4 | 0.0 |
-| 2022H2 | 24.8 | 24.6 | 1.01x | 0.93x | 1.80x | 1 | 1 | 18.6 | 0.0 |
-| 2023H1 | 24.7 | 24.4 | 1.01x | 1.01x | 1.91x | 1 | 1 | 18.9 | 0.0 |
-| 2023H2 | 25.4 | 24.6 | 1.03x | 1.02x | 1.93x | 1 | 1 | 0.0 | 0.0 |
+| 2021H2 | 23.0 | 23.9 | 0.96x | 0.86x | 1.54x | 1 | 1 | 24.0 | 0.0 |
+| 2022H1 | 19.7 | 23.4 | 0.84x | 0.90x | 1.66x | 1 | 1 | 18.3 | 0.0 |
+| 2022H2 | 24.8 | 24.6 | 1.01x | 0.93x | 1.80x | 1 | 1 | 18.5 | 0.0 |
+| 2023H1 | 24.7 | 24.4 | 1.01x | 1.01x | 1.91x | 1 | 1 | 18.7 | 0.0 |
+| 2023H2 | 25.3 | 24.6 | 1.03x | 1.02x | 1.93x | 1 | 1 | 0.0 | 0.0 |
 
 ## 9. Termination compensation at June 30, 2022 (T-F08)
 
 | Item | ARD m |
 |---|---|
-| senior principal | 859.9 |
+| senior principal | 860.4 |
 | senior arrears | 0.0 |
-| senior claims | 859.9 |
+| senior claims | 860.4 |
 | nilo outstanding | 538.7 |
 | equity contributed | 424.7 |
 | equity distributions | 0.0 |
 | authority default equity npv | 745.3 |
-| authority default total | 2,143.9 |
-| fm total | 1,823.3 |
+| authority default total | 2,144.3 |
+| fm total | 1,823.8 |
 | fair value | 1,074.2 |
 | retender costs | 12.5 |
 | concessionaire default comp | 1,061.7 |
 | cd senior recovery nilo subordinated | 100.0% |
 | cd senior recovery nilo pari passu | 75.9% |
 | cd nilo recovery pari passu | 75.9% |
-| cd nilo recovery subordinated | 37.5% |
-| cd shortfall to senior | -201.8 |
+| cd nilo recovery subordinated | 37.4% |
+| cd shortfall to senior | -201.3 |
 
 ## 10. Restructuring at December 31, 2023 (T-F09)
 
 | Item | Value |
 |---|---|
-| claims gross | 840.3 |
+| claims gross | 841.0 |
 | swap mtm | 31.2 |
-| claims net | 809.1 |
-| notes issue | 614.9 |
-| conv eq | 80.9 |
-| cancelled | 113.3 |
+| claims net | 809.8 |
+| notes issue | 615.5 |
+| conv eq | 81.0 |
+| cancelled | 113.4 |
 | shl wo | 771.2 |
-| bank claim gross | 378.1 |
-| bond claim gross | 462.1 |
-| bank principal | 378.1 |
-| bond principal | 462.1 |
+| bank claim gross | 378.4 |
+| bond claim gross | 462.5 |
+| bank principal | 378.4 |
+| bond principal | 462.5 |
 | accrued interest | 0.0 |
-| bank claim net | 347.0 |
-| bond claim net | 462.1 |
-| equity value total | 275.8 |
+| bank claim net | 347.3 |
+| bond claim net | 462.5 |
+| equity value total | 275.6 |
 | warrant value | 0.6 |
-| equity value creditors | 233.9 |
+| equity value creditors | 233.8 |
 | equity value state | 41.3 |
 | state new money | 120.0 |
 | state npv at plan rate | -78.7 |
 | notes repaid from | 2050-12-31 |
-| notes market value | 499.7 |
+| notes market value | 500.1 |
 | notes price pct | 81.3% |
-| senior value at par | 848.8 |
+| senior value at par | 849.2 |
 | senior recovery pct at par | 104.9% |
-| senior value received | 733.6 |
-| plan value per 1pct | 275.1% |
+| senior value received | 733.9 |
+| plan value per 1pct | 275.0% |
 | state subscription at plan value | 41.3 |
 | state capital grant implied | 78.7 |
 | state price per 1pct | 800.0% |
-| creditor conversion per 1pct | 95.2% |
-| creditor give up per 1pct | 228.5% |
-| senior recovery pct net claims | 90.7% |
+| creditor conversion per 1pct | 95.3% |
+| creditor give up per 1pct | 228.7% |
+| senior recovery pct net claims | 90.6% |
 | senior recovery pct gross claims incl setoff | 91.0% |
-| bank notes | 263.7 |
-| bank equity value | 100.3 |
+| bank notes | 263.9 |
+| bank equity value | 100.2 |
 | bank cancelled | 48.6 |
-| bank notes market | 214.3 |
-| bank recovery pct | 90.7% |
-| bond notes | 351.2 |
-| bond equity value | 133.6 |
-| bond cancelled | 64.7 |
-| bond notes market | 285.4 |
-| bond recovery pct | 90.7% |
+| bank notes market | 214.5 |
+| bank recovery pct | 90.6% |
+| bond notes | 351.5 |
+| bond equity value | 133.5 |
+| bond cancelled | 64.8 |
+| bond notes market | 285.6 |
+| bond recovery pct | 90.6% |
 | nilo claim | 563.9 |
 | nilo pv at 3.06 | 491.3 |
 | nilo recovery pv pct | 87.1% |
@@ -239,10 +239,10 @@ Traffic in thousand trips per day (2019 averaged over operating days); revenue =
 | original equity distributions | 0.0 |
 | original equity warrants | 0.6 |
 | shl written off | 771.2 |
-| forgiveness to losses | 642.7 |
-| forgiveness to cost base | 241.8 |
-| losses before forgiveness | 642.7 |
-| notes s | 2.66 |
+| forgiveness to losses | 643.4 |
+| forgiveness to cost base | 241.2 |
+| losses before forgiveness | 643.4 |
+| notes s | 2.65 |
 | nilo r k | 2.95 |
 | nilo balance 2023 | 563.9 |
 | dsra 2023 | 0.0 |
@@ -250,9 +250,60 @@ Traffic in thousand trips per day (2019 averaged over operating days); revenue =
 
 ## 11. Post-restructuring projections (T-F10)
 
-Minimum notes DSCR 2.00x; average 3.27x; cash sweep total 167.2; first distribution 2024-06-30; equity value at the plan rate (14.0%) 275.8; state revenue share total 0.0 (2030 revenue is 44.8% of the threshold; final full year 62.9%).
+Minimum notes DSCR 2.00x; average 3.26x; cash sweep total 167.1; first distribution 2024-06-30; equity value at the plan rate (14.0%) 275.6; state revenue share total 0.0 (2030 revenue is 44.8% of the threshold; final full year 62.9%).
 
-## 12. Restructuring plan: classes, votes and equity allocation
+## 12. Annex TR absorption (model v1.1)
+
+Bid IRR framing (editor-in-chief ruling): the winning bidder priced on its sponsor (Pellow high value-of-time) traffic case, where the ARD 287.4 million contribution gives 12.3%, above its 11.4% target; on the lenders' banking case the same bid gives 10.0%, and on Pellow's own central value-of-time case 11.4% (low case 10.5%). The gap between the sponsor case, the recommended case and the banking case is the winner's-curse teaching point for Chapters 47 and 57; senior 51.1% and NILO 26.9% are accepted as model outcomes.
+
+Performance payments to BRTA (T-F20), actual-history runs only, tax-deductible operating cost:
+
+| Half-year | Payment | CFADS | CFADS without | Covenant DSCR | Without |
+|---|---|---|---|---|---|
+| 2019H1 | 0.14 | 14.29 | 14.43 | 0.000x | 0.000x |
+| 2019H2 | 0.24 | 16.85 | 17.09 | 1.097x | 1.112x |
+| 2020H1 | 0.03 | 8.97 | 9.00 | 0.745x | 0.753x |
+| 2020H2 | 0.00 | 16.45 | 16.45 | 0.637x | 0.638x |
+| 2021H1 | 0.00 | 18.01 | 18.01 | 0.778x | 0.778x |
+| 2021H2 | 0.02 | 23.05 | 23.07 | 0.861x | 0.862x |
+| 2022H1 | 0.05 | 19.66 | 19.71 | 0.903x | 0.905x |
+| 2022H2 | 0.06 | 24.75 | 24.81 | 0.925x | 0.928x |
+| 2023H1 | 0.04 | 24.65 | 24.69 | 1.008x | 1.011x |
+| 2023H2 | 0.05 | 25.31 | 25.36 | 1.019x | 1.022x |
+| 2024H1 | 0.08 | 30.52 | 30.60 | 1.945x | 1.951x |
+| 2024H2 | 0.09 | 33.97 | 34.06 | 2.089x | 2.097x |
+| 2025H1 | 0.03 | 33.68 | 33.71 | 2.247x | 2.254x |
+| 2025H2 | 0.04 | 36.56 | 36.60 | 2.372x | 2.377x |
+
+Largest effect on a covenant DSCR: 0.0156x; no displayed (two-decimal) T-F07 ratio changes sign against a covenant threshold. Cap check (2.5% of the previous calendar year's net toll revenue): every year from 2020 is within the cap; no 2018 toll revenue (road opened 2019), so the cap formula gives nil for 2019; the Concession Deed's first-year cap is not specified: flagged, not applied.
+
+Traffic ratios (T-F18): actual / Pellow / Ridgeway / downside:
+
+| Year | Actual | / Pellow | / Ridgeway | / downside | / Ridgeway 2023 |
+|---|---|---|---|---|---|
+| 2019 | 30.4 | 0.651 | 0.803 | 1.002 | - |
+| 2020 | 25.7 | 0.473 | 0.566 | 0.691 | - |
+| 2021 | 33.9 | 0.566 | 0.655 | 0.790 | - |
+| 2022 | 40.2 | 0.623 | 0.716 | 0.849 | - |
+| 2023 | 42.6 | 0.638 | 0.722 | 0.836 | - |
+| 2024 | 44.7 | 0.648 | 0.737 | 0.859 | 0.999 |
+| 2025 | 46.3 | 0.649 | 0.742 | 0.870 | 1.008 |
+| 2026 | 47.1 | 0.638 | 0.733 | 0.866 | 1.000 |
+
+Shortfall against Pellow by cause (T-F19), k trips/day:
+
+| Year | Shortfall | Housing | Value of time | Heavy vehicles | SR 14 works | COVID-19 |
+|---|---|---|---|---|---|---|
+| 2019 | 16.3 | 6.7 | 4.7 | 3.3 | 1.6 | 0.0 |
+| 2020 | 28.6 | 6.6 | 4.6 | 3.1 | 1.4 | 12.9 |
+| 2021 | 26.0 | 7.5 | 5.2 | 3.6 | 1.8 | 7.8 |
+| 2022 | 24.4 | 8.8 | 6.1 | 4.4 | 2.2 | 2.9 |
+
+Pellow value-of-time variants (T-F21), financing locked, contribution ARD 287.4 million: low (51.2) 10.47%, NPV -47.8; central (54.6) 11.36%, NPV -1.9; high (58.4, sponsor base) 12.34%.
+
+VfM on gross PSC cost (ARD 2,205.6 million): reference 1.8%, winning bid 5.4%; on net PSC: reference 10.1%, winning bid 31.2%.
+
+## 13. Restructuring plan: classes, votes and equity allocation
 
 Court-sanctioned restructuring plan under Part 9 of the Companies Act (Ardmore); approval threshold 75% by value of those voting in each class. Story assumptions added by the modeler for Chapter 64:
 
@@ -265,10 +316,11 @@ Court-sanctioned restructuring plan under Part 9 of the Companies Act (Ardmore);
 
 The state: not a plan creditor; party to the restructuring support agreement and the Concession Deed amendments.
 
-Equity allocation rationale. The plan values the post-restructuring equity at ARD 275.8 million (distributions on the Ridgeway 2023 case discounted at 14.0%), or ARD 2.75 million per 1% after the warrants. The state's ARD 120.0 million buys 15% worth ARD 41.3 million at plan value (close to the ARD 41.7 million reserve top-up); the remaining ARD 78.7 million is in substance a capital grant that funds the Holloway Junction interchange upgrade (ARD 78.3 million), a public asset the state wanted and which supports the 2.4% uplift in the Ridgeway 2023 case. Senior creditors give up ARD 194.2 million of claims (14 points cancelled, 10 converted) for 85% of the equity, worth ARD 233.9 million, so they too receive less than par for what they surrender. Senior recovery at plan values is 90.7% of net claims (notes at a 7.50% yield), against 75.9% in the relevant alternative (termination for concessionaire default with NILO's springing lien pari passu, T-F08), which is why the senior classes vote for the plan and why the dissenting shareholder class, which receives nothing in the relevant alternative, can be crammed down.
+Equity allocation rationale. The plan values the post-restructuring equity at ARD 275.6 million (distributions on the Ridgeway 2023 case discounted at 14.0%), or ARD 2.75 million per 1% after the warrants. The state's ARD 120.0 million buys 15% worth ARD 41.3 million at plan value (close to the ARD 41.7 million reserve top-up); the remaining ARD 78.7 million is in substance a capital grant that funds the Holloway Junction interchange upgrade (ARD 78.3 million), a public asset the state wanted and which supports the 2.4% uplift in the Ridgeway 2023 case. Senior creditors give up ARD 194.4 million of claims (14 points cancelled, 10 converted) for 85% of the equity, worth ARD 233.8 million, so they too receive less than par for what they surrender. Senior recovery at plan values is 90.6% of net claims (notes at a 7.50% yield), against 75.9% in the relevant alternative (termination for concessionaire default with NILO's springing lien pari passu, T-F08), which is why the senior classes vote for the plan and why the dissenting shareholder class, which receives nothing in the relevant alternative, can be crammed down.
 
-## 13. Assumption changes
+## 14. Assumption changes
 
+- v1.1 (annex TR, T-C22): performance payments to BRTA by half-year (T-IR-01) deducted from EBITDA in actual-traffic periods of the history runs; Pellow low and central value-of-time bid variants added as scenarios 14 and 15 (T-IR-06); figures T-F18 to T-F21 and the T-F01, T-F02 and T-F04 extensions added. No change to the financing at close or the bid returns.
 - PSC risk adjustments (editor-in-chief review): construction risk 221.7 -> 115.3, traffic revenue risk 274.0 -> 87.4, operating risk 41.3 -> 18.5, competitive neutrality 38.4 -> 19.6 (ARD m, PV 2012). The original values made the risk adjustments (575.4) four times the raw PSC (143.4) and gave a reference value for money of 52% of the PSC, outside published PSC practice; the new values add 12% to gross PSC costs and give a reference VfM of about 10%.
 - Bid-date CPI (new input): bid, banking, downside and sensitivity runs use 2.5% a year from 2015 (the file's long-run value); actual-history runs use the actual CPI path. A 2015 bid model cannot know 2021 to 2023 inflation.
 - Ramp-up interest account (new use of funds, about ARD 20 million): pays senior interest above banking-case CFADS/1.50 from opening to the first repayment. Without it the banking-case DSCR in 2019-2020 is below 1.0x and the financing is unbankable.

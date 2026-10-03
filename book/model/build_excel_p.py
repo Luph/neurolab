@@ -280,6 +280,8 @@ add_scalars('Structural constants (FAST: no numbers inside calculation formulas)
     ('sb_split', 'Standby share of overrun funding (rest contingent equity)', 'fraction', 0.75), ('def_n', 'Number of deferred repayments', 'count', 4),
     ('eca_cap', 'ECA-covered tranche cap', 'USD m', 224.1), ('npv_r', 'Equity NPV rate', '%', 16.0), ('eps', 'Numerical zero (balances and debt service)', 'USD m', 0.000000001),
     ('eps_r', 'Reserve tolerance', 'USD m', 0.000001), ('irr_g', 'XIRR starting guess, project IRR', 'fraction', 0.1),
+    ('price_yr', 'Price base year for GSA and GTA escalation', 'year', 2018), ('lu_n', 'Consecutive lock-ups before the lock-up cash sweep', 'count', 2),
+    ('n_gt', 'Number of gas turbines', 'count', 2), ('tol_sc', 'Sculpting convergence tolerance (USD 1,000)', 'USD m', 0.001),
 ])
 add_scalars('Events (actual history)', [
     ('gas_arr', 'Share of SEKA arrears matched by deferred SNHK/GCK payables (calibration)', 'fraction', cp.GAS_ARREARS_SHARE),
@@ -334,7 +336,7 @@ T.sec('Key dates (scenario-dependent)')
 def tsc(k, lab, un, f, fmt='0'):
     T.scalar(k, lab, un, f, fmt)
 tsc('cod', 'Commercial operation date', 'date',
-    f"=IF({V('Inputs.s_constr')}=2,{V('Inputs.d_cod_act')},EDATE({V('Inputs.d_cod_fc')},{V('Inputs.s_cod_delay')}))", 'yyyy-mm-dd')
+    f"=IF({V('Inputs.s_constr')}<>1,{V('Inputs.d_cod_act')},EDATE({V('Inputs.d_cod_fc')},{V('Inputs.s_cod_delay')}))", 'yyyy-mm-dd')
 tsc('ppam', 'PPA term', 'months', f"={V('Inputs.ppa_years')}*12")
 tsc('expiry', 'PPA expiry', 'date', f"=EDATE({V('Time.cod')},{V('Time.ppam')})-1", 'yyyy-mm-dd')
 tsc('nc', 'Construction months (NTP to COD)', 'months', f"=(YEAR({V('Time.cod')})-YEAR({V('Inputs.d_ntp')}))*12+MONTH({V('Time.cod')})-MONTH({V('Inputs.d_ntp')})")
@@ -353,7 +355,7 @@ T.row('end', 'Period end', 'date', lambda i: f"=EOMONTH({ref('Time.start', i)},{
 T.row('yf30', 'Year fraction 30/360 (months / 12)', 'factor', lambda i: f"={ref('Time.mper', i)}/12", fmt='0.0000')
 T.row('days', 'Days in period', 'days', lambda i: f"={ref('Time.end', i)}-{ref('Time.start', i)}+1", fmt='0')
 T.row('year', 'Calendar year', 'year', lambda i: f"=YEAR({ref('Time.start', i)})", fmt='0')
-T.row('half', 'Half (1 = Jan-Jun)', 'index', lambda i: f"=IF(MONTH({ref('Time.start', i)})=1,1,2)", fmt='0')
+T.row('half', 'Flag_FirstHalf (Jan-Jun)', 'flag', lambda i: f"=IF(MONTH({ref('Time.start', i)})=1,1,0)", fmt='0')
 T.row('os', 'Operations start in period', 'date', lambda i: f"=MAX({ref('Time.start', i)},{V('Time.cod')})", fmt='yyyy-mm-dd')
 T.row('oe', 'Operations end in period', 'date', lambda i: f"=MIN({ref('Time.end', i)},{V('Time.expiry')})", fmt='yyyy-mm-dd')
 T.row('om', 'Operating months in period', 'months',
@@ -442,9 +444,9 @@ O.row('avail_prof', 'Availability, profile (month-weighted)', '%',
       lambda i: f"=IF({ref('Time.om', i)}>0,({ref('Operations.ma', i)}*INDEX({av8},1,MOD({ref('Operations.oya', i)}-1,{V('Inputs.av_cycle')})+1)+({ref('Time.om', i)}-{ref('Operations.ma', i)})*INDEX({av8},1,MOD({ref('Operations.oya', i)},{V('Inputs.av_cycle')})+1))/{ref('Time.om', i)},0)",
       py='S.avail_prof')
 O.row('avail', 'Availability', '%', lambda i: f"=IF({ref('Time.om', i)}>0,{ref('Operations.avail_prof', i)}+{V('Inputs.s_avail_d')},0)", py='S.avail')
-O.row('yrs', 'Years since COD (period mid-point)', 'years', lambda i: f"=IF({ref('Time.om', i)}>0,({ref('Time.oms', i)}+{ref('Time.ome', i)})/24,0)", py='S.yrs')
-O.scalar('C', 'Contracted capacity', 'MW', f"=IF({V('Inputs.s_constr')}=2,{V('Inputs.C_act')},{V('Inputs.C_fc')})", '0.0')
-O.scalar('HRg', 'Plant net heat rate, new and clean', 'kJ/kWh', f"=IF({V('Inputs.s_constr')}=2,{V('Inputs.HR_t')},{V('Inputs.HR_g')})", '0')
+O.row('yrs', 'Years since COD (period mid-point)', 'years', lambda i: f"=IF({ref('Time.om', i)}>0,AVERAGE({ref('Time.oms', i)},{ref('Time.ome', i)})/12,0)", py='S.yrs')
+O.scalar('C', 'Contracted capacity', 'MW', f"=IF({V('Inputs.s_constr')}<>1,{V('Inputs.C_act')},{V('Inputs.C_fc')})", '0.0')
+O.scalar('HRg', 'Plant net heat rate, new and clean', 'kJ/kWh', f"=IF({V('Inputs.s_constr')}<>1,{V('Inputs.HR_t')},{V('Inputs.HR_g')})", '0')
 O.row('of', 'Output degradation factor', 'factor',
       lambda i: f"=(1-{V('Inputs.o_nr')}/100*{ref('Operations.yrs', i)})*(1-{V('Inputs.o_rec')}/100)", py='S.out_factor')
 O.row('disp', 'Dispatch factor when available', '%',
@@ -458,7 +460,7 @@ O.row('hr_con', 'Contracted heat rate at dispatched load', 'kJ/kWh',
       lambda i: f"={V('Inputs.HR_c')}*(1+{V('Inputs.HR_cdeg')}/100*{ref('Operations.yrs', i)})*(1+{V('Inputs.pl')}/100)", py='S.hr_con')
 KG = f"(1000*{V('Inputs.hhv')}/{V('Inputs.kj')})"
 O.row('gas_p', 'Gas price (GCV)', 'USD/MMBtu',
-      lambda i: f"={V('Inputs.gas_p')}*(1+{V('Inputs.gas_esc')}/100)^({ref('Time.year', i)}-2018)*{V('Inputs.s_gas_f')}", py='S.gas_price')
+      lambda i: f"={V('Inputs.gas_p')}*(1+{V('Inputs.gas_esc')}/100)^({ref('Time.year', i)}-{V('Inputs.price_yr')})*{V('Inputs.s_gas_f')}", py='S.gas_price')
 O.row('gas', 'Gas burned', 'MMBtu', lambda i: f"={ref('Operations.energy', i)}*{ref('Operations.hr_act', i)}*{KG}", fmt='#,##0', py='S.gas_mmbtu')
 O.row('top_vol', 'Take-or-pay quantity', 'MMBtu', lambda i: f"={V('Inputs.top')}*{V('Inputs.dcq')}*{ref('Time.opdays', i)}", fmt='#,##0', py='S.top_vol')
 O.sec('Revenue (USD m)')
@@ -475,16 +477,16 @@ O.row('vom', 'Variable O&M payment', 'USD m', lambda i: f"={ref('Operations.ener
 O.row('fuel_rev', 'Fuel charge (pass-through)', 'USD m',
       lambda i: f"={ref('Operations.energy', i)}*{ref('Operations.hr_con', i)}*{KG}*{ref('Operations.gas_p', i)}/1000000" + (f"*0.765/({V('Inputs.s_dispatch')}/100)" if 'E9' in ERR else ''), total=True, py='S.fuel_rev')
 O.row('gta_res', 'GTA reservation charge (pass-through)', 'USD m',
-      lambda i: f"={V('Inputs.gta_cap')}*{ref('Time.opdays', i)}*{V('Inputs.gta_r')}*(1+{V('Inputs.gta_esc')}/100)^({ref('Time.year', i)}-2018)/1000000", total=True, py='S.gta_res')
+      lambda i: f"={V('Inputs.gta_cap')}*{ref('Time.opdays', i)}*{V('Inputs.gta_r')}*(1+{V('Inputs.gta_esc')}/100)^({ref('Time.year', i)}-{V('Inputs.price_yr')})/1000000", total=True, py='S.gta_res')
 O.row('gta_com', 'GTA commodity charge (pass-through)', 'USD m',
-      lambda i: f"={ref('Operations.gas', i)}*{V('Inputs.gta_c')}*(1+{V('Inputs.gta_esc')}/100)^({ref('Time.year', i)}-2018)/1000000", total=True, py='S.gta_com')
+      lambda i: f"={ref('Operations.gas', i)}*{V('Inputs.gta_c')}*(1+{V('Inputs.gta_esc')}/100)^({ref('Time.year', i)}-{V('Inputs.price_yr')})/1000000", total=True, py='S.gta_com')
 O.row('top_pay', 'Take-or-pay payment (pass-through)', 'USD m',
       lambda i: f"=MAX(0,{ref('Operations.top_vol', i)}-{ref('Operations.gas', i)})*{ref('Operations.gas_p', i)}/1000000", total=True, py='S.top_pay')
 O.row('nonfuel', 'Non-fuel revenue', 'USD m', lambda i: f"={ref('Operations.cap_pay', i)}+{ref('Operations.vom', i)}", total=True, py='S.nonfuel_rev')
 O.row('rev', 'Total revenue', 'USD m',
       lambda i: f"={ref('Operations.nonfuel', i)}+{ref('Operations.fuel_rev', i)}+{ref('Operations.gta_res', i)}+{ref('Operations.gta_com', i)}+{ref('Operations.top_pay', i)}", total=True, py='S.revenue')
 O.row('lpi_acc', 'Late payment interest accrued (to settlement 2024-03-21)', 'USD m',
-      lambda i: (f"=IF({V('Inputs.s_crisis')}=1,({ref('Operations.over', i, -1)}+{ref('Operations.over', i)})/2*({ref('Operations.base', i)}-{ref('Time.f_sofr', i)}*{V('Inputs.cas')}+{V('Inputs.lpi_sp')})/100"
+      lambda i: (f"=IF({V('Inputs.s_crisis')}=1,AVERAGE({ref('Operations.over', i, -1)},{ref('Operations.over', i)})*({ref('Operations.base', i)}-{ref('Time.f_sofr', i)}*{V('Inputs.cas')}+{V('Inputs.lpi_sp')})/100"
                  f"*{ref('Time.f_lpi', i)}/{V('Inputs.day_usd')},0)"), total=True, py='S.lpi_accrued')
 O.row('lpi', 'Late payment interest received (60%, with settlement installments)', 'USD m',
       lambda i: f"={V('Inputs.lpi_paid')}*SUM({rng('Operations.lpi_acc')})*{ref('Inputs.S_lpi_sh', i)}", total=True, py='S.lpi_received')
@@ -496,7 +498,7 @@ O.row('om_inc', 'O&M availability incentive', 'USD m',
       lambda i: f"=IF({ref('Time.om', i)}>0,{V('Inputs.om_inc')}*MAX(-1,MIN(1,({ref('Operations.avail', i)}-{V('Inputs.om_pivot')})/{V('Inputs.om_band')}))*{ref('Operations.us_cf', i)}*{mf(i)},0)", total=True, py='S.om_incentive')
 O.row('ltsa_fix', 'LTSA fixed fee', 'USD m', lambda i: f"={V('Inputs.ltsa_fix')}*{ref('Operations.us_cf', i)}*{mf(i)}*{fo}", total=True, py='S.ltsa_fixed')
 O.row('eoh', 'Equivalent operating hours (2 GTs)', 'EOH',
-      lambda i: f"=IF({ref('Operations.avail_prof', i)}>0,{'1' if 'E2' in ERR else '2'}*({V('Inputs.gt_hours')}*{ref('Operations.avail', i)}/{ref('Operations.avail_prof', i)}*{ref('Operations.disp', i)}/{V('Inputs.disp_base')}+{V('Inputs.gt_starts')}*{V('Inputs.eoh_start')})*{mf(i)},0)", fmt='#,##0', py='S.eoh')
+      lambda i: f"=IF({ref('Operations.avail_prof', i)}>0,{'1' if 'E2' in ERR else V('Inputs.n_gt')}*({V('Inputs.gt_hours')}*{ref('Operations.avail', i)}/{ref('Operations.avail_prof', i)}*{ref('Operations.disp', i)}/{V('Inputs.disp_base')}+{V('Inputs.gt_starts')}*{V('Inputs.eoh_start')})*{mf(i)},0)", fmt='#,##0', py='S.eoh')
 O.row('ltsa_var', 'LTSA variable fee', 'USD m', lambda i: f"={ref('Operations.eoh', i)}*{V('Inputs.ltsa_var')}*{ref('Operations.us_cf', i)}/1000000", total=True, py='S.ltsa_var')
 O.row('insur', 'Operational insurance', 'USD m',
       lambda i: f"={V('Inputs.ins_o')}*{ref('Operations.us_cf', i)}*{mf(i)}*(1+{V('Inputs.ins_step')}*{V('Inputs.s_ins_step')}*{ref('Time.f_ins', i)})*{fo}", total=True, py='S.insurance')
@@ -569,15 +571,15 @@ CS.row('pol', 'Kessara policy rate', '%', lambda i: f"=IF({mac}=1,{V('Inputs.fc_
 CS.sec('Uses before financing costs (USD m)')
 cx = V('Inputs.s_capex'); nc = V('Time.nc'); m_ = lambda i: ref('Construction.m', i)
 CS.row('pct', 'EPC payment profile, selected', '%',
-      lambda i: f"=IF({V('Inputs.s_constr')}=2,{ref('Inputs.M_epc_act', i)},{ref('Inputs.M_epc_fc', i)}+IF({V('Inputs.s_cod_delay')}>0,IF({m_(i)}={V('Inputs.epc_fc_m')},-{V('Inputs.to_pct')},0)+IF({m_(i)}={V('Inputs.epc_fc_m')}+{V('Inputs.s_cod_delay')},{V('Inputs.to_pct')},0),0))")
+      lambda i: f"=IF({V('Inputs.s_constr')}<>1,{ref('Inputs.M_epc_act', i)},{ref('Inputs.M_epc_fc', i)}+IF({V('Inputs.s_cod_delay')}>0,IF({m_(i)}={V('Inputs.epc_fc_m')},-{V('Inputs.to_pct')},0)+IF({m_(i)}={V('Inputs.epc_fc_m')}+{V('Inputs.s_cod_delay')},{V('Inputs.to_pct')},0),0))")
 CS.row('prog', 'EPC progress payments for contingency (FC)', '%',
       lambda i: f"=IF({m_(i)}=1,0,{ref('Construction.pct', i)})-IF({m_(i)}={nc},{V('Inputs.to_pct')},0)")
 CS.row('epc', 'EPC payments', 'USD m',
-      lambda i: f"=IF({V('Inputs.s_constr')}=2,{ref('Construction.pct', i)}/100*{V('Inputs.epc_off')}+{ref('Construction.pct', i)}/100*{V('Inputs.epc_on')}*{V('Inputs.on_rate')}/{ref('Construction.fx', i)},{V('Inputs.epc_price')}*{cx}*{ref('Construction.pct', i)}/100)",
+      lambda i: f"=IF({V('Inputs.s_constr')}<>1,{ref('Construction.pct', i)}/100*{V('Inputs.epc_off')}+{ref('Construction.pct', i)}/100*{V('Inputs.epc_on')}*{V('Inputs.on_rate')}/{ref('Construction.fx', i)},{V('Inputs.epc_price')}*{cx}*{ref('Construction.pct', i)}/100)",
       total=True, py='u.epc')
 CS.row('owners', "Owner's costs", 'USD m',
       lambda i: (f"={V('Inputs.owners')}*IF({V('Inputs.s_constr')}=1,{cx},1)*({ref('Inputs.M_own_fc', i)}+IF(AND({V('Inputs.s_constr')}=1,{m_(i)}>{V('Inputs.epc_fc_m')},{m_(i)}<={nc}),{V('Inputs.own_ext')},0))/100"
-                 f"+IF(AND({V('Inputs.s_constr')}=2,{m_(i)}>={V('Inputs.ext1')},{m_(i)}<={V('Inputs.ext2')}),{V('Inputs.ext_own')}/({V('Inputs.ext2')}-{V('Inputs.ext1')}+1),0)"), total=True, py='u.owners')
+                 f"+IF(AND({V('Inputs.s_constr')}<>1,{m_(i)}>={V('Inputs.ext1')},{m_(i)}<={V('Inputs.ext2')}),{V('Inputs.ext_own')}/({V('Inputs.ext2')}-{V('Inputs.ext1')}+1),0)"), total=True, py='u.owners')
 CS.row('ins', 'Insurance during construction', 'USD m',
       lambda i: f"={V('Inputs.ins_c')}*{cx}*({V('Inputs.ins_sh1')}*IF({m_(i)}=1,1,0)+(1-{V('Inputs.ins_sh1')})*IF({m_(i)}={V('Inputs.ins_m2')},1,0))", total=True, py='u.insurance')
 CS.row('dev', 'Development costs and fee', 'USD m', lambda i: f"=IF({m_(i)}=1,{V('Inputs.dev_c')}+{V('Inputs.dev_fee')},0)", total=True, py='u.dev')
@@ -586,7 +588,7 @@ CS.row('adv', "Lenders' advisors and legal", 'USD m',
 CS.row('cont', 'Contingency (FC: pro rata with EPC progress payments)', 'USD m',
       lambda i: f"=IF({V('Inputs.s_constr')}=1,{V('Inputs.cont')}*{cx}*{ref('Construction.prog', i)}/SUM({rng('Construction.prog')}),0)", total=True, py='u.contingency')
 CS.row('wc', 'Initial working capital', 'USD m', lambda i: f"=IF({m_(i)}={nc},{V('Inputs.init_wc')}*{cx},0)", total=True, py='u.wc')
-CS.row('ovr', 'Overrun items (actual)', 'USD m', lambda i: f"=IF({V('Inputs.s_constr')}=2,{ref('Inputs.M_ovr', i)},0)", total=True, py='u.overrun')
+CS.row('ovr', 'Overrun items (actual)', 'USD m', lambda i: f"=IF({V('Inputs.s_constr')}<>1,{ref('Inputs.M_ovr', i)},0)", total=True, py='u.overrun')
 CS.row('base_total', 'Uses before financing costs', 'USD m',
       lambda i: "=" + "+".join(ref('Construction.' + k, i) for k in ['epc', 'owners', 'ins', 'dev', 'adv', 'cont', 'wc', 'ovr']), total=True, py='u.base_total')
 CS.sec('VAT on onshore EPC (KCR m) and UBK VAT facility')
@@ -605,7 +607,7 @@ F = Sheet('Funding', 'M', 'Funding: closed-form gross-up, drawdowns by tranche, 
 TRK = [('E', 'ECA-covered tranche'), ('A', 'ABDB A-loan'), ('B', 'ABDB B-loan'), ('C', 'Commercial tranche')]
 F.sec('Constants')
 F.scalar('gc', 'Contract debt share of funding g = D/(D+E)', 'fraction', f"={V('Inputs.D_c')}/({V('Inputs.D_c')}+{V('Inputs.E_c')})", '0.000000')
-F.scalar('gaff', 'Gearing used in the closed-form gross-up', 'fraction', f"=IF({V('Inputs.s_mode')}=2,{V('Funding.gc')},{V('Inputs.gear')})", '0.000000')
+F.scalar('gaff', 'Gearing used in the closed-form gross-up', 'fraction', f"=IF({V('Inputs.s_mode')}<>1,{V('Funding.gc')},{V('Inputs.gear')})", '0.000000')
 F.scalar('den', 'ECA premium gross-up denominator 1 - prem x share x g', 'factor', f"=1-{V('Inputs.eca_prem')}/100*{V('Inputs.sh_E')}*{V('Funding.gaff')}", '0.000000')
 gu = {'E': '1', 'A': '1', 'B': '1', 'C': f"(1/(1-{V('Inputs.wht')}/100))"}
 cfk = {'E': V('Inputs.cf_E'), 'A': V('Inputs.cf_A'), 'B': V('Inputs.cf_B'), 'C': f"({V('Inputs.cf_Cpct')}/100*{V('Inputs.m_C1')})"}
@@ -646,7 +648,7 @@ F.row('beta', 'Balance per USD of total funding (beta)', 'factor',
 F.scalar('T_aff', 'Total funding requirement at this gearing, closed form T = alpha/(g - beta)', 'USD m',
          f"=INDEX({rng('Funding.alpha')},1,{V('Time.fe')})/({V('Funding.gaff')}-INDEX({rng('Funding.beta')},1,{V('Time.fe')}))", '#,##0.000000', py='f.T_closed_form')
 F.scalar('D', 'Senior debt (committed tranches)', 'USD m',
-         f"=IF({V('Inputs.s_mode')}=2,{V('Funding.gc')}*{V('Funding.T_aff')},{V('Inputs.D_c')})", '#,##0.000000', py='f.D')
+         f"=IF({V('Inputs.s_mode')}<>1,{V('Funding.gc')}*{V('Funding.T_aff')},{V('Inputs.D_c')})", '#,##0.000000', py='f.D')
 F.scalar('g', 'Debt share of monthly funding', 'fraction', lambda: (f"=({V('Inputs.D_c')}-SUM({rng('Funding.dsra')}))/({V('Inputs.D_c')}+{V('Inputs.E_c')}-SUM({rng('Funding.dsra')}))" if 'E7' in ERR else f"={V('Funding.gc')}"), '0.000000')
 F.sec('Monthly funding schedule (USD m)')
 for k, lab in TRK:
@@ -684,7 +686,7 @@ F.row('uses', 'Total uses of funds', 'USD m', lambda i: f"={ref('Funding.X', i)}
 F.row('bfund', 'Funded pro rata from committed debt and equity', 'USD m', lambda i: (f"={ref('Funding.uses', i)}" if 'E7' in ERR else f"={ref('Funding.bdebt', i)}/{V('Funding.g')}"), total=True, py='f.base_fund')
 F.row('r1', 'Remaining uses after committed facilities', 'USD m', lambda i: f"={ref('Funding.uses', i)}-{ref('Funding.bfund', i)}")
 F.row('ldrec', 'Delay LDs and DSU proceeds received', 'USD m',
-      lambda i: f"=IF(AND({V('Inputs.s_constr')}=2,{m_(i)}={V('Inputs.ld_month')}),{V('Inputs.ld_delay')}+{V('Inputs.dsu')},0)", total=True, py='f.ld_received')
+      lambda i: f"=IF(AND({V('Inputs.s_constr')}<>1,{m_(i)}={V('Inputs.ld_month')}),{V('Inputs.ld_delay')}+{V('Inputs.dsu')},0)", total=True, py='f.ld_received')
 F.row('ldu', 'LD and DSU proceeds applied', 'USD m',
       lambda i: f"=MIN({ref('Funding.r1', i)},{ref('Funding.ldpool', i, -1)}+{ref('Funding.ldrec', i)})", total=True, py='f.ld_used')
 F.row('ldpool', 'LD and DSU proceeds held (Proceeds Account)', 'USD m',
@@ -923,7 +925,7 @@ RS.row('hb_c', 'Handback reserve contribution', 'USD m', lambda i: f"=MIN({ref('
 RS.row('hb_r', 'Handback reserve release at expiry', 'USD m', lambda i: f"={ref('Time.f_last', i)}*({ref('Reserves.hb_b', i, -1)}+{ref('Reserves.hb_c', i)})", total=True, py='S.hb_release')
 RS.row('hb_b', 'Handback reserve balance', 'USD m', lambda i: f"={ref('Reserves.hb_b', i, -1)}+{ref('Reserves.hb_c', i)}-{ref('Reserves.hb_r', i)}", py='S.hb_bal')
 RS.row('comp', 'Compensation Account (performance LDs held)', 'USD m',
-       lambda i: f"={V('Inputs.s_ld_prep')}*IF(AND({tt(i)}>={V('Time.tcod')},{tt(i)}<8),{V('Inputs.ld_perf')},0)", py='S.comp_acct')
+       lambda i: f"={V('Inputs.s_ld_prep')}*IF(AND({tt(i)}>={V('Time.tcod')},{ref('Time.end', i)}<{V('Inputs.d_ldprep')}),{V('Inputs.ld_perf')},0)", py='S.comp_acct')
 
 W = Sheet('Waterfall', 'S', 'Waterfall: CFADS, debt service, reserves, tests, sweeps, distributions')
 W.row('cfads', 'CFADS', 'USD m',
@@ -957,7 +959,7 @@ W.row('lock', 'Lock-up', 'flag', lambda i: f"=IF(AND({ref('Waterfall.ok', i)}=0,
 W.row('cnt', 'Consecutive lock-ups', 'count', lambda i: f"=IF({ref('Waterfall.lock', i)}=1,{ref('Waterfall.cnt', i, -1)}+1,0)", fmt='0', py='S.lu_count')
 W.sec('Sweeps and distributions (USD m)')
 W.row('lusw', 'Lock-up cash sweep (after two consecutive lock-ups)', 'USD m',
-      lambda i: (f"=IF(AND({ref('Waterfall.ok', i)}=0,{ref('Waterfall.cnt', i)}>=2,{ref('Waterfall.inw', i)}=0),MIN({ref('Waterfall.cash', i)},"
+      lambda i: (f"=IF(AND({ref('Waterfall.ok', i)}=0,{ref('Waterfall.cnt', i)}>={V('Inputs.lu_n')},{ref('Waterfall.inw', i)}=0),MIN({ref('Waterfall.cash', i)},"
                  + "+".join(ref('Debt.after_' + k, i) for k in ['E', 'A', 'B', 'C', 'SB']) + "),0)"), total=True, py='S.lu_sweep')
 W.row('mpsw', 'Soft mini-perm sweep (50%, commercial tranche, from 2027)', 'USD m',
       lambda i: f"=IF(AND({ref('Waterfall.ok', i)}=1,{ref('Time.f_mp', i)}=1,{V('Inputs.s_miniperm')}=1),MIN({V('Inputs.mp_share')}*{ref('Waterfall.cash', i)},{ref('Debt.after_C', i)}),0)", total=True, py='S.mp_sweep')
@@ -1022,7 +1024,7 @@ FN.row('dtl', 'Deferred tax liability', 'USD m', lambda i: f"=MAX(0,{ref('Financ
 FN.row('scap', 'Share capital', 'USD m', lambda i: f"={cum_m('Funding.sc', i)}", py='S.bs_sc')
 FN.row('reb', 'Retained earnings', 'USD m', lambda i: f"={ref('Waterfall.re', i)}", py='S.bs_re')
 FN.row('tle', 'Total liabilities and equity', 'USD m', lambda i: "=" + "+".join(ref('Financials.' + k, i) for k in ['debt', 'shl', 'pay', 'dtl', 'scap', 'reb']), py='S.bs_liab_eq')
-FN.row('chk', 'Balance check (assets less liabilities and equity)', 'USD m', lambda i: f"=ROUND({ref('Financials.ta', i)}-{ref('Financials.tle', i)},6)", py='S.bs_check')
+FN.row('chk', 'Balance check (assets less liabilities and equity)', 'USD m', lambda i: f"={ref('Financials.ta', i)}-{ref('Financials.tle', i)}", py='S.bs_check')
 
 # ========================================================================================
 # RATIOS
@@ -1073,14 +1075,14 @@ RET.scalar('npv16', 'Equity NPV at 16.0%, at financial close (2018-07-17)', 'USD
 # ========================================================================================
 CK = Sheet('Checks', None, 'Checks: every check shows 0 when passing')
 CHK = [
-    ('c_su', 'Sources less uses (construction)', f"=ROUND(SUM({rng('Funding.debt_draw')})+SUM({rng('Funding.eq')})+SUM({rng('Funding.ldu')})-SUM({rng('Funding.uses')}),6)"),
-    ('c_dc', 'Committed debt drawn in full (FC-type), USD m', f"=IF({V('Inputs.s_constr')}=1,ROUND(SUM({rng('Funding.bdebt')})-{V('Funding.D')},4),0)"),
-    ('c_cf', 'Closed-form T less live T (re-grossed cases), USD m', f"=IF({V('Inputs.s_mode')}=2,ROUND({V('Funding.T_aff')}-{V('Funding.T')},4),0)"),
-    ('c_bs', 'Balance sheet balances (max abs difference)', f"=ROUND(MAX(MAX({rng('Financials.chk')}),-MIN({rng('Financials.chk')})),4)"),
-    ('c_sf', 'No unpaid debt service after DSRA', f"=ROUND(SUM({rng('Waterfall.unpaid')}),4)"),
-    ('c_dr', 'Debt repaid by final maturity', f"=ROUND(INDEX({rng('Debt.bc')},1,COLUMNS({rng('Debt.bc')})),4)"),
-    ('c_sc', 'FC base: live sculpting equals contract profile (max abs, USD m)', f"=ROUND(MAX(MAX({rng('Debt.sdiff')}),-MIN({rng('Debt.sdiff')})),3)"),
-    ('c_ds', 'FC base: debt not above DSCR capacity or gearing cap', f"=IF({V('Inputs.Scenario')}=1,IF({V('Funding.D')}<=MIN({V('Debt.capacity')},{V('Debt.gearcap')})+0.001,0,1),0)"),
+    ('c_su', 'Sources less uses (construction)', f"=IF(ABS(SUM({rng('Funding.debt_draw')})+SUM({rng('Funding.eq')})+SUM({rng('Funding.ldu')})-SUM({rng('Funding.uses')}))<={V('Inputs.eps_r')},0,SUM({rng('Funding.debt_draw')})+SUM({rng('Funding.eq')})+SUM({rng('Funding.ldu')})-SUM({rng('Funding.uses')}))"),
+    ('c_dc', 'Committed debt drawn in full (FC-type), USD m', f"=IF({V('Inputs.s_constr')}=1,IF(ABS(SUM({rng('Funding.bdebt')})-{V('Funding.D')})<={V('Inputs.eps_r')},0,SUM({rng('Funding.bdebt')})-{V('Funding.D')}),0)"),
+    ('c_cf', 'Closed-form T less live T (re-grossed cases), USD m', f"=IF({V('Inputs.s_mode')}<>1,IF(ABS({V('Funding.T_aff')}-{V('Funding.T')})<={V('Inputs.eps_r')},0,{V('Funding.T_aff')}-{V('Funding.T')}),0)"),
+    ('c_bs', 'Balance sheet balances (max abs difference)', f"=IF(MAX(MAX({rng('Financials.chk')}),-MIN({rng('Financials.chk')}))<={V('Inputs.eps_r')},0,MAX(MAX({rng('Financials.chk')}),-MIN({rng('Financials.chk')})))"),
+    ('c_sf', 'No unpaid debt service after DSRA', f"=IF(ABS(SUM({rng('Waterfall.unpaid')}))<={V('Inputs.eps_r')},0,SUM({rng('Waterfall.unpaid')}))"),
+    ('c_dr', 'Debt repaid by final maturity', f"=IF(ABS(INDEX({rng('Debt.bc')},1,COLUMNS({rng('Debt.bc')})))<={V('Inputs.eps_r')},0,INDEX({rng('Debt.bc')},1,COLUMNS({rng('Debt.bc')})))"),
+    ('c_sc', 'FC base: live sculpting equals contract profile (max abs, USD m)', f"=IF(MAX(MAX({rng('Debt.sdiff')}),-MIN({rng('Debt.sdiff')}))<={V('Inputs.tol_sc')},0,MAX(MAX({rng('Debt.sdiff')}),-MIN({rng('Debt.sdiff')})))"),
+    ('c_ds', 'FC base: debt not above DSCR capacity or gearing cap', f"=IF({V('Inputs.Scenario')}=1,IF({V('Funding.D')}<=MIN({V('Debt.capacity')},{V('Debt.gearcap')})+{V('Inputs.eps_r')},0,1),0)"),
     ('c_vat', 'VAT facility within limit', f"=IF(MAX({rng('Construction.vat_bal')})<={V('Inputs.vat_limit')},0,1)"),
     ('c_sb', 'Standby and contingent equity within commitments', f"=IF(AND(SUM({rng('Funding.sbd')})<={V('Inputs.sb_commit')}+{V('Inputs.eps_r')},SUM({rng('Funding.ced')})<={V('Inputs.ce')}+{V('Inputs.eps_r')}),0,1)"),
     ('c_eca', 'ECA tranche within cap', f"=IF({V('Inputs.sh_E')}*{V('Funding.D')}<={V('Inputs.eca_cap')},0,1)"),

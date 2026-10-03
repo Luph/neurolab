@@ -114,61 +114,61 @@ Figure IDs T-F01 to T-F10 are those of the Case Bible figure register; T-F11 to 
 | T-F06 | Net toll revenue 2023: bid base / banking / actual | 141.8 / 125.2 / 95.6 (actual -32.5% vs bid base) | ARD m (2019 from opening) | Runs 1, 2, 4 | 2023-12-31 |
 | T-F06 | Net toll revenue 2024: bid base / banking / actual | 151.4 / 133.1 / 103.0 (actual -32.0% vs bid base) | ARD m (2019 from opening) | Runs 1, 2, 4 | 2024-12-31 |
 | T-F06 | Net toll revenue 2025: bid base / banking / actual | 160.8 / 140.7 / 109.5 (actual -31.9% vs bid base) | ARD m (2019 from opening) | Runs 1, 2, 4 | 2025-12-31 |
-| T-F07 | Senior DSCR 2019H2: actual covenant (historic) / period / banking projection | 1.11x / 1.11x / 1.50x | x | Actual history (4) vs banking (2) | 2019-12-31 |
-| T-F07 | 2019H2: CFADS / scheduled DS / DSRA / lock-up / event of default | 17.1 / 15.4 / 19.3 / 1 / 0 | ARD m; flags | Actual history (4) | 2019-12-31 |
-| T-F07 | Senior DSCR 2020H1: actual covenant (historic) / period / banking projection | 0.75x / 0.47x / 1.50x | x | Actual history (4) vs banking (2) | 2020-06-30 |
-| T-F07 | 2020H1: CFADS / scheduled DS / DSRA / lock-up / event of default | 9.0 / 19.3 / 11.9 / 1 / 0 | ARD m; flags | Actual history (4) | 2020-06-30 |
+| T-F07 | Senior DSCR 2019H2: actual covenant (historic) / period / banking projection | 1.10x / 1.10x / 1.50x | x | Actual history (4) vs banking (2) | 2019-12-31 |
+| T-F07 | 2019H2: CFADS / scheduled DS / DSRA / lock-up / event of default | 16.9 / 15.4 / 19.3 / 1 / 0 | ARD m; flags | Actual history (4) | 2019-12-31 |
+| T-F07 | Senior DSCR 2020H1: actual covenant (historic) / period / banking projection | 0.74x / 0.46x / 1.50x | x | Actual history (4) vs banking (2) | 2020-06-30 |
+| T-F07 | 2020H1: CFADS / scheduled DS / DSRA / lock-up / event of default | 9.0 / 19.3 / 11.5 / 1 / 0 | ARD m; flags | Actual history (4) | 2020-06-30 |
 | T-F07 | Senior DSCR 2020H2: actual covenant (historic) / period / banking projection | 0.64x / 0.80x / 1.50x | x | Actual history (4) vs banking (2) | 2020-12-31 |
-| T-F07 | 2020H2: CFADS / scheduled DS / DSRA / lock-up / event of default | 16.5 / 20.6 / 7.7 / 1 / 1 | ARD m; flags | Actual history (4) | 2020-12-31 |
+| T-F07 | 2020H2: CFADS / scheduled DS / DSRA / lock-up / event of default | 16.5 / 20.6 / 7.3 / 1 / 1 | ARD m; flags | Actual history (4) | 2020-12-31 |
 | T-F07 | Senior DSCR 2021H1: actual covenant (historic) / period / banking projection | 0.78x / 0.76x / 1.50x | x | Actual history (4) vs banking (2) | 2021-06-30 |
 | T-F07 | 2021H1: CFADS / scheduled DS / DSRA / lock-up / event of default | 18.0 / 23.7 / 23.9 / 1 / 1 | ARD m; flags | Actual history (4) | 2021-06-30 |
 | T-F07 | Senior DSCR 2021H2: actual covenant (historic) / period / banking projection | 0.86x / 0.96x / 1.54x | x | Actual history (4) vs banking (2) | 2021-12-31 |
-| T-F07 | 2021H2: CFADS / scheduled DS / DSRA / lock-up / event of default | 23.1 / 23.9 / 24.0 / 1 / 1 | ARD m; flags | Actual history (4) | 2021-12-31 |
+| T-F07 | 2021H2: CFADS / scheduled DS / DSRA / lock-up / event of default | 23.0 / 23.9 / 24.0 / 1 / 1 | ARD m; flags | Actual history (4) | 2021-12-31 |
 | T-F07 | Senior DSCR 2022H1: actual covenant (historic) / period / banking projection | 0.90x / 0.84x / 1.66x | x | Actual history (4) vs banking (2) | 2022-06-30 |
-| T-F07 | 2022H1: CFADS / scheduled DS / DSRA / lock-up / event of default | 19.7 / 23.4 / 18.4 / 1 / 1 | ARD m; flags | Actual history (4) | 2022-06-30 |
+| T-F07 | 2022H1: CFADS / scheduled DS / DSRA / lock-up / event of default | 19.7 / 23.4 / 18.3 / 1 / 1 | ARD m; flags | Actual history (4) | 2022-06-30 |
 | T-F07 | Senior DSCR 2022H2: actual covenant (historic) / period / banking projection | 0.93x / 1.01x / 1.80x | x | Actual history (4) vs banking (2) | 2022-12-31 |
-| T-F07 | 2022H2: CFADS / scheduled DS / DSRA / lock-up / event of default | 24.8 / 24.6 / 18.6 / 1 / 1 | ARD m; flags | Actual history (4) | 2022-12-31 |
+| T-F07 | 2022H2: CFADS / scheduled DS / DSRA / lock-up / event of default | 24.8 / 24.6 / 18.5 / 1 / 1 | ARD m; flags | Actual history (4) | 2022-12-31 |
 | T-F07 | Senior DSCR 2023H1: actual covenant (historic) / period / banking projection | 1.01x / 1.01x / 1.91x | x | Actual history (4) vs banking (2) | 2023-06-30 |
-| T-F07 | 2023H1: CFADS / scheduled DS / DSRA / lock-up / event of default | 24.7 / 24.4 / 18.9 / 1 / 1 | ARD m; flags | Actual history (4) | 2023-06-30 |
+| T-F07 | 2023H1: CFADS / scheduled DS / DSRA / lock-up / event of default | 24.7 / 24.4 / 18.7 / 1 / 1 | ARD m; flags | Actual history (4) | 2023-06-30 |
 | T-F07 | Senior DSCR 2023H2: actual covenant (historic) / period / banking projection | 1.02x / 1.03x / 1.93x | x | Actual history (4) vs banking (2) | 2023-12-31 |
-| T-F07 | 2023H2: CFADS / scheduled DS / DSRA / lock-up / event of default | 25.4 / 24.6 / 0.0 / 1 / 1 | ARD m; flags | Actual history (4) | 2023-12-31 |
-| T-F08 | Senior principal outstanding | 859.9 | ARD m | Actual history (4); bid base (1); retender (6) | 2022-06-30 |
+| T-F07 | 2023H2: CFADS / scheduled DS / DSRA / lock-up / event of default | 25.3 / 24.6 / 0.0 / 1 / 1 | ARD m; flags | Actual history (4) | 2023-12-31 |
+| T-F08 | Senior principal outstanding | 860.4 | ARD m | Actual history (4); bid base (1); retender (6) | 2022-06-30 |
 | T-F08 | Senior interest arrears | 0.0 | ARD m | Actual history (4); bid base (1); retender (6) | 2022-06-30 |
-| T-F08 | Senior claims | 859.9 | ARD m | Actual history (4); bid base (1); retender (6) | 2022-06-30 |
+| T-F08 | Senior claims | 860.4 | ARD m | Actual history (4); bid base (1); retender (6) | 2022-06-30 |
 | T-F08 | NILO outstanding (incl. capitalized interest) | 538.7 | ARD m | Actual history (4); bid base (1); retender (6) | 2022-06-30 |
 | T-F08 | Equity contributed incl. 2021 support | 424.7 | ARD m | Actual history (4); bid base (1); retender (6) | 2022-06-30 |
 | T-F08 | Distributions received | 0.0 | ARD m | Actual history (4); bid base (1); retender (6) | 2022-06-30 |
 | T-F08 | Authority default: equity compensation (NPV of bid-base distributions at 11.4%) | 745.3 | ARD m | Actual history (4); bid base (1); retender (6) | 2022-06-30 |
-| T-F08 | Authority default or voluntary termination: total (before swap breakage) | 2,143.9 | ARD m | Actual history (4); bid base (1); retender (6) | 2022-06-30 |
-| T-F08 | Prolonged force majeure: total | 1,823.3 | ARD m | Actual history (4); bid base (1); retender (6) | 2022-06-30 |
+| T-F08 | Authority default or voluntary termination: total (before swap breakage) | 2,144.3 | ARD m | Actual history (4); bid base (1); retender (6) | 2022-06-30 |
+| T-F08 | Prolonged force majeure: total | 1,823.8 | ARD m | Actual history (4); bid base (1); retender (6) | 2022-06-30 |
 | T-F08 | Concessionaire default: estimated fair value (pre-tax 9.0%) | 1,074.2 | ARD m | Actual history (4); bid base (1); retender (6) | 2022-06-30 |
 | T-F08 | Retendering costs | 12.5 | ARD m | Actual history (4); bid base (1); retender (6) | 2022-06-30 |
 | T-F08 | Concessionaire default: compensation | 1,061.7 | ARD m | Actual history (4); bid base (1); retender (6) | 2022-06-30 |
 | T-F08 | Senior recovery if NILO's springing lien ranks pari passu | 75.9% | % | Actual history (4); bid base (1); retender (6) | 2022-06-30 |
 | T-F08 | Senior recovery if NILO stays subordinated | 100.0% | % | Actual history (4); bid base (1); retender (6) | 2022-06-30 |
-| T-F08 | NILO recovery if subordinated | 37.5% | % | Actual history (4); bid base (1); retender (6) | 2022-06-30 |
-| T-F09 | Bank principal | 378.1 | ARD m | Restructuring case (5) | 2023-12-31 |
-| T-F09 | Bond principal | 462.1 | ARD m | Restructuring case (5) | 2023-12-31 |
+| T-F08 | NILO recovery if subordinated | 37.4% | % | Actual history (4); bid base (1); retender (6) | 2022-06-30 |
+| T-F09 | Bank principal | 378.4 | ARD m | Restructuring case (5) | 2023-12-31 |
+| T-F09 | Bond principal | 462.5 | ARD m | Restructuring case (5) | 2023-12-31 |
 | T-F09 | Accrued unpaid senior interest | 0.0 | ARD m | Restructuring case (5) | 2023-12-31 |
-| T-F09 | Senior claims, gross | 840.3 | ARD m | Restructuring case (5) | 2023-12-31 |
+| T-F09 | Senior claims, gross | 841.0 | ARD m | Restructuring case (5) | 2023-12-31 |
 | T-F09 | Swap termination value set off (4.36% vs 3.48%) | 31.2 | ARD m | Restructuring case (5) | 2023-12-31 |
-| T-F09 | Senior claims, net | 809.1 | ARD m | Restructuring case (5) | 2023-12-31 |
-| T-F09 | Bank claim, net of set-off | 347.0 | ARD m | Restructuring case (5) | 2023-12-31 |
-| T-F09 | Bondholder claim | 462.1 | ARD m | Restructuring case (5) | 2023-12-31 |
-| T-F09 | Cancelled (14 points) | 113.3 | ARD m | Restructuring case (5) | 2023-12-31 |
-| T-F09 | Converted to equity (10 points) | 80.9 | ARD m | Restructuring case (5) | 2023-12-31 |
-| T-F09 | Restructured Senior Notes (76%) | 614.9 | ARD m | Restructuring case (5) | 2023-12-31 |
-| T-F09 | Notes value at a 7.50% market yield | 499.7 | ARD m | Restructuring case (5) | 2023-12-31 |
+| T-F09 | Senior claims, net | 809.8 | ARD m | Restructuring case (5) | 2023-12-31 |
+| T-F09 | Bank claim, net of set-off | 347.3 | ARD m | Restructuring case (5) | 2023-12-31 |
+| T-F09 | Bondholder claim | 462.5 | ARD m | Restructuring case (5) | 2023-12-31 |
+| T-F09 | Cancelled (14 points) | 113.4 | ARD m | Restructuring case (5) | 2023-12-31 |
+| T-F09 | Converted to equity (10 points) | 81.0 | ARD m | Restructuring case (5) | 2023-12-31 |
+| T-F09 | Restructured Senior Notes (76%) | 615.5 | ARD m | Restructuring case (5) | 2023-12-31 |
+| T-F09 | Notes value at a 7.50% market yield | 500.1 | ARD m | Restructuring case (5) | 2023-12-31 |
 | T-F09 | Notes price | 81.3% | % | Restructuring case (5) | 2023-12-31 |
-| T-F09 | New equity value at 14.0% | 275.8 | ARD m | Restructuring case (5) | 2023-12-31 |
+| T-F09 | New equity value at 14.0% | 275.6 | ARD m | Restructuring case (5) | 2023-12-31 |
 | T-F09 | Warrants (3%, original sponsors) | 0.6 | ARD m | Restructuring case (5) | 2023-12-31 |
-| T-F09 | Equity value to senior creditors (85%) | 233.9 | ARD m | Restructuring case (5) | 2023-12-31 |
+| T-F09 | Equity value to senior creditors (85%) | 233.8 | ARD m | Restructuring case (5) | 2023-12-31 |
 | T-F09 | Equity value to the state (15%) | 41.3 | ARD m | Restructuring case (5) | 2023-12-31 |
 | T-F09 | State money above plan value (implied capital grant) | 78.7 | ARD m | Restructuring case (5) | 2023-12-31 |
-| T-F09 | Senior recovery (notes at market, equity at plan value) | 90.7% | % | Restructuring case (5) | 2023-12-31 |
+| T-F09 | Senior recovery (notes at market, equity at plan value) | 90.6% | % | Restructuring case (5) | 2023-12-31 |
 | T-F09 | Senior recovery with notes at par | 104.9% | % | Restructuring case (5) | 2023-12-31 |
-| T-F09 | Bank recovery | 90.7% | % | Restructuring case (5) | 2023-12-31 |
-| T-F09 | Bondholder recovery | 90.7% | % | Restructuring case (5) | 2023-12-31 |
+| T-F09 | Bank recovery | 90.6% | % | Restructuring case (5) | 2023-12-31 |
+| T-F09 | Bondholder recovery | 90.6% | % | Restructuring case (5) | 2023-12-31 |
 | T-F09 | NILO claim (no write-down) | 563.9 | ARD m | Restructuring case (5) | 2023-12-31 |
 | T-F09 | PV of NILO receipts at 3.06% | 491.3 | ARD m | Restructuring case (5) | 2023-12-31 |
 | T-F09 | NILO recovery in PV terms | 87.1% | % | Restructuring case (5) | 2023-12-31 |
@@ -176,31 +176,31 @@ Figure IDs T-F01 to T-F10 are those of the Case Bible figure register; T-F11 to 
 | T-F09 | Original equity invested incl. support | 424.7 | ARD m | Restructuring case (5) | 2023-12-31 |
 | T-F09 | Shareholder loans written off (incl. accrued interest) | 771.2 | ARD m | Restructuring case (5) | 2023-12-31 |
 | T-F09 | Value of warrants to original sponsors | 0.6 | ARD m | Restructuring case (5) | 2023-12-31 |
-| T-F09 | Notes sculpting divisor | 2.66x |  | Restructuring case (5) | 2023-12-31 |
+| T-F09 | Notes sculpting divisor | 2.65x |  | Restructuring case (5) | 2023-12-31 |
 | T-F09 | DSRA balance at 2023-12-31 (before state top-up) | 0.0 | ARD m | Restructuring case (5) | 2023-12-31 |
-| T-F09 | Pre-restructuring capital structure (bank / bonds / arrears / NILO / shareholder loans) | 378.1 / 462.1 / 0.0 / 563.9 / 771.2 | ARD m | Restructuring case (5) | 2023-12-31 |
-| T-F09 | Post-restructuring capital structure (notes / NILO / equity from conversion / state equity money) | 614.9 / 563.9 / 80.9 / 120.0 | ARD m | Restructuring case (5) | 2023-12-31 |
+| T-F09 | Pre-restructuring capital structure (bank / bonds / arrears / NILO / shareholder loans) | 378.4 / 462.5 / 0.0 / 563.9 / 771.2 | ARD m | Restructuring case (5) | 2023-12-31 |
+| T-F09 | Post-restructuring capital structure (notes / NILO / equity from conversion / state equity money) | 615.5 / 563.9 / 81.0 / 120.0 | ARD m | Restructuring case (5) | 2023-12-31 |
 | T-F09 | Price per 1% of new equity: plan value / state / creditors' converted claims | 2.75 / 8.00 / 0.95 | ARD m per 1% | Restructuring case (5) | 2023-12-31 |
 | T-F10 | Minimum notes DSCR (2024-2052) | 2.00x | x | Ridgeway 2023 case (5) | 2023-12-31 |
-| T-F10 | Average notes DSCR | 3.27x | x | Ridgeway 2023 case (5) | 2023-12-31 |
+| T-F10 | Average notes DSCR | 3.26x | x | Ridgeway 2023 case (5) | 2023-12-31 |
 | T-F10 | Notes DSCR 2024H1 | 2.00x | x | Ridgeway 2023 case (5) | 2023-12-31 |
 | T-F10 | Notes DSCR 2024H2 | 2.20x | x | Ridgeway 2023 case (5) | 2023-12-31 |
 | T-F10 | Notes DSCR 2025H2 | 2.43x | x | Ridgeway 2023 case (5) | 2023-12-31 |
 | T-F10 | Notes DSCR 2027H2 | 2.48x | x | Ridgeway 2023 case (5) | 2023-12-31 |
 | T-F10 | Notes DSCR 2030H2 | 3.47x | x | Ridgeway 2023 case (5) | 2023-12-31 |
-| T-F10 | Notes DSCR 2035H2 | 3.30x | x | Ridgeway 2023 case (5) | 2023-12-31 |
-| T-F10 | Notes DSCR 2040H2 | 3.43x | x | Ridgeway 2023 case (5) | 2023-12-31 |
+| T-F10 | Notes DSCR 2035H2 | 3.29x | x | Ridgeway 2023 case (5) | 2023-12-31 |
+| T-F10 | Notes DSCR 2040H2 | 3.42x | x | Ridgeway 2023 case (5) | 2023-12-31 |
 | T-F10 | Notes DSCR 2045H2 | 3.19x | x | Ridgeway 2023 case (5) | 2023-12-31 |
-| T-F10 | Notes balance at end 2024H2 | 584.7 | ARD m | Ridgeway 2023 case (5) | 2023-12-31 |
-| T-F10 | Notes balance at end 2026H2 | 539.9 | ARD m | Ridgeway 2023 case (5) | 2023-12-31 |
-| T-F10 | Notes balance at end 2028H2 | 495.7 | ARD m | Ridgeway 2023 case (5) | 2023-12-31 |
-| T-F10 | Notes balance at end 2030H2 | 446.9 | ARD m | Ridgeway 2023 case (5) | 2023-12-31 |
-| T-F10 | Notes balance at end 2035H2 | 411.1 | ARD m | Ridgeway 2023 case (5) | 2023-12-31 |
-| T-F10 | Notes balance at end 2040H2 | 330.5 | ARD m | Ridgeway 2023 case (5) | 2023-12-31 |
-| T-F10 | Notes balance at end 2045H2 | 176.0 | ARD m | Ridgeway 2023 case (5) | 2023-12-31 |
+| T-F10 | Notes balance at end 2024H2 | 585.2 | ARD m | Ridgeway 2023 case (5) | 2023-12-31 |
+| T-F10 | Notes balance at end 2026H2 | 540.4 | ARD m | Ridgeway 2023 case (5) | 2023-12-31 |
+| T-F10 | Notes balance at end 2028H2 | 496.3 | ARD m | Ridgeway 2023 case (5) | 2023-12-31 |
+| T-F10 | Notes balance at end 2030H2 | 447.5 | ARD m | Ridgeway 2023 case (5) | 2023-12-31 |
+| T-F10 | Notes balance at end 2035H2 | 411.7 | ARD m | Ridgeway 2023 case (5) | 2023-12-31 |
+| T-F10 | Notes balance at end 2040H2 | 331.0 | ARD m | Ridgeway 2023 case (5) | 2023-12-31 |
+| T-F10 | Notes balance at end 2045H2 | 176.3 | ARD m | Ridgeway 2023 case (5) | 2023-12-31 |
 | T-F10 | Notes fully repaid (with 50% sweep to 2030) | 2050-12-31 | date | Ridgeway 2023 case (5) | 2023-12-31 |
-| T-F10 | Cash swept to noteholders 2024-2030 | 167.2 | ARD m | Ridgeway 2023 case (5) | 2023-12-31 |
-| T-F10 | New equity value at 14.0% | 275.8 | ARD m | Ridgeway 2023 case (5) | 2023-12-31 |
+| T-F10 | Cash swept to noteholders 2024-2030 | 167.1 | ARD m | Ridgeway 2023 case (5) | 2023-12-31 |
+| T-F10 | New equity value at 14.0% | 275.6 | ARD m | Ridgeway 2023 case (5) | 2023-12-31 |
 | T-F10 | First distribution to new equity | 2024-06-30 | date | Ridgeway 2023 case (5) | 2023-12-31 |
 | T-F10 | State revenue share paid (whole extended term) | 0.0 | ARD m nominal | Ridgeway 2023 case (5) | 2023-12-31 |
 | T-F10 | 2030 toll revenue as share of the revenue-share threshold | 44.8% | % | Ridgeway 2023 case (5) | 2023-12-31 |
@@ -250,12 +250,12 @@ Figure IDs T-F01 to T-F10 are those of the Case Bible figure register; T-F11 to 
 | T-F15 | Original sponsors: equity invested incl. 2021 support | 424.7 | ARD m | Actual history (4) | 2023-12-31 |
 | T-F15 | Original sponsors: distributions received 2019-2023 | 0.0 | ARD m | Actual history (4) | 2023-12-31 |
 | T-F15 | First event of default (historic DSCR below 1.05x) | 2020H2 | period | Actual history (4) | 2020-12-31 |
-| T-F15 | DSRA drawn in total 2019-2023 | 17.1 | ARD m | Actual history (4) | 2023-12-31 |
+| T-F15 | DSRA drawn in total 2019-2023 | 17.6 | ARD m | Actual history (4) | 2023-12-31 |
 | T-F15 | 2019 traffic against the bid base | -34.9% | % | Inputs | 2019-12-31 |
-| T-F16 | Tax losses before forgiveness at 2023-12-31 | 642.7 | ARD m | Restructuring case (5) | 2023-12-31 |
-| T-F16 | Forgiveness applied to losses / to the asset's cost base | 642.7 / 241.8 | ARD m | Restructuring case (5) | 2023-12-31 |
+| T-F16 | Tax losses before forgiveness at 2023-12-31 | 643.4 | ARD m | Restructuring case (5) | 2023-12-31 |
+| T-F16 | Forgiveness applied to losses / to the asset's cost base | 643.4 / 241.2 | ARD m | Restructuring case (5) | 2023-12-31 |
 | T-F17 | USD equivalents at close (0.76): total uses / senior / NILO / equity | 1,530.2 / 670.4 / 352.7 / 288.6 | USD m (illustrative) | Banking (2) | 2015-05-27 |
-| T-F17 | USD equivalents at 2023 (0.67): net senior claims / notes / state money | 542.1 / 412.0 / 80.4 | USD m (illustrative) | Restructuring case (5) | 2023-12-31 |
+| T-F17 | USD equivalents at 2023 (0.67): net senior claims / notes / state money | 542.6 / 412.4 / 80.4 | USD m (illustrative) | Restructuring case (5) | 2023-12-31 |
 
 New figure IDs:
 

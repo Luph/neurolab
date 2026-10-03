@@ -1604,8 +1604,6 @@ def annex_figures(d, runs, out):
                                  "max_abs_dscr_effect": max(abs(v["dscr_hist"] - v["dscr_hist_without"]) for v in pp.values()),
                                  "note_2019": "no 2018 toll revenue (road opened 2019), so the cap formula gives nil for 2019; "
                                               "the Concession Deed's first-year cap is not specified: flagged, not applied"}
-    # effect on T-F09/T-F10 (restructuring run includes 2019-2023 payments)
-    d["performance_payments"]["effect_claims_net"] = None
     # T-F21 VoT variants
     d["vot_variants"] = {k: {"mature_2019": TRAFFIC_CASES[c][0], "equity_irr": runs[s]["equity_irr"],
                              "npv_11.4": runs[s]["equity_npv_target"], "min_dscr": runs[s]["min_dscr_rep"]}
@@ -1774,7 +1772,44 @@ def write_report(runs, out):
       f"first distribution {pr['first_distribution']}; equity value at the plan rate (14.0%) {f1(pr['equity_value_total'])}; state revenue share total "
       f"{f1(pr['revshare_total_nominal'])} (2030 revenue is {pct(pr['revenue_threshold_ratio_2030'])} of the threshold; final full year "
       f"{pct(pr['revenue_threshold_ratio_2058'])}).\n")
-    w("## 12. Restructuring plan: classes, votes and equity allocation\n")
+    w("## 12. Annex TR absorption (model v1.1)\n")
+    w("Bid IRR framing (editor-in-chief ruling): the winning bidder priced on its sponsor (Pellow high value-of-time) "
+      f"traffic case, where the ARD 287.4 million contribution gives {pct(d['bid']['equity_irr_bid_base'], 1)}, above its "
+      f"11.4% target; on the lenders' banking case the same bid gives {pct(d['bid']['equity_irr_banking'], 1)}, and on Pellow's "
+      f"own central value-of-time case {pct(d['vot_variants']['central']['equity_irr'], 1)} (low case "
+      f"{pct(d['vot_variants']['low']['equity_irr'], 1)}). The gap between the sponsor case, the recommended case and the "
+      "banking case is the winner's-curse teaching point for Chapters 47 and 57; senior 51.1% and NILO 26.9% are accepted "
+      "as model outcomes.\n")
+    pp = d["performance_payments"]
+    w("Performance payments to BRTA (T-F20), actual-history runs only, tax-deductible operating cost:\n")
+    w("| Half-year | Payment | CFADS | CFADS without | Covenant DSCR | Without |\n|---|---|---|---|---|---|")
+    for k, v in pp["by_half"].items():
+        w(f"| {k} | {v['payment']:.2f} | {f1(v['cfads'], 2)} | {f1(v['cfads_without'], 2)} | {f1(v['dscr_hist'], 3)}x | "
+          f"{f1(v['dscr_hist_without'], 3)}x |")
+    w(f"\nLargest effect on a covenant DSCR: {pp['max_abs_dscr_effect']:.4f}x; no displayed (two-decimal) T-F07 ratio "
+      "changes sign against a covenant threshold. Cap check (2.5% of the previous calendar year's net toll revenue): every "
+      "year from 2020 is within the cap; " + pp["note_2019"] + ".\n")
+    w("Traffic ratios (T-F18): actual / Pellow / Ridgeway / downside:\n")
+    w("| Year | Actual | / Pellow | / Ridgeway | / downside | / Ridgeway 2023 |\n|---|---|---|---|---|---|")
+    for y, v in d["traffic_ratios"].items():
+        w(f"| {y} | {v['actual']:.1f} | {v['vs_pellow']:.3f} | {v['vs_ridgeway']:.3f} | {v['vs_downside']:.3f} | "
+          f"{v['vs_ridgeway_2023']:.3f} |" if "vs_ridgeway_2023" in v else
+          f"| {y} | {v['actual']:.1f} | {v['vs_pellow']:.3f} | {v['vs_ridgeway']:.3f} | {v['vs_downside']:.3f} | - |")
+    w("\nShortfall against Pellow by cause (T-F19), k trips/day:\n")
+    w("| Year | Shortfall | Housing | Value of time | Heavy vehicles | SR 14 works | COVID-19 |\n|---|---|---|---|---|---|---|")
+    for y, v in d["shortfall_by_cause"].items():
+        c = v["by_cause_k"]
+        w(f"| {y} | {v['shortfall']:.1f} | {c['housing']:.1f} | {c['value_of_time']:.1f} | {c['heavy_vehicles']:.1f} | "
+          f"{c['sr14_works']:.1f} | {c['covid']:.1f} |")
+    vv = d["vot_variants"]
+    w(f"\nPellow value-of-time variants (T-F21), financing locked, contribution ARD 287.4 million: low (51.2) "
+      f"{pct(vv['low']['equity_irr'], 2)}, NPV {f1(vv['low']['npv_11.4'])}; central (54.6) {pct(vv['central']['equity_irr'], 2)}, "
+      f"NPV {f1(vv['central']['npv_11.4'])}; high (58.4, sponsor base) {pct(vv['high']['equity_irr'], 2)}.\n")
+    p_ = out["psc"]
+    w(f"VfM on gross PSC cost (ARD {f1(p_['gross_psc_cost'])} million): reference {pct(p_['vfm_reference_pct_gross'])}, "
+      f"winning bid {pct(p_['vfm_bid_pct_gross'])}; on net PSC: reference {pct(p_['vfm_reference_pct_net'])}, winning bid "
+      f"{pct(p_['vfm_bid_pct_net'])}.\n")
+    w("## 13. Restructuring plan: classes, votes and equity allocation\n")
     pv = MA["plan_classes_and_votes"]
     w("Court-sanctioned restructuring plan under Part 9 of the Companies Act (Ardmore); approval threshold "
       f"{pv['threshold']}. Story assumptions added by the modeler for Chapter 64:\n")
@@ -1799,7 +1834,7 @@ def write_report(runs, out):
       "relevant alternative (termination for concessionaire default with NILO's springing lien pari passu, T-F08), which "
       "is why the senior classes vote for the plan and why the dissenting shareholder class, which receives nothing in "
       "the relevant alternative, can be crammed down.\n")
-    w("## 13. Assumption changes\n")
+    w("## 14. Assumption changes\n")
     for line in ASSUMPTION_CHANGES:
         w(f"- {line}")
     w("")
@@ -1807,6 +1842,10 @@ def write_report(runs, out):
 
 
 ASSUMPTION_CHANGES = [
+    "v1.1 (annex TR, T-C22): performance payments to BRTA by half-year (T-IR-01) deducted from EBITDA in actual-traffic "
+    "periods of the history runs; Pellow low and central value-of-time bid variants added as scenarios 14 and 15 "
+    "(T-IR-06); figures T-F18 to T-F21 and the T-F01, T-F02 and T-F04 extensions added. No change to the financing at "
+    "close or the bid returns.",
     "PSC risk adjustments (editor-in-chief review): construction risk 221.7 -> 115.3, traffic revenue risk 274.0 -> 87.4, "
     "operating risk 41.3 -> 18.5, competitive neutrality 38.4 -> 19.6 (ARD m, PV 2012). The original values made the "
     "risk adjustments (575.4) four times the raw PSC (143.4) and gave a reference value for money of 52% of the PSC, "
