@@ -205,6 +205,6 @@ Ownership in Part XVI (+R-101): a sector chapter owns only sector-specific mecha
 ### Matter (Phase 6, in `matter/`)
 
 - 00-front-matter.tex: how to use the book, study plan, how to work exercises and model builds, general caveat (stated once), running-case summaries and cast list, capability-to-chapter map; labels fm:slug (+R-107, +R-108).
-- 89-capstone.md: capstone end-to-end deal simulation with full expert solution; own inputs, model and ledger C-F01 to C-F24, and a capstone mini-Bible (+R-106).
+- 89-capstone.tex: capstone end-to-end deal simulation with full expert solution; own inputs, model and ledger C-F01 to C-F24, and a capstone mini-Bible (+R-106).
 - 90-final-examination.tex: final exam with worked answers; model-task inputs and an audit workbook in model/exam/ (+R-106).
 - 91-glossary.tex, 92-formula-sheet.tex, 93-checklists-and-templates.tex, 94-index-of-cases.tex.
