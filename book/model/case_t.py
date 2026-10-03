@@ -48,6 +48,7 @@ import numpy as np
 HERE = os.path.dirname(os.path.abspath(__file__))
 INP = json.load(open(os.path.join(HERE, "inputs_case_t.json")))
 TOL = 1e-9
+EPS = 1e-6           # threshold used in covenant and lock-up tests (Inputs!Tol)
 MAX_PASSES = 400
 
 # ----------------------------------------------------------------------------------------
@@ -777,18 +778,18 @@ def one_pass(R, st, C, H, ext, scn):
         X["A6"][t] = A6
         # covenant ratios
         X["dscr_den"][t] = X["ds_sched"][t]
-        X["dscr"][t] = X["cfads"][t] / X["ds_sched"][t] if X["ds_sched"][t] > 1e-9 else 0.0
+        X["dscr"][t] = X["cfads"][t] / X["ds_sched"][t] if X["ds_sched"][t] > EPS else 0.0
         if R["notesfirst"][t] or not R["testdate"][t - 1]:
             num, den = X["cfads"][t], X["ds_sched"][t]
         else:
             num, den = X["cfads"][t] + X["cfads"][t - 1], X["ds_sched"][t] + X["ds_sched"][t - 1]
-        X["dscr_hist"][t] = num / den if (R["testdate"][t] and den > 1e-9) else 0.0
-        test_fail_lock = R["testdate"][t] and den > 1e-9 and X["dscr_hist"][t] < LOCKUP
-        test_fail_def = R["eodtest"][t] and den > 1e-9 and X["dscr_hist"][t] < DEFAULT_DSCR
+        X["dscr_hist"][t] = num / den if (R["testdate"][t] and den > EPS) else 0.0
+        test_fail_lock = R["testdate"][t] and den > EPS and X["dscr_hist"][t] < LOCKUP
+        test_fail_def = R["eodtest"][t] and den > EPS and X["dscr_hist"][t] < DEFAULT_DSCR
         X["eod"][t] = 1.0 if ((not R["post"][t]) and (X["eod"][t - 1] > 0 or test_fail_def)) else 0.0
-        lock = (R["prefirst"][t] or test_fail_lock or X["dsra_close"][t] < target - 1e-6 or X["eod"][t] > 0
-                or R["standstill"][t] or X["nilo_short"][t] > 1e-6
-                or X["arr_bank_close"][t] + X["arr_bond_close"][t] > 1e-6)
+        lock = (R["prefirst"][t] or test_fail_lock or X["dsra_close"][t] < target - EPS or X["eod"][t] > 0
+                or R["standstill"][t] or X["nilo_short"][t] > EPS
+                or X["arr_bank_close"][t] + X["arr_bond_close"][t] > EPS)
         X["lockup"][t] = 0.0 if R["final"][t] else (1.0 if lock else 0.0)
         X["distr"][t] = 0.0 if X["lockup"][t] else max(0.0, A6)
         X["statecash"][t] = STATE_RES * R["restr"][t]
@@ -1170,11 +1171,11 @@ def size_banking(C=CONTRIB_BID, down=None):
     raise RuntimeError("downside loop did not converge")
 
 
-def solve_contribution(target, which):
+def solve_contribution(target, which, down):
     """Contribution giving the target equity IRR: which='banking' (IRR on the banking case
     with live sizing) or 'base' (bid base IRR with financing sized on the banking case)."""
     def irr_at(C):
-        Xb, _ = size_banking(C)
+        Xb = run(2, C, down_cfads=down)
         if which == "banking":
             return Xb["equity_irr"]
         return run(1, C, locked=lock_from(Xb))["equity_irr"]
@@ -1205,9 +1206,9 @@ def main():
     runs[6] = run(6, locked=L)
     for s in range(7, 14):
         runs[s] = run(s, locked=L)
-    C_bank = solve_contribution(TARGET_IRR, "banking")
-    C_base = solve_contribution(TARGET_IRR, "base")
-    Xc, _ = size_banking(C_bank)
+    C_bank = solve_contribution(TARGET_IRR, "banking", Xd["cfads"])
+    C_base = solve_contribution(TARGET_IRR, "base", Xd["cfads"])
+    Xc = run(2, C_bank, down_cfads=Xd["cfads"])
     out["runs"] = {}
     for s, X in runs.items():
         out["runs"][str(s)] = export_run(X)
@@ -1397,7 +1398,7 @@ def derived(runs, out):
     dates = [ENDS[i] for i in after]
     distr = [X5["distr"][i] for i in after]
     eqv = xnpv(EQV_RATE, distr, dates, RESTR_DATE)
-    notes_repaid = [i for i in after if X5["notes_open"][i] <= 1e-9 and X5["notes_close"][i - 1] <= 1e-9]
+    notes_repaid = [i for i in after if X5["notes_open"][i] <= EPS]
     w = WARRANT * xnpv(EQV_RATE, [X5["distr"][i] for i in notes_repaid], [ENDS[i] for i in notes_repaid], RESTR_DATE) if notes_repaid else 0.0
     r["equity_value_total"] = eqv
     r["warrant_value"] = w

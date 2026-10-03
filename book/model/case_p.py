@@ -142,7 +142,7 @@ BASE = dict(macro='FC', constr='FC', cod_delay=0, capex=1.0, avail_d=0.0, dispat
 SCENARIOS = {
     1: dict(name='FC base'),
     2: dict(name='FC banking', dispatch=72.0),
-    3: dict(name='FC downside', avail_d=-6.5, hr_f=1.015, fo_f=1.10, dispatch=58.0),
+    3: dict(name='FC downside', avail_d=-6.5, hr_f=1.015, fo_f=1.10),
     4: dict(name='Sens: availability -3 points', avail_d=-3.0),
     5: dict(name='Sens: heat rate +2%', hr_f=1.02),
     6: dict(name='Sens: fixed opex +10%', fo_f=1.10),
@@ -662,11 +662,12 @@ def _run(p, prof, N_m, N_s, bond_prof, D_fixed):
     S['ebitda'] = ebitda
     # ---- working capital
     rdays = np.full(NS, 45.0)
+    xdays = np.zeros(NS)     # extra days on SEKA's capacity and VOM payments (sensitivities)
     if p['delay_days'] or p['lag_days']:
-        rdays[SHOCK_T0:SHOCK_T0 + 2] += p['delay_days'] + p['lag_days']
+        xdays[SHOCK_T0:SHOCK_T0 + 2] = p['delay_days'] + p['lag_days']
     od = np.where(opdays > 0, opdays, 1)
     fin = np.arange(NS) >= last_op
-    ar = np.where(fin, 0, rev / od * rdays)
+    ar = np.where(fin, 0, rev / od * rdays + nonfuel / od * xdays)
     pay_gas = np.where(fin, 0, (fuel_cost + top_pay) / od * 45)
     pay_gta = np.where(fin, 0, (gta_res + gta_com) / od * 30)
     pay_om = np.where(fin, 0, (om_fix + om_inc + ltsa_fix + ltsa_var) / od * 30)
@@ -674,7 +675,7 @@ def _run(p, prof, N_m, N_s, bond_prof, D_fixed):
     nwc = ar + over - pay_gas - pay_gta - pay_om - pay_oth - gas_arr
     dnwc = nwc - np.concatenate([[0], nwc[:-1]])
     inv_rel = np.where(np.arange(NS) == last_op, 5.35 * p['capex'], 0.0)
-    S.update(rec_days=rdays, ar=ar, pay_gas=pay_gas, pay_gta=pay_gta, pay_om=pay_om, pay_oth=pay_oth,
+    S.update(rec_days=rdays, extra_days=xdays, ar=ar, pay_gas=pay_gas, pay_gta=pay_gta, pay_om=pay_om, pay_oth=pay_oth,
              nwc=nwc, dnwc=dnwc, inv_release=inv_rel)
     # ---- MMRA
     mm_contr = np.array([mm[t + 1:t + 7].sum() / 6 for t in range(NS)])
@@ -1095,40 +1096,44 @@ def sculpt(R, D, t_first, t_last, w):
         newp[t] = prin / D; bal -= prin
     return newp, dscr, pv, r, ds
 
-def size_fc(p, gearing=0.75, dscr_target=1.35, verbose=False, max_it=200):
-    """FC sizing: iterate (profile, notional) -> model -> CFADS -> re-sculpt to convergence."""
+def size_fc(p, gearing=0.75, dscr_target=1.35, down_target=1.20, verbose=False, max_it=200):
+    """FC sizing: iterate (profile, notional, debt) -> model -> CFADS -> re-sculpt to convergence.
+    Debt = min(gearing cap x T, PV(CFADS)/DSCR target, downside-constrained amount)."""
     _, t1 = first_ds_period(p); tl = tix('2034H1')
     prof = np.zeros(NS); prof[t1:tl + 1] = 1.0 / (tl - t1 + 1)
     N_m = np.zeros(NM); N_s = np.zeros(NS)
     D_fixed = None; hist = []
+    pd = dict(p); pd.update(SCENARIOS[3]); pd['name'] = 'FC downside'; pd['fund_mode'] = 'size'
     for it in range(1, max_it + 1):
         p['fund_mode'] = 'size'
         R = run(p, prof, N_m, N_s, None, D_fixed, gearing)
         D = R['f']['D']; T = R['f']['T']
         newp, dscr, pv, r, ds = sculpt(R, D, t1, tl, SHARE_W())
         cap_ = pv / dscr_target
-        # notional: 80% of opening balance (monthly) and of scheduled balance (semiannual)
+        Rd = run(pd, prof, N_m, N_s, None, D, gearing)
+        md = min(Rd['S']['dscr'][t] for t in range(t1, tl + 1))
+        cap_down = D * md / down_target
         fe = R['fe']; bal_m = sum(R['f']['bal_' + k] for k in TR)
         newNm = np.zeros(NM); newNm[1:fe + 1] = 0.8 * bal_m[:fe]
         newNs = np.zeros(NS)
-        for t in range(NS):
-            if t >= t1: newNs[t] = 0.8 * D * newp[t:].sum()
-        newNs[R['t_cod']] = 0.0
-        newD_fixed = None if G * T <= cap_ + 1e-9 or gearing * T <= cap_ else cap_
-        if gearing * T > cap_:
-            newD_fixed = cap_
+        for t in range(t1, NS):
+            newNs[t] = 0.8 * D * newp[t:].sum()
+        cands = {'gearing': gearing * T, 'DSCR': cap_, 'downside': cap_down}
+        bind = min(cands, key=cands.get)
+        newD_fixed = None if bind == 'gearing' else cands[bind]
         diff = max(np.abs((newp - prof) * D).max(), np.abs(newNm - N_m).max(), np.abs(newNs - N_s).max(),
                    abs((newD_fixed or 0) - (D_fixed or 0)))
         hist.append(diff)
         prof, N_m, N_s, D_fixed = newp, newNm, newNs, newD_fixed
-        if diff < TOL * 0.01:
+        if diff < TOL * 0.01 and it > 2:
             break
     R = run(p, prof, N_m, N_s, None, D_fixed, gearing)
     R['sizing_iterations'] = it; R['sizing_hist'] = hist
     newp, dscr, pv, r, ds = sculpt(R, R['f']['D'], t1, tl, SHARE_W())
     R['sculpt_dscr'] = dscr; R['sculpt_pv'] = pv; R['capacity'] = pv / dscr_target
+    R['cands'] = cands; R['downside_min'] = md
     R['sculpt_check'] = np.abs((newp - prof) * R['f']['D']).max()
-    R['binding'] = 'DSCR' if D_fixed is not None else 'gearing'
+    R['binding'] = bind
     return R
 
 def SHARE_W():
