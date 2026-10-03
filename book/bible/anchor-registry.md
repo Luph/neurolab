@@ -121,7 +121,7 @@ Rows A1 to A14 are the fixes of the first issue (2026-10-03) and remain in force
 | 42.1 | `fw:waterfall-tier` | The four-row waterfall tier | Ch 42 | ssec:42.1.2 |
 | 42.2 | `fw:dividend-trap-test` | The dividend trap test | Ch 42 | ssec:42.5.3 |
 | 43.1 | `fw:locked-debt-test-protocol` | The locked-debt test protocol | Ch 43 | sec:43.2 |
-| 43.2 | `fw:integrity-check-catalogue` | The integrity-check catalog | Ch 43 | ssec:43.7.1 |
+| 43.2 | `fw:integrity-check-catalog` | The integrity-check catalog | Ch 43 | ssec:43.7.1 |
 | 44.1 | `fw:seven-pass-review` | The seven-pass model review | Ch 44 | sec:44.2 |
 | 44.2 | `fw:finding-severity` | Finding severity grades | Ch 44 | ssec:44.2.8 |
 | 45.1 | `fw:revenue-driver-decomposition` | Revenue driver decomposition | Ch 45 | sec:45.1 |
@@ -3267,7 +3267,7 @@ Source brief: `briefs/u09.md`.
 | `eq:43.4` | Expected capped payment factor |  |
 | `eq:43.5` | Months-of-zero-payment breakeven |  |
 | `fw:locked-debt-test-protocol` | Framework 43.1 The locked-debt test protocol | home sec:43.2 |
-| `fw:integrity-check-catalogue` | Framework 43.2 The integrity-check catalog | home ssec:43.7.1 |
+| `fw:integrity-check-catalog` | Framework 43.2 The integrity-check catalog | home ssec:43.7.1 |
 | `exr:43.1` to `exr:43.17` | Exercises (17) | range; cited only inside Ch 43 and by matter file 93 |
 
 ### Chapter 44: Auditing a model
@@ -3510,10 +3510,10 @@ Source brief: `briefs/u10.md`.
 | `exh:47.8` | Case T BAFO contributions against the reference (ARD m) (Case T) |  |
 | `exh:47.9` | Case R A1 bid against valuation (USD m) (Case R) |  |
 | `exh:47.10` | Buy-side acquisition due diligence request list for an operating project company (Illustrative) | new label |
-| `cl:47.1` | Permitted leakage and leakage indemnity, share purchase agreement (clausevariants parent) |  |
-| `cl:47.1a` | Permitted leakage and leakage indemnity, share purchase agreement (clausevariants parent) (Illustrative, seller-friendly) | new label |
-| `cl:47.1b` | Permitted leakage and leakage indemnity, share purchase agreement (clausevariants parent) (Illustrative, lender-friendly) | new label |
-| `cl:47.1c` | Permitted leakage and leakage indemnity, share purchase agreement (clausevariants parent) (Illustrative, buyer-friendly) | new label |
+| `cl:47.1` | Permitted leakage and leakage indemnity, share purchase agreement |  |
+| `cl:47.1a` | Permitted leakage and leakage indemnity, share purchase agreement (Illustrative, seller-friendly) | new label |
+| `cl:47.1b` | Permitted leakage and leakage indemnity, share purchase agreement (Illustrative, lender-friendly) | new label |
+| `cl:47.1c` | Permitted leakage and leakage indemnity, share purchase agreement (Illustrative, buyer-friendly) | new label |
 | `cl:47.2` | Limitation of seller liability where a W&I policy is in place, share purchase agreement |  |
 | `eq:47.1` | Bid tariff solved for a target equity IRR, citing eq:5.11 | repurposed, R-001, R-116 |
 | `eq:47.2` | Expected error of the winning estimate |  |
@@ -6102,7 +6102,7 @@ Source brief: `briefs/u14.md`.
 | `ssec:84.2.3` | Mixed portfolios and allocation |  |
 | `ssec:84.2.4` | Social, sustainability, blue, and nature labels |  |
 | `sec:84.3` | The EU Taxonomy and the European Green Bond Standard |  |
-| `ssec:84.3.1` | How the Taxonomy defines "environmentally sustainable |  |
+| `ssec:84.3.1` | How the Taxonomy defines "environmentally sustainable" |  |
 | `ssec:84.3.2` | The 2026 simplification |  |
 | `ssec:84.3.3` | The European Green Bond |  |
 | `ssec:84.3.4` | When a project should use the EuGB label |  |

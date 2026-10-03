@@ -1028,7 +1028,7 @@ Round 1: the Chapter 7 judgment drill (u02) reuses the Republic of Corredana and
 | P-F52 | Planned against actual EPC progress and certified payments by quarter, 2018 to 2021 | FC base, actual | 61 | u13 (P-F37) |
 | P-F53 | Expected credit loss allowance on SEKA receivables at December 31, 2022, June 30, 2023 and December 31, 2023; swap mark-to-market and hedge reserve at close, December 31, 2022, June 30, 2025 (before and after partial termination) and September 30, 2026 | Actual | 66 | u14 (P-F41) |
 | P-F54 | Estimated UK Multinational Top-up Tax on Kilnworth's share of Bélanou, 2024 to 2026 (simplified) | Actual | 67 | u14 (P-F38) |
-| P-F55 | Castellan: underwriting and final holds by tranche, swap line, slotting by phase, RWA and capital by tranche with ECA cover and PRI treatment, RAROC (the ledger v1.2 label "RORAC" is read as RAROC; relabel requested) | FC base | 68, 86 | u14 (P-F40), u17 (P-F38) |
+| P-F55 | Castellan: underwriting and final holds by tranche, swap line, slotting by phase, RWA and capital by tranche with ECA cover and PRI treatment, RAROC | FC base | 68, 86 | u14 (P-F40), u17 (P-F38) |
 | P-F56 | IFRIC 12 financial-asset presentation of Bélanou Power (key balances 2021 to 2026) and reconciliation to the lenders' basis; P-F26 recomputed on IFRS carrying amounts | Actual | 7 (one-line note), 66 | u02 BF-2, u14 BF-1 |
 | P-F57 | Kessara 2015 technology screening curves: annualized cost per kW-year and cost per MWh by capacity factor | Inputs (4.12) | 69 | u15 (P-F39) |
 | P-F58 | Actual dispatch and gas burn, 2022 H1 and H2, against FC base 76.5% | Actual | 72 | u15 (P-F40) |
@@ -1037,7 +1037,7 @@ Round 1: the Chapter 7 judgment drill (u02) reuses the Republic of Corredana and
 | P-F61 | Sombé West reserve coverage: 2P reserves against Bélanou GSA and SEKA contract quantities | Inputs (1.7.4) | 48 | u10 BF-5 |
 | P-F62 | Bid comparison: levelized tariffs of the four bids under the RFP formula; pricing committee tariff against the submitted tariff (extends P-F06, which keeps its ID; P-F62 holds the comparison table) | Bid inputs (4.7) | 47 | u10 BF-2 |
 | P-F63 | Equity cure amount needed at June 30, 2023 to restore the historic DSCR to 1.10x and to 1.20x | Actual | 62 | u13 CBF-4 |
-| P-F64 | Bid-to-close equity IRR bridge: from the 16.0% bid-model IRR to the FC base IRR by step (capex, financing terms, fees and premiums, tax, FX and indexation, schedule, residual), each step re-sized | FC base re-sized at each step | 8, 47 | Editor (D-037, formerly the second D-017; sequencing review defect 19) |
+| P-F64 | Bid-to-close equity IRR bridge: from the 16.0% bid-model IRR to the FC base IRR in the ledger's nine sequential steps (base rate, debt terms, PRI cover and WHT gross-up, soft mini-perm sweep, capex, VAT facility interest, tax, FX, IRR dating), each step re-sized, summing to the gap with no residual (D-115; step list aligned with ledger v1.4 in round 2) | FC base re-sized at each step | 8, 47 | Editor (D-037, formerly the second D-017; sequencing review defect 19) |
 | P-F65 | KCR forwards traded July 17, 2018 with Castellan: share hedged (75%), KCR notional, forward rate and USD equivalent by settlement date, USD at forward against USD at FC spot | Contract (FC) | 37, 38, 40, 66 | Editor (D-114; coverage review defect 1) |
 | P-F66 | KCR forward settlements by half-year (gain to the project), mark-to-market to COD, and the unhedged comparison | Actual | 59, 61, 66 | Editor (D-114) |
 
@@ -1083,6 +1083,7 @@ Each brief requested its own "P-F37 onward", and those provisional meanings coll
 | u11 | 55 | P-F37 | Funds flow at financial close, July 17, 2018 (exh:55.10) | P-F49 |
 | u11 | 56 | P-F38 | PV of the swap credit and execution charge | P-F50 |
 | u12 | 60 | P-F37 | PRI insured amount and premium, 2018 to June 2025 | P-F51 |
+| u13 | 61 | P-F37 | EPC cumulative progress, planned and actual | P-F52 (row added in round 2) |
 | u14 | 66 | P-F41 | ECL allowance on SEKA receivables; swap MTM and hedge reserve | P-F53 |
 | u14 | 66, 67 | P-F37 | VAT paid on the onshore EPC portion, peak VAT receivable, refund-lag cost | P-F37 (same ID, same meaning) |
 | u14 | 67 | P-F38 | Estimated GloBE (UK Multinational Top-up Tax) on Bélanou, 2024 to 2026 | P-F54 |

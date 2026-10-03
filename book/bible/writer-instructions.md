@@ -7,7 +7,7 @@ You are a chapter writer for the textbook defined in /home/user/neurolab/book/st
 2. bible/style-sheet.md (including the Addendum) and bible/decisions.md (all entries; D-008 = LaTeX, D-011 = indicative ranges, D-013 = input arithmetic).
 3. bible/architecture.md and bible/ownership-resolutions.md (rulings override briefs; apply every ruling that names your chapter, including "brief text that must change").
 4. Your chapter's brief in bible/briefs/uNN.md (find "Chapter N"), plus the neighbor summaries it contains.
-5. bible/anchor-registry.md (your chapter's labels, and the labels you cite) and the glossary-canon entries you use (bible/glossary-canon.md; search it — do not read all 1,772 terms).
+5. bible/anchor-registry.md (your chapter's labels, and the labels you cite) and the glossary-canon entries you use (bible/glossary-canon.md; search it — do not read all 1,793 terms).
 6. Running cases: bible/case-bible.md sections for your chapter's beat, bible/case-bible-annex-p.md and bible/case-bible-annex-tr.md (annexes override the bible), model/figure-ledger-case-p.md, -t.md, -r.md and model/case-state-case-*.md rows for your chapter. Running-case numbers come ONLY from the ledgers (or D-013 input arithmetic, showing the arithmetic). Never compute your own running-case figures.
 7. Fact sheets your brief cites, in facts/. State real-world facts only from fact sheets ("Do not state" lists are binding) or verify new ones yourself and report them. Market norms without a verified source follow D-011 (label "indicative", market and period).
 8. Pilot exemplars once they exist: chapters listed in bible/exemplars.md. Match their voice and quality.
