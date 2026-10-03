@@ -120,3 +120,4 @@
 - Consolidation part A DONE (registry 5,558 labels; glossary 1,793; R-142..R-148; D-048..D-055; renames applied).
 - Blueprint review round 2 launched (4 fresh reviewers). Phase 2 pilot launched in parallel: Ch 2 (narrative) and Ch 36 (calculation).
 - Case P model v1.4 DONE (R1–R12 rows; ledger extensions; inputs_case_p.xlsx; stage reconciliation confirmed). Build-along + exercise workbook builder launched.
+- Blueprint review round 2: coverage FAIL (3 major), capabilities FAIL (1 major), sequencing FAIL (1 major), standards PASS. Round-2 fixer launched; then a single verifier confirms (round 3).
