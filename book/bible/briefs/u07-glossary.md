@@ -4,15 +4,15 @@ Terms owned by Part V chapters, with canonical definitions and home sections. Wr
 
 | Term | Abbreviation | Definition | Home section |
 |---|---|---|---|
-| risk-adjusted return on capital | RAROC | A bank's after-tax income from a loan, net of funding cost, operating cost and expected loss, divided by the capital the bank allocates to it. | Section 29.2.1 |
+| risk-adjusted return on capital | RAROC | A bank's after-tax income from a loan, net of funding cost, operating cost, and expected loss, divided by the capital the bank allocates to it. | Section 29.2.1 |
 | liquidity premium | – | The extra funding cost a lender pays to borrow for longer, which it passes into the margin on long-tenor loans. | Section 29.2.2 |
 | hold level | – | The amount of a loan a bank intends to keep on its own balance sheet after syndication. | Section 29.2.3 |
-| OECD Arrangement on Officially Supported Export Credits | the Arrangement | A non-binding agreement among eleven Participants that caps the generosity of official export credit support, including down payment, support percentage, local costs, tenor, repayment profile, minimum interest rates and minimum premia. | Section 29.3.2 |
+| OECD Arrangement on Officially Supported Export Credits | the Arrangement | A non-binding agreement among eleven Participants that caps the generosity of official export credit support, including down payment, support percentage, local costs, tenor, repayment profile, minimum interest rates, and minimum premia. | Section 29.3.2 |
 | export contract value | – | The value of the goods and services in the export contract, including third-country content and excluding local costs, on which ECA support limits are calculated. | Section 29.3.2 |
 | local costs | – | Goods and services bought in the buyer's country, which ECAs may support only up to a cap expressed as a share of the export contract value. | Section 29.3.2 |
 | starting point of credit | – | The date from which an ECA-supported loan's repayment term and first-installment deadline are measured, usually linked to delivery, commissioning or acceptance. | Section 29.3.2 |
 | Commercial Interest Reference Rate | CIRR | The minimum fixed interest rate an official lender may charge under the Arrangement, built from government bond yields plus a margin. | Section 29.3.2 |
-| minimum premium rate | MPR | The lowest premium an ECA may charge for credit risk under the Arrangement, set by country risk category, risk horizon, buyer risk, cover and mitigants. | Section 29.3.5 |
+| minimum premium rate | MPR | The lowest premium an ECA may charge for credit risk under the Arrangement, set by country risk category, risk horizon, buyer risk, cover, and mitigants. | Section 29.3.5 |
 | Climate Change Sector Understanding | CCSU | The annex to the Arrangement that allows longer tenors and more flexible repayment for listed climate-related sectors. | Section 29.3.2 |
 | pure cover | – | ECA support given as a guarantee or insurance to commercial lenders who fund the loan themselves. | Section 29.3.3 |
 | direct lending | – | ECA support in which the ECA or an affiliated official lender funds the loan itself. | Section 29.3.3 |
@@ -31,7 +31,7 @@ Terms owned by Part V chapters, with canonical definitions and home sections. Wr
 | infrastructure debt fund | – | A pooled investment vehicle that lends to infrastructure projects on behalf of institutional investors. | Section 29.7.1 |
 | private credit | – | Lending by non-bank funds and investors through privately negotiated loans or notes rather than syndicated bank loans or public bonds. | Section 29.7.1 |
 | project bond | – | A debt security issued by or for a project company, usually secured and amortizing, and sold to investors rather than lent by banks. | Section 30.1.1 |
-| indenture | – | The contract between a bond issuer and a trustee acting for bondholders that sets out the bond's terms, covenants and remedies (a trust deed in English-law practice). | Section 30.1.1 |
+| indenture | – | The contract between a bond issuer and a trustee acting for bondholders that sets out the bond's terms, covenants, and remedies (a trust deed in English-law practice). | Section 30.1.1 |
 | bond trustee | – | The institution that holds the bond's rights and security for the bondholders and acts on their instructions. | Section 30.1.1 |
 | Rule 144A | 144A | The US securities rule that permits resale of privately placed securities to qualified institutional buyers without registration. | Section 30.2.1 |
 | Regulation S | Reg S | The US securities rule under which securities sold outside the United States need not be registered. | Section 30.2.1 |
@@ -96,7 +96,7 @@ Terms owned by Part V chapters, with canonical definitions and home sections. Wr
 | maysir | – | Gambling or speculation, which Islamic finance prohibits. | Section 33.1.1 |
 | Sharia board | – | The panel of scholars that reviews and certifies a financial institution's products and transactions as compliant. | Section 33.1.2 |
 | fatwa | – | A Sharia board's or scholar's formal opinion that a transaction or document complies. | Section 33.1.2 |
-| AAOIFI | AAOIFI | The Accounting and Auditing Organization for Islamic Financial Institutions, which issues Sharia, accounting and governance standards. | Section 33.1.2 |
+| AAOIFI | AAOIFI | The Accounting and Auditing Organization for Islamic Financial Institutions, which issues Sharia, accounting, and governance standards. | Section 33.1.2 |
 | istisna'a | – | A contract to manufacture or build an asset for future delivery at an agreed price, which may be paid in stages. | Section 33.2.1 |
 | ijara | – | A lease under which the financier owns an asset and earns rent from the lessee's use of it. | Section 33.2.2 |
 | forward ijara | – | A lease agreed before the leased asset exists, with advance rentals payable during construction. | Section 33.2.2 |
