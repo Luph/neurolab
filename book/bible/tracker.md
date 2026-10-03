@@ -88,3 +88,8 @@
 - Case T model v1.0 DONE (1,642/1,642 PASS); v1.1 absorbing annex inputs.
 - Case T model v1.1 DONE (1,742/1,742 PASS; T-F18..T-F21; annex inputs absorbed).
 - Case P model v1.2 DONE (15 scenarios PASS; FX hedge P-F65/66; IRR bridge P-F64; no hardcodes). v1.3 small fixes requested (exact bridge; name overrun items).
+
+### Phase 1 blueprint review round 1
+- Panel verdicts: coverage FAIL (1 blocking/5 major/5 minor), capabilities FAIL (1/10/6), sequencing FAIL (1/25/15), standards FAIL (1/9/10).
+- Revision wave launched: 17 unit brief revisers (u01..u17) + central Bible fixer.
+- NEXT: regenerate anchor registry from revised briefs → blueprint review round 2 (targeted re-check) → build-along workbooks (modeling agent) → Phase 2 pilot (Ch 2, Ch 36).

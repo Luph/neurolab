@@ -2429,8 +2429,8 @@ def irr_bridge(Rb):
                 note=('Sequential attribution from the reconstructed bid model to the FC base, in the order shown; each step re-sizes '
                       'debt (DSCR 1.35x, 75%% gearing cap, downside 1.20x). Steps sum exactly to the gap (no residual). The one '
                       'undocumented bid input, the swapped base rate, is solved at %.2f%% flat so that the reconstruction returns 16.0%%; '
-                      'it is a modeler reconstruction (2016 USD swap rates of about 1.5%% to 2.0%% plus a bid-stage rate cushion). '
-                      'Reordering the steps moves individual steps by up to a few tenths of a point but not the total.') % rate)
+                      'it is a modeler reconstruction, read as a conservative bid-stage rate (2016 USD swap rates were about 1.5%% to 2.0%%). '
+                      'Reordering the steps changes individual steps, never the total.') % rate)
 
 def _cfads_build(R, ts):
     S = R['S']; sm = lambda k: float(sum(S[k][t] for t in ts))

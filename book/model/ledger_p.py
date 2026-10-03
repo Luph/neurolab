@@ -391,7 +391,9 @@ add('P-F63', 'Equity cure needed for 1.10x / 1.20x', f"{f['cure_to_1_10']:.1f} /
 
 # P-F64 to P-F66 (v1.2)
 for st in P['P-F64']['steps']:
-    add('P-F64', 'Bid-to-close IRR bridge: ' + st['step'], f"{st['cumulative_irr'] * 100:.1f}% ({st['change_pp']:+.1f} pp)", '% (cumulative)', FCB + ' re-sized at each step', '2016-09 to 2018-07')
+    add('P-F64', 'Bid-to-close IRR bridge (sequential, in this order): ' + st['step'], f"{st['cumulative_irr'] * 100:.2f}% ({st['change_pp']:+.2f} pp)", '% (cumulative)', FCB + ' re-sized at each step', '2016-09 to 2018-07')
+add('P-F64', 'Bridge total: bid model to FC base / sum of steps (no residual)', f"{P['P-F64']['total_change_pp']:+.2f} pp / {P['P-F64']['sum_of_steps_pp']:+.2f} pp", 'pp', FCB, '2016-09 to 2018-07')
+add('P-F64', 'Reconstructed bid-model swapped base rate (modeler reconstruction, solved to the 16.0% bid IRR)', f"{P['P-F64']['reconstructed_bid_swapped_rate_pct']:.2f}%", '% flat', 'Modeler reconstruction', '2016-09')
 f = P['P-F65']
 add('P-F65', 'FX forwards (Castellan, traded 2018-07-17): share hedged / KCR notional / USD at forward / USD at FC spot / average forward', f"{f['hedge_share'] * 100:.0f}% / {f['total_kcr_m']:,.0f} / {f['total_usd_at_forward']:.1f} / {f['total_usd_at_fc_spot']:.1f} / {f['average_forward']:.1f}", '%, KCR m, USD m, KCR/USD', 'Contract (FC)', '2018-07-17')
 for k, v in list(f['schedule'].items())[::6]: add('P-F65', f'Forward {k}: KCR notional / forward rate / USD', f"{v['kcr_m']:,.1f} / {v['forward']:.1f} / {v['usd_at_forward']:.2f}", 'KCR m, KCR/USD, USD m', 'Contract (FC)', k)
