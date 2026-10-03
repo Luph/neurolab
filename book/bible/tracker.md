@@ -56,3 +56,4 @@
 - w2c: t-power-tech-norms, t-electricity-market-design, t-reserves-codes, spreadsheet-errors, t-excel-versions
 - w2d: t-cyber-infrastructure, t-decommissioning-liabilities, t-risk-standards, t-us-cpi, t-capm-inputs
 - QUEUED wave 2: t-sustainable-finance-2, t-infra-asset-metrics, t-contract-law additions (Hadley, BGB, UNIDROIT, ICC 2020, NY), t-country-risk (in w2a as political-risk-theory), t-ratings-2 (running)
+- Briefs done: u01, u06, u11. Fact wave 2 launched: w2e (oem-fleet-defects, t-om-ltsa-norms, t-construction-norms, wagp), w2f (h-production-payments, h-north-sea-field-finance, h-purpa-us-ipp, h-gfc-pf-markets), w2g (t-security-civil-law, t-arbitral-rules, t-loan-syndication, t-negotiation-sources).
