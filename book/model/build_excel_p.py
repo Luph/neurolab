@@ -377,7 +377,7 @@ O.row('avail_prof', 'Availability, profile (month-weighted)', '%',
       lambda i: f"=IF({ref('Time.om', i)}>0,({ref('Operations.ma', i)}*INDEX({av8},1,MOD({ref('Operations.oya', i)}-1,8)+1)+({ref('Time.om', i)}-{ref('Operations.ma', i)})*INDEX({av8},1,MOD({ref('Operations.oya', i)},8)+1))/{ref('Time.om', i)},0)",
       py='S.avail_prof')
 O.row('avail', 'Availability', '%', lambda i: f"=IF({ref('Time.om', i)}>0,{ref('Operations.avail_prof', i)}+{V('Inputs.s_avail_d')},0)", py='S.avail')
-O.row('yrs', 'Years since COD (period mid-point)', 'years', lambda i: f"=({ref('Time.oms', i)}+{ref('Time.ome', i)})/24", py='S.yrs')
+O.row('yrs', 'Years since COD (period mid-point)', 'years', lambda i: f"=IF({ref('Time.om', i)}>0,({ref('Time.oms', i)}+{ref('Time.ome', i)})/24,0)", py='S.yrs')
 O.scalar('C', 'Contracted capacity', 'MW', f"=IF({V('Inputs.s_constr')}=2,{V('Inputs.C_act')},{V('Inputs.C_fc')})", '0.0')
 O.scalar('HRg', 'Plant net heat rate, new and clean', 'kJ/kWh', f"=IF({V('Inputs.s_constr')}=2,{V('Inputs.HR_t')},{V('Inputs.HR_g')})", '0')
 O.row('of', 'Output degradation factor', 'factor',

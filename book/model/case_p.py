@@ -794,11 +794,11 @@ def _run(p, prof, N_m, N_s, bond_prof, D_fixed):
                     + dep_m_int * max(0, min(ome[t], 60) - min(oms[t], 60)))
         dep_hol = (dep_m_plant + dep_m_bld + dep_m_int) * hol
         dep_cur = dep_full - dep_hol
-        rr['shl_open'][t] = shl
+        rr['shl_open'][t] = shl if t >= t_cod else 0.0
         shl_int = shl * SHL_RATE / 100 * opdays[t] / 365 if t >= t_cod else 0.0
         if t == t_cod:  # interest accrues from COD
             shl_int = shl * SHL_RATE / 100 * opdays[t] / 365
-        thin = min(1.0, 3 * (sc_bal + max(0.0, re_)) / shl) if shl > 0 else 1.0
+        thin = min(1.0, 3 * (sc_bal + max(0.0, re_)) / shl) if (shl > 0 and t >= t_cod) else 1.0
         shl_ded = shl_int * thin
         int_ded = rr['senior_costs'][t] + rr['waiver_fee'][t] + rr['refi_costs'][t] - rr['unwind'][t]
         nh = (om[t] - hol) / om[t] if om[t] > 0 else 0.0
@@ -944,7 +944,7 @@ def _run(p, prof, N_m, N_s, bond_prof, D_fixed):
             rr['final_dist'][t] = extra
         re_ = re_ + ni - dv
         rr['shl_int_paid'][t] = sip; rr['shl_prin'][t] = spr; rr['div'][t] = dv; rr['trap_close'][t] = trap
-        rr['shl_close'][t] = shl; rr['ni'][t] = ni; rr['re'][t] = re_; rr['book_dep'][t] = book_dep
+        rr['shl_close'][t] = shl if t >= t_cod else 0.0; rr['ni'][t] = ni; rr['re'][t] = re_; rr['book_dep'][t] = book_dep
         rr['int_exp'][t] = int_exp; rr['dt'][t] = dtv; rr['dt_exp'][t] = dt_exp
         rr['tax_exp'][t] = tax + dt_exp; rr['book_nbv'][t] = book_nbv; rr['tax_nbv'][t] = tax_nbv
         rr['equity_dist'][t] = sip + spr + dv
