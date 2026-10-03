@@ -50,3 +50,6 @@ Never put personal identifiers in any web request header; never bypass bot block
 - Reusing phrases or gestures from the style sheet's sample passages.
 - Typing "Chapter 1", "the next section" by hand: always \cref.
 - Words for numbers 10 and above; "USD 412 thousand" in prose (D-126); bare "the government" (use "host government" or the named body); varying names for the same agent or party; unexpanded abbreviations.
+- NEVER let production apparatus reach the reader: no figure IDs (P-F08, T-F10, R-F01), decision numbers (D-013), ruling numbers (R-xxx), fact-sheet slugs (t-market-norms), "Case Bible", "Annex P", "ledger", "brief", "draft", or any reference to the book's production. Cite running-case figures as plain numbers; keep IDs only in % LaTeX comments if you want traceability (e.g., "USD 633.3 million % P-F07").
+- Do not restate in prose the numbers an exhibit already shows; say what the reader should notice.
+- British spellings (cancelled, panellist, programme, licence) are errors.

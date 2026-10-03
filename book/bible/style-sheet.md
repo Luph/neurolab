@@ -120,7 +120,7 @@ A non-breaking space joins numeral and unit: `650~MW`, `4,725~GWh`, `7,150~kJ/kW
 - Capacity in MW or GW; energy in kWh, MWh, GWh, or TWh. Never "MW per hour".
 - Price per unit: code, slash, unit: USD/MWh, USD/MMBtu, USD/kW-month, USD/t.
 - Heat rate in kJ/kWh (net, LHV unless stated).
-- Gas: MMBtu for energy, MMscfd for flow, bcm for annual volume; LNG in mtpa. Oil: bbl and bbl/d. Mining: t, Mt, g/t.
+- Gas: MMBtu for energy, MMscfd for flow, bcm for annual volume; LNG in mtpa. Oil: bbl and bbl/d. Mining: t, Mt, g/t. In prose the unit word is "metric ton" (never "tonne"; A.12, D-131).
 - Traffic: vehicles per day (vpd after first use); AADT for annual average daily traffic.
 
 ### 2.7 Signs
@@ -135,7 +135,7 @@ A non-breaking space joins numeral and unit: `650~MW`, `4,725~GWh`, `7,150~kJ/kW
 
 One file per chapter, `chapters/NN-slug.tex`, containing exactly one `\chapter`. No preamble, no `\documentclass`, no `\begin{document}`. Part openers are handled by the build (`latex/parts.tex`); chapters never contain `\part`.
 
-All headings are sentence case, with no dashes and no terminal period. Every numbered heading carries a label whose number matches the printed number.
+All headings are sentence case, with no dashes and no terminal period. An en dash inside a proper name (Chad–Cameroon) is not a dash for this rule (A.13, D-130). Every numbered heading carries a label whose number matches the printed number.
 
 ```latex
 \chapter{Sizing and sculpting debt}\label{ch:36}
@@ -884,4 +884,13 @@ Every worked example, exercise or clause that models a project, a financing or a
 
 ### A.11 Never reuse the style sheet's sample figures as inputs (blueprint review; D-041)
 
-Never reuse the style sheet's sample figures as inputs. The numbers that illustrate formats in this file (USD 412.6 million, the table values in Section 6.1, and the figures in the sample passage of Section 12) show format only: no writer may use them as an example's or exercise's capex, debt, CFADS, energy, reserves or any other input or result. Choose distinct, lumpy, realistic figures for each example and recompute the results in Python. A round principal is allowed only when the round number is the teaching point, and the text then says so (for example "a USD 400 million commitment, typical of a club deal"). The numbers auditor checks this rule.
+Never reuse the style sheet's sample figures as inputs. The numbers that illustrate formats in this file (USD 412.6 million, the table values in Section 6.1, and the figures in the sample passage of Section 12) show format only: no writer may use them as an example's or exercise's capex, debt, CFADS, energy, reserves or any other input or result. Choose distinct, lumpy, realistic figures for each example and recompute the results in Python. A round principal is allowed only when the round number is the teaching point, and the text then says so (for example "a USD 400 million commitment, typical of a club deal"). Before fixing an input, search all briefs and chapters for the value: a figure already used elsewhere may not be reused for a different quantity, so no illustrative input value of three or more significant figures appears in two different examples or exercises unless they treat the same deal (round 2, D-132). The sample passage of Section 12 is a format sample, not an example (D-129). The numbers auditor checks this rule.
+
+### A.12 Unit words and American spellings that recur (blueprint review round 2; D-131)
+
+- Mass: the prose word is "metric ton" ("per metric ton", "dry metric ton", "1.07 million metric tons of CO2"); the symbol t, Mt and Mtpa with numerals (style sheet 2.6). "Tonne" is never used, except inside the industry abbreviation's expansion "million tonnes per annum" (mtpa), the canon term, and in quoted titles. "Tonnage" is allowed as the noun for a quantity of material.
+- "Program", never "programme", except in proper names and titles (South Africa's Renewable Energy Independent Power Producer Procurement Programme; Defra's Waste Infrastructure Delivery Programme; the Intercity Express Programme). A construction "programme" in British usage is a "schedule" in this book.
+
+### A.13 En dashes in proper names (blueprint review round 2; D-130)
+
+An en dash that is part of a proper name (the Chad–Cameroon pipeline, the Baku–Tbilisi–Ceyhan pipeline) is typed `--` and is allowed in headings, captions and prose; it is not a "dash" for Section 3.1 or for the em-dash count of Section 11. Use it only where the name is conventionally written with a dash; never to join two ordinary words in a heading.

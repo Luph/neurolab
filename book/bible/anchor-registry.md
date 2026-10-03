@@ -1438,7 +1438,7 @@ Source brief: `briefs/u05.md`.
 | `sec:17.6` | Hub Power and the implementation agreement as enabling legislation |  |
 | `sec:17.7` | Guarantee chains at Lake Turkana, REIPPPP, and Dabhol |  |
 | `sec:17.8` | Walkthrough: marking up an implementation agreement's termination schedule |  |
-| `sec:17.9` | Case P: the tender, the implementation agreement and the guarantee |  |
+| `sec:17.9` | Case P: the tender, the implementation agreement, and the guarantee |  |
 | `sec:17.10` | Practitioner's notebook |  |
 | `sec:17.11` | Judgment drill |  |
 | `sec:17.12` | A guarantee pays only what the offtake contract says is owed |  |
@@ -2040,7 +2040,7 @@ Source brief: `briefs/u06.md`.
 | `sec:25.7` | Land rights |  |
 | `ssec:25.7.1` | Forms of land right |  |
 | `ssec:25.7.2` | What lenders need from a land right |  |
-| `ssec:25.7.3` | Linear rights for pipelines, lines and roads |  |
+| `ssec:25.7.3` | Linear rights for pipelines, lines, and roads |  |
 | `sec:25.8` | Permits and their transferability |  |
 | `ssec:25.8.1` | The permit register |  |
 | `ssec:25.8.2` | Transferability, change of control, and enforcement |  |
@@ -2118,7 +2118,7 @@ Source brief: `briefs/u06.md`.
 | `ssec:26.5.4` | Cost-overrun undertakings, keepwells, and other support |  |
 | `sec:26.6` | Completion guarantees in the LNG and petrochemical mega-projects |  |
 | `sec:26.7` | Walkthrough: negotiating a reserved-matters schedule |  |
-| `sec:26.8` | Case P: the shareholders' agreement among Kilnworth, Talmé and the ABDB fund |  |
+| `sec:26.8` | Case P: the shareholders' agreement among Kilnworth, Talmé, and the ABDB fund |  |
 | `sec:26.9` | Practitioner's notebook |  |
 | `sec:26.10` | Judgment drill |  |
 | `sec:26.11` | Sponsors stand behind the build; insurers stand behind the accidents |  |
