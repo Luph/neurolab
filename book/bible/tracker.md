@@ -136,3 +136,8 @@
 - Ch 2: final verification PASS (reviews/02/final-verification.md). Pre-print flag: reported Chilean bill to amend Ley 18.046 art. 79 unanimity rule unverified; recheck before print (OPEN-01).
 - Ch 36: round-2 fixes done; final verifier running.
 - v1.5 propagation complete (139 edits; reviews/blueprint/v15-propagation-log.md).
+- Ch 36: final verification PASS (reviews/36/final-verification.md). Both pilots pass; bible/exemplars.md created. Phase 2 complete.
+- Case P v1.6 pending (COD-period DSRA draw to be funded correctly; actual-history figures may move). Phase 3 wave 1 limited to chapters that do not cite Case P actual-history figures.
+
+### Phase 3 wave 1 (launched)
+- Chapters 1, 3–19 (18 writers).

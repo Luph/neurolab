@@ -667,7 +667,7 @@ F.row('rr', 'Blended loan rate per month (rho)', 'factor',
 F.row('kk', 'Blended commitment fee per month (kappa)', 'factor',
       lambda i: "=" + "+".join(f"{shk[k]}*{cfk[k]}/100*{dcf(i)}" for k in 'EABC'), fmt='0.0000000')
 F.row('const', 'Costs independent of facility size', 'USD m',
-      lambda i: (f"={fl(i)}*({ref('Construction.base_total', i)}+{ref('Construction.vat_int', i)}+{V('Inputs.agency')}/12"
+      lambda i: (f"={ref('Funding.codw', i)}+{fl(i)}*({ref('Construction.base_total', i)}+{ref('Construction.vat_int', i)}+{V('Inputs.agency')}/12"
                  f"+{SG()}{ref('Inputs.M_N_m', i)}*({V('Inputs.swap_fix')}/100/12-{ref('Construction.base', i)}/100*{dcf(i)})"
                  f"+{V('Inputs.sb_commit')}*{V('Inputs.sb_cf')}/100*{dcf(i)}+{ref('Construction.f_codm', i)}*{V('Funding.d0')})"))
 F.row('alpha', 'Balance, constant part (alpha)', 'USD m',
@@ -707,7 +707,7 @@ F.row('dsra', 'DSRA initial funding (COD month)', 'USD m',
                  + f"+{V('Funding.d0')}," + "+".join(f"{V('Funding.d1_' + k)}*{ref('Funding.bo_' + k, i)}" for k in 'EABC')
                  + f"+{V('Funding.d1_SB')}*{ref('Funding.bo_SB', i)}+{V('Funding.d0')})"), total=True, py='f.dsra')
 F.row('X', 'Uses before ECA premium', 'USD m',
-      lambda i: f"={fl(i)}*({ref('Construction.base_total', i)}+{ref('Construction.vat_int', i)})+" + "+".join(ref('Funding.' + k, i) for k in ['idc_E', 'idc_A', 'idc_B', 'idc_C', 'sbi', 'pri', 'swap', 'cfee', 'sbf', 'upf', 'agy', 'dsra']))
+      lambda i: f"={fl(i)}*({ref('Construction.base_total', i)}+{ref('Construction.vat_int', i)})+" + "+".join(ref('Funding.' + k, i) for k in ['idc_E', 'idc_A', 'idc_B', 'idc_C', 'sbi', 'pri', 'swap', 'cfee', 'sbf', 'upf', 'agy', 'dsra', 'codw']))
 F.row('hd', 'Headroom on committed senior tranches', 'USD m',
       lambda i: f"={V('Funding.D')}-" + "-".join(ref('Funding.bo_' + k, i) for k in 'EABC'))
 F.row('bdebt', 'Senior tranche drawdown (pro rata)', 'USD m',
@@ -747,8 +747,15 @@ F.row('fin_costs', 'Financing costs (IDC, fees, premium, VAT interest)', 'USD m'
       lambda i: "=" + "+".join(ref('Funding.' + k, i) for k in ['idc_E', 'idc_A', 'idc_B', 'idc_C', 'sbi', 'pri', 'swap', 'cfee', 'sbf', 'upf', 'agy', 'prem']) + f"+{fl(i)}*{ref('Construction.vat_int', i)}", total=True, py='f.fin_costs')
 F.scalar('T', 'Total funding requirement (sum of uses)', 'USD m', f"=SUM({rng('Funding.uses')})", '#,##0.000000', py='f.T')
 F.scalar('cap', 'Capitalized cost (book and tax)', 'USD m',
-         f"=SUM({rng('Funding.uses')})-SUM({rng('Funding.dsra')})-SUM({rng('Construction.wc')})+SUM({rng('Funding.shl_i')})-SUM({rng('Funding.ldrec')})-{V('Inputs.s_ld_prep')}*{V('Inputs.ld_perf')}",
+         lambda: f"=SUM({rng('Funding.uses')})-SUM({rng('Funding.dsra')})-SUM({rng('Construction.wc')})-SUM({rng('Funding.codw')})+SUM({rng('Funding.shl_i')})-SUM({rng('Funding.ldrec')})-{V('Inputs.s_ld_prep')}*{V('Inputs.ld_perf')}",
          '#,##0.000000', py='R.capcost')
+# v1.6 appended (D-143): COD-period working capital funded through the construction cascade, held to COD
+F.gap()
+F.scalar('codneed', 'COD-period operating cash shortfall before tax (working capital built in the COD period)', 'USD m',
+         lambda: (f"=MAX(0,-(INDEX({rng('Operations.ebitda')},1,{V('Time.tcod')})-INDEX({rng('Operations.dnwc')},1,{V('Time.tcod')})+INDEX({rng('Operations.inv_rel')},1,{V('Time.tcod')})"
+                  f"-INDEX({rng('Reserves.mmc')},1,{V('Time.tcod')})+INDEX({rng('Operations.mm')},1,{V('Time.tcod')})))"), '#,##0.000000', py='R.cod_wc')
+F.row('codw', 'COD working-capital funding (a use in the last funding month; held in the project accounts to COD)', 'USD m',
+      lambda i: f"=IF({m_(i)}={V('Time.fe')},{V('Funding.codneed')},0)", total=True, py='f.cod_wc')
 
 # ========================================================================================
 # DEBT (semiannual)
@@ -990,10 +997,10 @@ W = Sheet('Waterfall', 'S', 'Waterfall: CFADS, debt service, reserves, tests, sw
 W.row('cfads', 'CFADS', 'USD m',
       lambda i: f"={ref('Operations.ebitda', i)}-{ref('Tax.tax', i)}-{ref('Operations.dnwc', i)}-{ref('Reserves.mmc', i)}+{ref('Operations.mm', i)}+{ref('Operations.inv_rel', i)}", total=True, py='S.cfads')
 W.row('copen', 'Cash brought forward (lock-up and trapped cash)', 'USD m',
-      lambda i: (f"=IF({ref('Time.f_cod', i)}=1,INDEX({rng('Funding.ldpool')},1,{V('Time.fe')}),0)+{ref('Waterfall.lu', i, -1)}+{ref('Waterfall.trap', i, -1)}"), py='S.cash_open')
+      lambda i: (f"=IF({ref('Time.f_cod', i)}=1,INDEX({rng('Funding.ldpool')},1,{V('Time.fe')})+SUM({rng('Funding.codw')}),0)+{ref('Waterfall.lu', i, -1)}+{ref('Waterfall.trap', i, -1)}"), py='S.cash_open')
 W.row('avail', 'Cash available for debt service', 'USD m', lambda i: f"={ref('Waterfall.cfads', i)}+{ref('Waterfall.copen', i)}", py='S.avail_cash')
 W.row('need', 'Senior debt service and fees due', 'USD m', lambda i: f"={ref('Debt.ds', i)}+{ref('Debt.wfee', i)}", total=True)
-W.row('short', 'Shortfall before DSRA', 'USD m', lambda i: f"=MAX(0,{ref('Waterfall.need', i)}-{ref('Waterfall.avail', i)})", total=True)
+W.row('short', 'Debt-service shortfall before DSRA (the DSRA covers debt service only)', 'USD m', lambda i: f"=MIN({ref('Waterfall.need', i)},MAX(0,{ref('Waterfall.need', i)}-{ref('Waterfall.avail', i)}))", total=True)
 W.row('unpaid', 'Shortfall after DSRA (must be zero)', 'USD m', lambda i: f"={ref('Waterfall.short', i)}-{ref('Reserves.dsra_d', i)}", total=True, py='S.shortfall')
 W.row('cad', 'Cash after debt service', 'USD m', lambda i: f"=MAX(0,{ref('Waterfall.avail', i)}-{ref('Waterfall.need', i)})", py='S.cash_after_ds')
 W.row('cash1', 'Cash after DSRA movements', 'USD m', lambda i: f"={ref('Waterfall.cad', i)}-{ref('Reserves.dsra_t', i)}+{ref('Reserves.dsra_r', i)}")
@@ -1107,11 +1114,13 @@ FN.row('cf_cld', 'Construction: delay LDs and DSU received less applied to uses'
        lambda i: f"=SUMIFS({rng('Funding.ldrec')},{rng('Construction.per')},{tt(i)})-SUMIFS({rng('Funding.ldu')},{rng('Construction.per')},{tt(i)})", total=True, py='S.cf_cld')
 FN.row('cf_mmr', 'MMRA contributions less releases (held in the project accounts)', 'USD m', lambda i: f"={ref('Reserves.mmc', i)}-{ref('Operations.mm', i)}", total=True, py='S.cf_mmr')
 FN.row('cf_net', 'Net cash flow', 'USD m',
-       lambda i: "=" + "+".join(ref('Financials.' + k, i) for k in ['cf_cfads', 'cf_ds', 'cf_ldin', 'cf_ldp', 'cf_bond', 'cf_prep', 'cf_unw', 'cf_sw', 'cf_shl', 'cf_div', 'cf_dsra', 'cf_cld', 'cf_mmr']), total=True, py='S.cf_net')
+       lambda i: "=" + "+".join(ref('Financials.' + k, i) for k in ['cf_cfads', 'cf_ds', 'cf_ldin', 'cf_ldp', 'cf_bond', 'cf_prep', 'cf_unw', 'cf_sw', 'cf_shl', 'cf_div', 'cf_dsra', 'cf_cld', 'cf_mmr', 'cf_codw']), total=True, py='S.cf_net')
 FN.row('cf_dsra_memo', 'Memo: DSRA top-ups less drawings and releases (transfers within the project accounts)', 'USD m',
        lambda i: f"={ref('Reserves.dsra_t', i)}-{ref('Reserves.dsra_d', i)}-{ref('Reserves.dsra_r', i)}", total=True, py='S.cf_dsra_memo')
 FN.row('cf_dc', 'Change in project-account cash', 'USD m', lambda i: f"={ref('Financials.cash', i)}-{ref('Financials.cash', i, -1)}", total=True, py='S.cf_dc')
 FN.row('cf_chk', 'Cash check: change in cash less net cash flow (0)', 'USD m', lambda i: f"={ref('Financials.cf_dc', i)}-{ref('Financials.cf_net', i)}", py='S.cf_chk')
+FN.row('cf_codw', 'COD working-capital funding brought into the COD period (standby facility and contingent equity)', 'USD m',
+       lambda i: f"={ref('Time.f_cod', i)}*SUM({rng('Funding.codw')})", total=True, py='S.cf_codw')
 
 # ========================================================================================
 # RATIOS

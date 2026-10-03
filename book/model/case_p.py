@@ -416,7 +416,7 @@ def funding_fc(p, mac_, u, prof, N_m, N_s, D_fixed=None, mode='size'):
         if m > fe: A[m], B[m] = a, b; continue
         rho, kap = month_rates(mac_, m)
         rr = (SHARE * rho).sum(); kk = (SHARE * kap).sum()
-        const = (u['base_total'][m] + u['vat_int'][m] + 0.255 / 12
+        const = (u['base_total'][m] + u['vat_int'][m] + (p.get('cod_wc', 0.0) if m == fe else 0.0) + 0.255 / 12
                  + N_m[m] * (SWAP_FIX / 100 / 12 - mac_['base_m'][m] / 100 * M_DAYS[m] / 360) * (-1 if 'E10' in ERRS else 1)
                  + SB_COMMIT * SB_CFEE / 100 * M_DAYS[m] / 360)
         cod_m = (m == nc)
@@ -451,7 +451,7 @@ def _fund_fc_pass(p, mac_, u, D, g, fe, nc, d1, d0, N_m):
         sbf = SB_COMMIT * SB_CFEE / 100 * M_DAYS[m] / 360
         upf = (Dk * UPF / 100).sum() if m == 0 else 0.0
         dsra = (d1 * Dk).sum() + d0 if m == nc else 0.0
-        X = (u['base_total'][m] + u['vat_int'][m] + idc_k.sum() + pri + swap + cfee + sbf
+        X = (u['base_total'][m] + u['vat_int'][m] + (p.get('cod_wc', 0.0) if m == fe else 0.0) + idc_k.sum() + pri + swap + cfee + sbf
              + upf + 0.255 / 12 + dsra)
         if 'E7' in ERRS:   # seeded error: DSRA funded 100% by senior debt
             draw = (g * (X - dsra) + dsra) / den
@@ -513,7 +513,7 @@ def funding_act(p, mac_, u, prof, N_m, N_s):
         sbf = (SB_COMMIT - sb) * SB_CFEE / 100 * dcf
         upf = (Dk * UPF / 100).sum() if m == 0 else 0.0
         dsra = (((d1 * Dk).sum() + d0) if p['constr'] == 'FC' else ((d1 * bal).sum() + sb * (prof[t1] / prof[t1:].sum() + rsb_t1) + d0)) if m == nc else 0.0
-        X = (u['base_total'][m] + u['vat_int'][m] + idc_k.sum() + sbi + pri + swap + cfee + sbf
+        X = (u['base_total'][m] + u['vat_int'][m] + (p.get('cod_wc', 0.0) if m == fe else 0.0) + idc_k.sum() + sbi + pri + swap + cfee + sbf
              + upf + 0.255 / 12 + dsra)
         HD = Dk.sum() - bal.sum()
         bdebt = min(g * X / (1 - ECA_PREM * SHARE[0] * g), HD)
@@ -570,9 +570,22 @@ def run(p, prof=None, N_m=None, N_s=None, bond_prof=None, D_fixed=None, gearing=
     if gearing is not None: G = gearing
     ERRS.clear(); ERRS.update(p.get('errs', ()))
     try:
-        return _run(p, prof, N_m, N_s, bond_prof, D_fixed)
+        R = _run(p, prof, N_m, N_s, bond_prof, D_fixed)
+        need = cod_wc_need(R)
+        if need > 1e-12 and abs(need - p.get('cod_wc', 0.0)) > 1e-12:
+            p = dict(p); p['cod_wc'] = need
+            R = _run(p, prof, N_m, N_s, bond_prof, D_fixed)
+        return R
     finally:
         G = G_saved
+
+def cod_wc_need(R):
+    """COD-period operating cash shortfall before tax (working capital built in the COD period), funded through the
+    construction funding cascade in the last funding month and held to COD (D-14x). Independent of the funding, so one
+    re-run is exact."""
+    S = R['S']; t = R['t_cod']
+    pre = S['ebitda'][t] - S['dnwc'][t] + S['inv_release'][t] - S['mm_contr'][t] + S['mm_spend'][t]
+    return float(max(0.0, -pre))
 
 def _run(p, prof, N_m, N_s, bond_prof, D_fixed):
     R = {}
@@ -745,7 +758,7 @@ def _run(p, prof, N_m, N_s, bond_prof, D_fixed):
     # ---- capitalized cost (book and tax)
     ld_rec = f['ld_received'].sum() if 'ld_received' in f else 0.0
     perf_ld = OVR['performance_lds_usd_m']['total'] if p['ld_prep'] else 0.0
-    capcost = (f['uses'][:fe + 1].sum() - f['dsra'].sum() - u['wc'].sum() + f['shl_capint'].sum()
+    capcost = (f['uses'][:fe + 1].sum() - f['dsra'].sum() - u['wc'].sum() - p.get('cod_wc', 0.0) + f['shl_capint'].sum()
                - ld_rec - perf_ld)
     R['ld_rec'] = ld_rec; R['perf_ld'] = perf_ld
     R['capcost'] = capcost
@@ -897,13 +910,13 @@ def _run(p, prof, N_m, N_s, bond_prof, D_fixed):
             ld_cash = comp; comp = 0.0
         rr['comp_acct'][t] = comp; rr['ld_cash'][t] = ld_cash
         if t == t_cod:
-            dsra = f['dsra'].sum(); lu = f['ld_leftover']
+            dsra = f['dsra'].sum(); lu = f['ld_leftover'] + p.get('cod_wc', 0.0)   # D-14x: COD working-capital funding held to COD
         cash_open = lu + trap
         rr['cash_open'][t] = cash_open
         avail = cfads + cash_open
         rr['avail_cash'][t] = avail
         need = rr['senior_costs'][t] + rr['waiver_fee'][t] + P[:, t].sum()
-        short = max(0.0, need - avail)
+        short = min(need, max(0.0, need - avail))     # the DSRA is drawn only for a debt-service shortfall
         dr = min(dsra, short)
         rr['dsra_open'][t] = dsra; rr['dsra_draw'][t] = dr; rr['shortfall'][t] = short - dr
         cad = max(0.0, avail - need)
@@ -1040,6 +1053,8 @@ def extras(R):
     """v1.4 report rows (u09 requests R3, R4, R11 and the live debt capacity): projected 12-month DSCR, cash flow
     statement, ECA tests on the selected profile, debt capacity at the sizing DSCR on the scenario's CFADS."""
     S = R['S']; f = R['f']; p = R['p']; z = np.zeros(NS)
+    R['cod_wc'] = float(p.get('cod_wc', 0.0)); f['cod_wc'] = np.zeros(NM)
+    if R['cod_wc'] > 0: f['cod_wc'][R['fe']] = R['cod_wc']
     nx = lambda a, k: np.concatenate([a[k:], np.zeros(k)])
     ds1, ds2 = nx(S['ds'], 1), nx(S['ds'], 2); cf1, cf2 = nx(S['cfads'], 1), nx(S['cfads'], 2)
     S['proj_dscr'] = np.where(ds1 > 1e-9, (cf1 + np.where(ds2 > 1e-9, cf2, 0.0)) / np.maximum(ds1 + ds2, 1e-12), 0.0)
@@ -1057,7 +1072,8 @@ def extras(R):
               cf_bond=S['bond_face'] - S['refi_costs'], cf_prep=-sum(S['refi_prepay_' + k] for k in ['B', 'COM', 'SB']),
               cf_unw=S['unwind'], cf_sw=-(S['lu_sweep'] + S['mp_sweep']), cf_shl=-(S['shl_int_paid'] + S['shl_prin']),
               cf_div=-S['div'], cf_dsra=fcod * float(f['dsra'].sum()), cf_cld=ldper, cf_mmr=S['mm_contr'] - S['mm_spend'])
-    cf['cf_net'] = sum(cf[k] for k in ['cf_cfads', 'cf_ds', 'cf_ldin', 'cf_ldp', 'cf_bond', 'cf_prep', 'cf_unw', 'cf_sw', 'cf_shl', 'cf_div', 'cf_dsra', 'cf_cld', 'cf_mmr'])
+    cf['cf_codw'] = fcod * float(p.get('cod_wc', 0.0))
+    cf['cf_net'] = sum(cf[k] for k in ['cf_cfads', 'cf_ds', 'cf_ldin', 'cf_ldp', 'cf_bond', 'cf_prep', 'cf_unw', 'cf_sw', 'cf_shl', 'cf_div', 'cf_dsra', 'cf_cld', 'cf_mmr', 'cf_codw'])
     cf['cf_dsra_memo'] = S['dsra_topup'] - S['dsra_draw'] - S['dsra_release']
     cash = S['bs_cash']; cf['cf_dc'] = cash - np.concatenate([[0.0], cash[:-1]])
     cf['cf_chk'] = cf['cf_dc'] - cf['cf_net']
@@ -2157,6 +2173,17 @@ def figures_annex(F, RS, R1, R14, R15):
                                      commercial_opening=float(Sb['bal_open_COM'][t]), at_1_35=bool(abs(Sb['dscr'][t] - 1.35) < 1e-4))
     mds = Sb['ds'] > 1e-9
     Rnm = run(scen(1, miniperm=0)); mn = Rnm['S']['ds'] > 1e-9
+    _above = [k for k, v in rows_.items() if not v['at_1_35']]
+    _rep = next((S_LABEL[t] for t in range(NS) if Sb['bal_open_COM'][t] > 1e-6 and Sb['bal_close_COM'][t] <= 1e-6), 'n/a')
+    _tail = [v['dscr_scheduled'] for k, v in rows_.items() if Sb['bal_open_COM'][tix(k)] <= 1e-6]
+    _why = ('The A-loan, B-loan and commercial tranches are sculpted, with the ECA-covered tranche in equal installments, so that CFADS / scheduled '
+            f'debt service = 1.35x in every period from {list(rows_)[0]} to 2034H1 on the FC base without sweeps. From 2027 the soft mini-perm sweep (50% of cash '
+            'available for distribution) prepays the commercial tranche ahead of its schedule; its later installments are its profile share times its reduced '
+            f'balance, so scheduled debt service falls below CFADS / 1.35 and the period DSCR rises from {_above[0] if _above else "n/a"}. The commercial tranche '
+            f'is repaid by sweep in {_rep}; from then on only the ECA, A and B tranches remain (DSCR {min(_tail):.1f}x to {max(_tail):.1f}x). Scheduled principal plus '
+            f'sweep equals the debt. The {float(Sb["cfads"][mds].sum() / Sb["ds"][mds].sum()):.2f}x average is the debt-service-weighted average of CFADS / scheduled '
+            'debt service (the term-sheet DSCR, which excludes voluntary and sweep prepayments); it is not an average over a different set of periods. '
+            'The averages including the sweep and without the sweep are shown alongside.')
     P['P-F09']['reconciliation'] = dict(
         by_period=rows_, scheduled_principal_total=float(Sb['principal_total'].sum()), cash_sweep_prepayment_total=float(swp.sum()),
         debt=float(CONTRACT['D']), periods_at_1_35=[k for k, v in rows_.items() if v['at_1_35']],
@@ -2165,14 +2192,7 @@ def figures_annex(F, RS, R1, R14, R15):
         min_dscr_incl_sweep=float(min(v['dscr_incl_sweep'] for v in rows_.values())),
         no_sweep_counterfactual=dict(avg_dscr=float(Rnm['S']['cfads'][mn].sum() / Rnm['S']['ds'][mn].sum()), min_dscr=float(Rnm['S']['dscr'][mn].min()),
                                      max_dscr=float(Rnm['S']['dscr'][mn].max()), equity_irr=float(Rnm['equity_irr'])),
-        explanation=('The repayment profile is sculpted so that CFADS / scheduled debt service = 1.35x in every period from 2021H2 to 2034H1 on the FC base '
-                     'without sweeps (the profile is a share of the original debt). From 2027 the soft mini-perm sweep (50% of cash available for distribution) '
-                     'prepays the commercial tranche ahead of its schedule; each tranche\'s later installments are its profile share times its reduced balance, '
-                     'so scheduled debt service falls below CFADS / 1.35 and the period DSCR rises (from 2027H2), and after the commercial tranche is repaid '
-                     'by sweep in 2031H2 only the ECA, A and B tranches remain (2.2x). Scheduled principal plus sweep equals the debt. The 1.54x average is '
-                     'the debt-service-weighted average of CFADS / scheduled debt service (the term-sheet DSCR, which excludes voluntary and sweep prepayments); '
-                     'it is not an average over a different set of periods. Including the sweep in the denominator the average is shown above; without the '
-                     'sweep the profile gives 1.35x in every period. The first period (2021H2, after the two-month COD period) is a full half-year and is at 1.35x.'))
+        explanation=_why)
     P['P-F09']['eca_tests_actual'] = dict(ECA_tests(Ra, cod_act), **eca24(Ra, cod_act))
     P['P-F09']['eca_rules'] = 'OECD Arrangement project finance terms for 2018 commitments (t-oecd-pf-2018; annex 3.6): repayment term <= 14 years; first repayment <= 24 months after COD with at least 2% repaid by then; WAL <= 7.25 years; <= 25% of principal in any six months'
     # ---- P-F10 first full operating year per annex 4.15
@@ -2705,7 +2725,7 @@ def main():
     F, RS, R1, R14, R15 = compute_all()
     contract = {k: (list(map(float, v)) if isinstance(v, (list, np.ndarray)) else float(v)) for k, v in CONTRACT.items()}
     audit_c = F.pop('_audit_contract')
-    out = dict(meta=dict(case='P', model='case_p.py', version='1.5', run_date='2026-10-03', currency='USD m unless stated',
+    out = dict(meta=dict(case='P', model='case_p.py', version='1.6', run_date='2026-10-03', currency='USD m unless stated',
                          timeline=dict(monthly=[d.strftime('%Y-%m') for d in M_START], semiannual=S_LABEL),
                          tolerance_usd_m=TOL, scenarios={i: SCENARIOS[i]['name'] for i in SCENARIOS},
                          gas_arrears_share_calibration=GAS_ARREARS_SHARE),
