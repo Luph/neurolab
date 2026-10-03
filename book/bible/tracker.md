@@ -45,5 +45,6 @@
 
 ### Phase 1 briefs (units)
 - Launched: u01 (1-4), u02 (5-9), u03 (10-13), u04 (14-16), u05 (17-22), u06 (23-28), u07 (29-34), u08 (35-38), u09 (39-45), u10 (46-50), u11 (51-56), u12 (57-60), u13 (61-65), u14 (66-68, 84)
-- Launched: u15 (69-76). QUEUED: u16 (77-83), u17 (85-88 + matter plan)
+- Launched: u15 (69-76), u16 (77-83). QUEUED: u17 (85-88 + matter plan)
 - Done: t-anticorruption-sanctions, t-insurance-market, t-ratings (PARTIAL: Fitch only; S&P and Moody's methodologies blocked). QUEUED: t-ratings-2 via headless Chromium browser fetch.
+- Done: t-contract-law, t-islamic, t-ppp-frameworks. All 74 planned fact sheets exist (t-ratings partial; t-market-norms-2 in progress).
