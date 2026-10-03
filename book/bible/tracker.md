@@ -103,3 +103,4 @@
 - Brief revision u07 DONE (cross-unit requests: u14 Ch67 US credit-dates exhibit; u06 Ch26 no contingent-equity acceleration variants; u08 Ex36.18 cite Fw 30.2/Exh 30.5).
 - Brief revision u11 DONE (ledger: P-F49 itemization gap; Annex P 1.15.5 FX hedging consent conflict).
 - Brief revision u02 DONE (tax subsection at ssec:7.11.4; Excel primer ssec:5.2.2).
+- Brief revision u13 DONE (ledger vs bible conflicts: 2025 bond combined DSCR 1.59x vs bible 1.35x; Case T notes min DSCR 2.00x vs bible 1.30x; case-state 1.14/0.97 vs P-F21 1.13/0.96 — ledger wins). Fact sheet wave 4 launched (t-repowering, t-fast-standard, t-energy-yield, t-battery-degradation, t-earned-value, t-sustainable-finance-2).
