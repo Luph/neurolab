@@ -1,6 +1,6 @@
 # Unit u07 glossary (Chapters 29 to 34)
 
-Terms owned by Part V chapters, with canonical definitions and home sections. Writers use these definitions exactly; bold (`\term{}`) appears only at the home section. Ownership questions are listed in u07.md, "Change requests" items 6, 7 and 9.
+Terms owned by Part V chapters, with canonical definitions and home sections. Writers use these definitions exactly; bold (`\term{}`) appears only at the home section. Ownership questions are listed in u07.md, "Change requests" items 6, 7, and 9.
 
 | Term | Abbreviation | Definition | Home section |
 |---|---|---|---|
@@ -10,7 +10,7 @@ Terms owned by Part V chapters, with canonical definitions and home sections. Wr
 | OECD Arrangement on Officially Supported Export Credits | the Arrangement | A non-binding agreement among eleven Participants that caps the generosity of official export credit support, including down payment, support percentage, local costs, tenor, repayment profile, minimum interest rates, and minimum premia. | Section 29.3.2 |
 | export contract value | – | The value of the goods and services in the export contract, including third-country content and excluding local costs, on which ECA support limits are calculated. | Section 29.3.2 |
 | local costs | – | Goods and services bought in the buyer's country, which ECAs may support only up to a cap expressed as a share of the export contract value. | Section 29.3.2 |
-| starting point of credit | – | The date from which an ECA-supported loan's repayment term and first-installment deadline are measured, usually linked to delivery, commissioning or acceptance. | Section 29.3.2 |
+| starting point of credit | – | The date from which an ECA-supported loan's repayment term and first-installment deadline are measured, usually linked to delivery, commissioning, or acceptance. | Section 29.3.2 |
 | Commercial Interest Reference Rate | CIRR | The minimum fixed interest rate an official lender may charge under the Arrangement, built from government bond yields plus a margin. | Section 29.3.2 |
 | minimum premium rate | MPR | The lowest premium an ECA may charge for credit risk under the Arrangement, set by country risk category, risk horizon, buyer risk, cover, and mitigants. | Section 29.3.5 |
 | Climate Change Sector Understanding | CCSU | The annex to the Arrangement that allows longer tenors and more flexible repayment for listed climate-related sectors. | Section 29.3.2 |
@@ -89,7 +89,7 @@ Terms owned by Part V chapters, with canonical definitions and home sections. Wr
 | tax credit transfer | – | The sale for cash of an eligible US federal energy tax credit to an unrelated taxpayer under §6418 of the Internal Revenue Code. | Section 32.9.3 |
 | hybrid tax equity | – | A partnership flip in which the partnership also sells some of its tax credits to a third party. | Section 32.9.3 |
 | elective pay | – | The US rule under which tax-exempt and governmental entities receive certain energy credits as a refundable payment. | Section 32.9.3 |
-| prohibited foreign entity | PFE | Under US federal law as amended in 2025, an entity whose ownership, debt or control links to specified foreign entities deny it energy tax credits. | Section 32.9.4 |
+| prohibited foreign entity | PFE | Under US federal law as amended in 2025, an entity whose ownership, debt, or control links to specified foreign entities is denied energy tax credits. | Section 32.9.4 |
 | Sharia | – | Islamic law as applied to commercial and financial dealings. | Section 33.1.1 |
 | riba | – | Any predetermined return on a loan of money, which Islamic finance prohibits. | Section 33.1.1 |
 | gharar | – | Excessive uncertainty in the terms or subject of a contract, which Islamic finance prohibits. | Section 33.1.1 |
@@ -101,20 +101,20 @@ Terms owned by Part V chapters, with canonical definitions and home sections. Wr
 | ijara | – | A lease under which the financier owns an asset and earns rent from the lessee's use of it. | Section 33.2.2 |
 | forward ijara | – | A lease agreed before the leased asset exists, with advance rentals payable during construction. | Section 33.2.2 |
 | advance rental | – | Rent paid under a forward ijara before the asset is delivered, credited against later rent or refunded if delivery fails. | Section 33.2.2 |
-| wakala | – | An agency in which a principal appoints an agent to act, invest or procure on its behalf. | Section 33.2.3 |
+| wakala | – | An agency in which a principal appoints an agent to act, invest, or procure on its behalf. | Section 33.2.3 |
 | murabaha | – | A sale at cost plus an agreed profit, with payment deferred. | Section 33.2.4 |
 | commodity murabaha | – | A murabaha over traded commodities used to provide cash liquidity, the buyer reselling the commodities spot. | Section 33.2.4 |
 | musharaka | – | A partnership in which parties contribute capital and share profits by agreement and losses by contribution. | Section 33.2.5 |
 | diminishing musharaka | – | A musharaka in which one partner buys out the other's share in stages. | Section 33.2.5 |
 | service agency agreement | – | The agreement under which the lessee performs, as the lessor's agent, the ownership duties (major maintenance, insurance) that the lessor must bear. | Section 33.3.1 |
-| purchase undertaking | – | The lessee's promise to buy the leased asset from the financier at a set price on maturity, default or other events. | Section 33.3.1 |
+| purchase undertaking | – | The lessee's promise to buy the leased asset from the financier at a set price on maturity, default, or other events. | Section 33.3.1 |
 | total loss event | – | The destruction of a leased asset, which ends the lease and triggers payment from insurance proceeds. | Section 33.3.2 |
-| sukuk | – | Certificates representing undivided ownership in assets, usufructs or a venture, whose returns come from those assets rather than from interest. | Section 33.4 |
+| sukuk | – | Certificates representing undivided ownership in assets, usufructs, or a venture, whose returns come from those assets rather than from interest. | Section 33.4 |
 | wa'd | – | A unilateral promise, used to build Islamic hedging and undertaking structures. | Section 33.5.2 |
 | blended finance | – | The use of public or philanthropic money to change a project's risk or return so that commercial money will invest alongside it. | Section 34.1 |
-| concessional finance | – | Lending on terms more favorable than the market offers, through lower rates, longer tenors, longer grace periods or grants. | Section 34.2.1 |
+| concessional finance | – | Lending on terms more favorable than the market offers, through lower rates, longer tenors, longer grace periods, or grants. | Section 34.2.1 |
 | grant element | – | The share of a loan's face value that is a gift, measured as one minus the present value of its debt service at a market rate divided by the face value. | Section 34.2.1 |
-| climate fund | – | A pooled public fund that provides concessional finance, grants or guarantees for climate mitigation or adaptation projects. | Section 34.2.2 |
+| climate fund | – | A pooled public fund that provides concessional finance, grants, or guarantees for climate mitigation or adaptation projects. | Section 34.2.2 |
 | on-lending | – | Borrowing from one lender and lending the proceeds to another borrower, often passing the original terms through. | Section 34.2.4 |
 | first-loss capital | – | A tranche or guarantee that absorbs losses before other investors or lenders do. | Section 34.3.1 |
 | minimum concessionality | – | The principle of giving no more concession than is needed to make a project financeable. | Section 34.3.2 |
