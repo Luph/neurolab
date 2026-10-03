@@ -3152,7 +3152,7 @@ Source brief: `briefs/u09.md`.
 | `ssec:42.2.2` | Discount factors and debt capacity |  |
 | `ssec:42.2.3` | When the gearing cap binds |  |
 | `ssec:42.2.4` | Scheduled balance and principal |  |
-| `ssec:42.2.5` | Tranches on a common profile |  |
+| `ssec:42.2.5` | Sculpted and equal-installment tranches |  |
 | `ssec:42.2.6` | ECA repayment tests |  |
 | `ssec:42.2.7` | Closing the sizing loop |  |
 | `ssec:42.2.8` | Sizing mode and locked-debt mode |  |

@@ -110,3 +110,6 @@ Format: D-NNN | date | phase | decision | reason
 
 ## D-141 — Open blueprint flag from v1.5 propagation: Ch 44 emphasis
 At v1.5, finding E2 (+13.3, gearing-bound) exceeds E10 (−10.0) in debt impact; the u09 Ch 44 outline's statement that E6 and E10 matter most for debt must be rechecked by the Ch 44 writer against the ledger at drafting (per D-140 the drafted chapter supersedes its brief). Logged as a writer instruction for Wave dispatch.
+
+## D-142 — Retitle ssec:42.2.5
+"Tranches on a common profile" contradicts D-128 (ECA tranche on its own equal-installment schedule). Retitled "Sculpted and equal-installment tranches" in the anchor registry and u09; label unchanged. The exh:42.5 caption ("Case P sculpted repayment profile and ECA tests") remains accurate and is kept.
