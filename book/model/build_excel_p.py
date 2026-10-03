@@ -676,7 +676,7 @@ D_.row('prof', 'Repayment profile, selected', 'fraction',
        lambda i: f"=IF({V('Inputs.s_profile')}=1,{ref('Inputs.S_prof_fc', i)},{ref('Inputs.S_prof_cod', i)})", fmt='0.000000', py='S.prof')
 D_.row('rem', 'Remaining profile (this and later installments)', 'fraction', lambda i: f"=SUM({rngrel('Debt.prof', i, NS - 1)})", fmt='0.000000')
 D_.row('psh', 'Installment share of remaining balance', 'fraction', lambda i: f"=IF({ref('Debt.rem', i)}>0.000000000001,{ref('Debt.prof', i)}/{ref('Debt.rem', i)},0)", fmt='0.000000')
-D_.row('f_tR', 'Flag_Refinancing (2025H1)', 'flag', lambda i: f"={V('Inputs.s_refi')}*IF({tt(i)}=15,1,0)", fmt='0')
+D_.row('f_tR', 'Flag_Refinancing (2025H1)', 'flag', lambda i: f"={V('Inputs.s_refi')}*IF({tt(i)}=14,1,0)", fmt='0')
 D_.row('f_t23', 'Flag_Waiver deferral (2023H2)', 'flag', lambda i: f"={V('Inputs.s_waiver')}*IF({tt(i)}=11,1,0)", fmt='0')
 D_.row('f_drep', 'Flag_Deferred repayment (2024H1-2025H2)', 'flag', lambda i: f"={V('Inputs.s_waiver')}*IF(AND({tt(i)}>=12,{tt(i)}<=15),1,0)", fmt='0')
 D_.row('f_ld', 'Flag_LD prepayment (2022H1)', 'flag', lambda i: f"={V('Inputs.s_ld_prep')}*IF({tt(i)}=8,1,0)", fmt='0')
@@ -728,7 +728,7 @@ for k, pk, lab in TR6:
         D_.row('bc_BD', 'Closing balance', 'USD m', lambda i: f"={ref('Debt.after_BD', i)}" + (f"+{ref('Debt.f_tR', i)}*{V('Debt.F')}" if i >= 13 else ''), py='S.bal_close_BOND')
 D_.sec('Refinancing 2025 (USD m)')
 D_.row('udf', 'Swap unwind discount factor at 3.68%', 'factor',
-       lambda i: f"=IF({tt(i)}>15,(1+{V('Inputs.unw_r')}/200)^-({tt(i)}-15),0)", fmt='0.000000')
+       lambda i: f"=IF({tt(i)}>14,(1+{V('Inputs.unw_r')}/200)^-({tt(i)}-14),0)", fmt='0.000000')
 D_.scalar('mtm', 'Swap unwind receipt (terminated share, MTM at 3.68% flat)', 'USD m',
           f"={V('Inputs.s_refi')}*{V('Inputs.unw_sh')}*({V('Inputs.unw_r')}-{V('Inputs.swap_fix')})/100*0.5*SUMPRODUCT({rng('Inputs.S_N_s')},{rng('Debt.udf')})", '#,##0.000000')
 D_.scalar('prepaid', 'Principal prepaid (B-loan, commercial, standby)', 'USD m',
@@ -740,7 +740,7 @@ D_.row('unwind', 'Swap unwind receipt', 'USD m', lambda i: f"={ref('Debt.f_tR', 
 D_.row('refi_c', 'Refinancing costs (OID, underwriting, other, PCG upfront)', 'USD m',
        lambda i: "=0" if i < 13 else f"={ref('Debt.f_tR', i)}*({V('Debt.F')}*(1-{V('Inputs.b_px')})+{V('Inputs.b_uw')}*{V('Debt.F')}+{V('Inputs.b_oth')}+{V('Inputs.pcg_up')}/100*{V('Inputs.pcg')})", total=True, py='S.refi_costs')
 D_.sec('Swap, premiums and fees (USD m)')
-D_.row('swsh', 'Swap share outstanding', 'fraction', lambda i: f"=IF(AND({V('Inputs.s_refi')}=1,{tt(i)}>15),{V('Inputs.sw_rem')},1)")
+D_.row('swsh', 'Swap share outstanding', 'fraction', lambda i: f"=IF(AND({V('Inputs.s_refi')}=1,{tt(i)}>14),{V('Inputs.sw_rem')},1)")
 D_.row('swap', 'Swap net payment (fixed 30/360 less floating ACT/360)', 'USD m',
        lambda i: f"={fds(i)}*{ref('Inputs.S_N_s', i)}*{ref('Debt.swsh', i)}*({V('Inputs.swap_fix')}/100*0.5-{ref('Operations.base', i)}/100*{dsc(i)})", total=True, py='S.swap')
 D_.row('pri', 'PRI premium (commercial tranche)', 'USD m', lambda i: f"={PRIR}*{ref('Debt.bo_C', i)}*{ref('Time.days', i)}/365", total=True, py='S.pri')

@@ -1493,6 +1493,19 @@ def derived(runs, out):
                                 "min_comb_dscr": X["min_comb_dscr"], "lockup_periods": X["lockup_periods"],
                                 "dsra_draws": X["dsra_draws_total"]}
     d["sensitivities"] = sens
+    # balances on the banking (= financing) schedule at selected year ends
+    bal = {}
+    for y in (2019, 2020, 2021, 2025, 2030, 2035, 2040, 2045, 2048, 2050, 2052):
+        t = ENDS.index(D_(y, 12, 31))
+        bal[y] = {"senior": float(X2["bank_close"][t] + X2["bond_close"][t]), "nilo": float(X2["nilo_close"][t])}
+    d["balances_banking"] = bal
+    # illustrative USD equivalents (inputs meta.currency.usd_per_ard_illustrative)
+    fx = INP["meta"]["currency"]["usd_per_ard_illustrative"]
+    d["usd"] = {"rate_2015": fx["2015"], "rate_2023": fx["2023"],
+                "total_uses_2015": su["total_uses"] * fx["2015"], "senior_2015": st["D"] * fx["2015"],
+                "nilo_2015": st["N"] * fx["2015"], "equity_2015": st["E"] * fx["2015"],
+                "claims_net_2023": r["claims_net"] * fx["2023"], "notes_2023": r["notes_issue"] * fx["2023"],
+                "state_money_2023": STATE_MONEY * fx["2023"]}
     # banking metrics
     d["banking_metrics"] = {k: X2[k] for k in ("min_dscr_rep", "avg_dscr_rep", "min_dscr_rampup", "min_comb_dscr",
                                                "llcr_first", "plcr_first", "min_llcr")}
