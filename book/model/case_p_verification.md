@@ -1,27 +1,27 @@
 # Case P workbook verification
 
-Model version 1.4. Method. `model/verify_p.py` builds `Case_P_Model.xlsx` with the scenario selector set to each of the 15 scenarios, recalculates every copy with LibreOffice 24.2 headless using a private user profile (`soffice -env:UserInstallation=file:///tmp/lo_profile_case_p --headless --calc --convert-to xlsx`) into `model/recalc_p/out/`, reads the recalculated values with openpyxl (`data_only=True`) and compares them with the Python mirror (`case_p.py`) row by row: every mapped calculation row over all its columns (monthly or semiannual) and every mapped scalar. Tolerance: 0.01 in displayed units (USD m for amounts, x for ratios, percentage points for IRRs). The workbook has no circular references and no macros; iterative calculation is off.
+Model version 1.5. Method. `model/verify_p.py` builds `Case_P_Model.xlsx` with the scenario selector set to each of the 15 scenarios, recalculates every copy with LibreOffice 24.2 headless using a private user profile (`soffice -env:UserInstallation=file:///tmp/lo_profile_case_p --headless --calc --convert-to xlsx`) into `model/recalc_p/out/`, reads the recalculated values with openpyxl (`data_only=True`) and compares them with the Python mirror (`case_p.py`) row by row: every mapped calculation row over all its columns (monthly or semiannual) and every mapped scalar. Tolerance: 0.01 in displayed units (USD m for amounts, x for ratios, percentage points for IRRs). The workbook has no circular references and no macros; iterative calculation is off.
 
 ## Results by scenario
 
 | Scenario | Name | Rows and scalars compared | Failures | Largest absolute difference | Workbook checks (0 = pass) | Result |
 |---|---|---|---|---|---|---|
-| 1 | FC base | 312 | 0 | 5.03e-08 | 0 | PASS |
-| 2 | FC banking | 312 | 0 | 4.84e-08 | 0 | PASS |
-| 3 | FC downside | 312 | 0 | 5.22e-08 | 0 | PASS |
-| 4 | Sens: availability -3 points | 312 | 0 | 5.03e-08 | 0 | PASS |
-| 5 | Sens: heat rate +2% | 312 | 0 | 5.22e-08 | 0 | PASS |
-| 6 | Sens: fixed opex +10% | 312 | 0 | 5.03e-08 | 0 | PASS |
-| 7 | Sens: capex +10% funded pro rata | 312 | 0 | 5.03e-08 | 0 | PASS |
-| 8 | Sens: COD delay 6 months, no LDs | 312 | 0 | 5.03e-08 | 0 | PASS |
-| 9 | Sens: base rate +200 bps (unhedged) | 312 | 0 | 5.03e-08 | 0 | PASS |
-| 10 | Sens: KCR devaluation 40%, 90-day lag | 312 | 0 | 5.03e-08 | 0 | PASS |
-| 11 | Sens: SEKA pays 120 days late for 12 months | 312 | 0 | 5.03e-08 | 0 | PASS |
-| 12 | Sens: dispatch 50% | 312 | 0 | 6.52e-09 | 0 | PASS |
-| 13 | Sens: gas price +30% | 312 | 0 | 5.03e-08 | 0 | PASS |
-| 14 | COD re-forecast (2021 lenders case) | 311 | 0 | 4.84e-08 | 0 | PASS |
-| 15 | Actual history | 311 | 0 | 4.84e-08 | 0 | PASS |
-| audit copy | Case_P_Model_AuditExercise.xlsx (FC base, errors E1-E10 seeded) | 312 | 0 | 5.03e-08 | 2 | PASS (the failing checks are intended audit clues: F14 debt above the correct gearing cap and F23 the ECA tests, which the seeded errors also breach) |
+| 1 | FC base | 315 | 0 | 5.03e-08 | 0 | PASS |
+| 2 | FC banking | 315 | 0 | 4.84e-08 | 0 | PASS |
+| 3 | FC downside | 315 | 0 | 5.22e-08 | 0 | PASS |
+| 4 | Sens: availability -3 points | 315 | 0 | 5.03e-08 | 0 | PASS |
+| 5 | Sens: heat rate +2% | 315 | 0 | 5.22e-08 | 0 | PASS |
+| 6 | Sens: fixed opex +10% | 315 | 0 | 5.03e-08 | 0 | PASS |
+| 7 | Sens: capex +10% funded pro rata | 315 | 0 | 5.03e-08 | 0 | PASS |
+| 8 | Sens: COD delay 6 months, no LDs | 315 | 0 | 5.03e-08 | 0 | PASS |
+| 9 | Sens: base rate +200 bps (unhedged) | 315 | 0 | 5.03e-08 | 0 | PASS |
+| 10 | Sens: KCR devaluation 40%, 90-day lag | 315 | 0 | 5.03e-08 | 0 | PASS |
+| 11 | Sens: SEKA pays 120 days late for 12 months | 315 | 0 | 5.03e-08 | 0 | PASS |
+| 12 | Sens: dispatch 50% | 315 | 0 | 6.52e-09 | 0 | PASS |
+| 13 | Sens: gas price +30% | 315 | 0 | 5.03e-08 | 0 | PASS |
+| 14 | COD re-forecast (2021 lenders case) | 314 | 0 | 4.84e-08 | 0 | PASS |
+| 15 | Actual history | 314 | 0 | 4.84e-08 | 0 | PASS |
+| audit copy | Case_P_Model_AuditExercise.xlsx (FC base, errors E1-E10 seeded) | 315 | 0 | 5.03e-08 | 1 | PASS (the one failing check is the intended audit clue: F14, debt above the correct gearing cap) |
 
 
 ## Monte Carlo wiring (u09 R5)
@@ -30,9 +30,9 @@ Scenario 1 with Inputs F311 set to a run number; the workbook reads that row of 
 
 | Run | Rows and scalars compared | Failures | Largest absolute difference | Workbook checks |
 |---|---|---|---|---|
-| 1 | 311 | 0 | 4.84e-08 | 0 |
-| 500 | 311 | 0 | 5.03e-08 | 0 |
-| 1000 | 311 | 0 | 5.40e-08 | 0 |
+| 1 | 314 | 0 | 4.84e-08 | 0 |
+| 500 | 314 | 0 | 5.03e-08 | 0 |
+| 1000 | 314 | 0 | 5.40e-08 | 0 |
 
 ## Build-stage reconciliation on Scenario 1 (u09 Section 0.5; confirmation for the build agent)
 
@@ -41,42 +41,42 @@ For each stage the companion workbook was cut to the rows the u09 Section 0.4 ro
 | Stage | Numeric cells compared | Largest absolute difference | Provisional rows pasted | Master check |
 |---|---|---|---|---|
 | Ch 39 | 36530 | 0.0e+00 | none | 0 |
-| Ch 40 | 42271 | 0.0e+00 | Construction 38 | 0 |
-| Ch 41 | 48230 | 1.0e-12 | Debt 103, Debt 104, Debt 110, Debt 112, Waterfall 33, Waterfall 43 | 0 |
-| Ch 42 | 59190 | 0.0e+00 | none | 0 |
-| Ch 43 | 60437 | 0.0e+00 | none | 0 |
+| Ch 40 | 42442 | 0.0e+00 | Construction 38 | 0 |
+| Ch 41 | 48401 | 9.9e-14 | Debt 103, Debt 104, Debt 110, Debt 112, Waterfall 33, Waterfall 43 | 0 |
+| Ch 42 | 59532 | 0.0e+00 | none | 0 |
+| Ch 43 | 60779 | 0.0e+00 | none | 0 |
 
 ## Key outputs, Python against workbook (selected scenarios)
 
 | Scenario | Output | Python | Workbook | Difference |
 |---|---|---|---|---|
-| 1 | Total funding requirement | 855.0897 | 855.0897 | 1.51e-10 |
-| 1 | Senior debt (four tranches) | 633.2560 | 633.2560 | 2.26e-10 |
-| 1 | Minimum DSCR | 1.3500 | 1.3500 | 7.49e-11 |
-| 1 | Average DSCR (debt-service weighted) | 1.5382 | 1.5382 | 3.62e-10 |
-| 1 | LLCR at first debt service period (incl. DSRA) | 1.4191 | 1.4191 | 2.05e-10 |
-| 1 | PLCR at first debt service period | 1.8597 | 1.8597 | 3.99e-10 |
-| 1 | Equity IRR | 13.2662% | 13.2662% | 1.21e-09 pp |
-| 1 | Project IRR, post-tax | 10.9610% | 10.9610% | 2.38e-08 pp |
-| 1 | Equity NPV at 16.0% (at FC) | -43.0674 | -43.0674 | 4.43e-10 |
-| 3 | Total funding requirement | 855.0897 | 855.0897 | 1.51e-10 |
-| 3 | Senior debt (four tranches) | 633.2560 | 633.2560 | 2.26e-10 |
-| 3 | Minimum DSCR | 1.2004 | 1.2004 | 1.88e-10 |
-| 3 | Average DSCR (debt-service weighted) | 1.3763 | 1.3763 | 1.23e-10 |
-| 3 | LLCR at first debt service period (incl. DSRA) | 1.3061 | 1.3061 | 7.91e-11 |
-| 3 | PLCR at first debt service period | 1.7178 | 1.7178 | 1.49e-10 |
-| 3 | Equity IRR | 11.3605% | 11.3605% | 3.34e-09 pp |
-| 3 | Project IRR, post-tax | 10.0651% | 10.0651% | 2.86e-08 pp |
-| 3 | Equity NPV at 16.0% (at FC) | -73.6294 | -73.6294 | 2.05e-10 |
-| 15 | Total funding requirement | 885.6322 | 885.6322 | 4.57e-10 |
-| 15 | Senior debt (four tranches) | 633.2560 | 633.2560 | 2.26e-10 |
-| 15 | Minimum DSCR | 0.9160 | 0.9160 | 4.16e-11 |
-| 15 | Average DSCR (debt-service weighted) | 1.4995 | 1.4995 | 4.09e-10 |
-| 15 | LLCR at first debt service period (incl. DSRA) | 1.4660 | 1.4660 | 4.69e-10 |
-| 15 | PLCR at first debt service period | 1.6955 | 1.6955 | 3.05e-10 |
-| 15 | Equity IRR | 12.4956% | 12.4956% | 1.43e-08 pp |
-| 15 | Project IRR, post-tax | 10.1333% | 10.1333% | 4.88e-08 pp |
-| 15 | Equity NPV at 16.0% (at FC) | -54.5199 | -54.5199 | 7.90e-11 |
+| 1 | Total funding requirement | 854.5519 | 854.5519 | 4.05e-10 |
+| 1 | Senior debt (four tranches) | 629.9497 | 629.9497 | 4.33e-10 |
+| 1 | Minimum DSCR | 1.3500 | 1.3500 | 8.61e-11 |
+| 1 | Average DSCR (debt-service weighted) | 1.5481 | 1.5481 | 4.89e-10 |
+| 1 | LLCR at first debt service period (incl. DSRA) | 1.4189 | 1.4189 | 1.51e-10 |
+| 1 | PLCR at first debt service period | 1.8466 | 1.8466 | 3.21e-10 |
+| 1 | Equity IRR | 13.1519% | 13.1519% | 4.79e-08 pp |
+| 1 | Project IRR, post-tax | 10.9696% | 10.9696% | 1.73e-08 pp |
+| 1 | Equity NPV at 16.0% (at FC) | -45.3092 | -45.3092 | 1.11e-10 |
+| 3 | Total funding requirement | 854.5519 | 854.5519 | 4.05e-10 |
+| 3 | Senior debt (four tranches) | 629.9497 | 629.9497 | 4.33e-10 |
+| 3 | Minimum DSCR | 1.2004 | 1.2004 | 1.73e-10 |
+| 3 | Average DSCR (debt-service weighted) | 1.3802 | 1.3802 | 2.81e-10 |
+| 3 | LLCR at first debt service period (incl. DSRA) | 1.3045 | 1.3045 | 8.16e-11 |
+| 3 | PLCR at first debt service period | 1.7061 | 1.7061 | 4.15e-10 |
+| 3 | Equity IRR | 11.2655% | 11.2655% | 1.76e-08 pp |
+| 3 | Project IRR, post-tax | 10.0755% | 10.0755% | 3.36e-08 pp |
+| 3 | Equity NPV at 16.0% (at FC) | -75.8790 | -75.8790 | 1.12e-10 |
+| 15 | Total funding requirement | 885.2146 | 885.2146 | 3.62e-10 |
+| 15 | Senior debt (four tranches) | 629.9497 | 629.9497 | 4.33e-10 |
+| 15 | Minimum DSCR | 0.9148 | 0.9148 | 1.61e-10 |
+| 15 | Average DSCR (debt-service weighted) | 1.5021 | 1.5021 | 2.72e-10 |
+| 15 | LLCR at first debt service period (incl. DSRA) | 1.4678 | 1.4678 | 4.09e-10 |
+| 15 | PLCR at first debt service period | 1.6953 | 1.6953 | 4.54e-10 |
+| 15 | Equity IRR | 12.4091% | 12.4091% | 6.85e-09 pp |
+| 15 | Project IRR, post-tax | 10.1399% | 10.1399% | 1.93e-08 pp |
+| 15 | Equity NPV at 16.0% (at FC) | -56.3856 | -56.3856 | 2.50e-10 |
 
 ## Coverage
 
