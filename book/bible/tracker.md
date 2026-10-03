@@ -107,3 +107,4 @@
 - Brief revision u03 DONE (needs: Ch13 refs ssec:5.0 → ssec:5.2.2 per u02; model/exercises/ch13 files; ~60 name checks).
 - Brief revision u14 DONE (cross-unit: ssec:7.6.4 references → ssec:7.11.4 per u02; t-decommissioning-accounting requested).
 - Brief revision u06 DONE (cross-unit: u03 Ch12 remove Félix take-or-pay ask).
+- Brief revision u10 DONE (12 DD request-list exhibits; Annex P 2.1 Devesh 'where wrong' conflicts with P-F62; cobre-panama count fix).
