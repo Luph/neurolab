@@ -666,12 +666,10 @@ def build(scenario="base", out=None):
         tx.scalar("basis_" + nm, "Depreciable basis, " + nm, "USD m", basis)
         tx.series("n_" + nm, "Recovery year index, " + nm, "years", lambda c, dk=dk: "=%s-YEAR(%s)" % (T("year", c), I(dk)), fmt="int")
         tx.series("dep_" + nm, "Tax depreciation, " + nm, "USD m", lambda c, nm=nm, bk=bk: (
-            "=%s*(%s/100+%s/100)*(IF(%s=0,%s/100,0)+(1-%s/100)*IF(AND(%s>=0,%s<%s),INDEX(%s,%s+1),0))"
-            "+%s*%s/100*(IF(%s=0,0,0))+%s*%s/100*(1-%s/100)*(IF(AND(%s>=0,%s<%s),INDEX(%s,%s+1),0)-IF(AND(%s>=0,%s<%s),INDEX(%s,%s+1),0))" % (
-                B.C("basis_" + nm), I("alloc5"), I("alloc15"), B.R("n_" + nm, c), I(bk), I(bk), B.R("n_" + nm, c), B.R("n_" + nm, c), I("n_macrs5"), B.RR("in_macrs5"), B.R("n_" + nm, c),
-                B.C("basis_" + nm), I("alloc15"), B.R("n_" + nm, c),
-                B.C("basis_" + nm), I("alloc15"), I(bk), B.R("n_" + nm, c), B.R("n_" + nm, c), I("n_macrs15"), B.RR("in_macrs15"), B.R("n_" + nm, c),
-                B.R("n_" + nm, c), B.R("n_" + nm, c), I("n_macrs5"), B.RR("in_macrs5"), B.R("n_" + nm, c))), total="SUM")
+            "=%s*((%s+%s)/100*IF(%s=0,%s/100,0)+(1-%s/100)*(%s/100*IF(AND(%s>=0,%s<%s),INDEX(%s,%s+1),0)+%s/100*IF(AND(%s>=0,%s<%s),INDEX(%s,%s+1),0)))" % (
+                B.C("basis_" + nm), I("alloc5"), I("alloc15"), B.R("n_" + nm, c), I(bk), I(bk),
+                I("alloc5"), B.R("n_" + nm, c), B.R("n_" + nm, c), I("n_macrs5"), B.RR("in_macrs5"), B.R("n_" + nm, c),
+                I("alloc15"), B.R("n_" + nm, c), B.R("n_" + nm, c), I("n_macrs15"), B.RR("in_macrs15"), B.R("n_" + nm, c))), total="SUM")
     tx.series("dep", "Tax depreciation, total", "USD m", lambda c: "=" + "+".join(B.R("dep_" + nm, c) for nm, _, _, _ in lots), total="SUM", pykey="finance.dep")
     tx.series("taxable_ops", "Taxable operating income (Mesa shares) less asset management", "USD m",
               lambda c: "=" + "+".join(B.R("L.%s.mesa_taxable" % a, c) for a in M.AIDS) + "-" + B.R("L.am", c), pykey="finance.taxable_ops")

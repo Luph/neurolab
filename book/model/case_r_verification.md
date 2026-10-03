@@ -12,14 +12,14 @@ Method: `python3 model/verify_case_r.py` builds `Case_R_Model.xlsx` once per sce
 | p90_1yr | 12878 | 0 | 5.00e-11 | PASS |
 | p90_10yr | 12875 | 0 | 5.00e-11 | PASS |
 | p99_1yr | 12894 | 0 | 5.00e-11 | PASS |
-| status_quo | 12868 | 1 | 5.00e-11 | FAIL |
+| status_quo | 12868 | 0 | 5.00e-11 | PASS |
 | sens_west_solar_capture_m5 | 12873 | 0 | 5.00e-11 | PASS |
 | sens_battery_low | 12874 | 0 | 5.00e-11 | PASS |
 | sens_curtailment_p3 | 12874 | 0 | 5.00e-11 | PASS |
 | sens_opex_p10 | 12875 | 0 | 5.00e-11 | PASS |
 | sens_sofr_p100_unhedged | 12873 | 0 | 5.00e-11 | PASS |
 
-Overall: **FAIL**.
+Overall: **PASS**.
 
 ## Key outputs, base scenario (Python against Excel)
 
@@ -3055,7 +3055,7 @@ Overall: **FAIL**.
 | refi.opco_net | Funding | F179 | 8.5e-14 | yes |
 | sc.tl_dscr_min_2022_2025 | Ratios | F15 | 2.7e-15 | yes |
 | sc.tl_dscr_avg_2022_2025 | Ratios | F16 | 2.9e-15 | yes |
-| sc.uspp_dscr_min_2026_2043 | Ratios | F17 | inf | NO |
+| sc.uspp_dscr_min_2026_2043 | Ratios | F17 | 0.0e+00 | yes |
 | sc.uspp_dscr_avg_2026_2043 | Ratios | F18 | 0.0e+00 | yes |
 | sc.rf_dscr_min | Ratios | F19 | 4.4e-16 | yes |
 | sc.rf_dscr_avg | Ratios | F20 | 2.2e-16 | yes |

@@ -1136,6 +1136,14 @@ def build_outputs(base_ops, p99_ops, S, runs, vals, uri):
                   "pv_2025_at_unlevered_terminal_rate": float(r["decom"][yidx(ly)] * (1 + VAL["discount_rates_nominal_post_tax_pct"]["unlevered"]["terminal_post_2040"] / 100) ** (-(ly - 2025)))}
     O["decommissioning"] = dec
     O["checks"] = checks(base_ops, S, runs)
+    rb, rq = runs["base"], runs["status_quo"]
+    O["derived"] = {
+        "a1_opco_gearing_pct": 100 * S["tl_debt"] / rb["su_a1"]["price"],
+        "a1_total_leverage_pct": 100 * (S["tl_debt"] + S["hc_face"]) / rb["su_a1"]["price"],
+        "holdco_repaid_at_repricing": float(rb["hc1_repay"][yidx(2025)] + rb["hc2_repay"][yidx(2025)]),
+        "irr_impact_life_pts": 100 * (rb["fund_irr_life"] - rq["fund_irr_life"]),
+        "irr_impact_2025_pts": 100 * (rb["fund_irr_2025"] - rq["fund_irr_2025"]),
+    }
     return tolist(O)
 
 

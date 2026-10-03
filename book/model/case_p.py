@@ -138,7 +138,7 @@ FX_FC0, FX_D = 519.4, 1.075 / 1.022
 BASE = dict(macro='FC', constr='FC', cod_delay=0, capex=1.0, avail_d=0.0, dispatch=76.5,
             hr_f=1.0, fo_f=1.0, gas_f=1.0, rate_shift=0.0, deval=0.0, lag_days=0,
             delay_days=0, crisis=0, ins_step=0, profile='FC', ld_prep=0, waiver=0, refi=0,
-            cap_charge_f=1.0, shl_share=EQ_SHL)
+            cap_charge_f=1.0, shl_share=EQ_SHL, miniperm=1)
 SCENARIOS = {
     1: dict(name='FC base'),
     2: dict(name='FC banking', dispatch=72.0),
@@ -174,7 +174,7 @@ CONTRACT = {}
 def build_macro(p):
     us, kc = CPI[p['macro']]
     base_s = {'FC': FC_FWD, 'ACT': ACT_BASE, 'CODRF': RF_BASE}[p['macro']]
-    base_s = np.array(base_s) + p['rate_shift']
+    base_s = np.array(base_s) + p['rate_shift'] * (np.arange(NS) >= SHOCK_T0)
     # FX semiannual average
     fx = np.zeros(NS)
     for t in range(NS):
@@ -189,6 +189,7 @@ def build_macro(p):
     fx_m = np.array([FX_FC0 * FX_D ** ((m + 0.5) / 12) if p['macro'] == 'FC' else fx[M_PER[m]]
                      for m in range(NM)])
     base_m = np.array([base_s[M_PER[m]] for m in range(NM)])
+    if p['rate_shift']: base_m = np.array([({'FC': FC_FWD, 'ACT': ACT_BASE, 'CODRF': RF_BASE}[p['macro']])[M_PER[m]] for m in range(NM)])
     pol = np.array([13.5 if p['macro'] == 'FC' else POLICY_ACT.get(M_START[m].year, 15.5)
                     for m in range(NM)])
 
@@ -327,42 +328,53 @@ def month_rates(mac_, m):
     kap = CFEE / 100 * dcf
     return rho, kap
 
-def funding_fc(p, mac_, u, prof, N_m, N_s, D_fixed=None):
-    """FC-type funding: pro rata g debt/equity; solve T by fixed-point iteration."""
+def funding_fc(p, mac_, u, prof, N_m, N_s, D_fixed=None, mode='size'):
+    """FC-type funding, pro rata debt/equity.
+    mode 'size'    : Python sizing loop; D = G*T (or D_fixed), g = D/T, T by fixed-point iteration
+    mode 'contract': committed amounts D_c, E_c from the FC sizing; g = D_c/(D_c+E_c); one pass
+    mode 'regross' : g = D_c/(D_c+E_c) and D = g*T (capex +10%, COD delay); T by iteration
+    The workbook's closed-form (affine) gross-up is reproduced for cross-check."""
     fe = fund_end_month(p); nc = u['nc']
     d1, d0 = dsra_coeffs(p, mac_, prof, N_s)
-    T = u['base_total'].sum() * 1.15; it = 0
-    while True:
-        it += 1
-        D = G * T if D_fixed is None else D_fixed
-        g = D / T
-        r = _fund_fc_pass(p, mac_, u, D, g, fe, nc, d1, d0, N_m)
-        Tn = r['uses'].sum()
-        if abs(Tn - T) < 1e-7:
-            T = Tn; break
-        T = Tn
-        if it > 500: raise RuntimeError('funding did not converge')
-    r = _fund_fc_pass(p, mac_, u, G * T if D_fixed is None else D_fixed,
-                      (G * T if D_fixed is None else D_fixed) / T, fe, nc, d1, d0, N_m)
-    r['iterations'] = it; r['T'] = T
-    # closed-form (affine) gross-up as built in the workbook, for cross-check
-    if D_fixed is None:
-        a = b = 0.0; A = np.zeros(NM); B = np.zeros(NM)
-        den = 1 - ECA_PREM * SHARE[0] * G
-        for m in range(NM):
-            if m > fe: A[m], B[m] = a, b; continue
-            rho, kap = month_rates(mac_, m)
-            rr = (SHARE * rho).sum(); kk = (SHARE * kap).sum()
-            const = (u['base_total'][m] + u['vat_int'][m] + 0.255 / 12
-                     + N_m[m] * (SWAP_FIX / 100 / 12 - mac_['base_m'][m] / 100 * M_DAYS[m] / 360)
-                     + SB_COMMIT * SB_CFEE / 100 * M_DAYS[m] / 360)
-            cod_m = (m == nc)
-            const += d0 if cod_m else 0.0
-            a_new = a + G / den * (const + rr * a - kk * a)
-            b_new = b + G / den * (rr * b + kk * (G - b) + (G * (SHARE * UPF / 100).sum() if m == 0 else 0)
-                                   + (G * (SHARE * d1).sum() if cod_m else 0))
-            a, b = a_new, b_new; A[m], B[m] = a, b
-        r['alpha'] = A; r['beta'] = B; r['T_closed_form'] = A[fe] / (G - B[fe])
+    if mode == 'contract':
+        Dc = CONTRACT['D']; gc = Dc / (Dc + CONTRACT['E'])
+        r = _fund_fc_pass(p, mac_, u, Dc, gc, fe, nc, d1, d0, N_m)
+        r['iterations'] = 1; r['T'] = r['uses'].sum()
+        g_aff = G
+    else:
+        gfix = None if mode == 'size' else CONTRACT['D'] / (CONTRACT['D'] + CONTRACT['E'])
+        T = u['base_total'].sum() * 1.15; it = 0
+        while True:
+            it += 1
+            if mode == 'size':
+                D = G * T if D_fixed is None else D_fixed; g = D / T
+            else:
+                g = gfix; D = g * T
+            r = _fund_fc_pass(p, mac_, u, D, g, fe, nc, d1, d0, N_m)
+            Tn = r['uses'].sum()
+            if abs(Tn - T) < 1e-9:
+                T = Tn; break
+            T = Tn
+            if it > 500: raise RuntimeError('funding did not converge')
+        r['iterations'] = it; r['T'] = T
+        g_aff = G if mode == 'size' else gfix
+    # closed-form (affine) gross-up as built in the workbook: balance_m = alpha_m + beta_m * T
+    a = b = 0.0; A = np.zeros(NM); B = np.zeros(NM); g = g_aff
+    den = 1 - ECA_PREM * SHARE[0] * g
+    for m in range(NM):
+        if m > fe: A[m], B[m] = a, b; continue
+        rho, kap = month_rates(mac_, m)
+        rr = (SHARE * rho).sum(); kk = (SHARE * kap).sum()
+        const = (u['base_total'][m] + u['vat_int'][m] + 0.255 / 12
+                 + N_m[m] * (SWAP_FIX / 100 / 12 - mac_['base_m'][m] / 100 * M_DAYS[m] / 360)
+                 + SB_COMMIT * SB_CFEE / 100 * M_DAYS[m] / 360)
+        cod_m = (m == nc)
+        const += d0 if cod_m else 0.0
+        a_new = a + g / den * (const + rr * a - kk * a)
+        b_new = b + g / den * (rr * b + kk * (g - b) + (g * (SHARE * UPF / 100).sum() if m == 0 else 0)
+                               + (g * (SHARE * d1).sum() if cod_m else 0))
+        a, b = a_new, b_new; A[m], B[m] = a, b
+    r['alpha'] = A; r['beta'] = B; r['g_aff'] = g; r['T_closed_form'] = A[fe] / (g - B[fe])
     return r
 
 def _fund_fc_pass(p, mac_, u, D, g, fe, nc, d1, d0, N_m):
@@ -516,7 +528,8 @@ def _run(p, prof, N_m, N_s, bond_prof, D_fixed):
     if N_s is None: N_s = np.array(CONTRACT['N_s'])
     if bond_prof is None and p['refi']: bond_prof = np.array(CONTRACT['prof_BOND'])
     if p['constr'] == 'FC':
-        f = funding_fc(p, mac_, u, prof, N_m, N_s, D_fixed)
+        mode = p.get('fund_mode') or ('regross' if (p['capex'] != 1.0 or p['cod_delay']) else 'contract')
+        f = funding_fc(p, mac_, u, prof, N_m, N_s, D_fixed, mode)
     else:
         f = funding_act(p, mac_, u, prof, N_m, N_s)
     R['mac'] = mac_; R['u'] = u; R['f'] = f; R['prof'] = prof; R['N_m'] = N_m; R['N_s'] = N_s
@@ -621,12 +634,13 @@ def _run(p, prof, N_m, N_s, bond_prof, D_fixed):
     hb_contr = 1.85 * us_cf * hb_m / 12
     opex_fixed = om_fix + om_inc + ltsa_fix + ltsa_var + insur + ga + land + comm + consum + agency + prg
     pass_cost = fuel_cost + gta_res + gta_com + top_pay
-    opex = opex_fixed + pass_cost + vat_int_ops + fxl + mm
+    hb_works = np.where(np.arange(NS) == last_op, hb_contr.sum(), 0.0)
+    opex = opex_fixed + pass_cost + vat_int_ops + fxl + mm + hb_works
     S.update(om_fixed=om_fix, om_incentive=om_inc, ltsa_fixed=ltsa_fix, eoh=eoh, ltsa_var=ltsa_var,
              insurance=insur, ga=ga, land=land, community_levy=comm, consumables=consum,
              agency=agency, prg_fee=prg, vat_int_ops=vat_int_ops, fx_loss=fxl, mm_spend=mm,
              mm_2018=mm_2018, opex_om=opex_fixed, pass_cost=pass_cost, opex=opex,
-             hb_months=hb_m, hb_contr_req=hb_contr)
+             hb_months=hb_m, hb_contr_req=hb_contr, hb_works=hb_works)
     # ---- crisis: overdue receivables, gas arrears, late payment interest
     over = z(); lpi_acc = z(); lpi_rec = z()
     crisis = INP['events']['offtaker_crisis']
@@ -667,7 +681,11 @@ def _run(p, prof, N_m, N_s, bond_prof, D_fixed):
     mm_bal = np.cumsum(mm_contr - mm)
     S.update(mm_contr=mm_contr, mmra_bal=mm_bal)
     # ---- capitalized cost (book and tax)
-    capcost = f['uses'][:fe + 1].sum() - f['dsra'].sum() - u['wc'].sum() + f['shl_capint'].sum()
+    ld_rec = f['ld_received'].sum() if 'ld_received' in f else 0.0
+    perf_ld = OVR['performance_lds_usd_m']['total'] if p['ld_prep'] else 0.0
+    capcost = (f['uses'][:fe + 1].sum() - f['dsra'].sum() - u['wc'].sum() + f['shl_capint'].sum()
+               - ld_rec - perf_ld)
+    R['ld_rec'] = ld_rec; R['perf_ld'] = perf_ld
     R['capcost'] = capcost
     # ---------------- semiannual loop: debt, tax, waterfall, accounts ----------------------
     # balances at end of funding period
@@ -694,7 +712,7 @@ def _run(p, prof, N_m, N_s, bond_prof, D_fixed):
     # schedule helpers
     def rem(t): return prof[t:].sum()
     shl = f['shl_bal'][fe]; sc_bal = f['sc_contrib'].sum()
-    pool = 0.0; loss = 0.0; dsra = 0.0; mmra = 0.0; hb = 0.0; lu = f['ld_leftover']
+    pool = 0.0; loss = 0.0; dsra = 0.0; mmra = 0.0; hb = 0.0; lu = 0.0
     trap = 0.0; re_ = 0.0; comp = 0.0; prev_lock = 0; released = 0.0; dt_prev = 0.0
     taxcost = capcost
     # depreciation per month (full)
@@ -812,7 +830,7 @@ def _run(p, prof, N_m, N_s, bond_prof, D_fixed):
             ld_cash = comp; comp = 0.0
         rr['comp_acct'][t] = comp; rr['ld_cash'][t] = ld_cash
         if t == t_cod:
-            dsra = f['dsra'].sum()
+            dsra = f['dsra'].sum(); lu = f['ld_leftover']
         cash_open = lu + trap
         rr['cash_open'][t] = cash_open
         avail = cfads + cash_open
@@ -845,16 +863,14 @@ def _run(p, prof, N_m, N_s, bond_prof, D_fixed):
         rel = max(0.0, dsra_after - tgt)
         dsra = dsra_after + top - rel
         rr['dsra_topup'][t] = top; rr['dsra_release'][t] = rel; rr['dsra_close'][t] = dsra
-        cash = cad - top + rel + ld_cash
+        cash = cad - top + rel
         rr['cash_after_ds'][t] = cad
         # handback reserve
         hbc = min(cash, hb_contr[t]); hb += hbc
         hbr = hb if t == last_op else 0.0
         hb -= hbr
-        cash = cash - hbc
+        cash = cash - hbc + hbr
         rr['hb_contr'][t] = hbc; rr['hb_bal'][t] = hb; rr['hb_release'][t] = hbr
-        # LD cash goes to mandatory prepayment (already in LDp); remove from cash
-        cash -= ld_cash
         # distribution test (historic DSCR, 12 months)
         dsr = cfads / rr['ds'][t] if rr['ds'][t] > 1e-9 else 0.0
         rr['dscr'][t] = dsr
@@ -895,7 +911,7 @@ def _run(p, prof, N_m, N_s, bond_prof, D_fixed):
             dist = 0.0
         else:
             lu = 0.0
-            if S_YEAR[t] >= 2027:
+            if S_YEAR[t] >= 2027 and p['miniperm']:
                 comm_after = Bo[3, t] - P[3, t] - LDp[3, t] - RF[3, t]
                 mpsw = min(0.5 * cash, comm_after)
                 SW[3, t] += mpsw
@@ -949,9 +965,43 @@ def _run(p, prof, N_m, N_s, bond_prof, D_fixed):
     R['bond_F'] = bond_F; R['p'] = p
     ratios(R)
     returns(R)
+    financials(R)
     return R
 
-GAS_ARREARS_SHARE = 0.75   # modeler calibration: energy-charge share of SEKA arrears matched by deferred SNHK/GCK payables
+
+# ----------------------------------------------------------------------------------------
+# Financial statements (IFRS basis, USD functional currency; see report)
+# ----------------------------------------------------------------------------------------
+def financials(R):
+    S = R['S']; f = R['f']; u = R['u']; fe = R['fe']; t_cod = R['t_cod']
+    z = lambda: np.zeros(NS)
+    # construction-phase cumulative amounts at each period end (monthly -> semiannual)
+    cum = lambda arr: np.array([arr[[m for m in range(NM) if M_PER[m] <= t]].sum() for t in range(NS)])
+    cap_m = f['uses'] - f['dsra'] - u['wc'] + f['shl_capint'] - f.get('ld_received', np.zeros(NM))
+    cwip = cum(cap_m) - np.where(np.arange(NS) >= t_cod, R['perf_ld'], 0.0)
+    ppe = np.where(np.arange(NS) >= t_cod, S['book_nbv'], cwip)
+    S['ppe'] = ppe
+    debt = np.where(np.arange(NS) < t_cod, cum(f['debt_draw']), S['debt_close'])
+    shl = np.where(np.arange(NS) < t_cod, cum(f['shl_contrib'] + f['shl_capint']), S['shl_close'])
+    sc = cum(f['sc_contrib'])
+    inv = np.where((np.arange(NS) >= t_cod) & (np.arange(NS) < R['last_op']), 5.35 * R['p']['capex'], 0.0)
+    if True:   # inventory funded in the last construction month
+        inv = np.where(np.arange(NS) < t_cod, cum(u['wc']), inv)
+    ld_pool = np.where(np.arange(NS) < t_cod, cum(f.get('ld_received', np.zeros(NM)) - f.get('ld_used', np.zeros(NM))), 0.0)
+    cash = (S['dsra_close'] + S['mmra_bal'] + S['hb_bal'] + S['lu_close'] + S['trap_close']
+            + S['comp_acct'] + ld_pool)
+    ar = S['ar'] + S['overdue']
+    pay = S['pay_gas'] + S['pay_gta'] + S['pay_om'] + S['pay_oth'] + S['gas_arrears']
+    dta = np.where(S['dt'] < 0, -S['dt'], 0.0); dtl = np.where(S['dt'] > 0, S['dt'], 0.0)
+    re_ = np.where(np.arange(NS) < t_cod, 0.0, S['re'])
+    assets = ppe + cash + ar + inv + dta
+    liab = debt + shl + pay + dtl
+    eq = sc + re_
+    S.update(bs_cash=cash, bs_ar=ar, bs_inv=inv, bs_dta=dta, bs_assets=assets, bs_debt=debt,
+             bs_shl=shl, bs_pay=pay, bs_dtl=dtl, bs_sc=sc, bs_re=re_, bs_liab_eq=liab + eq,
+             bs_check=assets - liab - eq, bs_ld_pool=ld_pool)
+
+GAS_ARREARS_SHARE = 0.80   # modeler calibration: energy-charge share of SEKA arrears matched by deferred SNHK/GCK payables
 
 # ----------------------------------------------------------------------------------------
 # Ratios
@@ -1052,6 +1102,7 @@ def size_fc(p, gearing=0.75, dscr_target=1.35, verbose=False, max_it=200):
     N_m = np.zeros(NM); N_s = np.zeros(NS)
     D_fixed = None; hist = []
     for it in range(1, max_it + 1):
+        p['fund_mode'] = 'size'
         R = run(p, prof, N_m, N_s, None, D_fixed, gearing)
         D = R['f']['D']; T = R['f']['T']
         newp, dscr, pv, r, ds = sculpt(R, D, t1, tl, SHARE_W())

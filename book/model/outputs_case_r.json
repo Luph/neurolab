@@ -186672,5 +186672,12 @@ null
 "value": 0.0,
 "pass": true
 }
-]
+],
+"derived": {
+"a1_opco_gearing_pct": 73.50777409875688,
+"a1_total_leverage_pct": 86.34088043498048,
+"holdco_repaid_at_repricing": 126.71598342280998,
+"irr_impact_life_pts": 1.4647250545807733,
+"irr_impact_2025_pts": 6.904742629681393
+}
 }

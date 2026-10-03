@@ -635,16 +635,16 @@ Lattimer Infrastructure Partners is a fictional Houston and New York infrastruct
 
 | ID | Asset | Technology | Capacity | COD | Hub | P50 NCF | P50 (GWh/yr) | P90 one-year | P90 ten-year | P99 one-year | Contract |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| R1 | Thatcher Flats Wind | 96 x 2.1 MW | 201.6 MW | 2014-12-15 | West | 39.4% | 695.8 | 87.6% | 92.9% | 81.2% | Merchant plus 40 MW fixed-volume swap 2023 to 2027 |
-| R2 | Sandoval Hills Wind | 108 x 2.3 MW, coastal | 248.4 MW | 2017-06-30 | South | 36.1% | 785.5 | 89.2% | 94.1% | 84.0% | Physical as-generated PPA to June 2029 |
-| R3 | Ollie Creek Wind | 51 x 3.0 MW, Panhandle | 153.0 MW | 2019-11-20 | West (Panhandle node) | 46.2% | 619.2 | 86.9% | 92.4% | 80.1% | Proxy revenue swap to December 2029; PTC tax equity |
-| R4 | Peeler Draw Solar | Tracking PV, 131.3 MWdc | 98.7 MWac | 2020-10-09 | West | 27.1% | 234.3 | 94.6% | 96.8% | 91.9% | Fixed-shape hedge 2022 to 2026 |
-| R5 | Calloway Mesa Solar | Tracking PV, 241.0 MWdc | 182.4 MWac | 2021-06-28 | West | 28.3% | 452.2 | 94.2% | 96.5% | 91.4% | Virtual PPA to June 2033; ITC tax equity |
+| R1 | Thatcher Flats Wind | 96 x 2.1 MW | 201.6 MW | 2014-12-15 | West | 39.4% | 695.8 | 87.6% | 92.9% | 77.5% | Merchant plus 40 MW fixed-volume swap 2023 to 2027 |
+| R2 | Sandoval Hills Wind | 108 x 2.3 MW, coastal | 248.4 MW | 2017-06-30 | South | 36.1% | 785.5 | 89.2% | 94.1% | 80.4% | Physical as-generated PPA to June 2029 |
+| R3 | Ollie Creek Wind | 51 x 3.0 MW, Panhandle | 153.0 MW | 2019-11-20 | West (Panhandle node) | 46.2% | 619.2 | 86.9% | 92.4% | 76.2% | Proxy revenue swap to December 2029; PTC tax equity |
+| R4 | Peeler Draw Solar | Tracking PV, 131.3 MWdc | 98.7 MWac | 2020-10-09 | West | 27.1% | 234.3 | 94.6% | 96.8% | 90.2% | Fixed-shape hedge 2022 to 2026 |
+| R5 | Calloway Mesa Solar | Tracking PV, 241.0 MWdc | 182.4 MWac | 2021-06-28 | West | 28.3% | 452.2 | 94.2% | 96.5% | 89.5% | Virtual PPA to June 2033; ITC tax equity |
 | R6 | Redfern Storage | LFP, 2-hour | 100.0 MW / 200 MWh | 2023-07-14 | North | – | – | – | – | – | Toll to July 2030 |
 | R7 | Kerrigan Storage | LFP, 2-hour | 150.0 MW / 300 MWh | 2024-04-02 | Houston | – | – | – | – | – | Merchant with revenue floor to April 2032 |
-| R8 | Barlow Gap Solar | Tracking PV, 162.0 MWdc | 120.0 MWac | 2024-12-19 | South | 27.6% | 290.1 | 94.4% | 96.6% | 91.6% | Fixed-shape hedge on 60% of P50, 2025 to 2034 |
+| R8 | Barlow Gap Solar | Tracking PV, 162.0 MWdc | 120.0 MWac | 2024-12-19 | South | 27.6% | 290.1 | 94.4% | 96.6% | 89.8% | Fixed-shape hedge on 60% of P50, 2025 to 2034 |
 
-P90 and P99 columns are percentages of P50. Totals: wind 603.0 MW, solar 401.1 MWac, storage 250.0 MW / 500 MWh. Degradation: wind 0.20% a year, solar 0.45% (R8 0.40%). Battery round-trip efficiency 86.0% (R6) and 86.5% (R7), availability 97.5%, augmentation of 6% of MWh in years 5 and 9 at USD 41/kWh (2025 prices). Useful lives end 2044 (R1), 2047 (R2), 2049 (R3), 2055 (R4), 2056 (R5), 2043 (R6), 2044 (R7) and 2059 (R8). Curtailment: West wind 4.5% in 2022 rising to 6.0% from 2025; Panhandle 5.2% rising to 7.0%; coastal wind 1.5%; West solar 2.0% rising to 3.5%; South solar 1.8%.
+P90 and P99 columns are percentages of P50. Yield is modeled as normal: one-year variance is long-term uncertainty plus inter-annual variability, ten-year variance is long-term uncertainty plus one-tenth of inter-annual variability; the P90s are the anchors and the P99s follow from them (modeler calibration R-C09). Portfolio P-values use inter-asset correlations (R-C10; values in `model/inputs_case_r.json`, figures in R-F01). Totals: wind 603.0 MW, solar 401.1 MWac, storage 250.0 MW / 500 MWh. Degradation: wind 0.20% a year, solar 0.45% (R8 0.40%). Battery round-trip efficiency 86.0% (R6) and 86.5% (R7), availability 97.5%, augmentation of 6% of MWh in years 5 and 9 at USD 41/kWh (2025 prices). Useful lives end 2044 (R1), 2047 (R2), 2049 (R3), 2055 (R4), 2056 (R5), 2043 (R6), 2044 (R7) and 2059 (R8). Curtailment: West wind 4.5% in 2022 rising to 6.0% from 2025; Panhandle 5.2% rising to 7.0%; coastal wind 1.5%; West solar 2.0% rising to 3.5%; South solar 1.8%.
 
 Tax equity: Castellan Bank's US tax-equity desk is the tax equity investor in R3 (PTC partnership flip: 99% of tax and 40% of cash to the investor until an expected flip on December 31, 2029, then 5%) and R5 (ITC partnership flip: 99% of tax and 20% of cash until an expected flip on June 30, 2027, then 5%). Mesa Corta owns the sponsor (class B) interests.
 
@@ -688,9 +688,9 @@ Battery merchant revenue (2-hour, energy arbitrage plus ancillary services, illu
 
 | Deal | Signed | Closed | Target | Seller | Price | Funding |
 |---|---|---|---|---|---|---|
-| A1 | 2021-12-09 | 2022-03-22 | Mesa Corta Renewables LLC (R1 to R5, sponsor interests) | Hollenbeck Energy North America | Enterprise value USD 1,184.6 million; transaction costs USD 14.9 million; buy-side W&I limit USD 118.0 million | New opco term loan, holdco term loan, fund equity |
-| A2 | 2023-06-02 | 2023-08-31 | Redfern Storage LLC (R6), at COD | Tolliver Energy Development LLC | USD 132.4 million; costs USD 2.6 million; ITC claimed by seller | Redfern term loan and fund equity |
-| A3 | 2024-02-15 | R7 2024-04-02; R8 2024-12-19 | Kerrigan Storage LLC (R7) and Barlow Gap Solar LLC (R8), late construction | Tolliver Energy Development LLC | R7 USD 171.9 million; R8 USD 168.3 million (20% deposit at signing); costs USD 4.4 million; seller bears construction risk; long-stop June 30, 2025 | Holdco incremental loan, fund equity, ITC transfer proceeds |
+| A1 | 2021-12-09 | 2022-03-22 | Mesa Corta Renewables LLC (R1 to R5, sponsor interests) | Hollenbeck Energy North America | Enterprise value USD 446.3 million (calibrated, R-C04); transaction costs USD 14.9 million; buy-side W&I limit USD 118.0 million | New opco term loan, holdco term loan, fund equity |
+| A2 | 2023-06-02 | 2023-08-31 | Redfern Storage LLC (R6), at COD | Tolliver Energy Development LLC | USD 63.7 million (calibrated, R-C05); costs USD 2.6 million; ITC claimed by seller | Redfern term loan and fund equity |
+| A3 | 2024-02-15 | R7 2024-04-02; R8 2024-12-19 | Kerrigan Storage LLC (R7) and Barlow Gap Solar LLC (R8), late construction | Tolliver Energy Development LLC | R7 USD 87.4 million; R8 USD 101.9 million (calibrated, R-C06; 20% deposit at signing); costs USD 4.4 million; seller bears construction risk; long-stop June 30, 2025 | Holdco incremental loan, fund equity, ITC transfer proceeds |
 
 The fund claims and sells the 30% ITC on R7 (92% eligible basis) and R8 (94% eligible basis) at USD 0.925 per USD 1 of credit; no energy community adder is assumed.
 
@@ -698,11 +698,11 @@ The fund claims and sells the 30% ITC on R7 (92% eligible basis) and R8 (94% eli
 
 | Facility | Date | Terms |
 |---|---|---|
-| Mesa Corta OpCo term loan | 2022-03-22 | Castellan, Kaito Pacific, Sterrenberg, Penhallow (US branch); 7-year mini-perm to March 22, 2029; Term SOFR 3M + 1.625% to March 2026, then + 1.875%; upfront fee 1.50%; sized by revenue bucket at DSCR 1.30x contracted, 1.40x hedged, 2.00x merchant on P50, with P99 one-year DSCR at least 1.00x; notional amortization to 2040; sweep 50% in 2026 to 2027 and 100% from 2028; 85% hedged at 2.41% to 2029; DSRA six months by LC. Expected USD 520 million to USD 600 million |
-| Mesa Corta HoldCo term loan B | 2022-03-22 | Institutional TLB arranged by Castellan; to March 22, 2028; SOFR (floor 0.50%) + 4.75%; OID 98.0; 1% a year amortization; 50% excess cash sweep; sized at distribution coverage 1.75x on P50 base and at most 45% of opco equity value. Expected USD 160 million to USD 210 million |
+| Mesa Corta OpCo term loan | 2022-03-22 | Castellan, Kaito Pacific, Sterrenberg, Penhallow (US branch); 7-year mini-perm to March 22, 2029; Term SOFR 3M + 1.625% to March 2026, then + 1.875%; upfront fee 1.50%; sized by revenue bucket at DSCR 1.30x contracted, 1.40x hedged, 2.00x merchant on P50, with P99 one-year DSCR at least 1.00x; notional amortization to 2040; sweep 50% in 2026 to 2027 and 100% from 2028; 85% hedged at 2.41% to 2029; DSRA six months by LC. Amount: model output (R-F05) |
+| Mesa Corta HoldCo term loan B | 2022-03-22 | Institutional TLB arranged by Castellan; to March 22, 2028; SOFR (floor 0.50%) + 4.75%; OID 98.0; 1% a year amortization; 50% excess cash sweep; sized at distribution coverage 1.75x on P50 base and at most 45% of opco equity value. Amount: model output (R-F05) |
 | Redfern term loan | 2023-08-31 | Penhallow Bank (US branch); SOFR + 2.10%; fee 1.40%; fully amortizing to June 30, 2030 on toll cash flow at 1.35x; 75% hedged at 4.38% |
 | HoldCo incremental term loan | 2024-02-15 | SOFR + 4.25%; OID 99.0; maturity March 22, 2028; sized at 1.75x on incremental P50 distributions from R7 and R8 |
-| Refinancing: Mesa Corta Senior Secured Notes (US private placement) | Priced 2025-10-21, funded 2025-12-16 (modeled December 31, 2025) | Issuer Mesa Corta OpCo; rated BBB- by one agency; Series A 7 years 5.71% (30%), Series B 12 years 6.08% (40%), Series C 18 years 6.39% (30%); sized at 1.35x contracted, 1.50x hedged, 2.25x merchant, P99 one-year at least 1.05x; make-whole at Treasuries + 50 bps; costs 1.10%; repays the opco term loan and the Redfern loan; opco swap unwound at 3.55% (receivable), Redfern swap at 3.55% (payable). Expected USD 750 million to USD 860 million |
+| Refinancing: Mesa Corta Senior Secured Notes (US private placement) | Priced 2025-10-21, funded 2025-12-16 (modeled December 31, 2025) | Issuer Mesa Corta OpCo; rated BBB- by one agency; Series A 7 years 5.71%, Series B 12 years 6.08%, Series C 18 years 6.39%, amortizing sequentially by tenor so that series sizes are outputs of the sculpted profile (R-C07; launch split of 30/40/30 superseded); sized at 1.35x contracted, 1.50x hedged, 2.25x merchant, P99 one-year at least 1.05x; make-whole at Treasuries + 50 bps; costs 1.10%; repays the opco term loan and the Redfern loan; opco swap unwound at 3.55% (receivable), Redfern swap at 3.55% (payable). Amount: model output (R-F08) |
 | Refinancing: HoldCo repricing | 2025-12-16 | Margin 3.50%; maturity December 31, 2031; OID 99.5; sized at 1.75x on post-refinancing distributions |
 
 SOFR (3M, annual average, approximate): 2022 2.04%; 2023 5.17%; 2024 5.16%; 2025 4.27%; 2026 3.66%; 2027 3.45%; 3.50% after.
@@ -1209,16 +1209,23 @@ The modelers compute each figure below from the input files and record its value
 
 | ID | Figure | Scenario | Chapters |
 |---|---|---|---|
-| R-F01 | P50, P90 and P99 by asset | Inputs | 9 |
+| R-F01 | P50, P90 and P99 (one-year and ten-year) by asset, uncertainty components, correlations, and correlated portfolio P50/P90/P99 | Yield model | 9 |
 | R-F02 | Hedge book by year: volumes, prices, share of revenue contracted, hedged and merchant | Base | 20 |
 | R-F03 | Uri-type stress on R1's fixed-volume swap | Sensitivity | 20 |
-| R-F04 | A1 valuation by asset and risk bucket at bid; enterprise value against the USD 1,184.6 million price | Base, low, high | 46, 47 |
+| R-F04 | A1 valuation by asset and risk bucket at bid; enterprise value against the USD 446.3 million price | Base, low, high | 46, 47 |
 | R-F05 | A1 sources and uses; opco term loan sizing by bucket; holdco TLB sizing | Base, P99 | 31 |
 | R-F06 | Capture price and revenue build by asset, 2022 to 2030 | Base and low | 45, 70 |
 | R-F07 | A2 and A3 valuation and funding; ITC transfer proceeds | Base | 73 |
 | R-F08 | 2025 refinancing: USPP size by series, blended coupon, swap unwinds, holdco repricing, distribution to the fund | Base | 63 |
 | R-F09 | Fund returns on Case R to December 31, 2025: gross IRR, multiple, NAV | Base | 63 |
 | R-F10 | Decommissioning obligations by asset | Base | 65 |
+| R-F11 | Redfern loan and holdco incremental loan; early opco TL DSCRs and 2024 holdco coverage (added by modeler) | Base | 31, 73 |
+| R-F12 | Opco debt by asset (opco TL 2022, USPP 2025) (added by modeler) | Base | 31, 63 |
+| R-F13 | Scenario and sensitivity results: CFADS, DSCRs, holdco coverage, fund IRR (added by modeler) | All | 20, 45, 70, 73 |
+| R-F14 | Cash tax and NOL profile (added by modeler) | Base | 70 |
+| R-F15 | USPP debt service, DSCR and balance profile (added by modeler) | Base | 63 |
+| R-F16 | Opco TL sculpted debt service and balance profile (added by modeler) | Base | 31 |
+| R-F17 | Repriced holdco balance and coverage profile (added by modeler) | Base | 63 |
 
 ---
 
@@ -1250,6 +1257,13 @@ Every change to a case after this version is logged here. "Date in story" is whe
 | R-C01 | 2023-08-31 | 73 | R | Portfolio | R1 to R5 | Adds R6 | Assumption (3.6) |
 | R-C02 | 2024-04-02 and 2024-12-19 | 73 | R | Portfolio | R1 to R6 | Adds R7 and R8 | Assumption (3.6) |
 | R-C03 | 2025-12-16 | 63 | R | Debt structure | Opco TL, holdco TLB, Redfern loan | USPP notes; repriced holdco | Assumption (3.7); R-F08 |
+| R-C04 | 2021-12-09 | 46, 47 | R | A1 enterprise value (modeler calibration, pre-publication) | USD 1,184.6 million | USD 446.3 million | Assumption (3.6); R-F04. v1.0 price was 2.7x the base-case breakeven value of USD 438.2 million given Bible revenues, costs and discount rates |
+| R-C05 | 2023-06-02 | 73 | R | A2 price (modeler calibration, pre-publication) | USD 132.4 million | USD 63.7 million | Assumption (3.6); R-F07 |
+| R-C06 | 2024-02-15 | 73 | R | A3 prices (modeler calibration, pre-publication) | R7 USD 171.9 million; R8 USD 168.3 million | R7 USD 87.4 million; R8 USD 101.9 million | Assumption (3.6); R-F07 |
+| R-C07 | 2025-10-21 | 63 | R | USPP series split (modeler calibration, pre-publication) | 30/40/30 | Sequential amortization by tenor; series sizes are model outputs | Assumption (3.7); R-F08 |
+| R-C08 | n/a | n/a | R | Expected debt ranges, design targets only (modeler calibration, pre-publication) | Opco TL 520-600; holdco TLB 160-210; USPP 750-860 (USD m) | Superseded by model outputs | R-F05, R-F08 |
+| R-C09 | 2021-12 | 9 | R | P99 one-year by asset (modeler calibration, pre-publication; editor-in-chief note) | R1 81.2%, R2 84.0%, R3 80.1%, R4 91.9%, R5 91.4%, R8 91.6% | R1 77.5%, R2 80.4%, R3 76.2%, R4 90.2%, R5 89.5%, R8 89.8% (normal, from the P90s) | Assumption (3.3); R-F01 |
+| R-C10 | 2021-12 | 9 | R | Yield uncertainty model and inter-asset correlations (modeler calibration, pre-publication; new) | None | Normal; long-term and inter-annual components; IAV correlations wind-wind 0.60 (West/Panhandle), 0.30 (with coastal), solar-solar 0.85 (West), 0.50 (West-South), wind-solar -0.10; long-term 0.50 within technology, 0 across | Assumption (3.3); R-F01 |
 
 Template for new entries:
 

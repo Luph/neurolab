@@ -831,8 +831,6 @@ def one_pass(R, st, C, H, ext, scn):
             X["state_cf"][t] = -STATE_MONEY
             X["neweq_cf"][t] = -STATE_MONEY
             st["notesface"] = X["notes_issue"][t]
-            # DSRA target re-based on the notes (next period)
-            X["dsra_target"][t] = next_ds(R, X, st, t) * 6.0 / R["months"][t + 1]
         # ---------------- tax losses and cost base (forgiveness applied at restructuring)
         forg = (X["cancelled"][t] + X["shl_wo"][t]) if R["restr"][t] else 0.0
         lpool = X["loss_open"][t] - X["loss_used"][t] + X["loss_added"][t]
@@ -858,11 +856,13 @@ def next_ds(R, X, st, t, pre_close=False):
         return 0.0
     u = t + 1
     if pre_close:
-        bank_c = X["bank_open"][t] - X["P_paid_bank"][t] - X["sweep1_bank"][t]
-        bond_c = X["bond_open"][t] - X["P_paid_bond"][t] - X["sweep1_bond"][t]
-        notes_c = X["notes_open"][t] - X["notes_P_paid"][t] - X["sweep2"][t]
+        # balances after this period's scheduled payments (before any cash sweep, so the
+        # target does not depend on itself); zero in the restructuring period
         if R["restr"][t]:
-            bank_c = bond_c = 0.0
+            return 0.0
+        bank_c = X["bank_open"][t] - X["P_paid_bank"][t]
+        bond_c = X["bond_open"][t] - X["P_paid_bond"][t]
+        notes_c = X["notes_open"][t] - X["notes_P_paid"][t]
     else:
         bank_c, bond_c, notes_c = X["bank_close"][t], X["bond_close"][t], X["notes_close"][t]
     intr = (bank_c * R["bankrate"][u] * R["days"][u] / 365.0 + bond_c * BOND_CPN * R["d360"][u] / 360.0
@@ -1036,8 +1036,39 @@ def sculpt_nilo(R, X, st, restructured):
 # ----------------------------------------------------------------------------------------
 # Results per run
 # ----------------------------------------------------------------------------------------
+def financials(X):
+    """Income statement and balance sheet (book amortization ignores tax forgiveness)."""
+    z = np.zeros(T)
+    nbv = np.zeros(T)
+    bam = np.zeros(T)
+    o = 0.0
+    for t in range(T):
+        bam[t] = o * X["opsdays"][t] / X["remdays"][t] if X["remdays"][t] > 0 else 0.0
+        o = o + X["wdv_add"][t] - bam[t]
+        nbv[t] = o
+    con = X["con"]
+    shl_exp = X["shl_int"] * (1 - con)
+    gain = X["cancelled"] + X["swap_mtm"]
+    ni = (X["ebitda"] - X["lc"] - X["hb_spend"] - bam - X["int_due"] - X["nilo_int_exp"] - shl_exp
+          - X["fees_due"] - X["tax"] + gain) * (1 - con) + gain * con
+    re = np.cumsum(ni - X["div"])
+    sharecap = np.cumsum(X["sharecap_draw"] + X["conv_eq"] + STATE_MONEY * X["restr"])
+    shl_res = np.cumsum(X["shl_wo"])
+    ret_pay = X["ret_close"]
+    assets = (nbv + X["rec"] + X["escrow_close"] + X["dsra_close"] + X["ria_close"] + X["mmra_close"]
+              + X["hb_close"] + X["ret_close"] + X["upg_close"] + X["cash_close"])
+    liab = (X["bank_close"] + X["bond_close"] + X["arr_bank_close"] + X["arr_bond_close"] + X["notes_close"]
+            + X["nilo_close"] + X["bridge_close"] + X["pay"] + X["shl_close"] + ret_pay)
+    equity = sharecap + shl_res + re
+    X["book_amort"], X["nbv"], X["net_income"], X["retained"] = bam, nbv, ni, re
+    X["share_capital"], X["shl_reserve"] = sharecap, shl_res
+    X["total_assets"], X["total_liab"], X["total_equity"] = assets, liab, equity
+    X["bs_check"] = assets - liab - equity
+
+
 def finish(X, scn):
     R = X
+    financials(X)
     ends = ENDS
     # equity returns (original sponsors)
     eq_dates = [FC_DATE] + ends
@@ -1147,7 +1178,7 @@ def solve_contribution(target, which):
         if which == "banking":
             return Xb["equity_irr"]
         return run(1, C, locked=lock_from(Xb))["equity_irr"]
-    lo, hi = 150.0, 700.0
+    lo, hi = 0.0, 700.0
     for _ in range(80):
         mid = 0.5 * (lo + hi)
         if irr_at(mid) < target:
@@ -1202,7 +1233,7 @@ SERIES = ("traffic", "toll", "wmult", "gross", "netrev", "ld", "opex", "revshare
           "dsra_target", "dsra_close", "dsra_draw", "ria_rel", "ria_close", "mmra_close", "hb_close",
           "cash_close", "lockup", "eod", "distr", "shl_paid", "div", "eq_cf", "neweq_cf", "wdv_close", "amort",
           "loss_close", "ti", "sweep1", "sweep2", "fees_due", "cpif", "level", "opsdays", "llcr", "fv_cf",
-          "project_cf", "A1", "upgrade", "upg_close", "ret_close", "support", "hb_spend", "rec", "pay")
+          "project_cf", "A1", "upgrade", "net_income", "nbv", "total_assets", "total_liab", "total_equity", "bs_check", "upg_close", "ret_close", "support", "hb_spend", "rec", "pay")
 
 
 def export_run(X, series=True):
@@ -1612,7 +1643,7 @@ def write_report(runs, out):
     w("\n## 11. Post-restructuring projections (T-F10)\n")
     pr = d["post_restructuring"]
     w(f"Minimum notes DSCR {f1(pr['min_notes_dscr'], 2)}x; average {f1(pr['avg_notes_dscr'], 2)}x; cash sweep total {f1(pr['sweep_total'])}; "
-      f"first distribution {pr['first_distribution']}; equity value at 11.4% {f1(pr['equity_value_total'])}; state revenue share total "
+      f"first distribution {pr['first_distribution']}; equity value at the plan rate (14.0%) {f1(pr['equity_value_total'])}; state revenue share total "
       f"{f1(pr['revshare_total_nominal'])} (2030 revenue is {pct(pr['revenue_threshold_ratio_2030'])} of the threshold; final full year "
       f"{pct(pr['revenue_threshold_ratio_2058'])}).\n")
     w("## 12. Assumption changes\n")
