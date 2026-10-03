@@ -549,14 +549,14 @@ PRIR = f"({V('Inputs.pri_rate')}/100*{V('Inputs.pri_cover')}/100)"
 # DSRA coefficients from the first debt service period (semiannual sheet references)
 t1i = V('Time.t1')
 def at_t1(key): return f"INDEX({rng(key)},1,{t1i})"
-F.scalar('pshare1', 'First installment share of remaining profile', 'fraction', f"={at_t1('Debt.prof')}/{at_t1('Debt.rem')}", '0.000000')
+F.scalar('pshare1', 'First installment share of remaining profile', 'fraction', lambda: f"={at_t1('Debt.prof')}/{at_t1('Debt.rem')}", '0.000000')
 for k, _ in TRK:
     extra = f"+{PRIR}*{at_t1('Time.days')}/365" if k == 'C' else ''
     F.scalar('d1_' + k, f'DSRA coefficient per USD of {k} balance', 'factor',
-             f"={V('Funding.pshare1')}+({at_t1('Operations.base')}+{mk[k] if k != 'C' else at_t1('Debt.mC')})/100*{at_t1('Time.days')}/360*{gu[k]}{extra}", '0.000000')
-F.scalar('d1_SB', 'DSRA coefficient per USD of standby balance', 'factor', f"={V('Funding.pshare1')}+{at_t1('Debt.r_SB')}", '0.000000')
+             lambda k=k, extra=extra: f"={V('Funding.pshare1')}+({at_t1('Operations.base')}+{mk[k] if k != 'C' else at_t1('Debt.mC')})/100*{at_t1('Time.days')}/360*{gu[k]}{extra}", '0.000000')
+F.scalar('d1_SB', 'DSRA coefficient per USD of standby balance', 'factor', lambda: f"={V('Funding.pshare1')}+{at_t1('Debt.r_SB')}", '0.000000')
 F.scalar('d0', 'DSRA constant (swap net payment)', 'USD m',
-         f"={at_t1('Inputs.S_N_s')}*({V('Inputs.swap_fix')}/100*0.5-{at_t1('Operations.base')}/100*{at_t1('Time.days')}/360)", '0.000000')
+         lambda: f"={at_t1('Inputs.S_N_s')}*({V('Inputs.swap_fix')}/100*0.5-{at_t1('Operations.base')}/100*{at_t1('Time.days')}/360)", '0.000000')
 F.sec('Closed-form gross-up: debt balance = alpha + beta x T (FC-type cases)')
 fl = lambda i: ref('Construction.f_fund', i)
 dcf = lambda i: f"{ref('Construction.days', i)}/360"
@@ -690,7 +690,8 @@ def bal_cod(k):
 for k, pk, lab in TR6:
     D_.sec(lab)
     D_.row('bo_' + k, 'Opening balance', 'USD m', lambda i, k=k: f"={fds(i)}*{ref('Debt.bc_' + k, i, -1) if i else '0'}", py='S.bal_open_' + pk)
-    D_.row('dfo_' + k, 'Deferred principal, opening', 'USD m', lambda i, k=k: f"={ref('Debt.dfc_' + k, i, -1) if i else '0'}", py='S.deferred_' + pk if False else None)
+    if k != 'BD':
+        D_.row('dfo_' + k, 'Deferred principal, opening', 'USD m', lambda i, k=k: f"={ref('Debt.dfc_' + k, i, -1) if i else '0'}")
     D_.row('int_' + k, 'Interest (incl. WHT gross-up where applicable)', 'USD m', lambda i, k=k: f"={ref('Debt.bo_' + k, i)}*{ref('Debt.r_' + k, i)}", total=True, py='S.interest_' + pk)
     if k != 'BD':
         D_.row('sch_' + k, 'Scheduled principal per profile', 'USD m',
@@ -1140,7 +1141,7 @@ def build(path, scenario=1):
                 elif d['key'] == 'lastop':
                     c.value = f"=SUMPRODUCT({rng('Time.f_last')},{rng('Time.t')})"
                 else:
-                    c.value = d['value']
+                    c.value = d['value']() if callable(d['value']) else d['value']
                 c.number_format = d['fmt']
                 continue
             # row

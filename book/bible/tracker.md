@@ -69,3 +69,4 @@
 - Case Bible annex P (case-bible-annex-p.md + case-p-input-requests.md).
 - Case Bible annex T/R/Ch1/capstone names (case-bible-annex-tr.md + case-tr-input-requests.md).
 - NEXT: models absorb input requests → blueprint review panel → Phase 2 pilot (two chapters).
+- Done: oem-fleet-defects, t-om-ltsa-norms, t-construction-norms (wrap premia/EPCM/LD rates unverified → D-011), wagp.
