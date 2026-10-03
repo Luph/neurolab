@@ -262,3 +262,160 @@ Structured finance & Shaped cash flows, often with third-party support & Vehicle
 \exhibitnote{Sizing and repayment differ as well: project debt is sized to contracted cash flow and repaid within the contract life; corporate and acquisition debt to a multiple of earnings, often repaid at maturity; reserve-based loans to a borrowing base that is redetermined; securitizations to the statistics of the pool.}
 \end{exhibit}
 
+\section{What sponsors, lenders, and governments gain from project finance}\label{sec:2.5}
+
+\subsection{Risk isolation and debt capacity}\label{ssec:2.5.1}
+
+A sponsor uses project finance first to keep one project's failure from becoming the company's failure, and closely tied to that, for debt capacity in its everyday sense: how much more a company can borrow before its lenders' covenants or its rating stop it. (\Cref{ssec:36.1.1} gives the term its narrower project finance meaning, the debt a project's own cash flows can support.) Both turn on one ratio that corporate lenders and rating agencies watch. \term{Net debt to EBITDA} is a leverage ratio: borrowings less cash, divided by annual earnings before interest, tax, depreciation, and amortization. EBITDA (\cref{ssec:7.3.1}) is roughly the cash a business's operations generate in a year before paying its lenders and the tax authority, so dividing debt by it tells a lender how many years of operating cash the debt represents.
+
+\begin{example}{Two ways to fund a wind farm \illustrative}\label{ex:2.3}
+In May 2024 GLA has EBITDA of USD~182.4~million and net debt of USD~510.6~million, a ratio of $510.6 / 182.4 = 2.80$\x. Its bank facilities cap net debt at 3.50\x{} EBITDA. Its board must decide by July 2024 how to fund the USD~389.6~million Alto Huelén wind farm (\cref{ex:2.1}), which will earn EBITDA of USD~41.3~million a year once running.
+
+If GLA takes the corporate route, it borrows the full cost in its own name. Once the cost is fully drawn, just before the wind farm starts operating, net debt is $510.6 + 389.6 = $ USD~900.2~million, while EBITDA is still USD~182.4~million because the wind farm earns nothing yet:
+\begin{equation*}
+\frac{900.2}{182.4} = 4.94\text{x}.
+\end{equation*}
+After the commercial operation date (COD), EBITDA rises to $182.4 + 41.3 = $ USD~223.7~million and the ratio falls to $900.2 / 223.7 = 4.02$\x. The covenant is breached in both periods. The most GLA can add to its net debt without breaching is
+\begin{equation*}
+3.50 \times 182.4 - 510.6 = 127.8 \quad \text{(USD m)},
+\end{equation*}
+about a third of the wind farm's cost.
+
+If GLA takes the project finance route, the project company borrows 75\% of the cost, USD~292.2~million, without recourse to GLA. GLA contributes the USD~97.4~million of equity, and suppose it borrows all of that at the parent. GLA's net debt rises to $510.6 + 97.4 = $ USD~608.0~million, and
+\begin{equation*}
+\frac{608.0}{182.4} = 3.33\text{x},
+\end{equation*}
+inside the covenant with USD~30.4~million of headroom left ($127.8 - 97.4$). The project debt is excluded because GLA's facility agreements, like many, leave the debt of non-recourse project subsidiaries out of net debt and count only the dividends those subsidiaries pay up, not their EBITDA. A rating agency may still add the project debt back if it judges that GLA would support the wind farm in trouble (\cref{ch:30}).
+
+The headroom does not survive the overrun of \cref{ex:2.1}. If GLA funds the USD~54.5~million overrun under its cost-overrun undertaking with parent debt, net debt becomes $608.0 + 54.5 = $ USD~662.5~million and leverage $662.5 / 182.4 = 3.63$\x, a breach by USD~24.1~million. If the lenders' full cap of USD~58.4~million were called, leverage would reach $666.4 / 182.4 = 3.65$\x. The USD~30.4~million of headroom covers only 52\% of the cap. Funding the call from cash does not help, because net debt rises by the same amount.
+
+Now suppose instead that two years after COD, serial gearbox failures across the turbine fleet make the wind farm worthless to its equity. Under project finance, GLA loses its USD~97.4~million (plus any overrun it funded), its covenant leverage stays where it was, and the project lenders bear the rest of the loss through their claim on a damaged wind farm and its warranties. Under the corporate route, GLA still owes the USD~389.6~million it borrowed, with no asset earning anything behind it. Its leverage returns to 4.94\x{} and stays there until it repays debt from other cash.
+\end{example}
+
+The example separates the two benefits. Debt capacity is about the covenant: the project finance route lets GLA build a wind farm costing three times its corporate headroom ($389.6 / 127.8 = 3.0$), provided the overrun support is sized to the headroom that is left, which the board paper in \cref{sec:2.8} has to solve. Risk isolation is about the failure case: the corporate route converts a project problem into a company problem. A sponsor values isolation more as the project's technology or resource risk grows relative to the sponsor's size.
+
+Two further gains follow from the same structure. Gearing, the share of a project's cost funded with debt (\cref{ssec:8.2.1}), lets GLA own a USD~389.6~million wind farm with USD~97.4~million of its own money, a quarter of the cost, and as long as the wind farm earns more on its assets than the debt costs, the return on that smaller equity investment rises; \cref{ch:8} works through the arithmetic. And project finance lets a sponsor borrow on the credit of the project's contracts and offtaker instead of its own. Cheniere's balance sheet could not have carried Sabine Pass, but four investment-grade offtakers paying fixed fees could (\cref{ssec:2.3.3}). For a sponsor with weak credit and a strong offtaker, project finance can be the cheaper debt, or the only debt available.
+
+\term{Off-balance-sheet financing} is financing that does not count as the sponsor's debt for covenant, rating, or (where the tests are met) accounting purposes. Finance directors routinely confuse those senses. GLA would own 100\% of the project company and control it, so the project company's debt would appear in GLA's consolidated accounts under the accounting standards most listed companies use: off balance sheet here means outside the covenant calculation and, if the agencies agree, outside the rating, but still in the group accounts. Taking a project out of the group accounts requires the sponsor to give up control, as Meta did at Hyperion (\cref{ssec:2.4.5}) and as Case P's Kilnworth will when, in 2026, it sells part of its stake (\cref{ch:66}).
+
+A project lender's exposure, for its part, does not depend on whether the sponsor's other businesses prosper, and its information is far more complete than a corporate lender's: it has seen every contract, every cost estimate, and every assumption in the model.
+
+\subsection{Governance and agency costs}\label{ssec:2.5.2}
+
+A company that generates more cash than its good investment opportunities need is tempted to spend the surplus on bad ones: an acquisition the chief executive wants, a new business the board finds appealing, a headquarters building. An \term{agency cost} is the loss of value that arises when managers or one set of owners act in their own interest at the expense of other investors (Jensen and Meckling 1976). Michael Jensen later argued that debt reduces the agency cost of surplus cash, because fixed debt service takes the cash away from managers before they can spend it (Jensen 1986).
+
+Project finance applies that argument with unusual force. Each December 31 at Llano Pardo (\cref{exh:1.10}), revenue from ELNACOR lands in an account administered by the facility agent and leaves it in a fixed order: operating costs and taxes, interest, principal, the top-up of the debt service reserve account (DSRA), and only then, if the distribution test is passed, distributions to the sponsors. The project company's managers cannot divert a dollar to a second solar plant or a new venture, because the single-purpose undertaking forbids it and the accounts structure makes it impossible. Every dollar that passes the distribution test reaches the sponsors, and none can be spent on a venture the lenders have not approved.
+
+The waterfall also protects the sponsors from each other. Tallisford's fund wanted a steady cash yield for its investors. Grupo Arismendi, a family group with agribusiness and logistics interests, might have been tempted to send the project company's trucking work to its own logistics arm, or to keep cash in Corredana for its own use. Partners who would not trust each other with a joint bank account trust a waterfall that neither of them controls, administered by the facility agent on the lenders' behalf (\cref{ch:52}).
+
+Moody's study of project finance bank loans to 10,452 projects originated between 1983 and 2021, drawn from a consortium of lenders covering about 67\% of the project financings originated worldwide in that period, shows what the discipline is worth to lenders (Moody's Investors Service 2023). The 10-year cumulative default rate, the share of loans that defaulted at some point within 10 years of origination, was 4.8\% on the Basel definition, the bank regulators' test under which a loan counts as defaulted once a payment is 90 days late or full repayment is judged unlikely (\cref{ch:68}). That is the same rate Moody's reports for corporate borrowers rated Baa3. The average ultimate recovery, the share of a defaulted loan that lenders eventually got back, was 79.5\%, and lenders recovered everything in 62\% of defaults. The shape of the default curve matters more for pricing than its total. Annual default rates in the first three years resembled those of high speculative-grade borrowers and fell toward single-A levels by about year seven, and defaults during construction recovered less on average than defaults in operation, 72.5\% against 80.8\%. That record is why lenders charge more for construction and early operations, and why sponsors refinance once a project has a few years of operating history. Lenders buy it with transparency (regular reports on a single asset they understand), control (consents over every material change, and the right to step in on default), security over everything the project company owns, and a price set for each project's own risk.
+
+\subsection{Partnering and political deterrence}\label{ssec:2.5.3}
+
+Project finance lets unequal partners invest together. Grupo Arismendi found the Llano Pardo site, signed the land option with the cooperative, and knew the ministries, but it could not have raised USD~65.1~million alone. Tallisford had capital and solar experience but no presence in Corredana. A project company with its own debt let each partner invest a fixed share of a defined project without exposing its other businesses to the other's, and without either partner's corporate lenders having a say. Larger projects stretch the same logic further. At financing in 2009, PNG LNG in Papua New Guinea was owned by ExxonMobil (33.2\%), Oil Search (29.0\%), Papua New Guinea state participants (19.6\%), Santos (13.5\%), and Nippon Oil (4.7\%), each committed to its share of one project company's equity (PNG LNG Global Company 2010).
+
+The lenders' identity also changes how a host government behaves. Half of the Llano Pardo loan came from the ABDB, a development bank whose shareholders include governments that lend to Corredana. A host government tempted to cut ELNACOR's tariff or delay its payments would be harming a lender its own finance ministry depends on, and would risk its standing with the bank. Practitioners call the deterrent effect of a development finance institution's or an export credit agency's presence a ``halo.'' The deterrent has limits, which \cref{ch:60} traces through the cases where it worked and where it failed.
+
+\subsection{What the host government gets}\label{ssec:2.5.4}
+
+Corredana's Ministry of Energy and Mines wanted 200~MW of solar power without borrowing to build it: four plants at Llano Pardo's USD~65.1~million each come to about USD~260~million. Private capital paid for the plants instead, with the cost recovered over 20 years through the tariff. Competition priced the power: four 50~MW lots were tendered in 2015, bidders priced against each other, and Llano Pardo won its lot at USD~58.20/MWh. And risk moved to private parties: if the plant had been late, over budget, or below its performance guarantee, the project company and its EPC contractor would have paid, not ELNACOR or the treasury.
+
+What remained with the host government is less visible. ELNACOR, a state company, owed 20 years of payments; if it could not pay, the pressure to support it would fall on the Ministry of Finance, whose letter of support carried political weight even without legal force. PPAs of this kind usually contain termination provisions under which the offtaker must buy the plant for a sum that covers the outstanding debt if the agreement ends through the offtaker's or the host government's default (\cref{ch:17}). The termination payment and the implicit support for ELNACOR are contingent liabilities, obligations that become payable only if something goes wrong, and they appear in no budget until they do. How governments measure them, and how statistical agencies decide whether such a plant counts as public debt, is a question of public finance in its own right (\cref{ch:57}).
+
+\section{What project finance costs}\label{sec:2.6}
+
+\subsection{Transaction costs and time to close}\label{ssec:2.6.1}
+
+Lenders who rely on one project's contracts and forecasts have to examine them, and the project company pays for the examination. Lenders' counsel reviews every contract and drafts the finance documents; an independent engineer reviews the design, the budget, the schedule, and the energy forecast; a model auditor checks the financial model; an insurance advisor reviews the insurance program. The sponsors need their own counsel and advisors to answer them. The lenders also charge an upfront fee for committing to a loan that, in \cref{ex:2.4}, takes more than a year to close. A corporate bond needs a prospectus, the offering document sold to investors, and a rating, and little else.
+
+\begin{example}{What project finance costs on the wind farm \illustrative}\label{ex:2.4}
+GLA compares the cost of the two routes for Alto Huelén (\cref{ex:2.3}). The figures are illustrative assumptions, not market data. The project financing incurs:
+
+\begin{center}
+\begin{tabularx}{\linewidth}{@{}L r@{}}
+\toprule
+Item (USD m) & Amount\\
+\midrule
+Lenders' legal counsel & 2.85\\
+Independent engineer & 0.62\\
+Model audit & 0.18\\
+Insurance advisor & 0.21\\
+\midrule
+Lenders' advisors & 3.86\\
+Sponsor's advisors & 3.40\\
+Upfront fee, $2.25\% \times 292.2$ & 6.57\\
+\midrule
+Total transaction costs & 13.83\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+The total is $13.83 / 389.6 = 3.55\%$ of the wind farm's cost. The corporate route raises the full USD~389.6~million with a bond: an issuance fee of $0.45\% \times 389.6 = $ USD~1.75~million plus USD~0.60~million of legal costs, USD~2.35~million in total.
+
+To compare one-off costs with annual interest, spread each over the life of the debt. Suppose both debts have an average life of 9.4 years, meaning the average dollar borrowed is outstanding for 9.4 years (\cref{ssec:6.3.2} defines weighted average life). Spreading the costs evenly and ignoring the time value of money:
+\begin{align*}
+\text{Project finance:}\quad & \frac{13.83}{292.2 \times 9.4} = 0.504\% = 50.4\text{ bps a year}\\
+\text{Corporate bond:}\quad & \frac{2.35}{389.6 \times 9.4} = 0.064\% = 6.4\text{ bps a year}
+\end{align*}
+Then add each instrument's premium for credit risk. A loan's margin is added to a floating reference rate, a benchmark interest rate that resets every few months; a bond's credit spread is measured over a government bond yield (\cref{ssec:6.4.2}). The project loan pays a margin of 195\bps; GLA's bond would pay a credit spread of 135\bps. The project loan also pays the facility agent a fee of USD~76,500 a year, which is $76{,}500 / 292{,}200{,}000 = 2.6$\bps.
+
+\begin{center}
+\begin{tabularx}{\linewidth}{@{}L rr@{}}
+\toprule
+Annual cost (bps) & Project finance & Corporate bond\\
+\midrule
+Margin or credit spread & 195.0 & 135.0\\
+Transaction costs spread over 9.4 years & 50.4 & 6.4\\
+\midrule
+Subtotal & 245.4 & 141.4\\
+Agency fee & 2.6 & --\\
+\midrule
+All-in & 248.0 & 141.4\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+Project finance costs 104.0\bps{} a year more before the agency fee and 106.6\bps{} with it. On the USD~292.2~million of project debt, 104.0\bps{} is $0.0104 \times 292.2 = $ USD~3.0~million a year, or USD~3.1~million including the agency fee. The project financing would take about 14 months from mandate to first drawing, the bond about 3.
+\end{example}
+
+The example simplifies, and the omissions do not all cut the same way. It applies the rate difference only to the USD~292.2~million that is borrowed differently, because GLA's USD~97.4~million of equity is funded at the parent under both routes. It leaves out the project loan's commitment fee on undrawn amounts during construction, the cost of hedging its floating rate, and the cost of funding the debt service reserve account, all of which widen the gap. It leaves out the negative carry on the bond, the interest paid on proceeds raised in one day and spent over two years of construction, less what they earn on deposit meanwhile, which narrows it. And it compares a bullet bond with an amortizing loan at an equal average life, and a spread over government yields with a margin over a floating reference rate, approximations that \cref{ch:6} and \cref{ch:38} replace with a proper all-in cost. The order of magnitude survives: in this illustration an investment-grade sponsor such as GLA pays about a percentage point a year more, and waits about a year longer, for the debt capacity and protection of \cref{ex:2.3}. A sponsor with weaker credit than its offtaker can face the opposite answer (\cref{ssec:2.5.1}).
+
+\subsection{Rigidity, information, and control}\label{ssec:2.6.2}
+
+The larger costs of project finance never appear in a fee letter, the side letter that sets the arrangers' fees (\cref{ssec:51.1.2}): they are what the sponsors give up for the life of the loan. In 2024 Llano Pardo's owners looked at adding a 10~MW battery behind the plant's grid connection, to store midday output and sell it into ELNACOR's evening peak. On a corporate balance sheet the decision would have taken a board meeting. Inside the ring-fence, the first gate was ELNACOR: the PPA bought energy as produced at a flat price, so selling stored energy at a different hour needed a PPA amendment with a time-shifted price or dispatch rights, and probably the Ministry of Energy and Mines' agreement, since it had run the tender. The lenders would condition their own consent on that amendment. The single-purpose undertaking defined the business as a 50~MW solar plant selling under one PPA, so a battery was a new business. The limit on other debt barred the battery's financing unless the lenders agreed to permit it, and the lenders would want the battery added to their security. The base-case model had to be rebuilt with the battery's costs, revenues, and degradation, and re-audited. The independent engineer had to give a new opinion on the battery's technology, its integration with the plant's inverters, and its effect on the plant's performance under the PPA. Sterrenberg Bank and the ABDB each had to take the request through its own credit process, with the loan's USD~32.9~million outstanding at the end of 2024 (\cref{exh:1.4}) as their only exposure, before any battery could be ordered.
+
+Consents are only the most visible control. Reporting obliges the project company to send monthly or quarterly operating reports, annual audited accounts, budgets, compliance certificates, and prompt notice of anything that could affect the lenders, so its management reports to the lenders as well as to its board. Distribution tests decide whether the sponsors receive cash at all: if the debt service cover ratio falls below the lock-up level, 1.15\x{} at Llano Pardo, cash stays in the project company until the ratio recovers (\cref{sec:37.4}). A sponsor used to moving cash around a group to wherever it earns most finds that cash trapped in a project company earns the deposit rate, for as long as the lenders' test says so (\cref{ch:62}).
+
+\section{When project finance is the wrong tool}\label{sec:2.7}
+
+Most of the costs in \cref{ex:2.4} are fixed. An independent engineer's review of a 24~MW wind farm costs not much less than one of a 240~MW wind farm, and lenders' counsel reads a short PPA as carefully as a long one. A project that is small relative to those costs cannot carry them, whatever its risk; a project whose cash flows cannot be separated or forecast cannot be financed this way at any size.
+
+\begin{example}{Too small for project finance \illustrative}\label{ex:2.5}
+In March 2025 Mvuli Paa Energy Ltd, a Nairobi developer, owns 214 rooftop solar systems on supermarkets and warehouses around Nairobi, with a combined capacity of 11.8~MWp (megawatts of panel capacity) and a total cost of USD~18.6~million. Each system sells its output to the building's owner under its own 15-year contract, priced and paid in Kenyan shillings. The average system is $11.8 / 214 = 0.055$~MWp, or 55~kWp, and cost about USD~86,900.
+
+Mvuli Paa asks a bank to arrange a project financing of the portfolio. The lenders would need counsel to review 214 offtake contracts and 214 roof leases under Kenyan law, an independent engineer to sample the installations and review the energy forecasts, a model auditor, an insurance review, and credit checks on 214 building owners, and they would charge their own fees. The arranger estimates the fixed transaction costs at about USD~2.9~million, which is $2.9 / 18.6 = 15.6\%$ of the portfolio's cost, against 3.55\% on Alto Huelén (\cref{ex:2.4}). The portfolio's risk would pass; its size would not.
+
+A corporate facility to Mvuli Paa, secured on its portfolio and repaid from its whole cash flow, costs a fraction as much to arrange. A warehouse facility lends against systems as they are installed, using standardized contracts and eligibility criteria instead of contract-by-contract review, until the portfolio is large enough to refinance. Because the contracts pay in shillings, either loan should be in shillings or hedged. Once the portfolio holds thousands of standardized contracts, a securitization can sell their receivables to a vehicle that issues notes, with investors relying on the statistics of the pool (\cref{ssec:2.4.5}), as tower and fiber owners already do (\cref{ssec:82.7.2}).
+\end{example}
+
+A project can fail the other test, forecastable cash flow, at any size. Northvolt AB, a Swedish battery cell manufacturer founded in 2016, financed its first gigafactory, Northvolt Ett in Skellefteå, as a project. On July 28, 2020, the project company, Northvolt Ett AB, signed first-lien and second-lien facilities of approximately USD~1.6~billion, called the Snowball facilities; first-lien lenders are paid from the security before second-lien lenders. The lenders included the European Investment Bank, commercial banks, the Export-Import Bank of Korea, and lenders whose loans were covered by export credit agencies (ECAs), government agencies that lend or insure to support their country's exports (\cref{ssec:4.3.2}), in Germany, Japan, and France. The facilities were secured on substantially all of Northvolt Ett AB's assets and on pledges of its shares; the project company had to hedge most of its interest-rate exposure and held a debt service reserve account (Millar 2024).
+
+It had no contracted revenue. Northvolt reported USD~55~billion of customer orders, but orders for battery cells are not take-or-pay obligations: a customer pays for cells delivered on specification and on time, and Northvolt Ett could not deliver them. The plant had been intended to be fully operational by 2023; in November 2024 it could make cells with a combined storage capacity of 16~GWh a year against a 60~GWh target, and the company relied on Chinese suppliers for some critical materials and machinery. Net losses widened from approximately USD~285~million in 2022 to USD~1.2~billion in 2023. An expansion package with approximately USD~4.5~billion of debt commitments, signed in December 2023, was never drawn and was unwound in November 2024. Northvolt filed for Chapter~11 in the Southern District of Texas on November 21, 2024, with approximately USD~30~million of cash, and its main Swedish companies filed for bankruptcy in Sweden on March 12, 2025 (Millar 2024; Northvolt 2025).
+
+No project finance structure turns manufacturing ramp-up risk into contracted cash flow. A power plant's EPC contractor guarantees output and efficiency against a test it has passed many times before; a first-of-a-kind gigafactory's yield depends on learning that nobody can guarantee, as \cref{ch:77} shows in detail. A PPA pays for energy the plant can produce; a supply agreement for cells pays only for cells that meet the customer's specification.
+
+\begin{framework}[label={fw:pf-fit-test}]{The project finance fit test}
+Ask six questions in this order. The first two decide whether project finance is the right tool at all; the other four decide what it will cost to make it work.
+\begin{enumerate}
+\item Is the asset legally and physically separable from the sponsor's other businesses, with revenues of its own?
+\item Is the revenue contracted with a counterparty creditworthy enough to pay for longer than the debt will be outstanding, in a currency the debt can be serviced in, or else predictable enough for lenders to forecast it for that long?
+\item Can construction risk be fixed in price and date with a creditworthy contractor?
+\item Is the deal large enough to carry the fixed transaction costs? Compute the ratio of fixed costs to project cost and compare it with the benefit.
+\item Can the sponsors accept the lenders' control and information demands for the life of the loan?
+\item Can the host country's legal system give lenders enforceable security over the assets, the contracts, and the shares, and the right to step in?
+\end{enumerate}
+A ``no'' to question 1 or 2 means another financing tool. A ``no'' to questions 3 to 6 means a fix or a price: a sponsor guarantee, a different contract structure, a portfolio, a waiver, or a higher margin. Use the test at the first screen of any project, before anyone spends money on advisors.
+\end{framework}
+
+Llano Pardo passes the \term{project finance fit test} on every question: a separate plant on leased land with its own grid connection; a 20-year US-dollar PPA with a state utility, in a dollarized country, backed by a letter of credit; a fixed-price EPC contract with an experienced contractor; a cost of USD~65.1~million that carried its advisors' fees; sponsors who accepted the controls; and Corredanan security law that allowed pledges of the shares, the accounts, and the contracts and a mortgage of the land lease. The Nairobi rooftops pass questions 1, 2, 3, and 6, with shilling revenue matched by shilling debt, and fail question 4 by a margin no fee or price could close, so the fix is structural: a different tool until the portfolio grows. Northvolt Ett passed question 1 and the size test easily but strained question 3, because no contractor could fix a gigafactory's ramp-up, and question 2, because customer orders gave no take-or-pay protection once the plant could not deliver.
+

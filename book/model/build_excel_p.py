@@ -315,8 +315,8 @@ for k, lab, un in [('base_fc', '6M LIBOR forward curve at FC', '%'),
                    ('overdue', 'SEKA overdue receivables at period end (actual)', 'USD m'),
                    ('fxloss', 'FX conversion losses (actual)', 'USD m'),
                    ('lpi_sh', 'Settlement installment share of late payment interest', 'fraction'),
-                   ('prof_fc', 'Contract repayment profile at FC (share of debt)', 'fraction'),
-                   ('prof_cod', 'COD re-sculpted repayment profile (share of debt at COD)', 'fraction'),
+                   ('prof_fc', 'Contract repayment profile at FC, A-loan, B-loan, commercial and standby (share of their amount; ECA in equal installments)', 'fraction'),
+                   ('prof_cod', 'COD re-sculpted repayment profile, tranches other than ECA (share of their amount at COD)', 'fraction'),
                    ('prof_bond', 'Bond amortization profile (share of face)', 'fraction'),
                    ('N_s', 'Swap notional schedule, semiannual (contract)', 'USD m'),
                    ('av8', 'Availability profile by OY (8-year cycle, cols J-Q)', '%'),
@@ -650,11 +650,11 @@ PRIR = f"({V('Inputs.pri_rate')}/100*{V('Inputs.pri_cover')}/100)"
 # DSRA coefficients from the first debt service period (semiannual sheet references)
 t1i = V('Time.t1')
 def at_t1(key): return f"INDEX({rng(key)},1,{t1i})"
-F.scalar('pshare1', 'First installment share of remaining profile', 'fraction', lambda: f"={at_t1('Debt.prof')}/{at_t1('Debt.rem')}", '0.000000')
+F.scalar('pshare1', 'First installment share of remaining profile (A, B, commercial, standby)', 'fraction', lambda: f"={at_t1('Debt.prof')}/{at_t1('Debt.rem')}", '0.000000')
 for k, _ in TRK:
     extra = f"+{PRIR}*{at_t1('Time.days')}/{V('Inputs.day_kcr')}" if k == 'C' else ''
     F.scalar('d1_' + k, f'DSRA coefficient per USD of {k} balance', 'factor',
-             lambda k=k, extra=extra: f"={V('Funding.pshare1')}+({at_t1('Operations.base')}+{mk[k] if k != 'C' else at_t1('Debt.mC')})/100*{'0.5' if 'E4' in ERR else at_t1('Time.days') + '/' + V('Inputs.day_usd')}*{gu[k]}{extra}", '0.000000')
+             lambda k=k, extra=extra: f"={at_t1('Debt.pshe') if k == 'E' else V('Funding.pshare1')}+({at_t1('Operations.base')}+{mk[k] if k != 'C' else at_t1('Debt.mC')})/100*{'0.5' if 'E4' in ERR else at_t1('Time.days') + '/' + V('Inputs.day_usd')}*{gu[k]}{extra}", '0.000000')
 F.scalar('d1_SB', 'DSRA coefficient per USD of standby balance', 'factor', lambda: f"={V('Funding.pshare1')}+{at_t1('Debt.r_SB')}", '0.000000')
 F.scalar('d0', 'DSRA constant (swap net payment)', 'USD m',
          lambda: f"={SG()}{at_t1('Inputs.S_N_s')}*({V('Inputs.swap_fix')}/100*{at_t1('Time.yf30')}-{at_t1('Operations.base')}/100*{at_t1('Time.days')}/{V('Inputs.day_usd')})", '0.000000')
@@ -795,7 +795,7 @@ for k, pk, lab in TR6:
     D_.row('int_' + k, 'Interest (incl. WHT gross-up where applicable)', 'USD m', lambda i, k=k: f"={ref('Debt.bo_' + k, i)}*{ref('Debt.r_' + k, i)}", total=True, py='S.interest_' + pk)
     if k != 'BD':
         D_.row('sch_' + k, 'Scheduled principal per profile', 'USD m',
-               lambda i, k=k: f"={fds(i)}*({ref('Debt.bo_' + k, i)}-{ref('Debt.dfo_' + k, i)})*{ref('Debt.psh', i)}", total=True, py='S.sched_' + pk)
+               lambda i, k=k: f"={fds(i)}*({ref('Debt.bo_' + k, i)}-{ref('Debt.dfo_' + k, i)})*{ref('Debt.pshe' if k == 'E' else 'Debt.psh', i)}", total=True, py='S.sched_' + pk)
         D_.row('dfn_' + k, 'Principal deferred under the waiver', 'USD m',
                lambda i, k=k: f"={ref('Time.f_t23', i)}*{V('Inputs.w_def')}*{ref('Debt.sch_' + k, i)}", total=True, py='S.deferred_new_' + pk)
         D_.row('dfr_' + k, 'Deferred principal repaid (equal parts over the remaining repayment dates)', 'USD m',
@@ -862,7 +862,7 @@ D_.row('bn_C', 'Commercial balance carried to next period', 'USD m', lambda i: f
 for k, pk, lab in TR6[:5]:
     BN = lambda i, k=k: f"IF({ref('Time.f_cod', i)}=1,{ref('Debt.bc_' + k, i)},{ref('Debt.after_' + k, i)})"
     D_.row('tn_' + k, f'{lab}: next period debt service', 'USD m',
-           lambda i, k=k, BN=BN: (f"=IF({LIVE(i)},({BN(i)}-{ref('Debt.dfc_' + k, i)})*{nxt('Debt.psh', i)}"
+           lambda i, k=k, BN=BN: (f"=IF({LIVE(i)},({BN(i)}-{ref('Debt.dfc_' + k, i)})*{nxt('Debt.pshe' if k == 'E' else 'Debt.psh', i)}"
                                   f"+IF({nxt('Time.n_drep', i)}>0,{nxt('Time.f_drep', i)}*{ref('Debt.dfc_' + k, i)}/{nxt('Time.n_drep', i)},0)"
                                   f"+{BN(i)}*{nxt('Debt.r_' + k, i)},0)"))
 BNB = lambda i: f"({ref('Debt.after_BD', i)}+{ref('Debt.Fn', i)})"
@@ -873,35 +873,50 @@ D_.row('tgt', 'DSRA target (six months of next debt service)', 'USD m',
        lambda i: (f"=IF({LIVE(i)}," + "+".join(ref('Debt.tn_' + k, i) for k, _, _ in TR6)
                   + f"+{SG()}{nxt('Inputs.S_N_s', i)}*{nxt('Debt.swsh', i)}*({V('Inputs.swap_fix')}/100*{nxt('Time.yf30', i)}-{nxt('Operations.base', i)}/100*{nxt('Time.days', i)}/{V('Inputs.day_usd')})"
                   + f"+{PRIR}*{ref('Debt.bn_C', i)}*{nxt('Time.days', i)}/{V('Inputs.day_kcr')},0)"), py='S.dsra_target')
-D_.sec('Live sculpting check (FC base: constant-DSCR profile from CFADS)')
+D_.sec('Live sculpting check (FC base: constant-DSCR total debt service; ECA equal installments, other tranches sculpted)')
 fsc = lambda i: ref('Time.f_sc', i)
-D_.row('wrate', 'Sculpting rate on scheduled balance', 'factor',
-       lambda i: (f"=IF({fsc(i)}=1,{V('Inputs.sh_E')}*{ref('Debt.r_E', i)}+{V('Inputs.sh_A')}*{ref('Debt.r_A', i)}+{V('Inputs.sh_B')}*{ref('Debt.r_B', i)}"
-                  f"+{V('Inputs.sh_C')}*({ref('Debt.r_C', i)}+{PRIR}*{ref('Time.days', i)}/{V('Inputs.day_kcr')})"
-                  f"+{SG()}{ref('Inputs.S_N_s', i)}/({V('Funding.D')}*{ref('Debt.rem', i)})*({V('Inputs.swap_fix')}/100*{yf(i)}-{ref('Operations.base', i)}/100*{dsc(i)}),0)"), fmt='0.0000000')
+DO = lambda: f"{V('Funding.D')}*(1-{V('Inputs.sh_E')})"
+SHO = lambda: f"(1-{V('Inputs.sh_E')})"
+D_.row('wrate', 'Sculpting rate on the other tranches\' scheduled balance (A, B, commercial incl. PRI; plus swap)', 'factor',
+       lambda i: (f"=IF({fsc(i)}=1,({V('Inputs.sh_A')}*{ref('Debt.r_A', i)}+{V('Inputs.sh_B')}*{ref('Debt.r_B', i)}"
+                  f"+{V('Inputs.sh_C')}*({ref('Debt.r_C', i)}+{PRIR}*{ref('Time.days', i)}/{V('Inputs.day_kcr')}))/{SHO()}+{ref('Debt.ssw', i)},0)"), fmt='0.0000000')
 D_.row('pvc', 'PV of CFADS to final maturity at the sculpting rate', 'USD m',
        lambda i: f"=IF({fsc(i)}=1,({ref('Waterfall.cfads', i)}{('+' + ref('Tax.tax', i)) if 'E8' in ERR else ''}+{nxt('Debt.pvc', i)})/(1+{ref('Debt.wrate', i)}),0)")
-D_.scalar('dscr_eff', 'Sculpted DSCR = PV(CFADS) / debt', 'x', lambda: f"=INDEX({rng('Debt.pvc')},1,{V('Time.t1')})/{V('Funding.D')}", '0.000000')
-D_.scalar('capacity', 'Debt capacity at the target DSCR', 'USD m', lambda: f"=INDEX({rng('Debt.pvc')},1,{V('Time.t1')})/{V('Inputs.dscr_t')}", '#,##0.000000')
+D_.scalar('dscr_eff', 'Sculpted DSCR = PV(CFADS) / (other tranches + PV of ECA debt service), at the sculpting rate', 'x',
+          lambda: f"=INDEX({rng('Debt.pvc')},1,{V('Time.t1')})/({DO()}+INDEX({rng('Debt.pvE')},1,{V('Time.t1')}))", '0.000000', py='R.sculpt_dscr_live')
+D_.scalar('capacity', 'Debt capacity at the target DSCR (debt x sculpted DSCR / target)', 'USD m', lambda: f"={V('Funding.D')}*{V('Debt.dscr_eff')}/{V('Inputs.dscr_t')}", '#,##0.000000', py='R.capacity_live')
 D_.scalar('gearcap', 'Debt at the gearing cap (closed form)', 'USD m', lambda: f"={V('Inputs.gear')}*{V('Funding.T_aff')}", '#,##0.000000')
-D_.row('sds', 'Sculpted debt service', 'USD m', lambda i: f"=IF({fsc(i)}=1,({ref('Waterfall.cfads', i)}{('+' + ref('Tax.tax', i)) if 'E8' in ERR else ''})/{V('Debt.dscr_eff')},0)")
-D_.row('sbal', 'Sculpted balance, opening', 'USD m',
-       lambda i: f"=IF({fsc(i)}=1,IF({tt(i)}={V('Time.t1')},{V('Funding.D')},{ref('Debt.sbal', i, -1)}-{ref('Debt.sprin', i, -1)}),0)")
-D_.row('sprin', 'Sculpted principal', 'USD m', lambda i: f"={ref('Debt.sds', i)}-{ref('Debt.sbal', i)}*{ref('Debt.wrate', i)}")
-D_.row('sdiff', 'Sculpted principal less contract principal (FC base)', 'USD m',
-       lambda i: f"=IF({V('Inputs.Scenario')}=1,{ref('Debt.sprin', i)}-{fsc(i)}*{ref('Inputs.S_prof_fc', i)}*{V('Funding.D')},0)")
+D_.row('sds', 'Sculpted debt service (all tranches)', 'USD m', lambda i: f"=IF({fsc(i)}=1,({ref('Waterfall.cfads', i)}{('+' + ref('Tax.tax', i)) if 'E8' in ERR else ''})/{V('Debt.dscr_eff')},0)")
+D_.row('sbal', 'Sculpted balance of the other tranches, opening', 'USD m',
+       lambda i: f"=IF({fsc(i)}=1,IF({tt(i)}={V('Time.t1')},{DO()},{ref('Debt.sbal', i, -1)}-{ref('Debt.sprin', i, -1)}),0)")
+D_.row('sprin', 'Sculpted principal of the other tranches', 'USD m', lambda i: f"={ref('Debt.sds', i)}-{ref('Debt.sE', i)}-{ref('Debt.sbal', i)}*{ref('Debt.wrate', i)}")
+D_.row('sdiff', 'Sculpted principal less contract principal, other tranches (FC base)', 'USD m',
+       lambda i: f"=IF({V('Inputs.Scenario')}=1,{ref('Debt.sprin', i)}-{fsc(i)}*{ref('Inputs.S_prof_fc', i)}*{DO()},0)")
 # v1.4 appended ECA tests on the selected profile (u09 R11; values as P-F09)
 D_.gap()
-D_.row('eca_y', 'ECA tests: years from COD to period end', 'years', lambda i: f"=({ref('Time.end', i)}-{V('Time.cod')})/{V('Inputs.day_yr')}", fmt='0.0000', py='S.eca_yrs')
-D_.scalar('eca_wal', 'ECA test: weighted average life from COD', 'years', lambda: f"=SUMPRODUCT({rng('Debt.prin')},{rng('Debt.eca_y')})/SUM({rng('Debt.prin')})", '0.0000', py='R.eca_wal')
-D_.scalar('eca_max', 'ECA test: largest installment as a share of principal', 'fraction', lambda: f"=MAX({rng('Debt.prin')})/SUM({rng('Debt.prin')})", '0.0000', py='R.eca_max_share')
+D_.row('eca_y', 'ECA tests (ECA-covered tranche, contractual schedule): years from COD to period end', 'years', lambda i: f"=({ref('Time.end', i)}-{V('Time.cod')})/{V('Inputs.day_yr')}", fmt='0.0000', py='S.eca_yrs')
+D_.scalar('eca_wal', 'ECA test: weighted average life from COD', 'years', lambda: f"=SUMPRODUCT({rng('Debt.pe')},{rng('Debt.eca_y')})/SUM({rng('Debt.pe')})", '0.0000', py='R.eca_wal')
+D_.scalar('eca_max', 'ECA test: largest installment as a share of principal', 'fraction', lambda: f"=MAX({rng('Debt.pe')})/SUM({rng('Debt.pe')})", '0.0000', py='R.eca_max_share')
 D_.scalar('eca_ten', 'ECA test: repayment term from COD (to the last installment)', 'years',
-          lambda: f"=INDEX({rng('Debt.eca_y')},1,SUMPRODUCT(MAX(({rng('Debt.prin')}>{V('Inputs.eps')})*{rng('Time.t')})))", '0.0000', py='R.eca_tenor')
+          lambda: f"=INDEX({rng('Debt.eca_y')},1,SUMPRODUCT(MAX(({rng('Debt.pe')}>{V('Inputs.eps')})*{rng('Time.t')})))", '0.0000', py='R.eca_tenor')
 D_.scalar('eca_fm', 'ECA test: months from COD to the first repayment', 'months',
-          lambda: (f"=(YEAR(INDEX({rng('Time.end')},1,_xlfn.MINIFS({rng('Time.t')},{rng('Debt.prin')},\">\"&{V('Inputs.eps')}))+1)-YEAR({V('Time.cod')}))*12"
-                   f"+MONTH(INDEX({rng('Time.end')},1,_xlfn.MINIFS({rng('Time.t')},{rng('Debt.prin')},\">\"&{V('Inputs.eps')}))+1)-MONTH({V('Time.cod')})"), '0', py='R.eca_first_m')
+          lambda: (f"=(YEAR(INDEX({rng('Time.end')},1,_xlfn.MINIFS({rng('Time.t')},{rng('Debt.pe')},\">\"&{V('Inputs.eps')}))+1)-YEAR({V('Time.cod')}))*12"
+                   f"+MONTH(INDEX({rng('Time.end')},1,_xlfn.MINIFS({rng('Time.t')},{rng('Debt.pe')},\">\"&{V('Inputs.eps')}))+1)-MONTH({V('Time.cod')})"), '0', py='R.eca_first_m')
 D_.scalar('eca_24', 'ECA test: share of principal repaid within the window from COD', 'fraction',
-          lambda: f"=SUMIFS({rng('Debt.prin')},{rng('Time.end')},\"<=\"&(EDATE({V('Time.cod')},{V('Inputs.eca_m')})-1))/SUM({rng('Debt.prin')})", '0.0000', py='R.eca_24m_share')
+          lambda: f"=SUMIFS({rng('Debt.pe')},{rng('Time.end')},\"<=\"&(EDATE({V('Time.cod')},{V('Inputs.eca_m')})-1))/SUM({rng('Debt.pe')})", '0.0000', py='R.eca_24m_share')
+# v1.5 appended (D-128): ECA-covered tranche in equal installments; sculpting helpers
+D_.gap()
+D_.sec('ECA-covered tranche: contractual schedule (equal semiannual installments, first repayment period to final maturity)')
+D_.row('pe', 'ECA installment, share of the ECA amount', 'fraction', lambda i: f"=IF({fsc(i)}=1,1/SUM({rng('Time.f_sc')}),0)", fmt='0.000000', py='S.prof_eca')
+D_.row('reme', 'ECA remaining profile (this and later installments)', 'fraction', lambda i: f"=SUM({rngrel('Debt.pe', i, NS - 1)})", fmt='0.000000')
+D_.row('pshe', 'ECA installment share of remaining balance', 'fraction', lambda i: f"=IF({ref('Debt.reme', i)}>{EPS},{ref('Debt.pe', i)}/{ref('Debt.reme', i)},0)", fmt='0.000000')
+D_.row('ssw', 'Swap net cost per USD of total scheduled balance (sculpting)', 'factor',
+       lambda i: (f"=IF({fsc(i)}=1,{SG()}{ref('Inputs.S_N_s', i)}/({V('Funding.D')}*({V('Inputs.sh_E')}*{ref('Debt.reme', i)}+{SHO()}*{ref('Debt.rem', i)}))"
+                  f"*({V('Inputs.swap_fix')}/100*{yf(i)}-{ref('Operations.base', i)}/100*{dsc(i)}),0)"), fmt='0.0000000')
+D_.row('sE', 'ECA scheduled debt service in the sculpting (installment, interest, swap share)', 'USD m',
+       lambda i: f"=IF({fsc(i)}=1,{V('Funding.D')}*{V('Inputs.sh_E')}*({ref('Debt.pe', i)}+{ref('Debt.reme', i)}*({ref('Debt.r_E', i)}+{ref('Debt.ssw', i)})),0)")
+D_.row('pvE', 'PV of ECA scheduled debt service at the sculpting rate', 'USD m',
+       lambda i: f"=IF({fsc(i)}=1,({ref('Debt.sE', i)}+{nxt('Debt.pvE', i)})/(1+{ref('Debt.wrate', i)}),0)")
 
 # ========================================================================================
 # TAX
@@ -1173,10 +1188,9 @@ CHK2 = [   # v1.4 appended checks (u09 R1, R4, R11, R12, R6), rows 20 to 25
     ('c_tcm', 'Construction flags sum to construction months', lambda: f"=SUM({rng('Construction.f_con')})-{V('Time.nc')}"),
     ('c_cash', 'Cash flow statement reconciles to project-account cash (max abs, USD m)',
      lambda: f"=IF(MAX(MAX({rng('Financials.cf_chk')}),-MIN({rng('Financials.cf_chk')}))<={V('Inputs.eps_r')},0,MAX(MAX({rng('Financials.cf_chk')}),-MIN({rng('Financials.cf_chk')})))"),
-    ('c_ecat', 'ECA tests pass on the FC base (Scenario 1; number of failed tests)',
-     lambda: (f"=IF(AND({V('Inputs.Scenario')}=1,{MCON()}=0),"
-              f"({V('Debt.eca_ten')}>{V('Inputs.eca_tenor')})+({V('Debt.eca_wal')}>{V('Inputs.eca_wal')})+({V('Debt.eca_max')}>{V('Inputs.eca_max')}/100)"
-              f"+({V('Debt.eca_fm')}>{V('Inputs.eca_m')})+({V('Debt.eca_24')}<{V('Inputs.eca_min')}/100),0)")),
+    ('c_ecat', 'ECA tests pass on the ECA-covered tranche\'s contractual schedule (number of failed tests)',
+     lambda: (f"=({V('Debt.eca_ten')}>{V('Inputs.eca_tenor')})+({V('Debt.eca_wal')}>{V('Inputs.eca_wal')})+({V('Debt.eca_max')}>{V('Inputs.eca_max')}/100)"
+              f"+({V('Debt.eca_fm')}>{V('Inputs.eca_m')})+({V('Debt.eca_24')}<{V('Inputs.eca_min')}/100)")),
     ('c_mmw', 'MMRA window equals the input number of periods', lambda: f"=COLUMNS(Operations!$K${SHEETS['Operations'].key['mm']}:$P${SHEETS['Operations'].key['mm']})-{V('Inputs.mmra_n')}"),
     ('c_out', 'Outputs: live dashboard equals the pasted row of the selected scenario', lambda: f"={V('Outputs.o_cmp')}"),
 ]

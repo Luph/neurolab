@@ -2,6 +2,8 @@
 
 Version 1.2, October 3, 2026 (consolidation after the round 1 brief revisions: storyline rows and figure-register users merged from the revisers' requests, ledger conflicts resolved in the ledger's favor, the Case T lenders' traffic adviser added, the round 1 illustrative names registered in Part 5A; cells and rows changed in this version carry "(round 1)"; see `reviews/blueprint/consolidation-B-log.md`). Version 1.1, October 3, 2026 (Version 1.0 amended after the blueprint review: Case P model and ledger v1.2, the construction currency hedge of D-114, the SEKA LC value of P-C44, the overrun funding of P-C43, the annex amendments merged into Parts 6 and 7, and the Case T cast additions; see `reviews/blueprint/central-fixes-log.md`). Owner: Case Bible designer, under the editor-in-chief. Binding on every writer, reviewer, and modeler.
 
+Round 2 amendments, October 3, 2026 (blueprint review round 2; `reviews/blueprint/r2-fix-log.md`; D-125, D-136): Part 6 row 43 and the P-F42 register line state the four Monte Carlo drivers; row 64 places Elspeth Varga in ssec:64.14.1, 64.14.4 and 64.14.6; Part 5A.3 registers Himkiran Hydro and Tamsarit Hydro Pvt Ltd; Part 7 cites the Case P ledger at model v1.4; sec:26.8's title takes the serial comma. Cells changed carry "(round 2)" or cite the decision.
+
 ## 0. How to use this file
 
 The book follows three fictional running cases. This file fixes everything about them that a writer could otherwise invent: the countries, the institutions, the people, the contracts, the dates, the assumption values, and the order in which events reach the reader. It does not contain model outputs. Debt quantum, interest during construction, ratios, returns, valuations, and every other computed figure come from the reference models built from the three input files in `book/model/`:
@@ -1115,8 +1117,8 @@ These names belong to illustrative examples, drills and exercises outside the th
 | Glasfaser Oberpfalz (u03) | Clear as a company; near miss Glasfaser Direkt (Amberg), a real Upper Palatinate fiber builder, never mentioned |
 | Mojave Flats Storage, Tehachapi Mesa Solar, Sangamon Sun (u03) | Clear (near miss: the decommissioned Tehachapi Energy Storage Project) |
 | Cholla Ridge Storage HoldCo LLC (u14) | Clear |
-| Himkiran Hydro (u09 Exercise 39.9; replaces "Kali Gandaki Hydro", round 2, D-134) | Clear (web check October 3, 2026: no company or project of the name; Himachal Pradesh results only) |
-| Tamsarit Hydro Pvt Ltd (u08 Exercise 36.19; replaces "Kali Gandaki Hydro Pvt Ltd", round 2, D-134) | Clear (web check October 3, 2026: no company or project of the name; near misses Tamor, Tamakoshi, never mentioned) |
+| Himkiran Hydro (u09 Exercise 39.9; replaces "Kali Gandaki Hydro", round 2, D-136) | Clear (web check October 3, 2026: no company or project of the name; Himachal Pradesh results only) |
+| Tamsarit Hydro Pvt Ltd (u08 Exercise 36.19; replaces "Kali Gandaki Hydro Pvt Ltd", round 2, D-136) | Clear (web check October 3, 2026: no company or project of the name; near misses Tamor, Tamakoshi, never mentioned) |
 
 ### 5A.4 Names checked by the unit revisers
 

@@ -2,6 +2,8 @@
 
 Version 1.2, October 3, 2026 (round 1 consolidation: 1.1.5 reconversion-rate note, 1.15.5 hedging basket reworded, Devesh Raval's "where wrong" rewritten against P-F62, 3.1 arrears sources, 8.3 readings of P-F02, P-F23, P-F26 and P-F65, 7.3 Corredana reuse; see `reviews/blueprint/consolidation-B-log.md`). Version 1.1, October 3, 2026 (amended after the blueprint review: SEKA LC values per P-C44, the construction currency hedge per D-114, P-F64 to P-F66 registered, RAROC per R-075, the model-audit condition of credit approval, the provisional figure-ID concordance in 8.4; see `reviews/blueprint/central-fixes-log.md`). Owner: Case Bible editor, under the editor-in-chief. Binding on every writer, reviewer and modeler.
 
+Round 2 amendments, October 3, 2026 (`reviews/blueprint/r2-fix-log.md`; D-125): 8.1 P-F42 row and 8.4 u09 row state the four Monte Carlo drivers; 8.2 P-F64 row lists the ledger's nine sequential steps with no residual; the P-F55 RORAC note is deleted; the P-F65 note says the ledger lists all 40 monthly forwards; 8.4 adds the u13 row (P-F37 to P-F52); the F-21 row records the four-driver extension.
+
 ## 0. Status and rules of use
 
 1. This annex resolves every Case P flaw raised in the unit briefs u01 to u17 (sections headed "Case Bible flaws", "bible_flaws", "BF-", "CBF-", "F-0") and in `bible/brief-feedback.md`. Section 9 maps each flaw to its resolution.
