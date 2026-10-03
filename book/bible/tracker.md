@@ -94,3 +94,4 @@
 - Revision wave launched: 17 unit brief revisers (u01..u17) + central Bible fixer.
 - NEXT: regenerate anchor registry from revised briefs → blueprint review round 2 (targeted re-check) → build-along workbooks (modeling agent) → Phase 2 pilot (Ch 2, Ch 36).
 - Case P model v1.3 DONE (exact IRR bridge; named overrun items; RBL accepted). Case models P v1.3, T v1.1, R v1.2 are final for drafting.
+- Central Bible fixes DONE (case bible v1.1, concordance Annex P 8.4, R-122..R-141, glossary 1,784, D-036..D-045). RORAC→RAROC relabeled in Case P model files by editor.

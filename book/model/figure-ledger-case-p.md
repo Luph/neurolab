@@ -1102,8 +1102,8 @@ Definitions used throughout: DSCR = CFADS / (interest incl. WHT gross-up + swap 
 | P-F54 | 2025 estimate: GloBE income / covered taxes / SBIE / UK top-up on Kilnworth share | 38.8 / 0.00 / 54.2 / 0.00 | USD m | Actual history (15) | 2025-12-31 |
 | P-F54 | 2026 estimate: GloBE income / covered taxes / SBIE / UK top-up on Kilnworth share | 45.4 / 0.06 / 50.4 / 0.00 | USD m | Actual history (15) | 2026-12-31 |
 | P-F55 | Underwritten at mandate (ECA-covered + commercial) / final holds commercial / ECA-covered | 430.6 / 81.8 / 76.0 | USD m | FC base (1) | 2018-07-17 |
-| P-F55 | Castellan construction_2020H1: RWA / capital / net income (annual) / RORAC | 71.9 / 9.70 / 1.90 / 19.6% | USD m, % | FC base (1) | 2020H1 |
-| P-F55 | Castellan operations_2022H1: RWA / capital / net income (annual) / RORAC | 75.2 / 10.15 / 2.72 / 26.8% | USD m, % | FC base (1) | 2022H1 |
+| P-F55 | Castellan construction_2020H1: RWA / capital / net income (annual) / RAROC | 71.9 / 9.70 / 1.90 / 19.6% | USD m, % | FC base (1) | 2020H1 |
+| P-F55 | Castellan operations_2022H1: RWA / capital / net income (annual) / RAROC | 75.2 / 10.15 / 2.72 / 26.8% | USD m, % | FC base (1) | 2022H1 |
 | P-F56 | IFRIC 12 financial asset at COD / effective interest rate | 839.6 / 12.81% a year | USD m, % | Actual history (15) | 2021-12-01 |
 | P-F56 | 2021: financial asset / PP&E (lenders) / finance income / capital charge collected / PBT difference / cumulative equity difference | 831.1 / 836.8 / 0.0 / 8.5 / -5.7 / -5.7 | USD m | Actual history (15) | 2021-12-31 |
 | P-F56 | 2022: financial asset / PP&E (lenders) / finance income / capital charge collected / PBT difference / cumulative equity difference | 831.5 / 803.3 / 103.3 / 102.9 / 33.9 / 28.2 | USD m | Actual history (15) | 2022-12-31 |

@@ -9,13 +9,14 @@ Rules for writers (rulings R-114, R-083, R-060 and R-121 govern the entries):
 3. A parenthetical qualifier in the Term column, such as "(finance sense)" or "(state)", distinguishes senses of the same words; prose uses the plain words where the context is unambiguous, and the qualifier where it is not.
 4. Abbreviation "–" means the term is not abbreviated. Several abbreviations are reserved to one sense (ruling R-114): ECA (export credit agency), EAR (erection all risks), EV (enterprise value), PV (present value), PCG (partial credit guarantee), PSC (public sector comparator), MLA (mandated lead arranger), SPA (commodity sale and purchase agreement), TSA (turbine supply agreement), FM (force majeure), RFR (reference-rate sense of risk-free rate). Equity contribution agreement, share purchase agreement, master lease agreement, parent company guarantee, production sharing contract, earned value, planned value, effective annual rate and unitary charge are never abbreviated.
 5. "Lock-up" refers only to distributions (ssec:37.4.1); share-transfer restrictions are "lock-ins" (ssec:26.3.3).
-6. Home section labels follow the anchor registry (`bible/anchor-registry.md`). Labels marked new in the Notes (ssec:27.3.4, ssec:62.5.4, ssec:66.4.7) are created by the rulings.
+6. Home section labels follow the anchor registry (`bible/anchor-registry.md`). Labels marked new in the Notes (ssec:27.3.4, ssec:62.5.4, ssec:66.4.7, and ssec:5.0, ssec:7.6.4 and ssec:13.8.5 from R-135 and R-136) are created by the rulings.
 7. Terms introduced in Chapter 1 are previews and are never bolded there (style sheet addendum 2026-10-03).
 
-Entries: 1772.
+Entries: 1784 (recounted October 3, 2026 after the blueprint-review edits; D-030 counted 1,772 before them).
 
 | Term | Abbreviation | Definition | Home section label | Notes |
 |---|---|---|---|---|
+| "Who pays if...?" trace | – | A step-by-step following of one adverse event through every contract and insurance to the party that finally bears each part of the loss. | sec:28.6 |  |
 | 3-2-1 crack spread | – | A benchmark crack spread that assumes three barrels of crude yield two barrels of gasoline and one of diesel. | ssec:77.2.1 |  |
 | 30/360 | – | A day-count convention that treats every month as 30 days and the year as 360, common for fixed-rate bonds and swap fixed legs. | ssec:6.2.2 |  |
 | 50 percent rule | – | The US rule that an entity owned 50% or more, in aggregate, by blocked persons is itself blocked. | ssec:60.7.1 |  |
@@ -24,7 +25,7 @@ Entries: 1772.
 | abnormally low bid | – | A bid priced so far below the reference or other bids that the authority must test whether it can be delivered. | ssec:58.2.4 |  |
 | absence index | – | A list of the documents and facts a deal of this type should have, marked to show which are missing, late, draft or unsigned. | ssec:85.5.4 |  |
 | absolute priority rule | – | The rule that a dissenting senior class must be paid in full before any junior class receives value. | ssec:64.10.1 |  |
-| absolute reference | – | A cell reference fixed in both row and column ($F$8). | sec:13.2 |  |
+| absolute reference | – | A cell reference fixed in both row and column ($F$8). | ssec:5.0 | Ruling R-135 (new subsection "A first spreadsheet"). sec:13.2 goes further with a cross-reference. |
 | acceleration | – | The lenders' declaration, after an event of default, that all outstanding debt is immediately due. | ssec:51.5.3 |  |
 | acceleration of equity | – | The obligation of sponsors to contribute all undrawn committed equity immediately on an event of default. | ssec:26.4.2 |  |
 | accession deed | – | The document by which a new creditor or its representative becomes a party to the intercreditor agreement. | sec:53.7 |  |
@@ -106,12 +107,12 @@ Entries: 1772.
 | augmentation | – | Adding battery modules over time to restore usable energy lost to degradation. | ssec:11.7.2 | Ruling R-023. Ch 45 models it; Ch 73 owns the overbuild-versus-augmentation decision. Also entered by Ch 45, Ch 73: those chapters cross-reference this home. |
 | auxiliary load | – | Electricity a plant consumes to run itself. | ssec:11.1.1 |  |
 | availability | – | The share of a period in which a plant is able to generate at its declared capacity. | ssec:11.1.2 |  |
-| availability-based PPP | – | A PPP in which the public sector pays for the asset being available and performing to standard, so the private party carries no demand risk. | ssec:58.1.2 |  |
 | availability cycle | – | The repeating pattern of planned outages over a plant's maintenance interval, which sets availability by operating year. | ssec:41.1.1 |  |
 | availability deduction | – | A reduction in the availability payment for parts of the asset that are unavailable, weighted by time and location. | ssec:21.6.1 | Ruling R-051. Ch 58 (sec:58.3) owns deduction regime design and calibration. Also entered by Ch 45: those chapters cross-reference this home. |
 | availability headroom | – | The margin between actual availability and the contractual target within which outages do not reduce capacity payments. | ssec:62.5.1 |  |
 | availability payment | AP | A periodic payment by a public authority for making an asset available to a specified standard, reduced by deductions. | ssec:21.6.1 |  |
 | availability period | – | The period during which a borrower may draw loans under a facility. | ssec:6.1.1 |  |
+| availability-based PPP | – | A PPP in which the public sector pays for the asset being available and performing to standard, so the private party carries no demand risk. | ssec:58.1.2 |  |
 | average DSCR | – | Total CFADS divided by total senior debt service over the repayment periods (the weighted form this book uses); the simple average of period DSCRs is reported only with that label. | ssec:35.2.2 |  |
 | average revenue per user | ARPU | Monthly revenue divided by the number of connected customers. | sec:12.10 | Also entered by Ch 82: those chapters cross-reference this home. |
 | B loan | – | The part of a DFI loan of record funded by commercial participants who share its privileges through a participation agreement. | ssec:29.4.4 |  |
@@ -124,7 +125,7 @@ Entries: 1772.
 | balloon | – | A final principal installment much larger than the scheduled installments before it, intended to be refinanced rather than repaid from one period's cash flow. | ssec:36.7.1 |  |
 | band overlap | – | The number of months of a period that fall inside a stated band of operating months, computed as the maximum of zero and the earlier end minus the later start. | ssec:39.4.4 |  |
 | bank case | – | The lender's own base projections after its adjustments to the sponsor case, from which the banking and downside cases are run. | ssec:86.2.5 |  |
-| bank price deck | – | The commodity price forecast set by the lenders and used to value reserves in a borrowing-base calculation. | ssec:75.3.2 | Ruling R-103. Ch 77 and Ch 78 cross-reference. Also entered by Ch 78: those chapters cross-reference this home. |
+| bank price deck | – | The commodity price forecast set by the lenders and used to value reserves in a borrowing-base calculation. | ssec:75.3.2 | Ruling R-103 (extended by R-129). Ch 45 (ssec:45.7.3) models price-deck rows with a forward reference; Ch 77 and Ch 78 cross-reference. Also entered by Ch 78: those chapters cross-reference this home. |
 | bankability ladder | – | A seven-rung scale (0 to 6) placing a risk allocation from unfinanceable to capital-markets terms; a project sits on its weakest material rung (Framework 15.3). | ssec:15.9.2 |  |
 | bankable | – | Describes a project whose risks, as allocated and mitigated, leave a residual that lenders will finance on non-recourse terms the project can afford, in the market at the time. | ssec:15.9.1 |  |
 | banking case | – | The lenders' projection: the base case with the adjustments the lenders and their advisors require (for example ten-year P90 resource, lower dispatch, higher costs), used for sizing or testing. | ssec:35.6.1 |  |
@@ -170,13 +171,12 @@ Entries: 1772.
 | borrowing-base assets | – | The fields and interests whose reserves and cash flows are included in the borrowing-base calculation. | ssec:75.3.2 |  |
 | borrowing-base deficiency | – | The amount by which loans and other utilizations exceed a newly redetermined borrowing base, which the borrower must cure. | ssec:75.3.3 |  |
 | bottom ash | – | The solid residue left on the grate after waste combustion. | ssec:81.4.3 |  |
-| breach of contract cover | – | Political risk insurance that pays when a state breaches or repudiates a contract with the investor and the investor cannot obtain or enforce an award. | ssec:60.4.2 |  |
 | breach of contract (political) | – | Failure by a government or state entity to honor its contractual obligations to the project, with no effective remedy. | ssec:14.14.3 |  |
-| break-even case | – | A projection in which one driver is moved until a ratio reaches a stated level, usually a minimum DSCR of 1.00x, to measure how far that driver can fall. | ssec:35.6.3 |  |
+| breach of contract cover | – | Political risk insurance that pays when a state breaches or repudiates a contract with the investor and the investor cannot obtain or enforce an award. | ssec:60.4.2 |  |
+| break-even case | – | A projection in which one driver is moved until a ratio reaches a stated level, usually a minimum DSCR of 1.00x, to measure how far that driver can fall. | ssec:35.6.3 | Ruling R-080 and R-133. Synonym: breakeven. Ch 9 and Ch 30 forward-reference sec:35.6; Ch 43 computes Case P breakevens (P-F16); Ch 85 owns screening breakevens. |
 | break-up value | – | The value realized by selling assets piecemeal. | ssec:10.8.3 |  |
 | breakage cost | – | The amount payable when a fixed-rate loan, swap or bond is terminated before maturity, compensating the counterparty for the loss of its contracted rate. | ssec:6.8.3 | Ch 63 (ssec:63.2.2) applies the set of breakage costs in a refinancing. Also entered by Ch 63: those chapters cross-reference this home. |
-| breakeven | – | The value of one input at which an output reaches a stated threshold, such as a DSCR of 1.00x. | ssec:43.4.3 |  |
-| breakeven analysis | – | Finding the value of one variable at which cash just covers debt service. | ssec:30.5.3 |  |
+| breakeven (model computation) | – | The model routine that finds the value of one input at which an output reaches a stated threshold, such as a DSCR of 1.00x, by goal seek or a closed form. | ssec:43.4.3 | Ruling R-133. The concept is "break-even case" (ssec:35.6.3). |
 | breakeven yield | – | The manufacturing yield at which revenue from good units equals variable and fixed cash costs at a given throughput. | ssec:77.4.1 |  |
 | Brier score | BS | The mean squared difference between forecast probabilities and outcomes (1 or 0); lower is better. | ssec:87.8.3 |  |
 | bring-down letter | – | An advisor's confirmation at financial close that nothing has come to its attention since its report that changes its conclusions. | ssec:48.1.2 |  |
@@ -186,9 +186,9 @@ Entries: 1772.
 | build, own, operate, transfer | BOOT | A BOT in which the private party owns the asset during the term before transferring it. | ssec:58.1.1 |  |
 | build-to-suit | – | A facility built to one tenant's specification and leased to it. | sec:12.11 | Also entered by Ch 82: those chapters cross-reference this home. |
 | bullet repayment | – | Repayment of all principal in one payment at maturity. | ssec:6.3.1 |  |
-| business-day convention | – | The rule that moves a payment date falling on a non-business day, such as following or modified following. | ssec:6.2.1 |  |
 | business interruption | BI | Insurance that pays for loss of gross profit or fixed costs and debt service while an operating asset is out of service after insured physical loss. | ssec:27.3.2 |  |
 | business pledge | – | A civil-law pledge over the business as a going concern (nantissement du fonds de commerce), covering the elements the local code lists. | ssec:52.2.2 |  |
+| business-day convention | – | The rule that moves a payment date falling on a non-business day, such as following or modified following. | ssec:6.2.1 |  |
 | buy-down LDs | – | Performance liquidated damages paid for a permanent shortfall in output or efficiency and applied, under the finance documents, to prepay debt so that cover ratios are restored. | ssec:61.11.3 |  |
 | by-product credit | – | Revenue from secondary metals in a mine's output, deducted from costs when computing unit cost of the main metal. | ssec:78.1.1 |  |
 | C1 cash cost | C1 | Site operating costs plus treatment, refining and freight charges, less by-product credits, per unit of payable main metal. | ssec:78.1.1 |  |
@@ -226,7 +226,7 @@ Entries: 1772.
 | cash flow statement | – | The statement of cash received and paid in a period, divided into operating, investing and financing activities. | ssec:7.5.1 |  |
 | cash sweep | – | A requirement that a stated share of cash left after senior debt service and reserve transfers be applied to prepay senior debt instead of being distributed. | ssec:37.3.1 |  |
 | cash waterfall | – | The order in which a project company's receipts are applied to operating costs, debt service, reserves and distributions, as fixed in the accounts agreement. | ssec:52.6.1 | Synonym: priority of payments. |
-| cash yield | – | Cash distributed to equity in a period divided by the equity invested, used by income investors as a measure of current return. | ssec:46.1.3 |  |
+| cash yield | – | Cash distributed to equity in a period divided by the equity invested, used by income investors as a measure of current return. | ssec:46.1.3 | Ruling R-013 (extended by R-128). Ch 43 (ssec:43.2.4) computes the row with a forward reference. |
 | catch-up | – | The waterfall tier that pays the GP a high share of distributions after the preferred return until it has received its full carry percentage of profit. | ssec:47.5.2 |  |
 | Category A, B, C | – | EP4 and IFC classifications of projects by the severity of potential E&S impacts, from significant and irreversible (A) to minimal (C). | ssec:50.2.2 |  |
 | change in law | – | A change after signing in the laws, regulations or their official interpretation that affects the project company's costs or revenues, classified as discriminatory, specific or general. | ssec:17.3.1 |  |
@@ -236,7 +236,7 @@ Entries: 1772.
 | circuit breaker | – | A switch that cuts a circular reference so a model with iterative calculation can be reset after an error. | ssec:40.5.2 |  |
 | circular reference | – | A formula that depends, directly or indirectly, on its own result. | ssec:13.8.1 |  |
 | civil law | – | A legal system built on comprehensive written codes, as in France, Germany, Latin America, and francophone Africa. | ssec:10.7.1 |  |
-| clean spark spread | – | The spark spread minus the cost of the carbon allowances needed to generate one MWh. | ssec:69.3.3 |  |
+| clean spark spread | – | The spark spread minus the cost of the carbon allowances needed to generate one MWh. | ssec:11.10.5 | Ruling R-024 (change list extended by R-134). Ch 69 applies it via eq:69.2; delete the u15 glossary row. |
 | clean team | – | A restricted group, usually of advisors or ring-fenced staff, allowed to see competitively sensitive information on terms that stop it reaching the wider deal team. | ssec:85.5.5 |  |
 | clear market undertaking | – | A sponsor's promise in a mandate letter not to raise competing debt for the project or its group while the arrangers syndicate. | ssec:51.1.2 |  |
 | clearing price | – | The price of the last unit dispatched, paid to all dispatched units in a uniform-price market. | ssec:11.10.2 |  |
@@ -272,8 +272,8 @@ Entries: 1772.
 | commodity charge | – | A pipeline charge per unit of gas actually transported. | ssec:21.3.1 |  |
 | commodity murabaha | – | A murabaha over traded commodities used to provide cash liquidity, the buyer reselling the commodities spot. | ssec:33.2.4 |  |
 | common law | – | A legal system in which judicial precedent is a primary source of law, as in England, New York, and most Commonwealth jurisdictions. | ssec:10.7.1 |  |
-| common-mode failure | – | The failure of several mitigants at once because their providers depend on the same party or event. | ssec:16.12.1 |  |
 | common terms agreement | CTA | The agreement among the project company and all senior lenders that holds the terms common to every tranche: conditions precedent, representations, covenants, events of default and related mechanics. | ssec:51.1.3 |  |
+| common-mode failure | – | The failure of several mitigants at once because their providers depend on the same party or event. | ssec:16.12.1 |  |
 | compensation account | – | The account into which termination, expropriation or similar compensation is paid for application to the secured debt. | ssec:52.5.1 |  |
 | compensation event | – | An event, usually within the authority's control or responsibility, that entitles the project company to relief from its obligations and to compensation that leaves it no better and no worse off. | ssec:17.3.2 | Ruling R-045. Ch 58 (ssec:58.4.3) applies it to PPP contracts. |
 | compensation event (NEC) | – | Under the NEC contracts, an event that entitles the contractor to an assessed change to the prices and the completion date. | ssec:23.7.2 | Contract-form sense only. |
@@ -284,7 +284,7 @@ Entries: 1772.
 | completion | – | The point at which the plant passes its contractual completion tests and the lenders' completion conditions are met, releasing construction-phase sponsor support (mechanics Ch 61). | ssec:4.10.4 |  |
 | completion accounts | – | A price mechanism under which the final price is adjusted for net debt and working capital shown in accounts prepared at completion. | ssec:47.3.4 |  |
 | completion guarantee | – | A sponsor's undertaking to the lenders to fund cost overruns or repay debt if the project does not reach financial completion. | ssec:26.5.1 |  |
-| completion long-stop date | – | The latest date by which lenders' completion must occur, after which an event of default arises. | ssec:61.11.2 |  |
+| completion long-stop date | – | The latest date by which financial completion must occur, after which an event of default arises. | ssec:61.11.2 |  |
 | compliance certificate | – | The certificate a project company delivers with each set of accounts or on each test date stating the covenant calculations and confirming that no Default is continuing. | ssec:51.4.1 | Ch 62 (ssec:62.2.2) owns the practice. Also entered by Ch 62: those chapters cross-reference this home. |
 | compound interest | – | Interest calculated on the principal plus all interest already added, so interest earns interest. | ssec:5.1.1 |  |
 | compounding frequency | – | The number of times a year interest is added to the balance, such as annually, semiannually or monthly. | ssec:5.1.2 |  |
@@ -302,8 +302,8 @@ Entries: 1772.
 | condition subsequent (finance documents) | CS | A condition that lenders allow to be satisfied after financial close by a set date, failing which an event of default occurs. | ssec:51.2.4 | Ruling R-028. |
 | condition subsequent (general law) | – | An event whose occurrence ends or modifies a right or obligation that is already in effect. | ssec:10.2.3 | Ruling R-028. |
 | confidentiality agreement | NDA | An agreement under which a recipient of non-public information about an asset or financing undertakes to keep it confidential and to use it only for the stated purpose. | ssec:47.3.1 | Ruling R-087. Ch 55 and Ch 85 (ssec:85.5.5) cross-reference. |
-| confirmation drilling | – | Drilling after exploration that tests whether a geothermal reservoir can supply enough steam for a plant of a given size. | ssec:72.5.1 |  |
 | confirmation (of an LC) | – | A second bank's undertaking to pay under a letter of credit, adding its credit to the issuing bank's. | ssec:59.5.1 |  |
+| confirmation drilling | – | Drilling after exploration that tests whether a geothermal reservoir can supply enough steam for a plant of a given size. | ssec:72.5.1 |  |
 | congestion | – | A transmission limit that prevents cheaper generation from reaching load, separating prices across the constraint. | ssec:11.11.2 |  |
 | congestion rent | – | Flow over a constrained line times the price difference across it. | ssec:11.11.2 |  |
 | connection agreement | – | The contract with the network owner that sets the physical connection works, their cost and the energization date. | ssec:25.5.1 |  |
@@ -354,10 +354,10 @@ Entries: 1772.
 | cost of debt | k_D | The return lenders require, measured by the yield on the project's debt. | ssec:8.6.1 |  |
 | cost of equity | k_E | The return shareholders require on their investment given its risk. | ssec:8.5.1 |  |
 | cost of retention | – | The expected loss of a retained risk plus the cost of the capital or support that must stand behind its tail (Equation 15.5). | ssec:15.8.2 |  |
-| cost-of-service tariff | – | A regulated tariff set to recover an asset's operating costs, depreciation and an allowed return on its rate base. | ssec:75.4.2 |  |
 | cost oil | – | The share of production a PSC contractor receives to recover its costs, usually subject to a cap. | ssec:75.2.2 |  |
-| cost-overrun facility | – | A committed facility dedicated to funding construction cost overruns, provided by lenders or sponsors. | sec:31.7 |  |
 | cost overrun risk | – | The construction risk that final capital cost exceeds the budget. | ssec:14.4.1 |  |
+| cost-of-service tariff | – | A regulated tariff set to recover an asset's operating costs, depreciation and an allowed return on its rate base. | ssec:75.4.2 |  |
+| cost-overrun facility | – | A committed facility dedicated to funding construction cost overruns, provided by lenders or sponsors. | sec:31.7 |  |
 | cost-overrun undertaking | – | A capped commitment by sponsors to fund construction cost overruns. | ssec:26.5.4 |  |
 | cost-plus O&M | – | An O&M agreement in which the operator is reimbursed actual costs plus a fee, so the owner bears cost variation. | ssec:24.2.2 |  |
 | cost-sharing threshold | – | A level of project spend at which the sharing of further overruns between investors and consumers or the state changes. | ssec:19.7.2 |  |
@@ -412,13 +412,13 @@ Entries: 1772.
 | dashboard | – | A one-page output sheet that presents the results a decision-maker needs with the model's check status and version. | ssec:43.6.1 |  |
 | data table | – | Excel's What-If tool that recalculates an output for a list or grid of input values. | ssec:13.7.1 |  |
 | date-certain | – | Describes a contract that fixes a completion date, with liquidated damages for delay. | ssec:22.1.1 |  |
+| day rate (capital and operating elements) | – | The daily charter payment for a floating asset, split into an element that repays capital and an element that covers operating costs. | ssec:76.8.2 |  |
 | day-ahead market | – | A market that sets prices and schedules for each hour or interval of the next day. | ssec:11.10.1 |  |
 | day-count convention | – | The rule for counting days in an interest period and in a year to compute the year fraction used for interest. | ssec:6.2.2 |  |
-| day rate (capital and operating elements) | – | The daily charter payment for a floating asset, split into an element that repays capital and an element that covers operating costs. | ssec:76.8.2 |  |
 | days receivable | – | Receivables expressed as days of revenue: receivables divided by revenue, times 365. | ssec:7.9.1 |  |
 | DC/AC ratio | – | Installed module (DC) capacity divided by inverter (AC) capacity. | ssec:11.4.2 |  |
-| de-designation | – | Ending hedge accounting for all or part of a hedging relationship, after which fair-value changes go to profit or loss. | ssec:66.6.3 |  |
 | de minimis threshold | – | A minimum size below which an individual claim is disregarded. | ssec:10.3.1 |  |
+| de-designation | – | Ending hedge accounting for all or part of a hedging relationship, after which fair-value changes go to profit or loss. | ssec:66.6.3 |  |
 | de-rating factor | – | The share of a resource's nameplate capacity that a capacity market counts toward its obligations. | ssec:20.6.2 |  |
 | deadband | – | A range of performance around the target within which no bonus or malus is paid. | ssec:24.2.3 |  |
 | deadlock | – | A state in which the shareholders cannot reach the majority a decision needs, triggering an agreed resolution procedure. | ssec:26.3.1 |  |
@@ -428,13 +428,13 @@ Entries: 1772.
 | debt beta | β_D | The beta of a company's debt, reflecting the market-related risk lenders bear. | ssec:8.5.2 |  |
 | debt cap | – | The maximum senior debt the finance documents allow, including any supplemental tranches that may be added later on ratio tests. | ssec:78.7.4 |  |
 | debt capacity | – | The largest senior debt that the CFADS of a stated case supports under all the sizing constraints at once. | ssec:36.1.1 | Ruling R-083. Ch 2 uses the plain-English sense with a forward reference; Ch 42 (ssec:42.2.2) computes it in the model. Also entered by Ch 2, Ch 42: those chapters cross-reference this home. |
-| debt-first funding | – | A drawdown order in which debt pays uses until it is fully drawn, with sponsors' equity commitments backed by letters of credit. | ssec:40.3.1 |  |
 | debt floor | – | The minimum share of senior debt that termination compensation must pay, even when the project company is the party in default. | ssec:17.4.2 | Also entered by Ch 58: those chapters cross-reference this home. |
-| debt-for-equity swap | – | The conversion of part of a creditor's claim into shares of the debtor. | ssec:64.7.2 |  |
-| debt-mobilization guarantee | – | A partial risk guarantee that covers commercial lenders' debt service if a defined government obligation is not met. | ssec:34.4.1 |  |
 | debt service cover ratio | DSCR | CFADS for a period divided by the senior debt service (interest, scheduled principal, periodic fees, and net hedge payments) due in that period. | ssec:35.2.1 |  |
 | debt service reserve account | DSRA | An account held for the lenders, funded at COD to a target (usually the next six months of senior debt service) and drawn to pay senior debt service when CFADS falls short. | ssec:37.1.1 |  |
 | debt trap | – | The compounding of capitalized interest when a heavily geared project is delayed, so that its debt grows faster than its future revenue can repay. | sec:3.4 |  |
+| debt-first funding | – | A drawdown order in which debt pays uses until it is fully drawn, with sponsors' equity commitments backed by letters of credit. | ssec:40.3.1 |  |
+| debt-for-equity swap | – | The conversion of part of a creditor's claim into shares of the debtor. | ssec:64.7.2 |  |
+| debt-mobilization guarantee | – | A partial risk guarantee that covers commercial lenders' debt service if a defined government obligation is not met. | ssec:34.4.1 |  |
 | debtor-in-possession financing | DIP | New-money financing to a company in Chapter 11, usually with super-priority. | ssec:64.7.3 |  |
 | decision journal | – | A dated record of a decision, the reasons, the alternatives rejected and the forecast with its probability, written at the time. | ssec:87.8.2 |  |
 | deck-tail-test triangle | – | The check that sizing deck, reserve tail and financial completion test use consistent assumptions. | ssec:78.7.3 | Framework 78.2. |
@@ -451,7 +451,7 @@ Entries: 1772.
 | deemed consent | – | A clause treating a lender that does not reply to a consent request within a set period as not voting, so that its commitment is excluded from the calculation. | ssec:51.7.2 |  |
 | deemed energy | – | Energy a plant could have delivered but for an event on the offtaker's side, paid for as if delivered. | ssec:18.4.2 |  |
 | deep connection | – | A connection charging regime in which the generator also pays for network reinforcement its connection requires. | ssec:25.5.1 |  |
-| Default | – | An event of default, or an event that will become an event of default when a grace period expires or a notice is given. | ssec:51.4.5 |  |
+| Default | – | An event of default, or an event that will become an event of default when a grace period expires or a notice is given. | ssec:51.5.1 | Ruling R-081. |
 | default budget | – | The budget that applies when a new budget has not been approved, usually the prior year's budget indexed or capped. | ssec:62.3.2 |  |
 | default DSCR | – | The DSCR level below which a test result is an event of default, set below the lock-up level. | ssec:37.5.2 |  |
 | defaulting lender | – | A lender that has failed to fund or has repudiated its commitment and whose votes are disregarded under the facility. | ssec:51.7.2 |  |
@@ -537,7 +537,7 @@ Entries: 1772.
 | early termination fee | – | The amount a charterer pays if it ends a charter before the firm period expires, usually scheduled to cover outstanding debt and an equity return. | ssec:76.8.3 |  |
 | earn-out | – | Deferred consideration whose amount depends on the asset's performance after completion. | ssec:47.3.6 |  |
 | earned value | – | The budgeted value of the work actually performed to date, measured as the assessed percent complete times the contract price. | ssec:61.4.2 | Ruling R-114. Spelled out; EV means enterprise value. |
-| earnings-based interest limitation | – | A rule capping deductible net interest at a percentage of a tax-adjusted EBITDA measure. | ssec:67.5.1 |  |
+| earnings-based interest limitation | – | A rule capping deductible net interest at a percentage of a tax-adjusted EBITDA measure. | ssec:7.6.4 | Ruling R-136 (new subsection), amending R-020. Ch 67 (sec:67.5) owns the regimes, grandfathering and structuring. |
 | easement | – | A right to use another's land for a stated purpose, such as running a cable or pipeline. | ssec:25.7.3 |  |
 | EBIT | – | Earnings before interest and tax: EBITDA minus depreciation and amortization. | ssec:7.3.1 |  |
 | EBITDA | – | Earnings before interest, tax, depreciation and amortization: revenue minus operating costs. | ssec:7.3.1 |  |
@@ -556,12 +556,13 @@ Entries: 1772.
 | employer's requirements | – | The owner's specification of what the EPC contractor must deliver. | ssec:22.1.2 |  |
 | end-of-life option tree | – | A framework comparing retirement, extension, repowering, transfer and sale at a project's contract or technical end (Framework 65.2). | ssec:65.4.2 |  |
 | Energy Charter Treaty | ECT | A multilateral treaty signed in 1994 that protects energy-sector investments among its parties and gives investors a right to arbitration. | ssec:54.6.1 |  |
-| energy-only market | – | A market that pays generators only for energy and ancillary services, with no separate capacity payment. | ssec:11.10.3 |  |
 | energy payment | – | The payment per unit of energy delivered, covering fuel and variable operating costs. | ssec:18.1.1 |  |
 | energy yield assessment | EYA | A consultant's estimate of a wind or solar plant's net output and its uncertainty, expressed as P50 and other exceedance levels. | sec:9.10 | Ch 48 (ssec:48.3.1) owns the review of the report. Also entered by Ch 48: those chapters cross-reference this home. |
+| energy-only market | – | A market that pays generators only for energy and ancillary services, with no separate capacity payment. | ssec:11.10.3 |  |
 | enforceability risk | – | The risk that rights under contracts, security or arbitral awards cannot be enforced in practice. | ssec:14.15.2 |  |
 | enforcement-first forum choice | – | Choosing law and forum by working backwards from where and how an award or judgment would be enforced. | ssec:54.2.4 | Framework 54.1. |
 | engagement letter | – | The contract appointing an advisor, setting scope, deliverables, fees and their reopening triggers, reliance and liability limits. | ssec:87.1.2 |  |
+| engineering, procurement, and construction contract | EPC contract | A contract under which one contractor designs, procures and builds the plant, usually for a fixed price and a fixed completion date, with liquidated damages for delay and underperformance. | ssec:2.3.1 | Ruling R-123. Ch 22 owns the full contract; ssec:4.6.1 owns the contractor as a party. |
 | engineering, procurement, and construction management | EPCM | A delivery model in which a contractor designs, procures and manages construction as the owner's agent for a fee, while the owner contracts with every trade and supplier and bears price and schedule risk. | ssec:23.5.1 |  |
 | enterprise value | EV | The value of a project's unlevered cash flows to all capital providers, before deducting debt. | ssec:46.4.1 |  |
 | entrenched matter | – | A decision that requires the consent of every lender, or of every affected lender, because it changes economics, maturity, security, the waterfall or the voting rules themselves. | ssec:51.7.1 |  |
@@ -584,12 +585,12 @@ Entries: 1772.
 | equity cash flow | – | The net cash flow between the sponsors and the project company in a period: contributions negative, interest, principal and dividends received positive. | ssec:43.2.1 |  |
 | equity contribution agreement | – | The contract by which sponsors commit to the project company and the lenders to contribute equity in stated amounts, at stated times and with stated support. | ssec:26.4.1 | Ruling R-059. Never abbreviated; ECA means export credit agency only. |
 | equity cure | – | The sponsors' right to remedy a financial covenant breach by injecting equity, either counted as CFADS for the test period or applied to prepay debt, within stated limits on number and timing. | ssec:37.5.3 | Ruling R-081. Ch 51 (ssec:51.5.4) drafts the clause; Ch 62 (ssec:62.4.4) covers practice. Also entered by Ch 51: those chapters cross-reference this home. |
-| equity-first funding | – | A drawdown order in which the sponsors' equity pays all uses until it is spent, and debt pays the rest. | ssec:40.3.1 |  |
 | equity IRR | – | The internal rate of return on the cash flows between a project company and its equity investors (share capital, shareholder loans and their interest, distributions), that is, the levered return on equity. | ssec:8.2.1 | Ruling R-013. Ch 46 (sec:46.1) owns conventions and investment use; Ch 43 computes it in the model. Also entered by Ch 46: those chapters cross-reference this home. |
 | equity kicker | – | A lender's share in equity upside, such as warrants or a success fee, granted alongside a loan. | ssec:31.2.3 |  |
 | equity letter of credit | equity LC | A letter of credit from a bank that lenders may draw if a sponsor fails to contribute committed equity. | ssec:32.3.2 |  |
 | equity method | – | Carrying an investment at cost adjusted for the investor's share of the investee's profit, other comprehensive income and distributions. | ssec:66.2.3 |  |
 | equity value | – | Enterprise value less net debt and other senior claims, or equivalently the present value of distributions to equity at a levered rate. | ssec:46.4.1 |  |
+| equity-first funding | – | A drawdown order in which the sponsors' equity pays all uses until it is spent, and debt pays the rest. | ssec:40.3.1 |  |
 | equivalent operating hours | EOH | Counted running hours adjusted for starts, trips, and load, used to schedule gas turbine inspections. | ssec:11.2.3 | Also entered by Ch 24, Ch 41: those chapters cross-reference this home. |
 | erection all risks | EAR | Property insurance for plant and machinery being erected and tested against physical loss or damage from any cause not excluded. | ssec:27.2.1 |  |
 | error check | – | A formula that returns 0 when a model condition holds and a nonzero flag when it fails. | sec:13.9 |  |
@@ -639,6 +640,7 @@ Entries: 1772.
 | field life cover ratio | FLCR | In reserve-based lending, the NPV of a borrowing base's cash flows over the remaining field life divided by the debt. | ssec:75.3.2 |  |
 | finance lease | – | A lease that transfers substantially all the risks and rewards of owning the asset to the lessee. | ssec:2.4.2 |  |
 | financial adviser | – | An advisor, usually appointed by the sponsors, that designs the financing strategy and runs the lender process, usually without lending itself. | sec:4.8 | Ch 55 (ssec:55.2.1) owns the role in the process. Also entered by Ch 55: those chapters cross-reference this home. |
+| financial advisor | – | An adviser that structures the financing and runs the lender process for a sponsor or a government, without lending. | sec:4.8 | Ruling R-066. |
 | financial asset model | – | The IFRIC 12 treatment in which the operator recognizes a receivable for its unconditional contractual right to cash from the grantor. | ssec:66.4.2 |  |
 | financial close | – | The point at which all conditions precedent to first drawdown are satisfied or waived and the lenders' commitments become available. | ssec:4.10.3 | Ruling R-065. Ch 55 (sec:55.8) owns signing versus close and closing mechanics. Also entered by Ch 55: those chapters cross-reference this home. |
 | financial completion | – | The lenders' test, set in the finance documents, of physical, operational, commercial and financial performance that ends the construction risk period and releases sponsor completion support. | ssec:26.5.2 | Ruling R-050. Synonyms: lenders' completion, project completion. Ch 61 (sec:61.11) owns the tests in practice; Ch 76 applies. Also entered by Ch 61, Ch 76: those chapters cross-reference this home. Merged entry: lenders' completion. |
@@ -656,8 +658,8 @@ Entries: 1772.
 | firm energy | – | The energy a hydro plant can deliver with high reliability in dry conditions, often contracted as primary energy. | ssec:72.1.2 |  |
 | firm transportation | – | Pipeline service on reserved capacity that the transporter must provide except in force majeure. | ssec:21.3.1 |  |
 | firming capacity | – | Dispatchable capacity contracted or held to cover periods when variable renewable output is low. | ssec:69.1.3 |  |
-| first-lien hedge | – | A hedge whose provider shares the senior lenders' security instead of receiving cash collateral. | ssec:20.7.1 |  |
 | first loss | – | The layer of a loss absorbed before any other party bears anything. | ssec:15.6.1 |  |
+| first-lien hedge | – | A hedge whose provider shares the senior lenders' security instead of receiving cash collateral. | ssec:20.7.1 |  |
 | first-loss capital | – | A tranche or guarantee that absorbs losses before other investors or lenders do. | ssec:34.3.1 |  |
 | first-of-a-kind | FOAK | A technology, design or configuration built at commercial scale for the first time, with no operating reference from which cost and performance can be predicted. | ssec:14.5.1 | Ruling R-042. Ch 48, Ch 74 and Ch 88 (fw:foak-ladder) cross-reference. Also entered by Ch 48, Ch 74, Ch 88: those chapters cross-reference this home. |
 | first-of-a-kind financing ladder | FOAK ladder | A sequence of financing sources a technology climbs from grants to institutional debt as evidence accumulates. | ssec:88.3.1 |  |
@@ -667,15 +669,15 @@ Entries: 1772.
 | fixed charge | – | A common-law security interest over specific assets that the chargor may not deal with without the chargee's consent. | ssec:52.2.1 |  |
 | fixed escalator | – | An increase in a contract price by a fixed percentage each period, regardless of actual inflation. | ssec:5.10.1 |  |
 | fixed fee | – | A payment owed for reserved capacity regardless of whether the capacity is used. | ssec:21.1.1 |  |
-| fixed-fee O&M | – | An O&M agreement in which the operator is paid a set, indexed fee and keeps any cost saving or overrun. | ssec:24.2.2 |  |
 | fixed rate | – | An interest rate set for the life of a loan or bond. | ssec:6.4.1 |  |
+| fixed-fee O&M | – | An O&M agreement in which the operator is paid a set, indexed fee and keeps any cost saving or overrun. | ssec:24.2.2 |  |
 | fixed-shape hedge | – | A financial hedge on a quantity that varies hour by hour according to a pre-agreed profile. | ssec:20.3.2 |  |
 | fixed-volume swap | – | A financial hedge that exchanges a fixed price for a market price on a set quantity in each hour, regardless of the project's output. | ssec:20.3.1 |  |
 | flex testing | – | Changing switches and inputs, including to extremes, to check that outputs move as they should and only as they should. | ssec:44.2.7 |  |
 | flip date | – | The date on which a partnership flip's investor reaches its target return and allocations change. | ssec:32.9.2 |  |
 | float | – | The time a task can slip without delaying financial close: latest start less earliest start. | ssec:55.9.1 |  |
 | floating charge | – | A common-law security interest over a changing class of assets that the chargor may use in the ordinary course until the charge crystallizes on default. | ssec:52.2.1 |  |
-| floating production, storage and offloading unit | FPSO | A ship-shaped facility that receives oil and gas from subsea wells, processes and stores the oil, and offloads it to tankers. | ssec:12.1.4 | Ch 76 (sec:76.9) owns FPSO financing. Also entered by Ch 76: those chapters cross-reference this home. Merged entry: floating production, storage and offloading vessel. |
+| floating production, storage and offloading unit | FPSO | A ship-shaped facility that receives oil and gas from subsea wells, processes and stores the oil, and offloads it to tankers. | ssec:12.1.4 | Ch 76 (sec:76.8) owns FPSO financing. Also entered by Ch 76: those chapters cross-reference this home. Merged entry: floating production, storage and offloading vessel. |
 | floating rate | – | An interest rate reset each interest period as a reference rate plus a margin. | ssec:6.4.1 |  |
 | floating storage and regasification unit | FSRU | A ship that stores and regasifies LNG at a jetty or buoy. | ssec:12.2.2 | Also entered by Ch 76: those chapters cross-reference this home. |
 | footloose-demand test | – | A scoring of how easily a transport asset's demand decision-makers can move elsewhere. | ssec:80.4.1 | Framework 80.1. |
@@ -686,16 +688,16 @@ Entries: 1772.
 | forward points (currency) | – | The difference between a forward exchange rate and spot, set mainly by the interest differential between the two currencies. | ssec:16.6.2 |  |
 | forward rate | – | The rate for a future period implied by today's curve, computed from two discount factors. | ssec:6.6.2 |  |
 | four-part completion test | – | Mechanical, physical, metallurgical and operating, and financial tests that a mine must pass before sponsor completion support is released. | ssec:78.7.3 | Framework 78.1. |
-| free-flow tolling | – | Electronic tolling without barriers, using transponders and number-plate cameras. | ssec:12.4.4 |  |
-| free-issue equipment | – | Equipment bought by the owner and handed to an installing contractor, so that the owner answers to the installer for its timely delivery and fitness. | ssec:23.2.3 |  |
 | free on board | FOB | A delivery basis in which the buyer takes LNG at the loading port and arranges shipping. | ssec:12.2.3 | Also entered by Ch 21: those chapters cross-reference this home. |
 | free, prior and informed consent | FPIC | Agreement of affected indigenous peoples reached through good-faith negotiation in the circumstances PS7 specifies; it does not require unanimity and confers no individual veto. | ssec:50.6.2 |  |
+| free-flow tolling | – | Electronic tolling without barriers, using transponders and number-plate cameras. | ssec:12.4.4 |  |
+| free-issue equipment | – | Equipment bought by the owner and handed to an installing contractor, so that the owner answers to the installer for its timely delivery and fitness. | ssec:23.2.3 |  |
 | front-end fee | – | An upfront fee charged by a DFI or other direct lender on its own commitment, payable at or after signing. | ssec:38.3.1 |  |
 | fronting | – | The issue of a policy by a local insurer, often required by law, which passes most of the risk to reinsurers. | ssec:27.1.3 |  |
 | frozen GAAP clause | – | A finance-document provision that fixes covenant calculations to the accounting standards in force at signing unless the parties agree otherwise. | ssec:66.8.3 |  |
 | frustration | – | The English-law doctrine that discharges a contract when an unforeseen event makes performance radically different from what was undertaken. | ssec:10.5.2 |  |
-| fuel-chain lock-in | – | Dependence of a plant on one fuel type, quality and supply route because its boilers or turbines were designed for them. | ssec:69.2.3 |  |
 | fuel pass-through | – | A tariff mechanism that charges the offtaker for fuel at its actual or formula price. | ssec:18.3.2 |  |
+| fuel-chain lock-in | – | Dependence of a plant on one fuel type, quality and supply route because its boilers or turbines were designed for them. | ssec:69.2.3 |  |
 | full recourse debt | – | Debt for which the borrower's owner is liable without limit. | ssec:2.2.1 |  |
 | full replacement cost | – | Compensation sufficient to replace lost assets at market value plus transaction costs, without deduction for depreciation. | ssec:50.5.1 |  |
 | full-service agreement | – | A wind-turbine maintenance contract under which the manufacturer performs all scheduled and unscheduled service and guarantees availability. | ssec:24.3.1 | Not abbreviated (FSA avoided). Also entered by Ch 70: those chapters cross-reference this home. |
@@ -712,7 +714,8 @@ Entries: 1772.
 | gap log | – | The record of mismatches found by a gap scan, with severity, fix, owner and status. | ssec:28.5.2 |  |
 | gas sale agreement | GSA | The contract under which a seller supplies natural gas to the project company in stated quantities, quality and price over a term. | ssec:25.2.1 |  |
 | gate fee | – | The price per tonne a waste supplier pays a treatment plant to accept waste. | ssec:81.4.1 |  |
-| gearing | – | Senior debt divided by the sum of senior debt and equity (share capital plus shareholder loans), measured on the total funding requirement at financial close, including financing costs and initial reserve funding. | ssec:35.5.1 |  |
+| gearing (general) | – | Debt as a share of total capital, debt divided by debt plus equity. | ssec:8.2.1 | Ruling R-124. Ch 2 uses it with a forward reference; Ch 35 (ssec:35.5.1) owns the project finance measurement. |
+| gearing (project finance measurement) | – | Senior debt divided by the sum of senior debt and equity (share capital plus shareholder loans), measured on the total funding requirement at financial close, including financing costs and initial reserve funding. | ssec:35.5.1 | Ruling R-124. The general sense is "gearing (general)" (ssec:8.2.1); this entry is the lenders' measurement on the total funding requirement. |
 | gearing cap | – | The maximum gearing the lenders allow, applied as a sizing constraint alongside the DSCR tests. | ssec:36.3.2 |  |
 | general partner | GP | The manager of a fund partnership, which makes investment decisions and earns fees and carried interest. | ssec:47.5.1 |  |
 | general syndication | – | The stage in which arrangers sell part of an underwritten financing to a wider group of lenders. | ssec:55.5.1 |  |
@@ -740,12 +743,12 @@ Entries: 1772.
 | grid code | – | The technical rules a plant must meet to connect to and operate on a grid. | ssec:11.9.2 |  |
 | grievance mechanism | – | A project-level process for receiving, investigating and resolving complaints from affected communities or workers. | ssec:50.4.2 |  |
 | gross calorific value | GCV | The energy released by burning a fuel including the latent heat of water vapor; the basis on which gas is usually sold. | ssec:25.2.6 |  |
-| gross-cost contract | – | A transit operating contract in which the authority keeps fare revenue and pays the operator its costs plus a fee. | ssec:80.1.2 |  |
 | gross decommissioning cost | – | The estimated cost of removal, restoration and remediation before any credit for salvage. | ssec:65.2.2 |  |
 | gross energy | – | Modeled energy before losses. | ssec:11.3.2 |  |
 | gross IRR | – | A fund's return on its investments before fees and carried interest. | ssec:47.5.3 |  |
 | gross negligence | – | A serious disregard of an obvious risk, more culpable than ordinary negligence; its meaning depends on the governing law and the drafting. | ssec:10.3.2 |  |
 | gross refining margin | GRM | A refinery's product revenue less crude and other feedstock cost, per barrel processed, before operating costs. | ssec:77.2.1 |  |
+| gross-cost contract | – | A transit operating contract in which the authority keeps fare revenue and pays the operator its costs plus a fee. | ssec:80.1.2 |  |
 | gross-up | – | An obligation to increase a payment so that the recipient receives the full amount after a deduction such as withholding tax. | ssec:49.4.2 |  |
 | growing annuity | – | A series of cash flows over a fixed number of periods that grows at a constant rate each period. | ssec:5.3.2 |  |
 | growing perpetuity | – | A cash flow paid forever that grows at a constant rate below the discount rate. | ssec:5.3.2 |  |
@@ -757,10 +760,10 @@ Entries: 1772.
 | handback requirements | – | The condition and residual-life standards an asset must meet when it returns to the public sector at the end of a PPP. | ssec:58.7.1 |  |
 | handback reserve | – | A reserve account funded in the final years of a PPP to pay for works needed to meet the handback requirements. | ssec:58.7.2 | Ch 37 names it as a reserve type; Ch 65 (ssec:65.3.3) covers practice. Also entered by Ch 65: those chapters cross-reference this home. |
 | handback survey | – | A joint inspection, usually several years before expiry, that measures the asset against the handback conditions and fixes the works required. | ssec:65.3.2 |  |
-| hard-coded number | – | A constant typed into a formula instead of referenced from an input cell. | sec:13.5 |  |
 | hard facilities management | hard FM | Maintenance of a building's fabric, plant, and systems, including lifecycle replacement. | sec:12.8 | Ruling R-114. "Hard FM" is permitted only as a compound; FM alone means force majeure. Also entered by Ch 81: those chapters cross-reference this home. |
 | hard market | – | A phase of the insurance cycle with high prices, restricted capacity and tighter terms; a soft market is the reverse. | ssec:27.7.1 |  |
 | hard mini-perm | – | A mini-perm whose outstanding balance must be repaid at legal maturity, so failure to refinance is an event of default. | ssec:36.7.2 |  |
+| hard-coded number | – | A constant typed into a formula instead of referenced from an input cell. | sec:13.5 |  |
 | hardening period | – | The period before insolvency during which security granted may be set aside by an insolvency officer. | ssec:52.3.1 |  |
 | hardship | – | A change of circumstances that makes performance excessively onerous without making it impossible. | ssec:10.5.4 |  |
 | head | – | The vertical height through which water falls to a hydro turbine. | ssec:11.5.1 |  |
@@ -768,8 +771,8 @@ Entries: 1772.
 | headroom | – | The fall in a driver or in CFADS that the debt structure can absorb before a ratio reaches a stated trigger level. | ssec:35.6.3 |  |
 | heat map | – | The grid form of a risk matrix, with likelihood on one axis, impact on the other and risks placed in cells. | ssec:15.4.1 |  |
 | heat rate | HR | Fuel energy consumed per unit of net electricity generated, in kJ/kWh. | ssec:11.2.1 |  |
-| heat-rate headroom | – | The margin by which the heat rate at which the PPA pays for fuel exceeds the heat rate the plant actually achieves (at financing, the EPC contractor's guaranteed heat rate). | ssec:18.3.2 | Also entered by Ch 41, Ch 69: those chapters cross-reference this home. |
 | heat recovery steam generator | HRSG | The boiler that turns gas turbine exhaust heat into steam in a combined cycle. | ssec:11.2.2 |  |
+| heat-rate headroom | – | The margin by which the heat rate at which the PPA pays for fuel exceeds the heat rate the plant actually achieves (at financing, the EPC contractor's guaranteed heat rate). | ssec:18.3.2 | Also entered by Ch 41, Ch 69: those chapters cross-reference this home. |
 | hedge accounting | – | Accounting that matches the timing of gains and losses on a hedging instrument with those on the hedged item. | ssec:66.6.1 |  |
 | hedge provider | – | A bank or other counterparty that enters into interest rate, currency or commodity hedges with the project company. | sec:4.7 |  |
 | hedge ratio | – | The hedge notional in a period divided by the projected floating-rate debt outstanding in that period. | ssec:37.7.2 |  |
@@ -794,6 +797,7 @@ Entries: 1772.
 | HVDC converter station | – | The installation at each end of a high-voltage direct current link that converts between alternating and direct current. | ssec:73.5.3 |  |
 | hybrid plant | – | A wind or solar plant with co-located storage behind a shared grid connection. | ssec:70.2.3 |  |
 | hybrid tax equity | – | A partnership flip in which the partnership also sells some of its tax credits to a third party. | ssec:32.9.3 |  |
+| hybrid till | – | Airport regulation that counts only part of commercial revenue against the revenue requirement. | ssec:80.2.2 | Ruling R-055. |
 | hybridization | – | Adding a different generation or storage technology behind an existing plant's grid connection, such as a battery at a solar plant. | ssec:62.8.1 |  |
 | hydrology risk | – | The risk that river flows, and so a hydro plant's output, fall below forecast. | ssec:72.2.1 |  |
 | hydroprocessed esters and fatty acids | HEFA | A SAF and renewable-diesel pathway that hydrotreats waste oils and fats. | ssec:83.4.1 |  |
@@ -837,8 +841,8 @@ Entries: 1772.
 | individual right | – | A right one creditor or class can exercise or protect without a vote, such as a DFI's policy rights on sanctions or integrity. | ssec:53.3.2 |  |
 | inertia | – | The stored rotational energy of synchronous machines that slows frequency changes after a disturbance. | ssec:11.9.2 |  |
 | inflation | – | A sustained rise in the general level of prices, measured as the percentage change in a price index. | ssec:5.9.1 |  |
-| inflation-linked bond | – | A bond whose principal or payments are indexed to an inflation measure, such as Colombia's UVR unit. | ssec:34.6.3 |  |
 | inflation risk | – | The risk that costs and revenues are indexed differently, or not at all, so that inflation changes the margin between them. | ssec:14.12.2 |  |
+| inflation-linked bond | – | A bond whose principal or payments are indexed to an inflation measure, such as Colombia's UVR unit. | ssec:34.6.3 |  |
 | information memorandum (sale) | IM | The seller's marketing document describing an asset for sale, issued to bidders after a confidentiality agreement. | ssec:47.3.1 | Also entered by Ch 55: those chapters cross-reference this home. |
 | informed consultation and participation | ICP | The in-depth consultation PS7 requires with affected indigenous peoples in all cases. | ssec:50.6.1 |  |
 | inframarginal rent | – | The difference between the clearing price and a dispatched plant's lower marginal cost. | ssec:11.10.2 |  |
@@ -847,7 +851,7 @@ Entries: 1772.
 | input | – | A value typed once into a labeled cell on an inputs sheet and referenced everywhere else. | ssec:13.1.1 |  |
 | input supplier | – | A party that supplies fuel, feedstock, water or another input the project needs to operate. | sec:4.7 |  |
 | input supply risk | – | The risk that fuel, feedstock, water or other inputs are unavailable, of the wrong quality, late or dearer than assumed. | ssec:14.8.1 |  |
-| input VAT | – | VAT a business pays on its purchases, recoverable against output VAT or by refund. | ssec:67.7.1 |  |
+| input VAT | – | VAT a business pays on its purchases, recoverable against output VAT or by refund. | ssec:31.5.1 | Ruling R-125. |
 | insolvency proceeding | – | A collective court-supervised process that replaces individual enforcement by creditors with an ordered distribution or rescue. | ssec:10.8.2 |  |
 | institutional investor | – | An insurer, pension fund or asset manager that lends to or invests in projects from long-term savings. | ssec:4.3.4 |  |
 | instructing group | – | The creditors whose votes are needed to instruct the intercreditor agent or security agent on a given decision. | ssec:53.3.1 |  |
@@ -923,16 +927,17 @@ Entries: 1772.
 | lender of record | – | The institution named as lender in the loan agreement, which holds and administers the loan for itself and its participants. | ssec:29.4.4 |  |
 | lenders' insurance advisor | – | The adviser who reviews a project's insurance program for the lenders against the finance documents and the project's risks. | ssec:49.2.1 |  |
 | lesser-of rule | – | The rule that senior debt equals the smallest amount allowed by each sizing constraint (DSCR tests on each case, gearing cap, and any other limit). | ssec:36.3.1 |  |
-| letter-of-credit facility | LC facility | A facility under which a bank issues letters of credit for the project company, which must reimburse the bank for any drawing. | sec:31.6 |  |
+| letter of credit | LC | A bank's written undertaking to pay a beneficiary up to a stated amount on presentation of stated documents or a demand, with the applicant obliged to reimburse the bank. | ssec:16.4.1 | Ruling R-123. Ch 59 (ssec:59.5.1) owns the standby letter of credit as payment security; Ch 31 (sec:31.6) owns the LC facility. |
 | letter of support | – | A letter in which a government states its support for a project and its intention to see an entity perform, without a legal obligation to pay. | ssec:17.5.3 |  |
 | letter of undertaking | – | A government letter containing specific, enforceable undertakings short of a guarantee, such as to procure that an entity has the means to pay. | ssec:17.5.1 |  |
+| letter-of-credit facility | LC facility | A facility under which a bank issues letters of credit for the project company, which must reimburse the bank for any drawing. | sec:31.6 |  |
 | levelized cost of electricity | LCOE | The constant price per MWh that recovers a plant's capital, operating, and fuel costs at a given discount rate over its life. | sec:11.8 | Ruling R-001. Applies the Ch 5 levelization arithmetic; Ch 47, Ch 69 to Ch 74 cross-reference. |
 | levelized cost of hydrogen | LCOH | The constant price per kilogram of hydrogen that recovers a plant's capital, operating and power costs at a stated cost of capital over its life. | ssec:83.2.1 | Ruling R-002. Ch 88 (ssec:88.4.5) cites it and owns only the cost-gap calculation. |
 | levelized price | – | The constant (or constant-escalating) price per unit of output whose present value over the project's life equals the present value of its costs or of a varying price stream; levelized cost and levelized tariff are its two common uses. | ssec:5.3.3 | Ruling R-001. Synonym in use: levelized cost (generic). |
 | levelized tariff | – | The constant tariff whose present value over the contract equals the present value of the actual tariff stream, per unit of output, at a stated discount rate. | ssec:5.3.3 | Ruling R-001. Ch 47 (ssec:47.1.2) builds a bid tariff from a target return and cross-references. Also entered by Ch 47: those chapters cross-reference this home. |
 | lever | – | A source of negotiating power, such as competition, timing, an alternative or an approval, that one party can use to move a term. | sec:56.2 |  |
-| leverage equation | – | The relation r_E = r_A + (r_A − r_D) × D/E linking the return on equity to the asset return, the cost of debt and the debt-to-equity ratio. | ssec:8.2.1 |  |
 | leverage (financial) | – | The use of debt to fund an investment, which raises the expected return and the risk of the equity; elsewhere in the book the funding share of debt is called gearing. | ssec:8.2.1 |  |
+| leverage equation | – | The relation r_E = r_A + (r_A − r_D) × D/E linking the return on equity to the asset return, the cost of debt and the debt-to-equity ratio. | ssec:8.2.1 |  |
 | levered return | – | The return on the equity invested after debt service. | ssec:8.2.1 |  |
 | liability | – | A present obligation of an entity to transfer economic resources. | ssec:7.2.1 |  |
 | liability cap | – | A contractual maximum on the amount a party must pay, overall or for a category of claims. | ssec:10.3.2 |  |
@@ -963,8 +968,8 @@ Entries: 1772.
 | loan-to-value ratio | LTV | Loan outstanding divided by the market value of the collateral securing it. | ssec:63.7.2 |  |
 | local content | – | Obligations or commitments to use host-country labor, suppliers, equity or training in a project. | ssec:60.3.3 |  |
 | local costs | – | Goods and services bought in the buyer's country, which ECAs may support only up to a cap expressed as a share of the export contract value. | ssec:29.3.2 |  |
-| local-currency financing | – | Debt denominated in the currency in which a project earns its revenue. | ssec:34.6.1 |  |
 | local currency (generic) | LCY | A label for an unspecified local currency in illustrative examples. | ssec:14.1.1 |  |
+| local-currency financing | – | Debt denominated in the currency in which a project earns its revenue. | ssec:34.6.1 |  |
 | locational marginal price | LMP | The cost of serving one more MWh at a specific node. | ssec:11.11.1 |  |
 | lock-in | – | A restriction that prevents a shareholder from transferring its shares, or requires it to keep a minimum holding, for a stated period, imposed by a shareholders' agreement, a concession or the finance documents. | ssec:26.3.3 | Ruling R-060. Never "lock-up" in this sense; Ch 17 (ssec:17.2.3) and Ch 51 (ssec:51.6.1) apply it. Also entered by Ch 32: those chapters cross-reference this home. Merged entry: lock-in period. |
 | lock-up account | – | The account in which cash that fails the distribution test is held until the test is passed or the cash is swept. | ssec:42.3.3 |  |
@@ -979,13 +984,15 @@ Entries: 1772.
 | long-term uncertainty | σ_LT | The uncertainty in a long-run average estimate (measurement, long-term correction, modeling and loss estimates), which does not average out over time. | ssec:9.6.1 |  |
 | lookback | – | The number of business days by which daily rates used for an in-arrears calculation are taken from earlier dates, to allow time for payment. | ssec:6.5.3 |  |
 | loss chain | – | The ordered set of percentage losses applied to gross output to reach net output. | ssec:48.3.1 |  |
-| loss given default | LGD | The share of an exposure a lender expects to lose if the borrower defaults. | ssec:68.2.2 |  |
+| loss given default | LGD | The share of an exposure a lender expects to lose if the borrower defaults. | ssec:38.1.1 | Ruling R-041. Ch 68 (sec:68.2) owns regulatory PD, LGD and EAD and input floors (entry "regulatory risk parameters"). |
 | loss of control | – | The event in which a parent ceases to control a subsidiary, triggering derecognition, fair-value remeasurement of any retained interest and a gain or loss. | ssec:66.3.2 |  |
 | loss payee | – | The party to whom an insurer pays claims, in project finance the security agent or the lenders. | ssec:27.6.1 |  |
 | lower heating value | LHV | Fuel energy content excluding the latent heat of water vapor in the exhaust; turbines are rated on it. | ssec:11.2.1 |  |
 | LTSA provider | LTSA | The equipment maker that maintains major equipment under a long-term service agreement. | ssec:4.6.2 |  |
 | lump-sum turnkey | LSTK | An EPC contract under which one contractor delivers a complete, operating facility for a fixed price. | ssec:22.1.1 |  |
 | machinery breakdown insurance | – | Insurance against sudden and unforeseen mechanical or electrical breakdown of plant. | ssec:27.3.1 |  |
+| macro | – | A recorded or written program that automates spreadsheet steps, in Excel written in VBA. | ssec:13.8.5 | Ruling R-135 (new subsection). |
+| macro-enabled workbook | .xlsm | An Excel file format that can store macros; the standard .xlsx format cannot. | ssec:13.8.5 | Ruling R-135 (new subsection). The book's supplied workbooks are macro-free .xlsx files. |
 | major inspection | – | The most extensive periodic gas turbine overhaul, opening the whole machine. | ssec:11.2.3 | Also entered by Ch 24: those chapters cross-reference this home. |
 | major maintenance | – | Large, infrequent maintenance events, such as overhauls and component replacements, planned years ahead. | ssec:24.5.1 |  |
 | major maintenance reserve account | MMRA | An account into which the project company transfers, over the periods before each major overhaul, the cost of that overhaul, so that the overhaul does not fall on one period's CFADS. | ssec:37.2.1 |  |
@@ -1010,10 +1017,10 @@ Entries: 1772.
 | market check | – | A five-step test of whether a proposed term is within the market range. | ssec:56.1.1 | Framework 56.1. |
 | market flex | – | The arrangers' right under an underwritten commitment to change the pricing or structure of a financing, within agreed limits, to complete syndication. | ssec:38.8.1 |  |
 | market risk | – | Price and volume risk arising from selling into a traded market rather than under a fixed contract. | ssec:14.7.2 |  |
-| market-risk holder trace | – | Identifying, link by link, which party bears the price and volume risk of a new molecule and whether that party can carry it for the debt's life. | ssec:83.5.1 | Framework 83.1. |
 | market risk premium | MRP | The expected return on a broad market portfolio in excess of the risk-free rate. | ssec:8.5.1 |  |
 | market term | – | A term within the range that comparable recent deals in the same sector, region and contract type have closed on, as shown by dated evidence. | ssec:56.1.1 |  |
 | market testing | – | Retendering a service within a PPP to reset its price. | ssec:58.4.2 |  |
+| market-risk holder trace | – | Identifying, link by link, which party bears the price and volume risk of a new molecule and whether that party can carry it for the debt's life. | ssec:83.5.1 | Framework 83.1. |
 | marketing company (LNG) | – | The entity, often jointly owned by an LNG project's participants, that signs sale and purchase agreements and sells the project's LNG. | ssec:76.2.1 |  |
 | master check | – | A single cell summing all error checks, which must be 0 for the model to be relied on. | sec:13.9 | Also entered by Ch 39: those chapters cross-reference this home. |
 | master lease agreement | – | A framework contract under which a mobile operator leases space on many towers from one tower company on common terms. | ssec:82.2.2 | Ruling R-114. Spelled out; MLA means mandated lead arranger. |
@@ -1038,7 +1045,7 @@ Entries: 1772.
 | metallurgical recovery | – | The share of contained metal in the ore that the plant recovers into concentrate. | ssec:45.6.2 |  |
 | mezzanine debt | – | Debt that ranks behind senior debt and ahead of equity in the same borrower, priced between the two. | ssec:31.2.1 |  |
 | midstream | – | Processing, transporting, and storing oil and gas between field and market. | sec:12.1 |  |
-| million British thermal units | MMBtu | A unit of energy used to price gas; one MMBtu is 1,055,056 kJ. | ssec:12.1.3 |  |
+| million British thermal units | MMBtu | A unit of energy used to price gas; one MMBtu is 1,055,056 kJ. | ssec:11.2.1 | Ruling R-134. First used in Ch 10 (Example 10.7) with a forward reference and taught in Ch 11. |
 | million standard cubic feet per day | MMscfd | A gas flow rate measured at standard temperature and pressure. | ssec:12.1.3 |  |
 | million tonnes per annum | mtpa | The unit of LNG plant capacity and annual trade. | ssec:12.2.1 |  |
 | mineral resource | – | A concentration of material with reasonable prospects for eventual economic extraction, classified Inferred, Indicated, or Measured by confidence. | ssec:12.3.1 |  |
@@ -1073,7 +1080,7 @@ Entries: 1772.
 | modified internal rate of return | MIRR | A rate of return that compounds interim inflows at a stated reinvestment rate and discounts outflows at a stated finance rate, giving a single answer. | ssec:5.6.2 |  |
 | Modigliani-Miller propositions | MM | The results that in a market without taxes, distress costs or information costs, firm value does not depend on capital structure (Proposition I) and the cost of equity rises linearly with leverage (Proposition II). | ssec:8.3.1 |  |
 | module supply agreement | – | The contract for supply of solar modules with product and performance warranties. | ssec:70.5.2 |  |
-| money multiple | MOIC | Total cash returned to equity divided by total equity invested, ignoring timing. | ssec:46.1.4 |  |
+| money multiple | MOIC | Total cash returned to equity divided by total equity invested, ignoring timing. | ssec:46.1.4 | Ruling R-013 (extended by R-128). Ch 43 (ssec:43.2.4) computes the row with a forward reference; Ch 1 points here, not to Ch 5. |
 | monitoring trigger | – | A measurable event named in the approval that obliges the portfolio team to report or re-present the credit. | ssec:86.2.9 |  |
 | monoline insurer | – | A specialist financial guarantor that wrapped bonds, including project bonds, by guaranteeing scheduled debt service, a market that largely ended in 2008. | ssec:3.6.1 | Ch 16 (sec:16.9) and Ch 30 cross-reference. Also entered by Ch 16: those chapters cross-reference this home. Merged entry: monoline insurance (financial guarantee). |
 | Monte Carlo simulation | – | Repeated calculation of an output with inputs drawn at random from stated distributions and correlations, to estimate the output's distribution. | ssec:9.8.3 |  |
@@ -1112,8 +1119,8 @@ Entries: 1772.
 | net present value | NPV | The sum of the present values of all of a project's cash flows, including the initial investment, at a stated discount rate. | ssec:5.4.1 |  |
 | net smelter return | NSR | The value of payable metal in a concentrate less treatment and refining charges, penalties and, depending on the definition, transport. | ssec:21.4.1 | Also entered by Ch 45: those chapters cross-reference this home. |
 | netting agreement | – | An agreement that sets off amounts owed between parties, such as an offtaker's arrears against a project's payables to a state supplier. | ssec:59.5.5 |  |
-| new-structure test | – | A seven-question framework for deciding whether a new structure is financeable now, with named support, or not yet. | sec:88.2 |  |
 | New York Convention | – | The 1958 UN Convention under which contracting states recognize and enforce foreign arbitral awards on limited grounds. | ssec:10.9.2 | Ch 54 (ssec:54.3.1) owns enforcement detail. Also entered by Ch 54: those chapters cross-reference this home. |
+| new-structure test | – | A seven-question framework for deciding whether a new structure is financeable now, with named support, or not yet. | sec:88.2 |  |
 | no-worse-off test | – | The condition that no member of a dissenting class is worse off under the plan than in the relevant alternative. | ssec:64.10.2 |  |
 | nodal decoupling | – | A persistent gap between prices at a generator's injection node and its customers' withdrawal node, caused by transmission congestion. | ssec:70.4.2 |  |
 | nodal pricing | – | A separate wholesale price at each network node reflecting energy, losses, and congestion. | ssec:11.11.1 |  |
@@ -1138,6 +1145,7 @@ Entries: 1772.
 | nth-of-a-kind | NOAK | A unit built after enough repetitions of the same design that its cost, schedule and performance can be predicted from a record. | ssec:14.5.1 | Ruling R-042 (brief change: Ch 14 adds the term). Ch 74 and Ch 88 cross-reference. Also entered by Ch 74, Ch 88: those chapters cross-reference this home. |
 | nuclear risk-bearer map | – | A table assigning each nuclear risk to the party that bears it under a given financing model. | sec:74.3 | Framework 74.1. |
 | number trace | – | Following one figure through every document in which it appears and reconciling each difference. | ssec:85.5.3 |  |
+| O&M operator | – | The company that operates and maintains the plant under an O&M agreement. | ssec:4.6.2 |  |
 | observation shift | – | A variant of the lookback in which the day weights also come from the earlier observation period. | ssec:6.5.3 |  |
 | obsolescing bargain | – | The shift of bargaining power from investor to host state once the investor's capital is sunk. | ssec:60.2.1 |  |
 | OECD Arrangement on Officially Supported Export Credits | the Arrangement | A non-binding agreement among eleven Participants that caps the generosity of official export credit support, including down payment, support percentage, local costs, tenor, repayment profile, minimum interest rates, and minimum premia. | ssec:29.3.2 |  |
@@ -1151,7 +1159,6 @@ Entries: 1772.
 | offshore transmission owner | OFTO | In Great Britain, the licensed owner to which an offshore wind farm's transmission assets must be sold after construction, earning a regulated revenue. | ssec:71.7.1 |  |
 | offtaker | – | The party that buys the project's output under a long-term contract. | ssec:2.3.1 |  |
 | oil-price slope | – | The coefficient that links a gas or LNG price to an oil price index. | ssec:45.7.2 |  |
-| O&M operator | – | The company that operates and maintains the plant under an O&M agreement. | ssec:4.6.2 |  |
 | on-lending | – | Borrowing from one lender and lending the proceeds to another borrower, often passing the original terms through. | ssec:34.2.4 |  |
 | one-hour deal screen | – | A six-block framework for screening any project in an hour and reaching a proceed, proceed-with-conditions or decline verdict. | sec:85.2 |  |
 | one-year P-value | – | An exceedance level for output in any single year, combining long-term uncertainty with full interannual variability. | ssec:9.6.1 |  |
@@ -1178,12 +1185,13 @@ Entries: 1772.
 | output floor | – | The rule that a bank's modeled RWA cannot fall below a set percentage (72.5% when fully phased in) of its standardised RWA. | ssec:68.3.2 |  |
 | over-hedging | – | A hedge notional above the debt it hedges, usually after a prepayment, leaving the project company with a position that gains or loses with rates on no underlying debt. | ssec:37.7.2 |  |
 | overall mitigation in global emissions | OMGE | The cancellation of at least 2% of issued A6.4ERs so that trading reduces global emissions. | ssec:84.7.2 |  |
-| overbuild | – | Construction of a competing network over an area already served, splitting the customer base. | ssec:82.3.2 |  |
+| overbuild (networks) | – | Construction of a competing network over an area already served, splitting the customer base. | ssec:82.3.2 | Ruling R-083 (as extended by R-134). |
+| overbuild (storage) | – | Installing more energy capacity than the contracted usable capacity at COD, so that degradation can be absorbed before augmentation. | ssec:73.2.2 | Ruling R-083 (as extended by R-134). Annex TR R.5 "battery overbuild". |
 | overnight cost | – | Construction cost as if the plant were built instantly, excluding financing costs. | ssec:11.6.2 | Also entered by Ch 74: those chapters cross-reference this home. |
 | own-use exemption | – | The rule that a contract to buy or sell a non-financial item for the entity's own needs is not accounted for as a derivative. | ssec:66.6.4 |  |
-| owner-controlled insurance program | – | A construction insurance program arranged by the project company for itself, its contractors and its lenders. | ssec:27.2.1 |  |
 | owner's contingency | – | The unallocated budget line held by the project company for cost increases outside the EPC lump sum, drawn under lender controls. | ssec:61.3.1 |  |
 | owner's engineer | – | The engineer retained by the project company to manage and supervise design and construction on its behalf, as distinct from the lenders' independent engineer. | ssec:48.2.1 |  |
+| owner-controlled insurance program | – | A construction insurance program arranged by the project company for itself, its contractors and its lenders. | ssec:27.2.1 |  |
 | ownership trace | – | A framework for mapping ownership and control to natural persons and applying each sanctions regime's tests. | ssec:49.6.2 |  |
 | P50 | – | The level of an outcome, such as annual energy, that is expected to be exceeded with 50% probability. | ssec:9.5.1 |  |
 | P75 | – | The level expected to be exceeded with 75% probability. | ssec:9.5.1 |  |
@@ -1192,8 +1200,8 @@ Entries: 1772.
 | P95 | – | The level expected to be exceeded with 95% probability. | ssec:9.5.1 |  |
 | P99 | – | The level expected to be exceeded with 99% probability, equal to the 1st percentile; state whether one-year or ten-year. | ssec:9.5.1 |  |
 | package | – | A set of concessions traded together so that each side gains on the terms it values most. | ssec:56.5.2 |  |
-| par, premium and discount | – | A bond trades at par when its price equals face value, at a premium above it, and at a discount below it. | ssec:6.7.1 |  |
 | par swap rate | – | The fixed rate at which a swap has zero value at inception, equal to (1 − DF_N) divided by the sum of discount factors for an annual swap. | ssec:6.8.2 |  |
+| par, premium and discount | – | A bond trades at par when its price equals face value, at a premium above it, and at a discount below it. | ssec:6.7.1 |  |
 | parallel debt | – | An undertaking by the project company to pay the security agent an amount equal to everything it owes the secured creditors, so that the agent holds a debt of its own that the security can secure; payment of either discharges the other. | ssec:52.2.2 |  |
 | parallel loan | – | A loan made directly by a separate lender alongside a DFI loan, usually under a common terms agreement, without sharing the DFI's privileges contractually. | ssec:29.4.4 |  |
 | parent company guarantee | – | A guarantee by the contractor's parent of the contractor's obligations under the EPC contract. | ssec:22.6.2 | Ruling R-114. Spelled out; PCG means partial credit guarantee. |
@@ -1214,11 +1222,11 @@ Entries: 1772.
 | payback period | – | The time until a project's cumulative undiscounted cash flows turn positive. | ssec:5.8.1 |  |
 | payer swap | – | A swap in which the holder pays the fixed rate and receives the floating rate. | ssec:6.8.1 |  |
 | payment blockage | – | A junior lender's agreement to stop receiving payments while a senior default or blockage notice is outstanding. | ssec:31.2.2 | Ch 53 (sec:53.2) applies it across classes. Also entered by Ch 53: those chapters cross-reference this home. |
-| payment-chain trace | – | Tracing a project's revenue from the end-payer through each collecting or appropriating intermediary to find the weakest link. | ssec:81.5.1 | Framework 81.1. |
-| payment-in-kind interest | PIK | Interest paid by adding it to the loan's principal instead of in cash. | ssec:31.2.3 | Also entered by Ch 64: those chapters cross-reference this home. |
 | payment mechanism | – | The contract schedule that sets the unitary charge, its indexation, and the deductions for unavailability and poor performance. | ssec:58.3.1 |  |
 | payment profile | – | The share of a contract price paid in each period, held as an input row and applied to the price. | ssec:40.1.1 |  |
 | payment security stack | – | The layered set of liquidity, credit and termination protections behind an offtaker's payment obligations. | ssec:59.4.2 |  |
+| payment-chain trace | – | Tracing a project's revenue from the end-payer through each collecting or appropriating intermediary to find the weakest link. | ssec:81.5.1 | Framework 81.1. |
+| payment-in-kind interest | PIK | Interest paid by adding it to the loan's principal instead of in cash. | ssec:31.2.3 | Also entered by Ch 64: those chapters cross-reference this home. |
 | payments ahead of progress | – | Certified payments to the contractor in excess of earned value, which is the owner's unsecured exposure if the contractor fails. | ssec:61.4.2 |  |
 | penalty clause (clause pénale) | – | In civil law, a valid agreed sum for non-performance that a court may moderate if manifestly excessive or derisory. | ssec:10.4.3 |  |
 | penalty element | – | A deleterious element in a concentrate, such as arsenic, above a threshold for which the buyer deducts a charge. | ssec:21.4.1 |  |
@@ -1250,13 +1258,13 @@ Entries: 1772.
 | plateau | – | The period of constant maximum production from a field. | ssec:12.1.2 |  |
 | pledge | – | A security interest over movable property, shares, or receivables; in civil law the general term (nantissement) for most non-land security. | ssec:10.8.1 | Also entered by Ch 52: those chapters cross-reference this home. |
 | political force majeure | – | Force majeure caused by war, civil disturbance, or government action in the host country, usually compensated by the offtaker or host government. | ssec:10.5.1 | Also entered by Ch 14, Ch 17: those chapters cross-reference this home. |
-| political-only cover | – | ECA or insurer cover against non-payment caused by defined political events only. | ssec:29.3.3 |  |
 | political risk | – | The risk of loss from acts or omissions of a government or from political events, including expropriation, political violence, breach of contract, change in law, non-honoring of sovereign obligations and sanctions. | sec:14.14 | Also entered by Ch 60: those chapters cross-reference this home. |
 | political risk insurance | PRI | Insurance against losses from defined political perils, such as expropriation, political violence, currency inconvertibility and transfer restriction, and breach of contract by a state, sold by MIGA, ECAs and private insurers to lenders and equity investors. | sec:27.5 | Ruling R-057. Ch 60 (sec:60.4) owns covers, triggers, waiting periods, pricing and claims. Also entered by Ch 60: those chapters cross-reference this home. |
 | political violence | – | War, insurrection, terrorism, sabotage or civil disturbance that damages the project or stops its operation. | ssec:14.14.2 | Also entered by Ch 60: those chapters cross-reference this home. |
+| political-only cover | – | ECA or insurer cover against non-payment caused by defined political events only. | ssec:29.3.3 |  |
 | politically exposed person | PEP | A person who holds or has held a prominent public function, or a family member or close associate of such a person. | ssec:49.6.1 |  |
 | power curve | – | The relation between wind speed at hub height and a turbine's output. | ssec:11.3.1 |  |
-| power purchase agreement | PPA | A long-term contract under which a buyer, usually a utility, pays a generator for capacity, energy or both at prices set by formula. | sec:18.1 |  |
+| power purchase agreement | PPA | A long-term contract under which a buyer, usually a utility, pays a generator for capacity, energy or both at prices set by formula. | ssec:2.3.1 | Ruling R-123. Ch 18 (sec:18.1) owns the full contract; Ch 3, 4, 5, 7, 10, 11 and 14 to 17 cross-reference ssec:2.3.1. |
 | power usage effectiveness | PUE | Total facility power divided by IT power. | sec:12.11 | Also entered by Ch 21, Ch 82: those chapters cross-reference this home. |
 | PPP commitment ceiling | – | A government-set limit on total annual PPP payments, usually expressed as a share of revenue or of a budget. | ssec:57.3.2 |  |
 | PPP unit | – | A government body that screens, advises on, standardizes, and often procures and manages public–private partnerships. | ssec:57.6.1 |  |
@@ -1284,14 +1292,14 @@ Entries: 1772.
 | pro rata funding | – | Funding construction costs with equity and debt drawn together in the agreed ratio. | ssec:32.3.1 | Ch 40 (ssec:40.3.1) models it. Also entered by Ch 40: those chapters cross-reference this home. |
 | probability density function | PDF | For a continuous variable, the function whose area over an interval gives the probability of a value in that interval. | ssec:9.1.2 |  |
 | probability distribution | – | A description of all possible values of a random variable and their probabilities. | ssec:9.1.1 |  |
-| probability of default | PD | The estimated likelihood that a borrower defaults within one year. | ssec:68.2.2 |  |
+| probability of default | PD | The estimated likelihood that a borrower defaults within one year. | ssec:38.1.1 | Ruling R-041. Ch 68 (sec:68.2) owns regulatory PD, LGD and EAD and input floors (entry "regulatory risk parameters"). Ch 15 and Ch 29 use the term with a cross-reference. |
 | proceeds account | – | The account into which all project revenues are paid before being applied through the priority of payments. | ssec:52.5.1 |  |
 | process performance guarantee | – | A licensor's guarantee that its technology will achieve stated capacity, yields and consumption when built and run to its design. | ssec:77.7.2 |  |
 | processing agreement | – | An industrial tolling arrangement in which a toller supplies feedstock, owns the product, and pays the project company a fee per unit processed. | ssec:77.5.2 |  |
 | production payment | – | A right to a share of a resource's output, or its proceeds, until a fixed sum plus a return has been received, with no claim on the producer beyond that output. | ssec:3.1.1 |  |
 | production sharing contract | – | A contract under which the state owns the resource and a contractor recovers costs and shares profit oil with the state. | ssec:75.2.2 | Ruling R-114. Spelled out; PSC means public sector comparator. |
-| profit-based royalty | – | A royalty calculated on a measure of mine profit rather than on gross revenue or volume. | ssec:78.5.4 |  |
 | profit oil | – | Production remaining after cost oil, split between the state and the contractor. | ssec:75.2.2 |  |
+| profit-based royalty | – | A royalty calculated on a measure of mine profit rather than on gross revenue or volume. | ssec:78.5.4 |  |
 | prohibited foreign entity | PFE | Under US law after July 4, 2025, a specified foreign entity or foreign-influenced entity denied clean-electricity credits. | ssec:67.10.2 | Ruling R-073. Ch 32 states the constraint exists, dated, with a forward reference. Also entered by Ch 32: those chapters cross-reference this home. |
 | project agreement | – | The generic name, common in water and port projects, for the principal contract between the contracting authority and the project company. | ssec:17.1.1 |  |
 | project bond | – | A debt security issued by or for a project company, usually secured and amortizing, and sold to investors rather than lent by banks. | ssec:30.1.1 |  |
@@ -1335,8 +1343,8 @@ Entries: 1772.
 | rating agency | – | A firm that assigns credit ratings to debt, including project bonds and loans. | sec:4.8 |  |
 | rating case | – | The set of conservative assumptions an analyst uses to test whether debt can be serviced, distinct from the sponsor's base case. | ssec:30.5.3 |  |
 | re-gearing | – | Increasing a project's debt after completion, usually at a refinancing, to release cash to equity; also called equity release refinancing. | ssec:63.4.1 |  |
-| real-time market | – | A market that settles deviations close to delivery; also balancing market. | ssec:11.10.1 |  |
 | real value | – | An amount expressed in the purchasing power of a stated base year, with inflation removed. | ssec:5.9.2 |  |
+| real-time market | – | A market that settles deviations close to delivery; also balancing market. | ssec:11.10.1 |  |
 | reasonableness warning | – | A check that flags an output outside a plausible range without counting as a model error. | ssec:43.7.2 |  |
 | reasoned opinion | – | A legal opinion that sets out the analysis and the opinion-giver's view where the law is unsettled, instead of an unqualified conclusion. | ssec:49.1.5 |  |
 | rebasing | – | Rescaling an index so that its value at a chosen base date equals 100. | ssec:5.9.1 |  |
@@ -1353,10 +1361,10 @@ Entries: 1772.
 | red-flag report | – | A diligence report limited to material adverse findings, without a full description of each document. | ssec:49.1.2 |  |
 | redetermination | – | The periodic recalculation of a borrowing base, usually semiannual. | ssec:75.3.3 |  |
 | reference class | – | A set of comparable past cases whose outcomes are used to forecast a new case, such as a practitioner's own past closings. | ssec:87.8.4 |  |
-| reference-class forecasting | – | Forecasting an outcome from the distribution of outcomes of a class of similar past projects rather than from the project's own plan. | ssec:9.9.2 |  |
 | reference price | – | The market price index against which a contract for difference settles. | ssec:19.4.1 |  |
 | reference project | – | The most efficient form of public delivery of the required output that the public sector comparator costs. | ssec:57.2.1 |  |
 | reference rate | – | A published benchmark interest rate on which floating rates are set, also called the base rate. | ssec:6.4.2 |  |
+| reference-class forecasting | – | Forecasting an outcome from the distribution of outcomes of a class of similar past projects rather than from the project's own plan. | ssec:9.9.2 |  |
 | refinancing | – | Replacing all or part of a project's debt with new debt on different terms. | ssec:4.10.6 | Also entered by Ch 63: those chapters cross-reference this home. |
 | refinancing gain | – | The increase in the present value of distributions to equity caused by a refinancing, measured at the base-case equity IRR. | ssec:58.6.2 | Ch 63 (sec:63.2, fw:refinancing-gain-bridge) measures it generally. Also entered by Ch 63: those chapters cross-reference this home. |
 | refinancing gain bridge | – | A framework that decomposes a refinancing gain into margin saving, rate reset, swap unwind, breakage, costs, tax and gain share (Framework 63.1). | ssec:63.2.1 |  |
@@ -1370,11 +1378,12 @@ Entries: 1772.
 | regulator | – | A public body that licenses the project or sets or approves its tariffs. | sec:4.5 |  |
 | regulatory capital | – | The equity and qualifying instruments a bank must hold against its risk-weighted assets. | ssec:68.1.1 |  |
 | regulatory risk | – | The risk that a regulator, acting within its powers, changes tariffs, rules or licences in a way that reduces value. | ssec:14.15.1 |  |
+| regulatory risk parameters | – | The probability of default, loss given default and exposure at default that a bank estimates or is assigned under its capital rules, subject to supervisory input floors and slotting. | ssec:68.2.2 | Ruling R-041. The pricing senses of PD and LGD are homed at ssec:38.1.1. |
 | reinjection | – | Returning spent geothermal fluid to the reservoir to sustain pressure and dispose of brine. | ssec:72.5.3 |  |
 | reinstatement test | – | The conditions under which insurance proceeds are released to rebuild damaged assets rather than to prepay debt. | ssec:27.6.4 | Ruling R-058. Ch 52 (ssec:52.6.3) places the proceeds in the waterfall and cross-references. Also entered by Ch 52: those chapters cross-reference this home. |
 | reinvestment assumption | – | The implicit assumption in comparing IRRs that interim cash flows can be reinvested at the IRR itself. | ssec:5.6.2 |  |
 | related-party transaction | – | A transaction between an entity and a party that controls or significantly influences it, such as a sponsor or its affiliates. | ssec:7.11.1 |  |
-| relative reference | – | A cell reference that shifts when a formula is copied (J12). | sec:13.2 |  |
+| relative reference | – | A cell reference that shifts when a formula is copied (J12). | ssec:5.0 | Ruling R-135 (new subsection "A first spreadsheet"). sec:13.2 goes further with a cross-reference. |
 | relevant alternative | – | What would most likely happen to creditors if a proposed restructuring did not proceed; the benchmark for the no-worse-off test in a Part 26A plan and, by extension, for any negotiation. | ssec:64.6.1 |  |
 | reliability run | – | A completion test requiring the plant to operate continuously at a set availability for a set period. | ssec:22.4.2 | Also entered by Ch 61, Ch 77: those chapters cross-reference this home. |
 | reliance letter | – | An advisor's letter allowing named lenders or investors to rely on a report prepared for another client, usually subject to a liability cap. | ssec:48.1.1 |  |
@@ -1397,10 +1406,10 @@ Entries: 1772.
 | required commercial operation date | RCOD | The date by which a PPA requires the plant to reach commercial operation, after which delay liquidated damages are payable to the offtaker. | ssec:18.1.3 |  |
 | required return | – | The minimum expected return investors demand for bearing an investment's risk. | ssec:8.4.1 |  |
 | reservation charge | – | A fixed charge per unit of reserved pipeline capacity, payable whether or not the capacity is used. | ssec:21.3.1 |  |
-| reservation of rights | – | A statement by lenders that, by acting or not acting, they do not give up any right in respect of a default. | ssec:62.7.4 |  |
+| reservation of rights | – | A statement by lenders that, by acting or not acting, they do not give up any right in respect of a default. | ssec:51.7.3 | Ruling R-126. Ch 62 (ssec:62.7.4) applies it in the Case P waiver. |
 | reservation point | – | The least favorable term a party will accept, derived from its best alternative. | ssec:56.5.1 |  |
-| reserve-based lending | RBL | Revolving or amortizing debt to oil and gas producers whose available amount is a borrowing base set by the value of reserves under a bank price deck and redetermined periodically. | sec:75.3 | Ruling R-101. Ch 2 (ssec:2.4.3) gives a one-paragraph overview with a forward reference. Also entered by Ch 2: those chapters cross-reference this home. |
 | reserve tail | – | Reserves remaining after the final debt maturity, expressed as a share of the original reserves. | ssec:45.6.3 | Ruling R-104. Synonym in reserve-based lending: tail test (Ch 75, ssec:75.3.2). Ch 48 tests it; Ch 78 sets the mining requirement. Also entered by Ch 48, Ch 75, Ch 78: those chapters cross-reference this home. Merged entry: tail test. |
+| reserve-based lending | RBL | Revolving or amortizing debt to oil and gas producers whose available amount is a borrowing base set by the value of reserves under a bank price deck and redetermined periodically. | sec:75.3 | Ruling R-101. Ch 2 (ssec:2.4.3) gives a one-paragraph overview with a forward reference. Also entered by Ch 2: those chapters cross-reference this home. |
 | reserved capacity | – | The pipeline capacity a shipper books and pays for whether or not it uses it. | ssec:25.3.1 |  |
 | reserved matter | – | A decision that requires a special majority or unanimous approval of the shareholders or their directors. | ssec:26.3.1 |  |
 | reserves dedication | – | A seller's commitment of specified field reserves to a supply contract. | ssec:25.2.7 |  |
@@ -1422,37 +1431,37 @@ Entries: 1772.
 | retained risk | – | A risk the public sector keeps under both conventional delivery and the PPP, included on both sides of a value-for-money test. | ssec:57.2.2 |  |
 | retendering procedure | – | A contractor-default compensation method in which the authority retenders the contract and pays the private party the adjusted highest compliant tender price less retendering costs. | ssec:58.5.2 |  |
 | retention | – | A percentage of each payment to a contractor withheld until completion or the end of the defects period. | ssec:22.6.2 | Construction sense. |
-| retention bond | – | A bond that replaces cash retention. | ssec:22.6.2 |  |
 | retention (W&I insurance) | – | The amount of loss the insured bears before a warranty and indemnity policy pays. | ssec:47.3.5 | Ruling R-083. Insurance sense. |
+| retention bond | – | A bond that replaces cash retention. | ssec:22.6.2 |  |
 | returns bridge | – | A step-by-step reconciliation of an equity return from the sponsor case to the investor's own case, one named assumption per step. | ssec:86.4.2 |  |
 | revenue bucket sizing | – | Sizing debt by applying a separate target DSCR to the CFADS from each revenue type (contracted, hedged, merchant) and adding the resulting debt service. | ssec:36.8.1 |  |
 | revenue floor | – | An option that tops a project's market revenue up to a set level in exchange for a premium. | ssec:20.5.1 |  |
 | revenue leakage | – | Toll or fare revenue that is due but not collected, because of evasion, misreads, enforcement failures or bad debt. | ssec:12.4.4 | Ch 21 and Ch 79 use it; never "leakage" alone in toll contexts. Also entered by Ch 21, Ch 79: those chapters cross-reference this home. Merged entry: leakage. |
-| revenue-maximizing toll | – | The toll at which further increases lose more revenue from lost traffic than they gain from higher price. | ssec:79.1.2 |  |
 | revenue recognition | – | The rules determining when and how much revenue is recorded in the income statement. | ssec:7.3.2 |  |
-| revenue-sharing band | – | A contract mechanism that shares revenue above an upper threshold (and sometimes below a lower one) between concessionaire and government. | ssec:58.1.3 | Ruling R-052 (moved from Ch 79). Ch 79 (ssec:79.4.1) applies it. Also entered by Ch 79: those chapters cross-reference this home. |
 | revenue stacking | – | Earning several revenue streams, such as capacity, ancillary services and arbitrage, from the same storage asset. | ssec:20.6.3 |  |
+| revenue-maximizing toll | – | The toll at which further increases lose more revenue from lost traffic than they gain from higher price. | ssec:79.1.2 |  |
+| revenue-sharing band | – | A contract mechanism that shares revenue above an upper threshold (and sometimes below a lower one) between concessionaire and government. | ssec:58.1.3 | Ruling R-052 (moved from Ch 79). Ch 79 (ssec:79.4.1) applies it. Also entered by Ch 79: those chapters cross-reference this home. |
 | reverse flex | – | A reduction in pricing made under a flex arrangement when syndication demand is strong. | ssec:38.8.1 |  |
 | reverse osmosis | RO | Desalination by pushing water through a membrane that holds back salt. | sec:12.9 | Also entered by Ch 81: those chapters cross-reference this home. |
 | riba | – | Any predetermined return on a loan of money, which Islamic finance prohibits. | ssec:33.1.1 |  |
 | right of first offer | ROFO | A shareholder's right to make the first offer for shares another shareholder wants to sell, before they are offered to third parties. | ssec:26.3.3 |  |
 | right of first refusal | ROFR | A shareholder's right to buy shares another shareholder proposes to sell to a third party, on the same terms. | ssec:26.3.3 |  |
 | ring-fencing | – | The legal and contractual separation that keeps a project's assets and cash flows apart from its sponsors' other businesses, protecting each from the other's failure. | ssec:2.1.2 |  |
-| risk-adjusted return on capital | RAROC | A bank's after-tax income from a loan, net of funding cost, operating cost, and expected loss, divided by the capital the bank allocates to it. | ssec:29.2.1 | Ruling R-075. Canonical name; RORAC is not used. Ch 86 (eq:86.1) presents it in a credit paper; Ch 68 supplies the capital input. Also entered by Ch 86: those chapters cross-reference this home. Merged entry: return on risk-adjusted capital. |
+| risk (project finance sense) | – | A possible variation in a project's cash flow, its timing or the value of the claims on it, which some party must absorb. | ssec:14.1.1 |  |
 | risk allocation principle | – | The rule that each risk should be borne by the party best able to control it, price it and absorb its loss. | ssec:2.3.2 |  |
 | risk bearer | – | The party that finally absorbs the loss when a risk occurs, after all contractual transfers are applied and honored. | ssec:14.1.2 |  |
-| risk-bucket valuation | – | Valuation that discounts contracted, hedged and merchant cash flows separately, each at a rate matched to its risk. | ssec:46.4.2 |  |
 | risk card | – | A five-field description of a risk: trigger, transmission path, cash-flow line hit, phase and duration, typical bearer (Framework 14.1). | ssec:14.1.2 |  |
 | risk cluster | – | A set of risks set off by a common trigger, which therefore occur together. | ssec:14.20.1 |  |
-| risk-free rate (finance sense) | – | The return on a default-free government security of matching currency and tenor, used as the base of required returns. | ssec:8.5.1 | Ruling R-010. Written $r_f$ in formulas; never abbreviated RFR. |
-| risk-free rate (reference-rate sense) | RFR | An overnight benchmark rate based on transactions with little or no credit risk, such as SOFR, SONIA and €STR. | ssec:6.5.2 | Ruling R-010. Distinct from the finance sense (ssec:8.5.1). |
 | risk management cycle | – | The seven-step method of identifying, analyzing, quantifying, allocating, mitigating, pricing and monitoring a project's risks, repeated at each deal stage (Framework 15.1). | ssec:15.1.1 |  |
 | risk matrix | – | A table that scores each risk's likelihood and impact on defined scales; drawn as a heat map. | ssec:15.4.1 |  |
 | risk premium (price of risk) | – | The amount a risk bearer charges for taking a risk, above its expected loss. | ssec:15.8.2 | Ruling R-038. |
 | risk premium (required return) | – | The excess of an investor's required return over the risk-free rate (finance sense). | ssec:8.4.1 | Ruling R-038. |
-| risk (project finance sense) | – | A possible variation in a project's cash flow, its timing or the value of the claims on it, which some party must absorb. | ssec:14.1.1 |  |
 | risk register | – | A list of a project's identified risks, each described in enough detail to be owned, assessed and tracked; the starting artifact of risk management. | sec:14.21 |  |
 | risk response | – | One of four ways of dealing with a risk: avoid, reduce, transfer or absorb. | ssec:16.1.1 |  |
+| risk-adjusted return on capital | RAROC | A bank's after-tax income from a loan, net of funding cost, operating cost, and expected loss, divided by the capital the bank allocates to it. | ssec:29.2.1 | Ruling R-075. Canonical name; RORAC is not used. Ch 86 (eq:86.1) presents it in a credit paper; Ch 68 supplies the capital input. Also entered by Ch 86: those chapters cross-reference this home. Merged entry: return on risk-adjusted capital. |
+| risk-bucket valuation | – | Valuation that discounts contracted, hedged and merchant cash flows separately, each at a rate matched to its risk. | ssec:46.4.2 |  |
+| risk-free rate (finance sense) | – | The return on a default-free government security of matching currency and tenor, used as the base of required returns. | ssec:8.5.1 | Ruling R-010. Written $r_f$ in formulas; never abbreviated RFR. |
+| risk-free rate (reference-rate sense) | RFR | An overnight benchmark rate based on transactions with little or no credit risk, such as SOFR, SONIA and €STR. | ssec:6.5.2 | Ruling R-010. Distinct from the finance sense (ssec:8.5.1). |
 | risk-sharing band | – | An allocation that divides a risk's loss into layers carried by different parties, often with a first-loss layer for the party that controls the risk. | ssec:15.5.4 |  |
 | risk-weighted assets | RWA | Exposures multiplied by regulatory risk weights; the denominator of a bank's capital ratios. | ssec:68.1.1 |  |
 | risk-weighted exposure | RWE | The sum of probability times cost across the open items on a construction risk register, used to test the adequacy of remaining contingency. | ssec:61.3.2 |  |
@@ -1527,13 +1536,13 @@ Entries: 1772.
 | sign convention | – | A rule that costs and outflows are stored as positive numbers on calculation sheets and subtracted explicitly. | ssec:39.2.3 |  |
 | signing | – | The date the finance documents are executed; lenders' obligations to fund remain subject to conditions precedent. | ssec:55.8.1 |  |
 | simple interest | – | Interest calculated on the original principal only, so it does not itself earn interest. | ssec:5.1.1 |  |
+| single point responsibility | – | The principle that one contractor is liable for the whole of design, procurement and construction, so that the owner need not prove which party caused a defect. | ssec:22.1.1 |  |
+| single till | – | Airport regulation that counts commercial revenue against the revenue requirement, lowering aeronautical charges. | ssec:21.8.1 | Ruling R-055. Ch 12 previews in one line; Ch 80 (ssec:80.2.2) applies it to airport regulation. Also entered by Ch 12, Ch 80: those chapters cross-reference this home. |
 | single-axis tracker | – | A mounting that rotates modules east to west to follow the sun. | ssec:11.4.2 |  |
 | single-buyer model | – | A market design in which one state entity buys all generation under long-term contracts. | ssec:11.10.1 |  |
-| single point responsibility | – | The principle that one contractor is liable for the whole of design, procurement and construction, so that the owner need not prove which party caused a defect. | ssec:22.1.1 |  |
 | single-purpose undertaking | – | A covenant by the project company to carry on no business other than the project. | ssec:2.1.2 |  |
-| single till | – | Airport regulation that counts commercial revenue against the revenue requirement, lowering aeronautical charges. | ssec:21.8.1 | Ruling R-055. Ch 12 previews in one line; Ch 80 (ssec:80.2.2) applies it to airport regulation. Also entered by Ch 12, Ch 80: those chapters cross-reference this home. |
 | sinking fund | – | A reserve built by periodic contributions that, with interest, reaches a target amount on a stated date. | ssec:65.2.3 |  |
-| sizing case | – | The scenario on which the debt amount and repayment profile are computed. | ssec:43.3.1 |  |
+| sizing case | – | The scenario on which the debt amount and repayment profile are computed. | ssec:35.6.1 | Ruling R-122. Ch 36 and Ch 37 use it; Ch 43 (ssec:43.3.1) owns test cases and the mechanics of running both cases in the model. |
 | sizing mode | – | The state of a model in which the debt amount and repayment profile are recalculated from CFADS. | ssec:42.2.8 |  |
 | sizing ratio | – | The ratio level, on a stated case, to which the amount and repayment profile of debt are set at financial close. | ssec:35.2.4 |  |
 | skew | – | Asymmetry of a distribution; a right-skewed distribution has a longer tail of high values, so its mean exceeds its median. | ssec:9.2.2 |  |
@@ -1575,9 +1584,9 @@ Entries: 1772.
 | standard deviation | σ | The square root of the variance, measuring spread in the variable's own units; stated as one-year or ten-year for energy yields. | ssec:9.3.1 |  |
 | standardised approach | SA | The bank capital route that assigns fixed risk weights by exposure class and external rating. | ssec:68.2.1 |  |
 | standby facility | – | Committed debt available only after construction contingency is used, to fund cost overruns, usually drawn with contingent equity in a fixed ratio. | sec:31.7 |  |
-| standby letter of credit | SBLC | A bank's undertaking to pay a beneficiary on demand if the applicant fails to pay, used as payment security for an offtaker. | ssec:59.5.1 |  |
-| standstill agreement | – | An agreement under which creditors suspend enforcement and acceleration for a period while the borrower provides information and the parties negotiate. | ssec:64.3.3 |  |
+| standby letter of credit | SBLC | A bank's undertaking to pay a beneficiary on demand if the applicant fails to pay, used as payment security for an offtaker. | ssec:59.5.1 | Ruling R-123. The generic instrument "letter of credit" is homed at ssec:16.4.1. |
 | standstill (direct agreement) | – | The counterparty's undertaking not to terminate or suspend the contract during the cure and step-in periods. | ssec:28.2.3 |  |
+| standstill agreement | – | An agreement under which creditors suspend enforcement and acceleration for a period while the borrower provides information and the parties negotiate. | ssec:64.3.3 |  |
 | standstill period | – | A period during which specified creditors may not accelerate or enforce, to give the instructing group time to decide. | ssec:53.6.1 | Ruling R-072. Ch 31 (ssec:31.2.2) states the mezzanine standstill in one sentence with a forward reference. Also entered by Ch 31: those chapters cross-reference this home. |
 | starting point of credit | – | The date from which an ECA-supported loan's repayment term and first-installment deadline are measured, usually linked to delivery, commissioning, or acceptance. | ssec:29.3.2 |  |
 | state of charge | SOC | The energy stored in a battery as a share of its usable capacity. | ssec:11.7.1 |  |
@@ -1614,9 +1623,9 @@ Entries: 1772.
 | supervisory slotting | – | The IRB fallback for specialised lending that maps each exposure to one of five supervisory categories with fixed risk weights and expected-loss rates. | ssec:68.2.3 |  |
 | supplier credit exposure | – | The value, at a point in time, of the supplier's remaining obligations to the owner that would be lost if the supplier failed. | ssec:23.10.2 |  |
 | support scheme | – | A government mechanism that gives a generator or network asset revenue certainty without a commercial offtaker. | ssec:19.1.1 |  |
+| sustainability performance target | SPT | The level of a KPI that the borrower commits to reach by a set date. | ssec:84.4.2 |  |
 | sustainability-linked bond | SLB | A bond whose coupon or other features vary with the issuer's performance against predefined sustainability targets. | ssec:84.4.1 |  |
 | sustainability-linked loan | SLL | A general-purpose loan whose margin varies with the borrower's performance against predefined sustainability targets. | ssec:84.4.1 |  |
-| sustainability performance target | SPT | The level of a KPI that the borrower commits to reach by a set date. | ssec:84.4.2 |  |
 | sustainable aviation fuel | SAF | Jet fuel made from non-fossil feedstocks or captured carbon that meets jet fuel specifications for blending. | ssec:83.4.1 |  |
 | sustainable debt | – | The debt a project can service on a conservative case at a target cover ratio, used to size the new senior instrument in a restructuring. | ssec:64.7.1 |  |
 | Swiss challenge | – | A regime in which an unsolicited proposal is tendered and the original proponent may match the best competing bid. | ssec:57.7.2 |  |
@@ -1642,15 +1651,17 @@ Entries: 1772.
 | tax holiday | – | A period during which a host country exempts a project company from income tax, wholly or partly. | ssec:7.8.3 | Ch 67 (sec:67.8) owns valuation and structuring of holidays; Ch 41 models them. Also entered by Ch 67: those chapters cross-reference this home. |
 | tax leakage | – | The share of a project's pre-tax cash that is lost to taxes on its way to the investor, across all taxing points. | ssec:67.1.1 | Ch 49 (ssec:49.4.2) quantifies it in diligence with a forward reference. Also entered by Ch 49: those chapters cross-reference this home. |
 | tax leakage map | – | A framework for tracing each cash route from project to investor and recording every tax and credit along it. | ssec:67.1.2 |  |
+| tax loss carryforward | – | A tax loss that may be set against taxable income of later years, usually for a limited number of years. | ssec:7.6.4 | Ruling R-136 (new subsection). |
 | teaser | – | A short, non-confidential description of an opportunity circulated to gauge interest before a confidentiality agreement is signed. | ssec:47.3.1 | Ruling R-087. Ch 55 and Ch 85 (sec:85.8) cross-reference. Also entered by Ch 85: those chapters cross-reference this home. |
 | technical bank | – | The arranger responsible for coordinating technical due diligence with the independent engineer. | ssec:55.2.2 |  |
 | technology risk | – | The risk that a design, piece of equipment or process does not perform as expected because it is new, scaled up or unproven in the conditions of use. | ssec:14.5.1 |  |
 | temporary difference | – | A difference between an asset's or liability's carrying amount and its tax base that will reverse in future periods. | ssec:7.8.1 |  |
 | ten-year P-value | – | An exceedance level for average output over ten years, in which interannual variability is reduced by averaging. | ssec:9.6.1 |  |
-| ten-year P90 | – | The energy level that average annual output over ten years is expected to exceed with 90% probability. | ssec:45.2.1 |  |
+| ten-year P90 | – | The energy level that average annual output over ten years is expected to exceed with 90% probability. | ssec:9.6.2 | Ruling R-132. Ch 45 (ssec:45.2.1) models it; Ch 35 and Ch 36 use it in the banking case and P90 sizing. |
 | tenancy ratio | – | The average number of operators leasing space on each tower. | sec:12.10 | Also entered by Ch 82: those chapters cross-reference this home. |
 | tenor | – | In debt sizing, the period from the first repayment (or COD) to final maturity, chosen against the length of the revenue contract and the asset's life. | ssec:36.5.1 |  |
 | term loan B | TLB | A floating-rate institutional term loan with minimal amortization, typically sold to funds and collateralized loan vehicles. | ssec:31.3.3 |  |
+| term sheet | – | A summary of the main terms of a financing (amount, tenor, pricing, sizing, covenants, security, conditions) agreed before the documents are drafted, usually not binding except for stated clauses. | ssec:4.10.3 | Ruling R-123. Ch 51 owns the document set; Ch 56 owns term-sheet negotiation. |
 | term sheet markup | – | A party's written changes and comments on a draft term sheet, with the reasons and costs of each change. | sec:56.8 |  |
 | Term SOFR | – | A forward-looking SOFR-based rate for a stated term, set in advance of the interest period and derived from SOFR derivatives. | ssec:6.5.3 |  |
 | terminal use agreement | TUA | A contract reserving capacity at an LNG terminal for a fee payable whether or not the capacity is used. | ssec:76.7.1 |  |
@@ -1659,7 +1670,7 @@ Entries: 1772.
 | test case | – | A scenario run with the debt locked at the sizing-case profile to measure its effect on ratios and returns. | ssec:43.3.1 |  |
 | test date | – | The date at the end of a calculation period on which financial covenants and distribution conditions are measured. | ssec:62.4.1 |  |
 | thermal runaway | – | A self-sustaining overheating reaction in a battery cell that can spread to neighboring cells. | ssec:11.7.3 | Also entered by Ch 73: those chapters cross-reference this home. |
-| thin capitalization | – | A rule that denies deductions for interest on related-party debt above a set ratio to equity. | ssec:67.4.2 | Ruling R-020. Ch 41 (ssec:41.5.3) computes it with a forward reference. Also entered by Ch 41: those chapters cross-reference this home. |
+| thin capitalization | – | A rule that denies deductions for interest on related-party debt above a set ratio to equity. | ssec:7.6.4 | Ruling R-136 (new subsection), amending R-020. Ch 41 (ssec:41.5.3) computes it; Ch 67 (ssec:67.4.2) owns structuring and policy. |
 | third-party liability insurance | TPL | Insurance of the insured's legal liability to others for injury or property damage. | ssec:27.2.4 |  |
 | three-point estimate | – | A low, most likely and high estimate of a quantity, used to build a simple probability distribution. | ssec:15.3.2 | Also entered by Ch 48: those chapters cross-reference this home. |
 | three-question label test | – | A framework for classifying a sustainable label by who sets it, what it certifies and who checks it. | ssec:84.1.2 |  |
@@ -1732,17 +1743,19 @@ Entries: 1772.
 | value of lost load | VOLL | The estimated cost to consumers of unserved electricity, used to set price caps and reliability standards. | ssec:11.10.3 |  |
 | value of time | – | The money a traveler is willing to pay to save a unit of travel time, used to predict toll-road choice. | ssec:12.4.1 | Also entered by Ch 48, Ch 79: those chapters cross-reference this home. |
 | value staircase | – | A framework for valuing a development project at each milestone by rolling back from financial close with probabilities, time, stage hurdles and remaining spend. | ssec:46.3.2 |  |
+| value-added tax | VAT | A tax on the value added at each stage of supply, charged on sales and recoverable on purchases by registered businesses. | ssec:31.5.1 | Ruling R-125. Ch 67 (sec:67.7) owns the rules, refund risk and indirect taxes. |
 | variable interest entity | VIE | Under US GAAP, an entity consolidated by the party that directs its most significant activities and absorbs its variability, regardless of voting share. | ssec:66.1.3 |  |
 | variance | σ² | The expected squared deviation of a variable from its mean. | ssec:9.3.1 |  |
 | variation | – | A change to the scope of works, instructed by the owner or proposed by the contractor, valued under the contract. | ssec:22.5.1 |  |
 | VAT facility | – | A short-term facility, usually in local currency, that funds value-added tax paid during construction until refunds are received. | ssec:31.5.1 |  |
-| VAT refund lag | – | The time between paying input VAT and receiving its refund from the tax authority. | sec:41.7 |  |
+| VAT refund lag | – | The time between paying input VAT and receiving its refund from the tax authority. | ssec:67.7.2 | Ruling R-125. Ch 41 (sec:41.7) models the refund schedule and the VAT facility rows only. |
 | vendor due diligence | VDD | Diligence reports commissioned by a seller and made available, with reliance, to bidders and the eventual buyer. | ssec:48.1.1 |  |
 | vendor equity | – | An equity stake taken by the reactor vendor in the project or its operator to align the vendor with long-term performance. | ssec:74.3.4 |  |
 | vertical separation | – | The division of a railway into separate infrastructure and train-operating businesses. | ssec:80.1.2 |  |
 | viability-gap funding | VGF | A public capital grant that closes the gap between a project's cost and the amount its revenues can finance. | sec:34.5 |  |
 | virtual data room | VDR | A secure online repository in which a seller, sponsor or borrower makes documents available to bidders, lenders and advisors under access controls and logs. | ssec:85.5.1 |  |
 | virtual PPA | vPPA | A financially settled corporate PPA in which the parties exchange the difference between a fixed price and a market price on the project's output, while the generator sells its power in the market. | ssec:20.2.2 |  |
+| Visual Basic for Applications | VBA | The programming language built into Excel for writing macros. | ssec:13.8.5 | Ruling R-135 (new subsection). |
 | volatile function | – | A function, such as OFFSET or INDIRECT, that recalculates on every change and hides its precedents. | sec:13.5 |  |
 | volume risk | – | The risk that the project produces or is allowed to deliver less output than forecast, whatever the demand. | ssec:14.7.1 |  |
 | wa'd | – | A unilateral promise, used to build Islamic hedging and undertaking structures. | ssec:33.5.2 |  |
@@ -1764,9 +1777,8 @@ Entries: 1772.
 | weather window | – | A period in which sea and wind conditions allow a given marine operation to proceed safely. | ssec:71.4.1 |  |
 | weighted average cost of capital | WACC | The average of the after-tax cost of debt and the cost of equity weighted by their market-value shares of funding. | ssec:8.7.1 |  |
 | weighted average life | WAL | The average time to repayment of a loan's principal, weighting each repayment date by the share of principal repaid then. | ssec:6.3.2 | Ruling R-005. Ch 29 (ssec:29.3.6) applies it in the ECA average-life test; Ch 30 and Ch 36 (ssec:36.9.1) cross-reference. Also entered by Ch 29, Ch 36: those chapters cross-reference this home. |
-| "Who pays if...?" trace | – | A step-by-step following of one adverse event through every contract and insurance to the party that finally bears each part of the loss. | sec:28.6 |  |
 | winner's curse | – | The tendency of the winning bidder in a common-value competition to be the one that most overestimated the asset's value. | ssec:47.2.1 |  |
-| withholding tax | WHT | Tax that the payer deducts from a payment of interest, dividends or fees and remits to the tax authority on the recipient's behalf. | ssec:67.3.1 |  |
+| withholding tax | WHT | Tax that the payer deducts from a payment of interest, dividends or fees and remits to the tax authority on the recipient's behalf. | ssec:7.6.4 | Ruling R-136 (new subsection). Ch 67 (sec:67.3) owns treaty rates, structuring and gross-up drafting. |
 | withholding tax gross-up | – | The borrower's obligation to increase interest payments so that a lender receives the same amount after withholding tax as it would have without it. | ssec:38.5.3 |  |
 | working capital | – | Current operating assets (receivables, inventory, prepayments) minus current operating liabilities (payables, accruals). | ssec:7.9.1 |  |
 | working-capital facility | – | A revolving facility that funds the timing gap between paying costs and collecting revenues. | ssec:31.5.2 |  |
@@ -1780,8 +1792,8 @@ Entries: 1772.
 | XNPV | – | The net present value of cash flows on specific dates, discounted using the actual number of days elapsed divided by 365. | ssec:5.7.1 |  |
 | yank-the-bank | – | A provision allowing the borrower to replace or prepay a lender that refuses a consent most other lenders have given. | ssec:63.3.1 |  |
 | year fraction | – | The length of a model period expressed in years under a day-count convention, held on its own row. | ssec:39.4.3 |  |
-| yield curve | – | The set of interest rates for different maturities at a given date. | ssec:6.6.1 |  |
 | yield (manufacturing) | – | The share of units started that pass final quality tests and can be sold. | ssec:77.4.1 |  |
+| yield curve | – | The set of interest rates for different maturities at a given date. | ssec:6.6.1 |  |
 | yield to maturity | YTM | The single discount rate at which the present value of a bond's remaining coupons and principal equals its price; the bond's internal rate of return. | ssec:6.7.1 | Ruling R-004. Ch 30 (ssec:30.3.1) owns project-bond market conventions (bond-equivalent yield, accrued interest, original issue discount) and cross-references. Also entered by Ch 30: those chapters cross-reference this home. |
 | yieldco | – | A listed company that owns operating infrastructure assets and pays out most of its cash available for distribution as dividends, usually with a sponsor that supplies new assets. | sec:32.7 |  |
 | z-score | z | The number of standard deviations a value lies from the mean of a normal distribution. | ssec:9.4.1 |  |

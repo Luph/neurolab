@@ -2,19 +2,21 @@
 
 This file fixes the book's skeleton: title, Parts, chapter numbering, chapter file names, concept ownership at chapter level, and running-case beats by chapter. Part brief writers expand each chapter to subsection level in `bible/briefs/part-NN.md` and must not change chapter numbers, titles' substance, or ownership without logging a request in `bible/decisions.md` (section "Change requests").
 
-Working title: **Project Finance: The Complete Practice — From First Principles to Financial Close and Beyond**
+Working title: **Project Finance in Practice, from First Principles to Financial Close and Beyond** (no colon subtitle or dash; D-040).
 
 Variety of English: American. Base number format: USD millions to one decimal place (USD 412.6 million in prose; tables headed "USD m"). See `bible/style-sheet.md`.
 
 Running cases (detail in `bible/case-bible.md`):
 
-- **Case P (primary)**: greenfield gas-fired combined-cycle power plant with a full domestic gas-supply chain in a fictional emerging-market country; state utility offtaker under a capacity-plus-energy PPA; EPC contractor; O&M operator plus turbine OEM long-term service agreement; lender group of commercial banks, an ECA-covered tranche and a DFI; interest-rate swaps and currency issues.
+- **Case P (primary)**: greenfield gas-fired combined-cycle power plant with a full domestic gas-supply chain in a fictional emerging-market country; state utility offtaker under a capacity-plus-energy PPA; EPC contractor; O&M operator plus turbine OEM long-term service agreement; lender group of commercial banks, an ECA-covered tranche and a DFI; interest-rate swaps and a construction-period currency hedge (D-114).
 - **Case T (PPP)**: user-pay toll road PPP (demand risk) in a fictional OECD jurisdiction with common-law PPP practice; from the government's decision to procure through bid, close, ramp-up shortfall, distress and restructuring.
 - **Case R (portfolio)**: operating wind, solar and battery storage portfolio in a liberalized energy-only power market with merchant exposure; acquisitions, valuation, hedging, holdco financing and refinancing.
 
 ## Chapter list and concept ownership
 
 Ownership refinements and every boundary between chapters are fixed in `bible/ownership-resolutions.md` (2026-10-03), which takes precedence over this table where they differ; glossary homes are in `bible/glossary-canon.md` and labels in `bible/anchor-registry.md`. A note such as (+R-013) cites the ruling that adds or bounds an item.
+
+Titles: the Title column applies R-113 and D-028 (serial commas, no colon subtitles, no parentheticals) and is binding verbatim on the anchor registry's `ch:N` captions and chapter headings, the brief headers and the `\chapter{}` commands; Part titles follow the same rules (D-040). Rulings R-122 to R-141 (blueprint review) refine ownership further.
 
 Ownership rule: a concept listed under a chapter is taught there in full. Every other chapter cross-references it by section number. A chapter may preview a later-owned concept only through a one- or two-sentence explicit forward reference.
 
@@ -32,7 +34,7 @@ Ownership rule: a concept listed under a chapter is taught there in full. Every 
 | Ch | File | Title | Owns | Case beats |
 |---|---|---|---|---|
 | 5 | 05-time-value-of-money.tex | Money and time | Interest, compounding, discounting, annuities, NPV, IRR and its traps (multiple IRRs, reinvestment, scale, timing), XNPV/XIRR, payback, real vs nominal, inflation and indexation (CPI/partial indexation mechanics); levelized price and levelized tariff (+R-001). | Case P: tariff indexation example. |
-| 6 | 06-debt-and-interest-rates.tex | Debt and interest rates | Principal, interest, upfront and commitment fee mechanics (+R-003); bullet, annuity, straight-line, sculpted (intro only; sculpting math owned by Ch 36); day counts; fixed vs floating; reference rates (SOFR, SONIA, €STR, EURIBOR, term vs compounded in arrears) and LIBOR transition; margins and bps; swaps at intuitive level (swap valuation basics, MTM, breakage); weighted average life; bond basics and yield to maturity (+R-005, +R-004). | Case P: indicative SOFR-based loan. |
+| 6 | 06-debt-and-interest-rates.tex | Debt and interest rates | Principal, interest, upfront and commitment fee mechanics (+R-003); bullet, annuity, straight-line, sculpted (intro only; sculpting math owned by Ch 36); day counts; fixed vs floating; reference rates (SOFR, SONIA, €STR, EURIBOR, term vs compounded in arrears) and LIBOR transition; margins and bps; swaps at intuitive level (swap valuation basics, MTM, breakage); weighted average life; bond basics and yield to maturity (+R-005, +R-004). | Case P: indicative LIBOR-based loan (2016) and the 2023 switch to Term SOFR. |
 | 7 | 07-accounting-for-the-project-company.tex | Accounting from zero | Three statements and linkages, accruals vs cash, depreciation/amortization, deferred tax, working capital, capitalized interest (IDC) in accounts, reading a project company's accounts; decommissioning provision basics. (Sponsor-level accounting, IFRIC 12 and asset retirement obligations are Ch 66; +R-016, +R-015.) | Case P: year-1 operating accounts. |
 | 8 | 08-leverage-risk-and-cost-of-capital.tex | Leverage, risk, and the cost of capital | Capital structure, leverage effect on equity returns, MM intuition, cost of capital, CAPM, WACC vs APV, risk and return; why PF achieves high leverage; equity IRR and project IRR defined as levered and unlevered IRR (conventions Ch 46; +R-013). | Case P: equity IRR at different gearing. |
 | 9 | 09-probability-and-uncertainty.tex | Probability and uncertainty | Distributions, expected values, P50/P90/P99 exceedance, one-year vs ten-year P-values, correlation, sensitivity vs scenario vs Monte Carlo (concepts; implementation in Ch 43); natural hedge, optimism bias, reference-class forecasting, energy yield assessment (+R-043). | Case R: wind yield P-values. |
@@ -86,7 +88,7 @@ Ownership rule: a concept listed under a chapter is taught there in full. Every 
 | 37 | 37-reserves-sweeps-covenants-and-hedging.tex | Reserves, sweeps, covenants, and hedging | DSRA, MMRA and other reserves (funding, sizing, LC substitution); cash sweeps; distribution lock-ups and trapped cash; equity cure design (+R-081); financial and non-financial covenants (design; drafting Ch 51); hedging requirements and hedge profiles. | Case P reserve and hedge structure. |
 | 38 | 38-pricing-project-debt.tex | Pricing project debt | Minimum margin build-up (capital input Ch 68; +R-075); margins and ratchets; swap credit and execution charges (+R-007); arrangement, underwriting, participation, commitment, agency fees; ECA premia in all-in cost; all-in cost of debt; market flex. | Case P pricing. |
 
-### Part VII — Financial Modeling: A Complete Course
+### Part VII — A Complete Course in Financial Modeling
 
 Built cell by cell on Case P. Companion model in `model/`.
 
@@ -131,7 +133,7 @@ Built cell by cell on Case P. Companion model in `model/`.
 | 55 | 55-running-a-financing-to-close.tex | Running a financing to close | Financing strategy (club, underwritten, best efforts; bank vs bond), financial advisor role, IM and lender presentations, credit approval inside a bank, syndication and sell-down, documentation management, CPs, signing vs financial close, funds flow and closing mechanics, timelines and critical paths. | Case P financial close. |
 | 56 | 56-negotiating-project-finance.tex | Negotiating project finance | What is market and why; levers; trade-offs on every key term; tactics, sequencing, escalation; market cycle; negotiating with governments, contractors, offtakers and lenders; term sheet markup walkthrough. | Case P term sheet negotiation. |
 
-### Part XII — Public–Private Partnerships
+### Part XII — Public-Private Partnerships
 
 | Ch | File | Title | Owns | Case beats |
 |---|---|---|---|---|

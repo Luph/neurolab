@@ -1,6 +1,6 @@
 # Case Bible Annex P: Case P terms, people, corrections and missing data
 
-Version 1.0, October 3, 2026. Owner: Case Bible editor, under the editor-in-chief. Binding on every writer, reviewer and modeler.
+Version 1.1, October 3, 2026 (amended after the blueprint review: SEKA LC values per P-C44, the construction currency hedge per D-114, P-F64 to P-F66 registered, RAROC per R-075, the model-audit condition of credit approval, the provisional figure-ID concordance in 8.4; see `reviews/blueprint/central-fixes-log.md`). Owner: Case Bible editor, under the editor-in-chief. Binding on every writer, reviewer and modeler.
 
 ## 0. Status and rules of use
 
@@ -86,7 +86,9 @@ Application to the June 9, 2021 grid event: the expert determination of February
 | Put option (IA) | Exercisable when a SEKA payment default has continued 90 days (after any OREK payment-plan suspension) |
 | 2017 LC fight | Pieter's and Kilnworth's opening ask was three months of estimated capacity and energy charges; Hyacinthe fought it down to two plus one (Case Bible 4.1). Both formulas at COD are figure P-F39 |
 
-2023 sequence (consistent with Case Bible 1.9): LC drawn February 14, 2023; replenishment due March 16, 2023; SEKA delivered an OREK-approved payment plan on March 14, 2023, which suspended the default to June 12, 2023; the put option became exercisable from September 10, 2023; the lenders and sponsors chose not to exercise it, and the October 2023 waiver and the March 2024 settlement overtook it.
+LC values (P-C44): the model value governs. The two-plus-one amount was USD 36.2 million at the January 1, 2022 reset and USD 36.6 million at the January 1, 2023 reset (P-F39); the February 14, 2023 drawing is the full January 1, 2023 reset value, USD 36.6 million (P-F40). The superseded USD 33.8 million is never printed.
+
+2023 sequence (consistent with Case Bible 1.9): LC drawn February 14, 2023 for USD 36.6 million; replenishment due March 16, 2023; SEKA delivered an OREK-approved payment plan on March 14, 2023, which suspended the default to June 12, 2023; the put option became exercisable from September 10, 2023; the lenders and sponsors chose not to exercise it, and the October 2023 waiver and the March 2024 settlement overtook it.
 
 #### 1.1.6 Handback
 
@@ -223,7 +225,7 @@ Gwen Treharne's 2017 view (Chapter 22). In the negotiation she gives only a prel
 | Fees | Case Bible 1.4 (fixed fee and availability incentive) |
 | Liability cap | 100% of the annual fixed fee per contract year; aggregate over the term two times the annual fixed fee; no cap for gross negligence, willful misconduct or fraud |
 | Replacement triggers (project company, with Majority Lender consent; or the lenders directly under the direct agreement) | Availability below 85.0% in two consecutive settlement years for reasons within the operator's control; material breach not cured within 60 days; operator insolvency; Kilnworth ceasing to hold at least 25% of Bélanou Power SA, unless the project company and the lenders confirm the operator in writing within 90 days |
-| 2026 | The sale leaves Kilnworth at 36%, so the 25% trigger is not hit; Coldharbour accepted Kilnworth Operations as operator in the SPA |
+| 2026 | The sale leaves Kilnworth at 36%, so the 25% trigger is not hit; Coldharbour accepted Kilnworth Operations as operator in the share purchase agreement |
 
 ### 1.7 Gas sale agreement (GSA)
 
@@ -463,7 +465,7 @@ The term sheet was agreed on October 27, 2017, after PPA signing on October 12, 
 | Exportgarant insurance policy | Issued July 16, 2018; satisfied |
 | ABDB Board approval of the A-loan and B-loan | February 21, 2018; satisfied |
 | ABDB Board approval of the PRG (USD 41.5 million) | June 20, 2018; satisfied |
-| Castellan credit committee approval | May 22, 2018, with the condition of a PRG of at least USD 40 million (2.5) |
+| Castellan credit committee approval | May 22, 2018, with the conditions of a PRG of at least USD 40 million and a satisfactory model audit report from Ferrand Model Assurance (2.5) |
 | OREK approval of the PPA tariff for pass-through | January 15, 2018; satisfied |
 | OREK generation license | Satisfied (1.9) |
 | Exchange Control Authorization No. 2018-114 | July 12, 2018; satisfied |
@@ -494,7 +496,7 @@ The term sheet was agreed on October 27, 2017, after PPA signing on October 12, 
 | Basket | Limit |
 |---|---|
 | Senior facilities and the standby facility | As committed |
-| Hedging under the hedging strategy | Interest rate swaps within the 75% to 90% band; no FX or commodity hedging without consent |
+| Hedging under the hedging strategy | Interest rate swaps within the 75% to 90% band; KCR forwards covering at least 75% of committed KCR construction payments, traded at close with Castellan (D-114, Case Bible 1.6; P-F65), matured by August 2021; no other FX or commodity hedging without consent |
 | VAT facility (UBK) | KCR 7,900.0 million, repaid from VAT refunds |
 | Working capital facility (UBK, KCR or USD) | USD 15.0 million equivalent; undrawn through 2025 |
 | LC facility for GSA buyer credit support | USD 15.0 million equivalent |
@@ -614,9 +616,9 @@ Approvals of brief proposals: Mariama Talmé may join Tomasz in Chapter 11's 201
 | 2 | Investment committee September 17, 2015; members Philippa Carrow (chair), Devesh Raval, Niall Brannigan, Tomasz presenting |
 | 4 | Development advisers named (2.3); the co-development agreement's conditional structure (1.14.1) |
 | 7 | Characters: Tomasz, Edwige Akakpo-Sodji, Joanna Sedley. Accounts on the lenders' reporting basis (5.1) |
-| 8 | Characters: Tomasz, Kunal Mehrotra, Devesh Raval |
+| 8 | Characters: Tomasz, Kunal Mehrotra, Devesh Raval. Premise: even 80% gearing leaves the FC base equity IRR below the 16.0% bid-model target (P-F05; bridge P-F64); the argument is over downside for about 0.5 points (P-C46) |
 | 15 | Gwen attends in the capacity of Castellan's pre-mandate technical reviewer (P-C18) |
-| 16 | Figures shown: "Inputs at financial close: LC formula (the USD 33.8 million is the 2022 amount and is labeled so if printed), Government Guarantee cap 1,250, PRG 41.5 (Board approval June 20, 2018; Thandeka proposes 30 in May 2017), PRI 90% at 1.15%, contingency 38.40, contingent equity 15.4, standby 46.0" (P-C17) |
+| 16 | Figures shown: "Inputs at financial close: LC formula (the amount under the 1.1.5 formula, P-F39, printed with its reset date: USD 36.2 million at the 2022 reset), Government Guarantee cap 1,250, PRG 41.5 (Board approval June 20, 2018; Thandeka proposes 30 in May 2017), PRI 90% at 1.15%, contingency 38.40, contingent equity 15.4, standby 46.0" (P-C17) |
 | 18 | SEKA's opening availability position 92.0% with bonus and malus (1.1.1); figures add P-F39, P-F47 |
 | 21 | Figures add P-F46 |
 | 24 | P-F11 shows the MMRA part only (P-F11b); add P-F48 |
@@ -670,7 +672,7 @@ Approvals of brief proposals: Mariama Talmé may join Tomasz in Chapter 11's 201
 
 ### 2.5 Castellan's credit committee (Chapter 86)
 
-Castellan's credit committee met on May 22, 2018, chaired by Clive Ormesher. It approved the underwriting and final holds (1.15.1) and the swap line, with one condition: an ABDB PRG of at least USD 40 million behind the LC confirmation (ABDB management's proposal then stood at USD 30 million, Thandeka's figure). The committee did not seek to reopen the signed PPA's LC formula. ABDB management took a USD 41.5 million proposal to its Board, which approved it on June 20, 2018. Castellan's regulatory and RORAC inputs are in 5.6.
+Castellan's credit committee met on May 22, 2018, chaired by Clive Ormesher. It approved the underwriting and final holds (1.15.1), the swap line and the KCR forward line (D-114), with two conditions: an ABDB PRG of at least USD 40 million behind the LC confirmation (ABDB management's proposal then stood at USD 30 million, Thandeka's figure), and a satisfactory model audit report from Ferrand Model Assurance (delivered June 28, 2018; 1.15.3), because the committee met before the model audit was complete. The committee did not seek to reopen the signed PPA's LC formula. ABDB management took a USD 41.5 million proposal to its Board, which approved it on June 20, 2018. Castellan's regulatory and RAROC inputs are in 5.6 (RAROC is the canonical term, R-075; RORAC is not used).
 
 ### 2.6 The 2016 intermediary approach (Chapter 87)
 
@@ -699,7 +701,7 @@ After the February 2022 expert determination confirmed that the transformer fail
 
 ### 3.1 Thandeka's PRG statement
 
-Case Bible 4.1 says that in 2023 the USD 41.5 million PRG was "less than one quarter of the peak arrears". Peak overdue receivables were USD 112.6 million net of the LC drawing (June 30, 2023), or USD 146.4 million gross of it; USD 41.5 million is about 37% and 28% of those. Corrected text: "in 2023 even that covers only about a third of the June 2023 peak arrears net of the LC drawing (less than 30% of the gross arrears)." (P-C16)
+Case Bible 4.1 says that in 2023 the USD 41.5 million PRG was "less than one quarter of the peak arrears". Peak overdue receivables were USD 112.6 million net of the LC drawing (June 30, 2023), or USD 149.2 million gross of the USD 36.6 million drawing (P-F40; P-C44); USD 41.5 million is about 37% and 28% of those. Corrected text: "in 2023 even that covers only about a third of the June 2023 peak arrears net of the LC drawing (less than 30% of the gross arrears)." (P-C16)
 
 ### 3.2 Chapter 16 row (May 2017)
 
@@ -748,7 +750,7 @@ Clarified by 1.8 (P-C30).
 ### 3.13 Other checks made, no change needed
 
 - Guarantee demand-to-payment days (99, 141; 164 to the settlement) and the FX queue duration (508 days) check against Case Bible dates. Printing them needs P-F40 or D-013 arithmetic.
-- The LC sizing formula reproduces the order of magnitude of the USD 33.8 million 2022 amount.
+- The LC sizing formula gives USD 36.2 million at the 2022 reset and USD 36.6 million at the 2023 reset (P-F39); the February 2023 drawing is the 2023 value (P-F40, P-C44).
 - The PRG fee is charged for the whole PPA term in the model; the annex confirms a PRG term matching the PPA (4.9).
 - The LTSA inspection intervals match the availability profile (1.5).
 
@@ -938,13 +940,13 @@ Discount rate 10.0% (USD, real terms not used; all costs flat in 2015 USD); capa
 - The ECA-covered tranche: 95% cover from Exportgarant, treated as an exposure to its home sovereign (rated AA or better; the sovereign is never named, D-104) for the covered part.
 - The ABDB: treated by Castellan's regulator as a qualifying multilateral development bank (0% risk weight); relevant to the B-loan participations of Kaito Pacific and Sterrenberg and to the PRG.
 - PRI: the insurers are rated A- or better, but the cover is political risk only, so Castellan's credit risk management does not recognize it as credit risk mitigation for capital; it uses it for country and transfer risk limits.
-- RORAC inputs: 5.6 and the input requests file (P-F55).
+- RAROC inputs: 5.6 and the input requests file (P-F55).
 
 ---
 
 ## 5. Inputs for figures (summary; detail in the input requests file)
 
-5.1 Accounting basis: 4.6. 5.2 Termination definitions: 1.1.7. 5.3 LC formulas: 1.1.5. 5.4 GSA heating value and reserves: 1.7. 5.5 PRI: 1.11.2. 5.6 Castellan: UK corporation tax 19% (2018); funding premium 0.45% a year; PD 1.6% (construction) and 0.9% (operations) a year; LGD 35% (commercial tranche), 5% on the covered part of the ECA tranche; capital ratio target 13.5% of RWA; operating cost 0.15% of exposure a year; RORAC hurdle 12% after tax. 5.7 Technology screening: 4.12. 5.8 Halbeck: 4.13. 5.9 Bid stage: 4.7. 5.10 Drought dispatch: 4.11.
+5.1 Accounting basis: 4.6. 5.2 Termination definitions: 1.1.7. 5.3 LC formulas: 1.1.5. 5.4 GSA heating value and reserves: 1.7. 5.5 PRI: 1.11.2. 5.6 Castellan: UK corporation tax 19% (2018); funding premium 0.45% a year; PD 1.6% (construction) and 0.9% (operations) a year; LGD 35% (commercial tranche), 5% on the covered part of the ECA tranche; capital ratio target 13.5% of RWA; operating cost 0.15% of exposure a year; RAROC hurdle 12% after tax. 5.7 Technology screening: 4.12. 5.8 Halbeck: 4.13. 5.9 Bid stage: 4.7. 5.10 Drought dispatch: 4.11.
 
 ---
 
@@ -1026,7 +1028,7 @@ Recorded for the register, outside the running cases: Republic of Corredana and 
 | P-F52 | Planned against actual EPC progress and certified payments by quarter, 2018 to 2021 | FC base, actual | 61 | u13 (P-F37) |
 | P-F53 | Expected credit loss allowance on SEKA receivables at December 31, 2022, June 30, 2023 and December 31, 2023; swap mark-to-market and hedge reserve at close, December 31, 2022, June 30, 2025 (before and after partial termination) and September 30, 2026 | Actual | 66 | u14 (P-F41) |
 | P-F54 | Estimated UK Multinational Top-up Tax on Kilnworth's share of Bélanou, 2024 to 2026 (simplified) | Actual | 67 | u14 (P-F38) |
-| P-F55 | Castellan: underwriting and final holds by tranche, swap line, slotting by phase, RWA and capital by tranche with ECA cover and PRI treatment, RORAC | FC base | 68, 86 | u14 (P-F40), u17 (P-F38) |
+| P-F55 | Castellan: underwriting and final holds by tranche, swap line, slotting by phase, RWA and capital by tranche with ECA cover and PRI treatment, RAROC (the ledger v1.2 label "RORAC" is read as RAROC; relabel requested) | FC base | 68, 86 | u14 (P-F40), u17 (P-F38) |
 | P-F56 | IFRIC 12 financial-asset presentation of Bélanou Power (key balances 2021 to 2026) and reconciliation to the lenders' basis; P-F26 recomputed on IFRS carrying amounts | Actual | 7 (one-line note), 66 | u02 BF-2, u14 BF-1 |
 | P-F57 | Kessara 2015 technology screening curves: annualized cost per kW-year and cost per MWh by capacity factor | Inputs (4.12) | 69 | u15 (P-F39) |
 | P-F58 | Actual dispatch and gas burn, 2022 H1 and H2, against FC base 76.5% | Actual | 72 | u15 (P-F40) |
@@ -1035,6 +1037,9 @@ Recorded for the register, outside the running cases: Republic of Corredana and 
 | P-F61 | Sombé West reserve coverage: 2P reserves against Bélanou GSA and SEKA contract quantities | Inputs (1.7.4) | 48 | u10 BF-5 |
 | P-F62 | Bid comparison: levelized tariffs of the four bids under the RFP formula; pricing committee tariff against the submitted tariff (extends P-F06, which keeps its ID; P-F62 holds the comparison table) | Bid inputs (4.7) | 47 | u10 BF-2 |
 | P-F63 | Equity cure amount needed at June 30, 2023 to restore the historic DSCR to 1.10x and to 1.20x | Actual | 62 | u13 CBF-4 |
+| P-F64 | Bid-to-close equity IRR bridge: from the 16.0% bid-model IRR to the FC base IRR by step (capex, financing terms, fees and premiums, tax, FX and indexation, schedule, residual), each step re-sized | FC base re-sized at each step | 8, 47 | Editor (D-037, formerly the second D-017; sequencing review defect 19) |
+| P-F65 | KCR forwards traded July 17, 2018 with Castellan: share hedged (75%), KCR notional, forward rate and USD equivalent by settlement date, USD at forward against USD at FC spot | Contract (FC) | 37, 38, 40, 66 | Editor (D-114; coverage review defect 1) |
+| P-F66 | KCR forward settlements by half-year (gain to the project), mark-to-market to COD, and the unhedged comparison | Actual | 59, 61, 66 | Editor (D-114) |
 
 ### 8.3 Extensions and definitions of existing IDs
 
@@ -1053,6 +1058,42 @@ Recorded for the register, outside the running cases: Republic of Corredana and 
 - P-F28: defined as: sources and uses (P-F07); senior debt by tranche and binding constraint (P-F08); minimum and average DSCR on base, banking and downside, LLCR at close, gearing; WAL and ECA tests (P-F09); all-in cost by tranche (P-F12); DSRA size (P-F11a); breakevens including months of zero SEKA payment covered by DSRA plus LC (P-F16); LC at COD under two-plus-one (P-F39); the swap rate (2.947%).
 - P-F31: unchanged; drought dispatch is P-F58.
 - D-013 covers, with no ID: days to the PPA delay LD cap; the 6,323 against 6,261 gap; the FC base first-period fraction; trigger-ladder percentages (1 − 1.20/1.35 and 1 − 1.10/1.35); the Chapter 28 hypothetical trace at the stated assumptions; base EOH per year (8,439).
+
+### 8.4 Provisional ID concordance (binding)
+
+Each brief requested its own "P-F37 onward", and those provisional meanings collide with the IDs assigned above and printed in `model/figure-ledger-case-p.md`. A writer reads a provisional ID in a brief through this table and cites only the final ID. Rows were built by matching each brief's description against the ledger labels (ledger v1.2). "No ID" means the number is D-013 arithmetic or the request was folded into an existing figure.
+
+| Unit | Chapter | Provisional ID in the brief | Brief's description | Final ID |
+|---|---|---|---|---|
+| u05 | 21 | P-F37 | GTA annual charges, 2022, and pass-through to SEKA | P-F46 |
+| u05 | 18 | P-F38 | LC at COD under the three-month and two-plus-one formulas, FC base | P-F39 |
+| u05 | 18 | P-F39 | Heat-rate headroom and annual fuel margin, FC base, OY1 | P-F47 |
+| u06 | 24, 28, 65 | P-F37 | LTSA run-out date by dispatch case against PPA expiry and debt maturity | P-F48 |
+| u06 | 28 | P-F38 | 2018 hypothetical grid-surge trace at an assumed delay | No ID: D-013 arithmetic at the assumptions in 2.2 row 28 (120 days, USD 7.5 million) |
+| u08 | 35 | P-F37 | PLCR at close; period-by-period CFADS and DSCR on base, banking and downside | P-F41 |
+| u08 | 35 | P-F38 | Case P breakevens for 1.00x minimum DSCR | P-F16 (Chapter 35 added as a user) |
+| u08 | 37 | P-F39 | Trigger-ladder CFADS falls to lock-up and default | No ID: D-013 arithmetic (8.3) |
+| u09 | 43 | P-F37 | Monte Carlo on availability and dispatch with locked debt | P-F42 |
+| u09 | 40 | P-F38 | Convergence log of the FC sizing; equity-first variant | P-F43 |
+| u09 | 41 | P-F39 | Revenue build OY1 to OY10 by component | P-F44 |
+| u09 | 41 | P-F40 | Construction VAT, refunds, VAT facility; working capital OY1 to OY3 | P-F37 |
+| u09 | 42 | P-F41 | FC base financial statements OY1 to OY3 with balance check | P-F45 |
+| u11 | 55 | P-F37 | Funds flow at financial close, July 17, 2018 (exh:55.10) | P-F49 |
+| u11 | 56 | P-F38 | PV of the swap credit and execution charge | P-F50 |
+| u12 | 60 | P-F37 | PRI insured amount and premium, 2018 to June 2025 | P-F51 |
+| u14 | 66 | P-F41 | ECL allowance on SEKA receivables; swap MTM and hedge reserve | P-F53 |
+| u14 | 66, 67 | P-F37 | VAT paid on the onshore EPC portion, peak VAT receivable, refund-lag cost | P-F37 (same ID, same meaning) |
+| u14 | 67 | P-F38 | Estimated GloBE (UK Multinational Top-up Tax) on Bélanou, 2024 to 2026 | P-F54 |
+| u14 | 67 | P-F39 (proposed) | Thin-capitalization computation and disallowance | P-F38 |
+| u14 | 68 | P-F40 | Castellan's exposures, slotting, RWA and capital by tranche | P-F55 |
+| u15 | 75 | P-F37 | Halbeck's Sombé West RBL borrowing base, 2017 and 2023 | P-F59 |
+| u15 | 75 | P-F38 | GCK reservation and commodity revenue from the Bélanou GTA, 2022 | P-F46 |
+| u15 | 69 | P-F39 | Kessara 2015 technology screening curves | P-F57 |
+| u15 | 72 | P-F40 | Actual dispatch and gas burn, 2022 H1 and H2 | P-F58 |
+| u17 | 85 | P-F37 | September 2016 bid-stage screen | P-F60 |
+| u17 | 86 | P-F38 | Castellan's underwriting, holds, swap line, slotting and RAROC box | P-F55 |
+
+The ledger itself carries P-F37 and P-F40 extension rows (working capital 2021H1; netting set-offs; the February 2023 LC drawing) under the same IDs: they belong to the 8.1 definitions. Anchor registry caption fix for the next regeneration: `exh:55.10` "Case P closing-day funds flow (P-F49)".
 
 ---
 
@@ -1227,3 +1268,5 @@ Case T: u03 5, 7, 8; u06 BF-1; u10 BF-3; u12 1 to 5; u13 CBF-5, CBF-6; u14 BF-8;
 | P-C38 | 2015-08-11 | 54, 67 | P | Holding company jurisdiction | "A treaty jurisdiction" | Mauritius; BIT 2004/2006; DTA 2009/2011 | Annex 1.3 |
 | P-C39 | 2017 to 2043 | 25, 28, 65, 76 | P | GSA and GTA term | 22 years from an unstated start | From COD to November 30, 2043; deliberate gap to PPA expiry | Annex 1.7.1 |
 | P-C40 | 2018 | 7, 66 | P | Accounting framework | Unstated | IFRS, USD functional, IFRIC 12 financial asset; lenders' basis fixed-asset model | Annex 4.6 |
+
+Rows P-C41 to P-C48 (model calibrations, the overrun funding, the LC value, the currency hedge and the Chapter 6, 8 and 12 scene fixes) are in Case Bible Part 8.

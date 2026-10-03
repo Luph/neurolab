@@ -421,7 +421,7 @@ Settled June 30, 2025, an interest payment date, so no loan breakage. A USD seni
 
 ### Partial sale (2026)
 
-Kilnworth sells 24% of the project company (40% of its 60% holding) in shares and shareholder loans pro rata to Coldharbour Infrastructure Income Fund. SPA signed April 14, 2026; locked-box date December 31, 2025 with a 6.50% a year ticker; completion September 30, 2026. Buyer's discount rate 13.75% (USD, post-tax, levered); Kilnworth's reserve discount rate 12.50%; price = 24% of equity value at the agreed rate (model, P-F24). Deferred consideration of USD 4.0 million if SEKA's overdue receivables stay at zero through June 30, 2027. W&I insurance limit USD 18.0 million. Consents: lenders and bondholders (Kilnworth must keep at least 30% until 2030), SEKA, MEH under the IA, and right-of-first-refusal waivers by Groupe Talmé and the ABDB fund. Kilnworth pays the 15% indirect transfer tax on its gain. After completion Kilnworth holds 36% and stops consolidating the project company (Chapter 66).
+Kilnworth sells 24% of the project company (40% of its 60% holding) in shares and shareholder loans pro rata to Coldharbour Infrastructure Income Fund. Share purchase agreement signed April 14, 2026 (never abbreviated; SPA means the commodity contract, R-084); locked-box date December 31, 2025 with a 6.50% a year ticker; completion September 30, 2026. Buyer's discount rate 13.75% (USD, post-tax, levered); Kilnworth's reserve discount rate 12.50%; price = 24% of equity value at the agreed rate (model, P-F24). Deferred consideration of USD 4.0 million if SEKA's overdue receivables stay at zero through June 30, 2027. W&I insurance limit USD 18.0 million. Consents: lenders and bondholders (Kilnworth must keep at least 30% until 2030), SEKA, MEH under the IA, and right-of-first-refusal waivers by Groupe Talmé and the ABDB fund. Kilnworth pays the 15% indirect transfer tax on its gain. After completion Kilnworth holds 36% and stops consolidating the project company (Chapter 66).
 
 ## 1.10 Case P scenarios
 
@@ -505,7 +505,9 @@ The winning contribution, ARD 287.4 million against a reference of ARD 410.0 mil
 | Corvus Road Services | O&M operator and tolling back office (Corvus Toll Roads affiliate) |
 | Pellow Transport Economics | Sponsor's traffic advisor (Sasha Hrytsenko) |
 | Ridgeway Traffic Consultants | Lenders' traffic advisor |
-| Calder Hartmann Engineering | Lenders' independent engineer (cross-case firm; the Case T team is led by a different partner, not Gwen Treharne) |
+| Calder Hartmann Engineering | Lenders' independent engineer and, from opening, lenders' technical and traffic monitoring adviser (cross-case firm; the Case T team is led by Rhys Tanaka-Bell of the Port Ellery office, not Gwen Treharne; Annex TR T.18) |
+| Galbraith Stowe | Lenders' counsel to the bank club, the BIFA bondholders' representative and NILO on the intercreditor terms (partner Lachlan Mereweather; Annex TR T.18) |
+| Dunmore Pryor | Counsel to Merrick Motorway Partners and the concessionaire from the bid to the 2023 plan (partner Anjali Thevarajah; Annex TR T.18) |
 | Independent certifier | Appointed jointly by BRTA and the concessionaire |
 | Castellan Bank, Penhallow Bank, Kaito Pacific Bank, Sterrenberg Bank NV | Bank club: senior mini-perm and contribution bridge |
 | BIFA bondholders | Ardmore insurers and funds holding the tax-exempt revenue bonds |
@@ -901,6 +903,10 @@ Ardmorean, born 1968. Credit Director, NILO. Wants to protect the federal loan a
 
 See Section 4.1. Restructuring adviser to the Case T senior lenders from January 2022.
 
+### Lachlan Mereweather (lenders' counsel), Anjali Thevarajah (sponsors' counsel) and Rhys Tanaka-Bell (independent engineer)
+
+Added after the blueprint review so that Case T has the lawyers' seats and the lenders' technical seat in every negotiation. Full sheets, verbal habits and where-wrong notes: Annex TR T.18. Lachlan appears at close (sec:58.13) and in the restructuring plan (ssec:64.14.5); Anjali at close and across the restructuring (Chapters 58 and 64); Rhys in the ramp-up (sec:79.14) and the restructuring evidence (ssec:64.14.1).
+
 ## 4.3 Case R characters
 
 ### Rafael Quintanilla (fund partner)
@@ -966,6 +972,9 @@ See Section 4.1. Principal, then Director, at Lattimer from June 2021; leads A2 
 | Oleksandr (Sasha) Hrytsenko | T | Ardmorean (Ukrainian-born) | 1970 | Pellow Transport Economics |
 | Owen Reddaway | T | Ardmorean | 1971 | Brannock Treasury |
 | Kirsten Lowry | T (minor) | Ardmorean | 1968 | NILO |
+| Lachlan Mereweather | T | Ardmorean | 1969 | Galbraith Stowe |
+| Anjali Thevarajah | T | Ardmorean (Sri Lankan Tamil descent) | 1975 | Dunmore Pryor |
+| Rhys Tanaka-Bell | T | Ardmorean (Welsh and Japanese parents) | 1971 | Calder Hartmann Engineering (Port Ellery) |
 | Rafael Quintanilla | R | American | 1971 | Lattimer Infrastructure Partners |
 | Carmen Villarreal-Ochoa | R | American | 1986 | Lattimer (Mesa Corta) |
 | Declan Furlong | R | Irish | 1981 | Castellan Bank |
@@ -1028,6 +1037,8 @@ Every name below is fictional. Each was checked by web search on October 3, 2026
 | Pellow Transport Economics | Sponsor's traffic advisor | T | Clear |
 | Ridgeway Traffic Consultants | Lenders' traffic advisor | T | Clear |
 | Penhallow Bank | Ardmorean bank | T, R | Clear |
+| Galbraith Stowe | Case T lenders' counsel (Port Ellery law firm) | T | Clear (separate US firms named Galbraith and Stowe exist; no firm of the combined name; checked October 3, 2026) |
+| Dunmore Pryor | Case T sponsors' and concessionaire's counsel (Port Ellery law firm) | T | Clear (Dunmore, Pennsylvania and Pryor, Oklahoma are towns; no firm of the combined name) |
 | Lattimer Infrastructure Partners; Lattimer Energy Transition Fund II | Fund manager and fund | R | Clear (Lattimer is an unrelated UK glass-equipment maker) |
 | Mesa Corta Renewables LLC; Mesa Corta HoldCo LLC; Mesa Corta OpCo LLC | Platform | R | Clear |
 | Thatcher Flats Wind; Sandoval Hills Wind; Ollie Creek Wind; Peeler Draw Solar; Calloway Mesa Solar; Redfern Storage; Kerrigan Storage; Barlow Gap Solar | Assets | R | Clear for Thatcher Flats and Ollie Creek; the others are not names of known ERCOT projects |
@@ -1083,7 +1094,7 @@ Every chapter carries a running-case installment (`standards.md` Section 6, item
 | 34 | P | 2017 | The ABDB PRG with a donor-subsidized fee; why a KCR loan was not available at the tenor needed | Thandeka, Clémentine | Inputs: PRG 41.5, fee 0.75% | – | PRG proposed at USD 30 million (ABDB management, November 2017); Board approves USD 41.5 million on June 20, 2018 (Annex P) |
 | 35 | P | 2018 (FC base) | CFADS for the first full operating year; DSCR, LLCR, PLCR; base, banking and downside cases | Pieter | P-F10, P-F08 (ratios); P-F16 (breakevens), P-F41 (Annex P) | – | – |
 | 36 | P | April 2018 | The lenders size the debt: sculpting at 1.35x, the 75% gearing cap, the ECA weighted average life test | Pieter, Tomasz | P-F08, P-F09; P-F36 (Annex P) | Term sheet agreed | Debt sized |
-| 37 | P | 2018 | DSRA, MMRA, lock-up and default levels; 80% swap at 2.947%; the hedging policy's currency-hedging requirement: at least 75% of committed KCR construction payments, met by the KCR forwards with Castellan (sec:37.10 in the term-sheet terms) (central fix 2026-10-03) | Pieter, Tomasz | P-F11, P-F12 (swap profile); P-F11a (DSRA), P-F11b (MMRA), P-F65 (central fix 2026-10-03) | – | Reserve and hedge structure set |
+| 37 | P | 2018 | DSRA, MMRA, lock-up and default levels; 80% swap at 2.947%; the hedging policy's currency-hedging requirement: at least 75% of committed KCR construction payments, met by the KCR forwards with Castellan (sec:37.10) (central fix 2026-10-03) | Pieter, Tomasz | P-F11, P-F12 (swap profile); P-F11a (DSRA), P-F11b (MMRA), P-F65 (central fix 2026-10-03) | – | Reserve and hedge structure set |
 | 38 | P | 2018 | Pricing: margins, fees, ECA premium, all-in cost by tranche; the credit charge on the KCR forwards as part of the all-in cost (central fix 2026-10-03) | Pieter, Henrike | P-F12 (all-in cost); P-F50, P-F65 (central fix 2026-10-03) | – | – |
 | 39 | P | Model build | Model skeleton: timeline, flags, inputs from the JSON file, scenario switch | – | None | – | – |
 | 40 | P | Model build (FC base) | Funding sheet: sources and uses, monthly drawdowns, IDC circularity; the KCR forwards in the two-currency Funding sheet (ssec:40.1.4, local-currency costs) (central fix 2026-10-03) | – | P-F07, P-F13; P-F43, P-F65 (central fix 2026-10-03) | – | – |
@@ -1150,7 +1161,7 @@ Concept-ownership notes for writers:
 
 # Part 7. Figure register
 
-The modelers compute each figure below from the input files and record its values in the figure ledger (`model/figure-ledger.md`, created by the modeling agents) under the same ID. Writers cite figures by ID in their status notes. "Scenario" names a scenario from Sections 1.10, 2.8 and 3.8. A figure marked "inputs" needs no model run; it is listed so that every running-case number in the book has an ID.
+The modelers compute each figure below from the input files and record its values in the figure ledgers (`model/figure-ledger-case-p.md`, `model/figure-ledger-case-t.md` and `model/figure-ledger-case-r.md`; Case P ledger v1.2) under the same ID. Writers cite figures by ID in their status notes. "Scenario" names a scenario from Sections 1.10, 2.8 and 3.8. A figure marked "inputs" needs no model run; it is listed so that every running-case number in the book has an ID.
 
 ## 7.1 Case P
 
@@ -1160,20 +1171,21 @@ The modelers compute each figure below from the input files and record its value
 | P-F02 | Capacity charge, fixed O&M charge and VOM charge indexed to the January 2022 invoice; real versus nominal | Actual history indices | 5, 18 |
 | P-F03 | Indicative 2016 all-in floating cost by tranche (6M LIBOR at 2016 levels plus margins and fees annualized) | Inputs plus simple calculation | 6 |
 | P-F04 | 2022 income statement, balance sheet and cash flow statement of Bélanou Power SA | Actual history | 7 |
-| P-F05 | Equity IRR at gearing of 60%, 65%, 70%, 75% and 80% (debt on the sculpted profile) | FC base | 8 |
+| P-F05 | Equity IRR at gearing of 60%, 65%, 70%, 75% and 80% (senior debt set at each gearing; Chapter 8 prints only the equity IRR and debt lines) | FC base | 8 |
 | P-F06 | Levelized tariff of the winning bid under the RFP evaluation formula; runner-up 4.6% higher | FC base inputs | 47 |
 | P-F07 | Sources and uses at financial close, including IDC, fees, ECA premium, DSRA; equity split between share capital and shareholder loans | FC base | 32, 40, 55 |
 | P-F08 | Senior debt by tranche; binding constraint; minimum and average DSCR on base, banking and downside; LLCR at close | FC base, banking, downside | 35, 36 |
 | P-F09 | Sculpted repayment profile; ECA weighted average life and largest installment tests | FC base | 36 |
 | P-F10 | CFADS build for the first full operating year | FC base | 35 |
-| P-F11 | DSRA initial balance; MMRA accumulation schedule | FC base | 24, 37 |
+| P-F11a | DSRA initial balance (Annex P 8.3 split) | FC base | 37 |
+| P-F11b | MMRA accumulation schedule (Annex P 8.3 split) | FC base | 24, 37 |
 | P-F12 | Swap notional profile; hedged and unhedged cost; all-in cost of debt by tranche including ECA premium | FC base | 37, 38 |
 | P-F13 | Monthly construction drawdown schedule and IDC | FC base | 40 |
 | P-F14 | Tax computation OY1 to OY10: holiday, deferred depreciation, minimum turnover tax | FC base | 41 |
 | P-F15 | Cash waterfall OY1 to OY3; distributions; dividend-trap check with and without shareholder loans | FC base | 42, 52 |
-| P-F16 | Equity IRR, project IRR, NPV at 16.0%, payback; sensitivity table; breakevens | FC base and sensitivities | 43, 69 |
+| P-F16 | Equity IRR, project IRR, NPV at 16.0%, payback; sensitivity table; breakevens | FC base and sensitivities | 35 (breakevens), 43, 69 |
 | P-F17 | Model audit findings (seeded errors and their effect on debt size), specified by the Chapter 44 brief | FC base | 44 |
-| P-F18 | Actual construction sources and uses; overrun funding (contingency, LDs, DSU, standby, contingent equity); IDC against FC base | Actual history | 61 |
+| P-F18 | Actual construction sources and uses; overrun funding (contingency, LDs, DSU, FX forward gains, standby, contingent equity; both drawn in ledger v1.2, P-C43); IDC against FC base | Actual history | 31, 32, 61 |
 | P-F19 | Completion test results; performance LDs; effect of the prepayment and the 581.9 MW reset on projected DSCR | Actual history | 61 |
 | P-F20 | Arrears path; cash DSCR by period 2022 H1 to 2025 H1; DSRA drawing and replenishment; FX losses | Actual history | 59 |
 | P-F21 | Historic DSCR at June 30, 2023; waiver economics (fee, margin uplift, deferral) | Actual history | 62 |
@@ -1183,7 +1195,7 @@ The modelers compute each figure below from the input files and record its value
 | P-F25 | Termination compensation at June 30, 2023 under SEKA default, project company default and natural force majeure, against senior debt outstanding | Actual history | 17 (formula only), 59 |
 | P-F26 | Kilnworth's accounting: consolidation to September 30, 2026; remeasurement gain on loss of control; equity-method carrying value | Actual history | 66 |
 | P-F27 | Withholding tax leakage on distributions and shareholder loan interest, treaty against domestic rates; commercial-tranche interest gross-up cost | FC base and actual | 67 |
-| P-F28 | Credit paper key metrics at close | FC base, banking, downside | 86 |
+| P-F28 | Credit paper key metrics at close (definition in Annex P 8.3) | FC base, banking, downside | 86 |
 | P-F29 | Handback reserve accumulation and plant condition at transfer (assumption-based) | Actual history | 65 |
 | P-F30 | Insurance claim: EAR material damage and DSU computation | Inputs | 61 |
 | P-F31 | OY1 actual against the FC base case: availability, revenue, opex, CFADS | Actual history and FC base | 62 |
@@ -1191,7 +1203,37 @@ The modelers compute each figure below from the input files and record its value
 | P-F33 | Delay LD calibration: daily interest, fixed costs and PPA LDs at the scheduled COD, compared with USD 247,300 | FC base | 22 |
 | P-F34 | Operating cost build OY1 to OY10, including LTSA fixed and variable fees | FC base | 24, 41 |
 | P-F35 | Annual gas volume against DCQ and the take-or-pay level at base, banking and downside dispatch | FC base | 25 |
-| P-F36 | Senior debt at DSCR targets of 1.30x, 1.35x and 1.40x and gearing caps of 70%, 75% and 80% | FC base | 56 |
+| P-F36 | Senior debt at DSCR targets of 1.30x, 1.35x and 1.40x and gearing caps of 70%, 75% and 80% | FC base | 36, 56 |
+| P-F37 | VAT on the onshore EPC portion: VAT paid, refunds, VAT facility balance and interest, peak VAT receivable and refund-lag cost; working capital balances OY1 to OY3 (Annex P 8.1) | FC base | 31, 41, 67 |
+| P-F38 | Thin capitalization computation and disallowed shareholder loan interest (Annex P 8.1) | FC base and actual | 41, 67 |
+| P-F39 | SEKA LC amount at COD under the two-plus-one and three-month formulas; reset values 2022 to 2025 (Annex P 8.1) | FC base and actual | 16, 18, 59, 86 |
+| P-F40 | FX losses, netting set-offs, settlement installments, guarantee demand-to-payment days, FX queue duration; the February 14, 2023 LC drawing (Annex P 8.1; P-C44) | Actual | 59 |
+| P-F41 | PLCR at close; period-by-period CFADS and DSCR on the three FC cases (Annex P 8.1) | FC cases | 35 |
+| P-F42 | Monte Carlo on availability and dispatch with locked debt (Annex P 8.1) | FC base | 43 |
+| P-F43 | Convergence log of the FC sizing; equity-first funding variant (Annex P 8.1) | FC base | 40 |
+| P-F44 | Revenue build OY1 to OY10 by component (Annex P 8.1) | FC base | 41 |
+| P-F45 | FC base financial statements OY1 to OY3 with balance check (Annex P 8.1) | FC base | 42 |
+| P-F46 | GTA charges 2022 and their pass-through; GCK's revenue from the Bélanou GTA (Annex P 8.2) | Actual | 21, 75 |
+| P-F47 | Heat-rate headroom as an annual fuel margin (Annex P 8.2) | FC base | 18, 48 |
+| P-F48 | LTSA run-out date by dispatch case (Annex P 8.2) | FC base, banking, low dispatch, actual | 24, 28, 65 |
+| P-F49 | Funds flow at financial close, July 17, 2018 (Annex P 8.2) | FC base | 55 |
+| P-F50 | PV of the 7.5 bps swap credit and execution charge; the 10 bps opening (Annex P 8.2) | FC base | 38, 56 |
+| P-F51 | PRI insured amount and premium by period (Annex P 8.2) | FC base and actual | 27, 60 |
+| P-F52 | Planned against actual EPC progress and payments by quarter (Annex P 8.2) | FC base, actual | 61 |
+| P-F53 | ECL allowance on SEKA receivables; swap MTM and hedge reserve (Annex P 8.2) | Actual | 66 |
+| P-F54 | Estimated UK Multinational Top-up Tax on Kilnworth's share (Annex P 8.2) | Actual | 67 |
+| P-F55 | Castellan: underwriting and holds, swap line, slotting, RWA and capital, RAROC (Annex P 8.2) | FC base | 68, 86 |
+| P-F56 | IFRIC 12 financial-asset presentation and reconciliation to the lenders' basis (Annex P 8.2) | Actual | 7 (one-line note), 66 |
+| P-F57 | Kessara 2015 technology screening curves (Annex P 8.2) | Inputs | 69 |
+| P-F58 | Actual dispatch and gas burn, 2022 (Annex P 8.2) | Actual | 72 |
+| P-F59 | Halbeck RBL borrowing base, 2017 and 2023 (Illustrative; Annex P 8.2) | Illustrative inputs | 75 |
+| P-F60 | September 2016 bid-stage screen (Annex P 8.2) | Bid-stage inputs | 85 |
+| P-F61 | Sombé West reserve coverage (Annex P 8.2) | Inputs | 48 |
+| P-F62 | Bid comparison: levelized tariffs of the four bids (Annex P 8.2) | Bid inputs | 47 |
+| P-F63 | Equity cure amount needed at June 30, 2023 (Annex P 8.2) | Actual | 62 |
+| P-F64 | Bid-to-close equity IRR bridge from the 16.0% bid-model IRR to the FC base (Annex P 8.2; D-037, formerly the second D-017) | FC base re-sized at each step | 8, 47 |
+| P-F65 | KCR forwards traded at financial close: share hedged, KCR notional, forward rates and USD equivalents by settlement date (D-114) | Contract (FC) | 37, 38, 40, 66 |
+| P-F66 | KCR forward settlements and mark-to-market to COD; unhedged comparison (D-114) | Actual | 59, 61, 66 |
 
 ## 7.2 Case T
 
@@ -1267,7 +1309,7 @@ Every change to a case after this version is logged here. "Date in story" is whe
 | P-C14 | 2025-06-30 | 63 | P | Debt structure | Four tranches plus standby | ECA tranche, A-loan, 7.875% bond to 2037 | Assumption (1.9); P-F23 |
 | P-C15 | 2026-09-30 | 63 | P | Shareholding | Kilnworth 60% | Kilnworth 36%, Coldharbour 24% | Assumption (1.9); P-F24 |
 | T-C01 | 2014-08-15 | 47, 58 | T | State contribution | Reference ARD 410.0 million | Bid ARD 287.4 million | Assumption (2.3) |
-| T-C02 | 2019-05-06 | 79 | T | Opening date | 2019-03-31 | 2019-05-06 | Assumption (2.2) |
+| T-C02 | 2019-05-06 | 45 (first revealed; Chapters 64 and 79 restate it) | T | Opening date | 2019-03-31 | 2019-05-06 | Assumption (2.2) |
 | T-C03 | 2022-05-20 | 64 | T | Bank maturity and margin | 2022-05-27; 2.60% | 2023-12-31; 3.25% | Assumption (2.8) |
 | T-C04 | 2023-12-18 | 64 | T | Senior debt, equity, NILO terms, concession term, tolls | Original | Per Section 2.8 restructuring table | Assumption (2.8); T-F09 |
 | T-C05 | 2012-11-08 | 57, 58 | T | PSC risk adjustments (modeler calibration, pre-publication; editor-in-chief note) | Construction 221.7; traffic revenue 274.0; operating 41.3; competitive neutrality 38.4 (ARD m, PV 2012) | Construction 115.3; traffic revenue 87.4; operating 18.5; competitive neutrality 19.6; VfM reported as a share of the risk-adjusted PSC | Assumption (2.3); T-F01. Old values gave a reference VfM of 52% of the PSC |
@@ -1290,7 +1332,7 @@ Every change to a case after this version is logged here. "Date in story" is whe
 
 | T-C12 | 2013-09-02 to 2015-05-27 | 47, 58 | T | Procurement terms | Unspecified | Three-stage evaluation; ARD 20.0m bid security; committed-finance rules; Northgate traffic basis; third consortium's reason | Annex T.2 (book inputs) |
 | T-C13 | 2015-05-27 | 23, 58 | T | Performance regime | "KPI deductions" only | Lane charges, KPI points, ARD 2,400 per point, 2.5% cap, thresholds 300/500/800 | Annex T.1 |
-| T-C14 | 2019 to 2025 | 58, 64 | T | Actual performance payments | None | 2019 0.38 to 2025 0.07 (ARD m) by half-year | Annex T.1; T-F13 |
+| T-C14 | 2019 to 2025 | 58, 64 | T | Actual performance payments | None | 2019 0.38 to 2025 0.07 (ARD m) by half-year | Annex T.1; T-F20 |
 | T-C15 | 2015-05-27 | 23 | T | D&C cap, interface agreement, tolling subcontract | Unspecified | 60% aggregate cap; Interface Agreement; Quillfield subcontract; acceptance test | Annex T.4 |
 | T-C16 | 2019-02 to 2019-05-06 | 23, 79 | T | Cause of the 36-day delay | Unspecified | Tolling acceptance test failure; JV recovers ARD 3.42m from Quillfield | Annex T.4 |
 | T-C17 | 2016 to 2017 | 12, 23 | T | Tunnel ground and method | Unspecified | Sandstone/siltstone with fault zone; sequential excavation; JV absorbs overrun | Annex T.6 |
@@ -1315,6 +1357,11 @@ Every change to a case after this version is logged here. "Date in story" is whe
 | P-C46 | 2017-10; 2023 | 75 | P | Halbeck RBL expected borrowing base (annex 4.13; editor ruling v1.3) | About USD 420 million at signing; about 360 million at the 2023 redetermination | USD 280.7 million at signing; USD 362.7 million in 2023 (model logic: sales capped at contracted SNHK demand, 40% reserve tail, completion-basis NPV; inputs unchanged) | P-F59 |
 | P-C47 | 2016-09 | 46, 47 | P | Kilnworth bid model reconstruction for the P-F64 bridge (modeler calibration, pre-publication) | Bid-model IRR 16.0% (annex 4.7); bid-model base rate not stated | Swapped base rate 3.44% flat, solved so that the reconstruction returns 16.0% with the annex 4.7 indicative terms, the 655 capex, no PRI or WHT gross-up, no mini-perm, no VAT facility interest, no minimum turnover tax or thin cap, KCR flat; the bridge to the FC base (13.3%) is sequential with no residual | P-F64 |
 | N-C01 | n/a | 1, 89 | All | Name register | Unregistered | Part N entries | Annex N |
+| P-C46 | 2017 | 8 | P | Chapter 8 scene premise (central fix) | "Committee wants 80% gearing to protect the 16.0% bid target" | No gearing up to 80% reaches 16.0% on the FC base (P-F05); the scene argues over downside for about 0.5 points, with the bid-to-close bridge P-F64; characters per Annex P 2.2 | P-F05, P-F64 |
+| P-C47 | 2016-07 | 6, 56 | P | Chapter 6 scene (central fix) | 2018 margin grid in a July 2016 scene; Pieter insists on an 80% hedge priced by Castellan | July 2016 indicative margins only (P-F03, Annex P 4.7); Pieter floats a hedging requirement without ratio or pricing; the 80% and execution-charge fight is staged once, September 2017 (Chapter 56, Annex P 1.15.2) | P-F03 |
+| P-C48 | 2017-11 | 12, 25 | P | Chapter 12 scene (central fix) | Félix argues for take-or-pay | Félix asks physical questions (offshore outages, plateau); take-or-pay is argued only in Chapter 25 | Inputs |
+| T-C23 | 2014 to 2023 | 58, 64, 79 | T | Case T cast (central fix; coverage review defect 10) | No lenders' counsel, sponsors' counsel or lenders' technical seat | Lachlan Mereweather (Galbraith Stowe), Anjali Thevarajah (Dunmore Pryor), Rhys Tanaka-Bell (Calder Hartmann) | Annex TR T.18 |
+| T-C24 | 2021 | 79 | T | Callum's Chapter 79 story date (central fix) | Annex TR "2021" against Part 6 "2019 to 2025" | Callum's Chapter 79 scene is set in 2021 within the row's 2019 to 2025 span | Annex TR T.16 |
 
 Rows T-C12 to T-C21, R-C11 to R-C18 and N-C01 are detailed in `bible/case-bible-annex-tr.md` (Annex TR, October 3, 2026), which takes precedence over this file where they differ.
 

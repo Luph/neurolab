@@ -366,7 +366,7 @@ for y, d in f['estimate'].items(): add('P-F54', f'{y} estimate: GloBE income / c
 f = P['P-F55']
 add('P-F55', 'Underwritten at mandate (ECA-covered + commercial) / final holds commercial / ECA-covered', f"{f['underwritten_at_mandate']:.1f} / {f['final_hold_commercial']:.1f} / {f['final_hold_eca']:.1f}", 'USD m', FCB, '2018-07-17')
 for ph in ('construction_2020H1', 'operations_2022H1'):
-    d = f[ph]; add('P-F55', f'Castellan {ph}: RWA / capital / net income (annual) / RORAC', f"{d['rwa']:.1f} / {d['capital']:.2f} / {d['net_income']:.2f} / {d['rorac'] * 100:.1f}%", 'USD m, %', FCB, ph[-6:])
+    d = f[ph]; add('P-F55', f'Castellan {ph}: RWA / capital / net income (annual) / RAROC', f"{d['rwa']:.1f} / {d['capital']:.2f} / {d['net_income']:.2f} / {d['raroc'] * 100:.1f}%", 'USD m, %', FCB, ph[-6:])
 f = P['P-F56']
 add('P-F56', 'IFRIC 12 financial asset at COD / effective interest rate', f"{f['asset_at_cod']:.1f} / {f['effective_interest_rate_annual'] * 100:.2f}% a year", 'USD m, %', ACT, '2021-12-01')
 for y, d in f['by_year'].items():

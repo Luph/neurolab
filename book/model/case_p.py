@@ -2227,8 +2227,8 @@ def figures_annex(F, RS, R1, R14, R15):
         p54[str(y)] = dict(globe_income=float(globe), covered_taxes=float(covered), etr=float(etr), payroll=float(payroll),
                            tangible_assets=tang, sbie=float(sbie), kilnworth_share=share, uk_top_up_estimate=float(topup))
     P['P-F54'] = dict(estimate=p54, label='estimate; simplified basis per input request 43; 2026 to September 30 at 60% (consolidated period)')
-    # ---- P-F55 Castellan RORAC (FC base)
-    def rorac(t, phase):
+    # ---- P-F55 Castellan RAROC (FC base)
+    def raroc(t, phase):
         bal = {k: (Sb['bal_open_' + k][t] if Sb['bal_open_' + k][t] > 0 else fb['bal_' + k][max(m for m in range(NM) if M_PER[m] == t)]) for k in ('ECA', 'COM')}
         exp_c = 0.34 * bal['COM']; exp_e = 0.40 * bal['ECA']
         rw = 1.15 if phase == 'construction' else 0.90
@@ -2239,12 +2239,12 @@ def figures_annex(F, RS, R1, R14, R15):
         el = pd_ * (exp_c * 0.35 + exp_e * 0.05)
         cost = (exp_c + exp_e) * (0.0045 + 0.0015)
         net = (income - el - cost) * (1 - 0.19)
-        return dict(exposure_commercial=exp_c, exposure_eca=exp_e, rwa=rwa, capital=cap, net_income=net, rorac=net / cap)
+        return dict(exposure_commercial=exp_c, exposure_eca=exp_e, rwa=rwa, capital=cap, net_income=net, raroc=net / cap)
     P['P-F55'] = dict(underwritten_at_mandate=float(fb['Dk'][0] + fb['Dk'][3]), final_hold_commercial=float(0.34 * fb['Dk'][3]),
                       final_hold_eca=float(0.40 * fb['Dk'][0]), standby_commitment_share=0.34 * 0.6 * 46.0,
                       swap_notional_share_peak=float(0.34 * max(CONTRACT['N_s'])),
-                      construction_2020H1=rorac(tix('2020H1'), 'construction'), operations_2022H1=rorac(tix('2022H1'), 'operations'),
-                      note='annual RORAC on loan holds (swap line not risk-weighted: exposure measure not specified); slotting construction 115%, operations 90%; ECA-covered 95% at 0%; PRI not recognized; 13.5% capital; funding premium 0.45%; opex 0.15%; tax 19%; hurdle 12%')
+                      construction_2020H1=raroc(tix('2020H1'), 'construction'), operations_2022H1=raroc(tix('2022H1'), 'operations'),
+                      note='annual RAROC on loan holds (swap line not risk-weighted: exposure measure not specified); slotting construction 115%, operations 90%; ECA-covered 95% at 0%; PRI not recognized; 13.5% capital; funding premium 0.45%; opex 0.15%; tax 19%; hurdle 12%')
     # ---- P-F57 technology screening
     tech = {'OCGT': (650, 10300, 'gas', 14, 4.0, 25), 'CCGT': (1050, 6350, 'gas', 22, 3.5, 25),
             'Coal': (2100, 9700, 'coal', 45, 4.5, 30), 'HFO': (1100, 8450, 'hfo', 30, 9.0, 25)}

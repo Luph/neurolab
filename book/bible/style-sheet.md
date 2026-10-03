@@ -857,3 +857,15 @@ Calendar-driven series that are not project inputs by period (reference base rat
 ### A.8 Formulas owned elsewhere (R-116)
 
 A chapter that displays a formula owned by another chapter does so only as a model row or a specialized application. Its equation caption names the application and the text cites the home equation ("implementing eq:37.1"). The anchor registry lists the repurposed captions.
+
+### A.9 Excel formulas that contain a percent sign (blueprint review; D-041)
+
+Any Excel formula containing `%` (for example `=PV(8.4%,20,-1.27)` or `=PMT(6.35%,10,-126.5)`) is shown in a display `excel` block, never inline in `\xl{}`, because `\xl{}` cannot carry `%` (Section 5.3). Prefer cell references (`=PV(F5,F6,-F7)`, with the rate in F5 and the layout stated in the lead-in sentence), which may then go inline. The same applies to formulas containing `#`, `\`, `{` or `}`. Briefs mark such formulas "excel block".
+
+### A.10 Every worked example is located (blueprint review; D-041)
+
+Every worked example, exercise or clause that models a project, a financing or a contract names its place (country, state or market), its date or year, and its parties (fictional names, or real ones labeled as a real case). Fictional parties follow Section 8 and the Case Bible naming conventions. Only placeless arithmetic whose subject is the technique itself (for example a discount factor or a day-count fraction) may stay unlocated, and then it states no sector or deal type. Within each Part, examples cover at least four regions (Americas; Europe; Middle East and Africa; Asia-Pacific), and sector examples sit in markets where that sector is actually financed.
+
+### A.11 Never reuse the style sheet's sample figures as inputs (blueprint review; D-041)
+
+Never reuse the style sheet's sample figures as inputs. The numbers that illustrate formats in this file (USD 412.6 million, the table values in Section 6.1, and the figures in the sample passage of Section 12) show format only: no writer may use them as an example's or exercise's capex, debt, CFADS, energy, reserves or any other input or result. Choose distinct, lumpy, realistic figures for each example and recompute the results in Python. A round principal is allowed only when the round number is the teaching point, and the text then says so (for example "a USD 400 million commitment, typical of a club deal"). The numbers auditor checks this rule.

@@ -1,6 +1,6 @@
 # Case Bible Annex TR: Case T and Case R resolutions, name register additions
 
-Version 1.0, October 3, 2026. Owner: Case Bible editor, under the editor-in-chief. Binding on every writer, reviewer and modeler.
+Version 1.1, October 3, 2026 (amended after the blueprint review: Case T counsel and lenders' technical adviser added in T.18; Callum's Chapter 79 date and T-C02 aligned in T.16; see `reviews/blueprint/central-fixes-log.md`). Owner: Case Bible editor, under the editor-in-chief. Binding on every writer, reviewer and modeler.
 
 **Precedence.** Where this annex and `case-bible.md` differ, this annex governs. Where this annex is silent, `case-bible.md` governs. Model outputs still come only from the figure ledgers (`model/figure-ledger-case-r.md`; the Case T ledger when released). Every new number in this annex that a model must absorb is listed, with units and target figure IDs, in `bible/case-tr-input-requests.md`. Numbers marked **(book input)** are fixed facts of the story that no model needs; writers may print them as Case Bible inputs. Simple arithmetic shown in this annex is permitted under D-013 and was computed in Python on October 3, 2026.
 
@@ -29,6 +29,7 @@ Concordance of flaws to sections is in Section 0.
 | u16 CB-u16-4 | 2016 hospital PPP | T.14 |
 | u14 BF-8 | Ardmore insurers' capital regime | T.15 |
 | u16 CB-u16-8 | Callum's "last scene" note | T.16 |
+| Coverage review defect 10; sequencing review defect 39 | Case T counsel and technical seat; Callum's Chapter 79 date and T-C02 | T.18; T.16 |
 | u03 #5 | Sasha in the Chapter 12 scene | T.16 |
 | u16 CB-u16-7; u09 T-F18 request | Traffic ratios; shortfall decomposition by cause | T.17 |
 | u10 BF-u10-1 | A1 sale process terms and competing bids | R.1 |
@@ -297,13 +298,15 @@ Ardmore insurers are regulated by the Commonwealth's prudential regulator (never
 
 ## T.16 Character and storyline fixes
 
-- Callum Petrie (Case Bible 4.2): read "Callum's last scene in story order is the restructuring meeting where Holbrook gets nothing (Chapter 64)." He still appears in Chapter 79 (story date 2021), which comes later in book order.
+- Callum Petrie (Case Bible 4.2): read "Callum's last scene in story order is the restructuring meeting where Holbrook gets nothing (Chapter 64)." He still appears in Chapter 79, in a scene set in 2021 (Part 6 row 79 spans 2019 to 2025 and now names the 2021 date for his scene), which comes later in book order (T-C24).
 - Part 6, row 12: add Sasha Hrytsenko (and optionally Dimitri Kalogeropoulos) to the Case T characters.
 - Part 6, row 23: add Dimitri Kalogeropoulos. Inputs: T.4.
 - Part 6, row 58: inputs T.1, T.2; figures T-F01 (extended), T-F02 (extended).
 - Part 6, row 47: Case T figures T-F02 (extended), optional T-F21; inputs T.2 and T.3.
 - Part 6, row 64: inputs T.10 and T.11; figures as before.
-- Part 6, row 79: figures T-F04, T-F06, T-F18, T-F19.
+- Part 6, row 79: figures T-F04, T-F06, T-F18, T-F19; Callum's scene dated 2021; add Rhys Tanaka-Bell (T.18).
+- Part 6, rows 58 and 64: add Lachlan Mereweather and Anjali Thevarajah; row 64 also Rhys Tanaka-Bell (T.18).
+- Change log T-C02 (opening date May 6, 2019): the reader first learns it in Chapter 45 (2019 actuals), not Chapter 79; Chapters 64 and 79 restate it.
 - Part 6, rows 45 and 48: add T-F18 and T-F19 where the traffic shortfall is discussed.
 - Part 6, rows 80 and 81: T.13 and T.14 as inputs; Nerida Faulkes optional.
 
@@ -321,6 +324,34 @@ Ardmore insurers are regulated by the Commonwealth's prudential regulator (never
 | COVID-19 and persistent working from home | 0% | 45% | 30% | 12% |
 | Total | 100% | 100% | 100% | 100% |
 
+## T.18 Case T counsel and the lenders' technical seat (added after the blueprint review)
+
+Standards Section 5 asks for recurring characters in every seat. Case T had no lenders' counsel, no sponsors' counsel and no lenders' technical seat, so the close (sec:58.13), the restructuring plan (sec:64.14) and the ramp-up (sec:79.14) lacked those voices. Three Ardmorean characters fill them. Names were web-checked on October 3, 2026 (N.3). No character explains a concept the reader needs; narration does that.
+
+### Lachlan Mereweather (lenders' counsel)
+
+Ardmorean, born 1969 in Port Ellery. Partner, Galbraith Stowe (Port Ellery), banking and restructuring. Law at the state university; articled at Galbraith Stowe; two years in a London firm's restructuring group (1998 to 2000); partner from 2004. Acts for the bank club on the 2015 financing, drafts the Financiers' Direct Deed and the intercreditor terms with the BIFA bondholders' representative and NILO, and acts for the senior lenders in the 2021 standstill and the 2023 restructuring plan alongside Quarrington Advisory.
+
+He wants documents that survive a court hearing: step-in that works inside the 90-day window, a springing-lien trigger NILO cannot argue about, and plan classes a judge will accept. He fears a class challenge that delays sanction past the bank maturity. He negotiates in drafts rather than meetings, concedes on drafting style and never on remedies, and keeps a hearing timetable on every call. Verbal habit: "How does that read to a judge?"
+
+Where he is wrong: in 2015 he accepts that concessionaire-default compensation has no debt floor (Case Bible 2.7), reasoning that the retendering procedure protects lenders in a liquid market; in 2022 there is no liquid market, which is why the lenders' alternative is worth less than their claims (T-F08). Arc: closes the 2015 financing (Chapter 58), drafts the standstill (2021) and the restructuring support agreement (June 2023), argues for banks and bondholders voting as separate classes, and presents the lenders' evidence at the November 30, 2023 hearing (ssec:64.14.5).
+
+### Anjali Thevarajah (sponsors' counsel)
+
+Ardmorean of Sri Lankan Tamil descent, born 1975 in Port Ellery. Partner, Dunmore Pryor (Port Ellery), projects and infrastructure. Commerce and law degrees; government lawyer at Partnerships Brannock (2000 to 2005), where she worked on the first availability PPPs; joined Dunmore Pryor in 2005, partner from 2011. Acts for Merrick Motorway Partners on the bid and the Concession Deed (2013 to 2015) and for the concessionaire and its shareholders through the 2020 relief claim, the 2021 standstill and the 2022 to 2023 restructuring negotiation.
+
+She wants the concession's risk allocation read as written and the shareholders' position preserved for as long as there is one. She fears the court treating the shareholders' class as out of the money without a fight. She knows the state's standard form from the inside and quotes its drafting history. Verbal habit: "That is not what the clause was written to do."
+
+Where she is wrong: in 2020 she advises that COVID-19 restrictions can be argued as a compensation event as well as a relief event; BRTA rejects it, and the claim costs the concessionaire time and goodwill with Owen Reddaway. Arc: wins the BAFO drafting points (2014), runs the relief claim (2020), negotiates the warrants for Wexcombe and Corvus in 2023, and loses the class 4 cram-down argument when Holbrook's objection fails (T.10).
+
+### Rhys Tanaka-Bell (lenders' independent engineer and technical and traffic monitoring adviser)
+
+Ardmorean, born 1971 in Port Ellery to a Welsh father and a Japanese mother. Partner, Calder Hartmann Engineering, Port Ellery office (the cross-case firm; not Gwen Treharne's team). Civil and tunnel engineer; twelve years with the state roads agency on motorway and tunnel delivery; Calder Hartmann from 2008. Leads the lenders' technical due diligence at bid stage (2014), certifies construction drawdowns (2015 to 2019) and, from opening, writes the lenders' semiannual monitoring reports, which combine Corvus's operating data with Ridgeway's traffic counts.
+
+He wants reports he can defend in a courtroom, and data from the tolling system rather than forecasts. He fears signing off a ramp-up that is not happening. He does not negotiate; he writes reservations and dates them. Verbal habit: "Show me the gantry counts."
+
+Where he is wrong: his 2019 monitoring report attributes the first months' shortfall mostly to the tolling acceptance delay and normal ramp-up, and he does not flag the heavy-vehicle diversion until the 2020 H1 report (T.17). Arc: technical diligence (2014), construction certification and the tunnel fault-zone reports (2017), the ramp-up monitoring reports that feed the lenders' alarm (2019 to 2021, sec:79.14), and the technical and traffic evidence for the plan valuation (ssec:64.14.1).
+
 ---
 
 # Part R. Case R: Mesa Corta Renewables
@@ -334,9 +365,9 @@ Seller Hollenbeck Energy North America ran a two-round auction through its finan
 | August 2021 | Teaser and confidentiality agreements; 14 parties sign |
 | October 12, 2021 | Non-binding first-round bids; 9 received; 4 admitted to the second round |
 | October to November 2021 | Virtual data room, management presentations, site visits |
-| December 2, 2021 | Binding bids with SPA markups; 3 received (the "three final bidders", Case Bible 3.9) |
+| December 2, 2021 | Binding bids with share purchase agreement markups; 3 received (the "three final bidders", Case Bible 3.9) |
 | December 4, 2021 | Lattimer selected; exclusivity granted |
-| December 9, 2021 | SPA signed (Case Bible 3.6) |
+| December 9, 2021 | Share purchase agreement signed (Case Bible 3.6; never abbreviated, R-084) |
 | March 22, 2022 | Closing (Case Bible 3.6); long-stop date June 30, 2022 |
 
 Chapter 9's diligence scene (P50 and P90 reading) is set in the confirmatory week of December 2021, between December 2 and December 9, or in late November before the binding bid.
@@ -511,6 +542,11 @@ Check method: web search on October 3, 2026 (searches were available for this pa
 | Quillfield Tolling Systems Ltd | Tolling subcontractor | T | Clear (no tolling or systems company of that name found) |
 | Dimitri Kalogeropoulos | D&C JV project director | T | Character; not meant to resemble a real person |
 | Nerida Faulkes | Director, Partnerships Brannock (2020 on) | T | Character; not meant to resemble a real person |
+| Galbraith Stowe | Lenders' counsel (Port Ellery law firm) | T | Clear (separate US firms named Galbraith and Stowe exist; no firm of the combined name) |
+| Dunmore Pryor | Sponsors' and concessionaire's counsel (Port Ellery law firm) | T | Clear (US towns Dunmore and Pryor; no firm of the combined name) |
+| Lachlan Mereweather | Lenders' counsel | T | Character; web check found no person of that name |
+| Anjali Thevarajah | Sponsors' counsel | T | Character; web check found no public figure (one private family tribute page uses the name); not meant to resemble a real person |
+| Rhys Tanaka-Bell | Lenders' IE and monitoring adviser | T | Character; web check found no person of that name |
 | Ellery Crosstown Light Rail | 2024 PPP line | T | Clear (built from fictional Port Ellery) |
 | Port Ellery Northern Hospital; Ellery Health Infrastructure Partners | 2016 hospital PPP and its concessionaire | T | Clear (built from fictional Port Ellery) |
 | Marlowe Gulf Hydrogen LLC | Hydrogen developer | R | Clear (no company of that name found; Marlowe is a surname) |
@@ -532,6 +568,9 @@ Check method: web search on October 3, 2026 (searches were available for this pa
 |---|---|---|---|---|
 | Dimitri Kalogeropoulos | T | Ardmorean | 1966 | Daneshill Construction (Holbrook-Daneshill JV) |
 | Nerida Faulkes | T (minor) | Ardmorean | 1976 | Partnerships Brannock |
+| Lachlan Mereweather | T | Ardmorean | 1969 | Galbraith Stowe |
+| Anjali Thevarajah | T | Ardmorean | 1975 | Dunmore Pryor |
+| Rhys Tanaka-Bell | T | Ardmorean | 1971 | Calder Hartmann Engineering |
 
 ---
 
@@ -576,3 +615,5 @@ Format as Case Bible Part 8. These rows are also appended to `case-bible.md` Par
 | R-C17 | 2020-03; 2024-11 | 20, 82 | R | Ostrander profile and vPPA credit support | Absent | Profile; thresholds 10.0 and 15.0; LC 5.0 | Annex R.2 |
 | R-C18 | 2024-03 to 2024-05 | 83 | R | Hydrogen developer offer | Unnamed | Marlowe Gulf Hydrogen; 12 years at USD 39.00/MWh; IC passes May 2024 | Annex R.3 |
 | N-C01 | n/a | 1, 89 | All | Name register | Unregistered | Part N entries | Annex N |
+| T-C23 | 2014 to 2023 | 58, 64, 79 | T | Case T cast | No lenders' counsel, sponsors' counsel or lenders' technical seat | Lachlan Mereweather, Anjali Thevarajah, Rhys Tanaka-Bell | Annex T.18 |
+| T-C24 | 2021 | 79 | T | Callum's Chapter 79 story date | "2021" here against "2019 to 2025" in Part 6 | Scene set in 2021; Part 6 row 79 states it | Annex T.16 |
