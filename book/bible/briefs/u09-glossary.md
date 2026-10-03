@@ -11,9 +11,11 @@ Terms owned by Part VII. Home section numbers follow the u09 briefs. Terms used 
 | model map | – | The list of a model's sheets in order with the purpose of each and the direction in which numbers flow between them. | Section 39.3.1 |
 | corkscrew | – | A block of rows that rolls a balance forward: opening balance equal to the prior closing balance, additions, subtractions, closing balance. | Section 39.3.3 |
 | model period | – | The span of time one column of a model represents, defined by a start date and an end date on the Time sheet. | Section 39.4.1 |
-| stub period | – | A model period shorter than the standard period, such as the months between COD and the next June 30 or December 31. | Section 39.4.3 |
+| stub period | – | In a single mixed timeline, a column shorter than the standard period, such as the months between COD and the next June 30 or December 31. | Section 39.4.3 |
 | year fraction | – | The length of a model period expressed in years under a day-count convention, held on its own row. | Section 39.4.3 |
-| operating year | OY | The count of years of operation used for contract and tax rules; in this book's model, the period's months since COD rounded up to whole years. | Section 39.4.4 |
+| operating year | OY | A twelve-month band of operation counted from COD, used for contract and tax rules; a model period may fall partly in two operating years. | Section 39.4.4 |
+| months of operation | – | The number of months in a model period during which the plant is in commercial operation, used to pro-rate operating rows in the COD and expiry periods. | Section 39.4.3 |
+| band overlap | – | The number of months of a period that fall inside a stated band of operating months, computed as the maximum of zero and the earlier end minus the later start. | Section 39.4.4 |
 | flag | – | A row of 1s and 0s computed from dates that switches a calculation on or off in each period. | Section 39.5.1 |
 | live column | – | The column of the Inputs sheet that holds the value of each scenario-dependent input for the case currently selected. | Section 39.6.2 |
 | scenario selector | – | The single input cell, named Scenario, whose value selects which scenario column the model uses. | Section 39.6.2 |
@@ -32,6 +34,7 @@ Terms owned by Part VII. Home section numbers follow the u09 briefs. Terms used 
 | converge macro | – | A short macro that copies calculated values over their pasted twins and recalculates until the residual is below a tolerance. | Section 40.5.4 |
 | circuit breaker | – | A switch that cuts a circular reference so a model with iterative calculation can be reset after an error. | Section 40.5.2 |
 | convergence residual | – | The absolute difference between a pasted value and its calculated twin after recalculation. | Section 40.5.4 |
+| affine carry | – | Carrying each balance in a loop as a fixed part plus a part proportional to the unknown total, so the total can be solved in closed form. | Section 40.5.3 |
 | availability cycle | – | The repeating pattern of planned outages over a plant's maintenance interval, which sets availability by operating year. | Section 41.1.1 |
 | output degradation | – | The decline in a plant's net output over time, split into a non-recoverable trend and losses recovered at overhauls. | Section 41.1.3 |
 | heat-rate headroom | – | The margin between the contracted heat rate used to charge fuel and the plant's actual heat rate, which leaves fuel profit or loss with the project company. | Section 41.1.3 |

@@ -735,9 +735,9 @@ def build(path, scenario=2, contribution_option=1):
     B.tr(S, "CumEq", "Cumulative equity", "ARD m", "{CumEq.p}+{EqDraw}")
     B.tr(S, "Need", "Funding need after equity", "ARD m", "{Uses}-{EqDraw}", total=True)
     B.sc(S, "R6", "Need in the bridge draw quarters", "ARD m", "SUMPRODUCT({Need.r},{Flag_Last6.r})")
-    B.tr(S, "BridgeDraw", "Bridge drawn", "ARD m", "IF({Flag_Last6}=1,{Contrib.c}*{Need}/{R6.c},0)", total=True)
+    B.tr(S, "BridgeDraw", "Bridge drawn", "ARD m", "IF(AND({Flag_Last6}=1,{R6.c}<>0),{Contrib.c}*{Need}/{R6.c},0)", total=True)
     B.tr(S, "DebtDraw", "Debt drawn (senior plus NILO)", "ARD m", "{Need}-{BridgeDraw}", total=True)
-    B.tr(S, "SenDraw", "Senior drawn", "ARD m", "{DebtDraw}*{Dsen.c}/({Dsen.c}+{Nsub.c})", total=True)
+    B.tr(S, "SenDraw", "Senior drawn", "ARD m", "IF({Dsen.c}+{Nsub.c}=0,0,{DebtDraw}*{Dsen.c}/({Dsen.c}+{Nsub.c}))", total=True)
     B.tr(S, "NiloDraw", "NILO drawn", "ARD m", "{DebtDraw}-{SenDraw}", total=True)
     B.tr(S, "BankDraw", "Bank drawn", "ARD m", "{Bank_Split.c}*{SenDraw}", total=True)
     B.tr(S, "BondDraw", "Bond escrow released", "ARD m", "{Bond_Split.c}*{SenDraw}", total=True)
@@ -766,10 +766,10 @@ def build(path, scenario=2, contribution_option=1):
     B.sc(S, "D_Gear", "Capacity: 55% of funding requirement net of contribution", "ARD m", "{GearCap.c}*{Fnet.c}")
     B.sc(S, "D_Sculpt", "Capacity: sculpted at 1.50x (PV / 1.50)", "ARD m", "{PVCF.c}/{DSCR_T.c}")
     B.sc(S, "D_LLCR", "Capacity: LLCR 1.55x", "ARD m", "{PVCF.c}/{LLCR_T.c}")
-    B.tr(S, "IOCap", "Interest-only capacity at 1.50x", "ARD m", "IF({Flag_Rep}=1,{CFADSL}/({DSCR_T.c}*{RR}),{Big.c})", fmt='#,##0.0;(#,##0.0);"–"')
+    B.tr(S, "IOCap", "Interest-only capacity at 1.50x", "ARD m", "IF(AND({Flag_Rep}=1,{RR}>0),{CFADSL}/({DSCR_T.c}*{RR}),{Big.c})", fmt='#,##0.0;(#,##0.0);"–"')
     B.sc(S, "D_IO", "Capacity: interest cover 1.50x in every repayment period", "ARD m", "MIN({IOCap.r})")
     B.tr(S, "IODown", "Downside interest-only capacity at 1.15x", "ARD m",
-         "IF({Flag_Rep}=1,{Locked_DownCF}/({DSCR_Down.c}*{RR}),{Big.c})", fmt='#,##0.0;(#,##0.0);"–"')
+         "IF(AND({Flag_Rep}=1,{RR}>0),{Locked_DownCF}/({DSCR_Down.c}*{RR}),{Big.c})", fmt='#,##0.0;(#,##0.0);"–"')
     B.sc(S, "D_Down", "Capacity: downside interest cover 1.15x", "ARD m", "MIN({IODown.r})")
     B.sc(S, "D_Live", "Senior debt, live sizing (lesser of the constraints)", "ARD m",
          "MIN({D_Gear.c},{D_Sculpt.c},{D_LLCR.c},{D_IO.c},{D_Down.c})")
@@ -790,7 +790,7 @@ def build(path, scenario=2, contribution_option=1):
     B.tr(S, "SP", "Scheduled principal (live)", "ARD m", "IF({Flag_Rep}=1,{SDS}-{SInt},0)", total=True)
     B.tr(S, "SBClose", "Scheduled balance: closing", "ARD m", "{SBOpen}-{SP}")
     B.sc(S, "Sdiv", "Sculpting divisor s (fixed point)", "x",
-         "IF({LiveOn.c}=1,SUMPRODUCT({CFADSL.r}*{DF.r}*{Flag_Rep.r}*(1-{SA.r}))/({Dsen.c}-SUMPRODUCT({SInt.r}*{DF.r}*{SA.r})),{DSCR_T.c})", fmt="0.000000")
+         "IF({LiveOn.c}=1,IFERROR(MAX({Tol.c},SUMPRODUCT({CFADSL.r}*{DF.r}*{Flag_Rep.r}*(1-{SA.r}))/({Dsen.c}-SUMPRODUCT({SInt.r}*{DF.r}*{SA.r}))),{DSCR_T.c}),{DSCR_T.c})", fmt="0.000000")
     B.tr(S, "RIALive", "Ramp-up interest account release (live)", "ARD m",
          "IF({Flag_RampUp}=1,MAX(0,{SInt}-{CFADSL}/{RIA_DSCR.c}),0)", total=True)
     B.tr(S, "RIA", "Ramp-up interest account release (applied)", "ARD m", "IF({LiveOn.c}=1,{RIALive},{Locked_RIA})", total=True)
@@ -852,7 +852,7 @@ def build(path, scenario=2, contribution_option=1):
     B.tr(S, "NSP", "Scheduled notes principal (live)", "ARD m", "IF({Flag_NotesRep}=1,{NSDS}-{NSInt},0)", total=True)
     B.tr(S, "NSBClose", "Scheduled notes balance: closing", "ARD m", "{NSBOpen}-{NSP}")
     B.sc(S, "SNdiv", "Notes sculpting divisor (fixed point)", "x",
-         "IF(AND({LiveROn.c}=1,{NotesFace.c}>0),SUMPRODUCT({CFADSL.r}*{NDF.r}*{Flag_NotesRep.r}*(1-{NSA.r}))/({NotesFace.c}-SUMPRODUCT({NSInt.r}*{NDF.r}*{NSA.r})),{NotesDSCR.c})", fmt="0.000000")
+         "IF(AND({LiveROn.c}=1,{NotesFace.c}>0),IFERROR(MAX({Tol.c},SUMPRODUCT({CFADSL.r}*{NDF.r}*{Flag_NotesRep.r}*(1-{NSA.r}))/({NotesFace.c}-SUMPRODUCT({NSInt.r}*{NDF.r}*{NSA.r}))),{NotesDSCR.c}),{NotesDSCR.c})", fmt="0.000000")
     B.tr(S, "NotesPApp", "Scheduled notes principal (applied)", "ARD m", "IF({LiveROn.c}=1,{NSP},{Locked_NotesP})", total=True)
     B.head(S, "Restructured Senior Notes")
     B.tr(S, "NotesOpen", "Opening balance", "ARD m", "{NotesClose.p}")
@@ -881,7 +881,7 @@ def build(path, scenario=2, contribution_option=1):
     B.sc(S, "KB0", "Scheduled balance at the first NILO repayment period", "ARD m", "SUMPRODUCT({KBOpen.r},{Flag_NiloFirst.r})")
     B.sc(S, "KOn", "NILO live sculpting active", "flag", "IF({Ext.c}=1,{LiveROn.c},{LiveOn.c})")
     B.sc(S, "Kdiv", "NILO sculpting divisor (fixed point)", "x",
-         "IF({KOn.c}=1,SUMPRODUCT({Resid.r}*{KDF.r}*{Flag_NiloRep.r}*(1-{KA.r}))/({KB0.c}-SUMPRODUCT({KCash.r}*{KDF.r}*{KA.r})),{DSCR_T.c})", fmt="0.000000")
+         "IF({KOn.c}=1,IFERROR(MAX({Tol.c},SUMPRODUCT({Resid.r}*{KDF.r}*{Flag_NiloRep.r}*(1-{KA.r}))/({KB0.c}-SUMPRODUCT({KCash.r}*{KDF.r}*{KA.r}))),{DSCR_T.c}),{DSCR_T.c})", fmt="0.000000")
     B.tr(S, "nPApp", "Scheduled NILO principal (applied)", "ARD m",
          "IF({KOn.c}=1,{KP},IF({Ext.c}=1,{Locked_nPr},{Locked_nP}))", total=True)
 
@@ -1034,31 +1034,31 @@ def build(path, scenario=2, contribution_option=1):
     S = "Ratios"
     B.head(S, "Senior ratios (original debt, repayment periods)")
     B.tr(S, "DSCRRep", "DSCR, repayment periods", "x", "IF(AND({Flag_Rep}=1,{SchedDS}>{Tol.c}),{CFADSW}/{SchedDS},\"\")")
-    B.sc(S, "MinDSCR", "Minimum DSCR, repayment periods", "x", "MIN({DSCRRep.r})")
-    B.sc(S, "AvgDSCR", "Average DSCR, repayment periods", "x", "AVERAGE({DSCRRep.r})")
-    B.tr(S, "DSCRRamp", "DSCR, ramp-up periods", "x", "IF({Flag_RampUp}=1,{CFADSW}/{SchedDS},\"\")")
-    B.sc(S, "MinDSCRRamp", "Minimum DSCR, ramp-up", "x", "MIN({DSCRRamp.r})")
+    B.sc(S, "MinDSCR", "Minimum DSCR, repayment periods", "x", "IF(COUNT({DSCRRep.r})>0,MIN({DSCRRep.r}),0)")
+    B.sc(S, "AvgDSCR", "Average DSCR, repayment periods", "x", "IF(COUNT({DSCRRep.r})>0,AVERAGE({DSCRRep.r}),0)")
+    B.tr(S, "DSCRRamp", "DSCR, ramp-up periods", "x", "IF(AND({Flag_RampUp}=1,{SchedDS}>{Tol.c}),{CFADSW}/{SchedDS},\"\")")
+    B.sc(S, "MinDSCRRamp", "Minimum DSCR, ramp-up", "x", "IF(COUNT({DSCRRamp.r})>0,MIN({DSCRRamp.r}),0)")
     B.tr(S, "DSCRComb", "Senior plus NILO DSCR", "x",
-         "IF(AND({Flag_Rep}=1,{Flag_NiloRep}=1),{CFADSW}/({SchedDS}+{NiloCashDue}+{NiloPDue}),\"\")")
-    B.sc(S, "MinComb", "Minimum senior plus NILO DSCR", "x", "MIN({DSCRComb.r})")
+         "IF(AND({Flag_Rep}=1,{Flag_NiloRep}=1,{SchedDS}+{NiloCashDue}+{NiloPDue}>{Tol.c}),{CFADSW}/({SchedDS}+{NiloCashDue}+{NiloPDue}),\"\")")
+    B.sc(S, "MinComb", "Minimum senior plus NILO DSCR", "x", "IF(COUNT({DSCRComb.r})>0,MIN({DSCRComb.r}),0)")
     B.tr(S, "DFAll", "Discount factor from 2021-01-01 (all periods)", "factor",
          "IF({End}>={First_Rep.c},IF({DFAll.p}>0,{DFAll.p},1)/(1+{RR}),0)", fmt="0.000000")
     B.tr(S, "LLCR", "LLCR", "x",
          "IF(AND({Flag_Rep}=1,{BankOpen}+{BondOpen}>{Tol.c}),SUMPRODUCT({CFADSW.rt},{DFAll.rt},{Flag_Rep.rt})/({DFAll}*(1+{RR}))/({BankOpen}+{BondOpen}),\"\")")
     B.sc(S, "LLCR1", "LLCR at the first repayment period", "x", "SUMPRODUCT({LLCR.r},{Flag_FirstRep.r})")
-    B.sc(S, "MinLLCR", "Minimum LLCR", "x", "MIN({LLCR.r})")
+    B.sc(S, "MinLLCR", "Minimum LLCR", "x", "IF(COUNT({LLCR.r})>0,MIN({LLCR.r}),0)")
     B.sc(S, "PLCR1", "PLCR at the first repayment period", "x",
-         "SUMPRODUCT({CFADSW.r},{DFAll.r},{Flag_Ops.r})/SUMPRODUCT({BankOpen.r}+{BondOpen.r},{Flag_FirstRep.r})")
+         "IFERROR(SUMPRODUCT({CFADSW.r},{DFAll.r},{Flag_Ops.r})/SUMPRODUCT({BankOpen.r}+{BondOpen.r},{Flag_FirstRep.r}),0)")
     B.tr(S, "DSCRNotes", "Notes DSCR", "x", "IF(AND({Flag_NotesRep}=1,{SchedDS}>{Tol.c}),{CFADSW}/{SchedDS},\"\")")
     B.sc(S, "MinNotes", "Minimum notes DSCR", "x", "IF(COUNT({DSCRNotes.r})>0,MIN({DSCRNotes.r}),0)")
     B.sc(S, "AvgNotes", "Average notes DSCR", "x", "IF(COUNT({DSCRNotes.r})>0,AVERAGE({DSCRNotes.r}),0)")
     B.sc(S, "LockPeriods", "Lock-up periods after the first repayment date", "#",
          "SUMPRODUCT({Lock.r},{Flag_Ops.r},1-{Flag_PreFirst.r})", fmt="0")
     B.sc(S, "DSRADraws", "DSRA drawn in total", "ARD m", "SUM({DSRADraw.r})")
-    B.sc(S, "GearSen", "Senior debt, % of funding net of contribution", "%", "{Dsen.c}/{Fnet.c}")
-    B.sc(S, "GearNilo", "NILO, % of funding net of contribution", "%", "{Nsub.c}/{Fnet.c}")
-    B.sc(S, "GearEq", "Equity, % of funding net of contribution", "%", "{Eq.c}/{Fnet.c}")
-    B.sc(S, "NiloElig", "NILO, % of eligible costs", "%", "{Nsub.c}/{TotalUses.c}")
+    B.sc(S, "GearSen", "Senior debt, % of funding net of contribution", "%", "IFERROR({Dsen.c}/{Fnet.c},0)")
+    B.sc(S, "GearNilo", "NILO, % of funding net of contribution", "%", "IFERROR({Nsub.c}/{Fnet.c},0)")
+    B.sc(S, "GearEq", "Equity, % of funding net of contribution", "%", "IFERROR({Eq.c}/{Fnet.c},0)")
+    B.sc(S, "NiloElig", "NILO, % of eligible costs", "%", "IFERROR({Nsub.c}/{TotalUses.c},0)")
 
     # ===================================================================== RETURNS
     S = "Returns"
