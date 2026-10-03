@@ -31,3 +31,4 @@
 - Done: t-oecd-arrangement, t-dfis, t-basel.
 - Done: gulf-iwpp (weakest), sabine-pass, png-lng.
 - Done: cobre-panama, colombia-4g, hyperion-meta.
+- Done: mundra, argentina-2002, spain-renewables.

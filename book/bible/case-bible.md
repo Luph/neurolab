@@ -431,3 +431,189 @@ Kilnworth sells 24% of the project company (40% of its 60% holding) in shares an
 | Actual history | Every event in Section 1.9 with historical macro paths to H1 2026, assumptions after |
 | Sensitivities | Availability -3 points; heat rate +2%; fixed opex +10%; capex +10% funded pro rata; COD delay of six months without LDs; base rate +200 bps on the unhedged portion; 40% devaluation with 90-day conversion lag; SEKA payment delay of 120 days for 12 months; dispatch 50%; gas price +30% (pass-through check) |
 | Breakevens | Availability for 1.00x minimum DSCR; capacity charge cut for 1.00x; months of zero SEKA payment covered by DSRA plus LC |
+
+---
+
+# Part 2. Case T: the Merrick Link toll road, State of Brannock, Commonwealth of Ardmore
+
+## 2.1 The jurisdiction
+
+The Commonwealth of Ardmore is a fictional federal parliamentary democracy and OECD member with a common-law legal system, six states, a population of about 31 million, and its own floating currency, the Ardmore dollar (code ARD, never printed with a symbol). Its PPP practice resembles that of the common-law federations that pioneered state-level PPP programs: each state runs its own PPP unit, publishes value-for-money guidelines and a public sector comparator methodology, and procures through expressions of interest, a shortlist, a request for proposals, and best and final offers. The federal government lends to state-sponsored infrastructure through a federal credit program.
+
+The State of Brannock is Ardmore's third-largest state (5.4 million people in 2012), with its capital and main port at Port Ellery. Its growth area, the Coldwater Plains north of Port Ellery, doubled in population between 1996 and 2011 and is served by a single free road, State Route 14, which runs 47.6 km through four signalized town centers to the inland freight terminal at Holloway Junction.
+
+Neither "Ardmore" as a country nor "Brannock" as a state exists (checked October 3, 2026; Ardmore is the name of small towns in the US and Ireland, which the book never mentions; see D-103). Writers name the country rarely ("the Commonwealth") and the state often.
+
+| Institution | Role in Case T |
+|---|---|
+| Brannock Cabinet | Approves the business case (March 2012) and the decision to procure as a PPP (December 2012) |
+| Brannock Treasury | Owns the PPP policy and the state budget; Deputy Secretary Owen Reddaway leads the state's side of the 2022 to 2023 restructuring |
+| Partnerships Brannock | The state's PPP unit inside Treasury; procuring agency; Director Margaret (Maggie) Dunleavy |
+| Brannock Roads and Transport Authority (BRTA) | Contracting authority; signs the Concession Deed; manages the contract |
+| Brannock Infrastructure Finance Authority (BIFA) | State conduit issuer of the tax-exempt revenue bonds |
+| National Infrastructure Lending Office (NILO) | Federal agency running the Commonwealth Infrastructure Credit Program, which lends subordinated, long-tenor, fixed-rate loans to qualifying projects |
+| Supreme Court of Brannock | Sanctions the 2023 restructuring plan under Part 9 of the Companies Act (Ardmore), which allows cross-class cram-down |
+
+ARD macro paths (CPI 1.4% to 7.1%, the 6-month Ardmore Bank Bill Rate (ABBR) from 0.06% to 4.41%) are in `inputs_case_t.json`. Illustrative USD per ARD rates for cross-case comparisons: 0.81 (2012), 0.76 (2015), 0.70 (2019), 0.67 (2023), 0.66 (2025).
+
+## 2.2 The road
+
+The Merrick Link is a 41.3 km four-lane (2+2) tolled motorway, with structures sized for 3+3, from the Port Ellery northern ring road through the Coldwater Plains to Holloway Junction. It has seven interchanges, the 620 m Merrick River viaduct, and the 1.9 km twin-bore Merrick Ridge Tunnel. Tolling is free-flow, electronic and distance-based (transponder and video). The road is delivered as a design, build, finance, operate and maintain (DBFOM) concession with full demand risk on the concessionaire.
+
+| Item | Value |
+|---|---|
+| Concession term | 38 years from financial close: May 27, 2015 to May 26, 2053 (extended in 2023 to May 26, 2059) |
+| Construction period | 46 months; scheduled opening March 31, 2019; actual opening May 6, 2019 (36 days late) |
+| Car toll | ARD 0.1525 per km in June 2014 prices |
+| Class multipliers | Car 1.0; light commercial 1.6; heavy vehicle 2.85 (2.40 from January 1, 2024) |
+| Vehicle mix | 79.4% cars, 9.0% light commercial, 11.6% heavy vehicles (77.6%, 8.6%, 13.8% from 2024) |
+| Average trip length | 23.8 km |
+| Toll escalation | Each July 1 by the greater of CPI and 3.0% until June 30, 2030, then CPI; CPI only from July 1, 2024 after the restructuring |
+| Toll regime | Concession sets maximum tolls; the concessionaire may discount |
+| Revenue leakage | 1.8% of gross toll revenue |
+| State land | Provided by the state (ARD 212.5 million, outside the concession) |
+
+## 2.3 Procurement and the public-sector case
+
+Partnerships Brannock built the business case and public sector comparator (PSC) in 2012 at a nominal discount rate of 6.85%. The PSC, in ARD millions of 2012 present value: raw capital cost 1,478.6; O&M and lifecycle 486.2; toll revenue retained by the state (1,821.4); construction risk 221.7; traffic revenue risk 274.0; operating risk 41.3; competitive neutrality 38.4. The PPP reference project assumed a state construction contribution of ARD 410.0 million paid at opening, retained risks of 52.8 and contract management of 21.6. The model computes PSC and PPP present costs and value for money (figure T-F01). Land (ARD 212.5 million) is common to both and excluded.
+
+| Date | Step |
+|---|---|
+| 2012-03-20 | Cabinet approves business case development |
+| 2012-11-08 | Business case and PSC completed |
+| 2012-12-04 | Cabinet decides to procure as a user-pay DBFOM PPP |
+| 2013-02-18 | Expressions of interest and RFQ issued |
+| 2013-06-10 | Three consortia shortlisted: Merrick Motorway Partners, Northgate Mobility Consortium, and a third consortium that withdrew in January 2014 |
+| 2013-09-02 | RFP issued; bid variable is the state construction contribution, with maximum tolls fixed by the state |
+| 2014-03-27 | Two bids received |
+| 2014-07-01 | BAFO requested |
+| 2014-08-15 | BAFOs received; Merrick Motorway Partners asks for ARD 287.4 million, Northgate for ARD 361.0 million |
+| 2014-09-23 | Merrick Motorway Partners named preferred bidder |
+| 2015-05-27 | Concession Deed signed and financial close (delayed from December 2014 by NILO credit approval) |
+
+The winning contribution, ARD 287.4 million against a reference of ARD 410.0 million, rested on the sponsor's traffic forecast (Pellow). Chapter 47 uses it to teach the winner's curse.
+
+## 2.4 Parties
+
+| Party | Role |
+|---|---|
+| Merrick Link Concession Co Ltd | Project company (concessionaire) |
+| Merrick Motorway Partners | Winning consortium: Holbrook Infrastructure 40% (construction-led sponsor), Wexcombe Infrastructure Fund III 35% (financial investor), Corvus Toll Roads 25% (toll road operator) |
+| Holbrook-Daneshill Joint Venture | Design and construction (D&C) contractor: Holbrook Civil 60%, Daneshill Construction 40%, joint and several, with parent guarantees |
+| Corvus Road Services | O&M operator and tolling back office (Corvus Toll Roads affiliate) |
+| Pellow Transport Economics | Sponsor's traffic advisor (Sasha Hrytsenko) |
+| Ridgeway Traffic Consultants | Lenders' traffic advisor |
+| Calder Hartmann Engineering | Lenders' independent engineer (cross-case firm; the Case T team is led by a different partner, not Gwen Treharne) |
+| Independent certifier | Appointed jointly by BRTA and the concessionaire |
+| Castellan Bank, Penhallow Bank, Kaito Pacific Bank, Sterrenberg Bank NV | Bank club: senior mini-perm and contribution bridge |
+| BIFA bondholders | Ardmore insurers and funds holding the tax-exempt revenue bonds |
+| NILO | Subordinated federal loan |
+| Quarrington Advisory | Restructuring adviser to the senior lenders from January 2022 (Pieter van Wijngaarden) |
+
+## 2.5 Costs and financing at close
+
+| Use of funds (ARD m) | Amount |
+|---|---|
+| D&C contract price (lump sum, including tolling system 48.6) | 1,684.3 |
+| Development and bid costs reimbursed | 41.2 |
+| Project company costs during construction | 37.8 |
+| Insurance during construction | 12.6 |
+| Independent certifier (concessionaire's share) | 3.4 |
+| Lenders' advisors and legal | 9.7 |
+| Contingency | 52.4 |
+| Subtotal before financing costs | 1,841.4 |
+| IDC, fees, DSRA, bond escrow negative carry | Model (T-F03) |
+
+D&C terms: delay LDs ARD 285,000 per day capped at 20% of price; performance security 10%; retention 5% (half released at completion, half after a 24-month defects period). The actual 36-day delay produced LDs of ARD 10.26 million.
+
+The state pays its ARD 287.4 million construction contribution at opening. A Contribution Bridge Facility of the same amount from the bank club (margin 1.60%, fee 1.00%) funds it during the last six construction quarters and is repaid from the contribution.
+
+Sizing rules and instruments:
+
+| Instrument | Terms |
+|---|---|
+| Equity | 22.0% of the funding requirement net of the state contribution (minimum 20%); 15% share capital, 85% shareholder loans at 10.25%; contributed first (equity first, in contrast to Case P's pro rata funding); bid target equity IRR 11.4% nominal post-tax |
+| Senior debt (bank plus bonds) | Lesser of the DSCR-sculpted amount at 1.50x on the banking case (Ridgeway), LLCR 1.55x, and 55% of the funding requirement net of the contribution; downside minimum DSCR 1.15x; first repayment June 30, 2021; final repayment December 31, 2048; split 45% bank, 55% bonds |
+| Bank mini-perm | Castellan, Penhallow, Kaito Pacific, Sterrenberg; maturity May 27, 2022; margin 2.35% to May 2020 then 2.60%; upfront fee 1.85%; commitment fee 0.95%; base case assumes refinancing at maturity at ABBR + 2.25% with 1.25% fees on the same profile; swapped 100% at 3.48% to June 30, 2035 |
+| Brannock Infrastructure Revenue Bonds, Series 2015 | Issued by BIFA and on-lent; coupon 4.85% fixed; fully funded at close, proceeds in escrow earning 2.10% until used; amortizing June 2021 to December 2048 pro rata with the bank profile; interest tax-exempt for holders under the Commonwealth's Qualified Infrastructure Bond regime; issue costs 1.20%; par call from May 27, 2025 |
+| NILO loan | 3.06% fixed (Commonwealth 30-year yield plus 0.01%); amount = remainder after senior and equity, checked against 33% of eligible costs and a combined senior plus NILO minimum DSCR of 1.25x on the banking case; drawn pro rata with senior after equity; interest capitalized to March 31, 2024; sculpted repayment June 2024 to December 2052; subordinated in payment with a springing lien that becomes pari passu on bankruptcy or insolvency; application fee 0.10% |
+| Covenants | Senior lock-up 1.20x, default 1.05x; DSRA six months of senior debt service; lifecycle reserve accumulated over six periods ahead of each item |
+| Expected outcome | Senior about 55%, NILO 22% to 25%, equity 22% of the funding requirement net of the contribution |
+
+Operating costs (ARD millions, 2015 prices, Ardmore CPI): Corvus fixed O&M 11.84 a year; tolling back office 6.2% of toll revenue plus 2.15 a year; insurance 3.36; project company costs 2.71. Lifecycle: pavement resurfacing 42.6 in OY12, OY24 and OY36; tunnel mechanical and electrical 31.9 in OY15 and OY30; tolling and ITS replacement 14.7 every eight years from OY8; handback reserve over the final five years.
+
+Tax: 30%; the concession asset is amortized straight line over the remaining term from opening; losses carry forward indefinitely subject to a continuity of ownership or same business test (passed in 2023); forgiven commercial debt reduces carried-forward losses first, then the asset's tax cost base; 10% withholding on interest to foreign lenders.
+
+## 2.6 Traffic
+
+Traffic is expressed as average daily vehicle trips (thousands). Revenue equals trips times days times 23.8 km times the car toll per km times the weighted class multiplier, less 1.8% leakage.
+
+| Case | Mature level 2019 (k trips/day) | Ramp-up factors | Growth |
+|---|---|---|---|
+| Sponsor base (Pellow) | 58.4 | 2019 0.80; 2020 0.90; 2021 0.96; 2022 on 1.00 | 3.4% to 2030; 2.3% 2031 to 2040; 1.2% after |
+| Banking (Ridgeway) | 52.6 | 2019 0.72; 2020 0.84; 2021 0.93; 2022 0.98; 2023 on 1.00 | 2.9%; 2.0%; 1.0% |
+| Downside | 46.7 | 2019 0.65; 2020 0.78; 2021 0.88; 2022 0.95; 2023 on 1.00 | 2.2%; 1.6%; 0.8% |
+
+Actual traffic (k trips/day):
+
+| Period | Actual | Note |
+|---|---|---|
+| 2019 H1 (from May 6) | 28.1 | |
+| 2019 H2 | 31.1 | 2019 average 30.4 against a base forecast of 46.7 (34.9% below) |
+| 2020 H1 | 21.4 | April 2020 traffic 62% below February 2020 |
+| 2020 H2 | 30.0 | |
+| 2021 H1 | 31.8 | Second lockdown; working from home persists |
+| 2021 H2 | 36.0 | |
+| 2022 H1 | 39.1 | |
+| 2022 H2 | 41.3 | 2022 average 40.2 against base 64.6 (37.7% below) |
+| 2023 H1 | 41.9 | |
+| 2023 H2 | 43.3 | |
+| 2024 H1 | 43.9 | Heavy-vehicle toll cut takes effect |
+| 2024 H2 | 45.5 | |
+| 2025 H1 | 45.8 | |
+| 2025 H2 | 46.8 | |
+| 2026 H1 | 47.1 | |
+
+The causes, which Chapter 48 and Chapter 79 analyze: Pellow assumed Coldwater Plains housing completions that slipped by about four years; it used a value of time for cars 22% above what a later revealed-preference survey found; trucks avoided the road because the heavy-vehicle multiplier made the tolled route dearer than SR 14 for trips under 30 km; and BRTA's promised SR 14 traffic-calming works were deferred. Ridgeway's 2023 restructuring case starts from the 2023 actual of 42.6, adds a 2.4% uplift in total trips from 2024 (heavy vehicles move to 13.8% of the mix), and grows at 2.6% to 2030, 1.8% to 2040 and 0.9% after.
+
+## 2.7 Termination compensation regime
+
+| Ground | Compensation |
+|---|---|
+| Authority default or voluntary termination | Senior debt including breakage plus NILO outstanding plus equity compensation equal to the NPV of base-case distributions at the base-case equity IRR of 11.4% |
+| Concessionaire default | Retendering procedure: the adjusted highest compliant tender price less retendering costs; if there is no liquid market, an estimated fair value; no floor at senior debt |
+| Relief events (including COVID-19) | Relief from termination and performance deductions; no compensation |
+| Prolonged uninsurable force majeure (more than 270 days) | Senior debt plus NILO plus equity contributed less distributions |
+| Lender step-in | 90 days, extendable to 180, under the Financiers' Direct Deed |
+
+Because concessionaire-default compensation has no debt floor, the senior lenders' alternative to restructuring in 2022 was a retender at a market value below their claims (figure T-F08). Chapter 64 builds the comparison.
+
+## 2.8 Distress and restructuring (2019 to 2023)
+
+| Date | Event |
+|---|---|
+| 2019-12-31 | First senior DSCR test; below the 1.20x lock-up (figure T-F07) |
+| 2020-03-23 | COVID-19 restrictions; the concessionaire claims a Relief Event; BRTA accepts relief but refuses compensation |
+| 2020-12-31 | Senior DSCR below 1.05x; event of default |
+| 2021-03-26 | Standstill agreement: interest paid as cash allows, principal deferred, 100% cash sweep, no enforcement |
+| 2021 | Sponsors lend ARD 45.0 million of support (22.5 in each half) as subordinated shareholder loans, then stop |
+| 2022-01-17 | Senior lenders appoint Quarrington Advisory (Pieter van Wijngaarden) |
+| 2022-05-20 | Amend and extend: bank maturity moved from May 27, 2022 to December 31, 2023; fee 0.50%; margin 3.25% |
+| 2023-06-14 | Restructuring support agreement and term sheet signed by senior lenders, bondholders' representative, NILO and the state |
+| 2023-11-30 | Court sanction hearing |
+| 2023-12-18 | Restructuring effective (modeled at December 31, 2023) |
+
+Restructuring terms:
+
+| Element | Term |
+|---|---|
+| Senior claims | Bank and bond principal plus accrued unpaid interest at December 31, 2023; the bank swap terminated at market (swap rate 4.36% against the 3.48% fixed rate, so the value is in the concessionaire's favor) and set off |
+| Write-down | 24.0% of senior claims: 14.0 points cancelled, 10.0 points converted into 85% of new equity |
+| Restructured Senior Notes | 76.0% of claims; single class; 5.10% fixed; sculpted semiannual amortization June 30, 2024 to December 31, 2052 at 1.30x minimum DSCR on the Ridgeway 2023 case; 50% excess cash sweep to December 31, 2030 |
+| NILO | No write-down; 1.00% PIK interest to December 31, 2030, then 3.06% cash; maturity December 31, 2058; ranking unchanged |
+| State | ARD 120.0 million new money for 15% of new equity, used for the Holloway Junction interchange upgrade (78.3, 2024 to 2025) and a reserve top-up (41.7); concession extended six years to May 26, 2059; heavy-vehicle multiplier cut to 2.40 from January 1, 2024; toll escalation at CPI only from July 1, 2024; state takes 30% of annual toll revenue above ARD 260.0 million (2023 prices, CPI-indexed) |
+| Original equity | Shares cancelled; shareholder loans including the 2021 support written off; Wexcombe and Corvus receive warrants over 3% of new equity, exercisable only after the senior notes are repaid in full; Holbrook receives nothing |
+| O&M | Corvus contract retained with an 8% fee cut and new KPIs |
+| Costs | ARD 21.6 million of restructuring costs (2022 to 2023) paid by the concessionaire |
+
+The model computes claims, recoveries, the new note quantum, and post-restructuring projections (figures T-F09 and T-F10).
