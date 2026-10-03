@@ -19,8 +19,8 @@ Model: `model/case_p.py` (Python mirror, source of truth) and `model/Case_P_Mode
 | 11 | Sens: SEKA pays 120 days late for 12 months | 854.6 | 629.9 | 0.13x | 1.55x | 1.42x | 13.1% | 10.9% | 2 |
 | 12 | Sens: dispatch 50% | 854.6 | 629.9 | 1.34x | 1.54x | 1.41x | 13.0% | 10.9% | 0 |
 | 13 | Sens: gas price +30% | 854.6 | 629.9 | 1.35x | 1.55x | 1.42x | 13.2% | 11.0% | 0 |
-| 14 | COD re-forecast (2021 lenders case) | 887.4 | 629.9 | 1.28x | 1.51x | 1.34x | 12.3% | 10.1% | 0 |
-| 15 | Actual history | 885.2 | 629.9 | 0.91x | 1.50x | 1.47x | 12.4% | 10.1% | 4 |
+| 14 | COD re-forecast (2021 lenders case) | 893.8 | 629.9 | 1.27x | 1.50x | 1.34x | 12.4% | 10.1% | 0 |
+| 15 | Actual history | 891.5 | 629.9 | 0.91x | 1.49x | 1.47x | 12.4% | 10.1% | 4 |
 
 Senior debt is the committed amount of the four tranches. Scenarios 2 to 6 and 9 to 13 keep the FC base construction and the contractual debt (amount, repayment profile, swap notional); scenarios 7 and 8 re-gross the funding pro rata at the contract debt share. Scenario 14 is the lenders' COD re-forecast (actual construction, no crisis); scenario 15 is the actual history.
 
@@ -73,11 +73,11 @@ ECA tests (OECD project finance terms in force in 2018): repayment term from COD
 
 ## 4. Actual history (scenario 15)
 
-Construction: hard-cost overrun 81.44 (39.27 Case Bible items plus 42.17 delay-related costs in seven named categories, P-C43); FX forward settlements (gain) 4.40. Total funding 885.21 against 854.55 at FC. Hard-cost overrun 39.27 against contingency 38.40; KCR depreciation reduced the onshore EPC cost by 6.72; loan interest, swap and PRI in construction 62.42 against 63.57 at FC. Undrawn senior commitment cancelled 0.00; standby drawn 10.08; contingent equity 3.36; delay LDs and DSU (17.22) applied to construction before the standby facility.
+Construction: hard-cost overrun 81.44 (39.27 Case Bible items plus 42.17 delay-related costs in seven named categories, P-C43); FX forward settlements (gain) 4.40. Total funding 891.53 against 854.55 at FC. Hard-cost overrun 39.27 against contingency 38.40; KCR depreciation reduced the onshore EPC cost by 6.72; loan interest, swap and PRI in construction 62.42 against 63.57 at FC. Undrawn senior commitment cancelled 0.00; standby drawn 14.82; contingent equity 4.94; delay LDs and DSU (17.22) applied to construction before the standby facility.
 
-Crisis: historic DSCR 1.12x at December 31, 2022 (lock-up), 0.95x at June 30, 2023 (event of default; DSRA drawn 3.33), waiver fee 1.43, margin uplift cost 4.46, deferred principal 10.85, lock-up released 2024H2.
-Refinancing June 30, 2025: prepaid 252.44; swap unwind receipt 6.28; bond face 253.75; transaction costs incl. OID 7.59; combined sculpted DSCR 1.59x.
-Sale: equity value at December 31, 2025 325.02 at 13.75% and 356.46 at 12.50%; price for 24% at completion 77.52; indirect transfer tax 5.49; Kilnworth IRR on the sold stake 9.6%.
+Crisis: historic DSCR 1.12x at December 31, 2022 (lock-up), 0.95x at June 30, 2023 (event of default; DSRA drawn 3.68), waiver fee 1.44, margin uplift cost 4.49, deferred principal 10.93, lock-up released 2024H2.
+Refinancing June 30, 2025: prepaid 256.26; swap unwind receipt 6.28; bond face 257.63; transaction costs incl. OID 7.65; combined sculpted DSCR 1.58x.
+Sale: equity value at December 31, 2025 322.10 at 13.75% and 353.39 at 12.50%; price for 24% at completion 76.85; indirect transfer tax 5.27; Kilnworth IRR on the sold stake 9.6%.
 
 ## 5. Returns, sensitivities and breakevens (FC base)
 
@@ -143,7 +143,7 @@ Editor rulings applied in v1.2: standby drawn in range (P-C43); equity IRR gap e
 
 D-128: the OECD Annex VII tests are measured on the ECA-covered tranche's own contractual schedule. In v1.4 every tranche shared one sculpted profile whose contractual WAL from COD was 7.79 years (the 7.18 years printed in P-F09 was measured on principal paid after the commercial sweep). The ECA-covered tranche now repays in 26 equal semiannual installments from 2021H2 to 2034H1: WAL 6.92 years, largest installment 3.8%, first repayment 8 months after COD, term 13.16 years, 11.5% repaid within 24 months; all pass. The A-loan, B-loan and commercial tranches share a sculpted profile so that total scheduled debt service is CFADS / 1.35 in each period (contractual WAL 8.17 years; no OECD limit applies to them). Senior debt falls to 629.95 (DSCR still binds): the ECA tranche, the cheapest, now amortizes faster, so the blended cost of the outstanding debt is higher and the same CFADS supports less debt. Workbook: Debt rows 145 to 150 appended (ECA profile and sculpting helpers); the ECA scheduled principal (row 24), its DSRA-target row (Debt row 119), the Funding DSRA coefficient F12 (ECA), the live sculpting block (rows 127 to 135) and the ECA test rows 137 to 142 now use them; Checks F23 applies in every scenario.
 
-Chapter 36 reconciliation (P-F09): scheduled principal 530.4623 plus the soft mini-perm sweep 99.4873 equals the debt 629.9497. DSCR on scheduled debt service is exactly 1.35x from 2021H2 to 2027H1; from 2027H2 the sweep has reduced the commercial balance, its later installments are its profile share of the reduced balance, so scheduled debt service falls and the DSCR rises, reaching about 2.2x after the commercial tranche is repaid by sweep. The average 1.55x is the debt-service-weighted average of CFADS / scheduled debt service (the term-sheet ratio); with the sweep in the denominator it is 1.39x; without the sweep the profile gives 1.35x. P-F36 now applies all four sizing tests in every row (the 1.30x rows bind on the downside test). Unrounded slack rows in P-F08: downside 0.1883, gearing 13.1317, LLCR 8.4940 (USD m); ECA WAL room 122.1 days. P-F19: the COD re-sculpt holds the debt drawn at COD and the June 30, 2034 maturity; its level DSCR 1.2811x is an output.
+Chapter 36 reconciliation (P-F09): scheduled principal 530.4623 plus the soft mini-perm sweep 99.4873 equals the debt 629.9497. DSCR on scheduled debt service is exactly 1.35x from 2021H2 to 2027H1; from 2027H2 the sweep has reduced the commercial balance, its later installments are its profile share of the reduced balance, so scheduled debt service falls and the DSCR rises, reaching about 2.2x after the commercial tranche is repaid by sweep. The average 1.55x is the debt-service-weighted average of CFADS / scheduled debt service (the term-sheet ratio); with the sweep in the denominator it is 1.39x; without the sweep the profile gives 1.35x. P-F36 now applies all four sizing tests in every row (the 1.30x rows bind on the downside test). Unrounded slack rows in P-F08: downside 0.1883, gearing 13.1317, LLCR 8.4940 (USD m); ECA WAL room 122.1 days. P-F19: the COD re-sculpt holds the debt drawn at COD and the June 30, 2034 maturity; its level DSCR 1.2712x is an output.
 
 ## 8c. Version 1.4 (u09 round 1 requests and ledger extensions, October 3, 2026)
 
@@ -162,7 +162,7 @@ Appended rows only; no existing address moved (verified cell by cell against the
 | R12 | Checks row 24 | MMRA window equals the input number of periods |
 | R8 | model/exercises/Case_P_Model_AuditExercise_reader.xlsx | Reader copy of the audit exercise without the AuditKey sheet (the other R8 files belong to the build agent) |
 
-Ledger extensions: P-F16 debt capacity at 1.35x by sensitivity (FC base 629.9; lowest 578.2, FC downside); P-F17 annual shadow sizing 615.3 against 629.9 (-14.7, the time-grain effect); P-F49 every Month 1 use itemized (sum 121.52 = total); P-F40 netting set-offs by month July 2023 to June 2025 (total 90.08, all within the 9.0 cap; half-year falls spread evenly because the model is semiannual); P-F63 prepayment cure 81.3 (pro rata, eq:51.3) and 80.2 (proportional, eq:37.4) for 1.10x; P-F65 every monthly forward listed (sum = KCR 32,204 million) with its schedule basis; P-F26 deferred consideration line (nil); labels for D-046 illustrative paths and the P-F02 reconversion proxy.
+Ledger extensions: P-F16 debt capacity at 1.35x by sensitivity (FC base 629.9; lowest 578.2, FC downside); P-F17 annual shadow sizing 615.3 against 629.9 (-14.7, the time-grain effect); P-F49 every Month 1 use itemized (sum 121.52 = total); P-F40 netting set-offs by month July 2023 to June 2025 (total 90.08, all within the 9.0 cap; half-year falls spread evenly because the model is semiannual); P-F63 prepayment cure 86.4 (pro rata, eq:51.3) and 85.3 (proportional, eq:37.4) for 1.10x; P-F65 every monthly forward listed (sum = KCR 32,204 million) with its schedule basis; P-F26 deferred consideration line (nil); labels for D-046 illustrative paths and the P-F02 reconversion proxy.
 
 Monte Carlo funding (P-F42): runs whose construction costs exceed the committed facilities now draw the standby facility and contingent equity 75:25, as the workbook does, instead of drawing senior debt above the commitment; P-F42 percentiles move by less than 0.0001 (no printed value changes).
 
