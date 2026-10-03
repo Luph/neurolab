@@ -36,3 +36,4 @@
 - Done: carillion, purple-line, port-of-miami-tunnel.
 - Done: sydney-tunnels, dulles-greenway, metronet.
 - Done: t-loan-docs, t-insolvency, t-arbitration-treaties.
+- Done: ichthys, mozambique-lng, oyu-tolgoi.

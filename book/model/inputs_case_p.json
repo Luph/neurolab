@@ -229,7 +229,9 @@
    "2015": 27.4,
    "2018": 29.5,
    "2021": 31.8,
+   "2022": 32.6,
    "2023": 33.4,
+   "2025": 35.1,
    "2026": 36.0
   },
   "gdp_usd_bn": {
@@ -281,6 +283,13 @@
    ]
   ],
   "legal_system": "civil law (French-derived codes)",
+  "sombe_west_field": {
+   "operator": "Halbeck Energy (65%)",
+   "snhk_share_pct": 35.0,
+   "water_depth_m": 72,
+   "first_production": "2019",
+   "certified_2p_reserves_bcf_2017": 1140
+  },
   "power_sector_2015": {
    "installed_mw": 2310,
    "available_mw": 1780,

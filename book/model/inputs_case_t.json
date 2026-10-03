@@ -443,6 +443,7 @@
   },
   "land_excluded_as_common": 212.5
  },
+ "refinancing_gain_share_state_pct": 50.0,
  "termination_regime": {
   "authority_default_or_voluntary": "senior debt outstanding including breakage + NILO outstanding + equity compensation = NPV of base-case distributions to equity at the base-case equity IRR (11.4%)",
   "concessionaire_default": "retendering procedure: compensation = adjusted highest compliant tender price less retendering costs; if no liquid market, estimated fair value; no debt floor",

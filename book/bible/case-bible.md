@@ -79,7 +79,7 @@ The laws: the Electricity Code (Law No. 2009-112) opened generation to independe
 
 In 2015 Kessara had 2,310 MW installed but only 1,780 MW available against a peak demand of 2,140 MW growing at 7.4% a year. The mix: 640 MW hydro on the northern Moraba River cascade (output falling in dry years), 820 MW of aging heavy fuel oil and diesel units, 690 MW of SEKA-owned open-cycle gas turbines, and 160 MW of other capacity. Load-shedding of up to eight hours a day in Dabakro in the 2014 dry season pushed the government to announce an Emergency Power Plan in March 2015 whose centerpiece was a competitively procured 450 MW to 650 MW gas-fired IPP at a government-allocated coastal site at Bélanou, 38 km east of Dabakro, beside the landfall of the coastal pipeline.
 
-The gas comes from Sombé West, an offshore field in 72 m of water operated by Halbeck Energy (fictional, 65%) with SNHK (35%). Sombé West started production in 2019 with certified 2P reserves sufficient for a 22-year GSA at Bélanou's contract quantities plus existing SEKA demand. Halbeck's upstream financing (a reserve-based loan) is a Chapter 75 illustration and is never a Case P party.
+The gas comes from Sombé West, an offshore field in 72 m of water operated by Halbeck Energy (fictional, 65%) with SNHK (35%). Sombé West started production in 2019 with certified 2P reserves of 1,140 billion cubic feet (2017 certification), sufficient for a 22-year GSA at Bélanou's contract quantities plus existing SEKA demand. Halbeck's upstream financing (a reserve-based loan) is a Chapter 75 illustration and is never a Case P party.
 
 ## 1.2 The project
 
@@ -585,6 +585,7 @@ The causes, which Chapter 48 and Chapter 79 analyze: Pellow assumed Coldwater Pl
 | Relief events (including COVID-19) | Relief from termination and performance deductions; no compensation |
 | Prolonged uninsurable force majeure (more than 270 days) | Senior debt plus NILO plus equity contributed less distributions |
 | Lender step-in | 90 days, extendable to 180, under the Financiers' Direct Deed |
+| Refinancing gain | The state takes 50% of any refinancing gain (never triggered) |
 
 Because concessionaire-default compensation has no debt floor, the senior lenders' alternative to restructuring in 2022 was a retender at a market value below their claims (figure T-F08). Chapter 64 builds the comparison.
 
@@ -774,7 +775,7 @@ Dutch, born 1966 in Rotterdam. Joined a Dutch bank in 1990; posted to Jakarta 19
 
 At Castellan he wants a landmark mandate, the underwriting and hedging fees that come with it, and a clean record at credit committee. He fears underwriting a deal that will not sell down, and he never stops worrying about convertibility (Jakarta). He negotiates bluntly, anchors early, hides behind his credit committee, and trades price for structure. Verbal habit: "Fine. And the day it goes wrong?"
 
-Where he is wrong: he insists on an 80% swap hedge with the swaps priced by his own bank, and the 7.5 bps execution charge becomes a sponsor grievance; in 2016 he tells Tomasz that the B-loan participants will accept a 16-year tenor, which they do not (the common profile ends in 2034 as a result). Arc: lead arranger of Case P (2017 to 2018); out of the bank in 2020; restructuring adviser to the Case T senior lenders (2022 to 2023), where he sits opposite sponsors as he once sat opposite borrowers; debt adviser to Kilnworth on the 2025 Case P bond, re-reading his own 2018 term sheet from the borrower's side.
+Where he is wrong: he insists on an 80% swap hedge with the swaps priced by his own bank, and the 7.5 bps execution charge becomes a sponsor grievance; in 2016 he tells Tomasz in 2016 that the banks will accept a final maturity in 2036, which they do not (the common profile ends on June 30, 2034). Arc: lead arranger of Case P (2017 to 2018); out of the bank in 2020; restructuring adviser to the Case T senior lenders (2022 to 2023), where he sits opposite sponsors as he once sat opposite borrowers; debt adviser to Kilnworth on the 2025 Case P bond, re-reading his own 2018 term sheet from the borrower's side.
 
 ### Adaeze Whitcombe (sponsor's counsel)
 
