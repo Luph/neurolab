@@ -698,9 +698,9 @@ for k, pk, lab in TR6:
                lambda i, k=k: f"={fds(i)}*({ref('Debt.bo_' + k, i)}-{ref('Debt.dfo_' + k, i)})*{ref('Debt.psh', i)}", total=True, py='S.sched_' + pk)
         D_.row('dfn_' + k, 'Principal deferred under the waiver', 'USD m',
                lambda i, k=k: f"={ref('Debt.f_t23', i)}*{V('Inputs.w_def')}*{ref('Debt.sch_' + k, i)}", total=True, py='S.deferred_new_' + pk)
-        D_.scalar('def23_' + k, 'Deferred amount at 2023-12-31', 'USD m', f"=SUM({rng('Debt.dfn_' + k)})", '#,##0.000000')
+        D_.scalar('def23_' + k, 'Deferred amount at 2023-12-31', 'USD m', lambda k=k: f"={ref('Debt.dfn_' + k, 10, absolute=True)}", '#,##0.000000')
         D_.row('dfr_' + k, 'Deferred principal repaid', 'USD m',
-               lambda i, k=k: f"={ref('Debt.f_drep', i)}*MIN({V('Debt.def23_' + k)}/4,{ref('Debt.dfo_' + k, i)})", total=True, py='S.deferred_repay_' + pk)
+               lambda i, k=k: (f"={ref('Debt.f_drep', i)}*MIN({V('Debt.def23_' + k)}/4,{ref('Debt.dfo_' + k, i)})" if 11 <= i <= 14 else "=0"), total=True, py='S.deferred_repay_' + pk)
         D_.row('p_' + k, 'Principal paid', 'USD m',
                lambda i, k=k: f"={ref('Debt.sch_' + k, i)}-{ref('Debt.dfn_' + k, i)}+{ref('Debt.dfr_' + k, i)}", total=True, py='S.principal_' + pk)
         D_.row('ld_' + k, 'Performance LD prepayment', 'USD m',
@@ -723,29 +723,29 @@ for k, pk, lab in TR6:
                lambda i, k=k: f"=IF({ref('Time.f_cod', i)}=1,{bal_cod(k)},{fds(i)}*({ref('Debt.after_' + k, i)}-{ref('Debt.sw_' + k, i)}))", py='S.bal_close_' + pk)
     else:
         D_.row('p_BD', 'Principal paid', 'USD m',
-               lambda i: f"=IF({ref('Debt.bo_BD', i)}>0,MIN({V('Debt.F')}*{ref('Inputs.S_prof_bond', i)},{ref('Debt.bo_BD', i)}),0)", total=True, py='S.principal_BOND')
+               lambda i: (f"=IF({ref('Debt.bo_BD', i)}>0,MIN({V('Debt.F')}*{ref('Inputs.S_prof_bond', i)},{ref('Debt.bo_BD', i)}),0)" if i >= 13 else "=0"), total=True, py='S.principal_BOND')
         D_.row('after_BD', 'Balance after scheduled payment', 'USD m', lambda i: f"={ref('Debt.bo_BD', i)}-{ref('Debt.p_BD', i)}")
-        D_.row('bc_BD', 'Closing balance', 'USD m', lambda i: f"={ref('Debt.after_BD', i)}+{ref('Debt.f_tR', i)}*{V('Debt.F')}", py='S.bal_close_BOND')
+        D_.row('bc_BD', 'Closing balance', 'USD m', lambda i: f"={ref('Debt.after_BD', i)}" + (f"+{ref('Debt.f_tR', i)}*{V('Debt.F')}" if i >= 13 else ''), py='S.bal_close_BOND')
 D_.sec('Refinancing 2025 (USD m)')
 D_.row('udf', 'Swap unwind discount factor at 3.68%', 'factor',
        lambda i: f"=IF({tt(i)}>15,(1+{V('Inputs.unw_r')}/200)^-({tt(i)}-15),0)", fmt='0.000000')
 D_.scalar('mtm', 'Swap unwind receipt (terminated share, MTM at 3.68% flat)', 'USD m',
           f"={V('Inputs.s_refi')}*{V('Inputs.unw_sh')}*({V('Inputs.unw_r')}-{V('Inputs.swap_fix')})/100*0.5*SUMPRODUCT({rng('Inputs.S_N_s')},{rng('Debt.udf')})", '#,##0.000000')
 D_.scalar('prepaid', 'Principal prepaid (B-loan, commercial, standby)', 'USD m',
-          f"=SUM({rng('Debt.rf_B')})+SUM({rng('Debt.rf_C')})+SUM({rng('Debt.rf_SB')})", '#,##0.000000')
+          lambda: f"={ref('Debt.rf_B', 13, absolute=True)}+{ref('Debt.rf_C', 13, absolute=True)}+{ref('Debt.rf_SB', 13, absolute=True)}", '#,##0.000000')
 D_.scalar('F', 'Bond face amount', 'USD m',
           f"={V('Inputs.s_refi')}*({V('Debt.prepaid')}+{V('Inputs.b_oth')}+{V('Inputs.pcg_up')}/100*{V('Inputs.pcg')}-{V('Debt.mtm')})/({V('Inputs.b_px')}-{V('Inputs.b_uw')})",
           '#,##0.000000', py='R.bond_F')
 D_.row('unwind', 'Swap unwind receipt', 'USD m', lambda i: f"={ref('Debt.f_tR', i)}*{V('Debt.mtm')}", total=True, py='S.unwind')
 D_.row('refi_c', 'Refinancing costs (OID, underwriting, other, PCG upfront)', 'USD m',
-       lambda i: f"={ref('Debt.f_tR', i)}*({V('Debt.F')}*(1-{V('Inputs.b_px')})+{V('Inputs.b_uw')}*{V('Debt.F')}+{V('Inputs.b_oth')}+{V('Inputs.pcg_up')}/100*{V('Inputs.pcg')})", total=True, py='S.refi_costs')
+       lambda i: "=0" if i < 13 else f"={ref('Debt.f_tR', i)}*({V('Debt.F')}*(1-{V('Inputs.b_px')})+{V('Inputs.b_uw')}*{V('Debt.F')}+{V('Inputs.b_oth')}+{V('Inputs.pcg_up')}/100*{V('Inputs.pcg')})", total=True, py='S.refi_costs')
 D_.sec('Swap, premiums and fees (USD m)')
 D_.row('swsh', 'Swap share outstanding', 'fraction', lambda i: f"=IF(AND({V('Inputs.s_refi')}=1,{tt(i)}>15),{V('Inputs.sw_rem')},1)")
 D_.row('swap', 'Swap net payment (fixed 30/360 less floating ACT/360)', 'USD m',
        lambda i: f"={fds(i)}*{ref('Inputs.S_N_s', i)}*{ref('Debt.swsh', i)}*({V('Inputs.swap_fix')}/100*0.5-{ref('Operations.base', i)}/100*{dsc(i)})", total=True, py='S.swap')
 D_.row('pri', 'PRI premium (commercial tranche)', 'USD m', lambda i: f"={PRIR}*{ref('Debt.bo_C', i)}*{ref('Time.days', i)}/365", total=True, py='S.pri')
 D_.row('pcg', 'ABDB PCG fee (bond)', 'USD m',
-       lambda i: f"=IF({V('Debt.F')}>0,{V('Inputs.pcg_fee')}/100*0.5*{ref('Debt.bo_BD', i)}*{V('Inputs.pcg')}/{V('Debt.F')},0)", total=True, py='S.pcg')
+       lambda i: (f"=IF({V('Debt.F')}>0,{V('Inputs.pcg_fee')}/100*0.5*{ref('Debt.bo_BD', i)}*{V('Inputs.pcg')}/{V('Debt.F')},0)" if i >= 13 else "=0"), total=True, py='S.pcg')
 D_.row('wfee', 'Waiver fee', 'USD m', lambda i: f"={ref('Debt.f_t23', i)}*{V('Inputs.w_fee')}/100*(" + "+".join(ref('Debt.bo_' + k, i) for k in ['E', 'A', 'B', 'C', 'SB']) + ")", total=True, py='S.waiver_fee')
 D_.row('int', 'Interest, all tranches', 'USD m', lambda i: "=" + "+".join(ref('Debt.int_' + k, i) for k, _, _ in TR6), total=True, py='S.interest_total')
 D_.row('sc', 'Senior financing costs (interest, swap, PRI, PCG)', 'USD m',
@@ -763,10 +763,10 @@ for k, pk, lab in TR6[:5]:
     D_.row('tn_' + k, f'{lab}: next period debt service', 'USD m',
            lambda i, k=k: (f"=IF(AND({tt(i)}>={V('Time.tcod')},{tt(i)}<{NS}),"
                            f"(IF({ref('Time.f_cod', i)}=1,{ref('Debt.bc_' + k, i)},{ref('Debt.after_' + k, i)})-{ref('Debt.dfc_' + k, i)})*{nxt('Debt.psh', i)}"
-                           f"+{nxt('Debt.f_drep', i)}*MIN({V('Debt.def23_' + k)}/4,{ref('Debt.dfc_' + k, i)})"
+                           + (f"+{nxt('Debt.f_drep', i)}*MIN({V('Debt.def23_' + k)}/4,{ref('Debt.dfc_' + k, i)})" if 10 <= i <= 13 else '') + f"
                            f"+IF({ref('Time.f_cod', i)}=1,{ref('Debt.bc_' + k, i)},{ref('Debt.after_' + k, i)})*{nxt('Debt.r_' + k, i)},0)"))
 D_.row('tn_BD', 'Bond: next period debt service', 'USD m',
-       lambda i: (f"=IF(AND({tt(i)}>={V('Time.tcod')},{tt(i)}<{NS},{ref('Debt.after_BD', i)}+{ref('Debt.f_tR', i)}*{V('Debt.F')}>0.000000001),"
+       lambda i: "=0" if i < 13 else (f"=IF(AND({tt(i)}>={V('Time.tcod')},{tt(i)}<{NS},{ref('Debt.after_BD', i)}+{ref('Debt.f_tR', i)}*{V('Debt.F')}>0.000000001),"
                   f"MIN({V('Debt.F')}*{nxt('Inputs.S_prof_bond', i)},{ref('Debt.after_BD', i)}+{ref('Debt.f_tR', i)}*{V('Debt.F')})"
                   f"+({ref('Debt.after_BD', i)}+{ref('Debt.f_tR', i)}*{V('Debt.F')})*({nxt('Debt.r_BD', i)}+{V('Inputs.pcg_fee')}/100*0.5*{V('Inputs.pcg')}/{V('Debt.F')}),0)"))
 D_.row('tgt', 'DSRA target (six months of next debt service)', 'USD m',

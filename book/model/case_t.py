@@ -249,9 +249,12 @@ def abbr_pct(year, half):
 
 
 def rnd(x, n=0):
-    """Excel ROUND (half away from zero)."""
+    """Excel ROUND (half away from zero). Like Excel, a value whose decimal representation ends
+    in 5 at the rounding digit is rounded up even when its binary value is a hair below
+    (pre-rounding to 9 decimals removes the binary noise)."""
     f = 10.0 ** n
-    return math.floor(abs(x) * f + 0.5) / f * (1 if x >= 0 else -1)
+    y = round(abs(x) * f, 9)
+    return math.floor(y + 0.5) / f * (1 if x >= 0 else -1)
 
 
 def xl(d):
