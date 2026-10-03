@@ -30,3 +30,4 @@
 - Done: ivanpah, sunedison-terraform, northvolt.
 - Done: t-oecd-arrangement, t-dfis, t-basel.
 - Done: gulf-iwpp (weakest), sabine-pass, png-lng.
+- Done: cobre-panama, colombia-4g, hyperion-meta.

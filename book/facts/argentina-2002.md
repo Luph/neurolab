@@ -49,8 +49,8 @@ In the early 1990s Argentina privatized its gas and electricity utilities under 
 
 | Date | Event |
 |---|---|
-| 1991 | Convertibility Law pegs peso at one to one with the US dollar; US–Argentina BIT signed |
 | 1990 | UK–Argentina BIT signed |
+| 1991 | Convertibility Law pegs peso at one to one with the US dollar; US–Argentina BIT signed |
 | 1992 | Gas privatization; licences with dollar tariffs and US PPI adjustment |
 | 1995 | CMS buys into TGN |
 | 2000 | PPI adjustments deferred by agreement; Decree 669/2000 |
@@ -58,7 +58,7 @@ In the early 1990s Argentina privatized its gas and electricity utilities under 
 | 1 Dec 2001 | Decree 1570/01 ("corralito") restricts bank withdrawals |
 | 6 Jan 2002 | Law 25,561: pesification at one to one, indexation voided, renegotiation authorized |
 | 2 May 2002 | Decrees 689/2002 and 704/2002 exempt gas exports |
-| 26 Apr 2003 | End of the necessity period found in LG&E (date of presidential election) |
+| 26 Apr 2003 | End of the necessity period found in LG&E |
 | 12 May 2005 | CMS award, USD 133.2 million |
 | 3 Oct 2006 | LG&E Decision on Liability (necessity accepted for 1 Dec 2001 to 26 Apr 2003) |
 | 22 May 2007 | Enron award |
