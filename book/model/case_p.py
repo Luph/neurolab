@@ -2408,7 +2408,7 @@ def figures_annex(F, RS, R1, R14, R15):
     P['P-F63'] = dict(cfads_12m=float(cf12), debt_service_12m=float(ds12), historic_dscr=float(cf12 / ds12),
                       cure_to_1_10=float(max(0, 1.10 * ds12 - cf12)), cure_to_1_20=float(max(0, 1.20 * ds12 - cf12)))
     P12 = float(Sa['principal_total'][t23] + Sa['principal_total'][t23 - 1]); D0 = float(Sa['debt_open'][t23 - 1])
-    I12 = float(Sa['senior_costs'][t23] + Sa['senior_costs'][t23 - 1]); i12 = I12 / D0
+    I12 = float(Sa['senior_costs'][t23] + Sa['senior_costs'][t23 - 1]); i12 = 2 * float(Sa['allin_rate'][t23 - 1])
     pre = lambda lvl: max(0.0, (ds12 - cf12 / lvl) / (P12 / D0 + i12))
     prop = lambda lvl: max(0.0, (ds12 - cf12 / lvl) * D0 / ds12)
     P['P-F63'].update(scheduled_principal_12m=P12, senior_costs_12m=I12, debt_open_2022_07_01=D0, all_in_rate_12m=i12,
@@ -2416,7 +2416,7 @@ def figures_annex(F, RS, R1, R14, R15):
                       prepayment_cure_proportional_to_1_10=prop(1.10), prepayment_cure_proportional_to_1_20=prop(1.20),
                       check_dscr_after_pro_rata_cure_1_10=float(cf12 / (ds12 - pre(1.10) * (P12 / D0 + i12))),
                       prepayment_basis='eq:51.3: (DS - CFADS/level) / (P/D + i), prepayment applied pro rata and deemed made at the start of the test period (July 1, 2022); '
-                                       'P = scheduled principal in the 12 months, D = senior debt at the start, i = senior financing costs in the 12 months / D. '
+                                       'P = scheduled principal in the 12 months, D = senior debt at the start, i = all-in senior rate a year at the start of the test (2 x the 2022H2 period rate, Ratios row 7). '
                                        'Proportional version (eq:37.4): (DS - CFADS/level) x D / DS')
     # ---- P-F16 months covered with the annex LC
     t = tix('2022H1'); lcv = P['P-F39']['fc_base_at_cod']['two_plus_one']

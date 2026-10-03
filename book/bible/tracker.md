@@ -115,3 +115,4 @@
 - Consolidation launched: part A (registry regeneration, cross-unit brief edits, glossary, rulings, style sheet), part B (Case Bible merges, ledger conflicts, model request list, fact-sheet plan, capability-map.md). Case P modeler v1.4 (u09 R1–R12, ledger extensions).
 - NEXT: build-along workbooks (after v1.4) + exercise workbooks; blueprint review round 2 (targeted re-check by fresh reviewers); Phase 2 pilot.
 - Done: wte-operating-pf (Dublin Poolbeg), subsea-cable-pf (EASSy), saf-mandates, h2global, kenya-steam-sales, t-decommissioning-accounting.
+- Done: t-repowering, t-fast-standard, t-energy-yield, t-battery-degradation, t-earned-value, t-sustainable-finance-2. All requested fact sheets delivered (172 files).
