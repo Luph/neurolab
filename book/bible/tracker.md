@@ -78,3 +78,4 @@
 - Done: t-judgment-research, t-conduct-regimes, t-energy-investment-gap (IEA via secondary), t-adaptation-resilience (UNEP via secondary), t-digital-execution.
 - Done: t-cap-and-floor, t-eu-support-schemes, t-corporate-ppa-market, t-capacity-ancillary-markets, t-mining-offtake, t-airport-port-revenue. Conflict: LDES consultation close date (t-frontier-data 7 Aug vs Ofgem 14 Aug 2026) — use Ofgem 14 Aug.
 - Done: wte (English waste PFI, no WTE financing case), municipal-water-concession, t-digital-norms, tower-carveout, ftth-altnet, t-hydrogen-support, saf-project, t-ccs-liability.
+- Done: t-rbl, upstream-field-pf (Jubilee), commodity-prepay, tap-pipeline, fpso-financing, fsru-charters, coral-sul-flng (financing 2017, not 2020), t-upstream-decom-security.

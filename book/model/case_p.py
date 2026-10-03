@@ -1225,3 +1225,224 @@ def build_contract():
     CONTRACT['prof_BOND'] = list(bp)
     return R1, R14, R15
 
+
+# ========================================================================================
+# ANALYSES: figure computations (every ledger figure comes from here)
+# ========================================================================================
+from contextlib import contextmanager
+
+@contextmanager
+def contract_swap(newc):
+    old = dict(CONTRACT); CONTRACT.update(newc)
+    try:
+        yield
+    finally:
+        CONTRACT.clear(); CONTRACT.update(old)
+
+def oy_months(R, k):
+    S = R['S']
+    return np.maximum(0, np.minimum(S['ome'], 12 * k) - np.maximum(S['oms'], 12 * (k - 1)))
+
+def oy_sum(R, series, k):
+    S = R['S']; w = np.divide(oy_months(R, k), S['om'], out=np.zeros(NS), where=S['om'] > 0)
+    return float((np.asarray(series) * w).sum())
+
+def cy_sum(series, y):
+    return float(sum(series[t] for t in range(NS) if S_YEAR[t] == y))
+
+def tidx_end(d):
+    return [t for t in range(NS) if S_END[t] == d][0]
+
+def ECA_tests(R, cod):
+    S = R['S']; P = S['principal_total']; tot = P.sum()
+    yrs = np.array([(S_END[t] - cod).days / 365.25 for t in range(NS)])
+    wal = float((P * yrs).sum() / tot)
+    first = min(t for t in range(NS) if P[t] > 1e-9); last = max(t for t in range(NS) if P[t] > 1e-9)
+    m_first = months_between(cod, add_months(date(S_END[first].year, S_END[first].month, 1), 1))
+    return dict(wal_years=wal, largest_installment_share=float(P.max() / tot),
+                largest_6m_share=float(P.max() / tot), tenor_years=float(yrs[last]),
+                first_repayment_months_after_cod=m_first, first_repayment=S_END[first].isoformat(),
+                final_maturity=S_END[last].isoformat(),
+                pass_tenor_14y=bool(yrs[last] <= 14), pass_wal_7_25=bool(wal <= 7.25),
+                pass_25pct=bool(P.max() / tot <= 0.25), pass_first_24m=bool(m_first <= 24),
+                pass_first_6m_bible_text=bool(m_first <= 6))
+
+def avg_life_from_fc(R):
+    """Balance-weighted average life of the senior loans measured from financial close."""
+    f = R['f']; S = R['S']; fe = R['fe']
+    bal_m = sum(f['bal_' + k] for k in TR)
+    area = sum(bal_m[m - 1] * M_DAYS[m] / 365 for m in range(1, fe + 1))
+    area += sum(S['debt_open'][t] * S_DAYS[t] / 365 for t in range(NS) if t > R['t_cod'])
+    # draws during the COD period after the last month are captured in bal_m
+    return area / R['f']['D']
+
+def dscr_stats(R):
+    S = R['S']; m = S['ds'] > 1e-9
+    return dict(min_dscr=float(S['dscr'][m].min()), avg_dscr=float(S['cfads'][m].sum() / S['ds'][m].sum()),
+                min_hist_dscr=float(S['dscr_hist'][m].min()), llcr_first=float(S['llcr_dsra'][R['t1']]),
+                llcr_first_ex_dsra=float(S['llcr'][R['t1']]), plcr_first=float(S['plcr'][R['t1']]),
+                lockups=int(S['lockup'].sum()), eod_periods=int(S['eod'].sum()),
+                dsra_draws=float(S['dsra_draw'].sum()), unpaid=float(S['shortfall'].sum()))
+
+def summary(R):
+    f = R['f']; S = R['S']
+    out = dict(T=float(f['T']), D=float(f['D']), E=float(f['equity'].sum()),
+               debt_drawn_incl_standby=float(f['debt_draw'].sum()),
+               gearing=float(f['debt_draw'].sum() / f['T']),
+               equity_irr=float(R['equity_irr']), project_irr=float(R['project_irr']),
+               project_irr_pretax=float(R['project_irr_pretax']), npv16_at_fc=float(R['equity_npv16_at_fc']),
+               payback_date=R['payback_date'])
+    out.update(dscr_stats(R))
+    return out
+
+def funding_equity_first(p):
+    """Annex variant (P-F43): equity first, then senior debt, at 75% gearing (Python only)."""
+    mac_ = build_macro(p); u = construction_uses(p, mac_)
+    prof = np.array(CONTRACT['prof_FC']); N_m = np.array(CONTRACT['N_m']); N_s = np.array(CONTRACT['N_s'])
+    fe = fund_end_month(p); nc = u['nc']; d1, d0 = dsra_coeffs(p, mac_, prof, N_s)
+    T = CONTRACT['T']; log = []
+    for it in range(1, 200):
+        D = G * T; E = T - D; Dk = SHARE * D
+        bal = np.zeros(4); eq = 0.0; uses_tot = 0.0; idc_tot = 0.0; cf_tot = 0.0; prem_tot = 0.0
+        for m in range(fe + 1):
+            idc_k = bal * (mac_['base_m'][m] + MARGIN) / 100 * M_DAYS[m] / 360 * GU
+            pri = PRI * bal[3] * M_DAYS[m] / 365
+            # swap accretes with drawn debt: 80% of opening balance
+            swap = 0.8 * bal.sum() * (SWAP_FIX / 100 / 12 - mac_['base_m'][m] / 100 * M_DAYS[m] / 360)
+            cfee = ((Dk - bal) * CFEE / 100 * M_DAYS[m] / 360).sum()
+            sbf = SB_COMMIT * SB_CFEE / 100 * M_DAYS[m] / 360
+            upf = (Dk * UPF / 100).sum() if m == 0 else 0.0
+            dsra = (d1 * Dk).sum() + d0 if m == nc else 0.0
+            X = u['base_total'][m] + u['vat_int'][m] + idc_k.sum() + pri + swap + cfee + sbf + upf + 0.255 / 12 + dsra
+            e_m = min(X, E - eq)
+            draw = (X - e_m) / (1 - ECA_PREM * SHARE[0])
+            prem = ECA_PREM * SHARE[0] * draw
+            eq += e_m; bal = bal + SHARE * draw
+            uses_tot += X + prem; idc_tot += idc_k.sum() + pri + swap; cf_tot += cfee + sbf; prem_tot += prem
+        log.append(uses_tot - T)
+        if abs(uses_tot - T) < 1e-9: break
+        T = uses_tot
+    return dict(T=T, D=G * T, E=(1 - G) * T, idc=idc_tot, commitment_fees=cf_tot, eca_premium=prem_tot,
+                iterations=it, note='Equity drawn first, then debt; gearing 75% of the resulting total funding requirement; '
+                'swap notional assumed to accrete at 80% of drawn debt; DSCR test not applied (illustrative variant).')
+
+def breakeven(fn, lo, hi, target=1.0, it=60):
+    flo = fn(lo) - target
+    for _ in range(it):
+        mid = (lo + hi) / 2; fm = fn(mid) - target
+        if (fm > 0) == (flo > 0): lo, flo = mid, fm
+        else: hi = mid
+    return (lo + hi) / 2
+
+def min_dscr_of(p):
+    R = run(p); S = R['S']; m = S['ds'] > 1e-9
+    return float(S['dscr'][m].min())
+
+def monte_carlo(n=1000, seed=20180717):
+    rng = np.random.default_rng(seed)
+    res = []
+    for i in range(n):
+        shock = np.clip(rng.normal(0, 2.0, 26), -10, 5)
+        disp = rng.triangular(55.0, 76.5, 85.0)
+        hrnr = max(0.0, rng.normal(0.12, 0.04))
+        fxd = 1 + rng.normal(FX_D - 1, 0.03)
+        p = scen(1, avail_shock=shock, dispatch=disp, hr_nr=hrnr, fx_d=fxd)
+        R = run(p); S = R['S']; m = S['ds'] > 1e-9
+        res.append((S['dscr'][m].min(), S['dscr_hist'][m].min(), R['equity_irr'],
+                    int((S['dscr_hist'][m] < 1.20).any()), int((S['dscr_hist'][m] < 1.10).any())))
+    a = np.array(res)
+    pct = lambda x, q: float(np.percentile(x, q))
+    hist_edges = [1.0, 1.1, 1.2, 1.25, 1.3, 1.35, 1.4, 1.5, 9.9]
+    counts = np.histogram(a[:, 0], bins=hist_edges)[0]
+    return dict(runs=n, seed=seed,
+                inputs=dict(availability_shock='per operating year, normal(0, 2.0 points), truncated to -10/+5 points, independent across years',
+                            dispatch='one draw per run, triangular(55.0%, 76.5%, 85.0%)',
+                            heat_rate_degradation='non-recoverable rate per year, normal(0.12%, 0.04%), floored at 0',
+                            fx='KCR depreciation drift per year, normal(5.19%, 3.0%) applied to the FC FX path',
+                            debt='locked at the FC base contract (amount and repayment profile)'),
+                min_dscr_p10=pct(a[:, 0], 10), min_dscr_p50=pct(a[:, 0], 50), min_dscr_p90=pct(a[:, 0], 90),
+                min_hist_dscr_p10=pct(a[:, 1], 10), min_hist_dscr_p50=pct(a[:, 1], 50),
+                equity_irr_p10=pct(a[:, 2], 10), equity_irr_p50=pct(a[:, 2], 50), equity_irr_p90=pct(a[:, 2], 90),
+                prob_hist_below_1_20=float(a[:, 3].mean()), prob_hist_below_1_10=float(a[:, 4].mean()),
+                min_dscr_histogram=dict(edges=hist_edges, counts=[int(c) for c in counts]))
+
+ERR_LIST = ['E%d' % i for i in range(1, 11)]
+ERR_DESC = {
+    'E1': 'Capacity payment without the availability cap (A/90% not capped at 1)',
+    'E2': 'LTSA variable fee on one gas turbine instead of two',
+    'E3': 'Tariff indexation reads the index at period end instead of the lagged (Sep/Mar) reading',
+    'E4': 'Senior loan interest on 30/360 instead of ACT/360',
+    'E5': 'Full tax exemption applied to OY1-OY8 (15% band ignored)',
+    'E6': 'Deferred holiday depreciation lost (pool never credited)',
+    'E7': 'DSRA initial funding drawn 100% from senior debt instead of pro rata',
+    'E8': 'Sculpting on CFADS before tax',
+    'E9': 'Fuel-charge revenue uses a typed 76.5% dispatch instead of the live dispatch',
+    'E10': 'Swap net settlement with legs reversed',
+}
+
+def audit_case(errs):
+    p = scen(1, errs=set(errs))
+    R = size_fc(p)
+    c = dict(D=R['f']['D'], T=R['f']['T'], E=R['f']['T'] - R['f']['D'], Dk=list(R['f']['Dk']),
+             prof_FC=list(R['prof']), N_m=list(R['N_m']), N_s=list(R['N_s']))
+    with contract_swap(c):
+        Rb = run(scen(1, errs=set(errs)))
+        Rd = run(scen(3, errs=set(errs)))
+    st = dscr_stats(Rb); sd = dscr_stats(Rd)
+    return R, c, dict(senior_debt=float(Rb['f']['D']), binding=R['binding'], total_funding=float(Rb['f']['T']),
+                      min_dscr_base=st['min_dscr'], avg_dscr_base=st['avg_dscr'], min_dscr_downside=sd['min_dscr'],
+                      llcr_at_close=st['llcr_first'], equity_irr=float(Rb['equity_irr']),
+                      gearing=float(Rb['f']['debt_draw'].sum() / Rb['f']['T']))
+
+def interp_bs(R, key, d):
+    S = R['S']; t1_ = [t for t in range(NS) if S_START[t] <= d <= S_END[t]][0]
+    a = S[key][t1_ - 1]; b = S[key][t1_]
+    w = (d - S_END[t1_ - 1]).days / S_DAYS[t1_]
+    return a + (b - a) * w
+
+def statements(R, t_list):
+    """Income statement, cash flow and balance sheet aggregates over periods t_list (end = last)."""
+    S = R['S']; t_end = t_list[-1]
+    sm = lambda k: float(sum(S[k][t] for t in t_list))
+    IS = dict(revenue=sm('revenue'), late_payment_interest=sm('lpi_received'),
+              operating_costs=sm('opex'), of_which_fuel_and_transport=sm('pass_cost'), ebitda=sm('ebitda'),
+              depreciation=sm('book_dep'), finance_costs=sm('int_exp'),
+              of_which_shareholder_loan_interest=sm('shl_int'), current_tax=sm('tax'), deferred_tax=sm('dt_exp'),
+              net_income=sm('ni'))
+    CF = dict(ebitda=sm('ebitda'), tax_paid=sm('tax'), increase_in_working_capital=sm('dnwc'),
+              mmra_net=float(sum(S['mm_contr'][t] - S['mm_spend'][t] for t in t_list)),
+              cfads=sm('cfads'), senior_interest_and_fees=sm('senior_costs'), senior_principal=sm('principal_total'),
+              ld_prepayment=float(sum(S['ld_prepay_' + k][t] for k in TR + ['SB'] for t in t_list)),
+              sweeps=float(sum(S['sweep_' + k][t] for k in TR + ['SB'] for t in t_list)),
+              dsra_topup_less_release=float(sum(S['dsra_topup'][t] - S['dsra_release'][t] - S['dsra_draw'][t] for t in t_list)),
+              shl_interest_paid=sm('shl_int_paid'), shl_principal_repaid=sm('shl_prin'), dividends=sm('div'))
+    BS = dict(date=S_END[t_end].isoformat(), plant=float(S['ppe'][t_end]), cash_in_project_accounts=float(S['bs_cash'][t_end]),
+              of_which_dsra=float(S['dsra_close'][t_end]), receivables=float(S['bs_ar'][t_end]),
+              of_which_overdue=float(S['overdue'][t_end]), inventory=float(S['bs_inv'][t_end]),
+              deferred_tax_asset=float(S['bs_dta'][t_end]), total_assets=float(S['bs_assets'][t_end]),
+              senior_debt=float(S['bs_debt'][t_end]), shareholder_loans=float(S['bs_shl'][t_end]),
+              payables=float(S['bs_pay'][t_end]), deferred_tax_liability=float(S['bs_dtl'][t_end]),
+              share_capital=float(S['bs_sc'][t_end]), retained_earnings=float(S['bs_re'][t_end]),
+              total_liabilities_and_equity=float(S['bs_liab_eq'][t_end]), balance_check=float(S['bs_check'][t_end]))
+    return dict(income_statement=IS, cash_flow=CF, balance_sheet=BS)
+
+def compute_all():
+    F = {}
+    R1, R14, R15 = build_contract()
+    RS = {i: run(scen(i)) for i in range(1, 16)}
+    # sizing details
+    Rs = R1; f1 = RS[1]['f']
+    gear_T = f1['T_closed_form']
+    F['sizing'] = dict(senior_debt=float(f1['D']), total_funding=float(f1['T']), binding=Rs['binding'],
+                       candidates={k: float(v) for k, v in Rs['cands'].items()},
+                       gearing_cap_debt_closed_form=float(0.75 * gear_T), total_funding_at_75pct_closed_form=float(gear_T),
+                       dscr_capacity_at_1_35=float(Rs['capacity']), sculpted_dscr=float(Rs['sculpt_dscr']),
+                       downside_min_dscr=float(Rs['downside_min']), sizing_iterations=Rs['sizing_iterations'],
+                       sizing_residuals=[float(x) for x in Rs['sizing_hist']],
+                       construction_fixed_point_iterations=int(Rs['f']['iterations']),
+                       llcr_at_close_incl_dsra=float(RS[1]['S']['llcr_dsra'][RS[1]['t1']]),
+                       llcr_at_close_ex_dsra=float(RS[1]['S']['llcr'][RS[1]['t1']]),
+                       gearing=float(f1['D'] / f1['T']), tolerance_usd_m=TOL)
+    F['summary'] = {i: summary(RS[i]) for i in RS}
+    F['scenario_names'] = {i: SCENARIOS[i]['name'] for i in SCENARIOS}
+    return F, RS, R1, R14, R15
