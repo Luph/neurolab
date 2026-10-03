@@ -1,0 +1,1067 @@
+{
+ "meta": {
+  "case_id": "P",
+  "name": "Belanou Combined Cycle Power Project (Case P)",
+  "file_version": "1.0",
+  "as_of": "2026-10-03",
+  "author": "Case Bible designer",
+  "source_document": "book/bible/case-bible.md, Part 1",
+  "status_note": "Assumptions only. Model outputs (debt quantum, IDC, fees in USD, ratios, IRRs, valuations) are computed by the reference model and recorded in the figure ledger. Where this file and case-bible.md disagree, raise a change request; do not silently pick one.",
+  "base_currency": "USD",
+  "local_currency": {
+   "code": "KCR",
+   "name": "Kessaran cauri",
+   "plural": "cauris"
+  },
+  "periodicity": {
+   "construction": "monthly, Month 1 = August 2018 (notice to proceed 2018-08-01); financial close 2018-07-17 is treated as occurring at the start of Month 1",
+   "operations": "semiannual, periods ending 30 June and 31 December; first operating period is a stub from COD to the next period end",
+   "day_count": "ACT/360 for all USD floating-rate loans and the swap floating leg; 30/360 for the swap fixed leg and the 2025 bond; ACT/365 for KCR items and shareholder loans",
+   "indexation_dates": "tariff indices reset 1 January and 1 July using index values lagged 3 months (September and March readings)"
+  },
+  "units_convention": "Key names carry units: _usd_m = USD millions; _usd = USD; _kcr_m = KCR millions; _pct = percent (5.0 means 5.0%); _x = ratio multiple; _mw, _gwh, _mwh, _kj_per_kwh, _mmbtu, _days, _months, _years. Prices labelled _2016 or _2018 are in prices of the stated base date before indexation.",
+  "sign_convention": "Costs stored as positive numbers; subtracted explicitly (style sheet 2.7)."
+ },
+ "timeline": {
+  "origination_first_contact": "2015-04-14",
+  "co_development_agreement_signed": "2015-06-22",
+  "rfq_issued": "2016-02-09",
+  "prequalification_announced": "2016-04-28",
+  "rfp_issued": "2016-05-16",
+  "bid_submission": "2016-09-27",
+  "bid_base_date_for_indexation": "2016-11-30",
+  "preferred_bidder_notified": "2016-12-08",
+  "abdb_equity_term_sheet": "2017-04-11",
+  "lead_arranger_mandate": "2017-06-19",
+  "ppa_ia_government_guarantee_signed": "2017-10-12",
+  "gsa_signed": "2017-11-30",
+  "gta_signed": "2017-11-30",
+  "epc_signed": "2017-12-19",
+  "limited_notice_to_proceed": "2018-02-05",
+  "ltsa_signed": "2018-03-27",
+  "om_agreement_signed": "2018-04-30",
+  "financial_close": "2018-07-17",
+  "notice_to_proceed": "2018-08-01",
+  "construction_months_base": 33,
+  "epc_guaranteed_completion_date_original": "2021-04-30",
+  "cod_base": "2021-05-01",
+  "ppa_required_cod_original": "2021-07-31",
+  "covid_lockdown_start_kessara": "2020-03-21",
+  "covid_eot_days": 97,
+  "civil_rework_contractor_delay_days": 41,
+  "gsu_transformer_failure": "2021-06-09",
+  "grid_event_eot_days": 76,
+  "epc_guaranteed_completion_date_extended": "2021-10-20",
+  "taking_over_actual": "2021-11-30",
+  "cod_actual": "2021-12-01",
+  "construction_months_actual": 40,
+  "ppa_term_years_from_cod": 25,
+  "ppa_expiry_base": "2046-04-30",
+  "ppa_expiry_actual": "2046-11-30",
+  "first_repayment_date_base": "2021-12-31",
+  "first_repayment_date_actual": "2022-06-30",
+  "final_maturity_senior_bank_debt": "2034-06-30",
+  "libor_to_term_sofr_switch_loans": "2023-01-01",
+  "swap_fallback_to_compounded_sofr": "2023-07-01",
+  "fx_queue_start": "2022-11-07",
+  "fx_queue_end": "2024-03-29",
+  "seka_lc_drawn": "2023-02-14",
+  "dscr_test_breach": "2023-06-30",
+  "waiver_and_amendment_letter": "2023-10-26",
+  "arrears_settlement_agreement": "2024-03-21",
+  "refinancing_bond_pricing": "2025-06-17",
+  "refinancing_settlement": "2025-06-30",
+  "partial_sale_spa_signed": "2026-04-14",
+  "partial_sale_locked_box_date": "2025-12-31",
+  "partial_sale_completion": "2026-09-30"
+ },
+ "macro": {
+  "notes": "US CPI-U annual averages 2015-2025 approximate published values (fact-check against BLS before printing); 2026+ assumptions. Kessara series are fictional. FX quoted as KCR per USD.",
+  "us_cpi_annual_avg_change_pct": {
+   "2015": 0.1,
+   "2016": 1.3,
+   "2017": 2.1,
+   "2018": 2.4,
+   "2019": 1.8,
+   "2020": 1.2,
+   "2021": 4.7,
+   "2022": 8.0,
+   "2023": 4.1,
+   "2024": 2.9,
+   "2025": 2.7,
+   "2026": 2.6,
+   "2027_onward": 2.3
+  },
+  "kessara_cpi_annual_avg_change_pct": {
+   "2015": 8.7,
+   "2016": 9.4,
+   "2017": 8.1,
+   "2018": 7.6,
+   "2019": 7.9,
+   "2020": 9.8,
+   "2021": 10.6,
+   "2022": 26.3,
+   "2023": 34.8,
+   "2024": 19.2,
+   "2025": 12.4,
+   "2026": 9.6,
+   "2027": 8.0,
+   "2028_onward": 7.0
+  },
+  "index_construction_rule": "Build monthly index levels by spreading each calendar year's average change evenly across its months (geometric); set both indices = 100.0 at November 2016 (bid base date). Tariff uses the index value of the month 3 months before each reset date.",
+  "fx_kcr_per_usd": {
+   "annual_avg": {
+    "2015": 418.6,
+    "2016": 451.7,
+    "2017": 487.3,
+    "2018": 516.8,
+    "2019": 545.2,
+    "2020": 572.9,
+    "2021": 603.5,
+    "2022": 742.6,
+    "2023": 1048.3,
+    "2024": 1071.9,
+    "2025": 1029.7,
+    "2026": 1036.4
+   },
+   "period_end": {
+    "2015-12-31": 436.2,
+    "2016-06-30": 447.9,
+    "2016-11-30": 462.35,
+    "2016-12-31": 468.9,
+    "2017-06-30": 489.6,
+    "2017-12-31": 502.4,
+    "2018-06-30": 517.0,
+    "2018-07-17": 519.4,
+    "2018-12-31": 531.7,
+    "2019-06-30": 544.3,
+    "2019-12-31": 556.0,
+    "2020-06-30": 577.8,
+    "2020-12-31": 590.3,
+    "2021-06-30": 604.1,
+    "2021-12-31": 618.7,
+    "2022-06-30": 688.2,
+    "2022-12-31": 897.4,
+    "2023-06-30": 1186.0,
+    "2023-12-31": 1112.6,
+    "2024-06-30": 1068.3,
+    "2024-12-31": 1043.5,
+    "2025-06-30": 1024.9,
+    "2025-12-31": 1018.2,
+    "2026-06-30": 1031.7
+   },
+   "semiannual_avg": {
+    "2018H2": 524.6,
+    "2019H1": 539.1,
+    "2019H2": 551.3,
+    "2020H1": 566.0,
+    "2020H2": 579.8,
+    "2021H1": 597.4,
+    "2021H2": 609.6,
+    "2022H1": 654.9,
+    "2022H2": 830.3,
+    "2023H1": 1052.8,
+    "2023H2": 1043.8,
+    "2024H1": 1093.1,
+    "2024H2": 1050.7,
+    "2025H1": 1035.6,
+    "2025H2": 1023.8,
+    "2026H1": 1028.9,
+    "2026H2": 1043.9
+   },
+   "projection_rule_after_2026H2": "Depreciate at the inflation differential: FX_t = FX_(t-1) x (1 + Kessara CPI)/(1 + US CPI), applied semiannually with half-year rates.",
+   "bid_base_rate_kcr_per_usd": 462.35
+  },
+  "usd_base_rates": {
+   "notes": "Fixings at the start of each semiannual interest period. 6M USD LIBOR applies to loans through 2022-12-31; 6M CME Term SOFR plus the ISDA 6M spread adjustment from 2023-01-01. Historical values approximate; fact-check before printing exact figures.",
+   "libor_6m_pct": {
+    "2018-07": 2.52,
+    "2019-01": 2.87,
+    "2019-07": 2.2,
+    "2020-01": 1.91,
+    "2020-07": 0.37,
+    "2021-01": 0.25,
+    "2021-07": 0.16,
+    "2022-01": 0.34,
+    "2022-07": 2.94
+   },
+   "term_sofr_6m_pct": {
+    "2023-01": 4.86,
+    "2023-07": 5.47,
+    "2024-01": 5.16,
+    "2024-07": 5.22,
+    "2025-01": 4.25,
+    "2025-07": 4.17,
+    "2026-01": 3.62,
+    "2026-07": 3.58,
+    "2027-01": 3.45,
+    "2027-07": 3.45,
+    "2028_onward": 3.5
+   },
+   "credit_adjustment_spread_6m_pct": 0.42826,
+   "construction_monthly_rule": "During construction each month accrues at the 6M LIBOR fixed for the semiannual period containing that month.",
+   "base_case_at_close_forward_curve_note": "The FC base case (scenario 'FC_base') uses the forward 6M LIBOR curve as at financial close: 2018H2 2.52, 2019H1 2.79, 2019H2 2.94, 2020H1 3.02, 2020H2 3.06, 2021 3.09, 2022 3.11, 2023-2034 3.12 (flat). Swapped portion is unaffected.",
+   "fc_forward_libor_6m_pct": {
+    "2018H2": 2.52,
+    "2019H1": 2.79,
+    "2019H2": 2.94,
+    "2020H1": 3.02,
+    "2020H2": 3.06,
+    "2021": 3.09,
+    "2022": 3.11,
+    "2023_onward": 3.12
+   }
+  },
+  "kessara_policy_rate_pct": {
+   "2015": 14.0,
+   "2018": 13.5,
+   "2021": 13.5,
+   "2022": 19.0,
+   "2023": 27.0,
+   "2024": 24.5,
+   "2025": 18.0,
+   "2026": 15.5
+  }
+ },
+ "country": {
+  "name": "Republic of Kessara",
+  "population_m": {
+   "2015": 27.4,
+   "2018": 29.5,
+   "2021": 31.8,
+   "2023": 33.4,
+   "2026": 36.0
+  },
+  "gdp_usd_bn": {
+   "2015": 48.7,
+   "2018": 58.3,
+   "2021": 71.9,
+   "2022": 66.2,
+   "2023": 60.8,
+   "2024": 64.9,
+   "2025": 70.4
+  },
+  "real_gdp_growth_pct": {
+   "2015": 5.8,
+   "2016": 5.1,
+   "2017": 5.6,
+   "2018": 6.1,
+   "2019": 5.9,
+   "2020": 0.9,
+   "2021": 4.8,
+   "2022": 3.1,
+   "2023": 2.4,
+   "2024": 3.9,
+   "2025": 4.6
+  },
+  "sovereign_rating_path": [
+   [
+    "2015-01",
+    "B+ stable"
+   ],
+   [
+    "2020-05",
+    "B stable"
+   ],
+   [
+    "2022-09",
+    "B- negative"
+   ],
+   [
+    "2023-03",
+    "CCC+"
+   ],
+   [
+    "2024-11",
+    "B- stable"
+   ],
+   [
+    "2026-05",
+    "B stable"
+   ]
+  ],
+  "legal_system": "civil law (French-derived codes)",
+  "power_sector_2015": {
+   "installed_mw": 2310,
+   "available_mw": 1780,
+   "peak_demand_mw": 2140,
+   "hydro_mw": 640,
+   "hfo_diesel_mw": 820,
+   "ocgt_gas_mw": 690,
+   "other_mw": 160,
+   "demand_growth_pct_pa": 7.4
+  }
+ },
+ "plant": {
+  "configuration": "2x1 combined cycle: two F-class gas turbines (Bergmark BT-9F), two triple-pressure reheat HRSGs, one reheat condensing steam turbine; once-through seawater cooling; dual fuel not provided (gas only)",
+  "site_reference_conditions": {
+   "ambient_c": 30.0,
+   "pressure_bar": 1.013,
+   "relative_humidity_pct": 80.0
+  },
+  "guaranteed_net_output_mw": 588.4,
+  "guaranteed_net_heat_rate_kj_per_kwh_lhv": 6261,
+  "tested_net_output_mw": 581.9,
+  "tested_net_heat_rate_kj_per_kwh_lhv": 6286,
+  "contracted_capacity_base_case_mw": 588.4,
+  "contracted_capacity_after_tests_mw": 581.9,
+  "hhv_to_lhv_ratio": 1.108,
+  "kj_per_mmbtu": 1055056,
+  "part_load_heat_rate_penalty_pct": {
+   "100": 0.0,
+   "75": 4.2,
+   "50": 11.8
+  },
+  "average_part_load_penalty_at_base_dispatch_pct": 2.3,
+  "degradation": {
+   "output_non_recoverable_pct_per_year": 0.15,
+   "output_recoverable_average_pct": 1.0,
+   "heat_rate_non_recoverable_pct_per_year": 0.12,
+   "heat_rate_recoverable_average_pct": 0.8,
+   "note": "Model uses a smooth average: output factor = (1 - 0.0015 x years since COD) x (1 - 0.010); heat-rate factor = (1 + 0.0012 x years since COD) x (1 + 0.008)."
+  },
+  "gt_hours_and_starts": {
+   "operating_hours_per_gt_per_year_base": 8059,
+   "starts_per_gt_per_year_base": 38,
+   "eoh_per_start": 10
+  },
+  "availability_profile_pct_by_operating_year_cycle": {
+   "cycle_years": 8,
+   "values": [
+    93.8,
+    92.9,
+    93.8,
+    90.6,
+    93.8,
+    92.9,
+    93.8,
+    88.7
+   ],
+   "note": "OY4 hot gas path; OY8 major inspection plus steam turbine major overhaul; cycle repeats from OY9. Includes forced outage rate 3.0%."
+  },
+  "dispatch_factor_when_available_pct": {
+   "base": 76.5,
+   "banking": 72.0,
+   "downside": 58.0
+  },
+  "auxiliary_load_note": "Net figures already net of auxiliary load; no separate adjustment"
+ },
+ "capex_usd_m": {
+  "epc_contract_price": 571.84,
+  "epc_offshore_portion": 489.17,
+  "epc_onshore_portion": 82.67,
+  "epc_onshore_paid_in_kcr_at_fixed_rate_kcr_per_usd": 519.4,
+  "export_contract_value_eligible_for_eca": 263.7,
+  "owners_costs": {
+   "total": 46.18,
+   "owners_engineer": 9.86,
+   "project_company_staff_and_admin": 11.27,
+   "site_preparation_and_access_road": 4.92,
+   "initial_spares": 8.31,
+   "start_up_fuel_net_of_test_energy": 6.74,
+   "resettlement_and_community_rap": 5.08
+  },
+  "insurance_during_construction": 7.62,
+  "development_costs_reimbursed_at_fc": 21.43,
+  "development_fee_to_sponsors_at_fc": 11.2,
+  "lenders_advisors_and_legal": 8.97,
+  "contingency": 38.4,
+  "initial_working_capital": 5.35,
+  "subtotal_before_financing_costs": 710.99,
+  "computed_by_model": [
+   "interest during construction",
+   "commitment fees",
+   "upfront and arrangement fees",
+   "ECA premium",
+   "agency fees during construction",
+   "DSRA initial funding at COD",
+   "shareholder loan interest capitalized (not a funded use)"
+  ],
+  "profiles": {
+   "epc_payment_pct_by_month_base": {
+    "2018-08": 10.0,
+    "2018-09": 0.0108,
+    "2018-10": 0.1133,
+    "2018-11": 0.3239,
+    "2018-12": 0.6294,
+    "2019-01": 1.0114,
+    "2019-02": 1.4496,
+    "2019-03": 1.9236,
+    "2019-04": 2.4133,
+    "2019-05": 2.8999,
+    "2019-06": 3.3659,
+    "2019-07": 3.7957,
+    "2019-08": 4.1755,
+    "2019-09": 4.4935,
+    "2019-10": 4.7405,
+    "2019-11": 4.9091,
+    "2019-12": 4.9946,
+    "2020-01": 4.9946,
+    "2020-02": 4.9091,
+    "2020-03": 4.7405,
+    "2020-04": 4.4935,
+    "2020-05": 4.1755,
+    "2020-06": 3.7957,
+    "2020-07": 3.3659,
+    "2020-08": 2.8999,
+    "2020-09": 2.4133,
+    "2020-10": 1.9236,
+    "2020-11": 1.4496,
+    "2020-12": 1.0114,
+    "2021-01": 0.6294,
+    "2021-02": 0.3239,
+    "2021-03": 0.1133,
+    "2021-04": 7.5108
+   },
+   "epc_payment_pct_by_month_actual": {
+    "2018-08": 10.0,
+    "2018-09": 0.0102,
+    "2018-10": 0.0868,
+    "2018-11": 0.2284,
+    "2018-12": 0.4235,
+    "2019-01": 0.6612,
+    "2019-02": 0.9313,
+    "2019-03": 1.2242,
+    "2019-04": 1.5311,
+    "2019-05": 1.8437,
+    "2019-06": 2.1545,
+    "2019-07": 2.4565,
+    "2019-08": 2.7436,
+    "2019-09": 3.01,
+    "2019-10": 3.2509,
+    "2019-11": 3.4619,
+    "2019-12": 3.6396,
+    "2020-01": 3.7808,
+    "2020-02": 3.8833,
+    "2020-03": 3.9455,
+    "2020-04": 3.966,
+    "2020-05": 3.9455,
+    "2020-06": 3.8833,
+    "2020-07": 3.7808,
+    "2020-08": 3.6396,
+    "2020-09": 3.4619,
+    "2020-10": 3.2509,
+    "2020-11": 3.01,
+    "2020-12": 2.7436,
+    "2021-01": 2.4565,
+    "2021-02": 2.1545,
+    "2021-03": 1.8437,
+    "2021-04": 1.5311,
+    "2021-05": 1.2242,
+    "2021-06": 0.9313,
+    "2021-07": 0.6612,
+    "2021-08": 0.4235,
+    "2021-09": 0.2284,
+    "2021-10": 0.0868,
+    "2021-11": 7.5102
+   },
+   "owners_costs_pct_by_month_base": {
+    "2018-08": 12.0,
+    "2018-09": 2.75,
+    "2018-10": 2.75,
+    "2018-11": 2.75,
+    "2018-12": 2.75,
+    "2019-01": 2.75,
+    "2019-02": 2.75,
+    "2019-03": 2.75,
+    "2019-04": 2.75,
+    "2019-05": 2.75,
+    "2019-06": 2.75,
+    "2019-07": 2.75,
+    "2019-08": 2.75,
+    "2019-09": 2.75,
+    "2019-10": 2.75,
+    "2019-11": 2.75,
+    "2019-12": 2.75,
+    "2020-01": 2.75,
+    "2020-02": 2.75,
+    "2020-03": 2.75,
+    "2020-04": 2.75,
+    "2020-05": 2.75,
+    "2020-06": 2.75,
+    "2020-07": 2.75,
+    "2020-08": 2.75,
+    "2020-09": 2.75,
+    "2020-10": 2.75,
+    "2020-11": 2.75,
+    "2020-12": 2.75,
+    "2021-01": 2.75,
+    "2021-02": 2.75,
+    "2021-03": 2.75,
+    "2021-04": 2.75
+   },
+   "owners_costs_actual_rule": "Base owner's costs follow the base profile over Months 1-33; the extension costs listed under events.construction_overrun are spread evenly over Months 34-40.",
+   "insurance_during_construction_timing": "85% at FC (Month 1), 15% in Month 18",
+   "development_costs_and_fee_timing": "100% at FC (Month 1)",
+   "lenders_advisors_timing": "70% at FC, remainder evenly Months 2-33 (base) or 2-40 (actual)",
+   "contingency_timing_base": "Drawn pro rata with EPC progress payments (FC base case assumes full use, per lender practice)",
+   "initial_working_capital_timing": "Final construction month",
+   "lntp_note": "LNTP payment of USD 14.20m (Feb 2018) was funded by sponsors before FC and is part of the EPC price; it is credited as an equity contribution at FC and reduces the Month 1 EPC advance accordingly."
+  }
+ },
+ "vat_and_duties": {
+  "vat_rate_pct": 18.0,
+  "imports_exempt": true,
+  "vat_on_onshore_epc_recoverable": true,
+  "vat_refund_lag_months": 9,
+  "vat_facility": {
+   "lender": "Union Bancaire du Kessara",
+   "currency": "KCR",
+   "limit_kcr_m": 7900.0,
+   "rate": "Kessara policy rate + 2.50%",
+   "repaid_from": "VAT refunds"
+  }
+ },
+ "ppa": {
+  "offtaker": "Societe d'Electricite du Kessara (SEKA)",
+  "term_years_from_cod": 25,
+  "structure": "BOOT; plant transfers to SEKA at expiry for USD 1 subject to handback conditions",
+  "currency": "Tariff denominated in USD, invoiced monthly in USD, paid in KCR at the Central Bank mid rate on the business day before payment",
+  "capacity_charge_usd_per_kw_month_2016": {
+   "capital_charge": 14.36,
+   "capital_charge_indexed_share_us_cpi_pct": 20.0,
+   "fixed_om_charge": 2.31,
+   "fixed_om_foreign_share_us_cpi_pct": 62.0,
+   "fixed_om_local_share_kessara_cpi_pct": 38.0,
+   "local_share_mechanics": "Local share converted to KCR at bid base rate 462.35, indexed by Kessara CPI, reconverted to USD at the invoice-date FX rate"
+  },
+  "variable_om_charge_usd_per_mwh_2016": 3.86,
+  "variable_om_indexation": {
+   "us_cpi_pct": 70.0,
+   "kessara_cpi_local_pct": 30.0
+  },
+  "fuel_charge": "Net energy delivered (MWh) x contracted heat rate at the dispatched load (kJ/kWh LHV) x 1.108 / 1,055,056 x gas price (USD/MMBtu, GCV) from the GSA; plus pass-through of GTA reservation and commodity charges and of GSA take-or-pay payments caused by SEKA dispatch",
+  "contracted_heat_rate_kj_per_kwh_lhv_100pct_load": 6323,
+  "contracted_heat_rate_degradation_allowance_pct_per_year": 0.1,
+  "contracted_heat_rate_part_load_curve": "same percentages as plant.part_load_heat_rate_penalty_pct",
+  "target_availability_pct": 90.0,
+  "capacity_payment_rule": "Capacity payment = capacity charge x contracted capacity x min(1, availability / 90%). No bonus above target.",
+  "payment_terms_days_from_invoice": 30,
+  "late_payment_interest": "6M Term SOFR (6M LIBOR before 2023) + 2.00%",
+  "payment_security": {
+   "standby_lc": "Issued for SEKA by Union Bancaire du Kessara, confirmed by Castellan Bank; amount = 2 months of estimated capacity charges + 1 month of estimated energy charges; USD 33.8m in 2022",
+   "lc_amount_2022_usd_m": 33.8,
+   "lc_replenishment_days": 30,
+   "government_guarantee": "Ministry of Economy and Finance guarantee of SEKA payment obligations and termination amounts (Garantie de l'Etat), capped at USD 1,250m",
+   "abdb_partial_risk_guarantee_usd_m": 41.5,
+   "abdb_prg_fee_pct_pa": 0.75,
+   "abdb_prg_note": "PRG backs the LC confirming bank's reimbursement claim against the Republic; fee subsidised by a donor facility"
+  },
+  "delay_ld_payable_to_seka_usd_per_day": 94150,
+  "delay_ld_cap_usd_m": 25.0,
+  "termination_compensation": {
+   "seka_or_government_default_and_political_fm": "senior debt outstanding + swap breakage + equity amount, where equity amount = greater of (a) NPV of projected distributions at 14.5% and (b) equity contributed compounded at 14.5% less distributions received",
+   "project_company_default": "100% of senior debt outstanding (principal plus accrued interest at the non-default rate, excluding default interest and swap breakage beyond scheduled hedges), less insurance proceeds",
+   "natural_fm_beyond_180_days": "senior debt outstanding + equity contributed less distributions (no return)",
+   "buyout_option_at_expiry": "USD 1"
+  },
+  "dispatch": "SEKA dispatches in merit order through the national control center; minimum stable load 45% per GT block; start charges included in VOM",
+  "change_in_law": "Kessaran change in law affecting costs > USD 0.5m p.a. passed through; change in tax law affecting dividend WHT excluded",
+  "refinancing_gain_sharing": "None; SEKA consent needed only if the refinancing extends beyond PPA term or increases termination exposure",
+  "bid_evaluation": {
+   "method": "levelized tariff over 25 years at 10.0% USD discount rate, 70% dispatch, reference gas price USD 5.50/MMBtu flat, contracted heat rate",
+   "runner_up_premium_over_winner_pct": 4.6,
+   "number_of_bids": 4,
+   "prequalified": 5,
+   "rfq_respondents": 9
+  }
+ },
+ "gsa": {
+  "seller": "Societe Nationale des Hydrocarbures du Kessara (SNHK), as aggregator from the Sombe West offshore field",
+  "term_years": 22,
+  "dcq_mmbtu_per_day": 72400,
+  "mdq_mmbtu_per_day": 96500,
+  "acq_rule": "DCQ x days in contract year",
+  "take_or_pay_pct_of_acq": 80.0,
+  "make_up_recovery_years": 3,
+  "deliver_or_pay": "Seller shortfall below 95% of nominations: price discount 25% on shortfall quantities plus SEKA deemed availability under PPA",
+  "price_usd_per_mmbtu_2018": 5.86,
+  "price_escalation_pct_pa": 2.0,
+  "price_escalation_date": "1 January",
+  "measurement_basis": "GCV (HHV)",
+  "payment_terms": "30 days after month end, in KCR at Central Bank mid rate",
+  "first_gas_for_commissioning": "2021-03"
+ },
+ "gta": {
+  "transporter": "Gazoduc Cotier du Kessara SA (GCK)",
+  "pipeline_km": {
+   "offshore": 68,
+   "onshore": 44
+  },
+  "reserved_capacity_mmbtu_per_day": 96500,
+  "reservation_charge_usd_per_mmbtu_reserved_2018": 0.62,
+  "commodity_charge_usd_per_mmbtu_2018": 0.19,
+  "escalation_pct_pa": 1.5,
+  "ship_or_pay_pct": 100.0,
+  "note": "All GTA charges pass through to SEKA under the PPA fuel transportation pass-through"
+ },
+ "opex": {
+  "om_fixed_fee_usd_m_pa_2018": 7.92,
+  "om_fee_split": {
+   "usd_us_cpi_pct": 65.0,
+   "kcr_kessara_cpi_pct": 35.0,
+   "kcr_conversion_rate_2018": 516.8
+  },
+  "om_availability_incentive": "+/- USD 0.60m p.a. (2018 USD) linear between 89% and 95% availability, zero at 92%",
+  "ltsa_fixed_fee_usd_m_pa_2018": 2.64,
+  "ltsa_variable_fee_usd_per_eoh_per_gt_2018": 486.0,
+  "ltsa_indexation": "US CPI 100%",
+  "operational_insurance_usd_m_pa_2018": 4.37,
+  "insurance_indexation": "US CPI; plus market step-up of 18.0% from 2022H2 (hard market)",
+  "project_company_g_and_a_usd_m_pa_2018": 3.18,
+  "g_and_a_split": {
+   "usd_us_cpi_pct": 50.0,
+   "kcr_kessara_cpi_pct": 50.0
+  },
+  "land_lease_and_permits_kcr_m_pa_2018": 368.0,
+  "land_lease_indexation": "Kessara CPI",
+  "community_development_fund_pct_of_non_fuel_revenue": 0.3,
+  "regulatory_levy_pct_of_non_fuel_revenue": 0.25,
+  "variable_consumables_usd_per_mwh_2018": 1.08,
+  "variable_consumables_split": {
+   "us_cpi_pct": 70.0,
+   "kessara_cpi_local_pct": 30.0
+  },
+  "major_maintenance_outside_ltsa_usd_m_2018": {
+   "steam_turbine_and_bop_major_overhaul_oy8_oy16_oy24": 9.47,
+   "hrsg_and_bop_minor_every_4_years_oy4_oy12_oy20": 2.18
+  },
+  "agency_and_admin_fees_usd_pa": {
+   "intercreditor_agent": 95000,
+   "security_agents_onshore_and_offshore": 75000,
+   "account_banks": 40000,
+   "eca_agent": 45000
+  },
+  "decommissioning_handback_reserve": "Handback reserve funded from OY20: USD 1.85m p.a. (2018 USD, US CPI) to PPA expiry"
+ },
+ "working_capital": {
+  "receivable_days_normal": 45,
+  "gas_payable_days": 45,
+  "gta_payable_days": 30,
+  "om_ltsa_payable_days": 30,
+  "other_payable_days": 30,
+  "spares_inventory_usd_m_2018": 5.35,
+  "note": "Receivable days in the crisis case are replaced by the arrears path in events.offtaker_crisis"
+ },
+ "tax": {
+  "corporate_income_tax_rate_pct": 30.0,
+  "tax_holiday": {
+   "full_exemption_years_from_cod": 5,
+   "reduced_rate_years_6_to_8_pct": 15.0,
+   "full_rate_from_year": 9
+  },
+  "minimum_turnover_tax_pct_of_non_fuel_revenue": 0.5,
+  "minimum_turnover_tax_applies_from_operating_year": 6,
+  "depreciation": {
+   "plant_share_of_capitalized_cost_pct": 92.0,
+   "plant_life_years": 20,
+   "plant_method": "straight line from COD",
+   "buildings_civil_share_pct": 5.0,
+   "buildings_life_years": 25,
+   "intangibles_development_and_financing_share_pct": 3.0,
+   "intangibles_life_years": 5,
+   "capitalized_items": "all construction uses including IDC, fees, ECA premium, development fee; DSRA funding and working capital excluded",
+   "deferred_depreciation_during_holiday": "Depreciation for holiday years is deemed deferred (amortissements reputes differes) and deductible later without time limit"
+  },
+  "loss_carryforward_years": 5,
+  "shareholder_loan_interest_deductibility": "Deductible; thin cap 3:1 related-party debt to equity; rate cap Kessara policy rate + 3% does not bind for USD loans (USD loans exempt)",
+  "third_party_interest_limitation": "30% of tax EBITDA from 1 January 2025 under Finance Act 2024; loans signed before 1 January 2023 grandfathered, including refinancing that does not increase principal",
+  "withholding_tax_pct": {
+   "dividends_domestic": 15.0,
+   "dividends_treaty_holdco": 7.5,
+   "interest_domestic": 10.0,
+   "interest_treaty_holdco_on_shareholder_loans": 5.0,
+   "interest_exempt_lenders": [
+    "ABDB A-loan",
+    "ABDB B-loan (lender of record)",
+    "Exportgarant-covered tranche",
+    "2025 project bond (listed Eurobond exemption)"
+   ],
+   "interest_gross_up_by_project_company": "commercial bank tranche and standby facility (commercial portion)"
+  },
+  "indirect_transfer_tax_from_2025_pct": 15.0,
+  "indirect_transfer_tax_note": "Finance Act 2024: gains on offshore share transfers deriving >50% of value from Kessaran assets, effective 1 January 2025"
+ },
+ "sponsors_and_equity": {
+  "project_company": "Belanou Power SA",
+  "shareholding_pct_at_fc": {
+   "Kilnworth Power International (via Kilnworth Belanou Holdings, a treaty-jurisdiction holding company)": 60.0,
+   "Groupe Talme": 25.0,
+   "ABDB Infrastructure Equity Fund": 15.0
+  },
+  "shareholding_pct_pre_fc": {
+   "Kilnworth": 70.0,
+   "Groupe Talme": 30.0
+  },
+  "abdb_fund_entry_development_premium_usd_m": 4.85,
+  "equity_share_of_total_funding_target_pct": 25.0,
+  "equity_form": {
+   "share_capital_pct": 20.0,
+   "shareholder_loans_pct": 80.0
+  },
+  "shareholder_loan_rate_pct": 9.5,
+  "shareholder_loan_terms": "USD; interest capitalized until COD, then paid subordinated to senior debt service and reserves; repaid from distributable cash after interest",
+  "equity_funding_mode": "pro rata 25:75 with senior debt, each sponsor's undrawn commitment backed by LCs from banks rated A- or better (Groupe Talme LC issued by Union Bancaire du Kessara, confirmed by Kaito Pacific Bank)",
+  "contingent_equity_usd_m": 15.4,
+  "development_budget_approved_2015_usd_m": 14.8,
+  "development_costs_actual_to_fc_usd_m": 21.43,
+  "sponsor_target_equity_irr_usd_nominal_post_tax_pct": 16.0,
+  "distribution_test_dates": [
+   "30 June",
+   "31 December"
+  ]
+ },
+ "debt": {
+  "sizing": {
+   "base_case_min_dscr_x": 1.35,
+   "downside_min_dscr_x": 1.2,
+   "downside_definition": "banking dispatch replaced by availability 6.5 points below profile every year, heat rate +1.5%, fixed opex +10%",
+   "gearing_cap_pct": 75.0,
+   "llcr_min_at_fc_x": 1.4,
+   "sculpting": "Aggregate senior debt service sculpted to base-case CFADS / 1.35 each period from first repayment to final maturity; quantum = min(DSCR-sculpted PV, gearing cap). All tranches amortize pro rata on the common sculpted profile.",
+   "eca_constraints": "OECD Arrangement project finance terms: repayment term from starting point (COD) <= 14 years; weighted average life of repayment <= 7.25 years; first repayment no later than 6 months after starting point (base case); no single installment > 25% of principal. Modeler must test and report.",
+   "expected_range_usd_m": [
+    600,
+    660
+   ],
+   "expected_binding_constraint": "gearing cap or close to it (both within 3%)"
+  },
+  "tranche_shares_of_senior_debt_pct": {
+   "eca_covered": 30.0,
+   "abdb_a_loan": 22.0,
+   "abdb_b_loan": 10.0,
+   "commercial_uncovered": 38.0
+  },
+  "tranches": {
+   "eca_covered": {
+    "lenders": "Castellan Bank (ECA agent), Kaito Pacific Bank, Banque Raveau",
+    "cover": "Exportgarant comprehensive 95%",
+    "max_usd_m": 224.1,
+    "margin_pct": 1.35,
+    "eca_premium_pct_of_principal": 10.85,
+    "premium_payment": "upfront pro rata to each drawdown, financed",
+    "arrangement_fee_pct": 1.1,
+    "commitment_fee_pct_pa": 0.45
+   },
+   "abdb_a_loan": {
+    "lender": "Atlantic Basin Development Bank",
+    "margin_pct": 3.65,
+    "front_end_fee_pct": 1.25,
+    "commitment_fee_pct_pa": 0.75
+   },
+   "abdb_b_loan": {
+    "lender_of_record": "Atlantic Basin Development Bank",
+    "participants": [
+     "Kaito Pacific Bank 55%",
+     "Sterrenberg Bank NV 45%"
+    ],
+    "margin_pct": 3.4,
+    "upfront_fee_pct": 1.5,
+    "commitment_fee_pct_pa": 0.85
+   },
+   "commercial_uncovered": {
+    "lenders": "Castellan Bank (MLA, bookrunner, modeling bank, hedge coordinator) 34%, Banque Raveau (MLA, documentation) 26%, Kaito Pacific Bank (MLA, technical) 22%, Hovland Bank ASA (MLA, insurance) 18%",
+    "margin_pct_schedule": {
+     "to_2025-12-31": 4.1,
+     "2026-01-01_to_2029-12-31": 4.6,
+     "from_2030-01-01": 5.1
+    },
+    "upfront_fee_pct": 2.15,
+    "commitment_fee_pct_pa": "40% of applicable margin",
+    "soft_mini_perm": "from 2027-01-01, 50% of cash otherwise distributable is swept to prepay this tranche"
+   },
+   "standby_facility": {
+    "commitment_usd_m": 46.0,
+    "lenders": "commercial banks 60%, ABDB 40%",
+    "margin_pct": "respective tranche margin + 0.25",
+    "commitment_fee_pct_pa": 0.6,
+    "draw_rule": "after contingency exhausted, drawn 75:25 with contingent equity",
+    "repayment": "pro rata with senior debt from first repayment date"
+   }
+  },
+  "common_terms": {
+   "final_maturity": "2034-06-30",
+   "repayment_dates": "30 June and 31 December",
+   "first_repayment_base": "2021-12-31",
+   "first_repayment_actual": "2022-06-30",
+   "installments_base": 26,
+   "installments_actual": 25,
+   "interest_period_months": 6,
+   "default_interest_pct": 2.0,
+   "cash_sweep_base": "none except soft mini-perm sweep and lock-up cash after 2 consecutive lock-ups"
+  },
+  "covenants": {
+   "historic_dscr_test": "12 months to each test date, cash basis",
+   "lock_up_dscr_x": 1.2,
+   "event_of_default_dscr_x": 1.1,
+   "projected_dscr_lock_up_x": 1.2,
+   "llcr_lock_up_x": 1.25,
+   "distribution_conditions": [
+    "no default",
+    "DSRA and MMRA fully funded",
+    "historic and projected DSCR >= 1.20x",
+    "first repayment made",
+    "completion certified by IE"
+   ],
+   "equity_cure": "permitted twice over life, not consecutive, by shareholder loan to raise CFADS for the test period"
+  },
+  "reserves": {
+   "dsra_months_of_next_debt_service": 6,
+   "dsra_funding": "fully funded at COD from final debt and equity drawdown",
+   "dsra_lc_substitution": "permitted for sponsors with A- rated LC",
+   "mmra": "Accumulate in each of the 6 semiannual periods before a major outage one sixth of the projected cost of the steam turbine/BOP overhaul and HRSG/BOP minor works (costs outside LTSA)",
+   "handback_reserve": "see opex.decommissioning_handback_reserve"
+  }
+ },
+ "hedging": {
+  "interest_rate_swap": {
+   "hedge_ratio_pct_of_projected_floating_senior_debt": 80.0,
+   "permitted_band_pct": [
+    75.0,
+    90.0
+   ],
+   "fixed_rate_pct": 2.947,
+   "fixed_rate_composition": "mid-market 2.872% + 7.5 bp credit and execution charge",
+   "trade_date": "2018-07-17",
+   "notional_profile": "80% of projected outstanding ECA, A-loan, B-loan, commercial tranche balances in the FC base case, accreting during construction, amortizing to 2034-06-30",
+   "counterparties": "Castellan Bank, Banque Raveau, Kaito Pacific Bank, Hovland Bank ASA pro rata to commercial tranche shares",
+   "libor_transition": "ISDA 2020 IBOR Fallbacks Protocol: from the first reset after 2023-06-30 the floating leg pays compounded SOFR in arrears + 0.42826%. Model simplification: treat swap floating leg as equal to the loan base rate each period (LIBOR through 2022, Term SOFR + CAS from 2023); basis H1 2023 ignored.",
+   "unwind_on_refinancing": "Portion of notional attributable to prepaid tranches (commercial + B-loan) terminated 2025-06-30 at mark-to-market using a flat swap rate of 3.68% for the remaining profile"
+  },
+  "fx": "No FX hedge on revenue (USD-indexed tariff). No hedge on KCR costs. Offshore USD accounts with Castellan Bank London under Central Bank Exchange Control Authorization 2018-114."
+ },
+ "accounts": {
+  "onshore": [
+   "KCR Collection Account (Union Bancaire du Kessara)",
+   "KCR Operating Account"
+  ],
+  "offshore": [
+   "USD Proceeds Account",
+   "Debt Service Account",
+   "DSRA",
+   "MMRA",
+   "Insurance Proceeds Account",
+   "Compensation Account",
+   "Distribution Account"
+  ],
+  "sweep_rule": "KCR collections converted and swept offshore daily, subject to Central Bank FX availability"
+ },
+ "insurance_program": {
+  "construction": {
+   "ear_sum_insured_usd_m": 640.0,
+   "ear_deductible_usd_m": 1.0,
+   "dsu_indemnity_period_months": 18,
+   "dsu_time_deductible_days": 45,
+   "dsu_daily_indemnity_usd": 228400,
+   "marine_cargo_sum_insured_usd_m": 310.0,
+   "marine_dsu_time_deductible_days": 45,
+   "tpl_usd_m": 50.0
+  },
+  "operations": {
+   "property_damage_usd_m": 690.0,
+   "pd_deductible_usd_m": 2.5,
+   "bi_indemnity_period_months": 18,
+   "bi_time_deductible_days": 60,
+   "tpl_usd_m": 75.0
+  },
+  "political_risk_insurance": "Private-market PRI for the commercial tranche: 90% of principal and interest, covering expropriation, currency inconvertibility and transfer, political violence, and non-honoring of the government guarantee; premium 1.15% p.a. on insured amount, paid by project company",
+  "broker": "Fenwick Lowe Insurance Brokers",
+  "lenders_insurance_advisor": "Marchbank Risk Advisory",
+  "local_fronting_insurer": "Assurances Generales du Kessara (AGK), 95% reinsured offshore with cut-through and assignment of reinsurance"
+ },
+ "epc_terms": {
+  "contractor": "Lindauer Kraftwerksbau AG (leader, 82%) and Bati-Kessara SA (civil works, 18%), joint and several",
+  "price_basis": "lump-sum turnkey, date-certain, fixed price; onshore portion fixed in KCR at 519.4 KCR/USD",
+  "delay_ld_usd_per_day": 247300,
+  "delay_ld_cap_pct_of_price": 18.0,
+  "performance_ld_output_usd_per_kw_shortfall": 2150,
+  "performance_ld_heat_rate_usd_per_kj_per_kwh": 180400,
+  "performance_ld_cap_pct_of_price": 12.0,
+  "aggregate_ld_cap_pct_of_price": 30.0,
+  "overall_liability_cap_pct_of_price": 100.0,
+  "minimum_performance_levels": {
+   "output_pct_of_guarantee": 95.0,
+   "heat_rate_pct_above_guarantee": 3.0
+  },
+  "performance_bond_pct": 10.0,
+  "advance_payment_pct": 10.0,
+  "advance_payment_guarantee": true,
+  "retention_pct": 5.0,
+  "retention_release": "against retention bond at taking-over",
+  "defects_liability_months": 24,
+  "parent_company_guarantee": "Lindauer Holding AG, full scope",
+  "completion_tests": "net output and heat rate corrected to reference conditions; 720-hour reliability run with >= 95% availability; emissions and grid code compliance"
+ },
+ "events": {
+  "construction_overrun": {
+   "covid_variation_order_usd_m": 9.4,
+   "grid_event_prolongation_settlement_usd_m": 8.27,
+   "extended_owners_costs_usd_m": 6.93,
+   "covid_owner_measures_usd_m": 4.11,
+   "insurance_extension_premium_usd_m": 1.42,
+   "additional_lenders_advisor_costs_usd_m": 0.86,
+   "ear_deductible_borne_usd_m": 1.0,
+   "additional_start_up_fuel_net_usd_m": 1.37,
+   "additional_resettlement_compensation_usd_m": 3.27,
+   "customs_duty_settlement_usd_m": 2.64,
+   "total_hard_cost_overrun_usd_m": 39.27,
+   "plus_computed_by_model": [
+    "additional IDC and commitment fees from 7-month delay",
+    "DSRA re-sizing from resculpted profile"
+   ],
+   "funding_order": [
+    "unused contingency (USD 38.40m)",
+    "EPC delay LDs received",
+    "DSU insurance proceeds",
+    "standby facility and contingent equity drawn 75:25 (pro rata) for the remainder"
+   ],
+   "epc_delay_ld_days": 41,
+   "epc_delay_lds_usd_m": 10.1393,
+   "dsu_indemnified_days": 31,
+   "dsu_proceeds_usd_m": 7.0804,
+   "ear_transformer_loss_usd_m": 6.84,
+   "ear_proceeds_paid_for_reinstatement_usd_m": 5.84,
+   "ppa_rcod_extension_days": 173,
+   "ppa_delay_lds_payable_usd_m": 0.0,
+   "performance_lds_usd_m": {
+    "output": 13.975,
+    "heat_rate": 4.51,
+    "total": 18.485
+   },
+   "performance_ld_application": "100% mandatory prepayment of senior debt pro rata on 2022-06-30"
+  },
+  "offtaker_crisis": {
+   "overdue_receivables_usd_m_period_end": {
+    "2021-12-31": 0.0,
+    "2022-06-30": 18.4,
+    "2022-12-31": 68.9,
+    "2023-06-30": 112.6,
+    "2023-12-31": 71.8,
+    "2024-06-30": 34.6,
+    "2024-12-31": 12.3,
+    "2025-06-30": 0.0
+   },
+   "path_note": "Overdue amounts in excess of normal 45-day receivables; net of the LC drawing; cleared by settlement installments April 2024 to June 2025",
+   "lc_drawn_usd_m": 33.8,
+   "lc_replenished": false,
+   "government_guarantee_demands": [
+    {
+     "date": "2023-04-18",
+     "usd_m": 21.6,
+     "paid": "2023-07-26"
+    },
+    {
+     "date": "2023-07-12",
+     "usd_m": 18.9,
+     "paid": "2023-11-30"
+    },
+    {
+     "date": "2023-10-09",
+     "usd_m": 17.4,
+     "paid": "not paid; folded into settlement"
+    }
+   ],
+   "fx_conversion_losses_usd_m": {
+    "2022H2": 1.27,
+    "2023H1": 3.84,
+    "2023H2": 1.12,
+    "2024H1": 0.31
+   },
+   "average_conversion_lag_days": 47,
+   "gas_netting_agreement": "Tripartite netting SEKA-SNHK-project company signed 2023-06-29: up to USD 9.0m per month of SEKA energy-charge arrears set off against project company gas payables to SNHK",
+   "late_payment_interest_waived_pct": 40.0,
+   "settlement_installments": "15 monthly installments April 2024 to June 2025"
+  },
+  "covenant_breach_and_waiver": {
+   "test_date": "2023-06-30",
+   "expected_historic_dscr_range_x": [
+    0.8,
+    1.0
+   ],
+   "dsra_drawn_for": "2023-06-30 debt service shortfall (model computes)",
+   "waiver_fee_pct_of_outstanding": 0.25,
+   "margin_uplift_pct": 0.5,
+   "margin_uplift_period": "2023-07-01 to 2024-12-31",
+   "principal_deferral": "60% of the 2023-12-31 scheduled principal deferred; repaid in four equal parts on 2024-06-30, 2024-12-31, 2025-06-30, 2025-12-31",
+   "lock_up_release_condition": "two consecutive historic DSCR tests >= 1.25x and DSRA fully replenished",
+   "arrears_recovery_sweep": "100% of arrears recoveries applied to DSRA replenishment first",
+   "waived_tests": [
+    "2023-06-30",
+    "2023-12-31"
+   ]
+  },
+  "refinancing_2025": {
+   "date": "2025-06-30",
+   "prepaid_tranches": [
+    "commercial_uncovered",
+    "abdb_b_loan",
+    "standby_facility"
+   ],
+   "remaining_tranches": [
+    "eca_covered",
+    "abdb_a_loan"
+   ],
+   "instrument": "USD senior secured amortizing project bond, 144A/Reg S, listed",
+   "bond_amount_rule": "= outstanding principal of prepaid tranches after the 2025-06-30 scheduled payment + transaction costs - swap unwind receipt; no upsizing",
+   "coupon_pct": 7.875,
+   "issue_price_pct": 99.512,
+   "coupon_frequency": "semiannual 30/360",
+   "final_maturity": "2037-06-30",
+   "amortization": "sculpted with remaining ECA and A-loan to combined base-case min DSCR 1.35x",
+   "abdb_partial_credit_guarantee_usd_m": 95.0,
+   "abdb_pcg_fee_pct_pa": 1.1,
+   "abdb_pcg_upfront_fee_pct": 0.75,
+   "bond_rating": "B+ (one agency), sovereign B- at pricing",
+   "transaction_costs_usd_m": {
+    "underwriting_1.00pct_of_bond": "computed",
+    "legal_rating_listing_other": 3.1
+   },
+   "loan_breakage": "none (settlement on an interest payment date)",
+   "intercreditor": "bondholders accede through a bond trustee to the amended intercreditor agreement; ECA and A-loan consent to tenor extension of bond beyond 2034"
+  },
+  "partial_sale_2026": {
+   "seller": "Kilnworth Power International",
+   "buyer": "Coldharbour Infrastructure Income Fund",
+   "stake_sold_pct_of_project_company": 24.0,
+   "seller_stake_after_pct": 36.0,
+   "instruments_sold": "pro rata shares and shareholder loans",
+   "valuation_date_locked_box": "2025-12-31",
+   "buyer_discount_rate_usd_post_tax_levered_pct": 13.75,
+   "seller_reserve_discount_rate_pct": 12.5,
+   "locked_box_ticker_pct_pa": 6.5,
+   "deferred_consideration_usd_m": 4.0,
+   "deferred_consideration_condition": "SEKA overdue receivables remain zero through 2027-06-30",
+   "w_and_i_insurance_limit_usd_m": 18.0,
+   "consents": [
+    "senior lenders and bondholders (change of control threshold: Kilnworth >= 30% until 2030)",
+    "SEKA (PPA)",
+    "Ministry of Energy and Hydrocarbons (IA)",
+    "ROFR waivers by Groupe Talme and ABDB fund"
+   ],
+   "tax": "Kessara indirect transfer tax 15% on seller gain"
+  }
+ },
+ "scenarios": {
+  "FC_base": "Sponsor and lenders' base case at financial close: COD 2021-05-01, 588.4 MW, base availability and dispatch, FC forward LIBOR curve, swap 80%, FX projection from 2018 via inflation differential using 2018 CPI expectations (Kessara 7.5%, US 2.2% flat).",
+  "FC_banking": "FC_base with banking dispatch 72.0%; identical to FC_base for capacity revenue",
+  "FC_downside": "per debt.sizing.downside_definition",
+  "actual_history": "All events applied with historical macro paths through 2026H1 and assumptions after",
+  "sensitivities": [
+   "availability -3 points",
+   "heat rate +2%",
+   "fixed opex +10%",
+   "capex +10% funded pro rata",
+   "COD delay 6 months without LDs",
+   "LIBOR/SOFR +200 bp on unhedged portion",
+   "KCR devaluation 40% with 90-day conversion lag",
+   "SEKA payment delay 120 days for 12 months",
+   "dispatch 50%",
+   "gas price +30% (pass-through check)"
+  ],
+  "breakevens": [
+   "availability for 1.00x min DSCR",
+   "capacity charge reduction for 1.00x",
+   "months of zero SEKA payment covered by DSRA plus LC"
+  ]
+ }
+}

@@ -18,4 +18,5 @@
 
 ### Phase 1 fact sheets (2026-10-03)
 - Workflow run stopped after 7 sheets (eurotunnel, dabhol, paiton, hub-power, nam-theun-2, chad-cameroon, sadara). Remaining relaunched as background agents in groups of 3.
-- PENDING (concurrency cap of 20 subagents hit): [loan-docs, insolvency, arbitration], [sustainable-fin, uk-cfd-rab, frontier-data], [insurance-market, anticorruption-sanctions, ratings], [contract-law, islamic, ppp-frameworks]
+- PENDING (concurrency cap of 20 subagents hit): [sustainable-fin, uk-cfd-rab, frontier-data], [insurance-market, anticorruption-sanctions, ratings], [contract-law, islamic, ppp-frameworks]
+- Done: reipppp, indiana-toll-road, sh130 (BW4 2018 signing unverified; ITR original debt medium). loan-docs group launched.
