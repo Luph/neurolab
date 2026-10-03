@@ -110,3 +110,4 @@
 - Brief revision u10 DONE (12 DD request-list exhibits; Annex P 2.1 Devesh 'where wrong' conflicts with P-F62; cobre-panama count fix).
 - Brief revision u05 DONE.
 - Brief revision u15 DONE.
+- Brief revision u16 DONE (open FS: operating WtE plant, subsea cable, SAF mandate, H2Global).
