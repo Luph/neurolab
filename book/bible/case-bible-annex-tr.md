@@ -4,7 +4,7 @@ Version 1.0, October 3, 2026. Owner: Case Bible editor, under the editor-in-chie
 
 **Precedence.** Where this annex and `case-bible.md` differ, this annex governs. Where this annex is silent, `case-bible.md` governs. Model outputs still come only from the figure ledgers (`model/figure-ledger-case-r.md`; the Case T ledger when released). Every new number in this annex that a model must absorb is listed, with units and target figure IDs, in `bible/case-tr-input-requests.md`. Numbers marked **(book input)** are fixed facts of the story that no model needs; writers may print them as Case Bible inputs. Simple arithmetic shown in this annex is permitted under D-013 and was computed in Python on October 3, 2026.
 
-**Scope.** This annex resolves every Case T and Case R flaw raised in the brief writers' "Case Bible flaws" sections (u01 to u17) and `brief-feedback.md`, adds the name-register entries for the Chapter 1 illustrative deal and the capstone, and records the result of coordination with the two modelers: the Case R model is complete (R-1.1); the Case T model is at version 1.0 with its report's assumption-change section still empty, so this annex adopts the Case T modeler's documented calibrations (`inputs_case_t.json`, `modeler_assumptions`) rather than overriding them. Case P flaws are out of scope and remain with the contract-terms annex.
+**Scope.** This annex resolves every Case T and Case R flaw raised in the brief writers' "Case Bible flaws" sections (u01 to u17) and `brief-feedback.md`, adds the name-register entries for the Chapter 1 illustrative deal and the capstone, and records the result of coordination with the two modelers: the Case R model is complete (R-1.1); the Case T model is at version 1.0 with its ledger (`model/figure-ledger-case-t.md`, T-F01 to T-F17) and report (Sections 12 and 13 record the plan classes, equity allocation and assumption changes); this annex adopts the Case T modeler's calibrations (`inputs_case_t.json`, `modeler_assumptions`; Case Bible Part 8 rows T-C05 to T-C11) rather than overriding them. Case P flaws are out of scope and remain with the contract-terms annex.
 
 Concordance of flaws to sections is in Section 0.
 
@@ -30,7 +30,7 @@ Concordance of flaws to sections is in Section 0.
 | u14 BF-8 | Ardmore insurers' capital regime | T.15 |
 | u16 CB-u16-8 | Callum's "last scene" note | T.16 |
 | u03 #5 | Sasha in the Chapter 12 scene | T.16 |
-| u16 CB-u16-7; u09 T-F11 request | Traffic ratios; shortfall decomposition by cause | T.17 |
+| u16 CB-u16-7; u09 T-F18 request | Traffic ratios; shortfall decomposition by cause | T.17 |
 | u10 BF-u10-1 | A1 sale process terms and competing bids | R.1 |
 | u16 CB-u16-5 | Ostrander credit profile and vPPA collateral | R.2 |
 | u16 CB-u16-6 | 2024 hydrogen developer and PPA terms | R.3 |
@@ -46,7 +46,7 @@ Concordance of flaws to sections is in Section 0.
 | u01 BF-u01-6 | Chapter 1 illustrative deal names; Sterrenberg and ABDB as 2016 lenders | N.1, N.4 |
 | u17 BF-u17-06 | Capstone names (Salinera, SLP and others) | N.2 |
 
-Figure ID note: two briefs proposed different contents for "T-F11" (u09: shortfall by cause; u16: actual-to-forecast ratios) and two proposed different contents for "R-F11" (u09: battery capacity; u15: R7 floor), while the Case R modeler has already used R-F11 to R-F17. This annex assigns T-F11 to the ratios, T-F12 to the decomposition, and new Case R IDs from R-F18. Full list in Section F.
+Figure ID note: two briefs proposed different contents for "T-F11" (u09: shortfall by cause; u16: actual-to-forecast ratios) and two proposed different contents for "R-F11" (u09: battery capacity; u15: R7 floor). Meanwhile the Case T modeler assigned T-F11 to T-F17 (sizing, ratio summary, sensitivities, balances, outturn, tax, USD equivalents) and the Case R modeler R-F11 to R-F17. This annex therefore assigns the briefs' requests to new IDs: T-F18 (traffic ratios), T-F19 (shortfall by cause), T-F20 (performance payments), T-F21 (optional VoT variants), R-F18 (R7 floor) and R-F19 (battery capacity). Full list in Section F.
 
 ---
 
@@ -91,7 +91,7 @@ Each performance point also carries a performance payment of ARD 2,400. Performa
 
 The COVID-19 Relief Event (Case Bible 2.7, 2.8) suspended all performance payments and points from March 23, 2020 to September 30, 2021. BRTA's refusal of compensation does not affect the suspension.
 
-Actual performance payments (ARD million, nominal; to be absorbed by the actual-history run, figure T-F13):
+Actual performance payments (ARD million, nominal; to be absorbed by the actual-history run, figure T-F20):
 
 | Half-year | Amount | Main cause |
 |---|---|---|
@@ -164,7 +164,7 @@ Pellow's 2014 bid report presented three car value-of-time (VoT) cases, in 2014 
 | Central | 19.80 | 54.6 | Pellow's recommendation |
 | High | 22.45 | 58.4 | Sponsor base case (Case Bible 2.6) |
 
-The 2021 revealed-preference survey (Case Bible 2.6) found a car VoT of ARD 18.40 per vehicle-hour in 2014 prices; the high case is 22% above it (18.40 x 1.22 = 22.45). Ramp-up factors and growth rates are the sponsor base's for all three cases. Heavy-vehicle VoT was common to all cases. The bid equity IRR at ARD 287.4 million on the low and central cases is requested as figure T-F14 (optional for Chapter 47).
+The 2021 revealed-preference survey (Case Bible 2.6) found a car VoT of ARD 18.40 per vehicle-hour in 2014 prices; the high case is 22% above it (18.40 x 1.22 = 22.45). Ramp-up factors and growth rates are the sponsor base's for all three cases. Heavy-vehicle VoT was common to all cases. The bid equity IRR at ARD 287.4 million on the low and central cases is requested as figure T-F21 (optional for Chapter 47).
 
 ## T.4 D&C contract, interface agreement and tolling subcontract
 
@@ -254,7 +254,7 @@ Process: joint handback survey 60 months before expiry (May 2054), repeated at 2
 
 ## T.9 Value for money (recalibration adopted)
 
-The Case T modeler recalibrated the PSC risk adjustments after the editor-in-chief's review (u12 flaw 5): construction risk 7.8% of raw capex, traffic revenue risk 4.8% of retained toll revenue, operating risk 3.8% of O&M and lifecycle, competitive neutrality 1.0% of gross costs, replacing the Case Bible 2.3 values (221.7, 274.0, 41.3, 38.4). This annex adopts the recalibration (change T-C05). The new values are in `inputs_case_t.json` and T-F01; writers print the PSC components only from T-F01. Teaching point retained for Chapter 57: the PSC still drew on Pellow's corridor study, so the traffic revenue retained by the state in the PSC is optimistic, and the value-for-money margin of the winning bid rests on the same optimism as the bid. T-F01 must also report VfM as a share of the gross PSC cost (costs and risks before netting retained toll revenue) as well as of the net PSC (Section F).
+The Case T modeler recalibrated the PSC risk adjustments after the editor-in-chief's review (u12 flaw 5): construction risk 7.8% of raw capex, traffic revenue risk 4.8% of retained toll revenue, operating risk 3.8% of O&M and lifecycle, competitive neutrality 1.0% of gross costs, replacing the Case Bible 2.3 values (221.7, 274.0, 41.3, 38.4). This annex adopts the recalibration (the modeler's change T-C05 in Case Bible Part 8). The new values are in `inputs_case_t.json` and T-F01; writers print the PSC components only from T-F01. Teaching point retained for Chapter 57: the PSC still drew on Pellow's corridor study, so the traffic revenue retained by the state in the PSC is optimistic, and the value-for-money margin of the winning bid rests on the same optimism as the bid. T-F01 must also report VfM as a share of the gross PSC cost (costs and risks before netting retained toll revenue) as well as of the net PSC (Section F).
 
 ## T.10 Restructuring plan: classes, votes and cram-down
 
@@ -301,16 +301,16 @@ Ardmore insurers are regulated by the Commonwealth's prudential regulator (never
 - Part 6, row 12: add Sasha Hrytsenko (and optionally Dimitri Kalogeropoulos) to the Case T characters.
 - Part 6, row 23: add Dimitri Kalogeropoulos. Inputs: T.4.
 - Part 6, row 58: inputs T.1, T.2; figures T-F01 (extended), T-F02 (extended).
-- Part 6, row 47: Case T figures T-F02 (extended), optional T-F14; inputs T.2 and T.3.
+- Part 6, row 47: Case T figures T-F02 (extended), optional T-F21; inputs T.2 and T.3.
 - Part 6, row 64: inputs T.10 and T.11; figures as before.
-- Part 6, row 79: figures T-F04, T-F06, T-F11, T-F12.
-- Part 6, rows 45 and 48: add T-F11 and T-F12 where the traffic shortfall is discussed.
+- Part 6, row 79: figures T-F04, T-F06, T-F18, T-F19.
+- Part 6, rows 45 and 48: add T-F18 and T-F19 where the traffic shortfall is discussed.
 - Part 6, rows 80 and 81: T.13 and T.14 as inputs; Nerida Faulkes optional.
 
 ## T.17 Traffic ratios and shortfall decomposition
 
-- **T-F11** (new): ratio of actual traffic to the Pellow sponsor base, to the Ridgeway banking case and to the downside, by year 2019 to 2026; from 2024 also the ratio to Ridgeway's 2023 restructuring case. Computed by the Case T modeler from T-F04 values.
-- **T-F12** (new): decomposition of the shortfall of actual traffic against the Pellow case, 2019 to 2022, by cause. The shares are Bible inputs; the modeler multiplies them by each year's shortfall.
+- **T-F18** (new): ratio of actual traffic to the Pellow sponsor base, to the Ridgeway banking case and to the downside, by year 2019 to 2026; from 2024 also the ratio to Ridgeway's 2023 restructuring case. Computed by the Case T modeler from T-F04 values.
+- **T-F19** (new): decomposition of the shortfall of actual traffic against the Pellow case, 2019 to 2022, by cause. The shares are Bible inputs; the modeler multiplies them by each year's shortfall.
 
 | Cause | 2019 | 2020 | 2021 | 2022 |
 |---|---|---|---|---|
@@ -542,10 +542,10 @@ Check method: web search on October 3, 2026 (searches were available for this pa
 | T-F01 (extended) | Adds VfM as a share of gross PSC cost and of net PSC, reference and winning bid, on the recalibrated PSC (T.9) | Inputs plus PV | 57, 58 |
 | T-F02 (extended) | Adds the winning contribution's gap to the reference and to Northgate (T.2, ARD m and percent; arithmetic already in this annex) | Inputs | 47, 58 |
 | T-F09 (extended) | Plan equity value; state subscription at plan value and implied capital grant; price per percentage point for the state and creditors; recoveries by class (T.10, T.11) | Actual history | 64 |
-| T-F11 | Ratio of actual traffic to the Pellow, Ridgeway banking and downside cases, 2019 to 2026, plus ratio to Ridgeway 2023 from 2024 | Inputs | 45, 48, 79 |
-| T-F12 | Shortfall against Pellow, 2019 to 2022, by cause (T.17 shares) | Actual history | 45, 48, 79 |
-| T-F13 | Performance payments to BRTA by half-year 2019 to 2025 and their effect on CFADS and T-F07 DSCRs | Actual history | 58, 64 |
-| T-F14 (optional) | Bid equity IRR at ARD 287.4 million on Pellow's low and central VoT cases (T.3) | Bid variants | 47 |
+| T-F18 | Ratio of actual traffic to the Pellow, Ridgeway banking and downside cases, 2019 to 2026, plus ratio to Ridgeway 2023 from 2024 | Inputs | 45, 48, 79 |
+| T-F19 | Shortfall against Pellow, 2019 to 2022, by cause (T.17 shares) | Actual history | 45, 48, 79 |
+| T-F20 | Performance payments to BRTA by half-year 2019 to 2025 and their effect on CFADS and T-F07 DSCRs | Actual history | 58, 64 |
+| T-F21 (optional) | Bid equity IRR at ARD 287.4 million on Pellow's low and central VoT cases (T.3) | Bid variants | 47 |
 | R-F18 | R7 floor: reference revenue, floor payments from Galloway, premium, upside share, by contract year 2024 to 2032 | Base, low, high | 20, 73 |
 | R-F19 | R6 and R7 usable energy, augmentation MWh and cost, revenue scaling factor by year | Base | 45, 73 |
 
@@ -553,21 +553,20 @@ Check method: web search on October 3, 2026 (searches were available for this pa
 
 # Part L. Change log for this annex
 
-Format as Case Bible Part 8. These rows are also appended to `case-bible.md` Part 8.
+Format as Case Bible Part 8. These rows are also appended to `case-bible.md` Part 8. The Case T modeler's own rows T-C05 to T-C11 (PSC recalibration, bid CPI, ramp-up and sizing, test timing, NILO profile, plan classes and valuation, termination inputs) were entered in Part 8 concurrently; this annex adopts them and numbers its own rows from T-C12. T-C19 below records the judgment date and narrative on top of the modeler's T-C10.
 
 | # | Date in story | Chapter | Case | Item changed | Old value | New value | Source of figure |
 |---|---|---|---|---|---|---|---|
-| T-C05 | 2012-11-08 | 57, 58 | T | PSC risk adjustments (modeler recalibration, adopted) | Construction 221.7; traffic 274.0; operating 41.3; competitive neutrality 38.4 | 7.8% of raw capex; 4.8% of retained toll revenue; 3.8% of O&M and lifecycle; 1.0% of gross costs (values in inputs and T-F01) | Annex T.9; T-F01 |
-| T-C06 | 2013-09-02 to 2015-05-27 | 47, 58 | T | Procurement terms | Unspecified | Three-stage evaluation; ARD 20.0m bid security; committed-finance rules; Northgate traffic basis; third consortium's reason | Annex T.2 (book inputs) |
-| T-C07 | 2015-05-27 | 23, 58 | T | Performance regime | "KPI deductions" only | Lane charges, KPI points, ARD 2,400 per point, 2.5% cap, thresholds 300/500/800 | Annex T.1 |
-| T-C08 | 2019 to 2025 | 58, 64 | T | Actual performance payments | None | 2019 0.38 to 2025 0.07 (ARD m) by half-year | Annex T.1; T-F13 |
-| T-C09 | 2015-05-27 | 23 | T | D&C cap, interface agreement, tolling subcontract | Unspecified | 60% aggregate cap; Interface Agreement; Quillfield subcontract; acceptance test | Annex T.4 |
-| T-C10 | 2019-02 to 2019-05-06 | 23, 79 | T | Cause of the 36-day delay | Unspecified | Tolling acceptance test failure; JV recovers ARD 3.42m from Quillfield | Annex T.4 |
-| T-C11 | 2016 to 2017 | 12, 23 | T | Tunnel ground and method | Unspecified | Sandstone/siltstone with fault zone; sequential excavation; JV absorbs overrun | Annex T.6 |
-| T-C12 | 2059-05-26 | 58, 65 | T | Handback requirements | Reserve only | Schedule 15 requirements; surveys at 60 and 24 months | Annex T.8 |
-| T-C13 | 2023-12-11 | 64 | T | Plan classes, votes, judgment date | Unspecified | Four classes; class 4 dissents and is crammed down; judgment December 11, 2023 | Annex T.10 |
-| T-C14 | 2023-12-18 | 64 | T | State's ARD 120.0m characterization | 15% of equity | Subscription at plan value plus capital grant | Annex T.11; T-F09 |
-| T-C15 | n/a | 57 | T | Owen Reddaway's career dates | Undated | Fiscal Risks Unit director 2009 to 2015 | Annex T.12 |
+| T-C12 | 2013-09-02 to 2015-05-27 | 47, 58 | T | Procurement terms | Unspecified | Three-stage evaluation; ARD 20.0m bid security; committed-finance rules; Northgate traffic basis; third consortium's reason | Annex T.2 (book inputs) |
+| T-C13 | 2015-05-27 | 23, 58 | T | Performance regime | "KPI deductions" only | Lane charges, KPI points, ARD 2,400 per point, 2.5% cap, thresholds 300/500/800 | Annex T.1 |
+| T-C14 | 2019 to 2025 | 58, 64 | T | Actual performance payments | None | 2019 0.38 to 2025 0.07 (ARD m) by half-year | Annex T.1; T-F20 |
+| T-C15 | 2015-05-27 | 23 | T | D&C cap, interface agreement, tolling subcontract | Unspecified | 60% aggregate cap; Interface Agreement; Quillfield subcontract; acceptance test | Annex T.4 |
+| T-C16 | 2019-02 to 2019-05-06 | 23, 79 | T | Cause of the 36-day delay | Unspecified | Tolling acceptance test failure; JV recovers ARD 3.42m from Quillfield | Annex T.4 |
+| T-C17 | 2016 to 2017 | 12, 23 | T | Tunnel ground and method | Unspecified | Sandstone/siltstone with fault zone; sequential excavation; JV absorbs overrun | Annex T.6 |
+| T-C18 | 2059-05-26 | 58, 65 | T | Handback requirements | Reserve only | Schedule 15 requirements; surveys at 60 and 24 months | Annex T.8 |
+| T-C19 | 2023-12-11 | 64 | T | Plan classes, votes, judgment date | Unspecified | Four classes; class 4 dissents and is crammed down; judgment December 11, 2023 | Annex T.10 |
+| T-C20 | 2023-12-18 | 64 | T | State's ARD 120.0m characterization | 15% of equity | Subscription at plan value plus capital grant | Annex T.11; T-F09 |
+| T-C21 | n/a | 57 | T | Owen Reddaway's career dates | Undated | Fiscal Risks Unit director 2009 to 2015 | Annex T.12 |
 | R-C11 | 2021-08 to 2022-03-22 | 47 | R | A1 process and price mechanism | Price only | Locked box at 2021-09-30; headline 436.0 plus 5.00% ticker; total 446.3 unchanged; W&I terms; bids 421.5 and 409.0 | Annex R.1 |
 | R-C12 | 2024-04-02 | 20, 73 | R | R7 floor reference and settlement | Floor terms only | Benchmark index times availability; quarterly with annual true-up | Annex R.4; R-F18 |
 | R-C13 | 2023-07-14 and 2024-04-02 | 45, 73 | R | Battery overbuild and fade | Augmentation only | 8% overbuild; fade 2.0 / 1.5 / 1.0 points a year | Annex R.5; R-F19 |

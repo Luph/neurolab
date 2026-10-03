@@ -2,18 +2,18 @@
 
 Version 1.0, October 3, 2026. Source: `bible/case-bible-annex-tr.md` (the annex governs where it differs from `case-bible.md`). The Case Bible editor has not edited any model file or inputs JSON; each modeler adds the inputs below to its own JSON, reruns, and records the new figures in its ledger. Every Case R price stays Illustrative.
 
-Status of coordination: Case R model R-1.1 is complete; the items below need a rerun (R-1.2). Case T model 1.0 has an empty "Assumption changes" section in its report; the annex adopts the Case T modeler's own `modeler_assumptions` (PSC recalibration, plan valuation, state money allocation, plan classes and votes, handback estimate), so those need no action beyond logging them in the report.
+Status of coordination: Case R model R-1.1 is complete; the items below need a rerun (R-1.2). Case T model 1.0 is complete with ledger T-F01 to T-F17; the items below need a rerun (1.1). The annex adopts the Case T modeler's own `modeler_assumptions` (PSC recalibration, plan valuation, state money allocation, plan classes and votes, handback estimate), which are already logged in its report (Sections 12 and 13) and in Case Bible Part 8 (T-C05 to T-C11).
 
 ## 1. Case T (`model/inputs_case_t.json`)
 
 | # | Input | Value | Unit | Annex | Target figure | Model use |
 |---|---|---|---|---|---|---|
-| T-IR-01 | Performance payments to BRTA, actual history | 2019H1 0.14; 2019H2 0.24; 2020H1 0.03; 2020H2 0.00; 2021H1 0.00; 2021H2 0.02; 2022H1 0.05; 2022H2 0.06; 2023H1 0.04; 2023H2 0.05; 2024H1 0.08; 2024H2 0.09; 2025H1 0.03; 2025H2 0.04 | ARD m nominal, by half-year | T.1 | T-F13; flows into T-F07, T-F09, T-F10 | Operating cost in the half incurred (actual-history run only); tax-deductible; nil in bid, banking, downside runs |
-| T-IR-02 | Performance payment cap (check only) | 2.5% of previous calendar year's net toll revenue | % | T.1 | T-F13 | Verify no half-year exceeds the cap; report |
-| T-IR-03 | Relief period (performance payments suspended) | 2020-03-23 to 2021-09-30 | dates | T.1 | T-F13 | Documentation; amounts in T-IR-01 already reflect it |
-| T-IR-04 | Traffic ratios | None (computed from existing traffic inputs) | ratio | T.17 | T-F11 | Actual / Pellow, actual / Ridgeway banking, actual / downside, annual 2019 to 2026; actual / Ridgeway 2023 case from 2024 |
-| T-IR-05 | Shortfall shares by cause | 2019: housing 41, VoT 29, trucks 20, SR 14 works 10, COVID 0. 2020: 23, 16, 11, 5, 45. 2021: 29, 20, 14, 7, 30. 2022: 36, 25, 18, 9, 12 | % of (Pellow less actual), annual average k trips/day | T.17 | T-F12 | Shares times each year's shortfall; report k trips/day and %; optionally revenue equivalent |
-| T-IR-06 | Pellow VoT variants (optional) | Mature 2019 level: low 51.2; central 54.6 (high 58.4 = existing sponsor base); ramp-up and growth as sponsor base | k trips/day | T.3 | T-F14 | Two extra bid runs with financing locked; report equity IRR at ARD 287.4m and NPV at 11.4% |
+| T-IR-01 | Performance payments to BRTA, actual history | 2019H1 0.14; 2019H2 0.24; 2020H1 0.03; 2020H2 0.00; 2021H1 0.00; 2021H2 0.02; 2022H1 0.05; 2022H2 0.06; 2023H1 0.04; 2023H2 0.05; 2024H1 0.08; 2024H2 0.09; 2025H1 0.03; 2025H2 0.04 | ARD m nominal, by half-year | T.1 | T-F20; flows into T-F07, T-F09, T-F10 | Operating cost in the half incurred (actual-history run only); tax-deductible; nil in bid, banking, downside runs |
+| T-IR-02 | Performance payment cap (check only) | 2.5% of previous calendar year's net toll revenue | % | T.1 | T-F20 | Verify no half-year exceeds the cap; report |
+| T-IR-03 | Relief period (performance payments suspended) | 2020-03-23 to 2021-09-30 | dates | T.1 | T-F20 | Documentation; amounts in T-IR-01 already reflect it |
+| T-IR-04 | Traffic ratios | None (computed from existing traffic inputs) | ratio | T.17 | T-F18 | Actual / Pellow, actual / Ridgeway banking, actual / downside, annual 2019 to 2026; actual / Ridgeway 2023 case from 2024 |
+| T-IR-05 | Shortfall shares by cause | 2019: housing 41, VoT 29, trucks 20, SR 14 works 10, COVID 0. 2020: 23, 16, 11, 5, 45. 2021: 29, 20, 14, 7, 30. 2022: 36, 25, 18, 9, 12 | % of (Pellow less actual), annual average k trips/day | T.17 | T-F19 | Shares times each year's shortfall; report k trips/day and %; optionally revenue equivalent |
+| T-IR-06 | Pellow VoT variants (optional) | Mature 2019 level: low 51.2; central 54.6 (high 58.4 = existing sponsor base); ramp-up and growth as sponsor base | k trips/day | T.3 | T-F21 | Two extra bid runs with financing locked; report equity IRR at ARD 287.4m and NPV at 11.4% |
 | T-IR-07 | VfM presentation | Gross PSC cost = raw capex + O&M and lifecycle + all risk adjustments (before netting retained toll revenue) | ARD m PV 2012 | T.9 | T-F01 (extended) | Report VfM (reference and winning bid) as % of gross PSC cost and as % of net PSC |
 | T-IR-08 | Contribution gaps | Reference 410.0, Northgate 361.0, winner 287.4 | ARD m nominal | T.2 | T-F02 (extended) | Report gaps (122.6; 73.6; 49.0) and percentages (29.9%; 20.4%; 12.0%) for the ledger |
 | T-IR-09 | Plan allocation reporting | None new (uses existing plan valuation) | ARD m; ARD m per 1% | T.10, T.11 | T-F09 (extended) | Ensure ledger rows for plan equity value, state subscription at plan value, implied capital grant, prices per percentage point (state, creditor conversion, creditor give-up), recovery by class |
@@ -41,4 +41,4 @@ Book inputs that need no model absorption (listed so no one hunts for them in th
 
 ## 3. New figure IDs
 
-T-F11, T-F12, T-F13, T-F14 (optional); extensions to T-F01, T-F02, T-F09. R-F18, R-F19. The IDs R-F11 to R-F17 stay as the Case R modeler assigned them; the briefs' proposed "R-F11" contents are now R-F18 (R7 floor) and R-F19 (battery capacity), and the briefs' proposed "T-F11" contents are T-F11 (ratios, u16) and T-F12 (decomposition, u09).
+T-F18 (traffic ratios), T-F19 (shortfall by cause), T-F20 (performance payments), T-F21 (optional VoT variants); extensions to T-F01, T-F02, T-F09. R-F18 (R7 floor), R-F19 (battery capacity). T-F11 to T-F17 and R-F11 to R-F17 stay as the modelers assigned them; the briefs' proposed "T-F11" contents (u16 ratios, u09 decomposition) and "R-F11" contents (u15 floor, u09 battery) move to the new IDs above.
