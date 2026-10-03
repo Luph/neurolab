@@ -967,3 +967,304 @@ See Section 4.1. Principal, then Director, at Lattimer from June 2021; leads A2 
 | Rafael Quintanilla | R | American | 1971 | Lattimer Infrastructure Partners |
 | Carmen Villarreal-Ochoa | R | American | 1986 | Lattimer (Mesa Corta) |
 | Declan Furlong | R | Irish | 1981 | Castellan Bank |
+
+---
+
+# Part 5. Register of fictional names
+
+Every name below is fictional. Each was checked by web search on October 3, 2026 for a real country, region, well-known city, or organization with the same name in a related field. "Clear" means no such match was found; "Near miss" records the closest real use, which the book never mentions. Real institutions appear only in real-world teaching, never as running-case parties (D-007).
+
+| Name | Type | Case | Check |
+|---|---|---|---|
+| Republic of Kessara; Kessaran | Country | P | Clear (Bangkok hotel and Thai given name "Kessara"; Indian village Keesara) |
+| Kessaran cauri (KCR) | Currency | P | Clear; KCR is not an ISO 4217 code |
+| Dabakro | Capital city | P | Not checked separately; Akan-style place name, no well-known city |
+| Bélanou | Plant site | P | Clear |
+| Moraba River | River | P | Not a well-known place name |
+| Sombé West | Gas field | P | Clear |
+| Halbeck Energy | Upstream operator | P | Clear |
+| Société d'Électricité du Kessara (SEKA) | Utility | P | Clear (country-specific) |
+| Société Nationale des Hydrocarbures du Kessara (SNHK) | State gas company | P | Clear (country-specific) |
+| Gazoduc Côtier du Kessara SA (GCK) | Pipeline company | P | Clear (country-specific) |
+| Office de Régulation de l'Énergie du Kessara (OREK) | Regulator | P | Clear (country-specific) |
+| Banque Centrale du Kessara | Central bank | P | Clear (country-specific) |
+| Union Bancaire du Kessara (UBK) | Local bank | P | Clear (near miss: Union Bancaire pour le Commerce et l'Industrie, Tunisia) |
+| Assurances Générales du Kessara (AGK) | Local insurer | P | Clear (country-specific) |
+| Bélanou Power SA | Project company | P | Clear |
+| Kilnworth Power International; Kilnworth Operations Services Ltd; Kilnworth Bélanou Holdings | Sponsor and affiliates | P | Clear |
+| Groupe Talmé | Local sponsor | P | Clear |
+| ABDB Infrastructure Equity Fund | DFI equity fund | P | Clear |
+| Atlantic Basin Development Bank (ABDB) | Multilateral DFI | P | Clear |
+| Exportgarant | ECA of the unnamed EPC home country | P | Clear (no ECA of that name; German official cover is branded differently) |
+| Castellan Bank | International bank | P, T, R | Clear for banks (near misses: US advisory firms named Castellan; Castell Bank, Germany) |
+| Banque Raveau | French-style bank | P | Clear |
+| Kaito Pacific Bank | Japanese-style bank | P, T, R | Clear |
+| Hovland Bank ASA | Norwegian-style bank | P | Clear (Hovland is a Minnesota community and a surname) |
+| Sterrenberg Bank NV | Dutch-style bank | P, T, R | Clear |
+| Lindauer Kraftwerksbau AG; Lindauer Holding AG | EPC contractor and parent | P | Clear (near miss: Lindauer Dornier, textile machinery) |
+| Bati-Kessara SA | Local civil contractor | P | Clear |
+| Bergmark Turbinen AG; Bergmark BT-9F | Turbine OEM and LTSA provider; gas turbine model | P | Clear |
+| Calder Hartmann Engineering | Independent engineer | P, T, R | Clear |
+| Pemberton Hale LLP | Sponsor's counsel | P | Clear (US firms named Pemberton exist; no "Pemberton Hale") |
+| Ashworth Quayle LLP | Lenders' counsel | P | Clear |
+| Fenwick Lowe Insurance Brokers | Broker | P | Clear |
+| Marchbank Risk Advisory | Lenders' insurance advisor | P | Clear |
+| Ferrand Model Assurance | Lenders' model auditor | P | Clear |
+| Coldharbour Infrastructure Income Fund | Buyer of 2026 stake | P | Clear |
+| Quarrington Advisory | Restructuring and debt adviser | P, T | Clear |
+| Commonwealth of Ardmore; Ardmorean; Ardmore dollar (ARD) | Country and currency | T | Clear as a country (towns named Ardmore exist in the US and Ireland); ARD is not an ISO 4217 code |
+| State of Brannock; Port Ellery; Coldwater Plains; Holloway Junction; Merrick River; Merrick Ridge | State and places | T | Clear |
+| Merrick Link; Merrick Link Concession Co Ltd | Road and project company | T | Clear (Merrick Road in New York is a different road) |
+| Partnerships Brannock; Brannock Treasury; BRTA; BIFA | State bodies | T | Clear |
+| National Infrastructure Lending Office (NILO); Commonwealth Infrastructure Credit Program | Federal lender | T | Clear |
+| Ardmore Bank Bill Rate (ABBR) | Reference rate | T | Clear |
+| Merrick Motorway Partners; Northgate Mobility Consortium | Bid consortia | T | Clear |
+| Holbrook Infrastructure; Holbrook Civil | Construction sponsor | T | Clear |
+| Daneshill Construction | D&C partner | T | Clear |
+| Corvus Toll Roads; Corvus Road Services | Operator sponsor | T | Clear |
+| Wexcombe Infrastructure Fund III | Financial sponsor | T | Clear |
+| Pellow Transport Economics | Sponsor's traffic advisor | T | Clear |
+| Ridgeway Traffic Consultants | Lenders' traffic advisor | T | Clear |
+| Penhallow Bank | Ardmorean bank | T, R | Clear |
+| Lattimer Infrastructure Partners; Lattimer Energy Transition Fund II | Fund manager and fund | R | Clear (Lattimer is an unrelated UK glass-equipment maker) |
+| Mesa Corta Renewables LLC; Mesa Corta HoldCo LLC; Mesa Corta OpCo LLC | Platform | R | Clear |
+| Thatcher Flats Wind; Sandoval Hills Wind; Ollie Creek Wind; Peeler Draw Solar; Calloway Mesa Solar; Redfern Storage; Kerrigan Storage; Barlow Gap Solar | Assets | R | Clear for Thatcher Flats and Ollie Creek; the others are not names of known ERCOT projects |
+| Hollenbeck Energy North America | Seller of A1 | R | Clear (near miss: Hollenbeck Industries, a parts supplier) |
+| Tolliver Energy Development LLC | Seller of A2 and A3 | R | Clear |
+| Galloway Risk Solutions | Insurer-style hedge provider | R | Clear |
+| Orchard Power Retail LLC | Retail electric provider | R | Clear |
+| Ostrander Data Systems Inc. | Corporate vPPA buyer | R | Clear |
+
+Names rejected during checking (do not use): Thornfield (UK energy companies), Arnstein (Canadian credit union), Halyard (private equity firms), Redbud (real power plants), Calvera (Spanish hydrogen company), Caliche (Houston storage developer), Sotol Energy (Texas oil operator), Tidewater (infrastructure companies), Kingsmere (UK rail and civils group), Fairhaven (US bank branches and savings bank), Daubeny (UK laboratory project), Sangora (town in Burkina Faso), Bassanga (Burkina Faso), Lusara (fiction).
+
+---
+
+# Part 6. Storyline by chapter
+
+Every chapter carries a running-case installment (`standards.md` Section 6, item 8). The table gives, for each chapter, the case, the story date, the scene or event, the characters, the figures shown (IDs from Part 7; "inputs" means values stated in Parts 1 to 3), and the state of the case at the start and end of the installment. Where a chapter has no natural beat, the installment is short and marked "(small)". Each installment respects concept ownership: it uses only concepts owned by that chapter or earlier ones, and refers forward only by an explicit one- or two-sentence pointer.
+
+| Ch | Case | Story date | Scene or event | Characters | Figures shown | State at start | State at end |
+|---|---|---|---|---|---|---|---|
+| 1 | P | April 2015 | Closing scene: Tomasz takes a call from Mariama Talmé about Kessara's Emergency Power Plan and books a flight to Dabakro | Tomasz, Mariama | Inputs: 2015 peak demand 2,140 MW against 1,780 MW available | No project | Origination |
+| 2 | P | September 2015 | Kilnworth's investment committee weighs project finance against funding Bélanou on Kilnworth's balance sheet; approves project finance and a development budget | Tomasz | Inputs: development budget USD 14.8 million; target gearing 75% | Opportunity identified | Decision to project-finance |
+| 3 | P | February 2016 (with 1997 to 1999 memory) | Pieter reads the Kessara RFQ and recalls dollar-tariff IPP restructurings he worked on in Jakarta; he flags convertibility to his team (small) | Pieter | None | RFQ issued | Castellan decides to pursue a mandate |
+| 4 | P | June 2015 to February 2016 | Co-development agreement (70:30); development team and advisers appointed; lifecycle map of Case P from origination to 2046 transfer | Tomasz, Mariama, Adaeze | P-F01; Case P lifecycle timeline (inputs) | Origination | Development under way |
+| 5 | P | Flash-forward: January 2022 invoice | Indexation of the capacity charge from the November 2016 base date; partial indexation; the local share converted at 462.35 and reconverted; real versus nominal tariff | Tomasz, Hyacinthe | P-F02 | Tariff as bid | Indexed tariff for January 2022 |
+| 6 | P | July 2016; flash-forward to November 2022 | Castellan's indicative term sheet on 6M LIBOR plus margins; the swap explained; in 2022 the LIBOR switch amendment (Term SOFR plus 0.42826%) | Pieter, Tomasz | P-F03, P-F22 | Indicative pricing | Pricing basis understood; transition shown |
+| 7 | P | Flash-forward: year to December 31, 2022 | Bélanou Power's first full-year accounts: capitalized IDC, depreciation, tax holiday and deferred tax, receivables swelling with SEKA arrears | Tomasz | P-F04 | First operating year | Accounts read |
+| 8 | P | 2017 (FC base case) | Kilnworth's finance team shows equity IRR at 60% to 80% gearing on the base case | Tomasz | P-F05 | Bid won | Gearing preference set |
+| 9 | R | December 2021 | Lattimer's diligence team reads P50, P90 and P99 for R1, R2 and R3; one-year versus ten-year P90; portfolio diversification | Rafael, Thandeka | R-F01 (inputs) | A1 under diligence | Yield view formed |
+| 10 | P | August 2017 | First look at the draft PPA: force majeure, Kessaran-law hardship, delay LDs, governing law | Adaeze, Laurent, Hyacinthe | Inputs: PPA delay LD USD 94,150 per day, cap USD 25.0 million | PPA draft received | First markup |
+| 11 | P, R | 2016; 2022 | Bélanou's 2x1 F-class technology, heat rate and part load; ERCOT market rules and capture prices for Mesa Corta's assets | Tomasz, Carmen | Inputs: Part 1.2 table; Part 3.5 capture ratios | – | – |
+| 12 | P, T | 2017; 2013 | The Sombé West field and the GCK pipeline; the Merrick Link alignment, tunnel and viaduct | Félix, Callum | Inputs | – | – |
+| 13 | P | Model build | A practice workbook with Case P timing flags: monthly construction, semiannual operations, the EPC payment profile | – | Inputs: EPC payment profile | – | – |
+| 14 | P | October 2016 | Kilnworth's bid-stage risk register v1 | Tomasz, Mariama | None (qualitative) | Bid submitted | Register v1 |
+| 15 | P | March 2017 | Risk matrix and bankability ladder; Pieter and Tomasz argue over who carries grid-interface risk (seeding 2021) | Pieter, Tomasz, Gwen | None | Register v1 | Risk matrix |
+| 16 | P | May 2017 | Mitigation plan: LC, guarantee, PRG, PRI, reserves, swaps, insurance, contingent equity, standby facility | Tomasz, Pieter, Thandeka | Inputs: LC 33.8, PRG 41.5, contingent equity 15.4, standby 46.0 | Risk matrix | Mitigation plan |
+| 17 | P | February 2016 to October 2017 | The PPP Unit's competitive tender; Implementation Agreement and Government Guarantee negotiation; termination compensation principles | Clémentine, Abdoulaye, Tomasz, Adaeze | Inputs: termination regime table; guarantee cap USD 1,250 million | Tender launched | IA and guarantee signed |
+| 18 | P | June to October 2017 | PPA negotiation: capacity charge, 90% availability target, contracted heat-rate headroom, fuel pass-through, LC sizing fight | Tomasz, Hyacinthe, Adaeze | P-F02, P-F32 | Draft PPA | PPA signed |
+| 19 | P (small) | 2024 | MEF's public debt team compares Bélanou's capacity tariff with a two-sided CfD proposed for Kessara's first solar auction | Clémentine | None | – | – |
+| 20 | R | October 2022 to 2023 | The hedge book: R1 swap, R3 proxy revenue swap, R4 shape hedge, R5 vPPA, R6 toll, R7 floor; a Uri-type stress on R1 | Rafael, Declan, Carmen | R-F02, R-F03 | A1 closed | Hedge book in place |
+| 21 | T, P | 2013 to 2014; 2017 | The Merrick Link toll regime (maximum tolls, escalation, class multipliers); Bélanou's GTA ship-or-pay | Maggie, Callum, Félix | T-F05; inputs (GTA) | – | – |
+| 22 | P | September to December 2017 | EPC negotiation: delay LD rate calibrated to interest, fixed costs and PPA LDs; caps; performance LDs | Tomasz, Konrad, Gwen, Pieter | P-F33; inputs | EPC draft | EPC signed |
+| 23 | T | 2014 | Holbrook-Daneshill D&C joint venture; interface with Corvus and the tolling subcontract | Callum | Inputs: D&C price, LDs | Bid team | D&C structure fixed |
+| 24 | P | March to April 2018 | LTSA with Bergmark and O&M with Kilnworth Operations; EOH-based fees; out-of-LTSA major maintenance | Tomasz, Gwen | P-F11, P-F34 | – | LTSA and O&M signed |
+| 25 | P | November 2017 | GSA negotiation: DCQ, MDQ, 80% take-or-pay, make-up, deliver-or-pay, pass-through to SEKA | Tomasz, Félix, Hyacinthe | P-F35 | Draft GSA | GSA signed |
+| 26 | P | April 2017 to July 2018 | Shareholders' agreement among Kilnworth, Talmé and the ABDB fund; reserved matters; ROFR without tag-along; equity contribution agreement; development premium | Tomasz, Mariama, Thandeka | Inputs: stakes, premium USD 4.85 million | Two sponsors | Three sponsors |
+| 27 | P | 2018; 2022 | Insurance program design; DSU daily indemnity sizing; lenders' requirements; the 2022 hard-market step-up | Tomasz, Pieter | Inputs: Part 1.4 insurance table | – | Program bound |
+| 28 | P | June 2018 | Full contract map; gap scan; a "Who pays if...?" trace of a grid surge destroying a step-up transformer during commissioning | Adaeze, Laurent, Gwen | None | Contracts signed | Gaps logged |
+| 29 | P, T | 2017 to 2018; 2014 to 2015 | Case P lender group: commercial banks, Exportgarant cover, ABDB A and B loans; Case T's NILO credit application | Pieter, Henrike, Thandeka, Kirsten | Inputs: tranche shares; ECA eligible value 263.7 and cap 224.1 | Mandate | Lender group formed |
+| 30 | P | 2018; 2024 | Why no bond at financial close; a 2024 rating pre-assessment of a refinancing bond | Pieter, Tomasz | None | – | Bond option alive |
+| 31 | R, P | March 2022; 2018 | Case R's holdco TLB sized on opco distributions (coverage ratio by forward reference to Chapter 35); Case P's standby and VAT facilities | Rafael, Declan | R-F05 (holdco lines) | A1 signing | Holdco funded |
+| 32 | P | 2017 to 2018 | The equity plan: share capital and shareholder loans, pro rata funding with LCs, contingent equity, development premium, ABDB farm-in | Tomasz, Mariama, Thandeka | P-F07 (equity lines) | – | Equity committed |
+| 33 | P (small) | Early 2025 | A Gulf bank proposes an ijara tranche for the refinancing; rejected because onshore security would have to be restructured | Pieter, Tomasz | None | – | – |
+| 34 | P | 2017 | The ABDB PRG with a donor-subsidized fee; why a KCR loan was not available at the tenor needed | Thandeka, Clémentine | Inputs: PRG 41.5, fee 0.75% | – | PRG approved |
+| 35 | P | 2018 (FC base) | CFADS for the first full operating year; DSCR, LLCR, PLCR; base, banking and downside cases | Pieter | P-F10, P-F08 (ratios) | – | – |
+| 36 | P | April 2018 | The lenders size the debt: sculpting at 1.35x, the 75% gearing cap, the ECA weighted average life test | Pieter, Tomasz | P-F08, P-F09 | Term sheet agreed | Debt sized |
+| 37 | P | 2018 | DSRA, MMRA, lock-up and default levels; 80% swap at 2.947% | Pieter, Tomasz | P-F11, P-F12 (swap profile) | – | Reserve and hedge structure set |
+| 38 | P | 2018 | Pricing: margins, fees, ECA premium, all-in cost by tranche | Pieter, Henrike | P-F12 (all-in cost) | – | – |
+| 39 | P | Model build | Model skeleton: timeline, flags, inputs from the JSON file, scenario switch | – | None | – | – |
+| 40 | P | Model build (FC base) | Funding sheet: sources and uses, monthly drawdowns, IDC circularity | – | P-F07, P-F13 | – | – |
+| 41 | P | Model build | Revenue and cost build, indexation, tax holiday and deferred depreciation, working capital, VAT facility | – | P-F14, P-F32, P-F34 | – | – |
+| 42 | P | Model build | Waterfall, sculpting, reserves, lock-up, dividend trap and the shareholder-loan solution | – | P-F15 | – | – |
+| 43 | P | Model build | Returns, ratios, sensitivities, breakevens, a Monte Carlo on availability and dispatch | – | P-F16 | – | – |
+| 44 | P | June 2018 | Ferrand Model Assurance's audit of the sponsor model: findings and fixes | Pieter, Tomasz | P-F17 | Draft model | Audited model |
+| 45 | T, R | 2014; 2021; 2023 | Traffic ramp-up model with Pellow's and Ridgeway's cases against actuals; Case R's yield and capture model | Sasha, Carmen | T-F04, T-F06, R-F06 | – | – |
+| 46 | R | November to December 2021 | Valuing A1 by risk bucket | Rafael, Thandeka | R-F04 | Diligence | Bid price set |
+| 47 | P, T, R | September 2016; August 2014; December 2021 | Case P's tariff bid; Case T's BAFO contribution and the winner's curse; Case R's A1 auction | Tomasz, Callum, Rafael | P-F06, T-F02, R-F04 | Bids prepared | Bids won |
+| 48 | P, T | 2018; 2014 | Gwen's IE report walkthrough; Pellow's and Ridgeway's traffic studies compared | Gwen, Sasha | T-F04; inputs | – | – |
+| 49 | P | 2018 | Lenders' legal due diligence report: parallel debt, business pledge, emphyteutic lease, guarantee, FX authorization; KYC on Groupe Talmé | Laurent, Mariama | None | – | – |
+| 50 | P | 2017 to 2021 | Resettlement of 214 households; ESAP; Category A review; 2021 grievance and additional compensation | Thandeka, Henrike | Inputs: RAP 5.08; additional 3.27 | – | – |
+| 51 | P | 2018 | The common terms agreement: CPs, representations, covenants, events of default, equity cure, distributions, change of control | Laurent, Adaeze | Inputs: covenant levels | – | CTA agreed |
+| 52 | P | 2018; 2023 | Accounts agreement and waterfall; parallel debt; business pledge; the 2023 re-notification fix | Laurent | P-F15 (structure) | – | – |
+| 53 | P | 2018; 2025 | Intercreditor agreement: ECA and DFI rights, A/B structure, hedge counterparties, voting; the 2025 bondholder accession | Pieter, Henrike, Thandeka | Inputs: tranche shares | – | ICA signed |
+| 54 | P | 2017 | Dispute clauses across PPA, IA and finance documents; treaty protection through the holding company; immunity waiver | Adaeze, Clémentine | None | – | – |
+| 55 | P | June to July 2018 | Financial close: CP satisfaction, funds flow on July 17, 2018 | Pieter, Tomasz, Laurent, Adaeze | P-F07 | Documents agreed | Financial close |
+| 56 | P | July to October 2017 | Term sheet negotiation: DSCR target, gearing, hedge ratio, lock-up, PRI cost | Pieter, Tomasz, Adaeze | P-F36 | Indicative terms | Agreed term sheet |
+| 57 | T | 2012 | Brannock's decision to procure: business case, PSC, value for money, affordability, contingent liabilities | Maggie, Owen | T-F01 | Corridor need | Decision to procure |
+| 58 | T | 2013 to 2015 | Procurement to preferred bidder and close; termination regime and refinancing gain share design | Maggie, Callum, Kirsten | T-F01, T-F02, T-F03 | Decision to procure | Financial close |
+| 59 | P | 2022 to 2024 | Offtaker crisis and currency shock: arrears, FX queue, LC drawing, guarantee demands, netting, settlement | Tomasz, Hyacinthe, Clémentine, Mariama, Abdoulaye | P-F20, P-F25 | Plant operating | Settlement signed |
+| 60 | P | 2018; 2022 to 2023 | PRI placement and the 2023 decision not to claim; ABDB's preferred creditor halo; the minister's attack on the dollar tariff; local content | Tomasz, Abdoulaye, Mariama | Inputs: PRI premium 1.15% | – | – |
+| 61 | P | August 2018 to November 2021 | Construction: drawdowns, COVID force majeure, civil rework, the transformer failure and insurance claim, LDs, overrun funding, completion tests | Konrad, Gwen, Tomasz, Abdoulaye | P-F18, P-F19, P-F30 | Financial close | COD December 1, 2021 |
+| 62 | P | 2022 to 2024 | Operations: reporting, budgets, ratio tests, the June 2023 breach, the October 2023 waiver | Tomasz, Adaeze, Laurent, Henrike | P-F21, P-F31 | Operating | Waiver in force |
+| 63 | P, R | 2025 to 2026; 2025 | Case P bond refinancing and the 24% sale; Case R USPP refinancing and holdco repricing | Pieter, Tomasz, Yusuf, Mariama; Thandeka, Rafael, Declan | P-F23, P-F24, R-F08, R-F09 | Pre-refinancing | Refinanced; stake sold |
+| 64 | T | 2019 to 2023 | Distress and restructuring: warnings, standstill, A&E, restructuring plan, cram-down, NILO, the state's role | Pieter, Callum, Owen, Kirsten, Maggie | T-F07, T-F08, T-F09, T-F10 | Lock-up | Restructured |
+| 65 | P, R | 2026 looking to 2046; 2026 | Bélanou handback planning; R1 repower-or-retire and decommissioning provisions | Tomasz, Carmen | P-F29, R-F10 | – | – |
+| 66 | P | 2018 to 2026 | Sponsor accounting: consolidation, equity method, loss of control in 2026, hedge accounting, expected credit losses on SEKA receivables | Tomasz, Mariama | P-F26 | – | – |
+| 67 | P | 2017; 2025 | Holding structure, treaty withholding rates, interest gross-up, thin capitalization, interest limitation grandfathering, indirect transfer tax | Adaeze, Tomasz | P-F27 | – | – |
+| 68 | P, T (small) | 2018; 2015 | Castellan's slotting grade for Case P; Case T's insurer bondholders and their capital treatment | Pieter | None | – | – |
+| 69 | P | 2015 to 2016 | Why a CCGT: Kessara's alternatives (OCGT, coal, HFO) compared; Bélanou in the thermal sector | Abdoulaye, Tomasz | Inputs; P-F16 | – | – |
+| 70 | R | 2022 to 2025 | Wind and solar in Mesa Corta: capture decline, curtailment, tax credits | Carmen, Rafael | R-F06 | – | – |
+| 71 | R (small) | 2025 | Lattimer's IC declines a minority stake in a US offshore wind project | Rafael | None | – | – |
+| 72 | P (small) | 2022 | The Moraba hydro cascade in a drought year raises Bélanou's dispatch; MEH's planned 240 MW Moraba Falls project | Abdoulaye | Inputs: hydro 640 MW | – | – |
+| 73 | R, P | 2023 to 2024 | R6 toll versus R7 merchant with floor; augmentation; Bélanou's 225 kV interconnection | Carmen, Thandeka | R-F07 | – | – |
+| 74 | P (small) | 2025 | MEH signs a small modular reactor memorandum; MEF's public debt team weighs it | Clémentine | None | – | – |
+| 75 | P | 2017; 2023 | Sombé West upstream financing (Halbeck's reserve-based loan, illustrative) and GCK's ship-or-pay pipeline | Félix | Inputs: reserves 1,140 bcf | – | – |
+| 76 | P (small) | 2026 | MEH studies an FSRU for LNG imports to back a Bélanou Phase 2 | Tomasz | None | – | – |
+| 77 | P (small) | 2025 | Groupe Talmé's plan for a gas-based fertilizer plant | Mariama | None | – | – |
+| 78 | P (small) | 2026 | A bauxite developer asks for power from a Bélanou expansion | Tomasz | None | – | – |
+| 79 | T | 2019 to 2025 | The Merrick Link ramp-up against the record of real toll-road failures | Sasha, Callum | T-F04, T-F06 | – | – |
+| 80 | T (small) | 2024 | Brannock procures a light-rail line as an availability PPP after the Merrick Link | Maggie | None | – | – |
+| 81 | T (small) | 2016 | Partnerships Brannock's availability-based hospital PPP as the contrast to user-pay | Maggie | None | – | – |
+| 82 | R | 2024 to 2026 | Ostrander's data-center growth and the credit of the R5 vPPA counterparty | Rafael, Carmen | None | – | – |
+| 83 | R (small) | 2024 | Lattimer screens and passes on a hydrogen offtake from R2 | Rafael | None | – | – |
+| 84 | R, P | 2025 | The USPP labeled green; why Case P's bond was not; physical climate risk at Bélanou (sea level, cooling-water temperature) | Thandeka, Tomasz | None | – | – |
+| 85 | P (with T, R) | September 2016 | A one-hour screen of Case P at bid stage; quick screens of T and R | Pieter | Inputs | – | – |
+| 86 | P | May 2018 | Castellan's credit paper for Case P | Pieter | P-F28 | – | Credit approval |
+| 87 | P, T, R | 2016 to 2026 | Careers and judgment: Pieter, Thandeka and Tomasz; an intermediary's 2016 approach during the tender, which Kilnworth reports | Pieter, Thandeka, Tomasz, Clémentine | None | – | – |
+| 88 | R | March 2026 | Lattimer's IC weighs a 15-year data-center PPA from a repowered R1 using the new-structure framework | Rafael, Carmen, Thandeka | None | – | Open decision |
+
+Concept-ownership notes for writers:
+
+- Chapters 5 to 8 use flash-forwards and the FC base case; they never discuss DSCR (Chapter 35), reserves (Chapter 37), or the covenant breach (Chapter 62).
+- Chapter 7's 2022 accounts show trade receivables rising; the narrative names the cause (SEKA paying late) without teaching payment security (Chapter 59).
+- Chapter 20 introduces R1's fixed-volume swap and its Uri stress; the valuation of the hedges belongs to Chapter 46.
+- Chapter 31 shows the holdco loan's size and the cash it depends on, with a forward reference to Chapter 35 for the coverage ratio.
+- Chapter 59 may say that the DSRA was drawn (Chapter 37) but leaves the covenant breach and waiver to Chapter 62.
+- Chapter 61 tells the insurance claim using Chapter 27's covers; Chapter 28's "Who pays if...?" trace of the same kind of event is written in 2018 as a hypothetical and must not reveal that the event later happened.
+
+---
+
+# Part 7. Figure register
+
+The modelers compute each figure below from the input files and record its values in the figure ledger (`model/figure-ledger.md`, created by the modeling agents) under the same ID. Writers cite figures by ID in their status notes. "Scenario" names a scenario from Sections 1.10, 2.8 and 3.8. A figure marked "inputs" needs no model run; it is listed so that every running-case number in the book has an ID.
+
+## 7.1 Case P
+
+| ID | Figure | Scenario | Chapters |
+|---|---|---|---|
+| P-F01 | Development budget (USD 14.8 million approved 2015) against actual costs to close (USD 21.43 million), by year | Inputs (annual split: 2015 3.12, 2016 6.87, 2017 7.64, 2018 3.80) | 2, 4 |
+| P-F02 | Capacity charge, fixed O&M charge and VOM charge indexed to the January 2022 invoice; real versus nominal | Actual history indices | 5, 18 |
+| P-F03 | Indicative 2016 all-in floating cost by tranche (6M LIBOR at 2016 levels plus margins and fees annualized) | Inputs plus simple calculation | 6 |
+| P-F04 | 2022 income statement, balance sheet and cash flow statement of Bélanou Power SA | Actual history | 7 |
+| P-F05 | Equity IRR at gearing of 60%, 65%, 70%, 75% and 80% (debt on the sculpted profile) | FC base | 8 |
+| P-F06 | Levelized tariff of the winning bid under the RFP evaluation formula; runner-up 4.6% higher | FC base inputs | 47 |
+| P-F07 | Sources and uses at financial close, including IDC, fees, ECA premium, DSRA; equity split between share capital and shareholder loans | FC base | 32, 40, 55 |
+| P-F08 | Senior debt by tranche; binding constraint; minimum and average DSCR on base, banking and downside; LLCR at close | FC base, banking, downside | 35, 36 |
+| P-F09 | Sculpted repayment profile; ECA weighted average life and largest installment tests | FC base | 36 |
+| P-F10 | CFADS build for the first full operating year | FC base | 35 |
+| P-F11 | DSRA initial balance; MMRA accumulation schedule | FC base | 24, 37 |
+| P-F12 | Swap notional profile; hedged and unhedged cost; all-in cost of debt by tranche including ECA premium | FC base | 37, 38 |
+| P-F13 | Monthly construction drawdown schedule and IDC | FC base | 40 |
+| P-F14 | Tax computation OY1 to OY10: holiday, deferred depreciation, minimum turnover tax | FC base | 41 |
+| P-F15 | Cash waterfall OY1 to OY3; distributions; dividend-trap check with and without shareholder loans | FC base | 42, 52 |
+| P-F16 | Equity IRR, project IRR, NPV at 16.0%, payback; sensitivity table; breakevens | FC base and sensitivities | 43, 69 |
+| P-F17 | Model audit findings (seeded errors and their effect on debt size), specified by the Chapter 44 brief | FC base | 44 |
+| P-F18 | Actual construction sources and uses; overrun funding (contingency, LDs, DSU, standby, contingent equity); IDC against FC base | Actual history | 61 |
+| P-F19 | Completion test results; performance LDs; effect of the prepayment and the 581.9 MW reset on projected DSCR | Actual history | 61 |
+| P-F20 | Arrears path; cash DSCR by period 2022 H1 to 2025 H1; DSRA drawing and replenishment; FX losses | Actual history | 59 |
+| P-F21 | Historic DSCR at June 30, 2023; waiver economics (fee, margin uplift, deferral) | Actual history | 62 |
+| P-F22 | Interest cost before and after the LIBOR switch; effect of the 0.42826% spread adjustment | Actual history | 6 |
+| P-F23 | 2025 bond size; transaction costs; swap unwind value; new combined profile and DSCR; NPV effect for equity | Actual history | 63 |
+| P-F24 | Equity value at December 31, 2025 at 13.75% and 12.50%; price for 24%; Kilnworth's realized IRR on the sold stake; indirect transfer tax | Actual history | 63 |
+| P-F25 | Termination compensation at June 30, 2023 under SEKA default, project company default and natural force majeure, against senior debt outstanding | Actual history | 17 (formula only), 59 |
+| P-F26 | Kilnworth's accounting: consolidation to September 30, 2026; remeasurement gain on loss of control; equity-method carrying value | Actual history | 66 |
+| P-F27 | Withholding tax leakage on distributions and shareholder loan interest, treaty against domestic rates; commercial-tranche interest gross-up cost | FC base and actual | 67 |
+| P-F28 | Credit paper key metrics at close | FC base, banking, downside | 86 |
+| P-F29 | Handback reserve accumulation and plant condition at transfer (assumption-based) | Actual history | 65 |
+| P-F30 | Insurance claim: EAR material damage and DSU computation | Inputs | 61 |
+| P-F31 | OY1 actual against the FC base case: availability, revenue, opex, CFADS | Actual history and FC base | 62 |
+| P-F32 | Example monthly invoice for January 2022: capacity, VOM and fuel charges | Actual history | 18, 41 |
+| P-F33 | Delay LD calibration: daily interest, fixed costs and PPA LDs at the scheduled COD, compared with USD 247,300 | FC base | 22 |
+| P-F34 | Operating cost build OY1 to OY10, including LTSA fixed and variable fees | FC base | 24, 41 |
+| P-F35 | Annual gas volume against DCQ and the take-or-pay level at base, banking and downside dispatch | FC base | 25 |
+| P-F36 | Senior debt at DSCR targets of 1.30x, 1.35x and 1.40x and gearing caps of 70%, 75% and 80% | FC base | 56 |
+
+## 7.2 Case T
+
+| ID | Figure | Scenario | Chapters |
+|---|---|---|---|
+| T-F01 | PSC and PPP present costs; value for money for the reference and the winning bid | Inputs plus PV | 57, 58 |
+| T-F02 | Bid equity IRR at the ARD 287.4 million contribution; the contribution needed at 11.4% on the banking case | Bid base, banking | 47, 58 |
+| T-F03 | Sources and uses at close; senior, NILO and equity amounts; contribution bridge | Bid base and banking | 58 |
+| T-F04 | Traffic: Pellow, Ridgeway, downside and actual, 2019 to 2026 | Inputs | 45, 48, 79 |
+| T-F05 | Nominal toll per km by class, 2015 to 2030, original and restructured regimes | Inputs plus indexation | 21 |
+| T-F06 | Revenue ramp-up: forecast against actual, 2019 to 2025 | Bid base, banking, actual | 45, 79 |
+| T-F07 | Senior DSCR history 2019 H2 to 2023 H2 against banking projections | Actual history | 64 |
+| T-F08 | Termination compensation under concessionaire default (estimated fair value) against senior claims at June 30, 2022 | Actual history | 64 |
+| T-F09 | Restructuring: claims, write-down, new notes, equity split, recoveries by class, NILO | Actual history | 64 |
+| T-F10 | Post-restructuring projections: DSCR, equity value, state revenue share | Ridgeway 2023 case | 64 |
+
+## 7.3 Case R
+
+| ID | Figure | Scenario | Chapters |
+|---|---|---|---|
+| R-F01 | P50, P90 and P99 by asset | Inputs | 9 |
+| R-F02 | Hedge book by year: volumes, prices, share of revenue contracted, hedged and merchant | Base | 20 |
+| R-F03 | Uri-type stress on R1's fixed-volume swap | Sensitivity | 20 |
+| R-F04 | A1 valuation by asset and risk bucket at bid; enterprise value against the USD 1,184.6 million price | Base, low, high | 46, 47 |
+| R-F05 | A1 sources and uses; opco term loan sizing by bucket; holdco TLB sizing | Base, P99 | 31 |
+| R-F06 | Capture price and revenue build by asset, 2022 to 2030 | Base and low | 45, 70 |
+| R-F07 | A2 and A3 valuation and funding; ITC transfer proceeds | Base | 73 |
+| R-F08 | 2025 refinancing: USPP size by series, blended coupon, swap unwinds, holdco repricing, distribution to the fund | Base | 63 |
+| R-F09 | Fund returns on Case R to December 31, 2025: gross IRR, multiple, NAV | Base | 63 |
+| R-F10 | Decommissioning obligations by asset | Base | 65 |
+
+---
+
+# Part 8. Change log
+
+Every change to a case after this version is logged here. "Date in story" is when it happens to the case; "Chapter" is where the reader learns of it; "Source of figure" is "assumption (Case Bible section)" or a figure ID. The rows already entered are the planned changes built into the cases at Version 1.0, so that later edits can be traced against them.
+
+| # | Date in story | Chapter | Case | Item changed | Old value | New value | Source of figure |
+|---|---|---|---|---|---|---|---|
+| P-C01 | 2016-12-08 | 47 | P | Shareholding | Kilnworth 70%, Talmé 30% | unchanged until close | Assumption (1.5) |
+| P-C02 | 2018-07-17 | 26, 32 | P | Shareholding at close | 70:30 | Kilnworth 60%, Talmé 25%, ABDB fund 15% | Assumption (1.5) |
+| P-C03 | 2020-09 | 61 | P | EPC guaranteed completion date | 2021-04-30 | 2021-08-05 (COVID EOT, 97 days) | Assumption (1.9) |
+| P-C04 | 2021-06 to 2022-02 | 61 | P | EPC guaranteed completion date | 2021-08-05 | 2021-10-20 (grid event EOT, 76 days) | Assumption (1.9) |
+| P-C05 | 2022-02 | 61 | P | PPA RCOD | 2021-07-31 | 2022-01-20 | Assumption (1.9) |
+| P-C06 | 2021-12-01 | 61 | P | COD | 2021-05-01 | 2021-12-01 | Assumption (1.9) |
+| P-C07 | 2021-11 | 61 | P | Contracted capacity | 588.4 MW | 581.9 MW | Assumption (1.9) |
+| P-C08 | 2018 to 2021 | 61 | P | Construction cost | FC budget | +USD 39.27 million hard costs plus model financing costs | Assumption (1.9); P-F18 |
+| P-C09 | 2022-06-30 | 61 | P | Senior debt | FC profile | Prepaid by USD 18.485 million performance LDs; first repayment moved to 2022-06-30; 25 installments | P-F19 |
+| P-C10 | 2023-01-01 | 6 | P | Loan base rate | 6M LIBOR | 6M Term SOFR + 0.42826% | Assumption (1.9); P-F22 |
+| P-C11 | 2023-07-01 | 6 | P | Swap floating leg | 6M LIBOR | Compounded SOFR + 0.42826% | Assumption (1.6) |
+| P-C12 | 2023-10-26 | 62 | P | Margins, fee, principal schedule | FC terms | +0.50% to 2024-12-31; 0.25% fee; 60% of 2023-12-31 principal deferred | Assumption (1.9); P-F21 |
+| P-C13 | 2024-03-21 | 59 | P | SEKA arrears | Unsettled | 15 installments to June 2025; 40% of late interest waived | Assumption (1.9) |
+| P-C14 | 2025-06-30 | 63 | P | Debt structure | Four tranches plus standby | ECA tranche, A-loan, 7.875% bond to 2037 | Assumption (1.9); P-F23 |
+| P-C15 | 2026-09-30 | 63 | P | Shareholding | Kilnworth 60% | Kilnworth 36%, Coldharbour 24% | Assumption (1.9); P-F24 |
+| T-C01 | 2014-08-15 | 47, 58 | T | State contribution | Reference ARD 410.0 million | Bid ARD 287.4 million | Assumption (2.3) |
+| T-C02 | 2019-05-06 | 79 | T | Opening date | 2019-03-31 | 2019-05-06 | Assumption (2.2) |
+| T-C03 | 2022-05-20 | 64 | T | Bank maturity and margin | 2022-05-27; 2.60% | 2023-12-31; 3.25% | Assumption (2.8) |
+| T-C04 | 2023-12-18 | 64 | T | Senior debt, equity, NILO terms, concession term, tolls | Original | Per Section 2.8 restructuring table | Assumption (2.8); T-F09 |
+| R-C01 | 2023-08-31 | 73 | R | Portfolio | R1 to R5 | Adds R6 | Assumption (3.6) |
+| R-C02 | 2024-04-02 and 2024-12-19 | 73 | R | Portfolio | R1 to R6 | Adds R7 and R8 | Assumption (3.6) |
+| R-C03 | 2025-12-16 | 63 | R | Debt structure | Opco TL, holdco TLB, Redfern loan | USPP notes; repriced holdco | Assumption (3.7); R-F08 |
+
+Template for new entries:
+
+| # | Date in story | Chapter | Case | Item changed | Old value | New value | Source of figure |
+|---|---|---|---|---|---|---|---|
+| X-Cnn | YYYY-MM-DD | NN | P, T or R | | | | |
+
+---
+
+# Part 9. Notes for the modelers
+
+1. Build each case from its JSON file and nothing else. If an input is missing or ambiguous, log a change request in `bible/decisions.md` rather than inventing a value.
+2. Case P needs four runs: FC base, FC banking, FC downside, and actual history. The FC runs use the forward LIBOR curve in `macro.usd_base_rates.fc_forward_libor_6m_pct` and an FX path projected from 2018 at 7.5% Kessaran and 2.2% US inflation; the actual run uses historical paths. In the FC runs, contingency is spent pro rata with EPC payments; in the actual run, contingency is spent on the listed overrun items first.
+3. Case P debt sizing: sculpt aggregate senior debt service to CFADS divided by 1.35 on the FC base, compute the PV at the all-in senior rate (hedged and unhedged blend plus margins), cap at 75% gearing, then test the downside (1.20x), the LLCR (1.40x) and the ECA constraints. Report which constraint binds. Resolve the IDC and fee circularity by iteration with a convergence tolerance of USD 1,000 and report the number of iterations.
+4. Case P actual run: re-sculpt at COD to the same final maturity on 25 installments with the same 1.35x target applied to the re-forecast CFADS (the lenders' COD re-sculpting), apply the performance LD prepayment on June 30, 2022, and then apply the crisis cash flows (receipts reduced by the change in overdue receivables, FX losses deducted), the waiver terms, the refinancing and the sale.
+5. Case T: the bid base and banking runs share the financing; size on the banking case. The actual run follows the events in Section 2.8 and applies the restructuring at December 31, 2023.
+6. Case R: value each asset by year and risk bucket. Classify revenue in each year as contracted (PPA, vPPA strike leg, PRS fixed leg, toll, floor up to the floor level), hedged (fixed-volume and fixed-shape hedge volumes) or merchant (the rest). Tax equity cash to the investor is deducted before Mesa Corta's share.
+7. Every model output that a chapter will print goes into the figure ledger with its ID, scenario, value, unit and the model version that produced it. Ranges stated in this file are design targets; report any output that falls outside its range to the editor-in-chief before the ledger is released, together with the input that drives it.
