@@ -1,0 +1,33 @@
+\chapter{Test chapter}\label{ch:99}
+\section{Sizing debt to a minimum DSCR}\label{sec:99.1}
+Ørsted, €STR, 1.35\x, USD~412.6 million, 75\%. A \term{debt service cover ratio} (DSCR) is
+$\mathrm{DSCR}_t = \mathrm{CFADS}_t / \mathrm{DS}_t$.
+\begin{equation}\label{eq:99.1}
+D_0=\sum_{t=1}^{n}\frac{\mathrm{CFADS}_t/\mathrm{DSCR}^{*}}{\prod_{s=1}^{t}(1+r_s)}
+\end{equation}
+\begin{excel}
+=SUMPRODUCT(CFADS_row/Target_DSCR, DF_row)   ' in F12, copied across
+\end{excel}
+Inline formula \xl{=IF(F$5=1,E12+F11,0)}.
+\begin{example}{Sculpted repayment \illustrative}\label{ex:99.1}
+Text.
+\end{example}
+\begin{exhibit}[H]\caption{Sources and uses at financial close (USD m)}\label{exh:99.1}
+\begin{tabularx}{\linewidth}{L r}\toprule Item & USD m\\\midrule EPC & 412.6\\ Total & 412.6\\\bottomrule\end{tabularx}
+\end{exhibit}
+\begin{exhibit}[H]\caption{Contract map}\label{exh:99.2}\centering
+\begin{tikzpicture}[node distance=12mm and 18mm]
+\node[pfspv](spv){Project company}; \node[pfgov,above=of spv](gov){Host government};
+\node[pflend,right=of spv](l){Lenders}; \draw[pfarrow](gov)--node[pflabel]{Implementation agreement}(spv);
+\draw[pfflow](l)--node[pflabel]{Senior debt}(spv);
+\end{tikzpicture}\end{exhibit}
+\begin{clause}{Delay liquidated damages}\label{cl:99.1}
+20.1 If Completion has not occurred by the Guaranteed Completion Date, the Contractor shall pay...
+\end{clause}
+\begin{framework}{Who pays if\ldots? trace} Steps. \end{framework}
+\begin{casescene}{Case P}{Lagos-type city office, March 2016} Dialogue. \end{casescene}
+See \cref{ex:99.1}, \cref{exh:99.1}, \cref{cl:99.1}, \cref{sec:99.1}, \cref{eq:99.1}, \cref{sec:36.4}.
+\section{Exercises}\label{sec:99.2}
+\begin{exercise}\label{exr:99.1} Compute X. \end{exercise}
+\section{Solutions to exercises}
+\begin{solution}{exr:99.1} Y. \end{solution}

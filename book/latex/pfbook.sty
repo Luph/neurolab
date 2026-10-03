@@ -1,0 +1,157 @@
+% pfbook.sty -- house style for "Project Finance: The Complete Practice"
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{pfbook}[2026/10/03 Project finance book style]
+
+% ---------- Engine, fonts, language ----------
+\RequirePackage{iftex}
+\RequireLuaTeX
+\RequirePackage{fontspec}
+\RequirePackage{amsmath,amssymb,mathtools}
+\RequirePackage{unicode-math}
+\setmainfont{TeX Gyre Pagella}
+\setsansfont{TeX Gyre Heros}[Scale=MatchLowercase]
+\setmonofont{DejaVu Sans Mono}[Scale=0.84]
+\setmathfont{TeX Gyre Pagella Math}
+\RequirePackage[english]{babel}
+\RequirePackage{microtype}
+
+% ---------- Page ----------
+\RequirePackage[paperwidth=7in,paperheight=10in,inner=0.95in,outer=0.8in,top=0.9in,bottom=0.95in]{geometry}
+\RequirePackage{fancyhdr}
+\RequirePackage{titlesec}
+\RequirePackage{emptypage}
+\setlength{\parskip}{0pt}
+\setlength{\parindent}{1.2em}
+
+% ---------- Color, graphics, diagrams ----------
+\RequirePackage[dvipsnames,svgnames,table]{xcolor}
+\definecolor{pfblue}{HTML}{1F4E79}
+\definecolor{pfgray}{HTML}{595959}
+\definecolor{pflight}{HTML}{EEF3F8}
+\definecolor{pfinput}{HTML}{FFF2CC}
+\RequirePackage{graphicx}
+\RequirePackage{tikz}
+\usetikzlibrary{positioning,arrows.meta,shapes.geometric,shapes.misc,shapes.multipart,fit,calc,backgrounds,decorations.pathreplacing,matrix,chains,shadows}
+\RequirePackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\tikzset{
+  pfbox/.style={draw=pfblue,fill=pflight,rounded corners=2pt,align=center,font=\small\sffamily,inner sep=4pt,minimum height=7mm},
+  pfgov/.style={pfbox,fill=Goldenrod!20},
+  pflend/.style={pfbox,fill=SeaGreen!15},
+  pfspv/.style={pfbox,fill=pfblue!25,very thick},
+  pfarrow/.style={-{Stealth[length=2mm]},thick,pfgray},
+  pfflow/.style={-{Stealth[length=2mm]},very thick,pfblue},
+  pflabel/.style={font=\scriptsize\sffamily,fill=white,inner sep=1pt}
+}
+
+% ---------- Tables ----------
+\RequirePackage{booktabs,tabularx,longtable,multirow,makecell,array,colortbl}
+\RequirePackage[group-separator={,},group-minimum-digits=4]{siunitx}
+\newcolumntype{L}{>{\raggedright\arraybackslash}X}
+\newcolumntype{R}{>{\raggedleft\arraybackslash}X}
+\newcolumntype{C}{>{\centering\arraybackslash}X}
+\renewcommand{\arraystretch}{1.15}
+
+% ---------- Floats: exhibits ----------
+\RequirePackage{float}
+\RequirePackage{caption}
+\RequirePackage{newfloat}
+\DeclareFloatingEnvironment[fileext=loe,listname={List of Exhibits},name=Exhibit,placement=htbp,within=chapter]{exhibit}
+\captionsetup{font=small,labelfont={bf,sf},labelsep=period,justification=raggedright,singlelinecheck=false}
+\captionsetup[exhibit]{position=top}
+
+% ---------- Lists ----------
+\RequirePackage{enumitem}
+\setlist{itemsep=2pt,topsep=4pt}
+
+% ---------- Boxes ----------
+\RequirePackage[most]{tcolorbox}
+\tcbuselibrary{breakable,skins}
+
+% Counters reset per chapter
+\newcounter{pfexample}[chapter]\renewcommand{\thepfexample}{\thechapter.\arabic{pfexample}}
+\newcounter{pfclause}[chapter]\renewcommand{\thepfclause}{\thechapter.\arabic{pfclause}}
+\newcounter{pfexercise}[chapter]\renewcommand{\thepfexercise}{\thechapter.\arabic{pfexercise}}
+
+% Example k.n: \begin{example}{Title}  (title may include "Illustrative" via \illustrative)
+\newenvironment{example}[1]{%
+  \refstepcounter{pfexample}%
+  \par\medskip\noindent{\sffamily\bfseries\color{pfblue}Example~\thepfexample\quad #1}\par\nopagebreak\smallskip%
+}{\par\noindent\hfill{\color{pfblue}\rule{2em}{0.4pt}}\par\medskip}
+\newcommand{\illustrative}{\textsc{\textcolor{pfgray}{(Illustrative)}}}
+
+% Drafted clause excerpt: \begin{clause}{Title}
+\newtcolorbox{pfclausebox}[1]{breakable,enhanced,colback=white,colframe=pfgray,boxrule=0.5pt,
+  left=6pt,right=6pt,top=4pt,bottom=4pt,fonttitle=\sffamily\bfseries\small,coltitle=black,colbacktitle=pflight,
+  title={Clause~\thepfclause\quad #1},fontupper=\small}
+\newenvironment{clause}[1]{\refstepcounter{pfclause}\begin{pfclausebox}{#1}}{\end{pfclausebox}}
+
+% Framework box: \begin{framework}{Name}
+\newtcolorbox{framework}[1]{breakable,enhanced,colback=pflight,colframe=pfblue,boxrule=0.8pt,
+  fonttitle=\sffamily\bfseries,title={Framework: #1},left=6pt,right=6pt}
+
+% Running-case scene: \begin{casescene}{Case P}{Place, date}
+\newtcolorbox{casescene}[2]{breakable,enhanced,colback=white,colframe=pfblue!50,boxrule=0pt,leftrule=2.5pt,arc=0pt,
+  left=8pt,right=4pt,top=2pt,bottom=2pt,
+  title={\sffamily\small #1\ \textperiodcentered\ #2},coltitle=pfblue,colbacktitle=white,attach title to upper,
+  before upper={\par\smallskip}}
+
+% Excel formulas
+\RequirePackage{listings}
+\lstdefinestyle{excel}{basicstyle=\ttfamily\small,columns=fullflexible,keepspaces=true,breaklines=true,
+  breakatwhitespace=false,frame=l,framerule=1.5pt,rulecolor=\color{SeaGreen},xleftmargin=1em,
+  backgroundcolor=\color{SeaGreen!5},aboveskip=4pt,belowskip=6pt,upquote=true,literate={-}{-}1}
+\lstnewenvironment{excel}{\lstset{style=excel}}{}
+\newcommand{\xl}[1]{\lstinline[style=excel,basicstyle=\ttfamily\small]{#1}}
+\lstdefinestyle{python}{language=Python,basicstyle=\ttfamily\footnotesize,columns=fullflexible,keepspaces=true,
+  breaklines=true,frame=single,rulecolor=\color{pfgray},backgroundcolor=\color{gray!4}}
+
+% Exercises and solutions
+% \begin{exercise}  ... \end{exercise}  (inside a tier subsection)
+\newenvironment{exercise}{\refstepcounter{pfexercise}\par\medskip\noindent{\sffamily\bfseries Exercise~\thepfexercise}\quad}{\par}
+% \begin{solution}{<label of exercise>} ... \end{solution}
+\newenvironment{solution}[1]{\par\medskip\noindent{\sffamily\bfseries Solution to Exercise~\ref{#1}}\quad}{\par}
+
+% Units and money helpers
+\newcommand{\USDm}[1]{USD~#1~million}
+\newcommand{\bps}{\,bps}
+\newcommand{\x}{\texttimes}
+
+% Defined terms: bold at first definition only
+\newcommand{\term}[1]{\textbf{#1}}
+
+% Headings
+\titleformat{\chapter}[display]{\sffamily\bfseries\color{pfblue}}{\large Chapter \thechapter}{4pt}{\Huge}
+\titlespacing*{\chapter}{0pt}{-10pt}{24pt}
+\titleformat{\section}{\sffamily\bfseries\Large\color{pfblue}}{\thesection}{0.8em}{}
+\titleformat{\subsection}{\sffamily\bfseries\large}{\thesubsection}{0.8em}{}
+\titleformat{\subsubsection}{\sffamily\bfseries\normalsize}{}{0em}{}
+\setcounter{secnumdepth}{2}
+\setcounter{tocdepth}{1}
+
+% Parts
+\titleformat{\part}[display]{\centering\sffamily\bfseries\color{pfblue}}{\Large Part \thepart}{10pt}{\Huge}
+
+% Header/footer
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE]{\small\sffamily\thepage\quad\leftmark}
+\fancyhead[RO]{\small\sffamily\rightmark\quad\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\chaptermark}[1]{\markboth{Chapter \thechapter\quad #1}{}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\quad #1}}
+
+% Hyperlinks and cross-references (load last)
+\RequirePackage[hidelinks,bookmarksnumbered]{hyperref}
+\RequirePackage[capitalise,noabbrev,nameinlink]{cleveref}
+\crefname{pfexample}{Example}{Examples}
+\crefname{pfclause}{Clause}{Clauses}
+\crefname{pfexercise}{Exercise}{Exercises}
+\crefname{exhibit}{Exhibit}{Exhibits}
+\crefname{section}{Section}{Sections}
+\crefname{subsection}{Section}{Sections}
+\crefname{chapter}{Chapter}{Chapters}
+\crefname{equation}{Equation}{Equations}
+
+% Draft/standalone support: undefined refs render as ?? and are caught by the checker.
+\endinput

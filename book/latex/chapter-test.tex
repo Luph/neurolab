@@ -1,0 +1,7 @@
+% Standalone driver: lualatex "\def\CHAPFILE{../chapters/07-accounting-for-the-project-company}\def\CHAPNUM{7}\input{chapter-test}"
+\documentclass[11pt,twoside]{book}
+\usepackage{pfbook}
+\begin{document}
+\setcounter{chapter}{\numexpr\CHAPNUM-1\relax}
+\input{\CHAPFILE}
+\end{document}
