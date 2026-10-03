@@ -13,7 +13,7 @@ extra={  # additional figure IDs and notes per chapter
  '6':('P-F03, P-F22','P-F03 uses an approximate July 2016 LIBOR of 0.95% (fact-check). The CAS costs little because 80% of the debt is swapped and the model sets the swap floating leg equal to the loan base rate.'),
  '7':('P-F04','Lenders reporting basis (fixed-asset model); say once that the IFRS accounts present the PPA as an IFRIC 12 financial asset (P-F56, Chapter 66); the receivable increase includes USD 18.4 million overdue at June 30 and 68.9 at December 31, 2022; deferred tax is an asset. Do not explain covenants.'),
  '8':('P-F05','Debt is forced to each gearing level on the sculpted profile; at 75% and 80% the minimum DSCR is below 1.35x (the DSCR test binds at 74.1%).'),
- '18':('P-F02, P-F32, P-F39','LC on the PPA formula is about USD 36.6 million at first full-period rates; the Bible states USD 33.8 million for 2022: present 33.8 as the amount issued (estimated charges) and do not print P-F39 unless the editor reconciles.'),
+ '18':('P-F02, P-F32, P-F39','LC on the two-plus-one formula: P-F39 (USD 36.2 million in 2022; P-C44 replaces the earlier 33.8).'),
  '24':('P-F11, P-F34','MMRA contributions are inside CFADS.'),
  '25':('P-F35','Downside dispatch is 76.5% (Bible 1.10 definition); the 50% dispatch sensitivity is the case that triggers take-or-pay.'),
  '32':('P-F07','Equity lines only.'),
@@ -28,8 +28,8 @@ extra={  # additional figure IDs and notes per chapter
  '44':('P-F17','Exercise workbook Case_P_Model_AuditExercise.xlsx carries the ten errors; E9 shows only off the 76.5% dispatch (banking case).'),
  '55':('P-F07','Funds flow at July 17, 2018: Month 1 uses in P-F13.'),
  '56':('P-F36',''),
- '59':('P-F20, P-F25, P-F40','2022 dispatch was 84.0% / 81.5% (drought). 80% of the overdue amounts are energy-charge arrears matched by deferred SNHK/GCK payables (modeler calibration A1). The DSRA is drawn only at June 30, 2023 (USD 2.5 million). Leave the breach and waiver to Chapter 62.'),
- '61':('P-F18, P-F19, P-F30','Standby and contingent equity were not drawn (outside the Bible range of 5 to 15): contingency, low 2020-2021 LIBOR and KCR depreciation on the onshore EPC covered the overrun and extra interest. Undrawn senior commitment of USD 6.5 million cancelled; delay LDs and DSU went to operating cash. Editor to confirm the narrative.'),
+ '59':('P-F20, P-F25, P-F40','2022 dispatch was 84.0% / 81.5% (drought). The LC drawn in February 2023 is the 2023 reset value (P-F40, P-C44). 80% of the overdue amounts are energy-charge arrears matched by deferred SNHK/GCK payables (modeler calibration A1). The DSRA is drawn only at June 30, 2023 (USD 2.5 million). Leave the breach and waiver to Chapter 62.'),
+ '61':('P-F18, P-F19, P-F30, P-F52, P-F66','Overrun includes the calibrated delay-related EPC acceleration and owner cost escalation (P-C43). Funding order: contingency (base facilities), delay LDs, DSU, then standby (about USD 10.0 million) and contingent equity (about 3.3 million). The FX forwards gained for the project.'),
  '62':('P-F21, P-F31','Historic DSCR 1.14x at December 31, 2022 (lock-up only) and 0.97x at June 30, 2023 (default); release in 2024H2.'),
  '63':('P-F23, P-F24',''),
  '65':('P-F29',''),
@@ -41,12 +41,12 @@ extra={  # additional figure IDs and notes per chapter
  '17':('P-F25 (formula only)',''),
 }
 L=['# Case state by chapter: Case P (Bélanou)','',
- 'Model version 1.1 (Case Bible annex P absorbed) (`model/case_p.py`, `model/Case_P_Model.xlsx`); story as of October 3, 2026. For every chapter of Case Bible Part 6 that features Case P: the state of the case at the start and end of the installment (Bible storyline plus modeled state) and the ledger figure IDs (`model/figure-ledger-case-p.md`) the chapter may print. "Inputs" means Case Bible Part 1 values after the change log.','',
+ 'Model version 1.2 (Case Bible annex P absorbed; editor rulings applied) (`model/case_p.py`, `model/Case_P_Model.xlsx`); story as of October 3, 2026. For every chapter of Case Bible Part 6 that features Case P: the state of the case at the start and end of the installment (Bible storyline plus modeled state) and the ledger figure IDs (`model/figure-ledger-case-p.md`) the chapter may print. "Inputs" means Case Bible Part 1 values after the change log.','',
  '| Ch | Story date | State at start | State at end | Figure IDs the chapter shows | Notes for the writer |','|---|---|---|---|---|---|']
 ADD={'21':['P-F46'],'75':['P-F46','P-F59'],'18':['P-F47'],'48':['P-F47','P-F61'],'24':['P-F48'],'28':['P-F48'],'65':['P-F48'],
- '55':['P-F49'],'38':['P-F50'],'56':['P-F50'],'27':['P-F51'],'60':['P-F51'],'61':['P-F52'],'66':['P-F53','P-F56'],'67':['P-F54','P-F37'],
- '68':['P-F55'],'86':['P-F55','P-F39'],'7':['P-F56 (one-line note)'],'69':['P-F57'],'72':['P-F58'],'85':['P-F60'],'47':['P-F62'],'62':['P-F63'],
- '31':['P-F37'],'59':['P-F39'],'35':['P-F16 (breakevens)'],'43':['P-F42'],'40':['P-F43'],'41':['P-F44'],'42':['P-F45'],'37':['P-F11a'],'24b':[]}
+ '55':['P-F49'],'38':['P-F50', 'P-F65'],'56':['P-F50'],'27':['P-F51'],'60':['P-F51'],'61':['P-F52'],'66':['P-F53','P-F56','P-F66'],'67':['P-F54','P-F37'],
+ '68':['P-F55'],'86':['P-F55','P-F39'],'7':['P-F56 (one-line note)'],'69':['P-F57'],'72':['P-F58'],'85':['P-F60'],'47':['P-F62', 'P-F64'],'46':['P-F64'],'59':['P-F39', 'P-F66'],'62':['P-F63'],
+ '31':['P-F37'],'35':['P-F16 (breakevens)'],'43':['P-F42'],'40':['P-F43', 'P-F65'],'41':['P-F44'],'42':['P-F45'],'37':['P-F11a', 'P-F65'],'24b':[]}
 for c in rows:
     ch,case,dt,scene,chars,figs,st,en=c[:8]
     ids,note=extra.get(ch,(figs,''))

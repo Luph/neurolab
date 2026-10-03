@@ -375,7 +375,8 @@ for k in f['gas_burn_actual']:
     add('P-F58', f'{k}: dispatch / gas burn actual / at 76.5% / fuel charge actual / at 76.5%', f"{f['dispatch'][k]:.1f}% / {f['gas_burn_actual'][k] / 1e6:.2f} / {f['gas_burn_at_76_5'][k] / 1e6:.2f} million MMBtu / {f['fuel_charge_actual'][k]:.1f} / {f['fuel_charge_at_76_5'][k]:.1f}", '%, MMBtu, USD m', ACT + ' vs ' + RF, k)
 f = P['P-F59']
 for k in ('at_signing_2017', 'at_2023_redetermination'):
-    d = f[k]; add('P-F59', f'Halbeck RBL {k}: NPV10 (net, after remaining capex) / borrowing base; before remaining capex', f"{d['npv10_p50_net']:.1f} / {d['borrowing_base']:.1f}; {d['npv10_before_remaining_capex']:.1f} / {d['borrowing_base_before_remaining_capex']:.1f}", 'USD m', 'Illustrative (annex 4.13)', k[-4:])
+    d = f[k]; add('P-F59', f'Halbeck RBL {k}: NPV10 of operating cash flows to the reserve tail (65% share) / borrowing base (NPV / 1.30, max 600)', f"{d['npv10_p50_net']:.1f} / {d['borrowing_base']:.1f}", 'USD m', 'Illustrative (annex 4.13)', k[-4:])
+add('P-F59', 'Gas price to SNHK that would give a USD 420m base at signing', f"{f['gas_price_needed_for_420_at_signing']:.2f}", 'USD/MMBtu (2018)', 'Illustrative', '2017-10')
 f = P['P-F60']
 add('P-F60', 'Bid screen: cost / capacity + FOM revenue / fixed costs / CFADS proxy', f"{f['project_cost']:.1f} / {f['capacity_and_fom_revenue']:.1f} / {f['fixed_costs_2018_prices']:.1f} / {f['cfads_proxy']:.1f}", 'USD m', 'Annex 4.7 inputs', '2016-09')
 add('P-F60', 'Bid screen: debt capacity at 1.35x over 13 years / debt at 75% gearing / capacity payments share of SEKA revenue', f"{f['debt_capacity_dscr_1_35']:.1f} / {f['debt_at_75pct_gearing']:.1f} / {f['capacity_share_of_seka_revenue_2016'] * 100:.1f}%", 'USD m, %', 'Annex 4.7 inputs', '2016-09')
@@ -388,11 +389,24 @@ f = P['P-F63']
 add('P-F63', 'June 30, 2023: 12-month CFADS / debt service / historic DSCR', f"{f['cfads_12m']:.1f} / {f['debt_service_12m']:.1f} / {f['historic_dscr']:.2f}x", 'USD m, x', ACT, '2023-06-30')
 add('P-F63', 'Equity cure needed for 1.10x / 1.20x', f"{f['cure_to_1_10']:.1f} / {f['cure_to_1_20']:.1f}", 'USD m', ACT, '2023-06-30')
 
+# P-F64 to P-F66 (v1.2)
+for st in P['P-F64']['steps']:
+    add('P-F64', 'Bid-to-close IRR bridge: ' + st['step'], f"{st['cumulative_irr'] * 100:.1f}% ({st['change_pp']:+.1f} pp)", '% (cumulative)', FCB + ' re-sized at each step', '2016-09 to 2018-07')
+f = P['P-F65']
+add('P-F65', 'FX forwards (Castellan, traded 2018-07-17): share hedged / KCR notional / USD at forward / USD at FC spot / average forward', f"{f['hedge_share'] * 100:.0f}% / {f['total_kcr_m']:,.0f} / {f['total_usd_at_forward']:.1f} / {f['total_usd_at_fc_spot']:.1f} / {f['average_forward']:.1f}", '%, KCR m, USD m, KCR/USD', 'Contract (FC)', '2018-07-17')
+for k, v in list(f['schedule'].items())[::6]: add('P-F65', f'Forward {k}: KCR notional / forward rate / USD', f"{v['kcr_m']:,.1f} / {v['forward']:.1f} / {v['usd_at_forward']:.2f}", 'KCR m, KCR/USD, USD m', 'Contract (FC)', k)
+f = P['P-F66']
+for k, v in f['settlements_by_half'].items(): add('P-F66', f'FX forward settlement {k} (gain to project)', m2(v), 'USD m', ACT, k)
+add('P-F66', 'FX forward settlements, total', m2(f['settlements_total']), 'USD m', ACT, '2021-11-30')
+for k, v in f['mtm_to_project'].items(): add('P-F66', f'FX forward MTM to project at {k}', m2(v), 'USD m', ACT, k)
+add('P-F66', 'Unhedged KCR depreciation saving on the onshore EPC (for comparison)', m2(f['unhedged_fx_gain_on_onshore_epc']), 'USD m', ACT, '2021-11-30')
+add('P-F40', 'SEKA LC drawing, February 14, 2023 (2023 reset value; P-C44)', m(P['P-F40']['lc_drawing']), 'USD m', ACT, '2023-02-14')
+
 L = ['# Figure ledger: Case P (Bélanou Combined Cycle Power Project)', '',
      'Source: `model/outputs_case_p.json`, produced by `model/case_p.py` (Case P model v1.0; story as of October 3, 2026); formatted by '
      '`model/ledger_p.py` (no computation). Amounts in USD million, nominal, unless stated. Scenario numbers are the workbook scenario switch '
      '(1 FC base, 2 FC banking, 3 FC downside, 4-13 sensitivities, 14 COD re-forecast, 15 actual history). P-F01 to P-F36 are the Case Bible '
-     'register; P-F37 to P-F45 are editor assignments and P-F46 to P-F63 come from case-bible-annex-p.md (P-F11 is split into P-F11a DSRA and P-F11b MMRA). Model version 1.1 (annex absorbed). Writers cite the ID; print values in the style-sheet format.', '',
+     'register; P-F37 to P-F45 are editor assignments and P-F46 to P-F63 come from case-bible-annex-p.md (P-F11 is split into P-F11a DSRA and P-F11b MMRA). Model version 1.2 (annex absorbed; editor rulings of October 3, 2026: overrun calibration P-C43, FX hedge D-114, P-F64 to P-F66). Writers cite the ID; print values in the style-sheet format.', '',
      'Definitions used throughout: DSCR = CFADS / (interest incl. WHT gross-up + swap net + PRI premium + PCG fee + scheduled principal); '
      'average DSCR = sum of CFADS / sum of debt service over the loan life; LLCR = (PV of CFADS to final maturity at the period all-in senior '
      'cost + DSRA balance) / senior debt, at the start of the first repayment period; gearing = senior debt / total funding requirement; '
@@ -401,7 +415,6 @@ L = ['# Figure ledger: Case P (Bélanou Combined Cycle Power Project)', '',
      '| ID | Figure | Value | Units | Model run (scenario) | As-of story date |', '|---|---|---|---|---|---|']
 for row in rows:
     L.append('| ' + ' | '.join(str(c) for c in row) + ' |')
-L += ['', 'Values outside Case Bible design ranges (reported to the editor-in-chief): standby facility and contingent equity drawing 0.0 '
-      '(range 5 to 15); FC base equity IRR below the 16.0% bid target. See `model/case_p_report.md` Section 6.']
+L += ['', 'FC base equity IRR is below the 16.0% bid-model target; P-F64 bridges the gap. See `model/case_p_report.md` Sections 6 and 8a.']
 open(os.path.join(H, 'figure-ledger-case-p.md'), 'w').write('\n'.join(L) + '\n')
 print(len(rows), 'rows')

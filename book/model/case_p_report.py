@@ -72,11 +72,12 @@ def write(o, path):
     a('## 4. Actual history (scenario 15)')
     a('')
     p18 = P['P-F18']
-    a(f"Construction: total funding {f2(p18['uses']['total'])} against {f2(p18['fc_base_comparison']['total_funding_fc'])} at FC. "
+    a(f"Construction: hard-cost overrun {f2(p18['uses']['hard_cost_overrun_total'])} ({f2(p18['uses']['of_which_bible_items'])} Case Bible items plus {f2(p18['uses']['of_which_calibration'])} delay-related EPC acceleration and owner cost escalation, calibration P-C43); FX forward settlements (gain) {f2(P['P-F66']['settlements_total'])}. "
+      f"Total funding {f2(p18['uses']['total'])} against {f2(p18['fc_base_comparison']['total_funding_fc'])} at FC. "
       f"Hard-cost overrun 39.27 against contingency 38.40; KCR depreciation reduced the onshore EPC cost by {f2(p18['uses']['epc_fx_gain_on_onshore'])}; "
       f"loan interest, swap and PRI in construction {f2(p18['fc_base_comparison']['idc_actual'])} against {f2(p18['fc_base_comparison']['idc_fc'])} at FC. "
       f"Undrawn senior commitment cancelled {f2(p18['sources']['undrawn_commitment_cancelled'])}; standby drawn {f2(p18['sources']['standby_drawn'])}; "
-      f"contingent equity {f2(p18['sources']['contingent_equity_drawn'])}; delay LDs and DSU ({f2(10.1393 + 7.0804)}) passed to operating cash.")
+      f"contingent equity {f2(p18['sources']['contingent_equity_drawn'])}; delay LDs and DSU ({f2(10.1393 + 7.0804)}) applied to construction before the standby facility.")
     a('')
     p21 = P['P-F21']
     a(f"Crisis: historic DSCR {p21['historic_dscr_2022_12_31']:.2f}x at December 31, 2022 (lock-up), {p21['historic_dscr_2023_06_30']:.2f}x at "
@@ -110,6 +111,11 @@ def write(o, path):
         ['A1', 'Cash effect of SEKA arrears (actual history)', 'Not specified (read literally, the full overdue increase hits cash)',
          '80% of overdue amounts are energy-charge arrears matched by deferred payments to SNHK and GCK (state gas chain), formalized by the June 2023 netting agreement; 20% hits cash',
          'Read literally the path gives a June 2023 historic DSCR near 0.0x and an event of default at December 2022, against the Bible design range of 0.80x to 1.00x for June 2023. With A1: 1.14x at December 2022 (lock-up), 0.97x at June 2023 (default), DSRA pays the June 2023 shortfall, as the storyline requires. Modeler calibration, pre-publication.'],
+        ['A12', 'Construction overrun (actual, P-C43, modeler calibration)', 'USD 39.27m hard-cost overrun; standby and contingent equity not drawn',
+         f"Plus USD {P['P-F18']['uses']['of_which_calibration']:.2f}m delay-related EPC acceleration and owner cost escalation (Months 34-40)", 'Editor ruling: Chapters 31 and 61 teach the standby facility; drawn about USD 10.0m with contingent equity about 3.3m after contingency, delay LDs, DSU and FX gains.'],
+        ['A13', 'Construction FX hedge (D-114)', 'None', 'Forwards with Castellan buying KCR for 75% of onshore EPC payments at covered-parity rates (13.5% vs FC LIBOR); actual run only (FC base budgets onshore at the FC spot)', 'Standards require currency hedging; P-F65, P-F66. The forwards gained (forward points about 10% a year against about 5% actual depreciation).'],
+        ['A14', 'SEKA LC amount (P-C44)', 'USD 33.8m in 2022; drawing USD 33.8m', 'USD 36.2m (2022 reset on the annex 1.1.5 formula); drawing February 2023 USD 36.6m (2023 reset)', 'Editor ruling: model value wins; the overdue path stays as given (already net of the drawing).'],
+        ['A15', 'Halbeck RBL logic (P-F59, Illustrative)', 'Field sold 150 MMscfd; NPV after remaining capex', 'Sales capped at contracted demand (about 106 MMscfd); 40% reserve tail; completion-basis NPV excluding capex funded by the facility', 'Editor ruling: logic check; inputs unchanged.'],
         ['A10', 'Actual 2022 dispatch (annex 4.11, P-C32)', '76.5%', '84.0% (2022H1), 81.5% (2022H2); 76.5% from 2023', 'Annex; changes actual-history 2022 energy, fuel and VOM revenue, gas volumes, LTSA EOH.'],
         ['A11', 'LTSA EOH scaling', 'Hours scale with availability only', 'Hours scale with availability and with dispatch relative to 76.5% (starts fixed); 8,439 EOH a year per unit at base', 'Annex 1.5 and P-F48; no change in the FC base; FC banking and the dispatch sensitivity change slightly.'],
         ['A2', 'FC downside dispatch', 'Plant input lists 58.0% downside dispatch; the 1.10 definition omits dispatch',
@@ -126,11 +132,7 @@ def write(o, path):
         ['A9', 'Onshore EPC price', 'Fixed in KCR at 519.4', 'FC base budgets it at USD 82.67; the actual run converts the KCR price at actual FX', 'Gives a KCR-depreciation saving in the actual run.'],
     ], ['#', 'Item', 'Old', 'New', 'Reason']))
     a('')
-    a('Outputs outside Case Bible design ranges (reported to the editor-in-chief): standby plus contingent equity drawing 0.0 (range 5 to 15); '
-      f"FC base equity IRR {pc(p16['equity_irr'])} against the 16.0% bid target (NPV at 16% negative); COD re-sculpted DSCR "
-      f"{P['P-F19']['cod_resculpted_dscr']:.2f}x before the LD prepayment ({P['P-F19']['projected_min_dscr_after_prepayment']:.2f}x minimum after it); "
-      f"LC size {f1(P['P-F39']['actual_resets']['2022']['two_plus_one'])} on the annex 1.1.5 formula for 2022 against USD 33.8 million stated for 2022; "
-      f"Halbeck RBL borrowing base (Illustrative, P-F59) {f1(P['P-F59']['at_signing_2017']['borrowing_base'])} at signing and {f1(P['P-F59']['at_2023_redetermination']['borrowing_base'])} in 2023 against about 420 and 360 expected in annex 4.13.")
+    a('Editor rulings applied in v1.2: standby drawn in range (P-C43); equity IRR gap explained by P-F64; LC model value adopted (P-C44); Halbeck RBL logic corrected (P-F59; the 2023 base lands near 360, signing near 281 rather than 420 because cash flows start two years later on a lower 2017 deck; a signing base of 420 would need gas at about USD 4.62/MMBtu, so the annex expectation should be revised); IFRIC 12 loss against lenders\' basis gain kept; COD re-sculpt 1.31x rising to 1.35x after the LD prepayment kept (P-F19).')
     a('')
     a('## 7. Modeling conventions (stated once; adopt centrally)')
     a('')
@@ -151,6 +153,10 @@ def write(o, path):
     ]:
         a('* ' + t_)
     a('')
+    a('## 8a. Version 1.2 (editor rulings, October 3, 2026)')
+    a('')
+    a('P-C43 overrun calibration; D-114 construction FX hedge (P-F65, P-F66); P-F64 bid-to-close IRR bridge; P-C44 LC; RBL logic (P-F59); all hard-coded constants moved to Inputs and Time (scan_hardcodes_p.py: 0 literals); deferred-principal repayment now dfo / remaining repayment dates (same values); bond face carried as a row (no column-specific formulas). Ledger values that changed: every actual-history figure (P-F04, P-F18 to P-F26, P-F29, P-F31, P-F37 to P-F40, P-F46, P-F51 to P-F54, P-F56, P-F58, P-F63) through the larger overrun, the standby drawing and the FX hedge; FC figures unchanged except P-F16 months covered (annex LC formula).')
+    a('')
     a('## 8. Annex P absorption (case-bible-annex-p.md and case-p-input-requests.md)')
     a('')
     a('Model version 1.1. Priority A items: 2 ECA test (absorbed; P-F09 adds the 2% test, values unchanged); 6 actual 2022 dispatch (absorbed, key `case_p.ACT_DISPATCH`, workbook row Operations disp; changes P-F04, P-F18 to P-F25, P-F40, P-F46, P-F58 and every actual-history ledger value slightly); 13 termination definitions (absorbed: the model already used them; P-F25 changes only through item 6); 19 and 20 development fee and premium split (absorbed in P-F49; project-company figures unchanged); 39 IFRIC 12 (absorbed as P-F56; lenders\' basis unchanged); 42 retained 36% fair value at the sale price per point and hedge-reserve recycling (absorbed; P-F26 recomputed). Priority B items absorbed as new figures P-F46 to P-F63 (rules stated in each ledger row); item 16 PRI premium accrues with each period rather than semiannually in advance (different timing rule, same amounts by period); item 37 equity cure computed on the 12-month historic test; item 43 Pillar Two on the simplified basis (top-up nil in 2024 and 2025 because GloBE income is below the substance carve-out). Priority C items confirmed: 1 (policy rates; 2016 and 2017 not used by the model), 3, 4, 5, 7 (GSA and GTA charges continue after 2043 as pass-through), 10, 11, 17, 18, 22 (no receivable booked for the grid claim), 23 to 26.')
@@ -159,6 +165,6 @@ def write(o, path):
     a('')
     a('Computed in `case_p.py` only (not in the workbook): P-F01 (inputs), P-F03, P-F05, P-F06, P-F17 (sizing runs; the seeded errors are also in '
       '`Case_P_Model_AuditExercise.xlsx`), P-F19 variants, P-F23 equity PV gain, P-F24, P-F25, P-F26, P-F27, P-F29, P-F31, P-F32, P-F33, '
-      'P-F36, P-F42 (Monte Carlo), P-F43 equity-first variant, breakevens in P-F16, and P-F46 to P-F63 (annex figures, derived from the verified runs or from annex inputs). All other figures are reproduced by the workbook '
+      'P-F36, P-F42 (Monte Carlo), P-F43 equity-first variant, breakevens in P-F16, P-F64 bridge, P-F66 MTM, and P-F46 to P-F63 (annex figures, derived from the verified runs or from annex inputs). All other figures are reproduced by the workbook '
       '(scenario switch) and verified in `case_p_verification.md`.')
     open(path, 'w').write('\n'.join(L) + '\n')

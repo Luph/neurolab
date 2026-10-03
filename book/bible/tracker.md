@@ -87,3 +87,4 @@
 - Central resolution DONE: ownership-resolutions.md (121 rulings), glossary-canon.md (1,772 terms), anchor-registry.md (5,240 labels), style-sheet addendum, D-015..D-034. Matter file names set to .tex.
 - Case T model v1.0 DONE (1,642/1,642 PASS); v1.1 absorbing annex inputs.
 - Case T model v1.1 DONE (1,742/1,742 PASS; T-F18..T-F21; annex inputs absorbed).
+- Case P model v1.2 DONE (15 scenarios PASS; FX hedge P-F65/66; IRR bridge P-F64; no hardcodes). v1.3 small fixes requested (exact bridge; name overrun items).

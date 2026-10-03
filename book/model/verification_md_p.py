@@ -3,13 +3,13 @@ from openpyxl import load_workbook
 import numpy as np
 H='/home/user/neurolab/book/model'
 o=json.load(open(f'{H}/outputs_case_p.json'))
-log=open(f'{H}/recalc/verify_all.log').read().splitlines()
-au=json.load(open(f'{H}/recalc/verify_audit.json'))
+log=open(f'{H}/recalc_p/verify_all.log').read().splitlines()
+au=json.load(open(f'{H}/recalc_p/verify_audit.json'))
 L=[]
 a=L.append
 a('# Case P workbook verification')
 a('')
-a('Method. `model/verify_p.py` builds `Case_P_Model.xlsx` with the scenario selector set to each of the 15 scenarios, recalculates every copy with LibreOffice 24.2 headless (`soffice --headless --calc --convert-to xlsx`), reads the recalculated values with openpyxl (`data_only=True`) and compares them with the Python mirror (`case_p.py`) row by row: every mapped calculation row over all its columns (monthly or semiannual) and every mapped scalar. Tolerance: 0.01 in displayed units (USD m for amounts, x for ratios, percentage points for IRRs). The workbook has no circular references and no macros; iterative calculation is off.')
+a('Model version 1.2. Method. `model/verify_p.py` builds `Case_P_Model.xlsx` with the scenario selector set to each of the 15 scenarios, recalculates every copy with LibreOffice 24.2 headless using a private user profile (`soffice -env:UserInstallation=file:///tmp/lo_profile_case_p --headless --calc --convert-to xlsx`) into `model/recalc_p/out/`, reads the recalculated values with openpyxl (`data_only=True`) and compares them with the Python mirror (`case_p.py`) row by row: every mapped calculation row over all its columns (monthly or semiannual) and every mapped scalar. Tolerance: 0.01 in displayed units (USD m for amounts, x for ratios, percentage points for IRRs). The workbook has no circular references and no macros; iterative calculation is off.')
 a('')
 a('## Results by scenario')
 a('')
@@ -27,7 +27,7 @@ a('')
 a('| Scenario | Output | Python | Workbook | Difference |')
 a('|---|---|---|---|---|')
 for i in (1,3,15):
-    wb=load_workbook(f'{H}/recalc/out/scn{i:02d}.xlsx',data_only=True)
+    wb=load_workbook(f'{H}/recalc_p/out/scn{i:02d}.xlsx',data_only=True)
     ws=wb['Outputs']
     lab={ws.cell(r,4).value: ws.cell(r,6).value for r in range(1,40) if ws.cell(r,4).value}
     s=o['summary'][str(i)]
@@ -46,6 +46,6 @@ a('Compared rows include: the Time sheet operating months and days; every Constr
 a('')
 a('## Known deviations from the style sheet (not verification failures)')
 a('')
-a('* Some structural constants are typed in formulas rather than held on the Inputs sheet: period numbers that identify event dates (2022H1 = period 8, 2023H2 = 11, 2025H1 = 14), month numbers of the base EPC profile (33) and of the actual overrun window (34 to 40), the 7.5% taking-over payment, the 2.75% monthly owner\'s cost extension, operating-month band limits (60, 96, 228, 300), 730 hours per month, the 92% availability incentive pivot and its 3-point band, the 75:25 standby/contingent-equity split, and the 0.5 semiannual 30/360 factor. Each is labeled in the row text; Chapter 39 can use them as the "find the hard-code" exercise or the coordinator can ask for them to be moved to Inputs.')
+a('* FAST check (v1.2): `model/scan_hardcodes_p.py` lists every numeric literal inside calculation formulas other than 0, 1, 12 and the unit conversions 100, 1,000 and 1,000,000. Result for Case_P_Model.xlsx: 0. Event dates, period lengths, operating-year bands, day bases, shares and tolerances are named inputs on the Inputs sheet; event flags (Flag_LDPrepayment, Flag_WaiverDeferral, Flag_Refinancing and others) sit on the Time sheet; every calculation row uses one formula copied across (the first column reads the blank column I as the prior period). The audit exercise copy keeps only its deliberate seeded errors (E4 uses 0.5 and 1/12, E9 types 0.765).')
 a('* The Inputs sheet holds time-series inputs on the model timelines (semiannual and monthly blocks), not on a separate date header.')
 open(f'{H}/case_p_verification.md','w').write('\n'.join(L)+'\n')

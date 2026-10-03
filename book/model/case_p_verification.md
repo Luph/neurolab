@@ -1,27 +1,27 @@
 # Case P workbook verification
 
-Method. `model/verify_p.py` builds `Case_P_Model.xlsx` with the scenario selector set to each of the 15 scenarios, recalculates every copy with LibreOffice 24.2 headless (`soffice --headless --calc --convert-to xlsx`), reads the recalculated values with openpyxl (`data_only=True`) and compares them with the Python mirror (`case_p.py`) row by row: every mapped calculation row over all its columns (monthly or semiannual) and every mapped scalar. Tolerance: 0.01 in displayed units (USD m for amounts, x for ratios, percentage points for IRRs). The workbook has no circular references and no macros; iterative calculation is off.
+Model version 1.2. Method. `model/verify_p.py` builds `Case_P_Model.xlsx` with the scenario selector set to each of the 15 scenarios, recalculates every copy with LibreOffice 24.2 headless using a private user profile (`soffice -env:UserInstallation=file:///tmp/lo_profile_case_p --headless --calc --convert-to xlsx`) into `model/recalc_p/out/`, reads the recalculated values with openpyxl (`data_only=True`) and compares them with the Python mirror (`case_p.py`) row by row: every mapped calculation row over all its columns (monthly or semiannual) and every mapped scalar. Tolerance: 0.01 in displayed units (USD m for amounts, x for ratios, percentage points for IRRs). The workbook has no circular references and no macros; iterative calculation is off.
 
 ## Results by scenario
 
 | Scenario | Name | Rows and scalars compared | Failures | Largest absolute difference | Workbook checks (0 = pass) | Result |
 |---|---|---|---|---|---|---|
-| 1 | FC base | 279 | 0 | 5.03e-08 | 0 | PASS |
-| 2 | FC banking | 279 | 0 | 4.84e-08 | 0 | PASS |
-| 3 | FC downside | 279 | 0 | 5.22e-08 | 0 | PASS |
-| 4 | Sens: availability -3 points | 279 | 0 | 5.03e-08 | 0 | PASS |
-| 5 | Sens: heat rate +2% | 279 | 0 | 5.22e-08 | 0 | PASS |
-| 6 | Sens: fixed opex +10% | 279 | 0 | 5.03e-08 | 0 | PASS |
-| 7 | Sens: capex +10% funded pro rata | 279 | 0 | 5.03e-08 | 0 | PASS |
-| 8 | Sens: COD delay 6 months, no LDs | 279 | 0 | 5.03e-08 | 0 | PASS |
-| 9 | Sens: base rate +200 bps (unhedged) | 279 | 0 | 5.03e-08 | 0 | PASS |
-| 10 | Sens: KCR devaluation 40%, 90-day lag | 279 | 0 | 5.03e-08 | 0 | PASS |
-| 11 | Sens: SEKA pays 120 days late for 12 months | 279 | 0 | 5.03e-08 | 0 | PASS |
-| 12 | Sens: dispatch 50% | 279 | 0 | 6.52e-09 | 0 | PASS |
-| 13 | Sens: gas price +30% | 279 | 0 | 5.03e-08 | 0 | PASS |
-| 14 | COD re-forecast (2021 lenders case) | 278 | 0 | 4.84e-08 | 0 | PASS |
-| 15 | Actual history | 278 | 0 | 4.84e-08 | 0 | PASS |
-| audit copy | Case_P_Model_AuditExercise.xlsx (FC base, errors E1-E10 seeded) | 279 | 0 | 5.03e-08 | 1 | PASS (the one failing check is the intended audit clue: debt above the correct gearing cap) |
+| 1 | FC base | 281 | 0 | 5.03e-08 | 0 | PASS |
+| 2 | FC banking | 281 | 0 | 4.84e-08 | 0 | PASS |
+| 3 | FC downside | 281 | 0 | 5.22e-08 | 0 | PASS |
+| 4 | Sens: availability -3 points | 281 | 0 | 5.03e-08 | 0 | PASS |
+| 5 | Sens: heat rate +2% | 281 | 0 | 5.22e-08 | 0 | PASS |
+| 6 | Sens: fixed opex +10% | 281 | 0 | 5.03e-08 | 0 | PASS |
+| 7 | Sens: capex +10% funded pro rata | 281 | 0 | 5.03e-08 | 0 | PASS |
+| 8 | Sens: COD delay 6 months, no LDs | 281 | 0 | 5.03e-08 | 0 | PASS |
+| 9 | Sens: base rate +200 bps (unhedged) | 281 | 0 | 5.03e-08 | 0 | PASS |
+| 10 | Sens: KCR devaluation 40%, 90-day lag | 281 | 0 | 5.03e-08 | 0 | PASS |
+| 11 | Sens: SEKA pays 120 days late for 12 months | 281 | 0 | 5.03e-08 | 0 | PASS |
+| 12 | Sens: dispatch 50% | 281 | 0 | 6.52e-09 | 0 | PASS |
+| 13 | Sens: gas price +30% | 281 | 0 | 5.03e-08 | 0 | PASS |
+| 14 | COD re-forecast (2021 lenders case) | 280 | 0 | 4.84e-08 | 0 | PASS |
+| 15 | Actual history | 280 | 0 | 4.84e-08 | 0 | PASS |
+| audit copy | Case_P_Model_AuditExercise.xlsx (FC base, errors E1-E10 seeded) | 281 | 0 | 5.03e-08 | 1 | PASS (the one failing check is the intended audit clue: debt above the correct gearing cap) |
 
 ## Key outputs, Python against workbook (selected scenarios)
 
@@ -45,15 +45,15 @@ Method. `model/verify_p.py` builds `Case_P_Model.xlsx` with the scenario selecto
 | 3 | Equity IRR | 11.3605% | 11.3605% | 3.34e-09 pp |
 | 3 | Project IRR, post-tax | 10.0651% | 10.0651% | 2.86e-08 pp |
 | 3 | Equity NPV at 16.0% (at FC) | -73.6294 | -73.6294 | 2.05e-10 |
-| 15 | Total funding requirement | 846.5288 | 846.5288 | 6.21e-11 |
+| 15 | Total funding requirement | 885.6322 | 885.6322 | 4.57e-10 |
 | 15 | Senior debt (four tranches) | 633.2560 | 633.2560 | 2.26e-10 |
-| 15 | Minimum DSCR | 0.9370 | 0.9370 | 2.87e-11 |
-| 15 | Average DSCR (debt-service weighted) | 1.5267 | 1.5267 | 2.25e-11 |
-| 15 | LLCR at first debt service period (incl. DSRA) | 1.5027 | 1.5027 | 4.16e-10 |
-| 15 | PLCR at first debt service period | 1.7267 | 1.7267 | 4.03e-10 |
-| 15 | Equity IRR | 13.4468% | 13.4468% | 2.78e-09 pp |
-| 15 | Project IRR, post-tax | 10.5464% | 10.5464% | 8.17e-09 pp |
-| 15 | Equity NPV at 16.0% (at FC) | -38.0109 | -38.0109 | 3.68e-10 |
+| 15 | Minimum DSCR | 0.9160 | 0.9160 | 4.16e-11 |
+| 15 | Average DSCR (debt-service weighted) | 1.4995 | 1.4995 | 4.09e-10 |
+| 15 | LLCR at first debt service period (incl. DSRA) | 1.4660 | 1.4660 | 4.69e-10 |
+| 15 | PLCR at first debt service period | 1.6955 | 1.6955 | 3.05e-10 |
+| 15 | Equity IRR | 12.4956% | 12.4956% | 1.43e-08 pp |
+| 15 | Project IRR, post-tax | 10.1333% | 10.1333% | 4.88e-08 pp |
+| 15 | Equity NPV at 16.0% (at FC) | -54.5199 | -54.5199 | 7.90e-11 |
 
 ## Coverage
 
@@ -61,5 +61,5 @@ Compared rows include: the Time sheet operating months and days; every Construct
 
 ## Known deviations from the style sheet (not verification failures)
 
-* Some structural constants are typed in formulas rather than held on the Inputs sheet: period numbers that identify event dates (2022H1 = period 8, 2023H2 = 11, 2025H1 = 14), month numbers of the base EPC profile (33) and of the actual overrun window (34 to 40), the 7.5% taking-over payment, the 2.75% monthly owner's cost extension, operating-month band limits (60, 96, 228, 300), 730 hours per month, the 92% availability incentive pivot and its 3-point band, the 75:25 standby/contingent-equity split, and the 0.5 semiannual 30/360 factor. Each is labeled in the row text; Chapter 39 can use them as the "find the hard-code" exercise or the coordinator can ask for them to be moved to Inputs.
+* FAST check (v1.2): `model/scan_hardcodes_p.py` lists every numeric literal inside calculation formulas other than 0, 1, 12 and the unit conversions 100, 1,000 and 1,000,000. Result for Case_P_Model.xlsx: 0. Event dates, period lengths, operating-year bands, day bases, shares and tolerances are named inputs on the Inputs sheet; event flags (Flag_LDPrepayment, Flag_WaiverDeferral, Flag_Refinancing and others) sit on the Time sheet; every calculation row uses one formula copied across (the first column reads the blank column I as the prior period). The audit exercise copy keeps only its deliberate seeded errors (E4 uses 0.5 and 1/12, E9 types 0.765).
 * The Inputs sheet holds time-series inputs on the model timelines (semiannual and monthly blocks), not on a separate date header.
