@@ -939,7 +939,7 @@ def build(scenario="base", out=None):
     yr = "Time!$%s$4:$%s$4" % (FC, LC)
     for key, row, y0, y1, pk in (("tl", "dscr_tl", 2022, 2025, "tl_dscr_%s_2022_2025"), ("u", "dscr_u", 2026, 2043, "uspp_dscr_%s_2026_2043"),
                                  ("rf", "dscr_rf", 2024, 2029, "rf_dscr_%s"), ("hc", "hc_cov", 2023, 2031, "holdco_cov_%s_2023_2031")):
-        ra.scalar("min_" + key, "Minimum %s, %d-%d" % (row, y0, y1), "x", '=IFERROR(_xlfn.MINIFS(%s,%s,">="&%d,%s,"<="&%d),"")' % (B.RR(row), yr, y0, yr, y1), fmt="x", pykey="sc." + pk % "min")
+        ra.scalar("min_" + key, "Minimum %s, %d-%d" % (row, y0, y1), "x", '=IF(SUMPRODUCT(ISNUMBER(%s)*(%s>=%d)*(%s<=%d))=0,"",_xlfn.MINIFS(%s,%s,">="&%d,%s,"<="&%d))' % (B.RR(row), yr, y0, yr, y1, B.RR(row), yr, y0, yr, y1), fmt="x", pykey="sc." + pk % "min")
         ra.scalar("avg_" + key, "Average %s, %d-%d" % (row, y0, y1), "x", '=IFERROR(AVERAGEIFS(%s,%s,">="&%d,%s,"<="&%d),"")' % (B.RR(row), yr, y0, yr, y1), fmt="x", pykey="sc." + pk % "avg")
 
     # ---------------------------------------------------------------- Returns: valuations and fund returns

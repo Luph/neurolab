@@ -642,7 +642,7 @@ def _run(p, prof, N_m, N_s, bond_prof, D_fixed):
         tot = lpi_acc.sum() * 0.6
         for lab, sh in (('2024H1', 3 / 15), ('2024H2', 6 / 15), ('2025H1', 6 / 15)):
             lpi_rec[tix(lab)] = tot * sh
-    gas_arr = GAS_ARREARS_SHARE * over * (fuel_rev + top_pay) / np.where(rev > 0, rev, 1)
+    gas_arr = GAS_ARREARS_SHARE * over
     S.update(overdue=over, lpi_accrued=lpi_acc, lpi_received=lpi_rec, gas_arrears=gas_arr)
     ebitda = rev - opex + lpi_rec
     S['ebitda'] = ebitda
@@ -694,7 +694,7 @@ def _run(p, prof, N_m, N_s, bond_prof, D_fixed):
     # schedule helpers
     def rem(t): return prof[t:].sum()
     shl = f['shl_bal'][fe]; sc_bal = f['sc_contrib'].sum()
-    pool = 0.0; loss = 0.0; dsra = f['dsra'].sum(); mmra = 0.0; hb = 0.0; lu = f['ld_leftover']
+    pool = 0.0; loss = 0.0; dsra = 0.0; mmra = 0.0; hb = 0.0; lu = f['ld_leftover']
     trap = 0.0; re_ = 0.0; comp = 0.0; prev_lock = 0; released = 0.0; dt_prev = 0.0
     taxcost = capcost
     # depreciation per month (full)
@@ -811,6 +811,8 @@ def _run(p, prof, N_m, N_s, bond_prof, D_fixed):
         if p['ld_prep'] and t == tix('2022H1'):
             ld_cash = comp; comp = 0.0
         rr['comp_acct'][t] = comp; rr['ld_cash'][t] = ld_cash
+        if t == t_cod:
+            dsra = f['dsra'].sum()
         cash_open = lu + trap
         rr['cash_open'][t] = cash_open
         avail = cfads + cash_open
@@ -949,7 +951,7 @@ def _run(p, prof, N_m, N_s, bond_prof, D_fixed):
     returns(R)
     return R
 
-GAS_ARREARS_SHARE = 0.0
+GAS_ARREARS_SHARE = 0.75   # modeler calibration: energy-charge share of SEKA arrears matched by deferred SNHK/GCK payables
 
 # ----------------------------------------------------------------------------------------
 # Ratios
