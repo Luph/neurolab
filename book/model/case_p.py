@@ -98,8 +98,9 @@ SHL_RATE = 9.5
 EQ_SC, EQ_SHL = 0.20, 0.80
 K_GAS = 1000 * 1.108 / 1055056       # MMBtu (HHV) per MWh per kJ/kWh(LHV)
 
+COM_MARGIN_ADJ = 0.0     # P-F64 bridge hook only (2016 indicative commercial margin 4.50 vs 4.10); 0 in every scenario
 def com_margin(year):
-    return 4.10 if year <= 2025 else (4.60 if year <= 2029 else 5.10)
+    return (4.10 if year <= 2025 else (4.60 if year <= 2029 else 5.10)) + COM_MARGIN_ADJ
 
 SB_MARGIN_BLEND = None   # standby: 60% commercial (margin+0.25, grossed up), 40% ABDB (3.65+0.25)
 
@@ -754,7 +755,7 @@ def _run(p, prof, N_m, N_s, bond_prof, D_fixed):
     dep_m_plant = 0.92 * taxcost / 240; dep_m_bld = 0.05 * taxcost / 300; dep_m_int = 0.03 * taxcost / 60
     bond_F = 0.0; deferred23 = np.zeros(nT); t23 = tix('2023H2')
     def mrg(t):
-        v = np.array([1.35, 3.65, 3.40, com_margin(S_YEAR[t]), 0.0, 0.0])
+        v = np.array([MARGIN[0], MARGIN[1], MARGIN[2], com_margin(S_YEAR[t]), 0.0, 0.0])
         if p['waiver'] and tix('2023H2') <= t <= tix('2024H2'):
             v[:5] += 0.50
         return v
@@ -1108,7 +1109,7 @@ def sculpt_rates(R, w, D, prof):
     r = np.zeros(NS)
     for t in range(NS):
         base = mac_['base_s'][t]; dcf = S_DAYS[t] / 360
-        mg = np.array([1.35, 3.65, 3.40, com_margin(S_YEAR[t])])
+        mg = np.array([MARGIN[0], MARGIN[1], MARGIN[2], com_margin(S_YEAR[t])])
         rk = (base + mg) / 100 * (0.5 if 'E4' in ERRS else dcf) * GU
         rk[3] += PRI * S_DAYS[t] / 365
         rsb = sb_rate(mac_, t)
@@ -2357,43 +2358,79 @@ def figures_annex(F, RS, R1, R14, R15):
                       heat_rate_at_oy25=6286 * (1 + 0.0012 * y25) * 1.008, heat_rate_threshold=6789,
                       handback_test_passes_on_average_degradation=True)
 
+BID_RATE_BRACKET = (1.0, 4.0)   # P-F64: search range (%) for the reconstructed bid-model swapped base rate
+
 def irr_bridge(Rb):
-    """Bid-to-close equity IRR bridge (P-F64): starting from the FC base (13.3%), reverse the changes between the
-    September 2016 bid model and the July 2018 close one at a time (cumulative, each step re-sized with the sizing
-    loop); the residual to the 16.0% bid-model IRR is reported as 'other bid-model differences'."""
+    """Bid-to-close equity IRR bridge (P-F64), sequential attribution from Kilnworth's September 2016 bid model
+    (16.0%) to the FC base (P-F16). The bid model is reconstructed in this engine: every bid-stage difference the
+    Case Bible and annex 4.7 document is switched on, and the one undocumented bid input (the all-in swapped base
+    rate) is solved so that the reconstruction returns exactly 16.0%. The differences are then removed one at a
+    time in the order listed; each step is the change in IRR (debt re-sized at each step), so the steps sum exactly
+    to FC base minus 16.0%. No residual and no interaction line: in a sequential attribution the order effects sit
+    inside the steps, and the order is stated."""
     g = globals()
-    saved = dict(PRI=g['PRI'], GU=g['GU'].copy(), ECA_PREM=g['ECA_PREM'])
-    steps = []; p = scen(1)
-    def irr(R, from_fc=False):
-        if not from_fc: return float(R['equity_irr'])
-        fl = list(R['eq_flows']); dts = list(R['eq_dates'])
-        fl[1] += fl[0]; return float(xirr(fl[1:], dts[1:]))
-    base = float(Rb['equity_irr']); steps.append(('FC base at financial close (July 2018)', base, 0.0))
+    keys = ['FC_FWD', 'SWAP_FIX', 'MARGIN', 'COM_MARGIN_ADJ', 'UPF', 'ECA_PREM', 'PRI', 'GU']
+    saved = {k: (g[k].copy() if isinstance(g[k], np.ndarray) else (list(g[k]) if isinstance(g[k], list) else g[k])) for k in keys}
+    target = 0.16
+    order = [
+        ('rate', 'Base rate: reconstructed bid-model swapped rate (flat) replaced by the FC forward curve and the 2.947% swap'),
+        ('terms', 'Debt terms: 2016 indicative margins, upfront fees and ECA premium (annex 4.7) replaced by the FC terms'),
+        ('pri', 'PRI cover on the commercial tranche and the 10% WHT gross-up, added in diligence'),
+        ('mini', 'Soft mini-perm cash sweep from 2027 (FC term sheet)'),
+        ('capex', 'Capex: bid-stage USD 655.0m before financing grows to the FC budget of USD 710.99m (owner\'s cost, resettlement, contingency)'),
+        ('vat', 'VAT facility interest (omitted from the bid model, annex Kunal Mehrotra)'),
+        ('tax', 'Tax: minimum turnover tax and thin-cap disallowance'),
+        ('fx', 'FX: KCR depreciation on the local tariff shares and costs (bid model held the KCR flat)'),
+        ('dating', 'IRR dating: measured from the February 2018 LNTP payment rather than from financial close'),
+    ]
+    def evaluate(active, rate):
+        for k in keys: g[k] = saved[k].copy() if isinstance(saved[k], np.ndarray) else (list(saved[k]) if isinstance(saved[k], list) else saved[k])
+        p = scen(1)
+        if 'rate' in active: g['FC_FWD'] = [rate] * NS; g['SWAP_FIX'] = rate
+        if 'terms' in active:
+            g['MARGIN'] = np.array([1.50, 3.90, 3.75, 4.50]); g['COM_MARGIN_ADJ'] = 0.40
+            g['UPF'] = np.array([1.25, 1.25, 1.50, 2.50]); g['ECA_PREM'] = 0.115
+        if 'pri' in active: g['PRI'] = 0.0; g['GU'] = np.array([1.0, 1.0, 1.0, 1.0])
+        if 'mini' in active: p['miniperm'] = 0
+        if 'capex' in active: p['capex'] = (655.0 - 32.63) / (710.99 - 32.63)
+        if 'vat' in active: p['no_vat_int'] = 1
+        if 'tax' in active: p['no_mtt'] = 1; p['no_thin'] = 1
+        if 'fx' in active: p['fx_d'] = 1.0
+        R = size_fc(dict(p))
+        if 'dating' in active:
+            fl = list(R['eq_flows']); dts = list(R['eq_dates']); fl[1] += fl[0]
+            return float(xirr(fl[1:], dts[1:])), R
+        return float(R['equity_irr']), R
+    allk = [k for k, _ in order]
     try:
-        defs = [
-            ('Capex: bid-stage estimate USD 655.0m before financing (vs 710.99)', dict(capex=(655.0 - 32.63) / (710.99 - 32.63))),
-            ('Financing terms: no soft mini-perm sweep from 2027', dict(miniperm=0)),
-            ('Fees and premiums: no PRI premium, WHT gross-up or financed ECA premium', 'fees'),
-            ('Tax: no minimum turnover tax, no thin-cap disallowance', dict(no_mtt=1, no_thin=1)),
-            ('FX and indexation: KCR flat at the FC rate (no depreciation of local tariff shares and costs)', dict(fx_d=1.0)),
-            ('Schedule: IRR measured from financial close, not from the February 2018 LNTP payment', 'dating'),
-        ]
-        last = base; from_fc = False
-        for lab, d in defs:
-            if d == 'fees':
-                g['PRI'] = 0.0; g['GU'] = np.array([1.0, 1.0, 1.0, 1.0]); g['ECA_PREM'] = 0.0
-            elif d == 'dating':
-                from_fc = True
-            else:
-                p = dict(p); p.update(d)
-            R = size_fc(dict(p))
-            v = irr(R, from_fc)
-            steps.append((lab, v, v - last)); last = v
+        lo, hi = BID_RATE_BRACKET
+        flo = evaluate(allk, lo)[0] - target; fhi = evaluate(allk, hi)[0] - target
+        for _ in range(60):
+            mid = 0.5 * (lo + hi); fm = evaluate(allk, mid)[0] - target
+            if abs(fm) < 1e-9: break
+            if (fm > 0) == (flo > 0): lo, flo = mid, fm
+            else: hi, fhi = mid, fm
+        rate = mid
+        v0, R0 = evaluate(allk, rate)
+        steps = [dict(step='Kilnworth bid model, September 2016 (reconstructed; tariff USD 14.36/kW-month)', cumulative_irr=v0, change_pp=0.0,
+                      senior_debt=float(R0['f']['D']), gearing=float(R0['f']['D'] / R0['f']['T']))]
+        last = v0
+        for i, (k, lab) in enumerate(order):
+            v, R = evaluate(allk[i + 1:], rate)
+            steps.append(dict(step=lab, cumulative_irr=v, change_pp=(v - last) * 100,
+                              senior_debt=float(R['f']['D']), gearing=float(R['f']['D'] / R['f']['T']))); last = v
     finally:
-        g.update(saved)
-    steps.append(('Other bid-model differences (residual to the 16.0% bid-model IRR)', 0.16, 0.16 - last))
-    return dict(steps=[dict(step=a, cumulative_irr=b, change_pp=c * 100) for a, b, c in steps],
-                note='Cumulative, order-dependent attribution; each step re-sizes debt (DSCR 1.35x, 75% gearing cap, downside 1.20x). The 16.0% is Kilnworth\'s 2016 bid-model IRR (annex 4.7), not a reference-model output.')
+        for k in keys: g[k] = saved[k]
+    base = float(Rb['equity_irr'])
+    assert abs(last - base) < 1e-6, (last, base)
+    return dict(steps=steps, bid_irr=v0, fc_irr=base, total_change_pp=(base - v0) * 100,
+                sum_of_steps_pp=sum(s['change_pp'] for s in steps), reconstructed_bid_swapped_rate_pct=rate,
+                order=[k for k, _ in order],
+                note=('Sequential attribution from the reconstructed bid model to the FC base, in the order shown; each step re-sizes '
+                      'debt (DSCR 1.35x, 75%% gearing cap, downside 1.20x). Steps sum exactly to the gap (no residual). The one '
+                      'undocumented bid input, the swapped base rate, is solved at %.2f%% flat so that the reconstruction returns 16.0%%; '
+                      'it is a modeler reconstruction (2016 USD swap rates of about 1.5%% to 2.0%% plus a bid-stage rate cushion). '
+                      'Reordering the steps moves individual steps by up to a few tenths of a point but not the total.') % rate)
 
 def _cfads_build(R, ts):
     S = R['S']; sm = lambda k: float(sum(S[k][t] for t in ts))
