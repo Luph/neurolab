@@ -10,7 +10,8 @@ sys.path.insert(0, HERE)
 import build_excel_p as bx
 import case_p as cp
 
-RC = os.path.join(HERE, 'recalc')
+RC = os.path.join(HERE, 'recalc_p')
+LOPROF = '-env:UserInstallation=file:///tmp/lo_profile_case_p'
 os.makedirs(RC, exist_ok=True)
 TOL = 0.01
 
@@ -26,7 +27,7 @@ def recalc(scn):
     bx.build(p, scn)
     out = os.path.join(RC, 'out')
     os.makedirs(out, exist_ok=True)
-    subprocess.run(['soffice', '--headless', '--calc', '--convert-to', 'xlsx', '--outdir', out, p],
+    subprocess.run(['soffice', LOPROF, '--headless', '--calc', '--convert-to', 'xlsx', '--outdir', out, p],
                    check=True, capture_output=True, timeout=600)
     return load_workbook(os.path.join(out, f'scn{scn:02d}.xlsx'), data_only=True)
 
@@ -63,7 +64,7 @@ def verify_audit():
     p = os.path.join(RC, 'audit.xlsx')
     c = bx.build_audit(p)
     out = os.path.join(RC, 'out'); os.makedirs(out, exist_ok=True)
-    subprocess.run(['soffice', '--headless', '--calc', '--convert-to', 'xlsx', '--outdir', out, p], check=True, capture_output=True, timeout=600)
+    subprocess.run(['soffice', LOPROF, '--headless', '--calc', '--convert-to', 'xlsx', '--outdir', out, p], check=True, capture_output=True, timeout=600)
     wb = load_workbook(os.path.join(out, 'audit.xlsx'), data_only=True)
     old = dict(cp.CONTRACT); cp.CONTRACT.update(c)
     bx.ERR.clear(); bx.ERR.update(cp.ERR_LIST)

@@ -2,7 +2,7 @@
  "meta": {
   "case_id": "T",
   "name": "Merrick Link toll road PPP (Case T)",
-  "file_version": "1.0",
+  "file_version": "1.1",
   "as_of": "2026-10-03",
   "source_document": "book/bible/case-bible.md, Part 2",
   "status_note": "Assumptions only; outputs computed by the reference model and recorded in the figure ledger.",
@@ -587,5 +587,88 @@
   },
   "nilo_eligible_cost_cap_applied": "NILO = remainder after senior and 22% equity, capped at 33% of eligible costs (total uses); any excess is funded by additional equity",
   "first_dscr_test": "the first test at 2019-12-31 covers the six months to that date (the preceding period was the opening stub); later tests use the historic 12 months"
+ },
+ "annex_tr_inputs": {
+  "source": "bible/case-bible-annex-tr.md Part T and bible/case-tr-input-requests.md (T-IR-01 to T-IR-10), absorbed in model v1.1",
+  "performance_payments_ard_m_actual": {
+   "2019H1": 0.14,
+   "2019H2": 0.24,
+   "2020H1": 0.03,
+   "2020H2": 0.0,
+   "2021H1": 0.0,
+   "2021H2": 0.02,
+   "2022H1": 0.05,
+   "2022H2": 0.06,
+   "2023H1": 0.04,
+   "2023H2": 0.05,
+   "2024H1": 0.08,
+   "2024H2": 0.09,
+   "2025H1": 0.03,
+   "2025H2": 0.04
+  },
+  "performance_payment_use": "operating cost in the half incurred, actual-traffic periods of history runs only; tax-deductible; nil in bid, banking, downside and projection periods",
+  "performance_payment_cap_pct_prev_year_net_toll_revenue": 2.5,
+  "relief_period": [
+   "2020-03-23",
+   "2021-09-30"
+  ],
+  "shortfall_shares_pct_vs_pellow": {
+   "housing": {
+    "2019": 41,
+    "2020": 23,
+    "2021": 29,
+    "2022": 36
+   },
+   "value_of_time": {
+    "2019": 29,
+    "2020": 16,
+    "2021": 20,
+    "2022": 25
+   },
+   "heavy_vehicles": {
+    "2019": 20,
+    "2020": 11,
+    "2021": 14,
+    "2022": 18
+   },
+   "sr14_works": {
+    "2019": 10,
+    "2020": 5,
+    "2021": 7,
+    "2022": 9
+   },
+   "covid": {
+    "2019": 0,
+    "2020": 45,
+    "2021": 30,
+    "2022": 12
+   }
+  },
+  "pellow_vot_variants_mature_2019": {
+   "low": 51.2,
+   "central": 54.6,
+   "high": 58.4
+  },
+  "contributions_ard_m": {
+   "reference": 410.0,
+   "northgate": 361.0,
+   "winner": 287.4
+  },
+  "northgate_traffic": {
+   "mature_level_2019": 53.9,
+   "ramp_up_factors": [
+    0.76,
+    0.88,
+    0.95,
+    0.99,
+    1.0
+   ],
+   "growth_pct": [
+    3.0,
+    2.1,
+    1.1
+   ]
+  },
+  "vfm_gross_psc_definition": "raw capex + O&M and lifecycle + all risk adjustments and competitive neutrality, before netting retained toll revenue"
  }
 }

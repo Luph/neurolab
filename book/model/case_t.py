@@ -204,6 +204,8 @@ SCENARIOS = {
     11: ("Sensitivity: lifecycle +20%", 1, None, 0, 1, 1.0, 0, 0, 1.0, 1.2, 0.0, 0.0, 0, 0),
     12: ("Sensitivity: interest +100 bp on refinancing", 1, None, 0, 1, 1.0, 0, 0, 1.0, 1.0, 1.0, 0.0, 0, 0),
     13: ("Sensitivity: heavy-vehicle share -2 points", 1, None, 0, 1, 1.0, 0, 0, 1.0, 1.0, 0.0, -2.0, 0, 0),
+    14: ("Bid variant: Pellow low value of time", 6, None, 0, 1, 1.0, 0, 0, 1.0, 1.0, 0.0, 0.0, 0, 0),
+    15: ("Bid variant: Pellow central value of time", 7, None, 0, 1, 1.0, 0, 0, 1.0, 1.0, 0.0, 0.0, 0, 0),
 }
 HISTORY_SCEN = (4, 5, 6)
 
@@ -222,6 +224,13 @@ TRAFFIC_CASES = {
     5: (_r23["base_2023"], 2023, [_r23["growth_pct"][k] for k in ("2024-2030", "2031-2040", "2041_onward")],
         [1.0] * 5, 0.0),
 }
+ANX = INP["annex_tr_inputs"]
+_vot = ANX["pellow_vot_variants_mature_2019"]
+for _c, _k in ((6, "low"), (7, "central")):
+    TRAFFIC_CASES[_c] = (_vot[_k],) + TRAFFIC_CASES[1][1:]
+PERF = {(int(k[:4]), int(k[5])): v for k, v in ANX["performance_payments_ard_m_actual"].items()}
+PERF_CAP = ANX["performance_payment_cap_pct_prev_year_net_toll_revenue"] / 100.0
+PERF_ON = True   # switch used only for the counterfactual in T-F20
 ACT_TRAFFIC = {}
 for k, v in traf["actual_semiannual"].items():
     ACT_TRAFFIC[(int(k[:4]), int(k[5]))] = v
@@ -362,7 +371,7 @@ def time_and_ops(scn):
               "notessweep", "hist", "f1", "f2", "hedge", "abbr", "cpif", "toll", "esc", "level",
               "ramp", "uplift", "traffic_fc", "traffic_act", "traffic", "wmult", "gross", "leak",
               "netrev", "ld", "om", "bofix", "bovar", "ins", "spv", "opex", "revshare", "restrcost",
-              "ebitda", "oy", "lc2015", "lc", "mmra_c", "hbflag", "hb_c", "rec", "pay", "nwc", "dwc",
+              "perf", "ebitda", "oy", "lc2015", "lc", "mmra_c", "hbflag", "hb_c", "rec", "pay", "nwc", "dwc",
               "upgrade", "nilorep", "nrate", "ncash", "mpm", "firstrep", "testdate", "lcspend_hb",
               "eodtest", "retention_rel", "end_xl", "start_xl", "contrib_flag", "firstpost",
               "notesfirst", "nilofirst", "postprev", "conc_t"):
@@ -475,7 +484,9 @@ def time_and_ops(scn):
             thr = REV_SHARE_THRESH * R["cpif"][t] / cpif2023 * od / 365.0
             R["revshare"][t] = REV_SHARE * max(0.0, R["netrev"][t] - thr)
         R["restrcost"][t] = RESTR_COST_TOTAL / 4.0 if (R["hist"][t] and D_(2022, 6, 30) <= e <= RESTR_DATE) else 0.0
-        R["ebitda"][t] = R["netrev"][t] + R["ld"][t] - R["opex"][t] - R["revshare"][t] - R["restrcost"][t]
+        R["perf"][t] = PERF.get((y, int(R["half"][t])), 0.0) * R["hist"][t] * (1 if PERF_ON else 0)
+        R["ebitda"][t] = (R["netrev"][t] + R["ld"][t] - R["opex"][t] - R["revshare"][t] - R["restrcost"][t]
+                          - R["perf"][t])
         # lifecycle (operating year counted from the scheduled opening; items in H2 periods)
         oy = y - 2018 if (R["half"][t] == 2 and R["ops"][t] and e <= conc_final) else 0
         R["oy"][t] = oy
@@ -1209,13 +1220,19 @@ def main():
     runs[5] = X5
     runs[4] = run(4, locked=L, locked_r=LR)
     runs[6] = run(6, locked=L)
-    for s in range(7, 14):
+    for s in range(7, 16):
         runs[s] = run(s, locked=L)
+    global PERF_ON
+    PERF_ON = False
+    runs["4_noperf"] = run(4, locked=L, locked_r=LR)
+    PERF_ON = True
     C_bank = solve_contribution(TARGET_IRR, "banking", Xd["cfads"])
     C_base = solve_contribution(TARGET_IRR, "base", Xd["cfads"])
     Xc = run(2, C_bank, down_cfads=Xd["cfads"])
     out["runs"] = {}
     for s, X in runs.items():
+        if s == "4_noperf":
+            continue
         out["runs"][str(s)] = export_run(X)
     out["contribution_solved"] = {"banking_case_at_11.4pct": C_bank, "bid_base_at_11.4pct": C_base,
                                   "banking_run_at_solved": export_run(Xc, series=False)}
@@ -1230,7 +1247,7 @@ def main():
     return runs, out
 
 
-SERIES = ("traffic", "toll", "wmult", "gross", "netrev", "ld", "opex", "revshare", "restrcost", "ebitda", "lc",
+SERIES = ("traffic", "toll", "wmult", "gross", "netrev", "ld", "opex", "revshare", "restrcost", "perf", "ebitda", "lc",
           "mmra_c", "hb_c", "dwc", "tax", "cfads", "uses", "capex", "eqdraw", "bridgedraw", "sendraw", "nilodraw",
           "bank_int", "commit_fee", "bond_int", "escrow_int", "bridge_int", "fees", "bank_open", "bank_close",
           "bond_open", "bond_close", "notes_open", "notes_close", "nilo_open", "nilo_close", "nilo_accr",
@@ -1495,6 +1512,7 @@ def derived(runs, out):
                                 "min_comb_dscr": X["min_comb_dscr"], "lockup_periods": X["lockup_periods"],
                                 "dsra_draws": X["dsra_draws_total"]}
     d["sensitivities"] = sens
+    annex_figures(d, runs, out)
     # balances on the banking (= financing) schedule at selected year ends
     bal = {}
     for y in (2019, 2020, 2021, 2025, 2030, 2035, 2040, 2045, 2048, 2050, 2052):
@@ -1523,6 +1541,91 @@ def derived(runs, out):
                    "traffic_2019_vs_base_pct": d["traffic_annual"]["actual"][2019] / d["traffic_annual"]["pellow"][2019] - 1,
                    "covid_2020H1_traffic": ACT_TRAFFIC[(2020, 1)]}
     return d
+
+
+def annex_figures(d, runs, out):
+    """Annex TR figures (model v1.1): T-F18 to T-F21 and the T-F01, T-F02, T-F04 extensions."""
+    X1, X2, X3, X4, X5 = (runs[i] for i in (1, 2, 3, 4, 5))
+    ta = d["traffic_annual"]
+    ta["ridgeway_2023"] = {y: v for y, v in annual(X5, "traffic", 2024, 2026, mode="avg").items()}
+    ta["actual"][2026] = ACT_TRAFFIC[(2026, 1)]   # 2026 = H1 actual only
+    # Northgate traffic basis (book input; comparison line only)
+    ng = ANX["northgate_traffic"]
+    lvl, ngy = ng["mature_level_2019"], {}
+    for y in range(2019, 2027):
+        if y > 2019:
+            lvl *= 1 + ng["growth_pct"][0] / 100.0
+        ngy[y] = lvl * ng["ramp_up_factors"][min(y, 2023) - 2019]
+    ta["northgate"] = ngy
+    # T-F18 ratios
+    rat = {}
+    for y in range(2019, 2027):
+        a = ta["actual"][y]
+        rat[y] = {"vs_pellow": a / ta["pellow"][y], "vs_ridgeway": a / ta["ridgeway"][y],
+                  "vs_downside": a / ta["downside"][y], "actual": a}
+        if y >= 2024:
+            rat[y]["vs_ridgeway_2023"] = a / ta["ridgeway_2023"][y]
+    d["traffic_ratios"] = rat
+    # T-F19 shortfall by cause
+    sh = ANX["shortfall_shares_pct_vs_pellow"]
+    ra = d["revenue_annual"]
+    dec = {}
+    for y in range(2019, 2023):
+        gap = ta["pellow"][y] - ta["actual"][y]
+        rgap = ra["bid_base"][y] - ra["actual"][y]
+        dec[y] = {"pellow": ta["pellow"][y], "actual": ta["actual"][y], "shortfall": gap,
+                  "shortfall_pct_of_pellow": gap / ta["pellow"][y], "revenue_gap": rgap,
+                  "by_cause_k": {c: gap * v[str(y)] / 100.0 for c, v in sh.items()},
+                  "by_cause_revenue": {c: rgap * v[str(y)] / 100.0 for c, v in sh.items()},
+                  "shares_pct": {c: v[str(y)] for c, v in sh.items()}}
+        assert abs(sum(v[str(y)] for v in sh.values()) - 100) < 1e-9
+    d["shortfall_by_cause"] = dec
+    # T-F20 performance payments, cap check and effect on CFADS and DSCR
+    X0 = runs["4_noperf"]
+    pp = {}
+    rev_year = {y: float(sum(X4["netrev"][t] for t in range(T) if ENDS[t].year == y)) for y in range(2018, 2027)}
+    for t in range(16, T):
+        if ENDS[t].year > 2025:
+            break
+        lab = f"{ENDS[t].year}H{1 if ENDS[t].month <= 6 else 2}"
+        y = ENDS[t].year
+        capv = PERF_CAP * rev_year[y - 1]
+        pp[lab] = {"payment": float(X4["perf"][t]), "cap_half_year_basis_annual": capv,
+                   "within_cap": (y == 2019) or bool(X4["perf"][t] <= capv + 1e-12),
+                   "cfads": float(X4["cfads"][t]), "cfads_without": float(X0["cfads"][t]),
+                   "dscr_hist": float(X4["dscr_hist"][t]), "dscr_hist_without": float(X0["dscr_hist"][t]),
+                   "dscr_period": float(X4["dscr"][t]), "dscr_period_without": float(X0["dscr"][t])}
+    ann = {}
+    for y in range(2019, 2026):
+        tot = float(sum(X4["perf"][t] for t in range(T) if ENDS[t].year == y))
+        ann[y] = {"total": tot, "cap": PERF_CAP * rev_year[y - 1] if y > 2019 else None,
+                  "within_cap": y == 2019 or tot <= PERF_CAP * rev_year[y - 1]}
+    d["performance_payments"] = {"by_half": pp, "annual": ann,
+                                 "max_abs_dscr_effect": max(abs(v["dscr_hist"] - v["dscr_hist_without"]) for v in pp.values()),
+                                 "note_2019": "no 2018 toll revenue (road opened 2019), so the cap formula gives nil for 2019; "
+                                              "the Concession Deed's first-year cap is not specified: flagged, not applied"}
+    # effect on T-F09/T-F10 (restructuring run includes 2019-2023 payments)
+    d["performance_payments"]["effect_claims_net"] = None
+    # T-F21 VoT variants
+    d["vot_variants"] = {k: {"mature_2019": TRAFFIC_CASES[c][0], "equity_irr": runs[s]["equity_irr"],
+                             "npv_11.4": runs[s]["equity_npv_target"], "min_dscr": runs[s]["min_dscr_rep"]}
+                         for k, c, s in (("low", 6, 14), ("central", 7, 15), ("high", 1, 1))}
+    # T-F02 extension: contribution gaps
+    cc = ANX["contributions_ard_m"]
+    d["contribution_gaps"] = {"reference_minus_winner": cc["reference"] - cc["winner"],
+                              "northgate_minus_winner": cc["northgate"] - cc["winner"],
+                              "reference_minus_northgate": cc["reference"] - cc["northgate"],
+                              "winner_below_reference_pct": (cc["reference"] - cc["winner"]) / cc["reference"],
+                              "winner_below_northgate_pct": (cc["northgate"] - cc["winner"]) / cc["northgate"],
+                              "northgate_below_reference_pct": (cc["reference"] - cc["northgate"]) / cc["reference"]}
+    # T-F01 extension
+    p = out["psc"]
+    gross = p["psc_total"] - p["psc_items"]["toll_revenue_retained"]
+    p["gross_psc_cost"] = gross
+    p["vfm_reference_pct_gross"] = p["vfm_reference"] / gross
+    p["vfm_bid_pct_gross"] = p["vfm_bid"] / gross
+    p["vfm_reference_pct_net"] = p["vfm_reference_pct"]
+    p["vfm_bid_pct_net"] = p["vfm_bid_pct"]
 
 
 def toll_table():
