@@ -1191,7 +1191,7 @@ def sculpt(R, D, t_first, t_last, w):
         newp[t] = prin / D; bal -= prin
     return newp, dscr, pv, r, ds
 
-def size_fc(p, gearing=0.75, dscr_target=1.35, down_target=1.20, verbose=False, max_it=200, only_gearing=False):
+def size_fc(p, gearing=0.75, dscr_target=1.35, down_target=1.20, verbose=False, max_it=200, only_gearing=False, llcr_target=1.40):
     """FC sizing: iterate (profile, notional, debt) -> model -> CFADS -> re-sculpt to convergence.
     Debt = min(gearing cap x T, PV(CFADS)/DSCR target, downside-constrained amount)."""
     _, t1 = first_ds_period(p); tl = tix('2034H1')
@@ -1216,7 +1216,9 @@ def size_fc(p, gearing=0.75, dscr_target=1.35, down_target=1.20, verbose=False, 
         newNs = np.zeros(NS)
         for t in range(t1, NS):
             newNs[t] = 0.8 * D * newp[t:].sum()
-        cands = {'gearing': gearing * T, 'DSCR': cap_, 'downside': cap_down if down_target else 1e9}
+        llcr_now = float(R['S']['llcr_dsra'][t1])
+        cands = {'gearing': gearing * T, 'DSCR': cap_, 'downside': cap_down if down_target else 1e9,
+                 'LLCR': D * llcr_now / llcr_target if llcr_target else 1e9}
         bind = 'gearing' if only_gearing else min(cands, key=cands.get)
         newD_fixed = None if bind == 'gearing' else cands[bind]
         diff = max(np.abs((newp - prof) * D).max(), np.abs(newNm - N_m).max(), np.abs(newNs - N_s).max(),
@@ -1229,7 +1231,7 @@ def size_fc(p, gearing=0.75, dscr_target=1.35, down_target=1.20, verbose=False, 
     R['sizing_iterations'] = it; R['sizing_hist'] = hist
     newp, dscr, pv, r, ds = sculpt(R, R['f']['D'], t1, tl, SHARE_W())
     R['sculpt_dscr'] = dscr; R['sculpt_pv'] = pv; R['capacity'] = pv / dscr_target
-    R['cands'] = cands; R['downside_min'] = md
+    R['cands'] = cands; R['downside_min'] = md; R['llcr_at_t1'] = float(R['S']['llcr_dsra'][t1])
     R['sculpt_check'] = np.abs((newp - prof) * R['f']['D']).max()
     R['binding'] = bind
     return R
@@ -2013,18 +2015,22 @@ def figures(F, RS, R1, R14, R15):
     P['P-F45'] = dict(balance_sheet_at_cod_period_end=statements(Rb, [Rb['t_cod']])['balance_sheet'],
                       balance_sheet_2018_12_31=statements(Rb, [0])['balance_sheet'],
                       fy2022=statements(Rb, [t22a, t22b]))
-    # ---------------- P-F36 sizing grid
+    # ---------------- P-F36 sizing grid (v1.5: every row applies all four sizing tests)
     grid = {}
     for dt in (1.30, 1.35, 1.40):
         for g in (0.70, 0.75, 0.80):
-            Rg = size_fc(scen(1), gearing=g, dscr_target=dt, down_target=0)
+            Rg = size_fc(scen(1), gearing=g, dscr_target=dt, down_target=1.20, llcr_target=1.40)
             with contract_swap(dict(D=Rg['f']['D'], E=Rg['f']['T'] - Rg['f']['D'], Dk=list(Rg['f']['Dk']), prof_FC=list(Rg['prof']),
                                     N_m=list(Rg['N_m']), N_s=list(Rg['N_s']))):
-                dd = dscr_stats(run(scen(3)))
+                dd = dscr_stats(run(scen(3))); db = dscr_stats(run(scen(1)))
             grid[f'DSCR {dt:.2f}x / gearing {int(g*100)}%'] = dict(senior_debt=float(Rg['f']['D']), binding=Rg['binding'],
-                                                                  total_funding=float(Rg['f']['T']), downside_min_dscr=dd['min_dscr'],
+                                                                  candidates={k: float(v) for k, v in Rg['cands'].items() if v < 1e8},
+                                                                  total_funding=float(Rg['f']['T']), base_min_dscr=db['min_dscr'], base_avg_dscr=db['avg_dscr'],
+                                                                  downside_min_dscr=dd['min_dscr'], llcr_at_first_repayment=db['llcr_first'],
                                                                   equity_irr=float(Rg['equity_irr']))
-    P['P-F36'] = dict(note='Sized on DSCR target and gearing cap only (downside shown as a test)', grid=grid)
+    P['P-F36'] = dict(note=('Each row is a full sizing: debt = the least of the gearing cap x total funding, PV(CFADS)/DSCR target, the amount at which the '
+                            'downside (76.5% to the downside case) minimum DSCR is 1.20x, and the amount at which the LLCR at the first repayment (incl. DSRA) is 1.40x; '
+                            'the binding test is named and every candidate amount is shown. The DSCR target is the sculpting target of the base case.'), grid=grid)
     F['figures'] = P
 
 
@@ -2067,6 +2073,33 @@ def figures_annex(F, RS, R1, R14, R15):
         rep = sum(P_[t] for t in range(NS) if S_END[t] <= lim)
         return dict(repaid_within_24_months_share=float(rep / tot), pass_2pct_by_24_months=bool(rep / tot >= 0.02))
     P['P-F09']['eca_tests'].update(eca24(Rb, cod_fc))
+    # v1.5 reconciliation of the sculpted profile, the soft mini-perm sweep and the average DSCR (Chapter 36 review)
+    nm6 = ['ECA', 'A', 'B', 'COM', 'SB', 'BOND']
+    swp = sum(Sb['sweep_' + k] for k in nm6)
+    rows_ = {}
+    for t in range(NS):
+        if Sb['ds'][t] > 1e-9:
+            rows_[S_LABEL[t]] = dict(cfads=float(Sb['cfads'][t]), scheduled_ds=float(Sb['ds'][t]), scheduled_principal=float(Sb['principal_total'][t]),
+                                     sweep=float(swp[t]), dscr_scheduled=float(Sb['dscr'][t]), dscr_incl_sweep=float(Sb['cfads'][t] / (Sb['ds'][t] + swp[t])),
+                                     commercial_opening=float(Sb['bal_open_COM'][t]), at_1_35=bool(abs(Sb['dscr'][t] - 1.35) < 1e-4))
+    mds = Sb['ds'] > 1e-9
+    Rnm = run(scen(1, miniperm=0)); mn = Rnm['S']['ds'] > 1e-9
+    P['P-F09']['reconciliation'] = dict(
+        by_period=rows_, scheduled_principal_total=float(Sb['principal_total'].sum()), cash_sweep_prepayment_total=float(swp.sum()),
+        debt=float(CONTRACT['D']), periods_at_1_35=[k for k, v in rows_.items() if v['at_1_35']],
+        avg_dscr_scheduled=float(Sb['cfads'][mds].sum() / Sb['ds'][mds].sum()),
+        avg_dscr_incl_sweep=float(Sb['cfads'][mds].sum() / (Sb['ds'][mds].sum() + swp.sum())),
+        min_dscr_incl_sweep=float(min(v['dscr_incl_sweep'] for v in rows_.values())),
+        no_sweep_counterfactual=dict(avg_dscr=float(Rnm['S']['cfads'][mn].sum() / Rnm['S']['ds'][mn].sum()), min_dscr=float(Rnm['S']['dscr'][mn].min()),
+                                     max_dscr=float(Rnm['S']['dscr'][mn].max()), equity_irr=float(Rnm['equity_irr'])),
+        explanation=('The repayment profile is sculpted so that CFADS / scheduled debt service = 1.35x in every period from 2021H2 to 2034H1 on the FC base '
+                     'without sweeps (the profile is a share of the original debt). From 2027 the soft mini-perm sweep (50% of cash available for distribution) '
+                     'prepays the commercial tranche ahead of its schedule; each tranche\'s later installments are its profile share times its reduced balance, '
+                     'so scheduled debt service falls below CFADS / 1.35 and the period DSCR rises (from 2027H2), and after the commercial tranche is repaid '
+                     'by sweep in 2031H2 only the ECA, A and B tranches remain (2.2x). Scheduled principal plus sweep equals the debt. The 1.54x average is '
+                     'the debt-service-weighted average of CFADS / scheduled debt service (the term-sheet DSCR, which excludes voluntary and sweep prepayments); '
+                     'it is not an average over a different set of periods. Including the sweep in the denominator the average is shown above; without the '
+                     'sweep the profile gives 1.35x in every period. The first period (2021H2, after the two-month COD period) is a full half-year and is at 1.35x.'))
     P['P-F09']['eca_tests_actual'] = dict(ECA_tests(Ra, cod_act), **eca24(Ra, cod_act))
     P['P-F09']['eca_rules'] = 'OECD Arrangement project finance terms for 2018 commitments (t-oecd-pf-2018; annex 3.6): repayment term <= 14 years; first repayment <= 24 months after COD with at least 2% repaid by then; WAL <= 7.25 years; <= 25% of principal in any six months'
     # ---- P-F10 first full operating year per annex 4.15
@@ -2599,7 +2632,7 @@ def main():
     F, RS, R1, R14, R15 = compute_all()
     contract = {k: (list(map(float, v)) if isinstance(v, (list, np.ndarray)) else float(v)) for k, v in CONTRACT.items()}
     audit_c = F.pop('_audit_contract')
-    out = dict(meta=dict(case='P', model='case_p.py', version='1.4', run_date='2026-10-03', currency='USD m unless stated',
+    out = dict(meta=dict(case='P', model='case_p.py', version='1.5', run_date='2026-10-03', currency='USD m unless stated',
                          timeline=dict(monthly=[d.strftime('%Y-%m') for d in M_START], semiannual=S_LABEL),
                          tolerance_usd_m=TOL, scenarios={i: SCENARIOS[i]['name'] for i in SCENARIOS},
                          gas_arrears_share_calibration=GAS_ARREARS_SHARE),
