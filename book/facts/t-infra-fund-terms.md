@@ -34,7 +34,7 @@ A 2024 SEC registration statement for a fund investing in third-party infrastruc
 **Open-ended and evergreen vehicles (US non-traded, SEC-reporting)**
 6. **K-INFRA management fee.** KKR Infrastructure Conglomerate LLC (10-K for 2025) pays its manager:
    - 1.25 percent a year of month-end NAV for Class D, I and S shares;
-   - 1.00 percent for a 60-month period after June 1, 2023 for early-investor Class U shares (and certain other classes). [confidence: high] [source: 5]
+   - 1.00 percent for a 60-month period after June 1, 2023 for Class U shares (and certain other classes named in the filing). [confidence: high] [source: 5]
 7. **K-INFRA performance participation.** KKR receives 12.5 percent of Total Return attributable to investor shares, subject to a 5.0 percent Hurdle Amount and a High Water Mark, with a 100 percent catch-up, measured and paid annually and accrued monthly. [confidence: high] [source: 5]
 8. **K-INFRA liquidity terms.**
    - Repurchases are limited to no more than 5.0 percent of aggregate NAV per calendar quarter.
@@ -111,7 +111,7 @@ Mechanics to teach:
 ## Do not state
 
 - Do not state a single "market standard" closed-end infrastructure fee (for example "1.5 and 15 over 8"). The verified evidence is the 1–2 percent and 15–20 percent ranges from one 2024 filing, plus Brookfield's 20 percent / 8 percent. Core and core-plus closed-end terms below these were not verified.
-- Do not quote ILPA, Preqin or Pregin-derived averages for infrastructure fee levels. Not retrieved.
+- Do not quote ILPA or Preqin averages for infrastructure fee levels. Not retrieved.
 - Do not give 3i Infrastructure, INPP or other listed trusts' fee or performance-fee terms. Not retrieved.
 - Do not name specific infrastructure continuation vehicles, or their sizes or buyers. None was verified in a primary source here.
 - Do not say BXINFRA's or K-INFRA's repurchase terms guarantee liquidity. The filings reserve discretion to limit or suspend repurchases.

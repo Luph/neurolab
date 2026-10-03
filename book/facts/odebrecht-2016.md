@@ -135,13 +135,13 @@ Peru also ended the Gasoducto Sur Peruano concession, held by an Odebrecht–Ena
 
 ## Sources
 
-1. "Odebrecht: The company that brought down presidents" (title as published), BBC News, 22 April 2018. https://www.bbc.com/news/business-43825294
-2. "Peru's president faces corruption charges linked to Brazil scandal", Al Jazeera, 21 December 2017. https://www.aljazeera.com/news/2017/12/perus-president-faces-corruption-charges-linked-brazil-scandal-171221130305541.html
+1. "'The largest foreign bribery case in history'", BBC News, 21–22 April 2018. https://www.bbc.com/news/business-43825294
+2. "Peru's Congress debates impeachment of President Kuczynski", Al Jazeera, 21 December 2017. https://www.aljazeera.com/news/2017/12/perus-president-faces-corruption-charges-linked-brazil-scandal-171221130305541.html
 3. "Combating Corruption in Latin America: Congressional Considerations", Congressional Research Service, R45733, 21 May 2019 (via EveryCRSReport). https://www.everycrsreport.com/reports/R45733.html
 4. "Odebrecht" and "Odebrecht scandal", Wikipedia (accessed 2026-10-03; tertiary, used only for medium-confidence items). https://en.wikipedia.org/wiki/Odebrecht
 5. "Caso Odebrecht en el Perú" and "Gasoducto Sur Peruano", Wikipedia en español (accessed 2026-10-03; secondary, citing DOJ and Peruvian press). https://es.wikipedia.org/wiki/Caso_Odebrecht_en_Per%C3%BA ; https://es.wikipedia.org/wiki/Gasoducto_Sur_Peruano
 6. Dan Collyns, "Peru ex-president Alejandro Toledo faces arrest on bribery charges", The Guardian, 10 February 2017. https://www.theguardian.com/world/2017/feb/10/peru-ex-president-alejandro-toledo-faces-arrest-on-bribery-charges
-7. "Peru president Pedro Pablo Kuczynski resigns amid corruption scandal", The Guardian, 21 March 2018 (headline as cited). https://www.theguardian.com/world/2018/mar/21/peru-president-pedro-pablo-kuczynski-resigns-amid-corruption-scandal
+7. "Peru president Pedro Pablo Kuczynski resigns amid corruption scandal", The Guardian, 21 March 2018 (reports that he offered his resignation on the eve of an impeachment vote). https://www.theguardian.com/world/2018/mar/21/peru-president-pedro-pablo-kuczynski-resigns-amid-corruption-scandal
 8. ICSID case details: *Enagás S.A. and Enagás Internacional S.L.U. v. Republic of Peru* (ARB/18/26) and *Odebrecht Latinvest S.à.r.l. v. Republic of Peru* (ARB/20/4), accessed 2026-10-03. https://icsid.worldbank.org/cases/case-database/case-detail?CaseNo=ARB/18/26 ; https://icsid.worldbank.org/cases/case-database/case-detail?CaseNo=ARB/20/4
 9. "Ruta del Sol (Colombia)", Wikipedia en español (accessed 2026-10-03; secondary, citing INCO/Ministry of Transport). https://es.wikipedia.org/wiki/Ruta_del_Sol_(Colombia)
 10. "Caso Odebrecht en Colombia", Wikipedia en español (accessed 2026-10-03; secondary). https://es.wikipedia.org/wiki/Caso_Odebrecht_en_Colombia

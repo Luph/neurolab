@@ -70,3 +70,4 @@
 - Case Bible annex T/R/Ch1/capstone names (case-bible-annex-tr.md + case-tr-input-requests.md).
 - NEXT: models absorb input requests → blueprint review panel → Phase 2 pilot (two chapters).
 - Done: oem-fleet-defects, t-om-ltsa-norms, t-construction-norms (wrap premia/EPCM/LD rates unverified → D-011), wagp.
+- Done: t-tax-treaties-wht, t-transfer-pricing, t-accounting-2, t-basel-crm; solvency-qualifying-deal UNRESOLVED (no deal named). t-basel 'do not state' on Basel output-floor schedule superseded by t-basel-crm (50% 2023 → 72.5% 2028).
