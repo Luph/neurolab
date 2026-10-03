@@ -1,12 +1,12 @@
 \chapter{Sizing and sculpting debt}\label{ch:36}
 
-On March 20, 2023, Port Arthur LNG Phase 1, a liquefied natural gas (LNG) export plant in Texas, signed a term loan facility of approximately USD~6.8~billion to help build a plant whose capital cost Sempra estimated at approximately USD~13.0~billion (Sempra 2023). The banks priced the loan at 2.00\% over Term SOFR before completion and 2.25\% after. The loans mature on March 20, 2030, seven years after signing. Quarterly repayments begin shortly after completion, and they follow a 20-year sculpted amortization profile. Run the arithmetic and the puzzle appears: a 20-year repayment profile cannot finish in seven years, so when the loans mature most of the principal is still outstanding and must be refinanced.
+On March 20, 2023, Port Arthur LNG Phase 1, a liquefied natural gas (LNG) export plant in Texas, signed a term loan facility of approximately USD~6.8~billion to help build a plant whose capital cost Sempra estimated at approximately USD~13.0~billion (Sempra 2023). The banks priced the loan at 2.00\% over Term SOFR, the forward-looking secured overnight financing rate (\cref{sec:6.5}), before completion and 2.25\% after. The loans mature on March 20, 2030, seven years after signing. Quarterly repayments begin shortly after completion, and they follow a 20-year sculpted amortization profile. Run the arithmetic and the puzzle appears: a 20-year repayment profile cannot finish in seven years, so when the loans mature most of the principal is still outstanding and must be refinanced.
 
 Every lender in that syndicate had to answer two questions before committing. Why would a bank sign a loan that it expects not to be repaid on its own schedule? And how did the lenders decide that the right number was approximately USD~6.8~billion, rather than five billion or eight? The first answer turns on a structure, the mini-perm, and on who carries the risk that the 2030 refinancing market is closed. For the second, a structuring banker at the lead arranger took a forecast of the cash the plant would earn, chose a ratio of cash to debt service the lenders could live with in a bad year, shaped the repayments to that cash, tested the result against every other limit the lenders imposed, and took the smallest answer. Along the way the banker had to decide which forecast to size on, how long a loan the revenue contracts could carry, how much refinancing risk to leave in the structure, and which of half a dozen constraints should bind.
 
 \section*{What you will be able to do}
 \begin{itemize}
-  \item Size senior debt to a minimum DSCR, a gearing cap, and downside and P90 or P99 tests, and identify which constraint binds (Capability 5).
+  \item Size senior debt to a minimum debt service cover ratio (DSCR), a gearing cap, and downside and P90 or P99 tests, and identify which constraint binds (Capability 5).
   \item Sculpt a repayment profile in closed form in Excel, test it against weighted-average-life and installment rules, and repair it when it fails (Capabilities 4 and 5).
   \item Choose tenor, tail, grace period, balloon, or mini-perm for a given project and explain the refinancing risk each creates (Capability 5).
   \item Explain why a sizing parameter that is market in one sector, contract, country, or year is wrong in another, and by how much (Capabilities 5 and 15).
@@ -14,11 +14,11 @@ Every lender in that syndicate had to answer two questions before committing. Wh
 
 \section{From a ratio to a debt amount}\label{sec:36.1}
 
-\Cref{ch:35} defined the ratios lenders use to describe a debt that already exists. Sizing runs the arithmetic the other way: the lenders fix the ratio first and solve for the debt. Every sizing method in this chapter is a variation on one move. Divide each period's cash flow available for debt service (CFADS) by a target debt service cover ratio (DSCR) to get the most debt service that period can carry, then discount that debt service at the loan's interest rate to get the principal it can repay.
+\Cref{ch:35} defined the ratios lenders use to describe a debt that already exists. Sizing runs the arithmetic the other way: the lenders fix the ratio first and solve for the debt. Every sizing method in this chapter is a variation on one move. Divide each period's cash flow available for debt service (CFADS) by a target DSCR to get the most debt service that period can carry, then discount that debt service at the loan's interest rate to get the principal it can repay.
 
 \subsection{Debt capacity of a flat cash flow}\label{ssec:36.1.1}
 
-Start with the simplest cash flow a project can have: the same amount every year. A social-infrastructure availability public-private partnership comes close. The contracting authority pays a unitary charge for a building kept available to a contracted standard (\cref{ssec:21.6.1}); the indexed part of the charge rises with inflation and so do the indexed costs it funds, so the cash left for the lenders is close to flat in nominal terms.
+Start with the simplest cash flow a project can have: the same amount every year. A social-infrastructure availability public-private partnership (PPP) comes close. The contracting authority pays a unitary charge for a building kept available to a contracted standard (\cref{ssec:21.6.1}); the indexed part of the charge rises with inflation and so do the indexed costs it funds, so the cash left for the lenders is close to flat in nominal terms.
 
 \begin{example}{Debt capacity of a flat availability payment \illustrative}\label{ex:36.1}
 Kenogami Justice Partners (fictional) reached financial close in 2025 on a design-build-finance-maintain courthouse in northern Ontario, Canada: a partnership in which the private party designs, builds, finances and maintains the building for a provincial contracting authority (\cref{ssec:58.1.1}). The operating term is 25 years from 2028. The unitary charge has an indexed component that moves with the indexed facilities-management and lifecycle costs, so we treat CFADS as flat at CAD~31.42~million a year in nominal terms. The senior debt is long-term fixed-rate bonds bought by Canadian life insurers, at an all-in rate of 5.48\%, paid annually. The lenders require a DSCR of 1.20\x{} in every year.
@@ -194,11 +194,11 @@ Seasonal sculpting. A project whose cash flow has a seasonal pattern, such as a 
 
 Pure sculpting can produce negative principal. \Cref{eq:36.2} sets debt service without reference to interest. In a project whose early CFADS is low relative to its later CFADS, the sculpted debt service in year 1 can be smaller than the interest on the debt that the later years support. Principal is then negative and the balance grows. The model will not complain unless you have a check row on it. \Cref{ex:36.8} shows a toll road where pure sculpting from opening would add MXN~208.4~million to the debt over four years. Lenders treat negative principal as a sizing error and fix it with a grace period, a reserve or a smaller loan (\cref{sec:36.6}).
 
-The debt also pays for its own costs, which makes the sizing circular. Interest during construction (IDC), upfront and commitment fees, the ECA premium and the initial DSRA balance are all uses of funds that depend on the debt amount. In a tax-paying project the loop also runs through operations: interest is deductible, so the tax inside CFADS depends on the very profile that CFADS sets. The sculpting equations assume these amounts are known; \cref{sec:40.5} resolves both loops, in closed form or by iterative calculation with a circuit breaker (\cref{fw:circularity-ladder}). In this chapter IDC, fees, reserve funding and tax are taken as given.
+The debt also pays for its own costs, which makes the sizing circular. Interest during construction (IDC), upfront and commitment fees, the ECA premium and the initial DSRA balance are all uses of funds that depend on the debt amount. In a tax-paying project the loop also runs through operations: interest is deductible, so the tax inside CFADS depends on the profile that CFADS itself sets. The sculpting equations assume these amounts are known; \cref{sec:40.5} resolves both loops, in closed form or by iterative calculation with a circuit breaker (\cref{fw:circularity-ladder}). In this chapter IDC, fees, reserve funding and tax are taken as given.
 
-Many term sheets let the lenders resculpt at the commercial operation date (COD) on an updated forecast. The debt and the final maturity stay; the debt service is reshaped to the new CFADS, so the DSCR is level again but at whatever level the new forecast supports. If that level falls below a floor set in the completion test, the project company must prepay until it is restored, usually with the EPC contractor's performance liquidated damages (LDs). Case P's lenders resculpted at COD in this way, keeping the debt and the June 30, 2034 maturity; the re-forecast supported a level DSCR of only 1.28\x, below the 1.30\x{} completion floor, and \cref{ch:61} follows how the contractor's performance LDs restored it. % 1.28x: P-F19 (v1.5 confirms)
+Many term sheets let the lenders resculpt at the commercial operation date (COD) on an updated forecast. The debt and the final maturity stay; the debt service is reshaped to the new CFADS, so the DSCR is level again but at whatever level the new forecast supports. If that level falls below a floor set in the completion test, the project company must prepay until it is restored, usually with the performance liquidated damages (LDs) the engineering, procurement, and construction (EPC) contractor pays. Case P's lenders resculpted at COD in this way, keeping the debt and the June 30, 2034 maturity; the re-forecast supported a level DSCR of only 1.28\x, below the 1.30\x{} completion floor, and \cref{ch:61} follows how the contractor's performance LDs restored it. % 1.28x: P-F19 (1.281051, v1.5)
 
-The contractor sits inside the sizing for that reason. Performance LDs under the engineering, procurement and construction (EPC) contract are calibrated to buy down enough debt to restore the sized DSCR when the plant underperforms its guarantees (\cref{ssec:22.4.1}), and delay LDs are calibrated to pay the debt service the project cannot earn while it is late (\cref{sec:22.3}). EPC contractors therefore negotiate their LD rates against the lenders' sizing model: every hundredth of DSCR the lenders want protected becomes LD exposure the contractor must price.
+The contractor sits inside the sizing for that reason. Performance LDs under the EPC contract are calibrated to buy down enough debt to restore the sized DSCR when the plant underperforms its guarantees (\cref{ssec:22.4.1}), and delay LDs are calibrated to pay the debt service the project cannot earn while it is late (\cref{sec:22.3}). EPC contractors therefore negotiate their LD rates against the lenders' sizing model: every hundredth of DSCR the lenders want protected becomes LD exposure the contractor must price.
 
 Sculpting to a forecast that proves high is the last failure. A level annuity on a declining cash flow has cushion in its early years; a sculpted profile has exactly the target cushion in every year and no more. If the sizing forecast proves 10\% too high, every period falls below target together, and there is no early-year surplus to build up cash. Sculpting's lack of spare cushion is the strongest argument for sizing on a conservative case and for the reserves of \cref{ch:37}.
 
@@ -392,7 +392,7 @@ LLCR (x) & 1.35 & 1.35 & 1.35 & 1.35 & 1.35\\
 \bottomrule
 \end{tabularx}
 \exhibitsource{\Cref{ex:36.7}.}
-\exhibitnote{PLCR is the present value of 30 years of CFADS at 7.15\% divided by the debt; LLCR equals the target under pure sculpting with no DSRA. The 20-year PLCR is 1.5999x before rounding. Geothermal falls under the OECD Arrangement's climate change sector understanding, which caps ECA repayment terms at 22 years, so beyond 22 years the ECA tranche could not follow; the 24-year column assumes the DFI or an uncovered lender carries the extra years.}
+\exhibitnote{PLCR is the present value of 30 years of CFADS at 7.15\% divided by the debt; LLCR equals the target under pure sculpting with no DSRA. The 20-year PLCR is 1.5999x before rounding. Geothermal falls under the climate change sector understanding of the Arrangement on Officially Supported Export Credits of the Organisation for Economic Co-operation and Development (OECD), which caps ECA repayment terms at 22 years, so beyond 22 years the ECA tranche could not follow; the 24-year column assumes the DFI or an uncovered lender carries the extra years.}
 \end{exhibit}
 
 Under pure sculpting, with no reserve in the numerator, the LLCR at the start of repayment equals the target DSCR, because the debt is defined as the present value of CFADS divided by the target; the LLCR identity of \cref{ssec:35.3.2} makes the same point from the other direction. An LLCR test set at or below the sculpting target therefore cannot bind on the sizing case; it bites only if the sculpting target is set below the LLCR test level, or if the profile is not sculpted. The PLCR, by contrast, measures what tenor costs the lenders in protection.
@@ -417,7 +417,7 @@ A \term{grace period (repayment)} is a period after COD or first drawdown during
 
 Sponsors ask for post-COD grace to build up cash after a tight completion, to cover a ramp-up when revenue starts below its mature level, or simply to push principal out so the early debt service is lower. Interest-only periods mean the debt is not falling while the asset ages, and the weighted average life lengthens. In a sculpted profile the effect on debt capacity is smaller than sponsors expect, because the sculpted principal in the first year is small anyway: a 12-month grace on the Uzbek solar plant in the judgment drill of \cref{sec:36.14} adds only 1.3\% to the debt.
 
-Export credit agencies regulate the first repayment directly. Under the current main text of the OECD Arrangement on Officially Supported Export Credits (January 2026 revision), a flexible, sculpted repayment profile must start within 24 months of the starting point of credit (OECD 2026, Article 13(e)). The 2017 project finance annex, on which Exportgarant's 2018 cover for Case P was based, had the same 24-month limit and added that at least 2\% of principal must have been repaid by then (OECD 2017, Annex VII). For a project finance transaction the starting point of credit is normally COD, so ECA-covered loans start repaying within two years of commercial operation, often much sooner. \Cref{ssec:29.3.6} sets out the Arrangement's terms; here they are constraints on the profile.
+Export credit agencies regulate the first repayment directly. Under the current main text of the OECD Arrangement (January 2026 revision), a flexible, sculpted repayment profile must start within 24 months of the starting point of credit (OECD 2026, Article 13(e)). The 2017 project finance annex, on which Exportgarant's 2018 cover for Case P was based, had the same 24-month limit and added that at least 2\% of principal must have been repaid by then (OECD 2017, Annex VII). For a project finance transaction the starting point of credit is normally COD, so ECA-covered loans start repaying within two years of commercial operation, often much sooner. \Cref{ssec:29.3.6} sets out the Arrangement's terms; here they are constraints on the profile.
 
 \subsection{Sizing through a ramp-up}\label{ssec:36.6.2}
 
@@ -623,7 +623,7 @@ Cash-flow volatility comes second for the DSCR. Within contracted renewables, US
 
 Contract length and lender type set tenor. Debt runs close to the end of long contracts with state-backed buyers (\cref{ssec:36.5.2}), while at two recent limited-recourse mining financings without long offtake contracts the debt amortizes over about six to eight years (Eldorado Gold 2026; Teck 2025). Who the lender is matters as much: India's Power Finance Corporation, a state-owned lender, made 20-year rupee term loans to ReNew's projects in 2023 (ReNew 2026), and US managed-lane toll roads borrowed through private activity bonds and TIFIA loans maturing as late as 2058 (Ferrovial 2026).
 
-Country and counterparty risk come third for the DSCR and second for tenor. In emerging markets DFIs and ECAs replace or anchor commercial banks, bringing longer tenors and their own limits; IFC disclosures for DFI-led power projects with 25-year PPAs in 2022 to 2026 show long-term debt of about 62\% to 80\% of project cost (IFC 2022a, 2022b, 2023, 2026). Large US LNG projects sit at the other end on gearing, at roughly 52\% of capital cost at Port Arthur and about two-thirds of term debt plus equity at Rio Grande, below the 75\% to 80\% of cost at the DFI-led contracted wind and gas deals above.
+Country and counterparty risk come third for the DSCR and second for tenor. In emerging markets DFIs and ECAs replace or anchor commercial banks, bringing longer tenors and their own limits; International Finance Corporation (IFC) disclosures for DFI-led power projects with 25-year PPAs in 2022 to 2026 show long-term debt of about 62\% to 80\% of project cost (IFC 2022a, 2022b, 2023, 2026). Large US LNG projects sit at the other end on gearing, at roughly 52\% of capital cost at Port Arthur and about two-thirds of term debt plus equity at Rio Grande, below the 75\% to 80\% of cost at the DFI-led contracted wind and gas deals above.
 
 \begin{exhibit}[H]
 \caption{Sizing parameters by sector and revenue type, with sources and periods \realcase{market surveys and filings, 2023--2026}}\label{exh:36.10}
@@ -713,17 +713,17 @@ The order of these steps is \cref{fw:sizing-constraint-stack} read backward: sta
 
 \section{Case P: the lenders size the debt}\label{sec:36.12}
 
-Castellan Bank's draft term sheet of July 14, 2017 had asked for a 1.45\x{} base-case DSCR, 70\% gearing and a 2032 final maturity. After 15 weeks of negotiation the term sheet agreed on October 27, 2017 set 1.35\x, 75\% and June 30, 2034. By April 2018 the commercial negotiation was over and the numbers had to be run on the financial close base case, the sponsor's best-estimate projection at financial close, for credit committee. The lender group combined an ECA-covered tranche, an A loan and a B loan from the Atlantic Basin Development Bank (ABDB), a DFI (\cref{ssec:29.4.4}), and an uncovered commercial tranche.
-% V1.5: all Case P figures in this section to be refreshed from the regenerated ledger (P-F07, P-F08, P-F09, P-F19, P-F36, P-F43).
+Castellan Bank's draft term sheet of July 14, 2017 had asked for a 1.45\x{} base-case DSCR, 70\% gearing and a 2032 final maturity. After 15 weeks of negotiation the term sheet agreed on October 27, 2017 set 1.35\x, 75\% and June 30, 2034. By April 2018 the commercial negotiation was over, and the numbers had to be run for credit committee on the financial close base case, the sponsor's best-estimate projection at financial close. The lender group combined an ECA-covered tranche, an A loan and a B loan from the Atlantic Basin Development Bank (ABDB), a DFI (\cref{ssec:29.4.4}), and an uncovered commercial tranche.
+% Figures in this section: Case P model v1.5 ledger, P-F07, P-F08 (incl. unrounded slack rows), P-F09, P-F19, P-F36, P-F43.
 
 \begin{casescene}{Case P}{Castellan Bank, London, April 2018}
-``Six-three-three. Point three.'' Tomasz turned the printout the right way up. ``The gearing line says six-four-two-point-nine.''
+``Six-two-nine-point-nine.'' Tomasz turned the printout the right way up. ``The gearing line says six-four-three-point-one.''
 
 ``The gearing line is what seventy-five percent would give you. You don't get it. The one-thirty-five binds.''
 
 ``So we're under our own cap.''
 
-``By nine-point-seven million. Which you'd only get if the cash flows were better than your own base case says. And the one-twenty downside lets you borrow six-three-three-point-four. Not quite two hundred thousand dollars of room.''
+``By thirteen million. Which you'd only get if the cash flows were better than your own base case says. And the one-twenty downside lets you borrow six-thirty-point-one. Not quite two hundred thousand dollars of room.''
 
 ``That's two tests binding.''
 
@@ -731,7 +731,7 @@ Castellan Bank's draft term sheet of July 14, 2017 had asked for a 1.45\x{} base
 
 Tomasz turned to the profile page. ``There are two schedules here.''
 
-``Exportgarant won't cover the common profile. On the sculpted shape its tranche's average life comes out over seven and a quarter years. So the covered tranche repays faster, and the A loan, the B loan and the commercial banks carry the back end.''
+``Exportgarant won't cover the sculpted shape. Its tranche's average life would come out over seven and a quarter years. So the covered tranche repays in twenty-six equal installments, and the A loan, the B loan and the commercial banks carry the back end.''
 
 ``And charge us for it.''
 
@@ -757,29 +757,28 @@ Pieter was wrong in 2016 and right in 2018. A 2036 maturity would have meant a r
 \toprule
 Constraint & Test & Debt allowed (USD m) & Result\\
 \midrule
-Base-case DSCR, sculpted & 1.35x & 633.3 & Binds\\
-Downside DSCR, debt service fixed & 1.20x & 633.4 & Slack 0.2\\
-Gearing cap on total funding requirement & 75\% & 642.9 & Slack 9.7\\
-LLCR at close (with DSRA) & 1.40x & n/a & 1.42x; does not bind\\
+Base-case DSCR, sculpted & 1.35x & 629.9 & Binds\\
+Downside DSCR, debt service fixed & 1.20x & 630.1 & Slack 0.2\\
+LLCR at close (with DSRA) & 1.40x & 638.4 & Slack 8.5\\
+Gearing cap on total funding requirement & 75\% & 643.1 & Slack 13.1\\
 \midrule
-Senior debt & n/a & 633.3 & n/a\\
-\quad ECA-covered tranche (30\%) & n/a & 190.0 & n/a\\
-\quad ABDB A loan (22\%) & n/a & 139.3 & n/a\\
-\quad ABDB B loan (10\%) & n/a & 63.3 & n/a\\
-\quad Commercial tranche (38\%) & n/a & 240.6 & n/a\\
-Gearing at financial close & n/a & 74.1\% & n/a\\
+Senior debt & n/a & 629.9 & n/a\\
+\quad ECA-covered tranche (30\%) & n/a & 189.0 & n/a\\
+\quad ABDB A loan (22\%) & n/a & 138.6 & n/a\\
+\quad ABDB B loan (10\%) & n/a & 63.0 & n/a\\
+\quad Commercial tranche (38\%) & n/a & 239.4 & n/a\\
+Gearing at financial close & n/a & 73.7\% & n/a\\
 \bottomrule
 \end{tabularx}
 \exhibitsource{Case P reference model, financial close base case and downside case.}
-\exhibitnote{Tranches add to 633.2 because of rounding. The ECA-covered tranche is below its USD 224.1 million cap. Slack is computed on unrounded figures.}
+\exhibitnote{Tranches add to 630.0 because of rounding; the unrounded total is 629.95. The ECA-covered tranche is below its USD 224.1 million cap. Slack is computed on unrounded figures. At the sized debt the LLCR is 1.42x with the DSRA and 1.36x without it.}
 \end{exhibit}
-% V1.5 sources: P-F07 (gearing, funding), P-F08 (debt, tranches, slack rows, LLCR), P-F43 (857.2 closed-form funding at cap)
 
-The DSCR binds, and the downside test is slack by only about USD~0.2~million: the lenders' downside (availability 6.5 points below profile in every year, a heat rate 1.5\% higher and fixed operating costs 10\% higher, run with debt service fixed) produces a minimum DSCR of almost exactly 1.20\x{} at the sized debt. In effect two tests bind together, which is what a lead arranger wants to show a credit committee: the base-case target and the downside test agree on the debt.
+The DSCR binds, and the downside test is slack by only about USD~0.2~million: the lenders' downside (availability 6.5 points below profile in every year, a heat rate 1.5\% higher and fixed operating costs 10\% higher, run with debt service fixed) produces a minimum DSCR of 1.20\x{} at the sized debt, with four ten-thousandths to spare. In effect two tests bind together, which is what a lead arranger wants to show a credit committee: the base-case target and the downside test agree on the debt.
 
-The gearing cap allows USD~642.9~million, so the sponsors are USD~9.7~million below their own cap. The USD~642.9~million is not 75\% of the base-case total funding requirement of USD~855.1~million, which would be USD~641.3~million. The funding requirement itself rises with the debt, because more debt means more IDC, commitment fees and ECA premium; at the 75\% cap the total funding requirement is USD~857.2~million, and 75\% of that is 642.9. The modeling bank converged the IDC, fees and DSRA funding in the funding requirement, and they are taken as given here (\cref{sec:40.5} shows how).
+The gearing cap allows USD~643.1~million. That is not 75\% of the base-case total funding requirement of USD~854.6~million, which would be USD~640.9~million. The funding requirement itself rises with the debt, because more debt means more IDC, commitment fees and ECA premium; at the 75\% cap the total funding requirement is USD~857.4~million, and 75\% of that is 643.1. Measured to that closed-form cap the sponsors are USD~13.1~million below their own gearing cap; measured against today's funding requirement, USD~11.0~million. Gearing at close is 73.7\%. The modeling bank converged the IDC, fees and DSRA funding, and they are taken as given here (\cref{sec:40.5} shows how).
 
-The 1.40\x{} LLCR test does not bind. The LLCR at close is 1.42\x{} including the DSRA and 1.36\x{} excluding it. The common terms agreement, the agreement holding the terms common to all tranches (\cref{ssec:51.1.3}), defines LLCR with the DSRA cash balance in the numerator, the book's convention from \cref{ssec:35.3.1}. Under the other definition the test would have failed by 0.04\x. LLCR without the reserve is 1.36\x{} rather than exactly the 1.35\x{} target because the LLCR discounts at the weighted all-in senior rate while the sculpting used each period's own rates. % V1.5: confirm explanation against model
+The 1.40\x{} LLCR test does not bind either. The LLCR at close is 1.42\x{} including the DSRA and 1.36\x{} excluding it. The common terms agreement, the agreement holding the terms common to all tranches (\cref{ssec:51.1.3}), defines LLCR with the DSRA cash balance in the numerator, the book's convention from \cref{ssec:35.3.1}. Under the other definition the test would have failed by 0.04\x. LLCR without the reserve sits slightly above the 1.35\x{} target because it discounts at the weighted average all-in senior rate, while the sculpting used each period's own debt-service cost, which includes swap payments and the political risk insurance premium on the commercial tranche.
 
 \begin{exhibit}[H]
 \caption{Case P sculpted repayment profile and ECA tests \casep}\label{exh:36.13}
@@ -788,26 +787,27 @@ The 1.40\x{} LLCR test does not bind. The LLCR at close is 1.42\x{} including th
 \toprule
 ECA test on the ECA-covered tranche's own schedule (2018 cover terms) & Limit & Case P & Room\\
 \midrule
-Repayment term from COD (years) & 14.00 & -- & --\\
-Weighted average life from COD (years) & 7.25 & -- & --\\
-Largest installment (\% of tranche principal) & 25.0 & -- & --\\
-First repayment after COD (months) & 24 & -- & --\\
-Principal repaid within 24 months of COD (\%) & at least 2.0 & -- & --\\
+Repayment term from COD (years) & 14.00 & 13.16 & 0.84\\
+Weighted average life from COD (years) & 7.25 & 6.92 & 0.33\\
+Largest installment (\% of tranche principal) & 25.0 & 3.8 & 21.2\\
+First repayment after COD (months) & 24 & 8 & 16\\
+Principal repaid within 24 months of COD (\%) & 2.0 minimum & 11.5 & 9.5\\
 \midrule
-Memo: all tranches & & & \\
-\quad Scheduled principal, all tranches (USD m) & n/a & -- & n/a\\
-\quad Forecast cash sweep of the commercial tranche (USD m) & n/a & -- & n/a\\
-\quad Senior debt at financial close (USD m) & n/a & 633.3 & n/a\\
+Weighted average life from COD, other tranches (years) & none & 8.17 & n/a\\
+Weighted average life from COD, all tranches (years) & none & 7.79 & n/a\\
+\midrule
+Scheduled principal, all tranches, 2021--2034 (USD m) & n/a & 530.5 & n/a\\
+Forecast cash sweep of the commercial tranche, 2027--2031 (USD m) & n/a & 99.5 & n/a\\
+Senior debt at financial close (USD m) & n/a & 629.9 & n/a\\
 \bottomrule
 \end{tabularx}
-\exhibitsource{Case P reference model, financial close base case; COD May 1, 2021 and PPA expiry April 30, 2046 from the Case P terms.}
-\exhibitnote{ECA tests apply to the covered tranche's contractual schedule; prepayments, including sweeps of other tranches, are ignored. Scheduled principal plus the forecast sweep equals the debt at close.}
+\exhibitsource{Case P reference model, financial close base case; COD May 1, 2021 and base-case PPA expiry April 30, 2046 from the Case P terms.}
+\exhibitnote{ECA tests apply to the covered tranche's contractual schedule; prepayments, including sweeps of other tranches, are ignored. The covered tranche repays 26 equal semiannual installments of 3.85\% (about USD 7.27 million) from December 31, 2021 to June 30, 2034. Scheduled principal plus the forecast sweep equals the debt at close.}
 \end{exhibit}
-% V1.5: fill from regenerated P-F09 (ECA tranche schedule, tests, explicit cash-sweep row); add ECA tranche installments by period if the ledger prints them.
 
-The ECA tranche's own schedule is what Exportgarant tests. Sculpted on the common profile, the covered tranche's WAL would have exceeded 7.25 years, because Case P's indexed capacity payments make CFADS rise and the sculpted principal back-ended. The lenders therefore gave the ECA-covered tranche a front-loaded schedule that meets every 2018 test, and sculpted the other tranches so that total debt service still meets the 1.35\x{} base-case target in every period. The commercial banks and the ABDB accepted more back-ended repayment than the ECA, at unchanged margins; that was the real negotiation in the scene above. The first repayment on December 31, 2021, eight months after COD, sits inside the 24-month limit. Under the 2017 text, credits outside the project finance terms had to start repaying within six months of the starting point (the current text allows one year); a first repayment eight months after COD would have failed that rule.
+The ECA tranche's own schedule is what Exportgarant tests. Sculpted on the common profile, the covered tranche would have repaid too late: Case P's indexed capacity payments make CFADS rise, so the sculpted principal is back-ended, and its WAL would have exceeded 7.25 years. The lenders therefore gave the ECA-covered tranche 26 equal semiannual installments, the most front-loaded schedule the dates allow, with a WAL of 6.92 years, about four months inside the limit. The A loan, the B loan and the commercial tranche share one sculpted profile chosen so that total scheduled debt service, ECA installments included, equals CFADS divided by 1.35 in every period. Their WAL is 8.17 years, which no Arrangement rule constrains, and the combined WAL of 7.79 years would have failed had Exportgarant tested the whole debt. The commercial banks and the ABDB accepted more back-ended repayment than the ECA at unchanged margins; that was the real negotiation in the scene. The first repayment on December 31, 2021, eight months after COD, sits inside the 24-month limit. Under the 2017 text, credits outside the project finance terms had to start repaying within six months of the starting point (the current text allows one year); a first repayment eight months after COD would have failed that rule.
 
-Two other features of the debt sit outside the sculpting. The tail from the June 30, 2034 maturity to the April 30, 2046 PPA expiry in the base case is about 11.8 years: long, as a by-product of the 14-year ECA cap rather than a lender requirement. Its cost to the sponsor is debt capacity left unused, visible in the gap between PLCR and LLCR, and it later gave the lenders room to defer and reschedule when Case P ran into trouble (\cref{ch:62,ch:63}). And the commercial tranche carries soft mini-perm features although it amortizes fully on its schedule: its margin steps up from 4.10\% to 4.60\% in 2026 and to 5.10\% in 2030, and from January 2027 50\% of distributable cash sweeps it (pricing detail in \cref{sec:38.11}). In the base case the sweep prepays part of the commercial tranche, so scheduled principal adds to less than the debt (the memo lines in \cref{exh:36.13}), and the shrinking later debt service lifts the debt-service-weighted average DSCR to 1.54\x{} against a minimum of 1.35\x. % V1.5: 1.54x average and memo lines from regenerated P-F08/P-F09
+Two other features of the debt sit outside the sculpting. The tail from the June 30, 2034 maturity to the April 30, 2046 PPA expiry in the base case is about 11.8 years: long, as a by-product of the 14-year ECA cap rather than a lender requirement. Its cost to the sponsor is debt capacity left unused, visible in the gap between PLCR and LLCR, and it later gave the lenders room to defer and reschedule when Case P ran into trouble (\cref{ch:62,ch:63}). And the commercial tranche carries soft mini-perm features although it amortizes fully on its schedule: its margin steps up from 4.10\% to 4.60\% in 2026 and to 5.10\% in 2030, and from January 2027 50\% of distributable cash sweeps it (pricing detail in \cref{sec:38.11}). In the base case the sweep prepays USD~99.5~million of the commercial tranche between 2027 and 2031, so scheduled principal adds to USD~530.5~million rather than the debt. The DSCR on scheduled debt service is exactly 1.35\x{} in every period from December 2021 to June 2027; from the second half of 2027 the sweep shrinks the commercial tranche's later installments, so scheduled debt service falls and the DSCR rises. The debt-service-weighted average DSCR on scheduled debt service, the basis the term sheet uses, is therefore 1.55\x{} against a minimum of 1.35\x; counting the sweep as debt service it would be 1.39\x, and without the sweep the profile would average 1.35\x.
 
 \begin{exhibit}[H]
 \caption{Case P debt at alternative DSCR targets and gearing caps \casep}\label{exh:36.14}
@@ -816,22 +816,22 @@ Two other features of the debt sit outside the sculpting. The tail from the June
 \toprule
 Base-case DSCR and gearing cap & \makecell[r]{Debt\\(USD m)} & Binding & \makecell[r]{Downside min\\DSCR (x)} & \makecell[r]{Equity\\IRR (\%)}\\
 \midrule
-1.30x, 70\% & 592.3 & Gearing & 1.28 & 12.9\\
-1.30x, 75\% & 642.9 & Gearing & 1.18 & 13.4\\
-1.30x, 80\% & 658.1 & DSCR & 1.19 & 13.5\\
-1.35x, 70\% & 592.3 & Gearing & 1.28 & 12.9\\
-1.35x, 75\% & 633.3 & DSCR & 1.20 & 13.3\\
-1.35x, 80\% & 633.3 & DSCR & 1.20 & 13.3\\
-1.40x, 70\% & 592.3 & Gearing & 1.28 & 12.9\\
-1.40x, 75\% & 610.1 & DSCR & 1.24 & 13.1\\
-1.40x, 80\% & 610.1 & DSCR & 1.24 & 13.1\\
+1.30x, 70\% & 592.5 & Gearing & 1.28 & 12.9\\
+1.30x, 75\% & 630.1 & Downside & 1.20 & 13.2\\
+1.30x, 80\% & 630.1 & Downside & 1.20 & 13.2\\
+1.35x, 70\% & 592.5 & Gearing & 1.28 & 12.9\\
+1.35x, 75\% & 629.9 & DSCR & 1.20 & 13.2\\
+1.35x, 80\% & 629.9 & DSCR & 1.20 & 13.2\\
+1.40x, 70\% & 592.5 & Gearing & 1.28 & 12.9\\
+1.40x, 75\% & 606.9 & DSCR & 1.25 & 13.0\\
+1.40x, 80\% & 606.9 & DSCR & 1.25 & 13.0\\
 \bottomrule
 \end{tabularx}
 \exhibitsource{Case P reference model, financial close base case.}
+\exhibitnote{IRR: internal rate of return. Each row is a full sizing that applies all four tests (base DSCR, 1.20x downside, 1.40x LLCR and the gearing cap) and names the binding one.}
 \end{exhibit}
-% V1.5: replace with regenerated P-F36 (all sizing tests applied).
 
-Kilnworth's finance team and Castellan used a table like \cref{exh:36.14} during the October 2017 negotiation, and the lenders reran it on the final base case. Read the 1.35\x{} rows. Moving the gearing cap from 75\% to 80\% adds no debt at all, because at 1.35\x{} the DSCR already binds below the 75\% cap; the cap matters only if the target falls. Kilnworth therefore stopped arguing about gearing once the 1.35\x{} target was settled. The 1.30\x{} rows show the other side: a lower base-case target is capped by the 1.20\x{} downside sizing test, so under the full constraint stack it buys almost nothing. The equity internal rate of return (IRR) row shows what the sponsor gives up for that discipline. % V1.5: rewrite against the regenerated P-F36 rows
+Kilnworth's finance team and Castellan used a table like \cref{exh:36.14} during the October 2017 negotiation, and the lenders reran it on the final base case. Read the 1.35\x{} rows. Moving the gearing cap from 75\% to 80\% adds no debt at all, because at 1.35\x{} the DSCR already binds below the 75\% cap; the cap matters only at 70\%, where it cuts the debt to USD~592.5~million. Kilnworth therefore stopped arguing about gearing once the 1.35\x{} target was settled. The 1.30\x{} rows show why Kilnworth also stopped arguing about the target: a lower base-case target lets the debt rise only until the 1.20\x{} downside test bites, at USD~630.1~million, about USD~0.2~million more than at 1.35\x. Under the full constraint stack the tenth of a turn Kilnworth fought for in 2017 would have bought almost nothing, and the equity internal rate of return (IRR) is 13.2\% in both rows.
 
 \section{Practitioner's notebook}\label{sec:36.13}
 
@@ -905,6 +905,284 @@ A DFI partial risk guarantee covering the single buyer's payment obligations (\c
 
 \section{Sizing fixes the debt; the reserves decide whether it survives a bad year}\label{sec:36.15}
 
-Sizing turns a forecast into a number. Case P's lenders ran the whole stack in April 2018 and arrived at USD~633.3~million, with the base-case DSCR and the downside test binding together and the ECA tranche given its own schedule to stay inside the 2018 cover terms. % V1.5: debt figure
+Sizing turns a forecast into a number. Case P's lenders ran the whole stack in April 2018 and arrived at USD~629.9~million, with the base-case DSCR and the downside test binding together and the ECA tranche given its own schedule to stay inside the 2018 cover terms. 
 
-Every number in that sizing rests on forecasts that will be wrong in some years. A profile sculpted at 1.35\x{} has CFADS 35\% above debt service in every period, so CFADS can fall about 26\% before it no longer covers debt service, and no further. Suppose the offtaker pays the December invoice four months late, as SEKA eventually would: in that half-year CFADS falls far more than 26\%, the debt service is still due on the sculpted schedule, and the sizing has nothing left to give. The cash to pay it has to be set aside before the bad half-year arrives, the sponsors' distributions have to stop before the money leaves the project, and the lenders need the right to act on a ratio that misses; the debt service reserve account, the lock-up and sweep, and the covenants of \cref{ch:37} are where those protections are sized.
+Every number in that sizing rests on forecasts that will be wrong in some years. A profile sculpted at 1.35\x{} has CFADS 35\% above debt service in every period, so CFADS can fall about 26\% before it no longer covers debt service, and no further. Suppose the offtaker pays two monthly invoices four months late: in that half-year CFADS falls far more than 26\%, the debt service is still due on the sculpted schedule, and the sizing has nothing left to give. The cash to pay it has to be set aside before the bad half-year arrives, the sponsors' distributions have to stop before the money leaves the project, and the lenders need the right to act on a ratio that misses; the debt service reserve account, the lock-up and sweep, and the covenants of \cref{ch:37} are where those protections are sized.
+
+\section{Exercises}\label{sec:36.16}
+
+\subsection*{Tier 1: Concept checks}
+
+\begin{exercise}\label{exr:36.1}
+Show that, for the same minimum DSCR and the same interest rate, sculpted debt is never smaller than annuity debt over the same tenor. State when the two are equal.
+\end{exercise}
+
+\begin{exercise}\label{exr:36.2}
+A colleague runs a downside case by resculpting the debt on the downside CFADS at the downside target and reports that the downside DSCR is 1.20\x{} in every period. Explain why the test is meaningless and how it should be run.
+\end{exercise}
+
+\begin{exercise}\label{exr:36.3}
+Define a hard mini-perm and a soft mini-perm. In each, who bears the risk that the refinancing market is closed when the loan matures, and what happens to the sponsors' distributions?
+\end{exercise}
+
+\begin{exercise}\label{exr:36.4}
+Why do lenders want a tail, and why is the end of the revenue contract, not the end of the asset's physical life, the horizon they measure it against?
+\end{exercise}
+
+\begin{exercise}\label{exr:36.5}
+Explain the revenue bucket method and why it protects lenders better than a single blended target that gives the same debt on the base case.
+\end{exercise}
+
+\subsection*{Tier 2: Calculation and drafting}
+
+\begin{exercise}\label{exr:36.6}
+A six-year loan for a hydro plant in Georgia's Racha region, owned by Rioni Zemo Hydro LLC (fictional) and financed in USD by a DFI in 2026, is sculpted at 1.35\x{} at 6.10\%. CFADS (USD m, nominal) is 12.84, 13.10, 13.37, 12.95, 13.66 and 13.92 in years 1 to 6, paid annually. Compute the debt and the full repayment schedule.
+\end{exercise}
+
+\begin{exercise}\label{exr:36.7}
+Las Cumbres Salud S.A. (fictional), a hospital availability PPP in Chile that closed in 2026, has flat CFADS of USD~18.75~million a year for 20 years. The debt bears 5.85\%. Compute the debt at targets of 1.30\x{} and 1.20\x{} with annual payments, and the difference in money and percent.
+\end{exercise}
+
+\begin{exercise}\label{exr:36.8}
+A solar plant in Rajasthan, India, owned by Thar Rekha Solar Pvt Ltd (fictional), is financed in USD by an international bank club in 2026. The total funding requirement is USD~427.35~million and the gearing cap 80\%. Base CFADS is flat at USD~31.2~million a year for 18 years and must clear 1.30\x{} at 6.40\%. A downside case has flat CFADS of USD~27.9~million and must clear 1.15\x{} with debt service fixed. Compute the debt under each constraint, identify the binding constraint, and state the resulting gearing.
+\end{exercise}
+
+\begin{exercise}\label{exr:36.9}
+Recompute \cref{ex:36.6} (Cheviot Edge Wind) with a one-year uncertainty of 8.0\% and then of 13.0\%, keeping the ten-year uncertainty at 6.0\%. For each, give the P90 and P99 factors, the debt under each test and the binding test.
+\end{exercise}
+
+\begin{exercise}\label{exr:36.10}
+For \cref{ex:36.7} (Toba Panas Bumi), compute the debt and the tail at a 22-year tenor. A DFI lender requires a PLCR of at least 1.60\x{} at the start of repayment. What is the longest tenor that passes, and on what debt?
+\end{exercise}
+
+\begin{exercise}\label{exr:36.11}
+Oti Valley Power Company Ltd (fictional) is financing a gas-fired plant in Ghana in 2026 with an ECA-covered loan, outside the climate change sector understanding. Its annual principal installments, per 100 of principal, are 4.1, 4.6, 5.2, 5.9, 6.6, 7.4, 8.3, 9.2, 10.4, 11.6, 12.9 and 13.8 over 12 years, the first one year after the starting point. Test the profile against the current Arrangement's main-text WAL and installment limits.
+\end{exercise}
+
+\begin{exercise}\label{exr:36.12}
+Waalhaven Logistiek B.V. (fictional) owns a logistics warehouse in Rotterdam leased for 15 years from 2026 to a European retailer and financed with a 10-year balloon loan. CFADS in years 11 to 15 is EUR~24.6, 25.1, 25.7, 26.2 and 26.8~million (nominal). The refinancing test assumes 7.25\% and a 1.35\x{} DSCR on sculpted debt service. Compute the maximum balloon, and draft the refinancing-test definition you would put in the term sheet.
+\end{exercise}
+
+\subsection*{Tier 3: Case problems and model tasks}
+
+\begin{exercise}\label{exr:36.13}
+Case P. Using \cref{exh:36.12,exh:36.13} and the Case P terms in \cref{sec:36.12}: (a) explain which constraint binds and why; (b) state the slack in each other constraint in money, and explain why the gearing cap's debt is not 75\% of the base-case total funding requirement; (c) test the ECA-covered tranche against Exportgarant's 2018 cover terms and say which test has the least room; (d) explain why the lenders could not have tested those terms on all tranches together, or net of the commercial tranche's sweep.
+\end{exercise}
+
+\begin{exercise}\label{exr:36.14}
+Model task. In a blank, macro-free workbook, rebuild \cref{ex:36.3} (Alto Lombada Eólica) on semiannual periods: split each year's CFADS equally between its two half-years, use 2.60\% interest per half-year, sculpt at 1.30\x{} with a cumulative compound-factor row, no goal seek and a zero closing-balance check. Then add a margin step-up of 0.25\% a year from year 6 (2.725\% per half-year in periods 11 to 20) and show that the closed form still works. Report the debt in both cases and the period-1 debt service, interest and principal.
+\end{exercise}
+
+\begin{exercise}\label{exr:36.15}
+Model task. Extend the \cref{exr:36.14} workbook (without the step-up) with a downside case in which CFADS is 12\% below base in every period and must clear 1.10\x{} with debt service shaped on base, and a 70\% gearing cap on a total funding requirement of EUR~168.4~million. Add a binding-constraint flag. Report the debt under each constraint, the binding constraint and the slack in money in the others.
+\end{exercise}
+
+\begin{exercise}\label{exr:36.16}
+Case problem: a merchant-tail decision. Pecan Bayou Storage LLC (fictional) owns a 200~MW, 400~MWh battery in ERCOT, the Texas power market, with a seven-year tolling agreement from 2027 with an investment-grade utility and 13 further years of merchant life. Contracted CFADS is USD~15.62~million a year in years 1 to 7; merchant CFADS is USD~13.87~million in year 8, falling 2.5\% a year to USD~10.24~million in year 20 (nominal). The rate is 6.85\%; bucket targets are 1.30\x{} contracted and 2.00\x{} merchant. For tenors of 7, 10, 12, 15 and 20 years compute the bucket-sized debt, the PLCR over the 20-year life, and the merchant share of the present value of debt service. Compare with a uniform 1.30\x{} over 20 years, test a 30\% fall in merchant CFADS, and recommend a tenor.
+\end{exercise}
+
+\begin{exercise}\label{exr:36.17}
+Case problem: hard against soft mini-perm. Using \cref{ex:36.10} (Redfish Pass LNG), compute the amount to refinance under a hard seven-year legal maturity, and the year of full repayment under a soft structure in which the scheduled notional principal is paid and 75\% of the cash remaining after interest and scheduled principal is swept, with the same margin step-ups. Advise the sponsor which structure to accept.
+\end{exercise}
+
+\begin{exercise}\label{exr:36.18}
+Case problem: rating case. Apply the rating-case stress ladder (\cref{fw:rating-stress-ladder}) to the Cheviot Edge wind farm of \cref{ex:36.6}, with the debt fixed at the binding GBP~139.3~million and debt service shaped on P50 (effective P50 factor 1.506). The rating case is ten-year P90 generation (348.5~GWh) in every year with operating costs 10\% above base. Compute (a) the minimum and debt-service-weighted average DSCR; (b) the LLCR at close at 6.05\%, with and without a DSRA of six months of year-1 debt service; (c) single-variable breakevens to a 1.00\x{} minimum DSCR for generation (at base and at 10\% higher costs) and for operating costs; (d) read the rating-case minimum DSCR against the preliminary operations-phase table in \cref{exh:30.5} at an operations phase business assessment of 3 and of 7.
+\end{exercise}
+
+\begin{exercise}\label{exr:36.19}
+Case problem: propose and defend a package. Tamsarit Hydro Pvt Ltd (fictional) is a 90~MW run-of-river hydro plant in western Nepal with a 25-year USD-indexed PPA with the state utility, seeking a 2027 close with two DFIs. P50 generation is 486.3~GWh; one-year uncertainty 12.8\%, ten-year 6.9\%; tariff USD~64.75/MWh flat; operating costs USD~6.84~million escalating 3.0\%; no tax in the period tested; all-in rate 7.40\%; total funding requirement USD~228.6~million. Propose the sizing case and DSCR tests, tenor and tail, gearing cap, DSRA and sweep, citing dated evidence where it exists and saying where it does not. Compute the debt under your package and defend it.
+\end{exercise}
+
+\section{Solutions to exercises}\label{sec:36.17}
+
+\subsection*{Tier 1: Concept checks}
+
+\begin{solution}{exr:36.1}
+Sculpted debt is at least as large as annuity debt, and equal only when CFADS is flat. The annuity's level debt service equals $\min_t \mathrm{CFADS}_t / \mathrm{DSCR}^{*}$, while sculpted debt service is $\mathrm{CFADS}_t/\mathrm{DSCR}^{*}$, at least that minimum in every period; both debts are present values at the same rates (\cref{eq:36.3}), so the larger stream has the larger value. Check: the sculpted debt in \cref{ex:36.2} is USD~111.24~million and the annuity debt USD~87.67~million; on the flat cash flow of \cref{ex:36.1} both methods give CAD~351.9~million.
+\end{solution}
+
+\begin{solution}{exr:36.2}
+A resculpted downside reports the target by construction, so it cannot fail. The agreed debt is a fixed schedule shaped on the sizing case, and the downside must be run on that schedule, dividing downside CFADS by the fixed debt service (\cref{ssec:36.2.3}); for sizing, convert the downside target into an effective base-case factor with \cref{eq:36.5}. Check: under a fixed schedule the downside minimum and average differ, as in \cref{exh:36.11} (1.15\x{} and 1.18\x).
+\end{solution}
+
+\begin{solution}{exr:36.3}
+A hard mini-perm must be repaid at legal maturity, so failure to refinance is a default; a soft mini-perm has a long legal maturity with step-ups and sweeps, and failure to refinance is only expensive (\cref{ssec:36.7.2}). Under the hard structure the sponsors bear the risk as default and the lenders as an unsellable asset in a closed market, while distributions continue until maturity; under the soft structure the sponsors bear it as cost and lost distributions. Check: in \cref{ex:36.10} the 100\% sweep stops distributions from year 8 to year 17.
+\end{solution}
+
+\begin{solution}{exr:36.4}
+A tail gives lenders contracted cash to extend maturity into if the project hits trouble, and the horizon is the contract because contracted revenue is the cash lenders can value; what the asset earns afterward is a market forecast (\cref{ssec:36.5.2}). Check: in \cref{ex:36.7}, a 24-year loan on a 30-year PPA has a six-year tail and a PLCR of 1.47\x, against 2.16\x{} for a 12-year loan.
+\end{solution}
+
+\begin{solution}{exr:36.5}
+The bucket method applies a separate target to each revenue type's CFADS and adds the debt service (\cref{eq:36.6}), which puts the cushion on the cash that is at risk (\cref{ssec:36.8.1}). Check: in \cref{ex:36.11}, a 20\% merchant price fall leaves the bucket profile at a 1.30\x{} minimum and drives a uniform 1.30\x{} profile to 0.85\x.
+\end{solution}
+
+\subsection*{Tier 2: Calculation and drafting}
+
+\begin{solution}{exr:36.6}
+The debt is USD~48.20~million. Debt service is CFADS divided by 1.35; discounting at 6.10\% gives the debt; the corkscrew follows.
+\begin{center}\small
+\begin{tabularx}{\linewidth}{@{}L rrrrrr@{}}
+\toprule
+Year & CFADS & Debt service & Opening & Interest & Principal & Closing\\
+\midrule
+1 & 12.84 & 9.51 & 48.20 & 2.94 & 6.57 & 41.63\\
+2 & 13.10 & 9.70 & 41.63 & 2.54 & 7.16 & 34.46\\
+3 & 13.37 & 9.90 & 34.46 & 2.10 & 7.80 & 26.66\\
+4 & 12.95 & 9.59 & 26.66 & 1.63 & 7.97 & 18.70\\
+5 & 13.66 & 10.12 & 18.70 & 1.14 & 8.98 & 9.72\\
+6 & 13.92 & 10.31 & 9.72 & 0.59 & 9.72 & 0.00\\
+\bottomrule
+\end{tabularx}
+\end{center}
+Reconciliation: total debt service is 59.14 and total interest 10.94, so principal is $59.14 - 10.94 = 48.20$, equal to the debt; the closing balance is zero. The commonest wrong answer computes interest on the original debt rather than on the opening balance, which leaves a balance at maturity.
+\end{solution}
+
+\begin{solution}{exr:36.7}
+At 1.30\x{} the debt is USD~167.47~million; at 1.20\x{} it is USD~181.42~million, USD~13.96~million (8.3\%) more. Debt service is $18.75/1.30 = 14.423$ and $18.75/1.20 = 15.625$; the 20-year annuity factor at 5.85\% is 11.611. Check by the inverse rule on the unrounded debt: $167.465 \times 1.30/1.20 = 181.42$. The commonest wrong answer scales the debt linearly with the change in target ($167.47 \times 1.10 = 184.2$); the relationship is inverse.
+\end{solution}
+
+\begin{solution}{exr:36.8}
+The base-case DSCR binds at USD~252.2~million, and gearing is 59.0\%. The gearing cap allows $80\% \times 427.35 = \USDm{341.9}$. The base test allows the 18-year annuity of $31.2/1.30 = 24.00$ at 6.40\%: \USDm{252.2}. The downside, with debt service fixed, needs $k = 1.15 \times 31.2/27.9 = 1.286$ (\cref{eq:36.5}), so it allows the annuity of $31.2/1.286 = 24.26$: \USDm{255.0}. The lesser is 252.2; gearing is $252.2/427.35 = 59.0\%$. Check: at 252.2 the downside DSCR is $27.9/24.00 = 1.16$\x, above 1.15\x. The commonest wrong answer sizes the downside at $27.9/1.15$ directly, which gives the same number here only because both cash flows are flat; with shaped cash flows only the effective-factor method is right.
+\end{solution}
+
+\begin{solution}{exr:36.9}
+At 8.0\% the one-year P90 binds at GBP~147.8~million; at 13.0\% the one-year P99 binds at GBP~114.4~million. Factors: at 8.0\%, P90 $= 1 - 1.2816 \times 0.080 = 0.8975$ and P99 $= 1 - 2.3263 \times 0.080 = 0.8139$; at 13.0\%, 0.8334 and 0.6976. Debts (GBP m), with debt service shaped on P50:
+\begin{center}\small
+\begin{tabularx}{\linewidth}{@{}L rrrr@{}}
+\toprule
+One-year uncertainty & \makecell[r]{P50\\at 1.35x} & \makecell[r]{Ten-year P90\\at 1.25x} & \makecell[r]{One-year P90\\at 1.20x} & \makecell[r]{One-year P99\\at 1.00x}\\
+\midrule
+8.0\% & 155.3 & 148.4 & 147.8 & 151.0\\
+9.6\% (\cref{ex:36.6}) & 155.3 & 148.4 & 142.4 & 139.3\\
+13.0\% & 155.3 & 148.4 & 131.0 & 114.4\\
+\bottomrule
+\end{tabularx}
+\end{center}
+At 8.0\% the one-year P90 binds by only GBP~0.6~million over the ten-year P90; at 13.0\% the P99 floor removes GBP~16.6~million more than the one-year P90. The P99 factor falls almost twice as fast as the P90 factor (2.3263 against 1.2816 per point of uncertainty), magnified by operating leverage. The commonest wrong answer changes the ten-year uncertainty too, which the question holds fixed.
+\end{solution}
+
+\begin{solution}{exr:36.10}
+At 22 years the debt is USD~407.6~million, the tail eight years and the PLCR 1.53\x. The longest tenor that passes a 1.60\x{} PLCR is 20 years, but only if the debt is trimmed by USD~0.03~million to USD~389.08~million. The 30-year present value of CFADS at 7.15\% is USD~622.53~million. At 21 years the debt is 398.6 and the PLCR 1.56\x; at 20 years the full sculpted debt is 389.12 and the PLCR is 1.5999\x, which fails by a hair; at 19 years the debt is 379.7 and the PLCR 1.64\x. The maximum debt at a 1.60\x{} PLCR is $622.53/1.60 = 389.08$, sculpted at a target of 1.3501\x. Recommendation: 20 years, ten-year tail, which is also within the 22-year term the ECA could cover. The commonest wrong answer reads the rounded 1.60\x{} as a pass at the full USD~389.12~million; the covenant is tested on unrounded figures unless the document says otherwise.
+\end{solution}
+
+\begin{solution}{exr:36.11}
+The profile passes both tests: WAL is 7.79 years against a 7.8-year limit, and the largest installment is 13.8\% against 30\%. The installments add to 100. WAL is $\sum_t t P_t / \sum_t P_t$ with $t = 1, \ldots, 12$: $(1 \times 4.1 + 2 \times 4.6 + \cdots + 12 \times 13.8)/100 = 7.787$ years. The limit is the longer of 65\% of the 12-year term (7.8 years) and six years, so 7.8 years; 12 years is the maximum term for a power plant outside the climate change sector understanding. The first repayment at one year is within 24 months. The margin, 0.013 years or about five days, means any late change that shifts principal back will fail the test. The commonest wrong answer uses the six-year floor as the limit, forgetting that the rule takes the longer of the two.
+\end{solution}
+
+\begin{solution}{exr:36.12}
+The maximum balloon is EUR~77.24~million: the present value at 7.25\% of years 11 to 15 CFADS divided by 1.35, $(24.6/1.35) \times 1.0725^{-1} + \cdots + (26.8/1.35) \times 1.0725^{-5}$. Check: the five debt service amounts are 18.22, 18.59, 19.04, 19.41 and 19.85, and a loan of 77.24 at 7.25\% repaid by them closes at zero. A drafted definition follows; as in real finance documents, capitalized words are defined terms whose definitions sit elsewhere in the agreement (here, the Final Maturity Date is the loan's last repayment date, the Banking Case the lenders' approved projection, and a Calculation Date a date on which ratios are tested).
+\begin{clause}{Refinancing test, term sheet \illustrative}\label{cl:36.1}
+\begin{enumerate}[label=(\alph*)]
+\item The Balloon Amount shall not exceed the amount that, if borrowed on the Final Maturity Date and repaid over the period from the Final Maturity Date to the expiry of the Lease, would give a Debt Service Cover Ratio of not less than 1.35:1 in each Calculation Period of that period.
+\item For paragraph (a), debt service shall be calculated at an assumed interest rate of 7.25 per cent per annum, and Cash Flow Available for Debt Service shall be taken from the Banking Case most recently approved by the Majority Lenders.
+\item The Borrower shall test the Balloon Amount against paragraph (a) at Financial Close and on each Calculation Date, and the Agent may require a prepayment equal to any excess.
+\end{enumerate}
+\end{clause}
+\begin{enumerate}
+\item Paragraph (a). Ties the balloon to the remaining lease cash at a cover above the amortizing target; a sponsor would push for the lease plus a renewal assumption, which lenders should resist.
+\item Paragraph (b). Fixes the rate and the case so the test cannot be met by optimistic assumptions at the time; sponsors ask for the then-current market rate, lenders for a fixed conservative one.
+\item Paragraph (c). Makes the test continuing, so a fall in forecast CFADS triggers prepayment before maturity rather than surprise at it.
+\end{enumerate}
+The commonest wrong answer discounts at the original loan rate rather than the refinancing rate, which overstates the balloon when refinancing is assumed to cost more.
+\end{solution}
+
+\subsection*{Tier 3: Case problems and model tasks}
+
+\begin{solution}{exr:36.13}
+(a) The base-case DSCR of 1.35\x{} binds: it allows USD~629.9~million, the least of the four tests. (b) The downside test at 1.20\x, run with debt service fixed, would allow USD~630.1~million, a slack of about USD~0.2~million, so it is effectively co-binding. The LLCR test at 1.40\x{} would allow USD~638.4~million, a slack of USD~8.5~million; the LLCR at the sized debt is 1.42\x{} with the DSRA. The gearing cap would allow USD~643.1~million, a slack of USD~13.1~million. That amount is 75\% of the total funding requirement at the cap, USD~857.4~million, not of the base-case USD~854.6~million, because more debt brings more IDC, fees and ECA premium; against the current funding requirement the slack is USD~11.0~million, and gearing at close is 73.7\%. (c) All five tests pass on the ECA-covered tranche's own 26 equal installments: repayment term 13.16 years against 14; WAL 6.92 years against 7.25; largest installment 3.8\% against 25\%; first repayment eight months after COD against 24 months; 11.5\% repaid within 24 months against 2\%. The WAL has the least room, about four months. (d) An ECA tests the covered tranche's contractual schedule; another tranche's principal and any forecast sweep are irrelevant to it. On all tranches together the WAL is 7.79 years, a fail; and netting a forecast sweep would count repayments that are neither contractual nor certain. Reconciliation: scheduled principal of USD~530.5~million plus the forecast sweep of USD~99.5~million equals the USD~629.9~million debt. The commonest wrong answer says the gearing cap binds because 73.7\% is close to 75\%; the binding constraint is the one that allows the least debt.
+\end{solution}
+
+\begin{solution}{exr:36.14}
+Semiannual debt is EUR~121.70~million; with the step-up, EUR~121.35~million, and the period-20 closing balance is zero in both. Period 1: debt service $9.82/1.30 = 7.55$, interest $121.70 \times 2.60\% = 3.16$, principal 4.39. The semiannual debt exceeds the annual EUR~120.54~million because half of each year's debt service is paid six months earlier and is discounted less. With the step-up, periods 11 to 20 are discounted at 2.725\% through the compound-factor row, so the later debt service is worth less and the debt falls by EUR~0.35~million; interest is charged at the same per-period rates, so the closed form remains exact. Layout: a Sizing sheet with periods 1 to 20 in columns J to AC; row 10 the semiannual CFADS; row 13 the period rate; row 14 the compound factor \xl{=IF(J$8*(1-I$8)=1,1,I14)*(1+J13*J$8)}; row 15 the present values; F16 \xl{=SUM(J15:AC15)}; rows 18 to 21 the corkscrew; G21 the check. The commonest wrong answer discounts all periods at 2.60\% while charging 2.725\% interest in periods 11 to 20, which leaves EUR~0.60~million outstanding at the end.
+\end{solution}
+
+\begin{solution}{exr:36.15}
+Gearing binds at EUR~117.88~million. The base test would allow EUR~121.70~million, a slack of EUR~3.82~million, and the downside test EUR~126.57~million, a slack of EUR~8.69~million. Gearing: $70\% \times 168.4 = 117.88$. Downside: CFADS is 88\% of base in every period, so $k = 1.10/0.88 = 1.25$, below the 1.30\x{} base target, and the debt at that factor is $121.70 \times 1.30/1.25 = 126.57$: the downside does not bind. Put the three amounts in F27 to F29, the debt in F31 as \xl{=MIN(F27:F29)}, and the flags in G27 to G29 as \xl{=IF(F27=$F$31,1,0)} copied down; the flag shows 1 against gearing. At the gearing debt the base DSCR is 1.34\x{} in every period. The commonest wrong answer reports the downside as binding because its 1.10\x{} target is the lowest number on the page; the binding constraint is the one that allows the least debt, and the downside's effective base-case factor of 1.25 is the least demanding of the three.
+\end{solution}
+
+\begin{solution}{exr:36.16}
+Recommended tenor: 12 years, USD~82.2~million. Results (USD m):
+\begin{center}\small
+\begin{tabularx}{\linewidth}{@{}L rrrrr@{}}
+\toprule
+Tenor (years) & 7 & 10 & 12 & 15 & 20\\
+\midrule
+Bucket debt & 65.09 & 76.30 & 82.23 & 89.32 & 97.56\\
+PLCR over 20 years (x) & 2.30 & 1.96 & 1.82 & 1.67 & 1.53\\
+Merchant share of PV of debt service (\%) & 0.0 & 14.7 & 20.8 & 27.1 & 33.3\\
+Tail to end of life (years) & 13 & 10 & 8 & 5 & 0\\
+\bottomrule
+\end{tabularx}
+\end{center}
+The present value of 20 years of CFADS at 6.85\% is USD~149.55~million, which divided by each debt gives the PLCR. A uniform 1.30\x{} over 20 years would give USD~115.04~million, with merchant debt service at only 1.30\x{} cover. With a 30\% fall in merchant CFADS the bucket profiles keep a 1.40\x{} DSCR in every merchant year at every tenor ($2.00 \times 0.70$), while the uniform profile would fall to 0.91\x. The recommendation: 12 years keeps merchant debt service near 21\% of the total, inside the 25\% to 30\% practical merchant ceiling one US banker described for early 2026 (Norton Rose Fulbright 2026); the source does not define its measure, and this solution uses the share of the present value of debt service as the proxy. Twelve years also leaves an eight-year tail of merchant life. Fifteen years (27.1\%) is defensible only with a cash sweep on merchant upside (\cref{sec:37.3}). Twenty years puts a third of the debt service on merchant cash with no tail. The commonest wrong answer sizes all 20 years at 1.30\x{} because the battery is ``contracted'', ignoring that the toll covers only the first seven.
+\end{solution}
+
+\begin{solution}{exr:36.17}
+Under a hard seven-year maturity, USD~2,991.7~million must be refinanced at the end of year 7. Under the 75\% soft sweep the loan is repaid in year 18, with USD~123.5~million outstanding at the end of year 17; under the 100\% sweep of \cref{ex:36.10} it is repaid in year 17. Path at 75\%: year-8 interest $2{,}991.7 \times 7.85\% = 234.8$; scheduled notional principal 122.4; cash left $445.0 - 234.8 - 122.4 = 87.7$, of which 65.8 is swept and 21.9 distributed. The balance falls to 2,803.5 (year 8), 2,369.0 (year 10), 1,575.7 (year 13), 535.3 (year 16) and 123.5 (year 17). The sponsors receive about USD~299.5~million in years 8 to 17 instead of nothing under the 100\% sweep, at the cost of one more year and about USD~131~million more interest. Advice: accept the soft structure. Its worst case is expensive but survivable, while the hard structure's worst case, a closed market in year 7, is a default on USD~3.0~billion. Negotiate the sweep percentage and the step-up dates, not the structure. The commonest wrong answer applies the sweep before scheduled principal, which double-counts cash.
+\end{solution}
+
+\begin{solution}{exr:36.18}
+(a) The rating-case minimum DSCR is 1.26\x{} (year 15) and the weighted average 1.27\x. Rating-case CFADS uses 348.5~GWh and operating costs at 110\% of base; debt service is the P99-binding profile, P50 CFADS divided by 1.506. The ratio declines slowly from 1.28\x{} in year 1 because costs escalate at 2.8\% while revenue indexes at 2.0\%. (b) The present value of rating-case CFADS at 6.05\% divided by GBP~139.3~million gives an LLCR of 1.27\x; adding a DSRA of six months of year-1 debt service, GBP~6.52~million, gives 1.31\x. (c) The generation breakeven at base costs is 293.2~GWh, 22.3\% below P50: exactly the one-year P99, by construction, because the P99 test at 1.00\x{} sized the debt. With costs 10\% higher it is 305.8~GWh, 19.0\% below P50. The operating-cost breakeven at P50 output is 66.7\% above base. Without a published worst-year record for UK onshore wind, the one-year P99 (factor 0.777) is the defensible proxy for the worst outcome; the generation breakeven equals it, so a P99 year with base costs exactly exhausts the cover, and the DSRA is what pays a worse year. (d) On \cref{exh:30.5}, at an operations phase business assessment of 3 the 'bbb' range is 1.175\x{} to below 1.40\x, so 1.26\x{} reads 'bbb'; at an assessment of 7 any DSCR below 1.35\x{} reads 'b'. The same debt maps two rating categories apart depending on the business assessment, which is why that assessment matters more than the ratio (\cref{sec:30.5}). The commonest wrong answer resculpts the rating case, which reports the target and hides the stress.
+\end{solution}
+
+\begin{solution}{exr:36.19}
+Proposed package: P50 sizing at 1.35\x{} with a ten-year P90 solvency test at 1.20\x; a one-year P99 liquidity test in which P99 CFADS plus the available DSRA must cover debt service; an 18-year tenor, leaving a seven-year tail on the 25-year PPA; a 70\% gearing cap; a six-month DSRA plus a hydrology reserve, cash set aside in wet years to pay debt service in dry ones; a 50\% cash sweep while the offtaker pays late. Under it the 70\% gearing cap binds at USD~160.0~million.
+
+Evidence and its limits. No verified sizing norm exists for Nepal or for South Asian hydro, so the package is built from principles and dated comparators. Pairing a P50 test with a P99 floor follows the US practice of a P50 DSCR with a P99 DSCR near 1.00\x{} (Norton Rose Fulbright 2024), applied with a higher P50 target because run-of-river hydrology is more volatile than solar irradiance. IFC-disclosed DFI-led power deals with 25-year PPAs in 2022 to 2026 show long-term debt of about 62\% to 80\% of cost (IFC 2022a, 2022b, 2023, 2026); they are single deals, not a Nepal norm, and they support a 70\% cap only as a ceiling.
+
+Computation (USD m, 18 years at 7.40\%). P50 CFADS is $486.3 \times 64.75/1{,}000 - 6.84 = 24.65$ in year 1, falling to 20.18 in year 18 as costs escalate against a flat tariff.
+\begin{center}\small
+\begin{tabularx}{\linewidth}{@{}L rrr@{}}
+\toprule
+Test & \makecell[r]{Output\\(GWh)} & \makecell[r]{Effective P50\\factor $k$} & Debt\\
+\midrule
+P50 at 1.35x & 486.3 & 1.350 & 167.1\\
+Ten-year P90 at 1.20x & 443.3 & 1.392 & 162.0\\
+70\% gearing on 228.6 & n/a & n/a & 160.0\\
+One-year P99 with the DSRA counted & 341.5 & 0.934 & not binding\\
+\bottomrule
+\end{tabularx}
+\end{center}
+With a six-month DSRA counted, P99 CFADS needs to cover only half of each year's debt service, so its factor is $0.5 \times \max_t(\mathrm{CFADS}^{\mathrm{P50}}_t/\mathrm{CFADS}^{\mathrm{P99}}_t) = 0.934$, far below every other test. The debt is USD~160.0~million, 70.0\% gearing, and the effective P50 DSCR is $1.35 \times 167.1/160.0 = 1.41$\x.
+
+What would move each parameter. If lenders insist on a stand-alone P99 floor at 1.00\x{} without the reserve, its factor is 1.868 and the debt falls to USD~120.8~million, 52.8\% gearing: that is the commonest wrong design, because it treats a dry-year liquidity event as a solvency test and leaves the DSRA idle. A DFI liquidity facility for dry years would play the same role as the DSRA. A partial risk guarantee on the offtaker (\cref{ch:34}) supports the tenor and the 70\% cap but does nothing for hydrology. If lenders doubt the hydrology record, a 15-year tenor gives USD~153.5~million on the P50 test. The commonest wrong answer quotes a regional ``South Asian hydro DSCR'' as if it were verified; no such norm exists in the evidence, and saying so is part of the answer.
+\end{solution}
+
+\section*{Sources}
+\begin{sloppypar}
+\begin{sources}
+\item ACWA Power. 2026. \textit{Integrated Annual Report 2025}. Riyadh: ACWA Power. \url{https://www.acwapower.com/media/b0tnh1to/acwa-integrated-annual-report-2025-eng.pdf}. Accessed October 3, 2026.
+\item Bevans, Graeme. 2019. ``Direct Testimony on Behalf of Toll Road Investors Partnership II, L.P.'' Case No. PUR-2019-00218, Virginia State Corporation Commission. \url{https://atlasarteria.com.au/stores/_sharedfiles/SCC_Rate_Case/TestimonyofGB.pdf}. Accessed October 3, 2026.
+\item Bond Buyer. 2014. ``Bankrupt Indiana Toll Road Says Lease Could Fetch USD 5 Billion.'' \textit{The Bond Buyer}, September 2014. \url{https://www.bondbuyer.com/news/bankrupt-indiana-toll-road-says-lease-could-fetch-5-billion}. Accessed October 3, 2026.
+\item Bond Buyer. 2016. ``Lenders to Take Over Private Texas Toll Road.'' \textit{The Bond Buyer}, August 2016. \url{https://www.bondbuyer.com/news/lenders-to-take-over-private-texas-toll-road}. Accessed October 3, 2026.
+\item Department for Energy Security and Net Zero (DESNZ). 2025. \textit{CfD AR7 Final Impact Assessment}. London: DESNZ, July 2025. \url{https://assets.publishing.service.gov.uk/media/68764f1a55c4bd0544dcaeab/cfd-ar7-final-impact-assessment.pdf}. Accessed October 3, 2026.
+\item Dogger Bank Wind Farm. 2020. ``Dogger Bank Wind Farm A and B Reaches Financial Close.'' Press release, November 26, 2020. \url{https://doggerbank.com/press-releases/dogger-bank-wind-farm-a-and-b-reaches-financial-close/}. Accessed October 3, 2026.
+\item Eldorado Gold Corporation. 2026. \textit{Audited Consolidated Financial Statements for 2025}. Form 6-K exhibit, filed February 19, 2026. \url{https://www.sec.gov/Archives/edgar/data/918608/000091860826000004/auditedfinancialstatements.htm}. Accessed October 3, 2026.
+\item Federal Highway Administration (FHWA). n.d. ``SH 130 (Segments 5--6).'' Project profile, Center for Innovative Finance Support. \url{https://www.fhwa.dot.gov/ipd/project_profiles/tx_sh130.aspx}. Accessed October 3, 2026.
+\item Ferrovial SE. 2026. \textit{Form 20-F for the Year Ended December 31, 2025}. Filed February 25, 2026. \url{https://www.sec.gov/Archives/edgar/data/1468522/000162828026011789/fer-20251231.htm}. Accessed October 3, 2026.
+\item Global Infrastructure Investor Association (GIIA). n.d. ``IFM Indiana Toll Road.'' Case study. \url{https://giia.net/case-studies/ifm-indiana-toll-road/}. Accessed October 3, 2026.
+\item IFC (International Finance Corporation). 2022a. ``Amunet Wind IPP.'' Summary of Investment Information, project 45837. \url{https://disclosures.ifc.org/project-detail/SII/45837/amunet-wind-ipp}. Accessed October 3, 2026.
+\item IFC (International Finance Corporation). 2022b. ``Syrdarya CCGT.'' Summary of Investment Information, project 45205. \url{https://disclosures.ifc.org/project-detail/SII/45205/syrdarya-ccgt}. Accessed October 3, 2026.
+\item IFC (International Finance Corporation). 2023. ``UZ Solar 3.'' Summary of Investment Information, project 47285. \url{https://disclosures.ifc.org/project-detail/SII/47285/uz-solar-3}. Accessed October 3, 2026.
+\item IFC (International Finance Corporation). 2026. ``Aysha I Wind.'' Summary of Investment Information, project 49251. \url{https://disclosures.ifc.org/project-detail/SII/49251/aysha-i-wind}. Accessed October 3, 2026.
+\item Indianapolis Business Journal. 2014. ``Indiana Toll Road Operator Facing Debt Woes.'' June 19, 2014. \url{https://www.ibj.com/articles/48208-indiana-toll-road-operator-facing-debt-woes}. Accessed October 3, 2026.
+\item Morningstar DBRS. 2023. ``DBRS Morningstar Confirms Ratings on Comber Wind Financial Corporation at BBB, Stable Trends.'' June 20, 2023. \url{https://dbrs.morningstar.com/research/416111}. Accessed October 3, 2026.
+\item Morningstar DBRS. 2026. ``Morningstar DBRS Upgrades Mountain View Partners GP's Issuer Rating and Series A Bonds to `A' From A (low); Stable Trends.'' May 5, 2026. \url{https://dbrs.morningstar.com/research/480325}. Accessed October 3, 2026.
+\item National Audit Office. 2018. \textit{PFI and PF2}. HC 718. London: National Audit Office, January 18, 2018. \url{https://www.nao.org.uk/wp-content/uploads/2018/01/PFI-and-PF2.pdf}. Accessed October 3, 2026.
+\item NextDecade Corporation. 2023. \textit{Form 8-K (Rio Grande LNG Phase 1 Final Investment Decision and Financing)}. Filed July 12, 2023. \url{https://www.sec.gov/Archives/edgar/data/1612720/000143774923019791/next20230712_8k.htm}. Accessed October 3, 2026.
+\item Norton Rose Fulbright. 2024. ``Cost of Capital: 2024 Outlook.'' Moderated by Keith Martin, February 19, 2024. \url{https://www.projectfinance.law/publications/2024/february/cost-of-capital-2024-outlook/}. Accessed October 3, 2026.
+\item Norton Rose Fulbright. 2025. ``Cost of Capital: 2025 Outlook.'' January 2025. \url{https://www.projectfinance.law/publications/2025/january/cost-of-capital-2025-outlook/}. Accessed October 3, 2026.
+\item Norton Rose Fulbright. 2026. ``Cost of Capital: 2026 Outlook.'' Moderated by Keith Martin, January 2026. \url{https://www.projectfinance.law/publications/2026/january/cost-of-capital-2026-outlook/}. Accessed October 3, 2026.
+\item OECD. 2017. \textit{Arrangement on Officially Supported Export Credits} (consolidated text published February 1, 2017), as reproduced in Commission Delegated Regulation (EU) 2018/179, \textit{Official Journal of the European Union} L 37, February 9, 2018. \url{https://www.legislation.gov.uk/eur/2018/179/pdfs/eur_20180179_adopted_en.pdf}. Accessed October 3, 2026.
+\item OECD. 2026. \textit{Arrangement on Officially Supported Export Credits}. OECD/LEGAL/5005, text revised January 2026. \url{https://legalinstruments.oecd.org/public/doc/253/253.en.pdf}. Accessed October 3, 2026.
+\item Ørsted. 2023. ``Ørsted Ceases Development of Ocean Wind 1 and Ocean Wind 2.'' October 31, 2023. \url{https://oceanwindone.com/news-archive/2023/11/orsted}. Accessed October 3, 2026.
+\item Ørsted. 2024. \textit{Annual Report 2023}. Fredericia: Ørsted A/S. \url{https://via.ritzau.dk/ir-files/13560592/8204/12529/%C3%98rsted%20annual%20report%202023.pdf}. Accessed October 3, 2026.
+\item ReNew Energy Global plc. 2026. \textit{Form 20-F for the Year Ended March 31, 2026}. Filed July 30, 2026. \url{https://www.sec.gov/Archives/edgar/data/1848763/000119312526325073/rnw-20260331.htm}. Accessed October 3, 2026.
+\item Sempra. 2023. \textit{Form 8-K (Port Arthur LNG Phase 1 Financing)}. Filed March 20, 2023. \url{https://www.sec.gov/Archives/edgar/data/1032208/000103220823000011/sempra-20230320.htm}. Accessed October 3, 2026.
+\item SSE. 2021. ``Dogger Bank C Reaches Financial Close.'' December 2, 2021. \url{https://www.sse.com/news-and-views/2021/12/dogger-bank-c-reaches-financial-close/}. Accessed October 3, 2026.
+\item Teck Resources Limited. 2025. \textit{Fourth Quarter 2024 News Release and Interim Financial Statements}. Form 6-K Exhibit 99.2, filed February 20, 2025. \url{https://www.sec.gov/Archives/edgar/data/886986/000095014225000461/eh250593634_ex9902.htm}. Accessed October 3, 2026.
+\item Texas Tribune. 2017. ``Operator of Texas Toll Road with 85 mph Speed Limit Emerges from Bankruptcy.'' June 28, 2017. \url{https://www.texastribune.org/2017/06/28/sh-130-toll-operator-announces-new-post-bankruptcy-ownership-structure/}. Accessed October 3, 2026.
+\item Toll Road Investors Partnership II, L.P. 2026. \textit{Audited Financial Statements for the Years Ended December 31, 2025 and 2024}. \url{https://d3ar6irj6sybdw.cloudfront.net/stores/_sharedfiles/Financials/Dulles_Greenway/TRIP%20II%20FY25%20Financial%20Statements%20(2).pdf}. Accessed October 3, 2026.
+\end{sources}
+\end{sloppypar}

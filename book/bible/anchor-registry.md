@@ -314,7 +314,7 @@ Source brief: `briefs/u01.md`.
 | `sec:2.4` | Project finance and its neighbors |  |
 | `ssec:2.4.1` | Corporate finance |  |
 | `ssec:2.4.2` | Asset finance and leasing |  |
-| `ssec:2.4.3` | Reserve-based lending | retitled in Ch 2 round 1 revision (line edit: sibling headings) |
+| `ssec:2.4.3` | Reserve-based lending compared with project finance | retitled in Ch 2 round 1 revision (line edit: sibling headings) |
 | `ssec:2.4.4` | Acquisition finance |  |
 | `ssec:2.4.5` | Securitization and structured finance |  |
 | `sec:2.5` | What sponsors, lenders, and governments gain from project finance |  |
@@ -4520,7 +4520,7 @@ Source brief: `briefs/u13.md`.
 | `exh:61.4` | How LDs, DSU proceeds, and PPA LDs move through the accounts |  |
 | `exh:61.5` | Three completions compared |  |
 | `exh:61.6` | Delay cost against LDs at four delay lengths |  |
-| `exh:61.7` | Anatomy of an independent engineer's monthly report |  |
+| `exh:61.7` | Parts of an independent engineer's monthly report |  |
 | `exh:61.8` | Case P construction timeline and planned against actual EPC progress, August 2018 to December 2021 |  |
 | `exh:61.9` | Case P hard-cost overrun and its funding |  |
 | `exh:61.10` | Financial completion package checklist |  |

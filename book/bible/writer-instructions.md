@@ -7,7 +7,7 @@ You are a chapter writer for the textbook defined in /home/user/neurolab/book/st
 2. bible/style-sheet.md (including the Addendum) and bible/decisions.md (all entries; D-008 = LaTeX, D-011 = indicative ranges, D-013 = input arithmetic).
 3. bible/architecture.md and bible/ownership-resolutions.md (rulings override briefs; apply every ruling that names your chapter, including "brief text that must change").
 4. Your chapter's brief in bible/briefs/uNN.md (find "Chapter N"), plus the neighbor summaries it contains.
-5. bible/anchor-registry.md (your chapter's labels, and the labels you cite) and the glossary-canon entries you use (bible/glossary-canon.md; search it — do not read all 1,793 terms).
+5. bible/anchor-registry.md (your chapter's labels, and the labels you cite) and the glossary-canon entries you use (bible/glossary-canon.md; search it — do not read all 1,795 terms).
 6. Running cases: bible/case-bible.md sections for your chapter's beat, bible/case-bible-annex-p.md and bible/case-bible-annex-tr.md (annexes override the bible), model/figure-ledger-case-p.md, -t.md, -r.md and model/case-state-case-*.md rows for your chapter. Running-case numbers come ONLY from the ledgers (or D-013 input arithmetic, showing the arithmetic). Never compute your own running-case figures.
 7. Fact sheets your brief cites, in facts/. State real-world facts only from fact sheets ("Do not state" lists are binding) or verify new ones yourself and report them. Market norms without a verified source follow D-011 (label "indicative", market and period).
 8. Pilot exemplars once they exist: chapters listed in bible/exemplars.md. Match their voice and quality.
@@ -55,3 +55,5 @@ Never put personal identifiers in any web request header; never bypass bot block
 - British spellings (cancelled, panellist, programme, licence) are errors.
 - Illustrative parties: never place them in a specific identifiable real procurement or auction round (D-129); real program types only, consistent with how the program works.
 - When citing an earlier chapter that already exists in chapters/, read the chapter file (not its brief) for labels, figures and framework wording (D-140).
+- Inputs of three or more significant figures must not repeat values used in other chapters' examples (D-134). Check your inputs against the candidate list in reviews/blueprint/r3-verification.md Appendix A and against chapters/ already drafted; vary them if they collide.
+- Fictional names: check bible/case-bible.md Part 5A before using any illustrative party name; never reuse a name for a different party.

@@ -4,7 +4,7 @@
     model/build/Ch39_skeleton.xlsx   Ch40_funding.xlsx   Ch41_operations.xlsx
     model/build/Ch42_waterfall.xlsx  Ch43_outputs.xlsx
 
-by FILTERING the output of the master build script (model/build_excel_p.py, Case P v1.4): no formula
+by FILTERING the output of the master build script (model/build_excel_p.py, Case P v1.5): no formula
 is retyped.  Each stage keeps the sheets and rows that the u09 Section 0.4 row map assigns to that
 chapter and every earlier chapter, with the modeler's confirmed assignments (case_p_report.md 8c):
 
@@ -21,9 +21,11 @@ chapter and every earlier chapter, with the modeler's confirmed assignments (cas
     pasted per-run results in rows 311 to 1312, F1321) and the Cover's Monte Carlo line (row 29) are
     therefore Chapter 43 rows (8c had listed F311, F312 and F1321 under Chapter 39; under D-125 they
     would be inert and unreferenced there);
-  * the same applies to the one v1.4 appended row of an earlier chapter that carries a hook: the
-    ECA-test check Checks F23 (Chapter 42) reads AND(Scenario=1, Inputs F312=0) in v1.4; the
-    Chapter 42 file holds it as Scenario=1 only, and Chapter 43 adds the Monte Carlo condition;
+  * v1.5 (D-128, case_p_report.md 8d): Debt rows 143 to 147 (ECA equal-installment profile, read by
+    Debt row 24, row 119 and Funding F12) belong to Chapter 40 and rows 148 to 150 (sculpting helpers)
+    to Chapter 42; Checks F23 applies in every scenario and has no Monte Carlo condition (in v1.4 it
+    did, and the Chapter 42 file dropped it).  The v1.5 changes left the D-125 cells untouched, so their
+    v1.3 pre-hook formulas still apply;
   * Checks F19 (master check) is restated in each stage as the sum of the absolute values of the
     checks present in that stage (in Chapter 43 it equals the master formula);
   * Cover rows 31 to 35 carry the stage note required by u09 R7 (stage, provisional rows, scenarios
@@ -41,7 +43,7 @@ from openpyxl.utils import get_column_letter as L
 HERE = os.path.dirname(os.path.abspath(__file__))
 MODEL = os.path.dirname(HERE)
 sys.path.insert(0, MODEL)
-import build_excel_p as bx          # noqa: E402  (Case P v1.4 master build script)
+import build_excel_p as bx          # noqa: E402  (Case P master build script, v1.5)
 import case_p as cp                 # noqa: E402
 
 WORK = os.environ.get('BUILDALONG_WORK', '/tmp/claude-0/buildalong_work')
@@ -78,7 +80,7 @@ INPUTS = _ranges(
 )
 CONSTRUCTION = _ranges((39, R(7, 15)), (40, R(16, 34)), (41, R(35, 37)), (41, [38]))
 OPERATIONS = _ranges((40, R(7, 15)), (41, R(16, 99)))
-DEBT = _ranges((40, R(7, 19)), (42, R(20, 142)))
+DEBT = _ranges((40, R(7, 19)), (42, R(20, 142)), (40, R(143, 147)), (42, R(148, 150)))   # v1.5: 143-147 ECA profile (Ch 40), 148-150 sculpting helpers (Ch 42)
 WATERFALL = _ranges((42, R(7, 44)), (41, [32]))
 CHECKS = _ranges((40, [7, 8, 9, 16, 17]), (41, [15]), (42, [10, 11, 12, 13, 14, 18, 22, 23, 24]),
                  (39, [19, 20, 21]), (43, [25]))
@@ -137,7 +139,7 @@ def soffice_recalc(paths, outdir):
 
 
 def master_files():
-    """Build the master (Scenario 1) with the v1.4 script and recalculate it once with LibreOffice."""
+    """Build the master (Scenario 1) with the master script and recalculate it once with LibreOffice."""
     os.makedirs(WORK, exist_ok=True)
     m = os.path.join(WORK, 'master_s1.xlsx')
     bx.build(m, 1)
@@ -163,7 +165,7 @@ def stage_note(stage):
     nxt = {39: 'Ch40_funding.xlsx', 40: 'Ch41_operations.xlsx', 41: 'Ch42_waterfall.xlsx', 42: 'Ch43_outputs.xlsx', 43: None}
     fname = dict(STAGES)[stage]
     lines = [
-        f"Build-along file {fname}: the companion model at the end of Chapter {stage} (u09 Section 0.4 rows of Chapters 39 to {stage}; model version 1.4).",
+        f"Build-along file {fname}: the companion model at the end of Chapter {stage} (u09 Section 0.4 rows of Chapters 39 to {stage}; model version 1.5).",
         "Provisional rows: " + (prov[stage] + " They hold FC base (Scenario 1) values pasted in input color." if stage in prov else "none."),
         ("Reconciles on Scenario 1 only (the provisional rows hold Scenario 1 values); other scenarios reconcile from Ch42_waterfall.xlsx."
          if stage in prov else "Reconciles in every scenario (1 to 15)." if stage in (39, 42, 43) else ""),
@@ -210,11 +212,12 @@ def build_stage(stage, master_path, master_vals, v13):
                 ws.cell(r, c).value = wo.cell(r, c).value
     # D-125 applied to a v1.4 appended row: the ECA-test check (Checks F23, Chapter 42) carries the
     # Monte Carlo condition AND(Scenario=1, Inputs F312=0); before Chapter 43 it reads Scenario=1 only.
+    # (v1.5: F23 applies in every scenario and carries no Monte Carlo condition; kept for older masters)
     if 42 <= stage < 43:
         c = wb['Checks']['F23']
         hook = 'AND(Inputs!$F$8=1,Inputs!$F$312=0)'
-        assert hook in c.value, c.value
-        c.value = c.value.replace(hook, 'Inputs!$F$8=1')
+        if hook in c.value:
+            c.value = c.value.replace(hook, 'Inputs!$F$8=1')
     # master check restated over the checks present
     ck = wb['Checks']
     present_checks = [r for r in list(range(7, 19)) + list(range(20, 26)) if present('Checks', r, stage)]

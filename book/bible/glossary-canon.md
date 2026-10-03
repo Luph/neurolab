@@ -12,7 +12,7 @@ Rules for writers (rulings R-114, R-083, R-060 and R-121 govern the entries):
 6. Home section labels follow the anchor registry (`bible/anchor-registry.md`). Labels marked new in the Notes (ssec:27.3.4, ssec:62.5.4, ssec:66.4.7; ssec:5.2.2, ssec:7.11.4 and ssec:13.8.5 under R-135 and R-136 as placed by the revised briefs, D-048) are created by the rulings. Every home label resolves in the anchor registry regenerated on October 3, 2026 (consolidation A).
 7. Terms introduced in Chapter 1 are previews and are never bolded there (style sheet addendum 2026-10-03).
 
-Entries: 1793 (recounted October 3, 2026 after consolidation A, which applied the glossary changes requested in the round-1 brief revision logs; 1,784 after the blueprint-review edits; D-030 counted 1,772 before them).
+Entries: 1795 (table rows recounted at the blueprint round 3 verification, October 3, 2026; consolidation A, which applied the glossary changes requested in the round-1 brief revision logs, stated 1,793, and the Chapter 36 review has since added "separateness undertaking"; 1,784 after the blueprint-review edits; D-030 counted 1,772 before them).
 
 | Term | Abbreviation | Definition | Home section label | Notes |
 |---|---|---|---|---|

@@ -95,10 +95,10 @@ def main():
     t4312 = dict(equity_irr=ret['F12'].value * 100, project_irr=ret['F13'].value * 100, project_irr_pretax=ret['F14'].value * 100,
                  npv16=ret['F15'].value, payback=payback.date().isoformat(), llcr=rat['F18'].value,
                  llcr_ex_dsra=rat.cell(14, 9 + t1).value, plcr=rat['F19'].value)
-    t4312_ok = dict(equity_irr=ok(t4312['equity_irr'], 13.3, 1), project_irr=ok(t4312['project_irr'], 11.0, 1),
-                    project_irr_pretax=ok(t4312['project_irr_pretax'], 11.6, 1), npv16=ok(t4312['npv16'], -43.1, 1),
-                    payback=t4312['payback'] == '2031-06-30', llcr=ok(t4312['llcr'], 1.42, 2), llcr_ex_dsra=ok(t4312['llcr_ex_dsra'], 1.36, 2),
-                    plcr=ok(t4312['plcr'], 1.86, 2))
+    t4312_ok = dict(equity_irr=ok(t4312['equity_irr'], 13.2, 1), project_irr=ok(t4312['project_irr'], 11.0, 1),
+                    project_irr_pretax=ok(t4312['project_irr_pretax'], 11.6, 1), npv16=ok(t4312['npv16'], -45.3, 1),
+                    payback=t4312['payback'] == '2031-06-30', llcr=ok(t4312['llcr'], 1.42, 2), 
+                    plcr=ok(t4312['plcr'], 1.85, 2))   # v1.5 ledger P-F16, P-F41 (no ledger line for LLCR excluding the DSRA)
     # draw table
     DR = cp.mc_draws(); dw = load_workbook(os.path.join(HERE, 'ex43_14', 'ch43_draw_table.xlsx')).active
     dmax = max(abs(dw.cell(313 + r, 10 + j).value - DR[r, j]) for r in range(DR.shape[0]) for j in range(DR.shape[1]))
@@ -122,7 +122,7 @@ def main():
     hist_counts = [int(((pr[:, 0] >= bins[i]) & (pr[:, 0] < bins[i + 1])).sum()) for i in range(len(bins) - 1)] + [int((pr[:, 0] >= bins[-1]).sum())]
     pf42 = dict(min_dscr_p=[round(x, 4) for x in p_dscr], irr_p=[round(x, 3) for x in p_irr], lockup_share=float(pr[:, 3].mean()),
                 default_share=float(pr[:, 4].mean()), histogram=hist_counts,
-                ok=[round(x, 2) for x in p_dscr] == [1.32, 1.34, 1.35] and [round(x, 1) for x in p_irr] == [12.9, 13.2, 13.7] and pr[:, 3].mean() == 0)
+                ok=[round(x, 2) for x in p_dscr] == [1.32, 1.34, 1.35] and [round(x, 1) for x in p_irr] == [12.8, 13.1, 13.6] and pr[:, 3].mean() == 0)
     R['ex43_14'] = dict(structure=dict(macro_free=st['macro_free'], iterative=st['iterative'], forward_refs=st['forward_refs']),
                         scenarios=runs, ex43_12_targets=t4312, ex43_12_ok=t4312_ok, draw_table=dict(maxdiff_vs_mirror=dmax, maxdiff_vs_ch43=dmax2, has_results=has_results,
                                                                                                         macro_free=macro_free(os.path.join(HERE, 'ex43_14', 'ch43_draw_table.xlsx'))),

@@ -2,7 +2,7 @@
 
 ## Phase status
 - [x] Setup: workspace, standards.md, architecture.md
-- [ ] Phase 1 Architecture: style sheet, Case Bible, models, fact sheets, part briefs, glossary canon, anchor registry, blueprint review
+- [x] Phase 1 Architecture (blueprint passed round 3)
 - [ ] Phase 2 Pilot (two chapters, full review)
 - [ ] Phase 3 Parallel drafting
 - [ ] Phase 4 Review and revision
@@ -128,3 +128,4 @@
 - Blueprint round-2 fixes DONE (r2-fix-log.md; D-129..D-139). Quebrada Honda in u10 renamed Loma Cobrecita.
 - Ch 2 revised (r1); round-2 reviews dispatched to the same six reviewers.
 - Case P model v1.5 DONE (D-128 ECA equal-installment tranche; debt 629.95; 443 ledger values changed, list in model/figure-ledger-case-p-changes-v1.5.md). Build-along regeneration + u09 map update, and v1.5 value propagation across briefs/Bible, launched.
+- BLUEPRINT PASSED (round 3 verification, reviews/blueprint/r3-verification.md). Phase 1 complete pending v1.5 value propagation and R3-1 name-clash fixes.
