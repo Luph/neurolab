@@ -324,7 +324,11 @@ Library (tcolorbox): 'tcbmagazine.code.tex' version '6.2.0'
 Library (tcolorbox): 'tcbvignette.code.tex' version '6.2.0'
 ) (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbposter.code.tex
 Library (tcolorbox): 'tcbposter.code.tex' version '6.2.0'
-)) (/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+)) (/usr/share/texlive/texmf-dist/tex/latex/pdflscape/pdflscape.sty
+(/usr/share/texlive/texmf-dist/tex/latex/pdflscape/pdflscape-nometadata.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/lscape.sty)))
+(/usr/share/texlive/texmf-dist/tex/latex/tools/xspace.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
 (/usr/share/texlive/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty)
 (/usr/share/texlive/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty)
 (/usr/share/texlive/texmf-dist/tex/generic/pdfescape/pdfescape.sty)
@@ -397,7 +401,7 @@ LaTeX Warning: There were undefined references.
    31 hlist, 2 vlist, 14 rule, 1 local_par, 4 glue, 4 kern, 1 penalty, 1 margin
 _kern, 3 glyph, 89 attribute, 67 glue_spec, 82 attribute_list, 2 write, 24 pdf_
 literal, 24 pdf_colorstack nodes
-   avail lists: 1:4,2:2459,3:1099,4:941,5:1190,6:65,7:3830,8:40,9:2775,10:23,11
+   avail lists: 1:3,2:2605,3:1102,4:943,5:1190,6:65,7:3834,8:40,9:2779,10:23,11
 :232
 </usr/share/texmf/fonts/opentype/public/tex-gyre/texgyreheros-regular.otf></usr
 /share/fonts/truetype/dejavu/DejaVuSansMono.ttf></usr/share/texmf/fonts/opentyp
@@ -407,5 +411,5 @@ public/tex-gyre/texgyrepagella-regular.otf></usr/share/texmf/fonts/opentype/pub
 lic/tex-gyre/texgyrepagella-bold.otf></usr/share/texmf/fonts/opentype/public/te
 x-gyre/texgyrepagella-regular.otf></usr/share/texmf/fonts/opentype/public/tex-g
 yre/texgyreheros-bold.otf>
-Output written on 99-test.pdf (2 pages, 49032 bytes).
+Output written on 99-test.pdf (2 pages, 51904 bytes).
 Transcript written on 99-test.log.

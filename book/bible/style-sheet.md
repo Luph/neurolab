@@ -1,6 +1,8 @@
 # Style sheet
 
-Binding on every writer, reviewer, and editor. Where this sheet and `standards.md` differ, `standards.md` wins and the conflict is logged in `bible/decisions.md`. Every choice below is final; do not reopen one inside a chapter. Text that this sheet quotes as an example of what not to write is marked **[BAD]**; everything marked **[GOOD]** is a model to imitate. All figures in this sheet (delay days, DSCR ranges, dates, amounts) illustrate format only; they are not Case Bible figures or verified market data, and no writer may cite them.
+Binding on every writer, reviewer, and editor. The book is authored in LaTeX and compiled to PDF with LuaLaTeX and the house package `latex/pfbook.sty` (decision D-008). Where this sheet and `standards.md` differ, `standards.md` wins, except that D-008 replaces the Markdown and Mermaid conventions of `standards.md` Section 10. Every choice below is final; do not reopen one inside a chapter.
+
+Text this sheet quotes as an example of what not to write is marked **[BAD]**; text marked **[GOOD]** is a model to imitate. All figures in this sheet (delay days, DSCR ranges, dates, amounts) illustrate format only. They are not Case Bible figures or verified market data, and no writer may cite them. LaTeX source is shown in code blocks exactly as it goes in the chapter file.
 
 ## 1. Voice
 
@@ -8,20 +10,18 @@ Binding on every writer, reviewer, and editor. Where this sheet and `standards.m
 
 Write as the most capable person on the deal team, explaining something to a sharp new colleague at the end of a long day: direct, specific, warm, and willing to say what is hard or unresolved. The reader is a future peer. Never lecture, reassure, or flatter.
 
-Concrete rules:
-
-- Lead with the case, the number, or the scene, then state the general rule. A paragraph that opens with an abstraction must reach a concrete instance within two sentences.
+- Lead with the case, the number, or the scene, then state the general rule. A paragraph that opens with an abstraction reaches a concrete instance within two sentences.
 - Every rule comes with its mechanism: what problem it solves, what breaks without it, and who pushed for it.
-- Use "you" for the reader acting in a role ("You are the facility agent, and the borrower's compliance certificate is three days late"). Use "we" only for shared calculation steps ("we discount at 8.5%"). Never use "I".
+- Use "you" for the reader acting in a role ("You are the facility agent, and the project company's compliance certificate is three days late"). Use "we" only for shared calculation steps ("we discount at 8.5%"). Never use "I".
 - Wry is allowed once or twice a chapter, when the humor carries information. A joke that could appear in any book is cut.
 - When practitioners disagree, give both positions, then say which one this book favors and why (`standards.md` Section 9).
-- Market norms are always dated and placed: "In 2025–2026 European bank deals for contracted onshore wind, minimum DSCRs on P90 sat at roughly 1.20x to 1.25x." Never state a bare norm.
+- Market norms are always dated and placed: "In 2025--2026 European bank deals for contracted onshore wind, minimum DSCRs on P90 sat at roughly 1.20x to 1.25x." Never state a bare norm.
 
 ### 1.2 The four lenses in prose
 
-Every major topic is seen from the sponsor, the lender, the host government, and the contractor or operator. Do not render this as a four-bullet list after every concept. Show it in prose through what each party needs, fears, and will trade, and let the lenses collide.
+Every major topic is seen from the sponsor, the lender, the host government, and the contractor or operator. Do not render this as a four-item list after every concept. Show it in prose through what each party needs, fears, and will trade, and let the lenses collide.
 
-**[GOOD]** "The sponsor wants the delay liquidated damages capped at 15% of the contract price so the EPC contractor's bid stays low. The lenders want the cap high enough to pay interest for the full delay the independent engineer thinks plausible, which on Case P is 210 days, or about USD 38.4 million. The EPC contractor will accept a higher cap only if the price rises to cover it, and the host government, which reimburses capacity payments from the commercial operation date, does not care about the cap at all until the delay pushes power past the winter peak."
+**[GOOD]** "The sponsor wants delay liquidated damages capped at 15% of the contract price so the EPC contractor's bid stays low. The lenders want the cap high enough to pay interest through the full delay the independent engineer thinks plausible, which on this project is 210 days, or about USD 38.4 million. The EPC contractor will accept a higher cap only if the price rises to cover it. The host government, which guarantees the offtaker's payments, ignores the cap until a delay pushes first power past the winter peak, at which point it becomes the government's problem in parliament."
 
 **[BAD]** "From the sponsor's perspective, the cap matters. From the lender's perspective, it also matters. The government and the contractor also have views."
 
@@ -29,410 +29,602 @@ A chapter passes the lens test when a reader can answer, for each major concept,
 
 ### 1.3 Running-case scenes
 
-Running-case installments are scenes, not dramatized lectures. People interrupt, posture, bluff, misread each other, concede badly, and are sometimes wrong; the narration or a later section shows who was wrong and why. No character delivers a paragraph of exposition. No one says "As you know." No scene ends on a spoken or narrated moral. Physical detail appears only if it changes the outcome (the term sheet printed without the latest markup; the call where the ECA representative is on a train and keeps dropping out). Characters come only from the Case Bible.
+Running-case installments are scenes, not dramatized lectures. People interrupt, posture, bluff, misread each other, concede badly, and are sometimes wrong; the narration or a later section shows who was wrong and why. No character delivers a paragraph of exposition, no one says "As you know," and no scene ends on a spoken or narrated moral. Physical detail appears only if it changes the outcome (the term sheet printed without the latest markup; the ECA representative on a train who keeps dropping off the call). Characters come only from the Case Bible. Dialogue goes inside a `casescene` box (Section 4.6); narration that teaches goes outside it.
 
 **[BAD]** (mouthpiece speech)
 
-> "As you know," said the lead arranger, "lenders size debt on P90 because the P50 is only a median estimate, and if production falls below it in any given year, the debt service coverage ratio could drop below the lock-up threshold, which would harm both lenders and sponsors. That is why we must insist on P90."
->
-> The developer nodded thoughtfully. "That makes perfect sense."
+> "As you know," said the lead arranger, "lenders size debt on P90 because the P50 is only a median estimate, and if production falls below it in any given year, the debt service coverage ratio could drop below the lock-up threshold, which would harm both lenders and sponsors. That is why we must insist on P90." The developer nodded thoughtfully. "That makes perfect sense."
 
-**[GOOD]** (scene with friction)
+**[GOOD]** (scene with friction, as LaTeX source)
 
-> "One-point-three-five on P50," the developer said. "That's what Brightmoor got last quarter."
->
-> "Brightmoor has a ten-year operating record. You have a met mast and a consultant's report." The arranger didn't look up from the sizing printout. "We're at one-point-two on the one-year P90."
->
-> "That's eleven million less debt."
->
-> "Twelve-point-four. I checked."
->
-> The developer's counsel cut in. "If we take the P90 case, we want the lock-up at one-point-oh-five, not one-ten."
->
-> "Different conversation."
->
-> It was the same conversation, and both of them knew it: the lock-up level and the sizing case are two dials on the same risk.
+```latex
+\begin{casescene}{Case R}{Arranger's offices, February 2027}
+``One-point-three-five on P50,'' the developer said. ``That's what Brightmoor got last quarter.''
 
-The final sentence of the good example is narration that explains a mechanism. It does not moralize. Number words in dialogue are spelled as people say them; the narration then states the figure in numerals if the reader needs it (Section 2.3).
+``Brightmoor has a ten-year operating record. You have a met mast and a consultant's report.'' The arranger didn't look up from the sizing printout. ``We're at one-point-two on the one-year P90.''
+
+``That's eleven million less debt.''
+
+``Twelve-point-four. I checked.''
+
+The developer's counsel cut in. ``If we take the P90 case, we want the lock-up at one-point-oh-five, not one-ten.''
+
+``Different conversation.''
+\end{casescene}
+
+It was the same conversation: the lock-up level and the sizing case are two dials
+on the same risk, and \cref{sec:37.4} shows how lenders set them together.
+```
+
+The paragraph after the box is narration that explains a mechanism and points to where it is taught. It does not moralize. Number words in dialogue are spelled as people say them; the narration states the figure in numerals if the reader needs it.
 
 ## 2. Spelling, usage, and numbers
 
+Each rule gives the printed form and, where it differs, the LaTeX source.
+
 ### 2.1 American English
 
-American spelling throughout prose: modeling, labor, program, center, defense, license (noun and verb), analyze, organization, judgment, fulfill, aging, sulfur, gray, catalog, enroll. Exceptions: proper names (Thames Tideway Tunnel, Ministry of Defence), titles of sources, and drafted clauses that state English law as governing law, which may use British forms ("Utilisation Request") because that is how such documents are drafted. Use "financial close" (not "financial closing"), "per year" (not "per annum" outside clauses), "lawsuit" only for US litigation.
+American spelling throughout prose: modeling, labor, program, center, defense, license (noun and verb), analyze, organization, judgment, fulfill, aging, sulfur, gray, catalog, enroll. Exceptions: proper names (Thames Tideway Tunnel, Ministry of Defence), titles of sources, and drafted clauses governed by English law, which may use British forms ("Utilisation Request") because such documents are drafted that way. Write "financial close" (not "financial closing") and "per year" (not "per annum" outside clauses).
 
-Serial (Oxford) comma always: "the sponsor, the lenders, and the offtaker." Single space after periods. Double quotation marks; single quotation marks only inside double. Periods and commas go inside closing quotation marks (American convention), except when quoting a defined code string or Excel formula, which go in code spans.
+Serial (Oxford) comma always: "the sponsor, the lenders, and the offtaker." Double quotation marks, typed ` ``like this'' `; single quotation marks inside double, typed `` `like this' ``. Periods and commas go inside closing quotation marks.
 
 Hyphenate compound modifiers before a noun when needed for sense (a 20-year PPA, a fixed-price contract), never after it (the PPA runs for 20 years). Never stack more than two hyphenated compound modifiers in one noun phrase.
 
 ### 2.2 Dates and periods
 
-- Prose dates: month-day-year with a comma: **October 3, 2026**. Month and year only: "October 2026" (no comma).
-- Table cells, Mermaid timelines, and the model: ISO format **2026-10-03**.
-- Decades: "the 1990s". Ranges: "2019–2023" with an en dash and no spaces.
-- Project time: the first full year of operation is **Operating Year 1** in prose and **OY1** in tables. Construction months are **Month 1** to **Month 34** counted from notice to proceed.
-- Calendar periods: Q3 2027, H1 2028. Fiscal years: **FY2027** (no space), and the chapter states once when the fiscal year ends ("FY2027 ends June 30, 2027").
+- Prose dates: October 3, 2026. Month and year only: October 2026.
+- Table cells and timeline exhibits: ISO format 2026-10-03, or "Q3 2027" where the period is the point.
+- Ranges use an en dash, typed `--`, with no spaces: `2019--2023`, `pages 45--67`, `1.20x--1.25x` is not used (write "1.20x to 1.25x" for ratio ranges in prose).
+- Project time: the first full year of operation is Operating Year 1 in prose and OY1 in tables. Construction months are Month 1 to Month 34, counted from notice to proceed.
+- Calendar periods: Q3 2027, H1 2028. Fiscal years: FY2027, and the chapter states once when the fiscal year ends.
 - Model periods are named by their end date: "the period ending June 30, 2028."
 
 ### 2.3 Numbers
 
-- Spell out one to nine in prose; use numerals for 10 and above. Always use numerals with units, money, percentages, ratios, multiples, section and exhibit numbers, years, and model periods ("3 MW", "USD 4.0 million", "5%", "Year 7", "Exhibit 36.2").
-- Never begin a sentence with a numeral; rewrite the sentence rather than spell out a large figure.
-- Thousands separator is a comma: 12,450 hours. Decimal point is a period.
-- Use "million" and "billion" in prose, never "mn", "mm", "bn", or "MM" (except in the unit MMBtu).
-- In dialogue, write numbers as spoken ("one-point-two"); the narration supplies the numeral if it matters.
-- Approximate real-world figures carry "approximately" (Section 9). Illustrative figures must look like real data: USD 412.6 million, not USD 400 million.
+- Spell out one to nine in prose; use numerals for 10 and above. Always use numerals with units, money, percentages, ratios, multiples, cross-referenced numbers, years, and model periods.
+- Never begin a sentence with a numeral; rewrite the sentence.
+- Thousands separator is a comma: 12,450 hours. Inside math, protect the comma: `$1{,}055.06$`.
+- Write "million" and "billion" in prose, never "mn", "mm", "bn", or "MM" (except in the unit MMBtu).
+- In dialogue, write numbers as spoken ("one-point-two").
+- Approximate real-world figures carry "approximately" (Section 9). Illustrative figures look like real data: USD 412.6 million, not USD 400 million.
 
 ### 2.4 Money
 
-- ISO code before the amount, separated by a space, no currency symbols: **USD 412.6 million**, **EUR 85.0 million**, **GBP 1.2 billion**, **USD 45,000**.
-- Default precision: millions to one decimal place in prose and tables. Billions to one decimal place when the figure is above USD 1,000 million and precision is not the point; otherwise keep millions (USD 1,184.3 million in a sources-and-uses table).
-- Table headers carry the unit: "USD m". Cells then hold bare numbers: 412.6.
-- Unit prices: two decimals: USD 52.40/MWh, USD 6.85/MMBtu, USD 3.15 per vehicle trip. Write "per" when the denominator is not a standard unit.
-- Fictional currencies: the Case Bible assigns each fictional country a three-letter code that is not an existing ISO 4217 code. Write them exactly like USD amounts. Every local-currency figure that matters to the reader appears with its USD equivalent and the exchange rate used, once per example: "KDR 9,860.0 million (USD 76.4 million at KDR 129.05 per USD)."
-- Exchange rates: "KDR 129.05 per USD" in prose; table header "KDR/USD".
-- Real versus nominal: say which, once per example: "USD 52.40/MWh in 2026 real terms."
+| Printed | LaTeX source | Rule |
+|---|---|---|
+| USD 412.6 million | `\USDm{412.6}` | Default for millions, one decimal |
+| USD 1.2 billion | `USD~1.2~billion` | Only above USD 1,000 million when precision is not the point |
+| USD 45,000 | `USD~45,000` | Amounts below one million |
+| USD 52.40/MWh | `USD~52.40/MWh` | Unit prices: two decimals |
+| KDR 9,860.0 million | `KDR~9,860.0~million` | Fictional currency, code from the Case Bible |
+| KDR 129.05 per USD | `KDR~129.05 per USD` | Exchange rate in prose; header "KDR/USD" |
+
+No currency symbols anywhere ($, €, £ are banned as currency markers; € may appear inside a name such as €STR). Table headers carry the unit "USD m" and cells hold bare numbers. Fictional currency codes are three letters assigned by the Case Bible and never an existing ISO 4217 code. Every local-currency figure that matters appears once per example with its USD equivalent and the rate used. State real or nominal once per example: "USD 52.40/MWh in 2026 real terms."
 
 ### 2.5 Percentages, rates, basis points, multiples, ratios
 
-- Percentages: numeral plus % with no space: 8.5%, 75%. "Percentage points" (written out) for differences between percentages: "gearing rose by 5 percentage points."
-- Interest rates and reference rates: two decimals when quoted as a rate: SOFR 4.31%, all-in rate 6.56%. Returns: one decimal: equity IRR 13.8%.
-- Basis points: numeral plus **bps** with a space: 175 bps, 25 bps. Use bps for margins, fees, spreads, and changes in rates; use % for rate levels.
-- Cover ratios and multiples: two decimals plus a lowercase x with no space: **1.35x**, 0.98x, 2.10x. Applies to DSCR, LLCR, PLCR, net debt to EBITDA, and money multiples (MOIC 1.85x).
-- Gearing: percentage with one decimal in tables (75.0%), and no decimal in prose when round (75%). Debt-to-equity as a ratio: 75:25.
-- P-values: P50, P90, P99 with no space or hyphen. Specify horizon when it matters: "one-year P90," "ten-year P90."
+| Printed | LaTeX source | Rule |
+|---|---|---|
+| 8.5% | `8.5\%` | No space. "Percentage points" (written out) for differences |
+| SOFR 4.31% | `SOFR 4.31\%` | Interest rates two decimals; returns one decimal (13.8%) |
+| 175 bps | `175\bps` | Margins, fees, spreads, rate changes; `\bps` supplies the thin space. Before a word write `175\bps{} over`, because the macro swallows the next space |
+| 1.35x | `1.35\x` | DSCR, LLCR, PLCR, net debt to EBITDA, money multiples; always two decimals. Before a word write `1.35\x{} on` |
+| 75.0% / 75% | `75.0\%` | Gearing: one decimal in tables, none in prose when round |
+| 75:25 | `75:25` | Debt-to-equity split |
+| P90 | `P90` | No space or hyphen; state "one-year" or "ten-year" when it matters |
 
 ### 2.6 Units
 
-SI and industry units, with a space between numeral and unit: 650 MW, 4,725 GWh, 0.8 kWh, 7,150 kJ/kWh, 28 km, 120,000 bbl/d, 4.5 mtpa, 110 kV, 1,450 MMBtu. Rules:
+A non-breaking space joins numeral and unit: `650~MW`, `4,725~GWh`, `7,150~kJ/kWh`, `28~km`, `120,000~bbl/d`, `4.5~mtpa`, `110~kV`.
 
-- Capacity in MW or GW; energy in kWh, MWh, GWh, or TWh. Never confuse them, and never write "MW per hour".
-- Price per unit: currency code, slash, unit: **USD/MWh**, **USD/MMBtu**, **USD/kW-month**, **USD/t**. No dollar sign anywhere.
-- Heat rate in kJ/kWh (net, LHV unless stated); give Btu/kWh in parentheses only where US practice is the subject.
-- Gas: MMBtu for energy, MMscfd for flow, bcm for annual volume; LNG in mtpa.
-- Oil: bbl and bbl/d. Mining: t, Mt, g/t, %Cu.
-- Traffic: vehicles per day (vpd after first use), AADT for annual average daily traffic.
-- Time: hours (h) in tables, "hours" in prose.
+- Capacity in MW or GW; energy in kWh, MWh, GWh, or TWh. Never "MW per hour".
+- Price per unit: code, slash, unit: USD/MWh, USD/MMBtu, USD/kW-month, USD/t.
+- Heat rate in kJ/kWh (net, LHV unless stated).
+- Gas: MMBtu for energy, MMscfd for flow, bcm for annual volume; LNG in mtpa. Oil: bbl and bbl/d. Mining: t, Mt, g/t.
+- Traffic: vehicles per day (vpd after first use); AADT for annual average daily traffic.
 
-### 2.7 Signs in tables and models
+### 2.7 Signs
 
-- Tables: negative numbers in parentheses: (12.4). Zero shown as a dash "–" in financial tables, as 0.0 in calculation tables where zero is a result being checked.
-- Prose and formulas: a true minus sign (−12.4 in LaTeX: $-12.4$). Prefer words in prose: "an outflow of USD 12.4 million."
-- Model sign convention: costs and outflows are stored as positive numbers on calculation sheets and subtracted explicitly in formulas; the cash flow statement and waterfall display outflows in parentheses. State this convention once in Chapter 39 and cross-reference it.
+- Tables: negatives in parentheses, (12.4). Nil is an en dash `--` in financial tables, 0.0 where a zero result is being checked.
+- Prose and formulas: a true minus in math mode, `$-12.4$`; prefer words in prose ("an outflow of USD 12.4 million").
+- Model convention: costs and outflows are stored as positive numbers on calculation sheets and subtracted explicitly; cash flow statements and the waterfall display outflows in parentheses. Chapter 39 states this once; others cross-reference it.
 
-## 3. Structure, numbering, and headings
+## 3. Structure, labels, and cross-references
 
-### 3.1 Heading formats
+### 3.1 Chapter file and headings
 
-All headings are sentence case (only the first word and proper nouns capitalized). Exact Markdown:
+One file per chapter, `chapters/NN-slug.tex`, containing exactly one `\chapter`. No preamble, no `\documentclass`, no `\begin{document}`. Part openers are handled by the build (`latex/parts.tex`); chapters never contain `\part`.
 
-```text
-# Part VI — Structuring Debt                    (Part opener files only; Part titles in title case)
-# Chapter 36 — Sizing and sculpting debt         (H1, one per chapter file)
-## 36.3 Sizing debt to a minimum DSCR            (H2, numbered section)
-### 36.3.2 Sculpting to a target ratio           (H3, numbered subsection)
-#### Example 36.4. Sizing one semiannual period (Illustrative)
-#### Exercise 36.7
-#### Solution 36.7
+All headings are sentence case, with no dashes and no terminal period. Every numbered heading carries a label whose number matches the printed number.
+
+```latex
+\chapter{Sizing and sculpting debt}\label{ch:36}
+\section{Sizing debt to a minimum DSCR}\label{sec:36.3}
+\subsection{Sculpting to a target ratio}\label{ssec:36.3.2}
 ```
 
-The em dash with a space on each side is the fixed separator in Part and Chapter headings only; it does not count toward the prose dash limit. No other heading uses a dash. Section numbers have no trailing period ("## 36.3 Sizing", not "## 36.3. Sizing"); example, exercise, and solution numbers end with a period before their title. Do not go deeper than H4. Headings name their content plainly (`standards.md` Section 8, "Headings and titles"): "Sizing debt to a minimum DSCR," never "The art of debt sizing." Fixed labels followed by a colon are allowed only for the patterns in Section 4 ("Case P:", "Walkthrough:").
+Do not go below `\subsection` for numbered structure. `\subsection*` is used only for the fixed element subheadings listed in Section 4. Headings name their content plainly: "Sizing debt to a minimum DSCR," never "The art of debt sizing." Never put `\xl`, `\cref`, `\term`, or math in a heading.
 
-### 3.2 Numbered objects
+### 3.2 Label scheme
 
-| Object | Label | Numbering | Example |
+| Object | Environment or command | Label | Printed as |
 |---|---|---|---|
-| Worked example | Example | per chapter, sequential | Example 36.4 |
-| Table, chart, or diagram | Exhibit | per chapter, sequential, one series for tables and diagrams | Exhibit 36.2 |
-| Exercise | Exercise | per chapter, sequential across all tiers | Exercise 36.11 |
-| Drafted clause excerpt | Clause | per chapter, sequential; variants take a, b, c | Clause 18.3, Clause 18.3b |
-| Framework | Framework | per book, by home chapter | Framework 28.2 |
-| Formula | equation tag | per chapter, in display math | (36.1) |
+| Chapter | `\chapter` | `ch:36` | Chapter 36 |
+| Section | `\section` | `sec:36.3` | Section 36.3 |
+| Subsection | `\subsection` | `ssec:36.3.2` | Section 36.3.2 |
+| Example | `example` | `ex:36.4` | Example 36.4 |
+| Exhibit (table, diagram, chart) | `exhibit` or `longtable` | `exh:36.2` | Exhibit 36.2 |
+| Clause | `clause` | `cl:18.3` | Clause 18.3 |
+| Clause variant | `clausevariant` | `cl:18.3a` | Clause 18.3a |
+| Exercise | `exercise` | `exr:36.11` | Exercise 36.11 |
+| Equation | `equation` | `eq:35.1` | Equation (35.1) |
+| Framework | `framework` | `[label={fw:who-pays-if}]` | Framework 28.2 |
 
-Exhibit captions sit above the table or diagram, on their own line, in this exact form, with the unit and status in parentheses:
+`K` in each label is the printed sequence number in that chapter; the writer keeps them in order. Framework labels use a short slug from the anchor registry. Place `\label` immediately after the `\caption`, the `\begin{...}{title}` line, or the heading it belongs to.
 
-```text
-Exhibit 36.2. Case P debt sizing on the banking case (USD m)
+### 3.3 Status labels
+
+Every example, exhibit, and clause carries exactly one status label, placed at the end of its title or caption argument:
+
+| Status | LaTeX | Printed |
+|---|---|---|
+| Invented material outside the running cases | `\illustrative` | (Illustrative) |
+| Running-case material from the Case Bible | `\casep`, `\caset`, `\caser` | (Case P) |
+| Real deal, from a fact sheet | `\realcase{Paiton I, 1999--2002}` | (Real case: Paiton I, 1999–2002) |
+
+```latex
+\begin{example}{Sizing one semiannual period \illustrative}\label{ex:36.4}
+\caption{Case P sources and uses at financial close (USD m) \casep}\label{exh:40.3}
+\begin{example}{The 2002 tariff renegotiation \realcase{Paiton I, 1999--2002}}\label{ex:59.2}
 ```
 
-Below the exhibit, a source line and, if needed, a note line:
-
-```text
-Source: Case P reference model, banking case, version of Chapter 36.
-Note: Figures may not sum because of rounding.
-```
-
-Use "Figures may not sum because of rounding" only when that is true and the reconciliation line (Section 6.1) shows the difference.
-
-Formulas that other text cites carry a tag: `$$ \text{DSCR}_t = \frac{\text{CFADS}_t}{\text{DS}_t} \tag{35.1} $$` and are cited as "equation (35.1)".
-
-### 3.3 Status labels: Illustrative, running case, real case
-
-Every example, exhibit, and clause carries exactly one status label in its heading or caption:
-
-- **(Illustrative)**: invented numbers or facts outside the running cases.
-- **(Case P)**, **(Case T)**, **(Case R)**: running-case material taken from the Case Bible.
-- **(Real case: Name, year)**: e.g., "(Real case: Paiton I, 1999–2002)".
-
-Clauses are always Illustrative and say so (Section 7).
+Clauses are always Illustrative and say so (Section 7). `\casep`, `\caset`, `\caser`, and `\realcase` are requested macros (Section 13).
 
 ### 3.4 Cross-references
 
-- Backward: "see Section 36.4", "Example 40.3 showed", "the waterfall in Exhibit 52.1", "equation (35.1)", "Framework 28.2 (the Who-pays-if trace)". Capitalize Section, Chapter, Example, Exhibit, Exercise, Clause, and Framework when followed by a number.
-- Forward: one or two sentences at most, always with the destination: "Chapter 37 shows how the debt service reserve is sized; here, assume it holds six months of debt service." Never "we will see later" or "more on this below."
-- Never "as discussed earlier", "as mentioned above", or "as we have seen." Use a section number or nothing.
-- Cite numbers from the anchor registry only. If an anchor is missing, report it; do not invent a number.
+- Always `\cref{...}`; at the start of a sentence `\Cref{...}`. Never type "Section 36.4" by hand, and never write "as discussed earlier", "as mentioned above", or "as we have seen".
+- Several targets: `\cref{ex:36.1,ex:36.2}`; ranges: `\crefrange{exr:36.1}{exr:36.5}`.
+- Equations print with parentheses automatically: `\cref{eq:35.1}` gives "Equation (35.1)".
+- Forward references: one or two sentences, always with the destination. **[GOOD]** `\Cref{ch:37} shows how the debt service reserve is sized; here, assume it holds six months of debt service.`
+- Cite only labels in the anchor registry. A cross-chapter `\cref` shows as "??" in a standalone build and is expected; any undefined label inside the chapter's own numbers is a defect. If an anchor you need is missing, report it; do not invent one.
 
-## 4. Required chapter elements and their headings
+## 4. Chapter skeleton and environments
 
-Every chapter file follows this skeleton. Bracketed text is replaced by the writer. Numbered sections continue sequentially; the actual numbers depend on the chapter.
+### 4.1 Skeleton
 
-```text
-# Chapter 36 — Sizing and sculpting debt
+```latex
+\chapter{Sizing and sculpting debt}\label{ch:36}
 
-[Opening: two to eight paragraphs, no heading. A real deal moment, a failure,
-a puzzle, or a running-case scene.]
+% Opening: two to eight paragraphs, no heading. A real deal moment, a failure,
+% a puzzle, or a running-case scene. Never announce the chapter's contents.
 
-## What you will be able to do
+\section*{What you will be able to do}
+\begin{itemize}
+  \item Size senior debt to a minimum DSCR on a contracted cash flow (Capability 5).
+  \item Sculpt a repayment profile and test it against LLCR (Capability 4).
+\end{itemize}
 
-[Two to four lines, each starting with a verb and ending with the capability
-number from standards.md Section 3, e.g. "(Capability 5)". A true list.]
-
-## 36.1 [Plain specific heading]
-... core teaching sections, worked examples, walkthroughs, frameworks,
-real cases ...
-## 36.6 Walkthrough: [the artifact or task]
-## 36.7 Case P: [what happens in this installment]
-## 36.9 Practitioner's notebook
-## 36.10 Judgment drill
-## 36.11 [Plain specific heading for the close]
-## 36.12 Exercises
-## 36.13 Solutions to exercises
-## Sources
+\section{Sizing debt to a minimum DSCR}\label{sec:36.1}
+% ... core teaching sections with examples, exhibits, frameworks, real cases ...
+\section{Walkthrough: reading a lender's sizing printout}\label{sec:36.6}
+\section{Case P: the lenders size the debt}\label{sec:36.7}
+\section{Practitioner's notebook}\label{sec:36.9}
+\section{Judgment drill}\label{sec:36.10}
+\section{Sizing fixes the debt; the reserves decide whether it survives a bad year}\label{sec:36.11}
+\section{Exercises}\label{sec:36.12}
+\section{Solutions to exercises}\label{sec:36.13}
+\section*{Sources}
 ```
 
 Rules for each element:
 
-- Opening: no heading and no announcement of the chapter's contents. It must create a need the chapter fills.
-- What you will be able to do: the only unnumbered H2 besides Sources. Two to four lines.
-- Walkthrough: heading "Walkthrough:" plus the specific artifact ("Walkthrough: reading an independent engineer's construction report"). A chapter may have several, each its own section.
-- Real cases: section heading names the deal and what it teaches ("36.5 Ichthys LNG and cost growth under ECA cover"). Examples analyzing a real case use the "(Real case: …)" label.
-- Running case: heading begins "Case P:", "Case T:", or "Case R:".
-- Practitioner's notebook: one section with these H3 subsections, in this order, each omitted only when the chapter has nothing for it: "### Checklist", "### Red flags", "### Rules of thumb and their limits", "### Common mistakes", "### Questions experts ask". Lists are allowed here because these are true checklists; every item is a full sentence with a reason, never a bold label plus colon.
-- Judgment drill: H3 subsections "### The situation" (second person, specific, with numbers and a deadline), "### Reasoning it through" (prose, showing trade-offs and the answer an expert gives), and "### What would change the answer" (named conditions and the direction each moves the decision).
-- Close: a numbered section with a specific heading that states the open problem or the idea it crystallizes ("36.11 Sizing fixes the debt; the reserves decide whether it survives a bad year"). Never **[BAD]** "Conclusion", "Summary", "Key takeaways", "Wrapping up", or "Looking ahead". The last paragraph poses a real problem that the next chapter solves, stated concretely.
-- Exercises: H3 subsections for tiers, exactly: "### Tier 1: Concept checks", "### Tier 2: Calculation and drafting", "### Tier 3: Case problems and model tasks". Exercises are numbered continuously across tiers (36.1 to 36.15) under H4 headings "#### Exercise 36.7". Each Tier 3 exercise states the starting file or the Case Bible figures it uses.
-- Solutions to exercises: H4 headings "#### Solution 36.7" in the same order. Each solution gives the answer in its first sentence, then every step, then a reconciliation or check, then (for Tier 2 and 3) the most common wrong answer and why it is wrong. Drafting solutions give a model clause in the Section 7 format plus annotations.
-- Sources: final H2, unnumbered, in the format of Section 9.2. Omit only if the chapter cites no real-world fact.
+- "What you will be able to do" is the only unnumbered `\section*` besides "Sources". Two to four items, each starting with a verb and ending with the capability number from `standards.md` Section 3.
+- Walkthroughs: `\section{Walkthrough: ...}` naming the artifact or task. A chapter may have several.
+- Real cases: the section heading names the deal and what it teaches ("Ichthys LNG and cost growth under ECA cover").
+- Running case: the heading begins "Case P:", "Case T:", or "Case R:". Those three prefixes and "Walkthrough:" are the only heading forms that take a colon.
+- Practitioner's notebook: `\subsection*` headings, in this order, each omitted only when the chapter has nothing for it: Checklist; Red flags; Rules of thumb and their limits; Common mistakes; Questions experts ask. Items are `itemize` (or `enumerate` for a real sequence), each a full sentence with its reason, never a bold label plus colon.
+- Judgment drill: `\subsection*{The situation}` (second person, specific, with numbers and a deadline), `\subsection*{Reasoning it through}` (prose: trade-offs and the answer an expert gives), `\subsection*{What would change the answer}` (named conditions and the direction each moves the decision).
+- Close: a numbered section whose heading states the open problem or the idea it crystallizes. **[BAD]** headings: "Conclusion", "Summary", "Key takeaways", "Wrapping up", "Looking ahead". The last paragraph poses a concrete problem the next chapter solves.
+- No other boxes, callouts, or labels. **[BAD]** "Pro tip", "Key insight", "Remember", "Fun fact". The Source and Note lines under exhibits (Section 4.3) are the only labels of that kind.
 
-No other boxes, callouts, or labels. **[BAD]** "Pro tip", "Key insight", "Remember", "Fun fact", and similar labels are banned; a point worth making goes in the prose. The "Note:" line under an exhibit (Section 3.2) is the only permitted label of that kind.
+### 4.2 Examples
+
+```latex
+\begin{example}{Sizing one semiannual period \illustrative}\label{ex:36.4}
+Prose and calculations, every step shown. Equations, \xl{...} formulas, and
+small tables (tabularx, no caption) are allowed inside; a captioned exhibit is not.
+\end{example}
+```
+
+The title is plain and specific and ends with the status macro. The environment prints its own closing rule; do not add one.
+
+### 4.3 Exhibits
+
+```latex
+\begin{exhibit}[H]
+\caption{Case P debt sizing on the banking case (USD m) \casep}\label{exh:36.2}
+\small
+\begin{tabularx}{\linewidth}{@{}L rrrr@{}}
+\toprule
+Item & OY1 & OY2 & OY3 & OY4\\
+\midrule
+CFADS & 61.4 & 63.0 & 62.2 & 64.9\\
+Debt service & (45.5) & (46.7) & (46.1) & (48.1)\\
+\midrule
+DSCR (x) & 1.35 & 1.35 & 1.35 & 1.35\\
+\bottomrule
+\end{tabularx}
+\exhibitsource{Case P reference model, banking case (Chapter 36 state).}
+\exhibitnote{Figures may not sum because of rounding.}
+\end{exhibit}
+```
+
+- Always `[H]`. Caption on top (the package places it), in the form "title (unit) status". The caption is a noun phrase without a final period.
+- `\exhibitsource{...}` is required on every exhibit; `\exhibitnote{...}` only when needed. Use "Figures may not sum because of rounding" only when that is true and a check line shows the difference. Both are requested macros (Section 13).
+- Diagrams and charts go in the same `exhibit` float with `\centering` before the `tikzpicture`.
+
+### 4.4 Clauses
+
+Covered in Section 7.
+
+### 4.5 Frameworks
+
+```latex
+\begin{framework}[label={fw:who-pays-if}]{Who pays if\ldots? trace}
+Steps of the framework as an enumerate list, then one sentence on when to use it.
+\end{framework}
+```
+
+Frameworks are numbered within their home chapter (Framework 28.2), which makes each number unique across the book and correct in standalone builds. The label is `fw:slug` from the anchor registry and goes in the optional argument, `[label={fw:slug}]`, not as a `\label` inside the box (a `\label` inside resolves to the enclosing section). The name is set in sentence case; the prose that first defines it uses `\term{}`. Established frameworks are credited in the prose next to the box. The current package prints "Framework: Name" without a number; the numbered version is a requested macro (Section 13). Only the home chapter uses the `framework` box; other chapters `\cref` it.
+
+### 4.6 Running-case scenes
+
+```latex
+\begin{casescene}{Case P}{Ministry of Energy, Kesari, March 2026}
+``...'' dialogue and scene narration ...
+\end{casescene}
+```
+
+First argument is exactly `Case P`, `Case T`, or `Case R`; the second is place and month-year from the Case Bible. Paragraphs inside the box are separated by a blank line. Teaching narration, numbers tables, and exhibits stay outside the box. (The place name in this example is a format placeholder; use the Case Bible's.)
+
+### 4.7 Exercises and solutions
+
+```latex
+\section{Exercises}\label{sec:36.12}
+\subsection*{Tier 1: Concept checks}
+\begin{exercise}\label{exr:36.1}
+Question text.
+\end{exercise}
+\subsection*{Tier 2: Calculation and drafting}
+\subsection*{Tier 3: Case problems and model tasks}
+
+\section{Solutions to exercises}\label{sec:36.13}
+\subsection*{Tier 1: Concept checks}
+\begin{solution}{exr:36.1}
+Answer in the first sentence, then every step, then a check.
+\end{solution}
+```
+
+Exercises are numbered continuously across tiers (36.1 to 36.15), and every exercise has exactly one solution in the same order. Each Tier 3 exercise names the starting file or the Case Bible figures it uses. Each solution gives the answer first, then every step, then a reconciliation; Tier 2 and Tier 3 solutions end with the most common wrong answer and why it is wrong. Drafting solutions give a model clause in a `clause` box plus annotations.
+
+### 4.8 Sources
+
+```latex
+\section*{Sources}
+\begin{sources}
+\item Asian Development Bank. 2021. \textit{Title of the Report in Title Case}. Manila: Asian Development Bank. \url{https://www.example.org/report}. Accessed October 3, 2026.
+\item Surname, Given Name, and Given Name Surname. 2019. ``Article Title in Title Case.'' \textit{Journal Name} 12 (3): 45--67.
+\end{sources}
+```
+
+Chicago author-date, alphabetical by author or organization. Report and book titles in `\textit{}`; article titles in quotation marks. URLs in `\url{}` (never escape characters inside `\url`). Access date required for web sources. No BibTeX. `sources` is a requested environment (Section 13). Omit the section only if the chapter states no real-world fact.
 
 ## 5. Notation and Excel
 
-### 5.1 LaTeX conventions
+### 5.1 Mathematics
 
-Inline math with `$…$`; display math with `$$…$$` on its own lines. Multi-letter variables are set in `\text{}` so they do not render as products: `$\text{CFADS}_t$`, not `$CFADS_t$`. Time subscript is always $t$. Use `\times` for multiplication, never `*` or `.`. Every display formula is followed immediately by a sentence defining any symbol not already in the canon below, then its Excel implementation.
+- Inline math `$...$`. Display math: `equation` with a label when the formula is built, cited, or appears in the formula sheet; `equation*` or `align*` for intermediate steps. Never `$$...$$`.
+- Multi-letter variables in `\mathrm{}`: `$\mathrm{CFADS}_t$`, never `$CFADS_t$`. Time subscript is always $t$.
+- Multiplication `\times`; division as `\frac{}{}` in display and `/` inline.
+- No Unicode in math: write `\times`, `-`, `\le`, `\ge`, `\sigma`, `\Delta`, never ×, −, ≤, ≥, σ, Δ.
+- Every display formula is followed by a sentence defining any symbol not in the canon below, then its Excel implementation.
 
 ### 5.2 Symbol canon
 
 | Symbol (LaTeX) | Meaning | Unit |
 |---|---|---|
-| $t$ | period index (model period, usually semiannual) | – |
-| $n$ | number of periods; $N$ for final period of the loan | – |
-| $T$ | final period of the project or concession life | – |
-| $r$ | discount rate per period | % |
-| $i$ | interest rate per period on debt | % |
-| $\text{DF}_t$ | discount factor, $\text{DF}_t = (1+r)^{-t}$ | – |
-| $\text{NPV}$ | net present value | currency |
-| $\text{IRR}$ | internal rate of return | % |
-| $\text{CF}_t$ | generic cash flow in period $t$ | currency |
-| $\text{Rev}_t$ | revenue | currency |
-| $\text{Opex}_t$ | operating costs | currency |
-| $\text{Capex}_t$ | capital expenditure | currency |
-| $\text{Tax}_t$ | cash tax paid | currency |
-| $\Delta\text{WC}_t$ | change in working capital (increase is a use of cash) | currency |
-| $\text{CFADS}_t$ | cash flow available for debt service | currency |
-| $P_t$ | scheduled principal repayment | currency |
-| $I_t$ | interest paid | currency |
-| $\text{DS}_t$ | debt service, $P_t + I_t$ | currency |
-| $D_t$ | debt outstanding at the start of period $t$ | currency |
-| $\text{DSCR}_t$ | debt service cover ratio | x |
-| $\text{DSCR}^{\text{target}}$ | sculpting target ratio | x |
-| $\text{LLCR}_t$ | loan life cover ratio | x |
-| $\text{PLCR}_t$ | project life cover ratio | x |
-| $G$ | gearing, debt as share of total funding | % |
-| $E$ | equity amount | currency |
-| $\text{P50}, \text{P90}, \text{P99}$ | exceedance levels of a resource or output estimate | as quantity |
-| $\sigma$ | standard deviation (state whether one-year or ten-year) | as quantity or % |
-| $A_t$ | availability factor | % |
-| $C$ | contracted (or declared) capacity | MW |
-| $\text{CP}_t$ | capacity payment | currency |
-| $\text{cpr}$ | capacity payment rate | USD/kW-month |
-| $\text{EP}_t$ | energy payment | currency |
-| $E^{\text{del}}_t$ | energy delivered | MWh |
-| $\text{HR}$ | net heat rate | kJ/kWh |
-| $p^{\text{fuel}}_t$ | fuel price | USD/MMBtu |
-| $\text{CPI}_t$ | price index level; indexation factor $\text{IF}_t = \text{CPI}_t / \text{CPI}_0$ | – |
-| $\text{FX}_t$ | exchange rate, local currency per USD | LCY/USD |
-| $\text{LD}$ | liquidated damages | currency |
+| `t` | period index (model period, usually semiannual) | – |
+| `n`; `N` | number of periods; final period of the loan | – |
+| `T` | final period of the project or concession life | – |
+| `r` | discount rate per period | % |
+| `i` | interest rate per period on debt | % |
+| `\mathrm{DF}_t` | discount factor, `(1+r)^{-t}` | – |
+| `\mathrm{NPV}`, `\mathrm{IRR}` | net present value; internal rate of return | currency; % |
+| `\mathrm{CF}_t` | generic cash flow | currency |
+| `\mathrm{Rev}_t`, `\mathrm{Opex}_t`, `\mathrm{Capex}_t`, `\mathrm{Tax}_t` | revenue, operating costs, capital expenditure, cash tax | currency |
+| `\Delta\mathrm{WC}_t` | change in working capital (increase is a use of cash) | currency |
+| `\mathrm{CFADS}_t` | cash flow available for debt service | currency |
+| `P_t`, `I_t` | scheduled principal; interest paid | currency |
+| `\mathrm{DS}_t` | debt service, `P_t + I_t` | currency |
+| `D_t` | debt outstanding at the start of period `t` | currency |
+| `\mathrm{DSCR}_t`; `\mathrm{DSCR}^{*}` | debt service cover ratio; sculpting target ratio | x |
+| `\mathrm{LLCR}_t`, `\mathrm{PLCR}_t` | loan life and project life cover ratios | x |
+| `G`; `E` | gearing; equity amount | %; currency |
+| `\mathrm{P50}`, `\mathrm{P90}`, `\mathrm{P99}` | exceedance levels | quantity |
+| `\sigma` | standard deviation (state one-year or ten-year) | quantity or % |
+| `A_t` | availability factor | % |
+| `C` | contracted capacity | MW |
+| `\mathrm{CP}_t`; `\mathrm{cpr}` | capacity payment; capacity payment rate | currency; USD/kW-month |
+| `\mathrm{EP}_t` | energy payment | currency |
+| `E^{\mathrm{del}}_t` | energy delivered | MWh |
+| `\mathrm{HR}` | net heat rate | kJ/kWh |
+| `p^{\mathrm{fuel}}_t` | fuel price | USD/MMBtu |
+| `\mathrm{IF}_t` | indexation factor, `\mathrm{CPI}_t/\mathrm{CPI}_0` | – |
+| `\mathrm{FX}_t` | exchange rate, local currency per USD | LCY/USD |
+| `\mathrm{LD}` | liquidated damages | currency |
 
-Core formulas, stated once here and owned by their home chapters:
+Core formulas, owned by their home chapters (Chapter 35 owns CFADS and the ratios, including LLCR discounting and DSRA treatment; Chapter 18 owns tariff formulas):
 
-$$ \text{CFADS}_t = \text{Rev}_t - \text{Opex}_t - \text{Tax}_t - \Delta\text{WC}_t $$
+```latex
+\begin{equation}\label{eq:35.1}
+\mathrm{DSCR}_t = \frac{\mathrm{CFADS}_t}{\mathrm{DS}_t}
+\end{equation}
 
-(reserve movements and other adjustments are added in Chapter 35, which owns the full definition)
-
-$$ \text{DSCR}_t = \frac{\text{CFADS}_t}{\text{DS}_t} \qquad \text{LLCR}_t = \frac{\sum_{k=t}^{N} \text{CFADS}_k \times \text{DF}_k / \text{DF}_{t-1} + \text{DSRA}_t}{D_t} $$
-
-$$ \text{CP}_t = C \times 1{,}000 \times \text{cpr} \times \text{IF}_t \times A_t \times m_t \qquad \text{EP}_t = E^{\text{del}}_t \times \frac{\text{HR} \times p^{\text{fuel}}_t}{1{,}055.06} $$
-
-where $m_t$ is months in the period, 1,000 converts MW to kW, and 1,055.06 converts MWh multiplied by kJ/kWh into MMBtu (1 MMBtu = 1,055,056 kJ); the heat-rate pass-through form is owned by Chapter 18, which also states the variable O&M component. LLCR conventions (discount at the weighted debt rate, DSRA inclusion) are owned by Chapter 35; the form above is the default.
-
-### 5.3 Formula then Excel
-
-Every formula the reader must build is followed by its Excel implementation, introduced by a sentence stating the cell layout. Short formulas go in a code span; anything longer, or any set of rows, goes in a fenced `text` block. Formulas are written for the first timeline column and copied right.
-
-**[GOOD]**
-
-> In the Ratios sheet, CFADS sits in row 12 and debt service in row 14, with the first operating period in column J. The DSCR for that period, in J16, is `=IF(J$8=1, J12/J14, "")`, where row 8 is the debt repayment flag on the Time sheet linked in.
-
-```text
-Ratios!J12   CFADS                USD m   =Waterfall!J40
-Ratios!J14   Debt service         USD m   =Debt!J55+Debt!J61
-Ratios!J16   DSCR                 x       =IF(J$8=1, J12/J14, "")
+\begin{equation*}
+\mathrm{CP}_t = C \times 1{,}000 \times \mathrm{cpr} \times \mathrm{IF}_t \times A_t \times m_t
+\qquad
+\mathrm{EP}_t = E^{\mathrm{del}}_t \times \frac{\mathrm{HR} \times p^{\mathrm{fuel}}_t}{1{,}055.06}
+\end{equation*}
 ```
+
+In the tariff formulas, `m_t` is months in the period, 1,000 converts MW to kW, and 1,055.06 converts MWh multiplied by kJ/kWh into MMBtu (1 MMBtu = 1,055,056 kJ).
+
+### 5.3 Formula, then Excel
+
+Every formula the reader must build is followed by its Excel implementation, introduced by a sentence stating the cell layout. Short single formulas use `\xl{...}` inline; a set of rows uses the `excel` block. Formulas are written for the first timeline column and copied right.
+
+```latex
+On the Ratios sheet, CFADS sits in row 12 and debt service in row 14, with the
+first operating period in column J. The DSCR for that period, in J16, is
+\xl{=IF(J$8=1, J12/J14, "")}, where row 8 is the repayment flag linked from Time.
+\begin{excel}
+Ratios!J12   CFADS          USD m   =Waterfall!J40
+Ratios!J14   Debt service   USD m   =Debt!J55+Debt!J61
+Ratios!J16   DSCR           x       =IF(J$8=1, J12/J14, "")
+\end{excel}
+```
+
+Content inside `excel` and `\xl{}` is verbatim: never escape `%`, `$`, `&`, or `_` there. `\xl{}` may not contain `%`, `#`, `\`, `{`, or `}`, and inside a table cell it may not contain `&`. It may not appear in headings, `\caption`, `\exhibitsource`, `\exhibitnote`, or any other command's argument; it does work in body text, inside example, clause, and casescene boxes, and in `tabularx` cells (tested). Formulas that break these limits go in an `excel` block.
 
 ### 5.4 Model conventions (FAST-consistent)
 
-- Workbook sheets, in this order: Cover, Inputs, Time, Construction, Operations, Tax, Funding, Debt, Reserves, Waterfall, Financials, Ratios, Returns, Checks, Outputs. Sheet names are capitalized single words, cited in prose without quotes: "the Debt sheet".
-- Time runs across columns; one row, one calculation, one formula copied across the whole row. Columns: A–C indent levels for grouping, D label, E units, F constants (single-value inputs or links), G row total or check, H–I blank, J first model period. The timeline is monthly in construction and semiannual in operations in Case P; the Time sheet builds a flag for each phase.
+- Sheets, in this order: Cover, Inputs, Time, Construction, Operations, Tax, Funding, Debt, Reserves, Waterfall, Financials, Ratios, Returns, Checks, Outputs. Cited in prose without quotes: "the Debt sheet".
+- Time runs across columns; one row, one calculation, one formula copied across the row. Columns: A--C grouping indents, D label, E units, F constants, G row total or check, H--I blank, J first model period. Case P runs monthly in construction and semiannual in operations.
 - Every row has a unit in column E: USD m, MWh, %, x, flag, date, factor.
-- Flags are 1 or 0 and named with a "Flag" prefix in the label column: `Flag_Construction`, `Flag_Operations`, `Flag_Repayment`, `Flag_FirstOpsPeriod`. Prose calls them "the construction flag." Never use TRUE/FALSE as flags.
-- Cell references in prose: Sheet!Cell, e.g., "Debt!J55". Row references: "row 55 of the Debt sheet". No range names except the scenario selector (`Scenario`), a decision fixed in Chapter 13.
-- Colors: inputs blue font (RGB 0, 0, 255) on pale yellow fill; calculations black font, no fill; links from another sheet green font; checks show 0 when passing and red fill with nonzero value when failing. Exhibits showing sheets describe colors in words because Markdown cannot show them.
-- Banned functions on calculation sheets: OFFSET, INDIRECT, merged cells, hard-coded numbers inside formulas (except 0, 1, 12, and unit conversions labeled in column E). Circularity is resolved by the method fixed in Chapter 40; writers before Chapter 40 forward-reference it.
+- Flags are 1 or 0, named with a "Flag" prefix: `Flag_Construction`, `Flag_Operations`, `Flag_Repayment`, `Flag_FirstOpsPeriod`. In LaTeX prose, write them with `\xl{Flag_Repayment}` (no escaping) or as "the repayment flag". Never TRUE/FALSE flags.
+- Cell references: `\xl{Debt!J55}`, or "row 55 of the Debt sheet". No range names except the scenario selector `Scenario` (fixed in Chapter 13).
+- Colors: inputs blue font on pale yellow fill; calculations black, no fill; links from other sheets green font; checks show 0 when passing and red fill when failing. Exhibits of sheets describe colors in words or use `\cellcolor{pfinput}` for input cells.
+- Banned on calculation sheets: OFFSET, INDIRECT, merged cells, and hard-coded numbers in formulas (except 0, 1, 12, and unit conversions labeled in column E). Circularity is resolved by the method fixed in Chapter 40; earlier chapters forward-reference it.
 
-## 6. Tables and diagrams
+## 6. Tables, diagrams, and charts
 
 ### 6.1 Tables
 
-Use a table when the reader compares three or more numbers, or two or more items across two or more attributes. Two numbers belong in a sentence. Rules:
+Use a table when the reader compares three or more numbers, or several items across several attributes. Two numbers belong in a sentence.
 
-- Caption above (Section 3.2). Units in the caption when the whole table shares them ("(USD m)"); otherwise in each column header ("Capacity (MW)").
-- Text columns left-aligned; number columns right-aligned (`---:` in Markdown). Same decimals in a column.
-- Totals rows are labeled "Total" and placed last. Subtotals are labeled with what they are ("CFADS", "Total uses").
-- Every table that must reconcile ends with a check line in the note or a "Difference" row: "Sources minus uses: 0.0." Rounding differences are shown, not hidden.
-- Years or periods run across columns when there are more than four; items run down rows. Match model orientation.
-- No empty cells: use "–" for nil and "n/a" for not applicable.
+- `booktabs` rules only (`\toprule`, `\midrule`, `\bottomrule`); no vertical lines, no `\hline`, no cell shading except `pfinput` for model inputs.
+- `tabularx` at `\linewidth` with `@{}` at both ends. Text columns `L` (ragged right X); number columns `r`, same decimals down a column. Do not use siunitx `S` columns.
+- Units in the caption when the table shares them; otherwise in each header ("Capacity (MW)").
+- Totals and subtotals sit below a `\midrule`, labeled "Total" or by what they are ("CFADS", "Total uses").
+- Tables that must reconcile end with a check row ("Sources minus uses & 0.0") or a note.
+- Periods run across columns when there are more than four; items down rows.
+- No empty cells: `--` for nil, "n/a" for not applicable.
+- Width: the text block is 5.25in. Up to six numeric columns at normal size; seven to nine with `\small` after `\caption`; 10 to 12 with `\footnotesize`; never smaller. Above 12 columns, split the table by period range into two exhibits. Landscape (`\begin{landscape}` from pdflscape, a requested package) is for full annual model printouts only.
+- Tables longer than a page use `longtable` outside any float. With the requested setting (Section 13), its caption is numbered as an Exhibit:
 
-### 6.2 Mermaid conventions
+```latex
+\begin{longtable}{@{}lrrr@{}}
+\caption{Case P construction drawdown schedule (USD m) \casep}\label{exh:40.5}\\
+\toprule Month & EPC & Owner's costs & Total\\ \midrule \endfirsthead
+\toprule Month & EPC & Owner's costs & Total\\ \midrule \endhead
+\bottomrule \endlastfoot
+1 & 61.9 & 3.4 & 65.3\\
+\end{longtable}
+\exhibitsource{Case P reference model.}
+```
 
-All diagrams are Mermaid code blocks with an Exhibit caption above. Rules:
+### 6.2 TikZ diagrams
 
-- Contract maps and process flows: `flowchart LR`. Cash waterfalls and decision trees: `flowchart TD`. Timelines: `gantt` with `dateFormat YYYY-MM-DD`.
-- Node IDs are short uppercase codes (PC, SPON, LEND, OFF, GOV, EPC, OM, IE); labels in double quotes, sentence case, using canonical terms (Section 8). Edge labels name the contract or the flow and are in double quotes after the pipe syntax.
-- At most 15 nodes per diagram. No colors, icons, or `style`/`classDef` lines, except one `classDef` allowed to mark the project company. No numbers in diagrams except dates in gantt charts; amounts go in tables.
-- Decision nodes in trees use the diamond `{}` shape and pose a yes/no condition.
+All diagrams are TikZ inside an `exhibit` float, using only the `pfbook.sty` styles:
+
+| Style | Use |
+|---|---|
+| `pfspv` | the project company (one per diagram) |
+| `pfbox` | private parties, process steps, outcomes |
+| `pfgov` | host government, contracting authority, regulators |
+| `pflend` | lenders, agents, ECAs, DFIs |
+| `pfarrow` | contracts and obligations (gray) |
+| `pfflow` | money flows (blue, heavy) |
+| `pflabel` | every edge label |
+
+Rules: canonical party names (Section 8) in sentence case; edge labels name the contract or the flow; at most 15 nodes; no amounts in diagrams (they go in tables), except dates on timelines; no other colors or fills; position with the `positioning` library (`above=of`, `below left=of`), not absolute coordinates, except on timelines and charts. Every diagram must fit 5.25in; check the build log for Overfull boxes. Decision nodes are diamonds that pose a yes/no question.
+
+All four examples below were compiled with `scripts/build_chapter.sh`.
 
 Contract map:
 
-```mermaid
-flowchart LR
-    SPON["Sponsors"] -->|"Shareholders' agreement, equity"| PC["Project company"]
-    LEND["Lenders"] -->|"Common terms agreement, loans"| PC
-    PC -->|"Power purchase agreement"| OFF["Offtaker"]
-    GOV["Host government"] -->|"Implementation agreement"| PC
-    PC -->|"EPC contract"| EPC["EPC contractor"]
-    PC -->|"O&M agreement"| OM["O&M operator"]
-    PC -->|"Gas supply agreement"| GAS["Gas supplier"]
-    LEND -.->|"Direct agreements"| OFF
-    LEND -.->|"Direct agreements"| EPC
+```latex
+\begin{exhibit}[H]
+\caption{Case P contract map \casep}\label{exh:28.1}
+\centering
+\begin{tikzpicture}[node distance=9mm and 14mm]
+\node[pfspv] (pc) {Project company};
+\node[pfbox, above=of pc] (spon) {Sponsors};
+\node[pflend, left=of spon] (lend) {Lenders};
+\node[pfgov, right=of spon] (gov) {Host government};
+\node[pfbox, below left=of pc] (epc) {EPC contractor};
+\node[pfbox, below=of pc] (om) {O\&M operator};
+\node[pfbox, below right=of pc] (off) {Offtaker};
+\draw[pfflow] (spon) -- node[pflabel] {Equity} (pc);
+\draw[pfflow] (lend) |- node[pflabel, pos=0.25] {Loans} (pc);
+\draw[pfarrow] (gov) |- node[pflabel, pos=0.25] {Implementation agreement} (pc);
+\draw[pfarrow] (pc) -- node[pflabel] {EPC contract} (epc);
+\draw[pfarrow] (pc) -- node[pflabel] {O\&M agreement} (om);
+\draw[pfarrow] (pc) -- node[pflabel] {PPA} (off);
+\end{tikzpicture}
+\exhibitsource{Case Bible.}
+\end{exhibit}
 ```
 
 Cash waterfall:
 
-```mermaid
-flowchart TD
-    A["Revenue account"] --> B["1. Operating costs and taxes"]
-    B --> C["2. Senior interest and fees"]
-    C --> D["3. Senior principal"]
-    D --> E["4. Debt service reserve account top-up"]
-    E --> F["5. Maintenance reserve account top-up"]
-    F --> G{"Distribution test met?"}
-    G -->|"Yes"| H["6. Distributions to sponsors"]
-    G -->|"No"| I["Lock-up account"]
+```latex
+\begin{exhibit}[H]
+\caption{Operating cash waterfall \illustrative}\label{exh:52.3}
+\centering
+\begin{tikzpicture}[node distance=4mm, every node/.style={text width=58mm}]
+\node[pfspv] (rev) {Revenue account};
+\node[pfbox, below=of rev] (s1) {1. Operating costs and taxes};
+\node[pfbox, below=of s1] (s2) {2. Senior interest and fees};
+\node[pfbox, below=of s2] (s3) {3. Senior principal};
+\node[pfbox, below=of s3] (s4) {4. DSRA top-up};
+\node[pfbox, below=of s4] (s5) {5. Distribution test};
+\node[pfbox, below=of s5] (s6) {6. Distributions to sponsors};
+\foreach \a/\b in {rev/s1,s1/s2,s2/s3,s3/s4,s4/s5,s5/s6} \draw[pfflow] (\a) -- (\b);
+\end{tikzpicture}
+\exhibitsource{Illustrative.}
+\end{exhibit}
 ```
 
-Timeline:
+Timeline (one year is 4 units of 5 mm; bars are quarters):
 
-```mermaid
-gantt
-    title Case P development to commercial operation (illustrative layout)
-    dateFormat YYYY-MM-DD
-    section Development
-    Tender and award           :a1, 2026-01-15, 2026-09-30
-    Contract negotiation       :a2, after a1, 180d
-    section Financing
-    Due diligence              :b1, 2026-10-01, 2027-04-30
-    Financial close            :milestone, b2, 2027-06-30, 0d
-    section Construction
-    EPC construction           :c1, 2027-07-01, 2030-03-31
+```latex
+\begin{exhibit}[H]
+\caption{Development to commercial operation \casep}\label{exh:4.2}
+\centering
+\begin{tikzpicture}[x=5mm, y=7mm, font=\small\sffamily]
+\foreach \yr [count=\i from 0] in {2026,2027,2028,2029,2030} {
+  \draw[pfgray] (\i*4,0.3) -- (\i*4,-3.6);
+  \node[anchor=south] at (\i*4+2,0.3) {\yr};
+}
+\draw[pfgray] (20,0.3) -- (20,-3.6);
+\fill[pfblue!25] (0,-0.9) rectangle (3.6,-0.3);  \node[anchor=east] at (0,-0.6) {Tender};
+\fill[pfblue!25] (3,-1.9) rectangle (6,-1.3);    \node[anchor=east] at (0,-1.6) {Financing};
+\fill[pfblue!50] (6,-2.9) rectangle (17,-2.3);   \node[anchor=east] at (0,-2.6) {Construction};
+\node[diamond, fill=pfblue, inner sep=2pt] at (6,-3.4) {};
+\node[anchor=west, font=\scriptsize\sffamily] at (6.2,-3.4) {Financial close};
+\end{tikzpicture}
+\exhibitsource{Case Bible.}
+\end{exhibit}
 ```
 
 Decision tree:
 
-```mermaid
-flowchart TD
-    Q1{"Is the offtaker investment grade?"}
-    Q1 -->|"Yes"| A1["Standard payment security: one month LC"]
-    Q1 -->|"No"| Q2{"Is a sovereign guarantee available?"}
-    Q2 -->|"Yes"| A2["Guarantee plus three-month LC"]
-    Q2 -->|"No"| A3["DFI partial risk guarantee or PRI"]
+```latex
+\begin{exhibit}[H]
+\caption{Choosing payment security \illustrative}\label{exh:59.4}
+\centering
+\begin{tikzpicture}[node distance=7mm and 6mm,
+  dec/.style={pfbox, diamond, aspect=2.4, inner sep=1pt, text width=26mm}]
+\node[dec] (q1) {Offtaker investment grade?};
+\node[pfbox, below left=of q1, text width=30mm] (a1) {One-month letter of credit};
+\node[dec, below right=of q1] (q2) {Sovereign guarantee available?};
+\node[pfbox, below left=of q2, text width=28mm] (a2) {Guarantee plus three-month LC};
+\node[pfbox, below right=of q2, text width=28mm] (a3) {DFI partial risk guarantee};
+\draw[pfarrow] (q1) -| node[pflabel, pos=0.25] {Yes} (a1);
+\draw[pfarrow] (q1) -| node[pflabel, pos=0.25] {No} (q2);
+\draw[pfarrow] (q2) -| node[pflabel, pos=0.25] {Yes} (a2);
+\draw[pfarrow] (q2) -| node[pflabel, pos=0.25] {No} (a3);
+\end{tikzpicture}
+\exhibitsource{Illustrative.}
+\end{exhibit}
 ```
 
-Gantt dates shown in an exhibit must match the Case Bible; the timeline above is a format example only.
+Timeline dates in a real exhibit must match the Case Bible; the dates above are format examples only.
+
+### 6.3 Charts (pgfplots)
+
+Charts show shape (ratio profiles, debt balances, price curves); the numbers behind a chart also appear in a table or the text. Inside `exhibit`, `width=\linewidth`, `height=55mm`; axis labels with units ("USD m", "x"); `xtick=data` for period axes; legend below the plot; fills `pfblue!60` and `SeaGreen!50` for the first two series, `pfgray` for a third; at most four series.
+
+```latex
+\begin{tikzpicture}
+\begin{axis}[width=\linewidth, height=55mm, ybar, bar width=8pt, xtick=data,
+  enlarge x limits=0.15, xlabel={Operating year}, ylabel={USD m}, ymin=0,
+  legend style={font=\scriptsize, at={(0.5,-0.3)}, anchor=north, legend columns=2},
+  tick label style={font=\scriptsize}, label style={font=\small}]
+\addplot[fill=pfblue!60] coordinates {(1,13.8) (2,14.1) (3,14.0) (4,13.6)};
+\addplot[fill=SeaGreen!50] coordinates {(1,10.6) (2,10.6) (3,10.6) (4,10.6)};
+\legend{CFADS, Debt service}
+\end{axis}
+\end{tikzpicture}
+```
 
 ## 7. Drafted clause excerpts
 
 All clause language is drafted originally for this book. Never reproduce or closely paraphrase LMA, LSTA, APLMA, FIDIC, ISDA, government standard forms, textbooks, or published contracts. A writer who recognizes a published formulation in a draft rewrites it from the principle.
 
-Format:
+A single clause:
 
-- Caption line above, like an exhibit: `Clause 18.3. Deemed energy payment, PPA (Illustrative, lender-friendly)`. The caption names the document and the variant. Variants of one clause take letters: Clause 18.3a (sponsor-friendly), 18.3b (lender-friendly), 18.3c (government-friendly). A clause with no negotiation angle has no letter and no variant tag.
-- The clause text is a Markdown block quote. Paragraphs inside are lettered (a), (b), (c) and sub-lettered (i), (ii). Defined terms inside the clause are capitalized, as in real drafting, and may follow English-law spelling where the governing law is English law.
-- Annotations follow immediately, as a numbered list keyed to the paragraph letters: "1. Paragraph (a)." then one to four sentences saying what the words do, who they protect, and what a party would push to change. Annotate every paragraph.
-- Variants: present the three variants in sequence, each with its annotations, then a prose paragraph titled by its first words, "Where it usually lands", stating the market outcome with market and date ("In Sub-Saharan African IPPs closed 2018–2025, the compromise was…").
+```latex
+\begin{clause}{Delay liquidated damages, EPC contract \illustrative}\label{cl:22.2}
+\begin{enumerate}[label=(\alph*)]
+\item If Completion has not occurred by the Guaranteed Completion Date, the Contractor
+      shall pay Delay Liquidated Damages at the Daily Rate for each day of delay.
+\item The aggregate Delay Liquidated Damages shall not exceed 20 per cent of the Contract Price.
+\end{enumerate}
+\end{clause}
+\begin{enumerate}
+\item Paragraph (a). What the words do, who they protect, what a party would push to change.
+\item Paragraph (b). ...
+\end{enumerate}
+```
 
-**[GOOD]**
+- The title names the provision and the document, then `\illustrative`.
+- Paragraphs inside are lettered (a), (b) with `enumerate[label=(\alph*)]`, sub-paragraphs (i), (ii) with `label=(\roman*)`. Defined terms inside clauses are capitalized as in real drafting; "per cent" and English-law spellings are permitted inside clauses governed by English law. `%` in a clause is written `\%`.
+- Annotations follow the box at once as a plain `enumerate`, one item per lettered paragraph, beginning "Paragraph (a)." and running one to four sentences. Every paragraph is annotated.
 
-Clause 18.3a. Deemed energy, PPA (Illustrative, sponsor-friendly)
+Negotiated variants (sponsor-friendly, lender-friendly, government-friendly) share one number and take letters:
 
-> (a) If the Seller is able and offers to deliver Net Energy Output and the Buyer fails to accept it for any reason other than Seller Fault, the Buyer shall pay for Deemed Energy as if it had been delivered.
->
-> (b) Deemed Energy for any hour equals the Available Capacity declared for that hour less Net Energy Output actually accepted.
+```latex
+\begin{clausevariants}\label{cl:18.3}
+\begin{clausevariant}{Deemed energy, PPA}{Illustrative, sponsor-friendly}\label{cl:18.3a}
+\begin{enumerate}[label=(\alph*)]
+\item If the Seller is able and offers to deliver Net Energy Output and the Buyer fails
+      to accept it for any reason other than Seller Fault, the Buyer shall pay for
+      Deemed Energy as if it had been delivered.
+\end{enumerate}
+\end{clausevariant}
+% annotations for 18.3a
+\begin{clausevariant}{Deemed energy, PPA}{Illustrative, lender-friendly}\label{cl:18.3b}
+...
+\end{clausevariant}
+% annotations for 18.3b
+\begin{clausevariant}{Deemed energy, PPA}{Illustrative, government-friendly}\label{cl:18.3c}
+...
+\end{clausevariant}
+% annotations for 18.3c
+\end{clausevariants}
+```
 
-1. Paragraph (a). "For any reason other than Seller Fault" puts grid outages, dispatch errors, and transmission failure on the offtaker. The offtaker will try to narrow this to listed causes.
-2. Paragraph (b). Basing the calculation on declared capacity, not tested capacity, lets the seller overstate availability; the lender-friendly variant adds an independent engineer check.
+Letters are fixed: a is sponsor-friendly, b lender-friendly, c government-friendly (for a contract with no government party, c is the counterparty-friendly variant, named in the second argument, e.g. "Illustrative, offtaker-friendly"). Immediately after `\end{clausevariants}`, an ordinary prose paragraph with no label states where the clause usually lands, with market and date ("In Sub-Saharan African IPPs closed 2018--2025, the compromise was..."). `clausevariants` and `clausevariant` are requested environments (Section 13).
 
 ## 8. Defined terms and canonical names
 
 ### 8.1 Bold at first definition only
 
-A term is bold once in the book: at its home definition (the section that owns it per `architecture.md`). Bold appears nowhere else, for any purpose. Acronyms: write the full term, then the acronym in parentheses: "**debt service cover ratio** (DSCR)". At the first use in each later chapter, write the full term once again (not bold) with the acronym, then use the acronym. Exempt from re-expansion: USD and other currency codes, MW, MWh, GWh, kWh, and the running-case labels Case P, Case T, Case R. Do not create acronyms used fewer than three times in a chapter.
+A term is bold once in the book, at its home definition (the section that owns it per `architecture.md`), using `\term{...}`. Bold appears nowhere else; `\textbf` is banned in chapters. Acronyms: the full term, then the acronym in parentheses: `\term{debt service cover ratio} (DSCR)`. At the first use in each later chapter, write the full term once again (not bold) with the acronym, then use the acronym. Exempt from re-expansion: currency codes, MW, MWh, GWh, kWh, and Case P, Case T, Case R. Do not create an acronym used fewer than three times in a chapter. `\emph{}` is for the rare word that carries spoken stress, and for foreign words; never for emphasis in sequence.
 
-Common nouns that are defined terms in this book stay lowercase in prose ("project company", "financial close", "commercial operation date"). Capitalized forms appear only inside drafted clauses.
+Common nouns that are defined terms stay lowercase in prose ("project company", "financial close", "commercial operation date"). Capitalized forms appear only inside clauses.
 
 ### 8.2 Canonical forms
-
-Use exactly these forms. A different word signals a different thing.
 
 | Canonical form | Acronym | Not |
 |---|---|---|
 | project company | – | SPV, vehicle, entity, borrower, ProjectCo (SPV only when discussing the legal form itself, Chapter 2) |
-| sponsor, sponsors | – | developer (except for the developer character or a pure developer company), shareholder (except in shareholder-agreement context) |
+| sponsor, sponsors | – | developer (except the developer character or a pure developer company), shareholder (except in shareholder-agreement context) |
 | lenders | – | banks (unless only banks), financiers, creditors (except in insolvency) |
-| senior lenders | – | used only when distinguishing from mezzanine or holdco lenders |
-| offtaker | – | buyer, purchaser, off-taker, off taker (Buyer only inside clauses) |
+| senior lenders | – | only when distinguishing from mezzanine or holdco lenders |
+| offtaker | – | buyer, purchaser, off-taker (Buyer only inside clauses) |
 | host government | – | the state, the government (alone), authorities |
 | contracting authority | – | Case T and PPP chapters only: the public body that signs the PPP contract |
 | EPC contractor | – | contractor (alone), builder, EPC firm |
@@ -441,65 +633,140 @@ Use exactly these forms. A different word signals a different thing.
 | independent engineer | IE | lenders' technical advisor, LTA |
 | facility agent | – | agent bank, administrative agent (except US-law contexts, noted once) |
 | intercreditor agent | – | intercreditor representative |
-| security agent | – | collateral agent, security trustee (security trustee only in Chapter 52 when the trust mechanism is the topic) |
+| security agent | – | collateral agent; security trustee only in Chapter 52 when the trust mechanism is the topic |
 | export credit agency | ECA | – |
 | development finance institution | DFI | multilateral (alone) |
 | engineering, procurement, and construction | EPC | – |
 | power purchase agreement | PPA | power offtake agreement |
-| commercial operation date | COD | completion date (completion is a separate defined term in finance documents) |
+| commercial operation date | COD | completion date (completion is a separate defined term) |
 | financial close | – | closing, financial closing |
 | cash flow available for debt service | CFADS | – |
 | debt service reserve account | DSRA | – |
-| gearing | – | leverage (except in the technical sense of debt's effect on returns, Chapter 8) |
+| gearing | – | leverage (except debt's effect on returns, Chapter 8) |
+
+In LaTeX source, "O&M" is typed `O\&M`.
 
 ## 9. Real cases and sources
 
-### 9.1 Presenting real cases
-
-- First mention names the project, country, and dates: "Paiton I, a 1,230 MW coal plant in East Java, Indonesia, reached financial close in 1995." Use the figures and dates in the fact sheet for that case in `book/facts/`.
-- Figures that are approximate carry "approximately" before the number: "approximately USD 2.5 billion." Never round a precise sourced figure without marking it.
-- Never quote a real person or document unless the fact sheet gives the exact words and source. Paraphrase otherwise.
-- Facts come only from `book/facts/` sheets. A writer who needs a fact not in the sheets verifies it from at least one primary or reputable secondary source and lists it in the status note under "verification flags" with the source.
-- In-text citation: author-date in parentheses at the first statement of a sourced figure or claim: "(MIGA 2016)". No footnotes.
+- First mention names the project, country, and dates: "Paiton I, a 1,230 MW coal plant in East Java, Indonesia." Figures and dates come from that case's fact sheet in `book/facts/`.
+- Approximate figures carry "approximately" before the number. Never round a precise sourced figure without marking it.
+- Never quote a real person or document unless the fact sheet gives the exact words and source; paraphrase otherwise.
+- A fact not in the sheets is verified from at least one primary or reputable secondary source and listed in the status note under "verification flags" with its source.
+- In-text citation: author-date in parentheses at the first statement of a sourced figure or claim, "(MIGA 2016)". No footnotes. Every in-text citation resolves to exactly one entry in Sources (Section 4.8).
 - The lesson of a real case is stated as a mechanism the reader can apply, never as a moral.
 
-### 9.2 Sources list format
+## 10. LaTeX hygiene
 
-Final H2 "Sources". Entries alphabetical by author or organization, one paragraph each (not bullets), Chicago author-date style:
+Every chapter compiles with `scripts/build_chapter.sh chapters/NN-slug.tex` before it is reported done. Allowed residue: undefined cross-chapter references only. Zero Overfull boxes wider than 5pt.
 
-```text
-Asian Development Bank. 2021. Title of the Report in Title Case. Manila: Asian Development Bank. https://www.example.org/report. Accessed October 3, 2026.
+- Escape in running text: `\%`, `\$`, `\&`, `\#`, `\_`, `\{`, `\}`; write `\textasciitilde` and `\textasciicircum` for literal tilde and caret. Never escape inside `excel`, `\xl{}`, or `\url{}`.
+- Dashes: `-` for hyphens, `--` for ranges, `---` for an em dash with no spaces around it. The prose limit stands: at most one `---` (or one pair) per paragraph, and most paragraphs have none. Never type Unicode dashes.
+- Quotes: ` ``...'' ` and `` `...' ``; never the straight `"` in prose (it is fine inside `\xl` and `excel`). Apostrophes are `'`.
+- Ellipsis `\ldots`. Multiplication sign for ratios via `\x`; elsewhere `$\times$`.
+- Non-breaking space `~` between a number and its unit or currency (`650~MW`, `USD~45,000`), and inside `\USDm{}` automatically. Do not put `~` before `\cref` (cleveref handles it). Thin space `\,` only where a macro does not already supply it, such as `$1{,}000\,\mathrm{kW}$` in math.
+- Unicode is allowed for letters in names (Ørsted, Société Générale, €STR as a name) and nowhere else: no Unicode quotes, dashes, math symbols, arrows, non-breaking spaces, or emoji.
+- No `\newcommand`, `\renewcommand`, `\def`, `\let`, `\usepackage`, `\setlength`, or `\definecolor` in chapter files. Request macros through the coordinator, who adds them to `pfbook.sty`.
+- No manual layout: no `\\` to break prose lines, no `\vspace`, `\newpage`, `\clearpage`, `\noindent` in prose, or font-size commands outside tables and TikZ.
+- No `\footnote`, `\textbf`, `\underline`, or color commands in prose.
+- Lists: `itemize` and `enumerate` only, never nested more than one level, and only for true checklists and sequences (`standards.md` Section 8).
+- Paragraphs are separated by one blank line. One sentence per source line is optional; never hard-wrap inside `\xl{}`.
 
-Surname, Given Name, and Given Name Surname. 2019. "Article Title in Title Case." Journal Name 12 (3): 45–67.
+## 11. Prose enforcement: the ten tics technical writers fall into most
+
+The full list is `standards.md` Section 8, "AI writing tics to avoid". Writers scan for all of it. The ten below recur most in technical drafts. Quoted text in this section is **[BAD]** unless marked otherwise.
+
+1. Em dashes. **[BAD]** "The DSRA (a reserve)---usually six months---protects lenders---and sponsors pay for it." At most one `---` or pair per paragraph; most paragraphs have none. Rewrite with a period, comma, or parentheses; do not swap in semicolons wholesale. Check with `grep -n -- '---' chapters/NN-*.tex` and inspect every paragraph with more than one hit.
+2. Inflated verbs and adjectives: "crucial", "robust", "ensure", "leverage" (as "use"), "key" (as an adjective), "facilitate". Name what the thing does: "the reserve pays six months of debt service," not "the reserve plays a crucial role in ensuring robust debt service."
+3. Vague "This" opening a sentence. **[BAD]** "This means lenders are protected." Use the noun: "The cap means lenders recover delay costs up to USD 38.4 million."
+4. False-contrast reframes. **[BAD]** "A DSRA isn't just a reserve; it's a signal." State the positive claim with its mechanism, or delete.
+5. Tacked-on significance clauses. **[BAD]** "..., highlighting the importance of contract design." Make it a separate claim with evidence, or cut.
+6. Signposted enumeration and the reflexive rule of three. **[BAD]** "There are three reasons. First..." Write connected prose in order of importance, with as many items as the content has.
+7. Hedge stacking and reflexive "can" or "may". **[BAD]** "This can potentially lead to issues in many cases." Give the condition and frequency: "When the offtaker pays more than 60 days late, the DSRA is drawn."
+8. Elegant variation. **[BAD]** "the project company... the SPV... the borrower... the vehicle." Use the canonical term from Section 8.2 every time.
+9. Zinger endings and summary sandwiches. **[BAD]** "And that is the whole game." Cut the last sentence of any paragraph that restates the paragraph; sections end on their last substantive point.
+10. "It depends" without direction, and non-conclusions. **[BAD]** "The right tenor depends on many factors." Name the two or three decisive factors, rank them, and say which way each moves the answer and by how much.
+
+Swapping a banned word for a synonym is the same failure (`standards.md` Section 8, "Applying the list"). Writers run a banned-word scan on every chapter file before reporting done and report the count in the status note.
+
+## 12. Sample passage
+
+The reference for tone and density, as LaTeX source. It compiles as shown.
+
+```latex
+\begin{example}{Why lenders size on P90 \illustrative}\label{ex:9.6}
+Take a 120~MW wind farm whose consultant forecasts 380.0~GWh a year at \term{P50},
+the output level the farm is expected to beat in half of all years. At a tariff of
+USD~52.40/MWh, that is revenue of \USDm{19.9}. Operating costs are \USDm{6.1}, so
+CFADS is \USDm{13.8}.
+
+Suppose the lenders sized the debt on that P50 case at a minimum DSCR of 1.30\x.
+Annual debt service would be \USDm{10.6}. Now give the wind a bad year. If annual
+output has a standard deviation of 10\%, the one-year \term{P90}, the level beaten in
+90\% of years, is 331.3~GWh. Revenue falls to \USDm{17.4}, CFADS to \USDm{11.3}, and
+the DSCR to 1.06\x. A typical lock-up test blocks distributions below 1.10\x, so one
+ordinary bad year would trap the sponsors' cash in the project company.
+
+Lenders therefore run the sizing on P90 as well and ask the bad year to clear its own
+ratio. At 1.20\x{} on the P90 case, debt service drops to \USDm{9.4}, and the sponsors
+lose \USDm{1.2} a year of debt capacity. That \USDm{1.2} buys the lenders a structure in
+which the predictable bad year pays its debt service with room to spare, while only a
+rarer, worse year tests the reserve account.
+\end{example}
 ```
 
-Titles of reports and books in italics (`*Title*`); article titles in quotation marks. Every in-text citation resolves to exactly one entry. The date accessed is required for web sources.
+About 200 words; no dashes. Arithmetic: 380.0 × 52.40 = 19,912 (USD 19.9 million); 19.912 − 6.1 = 13.812; 13.812 / 1.30 = 10.62; 380.0 × (1 − 1.2816 × 0.10) = 331.3 GWh; 331.3 × 52.40 = 17,360 (USD 17.4 million); 17.360 − 6.1 = 11.26; 11.26 / 10.62 = 1.06x; 11.26 / 1.20 = 9.38 (USD 9.4 million); 10.62 − 9.38 = 1.24 (USD 1.2 million). Note `1.20\x{}` before a space: `\x` swallows the following space, so write `\x{}` when a word follows and `\x` before punctuation. (The P50 and P90 terms are bold here only because this passage stands in for their home definition in Chapter 9.)
 
-## 10. Prose enforcement: the ten tics technical writers fall into most
+## 13. Macros (now merged into latex/pfbook.sty)
 
-The full list is `standards.md` Section 8, "AI writing tics to avoid". Writers scan for all of it. The ten below recur most in technical drafts, with the rewrite strategy for each. Quoted text in this section is **[BAD]** unless marked otherwise.
+Status: all macros below are merged into `latex/pfbook.sty` as of 2026-10-03. `\x` and `\bps` now use `xspace`, so `1.35\x on` and `175\bps over` space correctly; the `{}` form still works.
 
-1. Em dashes. **[BAD]** "The DSRA (a reserve) — usually six months — protects lenders — and sponsors pay for it." Rule: at most one dash or dash pair per paragraph; most paragraphs have none. Rewrite with a period, comma, or parentheses, and do not substitute semicolons wholesale. Writers run `grep -c "—"` per paragraph before submission.
-2. Inflated verbs and adjectives: "crucial", "robust", "ensure", "leverage" (as "use"), "key" (as an adjective), "facilitate". Rewrite by naming what the thing does: "the reserve pays six months of debt service" instead of "the reserve plays a crucial role in ensuring robust debt service."
-3. Vague "This" opening a sentence. **[BAD]** "This means lenders are protected." Rewrite with the noun: "The cap means lenders recover delay costs up to USD 38.4 million."
-4. False-contrast reframes. **[BAD]** "A DSRA isn't just a reserve; it's a signal." Rewrite as the positive claim with its mechanism, or delete.
-5. Tacked-on significance clauses. **[BAD]** "…, highlighting the importance of contract design." Rewrite as a separate claim with evidence, or cut.
-6. Signposted enumeration and the reflexive rule of three. **[BAD]** "There are three reasons. First…" Rewrite as connected prose in order of importance, with as many items as the content has.
-7. Hedge stacking and reflexive "can" or "may". **[BAD]** "This can potentially lead to issues in many cases." Rewrite with the condition and frequency: "When the offtaker pays more than 60 days late, the DSRA is drawn."
-8. Elegant variation. **[BAD]** "the project company… the SPV… the borrower… the vehicle." Rewrite using the canonical term from Section 8.2 every time.
-9. Zinger endings and summary sandwiches. **[BAD]** "And that is the whole game." Cut the last sentence of any paragraph that restates the paragraph. Sections end on their last substantive point.
-10. "It depends" without direction, and non-conclusions. **[BAD]** "The right tenor depends on many factors." Rewrite by naming the two or three decisive factors, ranking them, and saying which way each moves the answer and by how much.
+Add to `latex/pfbook.sty` (before the hyperref/cleveref block unless noted; the `framework` and `casescene` definitions replace the existing ones). Each was compiled in a scratch document with the package and the rendered PDF inspected; definitions are exact.
 
-Swapping a banned word for a synonym is the same failure (`standards.md` Section 8, "Applying the list"). Writers also run a banned-word scan on every chapter file before reporting done, using the lists in `standards.md` Section 8, and report the count in the status note.
+```latex
+% Status labels (match \illustrative)
+\newcommand{\casep}{\textsc{\textcolor{pfgray}{(Case P)}}}
+\newcommand{\caset}{\textsc{\textcolor{pfgray}{(Case T)}}}
+\newcommand{\caser}{\textsc{\textcolor{pfgray}{(Case R)}}}
+\newcommand{\realcase}[1]{\textsc{\textcolor{pfgray}{(Real case: #1)}}}
 
-## 11. Sample passage
+% Exhibit source and note lines
+\newcommand{\exhibitsource}[1]{\par\smallskip{\footnotesize\sffamily\raggedright Source: #1\par}}
+\newcommand{\exhibitnote}[1]{\par{\footnotesize\sffamily\raggedright Note: #1\par}}
 
-The passage below demonstrates the voice and every rule above. It is the reference for tone and density. (Illustrative)
+% Clause variants: \begin{clausevariants}\label{cl:N.K} ... \begin{clausevariant}{Title}{Status}\label{cl:N.Ka}
+\newcounter{pfclausevar}[pfclause]
+\renewcommand{\thepfclausevar}{\thepfclause\alph{pfclausevar}}
+\newtcolorbox{pfclausevarbox}[2]{breakable,enhanced,colback=white,colframe=pfgray,boxrule=0.5pt,
+  left=6pt,right=6pt,top=4pt,bottom=4pt,fonttitle=\sffamily\bfseries\small,coltitle=black,colbacktitle=pflight,
+  title={Clause~\thepfclausevar\quad #1\quad\textmd{\textsc{(#2)}}},fontupper=\small}
+\newenvironment{clausevariants}{\refstepcounter{pfclause}}{}
+\newenvironment{clausevariant}[2]{\refstepcounter{pfclausevar}\begin{pfclausevarbox}{#1}{#2}}{\end{pfclausevarbox}}
 
-> Take a 120 MW wind farm whose consultant forecasts 380.0 GWh a year at **P50**, the output level the farm is expected to beat in half of all years. At a tariff of USD 52.40/MWh, that is revenue of USD 19.9 million. Operating costs are USD 6.1 million, so CFADS is USD 13.8 million.
->
-> Suppose the lenders sized the debt on that P50 case at a minimum DSCR of 1.30x. Annual debt service would be USD 10.6 million. Now give the wind a bad year. If annual output has a standard deviation of 10%, the one-year **P90**, the level beaten in 90% of years, is 331.3 GWh. Revenue falls to USD 17.4 million, CFADS to USD 11.3 million, and the DSCR to 1.06x. A typical lock-up test blocks distributions below 1.10x, so one ordinary bad year would trap the sponsors' cash in the project company.
->
-> Lenders therefore run the sizing on P90 as well and ask the bad year to clear its own ratio. At 1.20x on the P90 case, debt service drops to USD 9.4 million, and the sponsors lose USD 1.2 million a year of debt capacity. That USD 1.2 million buys the lenders a structure in which the predictable bad year pays its debt service with room to spare, while only a rarer, worse year tests the reserve account.
+% Numbered framework box (replaces the current \newtcolorbox{framework})
+% Usage: \begin{framework}[label={fw:slug}]{Name}
+\newtcolorbox[auto counter,number within=chapter,crefname={Framework}{Frameworks}]{framework}[2][]{%
+  breakable,enhanced,colback=pflight,colframe=pfblue,boxrule=0.8pt,
+  fonttitle=\sffamily\bfseries,title={Framework~\thetcbcounter\quad #2},left=6pt,right=6pt,#1}
 
-Word count of the passage: about 200 words. Dashes: none. Numbers checked: 380.0 × 52.40 = 19,912 (USD 19.9 million); 19.912 − 6.1 = 13.812; 13.812 / 1.30 = 10.62; 380.0 × (1 − 1.2816 × 0.10) = 331.3 GWh; 331.3 × 52.40 = 17,360 (USD 17.4 million); 17.360 − 6.1 = 11.26; 11.26 / 10.62 = 1.06x; 11.26 / 1.20 = 9.38 (USD 9.4 million); 10.62 − 9.38 = 1.24 (USD 1.2 million).
+% Running-case scene (replaces the current casescene: its "attach title to upper"
+% title did not render in the test build; this version prints it as the first line,
+% and parbox=false gives normal paragraph indents instead of hanging lines)
+\newtcolorbox{casescene}[2]{breakable,enhanced,parbox=false,colback=white,colframe=pfblue!50,boxrule=0pt,
+  leftrule=2.5pt,arc=0pt,left=8pt,right=4pt,top=2pt,bottom=2pt,
+  before upper={{\sffamily\small\color{pfblue}#1\ \textperiodcentered\ #2}\par\smallskip}}
+
+% Sources list with hanging indent
+\newenvironment{sources}{\begin{list}{}{\setlength{\leftmargin}{1.5em}%
+  \setlength{\itemindent}{-1.5em}\setlength{\itemsep}{3pt}\small}}{\end{list}}
+
+% Long tables numbered as exhibits
+\def\LTcaptype{exhibit}
+
+% Landscape pages for wide model printouts
+\RequirePackage{pdflscape}
+
+% In the cleveref block (after \RequirePackage{cleveref}):
+\crefname{pfclausevar}{Clause}{Clauses}
+```
+
+With the `\crefname{pfclausevar}` line in the preamble after cleveref, `\cref{cl:18.3a}` printed "Clause 18.3a" in the test; the numbered framework printed "Framework 28.1" and resolved through `\cref`; `\xl{}` inside a `tabularx` cell compiled and rendered.

@@ -86,15 +86,47 @@
   title={Clause~\thepfclause\quad #1},fontupper=\small}
 \newenvironment{clause}[1]{\refstepcounter{pfclause}\begin{pfclausebox}{#1}}{\end{pfclausebox}}
 
-% Framework box: \begin{framework}{Name}
-\newtcolorbox{framework}[1]{breakable,enhanced,colback=pflight,colframe=pfblue,boxrule=0.8pt,
-  fonttitle=\sffamily\bfseries,title={Framework: #1},left=6pt,right=6pt}
+% Status labels (match \illustrative)
+\newcommand{\casep}{\textsc{\textcolor{pfgray}{(Case P)}}}
+\newcommand{\caset}{\textsc{\textcolor{pfgray}{(Case T)}}}
+\newcommand{\caser}{\textsc{\textcolor{pfgray}{(Case R)}}}
+\newcommand{\realcase}[1]{\textsc{\textcolor{pfgray}{(Real case: #1)}}}
 
-% Running-case scene: \begin{casescene}{Case P}{Place, date}
-\newtcolorbox{casescene}[2]{breakable,enhanced,colback=white,colframe=pfblue!50,boxrule=0pt,leftrule=2.5pt,arc=0pt,
-  left=8pt,right=4pt,top=2pt,bottom=2pt,
-  title={\sffamily\small #1\ \textperiodcentered\ #2},coltitle=pfblue,colbacktitle=white,attach title to upper,
-  before upper={\par\smallskip}}
+% Exhibit source and note lines
+\newcommand{\exhibitsource}[1]{\par\smallskip{\footnotesize\sffamily\raggedright Source: #1\par}}
+\newcommand{\exhibitnote}[1]{\par{\footnotesize\sffamily\raggedright Note: #1\par}}
+
+% Clause variants: \begin{clausevariants}\label{cl:N.K} ... \begin{clausevariant}{Title}{Status}\label{cl:N.Ka}
+\newcounter{pfclausevar}[pfclause]
+\renewcommand{\thepfclausevar}{\thepfclause\alph{pfclausevar}}
+\newtcolorbox{pfclausevarbox}[2]{breakable,enhanced,colback=white,colframe=pfgray,boxrule=0.5pt,
+  left=6pt,right=6pt,top=4pt,bottom=4pt,fonttitle=\sffamily\bfseries\small,coltitle=black,colbacktitle=pflight,
+  title={Clause~\thepfclausevar\quad #1\quad\textmd{\textsc{(#2)}}},fontupper=\small}
+\newenvironment{clausevariants}{\refstepcounter{pfclause}}{}
+\newenvironment{clausevariant}[2]{\refstepcounter{pfclausevar}\begin{pfclausevarbox}{#1}{#2}}{\end{pfclausevarbox}}
+
+% Numbered framework box (replaces the current \newtcolorbox{framework})
+% Usage: \begin{framework}[label={fw:slug}]{Name}
+\newtcolorbox[auto counter,number within=chapter]{framework}[2][]{%
+  breakable,enhanced,colback=pflight,colframe=pfblue,boxrule=0.8pt,
+  fonttitle=\sffamily\bfseries,title={Framework~\thetcbcounter\quad #2},left=6pt,right=6pt,#1}
+
+% Running-case scene (replaces the current casescene: its "attach title to upper"
+% title did not render in the test build; this version prints it as the first line,
+% and parbox=false gives normal paragraph indents instead of hanging lines)
+\newtcolorbox{casescene}[2]{breakable,enhanced,parbox=false,colback=white,colframe=pfblue!50,boxrule=0pt,
+  leftrule=2.5pt,arc=0pt,left=8pt,right=4pt,top=2pt,bottom=2pt,
+  before upper={{\sffamily\small\color{pfblue}#1\ \textperiodcentered\ #2}\par\smallskip}}
+
+% Sources list with hanging indent
+\newenvironment{sources}{\begin{list}{}{\setlength{\leftmargin}{1.5em}%
+  \setlength{\itemindent}{-1.5em}\setlength{\itemsep}{3pt}\small}}{\end{list}}
+
+% Long tables numbered as exhibits
+\def\LTcaptype{exhibit}
+
+% Landscape pages for wide model printouts
+\RequirePackage{pdflscape}
 
 % Excel formulas
 \RequirePackage{listings}
@@ -114,8 +146,9 @@
 
 % Units and money helpers
 \newcommand{\USDm}[1]{USD~#1~million}
-\newcommand{\bps}{\,bps}
-\newcommand{\x}{\texttimes}
+\RequirePackage{xspace}
+\newcommand{\bps}{\,bps\xspace}
+\newcommand{\x}{\texttimes\xspace}
 
 % Defined terms: bold at first definition only
 \newcommand{\term}[1]{\textbf{#1}}
@@ -152,6 +185,8 @@
 \crefname{subsection}{Section}{Sections}
 \crefname{chapter}{Chapter}{Chapters}
 \crefname{equation}{Equation}{Equations}
+\crefname{pfclausevar}{Clause}{Clauses}
+\crefname{tcb@cnt@framework}{Framework}{Frameworks}
 
 % Draft/standalone support: undefined refs render as ?? and are caught by the checker.
 \endinput
