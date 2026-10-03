@@ -228,3 +228,122 @@ Every new or changed number was recomputed in Python (`scratchpad/ch02/nums2.py`
 - New illustrative fact: Alto Huelén's PPA (15 years, US dollar, a copper miner rated BBB-, 80% of output). It is not placed in any real Chilean auction (D-127).
 - New verified facts: *Prest v Petrodel* [2013] UKSC 34 (decided June 12, 2013), a settled authority on veil-piercing; and the French extension of insolvency proceedings for commingled assets (*confusion des patrimoines*), stated in general terms without an article citation.
 - Hyperion: "senior secured notes" rests on the fact sheet's medium-confidence item 10.
+
+# Round 2 (2026-10-03)
+
+**Status.**
+- Build: BUILD OK, 53 pages, one overfull box of 0.27pt; only cross-chapter references are undefined; every `\cref` target exists in the registry; every section title matches the registry (scripted).
+- Prose scan: 0 hits; em dashes: 0.
+- Word count, excluding commands: body about 17,600; exercises and solutions about 3,800; sources about 600.
+
+**Case P (D-128, model v1.5).** Chapter 2 prints only these Case P inputs: USD 14.8 million, USD 12 million, 75%, 4.1 GW, BBB-, and the 70:30 split. None of them is affected by `model/figure-ledger-case-p-changes-v1.5.md`, so no update was needed.
+
+## New numbers (Python: `scratchpad/ch02/nums3.py`)
+
+Thresholds (the EBITDA at which the 3.50x covenant breaks):
+
+| Net debt (USD m) | Breaks at EBITDA (USD m) | EBITDA fall to breach |
+|---|---|---|
+| 608.0 | 173.7 | 4.8% |
+| 637.2 | 182.1 | 0.2% |
+
+Dividend restraint (half of an illustrative USD 67.2 million dividend, so 33.6 retained):
+
+| Case | Net debt (USD m) | Leverage | EBITDA fall to breach |
+|---|---|---|---|
+| After the equity | 608.0 - 33.6 = 574.4 | 3.15x | 10.0% |
+| After a full call of 29.2 | 603.6 | 3.31x | 5.5% (breach at 172.5) |
+
+Standby facility:
+- Committed: 292.2 + 29.2 = 321.4.
+- Drawn after a 14% overrun: 292.2 + 25.3 = 317.5.
+- Upfront fee: 0.0225 × 29.2 = 0.66.
+- Base loan plus full standby is 71.7% of cost plus the cap overrun, under the 75% gearing reference.
+
+## Domain (r2-domain.md)
+
+**N1. Cushion.**
+- Step 2 now states the EBITDA falls that would break the covenant: 4.8% before any call and 0.2% after a full call.
+- The paper sets a cushion policy (about 5% EBITDA fall after a full call) and meets it with a halved 2025 dividend (USD 33.6 million retained) plus the USD 29.2 million cap. This gives 3.31x after a call and a 5.5% cushion.
+- The paper attaches a quarterly covenant forecast on trailing EBITDA.
+- Exhibit 2.3 gains the leverage-after-call and EBITDA-fall rows; its note gives the unrestrained figures.
+- Solution 2.7 now uses this wording in place of "to leave a margin".
+- The drill concedes that project finance uses up GLA's construction headroom, and that the use is capped, temporary, and released at completion.
+
+**N2. Standby facility.**
+- Rewritten as the lenders' concession. The base loan plus the fully drawn standby must pass the cover-ratio and gearing tests (`sec:31.7`).
+- The drawing order is presented as a negotiated term, with the fixed-ratio alternative noted.
+- Price: an upfront fee of about USD 0.66 million, a commitment fee, and possibly a higher margin.
+- If the lenders refuse, the fallback is an equity-funded overrun reserve or a letter of credit.
+- Step 4 now shows project debt of 317.5 if the standby is drawn, with its effect on cover ratios and distributions.
+- Exhibit 2.3 now reads "before the standby facility's fees".
+
+**N3. PPA settlement.** Example 2.1 now states that the PPA is pay-as-produced and settled through the national market at the wind farm's own node. The miner bears the price difference between nodes and GLA keeps curtailment risk. Step 4 refers back to this.
+
+**N4. Fit-test question 2.** Reworded so the currency condition applies to both the contracted branch and the merchant branch. Fit-test wording now:
+- Chapter 2 brief section in `bible/briefs/u01.md`: updated.
+- `bible/briefs/u17.md` Chapter 85: no prior citation existed. A citation with the new wording has been added to the "Concepts assumed" list.
+
+## Numbers (r2-numbers.md)
+
+- **Item 1:** Step 1 now asks the board to approve USD 292.2 million of senior debt plus a USD 29.2 million standby facility, USD 321.4 million committed. Step 6 now says "up to USD 321.4 million if the standby facility is drawn in full".
+- **Item 2:** All three places now read "before the standby facility's fees". The USD 0.66 million upfront fee is stated in Step 2.
+
+## Novice (r2-novice.md)
+
+1. "Bank bond" changed to "bank guarantee (in construction usually called a performance bond, ch:22)".
+2. "Amortizes" glossed in 2.4.2; "bullet bond" glossed in the paragraph listing the simplifications of Example 2.4.
+3. The rating-scale sentence (AAA to BB) added to the ratings paragraph. The Moody's curve is now worded as "around BB" and "borrowers rated A".
+4. The Exhibit 2.3 note explains why after-COD leverage is unchanged (no dividends from the wind farm assumed in the first year).
+5. "PPP unit" is now lowercase in both narration and dialogue.
+
+## Facts (r2-facts.md)
+
+1. **French law.** Reworded to cover any company, commingled assets or a sham, with the citation (France 2022). Code de commerce art. L621-2 added to Sources with its Légifrance URL.
+2. ***Prest.*** Wording now reads "to evade, or frustrate the enforcement of, an existing obligation or restriction". The in-text citation is now in house style, and the Sources entry has a URL and access date.
+3. **Terra Operating notes.** Now described as unsecured senior notes, ranking equally with Terra Operating's other unsecured debt. The guarantee is stated as "guaranteed by Terra LLC" in the text; the full ranking sentence was cut under line item R2-14, and Solution 2.12 matches.
+4. **"First use".** Replaced with "showed what that control could do".
+5. **Hyperion.** The debt is now described as part of Blue Owl's side, sold privately to PIMCO and other bond investors (Meta Platforms 2025). "Senior secured" and "2049" are attributed to the fund holdings filing (PIMCO Variable Insurance Trust 2025), which is added to Sources.
+6. **PNG LNG.** Now described as an unincorporated joint venture borrowing through PNG LNG Global Company, with the co-venturers' guarantee until financial completion in 2015. The citation key now matches its Sources entry.
+7. **Whole-business securitization.** Narrowed to "whole-business-style" financings, with the Thames Tideway Tunnel company as the example (Bazalgette Tunnel Limited 2026, from the Tideway fact sheet). The Tideway annual report is added to Sources.
+
+## Consistency (r2-consistency.md)
+
+1. Mariama Talmé is now Groupe Talmé's deputy chief executive.
+2. Kilnworth's 2026 sale is now in the past tense ("did when it sold").
+3. "Approximately" now used for USD 3.8 billion and for 67%.
+4. The DSRA and ECAs acronyms are removed (each was used once).
+5. Now reads "O&M operator's solvency".
+6. **u01 brief, Chapter 2 section.**
+   - A round 2 note has been added.
+   - All example and exhibit numbers have been converted to print order.
+   - The anchor table is reordered, `cl:2.2` is added, and "Illustrative" is added to the `exh:2.2` caption.
+   - The fit-test entry carries the chapter's wording.
+   - Exercise 2.8 already read "151.9 before and after".
+
+## Line (r2-line.md)
+
+| Item | Fix |
+|---|---|
+| R2-1 | Opening glosses shortened; the `ssec:7.4.1` reference moved to the first use of "balance sheet" in 2.1.1. |
+| R2-2 | Hook sentence rewritten as suggested. |
+| R2-3 | "Borrowing of that kind ... is corporate finance". |
+| R2-4 | The ch:28 and ch:57 pointer sentences cut; the references are now attached to the preceding claims. |
+| R2-5 | Count sentence deleted. The structured-finance family is now one sentence. |
+| R2-6 | The orphan sentence now opens the Moody's paragraph. |
+| R2-7 | Paragraph split; the second part opens "Lenders get that record from four things". |
+| R2-8 | Now "The difference from project finance lies in what makes the asset valuable". |
+| R2-9 | The trust sentence is split. |
+| R2-10 | The sizing clause is kept once (in the Sabine Pass paragraph on 2020). |
+| R2-11 | The restating clause is cut. |
+| R2-12 | The first sentence now leads into the definition instead of defining. |
+| R2-13 | "Northvolt Ett had no contracted revenue." |
+| R2-14 | The TerraForm paragraph is reordered (three layers, then the notes); glosses shortened. |
+| R2-15 | Close now reads "None of those rules was settled when the Channel Tunnel's banks underwrote it." |
+
+**Coordinator item (ssec:2.4.3 title).** The heading is restored to the registry's locked title, "Reserve-based lending compared with project finance". This reverses the round-1 retitle requested in line item R1-31.
+
+## Flags
+
+- **D-134.** The illustrative dividend of USD 67.2 million does not repeat as a value in any other brief or chapter. The two grep hits are Chapter 67 section labels, not figures.
+- **Unverified illustrative assumption.** The 5% EBITDA cushion policy and the GLA dividend are illustrative assumptions with no market source.
