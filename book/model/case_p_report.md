@@ -19,8 +19,8 @@ Model: `model/case_p.py` (Python mirror, source of truth) and `model/Case_P_Mode
 | 11 | Sens: SEKA pays 120 days late for 12 months | 855.1 | 633.3 | 0.13x | 1.54x | 1.42x | 13.2% | 10.9% | 2 |
 | 12 | Sens: dispatch 50% | 855.1 | 633.3 | 1.34x | 1.53x | 1.41x | 13.1% | 10.9% | 0 |
 | 13 | Sens: gas price +30% | 855.1 | 633.3 | 1.35x | 1.54x | 1.42x | 13.3% | 11.0% | 0 |
-| 14 | COD re-forecast (2021 lenders case) | 848.4 | 633.3 | 1.31x | 1.54x | 1.38x | 13.3% | 10.5% | 0 |
-| 15 | Actual history | 846.5 | 633.3 | 0.94x | 1.53x | 1.50x | 13.4% | 10.5% | 4 |
+| 14 | COD re-forecast (2021 lenders case) | 887.5 | 633.3 | 1.28x | 1.51x | 1.34x | 12.4% | 10.1% | 0 |
+| 15 | Actual history | 885.3 | 633.3 | 0.92x | 1.50x | 1.47x | 12.5% | 10.1% | 4 |
 
 Senior debt is the committed amount of the four tranches. Scenarios 2 to 6 and 9 to 13 keep the FC base construction and the contractual debt (amount, repayment profile, swap notional); scenarios 7 and 8 re-gross the funding pro rata at the contract debt share. Scenario 14 is the lenders' COD re-forecast (actual construction, no crisis); scenario 15 is the actual history.
 
@@ -68,16 +68,16 @@ ECA tests (OECD project finance terms in force in 2018): repayment term from COD
 ## 3. Circularity resolution (for Chapters 40 and 42)
 
 * Construction gross-up (IDC, commitment and upfront fees, ECA premium, DSRA): Python iterates the total funding requirement to a tolerance of USD 1,000 (12 passes on the FC base). The workbook solves the same fixed point in closed form on the Funding sheet: each month's balance is carried as alpha_m + beta_m x T, and T = alpha_end / (g - beta_end). The ECA premium inside each month is removed algebraically: draw = g X / (1 - 10.85% x 30% x g). At the 75% gearing cap the closed form gives T = 857.21.
-* Sculpting with tax: CFADS depends on tax, which depends on interest and the shareholder-loan path. Python iterates profile -> model -> CFADS -> constant-DSCR re-sculpt to USD 1,000 on every installment: 11 passes at financial close, 5 for the COD re-sculpting, 5 for the 2025 bond. The workbook carries the converged profiles on the Inputs sheet as contractual schedules (after financial close they are contract terms) and recomputes the sculpted profile live on the Debt sheet; the Checks sheet reports live minus contract (0.000).
+* Sculpting with tax: CFADS depends on tax, which depends on interest and the shareholder-loan path. Python iterates profile -> model -> CFADS -> constant-DSCR re-sculpt to USD 1,000 on every installment: 11 passes at financial close, 4 for the COD re-sculpting, 5 for the 2025 bond. The workbook carries the converged profiles on the Inputs sheet as contractual schedules (after financial close they are contract terms) and recomputes the sculpted profile live on the Debt sheet; the Checks sheet reports live minus contract (0.000).
 * The workbook contains no circular reference and needs no iterative calculation or macro. A pasted-value Converge macro is the alternative the book may teach; it is not needed to run this workbook.
 
 ## 4. Actual history (scenario 15)
 
-Construction: total funding 846.53 against 855.09 at FC. Hard-cost overrun 39.27 against contingency 38.40; KCR depreciation reduced the onshore EPC cost by 6.72; loan interest, swap and PRI in construction 62.52 against 63.90 at FC. Undrawn senior commitment cancelled 6.34; standby drawn 0.00; contingent equity 0.00; delay LDs and DSU (17.22) passed to operating cash.
+Construction: total funding 885.29 against 855.09 at FC. Hard-cost overrun 39.27 against contingency 38.40; KCR depreciation reduced the onshore EPC cost by 6.72; loan interest, swap and PRI in construction 62.89 against 63.90 at FC. Undrawn senior commitment cancelled 0.00; standby drawn 9.73; contingent equity 3.24; delay LDs and DSU (17.22) passed to operating cash.
 
-Crisis: historic DSCR 1.14x at December 31, 2022 (lock-up), 0.98x at June 30, 2023 (event of default; DSRA drawn 2.41), waiver fee 1.40, margin uplift cost 4.35, deferred principal 10.77, lock-up released 2024H2.
-Refinancing June 30, 2025: prepaid 233.00; swap unwind receipt 6.30; bond face 233.99; transaction costs incl. OID 7.29; combined sculpted DSCR 1.62x.
-Sale: equity value at December 31, 2025 327.36 at 13.75% and 358.71 at 12.50%; price for 24% at completion 78.00; indirect transfer tax 6.62; Kilnworth IRR on the sold stake 11.5%.
+Crisis: historic DSCR 1.13x at December 31, 2022 (lock-up), 0.96x at June 30, 2023 (event of default; DSRA drawn 3.26), waiver fee 1.44, margin uplift cost 4.48, deferred principal 10.82, lock-up released 2024H2.
+Refinancing June 30, 2025: prepaid 244.39; swap unwind receipt 6.30; bond face 245.56; transaction costs incl. OID 7.47; combined sculpted DSCR 1.59x.
+Sale: equity value at December 31, 2025 323.99 at 13.75% and 355.36 at 12.50%; price for 24% at completion 77.28; indirect transfer tax 5.58; Kilnworth IRR on the sold stake 9.7%.
 
 ## 5. Returns, sensitivities and breakevens (FC base)
 
@@ -99,7 +99,7 @@ Equity IRR 13.3% (project-company level from the LNTP date, before shareholder w
 | Sens: dispatch 50% | 1.34x | 1.53x | 13.1% |
 | Sens: gas price +30% | 1.35x | 1.54x | 13.3% |
 
-Breakevens (debt locked): availability -21.4 points below profile for a 1.00x minimum DSCR; capacity charge cut 25.0%; DSRA plus LC cover 3.0 months of zero SEKA payment if gas is paid, 8.2 months if gas payments are deferred.
+Breakevens (debt locked): availability -21.4 points below profile for a 1.00x minimum DSCR; capacity charge cut 25.0%; DSRA plus LC cover 3.0 months of zero SEKA payment if gas is paid, 8.1 months if gas payments are deferred.
 
 ## 6. Assumption changes and interpretations
 
@@ -117,7 +117,7 @@ Breakevens (debt locked): availability -21.4 points below profile for a 1.00x mi
 | A8 | Overrun item timing | Amounts only | Timing per month in `case_p.OVERRUN_TIMING` | Amounts unchanged (39.27). |
 | A9 | Onshore EPC price | Fixed in KCR at 519.4 | FC base budgets it at USD 82.67; the actual run converts the KCR price at actual FX | Gives a KCR-depreciation saving in the actual run. |
 
-Outputs outside Case Bible design ranges (reported to the editor-in-chief): standby plus contingent equity drawing 0.0 (range 5 to 15); FC base equity IRR 13.3% against the 16.0% bid target (NPV at 16% negative); COD re-sculpted DSCR 1.31x before the LD prepayment (1.35x minimum after it); LC size 36.2 on the annex 1.1.5 formula for 2022 against USD 33.8 million stated for 2022; Halbeck RBL borrowing base (Illustrative, P-F59) 39.2 at signing and 600.0 in 2023 against about 420 and 360 expected in annex 4.13.
+Outputs outside Case Bible design ranges (reported to the editor-in-chief): standby plus contingent equity drawing 0.0 (range 5 to 15); FC base equity IRR 13.3% against the 16.0% bid target (NPV at 16% negative); COD re-sculpted DSCR 1.28x before the LD prepayment (1.32x minimum after it); LC size 36.2 on the annex 1.1.5 formula for 2022 against USD 33.8 million stated for 2022; Halbeck RBL borrowing base (Illustrative, P-F59) 280.7 at signing and 362.7 in 2023 against about 420 and 360 expected in annex 4.13.
 
 ## 7. Modeling conventions (stated once; adopt centrally)
 

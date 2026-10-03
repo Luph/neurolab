@@ -73,7 +73,7 @@ Figure IDs T-F01 to T-F10 are those of the Case Bible figure register; T-F11 to 
 | T-F03 | Bridge upfront fee 1.00% | 2.9 | ARD m | Banking (2) | 2015-05-27 |
 | T-F03 | NILO interest capitalized during construction | 23.9 | ARD m | Banking (2) | 2019-03-31 |
 | T-F03 | NILO balance at completion | 488.0 | ARD m | Banking (2) | 2019-03-31 |
-| T-F03 | NILO balance at 2023-12-31 (start of capitalization's last quarter) | 563.9 | ARD m | Banking (2) | 2023-12-31 |
+| T-F03 | NILO balance at 2023-12-31 (banking schedule, before the final capitalized quarter) | 563.9 | ARD m | Banking (2) | 2023-12-31 |
 | T-F03 | Shareholder-loan interest accrued during construction | 121.5 | ARD m | Banking (2) | 2019-03-31 |
 | T-F03 | Contribution Bridge Facility (drawn 2017Q4-2019Q1, repaid at opening) | 287.4 | ARD m | Banking (2) | 2019-03-31 |
 | T-F04 | Average daily trips 2019 | Pellow 46.7; Ridgeway 37.9; downside 30.4; actual 30.4 | thousand trips/day (2019: average over operating days) | Inputs via runs 1, 2, 3, 4 | 2019-12-31 |

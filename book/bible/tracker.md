@@ -85,3 +85,4 @@
 - Case Bible annex P DONE (case-bible-annex-p.md; 44 input requests; P-F46..P-F63). Sent to Case P modeler.
 - Case P model v1.1 DONE (15 scenarios PASS); v1.2 fixes requested (D-017).
 - Central resolution DONE: ownership-resolutions.md (121 rulings), glossary-canon.md (1,772 terms), anchor-registry.md (5,240 labels), style-sheet addendum, D-015..D-034. Matter file names set to .tex.
+- Case T model v1.0 DONE (1,642/1,642 PASS); v1.1 absorbing annex inputs.

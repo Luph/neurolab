@@ -91,7 +91,7 @@ for k, lab in (("bank_upfront", "Bank upfront fee 1.85%"), ("bond_issue", "Bond 
     add("T-F03", lab, m(su["fees_breakdown"][k]), "ARD m", "Banking (2)", "2015-05-27")
 add("T-F03", "NILO interest capitalized during construction", m(su["nilo_capitalized_interest_construction"]), "ARD m", "Banking (2)", "2019-03-31")
 add("T-F03", "NILO balance at completion", m(su["nilo_balance_at_completion"]), "ARD m", "Banking (2)", "2019-03-31")
-add("T-F03", "NILO balance at 2023-12-31 (start of capitalization's last quarter)", m(su["nilo_balance_2024_03_31_start_of_2024H1"]), "ARD m", "Banking (2)", "2023-12-31")
+add("T-F03", "NILO balance at 2023-12-31 (banking schedule, before the final capitalized quarter)", m(su["nilo_balance_2024_03_31_start_of_2024H1"]), "ARD m", "Banking (2)", "2023-12-31")
 add("T-F03", "Shareholder-loan interest accrued during construction", m(su["shl_interest_capitalized_construction"]), "ARD m", "Banking (2)", "2019-03-31")
 add("T-F03", "Contribution Bridge Facility (drawn 2017Q4-2019Q1, repaid at opening)", m(su["sources"]["state_contribution_via_bridge"]), "ARD m", "Banking (2)", "2019-03-31")
 # ---------------------------------------------------------------- T-F04 traffic

@@ -289,6 +289,7 @@ def build(path, scenario=2, contribution_option=1):
     B.inp(I, "ContribOpt", "Contribution option (1 = bid, 2 = solved for 11.4% on banking)", "#", contribution_option)
     B.inp(I, "Circ", "Circuit breaker (1 = live circular links, 0 = cut)", "flag", 1)
     B.inp(I, "Tol", "Test tolerance", "ARD m", 0.000001, fmt="0.000000")
+    B.inp(I, "Mat", "Materiality for lock-up tests (arrears, NILO shortfall, DSRA)", "ARD m", 0.01, fmt="0.00")
     B.inp(I, "Big", "Large number for MIN helper rows", "#", 1e12, fmt="0.0E+00")
     B.gap(I)
     B.head(I, "Dates")
@@ -969,8 +970,8 @@ def build(path, scenario=2, contribution_option=1):
     B.tr(S, "EoD", "Event of default continuing", "flag",
          "IF(AND({Flag_Construction}=0,{Post}=0,OR({EoD.p}=1,{DefFail}=1)),1,0)")
     B.tr(S, "Lock", "Distributions blocked", "flag",
-         "IF(OR({Flag_Construction}=1,{Flag_Final}=1),0,IF(OR({Flag_PreFirst}=1,{LockFail}=1,{DSRAGap}>MAX(0,{A2})+{Tol.c},{EoD}=1,"
-         "{Flag_Standstill}=1,{NiloShort}>{Tol.c},{ArrBankPre}+{ArrBondPre}>{Tol.c}),1,0))")
+         "IF(OR({Flag_Construction}=1,{Flag_Final}=1),0,IF(OR({Flag_PreFirst}=1,{LockFail}=1,{DSRAGap}>MAX(0,{A2})+{Mat.c},{EoD}=1,"
+         "{Flag_Standstill}=1,{NiloShort}>{Mat.c},{ArrBankPre}+{ArrBondPre}>{Mat.c}),1,0))")
     B.tr(S, "Distr", "Distributions to equity", "ARD m", "IF({Lock}=1,0,MAX(0,{A6}))*(1-{Flag_Construction})", total=True)
     B.tr(S, "StateCash", "State reserve top-up received", "ARD m", "{StateRes.c}*{Flag_Restr}", total=True)
     B.tr(S, "CashClose", "Cash account carried forward", "ARD m", "({A6}-{Distr}+{StateCash})*(1-{Flag_Construction})")

@@ -48,7 +48,8 @@ import numpy as np
 HERE = os.path.dirname(os.path.abspath(__file__))
 INP = json.load(open(os.path.join(HERE, "inputs_case_t.json")))
 TOL = 1e-9
-EPS = 1e-6           # threshold used in covenant and lock-up tests (Inputs!Tol)
+EPS = 1e-6           # threshold used in covenant ratio tests (Inputs!Tol)
+MAT = 0.01           # materiality for lock-up tests on arrears, NILO shortfall and DSRA (Inputs!Mat)
 MAX_PASSES = 400
 
 # ----------------------------------------------------------------------------------------
@@ -791,9 +792,9 @@ def one_pass(R, st, C, H, ext, scn):
         test_fail_def = R["eodtest"][t] and den > EPS and X["dscr_hist"][t] < DEFAULT_DSCR
         X["eod"][t] = 1.0 if ((not R["post"][t]) and (X["eod"][t - 1] > 0 or test_fail_def)) else 0.0
         # DSRA test: distributions blocked when cash was insufficient to fill the DSRA to its target
-        lock = (R["prefirst"][t] or test_fail_lock or gap > max(0.0, A2) + EPS or X["eod"][t] > 0
-                or R["standstill"][t] or X["nilo_short"][t] > EPS
-                or X["arr_bank_close"][t] + X["arr_bond_close"][t] > EPS)
+        lock = (R["prefirst"][t] or test_fail_lock or gap > max(0.0, A2) + MAT or X["eod"][t] > 0
+                or R["standstill"][t] or X["nilo_short"][t] > MAT
+                or X["arr_bank_close"][t] + X["arr_bond_close"][t] > MAT)
         X["lockup"][t] = 0.0 if R["final"][t] else (1.0 if lock else 0.0)
         X["distr"][t] = 0.0 if X["lockup"][t] else max(0.0, A6)
         X["statecash"][t] = STATE_RES * R["restr"][t]
