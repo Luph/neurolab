@@ -154,3 +154,28 @@ Line numbers are those of the file at the time of the edit (all edits are within
 | model/case-state-case-p.md | 45 | P-F15 (stale modeler note) | up to USD 172.8 million would be trapped | up to USD 175.6 million would be trapped |
 | model/case-state-case-p.md | 60 | P-F18 (stale modeler note) | then standby (about USD 10.0 million) and contingent equity (about 3.3 million) | then standby (about USD 10.1 million) and contingent equity (about 3.4 million) |
 
+## Left unchanged (ambiguous or deliberate)
+
+| File | Line | Text | Reason |
+|---|---|---|---|
+| bible/briefs/u02.md | 1672 | Round-2 revision log: "P-F64 bridge rewritten ... from 16.0% to 13.3%" | Historical revision record of a round-2 fix; the operative text (line 1170, Exercise 8.13) now prints v1.5 values. |
+| bible/case-bible.md | P-C60 row | v1.4 delivery record: P-F49 "121.59", P-F63 cure "80.9", P-F17 shadow sizing "614.3 (-18.9)" | Change-log entry describing the v1.4 delivery; superseded by P-C63 (v1.5). Rewriting it would falsify the record. |
+| bible/case-bible.md | P-C63 row | "7.18", "633.26 to 629.95" | This is the v1.5 change record itself; old values are stated as old. |
+| bible/case-bible.md | P-C57 row | "(1.13x and 0.96x at v1.4)" | Kept on purpose, labeled as v1.4, beside the new 1.12x / 0.95x. |
+| bible/case-bible.md | Section 1.6 table | "Expected outcome ... gearing cap binding or within 3% of binding" | Design target that D-111 says is never printed; not a ledger value. |
+| bible/briefs/u09.md | Ch 44 teaching outline (approx. line 2003) | "the two findings that matter most by P-F17 (E6 and E10 on debt; E1 on the downside)" | Not a printed value, but at v1.5 E2 (+13.3, gearing-bound) now exceeds E10 (−10.0) in absolute debt effect (v1.4: both 9.9). Wording is a teaching judgment for the u09/Ch 44 writer; flagged, not changed. |
+| model/case-state-case-p.md | Ch 59 row | "The DSRA is drawn only at June 30, 2023 (USD 3.3 million, P-F21)" | Value still correct (3.33 rounds to 3.3). P-F20 shows a 0.2 draw in 2022H2 (0.1 at v1.4), so "only" was already loose at v1.4; modeler's note, flagged for the modeler. |
+| bible/briefs/u02.md | 562, 609 | P-F22 "senior financing cost USD 20.8 million and 21.8 million" | P-F22 financing cost unchanged at v1.5 (only all-in cost and unhedged balance changed, both updated). |
+| bible/briefs/u02.md | 878 | P-F04 "payables 80.9" and the other unchanged P-F04 lines (revenue, EBITDA, CFADS 82.2, cash 38.3, DSRA 37.4, LD prepayment 18.5) | Unchanged at v1.5; 80.9 only matched P-F63's old cure value by coincidence. |
+| bible/briefs/u02.md, u14.md, case-bible-annex-p.md | various | "7.0-year average life" (Annex P 4.7), PRG "41.5", LC "36.6"/"36.2", "7.5 bps", "USD 7.5 million" transformer loss, development costs "3.80" (2018), ESIA "1.90", "USD 18.4 million overdue", ECL "3.31/8.17/7.26", hedge recycling "2.1", IFRIC 12 adjustment "143.1", P-F23 combined DSCR "1.59x", P-F16 breakevens (−21.4, 25.0%, 3.0, 8.1), P-F12 tranche all-in costs (9.15%, 8.36%, 8.11%, 5.70%) | Case Bible inputs or ledger values that did not change at v1.5; matched an old value of another row by coincidence. |
+| bible/briefs/u09.md | Ch 40 resource row (approx. line 749) | P-F07 / P-F43 values | Already updated to v1.5 by another agent (commit 3c6df33, "Build-along v1.5") during this pass; not edited again. |
+| all briefs | – | About 600 other token hits | Coincidental: section, exercise, clause and equation numbers; illustrative examples outside Case P (e.g., u02 Example 6.1 13.2%; u08 Tema East DSRA 31.4; u11 Example 52 recovery 74.1%; u13 172.8 MW wind farm; u17 Section 85 screen 13.31%, P-F60 bid screen fixed costs 18.1); Case T/R ledger values (T-F02 12.3%, 11.4%). |
+| bible/case-bible-annex-tr.md, bible/capability-map.md | – | 20.0, 38.4, 85.15, 36.6, 60.9 and similar | No Case P values: Case T inputs and exercise/chapter numbers. No edits needed. |
+
+## Notes for writers and the editor-in-chief
+
+- Drafted chapters are not covered here (D-140: once drafted, the chapter supersedes its brief). Any drafted chapter citing Case P debt figures needs the same changes by its writer; `chapters/36-sizing-and-sculpting-debt.tex` was being edited during this pass.
+- The P-F36 narration (u11 Ch 56 and Exercise 56.13) changed in substance, not only in digits: at 1.30x and 75% the binding test is now the 1.20x downside (630.14), not the gearing cap, so 1.35x to 1.30x adds only USD 0.19 million. The grid now prints debt to two decimals, and the brief follows that.
+- u14 Example 66.9: at v1.5 the lenders'-basis gain is 2.8, and the rounded components also give 2.8, so the old rounding caveat (3.8 against 3.9) was removed.
+- u08 Exercise 36.13: the gearing-cap gap is now about USD 13.2 million (643.1 − 629.9). The ECA tests are measured on the ECA-covered tranche's own equal-installment schedule (WAL 6.92 against 7.25; still the test with the least room).
+- Text on the repayment structure (case-bible 1.6 and the P-F09 registry row, Part 8 methodology step 4, u07 Ch 29, u08 Exhibit 36.13, u09 Ch 42 sections 42.2.5 and 42.A, u11 Ch 56, u17 Ch 86) now says that the ECA-covered tranche repays in 26 equal semiannual installments from 2021H2 to 2034H1, and that the A-loan, B-loan and commercial tranches share one sculpted profile so that total scheduled debt service = CFADS / 1.35. Case bible 1.6 also gives the commercial sweep window in the FC base: 2027 to 2032H1.
