@@ -112,3 +112,5 @@
 - Brief revision u15 DONE.
 - Brief revision u16 DONE (open FS: operating WtE plant, subsea cable, SAF mandate, H2Global).
 - Brief revision u09 DONE. ALL 17 BRIEF UNITS REVISED (round 1).
+- Consolidation launched: part A (registry regeneration, cross-unit brief edits, glossary, rulings, style sheet), part B (Case Bible merges, ledger conflicts, model request list, fact-sheet plan, capability-map.md). Case P modeler v1.4 (u09 R1–R12, ledger extensions).
+- NEXT: build-along workbooks (after v1.4) + exercise workbooks; blueprint review round 2 (targeted re-check by fresh reviewers); Phase 2 pilot.
