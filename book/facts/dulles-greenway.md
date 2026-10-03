@@ -1,6 +1,6 @@
 # Dulles Greenway: ramp-up risk
 
-As of: 2026-10-03 (latest event covered: Atlas Arteria's H1 2026 results release, August 2026, reporting progress on TRIP II's 2025 toll rate case and Virginia's March 2026 tolling legislation)
+As of: 2026-10-03 (latest event covered: Atlas Arteria's H1 2026 results release, 27 August 2026, reporting progress on TRIP II's 2025 toll rate case and Virginia's March 2026 tolling legislation)
 
 ## Summary
 
@@ -48,7 +48,7 @@ The Dulles Greenway is a 14-mile (about 22 km) private toll road in Loudoun Coun
 | Sep 2005 | Macquarie buys TRIP II for USD 617.5 million |
 | Dec 2006 | 50% sold to Macquarie Infrastructure Partners |
 | 2008 | Statutory toll escalation for 2013 to 2020 enacted |
-| 2010 | Minimum Coverage Ratio last met (per 2019 testimony) |
+| 2010 onward | Minimum Coverage Ratio not met since 2010 (per 2019 testimony); distributions locked up |
 | 2011 to 2012 | Bond buyback: USD 34 million for USD 64 million face |
 | 2017 | Atlas Arteria reaches 100% economic interest |
 | 26 Apr 2021 | SCC approves off-peak increases for 2021 and 2022 only |
@@ -69,7 +69,7 @@ The Dulles Greenway is a 14-mile (about 22 km) private toll road in Loudoun Coun
 - Ramp-up and land-use timing. TRIP II attributes the shortfall to a difficult economy and slower-than-anticipated development in the corridor; the forecasts assumed growth that came, but a decade or more later than the debt needed it. [source: 3]
 - Price elasticity in a corridor with free alternatives. The toll cut from USD 1.75 to USD 1.00 raised use but not revenue (FHWA), showing that lowering price does not cure a demand shortfall when users are price-sensitive and free routes compete. [source: 5]
 - Expensive original debt with no cushion. About USD 311 million of debt at about 9.8% on USD 40 million of equity (TRIP II figures) meant almost any shortfall caused default. [source: 3]
-- Back-ended restructuring as a bet on growth. The 1999 and 2005 deals replaced cash interest with accreting zero-coupon bonds and lengthened the concession; this cured the default but tripled the debt (USD 419 million in 1999 to USD 882 million in 2005 to about USD 1.1 billion today) and paid about USD 86 million in bond insurance premiums. The 2005 refinancing also paid USD 70 million to investors. Distribution lock-ups have bound since 2010. [source: 3, 4]
+- Back-ended restructuring as a bet on growth. The 1999 and 2005 deals replaced cash interest with accreting zero-coupon bonds and lengthened the concession; this cured the default but raised debt from about USD 311 million at opening to USD 419 million after 1999, USD 882 million after 2005 and about USD 1.1 billion at end-2025 and paid about USD 86 million in bond insurance premiums. The 2005 refinancing also paid USD 70 million to investors. Distribution lock-ups have bound since 2010. [source: 3, 4]
 - Regulatory cap on recovery. Toll increases need SCC approval under user-benefit and "materially discourage" tests; strong public opposition (730 comments, all but one opposed, in 2020) and SCC discretion limited increases, so the operator could not price its way out. [source: 2, 7]
 - What went right: the road was built early, privately and without public money, it carries 15 million trips a year, and lenders have been protected through insurance and restructuring rather than enforcement.
 
@@ -96,6 +96,6 @@ The Dulles Greenway is a 14-mile (about 22 km) private toll road in Loudoun Coun
 5. Project Profile: Dulles Greenway, Federal Highway Administration, Center for Innovative Finance Support, accessed 3 October 2026. https://www.fhwa.dot.gov/ipd/project_profiles/va_dulles_greenway.aspx
 6. Dulles Greenway (portfolio page: ownership history, tolling structure, rate cases), Atlas Arteria, accessed 3 October 2026. https://www.atlasarteria.com/portfolio/dulles-greenway
 7. Report of D. Mathias Roussy, Jr., Hearing Examiner, Case No. PUR-2019-00218, Virginia SCC, 13 October 2020. https://atlasarteria.com.au/stores/_sharedfiles/SCC_Rate_Case/SCCRateCaseReportofD.MathiasRoussyJR.Hearingexaminer.pdf
-8. Atlas Arteria 2025 Full Year Results, ASX release, February 2026. https://d3ar6irj6sybdw.cloudfront.net/stores/_sharedfiles/Results/2025_Results/ALX%202025%20Results%20ASX%20Release.pdf
-9. Atlas Arteria H1 2026 Results and Distribution Guidance, ASX announcement, August 2026. https://d3ar6irj6sybdw.cloudfront.net/stores/_sharedfiles/Results/H1%202026_Results/ASX%20Announcement%20-%20Atlas%20Arteria%20H1%202026%20Results%20and%20Distribution%20Guidance.pdf
+8. Atlas Arteria 2025 Full Year Results, ASX release, 26 February 2026. https://d3ar6irj6sybdw.cloudfront.net/stores/_sharedfiles/Results/2025_Results/ALX%202025%20Results%20ASX%20Release.pdf
+9. Atlas Arteria H1 2026 Results and Distribution Guidance, ASX announcement, 27 August 2026. https://d3ar6irj6sybdw.cloudfront.net/stores/_sharedfiles/Results/H1%202026_Results/ASX%20Announcement%20-%20Atlas%20Arteria%20H1%202026%20Results%20and%20Distribution%20Guidance.pdf
 10. Virginia State Route 267 (Dulles Greenway section), Wikipedia, accessed 3 October 2026 (secondary; citing Washington Post for 1996 and 2006 traffic). https://en.wikipedia.org/wiki/Virginia_State_Route_267

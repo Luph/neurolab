@@ -743,3 +743,226 @@ Scenarios: base, low and high price and capture; P90 and P99 one-year volumes. S
 | 2025-10-21 | USPP priced |
 | 2025-12-16 | Refinancing funded; holdco repriced; distribution to the fund |
 | 2026-03 | Lattimer's investment committee reviews an offer from a data-center developer for a 15-year PPA from a repowered R1 (Chapter 88) |
+
+---
+
+# Part 4. Characters
+
+Rules for writers. Characters come only from this list. Use a character's verbal habit at most once per chapter, and only in a scene where it carries information. No character explains a concept the reader needs; narration does that (style sheet 1.3). Characters are sometimes wrong, and each sheet says where. Ages are given as birth years so that every scene can compute them. Names were chosen to fit nationality and generation and to avoid the stock names in `standards.md` Section 8; none is meant to resemble a real person. Where a character works for an institution in Part 5, the institution is fictional.
+
+## 4.1 Case P characters
+
+### Tomasz Wierzbicki (developer lead)
+
+Polish, born 1972 in Gdańsk. Kilnworth Power International: Vice President, Business Development West Africa (2014 to 2019); Managing Director, Africa (2019 to 2024); Head of Portfolio Management (from 2024). Mechanical engineer (Gdańsk University of Technology, 1996); gas turbine commissioning engineer for an OEM's field service arm in Poland and the Gulf (1996 to 2004); joined Kilnworth in 2004 as a project engineer; developed a 340 MW open-cycle plant in South Asia and a 120 MW HFO plant in East Africa before Bélanou.
+
+He wants Bélanou to be the first flagship deal he leads from site to close, and to prove that an engineer can run a deal as well as a banker. He fears writing off a development budget (his first East African project had a tariff renegotiation that wiped out most of its equity value, and he was in the room) and being outmaneuvered on terms he does not fully understand. He negotiates by conceding small points fast to bank goodwill, then digging in on the items he understands physically: dispatch, heat rate, availability, LDs. He reads political signals poorly and trusts a signed contract more than he should. Verbal habit: converts every proposal into tariff terms, "What does that cost us per kilowatt-month?"
+
+Where he is wrong: in 2017 he dismisses convertibility risk because "the tariff is in dollars" (Chapter 59 shows why that was the wrong frame), and in 2016 he pushes the bid tariff lower than Kilnworth's pricing committee wanted. Arc: closes the deal (2018), survives the delay (he signs off the COVID variation without board approval and is reprimanded), manages the 2022 to 2023 crisis badly at first and well later, champions the 2025 bond, and in 2026 leads the partial sale he once said Kilnworth would never make.
+
+### Mariama Talmé (local sponsor)
+
+Kessaran, born 1977 in Dabakro. Deputy Chief Executive of Groupe Talmé (2008 to 2021), Chief Executive from 2021 when her father, the founder Ousmane Talmé (born 1946), retires to the chairmanship. MBA in Paris; six years in a Paris investment bank's Africa coverage team; returned in 2008 to run group finance.
+
+She wants Groupe Talmé to graduate from a small diesel IPP to a serious infrastructure partner, with a board seat, reserved matters, and a share of the O&M jobs for Kessarans. She fears being treated as the partner who "handles the government," and being blamed in Dabakro if tariffs rise. She negotiates patiently, times her asks to political events she sees coming before the foreigners do, and trades economics for governance. Verbal habit: answers a proposal with "Who else has seen this?"
+
+Where she is wrong: in 2017 she accepts a 25% stake without a tag-along right that would have let Talmé sell alongside Kilnworth, which costs her leverage in 2026. Arc: becomes the indispensable channel to ministers during the 2023 crisis and brokers the gas netting agreement with SNHK; in 2026 waives her right of first refusal over Kilnworth's stake in exchange for an additional board seat and a tag-along right.
+
+### Pieter van Wijngaarden (lead arranger, later restructuring adviser)
+
+Dutch, born 1966 in Rotterdam. Joined a Dutch bank in 1990; posted to Jakarta 1995 to 1999, where he worked on restructurings of dollar-tariff IPP loans after the 1997 crisis; London from 2000; Castellan Bank from 2008, Managing Director and Head of Project and Export Finance, EMEA (2014 to 2020). Leaves Castellan in late 2020 when its EMEA project finance team is cut after unrelated losses; Partner, Quarrington Advisory, from 2021.
+
+At Castellan he wants a landmark mandate, the underwriting and hedging fees that come with it, and a clean record at credit committee. He fears underwriting a deal that will not sell down, and he never stops worrying about convertibility (Jakarta). He negotiates bluntly, anchors early, hides behind his credit committee, and trades price for structure. Verbal habit: "Fine. And the day it goes wrong?"
+
+Where he is wrong: he insists on an 80% swap hedge with the swaps priced by his own bank, and the 7.5 bps execution charge becomes a sponsor grievance; in 2016 he tells Tomasz that the B-loan participants will accept a 16-year tenor, which they do not (the common profile ends in 2034 as a result). Arc: lead arranger of Case P (2017 to 2018); out of the bank in 2020; restructuring adviser to the Case T senior lenders (2022 to 2023), where he sits opposite sponsors as he once sat opposite borrowers; debt adviser to Kilnworth on the 2025 Case P bond, re-reading his own 2018 term sheet from the borrower's side.
+
+### Adaeze Whitcombe (sponsor's counsel)
+
+British-Nigerian, born 1971 in London. Partner, Pemberton Hale LLP (London), energy and infrastructure finance. Oxford law; trained at Pemberton Hale; seconded to a Lagos firm in 1999; partner in 2007; acts for Kilnworth on every Case P document from the PPA to the 2026 sale.
+
+She wants documents that are bankable without giving away more than the lenders need, and she wants the termination regime exactly right because she has seen a Government Guarantee fail on a drafting point. She fears a gap that is later traced to her draft. She drafts overnight, concedes words rather than substance, and quotes lenders' counsel's own precedents back at them. Verbal habit: "Let's read the clause."
+
+Where she is wrong: the PPA lets SEKA cure a failure to replenish the LC within 30 days by a "payment plan" approved by OREK, which delays the put option in 2023; she accepted the wording in a late-night trade for the 14.5% equity rate in the termination formula. Arc: wins the termination formula (2017), drafts the waiver request (2023), acts on the bond (2025) and the sale (2026).
+
+### Laurent Bécherel (lenders' counsel)
+
+French, born 1961 in Lyon. Partner, Ashworth Quayle LLP (Paris office), finance and security in francophone civil-law jurisdictions; avocat since 1988; joined Ashworth Quayle in 1999. Leads the lenders' legal team on Case P; his London colleagues handle the English-law documents.
+
+He wants security that a Kessaran court will enforce. He fears a parallel debt clause challenged in a Kessaran insolvency, and an unregistered pledge. He negotiates formally and slowly, cites precedent, never moves on conditions precedent, and is flexible on anything he classifies as "commercial, not legal." Verbal habit: opens objections with "En droit kessarais" (in Kessaran law).
+
+Where he is wrong: he advises in 2018 that the business pledge captures future receivables under the PPA without a separate notice to SEKA, and a Dabakro court registrar disagrees in 2023 (fixed by re-notification, Chapter 52). Arc: builds the onshore security package (2018), insists on a reservation of rights in the 2023 waiver, restructures the intercreditor arrangements to admit the bond trustee (2025).
+
+### Abdoulaye Ndao-Sylla (host government official)
+
+Kessaran, born 1958. Electrical engineer; 25 years at SEKA, rising to Director of Generation; Secretary-General of the Ministry of Energy and Hydrocarbons (2014 to 2021); Minister of Energy and Hydrocarbons (2021 to October 2023, removed in a cabinet reshuffle after the tariff protests).
+
+He wants power on the grid before the 2019 elections, and a plant that is visibly Kessaran (local staff, training, a SEKA engineer seconded to the control room). He fears load-shedding, and being remembered for an expensive dollar tariff. He negotiates with deadlines and political support rather than money, delays signatures to extract concessions, and speaks of capacity as places. Verbal habit: translates megawatts into towns ("that is Dabakro's evening peak").
+
+Where he is wrong: in 2016 he pushes for the shortest possible construction period in the RFP, and bidders price the risk. In 2022, as minister, he attacks the "dollar tariff" in parliament, which makes lenders and SEKA's suppliers more nervous, not less. Arc: champion of Bélanou (2015 to 2018); public critic (2022); quiet broker of the netting agreement (2023); leaves office.
+
+### Clémentine Agbo-Lawson (PPP Unit head, later public debt director)
+
+Kessaran, born 1979. Economics trained in Paris and Montreal; six years in an international consulting firm's public sector practice; returned in 2012 to set up the PPP Unit at the Ministry of Economy and Finance and headed it until 2020; Director-General of Public Debt at MEF from 2020.
+
+At the PPP Unit she wants Kessara's first competitive IPP to be a clean, transparent model, and she wants the contingent liabilities counted. She fears a procurement challenge, a bypass by the Energy Ministry, and a guarantee call. She runs process strictly, writes everything down, and uses competition rather than relationships. Verbal habit: "Where is that written?"
+
+Where she is wrong: she caps the Government Guarantee at USD 1,250 million but never budgets for a call, and in 2023 the Treasury has no line for it. Arc: designs and runs the 2016 tender; in 2023, as Director-General of Public Debt, she is the official who receives the guarantee demands, pays two late, and folds the third into the settlement she negotiates with Tomasz and Hyacinthe Dossa.
+
+### Hyacinthe Dossa (utility CFO)
+
+Kessaran, born 1964. Chartered accountant; audit practice in Dabakro; SEKA finance from 2001; Chief Financial Officer of SEKA from 2016 to 2024.
+
+He wants SEKA to stay solvent, and he wants IPP payments not to crowd out his own maintenance budget. He fears a public payment default, personal liability as an officer, and losing his job when ministers look for someone to blame. He pleads poverty, delays, pays in part, and offers comfort letters instead of cash. Verbal habit: "Not in this cash calendar."
+
+Where he is wrong: in 2017 he fights the LC size down from three months to the two-plus-one formula and then in 2023 cannot replenish even that. Arc: adversary in the PPA negotiation; designer, with SNHK, of the 2023 netting agreement; signatory of the 2024 settlement; leaves SEKA in 2024.
+
+### Konrad Elsässer (EPC project director)
+
+National of the EPC contractor's unnamed Western European home country, born 1960. Project Director, Lindauer Kraftwerksbau AG. Thirty years building combined-cycle plants in the Gulf, Southeast Asia and Latin America; Bélanou is his last project before retirement.
+
+He wants to finish on time and keep his margin, and to avoid LDs. He fears ending his career in an arbitration. He negotiates through schedules, files claims early and often, and trades acceleration for money. Verbal habit: puts dates on everything ("that is the fourteenth of March, not a day later").
+
+Where he is wrong: he blames the failed foundation concrete on the cement supplier rather than his civil partner Bati-Kessara, which delays the fix by three weeks. Arc: claims force majeure (2020), loses on the civil rework (41 days of LDs), wins the grid-event extension, settles prolongation at USD 8.27 million against USD 11.60 million claimed, hands over and retires in 2022.
+
+### Gwen Treharne (independent engineer)
+
+Welsh, born 1966. Partner, Calder Hartmann Engineering (Cardiff and London). Performance engineer at a UK CCGT operator for nine years; independent engineer for twenty.
+
+She wants a report she can defend in ten years. She fears certifying something that later proves wrong, and her own liability cap. She does not negotiate; the craft is in how she words reservations. Verbal habit: puts odds on things ("I would put that at one in five").
+
+Where she is wrong: her 2018 report puts the probability of a delay longer than six months at one in eight. Arc: writes the 2018 IE report (Chapter 48), certifies drawdowns, gathers the evidence that the transformer failure started at SEKA's substation, certifies completion with a reservation on HRSG tube supports, and in 2025 acts as lenders' independent engineer on Case R's refinancing.
+
+### Thandeka Mabuza (DFI investment officer, later fund principal)
+
+South African, born 1983 in Durban. Actuarial science (Cape Town); four years on a Johannesburg bank's project finance desk working on renewable IPP tenders; ABDB Investment Officer (2014 to 2018) and Principal (2018 to 2021) on the lending side; Principal at Lattimer Infrastructure Partners from June 2021, Director from 2024.
+
+At the ABDB she wants additionality she can defend to her board, and an environmental and social record without a stain. She fears a resettlement grievance becoming a campaign. She uses DFI policy as leverage, ties E&S conditions to disbursements, and is quiet and persistent. Verbal habit: "What's the counterfactual?"
+
+Where she is wrong: in 2017 she argues for a smaller PRG (USD 30 million); the Board raises it to USD 41.5 million, and in 2023 even that is less than one quarter of the peak arrears. Arc: drives the RAP, the ESAP and the PRG on Case P; moves to Lattimer in 2021; leads diligence on Case R's A2 and A3 and the 2025 refinancing.
+
+### Henrike Vosskamp (ECA underwriter)
+
+National of the EPC contractor's unnamed home country, born 1975. Senior Underwriter, Exportgarant. Economist; ministry of economics; Exportgarant since 2005.
+
+She wants the content rules met, the environmental review clean, and a premium that matches the country risk. She fears country risk reclassification and public criticism of fossil fuel support. She negotiates only inside the OECD Arrangement and is slow. Verbal habit: cites Arrangement provisions by number, once.
+
+Arc: classifies Bélanou as a Category A project under the OECD Common Approaches and approves cover (2018); must consent to the 2023 waiver and does so last; consents to the bond's maturity beyond 2034 (2025).
+
+### Félix Adandé (gas seller)
+
+Kessaran, born 1969. Commercial Director, SNHK. Wants a take-or-pay strong enough for Halbeck to finance Sombé West; fears Halbeck walking away. Appears in Chapters 25 and 59.
+
+### Yusuf Demirci (buyer of the 2026 stake)
+
+Turkish-British, born 1979. Partner, Coldharbour Infrastructure Income Fund. Former infrastructure banker. Wants a contracted dollar yield with an emerging-market premium; fears a second SEKA crisis. Appears in Chapter 63.
+
+## 4.2 Case T characters
+
+### Margaret (Maggie) Dunleavy (PPP unit director)
+
+Ardmorean, born 1965 in Port Ellery. Civil engineer at the state roads agency (1987 to 2002); Treasury PPP team from 2002; Director, Partnerships Brannock (2011 to 2020); Commissioner of the independent Brannock Infrastructure Advisory Board from 2020.
+
+She wants the Merrick Link built without the state carrying traffic risk, and a value-for-money case that survives audit. She fears a failed PPP becoming a political story, and accusations that she hid liabilities. She runs competitive tension hard, defends the standard form, and refuses to move on risk transfer. Verbal habit: "What does the standard form say?"
+
+Where she is wrong: the PSC used the same traffic optimism as the bidders (it drew on Pellow's earlier corridor study), so the value-for-money margin was overstated, and she accepts a contribution far below the reference without testing the winning traffic case hard enough. Arc: designs the procurement, takes the low bid (2014), and in 2023 gives evidence to a parliamentary inquiry where she concedes the PSC point and defends the risk transfer, which worked as designed: lenders and equity, not the state, took the loss.
+
+### Callum Petrie (bid team leader)
+
+Scottish-born Ardmorean, born 1974 in Paisley; moved to Ardmore in 2003. Quantity surveyor and construction claims specialist in Glasgow; Holbrook from 2005; Bid Director for three PPPs (lost two); Head of Investments, Holbrook Infrastructure, from 2016.
+
+He wants to win, because Holbrook's real prize is the D&C margin, and he wants Holbrook's equity as small as possible. He fears a third straight loss. He is aggressive and optimistic, presses his traffic advisor for upside, and uses deadlines. Verbal habit: "Close enough to win."
+
+Where he is wrong: he selects Pellow's high value-of-time case for the BAFO. Arc: wins (2014); Holbrook earns its construction margin; Holbrook's equity is wiped out in 2023, and Callum's last scene is the restructuring meeting where Holbrook gets nothing (Chapter 64).
+
+### Oleksandr (Sasha) Hrytsenko (traffic advisor)
+
+Ukrainian-born Ardmorean, born 1970 in Kharkiv; emigrated 1998. Applied mathematician; transport modeling at a Kyiv research institute; PhD in Ardmore; Director, Pellow Transport Economics, from 2009.
+
+He wants a model he can defend and repeat sponsor work. He fears being the forecaster blamed for a failed toll road. He hedges in writing, resists direct pressure, but supplies "sensitivity ranges" from which bid teams choose. Verbal habit: talks in elasticities ("the elasticity on trucks is minus point six, not minus point three").
+
+Where he is wrong: he accepts the bid team's housing timetable without independent check. Arc: produces the bid forecast (2014); revisits it in 2021; gives evidence in 2023; in Chapter 45 his revised ramp-up method is the worked example.
+
+### Owen Reddaway (state treasury official in the restructuring)
+
+Ardmorean, born 1971. Treasury economist, then head of the fiscal risks unit; Deputy Secretary (Commercial), Brannock Treasury, from 2019.
+
+He wants to limit the state's exposure, avoid a termination payment, and avoid a "bailout" headline. He fears setting a precedent that the state rescues failed PPPs, and a rating agency comment. He offers term, tolls and regulation rather than cash, and insists that any state money buys equity. Verbal habit: "The state does not write checks."
+
+Arc: refuses compensation for COVID-19 (2020); in 2023 agrees ARD 120.0 million of new money for 15% of the equity, a six-year extension and the heavy-vehicle toll cut.
+
+### Kirsten Lowry (federal lender)
+
+Ardmorean, born 1968. Credit Director, NILO. Wants to protect the federal loan and the program's no-write-down policy. Uses the springing lien as leverage in 2023 and accepts PIK interest and an extension instead of a haircut. Appears in Chapters 29, 58 and 64.
+
+### Pieter van Wijngaarden
+
+See Section 4.1. Restructuring adviser to the Case T senior lenders from January 2022.
+
+## 4.3 Case R characters
+
+### Rafael Quintanilla (fund partner)
+
+American, born 1971 in San Antonio, Texas. Power trader on a Houston utility trading desk (1996 to 2006); built and hedged an ERCOT generation portfolio for a utility (2006 to 2012); Partner, Lattimer Infrastructure Partners, from 2012, leading Fund II's energy transition investments.
+
+He wants to deploy Fund II at target returns and to be known as the investor who understands merchant risk. He fears overpaying in auctions, being wrong on batteries, and another Uri. He knows the market better than most counterparties, prices shape risk tightly, and is impatient with lenders. Verbal habit: "What's the shape?"
+
+Where he is wrong: he underwrites A2 and A3 on 2023 battery revenues that halve in 2024, and his West solar capture assumption in A1 is the high case in hindsight. Arc: wins A1 (2022) at a full price; is hurt by the 2024 battery revenue fall; restores fund returns through the 2025 refinancing; in 2026 brings the data-center repowering idea to his investment committee.
+
+### Carmen Villarreal-Ochoa (asset manager)
+
+American, born 1986 in El Paso, Texas. Electrical engineer; operator at a qualified scheduling entity in Austin (2009 to 2015); asset manager for a solar developer (2015 to 2022); Asset Manager, Mesa Corta Renewables, from 2022.
+
+She wants assets run well and numbers she can stand behind with lenders. She fears hedge settlement surprises, battery degradation, and a compliance breach. She negotiates with data and refuses to sign optimistic budgets. Verbal habit: "Let me pull the settlement data."
+
+Arc: finds the shape mismatch on R1's fixed-volume swap (2023), pushes the augmentation plan for R6 and R7, runs the 2025 refinancing data room.
+
+### Declan Furlong (hedge desk counterparty)
+
+Irish, born 1981 in Cork. Physicist; quantitative analyst on a London utility trading desk; Director, Castellan Bank commodities desk, Houston, from 2014.
+
+He wants margin on hedges and limited credit exposure. He fears being on the wrong side of a scarcity event with a weak counterparty. He is fast and numerical, and always offers an alternative structure. Verbal habit: "I can show you a price."
+
+Arc: sells the R1 fixed-volume swap (2022), structures the R8 fixed-shape hedge (2024), and negotiates the hedges' first-lien ranking with the USPP noteholders (2025).
+
+### Thandeka Mabuza
+
+See Section 4.1. Principal, then Director, at Lattimer from June 2021; leads A2 and A3 diligence and the 2025 refinancing.
+
+## 4.4 Cross-case movements
+
+| Character | Case P | Case T | Case R |
+|---|---|---|---|
+| Pieter van Wijngaarden | Lead arranger (2017 to 2018); Kilnworth's debt adviser (2025) | Senior lenders' restructuring adviser (2022 to 2023) | – |
+| Thandeka Mabuza | ABDB officer (2014 to 2021) | – | Lattimer principal and director (2021 on) |
+| Gwen Treharne | Independent engineer (2018 to 2023) | – (her firm, a different partner) | Lenders' independent engineer for the 2025 refinancing |
+| Castellan Bank (institution) | MLA, ECA agent, hedge provider | Bank club member | Opco lender, TLB arranger, hedge desk, tax equity investor |
+| Kaito Pacific Bank, Sterrenberg Bank NV | Lenders | Bank club | Opco lenders |
+| Penhallow Bank | – | Bank club | Opco lender, Redfern lender |
+
+## 4.5 Character name register
+
+| Name | Case | Nationality | Born | Employer |
+|---|---|---|---|---|
+| Tomasz Wierzbicki | P | Polish | 1972 | Kilnworth Power International |
+| Mariama Talmé | P | Kessaran | 1977 | Groupe Talmé |
+| Ousmane Talmé | P (minor) | Kessaran | 1946 | Groupe Talmé (founder) |
+| Pieter van Wijngaarden | P, T | Dutch | 1966 | Castellan Bank; Quarrington Advisory |
+| Adaeze Whitcombe | P | British | 1971 | Pemberton Hale LLP |
+| Laurent Bécherel | P | French | 1961 | Ashworth Quayle LLP |
+| Abdoulaye Ndao-Sylla | P | Kessaran | 1958 | Ministry of Energy and Hydrocarbons |
+| Clémentine Agbo-Lawson | P | Kessaran | 1979 | Ministry of Economy and Finance |
+| Hyacinthe Dossa | P | Kessaran | 1964 | SEKA |
+| Konrad Elsässer | P | (unnamed home country) | 1960 | Lindauer Kraftwerksbau AG |
+| Gwen Treharne | P, R | British (Welsh) | 1966 | Calder Hartmann Engineering |
+| Thandeka Mabuza | P, R | South African | 1983 | ABDB; Lattimer |
+| Henrike Vosskamp | P | (unnamed home country) | 1975 | Exportgarant |
+| Félix Adandé | P (minor) | Kessaran | 1969 | SNHK |
+| Yusuf Demirci | P (minor) | Turkish-British | 1979 | Coldharbour Infrastructure Income Fund |
+| Margaret (Maggie) Dunleavy | T | Ardmorean | 1965 | Partnerships Brannock |
+| Callum Petrie | T | Ardmorean (Scottish-born) | 1974 | Holbrook Infrastructure |
+| Oleksandr (Sasha) Hrytsenko | T | Ardmorean (Ukrainian-born) | 1970 | Pellow Transport Economics |
+| Owen Reddaway | T | Ardmorean | 1971 | Brannock Treasury |
+| Kirsten Lowry | T (minor) | Ardmorean | 1968 | NILO |
+| Rafael Quintanilla | R | American | 1971 | Lattimer Infrastructure Partners |
+| Carmen Villarreal-Ochoa | R | American | 1986 | Lattimer (Mesa Corta) |
+| Declan Furlong | R | Irish | 1981 | Castellan Bank |
