@@ -264,6 +264,8 @@ SCENARIO_NAMES = {
     11: "Sensitivity: lifecycle +20%",
     12: "Sensitivity: interest +100 bp on refinancing",
     13: "Sensitivity: heavy-vehicle share -2 points",
+    14: "Bid variant: Pellow low value of time (51.2), locked financing",
+    15: "Bid variant: Pellow central value of time (54.6), locked financing",
 }
 
 
@@ -285,7 +287,7 @@ def build(path, scenario=2, contribution_option=1):
 
     # ===================================================================== INPUTS
     B.head(I, "Switches")
-    B.inp(I, "Scenario", "Scenario (1-13, see Cover)", "#", scenario)
+    B.inp(I, "Scenario", "Scenario (1-15, see Cover)", "#", scenario)
     B.inp(I, "ContribOpt", "Contribution option (1 = bid, 2 = solved for 11.4% on banking)", "#", contribution_option)
     B.inp(I, "Circ", "Circuit breaker (1 = live circular links, 0 = cut)", "flag", 1)
     B.inp(I, "Tol", "Test tolerance", "ARD m", 0.000001, fmt="0.000000")
@@ -479,16 +481,16 @@ def build(path, scenario=2, contribution_option=1):
     B.inp(I, "PSC_CM", "PPP contract management", "ARD m", psc["ppp_shadow_bid"]["contract_management"])
     B.gap(I)
     # ---------------- scenario table
-    B.head(I, "Scenario table (columns J to V = scenarios 1 to 13)")
+    B.head(I, "Scenario table (columns J to X = scenarios 1 to 15)")
     import case_t as M
     sc = M.SCENARIOS
-    cols = list(range(1, 14))
+    cols = list(range(1, 16))
     B.table(I, "ST_No", "Scenario number", "#", cols)
     B.table(I, "ST_Hist", "History run (actual events)", "flag", [1 if s in M.HISTORY_SCEN else 0 for s in cols])
     B.table(I, "ST_HistEnd", "Actual traffic used to", "date", [sc[s][2] if sc[s][2] else D(1900, 1, 1) for s in cols])
     B.table(I, "ST_Ext", "Restructured (extension and new terms)", "flag", [sc[s][3] for s in cols])
     B.table(I, "ST_CPIPath", "CPI path (1 bid 2.5%, 2 actual)", "#", [sc[s][4] for s in cols])
-    B.table(I, "ST_TCase", "Traffic case (1 Pellow, 2 Ridgeway, 3 downside, 4 R2023, 5 retender)", "#", [sc[s][1] for s in cols])
+    B.table(I, "ST_TCase", "Traffic case (1 Pellow, 2 Ridgeway, 3 downside, 4 R2023, 5 retender, 6 Pellow low VoT, 7 Pellow central VoT)", "#", [sc[s][1] for s in cols])
     B.table(I, "ST_TFac", "Traffic factor", "factor", [sc[s][5] for s in cols])
     B.table(I, "ST_Lag", "Ramp-up lag", "years", [sc[s][6] for s in cols], fmt="0")
     B.table(I, "ST_CPIOnly", "Toll escalation CPI only", "flag", [sc[s][7] for s in cols])
@@ -510,16 +512,16 @@ def build(path, scenario=2, contribution_option=1):
     B.sc(I, "Contrib", "State contribution used", "ARD m", "IF({ContribOpt.c}=2,{Contrib_Solved.c},{Contrib_Bid.c})")
     B.gap(I)
     # ---------------- traffic cases
-    B.head(I, "Traffic cases (columns J to N = cases 1 to 5)")
+    B.head(I, "Traffic cases (columns J to P = cases 1 to 7)")
     tc = M.TRAFFIC_CASES
-    B.table(I, "TC_L0", "Base level (k trips/day)", "k/day", [tc[c][0] for c in range(1, 6)])
-    B.table(I, "TC_BY", "Base year", "year", [tc[c][1] for c in range(1, 6)])
-    B.table(I, "TC_G1", "Growth to band 1 end", "%pa", [tc[c][2][0] for c in range(1, 6)])
-    B.table(I, "TC_G2", "Growth band 2", "%pa", [tc[c][2][1] for c in range(1, 6)])
-    B.table(I, "TC_G3", "Growth after band 2", "%pa", [tc[c][2][2] for c in range(1, 6)])
+    B.table(I, "TC_L0", "Base level (k trips/day)", "k/day", [tc[c][0] for c in range(1, 8)])
+    B.table(I, "TC_BY", "Base year", "year", [tc[c][1] for c in range(1, 8)])
+    B.table(I, "TC_G1", "Growth to band 1 end", "%pa", [tc[c][2][0] for c in range(1, 8)])
+    B.table(I, "TC_G2", "Growth band 2", "%pa", [tc[c][2][1] for c in range(1, 8)])
+    B.table(I, "TC_G3", "Growth after band 2", "%pa", [tc[c][2][2] for c in range(1, 8)])
     for k in range(5):
-        B.table(I, f"TC_R{k}", f"Ramp-up factor {2019 + k}", "factor", [tc[c][3][k] for c in range(1, 6)])
-    B.table(I, "TC_Upl", "Heavy-vehicle uplift in total trips", "%pa", [tc[c][4] for c in range(1, 6)])
+        B.table(I, f"TC_R{k}", f"Ramp-up factor {2019 + k}", "factor", [tc[c][3][k] for c in range(1, 8)])
+    B.table(I, "TC_Upl", "Heavy-vehicle uplift in total trips", "%pa", [tc[c][4] for c in range(1, 8)])
     for nm in ("L0", "BY", "G1", "G2", "G3", "Upl"):
         B.sc(I, "T" + nm, f"Selected traffic case: {nm}", "#", f"INDEX({{TC_{nm}.r}},{{TCase.c}})", fmt="0.000")
     B.sc(I, "TRamp_dummy", "Selected ramp-up factors follow (2019 to 2023)", "", "0")
@@ -539,6 +541,10 @@ def build(path, scenario=2, contribution_option=1):
     tcodes = sorted(y * 10 + h for (y, h) in M.ACT_TRAFFIC)
     B.table(I, "AT_Code", "Actual traffic code", "code", tcodes)
     B.table(I, "AT_Val", "Actual traffic (k trips/day)", "k/day", [M.ACT_TRAFFIC[(c // 10, c % 10)] for c in tcodes])
+    pcodes = sorted(int(k[:4]) * 10 + int(k[5]) for k in INP["annex_tr_inputs"]["performance_payments_ard_m_actual"])
+    B.table(I, "PP_Code", "Performance payment code", "code", pcodes)
+    B.table(I, "PP_Val", "Performance payments to BRTA (actual, nominal)", "ARD m",
+            [INP["annex_tr_inputs"]["performance_payments_ard_m_actual"][f"{c // 10}H{c % 10}"] for c in pcodes])
     B.table(I, "SUP_Code", "Sponsor support code", "code", [20211, 20212])
     B.table(I, "SUP_Val", "Sponsor support (subordinated shareholder loans)", "ARD m", [22.5, 22.5])
     B.gap(I)
@@ -684,7 +690,9 @@ def build(path, scenario=2, contribution_option=1):
          "IF({Post}=1,{RevShare.c}*MAX(0,{NetRev}-{RevThresh.c}*{CPIf}/{CPIf2023.c}*{OpsDays}/{DaysYear.c}),0)", total=True)
     B.tr(S, "RestrCost", "Restructuring costs", "ARD m",
          "IF(AND({Flag_History}=1,{End}>={RC_Start.c},{End}<={Restr_Date.c}),{RC_Total.c}/{RC_N.c},0)", total=True)
-    B.tr(S, "EBITDA", "EBITDA", "ARD m", "{NetRev}+{LD}-{Opex}-{RevSh}-{RestrCost}", total=True)
+    B.tr(S, "PerfPay", "Performance payments to BRTA (actual history)", "ARD m",
+         "{Flag_History}*IFERROR(INDEX({PP_Val.r},MATCH({Code},{PP_Code.r},0)),0)", total=True)
+    B.tr(S, "EBITDA", "EBITDA", "ARD m", "{NetRev}+{LD}-{Opex}-{RevSh}-{RestrCost}-{PerfPay}", total=True)
     B.head(S, "Lifecycle and handback")
     B.tr(S, "OY", "Operating year (H2 periods)", "#", "IF(AND({Half}=2,{Flag_Ops}=1,{End}<={ConcFinal.c}),{Year}-{OY_Base.c},0)")
     B.tr(S, "LC2015", "Lifecycle works (2015 prices)", "ARD m",
@@ -1118,6 +1126,9 @@ def build(path, scenario=2, contribution_option=1):
     B.sc(S, "VfMRefPct", "Value for money, reference, % of risk-adjusted PSC", "%", "{VfMRef.c}/{PSCTot.c}")
     B.sc(S, "VfMBid", "Value for money, winning bid", "ARD m", "{PSCTot.c}-{PPPBid.c}")
     B.sc(S, "VfMBidPct", "Value for money, winning bid, % of risk-adjusted PSC", "%", "{VfMBid.c}/{PSCTot.c}")
+    B.sc(S, "PSCGross", "Gross PSC cost (before retained toll revenue)", "ARD m", "{PSCTot.c}-{PSC_Toll.c}")
+    B.sc(S, "VfMRefGross", "Value for money, reference, % of gross PSC cost", "%", "{VfMRef.c}/{PSCGross.c}")
+    B.sc(S, "VfMBidGross", "Value for money, winning bid, % of gross PSC cost", "%", "{VfMBid.c}/{PSCGross.c}")
 
     # ===================================================================== CHECKS
     S = "Checks"

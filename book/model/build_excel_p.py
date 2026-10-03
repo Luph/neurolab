@@ -281,7 +281,7 @@ add_scalars('Structural constants (FAST: no numbers inside calculation formulas)
     ('eca_cap', 'ECA-covered tranche cap', 'USD m', 224.1), ('npv_r', 'Equity NPV rate', '%', 16.0), ('eps', 'Numerical zero (balances and debt service)', 'USD m', 0.000000001),
     ('eps_r', 'Reserve tolerance', 'USD m', 0.000001), ('irr_g', 'XIRR starting guess, project IRR', 'fraction', 0.1),
     ('price_yr', 'Price base year for GSA and GTA escalation', 'year', 2018), ('lu_n', 'Consecutive lock-ups before the lock-up cash sweep', 'count', 2),
-    ('n_gt', 'Number of gas turbines', 'count', 2), ('tol_sc', 'Sculpting convergence tolerance (USD 1,000)', 'USD m', 0.001),
+    ('n_gt', 'Number of gas turbines', 'count', 2), ('fxh_share', 'Share of onshore KCR EPC payments hedged forward', 'fraction', cp.FXH_SHARE), ('tol_sc', 'Sculpting convergence tolerance (USD 1,000)', 'USD m', 0.001),
 ])
 add_scalars('Events (actual history)', [
     ('gas_arr', 'Share of SEKA arrears matched by deferred SNHK/GCK payables (calibration)', 'fraction', cp.GAS_ARREARS_SHARE),
@@ -589,8 +589,12 @@ CS.row('cont', 'Contingency (FC: pro rata with EPC progress payments)', 'USD m',
       lambda i: f"=IF({V('Inputs.s_constr')}=1,{V('Inputs.cont')}*{cx}*{ref('Construction.prog', i)}/SUM({rng('Construction.prog')}),0)", total=True, py='u.contingency')
 CS.row('wc', 'Initial working capital', 'USD m', lambda i: f"=IF({m_(i)}={nc},{V('Inputs.init_wc')}*{cx},0)", total=True, py='u.wc')
 CS.row('ovr', 'Overrun items (actual)', 'USD m', lambda i: f"=IF({V('Inputs.s_constr')}<>1,{ref('Inputs.M_ovr', i)},0)", total=True, py='u.overrun')
-CS.row('base_total', 'Uses before financing costs', 'USD m',
-      lambda i: "=" + "+".join(ref('Construction.' + k, i) for k in ['epc', 'owners', 'ins', 'dev', 'adv', 'cont', 'wc', 'ovr']), total=True, py='u.base_total')
+CS.row('fwd', 'KCR forward rate traded at financial close (covered interest parity)', 'KCR/USD',
+      lambda i: f"={V('Inputs.on_rate')}*((1+{V('Inputs.fc_policy')}/100)/(1+INDEX({rng('Inputs.S_base_fc')},1,{ref('Construction.per', i)})/100))^(({ref('Construction.end', i)}-{V('Inputs.d_fc')})/{V('Inputs.day_kcr')})", py='u.fx_fwd')
+CS.row('fxh', 'FX forward settlement on onshore EPC payments (gain to the project)', 'USD m',
+      lambda i: f"=IF({V('Inputs.s_constr')}<>1,{V('Inputs.fxh_share')}*{ref('Construction.on_kcr', i)}*(1/{ref('Construction.fx', i)}-1/{ref('Construction.fwd', i)}),0)", total=True, py='u.fx_hedge')
+CS.row('base_total', 'Uses before financing costs (net of FX hedge settlements)', 'USD m',
+      lambda i: "=" + "+".join(ref('Construction.' + k, i) for k in ['epc', 'owners', 'ins', 'dev', 'adv', 'cont', 'wc', 'ovr']) + f"-{ref('Construction.fxh', i)}", total=True, py='u.base_total')
 CS.sec('VAT on onshore EPC (KCR m) and UBK VAT facility')
 CS.row('on_kcr', 'Onshore EPC payments', 'KCR m', lambda i: f"={ref('Construction.pct', i)}/100*{V('Inputs.epc_on')}*{V('Inputs.on_rate')}*{cx}", total=True, py='u.onshore_kcr')
 CS.row('vat', 'VAT paid (drawn on the VAT facility)', 'KCR m', lambda i: f"={V('Inputs.vat_rate')}/100*{ref('Construction.on_kcr', i)}", total=True, py='u.vat_kcr')

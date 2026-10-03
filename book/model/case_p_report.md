@@ -19,8 +19,8 @@ Model: `model/case_p.py` (Python mirror, source of truth) and `model/Case_P_Mode
 | 11 | Sens: SEKA pays 120 days late for 12 months | 855.1 | 633.3 | 0.13x | 1.54x | 1.42x | 13.2% | 10.9% | 2 |
 | 12 | Sens: dispatch 50% | 855.1 | 633.3 | 1.34x | 1.53x | 1.41x | 13.1% | 10.9% | 0 |
 | 13 | Sens: gas price +30% | 855.1 | 633.3 | 1.35x | 1.54x | 1.42x | 13.3% | 11.0% | 0 |
-| 14 | COD re-forecast (2021 lenders case) | 887.5 | 633.3 | 1.28x | 1.51x | 1.34x | 12.4% | 10.1% | 0 |
-| 15 | Actual history | 885.3 | 633.3 | 0.92x | 1.50x | 1.47x | 12.5% | 10.1% | 4 |
+| 14 | COD re-forecast (2021 lenders case) | 887.9 | 633.3 | 1.28x | 1.50x | 1.34x | 12.4% | 10.1% | 0 |
+| 15 | Actual history | 885.6 | 633.3 | 0.92x | 1.50x | 1.47x | 12.5% | 10.1% | 4 |
 
 Senior debt is the committed amount of the four tranches. Scenarios 2 to 6 and 9 to 13 keep the FC base construction and the contractual debt (amount, repayment profile, swap notional); scenarios 7 and 8 re-gross the funding pro rata at the contract debt share. Scenario 14 is the lenders' COD re-forecast (actual construction, no crisis); scenario 15 is the actual history.
 
@@ -73,11 +73,11 @@ ECA tests (OECD project finance terms in force in 2018): repayment term from COD
 
 ## 4. Actual history (scenario 15)
 
-Construction: total funding 885.29 against 855.09 at FC. Hard-cost overrun 39.27 against contingency 38.40; KCR depreciation reduced the onshore EPC cost by 6.72; loan interest, swap and PRI in construction 62.89 against 63.90 at FC. Undrawn senior commitment cancelled 0.00; standby drawn 9.73; contingent equity 3.24; delay LDs and DSU (17.22) passed to operating cash.
+Construction: total funding 885.63 against 855.09 at FC. Hard-cost overrun 39.27 against contingency 38.40; KCR depreciation reduced the onshore EPC cost by 6.72; loan interest, swap and PRI in construction 62.75 against 63.90 at FC. Undrawn senior commitment cancelled 0.00; standby drawn 9.99; contingent equity 3.33; delay LDs and DSU (17.22) passed to operating cash.
 
-Crisis: historic DSCR 1.13x at December 31, 2022 (lock-up), 0.96x at June 30, 2023 (event of default; DSRA drawn 3.26), waiver fee 1.44, margin uplift cost 4.48, deferred principal 10.82, lock-up released 2024H2.
-Refinancing June 30, 2025: prepaid 244.39; swap unwind receipt 6.30; bond face 245.56; transaction costs incl. OID 7.47; combined sculpted DSCR 1.59x.
-Sale: equity value at December 31, 2025 323.99 at 13.75% and 355.36 at 12.50%; price for 24% at completion 77.28; indirect transfer tax 5.58; Kilnworth IRR on the sold stake 9.7%.
+Crisis: historic DSCR 1.13x at December 31, 2022 (lock-up), 0.96x at June 30, 2023 (event of default; DSRA drawn 3.28), waiver fee 1.44, margin uplift cost 4.48, deferred principal 10.82, lock-up released 2024H2.
+Refinancing June 30, 2025: prepaid 244.60; swap unwind receipt 6.30; bond face 245.77; transaction costs incl. OID 7.47; combined sculpted DSCR 1.59x.
+Sale: equity value at December 31, 2025 323.89 at 13.75% and 355.26 at 12.50%; price for 24% at completion 77.26; indirect transfer tax 5.57; Kilnworth IRR on the sold stake 9.7%.
 
 ## 5. Returns, sensitivities and breakevens (FC base)
 

@@ -53,7 +53,7 @@ def recalc(src, dst, scenario=None, contrib=None, port=28173, max_passes=3000, t
         rows = {}
         for r in range(0, 40):
             lab = sh_in.getCellByPosition(3, r).getString()
-            if lab.startswith("Scenario (1-13"):
+            if lab.startswith("Scenario (1-"):
                 rows["scen"] = r
             if lab.startswith("Contribution option"):
                 rows["contrib"] = r

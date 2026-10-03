@@ -232,7 +232,8 @@ EPC_ACT = list(PROF['epc_payment_pct_by_month_actual'].values())
 OWN_FC = list(PROF['owners_costs_pct_by_month_base'].values())
 OVR = INP['events']['construction_overrun']
 # timing of actual overrun items (modeler timing assumptions; amounts from the Case Bible)
-CAL_OVERRUN = 37.33        # v1.2 calibration (P-C43): standby drawn about USD 10m, contingent equity about USD 3m
+FXH_SHARE = 0.75          # share of onshore KCR EPC payments hedged forward (D-114)
+CAL_OVERRUN = 42.17        # v1.2 calibration (P-C43): standby drawn about USD 10m, contingent equity about USD 3m (after the FX hedge)
 OVERRUN_TIMING = [   # (name, amount, first month index (0 = Aug 2018), number of months)
     ('COVID variation order', OVR['covid_variation_order_usd_m'], 26, 6),       # Oct20-Mar21
     ('Grid-event prolongation settlement', OVR['grid_event_prolongation_settlement_usd_m'], 39, 1),
@@ -287,8 +288,15 @@ def construction_uses(p, mac_):
     u['advisors'][0] = 0.70 * 8.97 * cx
     u['advisors'][1:nc] += 0.30 * 8.97 * cx / (nc - 1)
     u['wc'][nc - 1] = 5.35 * cx
+    # construction-period FX hedge (v1.2, D-114): forwards with Castellan buying KCR for 75% of each onshore EPC
+    # payment, traded at financial close at covered-interest-parity forward rates (FC policy rate 13.5% against the
+    # FC forward 6M LIBOR for the payment's half-year); cash-settled in USD against the spot rate of the payment month.
+    # The FC base budgets the onshore portion at the FC spot rate (519.4), so the hedge settles only in the actual run.
+    u['fx_fwd'] = np.array([FX_FC0 * ((1 + 13.5 / 100) / (1 + FC_FWD[M_PER[m]] / 100)) ** ((M_END[m] - date(2018, 7, 17)).days / 365)
+                            for m in range(NM)])
+    u['fx_hedge'] = (FXH_SHARE * u['onshore_kcr'] * (1 / mac_['fx_m'] - 1 / u['fx_fwd'])) if p['constr'] == 'ACT' else np.zeros(NM)
     u['base_total'] = sum(u[k] for k in ['epc', 'owners', 'insurance', 'dev', 'advisors',
-                                          'contingency', 'wc', 'overrun'])
+                                          'contingency', 'wc', 'overrun']) - u['fx_hedge']
     # VAT on onshore EPC (KCR), refunded after 9 months; UBK facility at policy + 2.50%
     vat = 0.18 * u['onshore_kcr']
     refund = np.zeros(NM); refund[9:] = vat[:-9]
@@ -2308,6 +2316,30 @@ def figures_annex(F, RS, R1, R14, R15):
     t = tix('2022H1'); lcv = P['P-F39']['fc_base_at_cod']['two_plus_one']
     P['P-F16']['months_zero_payment_covered_paying_gas'] = float((Sb['dsra_close'][t] + lcv) / ((Sb['opex'][t] + Sb['ds'][t]) / 6))
     P['P-F16']['months_zero_payment_covered_gas_deferred'] = float((Sb['dsra_close'][t] + lcv) / ((Sb['opex_om'][t] + Sb['ds'][t]) / 6))
+    # ---- P-F65 / P-F66 construction FX hedge
+    ua = Ra['u']; ma = Ra['mac']; nact = ua['nc']
+    K = FXH_SHARE * ua['onshore_kcr']
+    sched = {M_START[m].strftime('%Y-%m'): dict(kcr_m=float(K[m]), forward=float(ua['fx_fwd'][m]), usd_at_forward=float(K[m] / ua['fx_fwd'][m]))
+             for m in range(NM) if K[m] > 1e-9}
+    P['P-F65'] = dict(counterparty='Castellan Bank', trade_date='2018-07-17', instrument='USD/KCR forwards buying KCR, cash-settled in USD (non-deliverable)',
+                      hedge_share=FXH_SHARE, spot_at_trade=FX_FC0, pricing='covered interest parity: 519.4 x ((1 + 13.5%) / (1 + FC forward 6M LIBOR))^(years to settlement)',
+                      total_kcr_m=float(K.sum()), total_usd_at_forward=float((K / ua['fx_fwd']).sum()), total_usd_at_fc_spot=float(K.sum() / FX_FC0),
+                      average_forward=float(K.sum() / (K / ua['fx_fwd']).sum()), schedule=sched,
+                      vat_note='The KCR VAT facility is not hedged: it is matched by the KCR VAT refund receivable (natural hedge); only the facility interest is exposed')
+    mtm = {}
+    for m in range(nact):
+        S_ = ma['fx_m'][m]; pol = ma['pol'][m]; lib = ma['base_m'][m]; v = 0.0
+        for j in range(m + 1, NM):
+            if K[j] <= 0: continue
+            tau = (M_END[j] - M_END[m]).days / 365
+            fj = S_ * ((1 + pol / 100) / (1 + lib / 100)) ** tau
+            v += K[j] * (1 / fj - 1 / ua['fx_fwd'][j]) / (1 + lib / 100) ** tau
+        if M_START[m].month in (6, 12) or m == nact - 1: mtm[M_END[m].isoformat()] = float(v)
+    P['P-F66'] = dict(scenario='Actual history', settlements_by_half={S_LABEL[t]: float(sum(ua['fx_hedge'][m] for m in range(NM) if M_PER[m] == t))
+                                                                      for t in range(NS) if any(abs(ua['fx_hedge'][m]) > 1e-9 for m in range(NM) if M_PER[m] == t)},
+                      settlements_total=float(ua['fx_hedge'].sum()), mtm_to_project=mtm,
+                      unhedged_fx_gain_on_onshore_epc=float(82.67 - (ua['onshore_kcr'] / ma['fx_m']).sum()),
+                      finding='The forwards locked in forward points of roughly 10% a year (KCR policy rate against USD LIBOR) while the cauri fell about 5% a year to 2021, so the project gained on the hedge; the hedge does not transfer the depreciation benefit to the bank. Settlements reduce the construction uses; the overrun calibration (P-C43) is set after them.')
     # ---- P-F64 bid-to-close equity IRR bridge
     P['P-F64'] = irr_bridge(Rb)
     # ---- sponsor-level development economics (items 19 to 21)

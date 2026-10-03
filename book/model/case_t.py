@@ -25,6 +25,8 @@ Scenarios (Inputs!Scenario in the workbook):
     June 30, 2022, original concession terms)
   7-13 Sensitivities on the bid base: traffic -10%, ramp-up one year slower, toll escalation
     CPI only, opex +10%, lifecycle +20%, interest +100 bp on refinancing, heavy vehicles -2 pts
+  14-15 Bid variants on Pellow's low and central value-of-time traffic (annex TR, T.3)
+Version 1.1 (annex TR): BRTA performance payments in actual-history runs; figures T-F18 to T-F21.
 
 Circularities and how they are resolved
   * Construction funding: IDC, commitment fees, upfront fees, bond negative carry, bridge
@@ -1668,7 +1670,7 @@ def write_report(runs, out):
       "2019-03-31 to 2019-06-30 column and semiannual periods to 2059-06-30 (97 columns; first model period in "
       "Excel column J).")
     w("- Scenarios: 1 bid base (Pellow), 2 banking (Ridgeway, live sizing), 3 downside, 4 actual history, "
-      "5 restructuring case (Ridgeway 2023), 6 retender valuation at June 30, 2022, 7 to 13 sensitivities on the bid base.")
+      "5 restructuring case (Ridgeway 2023), 6 retender valuation at June 30, 2022, 7 to 13 sensitivities on the bid base, 14 and 15 Pellow low and central value-of-time bid variants.")
     w("- Financing is sized live on the banking case (scenario 2) and locked for all other runs; the Restructured "
       "Senior Notes and restructured NILO profile are sculpted live in scenario 5 and locked for scenario 4.")
     w(f"- Circularity: Gauss-Seidel iteration of the whole model to a tolerance of {TOL:g} (ARD million) on every "

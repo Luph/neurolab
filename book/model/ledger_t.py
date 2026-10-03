@@ -230,9 +230,9 @@ add("T-F02", "Gap: reference less Northgate", f"{m(g['reference_minus_northgate'
 ng = D["traffic_annual"]["northgate"]
 add("T-F04", "Northgate traffic basis 2019 to 2026 (comparison line)", "; ".join(f"{y} {ng[str(y)]:.1f}" for y in range(2019, 2027)), "thousand trips/day", "Book input (annex T.2)", "2014-03-27")
 for y, v in D["traffic_ratios"].items():
-    extra = f" / R2023 {v['vs_ridgeway_2023']:.2f}" if "vs_ridgeway_2023" in v else ""
+    extra = f" / {v['vs_ridgeway_2023']:.2f}" if "vs_ridgeway_2023" in v else ""
     add("T-F18", f"Actual traffic {y} ({v['actual']:.1f}) as a ratio of Pellow / Ridgeway / downside" + (" / Ridgeway 2023" if extra else ""),
-        f"{v['vs_pellow']:.2f} / {v['vs_ridgeway']:.2f} / {v['vs_downside']:.2f}{extra}", "ratio", "Inputs via runs 1, 2, 3, 4, 5", f"{y}-12-31" if y != "2026" else "2026-06-30")
+        f"{v['vs_pellow']:.2f} / {v['vs_ridgeway']:.2f} / {v['vs_downside']:.2f}{extra}", "ratio (2026: H1 actual against the full-year forecast)" if y == "2026" else "ratio", "Inputs via runs 1, 2, 3, 4, 5", f"{y}-12-31" if y != "2026" else "2026-06-30")
 causes = (("housing", "housing"), ("value_of_time", "value of time"), ("heavy_vehicles", "heavy vehicles"), ("sr14_works", "SR 14 works"), ("covid", "COVID-19"))
 for y, v in D["shortfall_by_cause"].items():
     add("T-F19", f"{y}: Pellow / actual / shortfall", f"{v['pellow']:.1f} / {v['actual']:.1f} / {v['shortfall']:.1f} ({pc(v['shortfall_pct_of_pellow'])})", "thousand trips/day", "Actual history (4) vs bid base (1)", f"{y}-12-31")

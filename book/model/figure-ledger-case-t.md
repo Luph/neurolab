@@ -268,9 +268,9 @@ Figure IDs T-F01 to T-F10 are those of the Case Bible figure register; T-F11 to 
 | T-F18 | Actual traffic 2021 (33.9) as a ratio of Pellow / Ridgeway / downside | 0.57 / 0.65 / 0.79 | ratio | Inputs via runs 1, 2, 3, 4, 5 | 2021-12-31 |
 | T-F18 | Actual traffic 2022 (40.2) as a ratio of Pellow / Ridgeway / downside | 0.62 / 0.72 / 0.85 | ratio | Inputs via runs 1, 2, 3, 4, 5 | 2022-12-31 |
 | T-F18 | Actual traffic 2023 (42.6) as a ratio of Pellow / Ridgeway / downside | 0.64 / 0.72 / 0.84 | ratio | Inputs via runs 1, 2, 3, 4, 5 | 2023-12-31 |
-| T-F18 | Actual traffic 2024 (44.7) as a ratio of Pellow / Ridgeway / downside / Ridgeway 2023 | 0.65 / 0.74 / 0.86 / R2023 1.00 | ratio | Inputs via runs 1, 2, 3, 4, 5 | 2024-12-31 |
-| T-F18 | Actual traffic 2025 (46.3) as a ratio of Pellow / Ridgeway / downside / Ridgeway 2023 | 0.65 / 0.74 / 0.87 / R2023 1.01 | ratio | Inputs via runs 1, 2, 3, 4, 5 | 2025-12-31 |
-| T-F18 | Actual traffic 2026 (47.1) as a ratio of Pellow / Ridgeway / downside / Ridgeway 2023 | 0.64 / 0.73 / 0.87 / R2023 1.00 | ratio | Inputs via runs 1, 2, 3, 4, 5 | 2026-06-30 |
+| T-F18 | Actual traffic 2024 (44.7) as a ratio of Pellow / Ridgeway / downside / Ridgeway 2023 | 0.65 / 0.74 / 0.86 / 1.00 | ratio | Inputs via runs 1, 2, 3, 4, 5 | 2024-12-31 |
+| T-F18 | Actual traffic 2025 (46.3) as a ratio of Pellow / Ridgeway / downside / Ridgeway 2023 | 0.65 / 0.74 / 0.87 / 1.01 | ratio | Inputs via runs 1, 2, 3, 4, 5 | 2025-12-31 |
+| T-F18 | Actual traffic 2026 (47.1) as a ratio of Pellow / Ridgeway / downside / Ridgeway 2023 | 0.64 / 0.73 / 0.87 / 1.00 | ratio (2026: H1 actual against the full-year forecast) | Inputs via runs 1, 2, 3, 4, 5 | 2026-06-30 |
 | T-F19 | 2019: Pellow / actual / shortfall | 46.7 / 30.4 / 16.3 (34.9%) | thousand trips/day | Actual history (4) vs bid base (1) | 2019-12-31 |
 | T-F19 | 2019: shortfall by cause (housing, value of time, heavy vehicles, SR 14 works, COVID-19) | 6.7 / 4.7 / 3.3 / 1.6 / 0.0 | thousand trips/day | Actual history (4) vs bid base (1) | 2019-12-31 |
 | T-F19 | 2019: revenue gap and its split by cause (indicative, same shares) | 28.9: 11.8 / 8.4 / 5.8 / 2.9 / 0.0 | ARD m | Runs 1 and 4 | 2019-12-31 |
