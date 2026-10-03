@@ -94,7 +94,7 @@ add('P-F09', 'ECA-covered tranche: first repayment after COD', str(e['first_repa
 add('P-F09', 'Contractual WAL from COD, all tranches / A, B and commercial (no OECD limit)', f"{f['contractual_wal_all_tranches_from_cod']:.4f} / {f['contractual_wal_other_tranches_from_cod']:.4f}", 'years', FCB, FC)
 rc = f['reconciliation']
 add('P-F09', 'Scheduled principal total (unrounded)', f"{rc['scheduled_principal_total']:.6f}", 'USD m', FCB, '2021-2034')
-add('P-F09', 'Cash sweep prepayment total (soft mini-perm, commercial tranche, unrounded)', f"{rc['cash_sweep_prepayment_total']:.6f}", 'USD m', FCB, '2027-2031')
+add('P-F09', 'Cash sweep prepayment total (soft mini-perm, commercial tranche, unrounded)', f"{rc['cash_sweep_prepayment_total']:.6f}", 'USD m', FCB, '2027-2032H1')
 add('P-F09', 'Scheduled principal + cash sweep = senior debt', f"{rc['scheduled_principal_total'] + rc['cash_sweep_prepayment_total']:.6f} = {rc['debt']:.6f}", 'USD m', FCB, FC)
 add('P-F09', 'Periods with DSCR exactly 1.35x on scheduled debt service', ', '.join(rc['periods_at_1_35']), 'periods', FCB, FC)
 add('P-F09', 'Average DSCR on scheduled debt service (term-sheet basis) / including the sweep in the denominator / minimum including the sweep', f"{rc['avg_dscr_scheduled']:.4f} / {rc['avg_dscr_incl_sweep']:.4f} / {rc['min_dscr_incl_sweep']:.4f}", 'x', FCB, FC)

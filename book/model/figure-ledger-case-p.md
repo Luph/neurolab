@@ -231,7 +231,7 @@ Definitions used throughout: DSCR = CFADS / (interest incl. WHT gross-up + swap 
 | P-F09 | ECA-covered tranche: first repayment after COD | 8 | months (limit 24) | FC base (1) | 2018-07-17 |
 | P-F09 | Contractual WAL from COD, all tranches / A, B and commercial (no OECD limit) | 7.7932 / 8.1693 | years | FC base (1) | 2018-07-17 |
 | P-F09 | Scheduled principal total (unrounded) | 530.462332 | USD m | FC base (1) | 2021-2034 |
-| P-F09 | Cash sweep prepayment total (soft mini-perm, commercial tranche, unrounded) | 99.487343 | USD m | FC base (1) | 2027-2031 |
+| P-F09 | Cash sweep prepayment total (soft mini-perm, commercial tranche, unrounded) | 99.487343 | USD m | FC base (1) | 2027-2032H1 |
 | P-F09 | Scheduled principal + cash sweep = senior debt | 629.949675 = 629.949675 | USD m | FC base (1) | 2018-07-17 |
 | P-F09 | Periods with DSCR exactly 1.35x on scheduled debt service | 2021H2, 2022H1, 2022H2, 2023H1, 2023H2, 2024H1, 2024H2, 2025H1, 2025H2, 2026H1, 2026H2, 2027H1 | periods | FC base (1) | 2018-07-17 |
 | P-F09 | Average DSCR on scheduled debt service (term-sheet basis) / including the sweep in the denominator / minimum including the sweep | 1.5481 / 1.3855 / 1.1470 | x | FC base (1) | 2018-07-17 |
