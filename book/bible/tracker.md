@@ -100,3 +100,4 @@
 - Brief revision u12 DONE (unit glossary files now superseded by glossary-canon.md).
 - Brief revision u08 DONE (targets Ch36 16,000, Ch37 14,800, Ch38 11,500).
 - Brief revision u17 DONE (capability map FM.1; study plan 642 h; capstone 107 h; exam 46 h; exercise workbooks requested: model/exercises/ex85_12, ex86_13; capstone and exam model files).
+- Brief revision u07 DONE (cross-unit requests: u14 Ch67 US credit-dates exhibit; u06 Ch26 no contingent-equity acceleration variants; u08 Ex36.18 cite Fw 30.2/Exh 30.5).
