@@ -44,3 +44,7 @@ None added. All real-world statements come from t-market-norms, t-market-norms-2
 ## For reviewers
 - Numbers auditor: the Python scripts above reproduce every table; Exhibit 36.11 inputs are in its source line.
 - Domain expert: please test the ssec:36.5.2 tail judgment and the 36.14 drill answer.
+
+
+## Round 1 revision (October 3, 2026)
+See `r1-revision.md` for the defect-by-defect log. The Case P section is now on model v1.5 (debt 629.9; ECA tranche in 26 equal installments; full-test P-F36; COD resculpt 1.28x). Words: about 21,500 excluding Sources. Build clean, scan clean.
