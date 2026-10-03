@@ -62,3 +62,4 @@
 - Briefs done: u07, u15, u16, u17. Remaining: u09 (modeling course).
 - Model Case R DONE (verification PASS, 12 scenarios; R-F11..R-F17 added).
 - Done: h-production-payments, h-north-sea-field-finance (Forties single source), h-purpa-us-ipp, h-gfc-pf-markets.
+- Done: t-security-civil-law, t-arbitral-rules, t-loan-syndication, t-negotiation-sources.
