@@ -774,7 +774,7 @@ def build(path, scenario=2, contribution_option=1):
     B.sc(S, "D_Live", "Senior debt, live sizing (lesser of the constraints)", "ARD m",
          "MIN({D_Gear.c},{D_Sculpt.c},{D_LLCR.c},{D_IO.c},{D_Down.c})")
     B.sc(S, "Binding", "Binding constraint (1 gearing, 2 sculpt, 3 LLCR, 4 interest cover, 5 downside)", "#",
-         "MATCH({D_Live.c},({D_Gear.c},{D_Sculpt.c},{D_LLCR.c},{D_IO.c},{D_Down.c}),0)")
+         "IF({D_Live.c}={D_Gear.c},1,IF({D_Live.c}={D_Sculpt.c},2,IF({D_Live.c}={D_LLCR.c},3,IF({D_Live.c}={D_IO.c},4,5))))")
     B.sc(S, "LiveOn", "Live sizing active (Live and Circ)", "flag", "IF(AND({Circ.c}=1,{Live.c}=1),1,0)")
     B.sc(S, "LiveROn", "Live restructured sculpting active", "flag", "IF(AND({Circ.c}=1,{LiveR.c}=1),1,0)")
     B.sc(S, "Dsen", "Senior debt applied", "ARD m", "IF({LiveOn.c}=1,{D_Live.c},{Locked_D.c})", fmt='#,##0.000')
