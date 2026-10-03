@@ -347,3 +347,63 @@ Standby facility:
 
 - **D-134.** The illustrative dividend of USD 67.2 million does not repeat as a value in any other brief or chapter. The two grep hits are Chapter 67 section labels, not figures.
 - **Unverified illustrative assumption.** The 5% EBITDA cushion policy and the GLA dividend are illustrative assumptions with no market source.
+
+# Round 3 (2026-10-03)
+
+**Status.** Build OK, 53 pages, with one overfull box (0.27pt). Prose scan: 0 hits. Em dashes: 0.
+
+## New numbers (Python)
+
+- GLA net profit: 67.2 / 0.65 = 103.4.
+- Halved dividend: 33.6 / 103.4 = 32.5% of net profit, above the 30% legal minimum (minimum 31.0).
+- Headroom with the dividend restraint: 638.4 − 574.4 = 64.0.
+- All other figures are unchanged from round 2: 3.15x, 3.31x, 10.0%, 5.5%, 4.8%, 0.2%, 106.6 bps.
+
+## Numbers (r3-numbers.md)
+
+1. Exhibit 2.3 now uses one basis throughout:
+   - Construction and after-COD leverage read "3.15 (3.33 without restraint)".
+   - Covenant headroom reads "headroom 64.0 (30.4 without restraint)".
+   - The note states that figures include the restraint, and that the 33.6 is assumed still held after COD.
+2. Step 2 now reads: "Even a cap of USD 29.2 million, 7.5% of cost and just inside the USD 30.4 million the headroom allows".
+3. Exhibit 2.3 cost row now reads "248.0 (106.6 more; USD 3.1 million a year)", per the coordinator's wording.
+
+## Domain (r3-domain.md)
+
+**D1.** The 5% floor is now explained as a joint-stress floor: a full call made while EBITDA is down. Before any call the cushion is about twice that, 10.0%. The floor is labeled as "GLA's treasury policy, an illustrative one set by its board".
+
+**D2.** The dividend cut is now a board proposal to the 2025 ordinary shareholders' meeting.
+- The paper shows that the halved dividend (32.5% of net profit of USD 103.4 million) stays above the 30% minimum distribution for open corporations.
+- It drafts a message to investors and rating agencies presenting the cut as a one-year retention.
+- The 30% minimum is cited to Chile, Ley 18.046, article 79. I verified the article's text on 2026-10-03 from the Servicio de Impuestos Internos copy (sii.cl). The BCN page (bcn.cl) did not load, so it was not used. The SII copy is listed in Sources as "Chile 1981".
+- The text says "unless every share votes otherwise", which is the article's unanimity exception.
+- Flag: a pending bill reported in the press would change the quorum for that exception. It has not been verified and is not stated in the chapter.
+
+**Minor.** Exhibit 2.3 cost row: done (see numbers item 3).
+
+## Novice (r3-novice.md)
+
+1. **Example 2.1.** Nodes, nodal settlement (`ssec:11.11.1`) and the system operator are glossed. The sentence now reads "settles any difference between the market price at the wind farm's node and at the mine's".
+2. **PNG LNG.** "Unincorporated joint venture" is glossed. PNG LNG Global Company is now said to play the borrowing role of a project company.
+3. **Exhibit 2.3 basis.** Fixed (see numbers item 1).
+4. **Standby facility in Step 2.** Now "For the lenders the standby cuts both ways ... they treat it as a concession to the sponsor", with "the buffer of Ex 2.1 here sized to replace sponsor support". It is now consistent with Example 2.1.
+5. **Tideway.** "Bankruptcy-remote" and "licensed business" are glossed.
+6. **Step 2.** "Trailing twelve-month EBITDA" is glossed, and "hydrology" is replaced by "rainfall, which drives hydro output".
+
+## Line (r3-line.md)
+
+| Item | Change |
+|---|---|
+| R3-1 | Fit-test question 2 is now two-part: (a) creditworthy contracted revenue or forecastable revenue; and (b), whether contracted or merchant, revenue earned in the currency of the debt or hedged into it. The exact wording is propagated to `bible/briefs/u01.md` (Chapter 2 framework entry) and `bible/briefs/u17.md` (Chapter 85 assumed list). |
+| R3-2 | Step 2 is split into three paragraphs: (a) the leverage arithmetic and cushions; (b) the policy, dividend proposal, forecast and rejected alternatives; (c) the standby facility and fallback. The false-contrast reframe is removed and the "most the headroom allows" error is corrected. |
+| R3-3 | Step 4 no longer restates the settlement mechanics. |
+| R3-4 | The Example 2.1 sentence is split, and "its own" is replaced by "the mine's". |
+| R3-5 | The rating-scale sentence now comes before the threshold. |
+| R3-6 | The repeated clause at the end of the drill's first paragraph is cut. |
+| R3-7 | Handled by the coordinator's bps-row wording (see numbers item 3) rather than a separate row. |
+
+## Consistency (r3-consistency.md)
+
+1. "Most the headroom allows": fixed (see numbers item 2).
+2. Exhibit 2.3 basis: fixed (see numbers item 1).
+3. Registry note for `ssec:2.4.3` now reads "title restored in Ch 2 round 2 revision".
