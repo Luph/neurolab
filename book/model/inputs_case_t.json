@@ -502,5 +502,43 @@
    "interest +100 bp on refinancing",
    "heavy vehicle share -2 points"
   ]
+ },
+ "modeler_assumptions": {
+  "note": "Added by the Case T modeler (pre-publication calibration, 2026-10-03). Each item fills a gap or resolves an inconsistency in Case Bible Part 2; logged in model/case_t_report.md (Assumption changes) and the Case Bible change log.",
+  "bid_date_cpi_pct": {
+   "value": 2.5,
+   "applies_to": "bid, banking, downside and sensitivity runs (a 2015 bid model cannot know 2021-2023 inflation); actual-history runs use macro.ardmore_cpi_annual_avg_change_pct"
+  },
+  "abbr_path_all_runs": "macro.abbr_6m_pct_semiannual_fixing is used in every run (it drives only the unhedged contribution bridge and bank interest after the 2035 swap expiry)",
+  "operating_days_convention": "operating days run from the day after the opening date to the concession end date",
+  "ramp_up_interest_account": {
+   "target_dscr_x": 1.5,
+   "description": "funded at completion; pays the part of senior interest above banking-case CFADS/1.50 in each operating period before the first repayment (2019H1-2020H2); releases are scheduled at close and do not change with outturn"
+  },
+  "senior_profile": "sculpted from 2021-06-30 as max(interest, CFADS/s), s solved so the senior debt repays on 2048-12-31; sizing also requires CFADS/interest >= 1.50 in every repayment period (interest-only constraint)",
+  "distributions_blocked_before_first_repayment": "2021-06-30",
+  "default_dscr_first_test_date": "2020-12-31",
+  "nilo_profile": "sculpted on CFADS after senior (or restructured notes) scheduled debt service as max(cash interest, residual/k), k solved for full repayment by the final NILO date",
+  "nilo_restructured_repayment": {
+   "first": "2031-06-30",
+   "final": "2058-12-31"
+  },
+  "handback_works_estimate_ard_m_2015": 42.6,
+  "handback_funding_periods": 10,
+  "dc_retention": "profile already excludes the 5% retention; 2.5% paid at completion, 2.5% deposited at completion in a retention account and released at the end of the 24-month defects period",
+  "reserve_interest": "DSRA, ramp-up, lifecycle, handback, retention and upgrade accounts earn no interest",
+  "unpaid_senior_interest": "accrues as arrears without interest on interest",
+  "restructuring_costs_profile": "ARD 21.6 million paid evenly over 2022H1, 2022H2, 2023H1 and 2023H2",
+  "state_new_money_booking": "at 2023-12-31: ARD 78.3 million to an upgrade account spent evenly over 2024H1-2025H2 (capitalized); ARD 41.7 million to the cash account available to the 2024H1 waterfall",
+  "revenue_share_period_threshold": "threshold of ARD 260.0 million a year (2023 prices) applied per period pro rata to operating days and indexed by Ardmore CPI from 2023",
+  "tax_conventions": "tax cost base = capitalized construction costs (including IDC, fees, capitalized NILO and shareholder-loan interest) less the state contribution, plus later capital additions; lifecycle and handback works deducted when spent; debt converted to equity treated as issued at face (no forgiveness); forgiven amount = cancelled senior claims plus written-off shareholder loans",
+  "equity_valuation_rate_pct": 11.4,
+  "fair_value_2022": {
+   "valuation_date": "2022-06-30",
+   "pre_tax_discount_rate_pct": 9.0,
+   "retendering_costs_ard_m": 12.5,
+   "traffic": "Ridgeway 2023 case without the heavy-vehicle uplift (2023 = 42.6, back-cast to 2022H2 at 2.6%), original toll regime and term"
+  },
+  "swap_mtm": "remaining notional = original scheduled bank balance 2024H1-2035H1; discounted at the 4.36% market swap rate per period (ACT/365)"
  }
 }

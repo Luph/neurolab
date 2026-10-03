@@ -47,6 +47,7 @@ SUPP = {
                  0.0591, 0.059, 0.0591, 0.059, 0.0591, 0.0295],
     "itc_basis_reduction_share": 0.5,
     "large_number": 1.0e9,
+    "ratio_threshold_usd_m": 0.001,
 }
 
 YEARS = np.arange(2022, 2060)
@@ -447,8 +448,11 @@ def size_all(base, p99):
     rr = redfern_rates()
     dfr = disc_factors(rr, fr)
     red = float(np.sum(dsr * dfr))
-    op = np.zeros(NT); prin = np.zeros(NT); bal = red
+    op = np.zeros(NT); prin = np.zeros(NT); bal = 0.0
+    draw = int(rf["date"][:4])
     for i in range(NT):
+        if YEARS[i] == draw:
+            bal = red
         op[i] = bal
         prin[i] = dsr[i] - bal * rr[i] / 100.0 * fr[i] if fr[i] > 0 else 0.0
         bal -= prin[i]
@@ -582,8 +586,11 @@ def run(case, base=None, p99=None, S=None):
     # ---- Redfern actual ----
     rr = redfern_rates(case["sofr_add"])
     fr = S["rf_f"]
-    op = np.zeros(NT); intr = np.zeros(NT); prin = np.zeros(NT); prep = np.zeros(NT); bal = S["rf_debt"]
+    op = np.zeros(NT); intr = np.zeros(NT); prin = np.zeros(NT); prep = np.zeros(NT); bal = 0.0
+    draw = int(D["redfern_loan_2023"]["date"][:4])
     for i in range(NT):
+        if YEARS[i] == draw:
+            bal = S["rf_debt"]
         op[i] = bal
         intr[i] = bal * rr[i] / 100.0 * fr[i]
         prin[i] = min(bal, S["rf_sched_prin"][i]) * (1 - post[i])
@@ -736,8 +743,10 @@ def run(case, base=None, p99=None, S=None):
     R["fund_dist_to_2025"] = dist25
     R["fund_moic_2025"] = (dist25 + nav) / contrib
     # ---- Ratios ----
+    thr = SUPP["ratio_threshold_usd_m"]
+
     def ratio(n, d):
-        return np.where(d > 1e-9, n / np.where(d > 1e-9, d, 1), np.nan)
+        return np.where(d > thr, n / np.where(d > thr, d, 1), np.nan)
     R["dscr_tl"] = ratio(L["cfads_a1"], R["tl_ds"])
     R["dscr_rf"] = ratio(L["assets"]["R6"]["mesa_cf"], R["rf_ds"])
     R["dscr_u"] = ratio(cfads, R["u_ds"])
