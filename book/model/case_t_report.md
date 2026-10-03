@@ -199,19 +199,19 @@ Traffic in thousand trips per day (2019 averaged over operating days); revenue =
 | accrued interest | 0.0 |
 | bank claim net | 347.0 |
 | bond claim net | 462.1 |
-| equity value total | 275.7 |
+| equity value total | 275.8 |
 | warrant value | 0.6 |
-| equity value creditors | 233.8 |
+| equity value creditors | 233.9 |
 | equity value state | 41.3 |
 | state new money | 120.0 |
 | state npv at plan rate | -78.7 |
 | notes repaid from | 2050-12-31 |
 | notes market value | 499.7 |
 | notes price pct | 81.3% |
-| senior value at par | 848.7 |
+| senior value at par | 848.8 |
 | senior recovery pct at par | 104.9% |
-| senior value received | 733.5 |
-| plan value per 1pct | 275.0% |
+| senior value received | 733.6 |
+| plan value per 1pct | 275.1% |
 | state subscription at plan value | 41.3 |
 | state capital grant implied | 78.7 |
 | state price per 1pct | 800.0% |
@@ -220,12 +220,12 @@ Traffic in thousand trips per day (2019 averaged over operating days); revenue =
 | senior recovery pct net claims | 90.7% |
 | senior recovery pct gross claims incl setoff | 91.0% |
 | bank notes | 263.7 |
-| bank equity value | 100.2 |
+| bank equity value | 100.3 |
 | bank cancelled | 48.6 |
 | bank notes market | 214.3 |
 | bank recovery pct | 90.7% |
 | bond notes | 351.2 |
-| bond equity value | 133.5 |
+| bond equity value | 133.6 |
 | bond cancelled | 64.7 |
 | bond notes market | 285.4 |
 | bond recovery pct | 90.7% |
@@ -242,14 +242,40 @@ Traffic in thousand trips per day (2019 averaged over operating days); revenue =
 | forgiveness to cost base | 241.8 |
 | losses before forgiveness | 642.7 |
 | notes s | 2.66 |
-| nilo r k | 2.94 |
+| nilo r k | 2.95 |
 | nilo balance 2023 | 563.9 |
 | dsra 2023 | 0.0 |
 | cash 2023 incl state | 41.7 |
 
 ## 11. Post-restructuring projections (T-F10)
 
-Minimum notes DSCR 2.00x; average 3.27x; cash sweep total 167.2; first distribution 2024-06-30; equity value at the plan rate (14.0%) 275.7; state revenue share total 0.0 (2030 revenue is 44.8% of the threshold; final full year 62.9%).
+Minimum notes DSCR 2.00x; average 3.27x; cash sweep total 167.2; first distribution 2024-06-30; equity value at the plan rate (14.0%) 275.8; state revenue share total 0.0 (2030 revenue is 44.8% of the threshold; final full year 62.9%).
 
-## 12. Assumption changes
+## 12. Restructuring plan: classes, votes and equity allocation
 
+Court-sanctioned restructuring plan under Part 9 of the Companies Act (Ardmore); approval threshold 75% by value of those voting in each class. Story assumptions added by the modeler for Chapter 64:
+
+| Class | Vote | Result |
+|---|---|---|
+| 1 Senior bank lenders (Castellan, Penhallow, Kaito Pacific, Sterrenberg) | 100.0% for | approves |
+| 2 Bondholders (BIFA Series 2015, via the bondholders' representative) | turnout 88.6%; 91.4% of those voting for | approves |
+| 3 NILO (federal subordinated lender) | 100.0% for | approves |
+| 4 Shareholders and shareholder lenders (Holbrook 40%, Wexcombe 35%, Corvus 25%) | 60.0% for | dissents (Holbrook votes against; 75% threshold not met); crammed down under cross-class cram-down: in the relevant alternative (termination for concessionaire default, figure T-F08) shareholders recover nothing, so they are no worse off |
+
+The state: not a plan creditor; party to the restructuring support agreement and the Concession Deed amendments.
+
+Equity allocation rationale. The plan values the post-restructuring equity at ARD 275.8 million (distributions on the Ridgeway 2023 case discounted at 14.0%), or ARD 2.75 million per 1% after the warrants. The state's ARD 120.0 million buys 15% worth ARD 41.3 million at plan value (close to the ARD 41.7 million reserve top-up); the remaining ARD 78.7 million is in substance a capital grant that funds the Holloway Junction interchange upgrade (ARD 78.3 million), a public asset the state wanted and which supports the 2.4% uplift in the Ridgeway 2023 case. Senior creditors give up ARD 194.2 million of claims (14 points cancelled, 10 converted) for 85% of the equity, worth ARD 233.9 million, so they too receive less than par for what they surrender. Senior recovery at plan values is 90.7% of net claims (notes at a 7.50% yield), against 75.9% in the relevant alternative (termination for concessionaire default with NILO's springing lien pari passu, T-F08), which is why the senior classes vote for the plan and why the dissenting shareholder class, which receives nothing in the relevant alternative, can be crammed down.
+
+## 13. Assumption changes
+
+- PSC risk adjustments (editor-in-chief review): construction risk 221.7 -> 115.3, traffic revenue risk 274.0 -> 87.4, operating risk 41.3 -> 18.5, competitive neutrality 38.4 -> 19.6 (ARD m, PV 2012). The original values made the risk adjustments (575.4) four times the raw PSC (143.4) and gave a reference value for money of 52% of the PSC, outside published PSC practice; the new values add 12% to gross PSC costs and give a reference VfM of about 10%.
+- Bid-date CPI (new input): bid, banking, downside and sensitivity runs use 2.5% a year from 2015 (the file's long-run value); actual-history runs use the actual CPI path. A 2015 bid model cannot know 2021 to 2023 inflation.
+- Ramp-up interest account (new use of funds, about ARD 20 million): pays senior interest above banking-case CFADS/1.50 from opening to the first repayment. Without it the banking-case DSCR in 2019-2020 is below 1.0x and the financing is unbankable.
+- Senior profile and sizing: DS = max(interest, CFADS/s) from June 2021 with s solved for the 2048 maturity, and sizing adds the constraint that CFADS covers interest 1.50x in every repayment period. This constraint binds: senior debt is 51.1% of the funding requirement net of the contribution (Bible design target about 55%) and NILO, the remainder, is 26.9% (target 22% to 25%; 23.1% of eligible costs, within the 33% cap). Toll-road CFADS grow fast, so the early interest cover, not the gearing cap, limits senior debt.
+- Covenant timing: the first test (2019-12-31) covers the six months to that date; the default DSCR covenant is first tested at 2020-12-31 (otherwise the 12-month ratio at 2020-06-30 would already trigger the event of default the Bible dates to 2020-12-31); no distributions before the first repayment date.
+- NILO: remainder after senior and 22% equity, capped at 33% of eligible costs (equity tops up; binds only in the contribution solve); repayment sculpted on CFADS after scheduled senior debt service; restructured repayment 2031-06-30 to 2058-12-31 (the Bible gives only the 2058 maturity).
+- Handback works estimate ARD 42.6 million (2015 prices, the OY36 resurfacing that falls after the original expiry), funded over the last 10 periods (the Bible gives no amount).
+- Timing conventions: restructuring costs paid evenly 2022H1-2023H2; state new money booked at 2023-12-31 (78.3 to an upgrade account spent evenly 2024H1-2025H2, 41.7 to cash); operating days counted from the day after the opening date; D&C retention as in Section 12 of the inputs file.
+- Plan valuation (editor-in-chief review): new equity at 14.0% and the 5.10% notes at a 7.50% market yield (previously 11.4% and par, which gave senior recoveries above 100%). The state's ARD 120.0 million is presented as a 15% subscription at plan value plus an implied capital grant for the interchange upgrade; plan classes and votes added (Section 12).
+- Fair value at 2022-06-30 for the concessionaire-default comparison: pre-tax unlevered cash flows on the Ridgeway 2023 case without the heavy-vehicle uplift, original terms, discounted at 9.0%; retendering costs ARD 12.5 million.
+- Other conventions (no Bible value changed): reserves earn no interest; unpaid senior interest accrues without interest on interest; swap value at 2023-12-31 on the original scheduled bank balance discounted at 4.36%; the ABBR path in the inputs file is used in every run; tax cost base nets the state contribution and capitalizes construction-period NILO and shareholder-loan interest; debt converted to equity is treated as issued at face.

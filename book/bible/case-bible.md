@@ -475,7 +475,7 @@ The Merrick Link is a 41.3 km four-lane (2+2) tolled motorway, with structures s
 
 ## 2.3 Procurement and the public-sector case
 
-Partnerships Brannock built the business case and public sector comparator (PSC) in 2012 at a nominal discount rate of 6.85%. The PSC, in ARD millions of 2012 present value: raw capital cost 1,478.6; O&M and lifecycle 486.2; toll revenue retained by the state (1,821.4); construction risk 221.7; traffic revenue risk 274.0; operating risk 41.3; competitive neutrality 38.4. The PPP reference project assumed a state construction contribution of ARD 410.0 million paid at opening, retained risks of 52.8 and contract management of 21.6. The model computes PSC and PPP present costs and value for money (figure T-F01). Land (ARD 212.5 million) is common to both and excluded.
+Partnerships Brannock built the business case and public sector comparator (PSC) in 2012 at a nominal discount rate of 6.85%. The PSC, in ARD millions of 2012 present value: raw capital cost 1,478.6; O&M and lifecycle 486.2; toll revenue retained by the state (1,821.4); construction risk 115.3; traffic revenue risk 87.4; operating risk 18.5; competitive neutrality 19.6 (recalibrated before publication, change log T-C05). Value for money is reported as a share of the risk-adjusted PSC. The PPP reference project assumed a state construction contribution of ARD 410.0 million paid at opening, retained risks of 52.8 and contract management of 21.6. The model computes PSC and PPP present costs and value for money (figure T-F01). Land (ARD 212.5 million) is common to both and excluded.
 
 | Date | Step |
 |---|---|
@@ -1204,6 +1204,13 @@ The modelers compute each figure below from the input files and record its value
 | T-F08 | Termination compensation under concessionaire default (estimated fair value) against senior claims at June 30, 2022 | Actual history | 64 |
 | T-F09 | Restructuring: claims, write-down, new notes, equity split, recoveries by class, NILO | Actual history | 64 |
 | T-F10 | Post-restructuring projections: DSCR, equity value, state revenue share | Ridgeway 2023 case | 64 |
+| T-F11 | Senior sizing: capacity under each constraint, binding constraint, sculpting divisors (added by the modeler) | Banking | 58, 64 |
+| T-F12 | Ratio summary for bid base, banking and downside: DSCR, ramp-up DSCR, senior plus NILO DSCR, LLCR, PLCR (added by the modeler) | Bid base, banking, downside | 47, 58, 64 |
+| T-F13 | Sensitivities on the bid base: equity IRR, NPV, minimum DSCR (added by the modeler) | Bid base | 47, 79 |
+| T-F14 | Scheduled senior and NILO balances on the financing at close (added by the modeler) | Banking | 29, 58 |
+| T-F15 | Outturn: equity invested and lost, first event of default, DSRA use (added by the modeler) | Actual history | 64, 79 |
+| T-F16 | Tax at the restructuring: losses and debt forgiveness (added by the modeler) | Restructuring case | 64 |
+| T-F17 | Illustrative USD equivalents of financing at close and restructuring amounts (added by the modeler) | Banking, restructuring case | 58, 64 |
 
 ## 7.3 Case R
 
@@ -1254,6 +1261,13 @@ Every change to a case after this version is logged here. "Date in story" is whe
 | T-C02 | 2019-05-06 | 79 | T | Opening date | 2019-03-31 | 2019-05-06 | Assumption (2.2) |
 | T-C03 | 2022-05-20 | 64 | T | Bank maturity and margin | 2022-05-27; 2.60% | 2023-12-31; 3.25% | Assumption (2.8) |
 | T-C04 | 2023-12-18 | 64 | T | Senior debt, equity, NILO terms, concession term, tolls | Original | Per Section 2.8 restructuring table | Assumption (2.8); T-F09 |
+| T-C05 | 2012-11-08 | 57, 58 | T | PSC risk adjustments (modeler calibration, pre-publication; editor-in-chief note) | Construction 221.7; traffic revenue 274.0; operating 41.3; competitive neutrality 38.4 (ARD m, PV 2012) | Construction 115.3; traffic revenue 87.4; operating 18.5; competitive neutrality 19.6; VfM reported as a share of the risk-adjusted PSC | Assumption (2.3); T-F01. Old values gave a reference VfM of 52% of the PSC |
+| T-C06 | 2014-08-15 | 47, 58 | T | CPI in the bid, banking, downside and sensitivity runs (modeler calibration, pre-publication; new) | Not specified | 2.5% a year from 2015; actual CPI path only in actual-history runs | `inputs_case_t.json` modeler_assumptions; T-F02, T-F03 |
+| T-C07 | 2015-05-27 | 58 | T | Ramp-up structure and senior sizing (modeler calibration, pre-publication; new) | No ramp-up provision; senior "about 55%", NILO 22% to 25% (design targets) | Ramp-up interest account at completion (pays senior interest above banking CFADS/1.50 to the first repayment); DS = max(interest, CFADS/s) to 2048; sizing adds 1.50x interest cover in every repayment period, which binds: senior 51.1%, NILO 26.9% of funding net of contribution (23.1% of eligible costs) | Assumption (2.5); T-F03, T-F11 |
+| T-C08 | 2019-12-31 | 64 | T | Covenant test timing (modeler calibration, pre-publication; new) | Not specified | First test covers six months; default DSCR covenant first tested 2020-12-31; no distributions before 2021-06-30 | Assumption (2.5, 2.8); T-F07 |
+| T-C09 | 2015-05-27 | 29, 58, 64 | T | NILO profile (modeler calibration, pre-publication; new) | Sculpted 2024-2052; restructured maturity 2058 | Sculpted on CFADS after senior debt service; capped at 33% of eligible costs with equity topping up; restructured repayment 2031-06-30 to 2058-12-31 | Assumption (2.5, 2.8); T-F14 |
+| T-C10 | 2023-11-30 | 64 | T | Plan classes, votes and plan valuation (modeler calibration, pre-publication; editor-in-chief note) | Not specified | Classes: (1) banks 100% for; (2) bondholders 88.6% turnout, 91.4% of votes cast for; (3) NILO for; (4) shareholders and shareholder lenders 60% for (Holbrook against), dissenting class crammed down (nil in the relevant alternative). Plan valuation: equity at 14.0%, notes at a 7.50% yield; state ARD 120.0 million = 15% subscription at plan value plus implied capital grant for the interchange upgrade | Assumption (2.8); T-F08, T-F09 |
+| T-C11 | 2022-06-30 | 64 | T | Termination comparison inputs (modeler calibration, pre-publication; new) | Not specified | Fair value on pre-tax unlevered cash flows at 9.0% (Ridgeway 2023 case without the heavy-vehicle uplift, original terms); retendering costs ARD 12.5 million; handback works estimate ARD 42.6 million (2015 prices) funded over 10 periods | Assumption (2.5, 2.7); T-F08 |
 | R-C01 | 2023-08-31 | 73 | R | Portfolio | R1 to R5 | Adds R6 | Assumption (3.6) |
 | R-C02 | 2024-04-02 and 2024-12-19 | 73 | R | Portfolio | R1 to R6 | Adds R7 and R8 | Assumption (3.6) |
 | R-C03 | 2025-12-16 | 63 | R | Debt structure | Opco TL, holdco TLB, Redfern loan | USPP notes; repriced holdco | Assumption (3.7); R-F08 |

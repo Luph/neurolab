@@ -1570,8 +1570,14 @@ def write_report(runs, out):
       "Senior Notes and restructured NILO profile are sculpted live in scenario 5 and locked for scenario 4.")
     w(f"- Circularity: Gauss-Seidel iteration of the whole model to a tolerance of {TOL:g} (ARD million) on every "
       f"tracked series and scalar. Banking run converged in {runs[2]['passes']} passes. The workbook uses iterative "
-      "calculation (100 iterations, 0.000001 maximum change) with a circuit breaker `Circ` on the Inputs sheet: "
-      "Circ = 0 cuts the financing-cost and sizing feedback so errors flush out; set it back to 1 to recalculate.")
+      "calculation (1,000 iterations, 0.0000001 maximum change) with a circuit breaker `Circ` on the Inputs sheet: "
+      "Circ = 0 cuts the financing-cost and sizing feedback (the locked financing is used) so errors flush out; set it "
+      "back to 1 and recalculate (press F9 until the Outputs stop changing; usually under 20 recalculations, more in "
+      "the solved-contribution run, where the interest-only periods are not contiguous). Every division inside the "
+      "loop is guarded so that a recalculation from blank cells cannot lock in #DIV/0!.")
+    w("- Teaching note for Chapters 39 to 43: the IDC and fee loop is a fixed point, not an algebra problem; the "
+      "sculpting divisor s is itself a fixed point, s = PV(CFADS in amortizing periods) / (D - PV(interest in "
+      "interest-only periods)); the model shows both rows so a reader can watch them converge.")
     w("- Day counts: bank, bridge, NILO, escrow and shareholder loans ACT/365; bonds and notes 30/360.")
     w("- Sign convention: costs stored positive and subtracted; equity cash flows negative for contributions.\n")
     w("## 2. Public sector comparator and value for money (T-F01)\n")
@@ -1663,14 +1669,75 @@ def write_report(runs, out):
       f"first distribution {pr['first_distribution']}; equity value at the plan rate (14.0%) {f1(pr['equity_value_total'])}; state revenue share total "
       f"{f1(pr['revshare_total_nominal'])} (2030 revenue is {pct(pr['revenue_threshold_ratio_2030'])} of the threshold; final full year "
       f"{pct(pr['revenue_threshold_ratio_2058'])}).\n")
-    w("## 12. Assumption changes\n")
+    w("## 12. Restructuring plan: classes, votes and equity allocation\n")
+    pv = MA["plan_classes_and_votes"]
+    w("Court-sanctioned restructuring plan under Part 9 of the Companies Act (Ardmore); approval threshold "
+      f"{pv['threshold']}. Story assumptions added by the modeler for Chapter 64:\n")
+    w("| Class | Vote | Result |\n|---|---|---|")
+    for c in pv["classes"]:
+        vote = (f"{c['vote_for_pct_by_value']:.1f}% for" if "vote_for_pct_by_value" in c else
+                f"turnout {c['turnout_pct_by_value']:.1f}%; {c['vote_for_pct_by_value_of_those_voting']:.1f}% of those voting for")
+        w(f"| {c['class']} | {vote} | {c['result']} |")
+    w(f"\nThe state: {pv['state']}.\n")
+    rr = out["derived"]["restructuring"]
+    w("Equity allocation rationale. The plan values the post-restructuring equity at "
+      f"ARD {rr['equity_value_total']:.1f} million (distributions on the Ridgeway 2023 case discounted at 14.0%), "
+      f"or ARD {rr['plan_value_per_1pct']:.2f} million per 1% after the warrants. The state's ARD 120.0 million buys 15% "
+      f"worth ARD {rr['equity_value_state']:.1f} million at plan value (close to the ARD 41.7 million reserve top-up); the "
+      f"remaining ARD {rr['state_capital_grant_implied']:.1f} million is in substance a capital grant that funds the "
+      "Holloway Junction interchange upgrade (ARD 78.3 million), a public asset the state wanted and which supports the "
+      "2.4% uplift in the Ridgeway 2023 case. Senior creditors give up ARD "
+      f"{rr['cancelled'] + rr['conv_eq']:.1f} million of claims (14 points cancelled, 10 converted) for 85% of the equity, "
+      f"worth ARD {rr['equity_value_creditors']:.1f} million, so they too receive less than par for what they surrender. "
+      f"Senior recovery at plan values is {100 * rr['senior_recovery_pct_net_claims']:.1f}% of net claims (notes at a 7.50% "
+      f"yield), against {100 * out['derived']['termination_2022']['cd_senior_recovery_nilo_pari_passu']:.1f}% in the "
+      "relevant alternative (termination for concessionaire default with NILO's springing lien pari passu, T-F08), which "
+      "is why the senior classes vote for the plan and why the dissenting shareholder class, which receives nothing in "
+      "the relevant alternative, can be crammed down.\n")
+    w("## 13. Assumption changes\n")
     for line in ASSUMPTION_CHANGES:
         w(f"- {line}")
     w("")
     open(os.path.join(HERE, "case_t_report.md"), "w").write("\n".join(L))
 
 
-ASSUMPTION_CHANGES = []
+ASSUMPTION_CHANGES = [
+    "PSC risk adjustments (editor-in-chief review): construction risk 221.7 -> 115.3, traffic revenue risk 274.0 -> 87.4, "
+    "operating risk 41.3 -> 18.5, competitive neutrality 38.4 -> 19.6 (ARD m, PV 2012). The original values made the "
+    "risk adjustments (575.4) four times the raw PSC (143.4) and gave a reference value for money of 52% of the PSC, "
+    "outside published PSC practice; the new values add 12% to gross PSC costs and give a reference VfM of about 10%.",
+    "Bid-date CPI (new input): bid, banking, downside and sensitivity runs use 2.5% a year from 2015 (the file's long-run "
+    "value); actual-history runs use the actual CPI path. A 2015 bid model cannot know 2021 to 2023 inflation.",
+    "Ramp-up interest account (new use of funds, about ARD 20 million): pays senior interest above banking-case "
+    "CFADS/1.50 from opening to the first repayment. Without it the banking-case DSCR in 2019-2020 is below 1.0x and the "
+    "financing is unbankable.",
+    "Senior profile and sizing: DS = max(interest, CFADS/s) from June 2021 with s solved for the 2048 maturity, and sizing "
+    "adds the constraint that CFADS covers interest 1.50x in every repayment period. This constraint binds: senior debt "
+    "is 51.1% of the funding requirement net of the contribution (Bible design target about 55%) and NILO, the "
+    "remainder, is 26.9% (target 22% to 25%; 23.1% of eligible costs, within the 33% cap). Toll-road CFADS grow fast, "
+    "so the early interest cover, not the gearing cap, limits senior debt.",
+    "Covenant timing: the first test (2019-12-31) covers the six months to that date; the default DSCR covenant is first "
+    "tested at 2020-12-31 (otherwise the 12-month ratio at 2020-06-30 would already trigger the event of default the "
+    "Bible dates to 2020-12-31); no distributions before the first repayment date.",
+    "NILO: remainder after senior and 22% equity, capped at 33% of eligible costs (equity tops up; binds only in the "
+    "contribution solve); repayment sculpted on CFADS after scheduled senior debt service; restructured repayment "
+    "2031-06-30 to 2058-12-31 (the Bible gives only the 2058 maturity).",
+    "Handback works estimate ARD 42.6 million (2015 prices, the OY36 resurfacing that falls after the original expiry), "
+    "funded over the last 10 periods (the Bible gives no amount).",
+    "Timing conventions: restructuring costs paid evenly 2022H1-2023H2; state new money booked at 2023-12-31 (78.3 to an "
+    "upgrade account spent evenly 2024H1-2025H2, 41.7 to cash); operating days counted from the day after the opening "
+    "date; D&C retention per modeler_assumptions.dc_retention in the inputs file.",
+    "Plan valuation (editor-in-chief review): new equity at 14.0% and the 5.10% notes at a 7.50% market yield (previously "
+    "11.4% and par, which gave senior recoveries above 100%). The state's ARD 120.0 million is presented as a 15% "
+    "subscription at plan value plus an implied capital grant for the interchange upgrade; plan classes and votes added "
+    "(Section 12).",
+    "Fair value at 2022-06-30 for the concessionaire-default comparison: pre-tax unlevered cash flows on the Ridgeway "
+    "2023 case without the heavy-vehicle uplift, original terms, discounted at 9.0%; retendering costs ARD 12.5 million.",
+    "Other conventions (no Bible value changed): reserves earn no interest; unpaid senior interest accrues without "
+    "interest on interest; swap value at 2023-12-31 on the original scheduled bank balance discounted at 4.36%; the ABBR "
+    "path in the inputs file is used in every run; tax cost base nets the state contribution and capitalizes "
+    "construction-period NILO and shareholder-loan interest; debt converted to equity is treated as issued at face.",
+]
 
 if __name__ == "__main__":
     runs, out = main()

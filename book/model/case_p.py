@@ -180,14 +180,14 @@ def build_macro(p):
     fx = np.zeros(NS)
     for t in range(NS):
         if p['macro'] == 'FC':
-            fx[t] = FX_FC0 * FX_D ** ((t + 0.5) / 2)
+            fx[t] = FX_FC0 * p.get('fx_d', FX_D) ** ((t + 0.5) / 2)
         elif p['macro'] == 'ACT':
             fx[t] = FX_ACT_GIVEN[t] if t < 17 else fx[t - 1] * ((1 + kc[S_YEAR[t]] / 100) / (1 + us[S_YEAR[t]] / 100)) ** 0.5
         else:
             fx[t] = FX_ACT_GIVEN[t] if t <= 6 else fx[t - 1] * FX_D ** 0.5
     if p['deval'] > 0:
         fx = fx * np.where(np.arange(NS) >= SHOCK_T0, 1 / (1 - p['deval']), 1.0)
-    fx_m = np.array([FX_FC0 * FX_D ** ((m + 0.5) / 12) if p['macro'] == 'FC' else fx[M_PER[m]]
+    fx_m = np.array([FX_FC0 * p.get('fx_d', FX_D) ** ((m + 0.5) / 12) if p['macro'] == 'FC' else fx[M_PER[m]]
                      for m in range(NM)])
     base_m = np.array([base_s[M_PER[m]] for m in range(NM)])
     if p['rate_shift']: base_m = np.array([({'FC': FC_FWD, 'ACT': ACT_BASE, 'CODRF': RF_BASE}[p['macro']])[M_PER[m]] for m in range(NM)])
@@ -567,7 +567,8 @@ def _run(p, prof, N_m, N_s, bond_prof, D_fixed):
     flag_ds = np.array([1.0 if t >= t1 else 0.0 for t in range(NS)])
     # ---- plant
     av_prof = INP['plant']['availability_profile_pct_by_operating_year_cycle']['values']
-    def av_oy(oy): return av_prof[(oy - 1) % 8]
+    shock = p.get('avail_shock')       # Monte Carlo: availability shock by operating year (points)
+    def av_oy(oy): return av_prof[(oy - 1) % 8] + (shock[oy - 1] if shock is not None and oy <= len(shock) else 0.0)
     A = z(); Ap = z(); yrs = z()
     for t in range(NS):
         if om[t] == 0: continue
@@ -577,10 +578,10 @@ def _run(p, prof, N_m, N_s, bond_prof, D_fixed):
         yrs[t] = (oms[t] + ome[t]) / 24
     A = np.where(om > 0, Ap + p['avail_d'], 0.0)
     act = p['constr'] == 'ACT'
-    C = 581.9 if act else 588.4
-    HRg = 6286 if act else 6261
+    C = p.get('C_override') or (581.9 if act else 588.4)
+    HRg = p.get('HR_override') or (6286 if act else 6261)
     OF = (1 - 0.0015 * yrs) * 0.99
-    HRF = (1 + 0.0012 * yrs) * 1.008
+    HRF = (1 + p.get('hr_nr', 0.12) / 100 * yrs) * 1.008
     E = C * 730 * om * A / 100 * p['dispatch'] / 100 * OF          # MWh
     HRa = HRg * HRF * 1.023 * p['hr_f']
     HRc = 6323 * (1 + 0.001 * yrs) * 1.023
@@ -1113,7 +1114,7 @@ def sculpt(R, D, t_first, t_last, w):
         newp[t] = prin / D; bal -= prin
     return newp, dscr, pv, r, ds
 
-def size_fc(p, gearing=0.75, dscr_target=1.35, down_target=1.20, verbose=False, max_it=200):
+def size_fc(p, gearing=0.75, dscr_target=1.35, down_target=1.20, verbose=False, max_it=200, only_gearing=False):
     """FC sizing: iterate (profile, notional, debt) -> model -> CFADS -> re-sculpt to convergence.
     Debt = min(gearing cap x T, PV(CFADS)/DSCR target, downside-constrained amount)."""
     _, t1 = first_ds_period(p); tl = tix('2034H1')
@@ -1127,16 +1128,19 @@ def size_fc(p, gearing=0.75, dscr_target=1.35, down_target=1.20, verbose=False, 
         D = R['f']['D']; T = R['f']['T']
         newp, dscr, pv, r, ds = sculpt(R, D, t1, tl, SHARE_W())
         cap_ = pv / dscr_target
-        Rd = run(pd, prof, N_m, N_s, None, D, gearing)
-        md = min(Rd['S']['dscr'][t] for t in range(t1, tl + 1))
+        if down_target:
+            Rd = run(pd, prof, N_m, N_s, None, D, gearing)
+            md = min(Rd['S']['dscr'][t] for t in range(t1, tl + 1))
+        else:
+            md = 9.99
         cap_down = D * md / down_target
         fe = R['fe']; bal_m = sum(R['f']['bal_' + k] for k in TR)
         newNm = np.zeros(NM); newNm[1:fe + 1] = 0.8 * bal_m[:fe]
         newNs = np.zeros(NS)
         for t in range(t1, NS):
             newNs[t] = 0.8 * D * newp[t:].sum()
-        cands = {'gearing': gearing * T, 'DSCR': cap_, 'downside': cap_down}
-        bind = min(cands, key=cands.get)
+        cands = {'gearing': gearing * T, 'DSCR': cap_, 'downside': cap_down if down_target else 1e9}
+        bind = 'gearing' if only_gearing else min(cands, key=cands.get)
         newD_fixed = None if bind == 'gearing' else cands[bind]
         diff = max(np.abs((newp - prof) * D).max(), np.abs(newNm - N_m).max(), np.abs(newNs - N_s).max(),
                    abs((newD_fixed or 0) - (D_fixed or 0)))
@@ -1221,6 +1225,3 @@ def build_contract():
     CONTRACT['prof_BOND'] = list(bp)
     return R1, R14, R15
 
-if __name__ == '__main__':
-    R1, R14, R15 = build_contract()
-    print('D', R1['f']['D'], 'T', R1['f']['T'], 'cap', R1['capacity'], R1['binding'], R1['sculpt_dscr'], 'IRR', R1['equity_irr'])
