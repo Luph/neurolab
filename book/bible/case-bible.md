@@ -617,3 +617,129 @@ Restructuring terms:
 | Costs | ARD 21.6 million of restructuring costs (2022 to 2023) paid by the concessionaire |
 
 The model computes claims, recoveries, the new note quantum, and post-restructuring projections (figures T-F09 and T-F10).
+
+---
+
+# Part 3. Case R: the Mesa Corta Renewables portfolio, ERCOT
+
+## 3.1 Market choice
+
+Case R sits in ERCOT, the real energy-only market covering most of Texas, with fictional assets, owners and counterparties and clearly illustrative prices (decision D-105). The reasons: ERCOT is the cleanest real example of an energy-only market with nodal pricing, hub settlement, scarcity pricing and no capacity market, so hub-to-node basis, capture prices, shape risk and battery merchant revenue all arise naturally; Winter Storm Uri (February 2021) is a real case the book teaches in Chapter 20, and a portfolio in the same market lets Chapter 20 run a Uri-type stress on Case R's own hedges; and real market rules can be verified, which a fictional market cannot. The cost is the risk that a reader takes the price paths as data. Every Case R price exhibit therefore carries the label "Illustrative" and the exhibit source line "Case Bible illustrative price paths; not ERCOT settlement data and not a forecast." The stylized 2022 to 2025 hub averages are of the same order as published hub averages (for example, ERCOT reported a 2023 real-time hub average of about USD 62.79/MWh and a 2024 average of about USD 28.84/MWh in its January 2025 market update); writers never present Case R's numbers as historical ERCOT data. US tax items (bonus depreciation, PTC, ITC, transferability) are law-dependent and dated; writers take them from the US tax-equity fact sheet.
+
+## 3.2 The owner
+
+Lattimer Infrastructure Partners is a fictional Houston and New York infrastructure manager. Its Lattimer Energy Transition Fund II (2021 vintage) has USD 2,380.0 million of commitments, a 1.40% management fee on commitments during the investment period, 15% carry over an 8% preferred return, and a 10-plus-2-year term. The fund owns 100% of Mesa Corta Renewables LLC, whose holding company (Mesa Corta HoldCo LLC) owns Mesa Corta OpCo LLC, which owns the asset companies. Asset management costs USD 3.2 million a year (2022 prices).
+
+## 3.3 Assets
+
+| ID | Asset | Technology | Capacity | COD | Hub | P50 NCF | P50 (GWh/yr) | P90 one-year | P90 ten-year | P99 one-year | Contract |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| R1 | Thatcher Flats Wind | 96 x 2.1 MW | 201.6 MW | 2014-12-15 | West | 39.4% | 695.8 | 87.6% | 92.9% | 81.2% | Merchant plus 40 MW fixed-volume swap 2023 to 2027 |
+| R2 | Sandoval Hills Wind | 108 x 2.3 MW, coastal | 248.4 MW | 2017-06-30 | South | 36.1% | 785.5 | 89.2% | 94.1% | 84.0% | Physical as-generated PPA to June 2029 |
+| R3 | Ollie Creek Wind | 51 x 3.0 MW, Panhandle | 153.0 MW | 2019-11-20 | West (Panhandle node) | 46.2% | 619.2 | 86.9% | 92.4% | 80.1% | Proxy revenue swap to December 2029; PTC tax equity |
+| R4 | Peeler Draw Solar | Tracking PV, 131.3 MWdc | 98.7 MWac | 2020-10-09 | West | 27.1% | 234.3 | 94.6% | 96.8% | 91.9% | Fixed-shape hedge 2022 to 2026 |
+| R5 | Calloway Mesa Solar | Tracking PV, 241.0 MWdc | 182.4 MWac | 2021-06-28 | West | 28.3% | 452.2 | 94.2% | 96.5% | 91.4% | Virtual PPA to June 2033; ITC tax equity |
+| R6 | Redfern Storage | LFP, 2-hour | 100.0 MW / 200 MWh | 2023-07-14 | North | – | – | – | – | – | Toll to July 2030 |
+| R7 | Kerrigan Storage | LFP, 2-hour | 150.0 MW / 300 MWh | 2024-04-02 | Houston | – | – | – | – | – | Merchant with revenue floor to April 2032 |
+| R8 | Barlow Gap Solar | Tracking PV, 162.0 MWdc | 120.0 MWac | 2024-12-19 | South | 27.6% | 290.1 | 94.4% | 96.6% | 91.6% | Fixed-shape hedge on 60% of P50, 2025 to 2034 |
+
+P90 and P99 columns are percentages of P50. Totals: wind 603.0 MW, solar 401.1 MWac, storage 250.0 MW / 500 MWh. Degradation: wind 0.20% a year, solar 0.45% (R8 0.40%). Battery round-trip efficiency 86.0% (R6) and 86.5% (R7), availability 97.5%, augmentation of 6% of MWh in years 5 and 9 at USD 41/kWh (2025 prices). Useful lives end 2044 (R1), 2047 (R2), 2049 (R3), 2055 (R4), 2056 (R5), 2043 (R6), 2044 (R7) and 2059 (R8). Curtailment: West wind 4.5% in 2022 rising to 6.0% from 2025; Panhandle 5.2% rising to 7.0%; coastal wind 1.5%; West solar 2.0% rising to 3.5%; South solar 1.8%.
+
+Tax equity: Castellan Bank's US tax-equity desk is the tax equity investor in R3 (PTC partnership flip: 99% of tax and 40% of cash to the investor until an expected flip on December 31, 2029, then 5%) and R5 (ITC partnership flip: 99% of tax and 20% of cash until an expected flip on June 30, 2027, then 5%). Mesa Corta owns the sponsor (class B) interests.
+
+## 3.4 Hedge book
+
+| Asset | Instrument | Counterparty | Key terms |
+|---|---|---|---|
+| R1 | Fixed-volume swap, 7x24 | Castellan Bank (commodities desk) | 40 MW at USD 48.25/MWh West Hub, January 2023 to December 2027 |
+| R2 | Physical as-generated PPA | Orchard Power Retail LLC | USD 31.40/MWh flat, to June 30, 2029 |
+| R3 | Proxy revenue swap | Galloway Risk Solutions | Galloway pays USD 25.84 million a year fixed; the project pays proxy revenue (proxy generation times West Hub price); 2020 to 2029; USD 12.0 million LC posted by the project |
+| R4 | Fixed-shape solar hedge | Castellan Bank (commodities desk) | 168.4 GWh a year in solar shape at USD 44.10/MWh West Hub, 2022 to 2026 |
+| R5 | Virtual PPA | Ostrander Data Systems Inc. | USD 27.85/MWh as generated, settled at West Hub, to June 30, 2033, with RECs |
+| R6 | Battery toll | Orchard Power Retail LLC | USD 9.15/kW-month for 7 years from COD; 97.0% availability guarantee; owner augments to keep 200 MWh |
+| R7 | Revenue floor (put) | Galloway Risk Solutions | Floor USD 74.00/kW-year for 8 years; premium USD 5.80/kW-year; Galloway takes 20% of revenue above USD 140/kW-year |
+| R8 | Fixed-shape solar hedge | Castellan Bank (commodities desk) | 174.1 GWh a year (60% of P50) at USD 38.90/MWh South Hub, 2025 to 2034 |
+
+Castellan's hedges are secured pari passu in the opco security package as first-lien hedges, with no cash collateral; Galloway's contracts are supported by LCs from the opco LC facility.
+
+## 3.5 Illustrative prices
+
+ERCOT North Hub around-the-clock annual average, USD/MWh nominal, illustrative:
+
+| Year | Base | Low | High |
+|---|---|---|---|
+| 2022 (stylized history) | 74.6 | 74.6 | 74.6 |
+| 2023 (stylized history) | 61.2 | 61.2 | 61.2 |
+| 2024 (stylized history) | 30.1 | 30.1 | 30.1 |
+| 2025 (stylized history) | 39.8 | 39.8 | 39.8 |
+| 2026 | 44.6 | 35.2 | 56.3 |
+| 2027 | 47.3 | 36.4 | 60.4 |
+| 2028 | 49.1 | 37.3 | 63.2 |
+| 2029 | 50.4 | 38.0 | 65.1 |
+| 2030 | 51.8 | 38.6 | 66.9 |
+| After 2030 | +2.0% a year | +1.0% a year | +2.8% a year |
+
+Hub ratios to North Hub: West 0.968, South 0.991, Houston 1.012. Capture ratios to the asset's own hub (base case): West wind 0.74 in 2022 falling 0.6 points a year to a floor of 0.62; Panhandle wind 0.66 falling 0.5 points to 0.58 (node basis included); coastal wind 0.92 falling 0.3 points to 0.85; West solar 0.86 falling 2.0 points to 0.60; South solar 0.90 falling 1.8 points to 0.64. The low case declines 1.5 times as fast with floors 0.04 lower; the high case declines half as fast. Node capture for hedge settlement equals hub capture less basis of 0.04 (West wind), 0.07 (Panhandle), 0.03 (West solar), 0.02 (South solar) and 0.01 (coastal wind).
+
+Battery merchant revenue (2-hour, energy arbitrage plus ancillary services, illustrative), USD/kW-year: 2023 142.5; 2024 61.8; 2025 52.4; 2026 base 57.9, low 39.0, high 84.5; then +1.5%, +0.5% and +2.5% a year.
+
+## 3.6 Acquisitions
+
+| Deal | Signed | Closed | Target | Seller | Price | Funding |
+|---|---|---|---|---|---|---|
+| A1 | 2021-12-09 | 2022-03-22 | Mesa Corta Renewables LLC (R1 to R5, sponsor interests) | Hollenbeck Energy North America | Enterprise value USD 1,184.6 million; transaction costs USD 14.9 million; buy-side W&I limit USD 118.0 million | New opco term loan, holdco term loan, fund equity |
+| A2 | 2023-06-02 | 2023-08-31 | Redfern Storage LLC (R6), at COD | Tolliver Energy Development LLC | USD 132.4 million; costs USD 2.6 million; ITC claimed by seller | Redfern term loan and fund equity |
+| A3 | 2024-02-15 | R7 2024-04-02; R8 2024-12-19 | Kerrigan Storage LLC (R7) and Barlow Gap Solar LLC (R8), late construction | Tolliver Energy Development LLC | R7 USD 171.9 million; R8 USD 168.3 million (20% deposit at signing); costs USD 4.4 million; seller bears construction risk; long-stop June 30, 2025 | Holdco incremental loan, fund equity, ITC transfer proceeds |
+
+The fund claims and sells the 30% ITC on R7 (92% eligible basis) and R8 (94% eligible basis) at USD 0.925 per USD 1 of credit; no energy community adder is assumed.
+
+## 3.7 Debt
+
+| Facility | Date | Terms |
+|---|---|---|
+| Mesa Corta OpCo term loan | 2022-03-22 | Castellan, Kaito Pacific, Sterrenberg, Penhallow (US branch); 7-year mini-perm to March 22, 2029; Term SOFR 3M + 1.625% to March 2026, then + 1.875%; upfront fee 1.50%; sized by revenue bucket at DSCR 1.30x contracted, 1.40x hedged, 2.00x merchant on P50, with P99 one-year DSCR at least 1.00x; notional amortization to 2040; sweep 50% in 2026 to 2027 and 100% from 2028; 85% hedged at 2.41% to 2029; DSRA six months by LC. Expected USD 520 million to USD 600 million |
+| Mesa Corta HoldCo term loan B | 2022-03-22 | Institutional TLB arranged by Castellan; to March 22, 2028; SOFR (floor 0.50%) + 4.75%; OID 98.0; 1% a year amortization; 50% excess cash sweep; sized at distribution coverage 1.75x on P50 base and at most 45% of opco equity value. Expected USD 160 million to USD 210 million |
+| Redfern term loan | 2023-08-31 | Penhallow Bank (US branch); SOFR + 2.10%; fee 1.40%; fully amortizing to June 30, 2030 on toll cash flow at 1.35x; 75% hedged at 4.38% |
+| HoldCo incremental term loan | 2024-02-15 | SOFR + 4.25%; OID 99.0; maturity March 22, 2028; sized at 1.75x on incremental P50 distributions from R7 and R8 |
+| Refinancing: Mesa Corta Senior Secured Notes (US private placement) | Priced 2025-10-21, funded 2025-12-16 (modeled December 31, 2025) | Issuer Mesa Corta OpCo; rated BBB- by one agency; Series A 7 years 5.71% (30%), Series B 12 years 6.08% (40%), Series C 18 years 6.39% (30%); sized at 1.35x contracted, 1.50x hedged, 2.25x merchant, P99 one-year at least 1.05x; make-whole at Treasuries + 50 bps; costs 1.10%; repays the opco term loan and the Redfern loan; opco swap unwound at 3.55% (receivable), Redfern swap at 3.55% (payable). Expected USD 750 million to USD 860 million |
+| Refinancing: HoldCo repricing | 2025-12-16 | Margin 3.50%; maturity December 31, 2031; OID 99.5; sized at 1.75x on post-refinancing distributions |
+
+SOFR (3M, annual average, approximate): 2022 2.04%; 2023 5.17%; 2024 5.16%; 2025 4.27%; 2026 3.66%; 2027 3.45%; 3.50% after.
+
+## 3.8 Operating costs, tax and valuation
+
+Opex (USD per kW-ac per year, 2022 prices, +2.5% a year, covering O&M, land, insurance, property tax and site costs): wind built before 2018 41.5; later wind 37.2; solar 18.4; storage 14.6. Wind land leases add 4.0% of revenue. Insurance steps up 22% in 2023. Decommissioning net of salvage (USD per kW, 2022): wind 62, solar 38, storage 21, secured by surety bonds costing 0.6% a year.
+
+Tax: federal 21%; Texas margin tax at 0.75% of 70% of revenue; asset-purchase basis step-up allocated 85% to 5-year MACRS, 10% to 15-year property, 5% to land and other; bonus depreciation 100% (2022), 80% (2023), 60% (2024), 40% (2025 before January 20) and 100% (property acquired after January 19, 2025); NOLs indefinite, limited to 80% of taxable income.
+
+Valuation (nominal, post-tax):
+
+| Risk bucket | Unlevered discount rate | Levered equity discount rate |
+|---|---|---|
+| Contracted | 6.75% | 8.25% |
+| Hedged | 7.75% | 9.50% |
+| Merchant | 9.25% | 11.50% |
+| Storage merchant | 10.25% | 12.50% |
+| Terminal (after 2040) | 10.50% | – |
+
+No terminal value beyond useful life; R1's repowering option is valued at zero in the base case. Fund target net IRR 11% to 13%. Valuation dates: March 22, 2022 (A1 bid), August 31, 2023 (A2), February 15, 2024 (A3), December 31, 2025 (refinancing and fund NAV).
+
+Scenarios: base, low and high price and capture; P90 and P99 one-year volumes. Sensitivities: West solar capture -5 points; battery revenue low case; curtailment +3 points; opex +10%; SOFR +100 bps unhedged; and a Uri-type stress on R1's fixed-volume swap (72 hours at USD 5,000/MWh with the wind farm at 15% availability).
+
+## 3.9 Case R timeline
+
+| Date | Event |
+|---|---|
+| 2021-02 | Winter Storm Uri (real event, before Case R begins; Hollenbeck's R1 had no fixed-volume hedge then) |
+| 2021-06 | Thandeka Mabuza joins Lattimer from the ABDB |
+| 2021-12-09 | A1 signed after a competitive auction run by Hollenbeck's adviser (three final bidders) |
+| 2022-03-22 | A1 closes; opco term loan and holdco TLB funded |
+| 2022-10 | R1 fixed-volume swap traded for 2023 to 2027 |
+| 2023-06-02 | A2 signed |
+| 2023-08-31 | A2 closes; Redfern loan |
+| 2024-02-15 | A3 signed; holdco incremental loan |
+| 2024-04-02 | R7 COD and payment |
+| 2024-12-19 | R8 COD and payment |
+| 2025-10-21 | USPP priced |
+| 2025-12-16 | Refinancing funded; holdco repriced; distribution to the fund |
+| 2026-03 | Lattimer's investment committee reviews an offer from a data-center developer for a 15-year PPA from a repowered R1 (Chapter 88) |

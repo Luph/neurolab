@@ -32,3 +32,4 @@
 - Done: gulf-iwpp (weakest), sabine-pass, png-lng.
 - Done: cobre-panama, colombia-4g, hyperion-meta.
 - Done: mundra, argentina-2002, spain-renewables.
+- Done: uk-pfi, covid-transport (UK and Spain only; wants a toll-road/airport example), sanctions-2022.
