@@ -1014,7 +1014,52 @@ def _run(p, prof, N_m, N_s, bond_prof, D_fixed):
     ratios(R)
     returns(R)
     financials(R)
+    extras(R)
     return R
+
+def extras(R):
+    """v1.4 report rows (u09 requests R3, R4, R11 and the live debt capacity): projected 12-month DSCR, cash flow
+    statement, ECA tests on the selected profile, debt capacity at the sizing DSCR on the scenario's CFADS."""
+    S = R['S']; f = R['f']; p = R['p']; z = np.zeros(NS)
+    nx = lambda a, k: np.concatenate([a[k:], np.zeros(k)])
+    ds1, ds2 = nx(S['ds'], 1), nx(S['ds'], 2); cf1, cf2 = nx(S['cfads'], 1), nx(S['cfads'], 2)
+    S['proj_dscr'] = np.where(ds1 > 1e-9, (cf1 + np.where(ds2 > 1e-9, cf2, 0.0)) / np.maximum(ds1 + ds2, 1e-12), 0.0)
+    S['proj_flag'] = ((S['proj_dscr'] > 0) & (S['proj_dscr'] < 1.20)).astype(float)
+    # cash flow statement (project accounts = Financials cash row)
+    ldper = np.zeros(NS)
+    if 'ld_received' in f:
+        for m in range(NM): ldper[M_PER[m]] += f['ld_received'][m] - f['ld_used'][m]
+    fcod = np.zeros(NS); fcod[R['t_cod']] = 1.0
+    ld = sum(S['ld_prepay_' + k] for k in ['ECA', 'A', 'B', 'COM', 'SB'])
+    comp = S['comp_acct']; comp_prev = np.concatenate([[0.0], comp[:-1]])
+    cf = dict(cf_ebitda=S['ebitda'], cf_tax=-S['tax'], cf_wc=-S['dnwc'] + S['inv_release'], cf_mm=S['mm_spend'] - S['mm_contr'])
+    cf['cf_cfads'] = cf['cf_ebitda'] + cf['cf_tax'] + cf['cf_wc'] + cf['cf_mm']
+    cf.update(cf_ds=-(S['ds'] + S['waiver_fee']), cf_ldin=comp - comp_prev + ld, cf_ldp=-ld,
+              cf_bond=S['bond_face'] - S['refi_costs'], cf_prep=-sum(S['refi_prepay_' + k] for k in ['B', 'COM', 'SB']),
+              cf_unw=S['unwind'], cf_sw=-(S['lu_sweep'] + S['mp_sweep']), cf_shl=-(S['shl_int_paid'] + S['shl_prin']),
+              cf_div=-S['div'], cf_dsra=fcod * float(f['dsra'].sum()), cf_cld=ldper, cf_mmr=S['mm_contr'] - S['mm_spend'])
+    cf['cf_net'] = sum(cf[k] for k in ['cf_cfads', 'cf_ds', 'cf_ldin', 'cf_ldp', 'cf_bond', 'cf_prep', 'cf_unw', 'cf_sw', 'cf_shl', 'cf_div', 'cf_dsra', 'cf_cld', 'cf_mmr'])
+    cf['cf_dsra_memo'] = S['dsra_topup'] - S['dsra_draw'] - S['dsra_release']
+    cash = S['bs_cash']; cf['cf_dc'] = cash - np.concatenate([[0.0], cash[:-1]])
+    cf['cf_chk'] = cf['cf_dc'] - cf['cf_net']
+    S.update(cf)
+    # ECA tests on the selected profile (principal paid, all tranches), measured from the scenario's COD
+    cod = cod_date(p); Pp = S['principal_total']; tot = Pp.sum()
+    yrs = np.array([(S_END[t] - cod).days / 365.25 for t in range(NS)]); S['eca_yrs'] = yrs
+    if tot > 1e-9:
+        first = min(t for t in range(NS) if Pp[t] > 1e-9); last = max(t for t in range(NS) if Pp[t] > 1e-9)
+        e1 = S_END[first] + timedelta(days=1)
+        lim = add_months(cod, 24) - timedelta(days=1)
+        R.update(eca_wal=float((Pp * yrs).sum() / tot), eca_max_share=float(Pp.max() / tot), eca_tenor=float(yrs[last]),
+                 eca_first_m=float((e1.year - cod.year) * 12 + e1.month - cod.month),
+                 eca_24m_share=float(sum(Pp[t] for t in range(NS) if S_END[t] <= lim) / tot))
+    # live debt capacity at the sizing DSCR (Debt F130)
+    tl = max(t for t in range(NS) if S_END[t] <= date(2034, 6, 30))
+    try:
+        pv = sculpt(R, f['D'], R['t1'], tl, SHARE_W())[2]
+    except Exception:
+        pv = float('nan')
+    R['capacity_live'] = float(pv / 1.35)
 
 
 # ----------------------------------------------------------------------------------------
@@ -1369,19 +1414,33 @@ def min_dscr_of(p):
     R = run(p); S = R['S']; m = S['ds'] > 1e-9
     return float(S['dscr'][m].min())
 
-def monte_carlo(n=1000, seed=20180717):
+MC_RUNS, MC_SEED, MC_NY = 1000, 20180717, 26
+def mc_draws(n=MC_RUNS, seed=MC_SEED):
+    """Draw table (n x 29): 26 operating-year availability shocks (points), dispatch (%), non-recoverable heat-rate
+    degradation (% a year), FC FX drift factor. Same generator order as P-F42 (pasted on Inputs from row 313)."""
     rng = np.random.default_rng(seed)
+    out = np.zeros((n, MC_NY + 3))
+    for i in range(n):
+        out[i, :MC_NY] = np.clip(rng.normal(0, 2.0, MC_NY), -10, 5)
+        out[i, MC_NY] = rng.triangular(55.0, 76.5, 85.0)
+        out[i, MC_NY + 1] = max(0.0, rng.normal(0.12, 0.04))
+        out[i, MC_NY + 2] = 1 + rng.normal(FX_D - 1, 0.03)
+    return out
+
+def mc_params(row):
+    return dict(avail_shock=row[:MC_NY], dispatch=float(row[MC_NY]), hr_nr=float(row[MC_NY + 1]), fx_d=float(row[MC_NY + 2]))
+
+MC_RESULTS = None
+def monte_carlo(n=MC_RUNS, seed=MC_SEED):
+    global MC_RESULTS
+    DR = mc_draws(n, seed)
     res = []
     for i in range(n):
-        shock = np.clip(rng.normal(0, 2.0, 26), -10, 5)
-        disp = rng.triangular(55.0, 76.5, 85.0)
-        hrnr = max(0.0, rng.normal(0.12, 0.04))
-        fxd = 1 + rng.normal(FX_D - 1, 0.03)
-        p = scen(1, avail_shock=shock, dispatch=disp, hr_nr=hrnr, fx_d=fxd)
+        p = scen(1, **mc_params(DR[i]))
         R = run(p); S = R['S']; m = S['ds'] > 1e-9
         res.append((S['dscr'][m].min(), S['dscr_hist'][m].min(), R['equity_irr'],
                     int((S['dscr_hist'][m] < 1.20).any()), int((S['dscr_hist'][m] < 1.10).any())))
-    a = np.array(res)
+    a = np.array(res); MC_RESULTS = a
     pct = lambda x, q: float(np.percentile(x, q))
     hist_edges = [1.0, 1.1, 1.2, 1.25, 1.3, 1.35, 1.4, 1.5, 9.9]
     counts = np.histogram(a[:, 0], bins=hist_edges)[0]
@@ -1686,6 +1745,9 @@ def figures(F, RS, R1, R14, R15):
                       equity_irr_basis='project-company level, from the LNTP date (2018-02-05), before shareholder withholding tax',
                       equity_irr_incl_development=float(xirr([-3.12, -6.87, -7.64, -3.80] + list(Rb['eq_flows'][:1]) + [Rb['eq_flows'][1] + 32.63] + list(Rb['eq_flows'][2:]),
                                                              [date(2015, 7, 1), date(2016, 7, 1), date(2017, 7, 1), date(2018, 4, 1)] + Rb['eq_dates'])))
+    P['P-F16']['debt_capacity_at_1_35'] = {SCENARIOS[i]['name']: float(RS[i]['capacity_live']) for i in range(1, 14)}
+    P['P-F16']['debt_capacity_basis'] = ('Debt F130: PV at the sculpting rate of the scenario\'s CFADS from the first repayment to June 30, 2034, '
+                                         'divided by 1.35, with the contract profile and amount (debt locked); the FC base value equals the senior debt (DSCR binding)')
     # ---------------- P-F17 audit errors
     aud = {}
     _, _, base_a = audit_case([])
@@ -1702,6 +1764,7 @@ def figures(F, RS, R1, R14, R15):
     P['P-F17'] = dict(note='Each error alone, re-sized with the sizing loop (DSCR, gearing and downside constraints); downside run with the erroneous model locked at its own sizing',
                       results=aud)
     F['_audit_contract'] = AUDIT_CONTRACTS['ALL']
+    P['P-F17']['annual_shadow_sizing'] = annual_shadow(Rb)
     # ---------------- P-F18 actual construction
     fa, ua = Ra['f'], Ra['u']
     P['P-F18'] = dict(scenario='Actual history',
@@ -2040,6 +2103,13 @@ def figures_annex(F, RS, R1, R14, R15):
                                          dict(date='2023-07-12', amount=18.9, paid='2023-11-30', days=141),
                                          dict(date='2023-10-09', amount=17.4, paid='folded into the 2024-03-21 settlement', days=164)],
                       fx_queue_days=(date(2024, 3, 29) - date(2022, 11, 7)).days, lc_drawing=float(P['P-F39']['actual_resets']['2023']['two_plus_one']) if 'P-F39' in P and 'actual_resets' in P['P-F39'] else 33.8)
+    _net = {}
+    for lab in ('2023H2', '2024H1', '2024H2', '2025H1'):
+        t_ = tix(lab); v_ = float((gd[t_ - 1] - gd[t_]) / 6)
+        for k_ in range(6): _net[add_months(S_START[t_], k_).strftime('%Y-%m')] = v_
+    P['P-F40'].update(netting_setoffs_by_month=_net, netting_setoffs_total=float(sum(_net.values())),
+                      netting_setoffs_within_cap=bool(max(_net.values()) <= 9.0),
+                      netting_basis='set-offs under the June 29, 2023 agreement equal the fall in energy-charge arrears matched by deferred SNHK/GCK payables, spread evenly over the six months of each half-year (the model is semiannual); cap USD 9.0m a month')
     # ---- P-F41 PLCR on the three FC cases and profiles
     P['P-F41'] = dict(plcr_at_close={k: float(R['S']['plcr'][R['t1']]) for k, R in (('base', Rb), ('banking', Rk), ('downside', Rd))},
                       llcr_at_close={k: float(R['S']['llcr_dsra'][R['t1']]) for k, R in (('base', Rb), ('banking', Rk), ('downside', Rd))},
@@ -2093,7 +2163,19 @@ def figures_annex(F, RS, R1, R14, R15):
                       upfront_fees=float(fb['upfront'][m0]), first_eca_premium=float(fb['eca_prem'][m0]),
                       advisers_at_close=0.7 * 8.97, insurance_at_close=0.85 * 7.62, idc_month1=float(fb['idc'][m0]),
                       total_uses_month1=float(fb['uses'][m0]),
+                      uses_month1_itemized={'EPC advance (10% of the EPC price; includes the USD 14.20m LNTP already paid by equity)': float(Rb['u']['epc'][m0]),
+                                            "Owner's costs, Month 1": float(Rb['u']['owners'][m0]),
+                                            'Insurance at close (85% of the construction premium)': float(Rb['u']['insurance'][m0]),
+                                            'Development cost reimbursement': 21.43, 'Development fee': 11.20,
+                                            "Lenders' advisers and legal at close (70%)": float(Rb['u']['advisors'][m0]),
+                                            'Upfront fees': float(fb['upfront'][m0]), 'First ECA premium installment': float(fb['eca_prem'][m0]),
+                                            'Commitment fees, Month 1 (senior tranches)': float(fb['cfee'][m0]),
+                                            'Standby facility commitment fee, Month 1': float(fb['sb_cfee'][m0]),
+                                            'Agency fees, Month 1': float(fb['agency'][m0]),
+                                            'Interest during construction, Month 1 (no balance outstanding before the first utilization)': float(fb['idc'][m0])},
                       note='Development cost reimbursement split per annex 1.14.1: Phase 1 USD 1.5 million Kilnworth, remainder 70:30 with Talme in-kind credit included; the ABDB fund premium is paid by the fund to the selling sponsors, outside the project company')
+    _it = P['P-F49']['uses_month1_itemized']; P['P-F49']['uses_month1_itemized_sum'] = float(sum(_it.values()))
+    assert abs(P['P-F49']['uses_month1_itemized_sum'] - P['P-F49']['total_uses_month1']) < 1e-6
     # ---- P-F50 swap charge PV
     def pv_charge(bps):
         v = 0.0
@@ -2325,6 +2407,17 @@ def figures_annex(F, RS, R1, R14, R15):
     cf12 = Sa['cfads'][t23] + Sa['cfads'][t23 - 1]; ds12 = Sa['ds'][t23] + Sa['ds'][t23 - 1]
     P['P-F63'] = dict(cfads_12m=float(cf12), debt_service_12m=float(ds12), historic_dscr=float(cf12 / ds12),
                       cure_to_1_10=float(max(0, 1.10 * ds12 - cf12)), cure_to_1_20=float(max(0, 1.20 * ds12 - cf12)))
+    P12 = float(Sa['principal_total'][t23] + Sa['principal_total'][t23 - 1]); D0 = float(Sa['debt_open'][t23 - 1])
+    I12 = float(Sa['senior_costs'][t23] + Sa['senior_costs'][t23 - 1]); i12 = I12 / D0
+    pre = lambda lvl: max(0.0, (ds12 - cf12 / lvl) / (P12 / D0 + i12))
+    prop = lambda lvl: max(0.0, (ds12 - cf12 / lvl) * D0 / ds12)
+    P['P-F63'].update(scheduled_principal_12m=P12, senior_costs_12m=I12, debt_open_2022_07_01=D0, all_in_rate_12m=i12,
+                      prepayment_cure_pro_rata_to_1_10=pre(1.10), prepayment_cure_pro_rata_to_1_20=pre(1.20),
+                      prepayment_cure_proportional_to_1_10=prop(1.10), prepayment_cure_proportional_to_1_20=prop(1.20),
+                      check_dscr_after_pro_rata_cure_1_10=float(cf12 / (ds12 - pre(1.10) * (P12 / D0 + i12))),
+                      prepayment_basis='eq:51.3: (DS - CFADS/level) / (P/D + i), prepayment applied pro rata and deemed made at the start of the test period (July 1, 2022); '
+                                       'P = scheduled principal in the 12 months, D = senior debt at the start, i = senior financing costs in the 12 months / D. '
+                                       'Proportional version (eq:37.4): (DS - CFADS/level) x D / DS')
     # ---- P-F16 months covered with the annex LC
     t = tix('2022H1'); lcv = P['P-F39']['fc_base_at_cod']['two_plus_one']
     P['P-F16']['months_zero_payment_covered_paying_gas'] = float((Sb['dsra_close'][t] + lcv) / ((Sb['opex'][t] + Sb['ds'][t]) / 6))
@@ -2368,6 +2461,23 @@ def figures_annex(F, RS, R1, R14, R15):
     P['P-F29'].update(output_at_oy25_mw=581.9 * (1 - 0.0015 * y25) * 0.99, output_threshold_mw=523.7,
                       heat_rate_at_oy25=6286 * (1 + 0.0012 * y25) * 1.008, heat_rate_threshold=6789,
                       handback_test_passes_on_average_degradation=True)
+
+def annual_shadow(Rb):
+    """P-F17 extension (Exercise 44.12): an annual shadow of the FC base sizing. CFADS summed by calendar year,
+    discounted at year end at the FC sculpting rates compounded within each year, debt = PV / 1.35."""
+    D = float(CONTRACT['D']); t1 = Rb['t1']; tl = max(t for t in range(NS) if S_END[t] <= date(2034, 6, 30))
+    r = sculpt_rates(Rb, SHARE_W(), D, Rb['prof'])
+    years = sorted(set(S_YEAR[t] for t in range(t1, tl + 1)))
+    rows = []; disc = 1.0; pv = 0.0
+    for y in years:
+        ts = [t for t in range(t1, tl + 1) if S_YEAR[t] == y]
+        cf = float(sum(Rb['S']['cfads'][t] for t in ts)); fac = float(np.prod([1 + r[t] for t in ts]))
+        disc /= fac; pv += cf * disc
+        rows.append(dict(year=y, periods=len(ts), cfads=cf, annual_all_in_rate=fac - 1, discount_factor=disc))
+    shadow = pv / 1.35
+    return dict(by_year=rows, pv_cfads=pv, shadow_debt=shadow, model_debt=D, difference=shadow - D,
+                basis='calendar-year CFADS from the first repayment period (2021H2) to June 30, 2034; each year discounted at its year end at the '
+                      'FC base sculpting rates compounded within the year; 1.35x; the difference against the semiannual sizing is the time-grain effect')
 
 BID_RATE_BRACKET = (1.0, 4.0)   # P-F64: search range (%) for the reconstructed bid-model swapped base rate
 
@@ -2482,7 +2592,7 @@ def main():
     F, RS, R1, R14, R15 = compute_all()
     contract = {k: (list(map(float, v)) if isinstance(v, (list, np.ndarray)) else float(v)) for k, v in CONTRACT.items()}
     audit_c = F.pop('_audit_contract')
-    out = dict(meta=dict(case='P', model='case_p.py', version='1.3', run_date='2026-10-03', currency='USD m unless stated',
+    out = dict(meta=dict(case='P', model='case_p.py', version='1.4', run_date='2026-10-03', currency='USD m unless stated',
                          timeline=dict(monthly=[d.strftime('%Y-%m') for d in M_START], semiannual=S_LABEL),
                          tolerance_usd_m=TOL, scenarios={i: SCENARIOS[i]['name'] for i in SCENARIOS},
                          gas_arrears_share_calibration=GAS_ARREARS_SHARE),

@@ -69,11 +69,7 @@ Repowering means renewing an operating renewable plant by replacing some or all 
     - Solar repowering that uses no additional space and complies with the original mitigation measures is exempt from screening and EIA.
     [confidence: high] [source: 11]
 19. Transposition: the general deadline for RED III was 21 May 2025, but Articles 16, 16b, 16c, 16d, 16e and 16f had to be transposed by 1 July 2024. Directive (EU) 2023/2413 was adopted on 18 October 2023. [confidence: high] [source: 11]
-20. Enforcement status:
-    - In early 2026 WindEurope reported that national implementation lags in most member states, and that the Commission had referred Sweden to the CJEU over permitting transposition.
-    - Germany is "one of the few countries" broadly meeting the deadlines, with average approval in 17 months in 2025 (23 months in 2024) and a record 20.8 GW of onshore wind permitted.
-    - Spain still averages four to five years of procedures.
-    [confidence: high (as WindEurope's report)] [source: 4]
+20. Enforcement status (WindEurope, early 2026): implementation lags in most member states, and the Commission has referred Sweden to the CJEU. Germany is "one of the few countries" broadly meeting the deadlines (average approval 17 months in 2025, down from 23; a record 20.8 GW of onshore wind permitted). Spain still averages four to five years. [confidence: high (as WindEurope's report)] [source: 4]
 21. Germany, BImSchG §16b (Federal Immission Control Act): in a repowering modification permit, the authority examines only the adverse effects relative to the existing plant. A full replacement qualifies if two conditions are met:
     - the new turbine is built within 48 months of dismantling the old one (extendable for good cause);
     - it stands within five times the new turbine's total height of the old one.
@@ -90,26 +86,20 @@ Repowering means renewing an operating renewable plant by replacing some or all 
 
 ## Timeline
 
-- 1994: Rev. Rul. 94-31 establishes the 80/20 rule for used property.
-- 2016: IRS Notice 2016-31 applies the 80/20 rule to wind and other retrofits for PTC/ITC beginning-of-construction.
-- 2017–2022: wave of US partial repowerings driven by PTC requalification (1.7 GW partially repowered in 2022).
-- September 2019: Berkeley Lab survey puts average assumed US wind project life at 29.6 years.
-- 18 October 2023: RED III adopted.
-- 1 July 2024: transposition deadline for RED III permitting articles (16, 16b–16f).
-- 15 January 2025: final §45Y/§48E regulations, including the 80/20 rule (§1.45Y-4(d), §1.48E-4(c)) and the Incremental Production Rule.
-- March 2025: IEC TS 61400-28 published.
-- 21 May 2025: general RED III transposition deadline.
-- 4 July 2025: OBBBA enacted.
-- 15 August 2025: Notice 2025-42 applies the 80/20 rule to the wind/solar termination.
+- 1994: Rev. Rul. 94-31 (80/20 rule). 2016: Notice 2016-31 applies it to wind retrofits.
+- 2022–2023: US partial repowering of 1.7 GW, then 0.6 GW.
+- 18 October 2023: RED III adopted; 1 July 2024: permitting articles due; 21 May 2025: general transposition.
+- 15 January 2025: final §45Y/§48E regulations (80/20 rule and Incremental Production Rule).
+- March 2025: IEC TS 61400-28.
+- 15 August 2025: Notice 2025-42 applies the 80/20 rule to the OBBBA wind/solar deadline.
 - February 2026: WindEurope reports 2 GW repowered in Europe in 2025.
-- 4 July 2026: last date for wind/solar (including retrofits) to begin construction and avoid the 2027 placed-in-service cliff.
+- 4 July 2026: last date for wind/solar, including retrofits, to begin construction.
 
 ## Financing and structure details
 
-- **US partial repowering inside a partnership flip**: the retrofit creates a new credit stream and new depreciable basis. The existing tax equity investor's consent is needed under the partnership agreement. Some investors require a business case beyond the credits [10]. Back-leverage or project lenders must consent to the capital spending, the replacement of collateral and any change to the O&M and turbine supply contracts.
-- **Credit sizing**: only the cost of new components counts toward the ITC base, and the 80/20 test runs turbine by turbine (unit of qualified facility). One turbine that fails the test loses its new credit without disqualifying the rest [5, 6].
-- **EU**: repowering normally coincides with the end of the original support contract (about 20 years) and therefore with a new revenue contract: a new auction, CfD or PPA. That makes it a new financing rather than an amendment. Faster permitting under RED III shortens the development period and so the bridge-to-financing risk.
-- **Lender consent points (general practice; verify against the specific facility agreement)**: restrictions on capital expenditure, asset disposals and changes to project documents; collateral over the replaced equipment; completion risk during the outage; DSCR tests while production is lost; and reserve accounts.
+- **US partial repowering in a partnership flip**: the retrofit creates new credits and new depreciable basis, so it needs the tax equity investor's consent (some want a business case beyond the credits [10]). Lenders must consent to the capex, the replacement of collateral and changes to O&M and supply contracts. Only new-component cost counts for the ITC, and the 80/20 test runs turbine by turbine [5, 6].
+- **EU**: repowering usually coincides with the end of a roughly 20-year support contract, so it comes with a new auction, CfD or PPA and is a new financing rather than an amendment.
+- **Typical consent points (general practice; check the facility agreement)**: capex, disposal and project-document covenants; security over replaced equipment; outage and completion risk; DSCR tests during lost production; reserve accounts.
 
 ## What went wrong or right, and why
 

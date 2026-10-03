@@ -62,7 +62,8 @@ The IEA notes that the pipeline of SMR offtake deals with data centres grew from
 
 ### D. Long-duration energy storage (GB; Ofgem LDES cap and floor scheme pages)
 
-20. On 26 June 2026 Ofgem published its Window 1 "minded-to" decision under the LDES cap-and-floor scheme. It provisionally selected 16 of 73 eligible projects, totalling about 7,645 MW and 136.9 GWh, with durations of 8 to 22 hours. The technologies are pumped storage hydro, compressed air, lithium-ion and vanadium redox flow. Consultation ran to 7 August 2026, with final awards expected in autumn 2026 and a decision on a second window by 2027. [confidence: high] [source: 22, 23]
+20. On 26 June 2026 Ofgem published its Window 1 "minded-to" decision under the LDES cap-and-floor scheme. It provisionally selected 16 projects out of the 73 assessed (77 had been found eligible in September 2025 and four withdrew), totalling about 7,645 MW and 136.9 GWh, with durations of 8 to 32 hours (Coire Glas, 32 hours, is the longest). The technologies are pumped storage hydro, compressed air, lithium-ion and vanadium redox flow. Consultation closed on 14 August 2026, with final awards expected in autumn 2026 and a decision on a second window by 2027. [confidence: high] [source: 22, 23; aligned with facts/t-cap-and-floor.md items 18, 20 and 21, which cite Ofgem's consultation document]
+   - Alignment note (October 3, 2026, consolidation editor): an earlier version of this item said "16 of 73 eligible projects", "durations of 8 to 22 hours" and "consultation ran to 7 August 2026". Those came from secondary summaries. `t-cap-and-floor.md` checked Ofgem's own documents: 77 eligible, 73 assessed after four withdrawals, a project list running to 32 hours, and a consultation closing on 14 August 2026 (one Ofgem page says 15 August). Where the two sheets differ, `t-cap-and-floor.md` governs. Writers say "73 projects assessed" and "8 to 32 hours".
 21. Under a cap and floor, consumers top up revenue to a floor if market revenues fall short, and revenue above the cap is shared with consumers. The model is adapted from Ofgem's interconnector regime. [confidence: high] [source: 23, 24]
 
 ### E. Hydrogen FIDs (global; IEA Global Hydrogen Review 2025, September 2025)
@@ -123,7 +124,7 @@ The IEA notes that the pipeline of SMR offtake deals with data centres grew from
 - Do not state a cost or in-service date for TVA's Clinch River unit; none was disclosed with the permit.
 - Do not state the Hyperion bond's coupon, rating or maturity as primary-sourced facts. They come from press and secondary analysis (medium confidence); check S&P's report or the offering summary before printing.
 - Do not state Stegra's board chair, or the exact month of its 2026 €1.4 billion round (reports say April or June 2026).
-- Do not quote final Ofgem LDES awards or name winning projects; only the June 2026 minded-to decision is verified.
+- Do not quote final Ofgem LDES awards or call any project a winner; only the June 2026 minded-to decision is verified. The minded-to project list is in `t-cap-and-floor.md` item 21. Do not write "73 eligible", "8 to 22 hours" or "consultation closed 7 August 2026" (superseded by `t-cap-and-floor.md`).
 - Do not present the IMF figure (USD 2.1 trillion, AUM-based) and the FSB figure (USD 1.5 trillion to USD 2 trillion of lending) as the same measure.
 - Do not state the IEA's 2025 report's scenario figures for 2035 or its sensitivity cases; these were not verified here.
 - Do not state the value of the record data-centre battery agreement mentioned by the IEA (2026); counterparty and size were not verified.
