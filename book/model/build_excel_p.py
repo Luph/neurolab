@@ -763,8 +763,8 @@ for k, pk, lab in TR6[:5]:
     D_.row('tn_' + k, f'{lab}: next period debt service', 'USD m',
            lambda i, k=k: (f"=IF(AND({tt(i)}>={V('Time.tcod')},{tt(i)}<{NS}),"
                            f"(IF({ref('Time.f_cod', i)}=1,{ref('Debt.bc_' + k, i)},{ref('Debt.after_' + k, i)})-{ref('Debt.dfc_' + k, i)})*{nxt('Debt.psh', i)}"
-                           + (f"+{nxt('Debt.f_drep', i)}*MIN({V('Debt.def23_' + k)}/4,{ref('Debt.dfc_' + k, i)})" if 10 <= i <= 13 else '') + f"
-                           f"+IF({ref('Time.f_cod', i)}=1,{ref('Debt.bc_' + k, i)},{ref('Debt.after_' + k, i)})*{nxt('Debt.r_' + k, i)},0)"))
+                           + (f"+{nxt('Debt.f_drep', i)}*MIN({V('Debt.def23_' + k)}/4,{ref('Debt.dfc_' + k, i)})" if 10 <= i <= 13 else '')
+                           + f"+IF({ref('Time.f_cod', i)}=1,{ref('Debt.bc_' + k, i)},{ref('Debt.after_' + k, i)})*{nxt('Debt.r_' + k, i)},0)"))
 D_.row('tn_BD', 'Bond: next period debt service', 'USD m',
        lambda i: "=0" if i < 13 else (f"=IF(AND({tt(i)}>={V('Time.tcod')},{tt(i)}<{NS},{ref('Debt.after_BD', i)}+{ref('Debt.f_tR', i)}*{V('Debt.F')}>0.000000001),"
                   f"MIN({V('Debt.F')}*{nxt('Inputs.S_prof_bond', i)},{ref('Debt.after_BD', i)}+{ref('Debt.f_tR', i)}*{V('Debt.F')})"
