@@ -1,70 +1,87 @@
 #!/usr/bin/env python3
-"""Build the Exercise 43.14 starting file Ex43_14_start.xlsx (u09 Chapter 43; D-125; coordinator note:
-the starting file must not contain its answer).
+"""Build the Exercise 43.14 files (u09 Section 0.7 R8, round 2; D-125):
 
-Pre-run state: Ch43_outputs.xlsx with the Monte Carlo NOT implemented and NOT run.
-  Supplied: the draw table (Inputs J312 heading, rows 313 to 1312, columns J to AL: 26 availability
-  shocks by operating year, dispatch, heat-rate degradation, FX drift; seed 20180717, P-F42
-  parameters) and its description cell Inputs F1321 (26 shock years).
-  Removed (the reader builds or produces them): the run index Inputs F311 and the active flag F312;
-  the per-run results pasted in Inputs AN311:AR1312 (the answer); the Monte Carlo branches of Time F16
-  and Operations rows 31, 37 and 39, and the run-suspension conditions in Checks F8, F13, F14, F23 and
-  Outputs F44 (these cells hold their pre-hook form, as in Ch42_waterfall.xlsx); the Cover's Monte
-  Carlo line (row 29).
-The answer (P-F42) is in model/build/Ch43_outputs.xlsx (Inputs AN313:AR1312) and the ledger.
+  Ch43_start_no_mc.xlsx  the pre-Monte-Carlo starting file: model/build/Ch43_outputs.xlsx with Inputs F311,
+                         F312, rows 313 to 1312 (draw table and pasted per-run results) and F1321 removed,
+                         and Time F16, Operations rows 31, 37 and 39, Checks F8, F13, F14 and F23 and Outputs
+                         F44 restored to their pre-Chapter 43 formulas.  It does not contain the answer.
+  ch43_draw_table.xlsx   the 1,000 x 29 draw table of R5 (values only, no results columns), seed and
+                         parameters stated; the draws sit at the companion's addresses (rows 313 to 1312,
+                         columns J to AL) so the block pastes straight onto Inputs.
 """
-import os, sys
-from openpyxl import load_workbook
-from openpyxl.styles import Font
+import os, sys, json
+from openpyxl import Workbook, load_workbook
+from openpyxl.styles import Font, PatternFill
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-BUILD = os.path.join(os.path.dirname(HERE), '..', 'build')
-sys.path.insert(0, BUILD)
+MODEL = os.path.abspath(os.path.join(HERE, '..', '..'))
+BUILD = os.path.join(MODEL, 'build')
+sys.path.insert(0, BUILD); sys.path.insert(0, MODEL)
 import build_stages as bs     # noqa: E402
 
-OUT = os.path.join(HERE, 'Ex43_14_start.xlsx')
+START = os.path.join(HERE, 'Ch43_start_no_mc.xlsx')
+DRAWS = os.path.join(HERE, 'ch43_draw_table.xlsx')
+BLUE = Font(color='0000FF'); YEL = PatternFill('solid', fgColor='FFF2CC'); BOLD = Font(bold=True)
 
 
-def build():
+def start_file():
     wb = load_workbook(os.path.join(BUILD, 'Ch43_outputs.xlsx'))
     pre = load_workbook(os.path.join(BUILD, 'Ch42_waterfall.xlsx'))
     ws = wb['Inputs']
-    # run index and active flag (reader builds them)
-    for r in (311, 312):
-        for col in 'DEF':
-            ws[f'{col}{r}'].value = None
-    # pasted per-run results (the answer)
-    for (r, c) in [k for k in ws._cells if 311 <= k[0] <= 1312 and k[1] >= 40]:   # AN = column 40
+    for (r, c) in [k for k in ws._cells if 311 <= k[0] <= 1312 or k[0] == 1321]:
         del ws._cells[(r, c)]
-    # pre-hook cells (D-125), copied from the Chapter 42 file
     for sh, r, kind in bs.V13_ROWS + [('Checks', 23, 'F')]:
         w, p = wb[sh], pre[sh]
         w.cell(r, 4).value = p.cell(r, 4).value
         cols = [6] if kind == 'F' else range(10, 10 + 57)
         for c in cols:
             w.cell(r, c).value = p.cell(r, c).value
-    # Outputs F44: drop the Monte Carlo suspension wrapper
     o = wb['Outputs']['F44']
-    pre_ = '=IF(Inputs!$F$312=1,0,'
-    assert o.value.startswith(pre_) and o.value.endswith(')')
-    o.value = '=' + o.value[len(pre_):-1]
-    # master check unchanged in form (it lists Checks F7 to F25)
+    wrap = '=IF(Inputs!$F$312=1,0,'
+    assert o.value.startswith(wrap) and o.value.endswith(')')
+    o.value = '=' + o.value[len(wrap):-1]
     cv = wb['Cover']
-    cv['D29'].value = ('Exercise 43.14 starting file: the Monte Carlo draw table is supplied on Inputs (rows 312 to 1312, columns J to AL; '
-                       'seed 20180717, P-F42 parameters); the run index, the hooks into Time F16 and Operations rows 31, 37 and 39, '
-                       'and the results are yours to build. The answer is P-F42 (Ch43_outputs.xlsx holds the solution).')
-    note = ['Exercise 43.14 starting file (pre-run state). Built from model/build/Ch43_outputs.xlsx with the Monte Carlo removed.',
-            'Supplied: the draw table (Inputs J312:AL1312) and Inputs F1321 (26 operating years with an availability shock).',
-            'Removed: Inputs F311 (run index) and F312 (active flag); the pasted per-run results (Inputs AN:AR); the Monte Carlo branches.',
-            'Every other cell equals Ch43_outputs.xlsx; all checks are 0 in every scenario.',
+    cv['D29'].value = None
+    note = ['Exercise 43.14 starting file Ch43_start_no_mc.xlsx: Ch43_outputs.xlsx without the Monte Carlo block (pre-run state; model version 1.4).',
+            'Removed: Inputs F311 and F312, rows 313 to 1312 (draw table and per-run results) and F1321; Time F16, Operations rows 31, 37 and 39,',
+            'Checks F8, F13, F14 and F23 and Outputs F44 hold their pre-Chapter 43 formulas. Paste the draws from ch43_draw_table.xlsx and build the rest (u09 Section 0.5, Ch 43 row).',
+            'Reconciles in every scenario (1 to 15); master check 0. Solution: model/build/Ch43_outputs.xlsx (do not open it first).',
             'Verification: model/exercises/README.md.']
     for j, t in enumerate(note):
-        c = cv.cell(bs.STAGE_NOTE_ROW + j, 4, t)
-        c.font = Font(bold=(j == 0))
+        c = cv.cell(bs.STAGE_NOTE_ROW + j, 4, t); c.font = Font(bold=(j == 0))
     wb.calculation.fullCalcOnLoad = True
-    wb.save(OUT)
-    return OUT
+    wb.save(START)
+
+
+def draw_table():
+    import build_excel_p as bx, case_p as cp
+    DR = cp.mc_draws()
+    wb = Workbook(); ws = wb.active; ws.title = 'Draws'
+    ws['A1'] = 'Case P Monte Carlo draw table (Exercise 43.14; u09 Section 0.7 R5; P-F42 inputs; D-125). Values only: no results.'; ws['A1'].font = Font(bold=True, size=12)
+    lines = ['Generated by model/case_p.py v1.4 (mc_draws), seed 20180717, 1,000 runs; the draws sit at the companion addresses: copy J313:AL1312 and paste onto Inputs J313:AL1312.',
+             'Columns J to AI: availability shock for operating years 1 to 26 (points; normal, mean 0, standard deviation 2.0, truncated to -10 and +5; independent).',
+             'Column AJ: dispatch factor when available (%; one draw per run; triangular 55.0, mode 76.5, 85.0).',
+             'Column AK: non-recoverable heat-rate degradation (% a year; one draw per run; normal 0.12, standard deviation 0.04, floored at 0); replaces Inputs F127 in the run.',
+             'Column AL: FX drift factor per year applied to the FC FX path (KCR depreciation drift normal 5.19% a year, standard deviation 3.0%), replaces Time F16 in the run.',
+             'Number of shocked operating years: 26 (Inputs F1321 in the companion).']
+    for j, t in enumerate(lines):
+        ws.cell(2 + j, 1, t)
+    ws.cell(312, 4, 'Run').font = BOLD
+    heads = [f'OY{k} shock' for k in range(1, 27)] + ['Dispatch', 'HR degradation', 'FX drift']
+    for j, h in enumerate(heads):
+        ws.cell(312, 10 + j, h).font = BOLD
+    for r in range(DR.shape[0]):
+        ws.cell(313 + r, 4, f'Run {r + 1}')
+        for j in range(DR.shape[1]):
+            c = ws.cell(313 + r, 10 + j, float(DR[r, j])); c.font = BLUE; c.fill = YEL
+    ws.freeze_panes = 'J313'
+    wb.save(DRAWS)
+    return DR.shape
 
 
 if __name__ == '__main__':
-    print('written', build())
+    old = os.path.join(HERE, 'Ex43_14_start.xlsx')
+    if os.path.exists(old):
+        os.remove(old)
+    start_file(); print('written', START)
+    print('written', DRAWS, draw_table())

@@ -1502,7 +1502,7 @@ Source brief: `briefs/u05.md`.
 | `sec:18.4` | Take-or-pay, deemed energy, and curtailment |  |
 | `ssec:18.4.1` | Take-or-pay in an offtake contract |  |
 | `ssec:18.4.2` | Deemed energy |  |
-| `ssec:18.4.3` | Curtailment |  |
+| `ssec:18.4.3` | Curtailment under a PPA |  |
 | `sec:18.5` | Indexation and currency |  |
 | `ssec:18.5.1` | Matching indexation to costs |  |
 | `ssec:18.5.2` | Denomination and payment currency |  |
@@ -3098,7 +3098,7 @@ Source brief: `briefs/u09.md`.
 | `ssec:41.5.4` | Losses and expiry |  |
 | `ssec:41.5.5` | Minimum tax and tax paid |  |
 | `ssec:41.5.6` | Withholding taxes |  |
-| `sec:41.6` | Working capital |  |
+| `sec:41.6` | Working capital rows in the model |  |
 | `sec:41.7` | VAT during construction |  |
 | `sec:41.8` | Walkthrough: from a monthly invoice to the model |  |
 | `sec:41.9` | Case P: operations and tax |  |
@@ -3373,7 +3373,7 @@ Source brief: `briefs/u09.md`.
 | `ex:45.4` | Toll-road ramp-up and elasticity |  |
 | `ex:45.5` | A copper concentrate module |  |
 | `ex:45.6` | LNG and oil-linked revenue |  |
-| `ex:45.7` | An availability payment with deductions |  |
+| `ex:45.7` | Availability deductions in the model |  |
 | `ex:45.8` | Revenue buckets for a hedged wind farm |  |
 | `exh:45.1` | Sector module interfaces |  |
 | `exh:45.2` | Illustrative wind yield assessment summary |  |
@@ -3750,10 +3750,10 @@ Source brief: `briefs/u11.md`.
 | `ssec:51.2.2` | The initial conditions precedent list |  |
 | `ssec:51.2.3` | Drawdown conditions during construction |  |
 | `ssec:51.2.4` | Waiving conditions and converting them to conditions subsequent |  |
-| `sec:51.3` | Representations and warranties |  |
+| `sec:51.3` | Representations and warranties in the facility agreement |  |
 | `ssec:51.3.1` | What representations do in a non-recourse loan |  |
 | `ssec:51.3.2` | Project-specific representations |  |
-| `sec:51.4` | Covenants |  |
+| `sec:51.4` | Covenants in the facility agreement |  |
 | `ssec:51.4.1` | Information covenants |  |
 | `ssec:51.4.2` | Positive and negative covenants |  |
 | `ssec:51.4.3` | Financial covenants as drafted |  |
@@ -4047,7 +4047,7 @@ Source brief: `briefs/u11.md`.
 | `exh:55.6` | Funds flow memorandum format |  |
 | `exh:55.7` | Critical path to close (Gantt chart) |  |
 | `exh:55.8` | Closing call script and checklist |  |
-| `exh:55.9` | Case P sources and uses at financial close |  |
+| `exh:55.9` | Case P closing-day sources and uses |  |
 | `exh:55.10` | Case P closing-day funds flow (P-F49) |  |
 | `exh:55.11` | Case P timeline from mandate to financial close |  |
 | `cl:55.1` | CP satisfaction notice, common terms agreement schedule (single clause with annotations; used as the model answer format for Exercise 55.11) |  |
@@ -4394,7 +4394,7 @@ Source brief: `briefs/u12.md`.
 | `ssec:60.6.1` | Bribery as a credit risk |  |
 | `ssec:60.6.2` | The FCPA and the UK Bribery Act |  |
 | `ssec:60.6.3` | Intermediaries, agents, and local partners |  |
-| `sec:60.7` | Sanctions |  |
+| `sec:60.7` | Sanctions in live projects |  |
 | `ssec:60.7.1` | How sanctions regimes reach a project |  |
 | `ssec:60.7.2` | Nord Stream 2 and Arctic LNG 2 |  |
 | `ssec:60.7.3` | Contract tools |  |
@@ -5345,7 +5345,7 @@ Source brief: `briefs/u15.md`.
 |---|---|---|
 | `ch:73` | Storage, transmission, and interconnectors |  |
 | `sec:73.1` | The economics of storage |  |
-| `ssec:73.1.1` | Power, energy, and duration |  |
+| `ssec:73.1.1` | Power, energy, and duration in a storage project's contracts |  |
 | `ssec:73.1.2` | Revenues that shrink as fleets grow |  |
 | `sec:73.2` | Battery technology and safety risk |  |
 | `ssec:73.2.1` | Cells, integrators, and warranties |  |
@@ -6545,4 +6545,4 @@ Hand fixes. (1) Excluded as non-declarations: `cl:35.2c` (u08 declares "no cl:35
 
 Verification. (a) Duplicates: none; every label appears once. (b) Chapter titles: all 88 `ch:` captions equal architecture.md verbatim, and every brief's chapter header and `ch:` anchor row matches it. (c) Numbering: sections, subsections (within each section), examples, exhibits, clauses, equations and clause variant letters run without gaps from 1 (or a) in every chapter; every subsection has its parent section. (d) Cross-references: every label token in the body of every brief and unit glossary file (revision logs excluded) resolves to this registry, except eight deliberate non-labels: the placeholder `ch:N` (u02, u15 conventions), `cl:35.2c` (stated as absent), `cl:62.1a`, `cl:62.1b`, `cl:62.2`, `cl:62.2a`, `cl:62.2b` (named only as withdrawn, in u11 ssec:51.7.3 and u13's Clause 62.1 paragraph) and `exh:89.4` (the first writer-assigned capstone exhibit). (e) Glossary: every home label in `bible/glossary-canon.md` resolves here.
 
-Unresolved (for the editor-in-chief and the Phase 3 writers). (1) Eight caption pairs repeat across chapters in the revised briefs and were not retitled here because the briefs are authoritative and the overlap is a heading choice, not a label conflict: sec:7.9 and sec:41.6 "Working capital"; ssec:10.2.1 and sec:51.3 "Representations and warranties"; ssec:10.2.2 and sec:51.4 "Covenants"; ssec:11.7.1 and ssec:73.1.1 "Power, energy, and duration"; ssec:11.11.3 and ssec:18.4.3 "Curtailment"; ssec:14.14.4 and sec:60.7 "Sanctions"; ex:21.6 and ex:45.7 "An availability payment with deductions"; exh:40.4 and exh:55.9 "Case P sources and uses at financial close" (two exhibits of the same table; the Ch 55 writer should cite exh:40.4 or caption exh:55.9 as the closing-day view). Under R-117 the later chapter's writer retitles on drafting and reports. (2) Equation captions keep the briefs' formulas; the writer may shorten a caption to its name. (3) cl:10.1 to cl:10.5 carry first-issue captions; the Ch 10 writer confirms them.
+Unresolved (for the editor-in-chief and the Phase 3 writers). (1) Eight caption pairs repeat across chapters in the revised briefs and were not retitled here because the briefs are authoritative and the overlap is a heading choice, not a label conflict: sec:7.9 and sec:41.6 "Working capital"; ssec:10.2.1 and sec:51.3 "Representations and warranties"; ssec:10.2.2 and sec:51.4 "Covenants"; ssec:11.7.1 and ssec:73.1.1 "Power, energy, and duration"; ssec:11.11.3 and ssec:18.4.3 "Curtailment"; ssec:14.14.4 and sec:60.7 "Sanctions"; ex:21.6 and ex:45.7 "An availability payment with deductions"; exh:40.4 and exh:55.9 "Case P sources and uses at financial close" (two exhibits of the same table; the Ch 55 writer should cite exh:40.4 or caption exh:55.9 as the closing-day view). Under R-117 the later chapter's writer retitles on drafting and reports. Resolved in round 2 (D-136): the later occurrence of each pair is retitled in its brief and in this registry: sec:41.6 "Working capital rows in the model"; sec:51.3 "Representations and warranties in the facility agreement"; sec:51.4 "Covenants in the facility agreement"; ssec:73.1.1 "Power, energy, and duration in a storage project's contracts"; ssec:18.4.3 "Curtailment under a PPA"; sec:60.7 "Sanctions in live projects"; ex:45.7 "Availability deductions in the model"; exh:55.9 "Case P closing-day sources and uses". (2) Equation captions keep the briefs' formulas; the writer may shorten a caption to its name. (3) cl:10.1 to cl:10.5 carry first-issue captions; the Ch 10 writer confirms them.
