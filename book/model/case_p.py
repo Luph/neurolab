@@ -167,6 +167,7 @@ SHOCK_T0 = tix('2022H1')      # start of devaluation / payment-delay sensitiviti
 # Contract (post-close fixed terms) -- produced by the sizing runs, then held fixed
 # ----------------------------------------------------------------------------------------
 CONTRACT = {}
+ERRS = set()      # seeded audit errors E1-E10 (Chapter 44 exercise); empty in the reference model
 
 # ----------------------------------------------------------------------------------------
 # Macro builder
@@ -213,6 +214,8 @@ def build_macro(p):
                     else (1 + g[y] / 100) ** 0.5
                 cost[t] = cost[t - 1] * f
                 tar[t] = cost[t - 1]
+            if 'E3' in ERRS:
+                tar[t] = cost[t] * (1 + g[y] / 100) ** 0.25
         base18 = idx(g, 2018, 6)
         out[nm + '_cost'] = cost; out[nm + '_tar'] = tar; out[nm + '_base18'] = base18
         out[nm + '_cf'] = cost / base18
@@ -309,7 +312,7 @@ def ds_rate_vector(p, mac_, t):
     """Per-tranche all-in loan rate for period t (fraction of balance per period)."""
     base = mac_['base_s'][t]; dcf = S_DAYS[t] / 360
     mg = MARGIN.copy(); mg[3] = com_margin(S_YEAR[t])
-    r = (base + mg) / 100 * dcf * GU
+    r = (base + mg) / 100 * (0.5 if 'E4' in ERRS else dcf) * GU
     r[3] += PRI * S_DAYS[t] / 365
     return r
 
@@ -318,12 +321,12 @@ def dsra_coeffs(p, mac_, prof, N_s):
     _, t1 = first_ds_period(p)
     r = ds_rate_vector(p, mac_, t1)
     d1 = prof[t1] / prof[t1:].sum() + r
-    d0 = N_s[t1] * (SWAP_FIX / 100 * 0.5 - mac_['base_s'][t1] / 100 * S_DAYS[t1] / 360)
+    d0 = N_s[t1] * (SWAP_FIX / 100 * 0.5 - mac_['base_s'][t1] / 100 * S_DAYS[t1] / 360) * (-1 if 'E10' in ERRS else 1)
     return d1, d0
 
 def month_rates(mac_, m):
     base = mac_['base_m'][m]; dcf = M_DAYS[m] / 360
-    rho = (base + MARGIN) / 100 * dcf * GU          # construction: commercial margin 4.10
+    rho = (base + MARGIN) / 100 * ((1 / 12) if 'E4' in ERRS else dcf) * GU          # construction: commercial margin 4.10
     rho[3] += PRI * M_DAYS[m] / 365
     kap = CFEE / 100 * dcf
     return rho, kap
@@ -338,6 +341,9 @@ def funding_fc(p, mac_, u, prof, N_m, N_s, D_fixed=None, mode='size'):
     d1, d0 = dsra_coeffs(p, mac_, prof, N_s)
     if mode == 'contract':
         Dc = CONTRACT['D']; gc = Dc / (Dc + CONTRACT['E'])
+        if 'E7' in ERRS:
+            ds_ = (d1 * SHARE * Dc).sum() + d0
+            gc = (Dc - ds_) / (Dc + CONTRACT['E'] - ds_)
         r = _fund_fc_pass(p, mac_, u, Dc, gc, fe, nc, d1, d0, N_m)
         r['iterations'] = 1; r['T'] = r['uses'].sum()
         g_aff = G
@@ -346,13 +352,17 @@ def funding_fc(p, mac_, u, prof, N_m, N_s, D_fixed=None, mode='size'):
         T = u['base_total'].sum() * 1.15; it = 0
         while True:
             it += 1
-            if mode == 'size':
+            if mode == 'size' and 'E7' in ERRS:
+                if it == 1: D, g = G * T, G
+                elif D_fixed is None: D, g = Dn_, G
+                else: g = g * D_fixed / Dn_; D = D_fixed
+            elif mode == 'size':
                 D = G * T if D_fixed is None else D_fixed; g = D / T
             else:
                 g = gfix; D = g * T
             r = _fund_fc_pass(p, mac_, u, D, g, fe, nc, d1, d0, N_m)
-            Tn = r['uses'].sum()
-            if abs(Tn - T) < 1e-9:
+            Tn = r['uses'].sum(); Dn_ = r['debt_draw'].sum()
+            if abs(Tn - T) < 1e-9 and ('E7' not in ERRS or abs(Dn_ - D) < 1e-9):
                 T = Tn; break
             T = Tn
             if it > 500: raise RuntimeError('funding did not converge')
@@ -393,17 +403,21 @@ def _fund_fc_pass(p, mac_, u, D, g, fe, nc, d1, d0, N_m):
             for k in range(4): out['bal_' + TR[k]][m] = bal[k]
             out['shl_bal'][m] = shl; continue
         rho, kap = month_rates(mac_, m)
-        idc_k = bal * (mac_['base_m'][m] + MARGIN) / 100 * M_DAYS[m] / 360 * GU
+        idc_k = bal * (mac_['base_m'][m] + MARGIN) / 100 * ((1 / 12) if 'E4' in ERRS else M_DAYS[m] / 360) * GU
         pri = PRI * bal[3] * M_DAYS[m] / 365
-        swap = N_m[m] * (SWAP_FIX / 100 / 12 - mac_['base_m'][m] / 100 * M_DAYS[m] / 360)
+        swap = N_m[m] * (SWAP_FIX / 100 / 12 - mac_['base_m'][m] / 100 * M_DAYS[m] / 360) * (-1 if 'E10' in ERRS else 1)
         cfee = ((Dk - bal) * kap).sum()
         sbf = SB_COMMIT * SB_CFEE / 100 * M_DAYS[m] / 360
         upf = (Dk * UPF / 100).sum() if m == 0 else 0.0
         dsra = (d1 * Dk).sum() + d0 if m == nc else 0.0
         X = (u['base_total'][m] + u['vat_int'][m] + idc_k.sum() + pri + swap + cfee + sbf
              + upf + 0.255 / 12 + dsra)
-        uses = X / den
-        draw = g * uses
+        if 'E7' in ERRS:   # seeded error: DSRA funded 100% by senior debt
+            draw = (g * (X - dsra) + dsra) / den
+            uses = X + ECA_PREM * SHARE[0] * draw
+        else:
+            uses = X / den
+            draw = g * uses
         prem = ECA_PREM * SHARE[0] * draw
         for k in range(4):
             out['draw_' + TR[k]][m] = SHARE[k] * draw
@@ -513,6 +527,7 @@ def run(p, prof=None, N_m=None, N_s=None, bond_prof=None, D_fixed=None, gearing=
     global G
     G_saved = G
     if gearing is not None: G = gearing
+    ERRS.clear(); ERRS.update(p.get('errs', ()))
     try:
         return _run(p, prof, N_m, N_s, bond_prof, D_fixed)
     finally:
@@ -572,7 +587,7 @@ def _run(p, prof, N_m, N_s, bond_prof, D_fixed):
     yrf = np.array(S_YEAR) - 2018
     pgas = 5.86 * 1.02 ** yrf * p['gas_f']
     gas = E * HRa * K_GAS                                           # MMBtu
-    fuel_rev = E * HRc * K_GAS * pgas / 1e6
+    fuel_rev = E * HRc * K_GAS * pgas / 1e6 * ((76.5 / p['dispatch']) if 'E9' in ERRS else 1.0)
     fuel_cost = gas * pgas / 1e6
     top_vol = 0.8 * 72400 * opdays
     top_short = np.maximum(0, top_vol - gas)
@@ -589,7 +604,7 @@ def _run(p, prof, N_m, N_s, bond_prof, D_fixed):
     cap_chg = 14.36 * p['cap_charge_f'] * (0.8 + 0.2 * usT)
     fom_chg = 2.31 * (0.62 * usT + 0.38 * kcT * 462.35 / fx)
     cpr = cap_chg + fom_chg
-    avf = np.minimum(1, A / 90.0)
+    avf = (A / 90.0) if 'E1' in ERRS else np.minimum(1, A / 90.0)
     CP = C * 1000 * om * cpr * avf / 1e6
     vom_rate = 3.86 * (0.7 * usT + 0.3 * kcT * 462.35 / fx)
     VOM = E * vom_rate / 1e6
@@ -605,7 +620,7 @@ def _run(p, prof, N_m, N_s, bond_prof, D_fixed):
     om_fix = 7.92 * (0.65 * us_cf + 0.35 * kc_cf * 516.8 / fx) * mf * fo
     om_inc = 0.60 * np.clip((A - 92) / 3, -1, 1) * us_cf * mf * (om > 0)
     ltsa_fix = 2.64 * us_cf * mf * fo
-    eoh = 2 * (8059 * np.divide(A, Ap, out=np.zeros(NS), where=Ap > 0) + 38 * 10) * mf
+    eoh = (1 if 'E2' in ERRS else 2) * (8059 * np.divide(A, Ap, out=np.zeros(NS), where=Ap > 0) + 38 * 10) * mf
     ltsa_var = eoh * 486 * us_cf / 1e6
     step = np.array([1.18 if (p['ins_step'] and t >= tix('2022H2')) else 1.0 for t in range(NS)])
     insur = 4.37 * us_cf * mf * step * fo
@@ -727,7 +742,7 @@ def _run(p, prof, N_m, N_s, bond_prof, D_fixed):
     def tranche_rate(t):   # fraction per period, for bank tranches 0..4 (SB blended), bond 5
         base = m_['base_s'][t]; dcf = S_DAYS[t] / 360; mg = mrg(t)
         r = np.zeros(nT)
-        r[:4] = (base + mg[:4]) / 100 * dcf * GU
+        r[:4] = (base + mg[:4]) / 100 * (0.5 if 'E4' in ERRS else dcf) * GU
         up = 0.5 if (p['waiver'] and tix('2023H2') <= t <= tix('2024H2')) else 0.0
         r[4] = (0.6 * (base + com_margin(S_YEAR[t]) + 0.25 + up) / 0.9 + 0.4 * (base + 3.65 + 0.25 + up)) / 100 * dcf
         r[5] = 7.875 / 100 * 0.5
@@ -758,7 +773,7 @@ def _run(p, prof, N_m, N_s, bond_prof, D_fixed):
                 P[5, t] = min(bond_F * bond_prof[t], Bo[5, t])
                 SCH[5, t] = P[5, t]
             DFc[:, t] = DFo[:, t] + DFn[:, t] - DFr[:, t]
-            rr['swap'][t] = N_s[t] * swap_share[t] * (SWAP_FIX / 100 * 0.5 - m_['base_s'][t] / 100 * S_DAYS[t] / 360)
+            rr['swap'][t] = N_s[t] * swap_share[t] * (SWAP_FIX / 100 * 0.5 - m_['base_s'][t] / 100 * S_DAYS[t] / 360) * (-1 if 'E10' in ERRS else 1)
             rr['pri'][t] = PRI * Bo[3, t] * S_DAYS[t] / 365
             rr['pcg'][t] = 0.011 * 0.5 * Bo[5, t] * (95.0 / bond_F if bond_F else 0)
             if p['waiver'] and t == t23:
@@ -786,13 +801,14 @@ def _run(p, prof, N_m, N_s, bond_prof, D_fixed):
         rr['senior_costs'][t] = I[:, t].sum() + rr['swap'][t] + rr['pri'][t] + rr['pcg'][t]
         rr['ds'][t] = rr['senior_costs'][t] + P[:, t].sum()
         # ---------------- tax
-        hol = max(0, min(ome[t], 60) - min(oms[t], 60))
-        red = max(0, min(ome[t], 96) - min(max(oms[t], 60), 96))
+        HE = 96 if 'E5' in ERRS else 60
+        hol = max(0, min(ome[t], HE) - min(oms[t], HE))
+        red = max(0, min(ome[t], 96) - min(max(oms[t], HE), 96))
         full = om[t] - hol - red
         dep_full = (dep_m_plant * max(0, min(ome[t], 240) - min(oms[t], 240))
                     + dep_m_bld * max(0, min(ome[t], 300) - min(oms[t], 300))
                     + dep_m_int * max(0, min(ome[t], 60) - min(oms[t], 60)))
-        dep_hol = (dep_m_plant + dep_m_bld + dep_m_int) * hol
+        dep_hol = (dep_m_plant + dep_m_bld) * hol + dep_m_int * max(0, min(ome[t], min(60, HE)) - min(oms[t], min(60, HE)))
         dep_cur = dep_full - dep_hol
         rr['shl_open'][t] = shl if t >= t_cod else 0.0
         shl_int = shl * SHL_RATE / 100 * opdays[t] / 365 if t >= t_cod else 0.0
@@ -812,7 +828,7 @@ def _run(p, prof, N_m, N_s, bond_prof, D_fixed):
         mtt = 0.005 * nonfuel[t] * ((red + full) / om[t] if om[t] > 0 else 0.0)
         tax = max(cit, mtt)
         rr['pool_open'][t] = pool
-        pool = pool + dep_hol - puse; loss = loss - luse + lnew
+        pool = pool + (0.0 if 'E6' in ERRS else dep_hol) - puse; loss = loss - luse + lnew
         rr.update()
         for k_, v in (('dep_full', dep_full), ('dep_hol', dep_hol), ('dep_cur', dep_cur), ('shl_int', shl_int),
                       ('thin_frac', thin), ('shl_ded', shl_ded), ('int_ded', int_ded), ('ti_pre', ti_pre),
@@ -856,7 +872,7 @@ def _run(p, prof, N_m, N_s, bond_prof, D_fixed):
                     tgt += sched + drep + Bn[k] * r1[k]
             if Bn[5] > 1e-9:
                 tgt += min(bond_F * bond_prof[t + 1], Bn[5]) + Bn[5] * r1[5] + 0.011 * 0.5 * Bn[5] * 95.0 / bond_F
-            tgt += N_s[t + 1] * swap_share[t + 1] * (SWAP_FIX / 100 * 0.5 - m_['base_s'][t + 1] / 100 * S_DAYS[t + 1] / 360)
+            tgt += N_s[t + 1] * swap_share[t + 1] * (SWAP_FIX / 100 * 0.5 - m_['base_s'][t + 1] / 100 * S_DAYS[t + 1] / 360) * (-1 if 'E10' in ERRS else 1)
             tgt += PRI * Bn[3] * S_DAYS[t + 1] / 365
         rr['dsra_target'][t] = tgt
         dsra_after = dsra - dr
@@ -1072,12 +1088,12 @@ def sculpt_rates(R, w, D, prof):
     for t in range(NS):
         base = mac_['base_s'][t]; dcf = S_DAYS[t] / 360
         mg = np.array([1.35, 3.65, 3.40, com_margin(S_YEAR[t])])
-        rk = (base + mg) / 100 * dcf * GU
+        rk = (base + mg) / 100 * (0.5 if 'E4' in ERRS else dcf) * GU
         rk[3] += PRI * S_DAYS[t] / 365
         rsb = sb_rate(mac_, t)
         rem = prof[t:].sum()
         bs = D * rem
-        sw = (N_s[t] / bs) * (SWAP_FIX / 100 * 0.5 - base / 100 * dcf) if bs > 1e-9 else 0.0
+        sw = (N_s[t] / bs) * (SWAP_FIX / 100 * 0.5 - base / 100 * dcf) * (-1 if 'E10' in ERRS else 1) if bs > 1e-9 else 0.0
         r[t] = (w[:4] * rk).sum() + w[4] * rsb + sw
     return r
 
@@ -1085,13 +1101,14 @@ def sculpt(R, D, t_first, t_last, w):
     """Constant-DSCR sculpting: DS_t = CFADS_t / DSCR*, DSCR* = PV(CFADS)/D."""
     S = R['S']; prof = R['prof']
     r = sculpt_rates(R, w, D, prof)
+    cf = S['cfads'] + (S['tax'] if 'E8' in ERRS else 0)
     pv = 0.0
     for t in range(t_last, t_first - 1, -1):
-        pv = (S['cfads'][t] + pv) / (1 + r[t])
+        pv = (cf[t] + pv) / (1 + r[t])
     dscr = pv / D
     bal = D; newp = np.zeros(NS); ds = np.zeros(NS)
     for t in range(t_first, t_last + 1):
-        ds[t] = S['cfads'][t] / dscr
+        ds[t] = cf[t] / dscr
         prin = ds[t] - bal * r[t]
         newp[t] = prin / D; bal -= prin
     return newp, dscr, pv, r, ds

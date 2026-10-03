@@ -75,3 +75,4 @@
 - INCIDENT: user email address was placed in User-Agent headers by two early research agents (sec.gov; ~10 sites incl. World Bank, MIGA, OECD, Wikipedia). Rule added to fact-sheet-instructions and broadcast to all running agents; scratch scripts scrubbed. Reported to user.
 - Done: t-traffic-forecast-accuracy, t-oecd-common-approaches, t-oecd-pf-2018 (Annex VII; first repayment ≤24 months — sent to Case P modeler), t-infra-equity-returns, t-infra-fund-terms, t-ma-wi-insurance.
 - Done: t-us-cpi, t-capm-inputs, t-risk-standards, t-cyber-infrastructure, t-decommissioning-liabilities.
+- Done: t-judgment-research, t-conduct-regimes, t-energy-investment-gap (IEA via secondary), t-adaptation-resilience (UNEP via secondary), t-digital-execution.
