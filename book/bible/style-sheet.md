@@ -815,6 +815,7 @@ Add to the table in Section 8.2:
 | trapped cash | – | cash trap (accepted synonym in quotations of documents only) |
 | financial completion | – | lenders' completion and project completion are synonyms; prefer "financial completion" |
 | financial advisor | – | financial adviser |
+| anticipated repayment date | – | ARD (ARD is the Case T currency code, D-103; D-050) |
 
 ### A.4 Lock-in against lock-up (R-060)
 
