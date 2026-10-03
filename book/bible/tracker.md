@@ -76,3 +76,4 @@
 - Done: t-traffic-forecast-accuracy, t-oecd-common-approaches, t-oecd-pf-2018 (Annex VII; first repayment ≤24 months — sent to Case P modeler), t-infra-equity-returns, t-infra-fund-terms, t-ma-wi-insurance.
 - Done: t-us-cpi, t-capm-inputs, t-risk-standards, t-cyber-infrastructure, t-decommissioning-liabilities.
 - Done: t-judgment-research, t-conduct-regimes, t-energy-investment-gap (IEA via secondary), t-adaptation-resilience (UNEP via secondary), t-digital-execution.
+- Done: t-cap-and-floor, t-eu-support-schemes, t-corporate-ppa-market, t-capacity-ancillary-markets, t-mining-offtake, t-airport-port-revenue. Conflict: LDES consultation close date (t-frontier-data 7 Aug vs Ofgem 14 Aug 2026) — use Ofgem 14 Aug.

@@ -2,11 +2,11 @@
 
 As of: 2026-10-03 (latest events covered: IHS shareholders approved the MTN merger at the EGM of 4 August 2026; IHS completed the sale of its Latin American towers to Macquarie Asset Management, 7 August 2026; IHS 6-K on a note redemption notice, 9 September 2026)
 
-Cross-references: facts/t-digital-norms.md (tower ABS and lease norms); facts/sanctions-2022.md and facts/t-frontier-data.md are unrelated. Cellnex and Vantage Towers were not researched for this sheet.
+Cross-references: facts/t-digital-norms.md (tower ABS and lease norms). Cellnex and Vantage Towers were not researched for this sheet.
 
 ## Summary
 
-A tower carve-out separates a mobile operator's passive infrastructure (masts, shelters, power) from its network. The operator sells the towers to a specialist tower company and leases space back under a long master lease agreement (MLA). The tower company then earns more by adding tenants (colocation). IHS Towers built Africa's largest independent tower business mostly through such deals with MTN. It bought MTN's towers in Côte d'Ivoire and Cameroon (2013), Zambia and Rwanda (2014) and Nigeria (10,966 towers in 2014–2015, including 2,116 from 9mobile). Its last big one, closed on 31 May 2022, was 5,691 towers in South Africa from MTN, with a managed-services agreement covering about 7,100 more MTN sites. Gross cash consideration was USD 421.2 million. It was funded partly by a ZAR 3.47 billion facility from South African banks (3-month JIBAR + 2.75%, maturing May 2029), with 30% to be owned by a Black economic empowerment (B-BBEE) consortium. IHS listed on the New York Stock Exchange in October 2021 (18 million shares at USD 21). MTN, its anchor tenant and a large shareholder, then signed a merger agreement on 17 February 2026 to take IHS private at USD 8.50 a share, an enterprise value of about USD 6.2 billion. Shareholders approved it on 4 August 2026, and it is not yet closed. The arc of sale-and-leaseback, IPO and buyback by the original seller is the teaching point. It also shows the carve-out risks a lender must underwrite: one tenant dominating revenue, FX-linked lease escalators in volatile currencies, and the operator's incentive to buy back its infrastructure when the price is right.
+A tower carve-out separates a mobile operator's passive infrastructure (masts, shelters, power) from its network. The operator sells the towers to a specialist tower company and leases space back under a long master lease agreement (MLA). The tower company then earns more by adding tenants (colocation). IHS Towers built Africa's largest independent tower business mostly through such deals with MTN. It bought MTN's towers in Côte d'Ivoire and Cameroon (2013), Zambia and Rwanda (2014) and Nigeria (10,966 towers in 2014–2015, including 2,116 from 9mobile). Its last big one, closed on 31 May 2022, was 5,691 towers in South Africa from MTN, with a managed-services agreement covering about 7,100 more MTN sites. Gross cash consideration was USD 421.2 million. It was funded partly by a ZAR 3.47 billion facility from South African banks (3-month JIBAR + 2.75%, maturing May 2029), with 30% to be owned by a Black economic empowerment (B-BBEE) consortium. IHS listed on the New York Stock Exchange in 2021 (18 million shares at USD 21). MTN, its anchor tenant and a large shareholder, then signed a merger agreement on 17 February 2026 to take IHS private at USD 8.50 a share, an enterprise value of about USD 6.2 billion. Shareholders approved it on 4 August 2026, and it is not yet closed. The arc of sale-and-leaseback, IPO and buyback by the original seller is the teaching point. It also shows the carve-out risks a lender must underwrite: one tenant dominating revenue, FX-linked lease escalators in volatile currencies, and the operator's incentive to buy back its infrastructure when the price is right.
 
 ## Verified facts
 
@@ -39,7 +39,7 @@ A tower carve-out separates a mobile operator's passive infrastructure (masts, s
 - 2014: MTN Zambia, Rwanda and first MTN Nigeria tranche; 9mobile.
 - 2015: second MTN Nigeria tranche; Airtel Zambia and Rwanda.
 - 2016: HTN Towers.
-- October 2021: NYSE IPO at USD 21.
+- 2021: NYSE IPO at USD 21.
 - 26 May 2022: IHS SA ZAR 3.47 billion facility.
 - 31 May 2022: MTN South Africa acquisition closes (5,691 towers).
 - December 2024: Kuwait disposal.
@@ -58,7 +58,7 @@ A tower carve-out separates a mobile operator's passive infrastructure (masts, s
 
 ## What went wrong or right, and why
 
-- Concentration: MTN group companies are IHS's largest customers in every African market listed above. The MTN merger turns a landlord-tenant relationship back into common ownership, which raises the question of what independent colocation economics are worth to an anchor tenant. [source: 2]
+- Concentration: MTN group companies are anchor tenants under MLAs in each of IHS's remaining African markets listed above (per-market revenue shares were not verified). The MTN merger turns a landlord-tenant relationship back into common ownership, which raises the question of what independent colocation economics are worth to an anchor tenant. [source: 2]
 - FX: IHS's 20-F stresses inflation and FX resets as protection. The fact that 32% of revenue is USD-linked shows that a tower company can partly pass currency risk to tenants, though the tenant still bears it. [source: 2]
 - Exit: the merger price is USD 8.50 against the USD 21 IPO price in 2021 (a share-price comparison, not a return calculation). [source: 1, 2]
 
