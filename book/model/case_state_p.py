@@ -41,7 +41,7 @@ extra={  # additional figure IDs and notes per chapter
  '17':('P-F25 (formula only)',''),
 }
 L=['# Case state by chapter: Case P (Bélanou)','',
- 'Model version 1.2 (Case Bible annex P absorbed; editor rulings applied) (`model/case_p.py`, `model/Case_P_Model.xlsx`); story as of October 3, 2026. For every chapter of Case Bible Part 6 that features Case P: the state of the case at the start and end of the installment (Bible storyline plus modeled state) and the ledger figure IDs (`model/figure-ledger-case-p.md`) the chapter may print. "Inputs" means Case Bible Part 1 values after the change log.','',
+ 'Model version 1.3 (Case Bible annex P absorbed; editor rulings and v1.3 fixes applied) (`model/case_p.py`, `model/Case_P_Model.xlsx`); story as of October 3, 2026. For every chapter of Case Bible Part 6 that features Case P: the state of the case at the start and end of the installment (Bible storyline plus modeled state) and the ledger figure IDs (`model/figure-ledger-case-p.md`) the chapter may print. "Inputs" means Case Bible Part 1 values after the change log.','',
  '| Ch | Story date | State at start | State at end | Figure IDs the chapter shows | Notes for the writer |','|---|---|---|---|---|---|']
 ADD={'21':['P-F46'],'75':['P-F46','P-F59'],'18':['P-F47'],'48':['P-F47','P-F61'],'24':['P-F48'],'28':['P-F48'],'65':['P-F48'],
  '55':['P-F49'],'38':['P-F50', 'P-F65'],'56':['P-F50'],'27':['P-F51'],'60':['P-F51'],'61':['P-F52'],'66':['P-F53','P-F56','P-F66'],'67':['P-F54','P-F37'],

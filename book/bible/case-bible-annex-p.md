@@ -913,7 +913,7 @@ Discount rate 10.0% (USD, real terms not used; all costs flat in 2015 USD); capa
 | Fiscal terms | Royalty 10% on gas, 12.5% on condensate; corporate tax 35%; no profit split (licence-and-royalty regime) |
 | Opex | USD 85 million a year gross fixed plus USD 0.35/MMBtu |
 | RBL | Signed October 2017; commitment USD 600 million; seven-year tenor; margin 4.25%; borrowing base = NPV at 10% of the P50 (2P) case on the bank price deck divided by 1.30, tested also on a P90 case at 1.00x; semiannual redeterminations |
-| Expected outputs | Borrowing base at signing about USD 420 million; at the 2023 redetermination about USD 360 million (P-F59 computes them) |
+| Expected outputs | Borrowing base at signing about USD 281 million; at the 2023 redetermination about USD 363 million (P-F59 computes them; revised from about 420 and 360 in v1.3, change log P-C46: sales capped at contracted SNHK demand, 40% reserve tail, completion-basis NPV; the signing base is lower because cash flows start two years later on the lower 2017 deck) |
 
 ### 4.14 Fertilizer plant and bauxite developer (Chapters 77 and 78)
 

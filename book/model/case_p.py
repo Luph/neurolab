@@ -234,7 +234,20 @@ OWN_FC = list(PROF['owners_costs_pct_by_month_base'].values())
 OVR = INP['events']['construction_overrun']
 # timing of actual overrun items (modeler timing assumptions; amounts from the Case Bible)
 FXH_SHARE = 0.75          # share of onshore KCR EPC payments hedged forward (D-114)
-CAL_OVERRUN = 42.17        # v1.2 calibration (P-C43): standby drawn about USD 10m, contingent equity about USD 3m (after the FX hedge)
+# v1.3 (P-C43, editor ruling): the 42.17 of delay-related costs beyond the Case Bible's 39.27 items, by named category.
+# Amounts are modeler assumptions consistent with the Chapter 61 story (COVID force majeure, the June 2021 grid event,
+# taking-over held at November 30, 2021); all incurred evenly over Months 34 to 40 (May to November 2021).
+OVERRUN_ADDED = [   # (key, name, USD m)
+    ('epc_claims', 'EPC claims settlement: COVID-19 disruption and compensable events beyond the 9.40 variation order (Lindauer, settled at taking-over)', 12.00),
+    ('acceleration', 'Acceleration agreement with Lindauer to hold taking-over at November 2021 after the grid event', 9.50),
+    ('owner_site', "Extended owner's costs and site team beyond the 6.93 (owner's engineer, site team, security, camp)", 7.20),
+    ('recommissioning', 'Re-commissioning after the grid event (repeat backfeed, protection coordination study, OEM field service)', 6.40),
+    ('transformer', 'Transformer replacement expediting, freight and installation not recovered under the EAR policy', 3.10),
+    ('ie_legal', "Additional IE, lenders' legal and expert-determination costs beyond the 0.86", 2.35),
+    ('operator', 'Operator mobilization and training held seven months longer (O&M contractor standby)', 1.62),
+]
+ADDED_OVERRUN = round(sum(a for _, _, a in OVERRUN_ADDED), 6)   # 42.17
+assert abs(ADDED_OVERRUN - 42.17) < 1e-9
 OVERRUN_TIMING = [   # (name, amount, first month index (0 = Aug 2018), number of months)
     ('COVID variation order', OVR['covid_variation_order_usd_m'], 26, 6),       # Oct20-Mar21
     ('Grid-event prolongation settlement', OVR['grid_event_prolongation_settlement_usd_m'], 39, 1),
@@ -245,10 +258,7 @@ OVERRUN_TIMING = [   # (name, amount, first month index (0 = Aug 2018), number o
     ('Additional start-up fuel, net', OVR['additional_start_up_fuel_net_usd_m'], 38, 2),
     ('EAR deductible', OVR['ear_deductible_borne_usd_m'], 35, 1),
     ('Additional lenders advisor costs', OVR['additional_lenders_advisor_costs_usd_m'], 33, 7),
-    # v1.2 modeler calibration (editor ruling): EPC acceleration and delay costs under the COVID and grid-event
-    # variations and the extended owner's team, beyond the Bible's 39.27, sized so that the standby facility is drawn
-    ('Delay-related EPC acceleration and owner cost escalation (calibration)', CAL_OVERRUN, 33, 7),
-]
+] + [(nm, amt, 33, 7) for _, nm, amt in OVERRUN_ADDED]   # v1.3: P-C43 categories, Months 34 to 40
 EXT_OWNERS = OVR['extended_owners_costs_usd_m']     # months 34-40 (index 33-39)
 RECEIPT_M = 39                                       # Nov 2021: taking-over
 
@@ -1697,7 +1707,8 @@ def figures(F, RS, R1, R14, R15):
     P['P-F18'] = dict(scenario='Actual history',
                       uses=dict(epc=float(ua['epc'].sum()), epc_fx_gain_on_onshore=float(82.67 - (ua['onshore_kcr'] / Ra['mac']['fx_m']).sum()),
                                 owners_costs_incl_extension=float(ua['owners'].sum()), overrun_items_excl_extension=float(ua['overrun'].sum()),
-                                hard_cost_overrun_total=39.27 + CAL_OVERRUN, of_which_bible_items=39.27, of_which_calibration=CAL_OVERRUN, contingency_available=38.40,
+                                hard_cost_overrun_total=39.27 + ADDED_OVERRUN, of_which_bible_items=39.27, of_which_delay_related_added=ADDED_OVERRUN,
+                                delay_related_added_by_category={k: dict(name=nm, usd_m=a) for k, nm, a in OVERRUN_ADDED}, contingency_available=38.40,
                                 other_base=float(ua['insurance'].sum() + ua['dev'].sum() + ua['advisors'].sum() + ua['wc'].sum()),
                                 subtotal_before_financing=float(ua['base_total'].sum()),
                                 idc_loans=float(fa['loan_int'].sum()), swap_net=float(fa['swap'].sum()), pri=float(fa['pri'].sum()),
@@ -1712,7 +1723,7 @@ def figures(F, RS, R1, R14, R15):
                                    contingent_equity_drawn=float(fa['ce_draw'].sum())),
                       fc_base_comparison=dict(total_funding_fc=float(fb['T']), idc_fc=float(fb['loan_int'].sum() + fb['swap'].sum() + fb['pri'].sum()),
                                               idc_actual=float(fa['loan_int'].sum() + fa['swap'].sum() + fa['pri'].sum() + fa['sb_int'].sum())),
-                      finding='After the unused contingency, delay LDs, DSU proceeds and the KCR depreciation on the onshore EPC, the remaining overrun was funded 75:25 by the standby facility and contingent equity (calibration P-C43)')
+                      finding='After the unused contingency, delay LDs, DSU proceeds and the KCR depreciation on the onshore EPC, the remaining overrun was funded 75:25 by the standby facility and contingent equity (delay-related costs by category, P-C43)')
     # ---------------- P-F19 completion tests and LDs
     R14b = run(scen(14, ld_prep=0))
     R14c = resculpt_cod(scen(14, C_override=588.4, HR_override=6261))
@@ -2286,7 +2297,7 @@ def figures_annex(F, RS, R1, R14, R15):
         return mid
     P['P-F59'] = dict(at_signing_2017=rbl(2018, 60.0, 2018.0), at_2023_redetermination=rbl(2023, 70.0, 2023.5),
                       gas_price_needed_for_420_at_signing=price_for(420.0, 2018, 60.0, 2018.0),
-                      note='Illustrative. Logic corrected in v1.2: production equals gas sold to SNHK (capped at contracted demand of about 106 MMscfd, not the 150 MMscfd plateau capacity) and cash flows run to a 40% reserve tail; development capex is funded by the facility and equity and excluded from the borrowing-base NPV (completion basis). With the annex inputs the 2023 base lands near 360; signing comes out lower than 2023 because cash flows start two years later and the 2017 Brent deck is lower, so a signing base of about 420 would need a gas price near the value shown; the annex expectation for signing should be revised')
+                      note='Illustrative. Logic corrected in v1.2: production equals gas sold to SNHK (capped at contracted demand of about 106 MMscfd, not the 150 MMscfd plateau capacity) and cash flows run to a 40% reserve tail; development capex is funded by the facility and equity and excluded from the borrowing-base NPV (completion basis). With the annex inputs the 2023 base lands near 360; signing comes out lower than 2023 because cash flows start two years later and the 2017 Brent deck is lower, so a signing base of about 420 would need a gas price near the value shown (kept for reference); the annex expectation was revised to the model values in v1.3 (P-C46)')
     # ---- P-F60 bid-stage screen
     cap_rev = (14.36 + 2.31) * 588.4 * 12 / 1000
     fixed = 7.92 + 2.64 + 4.37 + 3.18
@@ -2341,7 +2352,7 @@ def figures_annex(F, RS, R1, R14, R15):
                                                                       for t in range(NS) if any(abs(ua['fx_hedge'][m]) > 1e-9 for m in range(NM) if M_PER[m] == t)},
                       settlements_total=float(ua['fx_hedge'].sum()), mtm_to_project=mtm,
                       unhedged_fx_gain_on_onshore_epc=float(82.67 - (ua['onshore_kcr'] / ma['fx_m']).sum()),
-                      finding='The forwards locked in forward points of roughly 10% a year (KCR policy rate against USD LIBOR) while the cauri fell about 5% a year to 2021, so the project gained on the hedge; the hedge does not transfer the depreciation benefit to the bank. Settlements reduce the construction uses; the overrun calibration (P-C43) is set after them.')
+                      finding='The forwards locked in forward points of roughly 10% a year (KCR policy rate against USD LIBOR) while the cauri fell about 5% a year to 2021, so the project gained on the hedge; the hedge does not transfer the depreciation benefit to the bank. Settlements reduce the construction uses before the standby facility is drawn.')
     # ---- P-F64 bid-to-close equity IRR bridge
     P['P-F64'] = irr_bridge(Rb)
     # ---- sponsor-level development economics (items 19 to 21)
@@ -2471,7 +2482,7 @@ def main():
     F, RS, R1, R14, R15 = compute_all()
     contract = {k: (list(map(float, v)) if isinstance(v, (list, np.ndarray)) else float(v)) for k, v in CONTRACT.items()}
     audit_c = F.pop('_audit_contract')
-    out = dict(meta=dict(case='P', model='case_p.py', version='1.0', run_date='2026-10-03', currency='USD m unless stated',
+    out = dict(meta=dict(case='P', model='case_p.py', version='1.3', run_date='2026-10-03', currency='USD m unless stated',
                          timeline=dict(monthly=[d.strftime('%Y-%m') for d in M_START], semiannual=S_LABEL),
                          tolerance_usd_m=TOL, scenarios={i: SCENARIOS[i]['name'] for i in SCENARIOS},
                          gas_arrears_share_calibration=GAS_ARREARS_SHARE),

@@ -72,7 +72,7 @@ def write(o, path):
     a('## 4. Actual history (scenario 15)')
     a('')
     p18 = P['P-F18']
-    a(f"Construction: hard-cost overrun {f2(p18['uses']['hard_cost_overrun_total'])} ({f2(p18['uses']['of_which_bible_items'])} Case Bible items plus {f2(p18['uses']['of_which_calibration'])} delay-related EPC acceleration and owner cost escalation, calibration P-C43); FX forward settlements (gain) {f2(P['P-F66']['settlements_total'])}. "
+    a(f"Construction: hard-cost overrun {f2(p18['uses']['hard_cost_overrun_total'])} ({f2(p18['uses']['of_which_bible_items'])} Case Bible items plus {f2(p18['uses']['of_which_delay_related_added'])} delay-related costs in seven named categories, P-C43); FX forward settlements (gain) {f2(P['P-F66']['settlements_total'])}. "
       f"Total funding {f2(p18['uses']['total'])} against {f2(p18['fc_base_comparison']['total_funding_fc'])} at FC. "
       f"Hard-cost overrun 39.27 against contingency 38.40; KCR depreciation reduced the onshore EPC cost by {f2(p18['uses']['epc_fx_gain_on_onshore'])}; "
       f"loan interest, swap and PRI in construction {f2(p18['fc_base_comparison']['idc_actual'])} against {f2(p18['fc_base_comparison']['idc_fc'])} at FC. "
@@ -111,8 +111,8 @@ def write(o, path):
         ['A1', 'Cash effect of SEKA arrears (actual history)', 'Not specified (read literally, the full overdue increase hits cash)',
          '80% of overdue amounts are energy-charge arrears matched by deferred payments to SNHK and GCK (state gas chain), formalized by the June 2023 netting agreement; 20% hits cash',
          'Read literally the path gives a June 2023 historic DSCR near 0.0x and an event of default at December 2022, against the Bible design range of 0.80x to 1.00x for June 2023. With A1: 1.14x at December 2022 (lock-up), 0.97x at June 2023 (default), DSRA pays the June 2023 shortfall, as the storyline requires. Modeler calibration, pre-publication.'],
-        ['A12', 'Construction overrun (actual, P-C43, modeler calibration)', 'USD 39.27m hard-cost overrun; standby and contingent equity not drawn',
-         f"Plus USD {P['P-F18']['uses']['of_which_calibration']:.2f}m delay-related EPC acceleration and owner cost escalation (Months 34-40)", 'Editor ruling: Chapters 31 and 61 teach the standby facility; drawn about USD 10.0m with contingent equity about 3.3m after contingency, delay LDs, DSU and FX gains.'],
+        ['A12', 'Construction overrun (actual, P-C43, modeler assumption)', 'USD 39.27m hard-cost overrun; standby and contingent equity not drawn',
+         f"Plus USD {P['P-F18']['uses']['of_which_delay_related_added']:.2f}m delay-related costs in seven named categories (Section 8b), Months 34-40", 'Editor ruling: Chapters 31 and 61 teach the standby facility; drawn about USD 10.0m with contingent equity about 3.3m after contingency, delay LDs, DSU and FX gains.'],
         ['A13', 'Construction FX hedge (D-114)', 'None', 'Forwards with Castellan buying KCR for 75% of onshore EPC payments at covered-parity rates (13.5% vs FC LIBOR); actual run only (FC base budgets onshore at the FC spot)', 'Standards require currency hedging; P-F65, P-F66. The forwards gained (forward points about 10% a year against about 5% actual depreciation).'],
         ['A14', 'SEKA LC amount (P-C44)', 'USD 33.8m in 2022; drawing USD 33.8m', 'USD 36.2m (2022 reset on the annex 1.1.5 formula); drawing February 2023 USD 36.6m (2023 reset)', 'Editor ruling: model value wins; the overdue path stays as given (already net of the drawing).'],
         ['A15', 'Halbeck RBL logic (P-F59, Illustrative)', 'Field sold 150 MMscfd; NPV after remaining capex', 'Sales capped at contracted demand (about 106 MMscfd); 40% reserve tail; completion-basis NPV excluding capex funded by the facility', 'Editor ruling: logic check; inputs unchanged.'],
@@ -132,7 +132,7 @@ def write(o, path):
         ['A9', 'Onshore EPC price', 'Fixed in KCR at 519.4', 'FC base budgets it at USD 82.67; the actual run converts the KCR price at actual FX', 'Gives a KCR-depreciation saving in the actual run.'],
     ], ['#', 'Item', 'Old', 'New', 'Reason']))
     a('')
-    a('Editor rulings applied in v1.2: standby drawn in range (P-C43); equity IRR gap explained by P-F64; LC model value adopted (P-C44); Halbeck RBL logic corrected (P-F59; the 2023 base lands near 360, signing near 281 rather than 420 because cash flows start two years later on a lower 2017 deck; a signing base of 420 would need gas at about USD 4.62/MMBtu, so the annex expectation should be revised); IFRIC 12 loss against lenders\' basis gain kept; COD re-sculpt 1.31x rising to 1.35x after the LD prepayment kept (P-F19).')
+    a('Editor rulings applied in v1.2: standby drawn in range (P-C43); equity IRR gap explained by P-F64; LC model value adopted (P-C44); Halbeck RBL logic corrected (P-F59; signing about 281 and 2023 about 363; the annex expectation is revised to these values in v1.3, P-C46); IFRIC 12 loss against lenders\' basis gain kept; COD re-sculpt 1.31x rising to 1.35x after the LD prepayment kept (P-F19).')
     a('')
     a('## 7. Modeling conventions (stated once; adopt centrally)')
     a('')
@@ -153,9 +153,23 @@ def write(o, path):
     ]:
         a('* ' + t_)
     a('')
+    a('## 8b. Version 1.3 (editor fixes, October 3, 2026)')
+    a('')
+    p64 = P['P-F64']
+    a(f"P-F64 is now a sequential attribution from the reconstructed bid model ({p64['bid_irr'] * 100:.2f}%) to the FC base ({p64['fc_irr'] * 100:.2f}%), in the order shown; each step re-sizes the debt; the steps sum to {p64['sum_of_steps_pp']:+.2f} pp, the full gap, with no residual and no interaction line. The bid model's swapped base rate is the one undocumented bid input; it is solved at {p64['reconstructed_bid_swapped_rate_pct']:.2f}% flat so that the reconstruction returns 16.0% (modeler reconstruction, a conservative bid-stage rate). The 2016 indicative terms are annex 4.7 (margins 1.50/3.90/3.75/4.50, upfront fees ECA 1.25 and commercial 2.50, ECA premium 11.5%; A- and B-loan upfront fees as at FC).")
+    a('')
+    a(table([[s_['step'], f"{s_['cumulative_irr'] * 100:.2f}%", f"{s_['change_pp']:+.2f}", f"{s_['gearing'] * 100:.1f}%"] for s_ in p64['steps']], ['Step', 'Equity IRR', 'Change (pp)', 'Gearing']))
+    a('')
+    cats = P['P-F18']['uses']['delay_related_added_by_category']
+    a(f"P-C43 is no longer a single calibration line: the USD {P['P-F18']['uses']['of_which_delay_related_added']:.2f}m is split into named cost categories (modeler assumptions consistent with Chapter 61), each incurred evenly over Months 34 to 40, so every downstream figure is unchanged.")
+    a('')
+    a(table([[c['name'], f2(c['usd_m'])] for c in cats.values()] + [['Total', f2(sum(c['usd_m'] for c in cats.values()))]], ['Category', 'USD m']))
+    a('')
+    a('Halbeck RBL (P-F59): the model result is accepted (signing about USD 281m, 2023 redetermination about USD 363m); case-bible-annex-p.md 4.13 is updated (P-C46).')
+    a('')
     a('## 8a. Version 1.2 (editor rulings, October 3, 2026)')
     a('')
-    a('P-C43 overrun calibration; D-114 construction FX hedge (P-F65, P-F66); P-F64 bid-to-close IRR bridge; P-C44 LC; RBL logic (P-F59); all hard-coded constants moved to Inputs and Time (scan_hardcodes_p.py: 0 literals); deferred-principal repayment now dfo / remaining repayment dates (same values); bond face carried as a row (no column-specific formulas). Ledger values that changed: every actual-history figure (P-F04, P-F18 to P-F26, P-F29, P-F31, P-F37 to P-F40, P-F46, P-F51 to P-F54, P-F56, P-F58, P-F63) through the larger overrun, the standby drawing and the FX hedge; FC figures unchanged except P-F16 months covered (annex LC formula).')
+    a('P-C43 delay-related overrun (named categories from v1.3); D-114 construction FX hedge (P-F65, P-F66); P-F64 bid-to-close IRR bridge; P-C44 LC; RBL logic (P-F59); all hard-coded constants moved to Inputs and Time (scan_hardcodes_p.py: 0 literals); deferred-principal repayment now dfo / remaining repayment dates (same values); bond face carried as a row (no column-specific formulas). Ledger values that changed: every actual-history figure (P-F04, P-F18 to P-F26, P-F29, P-F31, P-F37 to P-F40, P-F46, P-F51 to P-F54, P-F56, P-F58, P-F63) through the larger overrun, the standby drawing and the FX hedge; FC figures unchanged except P-F16 months covered (annex LC formula).')
     a('')
     a('## 8. Annex P absorption (case-bible-annex-p.md and case-p-input-requests.md)')
     a('')

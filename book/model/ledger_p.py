@@ -151,7 +151,11 @@ for k, v in P['P-F17']['results'].items():
     add('P-F17', f'{k}: {v.get("description", "correct model")}', f"debt {v['senior_debt']:.1f} ({v.get('delta_senior_debt', 0):+.1f}), {v['binding']}; min DSCR {v['min_dscr_base']:.2f}x; avg {v['avg_dscr_base']:.2f}x; downside {v['min_dscr_downside']:.2f}x; banking {v['min_dscr_banking']:.2f}x; LLCR {v['llcr_at_close']:.2f}x; equity IRR {v['equity_irr'] * 100:.1f}%", 'USD m, x, %', 'FC base, sponsor model v0.9', '2018-06')
 # P-F18
 f = P['P-F18']
-for k, v in f['uses'].items(): add('P-F18', 'Actual use: ' + k.replace('_', ' '), m2(v), 'USD m', ACT, '2021-12-01')
+for k, v in f['uses'].items():
+    if isinstance(v, dict):
+        for kk, vv in v.items(): add('P-F18', 'Actual use: delay-related cost added (P-C43): ' + vv['name'], m2(vv['usd_m']), 'USD m', 'Modeler assumption (P-C43), Months 34-40', '2021-05 to 2021-11')
+        continue
+    add('P-F18', 'Actual use: ' + k.replace('_', ' '), m2(v), 'USD m', ACT, '2021-12-01')
 for k, v in f['sources'].items(): add('P-F18', 'Actual source: ' + k.replace('_', ' '), m2(v), 'USD m', ACT, '2021-12-01')
 for k, v in f['fc_base_comparison'].items(): add('P-F18', k.replace('_', ' '), m2(v), 'USD m', ACT + ' vs ' + FCB, '2021-12-01')
 # P-F19
@@ -405,10 +409,10 @@ add('P-F66', 'Unhedged KCR depreciation saving on the onshore EPC (for compariso
 add('P-F40', 'SEKA LC drawing, February 14, 2023 (2023 reset value; P-C44)', m(P['P-F40']['lc_drawing']), 'USD m', ACT, '2023-02-14')
 
 L = ['# Figure ledger: Case P (Bélanou Combined Cycle Power Project)', '',
-     'Source: `model/outputs_case_p.json`, produced by `model/case_p.py` (Case P model v1.0; story as of October 3, 2026); formatted by '
+     'Source: `model/outputs_case_p.json`, produced by `model/case_p.py` (Case P model v1.3; story as of October 3, 2026); formatted by '
      '`model/ledger_p.py` (no computation). Amounts in USD million, nominal, unless stated. Scenario numbers are the workbook scenario switch '
      '(1 FC base, 2 FC banking, 3 FC downside, 4-13 sensitivities, 14 COD re-forecast, 15 actual history). P-F01 to P-F36 are the Case Bible '
-     'register; P-F37 to P-F45 are editor assignments and P-F46 to P-F63 come from case-bible-annex-p.md (P-F11 is split into P-F11a DSRA and P-F11b MMRA). Model version 1.2 (annex absorbed; editor rulings of October 3, 2026: overrun calibration P-C43, FX hedge D-114, P-F64 to P-F66). Writers cite the ID; print values in the style-sheet format.', '',
+     'register; P-F37 to P-F45 are editor assignments and P-F46 to P-F63 come from case-bible-annex-p.md (P-F11 is split into P-F11a DSRA and P-F11b MMRA). Model version 1.3 (annex absorbed; editor rulings of October 3, 2026: delay-related overrun categories P-C43, FX hedge D-114, P-F64 to P-F66, sequential P-F64 bridge, RBL expectation revised P-C46). Writers cite the ID; print values in the style-sheet format.', '',
      'Definitions used throughout: DSCR = CFADS / (interest incl. WHT gross-up + swap net + PRI premium + PCG fee + scheduled principal); '
      'average DSCR = sum of CFADS / sum of debt service over the loan life; LLCR = (PV of CFADS to final maturity at the period all-in senior '
      'cost + DSRA balance) / senior debt, at the start of the first repayment period; gearing = senior debt / total funding requirement; '
@@ -417,6 +421,6 @@ L = ['# Figure ledger: Case P (Bélanou Combined Cycle Power Project)', '',
      '| ID | Figure | Value | Units | Model run (scenario) | As-of story date |', '|---|---|---|---|---|---|']
 for row in rows:
     L.append('| ' + ' | '.join(str(c) for c in row) + ' |')
-L += ['', 'FC base equity IRR is below the 16.0% bid-model target; P-F64 bridges the gap. See `model/case_p_report.md` Sections 6 and 8a.']
+L += ['', 'FC base equity IRR is below the 16.0% bid-model target; P-F64 bridges the gap sequentially with no residual (steps printed to 0.01 pp may sum to the total within 0.01 by rounding). See `model/case_p_report.md` Section 8b.']
 open(os.path.join(H, 'figure-ledger-case-p.md'), 'w').write('\n'.join(L) + '\n')
 print(len(rows), 'rows')

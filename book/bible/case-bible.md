@@ -1,6 +1,6 @@
 # Case Bible
 
-Version 1.0, October 3, 2026. Owner: Case Bible designer, under the editor-in-chief. Binding on every writer, reviewer, and modeler.
+Version 1.1, October 3, 2026 (Version 1.0 amended after the blueprint review: Case P model and ledger v1.2, the construction currency hedge of D-114, the SEKA LC value of P-C44, the overrun funding of P-C43, the annex amendments merged into Parts 6 and 7, and the Case T cast additions; see `reviews/blueprint/central-fixes-log.md`). Owner: Case Bible designer, under the editor-in-chief. Binding on every writer, reviewer, and modeler.
 
 ## 0. How to use this file
 
@@ -150,7 +150,7 @@ The tariff is denominated in USD, invoiced monthly in USD, and paid in KCR at th
 
 Indices reset January 1 and July 1 using values lagged three months. Capacity payments equal the capacity charge times contracted capacity times the lesser of 1 and availability divided by the 90.0% target; there is no bonus above target. Contracted capacity is 588.4 MW until the completion tests reset it to the tested 581.9 MW.
 
-Payment security: a standby letter of credit issued for SEKA by UBK and confirmed by Castellan Bank equal to two months of estimated capacity charges plus one month of estimated energy charges (USD 33.8 million in 2022), to be replenished within 30 days of any drawing; a Government Guarantee from the Ministry of Economy and Finance covering SEKA's payment obligations and termination amounts, capped at USD 1,250 million; and a USD 41.5 million partial risk guarantee from the Atlantic Basin Development Bank (ABDB) that backs Castellan's reimbursement claim on the Republic if it pays under the LC confirmation and SEKA and the government fail to reimburse it. A donor facility subsidizes the PRG fee to 0.75% a year; this is Case P's concessional element (Chapter 34). Late payment interest is 6M Term SOFR plus 2.00% (6M LIBOR plus 2.00% before 2023).
+Payment security: a standby letter of credit issued for SEKA by UBK and confirmed by Castellan Bank equal to two months of estimated capacity charges plus one month of estimated energy charges (the amount under the Annex P 1.1.5 formula, figure P-F39: USD 36.2 million at the January 1, 2022 reset and USD 36.6 million at the January 1, 2023 reset; P-C44), to be replenished within 30 days of any drawing; a Government Guarantee from the Ministry of Economy and Finance covering SEKA's payment obligations and termination amounts, capped at USD 1,250 million; and a USD 41.5 million partial risk guarantee from the Atlantic Basin Development Bank (ABDB) that backs Castellan's reimbursement claim on the Republic if it pays under the LC confirmation and SEKA and the government fail to reimburse it. A donor facility subsidizes the PRG fee to 0.75% a year; this is Case P's concessional element (Chapter 34). Late payment interest is 6M Term SOFR plus 2.00% (6M LIBOR plus 2.00% before 2023).
 
 Other terms: PPA delay liquidated damages payable to SEKA of USD 94,150 per day after the Required Commercial Operation Date (RCOD), originally July 31, 2021, capped at USD 25.0 million; RCOD extended day for day for force majeure and SEKA risk events; change in Kessaran law affecting costs by more than USD 0.5 million a year passed through, excluding changes to dividend withholding tax; no refinancing gain-sharing. Termination compensation:
 
@@ -277,7 +277,7 @@ DSRA: six months of next debt service, fully funded at COD from the final drawdo
 
 Interest rate swap at 2.947% fixed (mid-market 2.872% plus 7.5 bps credit and execution charge), traded at financial close with the four commercial banks pro rata to their commercial-tranche shares, covering 80% of projected floating senior debt (permitted band 75% to 90%), accreting in construction and amortizing to June 30, 2034. The swaps move to compounded SOFR plus 0.42826% from the first reset after June 30, 2023 under the ISDA 2020 IBOR Fallbacks Protocol, to which all parties adhered. Between January and June 2023 the loans paid Term SOFR plus the spread while the swaps still received LIBOR; the model ignores that six-month basis and Chapter 6 discusses it.
 
-No FX hedge: the tariff is USD-indexed and paid in KCR at the prevailing rate, so the project company's exposure is to convertibility, transfer delay, and SEKA's ability to pay, not to the exchange rate itself.
+Construction-period currency hedge (decision D-114; P-C45). The onshore EPC portion is fixed in KCR (KCR 42,939 million, the USD 82.67 million of Section 1.3 at 519.4 KCR per USD), so the common terms agreement's hedging policy requires the project company to hedge at least 75% of committed KCR construction payments. At financial close on July 17, 2018 the project company bought KCR forward against USD from Castellan Bank for 75% of each scheduled onshore EPC payment (KCR 32,204 million in seven semiannual settlement dates from August 2018 to August 2021), at covered-interest-parity forward rates (KCR policy rate 13.5% against the FC forward 6M LIBOR), cash-settled in USD and secured pari passu with the interest rate swaps. Notional profile, forward rates and USD equivalents: figure P-F65. The FC base budgets the onshore portion at the FC spot rate; in the actual run the forwards settle with a gain to the project (figure P-F66) because the forward points of about 10% a year exceeded the cauri's actual fall of about 5% a year, while the unhedged quarter of the onshore payments gained from the cauri's fall. The VAT facility is left unhedged because it is matched by the KCR VAT refunds. After COD there is no FX hedge: the tariff is USD-indexed and paid in KCR at the prevailing rate, so the operating exposure is to convertibility, transfer delay, and SEKA's ability to pay, not to the exchange rate itself.
 
 ### Accounts
 
@@ -324,7 +324,7 @@ Common terms agreement, facility agreements, intercreditor agreement, accounts a
 | 2018-02-05 | LNTP (USD 14.20 million, sponsor funded) |
 | 2018-03-27 | LTSA signed |
 | 2018-04-30 | O&M agreement signed |
-| 2018-07-17 | Financial close; swaps traded |
+| 2018-07-17 | Financial close; interest rate swaps and KCR forwards traded |
 | 2018-08-01 | Notice to proceed (Month 1) |
 | 2019-11 | Steam turbine foundation concrete fails strength tests; demolition and re-pour (contractor delay) |
 | 2020-03-21 | Kessaran COVID-19 lockdown; EPC force majeure notice |
@@ -338,7 +338,7 @@ Common terms agreement, facility agreements, intercreditor agreement, accounts a
 | 2022 H1 | Dollar strengthens, cauri weakens; SEKA arrears begin |
 | 2022-11 | LIBOR switch amendment signed (effective January 1, 2023) |
 | 2022-11-07 | Central Bank FX allocation queue begins |
-| 2023-02-14 | SEKA LC drawn (USD 33.8 million); not replenished |
+| 2023-02-14 | SEKA LC drawn (USD 36.6 million, the January 1, 2023 reset value; P-F39, P-F40); not replenished |
 | 2023-04-18 | First Government Guarantee demand |
 | 2023-06-29 | Tripartite gas netting agreement |
 | 2023-06-30 | Historic DSCR below 1.10x; event of default; DSRA drawn |
@@ -384,7 +384,7 @@ Hard cost overrun (USD m):
 | Additional lenders' advisor costs | 0.86 |
 | Total | 39.27 |
 
-The model adds the extra IDC and commitment fees from the seven-month delay and the DSRA re-sizing. The funding order is: unused contingency (USD 38.40 million), EPC delay LDs, DSU proceeds, then the standby facility and contingent equity 75:25 for any remainder (figure P-F18; expected drawing USD 5 million to USD 15 million).
+The model adds the extra IDC and commitment fees from the seven-month delay and the DSRA re-sizing. The funding order is: unused contingency (USD 38.40 million), EPC delay LDs, DSU proceeds, then the standby facility and contingent equity 75:25 for any remainder (figure P-F18). Ledger v1.2 adds the modeler's calibration of delay-related EPC acceleration and owner cost escalation in Months 34 to 40 (P-C43) and the KCR forward settlements (P-F66), and both the standby facility and the contingent equity are drawn: writers print the drawn amounts only from P-F18, and Chapters 31, 32 and 61 say they were drawn.
 
 ### Completion tests and performance LDs (November 2021)
 
@@ -409,7 +409,7 @@ SEKA's retail tariff was frozen after street protests in October 2022 while its 
 | 2024-12-31 | 12.3 |
 | 2025-06-30 | 0.0 |
 
-Further assumptions: Central Bank FX queue from November 7, 2022 to March 29, 2024 with an average conversion lag of 47 days; FX losses on trapped cauris of USD 1.27 million (H2 2022), USD 3.84 million (H1 2023), USD 1.12 million (H2 2023) and USD 0.31 million (H1 2024); LC drawn for USD 33.8 million on February 14, 2023 and never replenished; Government Guarantee demands of USD 21.6 million (April 18, 2023, paid July 26, 2023), USD 18.9 million (July 12, 2023, paid November 30, 2023) and USD 17.4 million (October 9, 2023, unpaid and folded into the settlement); tripartite netting agreement of June 29, 2023 (up to USD 9.0 million a month of SEKA energy-charge arrears set off against the project company's gas payables to SNHK); settlement agreement of March 21, 2024 providing 15 monthly installments from April 2024 to June 2025 with 40% of late payment interest waived.
+Further assumptions: Central Bank FX queue from November 7, 2022 to March 29, 2024 with an average conversion lag of 47 days; FX losses on trapped cauris of USD 1.27 million (H2 2022), USD 3.84 million (H1 2023), USD 1.12 million (H2 2023) and USD 0.31 million (H1 2024); LC drawn for USD 36.6 million on February 14, 2023 (the January 1, 2023 reset value; P-F39, P-F40; P-C44) and never replenished; Government Guarantee demands of USD 21.6 million (April 18, 2023, paid July 26, 2023), USD 18.9 million (July 12, 2023, paid November 30, 2023) and USD 17.4 million (October 9, 2023, unpaid and folded into the settlement); tripartite netting agreement of June 29, 2023 (up to USD 9.0 million a month of SEKA energy-charge arrears set off against the project company's gas payables to SNHK); settlement agreement of March 21, 2024 providing 15 monthly installments from April 2024 to June 2025 with 40% of late payment interest waived.
 
 ### Covenant breach and waiver (2023)
 
@@ -430,7 +430,7 @@ Kilnworth sells 24% of the project company (40% of its 60% holding) in shares an
 | FC base | Financial close base case: COD May 1, 2021; 588.4 MW; base availability and dispatch; FC forward LIBOR curve; FX projected from 2018 by inflation differential using 2018 expectations (Kessaran CPI 7.5%, US CPI 2.2%) |
 | FC banking | FC base with 72.0% dispatch |
 | FC downside | Availability 6.5 points lower every year, heat rate +1.5%, fixed opex +10% |
-| Actual history | Every event in Section 1.9 with historical macro paths to H1 2026, assumptions after |
+| Actual history | Every event in Section 1.9 and the KCR forward settlements of Section 1.6, with historical macro paths to H1 2026, assumptions after |
 | Sensitivities | Availability -3 points; heat rate +2%; fixed opex +10%; capex +10% funded pro rata; COD delay of six months without LDs; base rate +200 bps on the unhedged portion; 40% devaluation with 90-day conversion lag; SEKA payment delay of 120 days for 12 months; dispatch 50%; gas price +30% (pass-through check) |
 | Breakevens | Availability for 1.00x minimum DSCR; capacity charge cut for 1.00x; months of zero SEKA payment covered by DSRA plus LC |
 
@@ -761,7 +761,7 @@ Polish, born 1972 in Gdańsk. Kilnworth Power International: Vice President, Bus
 
 He wants Bélanou to be the first flagship deal he leads from site to close, and to prove that an engineer can run a deal as well as a banker. He fears writing off a development budget (his first East African project had a tariff renegotiation that wiped out most of its equity value, and he was in the room) and being outmaneuvered on terms he does not fully understand. He negotiates by conceding small points fast to bank goodwill, then digging in on the items he understands physically: dispatch, heat rate, availability, LDs. He reads political signals poorly and trusts a signed contract more than he should. Verbal habit: converts every proposal into tariff terms, "What does that cost us per kilowatt-month?"
 
-Where he is wrong: in 2017 he dismisses convertibility risk because "the tariff is in dollars" (Chapter 59 shows why that was the wrong frame), and in 2016 he pushes the bid tariff lower than Kilnworth's pricing committee wanted. Arc: closes the deal (2018), survives the delay (he signs off the COVID variation without board approval and is reprimanded), manages the 2022 to 2023 crisis badly at first and well later, champions the 2025 bond, and in 2026 leads the partial sale he once said Kilnworth would never make.
+Where he is wrong: from October 2016 (risk register v1, Chapter 14) and again in 2017 he dismisses convertibility risk because "the tariff is in dollars" (Chapter 59 shows why that was the wrong frame; P-C20), and in 2016 he pushes the bid tariff lower than Kilnworth's pricing committee wanted. Arc: closes the deal (2018), survives the delay (he signs off the COVID variation without board approval and is reprimanded), manages the 2022 to 2023 crisis badly at first and well later, champions the 2025 bond, and in 2026 leads the partial sale he once said Kilnworth would never make.
 
 ### Mariama Talmé (local sponsor)
 
@@ -777,7 +777,7 @@ Dutch, born 1966 in Rotterdam. Joined a Dutch bank in 1990; posted to Jakarta 19
 
 At Castellan he wants a landmark mandate, the underwriting and hedging fees that come with it, and a clean record at credit committee. He fears underwriting a deal that will not sell down, and he never stops worrying about convertibility (Jakarta). He negotiates bluntly, anchors early, hides behind his credit committee, and trades price for structure. Verbal habit: "Fine. And the day it goes wrong?"
 
-Where he is wrong: he insists on an 80% swap hedge with the swaps priced by his own bank, and the 7.5 bps execution charge becomes a sponsor grievance; in 2016 he tells Tomasz in 2016 that the banks will accept a final maturity in 2036, which they do not (the common profile ends on June 30, 2034). Arc: lead arranger of Case P (2017 to 2018); out of the bank in 2020; restructuring adviser to the Case T senior lenders (2022 to 2023), where he sits opposite sponsors as he once sat opposite borrowers; debt adviser to Kilnworth on the 2025 Case P bond, re-reading his own 2018 term sheet from the borrower's side.
+Where he is wrong: he insists on an 80% swap hedge with the swaps priced by his own bank, and the 7.5 bps execution charge becomes a sponsor grievance (this fight is staged once, in September 2017, Chapter 56); in 2016 he tells Tomasz that the banks will accept a final maturity in 2036, which they do not (the common profile ends on June 30, 2034). Arc: lead arranger of Case P (2017 to 2018); out of the bank in 2020; restructuring adviser to the Case T senior lenders (2022 to 2023), where he sits opposite sponsors as he once sat opposite borrowers; debt adviser to Kilnworth on the 2025 Case P bond, re-reading his own 2018 term sheet from the borrower's side.
 
 ### Adaeze Whitcombe (sponsor's counsel)
 
@@ -841,7 +841,7 @@ South African, born 1983 in Durban. Actuarial science (Cape Town); four years on
 
 At the ABDB she wants additionality she can defend to her board, and an environmental and social record without a stain. She fears a resettlement grievance becoming a campaign. She uses DFI policy as leverage, ties E&S conditions to disbursements, and is quiet and persistent. Verbal habit: "What's the counterfactual?"
 
-Where she is wrong: in 2017 she argues for a smaller PRG (USD 30 million); the Board raises it to USD 41.5 million, and in 2023 even that is less than one quarter of the peak arrears. Arc: drives the RAP, the ESAP and the PRG on Case P; moves to Lattimer in 2021; leads diligence on Case R's A2 and A3 and the 2025 refinancing.
+Where she is wrong: in 2017 she argues for a smaller PRG (USD 30 million); the Board raises it to USD 41.5 million, and in 2023 even that covers only about a third of the June 2023 peak arrears net of the LC drawing (less than 30% of the gross arrears; P-C16). Arc: drives the RAP, the ESAP and the PRG on Case P; moves to Lattimer in 2021; leads diligence on Case R's A2 and A3 and the 2025 refinancing.
 
 ### Henrike Vosskamp (ECA underwriter)
 
@@ -1308,9 +1308,11 @@ Every change to a case after this version is logged here. "Date in story" is whe
 | R-C18 | 2024-03 to 2024-05 | 83 | R | Hydrogen developer offer | Unnamed | Marlowe Gulf Hydrogen; 12 years at USD 39.00/MWh; IC passes May 2024 | Annex R.3 |
 | P-C41 | 2022-06 to 2025-06 | 59, 62 | P | Cash effect of SEKA arrears (modeler calibration, pre-publication) | Not specified (full overdue increase hits cash) | 80% of overdue amounts are energy-charge arrears matched by deferred payments to SNHK and GCK (formalized by the June 2023 netting agreement); 20% hits cash | Assumption; P-F20, P-F21, P-F40 |
 | P-C42 | 2021 onward | 24, 41 | P | LTSA equivalent operating hours (modeler rule, pre-publication) | Hours fixed at 8,059 a year | Hours scale with availability and with dispatch relative to 76.5% (8,439 EOH a year per unit at base) | Annex 1.5; P-F48 |
-| P-C43 | 2020-10 to 2021-11 | 61 | P | Construction overrun (modeler calibration, pre-publication; editor ruling) | Hard-cost overrun USD 39.27 million; standby and contingent equity not drawn | Plus USD 42.17 million delay-related EPC acceleration and owner cost escalation (Months 34 to 40); standby drawn USD 10.0 million and contingent equity USD 3.3 million after contingency, delay LDs, DSU and FX gains | P-F18 |
+| P-C43 | 2021-05 to 2021-11 | 61 | P | Construction overrun: delay-related costs (modeler calibration, pre-publication; editor rulings v1.2 and v1.3) | Hard-cost overrun USD 39.27 million; standby and contingent equity not drawn | Plus USD 42.17 million delay-related costs incurred Months 34 to 40: EPC claims settlement: COVID-19 disruption and compensable events beyond the 9.40 variation order (Lindauer, settled at taking-over) 12.00; Acceleration agreement with Lindauer to hold taking-over at November 2021 after the grid event 9.50; Extended owner's costs and site team beyond the 6.93 (owner's engineer, site team, security, camp) 7.20; Re-commissioning after the grid event (repeat backfeed, protection coordination study, OEM field service) 6.40; Transformer replacement expediting, freight and installation not recovered under the EAR policy 3.10; Additional IE, lenders' legal and expert-determination costs beyond the 0.86 2.35; Operator mobilization and training held seven months longer (O&M contractor standby) 1.62; standby drawn USD 10.0 million and contingent equity USD 3.3 million after contingency, delay LDs, DSU and FX gains | P-F18 |
 | P-C44 | 2022-01-01; 2023-02-14 | 16, 18, 59 | P | SEKA standby LC amount (editor ruling) | USD 33.8 million (2022); drawing USD 33.8 million | USD 36.2 million on the two-plus-one formula (2022); drawing USD 36.6 million (2023 reset); overdue path unchanged | P-F39, P-F40 |
 | P-C45 | 2018-07-17 | 37, 38, 40, 59, 66 | P | Construction FX hedge (D-114) | No currency hedge | USD/KCR forwards with Castellan buying KCR for 75% of onshore EPC payments (KCR 32,204 million; average forward 612.6), covered-parity pricing, cash-settled; settlements USD 4.40 million gain | P-F65, P-F66 |
+| P-C46 | 2017-10; 2023 | 75 | P | Halbeck RBL expected borrowing base (annex 4.13; editor ruling v1.3) | About USD 420 million at signing; about 360 million at the 2023 redetermination | USD 280.7 million at signing; USD 362.7 million in 2023 (model logic: sales capped at contracted SNHK demand, 40% reserve tail, completion-basis NPV; inputs unchanged) | P-F59 |
+| P-C47 | 2016-09 | 46, 47 | P | Kilnworth bid model reconstruction for the P-F64 bridge (modeler calibration, pre-publication) | Bid-model IRR 16.0% (annex 4.7); bid-model base rate not stated | Swapped base rate 3.44% flat, solved so that the reconstruction returns 16.0% with the annex 4.7 indicative terms, the 655 capex, no PRI or WHT gross-up, no mini-perm, no VAT facility interest, no minimum turnover tax or thin cap, KCR flat; the bridge to the FC base (13.3%) is sequential with no residual | P-F64 |
 | N-C01 | n/a | 1, 89 | All | Name register | Unregistered | Part N entries | Annex N |
 
 Rows T-C12 to T-C21, R-C11 to R-C18 and N-C01 are detailed in `bible/case-bible-annex-tr.md` (Annex TR, October 3, 2026), which takes precedence over this file where they differ.

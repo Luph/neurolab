@@ -1,6 +1,6 @@
 # Figure ledger: Case P (Bélanou Combined Cycle Power Project)
 
-Source: `model/outputs_case_p.json`, produced by `model/case_p.py` (Case P model v1.0; story as of October 3, 2026); formatted by `model/ledger_p.py` (no computation). Amounts in USD million, nominal, unless stated. Scenario numbers are the workbook scenario switch (1 FC base, 2 FC banking, 3 FC downside, 4-13 sensitivities, 14 COD re-forecast, 15 actual history). P-F01 to P-F36 are the Case Bible register; P-F37 to P-F45 are editor assignments and P-F46 to P-F63 come from case-bible-annex-p.md (P-F11 is split into P-F11a DSRA and P-F11b MMRA). Model version 1.2 (annex absorbed; editor rulings of October 3, 2026: overrun calibration P-C43, FX hedge D-114, P-F64 to P-F66). Writers cite the ID; print values in the style-sheet format.
+Source: `model/outputs_case_p.json`, produced by `model/case_p.py` (Case P model v1.3; story as of October 3, 2026); formatted by `model/ledger_p.py` (no computation). Amounts in USD million, nominal, unless stated. Scenario numbers are the workbook scenario switch (1 FC base, 2 FC banking, 3 FC downside, 4-13 sensitivities, 14 COD re-forecast, 15 actual history). P-F01 to P-F36 are the Case Bible register; P-F37 to P-F45 are editor assignments and P-F46 to P-F63 come from case-bible-annex-p.md (P-F11 is split into P-F11a DSRA and P-F11b MMRA). Model version 1.3 (annex absorbed; editor rulings of October 3, 2026: delay-related overrun categories P-C43, FX hedge D-114, P-F64 to P-F66, sequential P-F64 bridge, RBL expectation revised P-C46). Writers cite the ID; print values in the style-sheet format.
 
 Definitions used throughout: DSCR = CFADS / (interest incl. WHT gross-up + swap net + PRI premium + PCG fee + scheduled principal); average DSCR = sum of CFADS / sum of debt service over the loan life; LLCR = (PV of CFADS to final maturity at the period all-in senior cost + DSRA balance) / senior debt, at the start of the first repayment period; gearing = senior debt / total funding requirement; CFADS = revenue - operating costs - tax paid - increase in working capital - MMRA contributions + MMRA releases. Equity IRR is at project-company level from the LNTP date (February 5, 2018), before shareholder withholding tax.
 
@@ -455,7 +455,14 @@ Definitions used throughout: DSCR = CFADS / (interest incl. WHT gross-up + swap 
 | P-F18 | Actual use: overrun items excl extension | 74.51 | USD m | Actual history (15) | 2021-12-01 |
 | P-F18 | Actual use: hard cost overrun total | 81.44 | USD m | Actual history (15) | 2021-12-01 |
 | P-F18 | Actual use: of which bible items | 39.27 | USD m | Actual history (15) | 2021-12-01 |
-| P-F18 | Actual use: of which calibration | 42.17 | USD m | Actual history (15) | 2021-12-01 |
+| P-F18 | Actual use: of which delay related added | 42.17 | USD m | Actual history (15) | 2021-12-01 |
+| P-F18 | Actual use: delay-related cost added (P-C43): EPC claims settlement: COVID-19 disruption and compensable events beyond the 9.40 variation order (Lindauer, settled at taking-over) | 12.00 | USD m | Modeler assumption (P-C43), Months 34-40 | 2021-05 to 2021-11 |
+| P-F18 | Actual use: delay-related cost added (P-C43): Acceleration agreement with Lindauer to hold taking-over at November 2021 after the grid event | 9.50 | USD m | Modeler assumption (P-C43), Months 34-40 | 2021-05 to 2021-11 |
+| P-F18 | Actual use: delay-related cost added (P-C43): Extended owner's costs and site team beyond the 6.93 (owner's engineer, site team, security, camp) | 7.20 | USD m | Modeler assumption (P-C43), Months 34-40 | 2021-05 to 2021-11 |
+| P-F18 | Actual use: delay-related cost added (P-C43): Re-commissioning after the grid event (repeat backfeed, protection coordination study, OEM field service) | 6.40 | USD m | Modeler assumption (P-C43), Months 34-40 | 2021-05 to 2021-11 |
+| P-F18 | Actual use: delay-related cost added (P-C43): Transformer replacement expediting, freight and installation not recovered under the EAR policy | 3.10 | USD m | Modeler assumption (P-C43), Months 34-40 | 2021-05 to 2021-11 |
+| P-F18 | Actual use: delay-related cost added (P-C43): Additional IE, lenders' legal and expert-determination costs beyond the 0.86 | 2.35 | USD m | Modeler assumption (P-C43), Months 34-40 | 2021-05 to 2021-11 |
+| P-F18 | Actual use: delay-related cost added (P-C43): Operator mobilization and training held seven months longer (O&M contractor standby) | 1.62 | USD m | Modeler assumption (P-C43), Months 34-40 | 2021-05 to 2021-11 |
 | P-F18 | Actual use: contingency available | 38.40 | USD m | Actual history (15) | 2021-12-01 |
 | P-F18 | Actual use: other base | 54.57 | USD m | Actual history (15) | 2021-12-01 |
 | P-F18 | Actual use: subtotal before financing | 742.91 | USD m | Actual history (15) | 2021-12-01 |
@@ -1120,14 +1127,18 @@ Definitions used throughout: DSCR = CFADS / (interest incl. WHT gross-up + swap 
 | P-F62 | Pricing committee tariff at USD 15.05/kW-month (bid-model IRR 17.6%) vs submitted (16.0%) | 74.35 vs 73.00 | USD/MWh | Bid inputs | 2016-09-19 |
 | P-F63 | June 30, 2023: 12-month CFADS / debt service / historic DSCR | 73.1 / 76.5 / 0.96x | USD m, x | Actual history (15) | 2023-06-30 |
 | P-F63 | Equity cure needed for 1.10x / 1.20x | 11.0 / 18.7 | USD m | Actual history (15) | 2023-06-30 |
-| P-F64 | Bid-to-close IRR bridge: FC base at financial close (July 2018) | 13.3% (+0.0 pp) | % (cumulative) | FC base (1) re-sized at each step | 2016-09 to 2018-07 |
-| P-F64 | Bid-to-close IRR bridge: Capex: bid-stage estimate USD 655.0m before financing (vs 710.99) | 15.1% (+1.8 pp) | % (cumulative) | FC base (1) re-sized at each step | 2016-09 to 2018-07 |
-| P-F64 | Bid-to-close IRR bridge: Financing terms: no soft mini-perm sweep from 2027 | 15.2% (+0.1 pp) | % (cumulative) | FC base (1) re-sized at each step | 2016-09 to 2018-07 |
-| P-F64 | Bid-to-close IRR bridge: Fees and premiums: no PRI premium, WHT gross-up or financed ECA premium | 16.8% (+1.6 pp) | % (cumulative) | FC base (1) re-sized at each step | 2016-09 to 2018-07 |
-| P-F64 | Bid-to-close IRR bridge: Tax: no minimum turnover tax, no thin-cap disallowance | 16.8% (+0.1 pp) | % (cumulative) | FC base (1) re-sized at each step | 2016-09 to 2018-07 |
-| P-F64 | Bid-to-close IRR bridge: FX and indexation: KCR flat at the FC rate (no depreciation of local tariff shares and costs) | 17.6% (+0.8 pp) | % (cumulative) | FC base (1) re-sized at each step | 2016-09 to 2018-07 |
-| P-F64 | Bid-to-close IRR bridge: Schedule: IRR measured from financial close, not from the February 2018 LNTP payment | 17.7% (+0.1 pp) | % (cumulative) | FC base (1) re-sized at each step | 2016-09 to 2018-07 |
-| P-F64 | Bid-to-close IRR bridge: Other bid-model differences (residual to the 16.0% bid-model IRR) | 16.0% (-1.7 pp) | % (cumulative) | FC base (1) re-sized at each step | 2016-09 to 2018-07 |
+| P-F64 | Bid-to-close IRR bridge (sequential, in this order): Kilnworth bid model, September 2016 (reconstructed; tariff USD 14.36/kW-month) | 16.00% (+0.00 pp) | % (cumulative) | FC base (1) re-sized at each step | 2016-09 to 2018-07 |
+| P-F64 | Bid-to-close IRR bridge (sequential, in this order): Base rate: reconstructed bid-model swapped rate (flat) replaced by the FC forward curve and the 2.947% swap | 16.56% (+0.56 pp) | % (cumulative) | FC base (1) re-sized at each step | 2016-09 to 2018-07 |
+| P-F64 | Bid-to-close IRR bridge (sequential, in this order): Debt terms: 2016 indicative margins, upfront fees and ECA premium (annex 4.7) replaced by the FC terms | 17.00% (+0.44 pp) | % (cumulative) | FC base (1) re-sized at each step | 2016-09 to 2018-07 |
+| P-F64 | Bid-to-close IRR bridge (sequential, in this order): PRI cover on the commercial tranche and the 10% WHT gross-up, added in diligence | 16.14% (-0.86 pp) | % (cumulative) | FC base (1) re-sized at each step | 2016-09 to 2018-07 |
+| P-F64 | Bid-to-close IRR bridge (sequential, in this order): Soft mini-perm cash sweep from 2027 (FC term sheet) | 16.01% (-0.14 pp) | % (cumulative) | FC base (1) re-sized at each step | 2016-09 to 2018-07 |
+| P-F64 | Bid-to-close IRR bridge (sequential, in this order): Capex: bid-stage USD 655.0m before financing grows to the FC budget of USD 710.99m (owner's cost, resettlement, contingency) | 14.21% (-1.79 pp) | % (cumulative) | FC base (1) re-sized at each step | 2016-09 to 2018-07 |
+| P-F64 | Bid-to-close IRR bridge (sequential, in this order): VAT facility interest (omitted from the bid model, annex Kunal Mehrotra) | 14.16% (-0.05 pp) | % (cumulative) | FC base (1) re-sized at each step | 2016-09 to 2018-07 |
+| P-F64 | Bid-to-close IRR bridge (sequential, in this order): Tax: minimum turnover tax and thin-cap disallowance | 14.10% (-0.06 pp) | % (cumulative) | FC base (1) re-sized at each step | 2016-09 to 2018-07 |
+| P-F64 | Bid-to-close IRR bridge (sequential, in this order): FX: KCR depreciation on the local tariff shares and costs (bid model held the KCR flat) | 13.31% (-0.79 pp) | % (cumulative) | FC base (1) re-sized at each step | 2016-09 to 2018-07 |
+| P-F64 | Bid-to-close IRR bridge (sequential, in this order): IRR dating: measured from the February 2018 LNTP payment rather than from financial close | 13.27% (-0.05 pp) | % (cumulative) | FC base (1) re-sized at each step | 2016-09 to 2018-07 |
+| P-F64 | Bridge total: bid model to FC base / sum of steps (no residual) | -2.73 pp / -2.73 pp | pp | FC base (1) | 2016-09 to 2018-07 |
+| P-F64 | Reconstructed bid-model swapped base rate (modeler reconstruction, solved to the 16.0% bid IRR) | 3.44% | % flat | Modeler reconstruction | 2016-09 |
 | P-F65 | FX forwards (Castellan, traded 2018-07-17): share hedged / KCR notional / USD at forward / USD at FC spot / average forward | 75% / 32,204 / 52.6 / 62.0 / 612.6 | %, KCR m, USD m, KCR/USD | Contract (FC) | 2018-07-17 |
 | P-F65 | Forward 2018-08: KCR notional / forward rate / USD | 3,220.4 / 526.0 / 6.12 | KCR m, KCR/USD, USD m | Contract (FC) | 2018-08 |
 | P-F65 | Forward 2019-02: KCR notional / forward rate / USD | 299.9 / 552.3 / 0.54 | KCR m, KCR/USD, USD m | Contract (FC) | 2019-02 |
@@ -1154,4 +1165,4 @@ Definitions used throughout: DSCR = CFADS / (interest incl. WHT gross-up + swap 
 | P-F66 | Unhedged KCR depreciation saving on the onshore EPC (for comparison) | 6.72 | USD m | Actual history (15) | 2021-11-30 |
 | P-F40 | SEKA LC drawing, February 14, 2023 (2023 reset value; P-C44) | 36.6 | USD m | Actual history (15) | 2023-02-14 |
 
-FC base equity IRR is below the 16.0% bid-model target; P-F64 bridges the gap. See `model/case_p_report.md` Sections 6 and 8a.
+FC base equity IRR is below the 16.0% bid-model target; P-F64 bridges the gap sequentially with no residual (steps printed to 0.01 pp may sum to the total within 0.01 by rounding). See `model/case_p_report.md` Section 8b.
