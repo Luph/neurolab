@@ -18,7 +18,8 @@
 
 ### Phase 1 fact sheets (2026-10-03)
 - Workflow run stopped after 7 sheets (eurotunnel, dabhol, paiton, hub-power, nam-theun-2, chad-cameroon, sadara). Remaining relaunched as background agents in groups of 3.
-- PENDING (concurrency cap of 20 subagents hit): [insurance-market, anticorruption-sanctions, ratings], [contract-law, islamic, ppp-frameworks]
+- All fact-sheet groups launched.
 - Done: reipppp, indiana-toll-road, sh130 (BW4 2018 signing unverified; ITR original debt medium). loan-docs group launched.
 - Done: tideway, hinkley-sizewell, ocean-wind. sustainable-fin group launched.
 - NOTE: session-wide WebSearch budget (~200 searches) reported exhausted; later research and fact-check agents must fall back to WebFetch/curl of known official URLs.
+- Done: dogger-bank, triple-point, t-reference-rates, t-pillar-two, t-interest-limitation, t-accounting, azura-edo, noor-ouarzazate, sarulla, moss-landing, northern-lights, neom-hydrogen.
