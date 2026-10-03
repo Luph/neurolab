@@ -1611,7 +1611,7 @@ Entries: 1793 (recounted October 3, 2026 after consolidation A, which applied th
 | strategic sponsor | – | A sponsor that invests mainly to sell a product or service to, or buy output from, the project, as well as for dividends. | ssec:4.1.1 |  |
 | stream | – | A contract under which a financier pays an upfront deposit and a fixed ongoing price per unit in exchange for a share of a mine's future production of a metal. | ssec:21.5.2 |  |
 | strike price | – | The fixed price per unit of energy in a contract for difference against which the reference price is settled. | ssec:19.4.1 |  |
-| strip ratio | – | Tonnes of waste moved per metric ton of ore mined in an open pit. | ssec:12.3.2 | Also entered by Ch 78: those chapters cross-reference this home. |
+| strip ratio | – | Metric tons of waste moved per metric ton of ore mined in an open pit. | ssec:12.3.2 | Also entered by Ch 78: those chapters cross-reference this home. |
 | structural mitigant | – | A feature of the financing's structure, such as gearing, tenor, sculpting, sweeps, lock-ups and covenants, that protects lenders without a third party. | sec:16.7 |  |
 | structural shortfall | – | A traffic shortfall caused by a permanently wrong assumption, which does not close with time. | ssec:79.5.1 |  |
 | structural subordination | – | The junior position of a holding company's creditors, who can reach a subsidiary's assets only after all the subsidiary's creditors are paid. | ssec:31.3.1 |  |

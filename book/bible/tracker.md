@@ -121,3 +121,6 @@
 - Blueprint review round 2 launched (4 fresh reviewers). Phase 2 pilot launched in parallel: Ch 2 (narrative) and Ch 36 (calculation).
 - Case P model v1.4 DONE (R1–R12 rows; ledger extensions; inputs_case_p.xlsx; stage reconciliation confirmed). Build-along + exercise workbook builder launched.
 - Blueprint review round 2: coverage FAIL (3 major), capabilities FAIL (1 major), sequencing FAIL (1 major), standards PASS. Round-2 fixer launched; then a single verifier confirms (round 3).
+- Pilot Ch 2 drafted (~19.1k words incl. exercises; 46 pp) → six reviewers running.
+- Pilot Ch 36 drafted (~21.5k words; 54 pp) → six reviewers running.
+- Pending ledger request (Case P): add P-F09 row for cash-sweep prepayment total (~USD 95m) so scheduled principal (538.2) + sweep = 633.3.
