@@ -7,7 +7,7 @@ Method. I split the briefs into 88 chapter chunks by script and checked every ch
 
 ## Verdict: FAIL
 
-One blocking defect: the locked TOC breaks the Section 8 heading rules in 60 headings. The briefs pass on most other points. All 88 chapters have every Section 6 element. Every chapter has three exercise tiers with 10 to 18 exercises in total. Every can-do statement has 2 to 4 items tied to capabilities. Every running-case figure ID cited exists in the ledgers. The modeling course is specified cell by cell, with notation and Excel. Numerical accuracy is excellent: 25 of the 26 recomputed examples match exactly, and the 26th differs only in a rounding display.
+One blocking defect: the locked TOC breaks the Section 8 heading rules in 57 headings. The briefs pass on most other points. All 88 chapters have every Section 6 element. Every chapter has three exercise tiers with 10 to 18 exercises in total. Every can-do statement has 2 to 4 items tied to capabilities. Every running-case figure ID cited exists in the ledgers. The modeling course is specified cell by cell, with notation and Excel. Numerical accuracy is excellent: 25 of the 26 recomputed examples match exactly, and the 26th differs only in a rounding display.
 
 Counts: 1 blocking, 9 major, 10 minor.
 

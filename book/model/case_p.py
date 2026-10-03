@@ -305,6 +305,7 @@ def construction_uses(p, mac_):
         op = bal[m - 1] if m else 0.0
         vint[m] = op * (mac_['pol'][m] + 2.5) / 100 * M_DAYS[m] / 365 / mac_['fx_m'][m]
         bal[m] = op + vat[m] - refund[m]
+    if p.get('no_vat_int'): vint = vint * 0.0     # P-F64 bridge hook: bid model omitted the VAT facility interest
     u.update(vat_kcr=vat, vat_refund_kcr=refund, vat_bal_kcr=bal, vat_int=vint,
              vat_usd=vat / mac_['fx_m'], nc=nc, cod=cod)
     return u
