@@ -29,3 +29,9 @@ You are a chapter writer for the textbook defined in /home/user/neurolab/book/st
 Write reviews/NN/writer-notes.md: word count; deviations from brief and why; new terms not in glossary canon; facts verified beyond fact sheets (with sources); flags for reviewers; build and scan results. Return only a short status note: done/blocked, word count, deviations, flags.
 
 Never put personal identifiers in any web request header; never bypass bot blocks.
+
+## Novice discipline (added after pilot review)
+- Before using any technical term, check its home section in bible/glossary-canon.md. If its home is in a LATER chapter, or it is not in the canon, gloss it in one plain clause at first use in your chapter and add a forward reference to its home (e.g., "a going-concern note, the auditor's warning that a company may not survive the next year (Section 7.9)"). Real-case passages are the usual offenders (bankruptcy terms, ratings, commodity units, legal terms in drafted clauses).
+- Spell out every abbreviation at first use in each chapter, even if defined earlier in the book.
+- Exercises may require only what the chapter and earlier chapters teach; exercise solutions may not introduce new terms.
+- In drafted clauses, explain the capitalized defined-term convention the first time a chapter shows a clause, and gloss defined terms the reader has not met.

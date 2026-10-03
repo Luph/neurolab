@@ -86,7 +86,7 @@ One file per item in `facts/<slug>.md`. Chapters listed are the primary users (a
 
 ## Delivered fact sheets (all files in `facts/`, October 3, 2026)
 
-Added by the central Bible editor after the blueprint review (D-042). One row per file actually delivered (172; the twelve D-122 sheets were added in round 2, D-126). Subject is the sheet's own title line. Chapters are the union of the main chapters planned above, the chapters whose briefs cite the slug (scripted scan of `bible/briefs/u01.md` to `u17.md`, chapter sections only; "matter NN" means a matter file), and the placements the coverage review assigned to unplaced sheets. Briefs under revision may add citations; the anchor and citation pass at registry regeneration refreshes this column.
+Added by the central Bible editor after the blueprint review (D-042). One row per file actually delivered (172; the twelve D-122 sheets were added in round 2, D-127). Subject is the sheet's own title line. Chapters are the union of the main chapters planned above, the chapters whose briefs cite the slug (scripted scan of `bible/briefs/u01.md` to `u17.md`, chapter sections only; "matter NN" means a matter file), and the placements the coverage review assigned to unplaced sheets. Briefs under revision may add citations; the anchor and citation pass at registry regeneration refreshes this column.
 
 | Slug | Subject (title line) | Chapters | Note |
 |---|---|---|---|
@@ -118,14 +118,14 @@ Added by the central Bible editor after the blueprint review (D-042). One row pe
 | h-north-sea-field-finance | North Sea field financings in the 1970s (BP Forties, 1972) and the shift to limited recourse | 3 | placement assigned by the coverage review or the central editor; no brief cites it yet |
 | h-production-payments | Oil and gas production payments in the US (1930s–1970s): mechanics and tax history | 3 | placement assigned by the coverage review or the central editor; no brief cites it yet |
 | h-purpa-us-ipp | PURPA 1978, qualifying facilities and the rise of US independent power producers in the 1980s | 3 | placement assigned by the coverage review or the central editor; no brief cites it yet |
-| h2global | H2Global: the Hintco double-auction mechanism and the first tender results (2024) and follow-on rounds | 83 | delivered after round 1 (D-126); placed in round 2: ssec:83.2.3 |
+| h2global | H2Global: the Hintco double-auction mechanism and the first tender results (2024) and follow-on rounds | 83 | delivered after round 1 (D-127); placed in round 2: ssec:83.2.3 |
 | hinkley-sizewell | Hinkley Point C (CfD) and Sizewell C (RAB, FID 2025) | 5, 8, 11, 19, 74, 88 |  |
 | hub-power | Hub Power (Pakistan): early IPP, World Bank support, disputes | 3, 14, 16, 17, 18, 22, 33, 34, 54, 56, 60, 69 |  |
 | hyperion-meta | Large data-center financings 2024-2025 (e.g., Meta Hyperion JV with Blue Owl) | 12, 20, 21, 29, 30, 32, 82, 88, matter 17 |  |
 | ichthys | Ichthys LNG (Browse Basin and Darwin, Australia) | 14, 16, 22, 23, 26, 29, 30, 32, 61, 63, 76 |  |
 | indiana-toll-road | Indiana Toll Road | 6, 8, 14, 16, 21, 36, 37, 46, 47, 52, 53, 64, 79 |  |
 | ivanpah | Ivanpah CSP and the DOE loan guarantee | 3, 11, 14, 24, 29, 48, 49, 62, 65, 70, 86, 88 |  |
-| kenya-steam-sales | Kenya's geothermal steam-sales model: GDC's Menengai PISSAs, KenGen's Olkaria VI steam-supply PPP and the Olkaria III contrast | 72 | delivered after round 1 (D-126); placed in round 2: ssec:72.5.4, ssec:72.5.5 |
+| kenya-steam-sales | Kenya's geothermal steam-sales model: GDC's Menengai PISSAs, KenGen's Olkaria VI steam-supply PPP and the Olkaria III contrast | 72 | delivered after round 1 (D-127); placed in round 2: ssec:72.5.4, ssec:72.5.5 |
 | lake-turkana | Lake Turkana Wind Power: transmission delay, deemed energy | 11, 14, 15, 17, 18, 22, 25, 27, 28, 31, 70, 73, 85 |  |
 | metronet | Metronet and the London Underground PPP | 14, 15, 24, 57, 58, 80 |  |
 | moss-landing | Battery fires (Moss Landing 2025) and storage insurance and safety | 11, 14, 16, 27, 62, 65, 73 |  |
@@ -151,7 +151,7 @@ Added by the central Bible editor after the blueprint review (D-042). One row pe
 | reipppp | South Africa's Renewable Energy Independent Power Producer Procurement Programme (REIPPPP) | 17, 19, 28, 47, 55, 56, 57, 58, 70 |  |
 | sabine-pass | Sabine Pass LNG: fee-based SPAs making liquefaction financeable | 12, 16, 21, 22, 76, 87 |  |
 | sadara | Sadara Chemical Company (Jubail, Saudi Arabia) | 26, 30, 32, 33, 51, 53, 55, 56, 77 |  |
-| saf-mandates | SAF mandates: ReFuelEU Aviation (Regulation (EU) 2023/2405), the UK SAF Mandate (2024 Order) and the UK Revenue Certainty Mechanism | 83 | delivered after round 1 (D-126); placed in round 2: ssec:83.4.2 |
+| saf-mandates | SAF mandates: ReFuelEU Aviation (Regulation (EU) 2023/2405), the UK SAF Mandate (2024 Order) and the UK Revenue Certainty Mechanism | 83 | delivered after round 1 (D-127); placed in round 2: ssec:83.4.2 |
 | saf-project | Sustainable aviation fuel project financing: Montana Renewables (Calumet) and its USD 1.44 billion DOE loan guarantee | 83 |  |
 | sanctions-2022 | Sanctions since 2022 and live projects: Nord Stream 2 and Arctic LNG 2 | 14, 49, 60, 75, 76 |  |
 | sarulla | Sarulla geothermal (Indonesia): resource risk, JBIC/ADB | 14, 16, 23, 48, 72 |  |
@@ -159,7 +159,7 @@ Added by the central Bible editor after the blueprint review (D-042). One row pe
 | solvency-qualifying-deal | A project bond or loan structured for Solvency II qualifying infrastructure treatment (real case): NOT VERIFIED | 84 |  |
 | spain-renewables | Spain: retroactive cuts to renewable support and the treaty arbitrations that followed | 14, 17, 19, 54, 60, 70 |  |
 | spreadsheet-errors | Spreadsheet errors: Reinhart–Rogoff and Herndon–Ash–Pollin (2013), the JPMorgan CIO VaR spreadsheet (2013 Task Force findings), and EuSpRIG research on error rates | 13 |  |
-| subsea-cable-pf | EASSy (Eastern Africa Submarine System) and WIOCC: a DFI-financed subsea telecom cable | 82 | delivered after round 1 (D-126); placed in round 2: ssec:82.3.4 (supersedes the request subsea-cable) |
+| subsea-cable-pf | EASSy (Eastern Africa Submarine System) and WIOCC: a DFI-financed subsea telecom cable | 82 | delivered after round 1 (D-127); placed in round 2: ssec:82.3.4 (supersedes the request subsea-cable) |
 | sunedison-terraform | SunEdison bankruptcy and TerraForm Power | 14, 26, 31, 32, 47, 63, 66 |  |
 | sydney-tunnels | Cross City Tunnel and Lane Cove Tunnel: traffic forecast failure | 9, 12, 14, 15, 27, 28, 35, 47, 48, 58, 64, 79, 86, 87 |  |
 | t-accounting | Accounting standards for projects and sponsors: IFRIC 12, IFRS 16, IFRS 9, IFRS 10/11, ASC 853/842/815, IFRS 18 | 7, 66, 84 |  |
@@ -171,7 +171,7 @@ Added by the central Bible editor after the blueprint review (D-042). One row pe
 | t-arbitration-treaties | Arbitration and investment treaties: ICSID, New York Convention, Energy Charter Treaty withdrawals, Achmea/Komstroy, sovereign immunity | 10, 54, 60, matter 94 |  |
 | t-basel | Basel slotting approach for project finance; Basel III final / "3.1" implementation in the EU, UK and US | 38, 68, 87 |  |
 | t-basel-crm | Basel credit risk mitigation for project lending: guarantees, ECA and credit insurance cover, the 0% MDB list, large exposures, the NSFR and the Basel output-floor phase-in | 84 |  |
-| t-battery-degradation | Lithium-ion BESS degradation and augmentation: cycle and calendar fade, warranty structures, augmentation strategies, NLR (formerly NREL) and Lazard assumptions | 45 | delivered after round 1 (D-126); placed in round 2: ssec:45.3.2 |
+| t-battery-degradation | Lithium-ion BESS degradation and augmentation: cycle and calendar fade, warranty structures, augmentation strategies, NLR (formerly NREL) and Lazard assumptions | 45 | delivered after round 1 (D-127); placed in round 2: ssec:45.3.2 |
 | t-blended-finance | Blended finance: market data, structures (first-loss, guarantees, concessional tranches) and climate funds (GCF, CIF) | 34 |  |
 | t-cap-and-floor | Ofgem cap-and-floor regimes: electricity interconnectors and long-duration electricity storage (LDES) | 19, 73 | coverage review placement added |
 | t-capacity-ancillary-markets | Capacity and ancillary-service markets: GB Capacity Market (T-4), PJM Base Residual Auctions 2025/26–2028/29, ERCOT ancillary services (RRS, ECRS) | 20 |  |
@@ -183,19 +183,19 @@ Added by the central Bible editor after the blueprint review (D-042). One row pe
 | t-corporate-ppa-market | Corporate PPA market: volumes, structures and price indices, 2020–2026 (US and Europe) | 20 |  |
 | t-critical-minerals-policy | Critical minerals policy finance: US DOE/DFC/EXIM/DoD, the EU Critical Raw Materials Act and Japan's JOGMEC and JBIC | 78, 83 |  |
 | t-cyber-infrastructure | Cyber risk in infrastructure: Colonial Pipeline (2021), Ukrainian grid attacks (2015/2016), cyber insurance and war exclusions, NERC CIP | 14, 16 |  |
-| t-decommissioning-accounting | Decommissioning provisions and asset retirement obligations: IAS 37, IAS 16, IFRIC 1, IFRIC 5 and IAS 12 (IFRS) versus ASC 410-20 (US GAAP), including discount-rate and unwinding rules | 7, 65, 66 | delivered after round 1 (D-126); placed in round 2: ssec:66.4.7 (primary), ssec:7.10.1, ssec:65.2.2 |
+| t-decommissioning-accounting | Decommissioning provisions and asset retirement obligations: IAS 37, IAS 16, IFRIC 1, IFRIC 5 and IAS 12 (IFRS) versus ASC 410-20 (US GAAP), including discount-rate and unwinding rules | 7, 65, 66 | delivered after round 1 (D-127); placed in round 2: ssec:66.4.7 (primary), ssec:7.10.1, ssec:65.2.2 |
 | t-decommissioning-liabilities | Decommissioning obligations and financial security: offshore wind, oil and gas, mining reclamation, nuclear | 14, 16 |  |
 | t-dfis | DFI and multilateral landscape; MIGA; preferred creditor status; A/B loans | 16, 29, 30, 34, 53, 59, 60, 68 |  |
 | t-digital-execution | Digital deal execution: e-signing finance documents, virtual signings and closings, data rooms, and AI in diligence | 88, matter 94 |  |
 | t-digital-norms | Digital infrastructure financing norms, 2022–2026: tower leases and tower ABS, fibre ABS, data-centre ABS and construction loans | 82, 83 |  |
-| t-earned-value | Earned value management: origins and standards (US DoD C/SCSC 1967, ANSI/EIA-748, PMI and ISO standards) | 61 | delivered after round 1 (D-126); placed in round 2: ssec:61.4.2 (origin and standards only) |
+| t-earned-value | Earned value management: origins and standards (US DoD C/SCSC 1967, ANSI/EIA-748, PMI and ISO standards) | 61 | delivered after round 1 (D-127); placed in round 2: ssec:61.4.2 (origin and standards only) |
 | t-electricity-market-design | Electricity market design: nodal vs zonal pricing, ERCOT price caps after Uri, capacity markets (PJM, GB, Italy), negative prices and ancillary services | 11, 13 |  |
 | t-energy-investment-gap | Energy transition investment gap: global volumes, regional distribution and the cost of capital | 88, matter 94 |  |
-| t-energy-yield | Wind and solar energy yield assessment: P50/P90 conventions, uncertainty components, IEC 61400-12/-15, PV degradation norms, and evidence on P50 bias | 45 | delivered after round 1 (D-126); placed in round 2: ssec:45.2.1, ssec:45.2.2, ssec:45.3.1 |
+| t-energy-yield | Wind and solar energy yield assessment: P50/P90 conventions, uncertainty components, IEC 61400-12/-15, PV degradation norms, and evidence on P50 bias | 45 | delivered after round 1 (D-127); placed in round 2: ssec:45.2.1, ssec:45.2.2, ssec:45.3.1 |
 | t-es-standards | IFC Performance Standards (2012), Equator Principles EP4, World Bank ESF | 50, 84 |  |
 | t-eu-support-schemes | EU renewable support schemes: Germany's sliding market premium (EEG) and the 2024 EU requirement for two-way CfDs | 19 |  |
 | t-excel-versions | Excel function availability by version (Microsoft 365, Excel 2021, Excel 2024): XLOOKUP, LET, LAMBDA, dynamic arrays and related functions | 13 |  |
-| t-fast-standard | The FAST Standard and other financial modelling standards (ICAEW Financial Modelling Code, SMART/Corality, Best Practice Modelling) | 39, 44 | delivered after round 1 (D-126); placed in round 2: ssec:39.2.2, ssec:44.2.2 |
+| t-fast-standard | The FAST Standard and other financial modelling standards (ICAEW Financial Modelling Code, SMART/Corality, Best Practice Modelling) | 39, 44 | delivered after round 1 (D-127); placed in round 2: ssec:39.2.2, ssec:44.2.2 |
 | t-frontier-data | Frontier data: AI and data-centre power demand (IEA), SMR project status, long-duration storage, hydrogen FIDs, private credit growth | 12, 29, 73, 74, 77, 82, 83, 87, 88, matter 17, matter 94 |  |
 | t-hydrogen-support | Hydrogen support schemes: UK HAR1 results and contracts, EU Hydrogen Bank auctions, US 45V final rules (January 2025) and the 2025 law change | 83 |  |
 | t-infra-debt-funds | Infrastructure debt funds and private credit in project finance (2020–2026) | 34 |  |
@@ -230,14 +230,14 @@ Added by the central Bible editor after the blueprint review (D-042). One row pe
 | t-ratings-2 | Rating agency project finance methodologies, part 2: S&P and Moody's criteria, and project finance default and recovery statistics | 30 | placement assigned by the coverage review or the central editor; no brief cites it yet |
 | t-rbl | Reserve-based lending (RBL) | 75 | coverage review placement added |
 | t-reference-rates | Reference rates (SOFR, SONIA, €STR, EURIBOR), LIBOR cessation dates, conventions | 6, 38 |  |
-| t-repowering | Wind and solar repowering and life extension: practice, economics, US tax treatment (80/20 rule), EU permitting (RED III), lender consents | 62, 65 | delivered after round 1 (D-126); placed in round 2: ssec:62.8.1, ssec:65.4.1 (R1 figures in sec:65.8 stay model outputs) |
+| t-repowering | Wind and solar repowering and life extension: practice, economics, US tax treatment (80/20 rule), EU permitting (RED III), lender consents | 62, 65 | delivered after round 1 (D-127); placed in round 2: ssec:62.8.1, ssec:65.4.1 (R1 figures in sec:65.8 stay model outputs) |
 | t-reserves-codes | Reserves and resources reporting codes: SPE-PRMS 2018, JORC 2012, NI 43-101, CRIRSCO Template, SEC S-K 1300 (and SEC oil and gas rules) | 12, 13 |  |
 | t-risk-standards | Risk management standards: ISO 31000:2018 and COSO ERM (2017) – process and risk responses | 14, 16 |  |
 | t-security-civil-law | Security agent structures: parallel debt, security trusts, OHADA security agent (2010), French fiducie and agent des sûretés (2017), UK project finance exception to administrative receivership (Insolvency Act 1986 s.72E), hardening periods | 51, 52, 56 |  |
 | t-solvency | Solvency II infrastructure asset classes and the review | 68 |  |
 | t-storage-safety | Battery storage safety standards and insurance (NFPA 855, UL 9540, UL 9540A) | 73 | placement assigned by the coverage review or the central editor; no brief cites it yet |
 | t-sustainable-finance | Sustainable finance standards: ICMA GBP/SBP/SLBP, LMA GLP/SLLP, EU Taxonomy, EU Green Bond Standard, ISSB S1/S2, Paris Article 6, ICVCM | 30, 84, 87 |  |
-| t-sustainable-finance-2 | Sustainable finance II: EU Taxonomy gas-power criteria, IPCC gas emission factor, TCFD-to-ISSB handover, NGFS scenarios, Climate Bonds Standard, CBAM and ETS2 status (2026) | 84 | delivered after round 1 (D-126); placed in round 2: ssec:84.1.1, ssec:84.3.1 (Exhibit 84.2), Example 84.5, ssec:84.6.4, ssec:84.6.5; covers no non-EU taxonomy, so ssec:84.3.5 keeps its concept-level fallback |
+| t-sustainable-finance-2 | Sustainable finance II: EU Taxonomy gas-power criteria, IPCC gas emission factor, TCFD-to-ISSB handover, NGFS scenarios, Climate Bonds Standard, CBAM and ETS2 status (2026) | 84 | delivered after round 1 (D-127); placed in round 2: ssec:84.1.1, ssec:84.3.1 (Exhibit 84.2), Example 84.5, ssec:84.6.4, ssec:84.6.5; covers no non-EU taxonomy, so ssec:84.3.5 keeps its concept-level fallback |
 | t-tax-treaties-wht | Tax treaties and withholding taxes for project structures: OECD and UN Models (Articles 5, 10–13), the MLI and the principal purpose test, offshore indirect transfers | 84 |  |
 | t-thermal-exclusions | Bank and DFI coal and gas financing exclusion policies | 69, 84 | placement assigned by the coverage review or the central editor; no brief cites it yet |
 | t-traffic-forecast-accuracy | Toll road traffic forecast accuracy: the S&P/Bain studies (2002–2005), Flyvbjerg et al., optimism bias and ramp-up | 48, 50, 79, 83 |  |
@@ -261,7 +261,7 @@ Added by the central Bible editor after the blueprint review (D-042). One row pe
 | wagp | West African Gas Pipeline (WAGP): supply interruptions, Ghana's thermal plants, and take-or-pay risk | 25 |  |
 | winter-storm-uri | Winter Storm Uri (Texas, Feb 2021): hedge shape and volume risk | 9, 11, 14, 16, 20, 69, 70, matter 94 |  |
 | wte | Project-financed waste-to-energy in England: the Defra waste PFI programme, Norfolk's Willows EfW termination (2014) and Herefordshire and Worcestershire's EnviRecover (council-funded) | 81, 83 | coverage review placement added |
-| wte-operating-pf | Dublin Waste-to-Energy (Poolbeg): a project-financed, operating EfW plant with public financing data | 81 | delivered after round 1 (D-126); placed in round 2: ssec:81.4.2, ssec:81.4.3, ssec:81.7.1 |
+| wte-operating-pf | Dublin Waste-to-Energy (Poolbeg): a project-financed, operating EfW plant with public financing data | 81 | delivered after round 1 (D-127); placed in round 2: ssec:81.4.2, ssec:81.4.3, ssec:81.7.1 |
 
 ## Request mapping (brief requests against delivered sheets)
 
@@ -278,13 +278,13 @@ Briefs requested some sheets under slugs that were delivered under other names, 
 | chile-lpvr | Superseded in part | chile-concessions |
 | t-airport-regulation | Superseded in part | t-airport-port-revenue |
 | t-interconnector-cap-floor | Superseded | t-cap-and-floor |
-| t-repowering | Delivered (D-126) | t-repowering: ssec:62.8.1 and ssec:65.4.1; the R1 figures in sec:65.8 stay Case R model outputs |
-| t-fast-standard | Delivered (D-126) | t-fast-standard: ssec:39.2.2, ssec:44.2.2 |
+| t-repowering | Delivered (D-127) | t-repowering: ssec:62.8.1 and ssec:65.4.1; the R1 figures in sec:65.8 stay Case R model outputs |
+| t-fast-standard | Delivered (D-127) | t-fast-standard: ssec:39.2.2, ssec:44.2.2 |
 | t-country-risk | Not delivered; commission or confirm cover | Check t-dfis and t-political-risk-theory for the sovereign ceiling; otherwise state no agency method in ssec:59.1.2 |
-| t-energy-yield | Delivered (D-126) | t-energy-yield: ssec:45.2.1, ssec:45.2.2, ssec:45.3.1 |
-| t-battery-degradation | Delivered (D-126) | t-battery-degradation: ssec:45.3.2; Case R fade stays Annex TR R.5 |
-| t-sustainable-finance-2 | Delivered (D-126) | t-sustainable-finance-2 covers EU gas criteria, the IPCC factor, ISSB, NGFS, the Climate Bonds Standard, CBAM and ETS2, but no non-EU taxonomy; ssec:84.3.5 keeps its concept-level fallback |
-| subsea-cable | Superseded; delivered (D-126) | subsea-cable-pf: ssec:82.3.4, beside Example 82.3 |
+| t-energy-yield | Delivered (D-127) | t-energy-yield: ssec:45.2.1, ssec:45.2.2, ssec:45.3.1 |
+| t-battery-degradation | Delivered (D-127) | t-battery-degradation: ssec:45.3.2; Case R fade stays Annex TR R.5 |
+| t-sustainable-finance-2 | Delivered (D-127) | t-sustainable-finance-2 covers EU gas criteria, the IPCC factor, ISSB, NGFS, the Climate Bonds Standard, CBAM and ETS2, but no non-EU taxonomy; ssec:84.3.5 keeps its concept-level fallback |
+| subsea-cable | Superseded; delivered (D-127) | subsea-cable-pf: ssec:82.3.4, beside Example 82.3 |
 | t-ppp-norms | Not delivered | Teach as D-011 indicative or Illustrative |
 | t-refi-repricing-norms | Not delivered | Teach as D-011 indicative or Illustrative |
 | t-operating-waivers | Not delivered | No fact sheet; state no market figure |
@@ -293,7 +293,7 @@ Briefs requested some sheets under slugs that were delivered under other names, 
 | t-flex-and-fees | Not delivered | No fact sheet; state no market figure |
 | t-thermal-ipp-terms | Not delivered | No fact sheet; state no market figure |
 | t-infra-asset-metrics | Not delivered | No fact sheet; state no market figure |
-| wte operating plant (unnamed request) | Superseded; delivered (D-126) | wte-operating-pf (Dublin Poolbeg): ssec:81.7.1, ssec:81.4.3, ssec:81.4.2 |
+| wte operating plant (unnamed request) | Superseded; delivered (D-127) | wte-operating-pf (Dublin Poolbeg): ssec:81.7.1, ssec:81.4.3, ssec:81.4.2 |
 
 
 ## Round 1 placements (October 3, 2026, consolidation editor part B)
@@ -392,31 +392,31 @@ Source: the "Revision log (round 1)" and "Central changes needed" sections of th
 | t-decommissioning (u13) | Superseded | t-decommissioning-liabilities |
 | FR-1 to FR-5 (u14) | Delivered | t-tax-treaties-wht; t-transfer-pricing; t-accounting-2; t-basel-crm; solvency-qualifying-deal |
 | t-ratings (u07) | Delivered | t-ratings and t-ratings-2 |
-| Earned value management origins and ANSI/EIA-748 (u13, Chapter 61) | Delivered (D-126) | t-earned-value: ssec:61.4.2 |
-| An operating project-financed EfW plant (u16, Chapter 81) | Delivered (D-126) | wte-operating-pf: ssec:81.7.1 |
-| subsea-cable (u16, Chapter 82) | Delivered (D-126) | subsea-cable-pf: ssec:82.3.4 |
-| A specific SAF mandate (u16, Chapter 83) | Delivered (D-126) | saf-mandates: ssec:83.4.2 |
-| H2Global double-sided auctions (u16, Chapter 83) | Delivered (D-126) | h2global: ssec:83.2.3 |
-| kenya-steam-sales (u15, Chapter 72) | Delivered (D-126) | kenya-steam-sales: ssec:72.5.4, ssec:72.5.5 |
+| Earned value management origins and ANSI/EIA-748 (u13, Chapter 61) | Delivered (D-127) | t-earned-value: ssec:61.4.2 |
+| An operating project-financed EfW plant (u16, Chapter 81) | Delivered (D-127) | wte-operating-pf: ssec:81.7.1 |
+| subsea-cable (u16, Chapter 82) | Delivered (D-127) | subsea-cable-pf: ssec:82.3.4 |
+| A specific SAF mandate (u16, Chapter 83) | Delivered (D-127) | saf-mandates: ssec:83.4.2 |
+| H2Global double-sided auctions (u16, Chapter 83) | Delivered (D-127) | h2global: ssec:83.2.3 |
+| kenya-steam-sales (u15, Chapter 72) | Delivered (D-127) | kenya-steam-sales: ssec:72.5.4, ssec:72.5.5 |
 
 ### Open requests and their status
 
-"In progress" meant a research agent was writing the sheet. Round 2 (D-126, October 3, 2026): the editor marks all twelve D-122 sheets delivered; the "Fallback" column of those rows now gives the placement, and the fallback no longer applies. The other rows keep their status and fallback.
+"In progress" meant a research agent was writing the sheet. Round 2 (D-127, October 3, 2026): the editor marks all twelve D-122 sheets delivered; the "Fallback" column of those rows now gives the placement, and the fallback no longer applies. The other rows keep their status and fallback.
 
 | Slug | Requested by (chapters) | Status | Fallback until delivered |
 |---|---|---|---|
-| t-repowering | u13 (ssec:62.8.1, sec:65.4, sec:65.8); coverage defects 5(3) and 8 | Delivered (D-126) | Placed: ssec:62.8.1 (80/20 rule, Incremental Production Rule, consents), ssec:65.4.1 (IEC TS 61400-28, Berkeley Lab lives, WindEurope volumes, RED III caps, BImSchG §16b); sec:65.8 R1 figures stay Case R model outputs |
-| t-fast-standard | u09 (ssec:39.2.2) | Delivered (D-126) | Placed: ssec:39.2.2 (FAST governance, versions, quoted rules; ICAEW, SMART and BPM compared), ssec:44.2.2 (checklist anchors) |
-| t-energy-yield | u09 (Chapter 45) | Delivered (D-126) | Placed: ssec:45.2.1, ssec:45.2.2, ssec:45.3.1 (IEC 61400 parts, P90 = P50 − 1.282σ, Lee and Fields, kWh Analytics, degradation sources) |
-| t-battery-degradation | u09 (Chapter 45) | Delivered (D-126) | Placed: ssec:45.3.2 (fade mechanisms, ATB and Lazard conventions, Fluence augmentation forms); Case R fade stays Annex TR R.5 |
-| t-earned-value | u13 (Chapter 61, eq:61.3) | Delivered (D-126) | Placed: ssec:61.4.2 (origin and standards only: DoDI 7000.2 of 1967, ANSI/EIA-748, ANSI/PMI 19-006-2019, ISO 21508:2018; Christensen and Heise with the Henderson and Zwikael caution) |
-| t-sustainable-finance-2 | u14 (ssec:84.3.1, 84.3.5, 84.6.4, 84.6.5, Example 84.5, Exhibit 84.2) | Delivered (D-126) | Placed: ssec:84.1.1 (Climate Bonds Standard v4.3), ssec:84.3.1 and Exhibit 84.2 (DA 2022/1214 Section 4.29 tests), Example 84.5 (IPCC factor), ssec:84.6.4 (NGFS Phase V, CBAM, ETS2), ssec:84.6.5 (TCFD to ISSB). The sheet covers EU gas criteria, ISSB, NGFS, the Climate Bonds Standard and CBAM, but no non-EU taxonomy: ssec:84.3.5 keeps its concept-level fallback |
-| wte-operating-pf | u16 (ssec:81.7.1) | Delivered (D-126) | Placed: ssec:81.7.1 (Dublin Poolbeg financing: 2014 close, 2017 refinancing, 2018 sell-down), ssec:81.4.3 (operating counterpart to Willows), ssec:81.4.2 (tonnage test) |
-| subsea-cable-pf | u16 (ssec:82.3.4) | Delivered (D-126) | Placed: ssec:82.3.4 (EASSy and WIOCC), beside Example 82.3 |
-| saf-mandates | u16 (Chapter 83) | Delivered (D-126) | Placed: ssec:83.4.2 (ReFuelEU Aviation, UK SAF Mandate, UK Revenue Certainty Mechanism) |
-| h2global | u16 (Chapter 83) | Delivered (D-126) | Placed: ssec:83.2.3 (Hintco double auctions as the fourth support design) |
-| kenya-steam-sales | u15 (ssec:72.5.4, 72.5.5) | Delivered (D-126) | Placed: ssec:72.5.4 (Menengai split and tariff), ssec:72.5.5 (two-sided PRG; Menengai II) |
-| t-decommissioning-accounting | u14 (ssec:66.4.7 primary; Chapters 7 and 65) | Delivered (D-126) | Placed: ssec:66.4.7 (primary; IAS 16, IAS 37, IFRIC 1, IAS 12, ASC 410-20 with paragraph references), ssec:7.10.1 and ssec:65.2.2 (one sentence each) |
+| t-repowering | u13 (ssec:62.8.1, sec:65.4, sec:65.8); coverage defects 5(3) and 8 | Delivered (D-127) | Placed: ssec:62.8.1 (80/20 rule, Incremental Production Rule, consents), ssec:65.4.1 (IEC TS 61400-28, Berkeley Lab lives, WindEurope volumes, RED III caps, BImSchG §16b); sec:65.8 R1 figures stay Case R model outputs |
+| t-fast-standard | u09 (ssec:39.2.2) | Delivered (D-127) | Placed: ssec:39.2.2 (FAST governance, versions, quoted rules; ICAEW, SMART and BPM compared), ssec:44.2.2 (checklist anchors) |
+| t-energy-yield | u09 (Chapter 45) | Delivered (D-127) | Placed: ssec:45.2.1, ssec:45.2.2, ssec:45.3.1 (IEC 61400 parts, P90 = P50 − 1.282σ, Lee and Fields, kWh Analytics, degradation sources) |
+| t-battery-degradation | u09 (Chapter 45) | Delivered (D-127) | Placed: ssec:45.3.2 (fade mechanisms, ATB and Lazard conventions, Fluence augmentation forms); Case R fade stays Annex TR R.5 |
+| t-earned-value | u13 (Chapter 61, eq:61.3) | Delivered (D-127) | Placed: ssec:61.4.2 (origin and standards only: DoDI 7000.2 of 1967, ANSI/EIA-748, ANSI/PMI 19-006-2019, ISO 21508:2018; Christensen and Heise with the Henderson and Zwikael caution) |
+| t-sustainable-finance-2 | u14 (ssec:84.3.1, 84.3.5, 84.6.4, 84.6.5, Example 84.5, Exhibit 84.2) | Delivered (D-127) | Placed: ssec:84.1.1 (Climate Bonds Standard v4.3), ssec:84.3.1 and Exhibit 84.2 (DA 2022/1214 Section 4.29 tests), Example 84.5 (IPCC factor), ssec:84.6.4 (NGFS Phase V, CBAM, ETS2), ssec:84.6.5 (TCFD to ISSB). The sheet covers EU gas criteria, ISSB, NGFS, the Climate Bonds Standard and CBAM, but no non-EU taxonomy: ssec:84.3.5 keeps its concept-level fallback |
+| wte-operating-pf | u16 (ssec:81.7.1) | Delivered (D-127) | Placed: ssec:81.7.1 (Dublin Poolbeg financing: 2014 close, 2017 refinancing, 2018 sell-down), ssec:81.4.3 (operating counterpart to Willows), ssec:81.4.2 (tonnage test) |
+| subsea-cable-pf | u16 (ssec:82.3.4) | Delivered (D-127) | Placed: ssec:82.3.4 (EASSy and WIOCC), beside Example 82.3 |
+| saf-mandates | u16 (Chapter 83) | Delivered (D-127) | Placed: ssec:83.4.2 (ReFuelEU Aviation, UK SAF Mandate, UK Revenue Certainty Mechanism) |
+| h2global | u16 (Chapter 83) | Delivered (D-127) | Placed: ssec:83.2.3 (Hintco double auctions as the fourth support design) |
+| kenya-steam-sales | u15 (ssec:72.5.4, 72.5.5) | Delivered (D-127) | Placed: ssec:72.5.4 (Menengai split and tariff), ssec:72.5.5 (two-sided PRG; Menengai II) |
+| t-decommissioning-accounting | u14 (ssec:66.4.7 primary; Chapters 7 and 65) | Delivered (D-127) | Placed: ssec:66.4.7 (primary; IAS 16, IAS 37, IFRIC 1, IAS 12, ASC 410-20 with paragraph references), ssec:7.10.1 and ssec:65.2.2 (one sentence each) |
 | t-contract-law-2 | u03 (Chapter 10) | Optional, not commissioned | Remoteness and consequential loss stated as general rules; no case names beyond t-contract-law |
 | t-infra-asset-metrics | u03 (Chapter 12) | Optional, not commissioned | State no market figure (PUE, SWRO energy, crane productivity, berth utilization) |
 | t-power-tech-norms-2 | u03 (Chapter 11) | Optional, not commissioned | NREL ATB values, refueling intervals and degradation rates stated qualitatively |
