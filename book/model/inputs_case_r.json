@@ -2,7 +2,7 @@
  "meta": {
   "case_id": "R",
   "name": "Mesa Corta Renewables portfolio (Case R)",
-  "file_version": "1.1",
+  "file_version": "1.2",
   "as_of": "2026-10-03",
   "source_document": "book/bible/case-bible.md, Part 3",
   "market": "ERCOT (Texas), a real energy-only market. Assets, owners, counterparties and all prices are fictional and ILLUSTRATIVE; price paths are of the same order of magnitude as published hub averages but are not ERCOT settlement data or a forecast.",
@@ -194,7 +194,16 @@
    },
    "useful_life_end": "2043-07-31",
    "acquired": "A2",
-   "revenue_contract": "7-year toll to 2030-07-13, merchant after"
+   "revenue_contract": "7-year toll to 2030-07-13, merchant after",
+   "overbuild_pct_of_nameplate_mwh": 8.0,
+   "capacity_fade_pts_of_bol_per_year": {
+    "year_1": 2.0,
+    "years_2_to_10": 1.5,
+    "year_11_on": 1.0
+   },
+   "fade_applies_to_augmentation_from_installation": true,
+   "revenue_scaling_rule": "merchant and R7 floor reference revenue x min(1, usable MWh / nameplate MWh)",
+   "toll_condition": "toll paid in full while usable energy >= 200 MWh and availability >= 97.0%"
   },
   {
    "id": "R7",
@@ -216,7 +225,15 @@
    },
    "useful_life_end": "2044-03-31",
    "acquired": "A3",
-   "revenue_contract": "merchant with 8-year revenue floor"
+   "revenue_contract": "merchant with 8-year revenue floor",
+   "overbuild_pct_of_nameplate_mwh": 8.0,
+   "capacity_fade_pts_of_bol_per_year": {
+    "year_1": 2.0,
+    "years_2_to_10": 1.5,
+    "year_11_on": 1.0
+   },
+   "fade_applies_to_augmentation_from_installation": true,
+   "revenue_scaling_rule": "merchant and R7 floor reference revenue x min(1, usable MWh / nameplate MWh)"
   },
   {
    "id": "R8",
@@ -595,7 +612,9 @@
    "premium_usd_per_kw_yr": 5.8,
    "upside_share_pct_above_140_usd_per_kw_yr": 20.0,
    "start": "2024-04-02",
-   "end": "2032-04-01"
+   "end": "2032-04-01",
+   "reference_revenue": "battery revenue index (Case Bible 3.5) x R7 availability x battery scaling factor (Annex TR R.4, R.5)",
+   "settlement": "quarterly with annual true-up; model annual, calendar-year basis, first and last years pro rata"
   },
   "R8_fixed_shape_hedge": {
    "counterparty": "Castellan Bank (commodities desk)",
@@ -876,6 +895,13 @@
    "old": "none",
    "new": "normal; sigma split into long-term and inter-annual components; ten-year P90/P99 and correlated portfolio P50/P90/P99 computed (R-F01)",
    "reason": "editor-in-chief note"
+  },
+  {
+   "id": "R-C12/R-C13 (Annex TR)",
+   "item": "battery overbuild, capacity fade and revenue scaling; R7 floor reporting",
+   "old": "augmentation only; no fade",
+   "new": "8% overbuild; fade 2.0/1.5/1.0 points a year; revenue scales by min(1, usable/nameplate); usable energy taken as the average of period-start and period-end values",
+   "reason": "Case Bible Annex TR R.4, R.5; input requests R-IR-01 to R-IR-07"
   }
  ],
  "yield_model": {

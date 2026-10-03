@@ -1,6 +1,6 @@
 # Figure ledger, Case R (Mesa Corta Renewables)
 
-Every value below is read by `model/ledger_case_r.py` from `model/outputs_case_r.json` (model R-1.1 (inputs v1.1), generated 2026-10-03). The JSON path is given for each figure so a reviewer can trace it. Display rounding follows the style sheet: USD m to one decimal, ratios to two decimals with x, rates to two decimals, returns to one decimal in prose. Scenario names: base, low, high (price and capture cases), p90_1yr, p90_10yr, p99_1yr (volume cases applied in every year), status_quo (no 2025 refinancing), sens_* (sensitivities). Debt is sized once on the base case and held fixed in every other scenario. Every Case R price is Illustrative. Figures R-F11 to R-F17 are new IDs added by the modeler.
+Every value below is read by `model/ledger_case_r.py` from `model/outputs_case_r.json` (model R-1.2 (inputs v1.2), generated 2026-10-03). The JSON path is given for each figure so a reviewer can trace it. Display rounding follows the style sheet: USD m to one decimal, ratios to two decimals with x, rates to two decimals, returns to one decimal in prose. Scenario names: base, low, high (price and capture cases), p90_1yr, p90_10yr, p99_1yr (volume cases applied in every year), status_quo (no 2025 refinancing), sens_* (sensitivities). Debt is sized once on the base case and held fixed in every other scenario. Every Case R price is Illustrative. Figures R-F11 to R-F17 are new IDs added by the modeler; R-F18 and R-F19 come from Case Bible Annex TR (R.4, R.5). Terminal value rule (Annex TR R.7): cash flows after 2040 and within each asset's useful life are discounted at the 10.50% unlevered tail rate from the valuation date; no terminal value beyond any useful life; no post-2040 levered rate (NAV uses bucket-weighted levered rates in every year). Battery convention (Annex TR R.5): usable energy is tracked at each period start and end; revenue scales by min(1, average usable / nameplate).
 
 | ID | Figure | Value | Units | Scenario | Story date | JSON path |
 |---|---|---|---|---|---|---|
@@ -853,14 +853,14 @@ Every value below is read by `model/ledger_case_r.py` from `model/outputs_case_r
 | R-F06 | Portfolio CFADS (Mesa share) 2029 | 52.5 | USD m | low | 2022 to 2030 | `scenarios.low.series.portfolio.cfads_all.7` |
 | R-F06 | West Hub ATC 2030 | 37.36 | USD/MWh | low | 2022 to 2030 | `scenarios.low.series.portfolio.west_atc.8` |
 | R-F06 | Portfolio CFADS (Mesa share) 2030 | 43.1 | USD m | low | 2022 to 2030 | `scenarios.low.series.portfolio.cfads_all.8` |
-| R-F07 | A2 R6 value before shield | 50.4 | USD m | base | 2023-08-31 | `valuations.base.A2.pre_shield` |
+| R-F07 | A2 R6 value before shield | 50.0 | USD m | base | 2023-08-31 | `valuations.base.A2.pre_shield` |
 | R-F07 | A2 tax shield | 12.1 | USD m | base | 2023-08-31 | `valuations.base.A2.shield_at_price` |
-| R-F07 | A2 value | 62.5 | USD m | base | 2023-08-31 | `valuations.base.A2.ev` |
+| R-F07 | A2 value | 62.1 | USD m | base | 2023-08-31 | `valuations.base.A2.ev` |
 | R-F07 | A2 price (calibrated, R-C05) | 63.7 | USD m | base | 2023-08-31 | `valuations.base.A2.price` |
-| R-F07 | A2 value less price | -1.2 | USD m | base | 2023-08-31 | `valuations.base.A2.npv_vs_price` |
-| R-F07 | A2 breakeven price | 62.2 | USD m | base | 2023-08-31 | `valuations.base.A2.breakeven_price` |
+| R-F07 | A2 value less price | -1.6 | USD m | base | 2023-08-31 | `valuations.base.A2.npv_vs_price` |
+| R-F07 | A2 breakeven price | 61.8 | USD m | base | 2023-08-31 | `valuations.base.A2.breakeven_price` |
 | R-F07 | A2 R6 value contracted | 38.6 | USD m | base | 2023-08-31 | `valuations.base.A2.R6.contracted` |
-| R-F07 | A2 R6 value merchant | 11.8 | USD m | base | 2023-08-31 | `valuations.base.A2.R6.merchant` |
+| R-F07 | A2 R6 value merchant | 11.4 | USD m | base | 2023-08-31 | `valuations.base.A2.R6.merchant` |
 | R-F07 | A2 uses: price | 63.7 | USD m | base | 2023-08-31 | `scenarios.base.sources_uses.A2.price` |
 | R-F07 | A2 uses: costs | 2.6 | USD m | base | 2023-08-31 | `scenarios.base.sources_uses.A2.costs` |
 | R-F07 | A2 uses: Redfern fee | 0.5 | USD m | base | 2023-08-31 | `scenarios.base.sources_uses.A2.fee` |
@@ -869,8 +869,8 @@ Every value below is read by `model/ledger_case_r.py` from `model/outputs_case_r
 | R-F07 | Redfern loan minimum DSCR 2024-2029 | 1.35x | x | base | 2023-08-31 | `scenarios.base.scalars.rf_dscr_min` |
 | R-F07 | A3 R7 value contracted | 35.3 | USD m | base | 2024-02-15 | `valuations.base.A3.R7.contracted` |
 | R-F07 | A3 R7 value hedged | 0.0 | USD m | base | 2024-02-15 | `valuations.base.A3.R7.hedged` |
-| R-F07 | A3 R7 value merchant | 15.0 | USD m | base | 2024-02-15 | `valuations.base.A3.R7.merchant` |
-| R-F07 | A3 R7 value total | 50.2 | USD m | base | 2024-02-15 | `valuations.base.A3.R7.total` |
+| R-F07 | A3 R7 value merchant | 14.4 | USD m | base | 2024-02-15 | `valuations.base.A3.R7.merchant` |
+| R-F07 | A3 R7 value total | 49.7 | USD m | base | 2024-02-15 | `valuations.base.A3.R7.total` |
 | R-F07 | A3 R8 value contracted | 0.0 | USD m | base | 2024-02-15 | `valuations.base.A3.R8.contracted` |
 | R-F07 | A3 R8 value hedged | 24.9 | USD m | base | 2024-02-15 | `valuations.base.A3.R8.hedged` |
 | R-F07 | A3 R8 value merchant | 30.1 | USD m | base | 2024-02-15 | `valuations.base.A3.R8.merchant` |
@@ -880,10 +880,10 @@ Every value below is read by `model/ledger_case_r.py` from `model/outputs_case_r
 | R-F07 | ITC transfer proceeds (nominal) | 48.9 | USD m | base | 2024-02-15 | `valuations.base.A3.itc_proceeds` |
 | R-F07 | ITC transfer proceeds (PV at signing) | 47.3 | USD m | base | 2024-02-15 | `valuations.base.A3.itc_pv` |
 | R-F07 | A3 tax shield | 29.1 | USD m | base | 2024-02-15 | `valuations.base.A3.shield` |
-| R-F07 | A3 value | 181.6 | USD m | base | 2024-02-15 | `valuations.base.A3.ev` |
+| R-F07 | A3 value | 181.1 | USD m | base | 2024-02-15 | `valuations.base.A3.ev` |
 | R-F07 | A3 prices (calibrated, R-C06) | 189.3 | USD m | base | 2024-02-15 | `valuations.base.A3.price_nominal` |
 | R-F07 | A3 price payments (PV at signing) | 184.2 | USD m | base | 2024-02-15 | `valuations.base.A3.price_pv` |
-| R-F07 | A3 value less PV of price | -2.6 | USD m | base | 2024-02-15 | `valuations.base.A3.npv_vs_price` |
+| R-F07 | A3 value less PV of price | -3.1 | USD m | base | 2024-02-15 | `valuations.base.A3.npv_vs_price` |
 | R-F07 | A3 R8 deposit | 20.4 | USD m | base | 2024-02-15 to 2024-12-19 | `scenarios.base.sources_uses.A3.r8_deposit` |
 | R-F07 | A3 costs | 4.4 | USD m | base | 2024-02-15 to 2024-12-19 | `scenarios.base.sources_uses.A3.costs` |
 | R-F07 | A3 holdco incremental OID | 0.9 | USD m | base | 2024-02-15 to 2024-12-19 | `scenarios.base.sources_uses.A3.oid` |
@@ -894,17 +894,17 @@ Every value below is read by `model/ledger_case_r.py` from `model/outputs_case_r
 | R-F07 | A3 equity at R7 COD | 0.0 | USD m | base | 2024-02-15 to 2024-12-19 | `scenarios.base.sources_uses.A3.eq_r7` |
 | R-F07 | A3 equity at R8 COD | 52.4 | USD m | base | 2024-02-15 to 2024-12-19 | `scenarios.base.sources_uses.A3.eq_r8` |
 | R-F07 | A3 fund equity | 52.4 | USD m | base | 2024-02-15 to 2024-12-19 | `scenarios.base.sources_uses.A3.equity` |
-| R-F08 | USPP Series A size | 142.2 | USD m | base | 2025-10-21 (priced) | `sizing.u_series_size.A` |
-| R-F08 | USPP Series A share | 39.90% | % | base | 2025-10-21 | `sizing.u_series_share.A` |
-| R-F08 | USPP Series B size | 81.9 | USD m | base | 2025-10-21 (priced) | `sizing.u_series_size.B` |
-| R-F08 | USPP Series B share | 22.98% | % | base | 2025-10-21 | `sizing.u_series_share.B` |
-| R-F08 | USPP Series C size | 132.3 | USD m | base | 2025-10-21 (priced) | `sizing.u_series_size.C` |
-| R-F08 | USPP Series C share | 37.12% | % | base | 2025-10-21 | `sizing.u_series_share.C` |
-| R-F08 | USPP notes total | 356.3 | USD m | base | 2025-12-16 (modeled 2025-12-31) | `sizing.u_size` |
-| R-F08 | Blended coupon (issue-weighted) | 6.05% | % | base | 2025-12-16 (modeled 2025-12-31) | `sizing.u_coupon` |
+| R-F08 | USPP Series A size | 142.8 | USD m | base | 2025-10-21 (priced) | `sizing.u_series_size.A` |
+| R-F08 | USPP Series A share | 40.20% | % | base | 2025-10-21 | `sizing.u_series_share.A` |
+| R-F08 | USPP Series B size | 82.3 | USD m | base | 2025-10-21 (priced) | `sizing.u_series_size.B` |
+| R-F08 | USPP Series B share | 23.18% | % | base | 2025-10-21 | `sizing.u_series_share.B` |
+| R-F08 | USPP Series C size | 130.1 | USD m | base | 2025-10-21 (priced) | `sizing.u_series_size.C` |
+| R-F08 | USPP Series C share | 36.62% | % | base | 2025-10-21 | `sizing.u_series_share.C` |
+| R-F08 | USPP notes total | 355.2 | USD m | base | 2025-12-16 (modeled 2025-12-31) | `sizing.u_size` |
+| R-F08 | Blended coupon (issue-weighted) | 6.04% | % | base | 2025-12-16 (modeled 2025-12-31) | `sizing.u_coupon` |
 | R-F08 | USPP capacity from contracted CFADS (PV at blended coupon) | 121.4 | USD m | base | 2025-12-16 (modeled 2025-12-31) | `sizing.u_pv_cap_contracted` |
 | R-F08 | USPP capacity from hedged CFADS (PV) | 32.1 | USD m | base | 2025-12-16 (modeled 2025-12-31) | `sizing.u_pv_cap_hedged` |
-| R-F08 | USPP capacity from merchant CFADS (PV) | 205.9 | USD m | base | 2025-12-16 (modeled 2025-12-31) | `sizing.u_pv_cap_merchant` |
+| R-F08 | USPP capacity from merchant CFADS (PV) | 204.8 | USD m | base | 2025-12-16 (modeled 2025-12-31) | `sizing.u_pv_cap_merchant` |
 | R-F08 | Years the USPP P99 test binds | 0 | years | base | 2025-12-16 (modeled 2025-12-31) | `sizing.u_p99_binds_years` |
 | R-F08 | Repriced holdco TLB face | 137.6 | USD m | base | 2025-12-16 (modeled 2025-12-31) | `sizing.hn_face` |
 | R-F08 | Opco term loan repaid | 251.6 | USD m | base | 2025-12-16 | `scenarios.base.refinancing_cash.tl_repay` |
@@ -912,37 +912,37 @@ Every value below is read by `model/ledger_case_r.py` from `model/outputs_case_r
 | R-F08 | Opco swap unwind receivable | 6.7 | USD m | base | 2025-12-16 | `scenarios.base.refinancing_cash.mtm_opco_receivable` |
 | R-F08 | Redfern swap unwind payable | 0.4 | USD m | base | 2025-12-16 | `scenarios.base.refinancing_cash.mtm_redfern_payable` |
 | R-F08 | USPP transaction costs | 3.9 | USD m | base | 2025-12-16 | `scenarios.base.refinancing_cash.costs` |
-| R-F08 | Net opco proceeds to holdco | 81.5 | USD m | base | 2025-12-16 | `scenarios.base.refinancing_cash.opco_net` |
+| R-F08 | Net opco proceeds to holdco | 80.4 | USD m | base | 2025-12-16 | `scenarios.base.refinancing_cash.opco_net` |
 | R-F08 | Holdco tranches repaid at repricing | 126.7 | USD m | base | 2025-12-16 | `derived.holdco_repaid_at_repricing` |
 | R-F08 | Holdco repricing net proceeds | 10.2 | USD m | base | 2025-12-16 | `scenarios.base.series.finance.recap_hold.3` |
-| R-F08 | Recapitalization distribution to the fund | 91.7 | USD m | base | 2025-12-16 | `scenarios.base.scalars.recap_distribution_2025` |
+| R-F08 | Recapitalization distribution to the fund | 90.6 | USD m | base | 2025-12-16 | `scenarios.base.scalars.recap_distribution_2025` |
 | R-F08 | Minimum USPP DSCR 2026-2043 | 1.43x | x | base | 2025-12-31 | `scenarios.base.scalars.uspp_dscr_min_2026_2043` |
 | R-F08 | Average USPP DSCR 2026-2043 | 2.03x | x | base | 2025-12-31 | `scenarios.base.scalars.uspp_dscr_avg_2026_2043` |
 | R-F08 | Repriced holdco balance at 2031 maturity (refinancing requirement) | 88.0 | USD m | base | 2031-12-31 (projected) | `scenarios.base.scalars.holdco_balance_end_2031` |
-| R-F08 | Fund gross IRR, life (base) | 11.33% | % | base | 2025-12-31 | `scenarios.base.scalars.fund_irr_life_pct` |
-| R-F08 | Fund gross IRR to 2025 incl. NAV (base) | 11.29% | % | base | 2025-12-31 | `scenarios.base.scalars.fund_irr_2025_pct` |
-| R-F08 | Fund gross IRR, life (status_quo) | 9.87% | % | status_quo | 2025-12-31 | `scenarios.status_quo.scalars.fund_irr_life_pct` |
-| R-F08 | Fund gross IRR to 2025 incl. NAV (status_quo) | 4.39% | % | status_quo | 2025-12-31 | `scenarios.status_quo.scalars.fund_irr_2025_pct` |
-| R-F08 | IRR impact of the refinancing, life (percentage points) | 1.46% | % | base less status_quo | 2025-12-31 | `derived.irr_impact_life_pts` |
-| R-F08 | IRR impact of the refinancing, to 2025 incl. NAV (percentage points) | 6.90% | % | base less status_quo | 2025-12-31 | `derived.irr_impact_2025_pts` |
+| R-F08 | Fund gross IRR, life (base) | 11.23% | % | base | 2025-12-31 | `scenarios.base.scalars.fund_irr_life_pct` |
+| R-F08 | Fund gross IRR to 2025 incl. NAV (base) | 10.98% | % | base | 2025-12-31 | `scenarios.base.scalars.fund_irr_2025_pct` |
+| R-F08 | Fund gross IRR, life (status_quo) | 9.82% | % | status_quo | 2025-12-31 | `scenarios.status_quo.scalars.fund_irr_life_pct` |
+| R-F08 | Fund gross IRR to 2025 incl. NAV (status_quo) | 4.17% | % | status_quo | 2025-12-31 | `scenarios.status_quo.scalars.fund_irr_2025_pct` |
+| R-F08 | IRR impact of the refinancing, life (percentage points) | 1.41% | % | base less status_quo | 2025-12-31 | `derived.irr_impact_life_pts` |
+| R-F08 | IRR impact of the refinancing, to 2025 incl. NAV (percentage points) | 6.81% | % | base less status_quo | 2025-12-31 | `derived.irr_impact_2025_pts` |
 | R-F09 | Fund equity contributed (A1+A2+A3) (base) | 164.6 | USD m | base | 2025-12-31 | `scenarios.base.scalars.fund_contributions` |
-| R-F09 | Distributions to December 31, 2025 (base) | 111.6 | USD m | base | 2025-12-31 | `scenarios.base.scalars.fund_distributions_to_2025` |
-| R-F09 | NAV at December 31, 2025 (base) | 105.0 | USD m | base | 2025-12-31 | `scenarios.base.scalars.fund_nav_2025` |
-| R-F09 | Gross IRR to December 31, 2025 incl. NAV (base) | 11.29% | % | base | 2025-12-31 | `scenarios.base.scalars.fund_irr_2025_pct` |
-| R-F09 | Multiple to December 31, 2025 incl. NAV (base) | 1.32x | x | base | 2025-12-31 | `scenarios.base.scalars.fund_moic_2025_x` |
-| R-F09 | Gross IRR, life (base) | 11.33% | % | base | 2025-12-31 | `scenarios.base.scalars.fund_irr_life_pct` |
-| R-F09 | Multiple, life (base) | 3.54x | x | base | 2025-12-31 | `scenarios.base.scalars.fund_moic_life_x` |
+| R-F09 | Distributions to December 31, 2025 (base) | 110.6 | USD m | base | 2025-12-31 | `scenarios.base.scalars.fund_distributions_to_2025` |
+| R-F09 | NAV at December 31, 2025 (base) | 104.5 | USD m | base | 2025-12-31 | `scenarios.base.scalars.fund_nav_2025` |
+| R-F09 | Gross IRR to December 31, 2025 incl. NAV (base) | 10.98% | % | base | 2025-12-31 | `scenarios.base.scalars.fund_irr_2025_pct` |
+| R-F09 | Multiple to December 31, 2025 incl. NAV (base) | 1.31x | x | base | 2025-12-31 | `scenarios.base.scalars.fund_moic_2025_x` |
+| R-F09 | Gross IRR, life (base) | 11.23% | % | base | 2025-12-31 | `scenarios.base.scalars.fund_irr_life_pct` |
+| R-F09 | Multiple, life (base) | 3.51x | x | base | 2025-12-31 | `scenarios.base.scalars.fund_moic_life_x` |
 | R-F09 | Fund equity contributed (A1+A2+A3) (status_quo) | 164.6 | USD m | status_quo | 2025-12-31 | `scenarios.status_quo.scalars.fund_contributions` |
 | R-F09 | Distributions to December 31, 2025 (status_quo) | 20.0 | USD m | status_quo | 2025-12-31 | `scenarios.status_quo.scalars.fund_distributions_to_2025` |
-| R-F09 | NAV at December 31, 2025 (status_quo) | 163.3 | USD m | status_quo | 2025-12-31 | `scenarios.status_quo.scalars.fund_nav_2025` |
-| R-F09 | Gross IRR to December 31, 2025 incl. NAV (status_quo) | 4.39% | % | status_quo | 2025-12-31 | `scenarios.status_quo.scalars.fund_irr_2025_pct` |
+| R-F09 | NAV at December 31, 2025 (status_quo) | 162.3 | USD m | status_quo | 2025-12-31 | `scenarios.status_quo.scalars.fund_nav_2025` |
+| R-F09 | Gross IRR to December 31, 2025 incl. NAV (status_quo) | 4.17% | % | status_quo | 2025-12-31 | `scenarios.status_quo.scalars.fund_irr_2025_pct` |
 | R-F09 | Multiple to December 31, 2025 incl. NAV (status_quo) | 1.11x | x | status_quo | 2025-12-31 | `scenarios.status_quo.scalars.fund_moic_2025_x` |
-| R-F09 | Gross IRR, life (status_quo) | 9.87% | % | status_quo | 2025-12-31 | `scenarios.status_quo.scalars.fund_irr_life_pct` |
-| R-F09 | Multiple, life (status_quo) | 4.11x | x | status_quo | 2025-12-31 | `scenarios.status_quo.scalars.fund_moic_life_x` |
+| R-F09 | Gross IRR, life (status_quo) | 9.82% | % | status_quo | 2025-12-31 | `scenarios.status_quo.scalars.fund_irr_life_pct` |
+| R-F09 | Multiple, life (status_quo) | 4.08x | x | status_quo | 2025-12-31 | `scenarios.status_quo.scalars.fund_moic_life_x` |
 | R-F09 | Fund distribution 2022 | 5.9 | USD m | base | 2022-12-31 | `scenarios.base.series.finance.fund_dist.0` |
 | R-F09 | Fund distribution 2023 | 3.8 | USD m | base | 2023-12-31 | `scenarios.base.series.finance.fund_dist.1` |
 | R-F09 | Fund distribution 2024 | 2.7 | USD m | base | 2024-12-31 | `scenarios.base.series.finance.fund_dist.2` |
-| R-F09 | Fund distribution 2025 | 99.2 | USD m | base | 2025-12-31 | `scenarios.base.series.finance.fund_dist.3` |
+| R-F09 | Fund distribution 2025 | 98.2 | USD m | base | 2025-12-31 | `scenarios.base.series.finance.fund_dist.3` |
 | R-F10 | R1 decommissioning cost in 2022 prices (retires 2044-12-31) | 12.5 | USD m | base | 2026-03 | `decommissioning.R1.cost_2022_prices` |
 | R-F10 | R1 decommissioning bonded amount 2026 (retires 2044-12-31) | 13.8 | USD m | base | 2026-03 | `decommissioning.R1.bonded_amount_2026` |
 | R-F10 | R1 decommissioning surety cost 2026 (retires 2044-12-31) | 0.083 | USD m | base | 2026-03 | `decommissioning.R1.bond_cost_2026` |
@@ -993,80 +993,80 @@ Every value below is read by `model/ledger_case_r.py` from `model/outputs_case_r
 | R-F12 | USPP allocated to R3 | 44.8 | USD m | base | 2025-12-31 | `debt_by_asset.uspp_2025.R3` |
 | R-F12 | USPP allocated to R4 | 22.3 | USD m | base | 2025-12-31 | `debt_by_asset.uspp_2025.R4` |
 | R-F12 | USPP allocated to R5 | 42.1 | USD m | base | 2025-12-31 | `debt_by_asset.uspp_2025.R5` |
-| R-F12 | USPP allocated to R6 | 35.3 | USD m | base | 2025-12-31 | `debt_by_asset.uspp_2025.R6` |
-| R-F12 | USPP allocated to R7 | 40.8 | USD m | base | 2025-12-31 | `debt_by_asset.uspp_2025.R7` |
+| R-F12 | USPP allocated to R6 | 34.8 | USD m | base | 2025-12-31 | `debt_by_asset.uspp_2025.R6` |
+| R-F12 | USPP allocated to R7 | 40.2 | USD m | base | 2025-12-31 | `debt_by_asset.uspp_2025.R7` |
 | R-F12 | USPP allocated to R8 | 39.3 | USD m | base | 2025-12-31 | `debt_by_asset.uspp_2025.R8` |
 | R-F13 | Portfolio CFADS 2026 (base) | 65.3 | USD m | base | 2025-12-31 view | `scenarios.base.scalars.cfads_2026` |
 | R-F13 | Minimum USPP DSCR (base) | 1.43x | x | base | 2025-12-31 view | `scenarios.base.scalars.uspp_dscr_min_2026_2043` |
 | R-F13 | Minimum holdco coverage 2023-2031 (base) | 1.40x | x | base | 2025-12-31 view | `scenarios.base.scalars.holdco_cov_min_2023_2031` |
-| R-F13 | Fund gross IRR, life (base) | 11.33% | % | base | 2025-12-31 view | `scenarios.base.scalars.fund_irr_life_pct` |
-| R-F13 | Fund gross IRR to 2025 incl. NAV (base) | 11.29% | % | base | 2025-12-31 view | `scenarios.base.scalars.fund_irr_2025_pct` |
+| R-F13 | Fund gross IRR, life (base) | 11.23% | % | base | 2025-12-31 view | `scenarios.base.scalars.fund_irr_life_pct` |
+| R-F13 | Fund gross IRR to 2025 incl. NAV (base) | 10.98% | % | base | 2025-12-31 view | `scenarios.base.scalars.fund_irr_2025_pct` |
 | R-F13 | Years with holdco shortfall (base) | 2 | years | base | 2025-12-31 view | `scenarios.base.scalars.years_holdco_shortfall` |
 | R-F13 | Portfolio CFADS 2026 (low) | 63.2 | USD m | low | 2025-12-31 view | `scenarios.low.scalars.cfads_2026` |
-| R-F13 | Minimum USPP DSCR (low) | 0.32x | x | low | 2025-12-31 view | `scenarios.low.scalars.uspp_dscr_min_2026_2043` |
+| R-F13 | Minimum USPP DSCR (low) | 0.30x | x | low | 2025-12-31 view | `scenarios.low.scalars.uspp_dscr_min_2026_2043` |
 | R-F13 | Minimum holdco coverage 2023-2031 (low) | 0.55x | x | low | 2025-12-31 view | `scenarios.low.scalars.holdco_cov_min_2023_2031` |
-| R-F13 | Fund gross IRR, life (low) | -12.31% | % | low | 2025-12-31 view | `scenarios.low.scalars.fund_irr_life_pct` |
-| R-F13 | Fund gross IRR to 2025 incl. NAV (low) | -13.49% | % | low | 2025-12-31 view | `scenarios.low.scalars.fund_irr_2025_pct` |
+| R-F13 | Fund gross IRR, life (low) | -12.64% | % | low | 2025-12-31 view | `scenarios.low.scalars.fund_irr_life_pct` |
+| R-F13 | Fund gross IRR to 2025 incl. NAV (low) | -13.86% | % | low | 2025-12-31 view | `scenarios.low.scalars.fund_irr_2025_pct` |
 | R-F13 | Years with holdco shortfall (low) | 30 | years | low | 2025-12-31 view | `scenarios.low.scalars.years_holdco_shortfall` |
 | R-F13 | Portfolio CFADS 2026 (high) | 69.2 | USD m | high | 2025-12-31 view | `scenarios.high.scalars.cfads_2026` |
 | R-F13 | Minimum USPP DSCR (high) | 1.52x | x | high | 2025-12-31 view | `scenarios.high.scalars.uspp_dscr_min_2026_2043` |
 | R-F13 | Minimum holdco coverage 2023-2031 (high) | 1.41x | x | high | 2025-12-31 view | `scenarios.high.scalars.holdco_cov_min_2023_2031` |
-| R-F13 | Fund gross IRR, life (high) | 19.89% | % | high | 2025-12-31 view | `scenarios.high.scalars.fund_irr_life_pct` |
-| R-F13 | Fund gross IRR to 2025 incl. NAV (high) | 42.83% | % | high | 2025-12-31 view | `scenarios.high.scalars.fund_irr_2025_pct` |
+| R-F13 | Fund gross IRR, life (high) | 19.81% | % | high | 2025-12-31 view | `scenarios.high.scalars.fund_irr_life_pct` |
+| R-F13 | Fund gross IRR to 2025 incl. NAV (high) | 42.59% | % | high | 2025-12-31 view | `scenarios.high.scalars.fund_irr_2025_pct` |
 | R-F13 | Years with holdco shortfall (high) | 1 | years | high | 2025-12-31 view | `scenarios.high.scalars.years_holdco_shortfall` |
 | R-F13 | Portfolio CFADS 2026 (p90_1yr) | 59.2 | USD m | p90_1yr | 2025-12-31 view | `scenarios.p90_1yr.scalars.cfads_2026` |
 | R-F13 | Minimum USPP DSCR (p90_1yr) | 1.30x | x | p90_1yr | 2025-12-31 view | `scenarios.p90_1yr.scalars.uspp_dscr_min_2026_2043` |
 | R-F13 | Minimum holdco coverage 2023-2031 (p90_1yr) | 1.00x | x | p90_1yr | 2025-12-31 view | `scenarios.p90_1yr.scalars.holdco_cov_min_2023_2031` |
-| R-F13 | Fund gross IRR, life (p90_1yr) | 5.87% | % | p90_1yr | 2025-12-31 view | `scenarios.p90_1yr.scalars.fund_irr_life_pct` |
-| R-F13 | Fund gross IRR to 2025 incl. NAV (p90_1yr) | -6.77% | % | p90_1yr | 2025-12-31 view | `scenarios.p90_1yr.scalars.fund_irr_2025_pct` |
+| R-F13 | Fund gross IRR, life (p90_1yr) | 5.74% | % | p90_1yr | 2025-12-31 view | `scenarios.p90_1yr.scalars.fund_irr_life_pct` |
+| R-F13 | Fund gross IRR to 2025 incl. NAV (p90_1yr) | -7.23% | % | p90_1yr | 2025-12-31 view | `scenarios.p90_1yr.scalars.fund_irr_2025_pct` |
 | R-F13 | Years with holdco shortfall (p90_1yr) | 6 | years | p90_1yr | 2025-12-31 view | `scenarios.p90_1yr.scalars.years_holdco_shortfall` |
 | R-F13 | Portfolio CFADS 2026 (p90_10yr) | 61.8 | USD m | p90_10yr | 2025-12-31 view | `scenarios.p90_10yr.scalars.cfads_2026` |
 | R-F13 | Minimum USPP DSCR (p90_10yr) | 1.35x | x | p90_10yr | 2025-12-31 view | `scenarios.p90_10yr.scalars.uspp_dscr_min_2026_2043` |
 | R-F13 | Minimum holdco coverage 2023-2031 (p90_10yr) | 1.17x | x | p90_10yr | 2025-12-31 view | `scenarios.p90_10yr.scalars.holdco_cov_min_2023_2031` |
-| R-F13 | Fund gross IRR, life (p90_10yr) | 8.36% | % | p90_10yr | 2025-12-31 view | `scenarios.p90_10yr.scalars.fund_irr_life_pct` |
-| R-F13 | Fund gross IRR to 2025 incl. NAV (p90_10yr) | 1.71% | % | p90_10yr | 2025-12-31 view | `scenarios.p90_10yr.scalars.fund_irr_2025_pct` |
+| R-F13 | Fund gross IRR, life (p90_10yr) | 8.25% | % | p90_10yr | 2025-12-31 view | `scenarios.p90_10yr.scalars.fund_irr_life_pct` |
+| R-F13 | Fund gross IRR to 2025 incl. NAV (p90_10yr) | 1.32% | % | p90_10yr | 2025-12-31 view | `scenarios.p90_10yr.scalars.fund_irr_2025_pct` |
 | R-F13 | Years with holdco shortfall (p90_10yr) | 3 | years | p90_10yr | 2025-12-31 view | `scenarios.p90_10yr.scalars.years_holdco_shortfall` |
 | R-F13 | Portfolio CFADS 2026 (p99_1yr) | 54.2 | USD m | p99_1yr | 2025-12-31 view | `scenarios.p99_1yr.scalars.cfads_2026` |
 | R-F13 | Minimum USPP DSCR (p99_1yr) | 1.19x | x | p99_1yr | 2025-12-31 view | `scenarios.p99_1yr.scalars.uspp_dscr_min_2026_2043` |
 | R-F13 | Minimum holdco coverage 2023-2031 (p99_1yr) | 0.20x | x | p99_1yr | 2025-12-31 view | `scenarios.p99_1yr.scalars.holdco_cov_min_2023_2031` |
-| R-F13 | Fund gross IRR, life (p99_1yr) | -0.74% | % | p99_1yr | 2025-12-31 view | `scenarios.p99_1yr.scalars.fund_irr_life_pct` |
-| R-F13 | Fund gross IRR to 2025 incl. NAV (p99_1yr) | -22.02% | % | p99_1yr | 2025-12-31 view | `scenarios.p99_1yr.scalars.fund_irr_2025_pct` |
+| R-F13 | Fund gross IRR, life (p99_1yr) | -0.93% | % | p99_1yr | 2025-12-31 view | `scenarios.p99_1yr.scalars.fund_irr_life_pct` |
+| R-F13 | Fund gross IRR to 2025 incl. NAV (p99_1yr) | -22.60% | % | p99_1yr | 2025-12-31 view | `scenarios.p99_1yr.scalars.fund_irr_2025_pct` |
 | R-F13 | Years with holdco shortfall (p99_1yr) | 13 | years | p99_1yr | 2025-12-31 view | `scenarios.p99_1yr.scalars.years_holdco_shortfall` |
 | R-F13 | Portfolio CFADS 2026 (status_quo) | 65.3 | USD m | status_quo | 2025-12-31 view | `scenarios.status_quo.scalars.cfads_2026` |
 | R-F13 | Minimum USPP DSCR (status_quo) | n.m. | x | status_quo | 2025-12-31 view | `scenarios.status_quo.scalars.uspp_dscr_min_2026_2043` |
 | R-F13 | Minimum holdco coverage 2023-2031 (status_quo) | 1.40x | x | status_quo | 2025-12-31 view | `scenarios.status_quo.scalars.holdco_cov_min_2023_2031` |
-| R-F13 | Fund gross IRR, life (status_quo) | 9.87% | % | status_quo | 2025-12-31 view | `scenarios.status_quo.scalars.fund_irr_life_pct` |
-| R-F13 | Fund gross IRR to 2025 incl. NAV (status_quo) | 4.39% | % | status_quo | 2025-12-31 view | `scenarios.status_quo.scalars.fund_irr_2025_pct` |
+| R-F13 | Fund gross IRR, life (status_quo) | 9.82% | % | status_quo | 2025-12-31 view | `scenarios.status_quo.scalars.fund_irr_life_pct` |
+| R-F13 | Fund gross IRR to 2025 incl. NAV (status_quo) | 4.17% | % | status_quo | 2025-12-31 view | `scenarios.status_quo.scalars.fund_irr_2025_pct` |
 | R-F13 | Years with holdco shortfall (status_quo) | 2 | years | status_quo | 2025-12-31 view | `scenarios.status_quo.scalars.years_holdco_shortfall` |
 | R-F13 | Portfolio CFADS 2026 (sens_west_solar_capture_m5) | 65.1 | USD m | sens_west_solar_capture_m5 | 2025-12-31 view | `scenarios.sens_west_solar_capture_m5.scalars.cfads_2026` |
 | R-F13 | Minimum USPP DSCR (sens_west_solar_capture_m5) | 1.43x | x | sens_west_solar_capture_m5 | 2025-12-31 view | `scenarios.sens_west_solar_capture_m5.scalars.uspp_dscr_min_2026_2043` |
 | R-F13 | Minimum holdco coverage 2023-2031 (sens_west_solar_capture_m5) | 1.39x | x | sens_west_solar_capture_m5 | 2025-12-31 view | `scenarios.sens_west_solar_capture_m5.scalars.holdco_cov_min_2023_2031` |
-| R-F13 | Fund gross IRR, life (sens_west_solar_capture_m5) | 10.85% | % | sens_west_solar_capture_m5 | 2025-12-31 view | `scenarios.sens_west_solar_capture_m5.scalars.fund_irr_life_pct` |
-| R-F13 | Fund gross IRR to 2025 incl. NAV (sens_west_solar_capture_m5) | 9.83% | % | sens_west_solar_capture_m5 | 2025-12-31 view | `scenarios.sens_west_solar_capture_m5.scalars.fund_irr_2025_pct` |
+| R-F13 | Fund gross IRR, life (sens_west_solar_capture_m5) | 10.75% | % | sens_west_solar_capture_m5 | 2025-12-31 view | `scenarios.sens_west_solar_capture_m5.scalars.fund_irr_life_pct` |
+| R-F13 | Fund gross IRR to 2025 incl. NAV (sens_west_solar_capture_m5) | 9.51% | % | sens_west_solar_capture_m5 | 2025-12-31 view | `scenarios.sens_west_solar_capture_m5.scalars.fund_irr_2025_pct` |
 | R-F13 | Years with holdco shortfall (sens_west_solar_capture_m5) | 2 | years | sens_west_solar_capture_m5 | 2025-12-31 view | `scenarios.sens_west_solar_capture_m5.scalars.years_holdco_shortfall` |
 | R-F13 | Portfolio CFADS 2026 (sens_battery_low) | 65.3 | USD m | sens_battery_low | 2025-12-31 view | `scenarios.sens_battery_low.scalars.cfads_2026` |
 | R-F13 | Minimum USPP DSCR (sens_battery_low) | 1.43x | x | sens_battery_low | 2025-12-31 view | `scenarios.sens_battery_low.scalars.uspp_dscr_min_2026_2043` |
 | R-F13 | Minimum holdco coverage 2023-2031 (sens_battery_low) | 1.40x | x | sens_battery_low | 2025-12-31 view | `scenarios.sens_battery_low.scalars.holdco_cov_min_2023_2031` |
-| R-F13 | Fund gross IRR, life (sens_battery_low) | 10.10% | % | sens_battery_low | 2025-12-31 view | `scenarios.sens_battery_low.scalars.fund_irr_life_pct` |
-| R-F13 | Fund gross IRR to 2025 incl. NAV (sens_battery_low) | 7.64% | % | sens_battery_low | 2025-12-31 view | `scenarios.sens_battery_low.scalars.fund_irr_2025_pct` |
+| R-F13 | Fund gross IRR, life (sens_battery_low) | 10.03% | % | sens_battery_low | 2025-12-31 view | `scenarios.sens_battery_low.scalars.fund_irr_life_pct` |
+| R-F13 | Fund gross IRR to 2025 incl. NAV (sens_battery_low) | 7.38% | % | sens_battery_low | 2025-12-31 view | `scenarios.sens_battery_low.scalars.fund_irr_2025_pct` |
 | R-F13 | Years with holdco shortfall (sens_battery_low) | 2 | years | sens_battery_low | 2025-12-31 view | `scenarios.sens_battery_low.scalars.years_holdco_shortfall` |
 | R-F13 | Portfolio CFADS 2026 (sens_curtailment_p3) | 63.2 | USD m | sens_curtailment_p3 | 2025-12-31 view | `scenarios.sens_curtailment_p3.scalars.cfads_2026` |
 | R-F13 | Minimum USPP DSCR (sens_curtailment_p3) | 1.39x | x | sens_curtailment_p3 | 2025-12-31 view | `scenarios.sens_curtailment_p3.scalars.uspp_dscr_min_2026_2043` |
 | R-F13 | Minimum holdco coverage 2023-2031 (sens_curtailment_p3) | 1.27x | x | sens_curtailment_p3 | 2025-12-31 view | `scenarios.sens_curtailment_p3.scalars.holdco_cov_min_2023_2031` |
-| R-F13 | Fund gross IRR, life (sens_curtailment_p3) | 9.68% | % | sens_curtailment_p3 | 2025-12-31 view | `scenarios.sens_curtailment_p3.scalars.fund_irr_life_pct` |
-| R-F13 | Fund gross IRR to 2025 incl. NAV (sens_curtailment_p3) | 6.03% | % | sens_curtailment_p3 | 2025-12-31 view | `scenarios.sens_curtailment_p3.scalars.fund_irr_2025_pct` |
+| R-F13 | Fund gross IRR, life (sens_curtailment_p3) | 9.57% | % | sens_curtailment_p3 | 2025-12-31 view | `scenarios.sens_curtailment_p3.scalars.fund_irr_life_pct` |
+| R-F13 | Fund gross IRR to 2025 incl. NAV (sens_curtailment_p3) | 5.68% | % | sens_curtailment_p3 | 2025-12-31 view | `scenarios.sens_curtailment_p3.scalars.fund_irr_2025_pct` |
 | R-F13 | Years with holdco shortfall (sens_curtailment_p3) | 3 | years | sens_curtailment_p3 | 2025-12-31 view | `scenarios.sens_curtailment_p3.scalars.years_holdco_shortfall` |
 | R-F13 | Portfolio CFADS 2026 (sens_opex_p10) | 61.6 | USD m | sens_opex_p10 | 2025-12-31 view | `scenarios.sens_opex_p10.scalars.cfads_2026` |
 | R-F13 | Minimum USPP DSCR (sens_opex_p10) | 1.35x | x | sens_opex_p10 | 2025-12-31 view | `scenarios.sens_opex_p10.scalars.uspp_dscr_min_2026_2043` |
 | R-F13 | Minimum holdco coverage 2023-2031 (sens_opex_p10) | 1.14x | x | sens_opex_p10 | 2025-12-31 view | `scenarios.sens_opex_p10.scalars.holdco_cov_min_2023_2031` |
-| R-F13 | Fund gross IRR, life (sens_opex_p10) | 8.61% | % | sens_opex_p10 | 2025-12-31 view | `scenarios.sens_opex_p10.scalars.fund_irr_life_pct` |
-| R-F13 | Fund gross IRR to 2025 incl. NAV (sens_opex_p10) | 2.52% | % | sens_opex_p10 | 2025-12-31 view | `scenarios.sens_opex_p10.scalars.fund_irr_2025_pct` |
+| R-F13 | Fund gross IRR, life (sens_opex_p10) | 8.50% | % | sens_opex_p10 | 2025-12-31 view | `scenarios.sens_opex_p10.scalars.fund_irr_life_pct` |
+| R-F13 | Fund gross IRR to 2025 incl. NAV (sens_opex_p10) | 2.14% | % | sens_opex_p10 | 2025-12-31 view | `scenarios.sens_opex_p10.scalars.fund_irr_2025_pct` |
 | R-F13 | Years with holdco shortfall (sens_opex_p10) | 4 | years | sens_opex_p10 | 2025-12-31 view | `scenarios.sens_opex_p10.scalars.years_holdco_shortfall` |
 | R-F13 | Portfolio CFADS 2026 (sens_sofr_p100_unhedged) | 65.3 | USD m | sens_sofr_p100_unhedged | 2025-12-31 view | `scenarios.sens_sofr_p100_unhedged.scalars.cfads_2026` |
 | R-F13 | Minimum USPP DSCR (sens_sofr_p100_unhedged) | 1.43x | x | sens_sofr_p100_unhedged | 2025-12-31 view | `scenarios.sens_sofr_p100_unhedged.scalars.uspp_dscr_min_2026_2043` |
 | R-F13 | Minimum holdco coverage 2023-2031 (sens_sofr_p100_unhedged) | 1.24x | x | sens_sofr_p100_unhedged | 2025-12-31 view | `scenarios.sens_sofr_p100_unhedged.scalars.holdco_cov_min_2023_2031` |
-| R-F13 | Fund gross IRR, life (sens_sofr_p100_unhedged) | 10.66% | % | sens_sofr_p100_unhedged | 2025-12-31 view | `scenarios.sens_sofr_p100_unhedged.scalars.fund_irr_life_pct` |
-| R-F13 | Fund gross IRR to 2025 incl. NAV (sens_sofr_p100_unhedged) | 9.12% | % | sens_sofr_p100_unhedged | 2025-12-31 view | `scenarios.sens_sofr_p100_unhedged.scalars.fund_irr_2025_pct` |
+| R-F13 | Fund gross IRR, life (sens_sofr_p100_unhedged) | 10.56% | % | sens_sofr_p100_unhedged | 2025-12-31 view | `scenarios.sens_sofr_p100_unhedged.scalars.fund_irr_life_pct` |
+| R-F13 | Fund gross IRR to 2025 incl. NAV (sens_sofr_p100_unhedged) | 8.79% | % | sens_sofr_p100_unhedged | 2025-12-31 view | `scenarios.sens_sofr_p100_unhedged.scalars.fund_irr_2025_pct` |
 | R-F13 | Years with holdco shortfall (sens_sofr_p100_unhedged) | 2 | years | sens_sofr_p100_unhedged | 2025-12-31 view | `scenarios.sens_sofr_p100_unhedged.scalars.years_holdco_shortfall` |
 | R-F14 | Cash tax 2022 | 0.0 | USD m | base | 2022 | `scenarios.base.series.finance.tax.0` |
 | R-F14 | NOL closing 2022 | 404.3 | USD m | base | 2022 | `scenarios.base.series.finance.nol_close.0` |
@@ -1079,77 +1079,77 @@ Every value below is read by `model/ledger_case_r.py` from `model/outputs_case_r
 | R-F14 | Cash tax 2026 | 0.2 | USD m | base | 2026 | `scenarios.base.series.finance.tax.4` |
 | R-F14 | NOL closing 2026 | 528.2 | USD m | base | 2026 | `scenarios.base.series.finance.nol_close.4` |
 | R-F14 | Cash tax 2027 | 0.6 | USD m | base | 2027 | `scenarios.base.series.finance.tax.5` |
-| R-F14 | NOL closing 2027 | 517.7 | USD m | base | 2027 | `scenarios.base.series.finance.nol_close.5` |
+| R-F14 | NOL closing 2027 | 517.5 | USD m | base | 2027 | `scenarios.base.series.finance.nol_close.5` |
 | R-F14 | Cash tax 2028 | 0.7 | USD m | base | 2028 | `scenarios.base.series.finance.tax.6` |
-| R-F14 | NOL closing 2028 | 504.0 | USD m | base | 2028 | `scenarios.base.series.finance.nol_close.6` |
+| R-F14 | NOL closing 2028 | 503.8 | USD m | base | 2028 | `scenarios.base.series.finance.nol_close.6` |
 | R-F14 | Cash tax 2029 | 1.1 | USD m | base | 2029 | `scenarios.base.series.finance.tax.7` |
-| R-F14 | NOL closing 2029 | 483.1 | USD m | base | 2029 | `scenarios.base.series.finance.nol_close.7` |
+| R-F14 | NOL closing 2029 | 482.8 | USD m | base | 2029 | `scenarios.base.series.finance.nol_close.7` |
 | R-F14 | Cash tax 2030 | 1.7 | USD m | base | 2030 | `scenarios.base.series.finance.tax.8` |
-| R-F14 | NOL closing 2030 | 449.9 | USD m | base | 2030 | `scenarios.base.series.finance.nol_close.8` |
+| R-F14 | NOL closing 2030 | 449.6 | USD m | base | 2030 | `scenarios.base.series.finance.nol_close.8` |
 | R-F14 | Cash tax 2031 | 1.7 | USD m | base | 2031 | `scenarios.base.series.finance.tax.9` |
-| R-F14 | NOL closing 2031 | 417.8 | USD m | base | 2031 | `scenarios.base.series.finance.nol_close.9` |
+| R-F14 | NOL closing 2031 | 417.4 | USD m | base | 2031 | `scenarios.base.series.finance.nol_close.9` |
 | R-F14 | Cash tax 2032 | 1.7 | USD m | base | 2032 | `scenarios.base.series.finance.tax.10` |
-| R-F14 | NOL closing 2032 | 385.8 | USD m | base | 2032 | `scenarios.base.series.finance.nol_close.10` |
+| R-F14 | NOL closing 2032 | 385.3 | USD m | base | 2032 | `scenarios.base.series.finance.nol_close.10` |
 | R-F14 | Cash tax 2033 | 1.8 | USD m | base | 2033 | `scenarios.base.series.finance.tax.11` |
-| R-F14 | NOL closing 2033 | 352.2 | USD m | base | 2033 | `scenarios.base.series.finance.nol_close.11` |
+| R-F14 | NOL closing 2033 | 351.6 | USD m | base | 2033 | `scenarios.base.series.finance.nol_close.11` |
 | R-F14 | Cash tax 2034 | 1.9 | USD m | base | 2034 | `scenarios.base.series.finance.tax.12` |
-| R-F14 | NOL closing 2034 | 316.0 | USD m | base | 2034 | `scenarios.base.series.finance.nol_close.12` |
+| R-F14 | NOL closing 2034 | 315.3 | USD m | base | 2034 | `scenarios.base.series.finance.nol_close.12` |
 | R-F14 | Cash tax 2035 | 1.9 | USD m | base | 2035 | `scenarios.base.series.finance.tax.13` |
-| R-F14 | NOL closing 2035 | 279.0 | USD m | base | 2035 | `scenarios.base.series.finance.nol_close.13` |
+| R-F14 | NOL closing 2035 | 278.2 | USD m | base | 2035 | `scenarios.base.series.finance.nol_close.13` |
 | R-F15 | USPP debt service 2026 | 45.6 | USD m | base | 2026 | `scenarios.base.series.finance.u_ds.4` |
 | R-F15 | USPP DSCR 2026 | 1.43x | x | base | 2026 | `scenarios.base.series.finance.dscr_u.4` |
-| R-F15 | USPP opening balance 2026 | 356.3 | USD m | base | 2026 | `scenarios.base.series.finance.u_open.4` |
+| R-F15 | USPP opening balance 2026 | 355.2 | USD m | base | 2026 | `scenarios.base.series.finance.u_open.4` |
 | R-F15 | USPP debt service 2027 | 43.4 | USD m | base | 2027 | `scenarios.base.series.finance.u_ds.5` |
 | R-F15 | USPP DSCR 2027 | 1.45x | x | base | 2027 | `scenarios.base.series.finance.dscr_u.5` |
-| R-F15 | USPP opening balance 2027 | 332.3 | USD m | base | 2027 | `scenarios.base.series.finance.u_open.5` |
+| R-F15 | USPP opening balance 2027 | 331.1 | USD m | base | 2027 | `scenarios.base.series.finance.u_open.5` |
 | R-F15 | USPP debt service 2028 | 40.4 | USD m | base | 2028 | `scenarios.base.series.finance.u_ds.6` |
 | R-F15 | USPP DSCR 2028 | 1.53x | x | base | 2028 | `scenarios.base.series.finance.dscr_u.6` |
-| R-F15 | USPP opening balance 2028 | 309.0 | USD m | base | 2028 | `scenarios.base.series.finance.u_open.6` |
+| R-F15 | USPP opening balance 2028 | 307.8 | USD m | base | 2028 | `scenarios.base.series.finance.u_open.6` |
 | R-F15 | USPP debt service 2029 | 40.0 | USD m | base | 2029 | `scenarios.base.series.finance.u_ds.7` |
 | R-F15 | USPP DSCR 2029 | 1.63x | x | base | 2029 | `scenarios.base.series.finance.dscr_u.7` |
-| R-F15 | USPP opening balance 2029 | 287.5 | USD m | base | 2029 | `scenarios.base.series.finance.u_open.7` |
+| R-F15 | USPP opening balance 2029 | 286.1 | USD m | base | 2029 | `scenarios.base.series.finance.u_open.7` |
 | R-F15 | USPP debt service 2030 | 34.7 | USD m | base | 2030 | `scenarios.base.series.finance.u_ds.8` |
 | R-F15 | USPP DSCR 2030 | 1.90x | x | base | 2030 | `scenarios.base.series.finance.dscr_u.8` |
-| R-F15 | USPP opening balance 2030 | 265.1 | USD m | base | 2030 | `scenarios.base.series.finance.u_open.8` |
+| R-F15 | USPP opening balance 2030 | 263.7 | USD m | base | 2030 | `scenarios.base.series.finance.u_open.8` |
 | R-F15 | USPP debt service 2031 | 32.2 | USD m | base | 2031 | `scenarios.base.series.finance.u_ds.9` |
 | R-F15 | USPP DSCR 2031 | 1.95x | x | base | 2031 | `scenarios.base.series.finance.dscr_u.9` |
-| R-F15 | USPP opening balance 2031 | 246.7 | USD m | base | 2031 | `scenarios.base.series.finance.u_open.9` |
+| R-F15 | USPP opening balance 2031 | 245.2 | USD m | base | 2031 | `scenarios.base.series.finance.u_open.9` |
 | R-F15 | USPP debt service 2032 | 30.0 | USD m | base | 2032 | `scenarios.base.series.finance.u_ds.10` |
 | R-F15 | USPP DSCR 2032 | 2.03x | x | base | 2032 | `scenarios.base.series.finance.dscr_u.10` |
-| R-F15 | USPP opening balance 2032 | 229.8 | USD m | base | 2032 | `scenarios.base.series.finance.u_open.10` |
+| R-F15 | USPP opening balance 2032 | 228.2 | USD m | base | 2032 | `scenarios.base.series.finance.u_open.10` |
 | R-F15 | USPP debt service 2033 | 28.8 | USD m | base | 2033 | `scenarios.base.series.finance.u_ds.11` |
 | R-F15 | USPP DSCR 2033 | 2.12x | x | base | 2033 | `scenarios.base.series.finance.dscr_u.11` |
-| R-F15 | USPP opening balance 2033 | 214.2 | USD m | base | 2033 | `scenarios.base.series.finance.u_open.11` |
+| R-F15 | USPP opening balance 2033 | 212.4 | USD m | base | 2033 | `scenarios.base.series.finance.u_open.11` |
 | R-F15 | USPP debt service 2034 | 28.6 | USD m | base | 2034 | `scenarios.base.series.finance.u_ds.12` |
 | R-F15 | USPP DSCR 2034 | 2.19x | x | base | 2034 | `scenarios.base.series.finance.dscr_u.12` |
-| R-F15 | USPP opening balance 2034 | 198.8 | USD m | base | 2034 | `scenarios.base.series.finance.u_open.12` |
+| R-F15 | USPP opening balance 2034 | 196.9 | USD m | base | 2034 | `scenarios.base.series.finance.u_open.12` |
 | R-F15 | USPP debt service 2035 | 27.4 | USD m | base | 2035 | `scenarios.base.series.finance.u_ds.13` |
 | R-F15 | USPP DSCR 2035 | 2.25x | x | base | 2035 | `scenarios.base.series.finance.dscr_u.13` |
-| R-F15 | USPP opening balance 2035 | 182.7 | USD m | base | 2035 | `scenarios.base.series.finance.u_open.13` |
+| R-F15 | USPP opening balance 2035 | 180.7 | USD m | base | 2035 | `scenarios.base.series.finance.u_open.13` |
 | R-F15 | USPP debt service 2036 | 27.3 | USD m | base | 2036 | `scenarios.base.series.finance.u_ds.14` |
 | R-F15 | USPP DSCR 2036 | 2.25x | x | base | 2036 | `scenarios.base.series.finance.dscr_u.14` |
-| R-F15 | USPP opening balance 2036 | 166.8 | USD m | base | 2036 | `scenarios.base.series.finance.u_open.14` |
-| R-F15 | USPP debt service 2037 | 27.3 | USD m | base | 2037 | `scenarios.base.series.finance.u_ds.15` |
+| R-F15 | USPP opening balance 2036 | 164.7 | USD m | base | 2036 | `scenarios.base.series.finance.u_open.14` |
+| R-F15 | USPP debt service 2037 | 27.2 | USD m | base | 2037 | `scenarios.base.series.finance.u_ds.15` |
 | R-F15 | USPP DSCR 2037 | 2.25x | x | base | 2037 | `scenarios.base.series.finance.dscr_u.15` |
-| R-F15 | USPP opening balance 2037 | 150.0 | USD m | base | 2037 | `scenarios.base.series.finance.u_open.15` |
-| R-F15 | USPP debt service 2038 | 27.4 | USD m | base | 2038 | `scenarios.base.series.finance.u_ds.16` |
+| R-F15 | USPP opening balance 2037 | 147.9 | USD m | base | 2037 | `scenarios.base.series.finance.u_open.15` |
+| R-F15 | USPP debt service 2038 | 27.1 | USD m | base | 2038 | `scenarios.base.series.finance.u_ds.16` |
 | R-F15 | USPP DSCR 2038 | 2.25x | x | base | 2038 | `scenarios.base.series.finance.dscr_u.16` |
-| R-F15 | USPP opening balance 2038 | 132.3 | USD m | base | 2038 | `scenarios.base.series.finance.u_open.16` |
-| R-F15 | USPP debt service 2039 | 27.4 | USD m | base | 2039 | `scenarios.base.series.finance.u_ds.17` |
+| R-F15 | USPP opening balance 2038 | 130.1 | USD m | base | 2038 | `scenarios.base.series.finance.u_open.16` |
+| R-F15 | USPP debt service 2039 | 27.1 | USD m | base | 2039 | `scenarios.base.series.finance.u_ds.17` |
 | R-F15 | USPP DSCR 2039 | 2.25x | x | base | 2039 | `scenarios.base.series.finance.dscr_u.17` |
-| R-F15 | USPP opening balance 2039 | 113.4 | USD m | base | 2039 | `scenarios.base.series.finance.u_open.17` |
-| R-F15 | USPP debt service 2040 | 27.5 | USD m | base | 2040 | `scenarios.base.series.finance.u_ds.18` |
+| R-F15 | USPP opening balance 2039 | 111.3 | USD m | base | 2039 | `scenarios.base.series.finance.u_open.17` |
+| R-F15 | USPP debt service 2040 | 27.1 | USD m | base | 2040 | `scenarios.base.series.finance.u_ds.18` |
 | R-F15 | USPP DSCR 2040 | 2.25x | x | base | 2040 | `scenarios.base.series.finance.dscr_u.18` |
-| R-F15 | USPP opening balance 2040 | 93.2 | USD m | base | 2040 | `scenarios.base.series.finance.u_open.18` |
-| R-F15 | USPP debt service 2041 | 27.6 | USD m | base | 2041 | `scenarios.base.series.finance.u_ds.19` |
+| R-F15 | USPP opening balance 2040 | 91.3 | USD m | base | 2040 | `scenarios.base.series.finance.u_open.18` |
+| R-F15 | USPP debt service 2041 | 27.1 | USD m | base | 2041 | `scenarios.base.series.finance.u_ds.19` |
 | R-F15 | USPP DSCR 2041 | 2.25x | x | base | 2041 | `scenarios.base.series.finance.dscr_u.19` |
-| R-F15 | USPP opening balance 2041 | 71.6 | USD m | base | 2041 | `scenarios.base.series.finance.u_open.19` |
-| R-F15 | USPP debt service 2042 | 27.7 | USD m | base | 2042 | `scenarios.base.series.finance.u_ds.20` |
+| R-F15 | USPP opening balance 2041 | 70.0 | USD m | base | 2041 | `scenarios.base.series.finance.u_open.19` |
+| R-F15 | USPP debt service 2042 | 27.1 | USD m | base | 2042 | `scenarios.base.series.finance.u_ds.20` |
 | R-F15 | USPP DSCR 2042 | 2.25x | x | base | 2042 | `scenarios.base.series.finance.dscr_u.20` |
-| R-F15 | USPP opening balance 2042 | 48.5 | USD m | base | 2042 | `scenarios.base.series.finance.u_open.20` |
-| R-F15 | USPP debt service 2043 | 25.4 | USD m | base | 2043 | `scenarios.base.series.finance.u_ds.21` |
+| R-F15 | USPP opening balance 2042 | 47.4 | USD m | base | 2042 | `scenarios.base.series.finance.u_open.20` |
+| R-F15 | USPP debt service 2043 | 24.8 | USD m | base | 2043 | `scenarios.base.series.finance.u_ds.21` |
 | R-F15 | USPP DSCR 2043 | 2.25x | x | base | 2043 | `scenarios.base.series.finance.dscr_u.21` |
-| R-F15 | USPP opening balance 2043 | 23.9 | USD m | base | 2043 | `scenarios.base.series.finance.u_open.21` |
+| R-F15 | USPP opening balance 2043 | 23.3 | USD m | base | 2043 | `scenarios.base.series.finance.u_open.21` |
 | R-F16 | Opco TL sculpted debt service 2022 | 30.0 | USD m | base | 2022-03-22 | `sizing.tl_ds.0` |
 | R-F16 | Opco TL scheduled opening balance 2022 | 328.1 | USD m | base | 2022-03-22 | `sizing.tl_sched_open.0` |
 | R-F16 | Opco TL sculpted debt service 2023 | 33.6 | USD m | base | 2022-03-22 | `sizing.tl_ds.1` |
@@ -1200,6 +1200,279 @@ Every value below is read by `model/ledger_case_r.py` from `model/outputs_case_r
 | R-F17 | Holdco coverage 2030 | 3.42x | x | base | 2030 | `scenarios.base.series.finance.hc_cov.8` |
 | R-F17 | Repriced holdco opening balance 2031 | 99.7 | USD m | base | 2031 | `scenarios.base.series.finance.hc3_open.9` |
 | R-F17 | Holdco coverage 2031 | 3.67x | x | base | 2031 | `scenarios.base.series.finance.hc_cov.9` |
+| R-F18 | R7 reference revenue 2024 | 60.26 | USD/MWh | base | 2024 (calendar year; contract years pro rata) | `scenarios.base.series.R7.floor_ref.2` |
+| R-F18 | R7 floor payment from Galloway 2024 | 1.5 | USD m | base | 2024 | `scenarios.base.series.R7.floor_payment.2` |
+| R-F18 | R7 premium 2024 | 0.6 | USD m | base | 2024 | `scenarios.base.series.R7.floor_premium.2` |
+| R-F18 | R7 upside share to Galloway 2024 | 0.0 | USD m | base | 2024 | `scenarios.base.series.R7.floor_upside.2` |
+| R-F18 | R7 net floor settlement 2024 | 0.9 | USD m | base | 2024 | `scenarios.base.series.R7.floor_net.2` |
+| R-F18 | R7 reference revenue 2025 | 51.09 | USD/MWh | base | 2025 (calendar year; contract years pro rata) | `scenarios.base.series.R7.floor_ref.3` |
+| R-F18 | R7 floor payment from Galloway 2025 | 3.4 | USD m | base | 2025 | `scenarios.base.series.R7.floor_payment.3` |
+| R-F18 | R7 premium 2025 | 0.9 | USD m | base | 2025 | `scenarios.base.series.R7.floor_premium.3` |
+| R-F18 | R7 upside share to Galloway 2025 | 0.0 | USD m | base | 2025 | `scenarios.base.series.R7.floor_upside.3` |
+| R-F18 | R7 net floor settlement 2025 | 2.6 | USD m | base | 2025 | `scenarios.base.series.R7.floor_net.3` |
+| R-F18 | R7 reference revenue 2026 | 56.45 | USD/MWh | base | 2026 (calendar year; contract years pro rata) | `scenarios.base.series.R7.floor_ref.4` |
+| R-F18 | R7 floor payment from Galloway 2026 | 2.6 | USD m | base | 2026 | `scenarios.base.series.R7.floor_payment.4` |
+| R-F18 | R7 premium 2026 | 0.9 | USD m | base | 2026 | `scenarios.base.series.R7.floor_premium.4` |
+| R-F18 | R7 upside share to Galloway 2026 | 0.0 | USD m | base | 2026 | `scenarios.base.series.R7.floor_upside.4` |
+| R-F18 | R7 net floor settlement 2026 | 1.8 | USD m | base | 2026 | `scenarios.base.series.R7.floor_net.4` |
+| R-F18 | R7 reference revenue 2027 | 57.30 | USD/MWh | base | 2027 (calendar year; contract years pro rata) | `scenarios.base.series.R7.floor_ref.5` |
+| R-F18 | R7 floor payment from Galloway 2027 | 2.5 | USD m | base | 2027 | `scenarios.base.series.R7.floor_payment.5` |
+| R-F18 | R7 premium 2027 | 0.9 | USD m | base | 2027 | `scenarios.base.series.R7.floor_premium.5` |
+| R-F18 | R7 upside share to Galloway 2027 | 0.0 | USD m | base | 2027 | `scenarios.base.series.R7.floor_upside.5` |
+| R-F18 | R7 net floor settlement 2027 | 1.6 | USD m | base | 2027 | `scenarios.base.series.R7.floor_net.5` |
+| R-F18 | R7 reference revenue 2028 | 58.16 | USD/MWh | base | 2028 (calendar year; contract years pro rata) | `scenarios.base.series.R7.floor_ref.6` |
+| R-F18 | R7 floor payment from Galloway 2028 | 2.4 | USD m | base | 2028 | `scenarios.base.series.R7.floor_payment.6` |
+| R-F18 | R7 premium 2028 | 0.9 | USD m | base | 2028 | `scenarios.base.series.R7.floor_premium.6` |
+| R-F18 | R7 upside share to Galloway 2028 | 0.0 | USD m | base | 2028 | `scenarios.base.series.R7.floor_upside.6` |
+| R-F18 | R7 net floor settlement 2028 | 1.5 | USD m | base | 2028 | `scenarios.base.series.R7.floor_net.6` |
+| R-F18 | R7 reference revenue 2029 | 59.03 | USD/MWh | base | 2029 (calendar year; contract years pro rata) | `scenarios.base.series.R7.floor_ref.7` |
+| R-F18 | R7 floor payment from Galloway 2029 | 2.2 | USD m | base | 2029 | `scenarios.base.series.R7.floor_payment.7` |
+| R-F18 | R7 premium 2029 | 0.9 | USD m | base | 2029 | `scenarios.base.series.R7.floor_premium.7` |
+| R-F18 | R7 upside share to Galloway 2029 | 0.0 | USD m | base | 2029 | `scenarios.base.series.R7.floor_upside.7` |
+| R-F18 | R7 net floor settlement 2029 | 1.4 | USD m | base | 2029 | `scenarios.base.series.R7.floor_net.7` |
+| R-F18 | R7 reference revenue 2030 | 59.91 | USD/MWh | base | 2030 (calendar year; contract years pro rata) | `scenarios.base.series.R7.floor_ref.8` |
+| R-F18 | R7 floor payment from Galloway 2030 | 2.1 | USD m | base | 2030 | `scenarios.base.series.R7.floor_payment.8` |
+| R-F18 | R7 premium 2030 | 0.9 | USD m | base | 2030 | `scenarios.base.series.R7.floor_premium.8` |
+| R-F18 | R7 upside share to Galloway 2030 | 0.0 | USD m | base | 2030 | `scenarios.base.series.R7.floor_upside.8` |
+| R-F18 | R7 net floor settlement 2030 | 1.2 | USD m | base | 2030 | `scenarios.base.series.R7.floor_net.8` |
+| R-F18 | R7 reference revenue 2031 | 60.81 | USD/MWh | base | 2031 (calendar year; contract years pro rata) | `scenarios.base.series.R7.floor_ref.9` |
+| R-F18 | R7 floor payment from Galloway 2031 | 2.0 | USD m | base | 2031 | `scenarios.base.series.R7.floor_payment.9` |
+| R-F18 | R7 premium 2031 | 0.9 | USD m | base | 2031 | `scenarios.base.series.R7.floor_premium.9` |
+| R-F18 | R7 upside share to Galloway 2031 | 0.0 | USD m | base | 2031 | `scenarios.base.series.R7.floor_upside.9` |
+| R-F18 | R7 net floor settlement 2031 | 1.1 | USD m | base | 2031 | `scenarios.base.series.R7.floor_net.9` |
+| R-F18 | R7 reference revenue 2032 | 61.73 | USD/MWh | base | 2032 (calendar year; contract years pro rata) | `scenarios.base.series.R7.floor_ref.10` |
+| R-F18 | R7 floor payment from Galloway 2032 | 0.5 | USD m | base | 2032 | `scenarios.base.series.R7.floor_payment.10` |
+| R-F18 | R7 premium 2032 | 0.2 | USD m | base | 2032 | `scenarios.base.series.R7.floor_premium.10` |
+| R-F18 | R7 upside share to Galloway 2032 | 0.0 | USD m | base | 2032 | `scenarios.base.series.R7.floor_upside.10` |
+| R-F18 | R7 net floor settlement 2032 | 0.2 | USD m | base | 2032 | `scenarios.base.series.R7.floor_net.10` |
+| R-F18 | R7 reference revenue 2024 | 60.26 | USD/MWh | low | 2024 (calendar year; contract years pro rata) | `scenarios.low.series.R7.floor_ref.2` |
+| R-F18 | R7 floor payment from Galloway 2024 | 1.5 | USD m | low | 2024 | `scenarios.low.series.R7.floor_payment.2` |
+| R-F18 | R7 premium 2024 | 0.6 | USD m | low | 2024 | `scenarios.low.series.R7.floor_premium.2` |
+| R-F18 | R7 upside share to Galloway 2024 | 0.0 | USD m | low | 2024 | `scenarios.low.series.R7.floor_upside.2` |
+| R-F18 | R7 net floor settlement 2024 | 0.9 | USD m | low | 2024 | `scenarios.low.series.R7.floor_net.2` |
+| R-F18 | R7 reference revenue 2025 | 51.09 | USD/MWh | low | 2025 (calendar year; contract years pro rata) | `scenarios.low.series.R7.floor_ref.3` |
+| R-F18 | R7 floor payment from Galloway 2025 | 3.4 | USD m | low | 2025 | `scenarios.low.series.R7.floor_payment.3` |
+| R-F18 | R7 premium 2025 | 0.9 | USD m | low | 2025 | `scenarios.low.series.R7.floor_premium.3` |
+| R-F18 | R7 upside share to Galloway 2025 | 0.0 | USD m | low | 2025 | `scenarios.low.series.R7.floor_upside.3` |
+| R-F18 | R7 net floor settlement 2025 | 2.6 | USD m | low | 2025 | `scenarios.low.series.R7.floor_net.3` |
+| R-F18 | R7 reference revenue 2026 | 38.02 | USD/MWh | low | 2026 (calendar year; contract years pro rata) | `scenarios.low.series.R7.floor_ref.4` |
+| R-F18 | R7 floor payment from Galloway 2026 | 5.4 | USD m | low | 2026 | `scenarios.low.series.R7.floor_payment.4` |
+| R-F18 | R7 premium 2026 | 0.9 | USD m | low | 2026 | `scenarios.low.series.R7.floor_premium.4` |
+| R-F18 | R7 upside share to Galloway 2026 | 0.0 | USD m | low | 2026 | `scenarios.low.series.R7.floor_upside.4` |
+| R-F18 | R7 net floor settlement 2026 | 4.5 | USD m | low | 2026 | `scenarios.low.series.R7.floor_net.4` |
+| R-F18 | R7 reference revenue 2027 | 38.21 | USD/MWh | low | 2027 (calendar year; contract years pro rata) | `scenarios.low.series.R7.floor_ref.5` |
+| R-F18 | R7 floor payment from Galloway 2027 | 5.4 | USD m | low | 2027 | `scenarios.low.series.R7.floor_payment.5` |
+| R-F18 | R7 premium 2027 | 0.9 | USD m | low | 2027 | `scenarios.low.series.R7.floor_premium.5` |
+| R-F18 | R7 upside share to Galloway 2027 | 0.0 | USD m | low | 2027 | `scenarios.low.series.R7.floor_upside.5` |
+| R-F18 | R7 net floor settlement 2027 | 4.5 | USD m | low | 2027 | `scenarios.low.series.R7.floor_net.5` |
+| R-F18 | R7 reference revenue 2028 | 38.41 | USD/MWh | low | 2028 (calendar year; contract years pro rata) | `scenarios.low.series.R7.floor_ref.6` |
+| R-F18 | R7 floor payment from Galloway 2028 | 5.3 | USD m | low | 2028 | `scenarios.low.series.R7.floor_payment.6` |
+| R-F18 | R7 premium 2028 | 0.9 | USD m | low | 2028 | `scenarios.low.series.R7.floor_premium.6` |
+| R-F18 | R7 upside share to Galloway 2028 | 0.0 | USD m | low | 2028 | `scenarios.low.series.R7.floor_upside.6` |
+| R-F18 | R7 net floor settlement 2028 | 4.5 | USD m | low | 2028 | `scenarios.low.series.R7.floor_net.6` |
+| R-F18 | R7 reference revenue 2029 | 38.60 | USD/MWh | low | 2029 (calendar year; contract years pro rata) | `scenarios.low.series.R7.floor_ref.7` |
+| R-F18 | R7 floor payment from Galloway 2029 | 5.3 | USD m | low | 2029 | `scenarios.low.series.R7.floor_payment.7` |
+| R-F18 | R7 premium 2029 | 0.9 | USD m | low | 2029 | `scenarios.low.series.R7.floor_premium.7` |
+| R-F18 | R7 upside share to Galloway 2029 | 0.0 | USD m | low | 2029 | `scenarios.low.series.R7.floor_upside.7` |
+| R-F18 | R7 net floor settlement 2029 | 4.4 | USD m | low | 2029 | `scenarios.low.series.R7.floor_net.7` |
+| R-F18 | R7 reference revenue 2030 | 38.80 | USD/MWh | low | 2030 (calendar year; contract years pro rata) | `scenarios.low.series.R7.floor_ref.8` |
+| R-F18 | R7 floor payment from Galloway 2030 | 5.3 | USD m | low | 2030 | `scenarios.low.series.R7.floor_payment.8` |
+| R-F18 | R7 premium 2030 | 0.9 | USD m | low | 2030 | `scenarios.low.series.R7.floor_premium.8` |
+| R-F18 | R7 upside share to Galloway 2030 | 0.0 | USD m | low | 2030 | `scenarios.low.series.R7.floor_upside.8` |
+| R-F18 | R7 net floor settlement 2030 | 4.4 | USD m | low | 2030 | `scenarios.low.series.R7.floor_net.8` |
+| R-F18 | R7 reference revenue 2031 | 38.99 | USD/MWh | low | 2031 (calendar year; contract years pro rata) | `scenarios.low.series.R7.floor_ref.9` |
+| R-F18 | R7 floor payment from Galloway 2031 | 5.3 | USD m | low | 2031 | `scenarios.low.series.R7.floor_payment.9` |
+| R-F18 | R7 premium 2031 | 0.9 | USD m | low | 2031 | `scenarios.low.series.R7.floor_premium.9` |
+| R-F18 | R7 upside share to Galloway 2031 | 0.0 | USD m | low | 2031 | `scenarios.low.series.R7.floor_upside.9` |
+| R-F18 | R7 net floor settlement 2031 | 4.4 | USD m | low | 2031 | `scenarios.low.series.R7.floor_net.9` |
+| R-F18 | R7 reference revenue 2032 | 39.19 | USD/MWh | low | 2032 (calendar year; contract years pro rata) | `scenarios.low.series.R7.floor_ref.10` |
+| R-F18 | R7 floor payment from Galloway 2032 | 1.3 | USD m | low | 2032 | `scenarios.low.series.R7.floor_payment.10` |
+| R-F18 | R7 premium 2032 | 0.2 | USD m | low | 2032 | `scenarios.low.series.R7.floor_premium.10` |
+| R-F18 | R7 upside share to Galloway 2032 | 0.0 | USD m | low | 2032 | `scenarios.low.series.R7.floor_upside.10` |
+| R-F18 | R7 net floor settlement 2032 | 1.1 | USD m | low | 2032 | `scenarios.low.series.R7.floor_net.10` |
+| R-F18 | R7 reference revenue 2024 | 60.26 | USD/MWh | high | 2024 (calendar year; contract years pro rata) | `scenarios.high.series.R7.floor_ref.2` |
+| R-F18 | R7 floor payment from Galloway 2024 | 1.5 | USD m | high | 2024 | `scenarios.high.series.R7.floor_payment.2` |
+| R-F18 | R7 premium 2024 | 0.6 | USD m | high | 2024 | `scenarios.high.series.R7.floor_premium.2` |
+| R-F18 | R7 upside share to Galloway 2024 | 0.0 | USD m | high | 2024 | `scenarios.high.series.R7.floor_upside.2` |
+| R-F18 | R7 net floor settlement 2024 | 0.9 | USD m | high | 2024 | `scenarios.high.series.R7.floor_net.2` |
+| R-F18 | R7 reference revenue 2025 | 51.09 | USD/MWh | high | 2025 (calendar year; contract years pro rata) | `scenarios.high.series.R7.floor_ref.3` |
+| R-F18 | R7 floor payment from Galloway 2025 | 3.4 | USD m | high | 2025 | `scenarios.high.series.R7.floor_payment.3` |
+| R-F18 | R7 premium 2025 | 0.9 | USD m | high | 2025 | `scenarios.high.series.R7.floor_premium.3` |
+| R-F18 | R7 upside share to Galloway 2025 | 0.0 | USD m | high | 2025 | `scenarios.high.series.R7.floor_upside.3` |
+| R-F18 | R7 net floor settlement 2025 | 2.6 | USD m | high | 2025 | `scenarios.high.series.R7.floor_net.3` |
+| R-F18 | R7 reference revenue 2026 | 82.39 | USD/MWh | high | 2026 (calendar year; contract years pro rata) | `scenarios.high.series.R7.floor_ref.4` |
+| R-F18 | R7 floor payment from Galloway 2026 | 0.0 | USD m | high | 2026 | `scenarios.high.series.R7.floor_payment.4` |
+| R-F18 | R7 premium 2026 | 0.9 | USD m | high | 2026 | `scenarios.high.series.R7.floor_premium.4` |
+| R-F18 | R7 upside share to Galloway 2026 | 0.0 | USD m | high | 2026 | `scenarios.high.series.R7.floor_upside.4` |
+| R-F18 | R7 net floor settlement 2026 | -0.9 | USD m | high | 2026 | `scenarios.high.series.R7.floor_net.4` |
+| R-F18 | R7 reference revenue 2027 | 84.44 | USD/MWh | high | 2027 (calendar year; contract years pro rata) | `scenarios.high.series.R7.floor_ref.5` |
+| R-F18 | R7 floor payment from Galloway 2027 | 0.0 | USD m | high | 2027 | `scenarios.high.series.R7.floor_payment.5` |
+| R-F18 | R7 premium 2027 | 0.9 | USD m | high | 2027 | `scenarios.high.series.R7.floor_premium.5` |
+| R-F18 | R7 upside share to Galloway 2027 | 0.0 | USD m | high | 2027 | `scenarios.high.series.R7.floor_upside.5` |
+| R-F18 | R7 net floor settlement 2027 | -0.9 | USD m | high | 2027 | `scenarios.high.series.R7.floor_net.5` |
+| R-F18 | R7 reference revenue 2028 | 86.56 | USD/MWh | high | 2028 (calendar year; contract years pro rata) | `scenarios.high.series.R7.floor_ref.6` |
+| R-F18 | R7 floor payment from Galloway 2028 | 0.0 | USD m | high | 2028 | `scenarios.high.series.R7.floor_payment.6` |
+| R-F18 | R7 premium 2028 | 0.9 | USD m | high | 2028 | `scenarios.high.series.R7.floor_premium.6` |
+| R-F18 | R7 upside share to Galloway 2028 | 0.0 | USD m | high | 2028 | `scenarios.high.series.R7.floor_upside.6` |
+| R-F18 | R7 net floor settlement 2028 | -0.9 | USD m | high | 2028 | `scenarios.high.series.R7.floor_net.6` |
+| R-F18 | R7 reference revenue 2029 | 88.72 | USD/MWh | high | 2029 (calendar year; contract years pro rata) | `scenarios.high.series.R7.floor_ref.7` |
+| R-F18 | R7 floor payment from Galloway 2029 | 0.0 | USD m | high | 2029 | `scenarios.high.series.R7.floor_payment.7` |
+| R-F18 | R7 premium 2029 | 0.9 | USD m | high | 2029 | `scenarios.high.series.R7.floor_premium.7` |
+| R-F18 | R7 upside share to Galloway 2029 | 0.0 | USD m | high | 2029 | `scenarios.high.series.R7.floor_upside.7` |
+| R-F18 | R7 net floor settlement 2029 | -0.9 | USD m | high | 2029 | `scenarios.high.series.R7.floor_net.7` |
+| R-F18 | R7 reference revenue 2030 | 90.94 | USD/MWh | high | 2030 (calendar year; contract years pro rata) | `scenarios.high.series.R7.floor_ref.8` |
+| R-F18 | R7 floor payment from Galloway 2030 | 0.0 | USD m | high | 2030 | `scenarios.high.series.R7.floor_payment.8` |
+| R-F18 | R7 premium 2030 | 0.9 | USD m | high | 2030 | `scenarios.high.series.R7.floor_premium.8` |
+| R-F18 | R7 upside share to Galloway 2030 | 0.0 | USD m | high | 2030 | `scenarios.high.series.R7.floor_upside.8` |
+| R-F18 | R7 net floor settlement 2030 | -0.9 | USD m | high | 2030 | `scenarios.high.series.R7.floor_net.8` |
+| R-F18 | R7 reference revenue 2031 | 93.21 | USD/MWh | high | 2031 (calendar year; contract years pro rata) | `scenarios.high.series.R7.floor_ref.9` |
+| R-F18 | R7 floor payment from Galloway 2031 | 0.0 | USD m | high | 2031 | `scenarios.high.series.R7.floor_payment.9` |
+| R-F18 | R7 premium 2031 | 0.9 | USD m | high | 2031 | `scenarios.high.series.R7.floor_premium.9` |
+| R-F18 | R7 upside share to Galloway 2031 | 0.0 | USD m | high | 2031 | `scenarios.high.series.R7.floor_upside.9` |
+| R-F18 | R7 net floor settlement 2031 | -0.9 | USD m | high | 2031 | `scenarios.high.series.R7.floor_net.9` |
+| R-F18 | R7 reference revenue 2032 | 95.54 | USD/MWh | high | 2032 (calendar year; contract years pro rata) | `scenarios.high.series.R7.floor_ref.10` |
+| R-F18 | R7 floor payment from Galloway 2032 | 0.0 | USD m | high | 2032 | `scenarios.high.series.R7.floor_payment.10` |
+| R-F18 | R7 premium 2032 | 0.2 | USD m | high | 2032 | `scenarios.high.series.R7.floor_premium.10` |
+| R-F18 | R7 upside share to Galloway 2032 | 0.0 | USD m | high | 2032 | `scenarios.high.series.R7.floor_upside.10` |
+| R-F18 | R7 net floor settlement 2032 | -0.2 | USD m | high | 2032 | `scenarios.high.series.R7.floor_net.10` |
+| R-F19 | R6 usable energy, start of year 2023 | 216 | MWh | base | 2023 | `scenarios.base.series.R6.bat_usable_start.1` |
+| R-F19 | R6 usable energy, end of year 2023 | 214 | MWh | base | 2023 | `scenarios.base.series.R6.bat_usable_end.1` |
+| R-F19 | R6 revenue scaling factor 2023 | 1.000 | ratio | base | 2023 | `scenarios.base.series.R6.bat_scale.1` |
+| R-F19 | R6 usable energy, start of year 2024 | 214 | MWh | base | 2024 | `scenarios.base.series.R6.bat_usable_start.2` |
+| R-F19 | R6 usable energy, end of year 2024 | 210 | MWh | base | 2024 | `scenarios.base.series.R6.bat_usable_end.2` |
+| R-F19 | R6 revenue scaling factor 2024 | 1.000 | ratio | base | 2024 | `scenarios.base.series.R6.bat_scale.2` |
+| R-F19 | R6 usable energy, start of year 2025 | 210 | MWh | base | 2025 | `scenarios.base.series.R6.bat_usable_start.3` |
+| R-F19 | R6 usable energy, end of year 2025 | 207 | MWh | base | 2025 | `scenarios.base.series.R6.bat_usable_end.3` |
+| R-F19 | R6 revenue scaling factor 2025 | 1.000 | ratio | base | 2025 | `scenarios.base.series.R6.bat_scale.3` |
+| R-F19 | R6 usable energy, start of year 2026 | 207 | MWh | base | 2026 | `scenarios.base.series.R6.bat_usable_start.4` |
+| R-F19 | R6 usable energy, end of year 2026 | 204 | MWh | base | 2026 | `scenarios.base.series.R6.bat_usable_end.4` |
+| R-F19 | R6 revenue scaling factor 2026 | 1.000 | ratio | base | 2026 | `scenarios.base.series.R6.bat_scale.4` |
+| R-F19 | R6 usable energy, start of year 2027 | 204 | MWh | base | 2027 | `scenarios.base.series.R6.bat_usable_start.5` |
+| R-F19 | R6 usable energy, end of year 2027 | 212 | MWh | base | 2027 | `scenarios.base.series.R6.bat_usable_end.5` |
+| R-F19 | R6 revenue scaling factor 2027 | 1.000 | ratio | base | 2027 | `scenarios.base.series.R6.bat_scale.5` |
+| R-F19 | R6 usable energy, start of year 2028 | 212 | MWh | base | 2028 | `scenarios.base.series.R6.bat_usable_start.6` |
+| R-F19 | R6 usable energy, end of year 2028 | 209 | MWh | base | 2028 | `scenarios.base.series.R6.bat_usable_end.6` |
+| R-F19 | R6 augmentation installed 2028 | 12 | MWh | base | 2028 | `scenarios.base.series.R6.bat_aug_mwh.6` |
+| R-F19 | R6 augmentation cost 2028 | 0.5 | USD m | base | 2028 | `scenarios.base.series.R6.aug.6` |
+| R-F19 | R6 revenue scaling factor 2028 | 1.000 | ratio | base | 2028 | `scenarios.base.series.R6.bat_scale.6` |
+| R-F19 | R6 usable energy, start of year 2029 | 209 | MWh | base | 2029 | `scenarios.base.series.R6.bat_usable_start.7` |
+| R-F19 | R6 usable energy, end of year 2029 | 206 | MWh | base | 2029 | `scenarios.base.series.R6.bat_usable_end.7` |
+| R-F19 | R6 revenue scaling factor 2029 | 1.000 | ratio | base | 2029 | `scenarios.base.series.R6.bat_scale.7` |
+| R-F19 | R6 usable energy, start of year 2030 | 206 | MWh | base | 2030 | `scenarios.base.series.R6.bat_usable_start.8` |
+| R-F19 | R6 usable energy, end of year 2030 | 202 | MWh | base | 2030 | `scenarios.base.series.R6.bat_usable_end.8` |
+| R-F19 | R6 revenue scaling factor 2030 | 1.000 | ratio | base | 2030 | `scenarios.base.series.R6.bat_scale.8` |
+| R-F19 | R6 usable energy, start of year 2031 | 202 | MWh | base | 2031 | `scenarios.base.series.R6.bat_usable_start.9` |
+| R-F19 | R6 usable energy, end of year 2031 | 211 | MWh | base | 2031 | `scenarios.base.series.R6.bat_usable_end.9` |
+| R-F19 | R6 revenue scaling factor 2031 | 1.000 | ratio | base | 2031 | `scenarios.base.series.R6.bat_scale.9` |
+| R-F19 | R6 usable energy, start of year 2032 | 211 | MWh | base | 2032 | `scenarios.base.series.R6.bat_usable_start.10` |
+| R-F19 | R6 usable energy, end of year 2032 | 207 | MWh | base | 2032 | `scenarios.base.series.R6.bat_usable_end.10` |
+| R-F19 | R6 augmentation installed 2032 | 12 | MWh | base | 2032 | `scenarios.base.series.R6.bat_aug_mwh.10` |
+| R-F19 | R6 augmentation cost 2032 | 0.6 | USD m | base | 2032 | `scenarios.base.series.R6.aug.10` |
+| R-F19 | R6 revenue scaling factor 2032 | 1.000 | ratio | base | 2032 | `scenarios.base.series.R6.bat_scale.10` |
+| R-F19 | R6 usable energy, start of year 2033 | 207 | MWh | base | 2033 | `scenarios.base.series.R6.bat_usable_start.11` |
+| R-F19 | R6 usable energy, end of year 2033 | 204 | MWh | base | 2033 | `scenarios.base.series.R6.bat_usable_end.11` |
+| R-F19 | R6 revenue scaling factor 2033 | 1.000 | ratio | base | 2033 | `scenarios.base.series.R6.bat_scale.11` |
+| R-F19 | R6 usable energy, start of year 2034 | 204 | MWh | base | 2034 | `scenarios.base.series.R6.bat_usable_start.12` |
+| R-F19 | R6 usable energy, end of year 2034 | 201 | MWh | base | 2034 | `scenarios.base.series.R6.bat_usable_end.12` |
+| R-F19 | R6 revenue scaling factor 2034 | 1.000 | ratio | base | 2034 | `scenarios.base.series.R6.bat_scale.12` |
+| R-F19 | R6 usable energy, start of year 2035 | 201 | MWh | base | 2035 | `scenarios.base.series.R6.bat_usable_start.13` |
+| R-F19 | R6 usable energy, end of year 2035 | 199 | MWh | base | 2035 | `scenarios.base.series.R6.bat_usable_end.13` |
+| R-F19 | R6 revenue scaling factor 2035 | 1.000 | ratio | base | 2035 | `scenarios.base.series.R6.bat_scale.13` |
+| R-F19 | R6 usable energy, start of year 2036 | 199 | MWh | base | 2036 | `scenarios.base.series.R6.bat_usable_start.14` |
+| R-F19 | R6 usable energy, end of year 2036 | 196 | MWh | base | 2036 | `scenarios.base.series.R6.bat_usable_end.14` |
+| R-F19 | R6 revenue scaling factor 2036 | 0.988 | ratio | base | 2036 | `scenarios.base.series.R6.bat_scale.14` |
+| R-F19 | R6 usable energy, start of year 2037 | 196 | MWh | base | 2037 | `scenarios.base.series.R6.bat_usable_start.15` |
+| R-F19 | R6 usable energy, end of year 2037 | 194 | MWh | base | 2037 | `scenarios.base.series.R6.bat_usable_end.15` |
+| R-F19 | R6 revenue scaling factor 2037 | 0.976 | ratio | base | 2037 | `scenarios.base.series.R6.bat_scale.15` |
+| R-F19 | R6 usable energy, start of year 2038 | 194 | MWh | base | 2038 | `scenarios.base.series.R6.bat_usable_start.16` |
+| R-F19 | R6 usable energy, end of year 2038 | 191 | MWh | base | 2038 | `scenarios.base.series.R6.bat_usable_end.16` |
+| R-F19 | R6 revenue scaling factor 2038 | 0.963 | ratio | base | 2038 | `scenarios.base.series.R6.bat_scale.16` |
+| R-F19 | R6 usable energy, start of year 2039 | 191 | MWh | base | 2039 | `scenarios.base.series.R6.bat_usable_start.17` |
+| R-F19 | R6 usable energy, end of year 2039 | 189 | MWh | base | 2039 | `scenarios.base.series.R6.bat_usable_end.17` |
+| R-F19 | R6 revenue scaling factor 2039 | 0.951 | ratio | base | 2039 | `scenarios.base.series.R6.bat_scale.17` |
+| R-F19 | R6 usable energy, start of year 2040 | 189 | MWh | base | 2040 | `scenarios.base.series.R6.bat_usable_start.18` |
+| R-F19 | R6 usable energy, end of year 2040 | 186 | MWh | base | 2040 | `scenarios.base.series.R6.bat_usable_end.18` |
+| R-F19 | R6 revenue scaling factor 2040 | 0.938 | ratio | base | 2040 | `scenarios.base.series.R6.bat_scale.18` |
+| R-F19 | R6 usable energy, start of year 2041 | 186 | MWh | base | 2041 | `scenarios.base.series.R6.bat_usable_start.19` |
+| R-F19 | R6 usable energy, end of year 2041 | 184 | MWh | base | 2041 | `scenarios.base.series.R6.bat_usable_end.19` |
+| R-F19 | R6 revenue scaling factor 2041 | 0.926 | ratio | base | 2041 | `scenarios.base.series.R6.bat_scale.19` |
+| R-F19 | R6 usable energy, start of year 2042 | 184 | MWh | base | 2042 | `scenarios.base.series.R6.bat_usable_start.20` |
+| R-F19 | R6 usable energy, end of year 2042 | 182 | MWh | base | 2042 | `scenarios.base.series.R6.bat_usable_end.20` |
+| R-F19 | R6 revenue scaling factor 2042 | 0.914 | ratio | base | 2042 | `scenarios.base.series.R6.bat_scale.20` |
+| R-F19 | R6 usable energy, start of year 2043 | 182 | MWh | base | 2043 | `scenarios.base.series.R6.bat_usable_start.21` |
+| R-F19 | R6 usable energy, end of year 2043 | 179 | MWh | base | 2043 | `scenarios.base.series.R6.bat_usable_end.21` |
+| R-F19 | R6 revenue scaling factor 2043 | 0.902 | ratio | base | 2043 | `scenarios.base.series.R6.bat_scale.21` |
+| R-F19 | R6 usable energy, start of year 2044 | 179 | MWh | base | 2044 | `scenarios.base.series.R6.bat_usable_start.22` |
+| R-F19 | R6 usable energy, end of year 2044 | 177 | MWh | base | 2044 | `scenarios.base.series.R6.bat_usable_end.22` |
+| R-F19 | R6 revenue scaling factor 2044 | 0.890 | ratio | base | 2044 | `scenarios.base.series.R6.bat_scale.22` |
+| R-F19 | R7 usable energy, start of year 2024 | 324 | MWh | base | 2024 | `scenarios.base.series.R7.bat_usable_start.2` |
+| R-F19 | R7 usable energy, end of year 2024 | 319 | MWh | base | 2024 | `scenarios.base.series.R7.bat_usable_end.2` |
+| R-F19 | R7 revenue scaling factor 2024 | 1.000 | ratio | base | 2024 | `scenarios.base.series.R7.bat_scale.2` |
+| R-F19 | R7 usable energy, start of year 2025 | 319 | MWh | base | 2025 | `scenarios.base.series.R7.bat_usable_start.3` |
+| R-F19 | R7 usable energy, end of year 2025 | 314 | MWh | base | 2025 | `scenarios.base.series.R7.bat_usable_end.3` |
+| R-F19 | R7 revenue scaling factor 2025 | 1.000 | ratio | base | 2025 | `scenarios.base.series.R7.bat_scale.3` |
+| R-F19 | R7 usable energy, start of year 2026 | 314 | MWh | base | 2026 | `scenarios.base.series.R7.bat_usable_start.4` |
+| R-F19 | R7 usable energy, end of year 2026 | 309 | MWh | base | 2026 | `scenarios.base.series.R7.bat_usable_end.4` |
+| R-F19 | R7 revenue scaling factor 2026 | 1.000 | ratio | base | 2026 | `scenarios.base.series.R7.bat_scale.4` |
+| R-F19 | R7 usable energy, start of year 2027 | 309 | MWh | base | 2027 | `scenarios.base.series.R7.bat_usable_start.5` |
+| R-F19 | R7 usable energy, end of year 2027 | 304 | MWh | base | 2027 | `scenarios.base.series.R7.bat_usable_end.5` |
+| R-F19 | R7 revenue scaling factor 2027 | 1.000 | ratio | base | 2027 | `scenarios.base.series.R7.bat_scale.5` |
+| R-F19 | R7 usable energy, start of year 2028 | 304 | MWh | base | 2028 | `scenarios.base.series.R7.bat_usable_start.6` |
+| R-F19 | R7 usable energy, end of year 2028 | 317 | MWh | base | 2028 | `scenarios.base.series.R7.bat_usable_end.6` |
+| R-F19 | R7 revenue scaling factor 2028 | 1.000 | ratio | base | 2028 | `scenarios.base.series.R7.bat_scale.6` |
+| R-F19 | R7 usable energy, start of year 2029 | 317 | MWh | base | 2029 | `scenarios.base.series.R7.bat_usable_start.7` |
+| R-F19 | R7 usable energy, end of year 2029 | 312 | MWh | base | 2029 | `scenarios.base.series.R7.bat_usable_end.7` |
+| R-F19 | R7 augmentation installed 2029 | 18 | MWh | base | 2029 | `scenarios.base.series.R7.bat_aug_mwh.7` |
+| R-F19 | R7 augmentation cost 2029 | 0.8 | USD m | base | 2029 | `scenarios.base.series.R7.aug.7` |
+| R-F19 | R7 revenue scaling factor 2029 | 1.000 | ratio | base | 2029 | `scenarios.base.series.R7.bat_scale.7` |
+| R-F19 | R7 usable energy, start of year 2030 | 312 | MWh | base | 2030 | `scenarios.base.series.R7.bat_usable_start.8` |
+| R-F19 | R7 usable energy, end of year 2030 | 307 | MWh | base | 2030 | `scenarios.base.series.R7.bat_usable_end.8` |
+| R-F19 | R7 revenue scaling factor 2030 | 1.000 | ratio | base | 2030 | `scenarios.base.series.R7.bat_scale.8` |
+| R-F19 | R7 usable energy, start of year 2031 | 307 | MWh | base | 2031 | `scenarios.base.series.R7.bat_usable_start.9` |
+| R-F19 | R7 usable energy, end of year 2031 | 302 | MWh | base | 2031 | `scenarios.base.series.R7.bat_usable_end.9` |
+| R-F19 | R7 revenue scaling factor 2031 | 1.000 | ratio | base | 2031 | `scenarios.base.series.R7.bat_scale.9` |
+| R-F19 | R7 usable energy, start of year 2032 | 302 | MWh | base | 2032 | `scenarios.base.series.R7.bat_usable_start.10` |
+| R-F19 | R7 usable energy, end of year 2032 | 315 | MWh | base | 2032 | `scenarios.base.series.R7.bat_usable_end.10` |
+| R-F19 | R7 revenue scaling factor 2032 | 1.000 | ratio | base | 2032 | `scenarios.base.series.R7.bat_scale.10` |
+| R-F19 | R7 usable energy, start of year 2033 | 315 | MWh | base | 2033 | `scenarios.base.series.R7.bat_usable_start.11` |
+| R-F19 | R7 usable energy, end of year 2033 | 309 | MWh | base | 2033 | `scenarios.base.series.R7.bat_usable_end.11` |
+| R-F19 | R7 augmentation installed 2033 | 18 | MWh | base | 2033 | `scenarios.base.series.R7.bat_aug_mwh.11` |
+| R-F19 | R7 augmentation cost 2033 | 0.9 | USD m | base | 2033 | `scenarios.base.series.R7.aug.11` |
+| R-F19 | R7 revenue scaling factor 2033 | 1.000 | ratio | base | 2033 | `scenarios.base.series.R7.bat_scale.11` |
+| R-F19 | R7 usable energy, start of year 2034 | 309 | MWh | base | 2034 | `scenarios.base.series.R7.bat_usable_start.12` |
+| R-F19 | R7 usable energy, end of year 2034 | 305 | MWh | base | 2034 | `scenarios.base.series.R7.bat_usable_end.12` |
+| R-F19 | R7 revenue scaling factor 2034 | 1.000 | ratio | base | 2034 | `scenarios.base.series.R7.bat_scale.12` |
+| R-F19 | R7 usable energy, start of year 2035 | 305 | MWh | base | 2035 | `scenarios.base.series.R7.bat_usable_start.13` |
+| R-F19 | R7 usable energy, end of year 2035 | 301 | MWh | base | 2035 | `scenarios.base.series.R7.bat_usable_end.13` |
+| R-F19 | R7 revenue scaling factor 2035 | 1.000 | ratio | base | 2035 | `scenarios.base.series.R7.bat_scale.13` |
+| R-F19 | R7 usable energy, start of year 2036 | 301 | MWh | base | 2036 | `scenarios.base.series.R7.bat_usable_start.14` |
+| R-F19 | R7 usable energy, end of year 2036 | 297 | MWh | base | 2036 | `scenarios.base.series.R7.bat_usable_end.14` |
+| R-F19 | R7 revenue scaling factor 2036 | 0.998 | ratio | base | 2036 | `scenarios.base.series.R7.bat_scale.14` |
+| R-F19 | R7 usable energy, start of year 2037 | 297 | MWh | base | 2037 | `scenarios.base.series.R7.bat_usable_start.15` |
+| R-F19 | R7 usable energy, end of year 2037 | 294 | MWh | base | 2037 | `scenarios.base.series.R7.bat_usable_end.15` |
+| R-F19 | R7 revenue scaling factor 2037 | 0.985 | ratio | base | 2037 | `scenarios.base.series.R7.bat_scale.15` |
+| R-F19 | R7 usable energy, start of year 2038 | 294 | MWh | base | 2038 | `scenarios.base.series.R7.bat_usable_start.16` |
+| R-F19 | R7 usable energy, end of year 2038 | 290 | MWh | base | 2038 | `scenarios.base.series.R7.bat_usable_end.16` |
+| R-F19 | R7 revenue scaling factor 2038 | 0.973 | ratio | base | 2038 | `scenarios.base.series.R7.bat_scale.16` |
+| R-F19 | R7 usable energy, start of year 2039 | 290 | MWh | base | 2039 | `scenarios.base.series.R7.bat_usable_start.17` |
+| R-F19 | R7 usable energy, end of year 2039 | 286 | MWh | base | 2039 | `scenarios.base.series.R7.bat_usable_end.17` |
+| R-F19 | R7 revenue scaling factor 2039 | 0.960 | ratio | base | 2039 | `scenarios.base.series.R7.bat_scale.17` |
+| R-F19 | R7 usable energy, start of year 2040 | 286 | MWh | base | 2040 | `scenarios.base.series.R7.bat_usable_start.18` |
+| R-F19 | R7 usable energy, end of year 2040 | 282 | MWh | base | 2040 | `scenarios.base.series.R7.bat_usable_end.18` |
+| R-F19 | R7 revenue scaling factor 2040 | 0.948 | ratio | base | 2040 | `scenarios.base.series.R7.bat_scale.18` |
+| R-F19 | R7 usable energy, start of year 2041 | 282 | MWh | base | 2041 | `scenarios.base.series.R7.bat_usable_start.19` |
+| R-F19 | R7 usable energy, end of year 2041 | 279 | MWh | base | 2041 | `scenarios.base.series.R7.bat_usable_end.19` |
+| R-F19 | R7 revenue scaling factor 2041 | 0.935 | ratio | base | 2041 | `scenarios.base.series.R7.bat_scale.19` |
+| R-F19 | R7 usable energy, start of year 2042 | 279 | MWh | base | 2042 | `scenarios.base.series.R7.bat_usable_start.20` |
+| R-F19 | R7 usable energy, end of year 2042 | 275 | MWh | base | 2042 | `scenarios.base.series.R7.bat_usable_end.20` |
+| R-F19 | R7 revenue scaling factor 2042 | 0.923 | ratio | base | 2042 | `scenarios.base.series.R7.bat_scale.20` |
+| R-F19 | R7 usable energy, start of year 2043 | 275 | MWh | base | 2043 | `scenarios.base.series.R7.bat_usable_start.21` |
+| R-F19 | R7 usable energy, end of year 2043 | 271 | MWh | base | 2043 | `scenarios.base.series.R7.bat_usable_end.21` |
+| R-F19 | R7 revenue scaling factor 2043 | 0.911 | ratio | base | 2043 | `scenarios.base.series.R7.bat_scale.21` |
+| R-F19 | R7 usable energy, start of year 2044 | 271 | MWh | base | 2044 | `scenarios.base.series.R7.bat_usable_start.22` |
+| R-F19 | R7 usable energy, end of year 2044 | 268 | MWh | base | 2044 | `scenarios.base.series.R7.bat_usable_end.22` |
+| R-F19 | R7 revenue scaling factor 2044 | 0.899 | ratio | base | 2044 | `scenarios.base.series.R7.bat_scale.22` |
+| R-F19 | R6 lowest usable energy in the toll term (requirement 200 MWh) | 202 | MWh | base | 2023-07-14 to 2030-07-13 | `battery_check.r6_min_usable_in_toll_term_mwh` |
 
 New IDs: R-F11 A2 and A3 debt and early ratios (Chapters 31, 73); R-F12 opco debt by asset; R-F13 scenario and sensitivity results; R-F14 cash tax and NOL profile; R-F15 USPP debt service and DSCR profile; R-F16 opco term loan sculpted schedule; R-F17 repriced holdco profile.
 

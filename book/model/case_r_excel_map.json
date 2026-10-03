@@ -756,413 +756,509 @@
 "Operations",
 279
 ],
-"R6.con_frac": [
+"R6.bat_base_start": [
 "Operations",
 280
 ],
-"R6.settle": [
+"R6.bat_aug_start": [
 "Operations",
 281
 ],
-"R6.stor_rev": [
+"R6.bat_usable_start": [
 "Operations",
 282
 ],
-"R6.rev_contracted": [
+"R6.bat_base_end": [
 "Operations",
 283
 ],
-"R6.rev_hedged": [
+"R6.bat_aug_end": [
 "Operations",
 284
 ],
-"R6.revenue": [
+"R6.bat_usable_end": [
 "Operations",
 285
 ],
-"R6.rev_merchant": [
+"R6.bat_usable_avg": [
 "Operations",
 286
 ],
-"R6.opex": [
+"R6.bat_scale": [
 "Operations",
 287
 ],
-"R6.land": [
+"R6.bat_aug_mwh": [
 "Operations",
 288
 ],
-"R6.bond": [
+"R6.con_frac": [
 "Operations",
 289
 ],
-"R6.margin_tax": [
+"R6.settle": [
 "Operations",
 290
 ],
-"R6.ebitda": [
+"R6.stor_rev": [
 "Operations",
 291
 ],
-"R6.aug": [
+"R6.toll_min_usable": [
 "Operations",
 292
 ],
-"R6.decom": [
+"R6.rev_contracted": [
 "Operations",
 293
 ],
-"R6.cf": [
+"R6.rev_hedged": [
 "Operations",
 294
 ],
-"R6.te_cash": [
+"R6.revenue": [
 "Operations",
 295
 ],
-"R6.mesa_tax_share": [
+"R6.rev_merchant": [
 "Operations",
 296
 ],
-"R6.mesa_cf": [
+"R6.opex": [
 "Operations",
 297
 ],
-"R6.mesa_taxable": [
+"R6.land": [
 "Operations",
 298
 ],
-"R6.s_contracted": [
+"R6.bond": [
+"Operations",
+299
+],
+"R6.margin_tax": [
 "Operations",
 300
 ],
-"R6.s_hedged": [
+"R6.ebitda": [
 "Operations",
 301
 ],
-"R6.s_merchant": [
+"R6.aug": [
 "Operations",
 302
 ],
-"R6.mesa_rev": [
+"R6.decom": [
+"Operations",
+303
+],
+"R6.cf": [
+"Operations",
+304
+],
+"R6.te_cash": [
+"Operations",
+305
+],
+"R6.mesa_tax_share": [
 "Operations",
 306
 ],
-"R7.op_frac": [
+"R6.mesa_cf": [
+"Operations",
+307
+],
+"R6.mesa_taxable": [
 "Operations",
 308
 ],
-"R7.own_share": [
+"R6.s_contracted": [
 "Operations",
 310
 ],
-"R7.hub_atc": [
+"R6.s_hedged": [
 "Operations",
 311
 ],
-"R7.con_frac": [
+"R6.s_merchant": [
 "Operations",
 312
 ],
-"R7.settle": [
-"Operations",
-314
-],
-"R7.stor_rev": [
-"Operations",
-315
-],
-"R7.rev_contracted": [
+"R6.mesa_rev": [
 "Operations",
 316
 ],
-"R7.rev_hedged": [
-"Operations",
-317
-],
-"R7.revenue": [
+"R7.op_frac": [
 "Operations",
 318
 ],
-"R7.rev_merchant": [
-"Operations",
-319
-],
-"R7.opex": [
+"R7.own_share": [
 "Operations",
 320
 ],
-"R7.land": [
+"R7.hub_atc": [
 "Operations",
 321
 ],
-"R7.bond": [
+"R7.bat_base_start": [
 "Operations",
 322
 ],
-"R7.margin_tax": [
+"R7.bat_aug_start": [
 "Operations",
 323
 ],
-"R7.ebitda": [
+"R7.bat_usable_start": [
 "Operations",
 324
 ],
-"R7.aug": [
+"R7.bat_base_end": [
 "Operations",
 325
 ],
-"R7.decom": [
+"R7.bat_aug_end": [
 "Operations",
 326
 ],
-"R7.cf": [
+"R7.bat_usable_end": [
 "Operations",
 327
 ],
-"R7.te_cash": [
+"R7.bat_usable_avg": [
 "Operations",
 328
 ],
-"R7.mesa_tax_share": [
+"R7.bat_scale": [
 "Operations",
 329
 ],
-"R7.mesa_cf": [
+"R7.bat_aug_mwh": [
 "Operations",
 330
 ],
-"R7.mesa_taxable": [
+"R7.con_frac": [
 "Operations",
 331
 ],
-"R7.s_contracted": [
+"R7.floor_ref": [
 "Operations",
 333
 ],
-"R7.s_hedged": [
+"R7.floor_payment": [
 "Operations",
 334
 ],
-"R7.s_merchant": [
+"R7.floor_premium": [
 "Operations",
 335
 ],
-"R7.mesa_rev": [
+"R7.floor_upside": [
+"Operations",
+336
+],
+"R7.floor_net": [
+"Operations",
+337
+],
+"R7.settle": [
+"Operations",
+338
+],
+"R7.stor_rev": [
 "Operations",
 339
 ],
-"R8.op_frac": [
+"R7.rev_contracted": [
+"Operations",
+340
+],
+"R7.rev_hedged": [
 "Operations",
 341
 ],
-"R8.own_share": [
+"R7.revenue": [
+"Operations",
+342
+],
+"R7.rev_merchant": [
 "Operations",
 343
 ],
-"R8.hub_atc": [
+"R7.opex": [
 "Operations",
 344
 ],
-"R8.deg": [
+"R7.land": [
+"Operations",
+345
+],
+"R7.bond": [
 "Operations",
 346
 ],
-"R8.curt": [
+"R7.margin_tax": [
 "Operations",
 347
 ],
-"R8.gen_full": [
+"R7.ebitda": [
 "Operations",
 348
 ],
-"R8.gen": [
+"R7.aug": [
 "Operations",
 349
 ],
-"R8.cap_hub": [
+"R7.decom": [
 "Operations",
 350
 ],
-"R8.cap_node": [
+"R7.cf": [
 "Operations",
 351
 ],
-"R8.node_price": [
+"R7.te_cash": [
 "Operations",
 352
 ],
-"R8.con_frac": [
+"R7.mesa_tax_share": [
 "Operations",
 353
 ],
-"R8.con_vol": [
+"R7.mesa_cf": [
 "Operations",
 354
 ],
-"R8.settle": [
+"R7.mesa_taxable": [
 "Operations",
 355
 ],
-"R8.mkt_gen": [
-"Operations",
-356
-],
-"R8.rev_contracted": [
+"R7.s_contracted": [
 "Operations",
 357
 ],
-"R8.rev_hedged": [
+"R7.s_hedged": [
 "Operations",
 358
 ],
-"R8.mkt_rev": [
+"R7.s_merchant": [
 "Operations",
 359
 ],
-"R8.revenue": [
-"Operations",
-360
-],
-"R8.rev_merchant": [
-"Operations",
-361
-],
-"R8.opex": [
-"Operations",
-362
-],
-"R8.land": [
+"R7.mesa_rev": [
 "Operations",
 363
 ],
-"R8.bond": [
-"Operations",
-364
-],
-"R8.margin_tax": [
+"R8.op_frac": [
 "Operations",
 365
 ],
-"R8.ebitda": [
-"Operations",
-366
-],
-"R8.aug": [
+"R8.own_share": [
 "Operations",
 367
 ],
-"R8.decom": [
+"R8.hub_atc": [
 "Operations",
 368
 ],
-"R8.cf": [
-"Operations",
-369
-],
-"R8.te_cash": [
+"R8.deg": [
 "Operations",
 370
 ],
-"R8.mesa_tax_share": [
+"R8.curt": [
 "Operations",
 371
 ],
-"R8.mesa_cf": [
+"R8.gen_full": [
 "Operations",
 372
 ],
-"R8.mesa_taxable": [
+"R8.gen": [
 "Operations",
 373
 ],
-"R8.s_contracted": [
+"R8.cap_hub": [
+"Operations",
+374
+],
+"R8.cap_node": [
 "Operations",
 375
 ],
-"R8.s_hedged": [
+"R8.node_price": [
 "Operations",
 376
 ],
-"R8.s_merchant": [
+"R8.con_frac": [
 "Operations",
 377
 ],
-"R8.mesa_rev": [
+"R8.con_vol": [
+"Operations",
+378
+],
+"R8.settle": [
+"Operations",
+379
+],
+"R8.mkt_gen": [
+"Operations",
+380
+],
+"R8.rev_contracted": [
 "Operations",
 381
 ],
-"portfolio.am_cost": [
+"R8.rev_hedged": [
+"Operations",
+382
+],
+"R8.mkt_rev": [
+"Operations",
+383
+],
+"R8.revenue": [
 "Operations",
 384
 ],
-"portfolio.mesa_rev_contracted_a1": [
+"R8.rev_merchant": [
+"Operations",
+385
+],
+"R8.opex": [
 "Operations",
 386
 ],
-"portfolio.mesa_rev_hedged_a1": [
+"R8.land": [
 "Operations",
 387
 ],
-"portfolio.mesa_rev_merchant_a1": [
+"R8.bond": [
 "Operations",
 388
 ],
-"portfolio.mesa_rev_a1": [
+"R8.margin_tax": [
 "Operations",
 389
 ],
-"portfolio.mesa_rev_contracted_all": [
+"R8.ebitda": [
+"Operations",
+390
+],
+"R8.aug": [
 "Operations",
 391
 ],
-"portfolio.mesa_rev_hedged_all": [
+"R8.decom": [
 "Operations",
 392
 ],
-"portfolio.mesa_rev_merchant_all": [
+"R8.cf": [
 "Operations",
 393
 ],
-"portfolio.mesa_rev_all": [
+"R8.te_cash": [
 "Operations",
 394
 ],
-"portfolio.cfads_a1": [
+"R8.mesa_tax_share": [
+"Operations",
+395
+],
+"R8.mesa_cf": [
+"Operations",
+396
+],
+"R8.mesa_taxable": [
+"Operations",
+397
+],
+"R8.s_contracted": [
+"Operations",
+399
+],
+"R8.s_hedged": [
 "Operations",
 400
 ],
-"portfolio.cfads_all": [
+"R8.s_merchant": [
 "Operations",
 401
 ],
-"portfolio.cfads_a3": [
-"Operations",
-402
-],
-"portfolio.share_contracted_a1": [
-"Operations",
-403
-],
-"portfolio.share_hedged_a1": [
-"Operations",
-404
-],
-"portfolio.share_merchant_a1": [
+"R8.mesa_rev": [
 "Operations",
 405
 ],
-"portfolio.share_contracted_all": [
+"portfolio.am_cost": [
 "Operations",
-409
+408
 ],
-"portfolio.share_hedged_all": [
+"portfolio.mesa_rev_contracted_a1": [
 "Operations",
 410
 ],
-"portfolio.share_merchant_all": [
+"portfolio.mesa_rev_hedged_a1": [
 "Operations",
 411
+],
+"portfolio.mesa_rev_merchant_a1": [
+"Operations",
+412
+],
+"portfolio.mesa_rev_a1": [
+"Operations",
+413
+],
+"portfolio.mesa_rev_contracted_all": [
+"Operations",
+415
+],
+"portfolio.mesa_rev_hedged_all": [
+"Operations",
+416
+],
+"portfolio.mesa_rev_merchant_all": [
+"Operations",
+417
+],
+"portfolio.mesa_rev_all": [
+"Operations",
+418
+],
+"portfolio.cfads_a1": [
+"Operations",
+424
+],
+"portfolio.cfads_all": [
+"Operations",
+425
+],
+"portfolio.cfads_a3": [
+"Operations",
+426
+],
+"portfolio.share_contracted_a1": [
+"Operations",
+427
+],
+"portfolio.share_hedged_a1": [
+"Operations",
+428
+],
+"portfolio.share_merchant_a1": [
+"Operations",
+429
+],
+"portfolio.share_contracted_all": [
+"Operations",
+433
+],
+"portfolio.share_hedged_all": [
+"Operations",
+434
+],
+"portfolio.share_merchant_all": [
+"Operations",
+435
 ],
 "finance.dep": [
 "Tax",
@@ -1632,119 +1728,119 @@
 ],
 "uri.gen_mwh": [
 "Operations",
-"F1159"
+"F1231"
 ],
 "uri.swap_mwh": [
 "Operations",
-"F1160"
+"F1232"
 ],
 "uri.shortfall_mwh": [
 "Operations",
-"F1161"
+"F1233"
 ],
 "uri.swap_payment": [
 "Operations",
-"F1162"
+"F1234"
 ],
 "uri.physical_revenue": [
 "Operations",
-"F1163"
+"F1235"
 ],
 "uri.net_cash": [
 "Operations",
-"F1164"
+"F1236"
 ],
 "uri.net_vs_fully_covered": [
 "Operations",
-"F1165"
+"F1237"
 ],
 "div.A1.p50_gwh": [
 "Operations",
-"F1168"
+"F1240"
 ],
 "div.A1.sigma_1yr_gwh": [
 "Operations",
-"F1171"
+"F1243"
 ],
 "div.A1.p90_1yr_gwh": [
 "Operations",
-"F1172"
+"F1244"
 ],
 "div.A1.p99_1yr_gwh": [
 "Operations",
-"F1173"
+"F1245"
 ],
 "div.A1.p90_1yr_correlated_gwh": [
 "Operations",
-"F1174"
+"F1246"
 ],
 "div.A1.p90_1yr_independent_gwh": [
 "Operations",
-"F1175"
+"F1247"
 ],
 "div.A1.sigma_10yr_gwh": [
 "Operations",
-"F1176"
+"F1248"
 ],
 "div.A1.p90_10yr_gwh": [
 "Operations",
-"F1177"
+"F1249"
 ],
 "div.A1.p99_10yr_gwh": [
 "Operations",
-"F1178"
+"F1250"
 ],
 "div.A1.p90_10yr_correlated_gwh": [
 "Operations",
-"F1179"
+"F1251"
 ],
 "div.A1.p90_10yr_independent_gwh": [
 "Operations",
-"F1180"
+"F1252"
 ],
 "div.all_generation.p50_gwh": [
 "Operations",
-"F1181"
+"F1253"
 ],
 "div.all_generation.sigma_1yr_gwh": [
 "Operations",
-"F1184"
+"F1256"
 ],
 "div.all_generation.p90_1yr_gwh": [
 "Operations",
-"F1185"
+"F1257"
 ],
 "div.all_generation.p99_1yr_gwh": [
 "Operations",
-"F1186"
+"F1258"
 ],
 "div.all_generation.p90_1yr_correlated_gwh": [
 "Operations",
-"F1187"
+"F1259"
 ],
 "div.all_generation.p90_1yr_independent_gwh": [
 "Operations",
-"F1188"
+"F1260"
 ],
 "div.all_generation.sigma_10yr_gwh": [
 "Operations",
-"F1189"
+"F1261"
 ],
 "div.all_generation.p90_10yr_gwh": [
 "Operations",
-"F1190"
+"F1262"
 ],
 "div.all_generation.p99_10yr_gwh": [
 "Operations",
-"F1191"
+"F1263"
 ],
 "div.all_generation.p90_10yr_correlated_gwh": [
 "Operations",
-"F1192"
+"F1264"
 ],
 "div.all_generation.p90_10yr_independent_gwh": [
 "Operations",
-"F1193"
+"F1265"
 ],
 "val.A3.itc7": [
 "Tax",

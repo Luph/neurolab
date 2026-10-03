@@ -216,6 +216,27 @@ def write_report(O, path):
                                 ["Net cash over the event (USD m)", f1(u["net_cash"])],
                                 ["Versus normal hedged revenue for the same hours (USD m)", f1(u["net_vs_fully_covered"])]]))
 
+    w("\n## 9a. Batteries and the R7 floor (R-F18, R-F19; Annex TR R.4, R.5)\n")
+    w("Overbuild 8%% of nameplate at COD; fade 2.0 points of beginning-of-life energy in year 1, 1.5 a year in years 2 to 10, 1.0 a year after; each augmentation tranche (6%% of nameplate at the start of calendar years COD+5 and COD+9) fades from its own installation. "
+      "Usable energy is computed at each period start and end; merchant revenue and the R7 floor reference revenue scale by min(1, average usable energy / nameplate). "
+      "R6 lowest usable energy in the toll term: %s MWh (requirement 200 MWh; condition holds).\n" % f1(O["battery_check"]["r6_min_usable_in_toll_term_mwh"]))
+    rows = []
+    for y in range(2023, 2036):
+        i = yi(y)
+        rows.append([y] + [f1(Sb["%s.%s" % (a, f)][i]) for a in ("R6", "R7") for f in ("bat_usable_end", "bat_aug_mwh", "aug")] + [f2(Sb["R6.bat_scale"][i]), f2(Sb["R7.bat_scale"][i])])
+    w(table(["Year", "R6 usable end (MWh)", "R6 augmentation (MWh)", "R6 augmentation cost", "R7 usable end (MWh)", "R7 augmentation (MWh)", "R7 augmentation cost", "R6 scale", "R7 scale"], rows))
+    rows = []
+    for sc in ("base", "low", "high"):
+        Ss = O["scenarios"][sc]["series"]
+        for y in range(2024, 2033):
+            i = yi(y)
+            rows.append([sc, y, f2(Ss["R7.floor_ref"][i]), f1(Ss["R7.floor_payment"][i]), f1(Ss["R7.floor_premium"][i]), f1(Ss["R7.floor_upside"][i]), f1(Ss["R7.floor_net"][i])])
+    w("\nR7 revenue floor by calendar year (contract years April to April, pro rata):\n")
+    w(table(["Case", "Year", "Reference revenue (USD/kW-yr)", "Floor payment", "Premium", "Upside share", "Net"], rows))
+    va2 = O["valuations"]["base"]["A2"]; va3 = O["valuations"]["base"]["A3"]
+    w("\nMateriality against D-014 prices (threshold USD 1.0 million): A2 breakeven %s against price %s (%s below); A3 value %s against price PV %s (%s short). Prices unchanged per D-014.\n"
+      % (f1(va2["breakeven_price"]), f1(va2["price"]), f1(va2["price"] - va2["breakeven_price"]), f1(va3["ev"]), f1(va3["price_pv"]), f1(va3["price_pv"] - va3["ev"])))
+
     w("\n## 10. Decommissioning (R-F10)\n")
     rows = [[a, d["retirement"], "%.0f" % d["usd_per_kw_2022"], f1(d["cost_2022_prices"]), f1(d["bonded_amount_2026"]), "%.3f" % d["bond_cost_2026"],
              f1(d["cost_nominal_at_retirement"])] for a, d in O["decommissioning"].items()]

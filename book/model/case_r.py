@@ -207,6 +207,41 @@ def corr_pair(i, j, comp):
 YSTAT = yield_stats()
 
 
+def fade_pts(age, fd):
+    """Cumulative capacity fade (percentage points of beginning-of-life usable energy) at age in years."""
+    return (fd["year_1"] * np.minimum(age, 1.0) + fd["years_2_to_10"] * np.minimum(np.maximum(age - 1.0, 0.0), 9.0)
+            + fd["year_11_on"] * np.maximum(age - 10.0, 0.0))
+
+
+def battery_energy(a):
+    """Usable energy (MWh) at period start and end: base modules with overbuild, plus augmentation
+    tranches installed at the start of calendar years COD+k (each fading from its own installation).
+    Revenue scaling uses the average of start and end values (convention)."""
+    fd = a["capacity_fade_pts_of_bol_per_year"]
+    cod = ser(a["cod"])
+    bol = a["mwh"] * (1 + a["overbuild_pct_of_nameplate_mwh"] / 100.0)
+    out = {}
+    for nm, dte in (("start", YS), ("end", YE)):
+        base = bol * (1 - fade_pts(np.maximum(0.0, (dte - cod) / 365.0), fd) / 100.0)
+        augu = np.zeros(NT)
+        for k in a["augmentation"]["years_after_cod"]:
+            inst = ser(dt.date(int(a["cod"][:4]) + k, 1, 1)) - 1
+            m = a["augmentation"]["pct_of_mwh"] / 100.0 * a["mwh"]
+            augu = augu + np.where(dte >= inst, m * (1 - fade_pts(np.maximum(0.0, (dte - inst) / 365.0), fd) / 100.0), 0.0)
+        out["base_" + nm] = base
+        out["aug_" + nm] = augu
+        out["usable_" + nm] = base + augu
+    out["usable_avg"] = (out["usable_start"] + out["usable_end"]) / 2
+    out["scale"] = np.minimum(1.0, out["usable_avg"] / a["mwh"])
+    aug_mwh = np.zeros(NT)
+    for k in a["augmentation"]["years_after_cod"]:
+        yy = int(a["cod"][:4]) + k
+        if 2022 <= yy <= 2059:
+            aug_mwh[yidx(yy)] = a["augmentation"]["pct_of_mwh"] / 100.0 * a["mwh"]
+    out["aug_mwh"] = aug_mwh
+    return out
+
+
 # --------------------------------------------------------------------------------------------
 # Operations block: asset yield, hedge settlement, revenue buckets, opex, CF, tax shares
 # --------------------------------------------------------------------------------------------
@@ -304,12 +339,22 @@ def operations(case):
             short = max(0.0, h["availability_guarantee_pct"] - avail) / 100.0
             settle = h["toll_usd_per_kw_month"] * 12 * mw / 1000.0 * con_frac * (1 - short)
             contracted = settle.copy()
-            stor = batt * mw / 1000.0 * avail / 100.0 * (r["op_frac"] - con_frac)
+            be = battery_energy(a)
+            r.update({"bat_" + k: v for k, v in be.items()})
+            r["toll_min_usable"] = np.where(con_frac > 0, np.minimum(be["usable_start"], be["usable_end"]), np.nan)
+            stor = batt * mw / 1000.0 * avail / 100.0 * be["scale"] * (r["op_frac"] - con_frac)
         elif aid == "R7":
             h = H["R7_revenue_floor"]
             con_frac = frac(h["start"], h["end"])
             avail = a["availability_pct"]
-            m = batt * avail / 100.0
+            be = battery_energy(a)
+            r.update({"bat_" + k: v for k, v in be.items()})
+            m = batt * avail / 100.0 * be["scale"]
+            r["floor_ref"] = m * (r["op_frac"] > 0)
+            r["floor_payment"] = np.maximum(0.0, h["floor_usd_per_kw_yr"] - m) * mw / 1000.0 * con_frac
+            r["floor_premium"] = h["premium_usd_per_kw_yr"] * mw / 1000.0 * con_frac
+            r["floor_upside"] = h["upside_share_pct_above_140_usd_per_kw_yr"] / 100.0 * np.maximum(0, m - 140.0) * mw / 1000.0 * con_frac
+            r["floor_net"] = r["floor_payment"] - r["floor_premium"] - r["floor_upside"]
             under = np.maximum(m, h["floor_usd_per_kw_yr"]) - h["premium_usd_per_kw_yr"] - \
                 h["upside_share_pct_above_140_usd_per_kw_yr"] / 100.0 * np.maximum(0, m - 140.0)
             settle = under * mw / 1000.0 * con_frac
@@ -1085,10 +1130,13 @@ ASSET_SERIES = ["op_frac", "own_share", "deg", "curt", "gen_full", "gen", "hub_a
                 "rev_contracted", "rev_hedged", "rev_merchant", "opex", "land", "bond", "margin_tax", "ebitda",
                 "aug", "decom", "cf", "te_cash", "mesa_tax_share", "mesa_cf", "te_cf", "mesa_taxable",
                 "s_contracted", "s_hedged", "s_merchant", "mesa_rev"]
+BAT_SERIES = ["bat_base_start", "bat_base_end", "bat_aug_start", "bat_aug_end", "bat_usable_start", "bat_usable_end", "bat_usable_avg",
+              "bat_scale", "bat_aug_mwh"]
+FLOOR_SERIES = ["floor_ref", "floor_payment", "floor_premium", "floor_upside", "floor_net"]
 
 
 def build_outputs(base_ops, p99_ops, S, runs, vals, uri):
-    O = {"meta": {"case": "R", "model": "case_r.py", "model_version": "R-1.1", "inputs_file_version": INP["meta"]["file_version"],
+    O = {"meta": {"case": "R", "model": "case_r.py", "model_version": "R-1.2", "inputs_file_version": INP["meta"]["file_version"],
                   "generated": "2026-10-03", "currency": "USD m nominal", "years": [int(y) for y in YEARS],
                   "supplementary_assumptions": SUPP}}
     O["sizing"] = {k: v for k, v in S.items()}
@@ -1103,6 +1151,12 @@ def build_outputs(base_ops, p99_ops, S, runs, vals, uri):
             for f in ASSET_SERIES:
                 ser_["%s.%s" % (a, f)] = L["assets"][a][f]
         ser_["R3.ptc_total"] = L["assets"]["R3"]["ptc_total"]
+        for a in STOR:
+            for f in BAT_SERIES:
+                ser_["%s.%s" % (a, f)] = L["assets"][a][f]
+        for f in FLOOR_SERIES:
+            ser_["R7." + f] = L["assets"]["R7"][f]
+        ser_["R6.toll_min_usable"] = L["assets"]["R6"]["toll_min_usable"]
         for f in ("north_atc", "west_atc", "south_atc", "houston_atc", "batt_rate", "am_cost", "cfads_a1", "cfads_all", "cfads_a3",
                   "mesa_rev_all", "mesa_rev_a1") + tuple("share_%s_%s" % (b, g) for b in BUCKETS for g in ("a1", "all")) + \
                 tuple("mesa_rev_%s_%s" % (b, g) for b in BUCKETS for g in ("a1", "all")) + tuple("cap_hub_" + b for b in BASIS):
@@ -1136,6 +1190,10 @@ def build_outputs(base_ops, p99_ops, S, runs, vals, uri):
                   "pv_2025_at_unlevered_terminal_rate": float(r["decom"][yidx(ly)] * (1 + VAL["discount_rates_nominal_post_tax_pct"]["unlevered"]["terminal_post_2040"] / 100) ** (-(ly - 2025)))}
     O["decommissioning"] = dec
     O["checks"] = checks(base_ops, S, runs)
+    tm = base_ops["assets"]["R6"]["toll_min_usable"]
+    O["checks"].append({"check": "R6 toll condition: years with usable energy below 200 MWh in the toll term (base)",
+                        "value": float(np.sum(tm[np.isfinite(tm)] < 200.0)), "pass": bool(np.sum(tm[np.isfinite(tm)] < 200.0) == 0)})
+    O["battery_check"] = {"r6_min_usable_in_toll_term_mwh": float(np.nanmin(tm))}
     rb, rq = runs["base"], runs["status_quo"]
     O["derived"] = {
         "a1_opco_gearing_pct": 100 * S["tl_debt"] / rb["su_a1"]["price"],

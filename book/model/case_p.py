@@ -1050,6 +1050,7 @@ def xirr(flows, dates, guess=0.15):
     yrs = np.array([(d - d0).days / 365.0 for d in dates]); cf = np.array(flows)
     r = guess
     for _ in range(200):
+        r = max(r, -0.95)
         v = (cf / (1 + r) ** yrs).sum(); dv = (-yrs * cf / (1 + r) ** (yrs + 1)).sum()
         nr = r - v / dv
         if abs(nr - r) < 1e-12: r = nr; break
@@ -1133,7 +1134,7 @@ def size_fc(p, gearing=0.75, dscr_target=1.35, down_target=1.20, verbose=False, 
             md = min(Rd['S']['dscr'][t] for t in range(t1, tl + 1))
         else:
             md = 9.99
-        cap_down = D * md / down_target
+        cap_down = D * md / down_target if down_target else 1e9
         fe = R['fe']; bal_m = sum(R['f']['bal_' + k] for k in TR)
         newNm = np.zeros(NM); newNm[1:fe + 1] = 0.8 * bal_m[:fe]
         newNs = np.zeros(NS)
@@ -1388,9 +1389,11 @@ def audit_case(errs):
     with contract_swap(c):
         Rb = run(scen(1, errs=set(errs)))
         Rd = run(scen(3, errs=set(errs)))
-    st = dscr_stats(Rb); sd = dscr_stats(Rd)
+        Rk = run(scen(2, errs=set(errs)))
+    st = dscr_stats(Rb); sd = dscr_stats(Rd); sk = dscr_stats(Rk)
     return R, c, dict(senior_debt=float(Rb['f']['D']), binding=R['binding'], total_funding=float(Rb['f']['T']),
                       min_dscr_base=st['min_dscr'], avg_dscr_base=st['avg_dscr'], min_dscr_downside=sd['min_dscr'],
+                      min_dscr_banking=sk['min_dscr'],
                       llcr_at_close=st['llcr_first'], equity_irr=float(Rb['equity_irr']),
                       gearing=float(Rb['f']['debt_draw'].sum() / Rb['f']['T']))
 
@@ -1445,4 +1448,532 @@ def compute_all():
                        gearing=float(f1['D'] / f1['T']), tolerance_usd_m=TOL)
     F['summary'] = {i: summary(RS[i]) for i in RS}
     F['scenario_names'] = {i: SCENARIOS[i]['name'] for i in SCENARIOS}
+    figures(F, RS, R1, R14, R15)
     return F, RS, R1, R14, R15
+
+def figures(F, RS, R1, R14, R15):
+    """Every figure ID in the Case Bible register (P-F01 to P-F45)."""
+    Rb, Rk, Rd, Ra, Rr = RS[1], RS[2], RS[3], RS[15], RS[14]
+    Sb, Sa = Rb['S'], Ra['S']
+    cod_fc, cod_act = date(2021, 5, 1), date(2021, 12, 1)
+    t22a, t22b = tix('2022H1'), tix('2022H2')
+    P = {}
+    # ---------------- P-F01 development budget (inputs)
+    P['P-F01'] = dict(budget_2015=14.8, actual_by_year={'2015': 3.12, '2016': 6.87, '2017': 7.64, '2018': 3.80},
+                      actual_total=21.43, overrun_vs_budget=round(21.43 - 14.8, 2), source='inputs')
+    # ---------------- P-F02 tariff indexed to the January 2022 invoice (actual history, 2022H1 reset)
+    t = t22a
+    P['P-F02'] = dict(scenario='Actual history', reset_date='2022-01-01',
+                      index_reading_month='2021-09 (three-month lag; September reading for the January reset)',
+                      us_cpi_index=float(Sa['us_tar'][t]), kessara_cpi_index=float(Sa['kc_tar'][t]),
+                      fx_for_reconversion_kcr_per_usd=float(Sa['fx'][t]),
+                      fx_note='model uses the 2022H1 average rate (654.9) as the invoice-date rate',
+                      contracted_capacity_mw=581.9, capacity_note='reset to the tested 581.9 MW at taking-over (November 2021), before the first invoice',
+                      capital_charge_2016=14.36, capital_charge_indexed=float(Sa['cap_charge'][t]),
+                      fixed_om_charge_2016=2.31, fixed_om_charge_indexed=float(Sa['fom_charge'][t]),
+                      capacity_charge_total_indexed=float(Sa['cap_charge'][t] + Sa['fom_charge'][t]),
+                      vom_charge_2016=3.86, vom_charge_indexed=float(Sa['vom_rate'][t]),
+                      capacity_charge_real_nov2016_usd=float((Sa['cap_charge'][t] + Sa['fom_charge'][t]) / (Sa['us_tar'][t] / 100)),
+                      vom_real_nov2016_usd=float(Sa['vom_rate'][t] / (Sa['us_tar'][t] / 100)))
+    # ---------------- P-F32 January 2022 invoice (31 days, OY1, availability 93.8%)
+    yrs = (0 + 2) / 24  # mid-January 2022, 1.5 months after COD
+    E = 581.9 * 744 * 0.938 * 0.765 * (1 - 0.0015 * yrs) * 0.99
+    hrc = 6323 * (1 + 0.001 * yrs) * 1.023; hra = 6286 * (1 + 0.0012 * yrs) * 1.008 * 1.023
+    gp = 5.86 * 1.02 ** 4; esc = 1.015 ** 4
+    cap_pay = 581.9 * 1000 * P['P-F02']['capacity_charge_total_indexed'] * 1.0 / 1e6
+    vom = E * P['P-F02']['vom_charge_indexed'] / 1e6
+    fuel = E * hrc * K_GAS * gp / 1e6
+    gta = (96500 * 31 * 0.62 * esc + E * hra * K_GAS * 0.19 * esc) / 1e6
+    P['P-F32'] = dict(month='2022-01', energy_mwh=E, availability_pct=93.8, dispatch_pct=76.5, gas_price=gp,
+                      contracted_heat_rate=hrc, capacity_payment=cap_pay, vom_payment=vom, fuel_charge=fuel,
+                      gta_pass_through=gta, take_or_pay=0.0, invoice_total=cap_pay + vom + fuel + gta,
+                      note='Illustrative monthly invoice built with the model formulas for one month (the model itself is semiannual)')
+    # ---------------- avg life and all-in cost (P-F03, P-F12)
+    al = avg_life_from_fc(Rb)
+    libor16 = 0.95
+    def allin(base, k, pri=True, gu=True, prem=True):
+        m = [1.35, 3.65, 3.40, 4.10][k]
+        c = base + m + UPF[k] / al
+        if k == 0 and prem: c += 10.85 / al
+        if k == 3 and gu: c += (base + m) * (1 / 0.9 - 1)
+        if k == 3 and pri: c += 1.15 * 0.90
+        return c
+    P['P-F03'] = dict(libor_6m_july_2016_pct=libor16, libor_note='approximate; not in the inputs file; fact-check before printing',
+                      margins_note='indicative 2016 margins assumed equal to the margins agreed at close',
+                      fee_annualization='upfront fees (and the ECA premium) divided by the average life of the loan from financial close',
+                      average_life_years=al,
+                      all_in_pct={TR[k]: allin(libor16, k) for k in range(4)},
+                      all_in_ex_pri_grossup_pct={TR[k]: allin(libor16, k, pri=False, gu=False) for k in range(4)},
+                      weighted_pct=float(sum(SHARE[k] * allin(libor16, k) for k in range(4))))
+    hedged = lambda k: SWAP_FIX
+    base22 = FC_FWD[7]
+    blend_base = 0.8 * SWAP_FIX + 0.2 * base22
+    P['P-F12'] = dict(swap_fixed_pct=SWAP_FIX, hedge_ratio=0.8, notional_semiannual={S_LABEL[t]: float(CONTRACT['N_s'][t]) for t in range(NS) if CONTRACT['N_s'][t] > 0},
+                      notional_monthly_peak=float(max(CONTRACT['N_m'])), fc_forward_libor_2022_pct=base22,
+                      hedged_base_pct=SWAP_FIX, unhedged_base_pct=base22, blended_base_pct=blend_base,
+                      average_life_years=al,
+                      all_in_pct_full={TR[k]: allin(blend_base, k) for k in range(4)},
+                      all_in_pct_ex_pri={TR[k]: allin(blend_base, k, pri=False) for k in range(4)},
+                      all_in_pct_ex_grossup={TR[k]: allin(blend_base, k, gu=False) for k in range(4)},
+                      all_in_pct_ex_eca_premium={TR[k]: allin(blend_base, k, prem=False) for k in range(4)},
+                      all_in_pct_margin_and_base_only={TR[k]: blend_base + [1.35, 3.65, 3.40, 4.10][k] for k in range(4)},
+                      weighted_all_in_pct=float(sum(SHARE[k] * allin(blend_base, k) for k in range(4))),
+                      model_allin_rate_2022_pct_pa=float((Sb['senior_costs'][t22a] + Sb['senior_costs'][t22b]) / Sb['debt_open'][t22a] * 100))
+    # ---------------- P-F04 2022 accounts (actual)
+    P['P-F04'] = dict(scenario='Actual history', year=2022, **statements(Ra, [t22a, t22b]),
+                      capitalized_idc_and_financing_costs=float(Ra['f']['fin_costs'].sum()),
+                      capitalized_shl_interest=float(Ra['f']['shl_capint'].sum()), capitalized_cost=float(Ra['capcost']),
+                      basis='IFRS, USD functional currency; plant as property, plant and equipment depreciated straight line over the 25-year PPA term to nil at transfer; SEKA receivables at amortized cost (no ECL provision modeled)')
+    # ---------------- P-F05 equity IRR at gearing 60-80% (debt forced to the gearing level, sculpted)
+    g5 = {}
+    for g in (0.60, 0.65, 0.70, 0.75, 0.80):
+        Rg = size_fc(scen(1), gearing=g, only_gearing=True, down_target=0)
+        st = dscr_stats(Rg)
+        g5[f'{int(g*100)}%'] = dict(senior_debt=float(Rg['f']['D']), total_funding=float(Rg['f']['T']),
+                                   equity=float(Rg['f']['T'] - Rg['f']['D']), equity_irr=float(Rg['equity_irr']),
+                                   min_dscr=st['min_dscr'])
+    P['P-F05'] = dict(note='Debt set at each gearing level and sculpted to FC base CFADS (constant DSCR); DSCR and downside tests not applied', by_gearing=g5)
+    # ---------------- P-F06 levelized tariff (RFP formula)
+    E_bid = 588.4 * 8760 * 0.70
+    cap_ann = (14.36 + 2.31) * 588.4 * 1000 * 12
+    fuel_mwh = 6323 * 1.108 / 1055056 * 1000 * 5.50
+    lev = cap_ann / E_bid + 3.86 + fuel_mwh
+    P['P-F06'] = dict(levelized_tariff_usd_per_mwh=lev, capacity_component=cap_ann / E_bid, vom_component=3.86,
+                      fuel_component=fuel_mwh, runner_up_usd_per_mwh=lev * 1.046,
+                      basis='25 years at 10.0% (flat real flows, so the discount rate cancels), 70% dispatch at 588.4 MW, gas USD 5.50/MMBtu, contracted heat rate 6,323 kJ/kWh, 2016 prices, capacity paid in full')
+    # ---------------- P-F07 sources and uses at FC (FC base)
+    fb, ub = Rb['f'], Rb['u']
+    uses = dict(epc=float(ub['epc'].sum()), of_which_lntp_paid_before_close=LNTP, owners_costs=float(ub['owners'].sum()),
+                insurance_during_construction=float(ub['insurance'].sum()), development_costs_and_fee=float(ub['dev'].sum()),
+                lenders_advisors=float(ub['advisors'].sum()), contingency=float(ub['contingency'].sum()),
+                initial_working_capital=float(ub['wc'].sum()), subtotal_before_financing=float(ub['base_total'].sum()),
+                idc_loans=float(fb['loan_int'].sum()), swap_net_during_construction=float(fb['swap'].sum()),
+                pri_premium=float(fb['pri'].sum()), commitment_fees=float(fb['cfee'].sum() + fb['sb_cfee'].sum()),
+                upfront_fees=float(fb['upfront'].sum()), eca_premium=float(fb['eca_prem'].sum()),
+                agency_fees=float(fb['agency'].sum()), vat_facility_interest=float(ub['vat_int'][:Rb['fe'] + 1].sum()),
+                dsra_initial=float(fb['dsra'].sum()), total=float(fb['T']))
+    sources = {('debt_' + TR[k]): float(fb['Dk'][k]) for k in range(4)}
+    sources.update(debt_total=float(fb['D']), share_capital=float(fb['sc_contrib'].sum()),
+                   shareholder_loans=float(fb['shl_contrib'].sum()), equity_total=float(fb['equity'].sum()),
+                   of_which_lntp_credit=LNTP, total=float(fb['debt_draw'].sum() + fb['equity'].sum()))
+    P['P-F07'] = dict(scenario='FC base', uses=uses, sources=sources, gearing=float(fb['D'] / fb['T']),
+                      shl_interest_capitalized_to_cod=float(fb['shl_capint'].sum()),
+                      shl_balance_at_cod=float(fb['shl_bal'][Rb['fe']]))
+    # ---------------- P-F08 debt and ratios at close
+    P['P-F08'] = dict(senior_debt_by_tranche={TR[k]: float(fb['Dk'][k]) for k in range(4)}, senior_debt=float(fb['D']),
+                      binding_constraint=F['sizing']['binding'], candidates=F['sizing']['candidates'],
+                      gearing_cap_debt=F['sizing']['gearing_cap_debt_closed_form'],
+                      base=dscr_stats(Rb), banking=dscr_stats(Rk), downside=dscr_stats(Rd),
+                      llcr_at_close_incl_dsra=F['sizing']['llcr_at_close_incl_dsra'],
+                      llcr_test_1_40_binds=bool(F['sizing']['llcr_at_close_incl_dsra'] < 1.40),
+                      definitions=dict(dscr='CFADS / (interest + swap net + PRI premium + scheduled principal) in the period',
+                                       avg_dscr='debt-service-weighted: sum CFADS / sum debt service over the loan life',
+                                       llcr='(PV of CFADS to final maturity at the period all-in senior cost + DSRA balance) / senior debt outstanding, at the start of the first repayment period',
+                                       gearing='senior debt / total funding requirement (all uses incl. IDC, fees, ECA premium and DSRA)'))
+    # ---------------- P-F09 sculpted profile and ECA tests
+    P['P-F09'] = dict(profile_share={S_LABEL[t]: float(Rb['prof'][t]) for t in range(NS) if Rb['prof'][t] > 0},
+                      principal_usd_m={S_LABEL[t]: float(Sb['principal_total'][t]) for t in range(NS) if Sb['principal_total'][t] > 1e-9},
+                      eca_tests=ECA_tests(Rb, cod_fc),
+                      eca_rules='OECD Arrangement project finance terms in force 2018: repayment term <= 14 years; first repayment <= 24 months after the starting point; WAL <= 7.25 years; no installment > 25% of principal (fact sheet t-oecd-pf-2018)')
+    # ---------------- P-F10 CFADS build, first full operating year = FY2022 (calendar)
+    def cfads_build(R, ts):
+        S = R['S']; sm = lambda k: float(sum(S[k][t] for t in ts))
+        return dict(capacity_payments=sm('cap_pay'), vom=sm('vom'), fuel_and_transport_pass_through=sm('fuel_rev') + sm('gta_res') + sm('gta_com') + sm('top_pay'),
+                    total_revenue=sm('revenue'), fuel_and_transport_costs=sm('pass_cost'), om_fixed=sm('om_fixed'),
+                    om_incentive=sm('om_incentive'), ltsa_fixed=sm('ltsa_fixed'), ltsa_variable=sm('ltsa_var'),
+                    insurance=sm('insurance'), g_and_a=sm('ga'), land=sm('land'), community_and_levy=sm('community_levy'),
+                    consumables=sm('consumables'), agency=sm('agency'), prg_fee=sm('prg_fee'), vat_interest=sm('vat_int_ops'),
+                    major_maintenance=sm('mm_spend'), ebitda=sm('ebitda'), tax=sm('tax'), increase_in_working_capital=sm('dnwc'),
+                    mmra_contribution=sm('mm_contr'), mmra_release=sm('mm_spend'), cfads=sm('cfads'), debt_service=sm('ds'),
+                    dscr=sm('cfads') / sm('ds'))
+    P['P-F10'] = dict(scenario='FC base', period='FY2022 (January 1 to December 31, 2022): the first full calendar year of operation; OY1 runs May 2021 to April 2022',
+                      cfads_definition='revenue - operating costs - tax paid - increase in working capital - MMRA contributions + MMRA releases (MMRA inside CFADS; DSRA flows excluded; late payment interest received is revenue)',
+                      build=cfads_build(Rb, [t22a, t22b]))
+    # ---------------- P-F11 DSRA and MMRA
+    P['P-F11'] = dict(dsra_initial=float(fb['dsra'].sum()), dsra_balance_by_period={S_LABEL[t]: float(Sb['dsra_close'][t]) for t in range(NS) if Sb['dsra_close'][t] > 0},
+                      mmra_contributions={S_LABEL[t]: float(Sb['mm_contr'][t]) for t in range(NS) if Sb['mm_contr'][t] > 1e-9},
+                      mm_spend={S_LABEL[t]: float(Sb['mm_spend'][t]) for t in range(NS) if Sb['mm_spend'][t] > 1e-9},
+                      mmra_balance={S_LABEL[t]: float(Sb['mmra_bal'][t]) for t in range(NS) if Sb['mmra_bal'][t] > 1e-9})
+    # ---------------- P-F13 monthly drawdowns and IDC (FC base)
+    P['P-F13'] = dict(month=[M_START[m].strftime('%Y-%m') for m in range(Rb['fe'] + 1)],
+                      uses=[float(x) for x in fb['uses'][:Rb['fe'] + 1]], debt_draw=[float(x) for x in fb['debt_draw'][:Rb['fe'] + 1]],
+                      equity=[float(x) for x in fb['equity'][:Rb['fe'] + 1]],
+                      idc_incl_swap_pri=[float(x) for x in fb['idc'][:Rb['fe'] + 1]],
+                      totals=dict(uses=float(fb['uses'].sum()), debt=float(fb['debt_draw'].sum()), equity=float(fb['equity'].sum()),
+                                  idc_incl_swap_pri=float(fb['idc'].sum())))
+    # ---------------- P-F14 tax OY1-OY10 (FC base, month-weighted operating-year aggregation)
+    tx = {}
+    for k in range(1, 11):
+        o = lambda key: oy_sum(Rb, Sb[key], k)
+        tx[f'OY{k}'] = dict(ebitda=o('ebitda'), deductible_senior_finance=o('int_ded'), shl_interest=o('shl_int'),
+                            shl_deductible=o('shl_ded'), depreciation_total=o('dep_full'), depreciation_deferred=o('dep_hol'),
+                            depreciation_current=o('dep_cur'), deferred_used=o('pool_use'), taxable_income=o('taxable'),
+                            cit=o('cit'), minimum_turnover_tax=o('mtt'), tax_paid=o('tax'))
+    pool_by_cy = {str(y): float(Sb['pool_close'][[t for t in range(NS) if S_YEAR[t] == y][-1]]) for y in range(2021, 2037)}
+    first_cit = [S_LABEL[t] for t in range(NS) if Sb['cit'][t] > 1e-6]
+    P['P-F14'] = dict(scenario='FC base', by_operating_year=tx, deferred_depreciation_pool_by_year_end=pool_by_cy,
+                      first_period_with_cit=first_cit[0] if first_cit else None,
+                      note='OY values allocate each semiannual period by its operating months (OY1 = May 2021 to April 2022)')
+    # ---------------- P-F15 waterfall OY1-OY3 and dividend trap
+    wf = {}
+    for k in (1, 2, 3):
+        o = lambda key: oy_sum(Rb, Sb[key], k)
+        wf[f'OY{k}'] = dict(cfads=o('cfads'), senior_interest_and_fees=o('senior_costs'), senior_principal=o('principal_total'),
+                            dsra_topup_net=o('dsra_topup') - o('dsra_release'), lockup_cash=None,
+                            shl_interest_paid=o('shl_int_paid'), shl_principal=o('shl_prin'), dividends=o('div'),
+                            net_income=o('ni'))
+    Rn = run(scen(1, shl_share=0.0))
+    trap_with = {S_LABEL[t]: float(Sb['trap_close'][t]) for t in range(NS) if Sb['trap_close'][t] > 1e-6}
+    trap_without = {S_LABEL[t]: float(Rn['S']['trap_close'][t]) for t in range(NS) if Rn['S']['trap_close'][t] > 1e-6}
+    P['P-F15'] = dict(scenario='FC base', waterfall_by_oy=wf, payment_order='SHL interest, SHL principal, dividends within distributable reserves; remainder trapped',
+                      trapped_cash_with_shl=trap_with, max_trapped_with_shl=max(trap_with.values(), default=0.0),
+                      trapped_cash_without_shl=trap_without, max_trapped_without_shl=max(trap_without.values(), default=0.0),
+                      equity_irr_with_shl=float(Rb['equity_irr']), equity_irr_without_shl=float(Rn['equity_irr']),
+                      first_dividend_with_shl=next((S_LABEL[t] for t in range(NS) if Sb['div'][t] > 1e-6), None),
+                      first_dividend_without_shl=next((S_LABEL[t] for t in range(NS) if Rn['S']['div'][t] > 1e-6), None))
+    # ---------------- P-F16 returns, sensitivities, breakevens
+    sens = {SCENARIOS[i]['name']: dict(min_dscr=F['summary'][i]['min_dscr'], avg_dscr=F['summary'][i]['avg_dscr'],
+                                       min_hist_dscr=F['summary'][i]['min_hist_dscr'], equity_irr=F['summary'][i]['equity_irr'],
+                                       project_irr=F['summary'][i]['project_irr'], dsra_draws=F['summary'][i]['dsra_draws'])
+            for i in range(1, 14)}
+    be_av = breakeven(lambda x: min_dscr_of(scen(1, avail_d=x)), -40.0, 0.0)
+    be_cc = breakeven(lambda x: min_dscr_of(scen(1, cap_charge_f=x)), 0.3, 1.0)
+    t = t22a
+    monthly_all = (Sb['opex'][t] + Sb['ds'][t]) / 6
+    monthly_ex_fuel = (Sb['opex_om'][t] + Sb['ds'][t]) / 6
+    lc = 2 * Sb['cap_pay'][t] / 6 + (Sb['vom'][t] + Sb['fuel_rev'][t] + Sb['gta_res'][t] + Sb['gta_com'][t]) / 6
+    res_ = Sb['dsra_close'][t] + lc
+    P['P-F16'] = dict(equity_irr=float(Rb['equity_irr']), project_irr_post_tax=float(Rb['project_irr']),
+                      project_irr_pre_tax=float(Rb['project_irr_pretax']), equity_npv_at_16pct_at_fc=float(Rb['equity_npv16_at_fc']),
+                      payback_date=Rb['payback_date'], sensitivities=sens,
+                      breakeven_availability_shift_points=be_av,
+                      breakeven_availability_oy1_pct=93.8 + be_av,
+                      breakeven_capacity_charge_cut_pct=(1 - be_cc) * 100,
+                      months_zero_payment_covered_paying_gas=float(res_ / monthly_all),
+                      months_zero_payment_covered_gas_deferred=float(res_ / monthly_ex_fuel),
+                      breakeven_basis='FC base debt locked; breakeven = minimum period DSCR of 1.00x; months covered = (DSRA + LC) / monthly outflows in 2022H1',
+                      equity_irr_basis='project-company level, from the LNTP date (2018-02-05), before shareholder withholding tax',
+                      equity_irr_incl_development=float(xirr([-3.12, -6.87, -7.64, -3.80] + list(Rb['eq_flows'][:1]) + [Rb['eq_flows'][1] + 32.63] + list(Rb['eq_flows'][2:]),
+                                                             [date(2015, 7, 1), date(2016, 7, 1), date(2017, 7, 1), date(2018, 4, 1)] + Rb['eq_dates'])))
+    # ---------------- P-F17 audit errors
+    aud = {}
+    _, _, base_a = audit_case([])
+    aud['correct'] = base_a
+    AUDIT_CONTRACTS = {}
+    for e in ERR_LIST + ['ALL']:
+        errs = ERR_LIST if e == 'ALL' else [e]
+        Re, ce, ae = audit_case(errs)
+        ae['description'] = 'all ten errors together' if e == 'ALL' else ERR_DESC[e]
+        ae['delta_senior_debt'] = ae['senior_debt'] - base_a['senior_debt']
+        ae['delta_equity_irr_pp'] = (ae['equity_irr'] - base_a['equity_irr']) * 100
+        aud[e] = ae
+        if e == 'ALL': AUDIT_CONTRACTS['ALL'] = ce
+    P['P-F17'] = dict(note='Each error alone, re-sized with the sizing loop (DSCR, gearing and downside constraints); downside run with the erroneous model locked at its own sizing',
+                      results=aud)
+    F['_audit_contract'] = AUDIT_CONTRACTS['ALL']
+    # ---------------- P-F18 actual construction
+    fa, ua = Ra['f'], Ra['u']
+    P['P-F18'] = dict(scenario='Actual history',
+                      uses=dict(epc=float(ua['epc'].sum()), epc_fx_gain_on_onshore=float(82.67 - (ua['onshore_kcr'] / Ra['mac']['fx_m']).sum()),
+                                owners_costs_incl_extension=float(ua['owners'].sum()), overrun_items_excl_extension=float(ua['overrun'].sum()),
+                                hard_cost_overrun_total=39.27, contingency_available=38.40,
+                                other_base=float(ua['insurance'].sum() + ua['dev'].sum() + ua['advisors'].sum() + ua['wc'].sum()),
+                                subtotal_before_financing=float(ua['base_total'].sum()),
+                                idc_loans=float(fa['loan_int'].sum()), swap_net=float(fa['swap'].sum()), pri=float(fa['pri'].sum()),
+                                commitment_fees=float(fa['cfee'].sum() + fa['sb_cfee'].sum()), upfront_fees=float(fa['upfront'].sum()),
+                                eca_premium=float(fa['eca_prem'].sum()), agency=float(fa['agency'].sum()),
+                                vat_interest=float(ua['vat_int'][:Ra['fe'] + 1].sum()), dsra_initial=float(fa['dsra'].sum()), total=float(fa['T'])),
+                      sources=dict(senior_debt_drawn=float(sum(fa['bal_' + k][Ra['fe']] for k in TR)), senior_commitment=float(CONTRACT['D']),
+                                   undrawn_commitment_cancelled=float(CONTRACT['D'] - sum(fa['bal_' + k][Ra['fe']] for k in TR)),
+                                   base_equity=float((fa['equity'] - fa['ce_draw']).sum()), delay_lds_received=OVR['epc_delay_lds_usd_m'],
+                                   dsu_received=OVR['dsu_proceeds_usd_m'], lds_and_dsu_applied_to_construction=float(fa['ld_used'].sum()),
+                                   lds_and_dsu_unused_to_operating_cash=float(fa['ld_leftover']), standby_drawn=float(fa['sb_draw'].sum()),
+                                   contingent_equity_drawn=float(fa['ce_draw'].sum())),
+                      fc_base_comparison=dict(total_funding_fc=float(fb['T']), idc_fc=float(fb['loan_int'].sum() + fb['swap'].sum() + fb['pri'].sum()),
+                                              idc_actual=float(fa['loan_int'].sum() + fa['swap'].sum() + fa['pri'].sum() + fa['sb_int'].sum())),
+                      finding='Standby facility and contingent equity not drawn: unused contingency covered the hard-cost overrun, lower 2020-2021 LIBOR and the KCR depreciation on the onshore EPC offset most of the extra interest, and delay LDs and DSU proceeds were not needed for construction')
+    # ---------------- P-F19 completion tests and LDs
+    R14b = run(scen(14, ld_prep=0))
+    R14c = resculpt_cod(scen(14, C_override=588.4, HR_override=6261))
+    S14 = Rr['S']; m14 = S14['ds'] > 1e-9
+    after = [t for t in range(NS) if t > tix('2022H1') and S14['ds'][t] > 1e-9]
+    P['P-F19'] = dict(tested_output_mw=581.9, tested_heat_rate=6286, output_lds=13.975, heat_rate_lds=4.51, total_lds=18.485,
+                      prepayment_date='2022-06-30', cod_resculpted_dscr=float(R14['sculpt_dscr']),
+                      cod_resculpted_dscr_if_no_reset=float(R14c['sculpt_dscr']),
+                      projected_min_dscr_after_prepayment=float(min(S14['dscr'][t] for t in after)),
+                      projected_avg_dscr_after_prepayment=float(S14['cfads'][after].sum() / S14['ds'][after].sum()),
+                      projected_min_dscr_without_prepayment=float(min(R14b['S']['dscr'][t] for t in after)),
+                      fc_base_min_dscr=F['summary'][1]['min_dscr'])
+    # ---------------- P-F20 arrears and cash DSCR (actual)
+    ts = range(tix('2022H1'), tix('2025H1') + 1)
+    P['P-F20'] = dict(overdue={S_LABEL[t]: float(Sa['overdue'][t]) for t in ts},
+                      deferred_snhk_gck_payables={S_LABEL[t]: float(Sa['gas_arrears'][t]) for t in ts},
+                      cfads={S_LABEL[t]: float(Sa['cfads'][t]) for t in ts}, debt_service={S_LABEL[t]: float(Sa['ds'][t]) for t in ts},
+                      cash_dscr={S_LABEL[t]: float(Sa['dscr'][t]) for t in ts}, historic_dscr={S_LABEL[t]: float(Sa['dscr_hist'][t]) for t in ts},
+                      dsra_draw={S_LABEL[t]: float(Sa['dsra_draw'][t]) for t in ts}, dsra_topup={S_LABEL[t]: float(Sa['dsra_topup'][t]) for t in ts},
+                      dsra_balance={S_LABEL[t]: float(Sa['dsra_close'][t]) for t in ts},
+                      fx_losses={k: v for k, v in INP['events']['offtaker_crisis']['fx_conversion_losses_usd_m'].items()},
+                      fx_losses_total=float(sum(INP['events']['offtaker_crisis']['fx_conversion_losses_usd_m'].values())),
+                      lpi_accrued_total=float(Sa['lpi_accrued'].sum()), lpi_received_total=float(Sa['lpi_received'].sum()),
+                      lockup_periods=[S_LABEL[t] for t in range(NS) if Sa['lockup'][t] > 0],
+                      lockup_released=next((S_LABEL[t] for t in range(NS) if Sa['released'][t] > 0), None))
+    # ---------------- P-F21 breach and waiver
+    t23a, t23b = tix('2023H1'), tix('2023H2')
+    uplift = 0.0
+    for t in range(tix('2023H2'), tix('2024H2') + 1):
+        for k, mk_ in (('ECA', 0), ('A', 1), ('B', 2), ('COM', 3)):
+            uplift += Sa['bal_open_' + k][t] * 0.005 * S_DAYS[t] / 360 * (GU[mk_])
+        uplift += Sa['bal_open_SB'][t] * 0.005 * S_DAYS[t] / 360 * (0.6 / 0.9 + 0.4)
+    P['P-F21'] = dict(historic_dscr_2023_06_30=float(Sa['dscr_hist'][t23a]), period_dscr_2023H1=float(Sa['dscr'][t23a]),
+                      historic_dscr_2022_12_31=float(Sa['dscr_hist'][tix('2022H2')]),
+                      historic_dscr_2023_12_31=float(Sa['dscr_hist'][t23b]),
+                      dsra_draw_2023_06_30=float(Sa['dsra_draw'][t23a]), waiver_fee=float(Sa['waiver_fee'][t23b]),
+                      margin_uplift_cost_total=uplift,
+                      deferred_principal_2023_12_31=float(sum(Sa['deferred_new_' + k][t23b] for k in TR + ['SB'])),
+                      deferred_repayment_each_installment=float(sum(Sa['deferred_new_' + k][t23b] for k in TR + ['SB']) / 4),
+                      release_period=P['P-F20']['lockup_released'])
+    # ---------------- P-F22 LIBOR to SOFR
+    def unhedged(t): return Sa['debt_open'][t] - Sa['N_s'][t]
+    P['P-F22'] = dict(base_2022H2_libor_pct=ACT_BASE[tix('2022H2')], base_2023H1_sofr_plus_cas_pct=ACT_BASE[t23a],
+                      term_sofr_2023H1_pct=4.86, cas_pct=CAS,
+                      interest_cost_2022H2=float(Sa['senior_costs'][tix('2022H2')]), interest_cost_2023H1=float(Sa['senior_costs'][t23a]),
+                      allin_rate_2022H2_pct_pa=float(Sa['senior_costs'][tix('2022H2')] / Sa['debt_open'][tix('2022H2')] / S_DAYS[tix('2022H2')] * 360 * 100),
+                      allin_rate_2023H1_pct_pa=float(Sa['senior_costs'][t23a] / Sa['debt_open'][t23a] / S_DAYS[t23a] * 360 * 100),
+                      unhedged_balance_2023H1=float(unhedged(t23a)),
+                      cas_cost_2023H1_unhedged=float(unhedged(t23a) * CAS / 100 * S_DAYS[t23a] / 360),
+                      cas_cost_per_year_2023=float(sum(unhedged(t) * CAS / 100 * S_DAYS[t] / 360 for t in (t23a, t23b))),
+                      hedged_note='the swap floating leg is modeled equal to the loan base rate, so the spread adjustment cancels on the hedged portion; the H1 2023 LIBOR/SOFR basis is ignored')
+    # ---------------- P-F23 refinancing
+    tR = tix('2025H1')
+    Rnr = run(scen(15, refi=0))
+    eqd = lambda R: [(S_END[t], R['S']['equity_dist'][t]) for t in range(tR + 1, NS)]
+    pv = lambda R, r: sum(v / (1 + r) ** ((d - S_END[tR]).days / 365) for d, v in eqd(R))
+    bnd = {S_LABEL[t]: float(Sa['principal_BOND'][t]) for t in range(NS) if Sa['principal_BOND'][t] > 1e-9}
+    P['P-F23'] = dict(prepaid_principal=float(sum(Sa['refi_prepay_' + k][tR] for k in ['B', 'COM', 'SB'])),
+                      prepaid_by_tranche={k: float(Sa['refi_prepay_' + k][tR]) for k in ['B', 'COM', 'SB']},
+                      swap_unwind_receipt=float(Sa['unwind'][tR]), bond_face=float(Ra['bond_F']),
+                      bond_proceeds=float(Ra['bond_F'] * 0.99512), oid=float(Ra['bond_F'] * (1 - 0.99512)),
+                      underwriting=float(0.01 * Ra['bond_F']), other_costs=3.10, pcg_upfront=0.0075 * 95.0,
+                      transaction_costs_total=float(Sa['refi_costs'][tR]),
+                      combined_dscr_sculpted=float(R15['bond_dscr']), bond_amortization=bnd,
+                      remaining_eca=float(Sa['bal_close_ECA'][tR]), remaining_a_loan=float(Sa['bal_close_A'][tR]),
+                      min_dscr_after_refi=float(min(Sa['dscr'][t] for t in range(tR + 1, NS) if Sa['ds'][t] > 1e-9)),
+                      equity_pv_gain_at_13_75pct=float(pv(Ra, 0.1375) - pv(Rnr, 0.1375)),
+                      equity_pv_gain_at_12_50pct=float(pv(Ra, 0.125) - pv(Rnr, 0.125)),
+                      equity_irr_with_refi=float(Ra['equity_irr']), equity_irr_without_refi=float(Rnr['equity_irr']),
+                      interest_limitation='grandfathered: bond principal only refinances the prepaid principal plus costs (no upsizing)')
+    # ---------------- P-F24 sale valuation
+    lb = date(2025, 12, 31); comp = date(2026, 9, 30)
+    flows = [(S_END[t], Sa['equity_dist'][t]) for t in range(NS) if S_END[t] > lb]
+    V = lambda r: sum(v / (1 + r) ** ((d - lb).days / 365) for d, v in flows)
+    v1375, v125 = V(0.1375), V(0.125)
+    ticker = 1 + 0.065 * (comp - lb).days / 365
+    leak = 0.24 * Sa['equity_dist'][tix('2026H1')]
+    price = 0.24 * v1375 * ticker - leak
+    eq_contrib = float(LNTP + Ra['f']['equity_cash'].sum())
+    shl_rep = float(Sa['shl_prin'][:tix('2026H1') + 1].sum())
+    cost_basis = 0.24 * (eq_contrib - shl_rep)
+    gain = price - cost_basis; itt = 0.15 * max(0.0, gain)
+    kd = [d for d in Ra['eq_dates'] if d <= date(2026, 6, 30)]
+    kf = [0.24 * x for x, d in zip(Ra['eq_flows'], Ra['eq_dates']) if d <= date(2026, 6, 30)]
+    irr_sold = xirr(kf + [price - itt], kd + [comp])
+    irr_sold_def = xirr(kf + [price - itt, 4.0 * (1 - 0.15)], kd + [comp, date(2027, 6, 30)])
+    P['P-F24'] = dict(locked_box_date='2025-12-31', equity_value_100pct_at_13_75=float(v1375), equity_value_100pct_at_12_50=float(v125),
+                      value_24pct_at_13_75=float(0.24 * v1375), value_24pct_at_12_50=float(0.24 * v125),
+                      ticker_factor=float(ticker), leakage_h1_2026_distribution_24pct=float(leak), price_at_completion=float(price),
+                      kilnworth_reserve_price_24pct=float(0.24 * v125 * ticker - leak),
+                      deferred_consideration=4.0, cost_basis_24pct=float(cost_basis), seller_gain=float(gain), indirect_transfer_tax=float(itt),
+                      kilnworth_irr_on_sold_stake=float(irr_sold), kilnworth_irr_incl_deferred=float(irr_sold_def),
+                      basis='equity value = PV of projected shareholder distributions (SHL interest, SHL principal, dividends) from the actual-history run after the locked-box date; price includes shares and shareholder loans pro rata')
+    # ---------------- P-F25 termination compensation at 2023-06-30
+    tt_ = t23a; dT = S_END[tt_]
+    mtm = 0.0; df = 1.0
+    for s_ in range(tt_ + 1, NS):
+        df /= 1 + Sa['base'][s_] / 100 * S_DAYS[s_] / 360
+        mtm += Sa['N_s'][s_] * (Sa['base'][s_] / 100 * S_DAYS[s_] / 360 - SWAP_FIX / 100 * 0.5) * df
+    debt_out = float(Sa['debt_close'][tt_])
+    fut = [(S_END[t], Sa['equity_dist'][t]) for t in range(tt_ + 1, NS)]
+    npv_d = sum(v / 1.145 ** ((d - dT).days / 365) for d, v in fut)
+    past = [(d, x) for d, x in zip(Ra['eq_dates'], Ra['eq_flows']) if d <= dT]
+    contrib_c = sum(-x * 1.145 ** ((dT - d).days / 365) for d, x in past if x < 0)
+    dist_c = sum(x * 1.145 ** ((dT - d).days / 365) for d, x in past if x > 0)
+    contrib = sum(-x for d, x in past if x < 0); dist = sum(x for d, x in past if x > 0)
+    eq_amt = max(npv_d, contrib_c - dist_c)
+    P['P-F25'] = dict(date='2023-06-30', senior_debt_outstanding=debt_out, swap_mtm_to_project=float(mtm),
+                      swap_breakage_payable=float(-mtm), equity_npv_distributions_14_5=float(npv_d),
+                      equity_contributed_compounded_less_distributions=float(contrib_c - dist_c), equity_amount=float(eq_amt),
+                      seka_default_compensation=float(debt_out - mtm + eq_amt), project_default_compensation=debt_out,
+                      natural_fm_compensation=float(debt_out + contrib - dist),
+                      equity_contributed=float(contrib), distributions_received=float(dist))
+    # ---------------- P-F26 Kilnworth accounting (simplified)
+    be_ = interp_bs(Ra, 'bs_sc', comp) + interp_bs(Ra, 'bs_re', comp)
+    shl_ = interp_bs(Ra, 'bs_shl', comp)
+    fv36 = 0.36 * v1375 * ticker
+    carrying60 = 0.60 * (be_ + shl_)
+    P['P-F26'] = dict(completion='2026-09-30', book_equity_at_completion=float(be_), shl_at_completion=float(shl_),
+                      kilnworth_carrying_amount_60pct=float(carrying60), consideration=float(price), fv_retained_36pct=float(fv36),
+                      remeasurement_and_disposal_gain=float(price + fv36 - carrying60),
+                      equity_method_carrying_value_36pct=float(fv36), indirect_transfer_tax=float(itt),
+                      basis='Simplified IFRS 10 loss-of-control: gain = consideration + fair value of retained interest - carrying amount of the 60% interest in net assets plus shareholder loans; balance interpolated to September 30, 2026; accounting framework to be confirmed centrally')
+    # ---------------- P-F27 withholding tax
+    def wht(R):
+        S = R['S']
+        com_int = S['interest_COM'].sum() + 0.6 * S['interest_SB'].sum()
+        return dict(dividends=float(S['div'].sum()), shl_interest=float(S['shl_int_paid'].sum()),
+                    wht_dividends_treaty_7_5=float(S['div'].sum() * 0.075), wht_dividends_domestic_15=float(S['div'].sum() * 0.15),
+                    wht_shl_interest_treaty_5=float(S['shl_int_paid'].sum() * 0.05), wht_shl_interest_domestic_10=float(S['shl_int_paid'].sum() * 0.10),
+                    commercial_grossup_cost=float(com_int * 0.10 + R['f']['idc_COM'].sum() * 0.10))
+    P['P-F27'] = dict(fc_base=wht(Rb), actual=wht(Ra), note='Treaty rates apply to Kilnworth (treaty holding company); totals are for 100% of shareholders over the PPA life; gross-up cost = 10% WHT borne on grossed-up commercial and standby (commercial share) interest incl. construction')
+    # ---------------- P-F28 credit paper metrics
+    P['P-F28'] = dict(senior_debt=float(fb['D']), total_funding=float(fb['T']), gearing=float(fb['D'] / fb['T']),
+                      tenor_from_cod_years=P['P-F09']['eca_tests']['tenor_years'], wal_years=P['P-F09']['eca_tests']['wal_years'],
+                      base=dscr_stats(Rb), banking=dscr_stats(Rk), downside=dscr_stats(Rd), equity_irr_base=float(Rb['equity_irr']),
+                      project_irr_base=float(Rb['project_irr']), binding_constraint=F['sizing']['binding'])
+    # ---------------- P-F29 handback reserve (actual)
+    P['P-F29'] = dict(contributions_by_year={str(y): cy_sum(Sa['hb_contr'], y) for y in range(2040, 2047) if cy_sum(Sa['hb_contr'], y) > 0},
+                      balance_at_expiry=float(Sa['hb_release'].sum()), start_oy=20,
+                      plant_condition='assumption-based: handback works equal to the accumulated reserve at expiry (USD 1 transfer)')
+    # ---------------- P-F30 insurance claim (inputs)
+    P['P-F30'] = dict(ear_loss=6.84, ear_deductible=1.0, ear_paid=5.84, dsu_days_delay=76, dsu_deductible_days=45,
+                      dsu_indemnified_days=31, dsu_daily=0.2284, dsu_paid=31 * 0.2284)
+    # ---------------- P-F31 OY1 actual vs FC base
+    def oy1(R):
+        S = R['S']; w = oy_months(R, 1)
+        return dict(availability_pct=float((S['avail'] * w).sum() / w.sum()), revenue=oy_sum(R, S['revenue'], 1),
+                    operating_costs=oy_sum(R, S['opex'], 1), ebitda=oy_sum(R, S['ebitda'], 1), cfads=oy_sum(R, S['cfads'], 1),
+                    overdue_change=oy_sum(R, S['dnwc'], 1))
+    P['P-F31'] = dict(actual_oy1='2021-12 to 2022-11', fc_oy1='2021-05 to 2022-04', actual=oy1(Ra), fc_base=oy1(Rb))
+    # ---------------- P-F33 delay LD calibration at scheduled COD
+    t_ = tix('2021H2')
+    daily_int = Sb['senior_costs'][t_] / S_DAYS[t_]
+    daily_fixed = (Sb['opex_om'][t_] - Sb['community_levy'][t_] - Sb['consumables'][t_] - Sb['ltsa_var'][t_]) / S_DAYS[t_]
+    P['P-F33'] = dict(daily_interest=float(daily_int * 1e6), daily_fixed_costs=float(daily_fixed * 1e6), ppa_delay_ld=94150.0,
+                      total=float((daily_int + daily_fixed) * 1e6 + 94150), epc_delay_ld=247300.0,
+                      daily_capacity_revenue=float(Sb['cap_pay'][t_] / S_DAYS[t_] * 1e6),
+                      basis='FC base, 2021H2 (first full period after scheduled COD), per calendar day')
+    # ---------------- P-F34 opex OY1-OY10 (FC base)
+    keys = ['om_fixed', 'om_incentive', 'ltsa_fixed', 'ltsa_var', 'insurance', 'ga', 'land', 'community_levy', 'consumables', 'agency', 'prg_fee', 'mm_spend', 'mm_contr', 'opex_om']
+    P['P-F34'] = dict(scenario='FC base', by_operating_year={f'OY{k}': {kk: oy_sum(Rb, Sb[kk], k) for kk in keys} for k in range(1, 11)})
+    # ---------------- P-F35 gas volumes
+    def gasy(R, y):
+        S = R['S']; return dict(gas_mmbtu=cy_sum(S['gas_mmbtu'], y), acq=72400 * 365, top_level=0.8 * 72400 * 365,
+                                take_or_pay_payment=cy_sum(S['top_pay'], y))
+    P['P-F35'] = dict(year=2022, base=gasy(Rb, 2022), banking=gasy(Rk, 2022), downside=gasy(Rd, 2022),
+                      dispatch_50=gasy(RS[12], 2022), note='FC downside uses base dispatch 76.5% (Case Bible 1.10 definition)')
+    # ---------------- P-F37 VAT
+    def vat(R):
+        u = R['u']; return dict(vat_paid_kcr=float(u['vat_kcr'].sum()), vat_paid_usd=float(u['vat_usd'].sum()),
+                                peak_facility_kcr=float(u['vat_bal_kcr'].max()), interest_usd_total=float(u['vat_int'].sum()),
+                                interest_construction=float(u['vat_int'][:R['fe'] + 1].sum()), interest_operations=float(u['vat_int'][R['fe'] + 1:].sum()),
+                                last_refund_month=M_START[max(m for m in range(NM) if u['vat_refund_kcr'][m] > 0)].strftime('%Y-%m'))
+    P['P-F37'] = dict(fc_base=vat(Rb), actual=vat(Ra), refund_lag_months=9, facility_limit_kcr=7900.0,
+                      note='refund-lag cost = interest on the UBK VAT facility (policy rate + 2.50%)')
+    # ---------------- P-F38 thin cap
+    def thin(R):
+        S = R['S']; dis = S['shl_int'] - S['shl_ded']
+        return dict(shl_interest_total=float(S['shl_int'].sum()), deductible=float(S['shl_ded'].sum()), disallowed=float(dis.sum()),
+                    disallowed_by_year={str(y): cy_sum(dis, y) for y in range(2021, 2036) if cy_sum(dis, y) > 1e-6},
+                    first_period_fraction=float(S['thin_frac'][R['t_cod']]))
+    P['P-F38'] = dict(rule='Shareholder loans count as related-party debt; equity = share capital + positive retained earnings; deductible share = min(1, 3 x equity / SHL balance at period start)',
+                      fc_base=thin(Rb), actual=thin(Ra),
+                      tax_effect_note='during the holiday and while deferred depreciation shelters income the disallowance has little or no cash-tax effect')
+    # ---------------- P-F39 LC size at COD
+    def lcsize(R, t):
+        S = R['S']; return float(2 * S['cap_pay'][t] / 6 + (S['vom'][t] + S['fuel_rev'][t] + S['gta_res'][t] + S['gta_com'][t]) / 6)
+    P['P-F39'] = dict(fc_base_2021H2=lcsize(Rb, tix('2021H2')), actual_2022H1=lcsize(Ra, t22a), case_bible_2022=33.8,
+                      formula='2 months of capacity charges + 1 month of energy charges (VOM, fuel, GTA) at the first full period rates')
+    # ---------------- P-F40 FX losses and settlement
+    ov = INP['events']['offtaker_crisis']['overdue_receivables_usd_m_period_end']
+    P['P-F40'] = dict(fx_losses=P['P-F20']['fx_losses'], fx_losses_total=P['P-F20']['fx_losses_total'],
+                      energy_charge_arrears_matched_by_snhk_gck_deferral={S_LABEL[t]: float(Sa['gas_arrears'][t]) for t in ts},
+                      netting_capacity_per_month=9.0,
+                      overdue_reduction_2024H1=ov['2023-12-31'] - ov['2024-06-30'], overdue_reduction_2024H2=ov['2024-06-30'] - ov['2024-12-31'],
+                      overdue_reduction_2025H1=ov['2024-12-31'] - ov['2025-06-30'],
+                      settlement_installment_implied_monthly_2024H2=(ov['2024-06-30'] - ov['2024-12-31']) / 6,
+                      settlement_installment_implied_monthly_2025H1=(ov['2024-12-31'] - ov['2025-06-30']) / 6,
+                      lpi_received=P['P-F20']['lpi_received_total'], lpi_waived=float(Sa['lpi_accrued'].sum() * 0.4))
+    # ---------------- P-F41 PLCR and profiles
+    P['P-F41'] = dict(plcr_at_close=float(Sb['plcr'][Rb['t1']]), llcr_at_close=float(Sb['llcr_dsra'][Rb['t1']]),
+                      fc_base_profile={S_LABEL[t]: dict(cfads=float(Sb['cfads'][t]), ds=float(Sb['ds'][t]), dscr=float(Sb['dscr'][t]))
+                                       for t in range(NS) if Sb['ds'][t] > 1e-9},
+                      actual_profile={S_LABEL[t]: dict(cfads=float(Sa['cfads'][t]), ds=float(Sa['ds'][t]), dscr=float(Sa['dscr'][t]))
+                                      for t in range(NS) if Sa['ds'][t] > 1e-9})
+    # ---------------- P-F42 Monte Carlo
+    P['P-F42'] = monte_carlo()
+    # ---------------- P-F43 convergence log and equity-first variant
+    P['P-F43'] = dict(sizing_passes=F['sizing']['sizing_iterations'], sizing_residuals_usd_m=F['sizing']['sizing_residuals'],
+                      construction_fixed_point_iterations=F['sizing']['construction_fixed_point_iterations'],
+                      tolerance_usd_m=TOL, closed_form_T_at_75pct=F['sizing']['total_funding_at_75pct_closed_form'],
+                      pro_rata=dict(T=float(fb['T']), D=float(fb['D']), idc=float(fb['idc'].sum())),
+                      equity_first=funding_equity_first(scen(1)))
+    # ---------------- P-F44 revenue build sample period (FC base 2022H1)
+    t = t22a
+    P['P-F44'] = {k: float(Sb[k][t]) for k in ['om', 'avail', 'energy', 'hr_act', 'hr_con', 'gas_price', 'gas_mmbtu', 'us_tar', 'kc_tar', 'fx',
+                                               'cap_charge', 'fom_charge', 'avail_factor', 'cap_pay', 'vom_rate', 'vom', 'fuel_rev',
+                                               'gta_res', 'gta_com', 'top_pay', 'revenue', 'fuel_cost']}
+    P['P-F44']['period'] = '2022H1 (FC base)'
+    # ---------------- P-F45 FC base statements
+    P['P-F45'] = dict(balance_sheet_at_cod_period_end=statements(Rb, [Rb['t_cod']])['balance_sheet'],
+                      balance_sheet_2018_12_31=statements(Rb, [0])['balance_sheet'],
+                      fy2022=statements(Rb, [t22a, t22b]))
+    # ---------------- P-F36 sizing grid
+    grid = {}
+    for dt in (1.30, 1.35, 1.40):
+        for g in (0.70, 0.75, 0.80):
+            Rg = size_fc(scen(1), gearing=g, dscr_target=dt, down_target=0)
+            with contract_swap(dict(D=Rg['f']['D'], E=Rg['f']['T'] - Rg['f']['D'], Dk=list(Rg['f']['Dk']), prof_FC=list(Rg['prof']),
+                                    N_m=list(Rg['N_m']), N_s=list(Rg['N_s']))):
+                dd = dscr_stats(run(scen(3)))
+            grid[f'DSCR {dt:.2f}x / gearing {int(g*100)}%'] = dict(senior_debt=float(Rg['f']['D']), binding=Rg['binding'],
+                                                                  total_funding=float(Rg['f']['T']), downside_min_dscr=dd['min_dscr'],
+                                                                  equity_irr=float(Rg['equity_irr']))
+    P['P-F36'] = dict(note='Sized on DSCR target and gearing cap only (downside shown as a test)', grid=grid)
+    F['figures'] = P
+
+
+# ========================================================================================
+# OUTPUTS
+# ========================================================================================
+def _clean(o):
+    if isinstance(o, dict): return {str(k): _clean(v) for k, v in o.items()}
+    if isinstance(o, (list, tuple)): return [_clean(v) for v in o]
+    if isinstance(o, np.ndarray): return [_clean(v) for v in o.tolist()]
+    if isinstance(o, (np.floating, float)): return round(float(o), 9)
+    if isinstance(o, (np.integer,)): return int(o)
+    if isinstance(o, (np.bool_,)): return bool(o)
+    if isinstance(o, date): return o.isoformat()
+    return o
+
+def series_of(R):
+    out = {}
+    for k, v in R['S'].items():
+        if isinstance(v, np.ndarray) and v.shape == (NS,): out['S.' + k] = v
+    for k, v in R['f'].items():
+        if isinstance(v, np.ndarray) and v.shape == (NM,): out['f.' + k] = v
+    for k, v in R['u'].items():
+        if isinstance(v, np.ndarray) and v.shape == (NM,): out['u.' + k] = v
+    return out
+
+def main():
+    F, RS, R1, R14, R15 = compute_all()
+    contract = {k: (list(map(float, v)) if isinstance(v, (list, np.ndarray)) else float(v)) for k, v in CONTRACT.items()}
+    audit_c = F.pop('_audit_contract')
+    out = dict(meta=dict(case='P', model='case_p.py', version='1.0', run_date='2026-10-03', currency='USD m unless stated',
+                         timeline=dict(monthly=[d.strftime('%Y-%m') for d in M_START], semiannual=S_LABEL),
+                         tolerance_usd_m=TOL, scenarios={i: SCENARIOS[i]['name'] for i in SCENARIOS},
+                         gas_arrears_share_calibration=GAS_ARREARS_SHARE),
+               contract=contract, audit_exercise_contract=audit_c, sizing=F['sizing'], summary=F['summary'],
+               iterations=dict(fc_sizing_passes=R1['sizing_iterations'], cod_resculpt_passes=R14['sizing_iterations'],
+                               bond_sculpt_passes=R15['bond_iterations'], fc_construction_fixed_point=int(R1['f']['iterations'])),
+               figures=F['figures'],
+               series={i: series_of(RS[i]) for i in RS},
+               scalars={i: dict(capcost=RS[i]['capcost'], bond_face=RS[i]['bond_F'], equity_irr=RS[i]['equity_irr'],
+                                project_irr=RS[i]['project_irr'], T=RS[i]['f']['T'], D=RS[i]['f']['D'],
+                                T_closed_form=RS[i]['f'].get('T_closed_form')) for i in RS})
+    json.dump(_clean(out), open(os.path.join(HERE, 'outputs_case_p.json'), 'w'))
+    import case_p_report
+    case_p_report.write(out, os.path.join(HERE, 'case_p_report.md'))
+    return out
+
+if __name__ == '__main__':
+    main()

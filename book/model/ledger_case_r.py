@@ -46,7 +46,10 @@ w("Every value below is read by `model/ledger_case_r.py` from `model/outputs_cas
   "ratios to two decimals with x, rates to two decimals, returns to one decimal in prose. Scenario names: base, low, high (price and capture cases), "
   "p90_1yr, p90_10yr, p99_1yr (volume cases applied in every year), status_quo (no 2025 refinancing), sens_* (sensitivities). "
   "Debt is sized once on the base case and held fixed in every other scenario. Every Case R price is Illustrative. "
-  "Figures R-F11 to R-F17 are new IDs added by the modeler.\n" % (VER, O["meta"]["generated"]))
+  "Figures R-F11 to R-F17 are new IDs added by the modeler; R-F18 and R-F19 come from Case Bible Annex TR (R.4, R.5). "
+  "Terminal value rule (Annex TR R.7): cash flows after 2040 and within each asset's useful life are discounted at the 10.50%% unlevered tail rate from the valuation date; "
+  "no terminal value beyond any useful life; no post-2040 levered rate (NAV uses bucket-weighted levered rates in every year). "
+  "Battery convention (Annex TR R.5): usable energy is tracked at each period start and end; revenue scales by min(1, average usable / nameplate).\n" % (VER, O["meta"]["generated"]))
 w("| ID | Figure | Value | Units | Scenario | Story date | JSON path |")
 w("|---|---|---|---|---|---|---|")
 
@@ -234,6 +237,26 @@ for y in range(2022, 2041):
 for y in range(2026, 2032):
     row("R-F17", "Repriced holdco opening balance %d" % y, B + ["finance.hc3_open", yr(y)], "USD m", "base", "%d" % y)
     row("R-F17", "Holdco coverage %d" % y, B + ["finance.hc_cov", yr(y)], "x", "base", "%d" % y)
+
+# R-F18 R7 revenue floor (Annex TR R.4)
+for sc in ("base", "low", "high"):
+    for y in range(2024, 2033):
+        i = yr(y)
+        Ssc = ["scenarios", sc, "series"]
+        row("R-F18", "R7 reference revenue %d" % y, Ssc + ["R7.floor_ref", i], "USD/MWh", sc, "%d (calendar year; contract years pro rata)" % y)
+        for f, lab in (("floor_payment", "floor payment from Galloway"), ("floor_premium", "premium"), ("floor_upside", "upside share to Galloway"), ("floor_net", "net floor settlement")):
+            row("R-F18", "R7 %s %d" % (lab, y), Ssc + ["R7." + f, i], "USD m", sc, "%d" % y)
+# R-F19 battery capacity (Annex TR R.5)
+for aid in ("R6", "R7"):
+    for y in range(2023 if aid == "R6" else 2024, 2045):
+        i = yr(y)
+        for f, lab, u in (("bat_usable_start", "usable energy, start of year", "MWh"), ("bat_usable_end", "usable energy, end of year", "MWh"),
+                          ("bat_aug_mwh", "augmentation installed", "MWh"), ("aug", "augmentation cost", "USD m"), ("bat_scale", "revenue scaling factor", "ratio")):
+            v = g(B + ["%s.%s" % (aid, f), i])
+            if f in ("bat_aug_mwh", "aug") and abs(v) < 1e-9:
+                continue
+            row("R-F19", "%s %s %d" % (aid, lab, y), B + ["%s.%s" % (aid, f), i], u, "base", "%d" % y)
+row("R-F19", "R6 lowest usable energy in the toll term (requirement 200 MWh)", ["battery_check", "r6_min_usable_in_toll_term_mwh"], "MWh", "base", "2023-07-14 to 2030-07-13")
 
 w("\nNew IDs: R-F11 A2 and A3 debt and early ratios (Chapters 31, 73); R-F12 opco debt by asset; R-F13 scenario and sensitivity results; "
   "R-F14 cash tax and NOL profile; R-F15 USPP debt service and DSCR profile; R-F16 opco term loan sculpted schedule; R-F17 repriced holdco profile.\n")

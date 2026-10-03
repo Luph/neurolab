@@ -282,8 +282,15 @@ def build(scenario="base", out=None):
             inp(aid + "_aug2", aid + " augmentation year 2 after COD year", "years", a["augmentation"]["years_after_cod"][1])
             inp(aid + "_augpct", aid + " augmentation share of MWh", "%", a["augmentation"]["pct_of_mwh"])
             inp(aid + "_augcost", aid + " augmentation cost (2025 prices)", "USD/kWh", a["augmentation"]["cost_usd_per_kwh_2025"])
+            inp(aid + "_ob", aid + " overbuild at COD", "% of nameplate MWh", a["overbuild_pct_of_nameplate_mwh"])
     for ck_, cv_ in M.CORR.items():
         inp("rho_" + ck_, "Yield correlation: " + ck_, "rho", cv_)
+    fdp = A["R6"]["capacity_fade_pts_of_bol_per_year"]
+    inp("fade1", "Battery fade, year 1", "points of BOL energy pa", fdp["year_1"])
+    inp("fade2", "Battery fade, years 2 to 10", "points of BOL energy pa", fdp["years_2_to_10"])
+    inp("fade3", "Battery fade, year 11 on", "points of BOL energy pa", fdp["year_11_on"])
+    inp("fade_end2", "Last year of the middle fade rate", "years", 10)
+    inp("toll_mwh", "R6 toll minimum usable energy", "MWh", 200.0)
     inp("avail_gen", "Wind and solar availability relative to P50 basis", "%", SUPP["availability_factor_vs_p50_pct"])
     inp("aug_y0", "Augmentation cost base year", "year", 2025)
     inp("aug_esc", "Augmentation cost escalation", "% pa", SUPP["augmentation_escalation_from_2025_pct"])
@@ -522,15 +529,41 @@ def build(scenario="base", out=None):
                 op.series(k("mkt_gen"), "R5 generation sold at node", "GWh", lambda c: "=" + R("gen", c), fmt="gwh", pykey=pk("mkt_gen"))
                 op.series(k("rev_contracted"), "R5 contracted revenue (strike x volume)", "USD m", lambda c: "=%s*%s/1000" % (R("con_vol", c), I("R5_hk")), pykey=pk("rev_contracted"))
                 op.series(k("rev_hedged"), "R5 hedged revenue", "USD m", lambda c: "=0", pykey=pk("rev_hedged"))
-            elif aid == "R6":
+
+            if aid in M.STOR:
+                def FD(age):
+                    return "(%s*MIN(%s,1)+%s*MIN(MAX(%s-1,0),%s-1)+%s*MAX(%s-%s,0))" % (I("fade1"), age, I("fade2"), age, I("fade_end2"), I("fade3"), age, I("fade_end2"))
+                bol = "%s*(1+%s/100)" % (I(aid + "_mwh"), I(aid + "_ob"))
+                augm = "%s/100*%s" % (I(aid + "_augpct"), I(aid + "_mwh"))
+                for nm, dk in (("start", "ys"), ("end", "ye")):
+                    op.series(k("bat_base_" + nm), aid + " usable energy of original modules, period " + nm, "MWh",
+                              lambda c, dk=dk: "=%s*(1-%s/100)" % (bol, FD("MAX(0,(%s-%s)/%s)" % (T(dk, c), I(aid + "_cod"), I("dpy")))), fmt="gwh", pykey=pk("bat_base_" + nm))
+                    def augexpr(c, dk=dk):
+                        parts = []
+                        for kk in ("_aug1", "_aug2"):
+                            inst = "(DATE(YEAR(%s)+%s,1,1)-1)" % (I(aid + "_cod"), I(aid + kk))
+                            parts.append("IF(%s>=%s,%s*(1-%s/100),0)" % (T(dk, c), inst, augm, FD("MAX(0,(%s-%s)/%s)" % (T(dk, c), inst, I("dpy")))))
+                        return "=" + "+".join(parts)
+                    op.series(k("bat_aug_" + nm), aid + " usable energy of augmentation modules, period " + nm, "MWh", augexpr, fmt="gwh", pykey=pk("bat_aug_" + nm))
+                    op.series(k("bat_usable_" + nm), aid + " usable energy, period " + nm, "MWh", lambda c, nm=nm: "=%s+%s" % (R("bat_base_" + nm, c), R("bat_aug_" + nm, c)), fmt="gwh", pykey=pk("bat_usable_" + nm))
+                op.series(k("bat_usable_avg"), aid + " usable energy, period average", "MWh", lambda c: "=(%s+%s)/2" % (R("bat_usable_start", c), R("bat_usable_end", c)), fmt="gwh", pykey=pk("bat_usable_avg"))
+                op.series(k("bat_scale"), aid + " revenue scaling factor min(1, usable / nameplate)", "factor", lambda c: "=MIN(1,%s/%s)" % (R("bat_usable_avg", c), I(aid + "_mwh")), fmt="f", pykey=pk("bat_scale"))
+                op.series(k("bat_aug_mwh"), aid + " augmentation installed", "MWh", lambda c: "=IF(OR(%s=YEAR(%s)+%s,%s=YEAR(%s)+%s),%s,0)" % (T("year", c), I(aid + "_cod"), I(aid + "_aug1"), T("year", c), I(aid + "_cod"), I(aid + "_aug2"), augm), fmt="gwh", pykey=pk("bat_aug_mwh"))
+            if aid == "R6":
                 op.series(k("con_frac"), "R6 toll term fraction", "fraction", lambda c: "=" + FR(c, I("R6_hs"), I("R6_he")), fmt="f", pykey=pk("con_frac"))
                 op.series(k("settle"), "R6 toll revenue", "USD m", lambda c: "=%s*%s*%s/1000*%s*(1-MAX(0,%s-%s)/100)" % (I("R6_hk"), I("mpy"), I("R6_mw"), R("con_frac", c), I("R6_hg"), I("R6_avail")), total="SUM", pykey=pk("settle"))
-                op.series(k("stor_rev"), "R6 merchant revenue after toll", "USD m", lambda c: "=%s*%s/1000*%s/100*(%s-%s)" % (B.R(pre + "batt", c), I("R6_mw"), I("R6_avail"), R("op_frac", c), R("con_frac", c)), total="SUM", pykey=pk("stor_rev"))
+                op.series(k("stor_rev"), "R6 merchant revenue after toll", "USD m", lambda c: "=%s*%s/1000*%s/100*%s*(%s-%s)" % (B.R(pre + "batt", c), I("R6_mw"), I("R6_avail"), R("bat_scale", c), R("op_frac", c), R("con_frac", c)), total="SUM", pykey=pk("stor_rev"))
+                op.series(k("toll_min"), "R6 lowest usable energy in toll term (start or end of period)", "MWh", lambda c: '=IF(%s>0,MIN(%s,%s),"")' % (R("con_frac", c), R("bat_usable_start", c), R("bat_usable_end", c)), fmt="gwh", pykey=pk("toll_min_usable"))
                 op.series(k("rev_contracted"), "R6 contracted revenue (toll)", "USD m", lambda c: "=" + R("settle", c), pykey=pk("rev_contracted"))
                 op.series(k("rev_hedged"), "R6 hedged revenue", "USD m", lambda c: "=0", pykey=pk("rev_hedged"))
-            elif aid == "R7":
+            if aid == "R7":
                 op.series(k("con_frac"), "R7 floor term fraction", "fraction", lambda c: "=" + FR(c, I("R7_hs"), I("R7_he")), fmt="f", pykey=pk("con_frac"))
-                op.series(k("m"), "R7 merchant revenue, availability-adjusted", "USD/kW-yr", lambda c: "=%s*%s/100" % (B.R(pre + "batt", c), I("R7_avail")), fmt="p")
+                op.series(k("m"), "R7 merchant revenue, availability-adjusted", "USD/kW-yr", lambda c: "=%s*%s/100*%s" % (B.R(pre + "batt", c), I("R7_avail"), R("bat_scale", c)), fmt="p")
+                op.series(k("floor_ref"), "R7 floor reference revenue (operating years)", "USD/kW-yr", lambda c: "=%s*(%s>0)" % (R("m", c), R("op_frac", c)), fmt="p", pykey=pk("floor_ref"))
+                op.series(k("floor_payment"), "R7 floor payment from Galloway", "USD m", lambda c: "=MAX(0,%s-%s)*%s/1000*%s" % (I("R7_hf"), R("m", c), I("R7_mw"), R("con_frac", c)), total="SUM", pykey=pk("floor_payment"))
+                op.series(k("floor_premium"), "R7 floor premium", "USD m", lambda c: "=%s*%s/1000*%s" % (I("R7_hp"), I("R7_mw"), R("con_frac", c)), total="SUM", pykey=pk("floor_premium"))
+                op.series(k("floor_upside"), "R7 upside share paid to Galloway", "USD m", lambda c: "=%s/100*MAX(0,%s-%s)*%s/1000*%s" % (I("R7_hsh"), R("m", c), I("R7_hth"), I("R7_mw"), R("con_frac", c)), total="SUM", pykey=pk("floor_upside"))
+                op.series(k("floor_net"), "R7 net floor settlement (payment less premium and upside share)", "USD m", lambda c: "=%s-%s-%s" % (R("floor_payment", c), R("floor_premium", c), R("floor_upside", c)), total="SUM", pykey=pk("floor_net"))
                 op.series(k("settle"), "R7 revenue under floor contract (max of floor, less premium and upside share)", "USD m",
                           lambda c: "=(MAX(%s,%s)-%s-%s/100*MAX(0,%s-%s))*%s/1000*%s" % (R("m", c), I("R7_hf"), I("R7_hp"), I("R7_hsh"), R("m", c), I("R7_hth"), I("R7_mw"), R("con_frac", c)), total="SUM", pykey=pk("settle"))
                 op.series(k("stor_rev"), "R7 merchant revenue outside floor term", "USD m", lambda c: "=%s*%s/1000*(%s-%s)" % (R("m", c), I("R7_mw"), R("op_frac", c), R("con_frac", c)), total="SUM", pykey=pk("stor_rev"))
@@ -1045,6 +1078,7 @@ def build(scenario="base", out=None):
         ("A3 sources equal uses", "=ROUND(%s+%s+%s+%s-%s,6)" % (B.C("hi_face"), B.C("su3_itc7"), B.C("su3_itc8"), B.C("su3_eq"), B.C("su3_uses"))),
         ("NOL never negative", "=ROUND(MIN(0,MIN(%s)),6)" % B.RR("nol_c")),
         ("Debt balances never negative", "=ROUND(MIN(0,MIN(%s),MIN(%s),MIN(%s),MIN(%s),MIN(%s)),6)" % (B.RR("tl_open"), B.RR("rf_open"), B.RR("hc1_open"), B.RR("hc2_open"), B.RR("hc3_open"))),
+        ("R6 toll term years with usable energy below the toll minimum", "=COUNTIF(%s,\"<\"&%s)" % (B.RR("L.R6.toll_min"), I("toll_mwh"))),
         ("Opco TL repaid when refinanced", "=ROUND(%s*INDEX(%s,%d),6)" % (I("refi"), B.RR("tl_close"), NT)),
     ]
     for aid in M.AIDS:

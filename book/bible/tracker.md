@@ -80,3 +80,4 @@
 - Done: wte (English waste PFI, no WTE financing case), municipal-water-concession, t-digital-norms, tower-carveout, ftth-altnet, t-hydrogen-support, saf-project, t-ccs-liability.
 - Done: t-rbl, upstream-field-pf (Jubilee), commodity-prepay, tap-pipeline, fpso-financing, fsru-charters, coral-sul-flng (financing 2017, not 2020), t-upstream-decom-security.
 - Done: refinery-pf (Duqm), us-battery-doe, t-critical-minerals-policy, t-untied-resource-finance, covid-toll-roads, airport-concession (LGA Terminal B), port-concession (Lekki).
+- Case R model v1.2 rerun DONE (verification PASS; R-F18, R-F19).

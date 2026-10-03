@@ -1,6 +1,6 @@
 # Case R reference model report: Mesa Corta Renewables (ERCOT)
 
-Model version R-1.1, inputs file version 1.1, generated 2026-10-03. All money USD millions nominal unless stated. Every Case R price is Illustrative (Case Bible illustrative price paths; not ERCOT settlement data and not a forecast). Source of every number: `model/outputs_case_r.json`, produced by `python3 model/case_r.py`.
+Model version R-1.2, inputs file version 1.2, generated 2026-10-03. All money USD millions nominal unless stated. Every Case R price is Illustrative (Case Bible illustrative price paths; not ERCOT settlement data and not a forecast). Source of every number: `model/outputs_case_r.json`, produced by `python3 model/case_r.py`.
 
 ## 1. Assumption changes (modeler calibration, pre-publication)
 
@@ -15,6 +15,7 @@ The v1.0 inputs produce a base-case unlevered value for A1 of about USD 438 mill
 | R-C08 | expected debt ranges (design targets) | opco TL 520-600; holdco TLB 160-210; USPP 750-860 | superseded by model outputs (see ledger R-F05, R-F08) | ranges assumed revenue about 1.7x what the Bible inputs produce |
 | R-C09 | P99 one-year by asset | R1 81.2, R2 84.0, R3 80.1, R4 91.9, R5 91.4, R8 91.6 (% of P50) | R1 77.5, R2 80.4, R3 76.2, R4 90.2, R5 89.5, R8 89.8 (computed from the P90s under a normal distribution) | editor-in-chief note: v1.0 P99s were inconsistent with the normal distribution implied by the stated P90s |
 | R-C10 | yield uncertainty model and inter-asset correlations (new) | none | normal; sigma split into long-term and inter-annual components; ten-year P90/P99 and correlated portfolio P50/P90/P99 computed (R-F01) | editor-in-chief note |
+| R-C12/R-C13 (Annex TR) | battery overbuild, capacity fade and revenue scaling; R7 floor reporting | augmentation only; no fade | 8% overbuild; fade 2.0/1.5/1.0 points a year; revenue scales by min(1, usable/nameplate); usable energy taken as the average of period-start and period-end values | Case Bible Annex TR R.4, R.5; input requests R-IR-01 to R-IR-07 |
 
 
 Supplementary assumptions where the Case Bible is silent (also on the workbook Inputs sheet):
@@ -169,8 +170,8 @@ Opco debt by asset (pro rata to PV of each asset's own debt-service capacity):
 | R3 | 65.0 | 44.8 | -- |
 | R4 | 36.2 | 22.3 | -- |
 | R5 | 52.5 | 42.1 | -- |
-| R6 | -- | 35.3 | 36.6 |
-| R7 | -- | 40.8 | -- |
+| R6 | -- | 34.8 | 36.6 |
+| R7 | -- | 40.2 | -- |
 | R8 | -- | 39.3 | -- |
 
 
@@ -195,7 +196,7 @@ A1 by asset (base by bucket; totals in low and high):
 | Platform costs | (10.6) | (3.2) | (19.6) | (33.4) | (33.5) | (33.3) |
 
 
-A2 (R6, at 2023-08-31): contracted 38.6, merchant 11.8, shield 12.1, value 62.5 against price 63.7 (breakeven 62.2). A3 (at 2024-02-15): R7 50.2, R8 55.0, ITC transfer proceeds PV 47.3 (nominal 48.9 on credits of 24.1 and 28.7), shield 29.1, value 181.6 against price PV 184.2 (nominal 189.3).
+A2 (R6, at 2023-08-31): contracted 38.6, merchant 11.4, shield 12.1, value 62.1 against price 63.7 (breakeven 61.8). A3 (at 2024-02-15): R7 49.7, R8 55.0, ITC transfer proceeds PV 47.3 (nominal 48.9 on credits of 24.1 and 28.7), shield 29.1, value 181.1 against price PV 184.2 (nominal 189.3).
 
 
 A2 sources and uses: price 63.7, costs 2.6, fee 0.5, loan 36.6, uses 66.8, equity 30.2
@@ -208,73 +209,73 @@ A3 sources and uses: r7_price 87.4, r8_price 101.9, r8_deposit 20.4, costs 4.4, 
 
 | Series | Tenor (years) | Coupon | Size | Share |
 |---|---|---|---|---|
-| A | 7 | 5.71% | 142.2 | 39.9% |
-| B | 12 | 6.08% | 81.9 | 23.0% |
-| C | 18 | 6.39% | 132.3 | 37.1% |
-| Total |  | 6.05% (issue-weighted) | 356.3 | 100.0% |
+| A | 7 | 5.71% | 142.8 | 40.2% |
+| B | 12 | 6.08% | 82.3 | 23.2% |
+| C | 18 | 6.39% | 130.1 | 36.6% |
+| Total |  | 6.04% (issue-weighted) | 355.2 | 100.0% |
 
 
 USPP P99 test binds in 0 years. Uses and proceeds at December 31, 2025:
 
 | Item | USD m |
 |---|---|
-| USPP proceeds | 356.3 |
+| USPP proceeds | 355.2 |
 | Repay opco term loan | (251.6) |
 | Repay Redfern loan | (25.6) |
 | Opco swap unwind (receivable) | 6.7 |
 | Redfern swap unwind (payable) | (0.4) |
 | Transaction costs (1.10%) | (3.9) |
-| Net opco proceeds to holdco | 81.5 |
+| Net opco proceeds to holdco | 80.4 |
 | Repriced holdco TLB (face) | 137.6 |
 | Repay holdco TLB and incremental | (126.7) |
 | Holdco OID (0.5%) | (0.7) |
-| Recapitalization distribution to the fund | 91.7 |
+| Recapitalization distribution to the fund | 90.6 |
 
 
-IRR impact (gross, fund level): lifetime IRR 11.33% with the refinancing against 9.87% without (+1.46 points); IRR to December 31, 2025 including NAV 11.29% against 4.39%; NAV 105.0 against 163.3; multiple to 2025 1.32x against 1.11x.
+IRR impact (gross, fund level): lifetime IRR 11.23% with the refinancing against 9.82% without (+1.41 points); IRR to December 31, 2025 including NAV 10.98% against 4.17%; NAV 104.5 against 162.3; multiple to 2025 1.31x against 1.11x.
 
 | Year | CFADS | USPP DS | USPP DSCR | USPP opening | Repriced holdco opening | Holdco coverage | Cash tax | Fund distribution |
 |---|---|---|---|---|---|---|---|---|
 | 2022 | 45.2 | 0.0 | n.m. | 0.0 | 0.0 | 4.38 | 0.0 | 5.9 |
 | 2023 | 49.2 | 0.0 | n.m. | 0.0 | 0.0 | 2.36 | 0.0 | 3.8 |
 | 2024 | 56.8 | 0.0 | n.m. | 0.0 | 0.0 | 1.40 | 0.0 | 2.7 |
-| 2025 | 65.9 | 0.0 | n.m. | 0.0 | 0.0 | 2.15 | 0.2 | 99.2 |
-| 2026 | 65.3 | 45.6 | 1.43 | 356.3 | 137.6 | 1.75 | 0.2 | 4.1 |
-| 2027 | 63.2 | 43.4 | 1.45 | 332.3 | 132.1 | 1.87 | 0.6 | 4.3 |
-| 2028 | 61.7 | 40.4 | 1.53 | 309.0 | 126.4 | 2.08 | 0.7 | 5.2 |
-| 2029 | 65.2 | 40.0 | 1.63 | 287.5 | 119.9 | 2.58 | 1.1 | 7.2 |
-| 2030 | 66.1 | 34.7 | 1.90 | 265.1 | 111.3 | 3.42 | 1.7 | 10.2 |
-| 2031 | 62.9 | 32.2 | 1.95 | 246.7 | 99.7 | 3.67 | 1.7 | 10.3 |
-| 2032 | 61.0 | 30.0 | 2.03 | 229.8 | 88.0 | 4.11 | 1.7 | 10.9 |
-| 2033 | 61.1 | 28.8 | 2.12 | 214.2 | 75.8 | 4.84 | 1.8 | 12.0 |
-| 2034 | 62.6 | 28.6 | 2.19 | 198.8 | 62.4 | 5.91 | 1.9 | 13.2 |
-| 2035 | 61.6 | 27.4 | 2.25 | 182.7 | 47.9 | 7.24 | 1.9 | 13.8 |
-| 2036 | 61.5 | 27.3 | 2.25 | 166.8 | 32.8 | 9.31 | 2.0 | 14.2 |
-| 2037 | 61.5 | 27.3 | 2.25 | 150.0 | 17.1 | 13.25 | 2.1 | 14.7 |
-| 2038 | 61.5 | 27.4 | 2.25 | 132.3 | 1.0 | 30.57 | 2.2 | 30.9 |
-| 2039 | 61.8 | 27.4 | 2.25 | 113.4 | 0.0 | n.m. | 2.3 | 32.0 |
-| 2040 | 62.0 | 27.5 | 2.25 | 93.2 | 0.0 | n.m. | 2.4 | 32.1 |
-| 2041 | 62.2 | 27.6 | 2.25 | 71.6 | 0.0 | n.m. | 2.4 | 32.1 |
-| 2042 | 62.3 | 27.7 | 2.25 | 48.5 | 0.0 | n.m. | 7.4 | 27.2 |
-| 2043 | 57.2 | 25.4 | 2.25 | 23.9 | 0.0 | n.m. | 11.7 | 20.1 |
+| 2025 | 65.9 | 0.0 | n.m. | 0.0 | 0.0 | 2.15 | 0.2 | 98.2 |
+| 2026 | 65.3 | 45.6 | 1.43 | 355.2 | 137.6 | 1.75 | 0.2 | 4.1 |
+| 2027 | 63.2 | 43.4 | 1.45 | 331.1 | 132.1 | 1.87 | 0.6 | 4.3 |
+| 2028 | 61.7 | 40.4 | 1.53 | 307.8 | 126.4 | 2.08 | 0.7 | 5.2 |
+| 2029 | 65.2 | 40.0 | 1.63 | 286.1 | 119.9 | 2.58 | 1.1 | 7.2 |
+| 2030 | 66.1 | 34.7 | 1.90 | 263.7 | 111.3 | 3.42 | 1.7 | 10.2 |
+| 2031 | 62.9 | 32.2 | 1.95 | 245.2 | 99.7 | 3.67 | 1.7 | 10.3 |
+| 2032 | 61.0 | 30.0 | 2.03 | 228.2 | 88.0 | 4.11 | 1.7 | 10.9 |
+| 2033 | 61.1 | 28.8 | 2.12 | 212.4 | 75.8 | 4.84 | 1.8 | 12.0 |
+| 2034 | 62.6 | 28.6 | 2.19 | 196.9 | 62.5 | 5.91 | 1.9 | 13.2 |
+| 2035 | 61.6 | 27.4 | 2.25 | 180.7 | 47.9 | 7.24 | 1.9 | 13.8 |
+| 2036 | 61.4 | 27.3 | 2.25 | 164.7 | 32.8 | 9.29 | 2.0 | 14.2 |
+| 2037 | 61.1 | 27.2 | 2.25 | 147.9 | 17.2 | 13.17 | 2.1 | 14.6 |
+| 2038 | 61.0 | 27.1 | 2.25 | 130.1 | 1.2 | 26.80 | 2.2 | 30.4 |
+| 2039 | 61.0 | 27.1 | 2.25 | 111.3 | 0.0 | n.m. | 2.3 | 31.6 |
+| 2040 | 61.0 | 27.1 | 2.25 | 91.3 | 0.0 | n.m. | 2.3 | 31.6 |
+| 2041 | 61.0 | 27.1 | 2.25 | 70.0 | 0.0 | n.m. | 2.4 | 31.5 |
+| 2042 | 60.9 | 27.1 | 2.25 | 47.4 | 0.0 | n.m. | 6.8 | 27.0 |
+| 2043 | 55.9 | 24.8 | 2.25 | 23.3 | 0.0 | n.m. | 11.4 | 19.6 |
 
 
 ## 8. Fund returns (R-F09) and scenarios
 
 | Scenario | CFADS 2026 | Min TL DSCR 2022-25 | Min USPP DSCR | Avg USPP DSCR | Min holdco cover | Equity in | Recap 2025 | NAV 2025 | IRR to 2025 | Lifetime IRR | Lifetime multiple | Years with holdco shortfall |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| base | 65.3 | 1.35 | 1.43 | 2.03 | 1.40 | 164.6 | 91.7 | 105.0 | 11.3% | 11.3% | 3.54 | 2 |
-| low | 63.2 | 1.34 | 0.32 | 0.91 | 0.55 | 164.6 | 91.3 | 6.5 | -13.5% | -12.3% | 0.72 | 30 |
-| high | 69.2 | 1.35 | 1.52 | 3.62 | 1.41 | 164.6 | 92.0 | 331.8 | 42.8% | 19.9% | 9.44 | 1 |
-| p90_1yr | 59.2 | 1.17 | 1.30 | 1.71 | 1.00 | 164.6 | 79.4 | 50.9 | -6.8% | 5.9% | 2.19 | 6 |
-| p90_10yr | 61.8 | 1.26 | 1.35 | 1.85 | 1.17 | 164.6 | 84.7 | 74.1 | 1.7% | 8.4% | 2.77 | 3 |
-| p99_1yr | 54.2 | 1.01 | 1.19 | 1.46 | 0.20 | 164.6 | 74.1 | 13.2 | -22.0% | -0.7% | 0.91 | 13 |
-| status_quo | 65.3 | 1.35 | n.m. | n.m. | 1.40 | 164.6 | 0.0 | 163.3 | 4.4% | 9.9% | 4.11 | 2 |
-| sens_west_solar_capture_m5 | 65.1 | 1.35 | 1.43 | 1.98 | 1.39 | 164.6 | 91.4 | 98.2 | 9.8% | 10.9% | 3.30 | 2 |
-| sens_battery_low | 65.3 | 1.35 | 1.43 | 1.87 | 1.40 | 164.6 | 91.7 | 86.8 | 7.6% | 10.1% | 3.12 | 2 |
-| sens_curtailment_p3 | 63.2 | 1.30 | 1.39 | 1.93 | 1.27 | 164.6 | 87.7 | 87.4 | 6.0% | 9.7% | 3.09 | 3 |
-| sens_opex_p10 | 61.6 | 1.26 | 1.35 | 1.86 | 1.14 | 164.6 | 85.5 | 76.0 | 2.5% | 8.6% | 2.82 | 4 |
-| sens_sofr_p100_unhedged | 65.3 | 1.33 | 1.43 | 2.03 | 1.24 | 164.6 | 88.8 | 100.0 | 9.1% | 10.7% | 3.44 | 2 |
+| base | 65.3 | 1.35 | 1.43 | 2.03 | 1.40 | 164.6 | 90.6 | 104.5 | 11.0% | 11.2% | 3.51 | 2 |
+| low | 63.2 | 1.34 | 0.30 | 0.90 | 0.55 | 164.6 | 90.3 | 6.5 | -13.9% | -12.6% | 0.71 | 30 |
+| high | 69.2 | 1.35 | 1.52 | 3.62 | 1.41 | 164.6 | 90.9 | 330.5 | 42.6% | 19.8% | 9.39 | 1 |
+| p90_1yr | 59.2 | 1.17 | 1.30 | 1.71 | 1.00 | 164.6 | 78.3 | 50.3 | -7.2% | 5.7% | 2.16 | 6 |
+| p90_10yr | 61.8 | 1.26 | 1.35 | 1.85 | 1.17 | 164.6 | 83.6 | 73.5 | 1.3% | 8.3% | 2.75 | 3 |
+| p99_1yr | 54.2 | 1.01 | 1.19 | 1.45 | 0.20 | 164.6 | 73.0 | 12.8 | -22.6% | -0.9% | 0.89 | 13 |
+| status_quo | 65.3 | 1.35 | n.m. | n.m. | 1.40 | 164.6 | 0.0 | 162.3 | 4.2% | 9.8% | 4.08 | 2 |
+| sens_west_solar_capture_m5 | 65.1 | 1.35 | 1.43 | 1.98 | 1.39 | 164.6 | 90.3 | 97.6 | 9.5% | 10.7% | 3.28 | 2 |
+| sens_battery_low | 65.3 | 1.35 | 1.43 | 1.87 | 1.40 | 164.6 | 90.6 | 86.6 | 7.4% | 10.0% | 3.11 | 2 |
+| sens_curtailment_p3 | 63.2 | 1.30 | 1.39 | 1.93 | 1.27 | 164.6 | 86.7 | 86.8 | 5.7% | 9.6% | 3.07 | 3 |
+| sens_opex_p10 | 61.6 | 1.26 | 1.35 | 1.86 | 1.14 | 164.6 | 84.4 | 75.4 | 2.1% | 8.5% | 2.80 | 4 |
+| sens_sofr_p100_unhedged | 65.3 | 1.33 | 1.43 | 2.03 | 1.24 | 164.6 | 87.7 | 99.5 | 8.8% | 10.6% | 3.42 | 2 |
 
 
 Fund distributions are floored at zero (limited liability); a holdco shortfall year is one in which opco distributions do not cover tax and holdco debt service, which in practice means a default or a negotiated cure. IRR 'n.m.' means the fund does not recover its equity.
@@ -292,6 +293,63 @@ Fund distributions are floored at zero (limited liability); a holdco shortfall y
 | Physical revenue (USD m) | 10.9 |
 | Net cash over the event (USD m) | (3.4) |
 | Versus normal hedged revenue for the same hours (USD m) | (3.5) |
+
+
+## 9a. Batteries and the R7 floor (R-F18, R-F19; Annex TR R.4, R.5)
+
+Overbuild 8% of nameplate at COD; fade 2.0 points of beginning-of-life energy in year 1, 1.5 a year in years 2 to 10, 1.0 a year after; each augmentation tranche (6% of nameplate at the start of calendar years COD+5 and COD+9) fades from its own installation. Usable energy is computed at each period start and end; merchant revenue and the R7 floor reference revenue scale by min(1, average usable energy / nameplate). R6 lowest usable energy in the toll term: 202.1 MWh (requirement 200 MWh; condition holds).
+
+| Year | R6 usable end (MWh) | R6 augmentation (MWh) | R6 augmentation cost | R7 usable end (MWh) | R7 augmentation (MWh) | R7 augmentation cost | R6 scale | R7 scale |
+|---|---|---|---|---|---|---|---|---|
+| 2023 | 214.0 | 0.0 | 0.0 | 324.0 | 0.0 | 0.0 | 1.00 | 1.00 |
+| 2024 | 210.2 | 0.0 | 0.0 | 319.2 | 0.0 | 0.0 | 1.00 | 1.00 |
+| 2025 | 206.9 | 0.0 | 0.0 | 313.9 | 0.0 | 0.0 | 1.00 | 1.00 |
+| 2026 | 203.7 | 0.0 | 0.0 | 309.0 | 0.0 | 0.0 | 1.00 | 1.00 |
+| 2027 | 212.4 | 0.0 | 0.0 | 304.2 | 0.0 | 0.0 | 1.00 | 1.00 |
+| 2028 | 209.0 | 12.0 | 0.5 | 317.3 | 0.0 | 0.0 | 1.00 | 1.00 |
+| 2029 | 205.5 | 0.0 | 0.0 | 312.1 | 18.0 | 0.8 | 1.00 | 1.00 |
+| 2030 | 202.1 | 0.0 | 0.0 | 306.9 | 0.0 | 0.0 | 1.00 | 1.00 |
+| 2031 | 210.7 | 0.0 | 0.0 | 301.8 | 0.0 | 0.0 | 1.00 | 1.00 |
+| 2032 | 207.0 | 12.0 | 0.6 | 314.7 | 0.0 | 0.0 | 1.00 | 1.00 |
+| 2033 | 203.9 | 0.0 | 0.0 | 309.2 | 18.0 | 0.9 | 1.00 | 1.00 |
+| 2034 | 201.4 | 0.0 | 0.0 | 305.0 | 0.0 | 0.0 | 1.00 | 1.00 |
+| 2035 | 198.9 | 0.0 | 0.0 | 301.2 | 0.0 | 0.0 | 1.00 | 1.00 |
+
+
+R7 revenue floor by calendar year (contract years April to April, pro rata):
+
+| Case | Year | Reference revenue (USD/kW-yr) | Floor payment | Premium | Upside share | Net |
+|---|---|---|---|---|---|---|
+| base | 2024 | 60.26 | 1.5 | 0.6 | 0.0 | 0.9 |
+| base | 2025 | 51.09 | 3.4 | 0.9 | 0.0 | 2.6 |
+| base | 2026 | 56.45 | 2.6 | 0.9 | 0.0 | 1.8 |
+| base | 2027 | 57.30 | 2.5 | 0.9 | 0.0 | 1.6 |
+| base | 2028 | 58.16 | 2.4 | 0.9 | 0.0 | 1.5 |
+| base | 2029 | 59.03 | 2.2 | 0.9 | 0.0 | 1.4 |
+| base | 2030 | 59.91 | 2.1 | 0.9 | 0.0 | 1.2 |
+| base | 2031 | 60.81 | 2.0 | 0.9 | 0.0 | 1.1 |
+| base | 2032 | 61.73 | 0.5 | 0.2 | 0.0 | 0.2 |
+| low | 2024 | 60.26 | 1.5 | 0.6 | 0.0 | 0.9 |
+| low | 2025 | 51.09 | 3.4 | 0.9 | 0.0 | 2.6 |
+| low | 2026 | 38.02 | 5.4 | 0.9 | 0.0 | 4.5 |
+| low | 2027 | 38.21 | 5.4 | 0.9 | 0.0 | 4.5 |
+| low | 2028 | 38.41 | 5.3 | 0.9 | 0.0 | 4.5 |
+| low | 2029 | 38.60 | 5.3 | 0.9 | 0.0 | 4.4 |
+| low | 2030 | 38.80 | 5.3 | 0.9 | 0.0 | 4.4 |
+| low | 2031 | 38.99 | 5.3 | 0.9 | 0.0 | 4.4 |
+| low | 2032 | 39.19 | 1.3 | 0.2 | 0.0 | 1.1 |
+| high | 2024 | 60.26 | 1.5 | 0.6 | 0.0 | 0.9 |
+| high | 2025 | 51.09 | 3.4 | 0.9 | 0.0 | 2.6 |
+| high | 2026 | 82.39 | 0.0 | 0.9 | 0.0 | (0.9) |
+| high | 2027 | 84.44 | 0.0 | 0.9 | 0.0 | (0.9) |
+| high | 2028 | 86.56 | 0.0 | 0.9 | 0.0 | (0.9) |
+| high | 2029 | 88.72 | 0.0 | 0.9 | 0.0 | (0.9) |
+| high | 2030 | 90.94 | 0.0 | 0.9 | 0.0 | (0.9) |
+| high | 2031 | 93.21 | 0.0 | 0.9 | 0.0 | (0.9) |
+| high | 2032 | 95.54 | 0.0 | 0.2 | 0.0 | (0.2) |
+
+
+Materiality against D-014 prices (threshold USD 1.0 million): A2 breakeven 61.8 against price 63.7 (1.9 below); A3 value 181.1 against price PV 184.2 (3.1 short). Prices unchanged per D-014.
 
 
 ## 10. Decommissioning (R-F10)
@@ -314,8 +372,8 @@ Fund distributions are floored at zero (limited liability); a holdco shortfall y
 |---|---|---|
 | Opco term loan 2022 | 520-600 | 328.1 |
 | Holdco TLB 2022 | 160-210 | 57.3 |
-| USPP 2025 | 750-860 | 356.3 |
-| Fund net IRR target | 11-13% (net) | gross lifetime 11.3% |
+| USPP 2025 | 750-860 | 355.2 |
+| Fund net IRR target | 11-13% (net) | gross lifetime 11.2% |
 
 
 Ranges were superseded with the price calibration (R-C08); the debt amounts follow from the Bible's revenue inputs and are reported to the editor-in-chief.
@@ -323,16 +381,17 @@ Ranges were superseded with the price calibration (R-C08); the debt amounts foll
 
 ## 12. Checks
 
-64 checks run, 0 failed.
+65 checks run, 0 failed.
 
 | Check | Value | Pass |
 |---|---|---|
 | Opco TL sculpted balance after 2040 (USD m) | -1.60e-13 | yes |
 | Redfern sculpted balance after 2030 (USD m) | 7.99e-15 | yes |
-| USPP balance after 2043: opening 2026 minus total principal (USD m) | 5.68e-14 | yes |
+| USPP balance after 2043: opening 2026 minus total principal (USD m) | 0.00e+00 | yes |
 | USPP DS = interest + principal vs sculpted target, max abs diff | 7.11e-15 | yes |
 | [base] revenue buckets sum to revenue, max abs diff | 0.00e+00 | yes |
 | [base] NOL never negative (min NOL, if <0) | 0.00e+00 | yes |
 | [base] debt balances never negative (min, if <0) | 0.00e+00 | yes |
 | [base] A1 sources = uses | 0.00e+00 | yes |
 | [base] A3 sources = uses | 0.00e+00 | yes |
+| R6 toll condition: years with usable energy below 200 MWh in the toll term (base) | 0.00e+00 | yes |
