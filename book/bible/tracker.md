@@ -96,3 +96,4 @@
 - Case P model v1.3 DONE (exact IRR bridge; named overrun items; RBL accepted). Case models P v1.3, T v1.1, R v1.2 are final for drafting.
 - Central Bible fixes DONE (case bible v1.1, concordance Annex P 8.4, R-122..R-141, glossary 1,784, D-036..D-045). RORAC→RAROC relabeled in Case P model files by editor.
 - Brief revision u01 DONE (central changes in revision log of u01.md).
+- Brief revision u04 DONE.
