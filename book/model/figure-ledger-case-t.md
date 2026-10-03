@@ -1,6 +1,6 @@
 # Figure ledger: Case T (Merrick Link)
 
-Source: `model/outputs_case_t.json`, produced by `model/case_t.py` (Case T model v1.0, story as of 2026-10-03). Every value below is read from that file and only formatted here (`model/ledger_t.py`). Amounts in ARD millions, nominal, unless stated. Scenario numbers refer to the workbook scenario switch: 1 bid base, 2 banking, 3 downside, 4 actual history, 5 restructuring case, 6 retender valuation. Writers cite the ID; when a chapter needs a figure that is not here, report it to the editor-in-chief.
+Source: `model/outputs_case_t.json`, produced by `model/case_t.py` (Case T model v1.1, story as of 2026-10-03). Every value below is read from that file and only formatted here (`model/ledger_t.py`). Amounts in ARD millions, nominal, unless stated. Scenario numbers refer to the workbook scenario switch: 1 bid base, 2 banking, 3 downside, 4 actual history, 5 restructuring case, 6 retender valuation. Writers cite the ID; when a chapter needs a figure that is not here, report it to the editor-in-chief.
 
 Figure IDs T-F01 to T-F10 are those of the Case Bible figure register; T-F11 to T-F17 are new (added by the modeler).
 
@@ -256,6 +256,58 @@ Figure IDs T-F01 to T-F10 are those of the Case Bible figure register; T-F11 to 
 | T-F16 | Forgiveness applied to losses / to the asset's cost base | 643.4 / 241.2 | ARD m | Restructuring case (5) | 2023-12-31 |
 | T-F17 | USD equivalents at close (0.76): total uses / senior / NILO / equity | 1,530.2 / 670.4 / 352.7 / 288.6 | USD m (illustrative) | Banking (2) | 2015-05-27 |
 | T-F17 | USD equivalents at 2023 (0.67): net senior claims / notes / state money | 542.6 / 412.4 / 80.4 | USD m (illustrative) | Restructuring case (5) | 2023-12-31 |
+| T-F01 | Gross PSC cost (costs and risks before retained toll revenue) | 2,205.6 | ARD m, PV 2012 | PSC | 2012-11-08 |
+| T-F01 | VfM, reference: share of gross PSC cost / of net (risk-adjusted) PSC | 1.8% / 10.1% | % | PSC | 2012-11-08 |
+| T-F01 | VfM, winning bid: share of gross PSC cost / of net (risk-adjusted) PSC | 5.4% / 31.2% | % | PSC | 2014-09-23 |
+| T-F02 | Gap: reference less winner | 122.6 (29.9% of reference) | ARD m | Inputs | 2014-08-15 |
+| T-F02 | Gap: Northgate less winner | 73.6 (20.4% of Northgate) | ARD m | Inputs | 2014-08-15 |
+| T-F02 | Gap: reference less Northgate | 49.0 (12.0% of reference) | ARD m | Inputs | 2014-08-15 |
+| T-F04 | Northgate traffic basis 2019 to 2026 (comparison line) | 2019 41.0; 2020 48.9; 2021 54.3; 2022 58.3; 2023 60.7; 2024 62.5; 2025 64.4; 2026 66.3 | thousand trips/day | Book input (annex T.2) | 2014-03-27 |
+| T-F18 | Actual traffic 2019 (30.4) as a ratio of Pellow / Ridgeway / downside | 0.65 / 0.80 / 1.00 | ratio | Inputs via runs 1, 2, 3, 4, 5 | 2019-12-31 |
+| T-F18 | Actual traffic 2020 (25.7) as a ratio of Pellow / Ridgeway / downside | 0.47 / 0.57 / 0.69 | ratio | Inputs via runs 1, 2, 3, 4, 5 | 2020-12-31 |
+| T-F18 | Actual traffic 2021 (33.9) as a ratio of Pellow / Ridgeway / downside | 0.57 / 0.65 / 0.79 | ratio | Inputs via runs 1, 2, 3, 4, 5 | 2021-12-31 |
+| T-F18 | Actual traffic 2022 (40.2) as a ratio of Pellow / Ridgeway / downside | 0.62 / 0.72 / 0.85 | ratio | Inputs via runs 1, 2, 3, 4, 5 | 2022-12-31 |
+| T-F18 | Actual traffic 2023 (42.6) as a ratio of Pellow / Ridgeway / downside | 0.64 / 0.72 / 0.84 | ratio | Inputs via runs 1, 2, 3, 4, 5 | 2023-12-31 |
+| T-F18 | Actual traffic 2024 (44.7) as a ratio of Pellow / Ridgeway / downside / Ridgeway 2023 | 0.65 / 0.74 / 0.86 / R2023 1.00 | ratio | Inputs via runs 1, 2, 3, 4, 5 | 2024-12-31 |
+| T-F18 | Actual traffic 2025 (46.3) as a ratio of Pellow / Ridgeway / downside / Ridgeway 2023 | 0.65 / 0.74 / 0.87 / R2023 1.01 | ratio | Inputs via runs 1, 2, 3, 4, 5 | 2025-12-31 |
+| T-F18 | Actual traffic 2026 (47.1) as a ratio of Pellow / Ridgeway / downside / Ridgeway 2023 | 0.64 / 0.73 / 0.87 / R2023 1.00 | ratio | Inputs via runs 1, 2, 3, 4, 5 | 2026-06-30 |
+| T-F19 | 2019: Pellow / actual / shortfall | 46.7 / 30.4 / 16.3 (34.9%) | thousand trips/day | Actual history (4) vs bid base (1) | 2019-12-31 |
+| T-F19 | 2019: shortfall by cause (housing, value of time, heavy vehicles, SR 14 works, COVID-19) | 6.7 / 4.7 / 3.3 / 1.6 / 0.0 | thousand trips/day | Actual history (4) vs bid base (1) | 2019-12-31 |
+| T-F19 | 2019: revenue gap and its split by cause (indicative, same shares) | 28.9: 11.8 / 8.4 / 5.8 / 2.9 / 0.0 | ARD m | Runs 1 and 4 | 2019-12-31 |
+| T-F19 | 2020: Pellow / actual / shortfall | 54.3 / 25.7 / 28.6 (52.7%) | thousand trips/day | Actual history (4) vs bid base (1) | 2020-12-31 |
+| T-F19 | 2020: shortfall by cause (housing, value of time, heavy vehicles, SR 14 works, COVID-19) | 6.6 / 4.6 / 3.1 / 1.4 / 12.9 | thousand trips/day | Actual history (4) vs bid base (1) | 2020-12-31 |
+| T-F19 | 2020: revenue gap and its split by cause (indicative, same shares) | 55.7: 12.8 / 8.9 / 6.1 / 2.8 / 25.0 | ARD m | Runs 1 and 4 | 2020-12-31 |
+| T-F19 | 2021: Pellow / actual / shortfall | 59.9 / 33.9 / 26.0 (43.4%) | thousand trips/day | Actual history (4) vs bid base (1) | 2021-12-31 |
+| T-F19 | 2021: shortfall by cause (housing, value of time, heavy vehicles, SR 14 works, COVID-19) | 7.5 / 5.2 / 3.6 / 1.8 / 7.8 | thousand trips/day | Actual history (4) vs bid base (1) | 2021-12-31 |
+| T-F19 | 2021: revenue gap and its split by cause (indicative, same shares) | 51.9: 15.0 / 10.4 / 7.3 / 3.6 / 15.6 | ARD m | Runs 1 and 4 | 2021-12-31 |
+| T-F19 | 2022: Pellow / actual / shortfall | 64.6 / 40.2 / 24.4 (37.7%) | thousand trips/day | Actual history (4) vs bid base (1) | 2022-12-31 |
+| T-F19 | 2022: shortfall by cause (housing, value of time, heavy vehicles, SR 14 works, COVID-19) | 8.8 / 6.1 / 4.4 / 2.2 / 2.9 | thousand trips/day | Actual history (4) vs bid base (1) | 2022-12-31 |
+| T-F19 | 2022: revenue gap and its split by cause (indicative, same shares) | 48.1: 17.3 / 12.0 / 8.7 / 4.3 / 5.8 | ARD m | Runs 1 and 4 | 2022-12-31 |
+| T-F20 | 2019H1: performance payment / CFADS / CFADS without / covenant DSCR / without | 0.14 / 14.29 / 14.43 / 0.00x / 0.00x | ARD m; x | Actual history (4) and counterfactual | 2019-06-30 |
+| T-F20 | 2019H2: performance payment / CFADS / CFADS without / covenant DSCR / without | 0.24 / 16.85 / 17.09 / 1.10x / 1.11x | ARD m; x | Actual history (4) and counterfactual | 2019-12-31 |
+| T-F20 | 2020H1: performance payment / CFADS / CFADS without / covenant DSCR / without | 0.03 / 8.97 / 9.00 / 0.74x / 0.75x | ARD m; x | Actual history (4) and counterfactual | 2020-06-30 |
+| T-F20 | 2020H2: performance payment / CFADS / CFADS without / covenant DSCR / without | 0.00 / 16.45 / 16.45 / 0.64x / 0.64x | ARD m; x | Actual history (4) and counterfactual | 2020-12-31 |
+| T-F20 | 2021H1: performance payment / CFADS / CFADS without / covenant DSCR / without | 0.00 / 18.01 / 18.01 / 0.78x / 0.78x | ARD m; x | Actual history (4) and counterfactual | 2021-06-30 |
+| T-F20 | 2021H2: performance payment / CFADS / CFADS without / covenant DSCR / without | 0.02 / 23.05 / 23.07 / 0.86x / 0.86x | ARD m; x | Actual history (4) and counterfactual | 2021-12-31 |
+| T-F20 | 2022H1: performance payment / CFADS / CFADS without / covenant DSCR / without | 0.05 / 19.66 / 19.71 / 0.90x / 0.90x | ARD m; x | Actual history (4) and counterfactual | 2022-06-30 |
+| T-F20 | 2022H2: performance payment / CFADS / CFADS without / covenant DSCR / without | 0.06 / 24.75 / 24.81 / 0.93x / 0.93x | ARD m; x | Actual history (4) and counterfactual | 2022-12-31 |
+| T-F20 | 2023H1: performance payment / CFADS / CFADS without / covenant DSCR / without | 0.04 / 24.65 / 24.69 / 1.01x / 1.01x | ARD m; x | Actual history (4) and counterfactual | 2023-06-30 |
+| T-F20 | 2023H2: performance payment / CFADS / CFADS without / covenant DSCR / without | 0.05 / 25.31 / 25.36 / 1.02x / 1.02x | ARD m; x | Actual history (4) and counterfactual | 2023-12-31 |
+| T-F20 | 2024H1: performance payment / CFADS / CFADS without / covenant DSCR / without | 0.08 / 30.52 / 30.60 / 1.94x / 1.95x | ARD m; x | Actual history (4) and counterfactual | 2024-06-30 |
+| T-F20 | 2024H2: performance payment / CFADS / CFADS without / covenant DSCR / without | 0.09 / 33.97 / 34.06 / 2.09x / 2.10x | ARD m; x | Actual history (4) and counterfactual | 2024-12-31 |
+| T-F20 | 2025H1: performance payment / CFADS / CFADS without / covenant DSCR / without | 0.03 / 33.68 / 33.71 / 2.25x / 2.25x | ARD m; x | Actual history (4) and counterfactual | 2025-06-30 |
+| T-F20 | 2025H2: performance payment / CFADS / CFADS without / covenant DSCR / without | 0.04 / 36.56 / 36.60 / 2.37x / 2.38x | ARD m; x | Actual history (4) and counterfactual | 2025-12-31 |
+| T-F20 | 2019: annual performance payments / cap (2.5% of prior-year net toll revenue) | 0.38 / n/a (no prior-year revenue) | ARD m | Actual history (4) | 2019-12-31 |
+| T-F20 | 2020: annual performance payments / cap (2.5% of prior-year net toll revenue) | 0.03 / 0.9 | ARD m | Actual history (4) | 2020-12-31 |
+| T-F20 | 2021: annual performance payments / cap (2.5% of prior-year net toll revenue) | 0.02 / 1.3 | ARD m | Actual history (4) | 2021-12-31 |
+| T-F20 | 2022: annual performance payments / cap (2.5% of prior-year net toll revenue) | 0.11 / 1.7 | ARD m | Actual history (4) | 2022-12-31 |
+| T-F20 | 2023: annual performance payments / cap (2.5% of prior-year net toll revenue) | 0.09 / 2.1 | ARD m | Actual history (4) | 2023-12-31 |
+| T-F20 | 2024: annual performance payments / cap (2.5% of prior-year net toll revenue) | 0.17 / 2.4 | ARD m | Actual history (4) | 2024-12-31 |
+| T-F20 | 2025: annual performance payments / cap (2.5% of prior-year net toll revenue) | 0.07 / 2.6 | ARD m | Actual history (4) | 2025-12-31 |
+| T-F20 | Largest change in a covenant DSCR from performance payments | 0.016x | x | Actual history (4) | 2019-12-31 |
+| T-F21 | Pellow low (51.2) value-of-time case: equity IRR / NPV at 11.4% / min DSCR at ARD 287.4 m | 10.5% / -47.8 / 1.53x | % / ARD m / x | Scenarios 14, 15, 1 (financing locked) | 2014-08-15 |
+| T-F21 | Pellow central (54.6) value-of-time case: equity IRR / NPV at 11.4% / min DSCR at ARD 287.4 m | 11.4% / -1.9 / 1.67x | % / ARD m / x | Scenarios 14, 15, 1 (financing locked) | 2014-08-15 |
+| T-F21 | Pellow high (58.4, sponsor base) value-of-time case: equity IRR / NPV at 11.4% / min DSCR at ARD 287.4 m | 12.3% / 49.5 / 1.82x | % / ARD m / x | Scenarios 14, 15, 1 (financing locked) | 2014-08-15 |
 
 New figure IDs:
 
@@ -266,3 +318,6 @@ New figure IDs:
 - T-F15 Outturn: equity invested and lost, first event of default, DSRA use (Chapters 64, 79).
 - T-F16 Tax at the restructuring: losses and forgiveness (Chapter 64).
 - T-F17 Illustrative USD equivalents (Chapters 58, 64).
+- T-F18 to T-F21 (annex TR, Part F): traffic ratios, shortfall by cause, performance payments, Pellow value-of-time bid variants; T-F01, T-F02 and T-F04 extended (gross-PSC VfM, contribution gaps, Northgate traffic line).
+
+Version note: v1.1 adds BRTA performance payments to the actual-history runs, which moves some T-F07 to T-F10, T-F15 and T-F16 values by up to ARD 0.7 million or 0.01x against v1.0 (no covenant outcome, date or recovery conclusion changes). Use only v1.1 values.

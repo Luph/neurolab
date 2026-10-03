@@ -7,7 +7,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 O = json.load(open(os.path.join(HERE, "outputs_case_t.json")))
 D = O["derived"]
 R = O["runs"]
-VER = "Case T model v1.0"
+VER = "Case T model v1.1"
 
 
 def m(x):
@@ -218,6 +218,42 @@ add("T-F17", "USD equivalents at close (0.76): total uses / senior / NILO / equi
 add("T-F17", "USD equivalents at 2023 (0.67): net senior claims / notes / state money",
     f"{m(u['claims_net_2023'])} / {m(u['notes_2023'])} / {m(u['state_money_2023'])}", "USD m (illustrative)", "Restructuring case (5)", "2023-12-31")
 
+# ---------------------------------------------------------------- annex TR additions (v1.1)
+p = O["psc"]
+add("T-F01", "Gross PSC cost (costs and risks before retained toll revenue)", m(p["gross_psc_cost"]), "ARD m, PV 2012", "PSC", "2012-11-08")
+add("T-F01", "VfM, reference: share of gross PSC cost / of net (risk-adjusted) PSC", f"{pc(p['vfm_reference_pct_gross'])} / {pc(p['vfm_reference_pct_net'])}", "%", "PSC", "2012-11-08")
+add("T-F01", "VfM, winning bid: share of gross PSC cost / of net (risk-adjusted) PSC", f"{pc(p['vfm_bid_pct_gross'])} / {pc(p['vfm_bid_pct_net'])}", "%", "PSC", "2014-09-23")
+g = D["contribution_gaps"]
+add("T-F02", "Gap: reference less winner", f"{m(g['reference_minus_winner'])} ({pc(g['winner_below_reference_pct'])} of reference)", "ARD m", "Inputs", "2014-08-15")
+add("T-F02", "Gap: Northgate less winner", f"{m(g['northgate_minus_winner'])} ({pc(g['winner_below_northgate_pct'])} of Northgate)", "ARD m", "Inputs", "2014-08-15")
+add("T-F02", "Gap: reference less Northgate", f"{m(g['reference_minus_northgate'])} ({pc(g['northgate_below_reference_pct'])} of reference)", "ARD m", "Inputs", "2014-08-15")
+ng = D["traffic_annual"]["northgate"]
+add("T-F04", "Northgate traffic basis 2019 to 2026 (comparison line)", "; ".join(f"{y} {ng[str(y)]:.1f}" for y in range(2019, 2027)), "thousand trips/day", "Book input (annex T.2)", "2014-03-27")
+for y, v in D["traffic_ratios"].items():
+    extra = f" / R2023 {v['vs_ridgeway_2023']:.2f}" if "vs_ridgeway_2023" in v else ""
+    add("T-F18", f"Actual traffic {y} ({v['actual']:.1f}) as a ratio of Pellow / Ridgeway / downside" + (" / Ridgeway 2023" if extra else ""),
+        f"{v['vs_pellow']:.2f} / {v['vs_ridgeway']:.2f} / {v['vs_downside']:.2f}{extra}", "ratio", "Inputs via runs 1, 2, 3, 4, 5", f"{y}-12-31" if y != "2026" else "2026-06-30")
+causes = (("housing", "housing"), ("value_of_time", "value of time"), ("heavy_vehicles", "heavy vehicles"), ("sr14_works", "SR 14 works"), ("covid", "COVID-19"))
+for y, v in D["shortfall_by_cause"].items():
+    add("T-F19", f"{y}: Pellow / actual / shortfall", f"{v['pellow']:.1f} / {v['actual']:.1f} / {v['shortfall']:.1f} ({pc(v['shortfall_pct_of_pellow'])})", "thousand trips/day", "Actual history (4) vs bid base (1)", f"{y}-12-31")
+    add("T-F19", f"{y}: shortfall by cause (" + ", ".join(n for _, n in causes) + ")",
+        " / ".join(f"{v['by_cause_k'][k]:.1f}" for k, _ in causes), "thousand trips/day", "Actual history (4) vs bid base (1)", f"{y}-12-31")
+    add("T-F19", f"{y}: revenue gap and its split by cause (indicative, same shares)",
+        f"{m(v['revenue_gap'])}: " + " / ".join(f"{v['by_cause_revenue'][k]:.1f}" for k, _ in causes), "ARD m", "Runs 1 and 4", f"{y}-12-31")
+pp = D["performance_payments"]
+for k, v in pp["by_half"].items():
+    add("T-F20", f"{k}: performance payment / CFADS / CFADS without / covenant DSCR / without",
+        f"{v['payment']:.2f} / {v['cfads']:.2f} / {v['cfads_without']:.2f} / {v['dscr_hist']:.2f}x / {v['dscr_hist_without']:.2f}x",
+        "ARD m; x", "Actual history (4) and counterfactual", k.replace("H1", "-06-30").replace("H2", "-12-31"))
+for y, v in pp["annual"].items():
+    capt = "n/a (no prior-year revenue)" if v["cap"] is None else m(v["cap"]) if v["cap"] >= 0.05 else f"{v['cap']:.2f}"
+    add("T-F20", f"{y}: annual performance payments / cap (2.5% of prior-year net toll revenue)", f"{v['total']:.2f} / {capt}", "ARD m", "Actual history (4)", f"{y}-12-31")
+add("T-F20", "Largest change in a covenant DSCR from performance payments", f"{pp['max_abs_dscr_effect']:.3f}x", "x", "Actual history (4)", "2019-12-31")
+vv = D["vot_variants"]
+for k, lab in (("low", "low (51.2)"), ("central", "central (54.6)"), ("high", "high (58.4, sponsor base)")):
+    add("T-F21", f"Pellow {lab} value-of-time case: equity IRR / NPV at 11.4% / min DSCR at ARD 287.4 m",
+        f"{pc(vv[k]['equity_irr'])} / {m(vv[k]['npv_11.4'])} / {x2(vv[k]['min_dscr'])}", "% / ARD m / x", "Scenarios 14, 15, 1 (financing locked)", "2014-08-15")
+
 L = ["# Figure ledger: Case T (Merrick Link)\n",
      f"Source: `model/outputs_case_t.json`, produced by `model/case_t.py` ({VER}, story as of 2026-10-03). Every value below is read "
      "from that file and only formatted here (`model/ledger_t.py`). Amounts in ARD millions, nominal, unless stated. "
@@ -235,6 +271,11 @@ L += ["", "New figure IDs:", "",
       "- T-F14 Scheduled senior and NILO balances on the financing at close (Chapters 29, 58).",
       "- T-F15 Outturn: equity invested and lost, first event of default, DSRA use (Chapters 64, 79).",
       "- T-F16 Tax at the restructuring: losses and forgiveness (Chapter 64).",
-      "- T-F17 Illustrative USD equivalents (Chapters 58, 64).", ""]
+      "- T-F17 Illustrative USD equivalents (Chapters 58, 64).",
+      "- T-F18 to T-F21 (annex TR, Part F): traffic ratios, shortfall by cause, performance payments, Pellow value-of-time bid variants; "
+      "T-F01, T-F02 and T-F04 extended (gross-PSC VfM, contribution gaps, Northgate traffic line).",
+      "", "Version note: v1.1 adds BRTA performance payments to the actual-history runs, which moves some T-F07 to T-F10, T-F15 "
+      "and T-F16 values by up to ARD 0.7 million or 0.01x against v1.0 (no covenant outcome, date or recovery conclusion changes). "
+      "Use only v1.1 values.", ""]
 open(os.path.join(HERE, "figure-ledger-case-t.md"), "w").write("\n".join(L))
 print(len(rows), "ledger rows")
