@@ -1,5 +1,7 @@
 pandas>=2.2
 openpyxl>=3.1
 xlrd>=2.0
+requests>=2.31
+pyarrow>=15
 # Sonraki fazlar için (Faz 3–6):
 # numpy, scipy, statsmodels, pyfixest (PPML), pulp (tamsayı programlama)
