@@ -5,10 +5,23 @@
 | | |
 |---|---|
 | Tarih | 17 Ekim 2026 (çalışma ortamının tarihi) |
-| Faz | 0 / 9: tamamlandı, **DEVAM** bekleniyor |
+| Faz | 0 / 9: tamamlandı; Revizyon 1 ile kullanıcı yanıtları işlendi; **DEVAM** bekleniyor |
 | Bu fazın çıktıları | `00_plan.md` (bu belge); `veri/nace_kapsam.csv`, `veri/nace_kapsam_bolum_ozeti.csv`, `veri/nace_r2_r21_kopru.csv`, `veri/cn2025_nace_rejim.csv`, `veri/akct_1996_cn8.txt`; `kod/f0_nace_kapsam.py`; `defter.md`; `DURUM_OZETI.md` |
 | Kanıt etiketleri | `[V]` doğrulanmış veri (kaynak, dönem) · `[T]` tahmin (yöntem, P10–P50–P90) · `[D?]` doğrulanması gereken · `[H]` hipotez veya uzman yargısı. Güven: **Y**üksek / **O**rta / **D**üşük |
 | Para birimi | Aksi belirtilmedikçe cari ABD doları; AB kaynaklı veriler avro olarak verilir. 2025 ortalama kuru: 1 € = 1,1300 $ `[V]` (ECB, EXR.A.USD.EUR) |
+
+---
+
+## Revizyon 1 (17.10.2026): kullanıcı yanıtları
+
+| Soru | Kullanıcının yanıtı | Çalışmaya etkisi |
+|---|---|---|
+| S-1 Görev çerçevesi | Her şey AB'nin hasmane tutumundan kaynaklanıyor | **Çıkış yönü veri kabul edildi.** Görev en az zararlı ve en yüksek faydalı çıkışın tasarımıdır. S1 (modernize GB) yalnızca maliyet karşılaştırma ölçütü olarak fiyatlanır. Çıkışın net negatif kaldığı tasarım, sınıf ve dönemler yine açıkça yazılır (`<gorev>`) |
+| S-2 T tarihi | 1.1.2028 de hesaplanacak | İki takvim birlikte yürütülür: **T2028** (hızlandırılmış, T = 1.1.2028) ve **T2029** (nominal, T = 1.1.2029). Kritik yol ve fizibilite §2A'da; bütün fazlarda iki takvim ayrı sütun olarak raporlanır |
+| S-3 Veri | Bütün verilere API'lerden veya kazıma ile çevrim içi erişilebilir | Kullanıcı yüklemesi beklenmez. TÜİK için anonim erişim yolu kuruldu, TÜİK verileri indirildi; diğer kaynaklar yeniden test edildi (§4) |
+| S-4 Üyelik perspektifi | Üyelik perspektifi yok | Diplomatik çerçeve "üyelikten bağımsız, çıkar temelli ekonomik ortaklık" (V-27). Ankara Anlaşması, 1/80 ve standstill hakları üyelik için değil, vatandaş hakları ve ekonomik çıkar için korunur (temel ilke 2) |
+| S-5 Enflasyon bütçesi kapsamı | Yanıt yok | Varsayılan geçerli: bütçe GB paketini ve kur/risk primi kanalını kapsar |
+| V-11 AB ile ilişki | AB'nin tutumu hasmane | Temel durum "gerginlik"; iş birliği yukarı yönlü duyarlılık. S5 bileşenlerinin olasılığı yükseltildi (V-11, V-28) |
 
 ---
 
@@ -17,7 +30,7 @@
 Bu bulgular strateji tasarımını daha ilk fazda etkiliyor; ayrıntıları ve kaynakları §5 ve §6'da.
 
 1. **Çıkışın asıl etki alanı sanayi malları.** Türkiye'nin AB'ye 2025 ihracatı (AB'nin Türkiye'den ithalatı) €103,4 mlr ($116,9 mlr) `[V]` (Eurostat Comext DS-045409). Bu değerin %89,3'ü GB kapsamındaki sanayi ürünleri, %6,0'ı tarım ve balıkçılık (1/98 sayılı Karar), %3,3'ü AKÇT kapsamındaki çelik ve kömür, %1,3'ü işlenmiş tarım ürünleri (İTÜ) `[V]` (CN8 düzeyinde eşleştirme; Güven: GB/tarım ayrımı Y, çelik ve İTÜ sınırları O). Menşe kuralları sorunu yaklaşık €92 mlr'lık ihracatta ortaya çıkar.
-2. **Türkiye'nin resmî pozisyonu bugün çıkış değil modernizasyon.** Faz 0 taramasında GB'den çıkışı öneren resmî bir Türk açıklaması bulunamadı. Bakan Bolat (Ekim 2026) modernizasyonu "seçenek değil zorunluluk" olarak tanımlıyor; Fidan–Kos ortak açıklaması (6.2.2026) modernizasyonun "yolunu açma" taahhüdü içeriyor `[V]`. AB Konseyi 2018'den beri müzakere yetkisi vermedi; Ortaklık Konseyi 2019'dan beri toplanmıyor `[V]`. Bu nedenle bu çalışma bir **koşullu çıkış / alternatif yol** tasarımıdır. S1 (modernize GB) gerçek bir karşı-olgu olarak tutulacaktır.
+2. **Kamuya açık resmî pozisyon bugüne kadar modernizasyondu; çıkış kararı bir pozisyon değişikliği olacak.** Faz 0 taramasında GB'den çıkışı öneren resmî bir Türk açıklaması bulunamadı: Bakan Bolat (Ekim 2026) modernizasyonu "seçenek değil zorunluluk" olarak tanımlıyor; Fidan–Kos ortak açıklaması (6.2.2026) modernizasyonun "yolunu açma" taahhüdü içeriyor `[V]`. AB Konseyi 2018'den beri müzakere yetkisi vermedi; Ortaklık Konseyi 2019'dan beri toplanmıyor `[V]`. Revizyon 1 ile çıkış yönü veri kabul edildi. Bu değişikliğin piyasalara, yatırımcılara ve AB'ye nasıl duyurulacağı kur ve risk primi bakımından başlı başına bir risk kalemidir (Faz 8 iletişim planı).
 3. **Hukuki çıkış kapısı dar ve oybirliğine bağlı.** Ankara Anlaşması'nda ve 1/95 sayılı Kararda süre, fesih veya çekilme hükmü yok. Ortaklık Konseyi oybirliğiyle karar alır (Ankara md. 23) `[V]`. Türkiye Viyana Antlaşmalar Hukuku Sözleşmesi'ne (VCLT) taraf değil `[V]` (BM Antlaşmalar Kayıtları, 17.10.2026); tek taraflı çıkış ancak teamül hukukuna (md. 56 mantığı, en az 12 ay bildirim) dayanabilir ve tartışmalıdır. AB tarafında veto riskini azaltan tek yol ABİHA md. 207'ye dayanan, portföy yatırımı ve yatırımcı-devlet uyuşmazlık çözümü (ISDS) içermeyen "yalnızca AB" (EU-only) ticaret anlaşmasıdır: nitelikli çoğunlukla (NÇ) kabul edilir. Ortaklık yolu (md. 217) oybirliği ve karma onay gerektirir `[V]`.
 4. **Mevcut sayısal literatür GB'den STA'ya geçişi Türkiye için olumsuz buluyor.** BKP (2016): GB yerine DCFTA → Türkiye refahı −€144 mn, AB'ye ihracat −€4,34 mlr; modernize GB → refah +€12,5 mlr, GSYH +%1,44 `[V]`. Dünya Bankası (2014): GB yerine STA olsaydı AB'ye ihracat %3,0–7,2 daha düşük olurdu `[V]`. ifo (2016): GB'nin sona ermesi GSYH'yi %0,81 düşürür `[V]`. Bu sonuçlar 2016 öncesi veriye dayanıyor; özerklik temettüsünü, ABD ve Çin kaynaklı yeni ortamı ve AB'nin 2024–2026 STA dalgasını içermiyor. Dürüstlük ilkesi gereği başlangıç hipotezi şudur `[H]`: **S2, S0'ı ancak elverişli menşe kuralları, ACAA, SKDM düzenlemesi ve büyük bir özerklik temettüsü birlikte sağlanırsa geçebilir.** Faz 1–2 bu hipotezi sınayacak.
 5. **Asimetri baskısı 2026'da sıçradı.** AB–Mercosur geçici ticaret anlaşması 1.5.2026'dan beri uygulanıyor; AB–Meksika 22.5.2026'da imzalandı; AB–Hindistan (27.1.2026) ve AB–Avustralya (24.3.2026) müzakereleri sonuçlandı; AB–Endonezya imza aşamasında `[V]`. Türkiye'nin bu ortaklarla STA'sı yok. Bu durum, GB içinde kalmanın maliyetini artıran ve özerklik argümanını güçlendiren en somut gelişme.
@@ -25,7 +38,7 @@ Bu bulgular strateji tasarımını daha ilk fazda etkiliyor; ayrıntıları ve k
 7. **AB'nin yeni sanayi politikası GB ortaklığını ödüllendiriyor.** Sanayi Hızlandırıcı Yasası (Industrial Accelerator Act, IAA) önerisi COM(2026) 100 (4.3.2026), STA ve gümrük birliği ortaklarını kamu desteği ve açık artırma ölçütlerinde AB menşeine eşdeğer sayıyor `[V]`. Türkiye savunma programı SAFE'ye ise Yunanistan engeli nedeniyle katılamadı `[V]`. Yeni anlaşma bu eşdeğerliği açıkça içermezse GB'den çıkış "Made in Europe" statüsünü kaybettirebilir. Bu bir **kırmızı çizgi müzakere maddesidir**.
 8. **Çelik zaten GB dışında ve 1.7.2026'dan beri kalıcı AB kota rejimine tabi.** Tüzük (AB) 2026/1384: yıllık tarife kontenjanı 18,35 Mt (−%47), kota dışı %50 vergi, eritme ve döküm (melt and pour) kuralı 1.10.2027'den itibaren tahsiste kullanılacak. Türkiye STA ortağı muamelesi görüyor ve ülke kotaları aldı `[V]`. SKDM (CBAM) kesin dönemi 1.1.2026'da başladı; 2026 sertifika fiyatı tCO₂ başına €75–82 `[V]`. TR-ETS pilot dönemi %100 ücretsiz tahsisle işliyor ve 2026 yalnızca raporlama yılı; dolayısıyla 2026–27'de SKDM'de mahsup edilebilecek bir Türk karbon fiyatı yok `[V]`. 24.10, 24.42, 23.51 ve 20.15 sınıfları GB kararından bağımsız olarak ağır maruziyette.
 9. **DTÖ politika alanı geniş, ama bağlı satırlarda dar.** Sanayi ürünlerinde bağlama oranı %43,0: giyim %3,7, tekstil %23,4, mineral-metal %24,3, taşıt %57,8, elektriksiz makine %68,6 `[V]` (WTO World Tariff Profiles 2026). DS629 panel raporu (28.7.2026), Türkiye'nin elektrikli araçlara uyguladığı ek vergileri bağlı oranı aştığı için GATT II:1'e aykırı buldu. DS583 tahkim kararı (2022) da yerlileştirme şartlarını III:4'e aykırı bulmuştu `[V]`. Tarife merdiveni bu nedenle satır satır bağlı oran kontrolüyle kurulacak. Bağsız satırlarda geniş alan var; itibar ve STA riski ise fiyatlanacak.
-10. **Makro çerçeve sıkı.** OVP 2027–2029: 2026 cari açığı −$47,5 mlr (GSYH'nin −%2,6'sı), 2029'da −%1,6 `[V]`. TÜFE Eylül 2026'da yıllık %29,73; TCMB ara hedefleri 2026 için %24, 2027 için %15, 2028 için %9; politika faizi %37 `[V]`. Cari dengeyi T+5'te (2034) sıfıra çekmek, OVP'nin 2029 patikasına göre yaklaşık 1,6 puan GSYH ek iyileşme gerektirir. GB paketi bunun ancak bir bölümünü sağlayabilir; büyüklüğü Faz 6'da hesaplanacak `[H]`.
+10. **Makro çerçeve sıkı.** OVP 2027–2029: 2026 cari açığı −$47,5 mlr (GSYH'nin −%2,6'sı), 2029'da −%1,6 `[V]`. TÜFE Eylül 2026'da yıllık %29,73; TCMB ara hedefleri 2026 için %24, 2027 için %15, 2028 için %9; politika faizi %37 `[V]`. Cari dengeyi T+5'te (T2028'de 2033, T2029'da 2034) sıfıra çekmek, OVP'nin 2029 patikasına göre yaklaşık 1,6 puan GSYH ek iyileşme gerektirir. GB paketi bunun ancak bir bölümünü sağlayabilir; büyüklüğü Faz 6'da hesaplanacak `[H]`.
 
 ---
 
@@ -91,21 +104,81 @@ Bu bulgular strateji tasarımını daha ilk fazda etkiliyor; ayrıntıları ve k
 
 ---
 
+## 2A. İki takvim: T2028 ve T2029
+
+Bugün (17.10.2026) itibarıyla T2028'e 14,5 ay, T2029'a 26,5 ay var. T2028'de prompttaki T−24 başlangıcı (1.1.2026) geride kaldı; hazırlık penceresi T−14,5'ten başlıyor. "Önce anlaşma, sonra çıkış" ilkesi gereği T, yeni çerçevenin yürürlüğe girdiği gündür.
+
+### Kritik yol
+
+Süreler emsallere dayanır: AB–İngiltere Ticaret ve İşbirliği Anlaşması'nda (TCA) Komisyon tavsiyesi 3.2.2020, Konsey yetkisi 25.2.2020, anlaşma 24.12.2020, geçici uygulama 1.1.2021 oldu `[V]`. AB–Japonya EPA'sı 2013–2019, AB–Yeni Zelanda 2018–2024, AB–Ukrayna DCFTA'sı 2008–2016 (geçici uygulama) sürdü `[V]`. Türkiye'ye ilişkin 2016 modernizasyon tavsiyesi ise 10 yıldır Konsey'de bekliyor `[V]`.
+
+| No | Adım | Asgari süre (emsal) | T2028'de son tarih | T2029'da son tarih |
+|---|---|---|---|---|
+| 1 | İç karar, müzakere heyeti, AB'ye resmî başvuru, piyasa iletişimi | 1–2 ay | Aralık 2026 | Mart 2027 |
+| 2 | AB Konseyi müzakere yetkisi (md. 207, NÇ) | 3 hafta (TCA) ile süresiz (2016 tavsiyesi) arası | Mart 2027 | Haziran 2027 |
+| 3 | Müzakere | İnce STA: ≈10 ay (TCA, sabit son tarih baskısıyla). DCFTA: 3–6 yıl | Nisan–Ekim 2027 (≈6 ay) | Temmuz 2027–Temmuz 2028 (≈12 ay) |
+| 4 | Hukuki gözden geçirme ve çeviri | 2–4 ay; geçici uygulamayla sıkıştırılabilir | Kasım 2027 | Eylül 2028 |
+| 5 | AB imza kararı ve geçici uygulama; Avrupa Parlamentosu onayı sonra gelebilir | 1–2 ay | Aralık 2027 | Kasım 2028 |
+| 6 | TBMM onayı (Anayasa md. 90) veya geçici uygulama kararı | 1–2 ay `[D?]` | Aralık 2027 | Aralık 2028 |
+| 7 | Ortaklık Konseyi kararı: 1/95'in yerine geçiş, AB tutumu md. 218(9) ile (oybirliği) | 1–3 ay; yazılı usul mümkün | Aralık 2027 | Aralık 2028 |
+| 8 | Uygulama hazırlığı: menşe ispatı (onaylı ihracatçı, REX benzeri sistem), BİLGE, tedarikçi beyanları, KOBİ eğitimi | 9–12 ay (İngiltere 2019–2020) | **Kasım 2026'da başlamalı**, menşe kuralları bilinmeden | Ocak 2028'e kadar başlamalı |
+| 9 | Yeni Türk tarife cetveli ve İGV'nin yeniden tasarımı; T−6'da ilan | 6 ay önceden ilan | 1.7.2027 | 1.7.2028 |
+| 10 | CE ve onaylanmış kuruluş sürekliliği (ACAA veya geçiş düzenlemesi) | ACAA müzakeresi yıllar sürer; geçiş için karşılıklı tanıma kararı gerekir | AB'nin geçiş kararına bağlı | AB'nin geçiş kararına bağlı |
+| 11 | Mevcut 24 STA'daki GB atıfları ve PEM kümülasyon ilişkileri | 6–18 ay | Paralel yürütülmeli | Paralel yürütülmeli |
+
+### Değerlendirme
+
+- **T2028'de tam DCFTA (S2) mümkün değil.** Müzakere için en fazla 6 ay kalıyor. Ulaşılabilecek en iyi sonuç geçici uygulamalı ince bir STA (S3: sanayi mallarında sıfır tarife ve revize PEM kuralları). Hizmetler, kamu alımları, ACAA, SKDM, karayolu taşımacılığı ve vize "yerleşik müzakere gündemi" olarak T'den sonraya kalır. Uygulama hazırlığı menşe kuralları kesinleşmeden başlamak zorunda. İngiltere'nin ilk aylardaki %59–70'lik tercih kullanım oranı `[V]` 2028'in ilk yarısında Türkiye için de beklenmelidir `[H]`.
+- **T2029'da 12–15 aylık müzakere penceresi var.** Bu süre ince STA'ya ek olarak öncelikli sektörlerde ACAA ve SKDM düzenlemesi gibi DCFTA bölümlerine yeter (S3+). Tam S2 büyük olasılıkla 2030–2031'i gerektirir `[H]`.
+- **AB'nin hasmane tutumu (V-11) iki takvimi farklı etkiler.** Yetki ve müzakere AB'nin iş birliğine bağlı. AB oyalarsa T2028'de "önce anlaşma" ilkesi karşılanamaz ve sonuç ya erteleme ya da anlaşmasız çıkıştır (S4/S5).
+- **T2028 üç takvimle çakışıyor:**
+  - **SKDM:** Mansap ürünlere genişleme önerisi 1.1.2028'de başlıyor; 2027 ithalatı için ilk sertifika teslimi Eylül 2028'de.
+  - **Çelik:** Eritme-döküm kuralı 1.10.2027'den itibaren kota tahsisinde kullanılıyor.
+  - **Seçim:** Olağan genel seçimler 2028'de; beş yıllık dönem Mayıs 2023'te başladı `[V]`.
+
+  Seçimden aylar önce bir ticaret şoku, siyasi ekonomi riskini (etki boyutu 21) en üst düzeye çıkarır.
+- **Enflasyon ve kur:** TCMB'nin ara hedefleri 2027 için %15, 2028 için %9 `[V]`. T2028'de olası bir şok tam dezenflasyonun son yılına denk gelir. Anlaşmasız çıkışta mevcut İGV rejimi AB menşeli mallara da uygulanmaya başlar, çünkü İGV STA'sı olmayan ülkelerin mallarına uygulanıyor `[V]`. Tarife ve İGV T'den önce yeniden tasarlanmazsa bu kendi başına büyük bir TÜFE şoku demektir. Bu nedenle 9. adım (tarife cetveli ve İGV) iki takvimde de kritik yoldadır.
+
+### T'de gerçekleşebilecek sonuçların öznel olasılıkları
+
+Bu olasılıklar V-11 (hasmane AB) varsayımı altında ve gitme/gitmeme kapıları işletilmeden önceki durumu gösterir `[H]`, Güven: D. Faz 2 ve 7'de güncellenecek.
+
+| T'deki sonuç | T2028 | T2029 |
+|---|---|---|
+| S2: tam DCFTA yürürlükte | < %5 | %5–15 |
+| S3/S3+: ince STA, geçici uygulamada | %10–25 | %30–45 |
+| Geçiş düzenlemesi: hukuki çıkış, yeni anlaşma yürürlüğe girene kadar GB kurallarının sürmesi | %15–30 | %15–25 |
+| S4/S5: anlaşmasız çıkış | %45–70 | %25–45 |
+
+### Kapılar
+
+Kapıların takvimi iki seçenekte farklıdır:
+
+| Kapı | T2028 | T2029 | Asgari koşul (sağlanmazsa T ertelenir) |
+|---|---|---|---|
+| K1 | 1.4.2027 (T−9) | 1.1.2028 (T−12) | AB müzakere yetkisi verilmiş; geçiş/statüko ilkesi üzerinde yazılı mutabakat |
+| K2 | 1.7.2027 (T−6) | 1.7.2028 (T−6) | Sanayi mallarında sıfır tarife ve menşe kuralları metni üzerinde uzlaşı; yeni tarife cetveli ilan edilmiş |
+| K3 | 1.11.2027 (T−2) | 1.10.2028 (T−3) | Geçici uygulama kararı veya geçiş düzenlemesi imzalanmış; gümrük ve menşe sistemleri test edilmiş |
+
+**Sonuç:** T2028 ancak AB geçiş düzenlemesini veya ince STA'yı kabul ederse "boşluksuz geçiş" ilkesiyle bağdaşır. Aksi halde T2028 fiilen bir **baskı tarihi** işlevi görür: Türkiye anlaşmasız çıkışa inandırıcı biçimde hazırsa pazarlık kaldıracı olur, hazır değilse maliyetlidir. Anlaşmasız çıkışın maliyeti Faz 3 ve 6'da her iki takvim için ayrı ayrı hesaplanacak.
+
+---
+
 ## 3. Varsayım kaydı (son hal)
 
 | ID | Parametre | Değer | Kaynak / gerekçe |
 |---|---|---|---|
 | V-01 | Bugünün tarihi | 17 Ekim 2026. Bilgi kesimi Haziran 2026; sonrası web aramasıyla kontrol edildi | Ortam tarihi |
 | V-02 | Baz yıl ve veri dönemi | 2025 tam yıl. Son 12 ay: cari denge Eyl 2025–Ağu 2026; dış ticaret ve fiyatlar mevcut son ay | Prompt varsayılanı |
-| V-03 | Zaman çizelgesi | Hazırlık **T−24 = 1 Ocak 2027** → **T = 1 Ocak 2029** (nominal) → geçiş **T+60 = 1 Ocak 2034**; vizyon 2035. T koşulludur: "önce anlaşma, sonra çıkış" ilkesi gereği yeni çerçevenin yürürlük tarihidir. Gitme/gitmeme kapıları T−12, T−6 ve T−1'de. Duyarlılık: T = 1 Ocak 2030 | Prompt varsayılanı + `<temel_ilkeler>` 1. T = 2029 iyimser; AB Konseyi henüz modernizasyon yetkisi bile vermedi `[H]` |
+| V-03 | Zaman çizelgesi | **İki takvim birlikte hesaplanır.** T2028: hazırlık 17.10.2026 → **T = 1 Ocak 2028** → T+60 = 1 Ocak 2033. T2029: hazırlık T−24 = 1 Ocak 2027 → **T = 1 Ocak 2029** → T+60 = 1 Ocak 2034. Vizyon 2035. T koşulludur: yeni çerçevenin yürürlük tarihidir. Kapılar §2A'da (T2028: T−9, T−6, T−2; T2029: T−12, T−6, T−3). Duyarlılık: T = 1 Ocak 2030 | Kullanıcı yanıtı (Revizyon 1) + `<temel_ilkeler>` 1 |
 | V-04 | Tercih edilen bitiş durumu | Faz 2'de S0–S5 karşılaştırmasıyla önerilecek; S2 ana tasarım hipotezi, S1 zorunlu karşı-olgu | Prompt varsayılanı |
 | V-05 | Enflasyon bütçesi (TÜFE) | Birinci tur kümülatif ≤ 50 baz puan (bp), herhangi bir yılda ≤ 30 bp; ikinci tur dahil kümülatif ≤ 100 bp. Hedef: net dezenflasyonist paket. Ölçüt: TÜFE genel (2025=100, COICOP 2018). Kur ve risk primi kanalı ayrı blok olarak gösterilir ve bütçeye sayılır | Prompt varsayılanı; kapsam için soru 5 |
-| V-06 | Cari denge hedefi | T+5'te (2034) cari denge/GSYH ≥ %0; enerji ve altın hariç çekirdek dengede kalıcı fazla. GB paketinin katkısı ile tamamlayıcı politikaların katkısı ayrı gösterilir. Baz: 2025 −$30,3 mlr (−%1,9) `[V]` (OVP 2027–29); TCMB'nin Şubat 2026 ilk açıklaması −$25,2 mlr; fark Faz 1'de EVDS'den çözülecek `[D?]`. 2026 tahmini −$47,5 mlr (−%2,6) | OVP 2027–2029 (6.9.2026) |
+| V-06 | Cari denge hedefi | T+5'te (T2028'de 2033, T2029'da 2034) cari denge/GSYH ≥ %0; enerji ve altın hariç çekirdek dengede kalıcı fazla. GB paketinin katkısı ile tamamlayıcı politikaların katkısı ayrı gösterilir. Baz: 2025 −$30,3 mlr (−%1,9) `[V]` (OVP 2027–29); TCMB'nin Şubat 2026 ilk açıklaması −$25,2 mlr; fark Faz 1'de EVDS'den çözülecek `[D?]`. 2026 tahmini −$47,5 mlr (−%2,6) | OVP 2027–2029 (6.9.2026) |
 | V-07 | İstihdam kısıtı | T+3'te toplam imalat istihdamında net kayıp sıfır. Herhangi bir NACE sınıfında %5'i aşan kayıp otomatik destek tetikler. Ölçüm: SGK 4/a sigortalı (NACE 4 hane, aylık) ve TÜİK. Baz: imalatta ücretli çalışan 4,46 mn (2025 sonu) `[D?]` | Prompt varsayılanı |
 | V-08 | Kabiliyet kısıtı | `<temel_ilkeler>` 3 (a)–(d). (a) "kalıcı %30 düşüş" = 3 yıllık hareketli ortalamanın 2023–25 ortalamasına göre %30'dan fazla düşmesi. (b) Kritik eşik varsayılanı = etkin girişim sayısının 2025 düzeyinin %70'i veya en az 3 bağımsız üretici (hangisi yüksekse); sınıf kartında özelleştirilir | `[H]`; Faz 3'te sınıf bazında |
 | V-09 | Mali kısıt | Net mali maliyet (ek gümrük gelirleri düşülmüş) ≤ GSYH'nin %0,5'i/yıl. 2026'da ≈ $9,1 mlr, 2029'da ≈ $11,1 mlr (OVP GSYH patikası) | Prompt varsayılanı; OVP 2027–29 |
 | V-10 | Hukuki kısıt | DTÖ uyumu zorunlu. İstisna önerilirse dava ve misilleme riski fiyatlanır (DS583 ve DS629 emsalleri) | Prompt varsayılanı |
-| V-11 | AB ile siyasi ilişki | Nötr-temkinli; iş birliği ve gerginlik senaryoları duyarlılık olarak | Prompt varsayılanı |
+| V-11 | AB ile siyasi ilişki | **Hasmane.** Temel durum "gerginlik": AB'nin ticaret savunması, SKDM varsayılan değerleri, IAA karşılıklılık hükmü ve savunma programlarından dışlama gibi araçları kullanma olasılığı yüksek. İş birliği yukarı yönlü duyarlılık | Kullanıcı yanıtı (Revizyon 1) |
 | V-12 | Risk iştahı | Orta: geri dönüşü olmayan kayıplara karşı düşük, geri alınabilir denemelere karşı orta | Prompt varsayılanı |
 | V-13 | Çıktı dili | Türkçe; teknik terimlerin İngilizcesi ilk geçtiği yerde parantez içinde | Prompt varsayılanı |
 | V-14 | Analiz birimi | NACE Rev. 2, C bölümünde 230 sınıf. TÜİK ulusal sınıflamada 2026'da NACE Rev. 2.1'e geçtiği için (GİB 2026 listeleri 651 sınıf) 2025 sonrası veriler resmî Eurostat köprüsüyle Rev. 2'ye çevrilir | `[V]` Eurostat NACE_R2 kod listesi; GİB 2026 |
@@ -119,8 +192,11 @@ Bu bulgular strateji tasarımını daha ilk fazda etkiliyor; ayrıntıları ve k
 | V-22 | Küresel bindirmeler | G1–G5 prompttaki gibi. G1 tabanı: ABD 301'de Türkiye %12,5, AB %10 tavanı; 232'de Türkiye'ye indirim yok | `[V]` USTR, Temmuz 2026 |
 | V-23 | KOBİ tanımı | KOBİ Yönetmeliği eşikleri: 250 çalışan ve güncel ciro/bilanço eşiği | `[D?]`: güncel TL eşiği Faz 3'te doğrulanacak |
 | V-24 | Bölge birimi | İBBS Düzey 2 (26 bölge) | Prompt |
-| V-25 | Tarih gösterimi | Eylem takvimleri T'ye göre ve nominal tarihle (T = 1.1.2029) verilir | — |
+| V-25 | Tarih gösterimi | Eylem takvimleri T'ye göre ve her iki takvim için nominal tarihle (T2028 ve T2029) verilir | — |
 | V-26 | Dış ticaret ölçüsü | AB tarafı maruziyeti için Comext (AB ithalatı, CIF, menşe ülke). Türkiye tarafı için TÜİK genel ticaret sistemi (FOB). Ayna veri farkları Faz 1'de mutabakata bağlanır | — |
+| V-27 | Üyelik perspektifi | **Yok.** Diplomatik çerçeve: "üyelikten bağımsız, çıkar temelli ekonomik ortaklık". Ankara Anlaşması feshedilmez: 1/80 ve Katma Protokol md. 41 hakları AB'deki Türk vatandaşları için korunur, 1/95'in sona ermesi bu hakları etkilemez (A-8). Sonuçlar: (a) AB katılım öncesi mali yardımları (IPA) sona erer; (b) müktesebata uyum hedefi kalkar, teknik mevzuat uyumu yalnızca pazar erişimi için yapılır (temel ilke 9); (c) md. 218(8)'deki aday ülke hükmü gündemden çıkar, md. 207 yolu tercih edilir | Kullanıcı yanıtı (Revizyon 1); temel ilke 2 |
+| V-28 | Görev çerçevesi | Çıkış yönü veri. S1 (modernize GB) öneri seçeneği değil, maliyet karşılaştırma ölçütü. Çıkışın net negatif kaldığı yerlerde bunu pozitife çevirecek tasarım koşulları ve gerçekçilikleri yazılır | Kullanıcı yanıtı (Revizyon 1); `<gorev>` |
+| V-29 | Veri erişimi | Bütün veriler çevrim içi kaynaklardan (API ve kazıma) alınır. TÜİK için Dağıtım Yönetim Sistemi arka ucu (anonim) ve Veri Portalı arama API'si kullanılır; erişim kodu `kod/tuik.py` | Kullanıcı yanıtı (Revizyon 1) |
 
 ---
 
@@ -389,17 +465,17 @@ Durum: **Doğrulandı** / **Güncellendi** (düzeltme veya yeni gelişme) / **K�
 
 ---
 
-## 7. Netleştirme soruları ve varsayılan cevaplar
+## 7. Netleştirme soruları ve sonuçları
 
-Cevap gelmezse varsayılan cevaplarla ilerlenir.
+Revizyon 1 ile S-1–S-4 yanıtlandı; S-5 için varsayılan geçerli.
 
-| No | Soru | Neden önemli | Varsayılan cevap |
-|---|---|---|---|
-| S-1 | Siyasi karar "GB'den çıkılacak" olarak verilmiş mi (görev: en iyi çıkış), yoksa karar açık mı (görev: çıkış ile modernize GB'nin karşılaştırılması ve öneri)? | Faz 2'deki bitiş durumu önerisinin çerçevesini belirler | **Karar açık.** S2 ana tasarım hipotezi olarak eksiksiz kurulur; S1 aynı titizlikle fiyatlanır; nihai öneri, gitme/gitmeme kapılarına bağlı "koşullu çıkış" olur ve S1'e dönüş opsiyonu korunur |
-| S-2 | T tarihi nominal 1 Ocak 2029 olarak mı alınsın? | Tüm takvim, kritik yol ve bütçe yılları buna bağlı | **Evet**, nominal T = 1.1.2029. T, "önce anlaşma" ilkesine bağlı olarak koşullu; T−12 (1.1.2028) kapısında asgari unsurlar yoksa ertelenir. Duyarlılık: T = 1.1.2030 |
-| S-3 | TÜİK ve kurum verileri yüklenebilir mi? GTİP12 × ülke × rejim (2015–2025), YSHİ NACE 4 hane (2019–2024), SGK NACE 4 hane istihdam ve il dağılımı, TÜFE madde ağırlıkları (2026), 2023 girdi-çıktı tabloları, 2026 uygulanan tarife ve İGV cetveli | Bu ortamdan TÜİK portalına ve Resmî Gazete'ye erişim yok; sınıf kartlarının güven düzeyini doğrudan belirler | **Yüklenmezse** yedek kaynaklar (Comtrade HS6, BACI, Eurostat STS ve HICP, OECD ICIO 2022) ve tahmin kullanılır. Etkilenen alanlar `[T]` ve Güven O/D olarak etiketlenir; sonucu değiştirebilecek veri noktaları kartlarda işaretlenir |
-| S-4 | AB üyelik perspektifi: GB dönüşümü "üyelik perspektifi korunarak yeni ortaklık çerçevesi" olarak mı sunulacak, yoksa üyelik hedefinden ayrışma da seçenek mi? | Müzakere çerçevesini, Ortaklık hukukunu (1/80) ve AB içi oy dengesini etkiler | **Dönüşüm çerçevesi.** Ankara Anlaşması, 1/80 ve standstill hakları korunur; üyelik başvurusu geri çekilmez; kopuş yalnızca S5 stres testinde ele alınır |
-| S-5 | Enflasyon bütçesinin kapsamı ne olsun? | Hangi önlemlerin bütçeye sayılacağını ve optimizasyonun kısıtını belirler | Bütçe **GB paketini** kapsar: tarife değişiklikleri, ticaret savunması, menşe ve uyum maliyetleri, kur ve risk primi kanalı (ayrı blok olarak gösterilir). Ölçüt TÜFE genel (2025=100). Enerji, maliye ve para politikası gibi tamamlayıcı politikaların enflasyon etkisi ayrıca raporlanır ama bütçeye sayılmaz |
+| No | Soru | Sonuç |
+|---|---|---|
+| S-1 | Siyasi karar "GB'den çıkılacak" olarak mı verildi, yoksa karar açık mı? | **Çıkış yönü veri** (AB'nin hasmane tutumu). S2 ana tasarım; S1 yalnızca maliyet karşılaştırma ölçütü (V-28) |
+| S-2 | T tarihi | **İki takvim:** T2028 (1.1.2028) ve T2029 (1.1.2029); duyarlılık T = 1.1.2030 (V-03, §2A) |
+| S-3 | Veriler nereden gelecek? | **Çevrim içi kaynaklar** (API ve kazıma); kullanıcı yüklemesi yok (V-29, §4) |
+| S-4 | AB üyelik perspektifi | **Yok.** Diplomatik çerçeve "üyelikten bağımsız ekonomik ortaklık"; Ankara Anlaşması ve 1/80 hakları vatandaş hakları olarak korunur (V-27) |
+| S-5 | Enflasyon bütçesinin kapsamı | **Varsayılan:** GB paketi + kur ve risk primi kanalı (ayrı blok). Ölçüt TÜFE genel (2025=100). Tamamlayıcı politikalar ayrı raporlanır, bütçeye sayılmaz |
 
 ---
 
