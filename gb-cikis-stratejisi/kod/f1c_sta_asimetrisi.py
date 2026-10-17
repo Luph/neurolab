@@ -8,6 +8,7 @@ olup Türkiye ile STA'sı yürürlükte olmayan pazarlarda:
     ortalama; Türkiye'nin ihracat bileşimiyle ağırlıklı),
   - aynı pazarda AB ihracatını ve AB'nin tercih marjını (AB ihracatı × MFN; liberalizasyonu
     tamamlanmış satırlarda AB'nin ödemediği vergi; EPA ve geçiş takvimi süren anlaşmalarda üst sınır)
+  - Türkiye'nin o ortaktan ithalatını (ortağın Türkiye ile STA'ya olan ilgisinin göstergesi)
 hesaplar.
 
 Kaynaklar (kimlik doğrulamasız):
@@ -16,7 +17,8 @@ Kaynaklar (kimlik doğrulamasız):
 Notlar:
   - BACI HS2017; WITS tarifeleri ortağın kendi HS sürümündedir (çoğunlukla HS2022). HS6 eşleşmeyen
     satırlar (HS2022 değişiklikleri) ağırlıktan düşülür; kapsama oranı çıktıda verilir.
-  - Anlaşma durumu ve yürürlük yılları 17.10.2026 itibarıyla; [D?] işaretliler Faz 2'de doğrulanacak.
+  - Anlaşma durumu ve yürürlük yılları 17.10.2026 itibarıyla (00_plan.md §6.4, D-8: DG TRADE müzakere
+    sayfası); Mercosur'da tercihler kademeli açılır, AB'nin avantajı bugün değil geçiş sonunda tam olur.
 
 Çıktı: veri/teshis_sta_asimetrisi.csv
 """
@@ -35,9 +37,10 @@ WITS = ("https://wits.worldbank.org/API/V1/SDMX/V21/datasource/TRN/reporter/{r}/
 AB27_ISO3 = ["AUT", "BEL", "BGR", "HRV", "CYP", "CZE", "DNK", "EST", "FIN", "FRA", "DEU", "GRC", "HUN", "IRL",
              "ITA", "LVA", "LTU", "LUX", "MLT", "NLD", "POL", "PRT", "ROU", "SVK", "SVN", "ESP", "SWE"]
 
+MERCOSUR = "imza 17.1.2026; AP ATAD görüşü istedi; tarife indirimleri kademeli"
 # iso3, WITS kodu, grup, AB anlaşması, AB yürürlük yılı, durum, not
 ORTAKLAR = [
-    ("MEX", "484", "Meksika", "Küresel Anlaşma (STA)", 2000, "yürürlükte", "modernize anlaşma imza sürecinde [D?]"),
+    ("MEX", "484", "Meksika", "Küresel Anlaşma (STA)", 2000, "yürürlükte", "modernize anlaşma 22.5.2026'da imzalandı"),
     ("CAN", "124", "Kanada", "CETA", 2017, "geçici uygulamada", ""),
     ("JPN", "392", "Japonya", "EPA", 2019, "yürürlükte", "TR–Japonya EPA müzakeresi 2014'ten beri sürüyor"),
     ("VNM", "704", "Vietnam", "EVFTA", 2020, "yürürlükte (geçiş takvimi 2030'a kadar)", ""),
@@ -63,14 +66,14 @@ ORTAKLAR = [
     ("CMR", "120", "Kamerun", "Ara EPA", 2014, "yürürlükte (asimetrik)", ""),
     ("MDG", "450", "Doğu ve Güney Afrika (ESA)", "Ara EPA", 2012, "yürürlükte (asimetrik)", "TR–Morityus STA var"),
     ("ZWE", "716", "Doğu ve Güney Afrika (ESA)", "Ara EPA", 2012, "yürürlükte (asimetrik)", ""),
-    ("BRA", "076", "Mercosur", "Ortaklık Anlaşması", None, "imzalı, yürürlük bekliyor [D?]", ""),
-    ("ARG", "032", "Mercosur", "Ortaklık Anlaşması", None, "imzalı, yürürlük bekliyor [D?]", ""),
-    ("URY", "858", "Mercosur", "Ortaklık Anlaşması", None, "imzalı, yürürlük bekliyor [D?]", ""),
-    ("PRY", "600", "Mercosur", "Ortaklık Anlaşması", None, "imzalı, yürürlük bekliyor [D?]", ""),
-    ("IND", "356", "Hindistan", "STA", None, "müzakere sonuçlandı, yürürlük bekliyor [D?]", ""),
-    ("IDN", "360", "Endonezya", "CEPA", None, "müzakere sonuçlandı, yürürlük bekliyor [D?]",
+    ("BRA", "076", "Mercosur", "Geçici Ticaret Anlaşması", 2026, "geçici uygulamada (1.5.2026'dan)", MERCOSUR),
+    ("ARG", "032", "Mercosur", "Geçici Ticaret Anlaşması", 2026, "geçici uygulamada (1.5.2026'dan)", MERCOSUR),
+    ("URY", "858", "Mercosur", "Geçici Ticaret Anlaşması", 2026, "geçici uygulamada (1.5.2026'dan)", MERCOSUR),
+    ("PRY", "600", "Mercosur", "Geçici Ticaret Anlaşması", 2026, "geçici uygulamada (1.5.2026'dan)", MERCOSUR),
+    ("IND", "356", "Hindistan", "STA", None, "müzakere tamamlandı (27.1.2026); imza önerisi 11.9.2026", ""),
+    ("IDN", "360", "Endonezya", "CEPA", None, "sonuçlandı (2025); Konsey'e sunuldu 29.6.2026",
      "TR–Endonezya müzakeresi sürüyor"),
-    ("AUS", "036", "Avustralya", "STA", None, "müzakere sürüyor [D?]", ""),
+    ("AUS", "036", "Avustralya", "STA", None, "müzakere tamamlandı (24.3.2026)", ""),
 ]
 YILLAR = (2025, 2024, 2023, 2022, 2021)
 
@@ -114,6 +117,7 @@ def main():
     tr, ab = iso["TUR"], set(iso[AB27_ISO3])
     b = pd.read_parquet(a.baci, columns=["i", "j", "k", "v"])
     hedef = {iso[o[0]] for o in ORTAKLAR}
+    tr_ith = b[(b.j == tr) & b.i.isin(hedef)].groupby("i").v.sum() / 1e3
     b = b[b.j.isin(hedef)]
     b["hs6"] = b.k.astype(str).str.zfill(6)
     b["kaynak"] = b.i.map(lambda i: "TR" if i == tr else ("AB27" if i in ab else "diger"))
@@ -133,6 +137,7 @@ def main():
             iso3=kod3, ortak_grubu=grup, ab_anlasmasi=anlasma, ab_yururluk=yil, durum=durum, not_=notu,
             tarife_yili=tyil,
             ithalat_toplam_musd=top / 1e3, tr_ihracati_musd=tr_top / 1e3, ab27_ihracati_musd=ab_top / 1e3,
+            tr_ithalati_musd=tr_ith.get(j, 0.0),
             tr_pazar_payi=tr_top / top if top else None, ab27_pazar_payi=ab_top / top if top else None,
             tarife_kapsama_tr=k.TR.sum() / tr_top if tr_top else None,
             tr_agirlikli_mfn=(k.TR * k.mfn).sum() / k.TR.sum() if k.TR.sum() else None,

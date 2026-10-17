@@ -5,7 +5,7 @@
 | | |
 |---|---|
 | Tarih | 17 Ekim 2026 (çalışma ortamının tarihi) |
-| Faz | 0 / 9: tamamlandı; Revizyon 1 ile kullanıcı yanıtları işlendi; **DEVAM** bekleniyor |
+| Faz | 0 / 9: tamamlandı; Revizyon 1 ile kullanıcı yanıtları işlendi. Faz 1'de §1 erişim tablosu, §3 V-06/V-07 ve §4 veri envanteri doğrulanmış erişime göre güncellendi. Güncel faz: [`01_teshis.md`](01_teshis.md) |
 | Bu fazın çıktıları | `00_plan.md` (bu belge); `veri/nace_kapsam.csv`, `veri/nace_kapsam_bolum_ozeti.csv`, `veri/nace_r2_r21_kopru.csv`, `veri/cn2025_nace_rejim.csv`, `veri/akct_1996_cn8.txt`; `kod/f0_nace_kapsam.py`; `defter.md`; `DURUM_OZETI.md` |
 | Kanıt etiketleri | `[V]` doğrulanmış veri (kaynak, dönem) · `[T]` tahmin (yöntem, P10–P50–P90) · `[D?]` doğrulanması gereken · `[H]` hipotez veya uzman yargısı. Güven: **Y**üksek / **O**rta / **D**üşük |
 | Para birimi | Aksi belirtilmedikçe cari ABD doları; AB kaynaklı veriler avro olarak verilir. 2025 ortalama kuru: 1 € = 1,1300 $ `[V]` (ECB, EXR.A.USD.EUR) |
@@ -60,13 +60,13 @@ Bu bulgular strateji tasarımını daha ilk fazda etkiliyor; ayrıntıları ve k
 | GİB | ✓ | NACE Rev. 2.1 Türkçe sınıf adları (2026) |
 | Eurostat'ta Türkiye: sanayi üretimi (STS), HICP ağırlıkları, ÜFE | ✓ | Ağustos–Eylül 2026'ya kadar; erken uyarı ve fiyat izleme için yedek |
 | Eurostat'ta Türkiye: yapısal işletme istatistikleri (SBS) | ✗ (veri yok) | NACE 4 haneli ölçek verisi için TÜİK şart |
-| OECD SDMX (ICIO/TiVA), Dünya Bankası API, WITS, CEPII (BACI), ECB | ✓ | |
+| OECD SDMX (ICIO/TiVA), Dünya Bankası API, WITS, CEPII (BACI), ECB | ✓; OECD ICIO dosyaları betikle 403 (Faz 1) | ICIO için elle indirme (VB-11) |
 | UN Comtrade | ✓ (genel önizleme API'si, kısıtlı) | Tam erişim için ücretsiz API anahtarı gerekir |
-| TCMB EVDS | ✓ | API anahtarı gerekir |
+| TCMB EVDS | ✓ | Faz 1: EVDS3 anonim arka ucu anahtarsız çalışıyor (`kod/evds3.py`) |
 | SBB, HMB, Sanayi ve Teknoloji Bakanlığı, SGK, İSO | ✓ | |
-| WTO web sitesi | ✓; ttd.wto.org ✗ (403) | Satır düzeyinde bağlı oranlar için WITS ve WTO TDF yolu denenecek |
-| TÜİK veri portalı, Resmî Gazete, mevzuat.gov.tr | ✗ (zaman aşımı) | TÜİK verileri için kullanıcı yüklemesi veya yedek kaynaklar (§4) |
-| ticaret.gov.tr | ✗ (502) | Ajanlar içeriği arama motoru önbelleği ve basın üzerinden doğruladı |
+| WTO web sitesi | ✓; ttd.wto.org ✗ (403) | Goods Schedules e-Kütüphanesinden HS2002 ve UR94 bağlı oran cetvelleri indirildi; HS2022 aktarımı VB-10 |
+| TÜİK veri portalı, Resmî Gazete, mevzuat.gov.tr | İlk tespitte ✗ (zaman aşımı); **Revizyon 1 ve Faz 1'de ✓** | TÜİK: Dağıtım Yönetim Sistemi arka ucu ve Veri Portalı API'si (anonim, `kod/tuik.py`); dış ticaret Qlik arayüzü başsız tarayıcıyla. Resmî Gazete: yavaş, yansıma kaynaklarla (OVP 2027–2029 metni) |
+| ticaret.gov.tr | Kesintili (502) | 2026 tarife ekleri yeniden denemeyle indirildi (`kod/tarife_tr.py`) |
 
 **Seçilen mod: araçlı mod** (web + kod + dosya). Hesaplamalar kodla yapılır, kod ve ara çıktılar depoda saklanır, web kaynakları künyesiyle verilir. **HEPSİNİ OTOMATİK** komutu verilirse fazlar durmadan dosyalara yazılır; her faz sonunda yine DURUM ÖZETİ üretilir.
 
@@ -198,8 +198,8 @@ Sınırlamalar: AB'nin spesifik vergileri ve tarım bileşenleri dahil değil (t
 | V-03 | Zaman çizelgesi | **İki takvim birlikte hesaplanır.** T2028: hazırlık 17.10.2026 → **T = 1 Ocak 2028** → T+60 = 1 Ocak 2033. T2029: hazırlık T−24 = 1 Ocak 2027 → **T = 1 Ocak 2029** → T+60 = 1 Ocak 2034. Vizyon 2035. T koşulludur: yeni çerçevenin yürürlük tarihidir. Kapılar §2A'da (T2028: T−9, T−6, T−2; T2029: T−12, T−6, T−3). Duyarlılık: T = 1 Ocak 2030 | Kullanıcı yanıtı (Revizyon 1) + `<temel_ilkeler>` 1 |
 | V-04 | Tercih edilen bitiş durumu | Faz 2'de S0–S5 karşılaştırmasıyla önerilecek; S2 ana tasarım hipotezi, S1 zorunlu karşı-olgu | Prompt varsayılanı |
 | V-05 | Enflasyon bütçesi (TÜFE) | Birinci tur kümülatif ≤ 50 baz puan (bp), herhangi bir yılda ≤ 30 bp; ikinci tur dahil kümülatif ≤ 100 bp. Hedef: net dezenflasyonist paket. Ölçüt: TÜFE genel (2025=100, COICOP 2018). Kur ve risk primi kanalı ayrı blok olarak gösterilir ve bütçeye sayılır | Prompt varsayılanı; kapsam için soru 5 |
-| V-06 | Cari denge hedefi | T+5'te (T2028'de 2033, T2029'da 2034) cari denge/GSYH ≥ %0; enerji ve altın hariç çekirdek dengede kalıcı fazla. GB paketinin katkısı ile tamamlayıcı politikaların katkısı ayrı gösterilir. Baz: 2025 −$30,3 mlr (−%1,9) `[V]` (OVP 2027–29); TCMB'nin Şubat 2026 ilk açıklaması −$25,2 mlr; fark Faz 1'de EVDS'den çözülecek `[D?]`. 2026 tahmini −$47,5 mlr (−%2,6) | OVP 2027–2029 (6.9.2026) |
-| V-07 | İstihdam kısıtı | T+3'te toplam imalat istihdamında net kayıp sıfır. Herhangi bir NACE sınıfında %5'i aşan kayıp otomatik destek tetikler. Ölçüm: SGK 4/a sigortalı (NACE 4 hane, aylık) ve TÜİK. Baz: imalatta ücretli çalışan 4,46 mn (2025 sonu) `[D?]` | Prompt varsayılanı |
+| V-06 | Cari denge hedefi | T+5'te (T2028'de 2033, T2029'da 2034) cari denge/GSYH ≥ %0; enerji ve altın hariç çekirdek dengede kalıcı fazla. GB paketinin katkısı ile tamamlayıcı politikaların katkısı ayrı gösterilir. Baz: 2025 −$30,3 mlr (−%1,9) `[V]` (EVDS3 −$30.276 mn; OVP 2027–29). TCMB'nin Şubat 2026 ilk açıklaması (−$25,2 mlr) birincil gelir giderindeki +$4,8 mlr revizyonla güncellendi (VB-07 kapandı). 2026 tahmini −$47,5 mlr (−%2,6). OVP patikası 2029'da −%1,6; T+5'te ≥ %0 için ek $25–48 mlr iyileşme gerekiyor `[H]` (`01_teshis.md` §3.6) | OVP 2027–2029 (6.9.2026) |
+| V-07 | İstihdam kısıtı | T+3'te toplam imalat istihdamında net kayıp sıfır. Herhangi bir NACE sınıfında %5'i aşan kayıp otomatik destek tetikler. Ölçüm: SGK 4/a sigortalı (NACE 4 hane, aylık) ve TÜİK. Baz: imalatta ücretli çalışan 4,46 mn (2025 sonu) `[D?]`; SGK 4/a imalat sigortalısı 4,03 mn (2025) `[V]`; YSHİ imalat çalışanı 5,03 mn (2024) `[V]`. S4 statik risk 207 bin (P10–P90: 135–297 bin) `[T]` (`01_teshis.md` §4) | Prompt varsayılanı |
 | V-08 | Kabiliyet kısıtı | `<temel_ilkeler>` 3 (a)–(d). (a) "kalıcı %30 düşüş" = 3 yıllık hareketli ortalamanın 2023–25 ortalamasına göre %30'dan fazla düşmesi. (b) Kritik eşik varsayılanı = etkin girişim sayısının 2025 düzeyinin %70'i veya en az 3 bağımsız üretici (hangisi yüksekse); sınıf kartında özelleştirilir | `[H]`; Faz 3'te sınıf bazında |
 | V-09 | Mali kısıt | Net mali maliyet (ek gümrük gelirleri düşülmüş) ≤ GSYH'nin %0,5'i/yıl. 2026'da ≈ $9,1 mlr, 2029'da ≈ $11,1 mlr (OVP GSYH patikası) | Prompt varsayılanı; OVP 2027–29 |
 | V-10 | Hukuki kısıt | DTÖ uyumu zorunlu. İstisna önerilirse dava ve misilleme riski fiyatlanır (DS583 ve DS629 emsalleri) | Prompt varsayılanı |
@@ -230,30 +230,30 @@ Sınırlamalar: AB'nin spesifik vergileri ve tarım bileşenleri dahil değil (t
 | # | Veri seti | Kaynak | Son dönem | Erişim (17.10.2026) | Kullanıldığı analiz | Yedek kaynak |
 |---|---|---|---|---|---|---|
 | 1 | AB–TR ticareti, CN8 × akış | Eurostat Comext DS-045409 | 2025 yıllık; Ağu 2026 aylık | ✓ API (2025 indirildi) | AB maruziyeti, rejim payları, `τ_AB` ağırlıkları, AME | UN Comtrade (AB beyanı) |
-| 2 | TR dış ticareti, GTİP12 × ülke × rejim (DİR, serbest bölge) | TÜİK | 2025; aylık 2026 | ✗ portal; **kullanıcı yüklemesi** | Bütün sınıf kartları, ithalat yapısı, DİR etkisi | UN Comtrade (TR beyanı, HS6), BACI |
-| 3 | Dünya ticareti, HS6 | CEPII BACI | 2023–2024 (HS22/HS17) | ✓ | RCA, rakip payları, PPML | UN Comtrade |
-| 4 | Yıllık Sanayi ve Hizmet İstatistikleri (NACE 4 hane: üretim, katma değer, istihdam, girişim, ölçek) | TÜİK | 2024 `[D?]` | ✗; **kullanıcı yüklemesi** | Ölçek, verimlilik, KS | Eurostat SBS'de TR yok → yedek yok; İSO 500 ve Sanayi Sicil kısmi |
+| 2 | TR dış ticareti, GTİP12 × ülke × rejim (DİR, serbest bölge) | TÜİK | 2025; aylık 2026 | ✓ TÜİK dış ticaret Qlik arayüzü (başsız tarayıcıyla) ve Veri Portalı bülten tabloları; **DİR rejim alanı yok** (VB-02) | Bütün sınıf kartları, ithalat yapısı, DİR etkisi | UN Comtrade (TR beyanı, HS6), BACI |
+| 3 | Dünya ticareti, HS6 | CEPII BACI | 2020–2024 (HS17, V202601) | ✓ (`kod/baci_ozet.py`) | RCA, rakip payları, PPML | UN Comtrade |
+| 4 | Yıllık Sanayi ve Hizmet İstatistikleri (NACE 4 hane: üretim, katma değer, istihdam, girişim, ölçek) | TÜİK | 2024 (sınıf); 2025 (Rev. 2.1 grup) | ✓ Dağıtım Yönetim Sistemi, anonim (`kod/f0b_tuik_yshi.py`) | Ölçek, verimlilik, KS | Eurostat SBS'de TR yok → yedek yok; İSO 500 ve Sanayi Sicil kısmi |
 | 5 | PRODTR (ürün düzeyi üretim) | TÜİK | 2024 `[D?]` | ✗ | Kabiliyet, ürün çeşitliliği | Sanayi Sicil |
-| 6 | Sanayi üretim endeksi | TÜİK; Eurostat `sts_inpr_m` | Ağu 2026 | ✓ Eurostat | Erken uyarı | — |
-| 7 | Girdi-çıktı (2023 arz-kullanım ve simetrik tablo, 64 sektör) | TÜİK (Ağustos 2025 revizyonu) `[D?]` | 2023 | ✗; **kullanıcı yüklemesi** | Leontief fiyat ve miktar, EDE, ERP | OECD ICIO 2025 baskısı (TR, 2022), Eurostat FIGARO |
-| 8 | TÜFE ağırlıkları ve alt endeksler (2025=100, COICOP 2018, 428 madde) | TÜİK | Eyl 2026 | ✗ | EDE, enflasyon yolu | Eurostat HICP ağırlıkları (TR, 2025) ✓ |
-| 9 | Yİ-ÜFE (CPA/NACE) | TÜİK; Eurostat `sts_inppd_m` | Eyl 2026 | ✓ Eurostat (toplam düzey) | Maliyet geçişkenliği | — |
-| 10 | Bölgesel istihdam ve ihracat (İBBS-2, il) | SGK, TİM, Ticaret Bakanlığı | 2025 | Kısmen (SGK ✓) | Bölgesel etki | SGK istatistik yıllığı |
-| 11 | Ödemeler dengesi (BPM6) | TCMB EVDS | Ağu 2026 | ✓ (anahtar gerekir) | Cari denge köprüsü | IMF BOP |
+| 6 | Sanayi üretim endeksi | TÜİK; Eurostat `sts_inpr_m` | Ağu 2026 | ✓ TÜİK DF_SANAYI_URETIM_ENDEKS_ALT_C (sınıf düzeyi, aylık) | Erken uyarı | — |
+| 7 | Girdi-çıktı (2023 arz-kullanım ve simetrik tablo, 64 sektör) | TÜİK | 2023 | ✓ Veri Portalı arama API'si (8 tablo indirildi) | Leontief fiyat ve miktar, EDE, ERP | OECD ICIO 2025 baskısı (TR, 2022), Eurostat FIGARO |
+| 8 | TÜFE ağırlıkları ve alt endeksler (2025=100, COICOP 2018, 428 madde) | TÜİK | Eyl 2026 | Kısmen ✓: COICOP 2018 2–5. düzey ağırlıkları (DF_TUFE_SDMX_TT04); madde ağırlıkları yok (VB-04) | EDE, enflasyon yolu | Eurostat HICP ağırlıkları (TR, 2025) ✓ |
+| 9 | Yİ-ÜFE (CPA/NACE) | TÜİK; Eurostat `sts_inppd_m` | Eyl 2026 | ✓ TÜİK DF_UFE_V6 | Maliyet geçişkenliği | — |
+| 10 | Bölgesel istihdam ve ihracat (İBBS-2, il) | SGK, TİM, Ticaret Bakanlığı | 2025 | Kısmen: SGK yıllığı il × NACE 2 hane ✓ (`kod/f1e_bolgesel.py`); 4 hane yok; il ihracat bileşimi VB-17 | Bölgesel etki | SGK istatistik yıllığı |
+| 11 | Ödemeler dengesi (BPM6) | TCMB EVDS | Ağu 2026 | ✓ EVDS3 anonim arka uç, anahtar gerekmiyor (`kod/evds3.py`) | Cari denge köprüsü | IMF BOP |
 | 12 | Sektör bilançoları (NACE) | TCMB | 2024 | ✓ web | Finansal kırılganlık, KOBİ finansmanı | KAP |
 | 13 | KKO (NACE 2 hane), iktisadi yönelim anketi | TCMB | Eyl–Eki 2026 | ✓ | Erken uyarı | — |
-| 14 | Doğrudan yatırım (stok, akım, gelir) | TCMB | 2025 | ✓ | Çapa yatırımcı, birincil gelir | OECD FDI |
+| 14 | Doğrudan yatırım (stok, akım, gelir) | TCMB | 2025 | ✓ EVDS3 (akım ve UYP stoku); ülke dağılımı VB-14 | Çapa yatırımcı, birincil gelir | OECD FDI |
 | 15 | Kur geçişkenliği ve endeksleme çalışmaları | TCMB çalışma tebliğleri, Enflasyon Raporları | 2018–2026 | ✓ | ρ, φ | Akademik literatür |
-| 16 | Uygulanan tarife cetveli (GTİP12, OGT + İGV) ve 2026 İthalat Rejimi Kararı | Ticaret Bakanlığı, Resmî Gazete (31.12.2025, No. 33124) | 2026 | ✗; **kullanıcı yüklemesi** | Tarife cetveli taslağı, ERP | WTO IDB/TDF (uygulanan), WITS TRAINS, ITC MAcMap |
+| 16 | Uygulanan tarife cetveli (GTİP12, OGT + İGV) ve 2026 İthalat Rejimi Kararı | Ticaret Bakanlığı, Resmî Gazete (31.12.2025, No. 33124) | 2026 | ✓ Bakanlığın konsolide ekleri (`kod/tarife_tr.py`; bağlantı kesintili, yeniden deneme) | Tarife cetveli taslağı, ERP | WTO IDB/TDF (uygulanan), WITS TRAINS, ITC MAcMap |
 | 17 | Türkiye'nin ticaret savunma önlemleri | Ticaret Bakanlığı | 2026 | ✗ (502) | Kamu yararı testi, EDE | WTO I-TIP, Global Trade Alert |
 | 18 | AB tarifesi (CN 2026, Uyg. Tüzüğü (AB) 2025/1926) ve TARIC | AB | 2026 | ✓ EUR-Lex | `τ_AB`, tepe tarifeler, AVE | WITS, MAcMap |
 | 19 | Menşe kuralları (revize PEM, Karar 1/2023) | PEM Ortak Komitesi, DG TAXUD, Access2Markets | 2025– | ✓ | c_RoO, p_uyum, ürün ağacı simülasyonu | — |
 | 20 | AB'nin Türkiye'ye karşı ticaret savunması | DG TRADE, TARIC | 2026 | ✓ | Risk, S5 | — |
 | 21 | SKDM varsayılan değerleri (Uyg. Tüzüğü 2025/2621), sertifika fiyatları | DG TAXUD | 2026 | ✓ | G arketipi, AB pazarında karbon maliyeti | — |
 | 22 | AB çelik rejimi (Tüzük 2026/1384) ve kota tahsisleri | DG TRADE, TAXUD | 2026 | ✓ | 24.xx sınıfları | Sektör basını (GMK, SteelOrbis) |
-| 23 | DTÖ bağlı ve uygulanan oranlar (satır düzeyi) | WTO TDF/IDB | 2025 | Kısmen (ttd ✗) | Bağlı oran kontrolü, politika alanı haritası | WITS ✓ |
+| 23 | DTÖ bağlı ve uygulanan oranlar (satır düzeyi) | WTO TDF/IDB | 2025 | Kısmen: HS2002 sertifikalı ve UR94 cetvelleri (WTO e-Kütüphane, anahtarsız); HS2022 için TTD (captcha) veya API anahtarı (VB-10) | Bağlı oran kontrolü, politika alanı haritası | WITS ✓ |
 | 24 | ITA-I kapsamı (WT/LET/173) | WTO | — | ✓ | 26.xx, 27.xx kontrolü | — |
-| 25 | OECD ICIO / TiVA | OECD | 1995–2022 (2025 baskısı) | ✓ | İthal girdi içeriği, yurt içi katma değer, ERP katsayıları | Eurostat FIGARO |
+| 25 | OECD ICIO / TiVA | OECD | 1995–2022 (2025 baskısı) | ✗ betikle 403; elle indirme (VB-11) | İthal girdi içeriği, yurt içi katma değer, ERP katsayıları | Eurostat FIGARO |
 | 26 | GTAP 12 | Purdue GTAP | 2017/2019/2023 referans yılları | Lisanslı | CGE | GE-PPML + literatür |
 | 27 | Ürün karmaşıklığı (PCI), ürün uzayı | Harvard Growth Lab Atlas | 2023–2024 | ✓ | KS | OEC |
 | 28 | UNIDO INDSTAT (ISIC 4 hane) | UNIDO | 2023 | ✓ | AB'ye göre verimlilik | Eurostat SBS (AB tarafı) |
@@ -265,18 +265,22 @@ Sınırlamalar: AB'nin spesifik vergileri ve tarım bileşenleri dahil değil (t
 | 34 | Çapa yatırımcı ve sektör verileri (İSO 500 ve İkinci 500, OSD, TAYSAD, TÇÜD, TÜRKBESD, İTKİB) | Sanayi kuruluşları | 2025 | ✓ (web) | Çapa yatırımcı analizi | Şirket raporları |
 | 35 | Brexit ampirik kanıtı (tercih kullanım oranları, firma çıkışı) | DBT/HMRC, CEP/LSE, OBR | 2021–2026 | ✓ | p_uyum, KOBİ etkisi, S3 kalibrasyonu | — |
 | 36 | NACE, CPA, CN yazışma tabloları | Eurostat / EU Vocabularies, GİB | 2025–2026 | ✓ indirildi | Eşleştirme | UN/WITS |
+| 37 | Türkiye dış ticareti, HS6 ve HS2 × ülke (1990–2025) | UN Comtrade genel önizleme API'si | 2025 | ✓ anahtarsız (`kod/comtrade_tr_hs6.py`, `kod/f1a_ab_ticaret.py`) | Teşhis, AB payı, ihracat bileşimi | TÜİK |
+| 38 | Ortak ülke MFN tarifeleri (HS6) | WITS/TRAINS SDMX API | 2022–2023 | ✓ anahtarsız (`kod/f1c_sta_asimetrisi.py`) | STA asimetrisi, yeni STA önceliklendirme | WTO IDB |
+| 39 | Hizmet ticareti, ortak ülke × EBOPS | TÜİK DF_UHTI_HIZMET_COGRAFI_C | 2016–2025 | ✓ (`kod/f1b_odemeler_dengesi.py`); seyahat ülke dağılımı yok (VB-12) | AB ile hizmet dengesi | Eurostat BOP_ITS |
+| 40 | Orta Vadeli Program makro çerçevesi (Tablo 1.1) | SBB, Resmî Gazete 6.9.2026 | 2025–2029 | ✓ | Makro taban, cari denge hedef boşluğu | — |
 
-**İlk veri boşlukları ve kapatma planı.** Bu liste her fazda güncellenir; Faz 9'da ek olarak verilir.
+**İlk veri boşlukları ve kapatma planı.** Bu liste her fazda güncellenir; Faz 9'da ek olarak verilir. **Güncel liste (VB-01…VB-18): [`01_teshis.md`](01_teshis.md) §8.**
 
 | No | Boşluk | Etkilediği analiz | Kapatma yolu (veri, kurum, süre) |
 |---|---|---|---|
-| VB-01 | NACE 4 haneli üretim, katma değer, istihdam ve girişim sayısı | Ölçek, KS, istihdam, kabiliyet eşiği | TÜİK YSHİ 2019–2024 tabloları veya mikro veri (TÜİK Mikro Veri Merkezi); kullanıcı yüklerse hemen; resmî başvuruyla 4–8 hafta |
-| VB-02 | GTİP12 × ülke × rejim dış ticareti | DİR etkisi, ithal girdi, menşe | TÜİK dış ticaret veri tabanı veya Ticaret Bakanlığı; 1–2 hafta. Yedek: UN Comtrade HS6 (anahtar ücretsiz) |
-| VB-03 | 2023 girdi-çıktı tabloları (64 sektör) | Enflasyon (EDE), ERP | TÜİK; kullanıcı yüklemesi. Yedek: OECD ICIO 2022 (hemen) |
-| VB-04 | TÜFE madde ağırlıkları (428 madde) ve COICOP–CPA köprüsü | EDE, ρ | TÜİK; yedek: Eurostat HICP (ECOICOP) ağırlıkları |
-| VB-05 | Uygulanan tarife ve İGV listesi (GTİP12, 2026) | Tarife cetveli, ERP | Ticaret Bakanlığı veya Resmî Gazete ekleri (CK 31.12.2025 ve 11.7.2026 değişikliği); kullanıcı yüklemesi |
+| VB-01 | **Kapandı (Faz 0 Rev. 1):** NACE 4 haneli üretim, katma değer, istihdam ve girişim sayısı | Ölçek, KS, istihdam, kabiliyet eşiği | TÜİK YSHİ 2019–2024 tabloları veya mikro veri (TÜİK Mikro Veri Merkezi); kullanıcı yüklerse hemen; resmî başvuruyla 4–8 hafta |
+| VB-02 | **Kısmen (Faz 1):** GTİP12 × ülke × rejim dış ticareti; DİR alanı eksik | DİR etkisi, ithal girdi, menşe | TÜİK dış ticaret veri tabanı veya Ticaret Bakanlığı; 1–2 hafta. Yedek: UN Comtrade HS6 (anahtar ücretsiz) |
+| VB-03 | **Kapandı (Faz 1):** 2023 girdi-çıktı tabloları (64 sektör) | Enflasyon (EDE), ERP | TÜİK Veri Portalı (Faz 1'de 8 tablo indirildi). Yedek: OECD ICIO 2022 |
+| VB-04 | **Kısmen:** TÜFE madde ağırlıkları (428 madde) ve COICOP–CPA köprüsü; 2–5. düzey ağırlıklar var | EDE, ρ | TÜİK; yedek: Eurostat HICP (ECOICOP) ağırlıkları |
+| VB-05 | **Kapandı (Faz 0 Rev. 1):** Uygulanan tarife ve İGV listesi (GTİP12, 2026) | Tarife cetveli, ERP | Ticaret Bakanlığı konsolide ekleri (`kod/tarife_tr.py`, `kod/f0e_tarifeler.py`) |
 | VB-06 | 1/95 Ek 1 (İTÜ listesi, 1/2007 değişikliğiyle) satır içeriği | İTÜ/GB ayrımı (tütün, içecekler) | EUR-Lex'te tablo görüntü olarak; Ticaret Bakanlığı İTÜ mevzuatı veya TARIC'teki Türkiye tercih satırları; Faz 3 |
-| VB-07 | 2025 cari denge tutarsızlığı (−$25,2 mlr ilk açıklama / −$30,3 mlr OVP) | Cari denge köprüsü bazı | TCMB EVDS revize seri; Faz 1 |
+| VB-07 | **Kapandı (Faz 1):** 2025 cari denge tutarsızlığı (−$25,2 mlr ilk açıklama / −$30,3 mlr OVP); EVDS3 −$30.276 mn, fark birincil gelir revizyonu | Cari denge köprüsü bazı | TCMB EVDS revize seri; Faz 1 |
 | VB-08 | Türkiye'nin AB çelik kotası toplam tahsisi (basında 2,86 Mt) | 24.xx | DG TAXUD kota tablosu; Faz 3 |
 | VB-09 | Sektör bazında çapa yatırımcı ve tedarikçi ağı verisi | Çapa yatırımcı tutma planı, tedarikçi çarpanı | OSD, TAYSAD, TÜRKBESD ve Sanayi Sicil; Faz 4 |
 
