@@ -160,7 +160,32 @@ Kapıların takvimi iki seçenekte farklıdır:
 | K2 | 1.7.2027 (T−6) | 1.7.2028 (T−6) | Sanayi mallarında sıfır tarife ve menşe kuralları metni üzerinde uzlaşı; yeni tarife cetveli ilan edilmiş |
 | K3 | 1.11.2027 (T−2) | 1.10.2028 (T−3) | Geçici uygulama kararı veya geçiş düzenlemesi imzalanmış; gümrük ve menşe sistemleri test edilmiş |
 
-**Sonuç:** T2028 ancak AB geçiş düzenlemesini veya ince STA'yı kabul ederse "boşluksuz geçiş" ilkesiyle bağdaşır. Aksi halde T2028 fiilen bir **baskı tarihi** işlevi görür: Türkiye anlaşmasız çıkışa inandırıcı biçimde hazırsa pazarlık kaldıracı olur, hazır değilse maliyetlidir. Anlaşmasız çıkışın maliyeti Faz 3 ve 6'da her iki takvim için ayrı ayrı hesaplanacak.
+**Sonuç:** T2028 ancak AB geçiş düzenlemesini veya ince STA'yı kabul ederse "boşluksuz geçiş" ilkesiyle bağdaşır. Aksi halde T2028 fiilen bir **baskı tarihi** işlevi görür: Türkiye anlaşmasız çıkışa inandırıcı biçimde hazırsa pazarlık kaldıracı olur, hazır değilse maliyetlidir.
+
+### Anlaşmasız çıkışın statik tarife duvarı (ön hesap)
+
+Hesap 2025 ticaret akımlarına (Comext, CN8) 2026 MFN oranlarını uyguluyor. AB tarafında Uyg. Tüzüğü (AB) 2025/1926'nın konvansiyonel oranları, Türkiye tarafında Ticaret Bakanlığı'nın 2026 konsolide İthalat Rejimi ve İGV ekleri ("Diğer Ülkeler" sütunu) kullanıldı. Oranlar ticaret değerinin %98,6–99,7'sinde CN8 düzeyinde eşleşiyor `[V]`. Tutar statik ilk tur gümrük vergisidir; hacim etkisi tek σ'lı kısmi denge tahminidir `[T]`, Güven: O. Kod: `kod/f0d_s4_tarife_duvari.py`.
+
+| Yön ve kapsam | Ticaret 2025 (mlr €) | Vergi (mlr €) | Ağırlıklı oran | Hacim etkisi σ = 3 / 5 / 8 (mlr €) |
+|---|---|---|---|---|
+| TR→AB, GB + İTÜ | 93,4 | **5,46** | %5,85 | −13,8 / −21,2 / −30,4 |
+| TR→AB, + tarım tercihleri kaybı | 99,6 | 6,03 | %6,09 | −15,1 / −23,2 / −33,1 |
+| AB→TR, GB + İTÜ, mevcut İGV AB'ye de uygulanırsa | 104,6 | **10,66** | %10,20 | −22,5 / −32,7 / −43,8 |
+| AB→TR, GB + İTÜ, İGV uygulanmazsa | 104,6 | 4,93 | %4,71 | −12,5 / −19,4 / −28,0 |
+
+En büyük kalemler:
+
+- **29.10 otomotiv:** AB'de €1,82 mlr vergi (%10,9; kamyonlarda %22). Hacim kaybı σ = 5'te −€6,7 mlr.
+- **Giyim (14.13, 14.14, 14.39):** AB'de €0,86 mlr (%12). İGV uygulanırsa Türkiye'nin AB giyimine uyguladığı oran %50'ye çıkıyor.
+- **27.11, 24.42, 13.92:** bunları 19.20 ve 22.21 izliyor (sınıf düzeyi: `veri/s4_tarife_duvari_sinif.csv`).
+
+Üç sonuç:
+
+1. Anlaşmasız çıkış Türk ihracatçısına yılda ≈€5,5 mlr doğrudan vergi yükler. Kısmi denge hesabına göre AB'ye ihracat −%15 ile −%33 arasında düşebilir; bu, ticaretin başka pazarlara sapmasından önceki değerdir.
+2. Türkiye mevcut İGV rejimini korursa AB'den ithalata ≈€10,7 mlr vergi biner. Bu, ithal girdi ve tüketim fiyatları üzerinden enflasyon bütçesini tek başına aşabilecek bir şoktur; büyüklüğü Faz 6'da girdi-çıktı modeliyle hesaplanacak. İGV ve tarife cetvelinin T'den önce yeniden tasarlanması (§2A, adım 9) bu yüzden zorunludur.
+3. Bu tutarlar iki takvimde aynıdır; takvimler bu duvarla karşılaşma olasılığında ayrışır.
+
+Sınırlamalar: AB'nin spesifik vergileri ve tarım bileşenleri dahil değil (tarım ve İTÜ'de eksik tahmin). Ticaret savunması önlemleri ve kotalar dahil değil. σ sektörlere göre değişir; Faz 3'te sınıf bazında hesaplanacak.
 
 ---
 

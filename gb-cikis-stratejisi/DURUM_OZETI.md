@@ -21,10 +21,10 @@ Yeni bir sohbette devam etmek için ana prompt ile bu dosyayı birlikte verin. A
 - TR→AB ihracatı €103,4 mlr (2025): GB %89,3, tarım %6,0, AKÇT %3,3, İTÜ %1,3.
 - T2028'de tam DCFTA mümkün değil (≈6 aylık müzakere penceresi). En iyi sonuç ya geçici uygulamalı ince STA ya da geçiş düzenlemesi. Hasmane AB varsayımında anlaşmasız çıkış olasılığı T2028'de %45–70, T2029'da %25–45 `[H]`.
 - T2028 SKDM mansap genişlemesi, çelikte eritme-döküm kuralı ve 2028 genel seçimleriyle çakışıyor.
-- S4'ün statik tarife duvarı (ön hesap, 2025 ticareti, WITS 2023 MFN oranları):
-  - Türk ihracatçıları AB'de ≈€5,4 mlr vergi öder (ortalama %5,8). Kısmi denge etkisi −€13,6 / −20,9 / −29,9 mlr (σ = 3 / 5 / 8).
-  - AB mallarına İGV de uygulanırsa Türkiye'nin vergi tahsilatı ≈€9,6 mlr (%9,2); İGV hariç ≈€4,7 mlr. Bu fark tarife cetvelini ve İGV'yi T'den önce yeniden tasarlamayı enflasyon açısından zorunlu kılıyor.
-  - En büyük yük 29.10'da: €1,9 mlr vergi.
+- S4'ün statik tarife duvarı (ön hesap; 2025 ticareti, 2026 MFN oranları, CN8 düzeyinde):
+  - Türk ihracatçıları AB'de ≈€5,5 mlr vergi öder (ortalama %5,85). Kısmi denge etkisi −€13,8 / −21,2 / −30,4 mlr (σ = 3 / 5 / 8).
+  - AB mallarına İGV de uygulanırsa Türkiye'nin vergi tahsilatı ≈€10,7 mlr (%10,2); İGV hariç ≈€4,9 mlr. Bu fark tarife cetvelini ve İGV'yi T'den önce yeniden tasarlamayı enflasyon açısından zorunlu kılıyor.
+  - En büyük yük 29.10'da: €1,8 mlr vergi.
 - Hukuk: Ankara Anlaşması'nda ve 1/95'te fesih hükmü yok; Türkiye VCLT'ye taraf değil; md. 207 "yalnızca AB" yolu veto riskini azaltır. Hurda koruması AKÇT STA'sında (md. 3–4).
 - Diğer: IAA'daki GB/STA eşdeğerliği kırmızı çizgi. ABD 301'de Türkiye %12,5 (AB %10 tavanlı). DS629 bağlı satırlarda tarife artışını engelliyor.
 - Makro: OVP 2027–29'a göre 2026 cari açık −%2,6 GSYH; TÜFE Eylül 2026'da %29,73.
@@ -33,7 +33,7 @@ Yeni bir sohbette devam etmek için ana prompt ile bu dosyayı birlikte verin. A
 
 **Açık konular.**
 - S-5 için varsayılan kullanılıyor.
-- Tarife verisi: AB CN8 ve AVE ile tarife duvarının kesinleştirilmesi; Türkiye'nin 2026 cetveli ve İGV listesi.
+- Tarife verisi: AB'nin spesifik vergileri için ad valorem eşdeğerleri; DTÖ bağlı oranlarının tam listesi (WTO TTD için e-posta ve captcha adımı veya ücretsiz WTO API anahtarı gerekiyor).
 - 2025 cari denge revizyonu.
 - 1/95 Ek 1 satır içeriği.
 
