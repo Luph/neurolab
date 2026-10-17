@@ -1,0 +1,331 @@
+nace2,nace21,esleme_tipi_resmi,nace2_ad_en,nace21_ad_en,nace21_ad_tr
+05.10,05.10,1:1,Mining of hard coal,Mining of hard coal,Taş kömürü madenciliği
+05.20,05.20,1:1,Mining of lignite,Mining of lignite,Linyit madenciliği
+06.10,06.10,1:1,Extraction of crude petroleum,Extraction of crude petroleum,Ham petrol çıkarımı
+06.20,06.20,1:1,Extraction of natural gas,Extraction of natural gas,Doğal gaz çıkarımı
+07.10,07.10,1:1,Mining of iron ores,Mining of iron ores,Demir cevherleri madenciliği
+07.21,07.21,1:1,Mining of uranium and thorium ores,Mining of uranium and thorium ores,Uranyum ve toryum cevherleri madenciliği
+07.29,07.29,1:1,Mining of other non-ferrous metal ores,Mining of other non-ferrous metal ores,Diğer demir dışı metal cevherleri madenciliği
+08.11,08.11,1:1,"Quarrying of ornamental and building stone, limestone, gypsum, chalk and slate","Quarrying of ornamental stone, limestone, gypsum, slate and other stone","Süs taşı, kireç taşı, alçı taşı, arduvaz ve diğer taşların taş ocakçılığı"
+08.12,08.12,1:1,Operation of gravel and sand pits; mining of clays and kaolin,Operation of gravel and sand pits and mining of clay and kaolin,Çakıl ve kum ocaklarının işletilmesi ve kil ve kaolin madenciliği
+08.91,08.91,1:1,Mining of chemical and fertiliser minerals,Mining of chemical and fertiliser minerals,Kimyasal ve gübreleme amaçlı mineral madenciliği
+08.92,08.92,1:1,Extraction of peat,Extraction of peat,Turba çıkarımı
+08.93,08.93,1:1,Extraction of salt,Extraction of salt,Tuz çıkarımı
+08.99,08.99,1:1,Other mining and quarrying n.e.c.,Other mining and quarrying n.e.c.,Başka yerde sınıflandırılmamış diğer madencilik ve taş ocakçılığı
+09.10,09.10,1:1,Support activities for petroleum and natural gas extraction,Support activities for petroleum and natural gas extraction,Petrol ve doğal gaz çıkarımını destekleyici faaliyetler
+09.90,09.90,1:1,Support activities for other mining and quarrying,Support activities for other mining and quarrying,Madencilik ve taş ocakçılığını destekleyici diğer faaliyetler
+10.11,10.11,1:1,Processing and preserving of meat,"Processing and preserving of meat, except of poultry meat",Etin işlenmesi ve saklanması (mezbahacılık) (kümes hayvanlarının eti hariç)
+10.12,10.12,1:1,Processing and preserving of poultry meat,Processing and preserving of poultry meat,Kümes hayvanları etlerinin işlenmesi ve saklanması
+10.13,10.13,1:1,Production of meat and poultry meat products,Production of meat and poultry meat products,Et ve kümes hayvanları etlerinden üretilen ürünlerin imalatı
+10.20,10.20,1:1,"Processing and preserving of fish, crustaceans and molluscs","Processing and preserving of fish, crustaceans and molluscs","Balık, kabuklu deniz hayvanları ve yumuşakçaların işlenmesi ve saklanması"
+10.31,10.31,1:1,Processing and preserving of potatoes,Processing and preserving of potatoes,Patatesin işlenmesi ve saklanması
+10.32,10.32,1:1,Manufacture of fruit and vegetable juice,Manufacture of fruit and vegetable juice,Sebze ve meyve suyu imalatı
+10.39,10.39,1:1,Other processing and preserving of fruit and vegetables,Other processing and preserving of fruit and vegetables,Meyve ve sebzelerin diğer şekillerde işlenmesi ve korunması
+10.41,10.41,1:1,Manufacture of oils and fats,Manufacture of oils and fats,Sıvı ve katı yağ imalatı
+10.42,10.42,1:1,Manufacture of margarine and similar edible fats,Manufacture of margarine and similar edible fats,Margarin ve benzeri yenilebilir katı yağların imalatı
+10.51,10.51,1:1,Operation of dairies and cheese making,Manufacture of dairy products,Süt ürünleri imalatı
+10.52,10.52,1:1,Manufacture of ice cream,Manufacture of ice cream and other edible ice,Dondurma ve diğer yenilebilir buzların imalatı
+10.61,10.61,6:6,Manufacture of grain mill products,Manufacture of grain mill products,Öğütülmüş hububat ve sebze ürünleri imalatı
+10.62,10.62,6:6,Manufacture of starches and starch products,Manufacture of starches and starch products,Nişasta ve nişastalı ürünlerin imalatı
+10.71,10.71,6:6,Manufacture of bread; manufacture of fresh pastry goods and cakes,Manufacture of bread; manufacture of fresh pastry goods and cakes,"Ekmek, taze pastane ürünleri ve taze kek imalatı"
+10.72,10.72,6:6,Manufacture of rusks and biscuits; manufacture of preserved pastry goods and cakes,"Manufacture of rusks, biscuits, preserved pastries and cakes","Peksimet, bisküvi, dayanıklı pastane ürünleri ve kek imalatı"
+10.73,10.73,6:6,"Manufacture of macaroni, noodles, couscous and similar farinaceous products",Manufacture of farinaceous products,"Makarna, şehriye, kuskus ve benzeri unlu mamullerin imalatı"
+10.81,10.81,1:1,Manufacture of sugar,Manufacture of sugar,Şeker imalatı
+10.82,10.82,1:1,"Manufacture of cocoa, chocolate and sugar confectionery","Manufacture of cocoa, chocolate and sugar confectionery","Kakao, çikolata ve şekerleme imalatı"
+10.83,10.83,1:1,Processing of tea and coffee,Processing of tea and coffee,Kahve ve çayın işlenmesi
+10.84,10.84,1:1,Manufacture of condiments and seasonings,Manufacture of condiments and seasonings,"Baharat, sos, sirke ve diğer çeşni maddelerinin imalatı"
+10.85,10.85,1:1,Manufacture of prepared meals and dishes,Manufacture of prepared meals and dishes,Hazır yemeklerin imalatı
+10.86,10.61,6:6,Manufacture of homogenised food preparations and dietetic food,Manufacture of grain mill products,Öğütülmüş hububat ve sebze ürünleri imalatı
+10.86,10.62,6:6,Manufacture of homogenised food preparations and dietetic food,Manufacture of starches and starch products,Nişasta ve nişastalı ürünlerin imalatı
+10.86,10.71,6:6,Manufacture of homogenised food preparations and dietetic food,Manufacture of bread; manufacture of fresh pastry goods and cakes,"Ekmek, taze pastane ürünleri ve taze kek imalatı"
+10.86,10.72,6:6,Manufacture of homogenised food preparations and dietetic food,"Manufacture of rusks, biscuits, preserved pastries and cakes","Peksimet, bisküvi, dayanıklı pastane ürünleri ve kek imalatı"
+10.86,10.73,6:6,Manufacture of homogenised food preparations and dietetic food,Manufacture of farinaceous products,"Makarna, şehriye, kuskus ve benzeri unlu mamullerin imalatı"
+10.86,10.86,6:6,Manufacture of homogenised food preparations and dietetic food,Manufacture of homogenised food preparations and dietetic food,Homojenize gıda müstahzarları ve diyetetik gıdaların imalatı
+10.89,10.89,2:2,Manufacture of other food products n.e.c.,Manufacture of other food products n.e.c.,Başka yerde sınıflandırılmamış diğer gıda maddelerinin imalatı
+10.89,11.07,2:2,Manufacture of other food products n.e.c.,Manufacture of soft drinks and bottled waters,Alkolsüz içecek ve şişelenmiş su imalatı
+10.91,10.91,1:1,Manufacture of prepared feeds for farm animals,Manufacture of prepared feeds for farm animals,Çiftlik hayvanları için hazır yem imalatı
+10.92,10.92,1:1,Manufacture of prepared pet foods,Manufacture of prepared pet foods,Ev hayvanları için hazır gıda imalatı
+11.01,11.01,1:1,"Distilling, rectifying and blending of spirits","Distilling, rectifying and blending of spirits","Alkollü içeceklerin damıtılması, arıtılması ve harmanlanması"
+11.02,11.02,1:1,Manufacture of wine from grape,Manufacture of wine from grape,Üzümden şarap imalatı
+11.03,11.03,1:1,Manufacture of cider and other fruit wines,Manufacture of cider and other fruit fermented beverages,Elma şarabı ve diğer fermente meyve içeceklerinin imalatı
+11.04,11.04,1:1,Manufacture of other non-distilled fermented beverages,Manufacture of other non-distilled fermented beverages,Diğer damıtılmamış fermente içeceklerin imalatı
+11.05,11.05,1:1,Manufacture of beer,Manufacture of beer,Bira imalatı
+11.06,11.06,1:1,Manufacture of malt,Manufacture of malt,Malt imalatı
+11.07,11.07,2:2,Manufacture of soft drinks; production of mineral waters and other bottled waters,Manufacture of soft drinks and bottled waters,Alkolsüz içecek ve şişelenmiş su imalatı
+12.00,12.00,1:1,Manufacture of tobacco products,Manufacture of tobacco products,Tütün ürünleri imalatı
+13.10,13.10,1:1,Preparation and spinning of textile fibres,Preparation and spinning of textile fibres,Tekstil elyafının hazırlanması ve bükülmesi
+13.20,13.20,4:4,Weaving of textiles,Weaving of textiles,Dokuma
+13.20,13.96,4:4,Weaving of textiles,Manufacture of other technical and industrial textiles,Diğer teknik ve endüstriyel tekstillerin imalatı
+13.20,23.99,4:4,Weaving of textiles,Manufacture of other non-metallic mineral products n.e.c.,Başka yerde sınıflandırılmamış metalik olmayan diğer mineral ürünlerin imalatı
+13.30,13.30,4:5,Finishing of textiles,Finishing of textiles,Tekstil ürünlerinin bitirilmesi
+13.91,13.91,1:1,Manufacture of knitted and crocheted fabrics,Manufacture of knitted and crocheted fabrics,Örgü (triko) veya tığ işi (kroşe) kumaşların imalatı
+13.92,13.92,4:4,"Manufacture of made-up textile articles, except apparel",Manufacture of household textiles and made-up furnishing articles,Ev tekstili ve hazır mefruşat ürünleri imalatı
+13.92,13.96,4:4,"Manufacture of made-up textile articles, except apparel",Manufacture of other technical and industrial textiles,Diğer teknik ve endüstriyel tekstillerin imalatı
+13.93,13.93,1:1,Manufacture of carpets and rugs,Manufacture of carpets and rugs,Halı ve kilim imalatı
+13.94,13.94,1:1,"Manufacture of cordage, rope, twine and netting","Manufacture of cordage, rope, twine and netting","Halat, urgan, kınnap ve ağ imalatı"
+13.95,13.95,1:1,"Manufacture of non-wovens and articles made from non-wovens, except apparel",Manufacture of non-wovens and non-woven articles,Dokusuz kumaşların ve dokusuz kumaştan yapılan ürünlerin imalatı
+13.96,13.96,4:4,Manufacture of other technical and industrial textiles,Manufacture of other technical and industrial textiles,Diğer teknik ve endüstriyel tekstillerin imalatı
+13.99,13.99,1:1,Manufacture of other textiles n.e.c.,Manufacture of other textiles n.e.c.,Başka yerde sınıflandırılmamış diğer tekstillerin imalatı
+14.11,14.24,1:2,Manufacture of leather clothes,Manufacture of leather clothes and fur apparel,Deri giysi ve kürk giysi imalatı
+14.12,14.23,1:1,Manufacture of workwear,Manufacture of workwear,İş giysisi imalatı
+14.13,14.10,4:5,Manufacture of other outerwear,Manufacture of knitted and crocheted apparel,Örme (trikotaj) ve tığ işi (kroşe) giyim eşyası imalatı
+14.13,14.21,4:5,Manufacture of other outerwear,Manufacture of outerwear,Dış giyim imalatı
+14.14,14.10,4:5,Manufacture of underwear,Manufacture of knitted and crocheted apparel,Örme (trikotaj) ve tığ işi (kroşe) giyim eşyası imalatı
+14.14,14.21,4:5,Manufacture of underwear,Manufacture of outerwear,Dış giyim imalatı
+14.14,14.22,4:5,Manufacture of underwear,Manufacture of underwear,İç giyim imalatı
+14.19,14.10,4:5,Manufacture of other wearing apparel and accessories,Manufacture of knitted and crocheted apparel,Örme (trikotaj) ve tığ işi (kroşe) giyim eşyası imalatı
+14.19,14.21,4:5,Manufacture of other wearing apparel and accessories,Manufacture of outerwear,Dış giyim imalatı
+14.19,14.22,4:5,Manufacture of other wearing apparel and accessories,Manufacture of underwear,İç giyim imalatı
+14.19,14.29,4:5,Manufacture of other wearing apparel and accessories,Manufacture of other wearing apparel and accessories n.e.c.,Başka yerde sınıflandırılmamış diğer giyim eşyası ve aksesuarların imalatı
+14.20,14.24,1:2,Manufacture of articles of fur,Manufacture of leather clothes and fur apparel,Deri giysi ve kürk giysi imalatı
+14.31,14.10,4:5,Manufacture of knitted and crocheted hosiery,Manufacture of knitted and crocheted apparel,Örme (trikotaj) ve tığ işi (kroşe) giyim eşyası imalatı
+14.39,14.10,4:5,Manufacture of other knitted and crocheted apparel,Manufacture of knitted and crocheted apparel,Örme (trikotaj) ve tığ işi (kroşe) giyim eşyası imalatı
+15.11,15.11,1:1,Tanning and dressing of leather; dressing and dyeing of fur,"Tanning, dressing, dyeing of leather and fur","Deri ve kürkün tabaklanması, işlenmesi ve boyanması"
+15.12,15.12,1:1,"Manufacture of luggage, handbags and the like, saddlery and harness","Manufacture of luggage, handbags, saddlery and harness of any material","Bavul, el çantası, saraçlık ve koşum takımı imalatı (her tür malzemeden)"
+15.20,15.20,20:18,Manufacture of footwear,Manufacture of footwear,"Ayakkabı, bot, terlik vb. imalatı"
+16.10,16.11,2:1,Sawmilling and planing of wood,Sawmilling and planing of wood,Ağaçların biçilmesi ve planyalanması
+16.10,16.12,2:1,Sawmilling and planing of wood,Processing and finishing of wood,Ahşabın işlenmesi ve bitirilmesi
+16.21,16.21,20:18,Manufacture of veneer sheets and wood-based panels,Manufacture of veneer sheets and wood-based panels,Ahşap kaplama paneli ve ağaç esaslı panel imalatı
+16.21,16.27,20:18,Manufacture of veneer sheets and wood-based panels,Finishing of wooden products,Ahşap ürünlerin bitirilmesi
+16.22,16.22,20:18,Manufacture of assembled parquet floors,Manufacture of assembled parquet floors,Birleştirilmiş parke yer döşemelerinin imalatı
+16.22,16.27,20:18,Manufacture of assembled parquet floors,Finishing of wooden products,Ahşap ürünlerin bitirilmesi
+16.23,16.23,20:18,Manufacture of other builders' carpentry and joinery,Manufacture of other builders' carpentry and joinery,Diğer bina doğramacılığı ve marangozluk ürünlerinin imalatı
+16.23,16.25,20:18,Manufacture of other builders' carpentry and joinery,Manufacture of doors and windows of wood,Ahşap kapı ve pencere imalatı
+16.23,16.27,20:18,Manufacture of other builders' carpentry and joinery,Finishing of wooden products,Ahşap ürünlerin bitirilmesi
+16.24,16.24,20:18,Manufacture of wooden containers,Manufacture of wooden containers,Ahşap konteyner imalatı
+16.24,16.27,20:18,Manufacture of wooden containers,Finishing of wooden products,Ahşap ürünlerin bitirilmesi
+16.29,15.20,20:18,"Manufacture of other products of wood; manufacture of articles of cork, straw and plaiting materials",Manufacture of footwear,"Ayakkabı, bot, terlik vb. imalatı"
+16.29,16.26,20:18,"Manufacture of other products of wood; manufacture of articles of cork, straw and plaiting materials",Manufacture of solid fuels from vegetable biomass,Bitkisel biyokütleden katı yakıt imalatı
+16.29,16.27,20:18,"Manufacture of other products of wood; manufacture of articles of cork, straw and plaiting materials",Finishing of wooden products,Ahşap ürünlerin bitirilmesi
+16.29,16.28,20:18,"Manufacture of other products of wood; manufacture of articles of cork, straw and plaiting materials","Manufacture of other products of wood and articles of cork, straw and plaiting materials","Diğer ağaç ürünleri imalatı; mantardan, saz, saman ve benzeri örme malzemelerinden yapılmış ürünlerin imalatı"
+17.11,17.11,1:1,Manufacture of pulp,Manufacture of pulp,Kağıt hamuru imalatı
+17.12,17.12,1:1,Manufacture of paper and paperboard,Manufacture of paper and paperboard,Kağıt ve mukavva imalatı
+17.21,17.21,1:1,Manufacture of corrugated paper and paperboard and of containers of paper and paperboard,"Manufacture of corrugated paper, paperboard and containers of paper and paperboard",Oluklu kağıt ve mukavva imalatı ile kağıt ve mukavvadan yapılan muhafazaların imalatı
+17.22,17.22,1:1,Manufacture of household and sanitary goods and of toilet requisites,Manufacture of household and sanitary goods and of toilet requisites,"Kağıttan yapılan ev eşyası, sıhhi malzemeler ve tuvalet malzemeleri imalatı"
+17.23,17.23,1:1,Manufacture of paper stationery,Manufacture of paper stationery,Kağıt kırtasiye ürünleri imalatı
+17.24,17.24,1:1,Manufacture of wallpaper,Manufacture of wallpaper,Duvar kağıdı imalatı
+17.29,17.25,1:1,Manufacture of other articles of paper and paperboard,Manufacture of other articles of paper and paperboard,Kağıt ve mukavvadan diğer ürünlerin imalatı
+18.11,18.11,1:1,Printing of newspapers,Printing of newspapers,Gazetelerin basımı
+18.12,13.30,4:5,Other printing,Finishing of textiles,Tekstil ürünlerinin bitirilmesi
+18.12,18.12,4:5,Other printing,Other printing,Diğer matbaacılık
+18.13,18.13,1:1,Pre-press and pre-media services,Pre-press and pre-media services,Basım ve yayım öncesi hizmetler
+18.14,18.14,1:1,Binding and related services,Binding and related services,Ciltçilik ve ilgili hizmetler
+18.20,18.20,1:1,Reproduction of recorded media,Reproduction of recorded media,Kayıtlı medyanın çoğaltılması
+19.10,19.10,1:1,Manufacture of coke oven products,Manufacture of coke oven products,Kok fırını ürünlerinin imalatı
+19.20,19.20,1:1,Manufacture of refined petroleum products,Manufacture of refined petroleum products and fossil fuel products,Rafine edilmiş petrol ve fosil yakıt ürünleri imalatı
+20.11,20.11,15:17,Manufacture of industrial gases,Manufacture of industrial gases,Sanayi gazları imalatı
+20.11,20.14,15:17,Manufacture of industrial gases,Manufacture of other organic basic chemicals,Diğer organik temel kimyasalların imalatı
+20.12,20.12,1:1,Manufacture of dyes and pigments,Manufacture of dyes and pigments,Boya maddeleri ve pigment imalatı
+20.13,20.13,1:1,Manufacture of other inorganic basic chemicals,Manufacture of other inorganic basic chemicals,Diğer inorganik temel kimyasal maddelerin imalatı
+20.14,20.14,15:17,Manufacture of other organic basic chemicals,Manufacture of other organic basic chemicals,Diğer organik temel kimyasalların imalatı
+20.14,20.51,15:17,Manufacture of other organic basic chemicals,Manufacture of liquid biofuels,Sıvı biyoyakıt imalatı
+20.15,20.15,1:1,Manufacture of fertilisers and nitrogen compounds,Manufacture of fertilisers and nitrogen compounds,Kimyasal gübre ve azot bileşiklerinin imalatı
+20.16,20.16,7:5,Manufacture of plastics in primary forms,Manufacture of plastics in primary forms,Birincil formda plastik ham maddelerin imalatı
+20.17,20.17,1:1,Manufacture of synthetic rubber in primary forms,Manufacture of synthetic rubber in primary forms,Birincil formda sentetik kauçuk imalatı
+20.20,20.20,1:1,Manufacture of pesticides and other agrochemical products,"Manufacture of pesticides, disinfectants and other agrochemical products","Haşere ilaçları, dezenfektanlar ve diğer zirai-kimyasal ürünlerin imalatı"
+20.30,20.30,1:1,"Manufacture of paints, varnishes and similar coatings, printing ink and mastics","Manufacture of paints, varnishes and similar coatings, printing ink and mastics","Boya, vernik ve benzeri kaplayıcı maddeler ile matbaa mürekkebi ve macun imalatı"
+20.41,20.41,1:1,"Manufacture of soap and detergents, cleaning and polishing preparations","Manufacture of soap and detergents, cleaning and polishing preparations",Sabun ve deterjan ile temizlik ve parlatıcı preparatlarının (müstahzarlarının) imalatı
+20.42,20.42,1:1,Manufacture of perfumes and toilet preparations,Manufacture of perfumes and toilet preparations,"Parfümlerin, kozmetiklerin ve kişisel bakım preparatlarının (müstahzarlarının) imalatı"
+20.51,20.59,15:17,Manufacture of explosives,Manufacture of other chemical products n.e.c.,Başka yerde sınıflandırılmamış diğer kimyasal ürünlerin imalatı
+20.52,20.59,15:17,Manufacture of glues,Manufacture of other chemical products n.e.c.,Başka yerde sınıflandırılmamış diğer kimyasal ürünlerin imalatı
+20.53,20.59,15:17,Manufacture of essential oils,Manufacture of other chemical products n.e.c.,Başka yerde sınıflandırılmamış diğer kimyasal ürünlerin imalatı
+20.59,20.51,15:17,Manufacture of other chemical products n.e.c.,Manufacture of liquid biofuels,Sıvı biyoyakıt imalatı
+20.59,20.59,15:17,Manufacture of other chemical products n.e.c.,Manufacture of other chemical products n.e.c.,Başka yerde sınıflandırılmamış diğer kimyasal ürünlerin imalatı
+20.60,20.60,1:1,Manufacture of man-made fibres,Manufacture of man-made fibres,Suni veya sentetik elyaf imalatı
+21.10,21.10,1:1,Manufacture of basic pharmaceutical products,Manufacture of basic pharmaceutical products,Temel eczacılık ürünleri imalatı
+21.20,21.20,1:1,Manufacture of pharmaceutical preparations,Manufacture of pharmaceutical preparations,Eczacılığa ilişkin preparatların (müstahzarların) imalatı
+22.11,22.11,1:1,Manufacture of rubber tyres and tubes; retreading and rebuilding of rubber tyres,"Manufacture, retreading and rebuilding of rubber tyres and manufacture of tubes","Kauçuk lastiklerin imalatı, lastiğe sırt geçirilmesi (kaplanması) ve yeniden işlenmesi ve iç lastik imalatı"
+22.19,15.20,20:18,Manufacture of other rubber products,Manufacture of footwear,"Ayakkabı, bot, terlik vb. imalatı"
+22.19,22.12,20:18,Manufacture of other rubber products,Manufacture of other rubber products,Diğer kauçuk ürünlerin imalatı
+22.21,22.21,20:18,"Manufacture of plastic plates, sheets, tubes and profiles","Manufacture of plastic plates, sheets, tubes and profiles","Plastik tabaka, levha, tüp ve profil imalatı"
+22.21,22.25,20:18,"Manufacture of plastic plates, sheets, tubes and profiles",Processing and finishing of plastic products,Plastik ürünlerin işlenmesi ve bitirilmesi
+22.22,22.22,20:18,Manufacture of plastic packing goods,Manufacture of plastic packing goods,Plastik ambalaj malzemeleri imalatı
+22.22,22.25,20:18,Manufacture of plastic packing goods,Processing and finishing of plastic products,Plastik ürünlerin işlenmesi ve bitirilmesi
+22.23,22.23,20:18,Manufacture of builders' ware of plastic,Manufacture of doors and windows of plastic,Plastikten kapı ve pencere imalatı
+22.23,22.24,20:18,Manufacture of builders' ware of plastic,Manufacture of builders’ ware of plastic,Plastikten inşaat malzemeleri imalatı
+22.23,22.25,20:18,Manufacture of builders' ware of plastic,Processing and finishing of plastic products,Plastik ürünlerin işlenmesi ve bitirilmesi
+22.23,23.66,20:18,Manufacture of builders' ware of plastic,"Manufacture of other articles of concrete, plaster and cement","Beton, çimento ve alçıdan diğer eşyaların imalatı"
+22.29,15.20,20:18,Manufacture of other plastic products,Manufacture of footwear,"Ayakkabı, bot, terlik vb. imalatı"
+22.29,22.21,20:18,Manufacture of other plastic products,"Manufacture of plastic plates, sheets, tubes and profiles","Plastik tabaka, levha, tüp ve profil imalatı"
+22.29,22.25,20:18,Manufacture of other plastic products,Processing and finishing of plastic products,Plastik ürünlerin işlenmesi ve bitirilmesi
+22.29,22.26,20:18,Manufacture of other plastic products,Manufacture of other plastic products,Diğer plastik ürünlerin imalatı
+23.11,23.11,1:1,Manufacture of flat glass,Manufacture of flat glass,Düz cam imalatı
+23.12,23.12,8:9,Shaping and processing of flat glass,Shaping and processing of flat glass,Düz camın şekillendirilmesi ve işlenmesi
+23.12,29.32,8:9,Shaping and processing of flat glass,Manufacture of other parts and accessories for motor vehicles,Motorlu kara taşıtları için diğer parça ve aksesuarların imalatı
+23.13,23.13,1:1,Manufacture of hollow glass,Manufacture of hollow glass,Çukur cam imalatı
+23.14,23.14,1:1,Manufacture of glass fibres,Manufacture of glass fibres,Cam elyafı imalatı
+23.19,23.15,1:1,"Manufacture and processing of other glass, including technical glassware","Manufacture and processing of other glass, including technical glassware",Diğer camların imalatı ve işlenmesi (teknik amaçlı cam eşyalar dahil)
+23.20,23.20,1:1,Manufacture of refractory products,Manufacture of refractory products,Ateşe dayanıklı (refrakter) ürünlerin imalatı
+23.31,23.31,1:1,Manufacture of ceramic tiles and flags,Manufacture of ceramic tiles and flags,Seramik karo ve kaldırım taşları imalatı
+23.32,23.32,1:1,"Manufacture of bricks, tiles and construction products, in baked clay","Manufacture of bricks, tiles and construction products, in baked clay","Fırınlanmış kilden tuğla, karo ve inşaat malzemeleri imalatı"
+23.41,23.41,1:1,Manufacture of ceramic household and ornamental articles,Manufacture of ceramic household and ornamental articles,Seramik ev ve süs eşyaları imalatı
+23.42,23.42,20:18,Manufacture of ceramic sanitary fixtures,Manufacture of ceramic sanitary fixtures,Seramik sıhhi ürünlerin imalatı
+23.42,31.00,20:18,Manufacture of ceramic sanitary fixtures,Manufacture of furniture,Mobilya imalatı
+23.43,23.43,1:1,Manufacture of ceramic insulators and insulating fittings,Manufacture of ceramic insulators and insulating fittings,Seramik yalıtkanların (izolatörlerin) ve yalıtkan bağlantı parçalarının imalatı
+23.44,23.44,1:1,Manufacture of other technical ceramic products,Manufacture of other technical ceramic products,Diğer teknik seramik ürünlerin imalatı
+23.49,23.45,1:1,Manufacture of other ceramic products,Manufacture of other ceramic products,Diğer seramik ürünlerin imalatı
+23.51,23.51,1:1,Manufacture of cement,Manufacture of cement,Çimento imalatı
+23.52,23.52,1:1,Manufacture of lime and plaster,Manufacture of lime and plaster,Kireç ve alçı imalatı
+23.61,23.61,1:1,Manufacture of concrete products for construction purposes,Manufacture of concrete products for construction purposes,İnşaat amaçlı beton ürünlerin imalatı
+23.62,23.62,1:1,Manufacture of plaster products for construction purposes,Manufacture of plaster products for construction purposes,İnşaat amaçlı alçı ürünlerin imalatı
+23.63,23.63,1:1,Manufacture of ready-mixed concrete,Manufacture of ready-mixed concrete,Hazır beton imalatı
+23.64,23.64,1:1,Manufacture of mortars,Manufacture of mortars,Toz harç imalatı
+23.65,23.65,1:1,Manufacture of fibre cement,Manufacture of fibre cement,Lif ve çimento karışımlı ürünlerin imalatı
+23.69,23.66,20:18,"Manufacture of other articles of concrete, plaster and cement","Manufacture of other articles of concrete, plaster and cement","Beton, çimento ve alçıdan diğer eşyaların imalatı"
+23.69,31.00,20:18,"Manufacture of other articles of concrete, plaster and cement",Manufacture of furniture,Mobilya imalatı
+23.70,23.70,20:18,"Cutting, shaping and finishing of stone","Cutting, shaping and finishing of stone","Taş ve mermerin kesilmesi, şekil verilmesi ve bitirilmesi"
+23.70,31.00,20:18,"Cutting, shaping and finishing of stone",Manufacture of furniture,Mobilya imalatı
+23.91,23.91,1:1,Production of abrasive products,Manufacture of abrasive products,Aşındırıcı ürünlerin imalatı
+23.99,23.99,4:4,Manufacture of other non-metallic mineral products n.e.c.,Manufacture of other non-metallic mineral products n.e.c.,Başka yerde sınıflandırılmamış metalik olmayan diğer mineral ürünlerin imalatı
+24.10,24.10,1:1,Manufacture of basic iron and steel and of ferro-alloys,Manufacture of basic iron and steel and of ferro-alloys,Ana demir ve çelik ürünleri ile ferro alaşımların imalatı
+24.20,24.20,1:1,"Manufacture of tubes, pipes, hollow profiles and related fittings, of steel","Manufacture of tubes, pipes, hollow profiles and related fittings, of steel","Çelikten tüpler, borular, içi boş profiller ve benzeri bağlantı parçalarının imalatı"
+24.31,24.31,1:1,Cold drawing of bars,Cold drawing of bars,Barların soğuk çekilmesi
+24.32,24.32,1:1,Cold rolling of narrow strip,Cold rolling of narrow strip,Dar şeritlerin soğuk haddelenmesi
+24.33,24.33,1:1,Cold forming or folding,Cold forming or folding,Soğuk şekillendirme veya katlama
+24.34,24.34,1:1,Cold drawing of wire,Cold drawing of wire,Tellerin soğuk çekilmesi
+24.41,24.41,1:1,Precious metals production,Precious metals production,Değerli metal üretimi
+24.42,24.42,1:1,Aluminium production,Aluminium production,Alüminyum üretimi
+24.43,24.43,1:1,"Lead, zinc and tin production","Lead, zinc and tin production","Kurşun, çinko ve kalay üretimi"
+24.44,24.44,1:1,Copper production,Copper production,Bakır üretimi
+24.45,24.45,1:1,Other non-ferrous metal production,Other non-ferrous metal production,Demir dışı diğer metallerin üretimi
+24.46,24.46,1:1,Processing of nuclear fuel,Processing of nuclear fuel,Nükleer yakıtların işlenmesi
+24.51,24.51,1:1,Casting of iron,Casting of iron,Demir döküm
+24.52,24.52,1:1,Casting of steel,Casting of steel,Çelik dökümü
+24.53,24.53,2:2,Casting of light metals,Casting of light metals,Hafif metallerin dökümü
+24.53,24.54,2:2,Casting of light metals,Casting of other non-ferrous metals,Diğer demir dışı metallerin dökümü
+24.54,24.54,2:2,Casting of other non-ferrous metals,Casting of other non-ferrous metals,Diğer demir dışı metallerin dökümü
+25.11,25.11,1:1,Manufacture of metal structures and parts of structures,Manufacture of metal structures and parts of structures,Metal yapı ve yapı parçaları imalatı
+25.12,25.12,1:1,Manufacture of doors and windows of metal,Manufacture of doors and windows of metal,Metalden kapı ve pencere imalatı
+25.21,25.21,8:9,Manufacture of central heating radiators and boilers,"Manufacture of central heating radiators, steam generators and boilers","Merkezi ısıtma radyatörleri, buhar jeneratörleri ve sıcak su kazanlarının (boylerleri) imalatı"
+25.21,28.21,8:9,Manufacture of central heating radiators and boilers,"Manufacture of ovens, furnaces and permanent household heating equipment","Fırınlar, sobalar ve sabit ev ısıtma ekipmanlarının imalatı"
+25.29,25.22,1:1,"Manufacture of other tanks, reservoirs and containers of metal","Manufacture of other tanks, reservoirs and containers of metal","Metalden diğer tank, rezervuar ve konteynerler imalatı"
+25.30,25.21,8:9,"Manufacture of steam generators, except central heating hot water boilers","Manufacture of central heating radiators, steam generators and boilers","Merkezi ısıtma radyatörleri, buhar jeneratörleri ve sıcak su kazanlarının (boylerleri) imalatı"
+25.40,25.30,1:1,Manufacture of weapons and ammunition,Manufacture of weapons and ammunition,Silah ve mühimmat (cephane) imalatı
+25.50,25.40,1:1,"Forging, pressing, stamping and roll-forming of metal; powder metallurgy",Forging and shaping metal and powder metallurgy,"Metallerin dövülmesi, şekil verilmesi ve toz metalürjisi"
+25.61,25.51,3:2,Treatment and coating of metals,Coating of metals,Metallerin kaplanması
+25.61,25.52,3:2,Treatment and coating of metals,Heat treatment of metals,Metallerin ısıl işlemi
+25.61,25.53,3:2,Treatment and coating of metals,Machining of metals,Metallerin makinede işlenmesi ve şekil verilmesi
+25.62,25.53,3:2,Machining,Machining of metals,Metallerin makinede işlenmesi ve şekil verilmesi
+25.71,25.61,1:1,Manufacture of cutlery,Manufacture of cutlery,Çatal-bıçak takımı ve diğer kesici aletlerin imalatı
+25.72,25.62,1:1,Manufacture of locks and hinges,Manufacture of locks and hinges,Kilit ve menteşe imalatı
+25.73,25.63,1:1,Manufacture of tools,Manufacture of tools,"El aletleri, takım tezgahı uçları, testere ağızları vb. imalatı"
+25.91,25.91,1:1,Manufacture of steel drums and similar containers,Manufacture of steel drums and similar containers,Çelik varil ve benzer muhafazaların imalatı
+25.92,25.92,1:1,Manufacture of light metal packaging,Manufacture of light metal packaging,Metalden hafif paketleme malzemeleri imalatı
+25.93,25.93,1:1,"Manufacture of wire products, chain and springs","Manufacture of wire products, chain and springs","Tel ürünleri, zincir ve yayların imalatı"
+25.94,25.94,1:1,Manufacture of fasteners and screw machine products,Manufacture of fasteners and screw machine products,Bağlantı malzemelerinin ve vida makinesi ürünlerinin imalatı
+25.99,25.99,1:1,Manufacture of other fabricated metal products n.e.c.,Manufacture of other fabricated metal products n.e.c.,Başka yerde sınıflandırılmamış diğer fabrikasyon metal ürünlerin imalatı
+26.11,26.11,1:1,Manufacture of electronic components,Manufacture of electronic components,Elektronik bileşenlerin imalatı
+26.12,26.12,1:1,Manufacture of loaded electronic boards,Manufacture of loaded electronic boards,Yüklü elektronik kart imalatı
+26.20,26.20,3:3,Manufacture of computers and peripheral equipment,Manufacture of computers and peripheral equipment,Bilgisayar ve bilgisayar çevre birimleri imalatı
+26.20,26.40,3:3,Manufacture of computers and peripheral equipment,Manufacture of consumer electronics,Tüketici elektroniği ürünlerinin imalatı
+26.30,26.30,2:2,Manufacture of communication equipment,Manufacture of communication equipment,İletişim ekipmanlarının imalatı
+26.30,26.51,2:2,Manufacture of communication equipment,"Manufacture of instruments and appliances for measuring, testing and navigation","Ölçme, test ve seyrüsefer (navigasyon) amaçlı alet ve cihazların imalatı"
+26.40,26.40,3:3,Manufacture of consumer electronics,Manufacture of consumer electronics,Tüketici elektroniği ürünlerinin imalatı
+26.51,26.51,2:2,"Manufacture of instruments and appliances for measuring, testing and navigation","Manufacture of instruments and appliances for measuring, testing and navigation","Ölçme, test ve seyrüsefer (navigasyon) amaçlı alet ve cihazların imalatı"
+26.52,26.52,1:1,Manufacture of watches and clocks,Manufacture of watches and clocks,"Kol saatlerinin, masa ve duvar saatlerinin ve benzerlerinin imalatı"
+26.60,26.60,15:17,"Manufacture of irradiation, electromedical and electrotherapeutic equipment","Manufacture of irradiation, electromedical and electrotherapeutic equipment","Işınlama, elektro medikal ve elektro terapi ile ilgili cihazların imalatı"
+26.70,26.70,1:2,Manufacture of optical instruments and photographic equipment,"Manufacture of optical instruments, magnetic and optical media and photographic equipment","Optik aletlerin, manyetik ve optik medyanın ve fotoğrafik ekipmanların imalatı"
+26.80,26.70,1:2,Manufacture of magnetic and optical media,"Manufacture of optical instruments, magnetic and optical media and photographic equipment","Optik aletlerin, manyetik ve optik medyanın ve fotoğrafik ekipmanların imalatı"
+27.11,27.11,15:17,"Manufacture of electric motors, generators and transformers","Manufacture of electric motors, generators and transformers","Elektrik motorları, jeneratörler ve transformatörlerin imalatı"
+27.11,29.10,15:17,"Manufacture of electric motors, generators and transformers",Manufacture of motor vehicles,Motorlu kara taşıtlarının imalatı
+27.12,27.11,15:17,Manufacture of electricity distribution and control apparatus,"Manufacture of electric motors, generators and transformers","Elektrik motorları, jeneratörler ve transformatörlerin imalatı"
+27.12,27.12,15:17,Manufacture of electricity distribution and control apparatus,Manufacture of electricity distribution and control apparatus,Elektrik dağıtım ve kontrol cihazları imalatı
+27.12,27.90,15:17,Manufacture of electricity distribution and control apparatus,Manufacture of other electrical equipment,Diğer elektrikli ekipmanların imalatı
+27.20,27.20,1:1,Manufacture of batteries and accumulators,Manufacture of batteries and accumulators,Akümülatör ve pil imalatı
+27.31,27.31,1:1,Manufacture of fibre optic cables,Manufacture of fibre optic cables,Fiber optik kabloların imalatı
+27.32,27.32,1:1,Manufacture of other electronic and electric wires and cables,Manufacture of other electronic and electric wires and cables,Diğer elektronik ve elektrikli teller ve kabloların imalatı
+27.33,27.33,1:1,Manufacture of wiring devices,Manufacture of wiring devices,Kablolamada kullanılan gereçlerin imalatı
+27.40,27.40,1:1,Manufacture of electric lighting equipment,Manufacture of lighting equipment,Aydınlatma ekipmanları imalatı
+27.51,27.51,1:1,Manufacture of electric domestic appliances,Manufacture of electric domestic appliances,Elektrikli ev aletlerinin imalatı
+27.52,27.52,1:1,Manufacture of non-electric domestic appliances,Manufacture of non-electric domestic appliances,Elektriksiz ev aletlerinin imalatı
+27.90,27.11,15:17,Manufacture of other electrical equipment,"Manufacture of electric motors, generators and transformers","Elektrik motorları, jeneratörler ve transformatörlerin imalatı"
+27.90,27.90,15:17,Manufacture of other electrical equipment,Manufacture of other electrical equipment,Diğer elektrikli ekipmanların imalatı
+27.90,29.31,15:17,Manufacture of other electrical equipment,Manufacture of electrical and electronic equipment for motor vehicles,Motorlu kara taşıtları için elektrik ve elektronik donanımların imalatı
+27.90,32.99,15:17,Manufacture of other electrical equipment,Other manufacturing n.e.c.,Başka yerde sınıflandırılmamış diğer imalatlar
+28.11,28.11,8:9,"Manufacture of engines and turbines, except aircraft, vehicle and cycle engines","Manufacture of engines and turbines, except aircraft, vehicle and cycle engines","Motor ve türbin imalatı (hava taşıtı, motorlu kara taşıtı ve motosiklet motorları hariç)"
+28.11,29.32,8:9,"Manufacture of engines and turbines, except aircraft, vehicle and cycle engines",Manufacture of other parts and accessories for motor vehicles,Motorlu kara taşıtları için diğer parça ve aksesuarların imalatı
+28.11,30.91,8:9,"Manufacture of engines and turbines, except aircraft, vehicle and cycle engines",Manufacture of motorcycles,Motosiklet imalatı
+28.12,28.12,1:1,Manufacture of fluid power equipment,Manufacture of fluid power equipment,Akışkan gücü ile çalışan ekipmanların imalatı
+28.13,28.13,1:1,Manufacture of other pumps and compressors,Manufacture of other pumps and compressors,Diğer pompaların ve kompresörlerin imalatı
+28.14,28.14,1:1,Manufacture of other taps and valves,Manufacture of other taps and valves,Diğer musluk ve valf/vana imalatı
+28.15,28.15,1:1,"Manufacture of bearings, gears, gearing and driving elements","Manufacture of bearings, gears, gearing and driving elements","Rulman, dişli/dişli takımı, şanzıman ve tahrik elemanlarının imalatı"
+28.21,28.21,8:9,"Manufacture of ovens, furnaces and furnace burners","Manufacture of ovens, furnaces and permanent household heating equipment","Fırınlar, sobalar ve sabit ev ısıtma ekipmanlarının imalatı"
+28.21,28.25,8:9,"Manufacture of ovens, furnaces and furnace burners",Manufacture of non-domestic air conditioning equipment,Ev dışı iklimlendirme ekipmanlarının imalatı
+28.22,28.22,1:1,Manufacture of lifting and handling equipment,Manufacture of lifting and handling equipment,Kaldırma ve taşıma ekipmanları imalatı
+28.23,26.20,3:3,Manufacture of office machinery and equipment (except computers and peripheral equipment),Manufacture of computers and peripheral equipment,Bilgisayar ve bilgisayar çevre birimleri imalatı
+28.23,28.23,3:3,Manufacture of office machinery and equipment (except computers and peripheral equipment),"Manufacture of office machinery and equipment, except computers and peripheral equipment",Büro makine ve ekipmanları imalatı (bilgisayarlar ve çevre birimleri hariç)
+28.24,28.24,1:1,Manufacture of power-driven hand tools,Manufacture of power-driven hand tools,Motorlu veya pnömatik (hava basınçlı) el aletlerinin imalatı
+28.25,28.25,8:9,Manufacture of non-domestic cooling and ventilation equipment,Manufacture of non-domestic air conditioning equipment,Ev dışı iklimlendirme ekipmanlarının imalatı
+28.25,29.32,8:9,Manufacture of non-domestic cooling and ventilation equipment,Manufacture of other parts and accessories for motor vehicles,Motorlu kara taşıtları için diğer parça ve aksesuarların imalatı
+28.29,28.29,2:2,Manufacture of other general-purpose machinery n.e.c.,Manufacture of other general-purpose machinery n.e.c.,Başka yerde sınıflandırılmamış diğer genel amaçlı makinelerin imalatı
+28.29,28.93,2:2,Manufacture of other general-purpose machinery n.e.c.,"Manufacture of machinery for food, beverage and tobacco processing","Gıda, içecek ve tütün işleme makineleri imalatı"
+28.30,28.30,2:2,Manufacture of agricultural and forestry machinery,Manufacture of agricultural and forestry machinery,Tarım ve ormancılık makinelerinin imalatı
+28.41,28.41,15:17,Manufacture of metal forming machinery,Manufacture of metal forming machinery and machine tools for metal work,Metal şekillendirme makineleri ve metal işlemeye yönelik takım tezgahlarının imalatı
+28.49,27.90,15:17,Manufacture of other machine tools,Manufacture of other electrical equipment,Diğer elektrikli ekipmanların imalatı
+28.49,28.41,15:17,Manufacture of other machine tools,Manufacture of metal forming machinery and machine tools for metal work,Metal şekillendirme makineleri ve metal işlemeye yönelik takım tezgahlarının imalatı
+28.49,28.42,15:17,Manufacture of other machine tools,Manufacture of other machine tools,Diğer takım tezgahlarının imalatı
+28.91,28.91,1:1,Manufacture of machinery for metallurgy,Manufacture of machinery for metallurgy,Metalürji makineleri imalatı
+28.92,28.30,2:2,"Manufacture of machinery for mining, quarrying and construction",Manufacture of agricultural and forestry machinery,Tarım ve ormancılık makinelerinin imalatı
+28.92,28.92,2:2,"Manufacture of machinery for mining, quarrying and construction","Manufacture of machinery for mining, quarrying and construction","Maden, taş ocağı ve inşaat makineleri imalatı"
+28.93,28.93,2:2,"Manufacture of machinery for food, beverage and tobacco processing","Manufacture of machinery for food, beverage and tobacco processing","Gıda, içecek ve tütün işleme makineleri imalatı"
+28.94,28.94,1:1,"Manufacture of machinery for textile, apparel and leather production","Manufacture of machinery for textile, apparel and leather production","Tekstil, giyim eşyası ve deri üretiminde kullanılan makinelerin imalatı"
+28.95,28.95,1:1,Manufacture of machinery for paper and paperboard production,Manufacture of machinery for paper and paperboard production,Kağıt ve mukavva üretiminde kullanılan makinelerin imalatı
+28.96,28.96,3:2,Manufacture of plastics and rubber machinery,Manufacture of plastics and rubber machinery,Plastik ve kauçuk makinelerinin imalatı
+28.96,28.97,3:2,Manufacture of plastics and rubber machinery,Manufacture of additive manufacturing machinery,Katmanlı (eklemeli) imalat makineleri imalatı
+28.99,28.97,3:2,Manufacture of other special-purpose machinery n.e.c.,Manufacture of additive manufacturing machinery,Katmanlı (eklemeli) imalat makineleri imalatı
+28.99,28.99,3:2,Manufacture of other special-purpose machinery n.e.c.,Manufacture of other special-purpose machinery n.e.c.,Başka yerde sınıflandırılmamış diğer özel amaçlı makinelerin imalatı
+29.10,29.10,15:17,Manufacture of motor vehicles,Manufacture of motor vehicles,Motorlu kara taşıtlarının imalatı
+29.20,29.20,1:1,Manufacture of bodies (coachwork) for motor vehicles; manufacture of trailers and semi-trailers,Manufacture of bodies and coachwork for motor vehicles; manufacture of trailers and semi-trailers,Motorlu kara taşıtları gövdesi ve karoseri (kaporta) imalatı; treyler (römork) ve yarı treyler (yarı römork) imalatı
+29.31,29.31,15:17,Manufacture of electrical and electronic equipment for motor vehicles,Manufacture of electrical and electronic equipment for motor vehicles,Motorlu kara taşıtları için elektrik ve elektronik donanımların imalatı
+29.32,29.32,8:9,Manufacture of other parts and accessories for motor vehicles,Manufacture of other parts and accessories for motor vehicles,Motorlu kara taşıtları için diğer parça ve aksesuarların imalatı
+30.11,30.11,2:1,Building of ships and floating structures,Building of civilian ships and floating structures,Sivil gemilerin ve yüzer yapıların inşası
+30.11,30.13,2:1,Building of ships and floating structures,Building of military ships and vessels,Askeri gemilerin ve teknelerin inşası
+30.12,30.12,1:1,Building of pleasure and sporting boats,Building of pleasure and sporting boats,Eğlence ve spor amaçlı teknelerin yapımı
+30.20,30.20,1:1,Manufacture of railway locomotives and rolling stock,Manufacture of railway locomotives and rolling stock,Demir yolu lokomotifleri ve vagonlarının imalatı
+30.30,30.31,2:1,Manufacture of air and spacecraft and related machinery,Manufacture of civilian air and spacecraft and related machinery,Sivil hava ve uzay araçları ve ilgili makinelerin imalatı
+30.30,30.32,2:1,Manufacture of air and spacecraft and related machinery,Manufacture of military air and spacecraft and related machinery,Askeri hava ve uzay araçları ve ilgili makinelerin imalatı
+30.40,30.40,5:4,Manufacture of military fighting vehicles,Manufacture of military fighting vehicles,Askeri kara savaş araçlarının imalatı
+30.40,33.18,5:4,Manufacture of military fighting vehicles,"Repair and maintenance of military fighting vehicles, ships, boats, air and spacecraft","Askeri savaş araçlarının, gemilerin, teknelerin, hava ve uzay araçlarının onarım ve bakımı"
+30.91,30.91,8:9,Manufacture of motorcycles,Manufacture of motorcycles,Motosiklet imalatı
+30.91,30.92,8:9,Manufacture of motorcycles,Manufacture of bicycles and invalid carriages,Bisiklet ve engelli aracı imalatı
+30.92,30.92,8:9,Manufacture of bicycles and invalid carriages,Manufacture of bicycles and invalid carriages,Bisiklet ve engelli aracı imalatı
+30.99,30.99,1:1,Manufacture of other transport equipment n.e.c.,Manufacture of other transport equipment n.e.c.,Başka yerde sınıflandırılmamış diğer ulaşım ekipmanlarının imalatı
+31.01,31.00,20:18,Manufacture of office and shop furniture,Manufacture of furniture,Mobilya imalatı
+31.02,31.00,20:18,Manufacture of kitchen furniture,Manufacture of furniture,Mobilya imalatı
+31.03,31.00,20:18,Manufacture of mattresses,Manufacture of furniture,Mobilya imalatı
+31.09,31.00,20:18,Manufacture of other furniture,Manufacture of furniture,Mobilya imalatı
+32.11,32.11,1:1,Striking of coins,Striking of coins,Madeni para basımı
+32.12,32.12,1:1,Manufacture of jewellery and related articles,Manufacture of jewellery and related articles,Mücevher ve benzeri eşyaların imalatı
+32.13,32.13,1:1,Manufacture of imitation jewellery and related articles,Manufacture of imitation jewellery and related articles,İmitasyon (taklit) takılar ve ilgili eşyaların imalatı
+32.20,32.20,1:1,Manufacture of musical instruments,Manufacture of musical instruments,Müzik aletleri imalatı
+32.30,32.30,15:17,Manufacture of sports goods,Manufacture of sports goods,Spor malzemeleri imalatı
+32.30,32.99,15:17,Manufacture of sports goods,Other manufacturing n.e.c.,Başka yerde sınıflandırılmamış diğer imalatlar
+32.40,32.40,1:1,Manufacture of games and toys,Manufacture of games and toys,Oyun ve oyuncak imalatı
+32.50,20.59,15:17,Manufacture of medical and dental instruments and supplies,Manufacture of other chemical products n.e.c.,Başka yerde sınıflandırılmamış diğer kimyasal ürünlerin imalatı
+32.50,26.60,15:17,Manufacture of medical and dental instruments and supplies,"Manufacture of irradiation, electromedical and electrotherapeutic equipment","Işınlama, elektro medikal ve elektro terapi ile ilgili cihazların imalatı"
+32.50,32.50,15:17,Manufacture of medical and dental instruments and supplies,Manufacture of medical and dental instruments and supplies,Tıbbi ve dişçilik ile ilgili araç ve gereçlerin imalatı
+32.91,32.91,1:1,Manufacture of brooms and brushes,Manufacture of brooms and brushes,Süpürge ve fırça imalatı
+32.99,32.50,15:17,Other manufacturing n.e.c.,Manufacture of medical and dental instruments and supplies,Tıbbi ve dişçilik ile ilgili araç ve gereçlerin imalatı
+32.99,32.99,15:17,Other manufacturing n.e.c.,Other manufacturing n.e.c.,Başka yerde sınıflandırılmamış diğer imalatlar
+33.11,03.30,10:9,Repair of fabricated metal products,Support activities for fishing and aquaculture,Balıkçılık ve su ürünleri yetiştiriciliği için destekleyici faaliyetler
+33.11,33.11,10:9,Repair of fabricated metal products,Repair and maintenance of fabricated metal products,Fabrikasyon metal ürünlerin onarım ve bakımı
+33.11,33.17,10:9,Repair of fabricated metal products,Repair and maintenance of other civilian transport equipment,Diğer sivil ulaşım ekipmanlarının onarım ve bakımı
+33.12,33.12,5:4,Repair of machinery,Repair and maintenance of machinery,Makinelerin onarım ve bakımı
+33.12,33.15,5:4,Repair of machinery,Repair and maintenance of civilian ships and boats,Sivil gemilerin ve teknelerin onarım ve bakımı
+33.12,33.18,5:4,Repair of machinery,"Repair and maintenance of military fighting vehicles, ships, boats, air and spacecraft","Askeri savaş araçlarının, gemilerin, teknelerin, hava ve uzay araçlarının onarım ve bakımı"
+33.13,33.13,1:1,Repair of electronic and optical equipment,Repair and maintenance of electronic and optical equipment,Elektronik ve optik ekipmanların onarım ve bakımı
+33.14,33.14,1:1,Repair of electrical equipment,Repair and maintenance of electrical equipment,Elektrikli ekipmanların onarım ve bakımı
+33.15,33.15,5:4,Repair and maintenance of ships and boats,Repair and maintenance of civilian ships and boats,Sivil gemilerin ve teknelerin onarım ve bakımı
+33.15,33.18,5:4,Repair and maintenance of ships and boats,"Repair and maintenance of military fighting vehicles, ships, boats, air and spacecraft","Askeri savaş araçlarının, gemilerin, teknelerin, hava ve uzay araçlarının onarım ve bakımı"
+33.16,33.16,5:4,Repair and maintenance of aircraft and spacecraft,Repair and maintenance of civilian air and spacecraft,Sivil hava taşıtları ve uzay araçlarının onarım ve bakımı
+33.16,33.18,5:4,Repair and maintenance of aircraft and spacecraft,"Repair and maintenance of military fighting vehicles, ships, boats, air and spacecraft","Askeri savaş araçlarının, gemilerin, teknelerin, hava ve uzay araçlarının onarım ve bakımı"
+33.17,33.17,10:9,Repair and maintenance of other transport equipment,Repair and maintenance of other civilian transport equipment,Diğer sivil ulaşım ekipmanlarının onarım ve bakımı
+33.19,33.19,23:16,Repair of other equipment,Repair and maintenance of other equipment,Diğer ekipmanların onarım ve bakımı
+33.19,91.30,23:16,Repair of other equipment,"Conservation, restoration and other support activities for cultural heritage","Kültürel mirasın konservasyonu, restorasyonu ve diğer destek faaliyetleri"
+33.20,33.20,1:1,Installation of industrial machinery and equipment,Installation of industrial machinery and equipment,Sanayi makine ve ekipmanlarının kurulumu
+35.11,35.11,3:1,Production of electricity,Production of electricity from non-renewable sources,Yenilenemeyen kaynaklardan elektrik üretimi
+35.11,35.12,3:1,Production of electricity,Production of electricity from renewable sources,Yenilenebilir kaynaklardan elektrik üretimi
+35.11,35.16,3:1,Production of electricity,Storage of electricity,Elektriğin depolanması
+38.31,38.21,7:5,Dismantling of wrecks,Materials recovery,Materyallerin geri kazanımı
+38.32,20.16,7:5,Recovery of sorted materials,Manufacture of plastics in primary forms,Birincil formda plastik ham maddelerin imalatı
+38.32,38.21,7:5,Recovery of sorted materials,Materials recovery,Materyallerin geri kazanımı
