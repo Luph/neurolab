@@ -1,0 +1,560 @@
+coicop18,label,weight_2025_permille,weight_2026_permille
+TOTAL,Total,1000.0,1000.0
+CP01,Food and non-alcoholic beverages,249.65,244.44
+CP011,Food,234.51,221.04
+CP0111,Cereals and cereal products (ND),45.96,44.5
+CP01111,Cereals (ND),3.92,4.67
+CP01112,Flour of cereals (ND),3.71,3.6
+CP01113,Bread and bakery products (ND),35.05,33.87
+CP011131,Bread,,
+CP011139,Other bakery products,,
+CP01114,Breakfast cereals (ND),0.44,0.28
+CP01115,"Macaroni, noodles, couscous and similar pasta products (ND)",2.85,2.07
+CP01119,Other milled cereal and grain products (ND),0.0,0.0
+CP0112,"Live animals, and meat and other parts of slaughtered land animals (ND)",49.86,46.08
+CP01121,Live land animals (ND),0.0,0.0
+CP01122,"Meat, fresh, chilled or frozen (ND)",42.73,36.72
+CP011221,"Meat of bovine animals, fresh, chilled or frozen",,
+CP011222,"Meat of pigs, fresh, chilled or frozen",0.0,0.0
+CP011223,"Meat of goats, lambs and sheep, fresh, chilled or frozen",,
+CP011224,"Meat of poultry, fresh, chilled or frozen",,
+CP011225,"Meat of hares and rabbits, fresh, chilled or frozen",0.0,0.0
+CP011226,"Meat of horses and other equines, fresh, chilled or frozen",0.0,0.0
+CP011227,"Meat of camels and camelids, fresh, chilled or frozen",0.0,0.0
+CP011229,"Other meat, fresh, chilled or frozen",0.0,0.0
+CP01123,"Meat, dried, salted, in brine or smoked (ND)",5.01,6.11
+CP01124,"Offal, blood and other parts of slaughtered animals, fresh, chilled or frozen, dried, salted, in brine or smoked (ND)",0.6,0.83
+CP01125,"Preparations of meat, offal, blood and other parts of slaughtered animals (ND)",1.52,2.42
+CP0113,Fish and other seafood (ND),3.66,3.78
+CP01131,"Fish, live, fresh, chilled or frozen (ND)",3.41,3.41
+CP01132,"Fish, dried, salted, in brine or smoked (ND)",0.0,0.0
+CP01133,Fish preparations (ND),0.25,0.37
+CP01134,"Other seafood, live, fresh, chilled or frozen (ND)",0.0,0.0
+CP01135,"Other seafood, dried, salted, in brine or smoked (ND)",0.0,0.0
+CP01136,Other seafood preparations (ND),0.0,0.0
+CP01137,"Livers, roes and other offal of fish and of other seafood in all forms (ND)",0.0,0.0
+CP0114,"Milk, other dairy products and eggs (ND)",30.1,32.76
+CP01141,Raw and whole milk (ND),4.54,5.2
+CP01142,Skimmed milk (ND),1.29,0.56
+CP01143,Other milk and cream (ND),0.0,0.53
+CP01144,Non-animal milk (ND),0.0,0.0
+CP01145,Cheese (ND),12.34,14.97
+CP01146,Yoghurt and similar products (ND),5.01,4.91
+CP01147,Milk-based dessert and beverages (ND),0.25,0.58
+CP01148,Eggs (ND),6.66,6.01
+CP01149,Other dairy products (ND),0.0,0.0
+CP0115,Oils and fats (ND),16.28,14.02
+CP01151,Vegetable oils (ND),12.4,9.96
+CP011513,Olive oil,,
+CP01152,Butter and other oils and fats derived from milk (ND),3.19,3.33
+CP01153,Margarine and similar preparations (ND),0.69,0.73
+CP01159,Other animal oils and fats (ND),0.0,0.0
+CP0116,Fruits and nuts (ND),27.16,22.92
+CP01161,"Dates, figs and tropical fruits, fresh (ND)",3.38,2.41
+CP01162,"Citrus fruits, fresh (ND)",4.8,2.7
+CP01163,"Stone fruits and pome fruits, fresh (ND)",4.3,5.06
+CP01164,"Berries, fresh (ND)",0.85,0.56
+CP01165,"Other fruits, fresh (ND)",6.37,3.62
+CP01166,"Fruits, frozen (ND)",0.0,0.0
+CP01167,"Fruits, dried and dehydrated (ND)",0.68,1.11
+CP01168,"Nuts, in shell or shelled (ND)",6.77,7.47
+CP01169,"Fruits and nuts, ground, and in other preparations (ND)",0.0,0.0
+CP0117,"Vegetables, tubers, plantains, cooking bananas and pulses (ND)",40.96,34.43
+CP01171,"Leafy or stem vegetables, fresh or chilled (ND)",2.76,2.16
+CP01172,"Fruit-bearing vegetables, fresh or chilled (ND)",19.3,13.31
+CP01173,"Green leguminous vegetables, fresh or chilled (ND)",1.31,1.49
+CP01174,"Other vegetables, fresh or chilled (ND)",9.38,7.4
+CP01175,"Tubers, plantains and cooking bananas, fresh or chilled (ND)",1.71,3.52
+CP011751,Potatoes,,
+CP01176,Pulses (ND),2.58,2.17
+CP01177,"Other vegetables, tubers, plantains and cooking bananas, dried and dehydrated (ND)",0.0,0.0
+CP01178,"Vegetables, tubers, plantains and cooking bananas, frozen (ND)",0.0,0.0
+CP01179,"Vegetables, tubers, plantains, cooking bananas and pulses, ground, and in other preparations (ND)",3.93,4.39
+CP0118,"Sugar, confectionery and desserts (ND)",15.37,15.25
+CP01181,Cane sugar and beet sugar (ND),3.38,3.55
+CP01182,Other sugars and sugar substitutes (ND),0.0,0.0
+CP01183,"Jams, marmalades, fruit jellies, purées and pastes, and honey (ND)",1.86,2.88
+CP01184,"Nut purées, nut butters and nut pastes (ND)",0.69,0.64
+CP01185,"Chocolate, cocoa and cocoa-based food products (ND)",4.44,3.51
+CP01186,"Ice, ice cream and sorbets (ND)",1.49,2.13
+CP01189,Other sugar confectionery and desserts n.e.c. (ND),3.51,2.55
+CP0119,Ready-made food and other food products (ND),5.15,7.29
+CP01191,Ready-made food (ND),0.27,2.64
+CP01192,Baby food (ND),0.85,0.88
+CP01193,"Salt, condiments and sauces (ND)",1.14,1.32
+CP01194,"Spices, culinary herbs and seeds (ND)",2.44,1.76
+CP01199,Other food products n.e.c. (ND),0.44,0.69
+CP012,Non-alcoholic beverages,15.15,23.4
+CP0121,Fruit and vegetable juices (ND),1.04,1.83
+CP01210,Fruit and vegetable juices (ND),1.04,1.83
+CP0122,Coffee and coffee substitutes (ND),1.78,3.37
+CP01220,Coffee and coffee substitutes (ND),1.78,3.37
+CP0123,"Tea, maté and other plant-derived products for infusion (ND)",6.28,7.05
+CP01230,"Tea, maté and other plant-derived products for infusion (ND)",6.28,7.05
+CP0124,Cocoa drinks (ND),0.0,0.0
+CP01240,Cocoa drinks (ND),0.0,0.0
+CP0125,Water (ND),3.6,5.95
+CP01250,Water (ND),3.6,5.95
+CP0126,Soft drinks (ND),2.44,5.2
+CP01260,Soft drinks (ND),2.44,5.2
+CP0129,Other non-alcoholic beverages (ND),0.0,0.0
+CP01290,Other non-alcoholic beverages (ND),0.0,0.0
+CP013,Services for processing primary goods for food and non-alcoholic beverages,0.0,0.0
+CP0130,Services for processing primary goods for food and non-alcoholic beverages (S),0.0,0.0
+CP01300,Services for processing primary goods for food and non-alcoholic beverages (S),0.0,0.0
+CP02,"Alcoholic beverages, tobacco and narcotics",35.23,27.55
+CP021,Alcoholic beverages,2.82,5.98
+CP0211,Spirits and liquors (ND),1.23,2.78
+CP02110,Spirits and liquors (ND),1.23,2.78
+CP0212,Wine (ND),0.25,0.48
+CP02121,Wine from grapes (ND),0.25,0.48
+CP02122,Wine from other sources (ND),0.0,0.0
+CP0213,Beer (ND),1.33,2.72
+CP02130,Beer (ND),1.33,2.72
+CP0219,Other alcoholic beverages (ND),0.0,0.0
+CP02190,Other alcoholic beverages (ND),0.0,0.0
+CP022,Alcohol production services,0.0,0.0
+CP0220,Alcohol production services (S),0.0,0.0
+CP02200,Alcohol production services (S),0.0,0.0
+CP023,Tobacco,32.41,21.57
+CP0230,Tobacco (ND),32.41,21.57
+CP02301,Cigarettes (ND),32.41,21.57
+CP02302,Cigars (ND),0.0,0.0
+CP02309,Other tobacco products (ND),0.0,0.0
+CP03,Clothing and footwear,71.59,79.04
+CP031,Clothing,57.23,67.96
+CP0311,Clothing materials (SD),0.0,0.0
+CP03110,Clothing materials (SD),0.0,0.0
+CP0312,Garments (SD),53.96,65.1
+CP03121,Garments for men or boys (SD),27.04,30.62
+CP03122,Garments for women or girls (SD),25.79,31.89
+CP03123,Garments for infants (under 2 years of age) (SD),1.13,1.41
+CP03124,School uniforms (SD),0.0,1.18
+CP0313,Other articles of clothing and clothing accessories (SD),2.14,1.95
+CP03131,Other articles of clothing (SD),1.52,1.95
+CP03132,Clothing accessories (SD),0.62,0.0
+CP0314,"Cleaning, repair, tailoring and hire of clothing (S)",1.12,0.91
+CP03141,Cleaning of clothing (S),0.39,0.15
+CP03142,"Repair, tailoring and hire of clothing (S)",0.73,0.75
+CP032,Footwear,14.36,11.08
+CP0321,Shoes and other footwear (SD),14.27,11.08
+CP03211,Footwear for men (SD),5.78,5.26
+CP03212,Footwear for women (SD),6.04,4.05
+CP03213,Footwear for infants and children (SD),2.46,1.76
+CP0322,"Cleaning, repair and hire of footwear (S)",0.09,0.0
+CP03220,"Cleaning, repair and hire of footwear (S)",0.09,0.0
+CP04,"Housing, water, electricity, gas and other fuels",152.63,114.02
+CP041,Actual rental payments made for housing,68.03,67.64
+CP0411,Actual rental payments made by tenants for main residence (S),68.03,67.64
+CP04110,Actual rental payments made by tenants for main residence (S),68.03,67.64
+CP0412,Other actual rental payments (S),0.0,0.0
+CP04121,Actual rental payments made by tenants for secondary residences (S),0.0,0.0
+CP04122,Garage rental payments and other rental payments made by tenants (S),0.0,0.0
+CP043,"Maintenance, repair and security of the dwelling",15.7,7.98
+CP0431,Security equipment and materials for dwelling maintenance and repair,15.56,3.48
+CP04311,Materials for the maintenance and repair of the dwelling (ND),15.56,3.48
+CP04312,Security equipment (SD),0.0,0.0
+CP0432,"Services for the maintenance, repair and security of the dwelling (S)",0.14,4.5
+CP04320,"Services for the maintenance, repair and security of the dwelling (S)",0.14,4.5
+CP044,Water supply and miscellaneous services relating to the dwelling,19.66,6.62
+CP0441,Water supply (ND),19.66,6.62
+CP04411,Water supply delivered through network systems (ND),19.66,6.62
+CP04412,Water supply delivered through other systems (ND),0.0,0.0
+CP0442,Refuse collection (S),0.0,0.0
+CP04420,Refuse collection (S),0.0,0.0
+CP0443,Sewage collection (S),0.0,0.0
+CP04431,Sewage collection through sewer systems (S),0.0,0.0
+CP04432,Sewage collection through on-site sanitation systems (S),0.0,0.0
+CP0444,Other services related to the dwelling (S),0.0,0.0
+CP04441,Charges for maintenance of multi-occupied buildings (S),0.0,0.0
+CP04449,Other services related to the dwelling n.e.c. (S),0.0,0.0
+CP045,"Electricity, gas and other fuels",49.25,31.78
+CP0451,Electricity (ND),17.94,12.74
+CP04510,Electricity (ND),17.94,12.74
+CP0452,Gas (ND),23.54,14.04
+CP04521,Natural gas through networks (ND),18.96,10.82
+CP04522,Liquefied hydrocarbons (ND),4.58,3.23
+CP0453,Liquid fuels (ND),0.0,0.0
+CP04530,Liquid fuels (ND),0.0,0.0
+CP0454,Solid fuels (ND),7.77,5.0
+CP04541,"Coal, coal briquettes, peat and peat briquettes (ND)",5.71,3.45
+CP04542,"Wood fuel, including pellets and briquettes (ND)",2.06,1.54
+CP04543,Charcoal (ND),0.0,0.0
+CP04549,Other solid fuels (ND),0.0,0.0
+CP0455,Other energy for heating and cooling (ND),0.0,0.0
+CP04550,Other energy for heating and cooling (ND),0.0,0.0
+CP05,"Furnishings, household equipment and routine household maintenance",76.22,79.2
+CP051,"Furniture, furnishings, and loose carpets",19.29,29.96
+CP0511,"Furniture, furnishings and loose carpets (D)",19.29,29.96
+CP05111,Household furniture (D),17.91,26.24
+CP05112,Garden and camping furniture (D),0.0,0.0
+CP05113,Lighting equipment (D),0.0,0.0
+CP05114,"Furnishings, loose carpets and rugs (D)",1.38,3.73
+CP0512,"Repair, installation and hire of furniture, furnishings and loose carpets (S)",0.0,0.0
+CP05120,"Repair, installation and hire of furniture, furnishings and loose carpets (S)",0.0,0.0
+CP052,Household textiles,4.97,6.85
+CP0521,Household textiles (SD),4.97,6.85
+CP05211,Furnishing fabrics and curtains (SD),2.12,2.31
+CP05212,Bed linen and bedding (SD),2.48,2.84
+CP05213,Table linen and bathroom linen (SD),0.38,0.54
+CP05219,Other household textiles (SD),0.0,1.16
+CP0522,"Repair, hire and sewing services of household textiles (S)",0.0,0.0
+CP05220,"Repair, hire and sewing services of household textiles (S)",0.0,0.0
+CP053,Household appliances,26.21,19.42
+CP0531,Major electric and other household appliances (D),22.2,15.98
+CP05311,Major kitchen appliances (D),11.58,6.8
+CP05312,Major laundry appliances (D),4.9,3.79
+CP05313,Heaters and air conditioners (D),3.26,3.19
+CP05314,Cleaning equipment (D),2.46,2.2
+CP05319,Other major household appliances (D),0.0,0.0
+CP0532,Small household appliances (SD),2.37,1.91
+CP05321,Small appliances for the cooking and processing of food (SD),1.27,0.88
+CP05322,Small appliances for the preparation of beverages (SD),0.7,0.5
+CP05329,Other small household appliances (SD),0.41,0.53
+CP0533,"Repair, installation and hire of household appliances (S)",1.64,1.52
+CP05330,"Repair, installation and hire of household appliances (S)",1.64,1.52
+CP054,"Glassware, tableware and household utensils",5.0,7.81
+CP0540,"Glassware, tableware and household utensils (SD)",5.0,7.81
+CP05401,"Glassware, crystal ware, ceramic ware and china ware (SD)",2.4,3.24
+CP05402,"Cutlery, flatware and silverware (SD)",0.39,0.59
+CP05403,Kitchen utensils and articles (SD),2.21,3.98
+CP05404,"Repair and hire of glassware, tableware and household utensils (S)",0.0,0.0
+CP055,Tools and equipment for house and garden,1.26,1.77
+CP0551,Motorized tools and equipment (D),0.0,0.0
+CP05510,Motorized tools and equipment (D),0.0,0.0
+CP0552,Non-motorized tools and miscellaneous accessories (SD),1.26,1.77
+CP05521,Non-motorized tools (SD),0.0,0.0
+CP05522,Miscellaneous accessories (SD),1.26,1.77
+CP0553,Repair and hire of motorized and non-motorized tools and equipment (S),0.0,0.0
+CP05530,Repair and hire of motorized and non-motorized tools and equipment (S),0.0,0.0
+CP056,Goods and services for routine household maintenance,19.5,13.4
+CP0561,Non-durable household goods (ND),14.32,10.39
+CP05611,Household cleaning and maintenance products (ND),11.97,8.4
+CP05619,Other non-durable household goods (ND),2.35,1.99
+CP0562,Domestic services and household services (S),5.17,3.01
+CP05621,Domestic services provided by paid staff (S),0.0,0.0
+CP05629,Other household services (S),5.17,3.01
+CP06,Health,40.87,27.92
+CP061,Medicines and health products,12.09,10.04
+CP0611,Medicines (ND),7.04,6.87
+CP06111,"Medicines, vaccines and other pharmaceutical preparations (ND)",7.04,6.87
+CP06112,Herbal medicines and homeopathic products (ND),0.0,0.0
+CP0612,Medical products (ND),1.27,0.0
+CP06121,Medical diagnostic products (ND),1.27,0.0
+CP06122,Preventive and protective devices (ND),0.0,0.0
+CP06123,Treatment devices for personal use (ND),0.0,0.0
+CP0613,Assistive products (D),3.78,3.16
+CP06131,Assistive products for vision (D),2.75,2.23
+CP06132,Assistive products for hearing and communication (D),0.0,0.0
+CP06133,Assistive products for mobility and daily living (D),1.04,0.93
+CP0614,"Repair, rental and maintenance of medical and assistive products (S)",0.0,0.0
+CP06140,"Repair, rental and maintenance of medical and assistive products (S)",0.0,0.0
+CP062,Outpatient care services,15.3,9.97
+CP0621,Preventive care services (S),0.0,0.0
+CP06211,Immunization services (S),0.0,0.0
+CP06219,Other preventive care services (S),0.0,0.0
+CP0622,Outpatient dental services (S),8.76,5.98
+CP06221,Dental preventive services (S),0.0,0.0
+CP06229,Other outpatient dental services (S),8.76,5.98
+CP0623,Other outpatient care services (S),6.55,3.99
+CP06231,Outpatient curative and rehabilitative services (S),6.55,3.99
+CP06232,Outpatient long-term care services (S),0.0,0.0
+CP063,Inpatient care services,8.42,7.22
+CP0631,Inpatient curative and rehabilitative services (S),8.42,7.22
+CP06310,Inpatient curative and rehabilitative services (S),8.42,7.22
+CP0632,Inpatient long-term care services (S),0.0,0.0
+CP06320,Inpatient long-term care services (S),0.0,0.0
+CP064,Other health services,5.06,0.7
+CP0641,Diagnostic imaging services and medical laboratory services (S),5.06,0.7
+CP06410,Diagnostic imaging services and medical laboratory services (S),5.06,0.7
+CP0642,Patient emergency transportation and emergency rescue services (S),0.0,0.0
+CP06420,Patient emergency transportation and emergency rescue services (S),0.0,0.0
+CP07,Transport,155.29,166.17
+CP071,Purchase of vehicles,74.08,51.18
+CP0711,Motor cars (D),69.48,45.86
+CP07111,New motor cars (D),69.48,45.86
+CP07112,Second-hand motor cars (D),0.0,0.0
+CP0712,Motorcycles (D),4.03,4.77
+CP07120,Motorcycles (D),4.03,4.77
+CP0713,Bicycles (D),0.56,0.55
+CP07130,Bicycles (D),0.56,0.55
+CP0714,Animal-drawn vehicles (D),0.0,0.0
+CP07140,Animal-drawn vehicles (D),0.0,0.0
+CP072,Operation of personal transport equipment,52.04,48.76
+CP0721,Parts and accessories for personal transport equipment (SD),4.03,3.58
+CP07211,Tyres (SD),3.4,1.84
+CP07212,Parts for personal transport equipment (SD),0.5,1.12
+CP07213,Accessories for personal transport equipment (SD),0.13,0.62
+CP0722,Fuels and lubricants for personal transport equipment (ND),33.28,32.29
+CP07221,Diesel (ND),14.37,13.92
+CP07222,Petrol (ND),12.66,12.36
+CP07223,Other fuels for personal transport equipment (ND),6.04,5.8
+CP07224,Lubricants (ND),0.21,0.21
+CP0723,Maintenance and repair of personal transport equipment (S),10.94,9.92
+CP07230,Maintenance and repair of personal transport equipment (S),10.94,9.92
+CP0724,Other services related to personal transport equipment (S),3.79,2.97
+CP07241,Parking services (S),0.27,0.0
+CP07242,Toll facilities (S),0.09,0.34
+CP07243,"Driving lessons, tests, licences and roadworthiness tests (S)",2.72,1.9
+CP07244,Hire of personal transport equipment without driver (S),0.7,0.72
+CP073,Passenger transport services,27.87,61.42
+CP0731,Passenger transport by railway (S),0.69,1.15
+CP07311,Passenger transport by train (S),0.63,0.98
+CP07312,Passenger transport by rapid transit and tram (S),0.06,0.17
+CP0732,Passenger transport by road (S),24.95,51.05
+CP07321,Passenger transport by bus and coach (S),15.09,36.53
+CP07322,Passenger transport by taxi and hired vehicle with driver (S),3.02,6.62
+CP07323,Passenger transport for students to and from school (S),6.83,7.89
+CP07329,Other passenger transport by road (S),0.0,0.0
+CP0733,Passenger transport by air (S),1.88,8.74
+CP07331,"Passenger transport by air, domestic (S)",0.96,5.86
+CP07332,"Passenger transport by air, international (S)",0.92,2.87
+CP0734,Passenger transport by sea and inland waterway (S),0.35,0.48
+CP07340,Passenger transport by sea and inland waterway (S),0.35,0.48
+CP0735,Combined passenger transport (S),0.0,0.0
+CP07350,Combined passenger transport (S),0.0,0.0
+CP0736,Other passenger transport services (S),0.0,0.0
+CP07360,Other passenger transport services (S),0.0,0.0
+CP074,Transport services for goods,1.3,4.81
+CP0741,Postal and courier services (S),0.23,0.41
+CP07411,Letter handling services (S),0.0,0.0
+CP07412,Courier and parcel delivery services (S),0.23,0.41
+CP0749,Other transport of goods (S),1.07,4.4
+CP07491,Removal and storage services (S),1.07,4.34
+CP07492,Delivery of goods (S),0.0,0.06
+CP08,Information and communication,48.21,31.04
+CP081,Information and communication equipment,19.78,14.77
+CP0811,Fixed telephone equipment (D),0.0,0.0
+CP08110,Fixed telephone equipment (D),0.0,0.0
+CP0812,Mobile telephone equipment (D),10.07,8.74
+CP08120,Mobile telephone equipment (D),10.07,8.74
+CP0813,Information processing equipment (D),2.16,1.98
+CP08131,"Computers, laptops and tablets (D)",1.79,1.81
+CP08132,Peripheral equipment and its consumable components (D),0.38,0.18
+CP0814,"Equipment for the reception, recording and reproduction of sound and vision (D)",5.72,2.58
+CP08140,"Equipment for the reception, recording and reproduction of sound and vision (D)",5.72,2.58
+CP0815,Unrecorded recording media (SD),0.23,0.0
+CP08150,Unrecorded recording media (SD),0.23,0.0
+CP0819,Other information and communication equipment and accessories (D),1.59,1.46
+CP08191,Other information and communication equipment (D),1.07,0.37
+CP08192,Other information and communication accessories (SD),0.52,1.09
+CP082,"Software, excluding games",0.0,0.0
+CP0820,"Software, excluding games (S)",0.0,0.0
+CP08200,"Software, excluding games (S)",0.0,0.0
+CP083,Information and communication services,28.44,16.27
+CP0831,Fixed communication services (S),0.22,0.0
+CP08310,Fixed communication services (S),0.22,0.0
+CP0832,Mobile communication services (S),19.39,11.47
+CP08320,Mobile communication services (S),19.39,11.47
+CP0833,Internet access provision services and online storage services (S),5.18,3.39
+CP08330,Internet access provision services and online storage services (S),5.18,3.39
+CP0834,Bundled telecommunication services (S),0.0,0.0
+CP08340,Bundled telecommunication services (S),0.0,0.0
+CP0835,Repair and rental of information and communication equipment (S),1.04,0.48
+CP08350,Repair and rental of information and communication equipment (S),1.04,0.48
+CP0839,Other information and communication services (S),2.6,0.93
+CP08391,Television and radio licences and fees (S),0.0,0.0
+CP08392,Subscriptions to audiovisual streaming services and rental of audiovisual content (S),2.55,0.93
+CP08399,Other information and communication services n.e.c. (S),0.05,0.0
+CP09,"Recreation, sport and culture",21.24,43.38
+CP091,Recreational durables,0.0,0.0
+CP0911,Photographic and cinematographic equipment and optical instruments (D),0.0,0.0
+CP09111,Cameras (D),0.0,0.0
+CP09112,Accessories for photographic and cinematographic equipment (D),0.0,0.0
+CP09113,Optical instruments (D),0.0,0.0
+CP0912,Major recreational durables (D),0.0,0.0
+CP09121,"Camper vans, caravans and trailers (D)",0.0,0.0
+CP09122,"Aeroplanes, microlight aircraft, gliders, hang gliders and hot-air balloons (D)",0.0,0.0
+CP09123,"Boats, yachts, outboard motors and other water-sport equipment (D)",0.0,0.0
+CP09124,"Horses, ponies, camels and dromedaries and accessories (D)",0.0,0.0
+CP09129,Other major recreational durables (D),0.0,0.0
+CP092,Other recreational goods,2.96,3.94
+CP0921,"Games, toys and hobby-related articles (SD)",1.96,2.35
+CP09211,"Video game computers, consoles, game applications and software (SD)",1.03,0.39
+CP09212,"Other games, toys and hobby-related articles (SD)",0.93,1.96
+CP09213,Celebration articles (ND),0.0,0.0
+CP0922,"Sporting, camping and open-air recreation equipment (SD)",1.0,1.6
+CP09221,Sporting equipment (SD),1.0,1.6
+CP09222,Camping and open-air recreation equipment (SD),0.0,0.0
+CP093,Garden products and pets,1.98,4.85
+CP0931,"Garden products, plants and flowers (ND)",0.0,0.0
+CP09311,Garden products (ND),0.0,0.0
+CP09312,"Plants, seeds and flowers (ND)",0.0,0.0
+CP0932,Pets and pet products (D),1.98,4.85
+CP09321,Pets (D),0.0,0.0
+CP09322,Products for pets and other household animals (ND),1.98,4.85
+CP094,Recreational services,3.81,19.3
+CP0941,Hire and repair of photographic and cinematographic equipment and optical instruments (S),0.0,0.0
+CP09410,Hire and repair of photographic and cinematographic equipment and optical instruments (S),0.0,0.0
+CP0942,"Hire, maintenance and repair of major recreational durables (S)",0.0,0.0
+CP09421,"Hire, maintenance and repair of camper vans and caravans (S)",0.0,0.0
+CP09422,"Hire, maintenance and repair of other major recreational durables (S)",0.0,0.0
+CP0943,"Hire and repair of games, toys and hobby-related articles (S)",0.0,0.0
+CP09431,Hire of game software and subscription to online games (S),0.0,0.0
+CP09432,"Hire and repair of other games, toys and hobby-related articles (S)",0.0,0.0
+CP0944,"Hire and repair of sporting, camping and open-air recreational equipment (S)",0.0,0.0
+CP09440,"Hire and repair of sporting, camping and open-air recreational equipment (S)",0.0,0.0
+CP0945,Veterinary and other services for pets (S),0.28,2.78
+CP09450,Veterinary and other services for pets (S),0.28,2.78
+CP0946,Recreational and sporting services (S),3.53,15.8
+CP09461,Recreational and leisure services (S),0.0,3.76
+CP09462,Services associated with the practice of sports (S),3.28,12.03
+CP09463,Services associated with attendance at sporting events (S),0.25,0.0
+CP0947,Games of chance (S),0.0,0.71
+CP09470,Games of chance (S),0.0,0.71
+CP095,Cultural goods,0.74,0.0
+CP0951,Musical instruments (D),0.74,0.0
+CP09510,Musical instruments (D),0.74,0.0
+CP0952,Audiovisual media (SD),0.0,0.0
+CP09520,Audiovisual media (SD),0.0,0.0
+CP096,Cultural services,4.67,4.27
+CP0961,"Services provided by cinemas, theatres and concert venues (S)",0.78,1.85
+CP09610,"Services provided by cinemas, theatres and concert venues (S)",0.78,1.85
+CP0962,"Services provided by museums, libraries and cultural sites (S)",0.0,0.0
+CP09620,"Services provided by museums, libraries and cultural sites (S)",0.0,0.0
+CP0963,Photographic services (S),0.49,0.0
+CP09630,Photographic services (S),0.49,0.0
+CP0969,Other cultural services (S),3.39,2.42
+CP09690,Other cultural services (S),3.39,2.42
+CP097,"Newspapers, books and stationery",5.27,5.11
+CP0971,Books (SD),3.46,3.4
+CP09711,Educational books and textbooks (SD),2.75,2.44
+CP09719,Other books (SD),0.71,0.96
+CP0972,Newspapers and periodicals (ND),0.38,0.0
+CP09721,Newspapers (ND),0.26,0.0
+CP09722,Magazines and periodicals (ND),0.13,0.0
+CP0973,Miscellaneous printed matter (ND),0.0,0.0
+CP09730,Miscellaneous printed matter (ND),0.0,0.0
+CP0974,Stationery and drawing materials (ND),1.42,1.71
+CP09740,Stationery and drawing materials (ND),1.42,1.71
+CP098,Package holidays,1.8,5.91
+CP0980,Package holidays (S),1.8,5.91
+CP09800,Package holidays (S),1.8,5.91
+CP10,Education services,23.07,20.22
+CP101,Early childhood and primary education,1.99,6.98
+CP1010,Early childhood and primary education (S),1.99,6.98
+CP10101,Early childhood education (S),0.0,2.4
+CP10102,Primary education (S),1.99,4.59
+CP102,Secondary education,11.1,5.48
+CP1020,Secondary education (S),11.1,5.48
+CP10200,Secondary education (S),11.1,5.48
+CP103,Post-secondary non-tertiary education,0.0,0.0
+CP1030,Post-secondary non-tertiary education (S),0.0,0.0
+CP10300,Post-secondary non-tertiary education (S),0.0,0.0
+CP104,Tertiary education,8.14,7.75
+CP1040,Tertiary education (S),8.14,7.75
+CP10400,Tertiary education (S),8.14,7.75
+CP105,Education not defined by level,1.84,0.0
+CP1050,Education not defined by level (S),1.84,0.0
+CP10501,Tutoring (S),0.27,0.0
+CP10509,Other education not defined by level (S),1.57,0.0
+CP11,Restaurants and accommodation services,83.16,111.35
+CP111,Food and beverage serving services,75.41,84.38
+CP1111,"Restaurants, cafés and the like (S)",75.41,79.11
+CP11111,"Restaurants, cafés and the like – with full service (S)",61.68,75.34
+CP11112,"Restaurants, cafés and the like – with limited service (S)",13.73,3.77
+CP1112,"Canteens, cafeterias and refectories (S)",0.0,5.27
+CP11121,"Canteens and cafeterias of universities, schools and kindergartens (S)",0.0,5.27
+CP11129,"Other canteens, cafeterias and refectories (S)",0.0,0.0
+CP112,Accommodation services,7.74,26.97
+CP1120,Accommodation services (S),7.74,26.97
+CP11201,"Hotels, motels, inns and similar accommodation services (S)",5.0,25.9
+CP11202,"Holiday centres, camping sites, youth hostels and similar accommodation services (S)",0.0,0.0
+CP11203,"Accommodation services of boarding schools, universities and other educational establishments (S)",2.74,1.08
+CP11209,Other accommodation services (S),0.0,0.0
+CP12,Insurance and financial services,2.58,10.74
+CP121,Insurance,2.53,4.28
+CP1211,Life and accident insurance (S),0.0,0.0
+CP12110,Life and accident insurance (S),0.0,0.0
+CP1212,Insurance connected with health (S),0.33,0.28
+CP12120,Insurance connected with health (S),0.33,0.28
+CP1213,Insurance connected with dwellings (S),0.19,0.46
+CP12130,Insurance connected with dwellings (S),0.19,0.46
+CP1214,Insurance connected with transport (S),2.01,3.54
+CP12141,Personal transport insurance (S),2.01,3.54
+CP12142,Travel insurance (S),0.0,0.0
+CP1219,Other insurance (S),0.0,0.0
+CP12190,Other insurance (S),0.0,0.0
+CP122,Financial services,0.05,6.46
+CP1222,Explicit charges by deposit-taking corporations (S),0.0,4.83
+CP12220,Explicit charges by deposit-taking corporations (S),0.0,4.83
+CP1229,Other financial services (S),0.05,1.62
+CP12291,Remittances fees (S),0.05,1.62
+CP12299,Other financial services n.e.c. (S),0.0,0.0
+CP13,"Personal care, social protection and miscellaneous goods and services",40.26,44.94
+CP131,Personal care,23.7,18.72
+CP1311,Electric appliances for personal care (SD),0.47,0.64
+CP13111,Purchase of electric appliances for personal care (SD),0.47,0.64
+CP13112,Repair of electric appliances for personal care (S),0.0,0.0
+CP1312,"Other appliances, articles and products for personal care (ND)",16.56,12.23
+CP13120,"Other appliances, articles and products for personal care (ND)",16.56,12.23
+CP1313,Hairdressing salons and personal grooming establishments (S),6.67,5.85
+CP13131,Hairdressing (S),4.97,3.93
+CP13132,Personal grooming treatments (S),1.7,1.93
+CP132,Other personal effects,9.38,10.94
+CP1321,Jewellery and watches (D),3.53,4.49
+CP13211,Purchase of jewellery and watches (D),3.53,4.49
+CP13212,"Repair and hire of jewellery, clocks and watches (S)",0.0,0.0
+CP1322,Devotional articles and articles for religious and ritual celebrations (SD),0.0,0.0
+CP13220,Devotional articles and articles for religious and ritual celebrations (SD),0.0,0.0
+CP1329,Other personal effects n.e.c. (SD),5.85,6.45
+CP13291,"Travel goods, baby articles and other personal effects n.e.c. (SD)",5.85,6.45
+CP13292,Repair and hire of other personal effects (S),0.0,0.0
+CP133,Social protection,2.49,3.52
+CP1330,Social protection (S),2.49,3.52
+CP13301,Childcare services (S),2.49,3.52
+CP13302,"Retirement homes for elderly persons and residences for disabled persons, not providing medical care (S)",0.0,0.0
+CP13303,Home care services for elderly and disabled (S),0.0,0.0
+CP13309,Other social protection services (S),0.0,0.0
+CP139,Other services,4.69,11.76
+CP1390,Other services (S),4.69,11.76
+CP13902,Religious services (S),1.43,4.02
+CP13909,Other services n.e.c. (S),3.26,7.74
+GD,Goods (overall index excluding services),689.77,616.24
+FOOD,Food including alcohol and tobacco,284.88,271.99
+FOOD_P,Processed food including alcohol and tobacco,164.51,167.64
+FOOD_P_X_TBC,Processed food excluding tobacco,132.1,146.07
+FOOD_P_X_ALC_TBC,Processed food excluding alcohol and tobacco,129.28,140.09
+FOOD_NP,Unprocessed food,120.37,104.36
+FOOD_S,Seasonal food,55.85,42.11
+IGD,Industrial goods,404.89,344.25
+IGD_NNRG,Non-energy industrial goods,322.57,280.38
+IGD_NNRG_D,"Non-energy industrial goods, durables only",142.65,118.45
+IGD_NNRG_SD,"Non-energy industrial goods, semi-durables only",101.52,115.57
+IGD_NNRG_ND,"Non-energy industrial goods, non-durables only",78.41,46.36
+NRG,Energy,82.32,63.86
+ELC_GAS,"Electricity, gas, solid fuels and heat energy",49.25,31.78
+FUEL,Liquid fuels and fuels for personal transport equipment,33.07,32.08
+SERV,Services (overall index excluding goods),310.23,383.76
+SERV_COM,Services related to communication,26.06,15.75
+SERV_HOUS,Services related to housing,75.17,77.13
+SERV_MSC,Services - miscellaneous,59.68,62.9
+SERV_REC,"Services related to recreation, including repairs and personal care",103.64,145.73
+SERV_REC_X_HOA,"Services related to recreation and personal care, excluding package holidays and accommodation",94.09,112.85
+SERV_REC_HOA,Services related to package holidays and accommodation,9.55,32.89
+SERV_TRA,Services related to transport,45.68,82.25
+NRG_FOOD_NP,Energy and unprocessed food,202.7,168.22
+NRG_FOOD_S,Energy and seasonal food,138.17,105.97
+EDUC_HLTH_SPR,"Education, health and social protection",66.43,51.66
+FROOPP,Frequent out-of-pocket purchases,,
+TOT_X_FOOD_S,Overall index excluding seasonal food,944.15,957.89
+TOT_X_ALC_TBC,Overall index excluding alcohol and tobacco,964.77,972.45
+TOT_X_TBC,Overall index excluding tobacco,967.59,978.43
+TOT_X_NRG,Overall index excluding energy,917.68,936.14
+TOT_X_NRG_FOOD,"Overall index excluding energy, food, alcohol and tobacco",632.8,664.14
+TOT_X_NRG_FOOD_NP,Overall index excluding energy and unprocessed food,797.3,831.78
+TOT_X_NRG_FOOD_S,Overall index excluding energy and seasonal food,861.83,894.03
+TOT_X_FUEL,Overall index excluding liquid fuels and fuels for personal transport equipment,966.93,967.92
+TOT_X_HOUS,"Overall index excluding housing, water, electricity, gas and other fuels",847.37,885.98
+TOT_X_EDUC_HLTH_SPR,"Overall index excluding education, health and social protection",933.57,948.34
+TOT_X_FROOPP,Overall index excluding frequent out-of-pocket purchases,,
+AP,Administered prices,158.87,151.73
+AP_NRG,Administered prices - energy,36.9,23.55
+AP_X_NRG,Administered prices excluding energy,121.97,128.18
+AP_X_NRG_FOOD,Administered prices excluding energy and food,79.9,96.01
+AP_NRG_FOOD,Administered prices - energy and food,78.97,55.72
+APF,Fully administered prices,90.08,96.04
+APM,Mainly administered prices,68.79,55.69
+TOT_X_AP,Overall index excluding administered prices,841.13,848.27
+TOT_X_APF,Overall index excluding fully administered prices,909.92,903.96
+TOT_X_APM,Overall index excluding mainly administered prices,931.21,944.31

@@ -1,0 +1,37 @@
+segment,domestic_units,imported_units,total_units,domestic_share_pct,imported_share_pct
+passenger cars,323223,761273,1084496,29.8,70.2
+light commercial vehicles,63313,220591,283904,22.3,77.7
+total cars+LCV,386536,981864,1368400,28.2,71.8
+
+car market by powertrain 2025,units,share_pct
+petrol,509217,47.0
+hybrid total,295378,27.2
+ - full hybrid,72851,6.7
+ - plug-in hybrid,47969,4.4
+ - mild hybrid,174558,16.1
+BEV,191960,17.7
+ - BEV <=160 kW (share of car market),,13.9
+ - BEV >160 kW (share of car market),,3.8
+diesel,80346,7.4
+LPG,7595,0.7
+
+car market by engine size 2025 (share of car market),,share_pct
+<1400 cc,,34.1
+1400-1600 cc,,20.1
+1600-2000 cc,,0.6
+>2000 cc,,0.2
+(remainder = BEV etc.),,
+
+"top-10 models 2025 (ODMD via press, PARTIAL)",units,production location
+Renault Clio,51717,Bursa TR (Oyak-Renault)
+Renault Megane Sedan,48099,Bursa TR
+Fiat Egea Sedan,42838,Bursa TR (Tofas)
+Toyota Corolla,35907,Sakarya TR (TMMT) - implied by ODMD Toyota domestic total
+Tesla Model Y,31509,imported (ODMD estimate)
+BYD Seal U,30380,"imported, China"
+Togg T10X,27583,Gemlik TR
+Fiat Egea Cross,26820,Bursa TR
+Toyota C-HR,25215,Sakarya TR
+Dacia Sandero Stepway,23699,imported (Romania/Morocco)
+
+"OSD 2025: production 1,419,464 (cars 872,538); exports 1,057,920 units (cars 599,687); export value USD 41.5bn (TIM), car exports USD 11.8bn (OIB); total market 1,413,903 (OSD release 19.01.2026 https://www.osd.org.tr/haberler/231)"

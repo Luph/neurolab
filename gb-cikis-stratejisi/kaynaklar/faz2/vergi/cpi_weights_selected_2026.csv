@@ -1,0 +1,21 @@
+coicop2018,item,weight_2025_permille,weight_2026_permille,weight_2026_pct
+CP07111,New motor cars,69.48,45.86,4.586
+CP07112,Second-hand motor cars,0.0,0.0,0.0
+CP0712,Motorcycles,4.03,4.77,0.477
+CP0531,"Major household appliances (white goods, incl. AC, cleaning)",22.2,15.98,1.598
+CP05311,  major kitchen appliances,11.58,6.8,0.68
+CP05312,  major laundry appliances,4.9,3.79,0.379
+CP05313,  heaters and air conditioners,3.26,3.19,0.319
+CP0532,Small household appliances,2.37,1.91,0.191
+CP0814,"TV, audio-visual equipment",5.72,2.58,0.258
+CP0812,Mobile telephone equipment,10.07,8.74,0.874
+CP0813,Computers and peripherals,2.16,1.98,0.198
+CP031,Clothing,57.23,67.96,6.796
+CP032,Footwear,14.36,11.08,1.108
+CP1312,"Personal-care products (cosmetics, toiletries)",16.56,12.23,1.223
+CP05111,Household furniture,17.91,26.24,2.624
+CP0511,"Furniture, furnishings, carpets",19.29,29.96,2.996
+CP03,Clothing and footwear (division),71.59,79.04,7.904
+CP07,Transport (division),155.29,166.17,16.617
+
+"Source: Eurostat prc_hicp_iw (HICP ECOICOP ver.2 item weights, geo=TR, updated 2026-10-16); TUIK CPI 2025=100 COICOP-2018 main-group weights identical (e.g. food 24.44%, transport 16.62%, clothing 7.90%)"

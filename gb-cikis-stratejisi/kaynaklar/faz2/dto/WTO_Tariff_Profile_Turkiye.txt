@@ -1,0 +1,81 @@
+                                                                                                                                                                                  WTO - Internal
+
+
+
+
+      Türkiye
+      Türkiye
+
+      Part A.1                                            Tariffs and imports: Summary and duty ranges
+                              Summary                                      Total            Ag            Non-Ag         WTO member since                                                 1995
+      Simple average final bound                                             28.9             61.8            17.2       Binding coverage:                                 Total          50.5
+      MFN applied                                                                                                                                                        Non-Ag           43.0
+          Simple average                                      2025           17.3             39.9            13.6       Ag: Tariff quotas (in %)                                            0
+          Trade weighted average                              2025             9.8            28.4             8.5       Ag: Special safeguards (in % )                                      0
+      Imports in billion US$                                  2024          344.0             23.2          320.8
+
+
+                                                          Duty-free       0 <= 5          5 <= 10        10 <= 15        15 <= 25        25 <= 50        50 <= 100       > 100            NAV
+                    Frequency distribution
+                                                                                               Tariff lines and import values (in %)                                                      in %
+      Agricultural products
+                                    Final bound                    0.0             3.2             3.5             5.6        20.4            26.1             22.2      19.0                0
+                                    MFN applied    2025         17.9               6.0           10.1              2.1        18.9            20.0             13.4      11.6                0
+                                        Imports    2024         34.5               5.7           12.7              3.4            7.6         16.8                 3.7   11.8              3.8
+      Non-agricultural products
+                                    Final bound                    3.3             3.7             4.1         11.4           11.1                8.5              0.8    0.0              0.1
+                                    MFN applied    2025         20.3           19.4              22.4              6.9            9.0         14.5                 6.4      0                0
+                                        Imports    2024         28.7           29.1              15.3              6.0            8.8         10.9                 1.1      0              0.2
+
+
+      Part A.2                                            Tariffs and imports by product groups
+                                                                           Final bound duties                                     MFN applied duties                            Imports
+
+                        Product groups                       AVG         Duty-free         Max            Binding         AVG           Duty-free          Max           Share        Duty-free
+                                                                           in %                            in %                           in %                           in %             in %
+      Live animals and meat                                   134.4            0             225             100           101.4                  9.1       225                 0.4       46.5
+      Dairy products                                          146.8            0             180             100           111.0                  1.3       180                 0.0        0.0
+      Fruits and vegetables                                    40.3            0             146             100             34.0                 0.5       136                 0.8       28.4
+      Coffee, tea, cocoa and spices                            68.9            0             168             100             19.4                 3.7         75                0.7       21.4
+      Cereals and food preparations                            72.0            0             180             100             37.7             12.6          130                 1.1        1.7
+      Oilseeds, fats and oils                                  27.8            0              68             100             16.5             19.3            68                1.5       47.4
+      Sugars and confectionery                                107.3            0             135             100             92.4                  0        135                 0.1        7.8
+      Beverages and tobacco                                    79.6            0             167             100             36.1             22.9            75                0.6       19.9
+      Cotton, silk and wool                                    13.3            0              24             100              0.0            100.0             0                0.5    100.0
+      Other agricultural products                              27.3          0.2              77             100             11.8             42.9            77                1.0       43.0
+      Fish and fish products                                   51.3            0              82            19.0             48.3                 5.3         82                0.2       44.6
+      Minerals and metals                                      18.5          1.4              50            24.3              9.5             33.0            60            29.1          41.9
+      Petroleum                                                  0.1           0               0            20.0              2.1             39.0             5            11.1          45.4
+      Chemicals                                                16.5          4.2             100            66.0              6.2             19.3            32            12.9          19.3
+      Wood, paper, furniture                                   27.2          3.4              62            45.0              6.9             57.6            34                1.8       63.6
+      Textiles                                                 25.2            0              92            23.4             22.6                 1.8         49                2.2        1.9
+      Clothing                                                 27.3            0              40             3.7             49.4                  0          51                1.1          0
+      Rubber, leather and footwear                             22.9            0              40            47.8             18.6             22.0            57                1.8       25.9
+      Mechanical, office and computing machinery               11.3          9.4              25            68.6              5.9             14.6            24            11.4          16.2
+      Electrical machinery and electronic equipment            11.3         35.8              50            58.3              6.6             23.3            34                8.1       29.7
+      Transport equipment                                      17.6            0              37            57.8              7.6             10.5            38            10.8           1.4
+      Other Manufactures                                       14.2         15.4              47            40.3              9.9             20.5            35                2.9       31.9
+
+
+      Part B                                              Exports to major trading partners and duties faced
+                                                             Bilateral imports               Diversification                 MFN AVG of                    Pref.         Duty-free imports
+                         Major markets                                   in million        95% trade in no. of                traded TL                   margin          TL           Value
+                                                                           US$           HS 2-digit      HS 6-digit      Simple         Weighted        Weighted         in %             in %
+      Agricultural products
+      1. European Union                                       2024           7,051               29            204         13.6            11.4              9.5           66.9             78.7
+      2. United States of America                             2024           1,962               20             88          5.2             2.8              0.0           22.8             30.4
+      3. United Kingdom                                       2024             967               22            119         10.9             7.6              7.0           76.8             93.7
+      4. United Arab Emirates                                 2023             566               19             90          5.0            18.1              2.3           62.0             54.2
+      5. Ukraine                                              2024             558               15             39          8.8             4.9              0.0           16.6             52.5
+      Non-agricultural products
+      1. European Union                                       2024         96,859                64         1,235           4.4             5.5              5.5          100.0            100.0
+      2. United Kingdom                                       2024         17,505                60            575          3.4             5.4              5.4          100.0            100.0
+      3. United Arab Emirates                                 2023         17,090                27             93          4.7             1.4              0.9           80.7             82.3
+      4. United States of America                             2024         14,001                63            674          4.6             2.9              0.0           37.3             44.0
+      5. China                                                2024           4,375               40            226          6.1             3.2              0.0           14.6             36.7
+
+
+                 Download the data:                                                                                                                     WTO ITC UNCTAD
+182
+                 www.wto.org/statistics                                                                                                          World Tariff Profiles 2026
+

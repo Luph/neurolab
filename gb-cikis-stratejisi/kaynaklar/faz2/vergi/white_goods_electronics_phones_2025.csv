@@ -1,0 +1,24 @@
+indicator,value,unit,source,tag
+"TURKBESD domestic sales, 6 main products (fridge, freezer, washer, dishwasher, oven, dryer)",9.9,million units (-3% y/y),TURKBESD press conf. 27.01.2026 via TV5,PARTIAL
+"TURKBESD exports, 6 main products",20.2,million units (-10% y/y),same,PARTIAL
+White-goods production change 2025,-9,% y/y; capacity ~29m units,same,PARTIAL
+Production 2025: refrigerators,6193140,units,Ticaret Bak. Beyaz Esya Sektor Raporu 2026 (TURKBESD data) via search summary,PARTIAL
+Production 2025: freezers,1438193,units,same,PARTIAL
+Production 2025: washing machines,5764367,units,same,PARTIAL
+Production 2025: dishwashers,5761230,units,same,PARTIAL
+Production 2025: ovens,5565322,units,same,PARTIAL
+Production 2025: dryers,4341443,units,same,PARTIAL
+Imports 2025: fridge-freezers+household fridges+freezers (841810/21/30/40),662826,units (USD 146.3m),UN Comtrade (TR reporter),VERIFIED
+Imports 2025: household washing machines (845011/12/19),345259,units (USD 88.8m),UN Comtrade,VERIFIED
+Imports 2025: household dishwashers (842211),204237,units (USD 69.3m),UN Comtrade,VERIFIED
+Imports 2025: dryers <=10kg (845121),507296,units (USD 217.7m; Poland main origin),UN Comtrade,VERIFIED
+"Approx. import penetration, 4 large appliances (imports / (TURKBESD domestic sales + imports))",~15,% of units (rough; ovens excluded from imports; members own imports may be inside TURKBESD sales),derived,PARTIAL
+Imports 2025: TV receivers (852872),296934,units (USD 157.8m),UN Comtrade,VERIFIED
+Turkish TV market size,~250-300k/month,units (undated),Hurriyet,UNVERIFIED
+Smartphones IMEI-registered 2025,11.7,million units,MOBISAD via press (Cozumpark),PARTIAL
+  of which domestically produced,5.27,million units (~45%),same,PARTIAL
+Smartphone production capacity / utilisation,14.8,million units; 35.7% utilisation,same,PARTIAL
+Imports 2025: smartphones/mobile phones (851713),3068.5,"USD million (China 78.9%, Vietnam 11.7%, India 9.3%; EU ~0%)",UN Comtrade,VERIFIED
+Imports 2025: laptops (847130),1798.6,"USD million (China 88.5%, Vietnam 10.0%)",UN Comtrade,VERIFIED
+IMEI registration fee (yolcu beraberi telefon kullanim izin harci) 2026,54258,"TL per device (2025: 45,614); 1 device/yr; register within 120 days",Harclar Kanunu (8) sayili tarife; CK 10783 RG 31.12.2025 (revaluation 18.95%) via press,PARTIAL
+TRT banderole fee (3093 s.K.),TV 16% / mobile phone 12% / smartwatch 14%,of manufacturer/importer sale price; since 26.05.2022,press (Teknoblog),PARTIAL

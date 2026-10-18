@@ -1,0 +1,20 @@
+iso,partner,value_mnUSD,units,CIF_unit_value_USD
+ESP,Spain,3814.2,210123,18152
+CHN,China,1760.0,109430,16083
+SVK,Slovakia,1291.1,52465,24609
+FRA,France,1280.4,63930,20028
+CZE,Czechia,1198.8,54489,22001
+KOR,Rep. of Korea,1048.9,39796,26357
+ROU,Romania,884.9,47593,18592
+JPN,Japan,785.5,34666,22660
+GBR,United Kingdom,733.4,28400,25825
+PRT,Portugal,591.1,29955,19734
+HUN,Hungary,519.1,18006,28827
+POL,Poland,374.8,15486,24201
+MAR,Morocco,337.3,27321,12345
+ZAF,South Africa,325.4,10947,29729
+SWE,Sweden,300.5,7253,41428
+BEL,Belgium,263.8,8600,30675
+DEU,Germany,6365.2,n/a (quantity not reported),
+
+"Source: UN Comtrade public API, reporter Turkiye (792), HS 8703, 2025, flow M; retrieved 18.10.2026"

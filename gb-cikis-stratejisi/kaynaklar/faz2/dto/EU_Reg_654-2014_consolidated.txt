@@ -1,0 +1,262 @@
+
+Consolidated TEXT: 32014R0654 — EN — 13.02.2021
+02014R0654 — EN — 13.02.2021 — 002.001
+This text is meant purely as a documentation tool and has no legal effect. The Union's institutions do not assume any liability for its contents. The authentic versions of the relevant acts, including their preambles, are those published in the Official Journal of the European Union and available in EUR-Lex. Those official texts are directly accessible through the links embedded in this document
+►B
+ REGULATION (EU) No 654/2014 OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL
+of 15 May 2014
+concerning the exercise of the Union's rights for the application and enforcement of international trade rules and amending Council Regulation (EC) No 3286/94 laying down Community procedures in the field of the common commercial policy in order to ensure the exercise of the Community's rights under international trade rules, in particular those established under the auspices of the World Trade Organization
+(OJ L 189 27.6.2014, p. 50)
+Amended by:
+Official Journal
+  No
+page
+date
+►M1
+ REGULATION (EU) 2015/1843 OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL
+  of 6 October 2015
+  L 272
+1
+16.10.2015
+►M2
+ REGULATION (EU) 2021/167 OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL
+  of 10 February 2021
+  L 49
+1
+12.2.2021
+Corrected by:
+ C1
+Corrigendum, OJ L 243, 18.9.2015, p.  14 (654/2014)
+▼B
+ REGULATION (EU) No 654/2014 OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL
+of 15 May 2014
+concerning the exercise of the Union's rights for the application and enforcement of international trade rules and amending Council Regulation (EC) No 3286/94 laying down Community procedures in the field of the common commercial policy in order to ensure the exercise of the Community's rights under international trade rules, in particular those established under the auspices of the World Trade Organization
+Article 1
+Subject matter
+This Regulation lays down rules and procedures to ensure an effective and timely exercise of the Union's rights to suspend or withdraw concessions or other obligations under international trade agreements, with the intention of:
+(a) 
+responding to breaches by third countries of international trade rules which affect the Union's interests, with a view to seeking a satisfactory solution that restores benefits for the Union's economic operators;
+▼M2
+(b) 
+rebalancing concessions or other obligations in the trade relations with third countries, when the treatment accorded to goods or services from the Union is altered in a way that affects the Union’s interests.
+▼B
+Article 2
+Definitions
+For the purposes of this Regulation the following definitions apply:
+(a) 
+"country" means any State or separate customs territory;
+▼M2
+(b) 
+"concessions or other obligations" means tariff concessions or other obligations or benefits in the field of trade in goods or services, or concerning trade-related aspects of intellectual property rights, that the Union has committed itself to applying in its trade with third countries by virtue of international trade agreements to which it is a party;
+▼B
+(c) 
+"level of nullification or impairment" means the degree to which the benefits accruing to the Union under an international trade agreement are affected. Except as otherwise defined in the relevant agreement, it includes any adverse economic impact resulting from a third country measure;
+(d) 
+"mandatory price penalty" means an obligation on contracting authorities or entities conducting public procurement procedures to increase, subject to certain exceptions, the price of services and/or goods originating in certain third countries that have been offered in contract award procedures.
+Article 3
+Scope
+This Regulation applies:
+(a) 
+following the adjudication of trade disputes under the WTO Understanding on Rules and Procedures Governing the Settlement of Disputes (WTO Dispute Settlement Understanding), when the Union has been authorised to suspend concessions or other obligations under the multilateral and plurilateral agreements covered by the WTO Dispute Settlement Understanding;
+▼M2
+(aa) 
+following the circulation of a WTO panel report upholding, in whole or in part, the claims brought by the Union, if an appeal under Article 17 of the WTO Dispute Settlement Understanding cannot be completed and if the third country has not agreed to interim appeal arbitration under Article 25 of the WTO Dispute Settlement Understanding;
+▼B
+(b) 
+following the adjudication of trade disputes under other international trade agreements, including regional or bilateral agreements, when the Union has the right to suspend concessions or other obligations under such agreements;
+▼M2
+(ba) 
+in trade disputes relating to other international trade agreements, including regional or bilateral agreements, if adjudication is not possible because the third country is not taking the steps that are necessary for a dispute settlement procedure to function, including unduly delaying the proceedings amounting to non-cooperation in the process;
+▼B
+(c) 
+for the rebalancing of concessions or other obligations, to which the application of a safeguard measure by a third country may give right pursuant to Article 8 of the WTO Agreement on Safeguards, or to the provisions on safeguards included in other international trade agreements, including regional or bilateral agreements;
+▼M2
+(d) 
+in cases of modification of concessions or commitments by a WTO member under Article XXVIII of the GATT 1994 or Article XXI of the General Agreement on Trade in Services (GATS), where no compensatory adjustments have been agreed and, as regards services, compensatory adjustments are not made in conformity with the findings of the arbitration pursuant to Article XXI of the GATS.
+▼B
+Article 4
+Exercise of the Union's rights
+1.  
+Where action is necessary to safeguard the Union's interests in the cases referred to in Article 3, the Commission shall adopt implementing acts determining the appropriate commercial policy measures. Those implementing acts shall be adopted in accordance with the examination procedure referred to in Article 8(2).
+2.  
+Implementing acts adopted pursuant to paragraph 1 shall meet the following conditions:
+(a) 
+where concessions or other obligations are suspended following the adjudication of a trade dispute under the WTO Dispute Settlement Understanding, their level shall not exceed the level authorised by the WTO Dispute Settlement Body;
+(b) 
+where concessions or other obligations are suspended following the discharge of an international dispute settlement procedure under other international trade agreements, including regional or bilateral agreements, their level shall not exceed the level of nullification or impairment as a result of the third country measure concerned, as determined by the Commission or through recourse to arbitration, as the case may be;
+▼M2
+(ba) 
+where measures are taken to restrict trade with a third country in situations under point (aa) or (ba) of Article 3, the level of such measures shall not exceed the nullification or impairment of the Union’s commercial interests caused by the measures of that third country;
+▼B
+(c) 
+in the case of rebalancing of concessions or other obligations under provisions on safeguards in international trade agreements, the Union's action shall be substantially equivalent to the level of concessions or other obligations affected by the safeguard measure, in accordance with the conditions of the WTO Agreement on Safeguards or of the provisions on safeguards in other international trade agreements, including regional or bilateral agreements, under which the safeguard measure is applied;
+▼M2
+(d) 
+where concessions or commitments are modified or withdrawn in the trade with a third country in connection with Article XXVIII of the GATT 1994 and the related Understanding (
+1
+), or with Article XXI of the GATS and the related implementing procedures, they shall be substantially equivalent to the concessions or commitments modified or withdrawn by that third country, in accordance with the terms established in Article XXVIII of the GATT 1994 and the related Understanding or Article XXI of the GATS and the related implementing procedures.
+▼B
+3.  
+Commercial policy measures referred to in paragraph 1 shall be determined on the basis of the following criteria, in light of available information and of the Union's general interest:
+(a) 
+effectiveness of the measures in inducing compliance of third countries with international trade rules;
+(b) 
+potential of the measures to provide relief to economic operators within the Union affected by third country measures;
+(c) 
+availability of alternative sources of supply for the goods or services concerned, in order to avoid or minimise any negative impact on downstream industries, contracting authorities or entities, or final consumers within the Union;
+(d) 
+avoidance of disproportionate administrative complexity and costs in the application of the measures;
+(e) 
+any specific criteria that may be established in international trade agreements in connection with the cases referred to in Article 3.
+Article 5
+Commercial policy measures
+1.  
+Without prejudice to any international agreement to which the Union is a party, the commercial policy measures that may be enacted by means of an implementing act pursuant to Article 4(1) shall consist of:
+(a) 
+the suspension of tariff concessions and the imposition of new or increased customs duties, including the re-establishment of customs duties at the most favoured nation level or the imposition of customs duties beyond the most favoured nation level, or the introduction of any additional charge on imports or exports of goods;
+(b) 
+the introduction or increase of quantitative restrictions on imports or exports of goods, whether made effective through quotas, import or export licences or other measures;
+▼M2
+(ba) 
+the suspension of obligations regarding trade in services and the imposition of restrictions on trade in services;
+(bb) 
+the suspension of obligations with respect to trade-related aspects of intellectual property rights granted by a Union institution or agency and valid throughout the Union, and the imposition of restrictions on the protection of such intellectual property rights or their commercial exploitation, in relation to right-holders who are nationals of the third country concerned;
+▼B
+(c) 
+the suspension of concessions regarding goods, services or suppliers in the area of public procurement, through:
+(i) 
+the exclusion from public procurement of suppliers of goods or services established in and operating from the third country concerned and/or of tenders the total value of which is made up of more than 50 % of goods or services originating in the third country concerned; and/or
+(ii) 
+the imposition of a mandatory price penalty on tenders of suppliers of goods or services established in and operating from the third country concerned and/or on that part of the tender consisting of goods or services originating in the third country concerned.
+▼M2
+1a.  
+When selecting measures to be adopted pursuant to point (ba) of paragraph 1 of this Article, the Commission shall always consider measures according to the following hierarchy of steps:
+(a) 
+measures relating to trade in services requiring an authorisation valid throughout the Union and based on secondary legislation, or, where no such measures are available,
+(b) 
+measures relating to other services in areas where extensive Union legislation exists, or, where no such measures are available,
+(c) 
+measures which the information-gathering exercise conducted pursuant to Article 9(1a), as provided for in point (a) of Article 5(1b), has demonstrated would not impose a disproportionate burden on the process of administration of relevant national regulations.
+1b.  
+Measures adopted pursuant to points (ba) and (bb) of paragraph 1 shall:
+(a) 
+be subject to an information-gathering exercise pursuant to Article 9(1a);
+(b) 
+be adjusted, if necessary, by means of an implementing act pursuant to Article 4(1) where, after a review conducted pursuant to Article 9(1a), the Commission concludes that the measures are of insufficient effectiveness or impose an unreasonable burden on the process of administration of relevant national regulations. Such review by the Commission shall be first conducted six months after the date of application of the measures and at intervals of 12 months thereafter;
+(c) 
+be subject to an evaluation report, six months after their termination and based, inter alia, on stakeholder input, which shall examine their effectiveness and operation, and draw possible conclusions for future measures.
+▼B
+2.  
+Measures adopted pursuant to paragraph 1(c) shall:
+(a) 
+include thresholds, according to the characteristics of the goods or services concerned, above which the exclusion and/or mandatory price penalty is to apply, taking into account the provisions of the trade agreement concerned and the level of nullification or impairment;
+(b) 
+determine the sectors or the categories of goods or services to which they apply, as well as any applicable exceptions;
+(c) 
+determine the contracting authorities or entities or categories of contracting authorities or entities, listed by Member State, whose procurement is covered. To provide the basis for this determination, each Member State shall submit a list of appropriate contracting authorities or entities or categories of contracting authorities or entities. The measures shall ensure that an appropriate level of suspension of concessions or other obligations and a fair distribution among Member States is achieved.
+Article 6
+Rules of origin
+1.  
+The origin of a good shall be determined in accordance with Regulation (EEC) No 2913/92.
+2.  
+The origin of a service shall be determined on the basis of the origin of the natural or legal person providing it. The origin of the service provider shall be deemed to be:
+(a) 
+in the case of a natural person, the country of which the person is a national or where he has a right of permanent residence;
+(b) 
+in the case of a legal person, either of the following:
+(i) 
+if the service is provided other than through a commercial presence within the Union, the country where the legal person is constituted or otherwise organised under the laws of that country and in the territory of which the legal person is engaged in substantive business operations;
+(ii) 
+if the service is provided through a commercial presence within the Union, the Member State where the legal person is established and in the territory of which it is engaged in substantive business operations such that it has a direct and effective link with the economy of that Member State.
+For the purposes of point (ii) of point (b) of the first subparagraph, if the legal person providing the service is not engaged in substantive business operations such that it has a direct and effective link with the economy of the Member State in which it is established, the origin of that legal person shall be deemed to be the origin of the natural or legal persons which own or control it.
+The legal person providing the service shall be considered to be "owned" by persons of a given country if more than 50 % of the equity interest in it is beneficially owned by persons of that country and "controlled" by persons of a given country if such persons have the power to name a majority of its directors or otherwise to legally direct its actions.
+▼M2
+3.  
+Regarding trade-related aspects of intellectual property rights, the term ‘nationals’ shall be understood in the same sense as it is used in paragraph 3 of Article 1 of the WTO Agreement on Trade-Related Aspects of Intellectual Property Rights.
+▼B
+Article 7
+Suspension, modification and repeal of measures
+1.  
+Where, after the adoption of an implementing act pursuant to Article 4(1), the third country concerned accords adequate and proportionate compensation to the Union in the cases referred to in Article 3(1)(a) and (b), the Commission may suspend the application of that implementing act for the duration of the compensation period. The suspension shall be decided in accordance with the examination procedure referred to in Article 8(2).
+2.  
+The Commission shall repeal an implementing act adopted under Article 4(1) in any of the following circumstances:
+(a) 
+when the third country whose measures were found to be in breach of international trade rules in a dispute settlement procedure brings itself into compliance, or where a mutually satisfactory solution has otherwise been reached;
+(b) 
+in cases of rebalancing of concessions or other obligations following the adoption by a third country of a safeguard measure, when the safeguard measure is withdrawn or expires, or when the third country concerned accords adequate and proportionate compensation to the Union after the adoption of an implementing act under Article 4(1);
+▼M2
+(c) 
+in cases of the withdrawal or modification of concessions or commitments by a WTO member under Article XXVIII of the GATT 1994 or Article XXI of the GATS, when the third country concerned accords adequate and proportionate compensation to the Union after the adoption of an implementing act under Article 4(1).
+▼B
+The repeal referred to in the first subparagraph shall be decided in accordance with the examination procedure referred to in Article 8(2).
+3.  
+Where it is necessary to make adjustments to commercial policy measures adopted under this Regulation, subject to Article 4(2) and (3), the Commission may introduce any appropriate amendments in accordance with the examination procedure referred to in Article 8(2).
+4.  
+On duly justified imperative grounds of urgency relating to the termination or the modification of the third country measure concerned, the Commission shall adopt immediately applicable implementing acts suspending, amending or repealing implementing acts adopted under Article 4(1), as provided for in this Article, in accordance with the procedure referred to in Article 8(3).
+Article 8
+Committee procedure
+1.  
+The Commission shall be assisted by the committee established by Regulation (EC) No 3286/94. That committee shall be a committee within the meaning of Article 3 of Regulation (EU) No 182/2011.
+2.  
+Where reference is made to this paragraph, Article 5 of Regulation (EU) No 182/2011 shall apply.
+Where the Committee delivers no opinion, the Commission shall not adopt the draft implementing act and the third subparagraph of Article 5(4) of Regulation (EU) No 182/2011 shall apply.
+3.  
+Where reference is made to this paragraph, Article 8 of Regulation (EU) No 182/2011 in conjunction with Article 5 thereof, shall apply.
+Article 9
+Information gathering
+▼M2
+1.  
+The Commission shall seek information and views regarding the Union’s economic interests in specific goods or services sectors, or regarding specific trade-related aspects of intellectual property rights, in the application of this Regulation, through a notice in the 
+Official Journal of the European Union
+ or through other suitable public communication means, indicating the period within which input is to be submitted. The Commission shall take the input received into account.
+▼M2
+1a.  
+When the Commission envisages measures pursuant to point (ba) or (bb) of Article 5(1), it shall inform and conduct consultations with stakeholders, in particular industry associations, affected by possible commercial policy measures and with Member State public authorities involved in the formulation or implementation of legislation regulating the affected fields. Without unduly delaying the adoption of such measures, the Commission shall, in particular, seek information on:
+(a) 
+the impact of such measures on third country service providers or right-holders who are nationals of the third country concerned and on Union competitors, users or consumers of such services or intellectual property rights holders;
+(b) 
+the interaction of such measures with relevant Member State regulations;
+(c) 
+the administrative burden which may be occasioned by such measures.
+The Commission shall take utmost account of the information gathered during such consultations.
+The Commission shall provide an analysis of the envisaged measures to Member States when proposing the draft implementing act pursuant to Article 8.
+▼B
+2.  
+Information received pursuant to this Regulation shall be used only for the purpose for which it was requested.
+3.  
+Neither the European Parliament, nor the Council, nor the Commission, nor Member States, nor their respective officials shall reveal any information of a confidential nature received pursuant to this Regulation, without specific permission from the supplier of such information.
+4.  
+The supplier of information may request that information supplied be treated as confidential. In such cases, it shall be accompanied by a non-confidential summary which presents the information in a generalised form or a statement of the reasons why the information cannot be summarised.
+5.  
+If it appears that a request for confidentiality is not justified and if the supplier is unwilling either to make the information public or to authorise its disclosure in generalised or summary form, the information in question may be disregarded.
+6.  
+Paragraphs 2 to 5 shall not preclude the disclosure of general information by the institutions of the Union and the authorities of the Member States. Such disclosure must take into account the legitimate interest of the parties concerned in not having their business secrets divulged.
+▼M2
+Article 10
+Review
+1.  
+At the earliest possible opportunity after 13 February 2021, but no later than one year after that date, the Commission shall review the scope of this Regulation, taking into account in particular the commercial policy measures that may be adopted, as well as its implementation, and shall report its findings to the European Parliament and the Council.
+2.  
+In acting pursuant to paragraph 1, the Commission shall undertake a review aimed at envisaging under this Regulation additional commercial policy measures suspending concessions or other obligations in the field of trade-related aspects of intellectual property rights.
+▼M1
+ —————
+▼B
+Article 12
+Entry into force
+This Regulation shall enter into force on the twentieth day following that of its publication in the 
+Official Journal of the European Union
+.
+This Regulation shall be binding in its entirety and directly applicable in all Member States.
+Statement by the Commission
+The Commission welcomes the adoption of the Regulation of the European Parliament and of the Council concerning the exercise of the Union’s rights for the application and enforcement of international trade rules and amending Council Regulation (EC) No 3286/94.
+Under the Regulation, the Commission is empowered to adopt implementing acts in certain specific situations, on the basis of objective criteria and subject to the control of the Member States. In exercising that empowerment, the Commission intends to act in accordance with this Declaration.
+When preparing draft implementing acts, the Commission will undertake extensive consultations with a view to ensuring that all relevant interests are duly taken into account. Through those consultations, the Commission expects to receive input from private stakeholders affected by third country measures or by possible commercial policy measures to be adopted by the Union. Similarly, the Commission expects to receive input from public authorities that may be involved in the implementation of possible commercial policy measures to be adopted by the Union. In the case of measures in the field of public procurement, in particular input from Member States’ public authorities will be duly taken into account in the preparation of draft implementing acts.
+The Commission recognizes the importance of Member States receiving timely information when it is considering the adoption of implementing acts under this Regulation so as to enable them to contribute to fully informed decisions and will act to achieve this objective.
+The Commission confirms that it will promptly transmit to the Parliament and to the Council draft implementing acts that it submits to the committee of Member States. Similarly, it will promptly transmit to the Parliament and the Council final draft implementing acts following the delivery of opinions in the committee.
+The Commission will keep the Parliament and the Council regularly informed of international developments that may lead to situations requiring the adoption of measures under the Regulation. This will be done through the responsible committees in Council and in Parliament.
+The Commission welcomes the Parliament’s intention to promote a structured dialogue on dispute settlement and enforcement issues and will fully engage in dedicated sessions with the responsible Parliamentary committee to exchange views on trade disputes and enforcement actions, including with regard to impacts on Union industries.
+Finally, the Commission confirms that it attaches great importance to ensuring that the Regulation is an effective and efficient tool for the enforcement of the Union’s rights under international trade agreements, including in the field of trade in services. Therefore, the Commission will, in accordance with the provisions of the Regulation, review the scope of Article 5 with a view to covering additional commercial policy measures concerning trade in services as soon as the conditions for ensuring the workability and effectiveness of such measures are present.
+(
+1
+) Understanding ‘Interpretation and Application of Article XXVIII.’
+

@@ -1,0 +1,42 @@
+gtip,category,condition_engine_or_power,matrah_TL_lower_excl,matrah_TL_upper_incl,rate_pct,legal_basis,tag
+87.03,ICE,<=1400 cc,0,650000,70,CK 10115,VERIFIED
+87.03,ICE,<=1400 cc,650000,900000,75,CK 10115,VERIFIED
+87.03,ICE,<=1400 cc,900000,1100000,80,CK 10115,VERIFIED
+87.03,ICE,<=1400 cc,1100000,,90,CK 10115,VERIFIED
+87.03,ICE,1400-1600 cc,0,850000,75,CK 10115,VERIFIED
+87.03,ICE,1400-1600 cc,850000,1100000,80,CK 10115,VERIFIED
+87.03,ICE,1400-1600 cc,1100000,1650000,90,CK 10115,VERIFIED
+87.03,ICE,1400-1600 cc,1650000,,100,CK 10115,VERIFIED
+87.03,HEV,1600-2000 cc; e-motor >50 kW and engine <=1800 cc,0,1250000,70,CK 10115,VERIFIED
+87.03,HEV,1600-2000 cc; e-motor >50 kW and engine <=1800 cc,1250000,,80,CK 10115,VERIFIED
+87.03,ICE,1600-2000 cc (other),0,1650000,150,CK 10115,VERIFIED
+87.03,ICE,1600-2000 cc (other),1650000,,170,CK 10115,VERIFIED
+87.03,HEV,>2000 cc; e-motor >100 kW and engine <=2500 cc,0,1650000,150,CK 10115,VERIFIED
+87.03,HEV,>2000 cc; e-motor >100 kW and engine <=2500 cc,1650000,,170,CK 10115,VERIFIED
+87.03,ICE,>2000 cc (other),0,,220,CK 10115,VERIFIED
+87.03,"PHEV (CO2<25 g/km, e-range>=70 km)",<=1600 cc,0,1350000,45,CK 10115 (category created by Law 7521 a.11),VERIFIED
+87.03,"PHEV (CO2<25 g/km, e-range>=70 km)",<=1600 cc,1350000,,75,CK 10115,VERIFIED
+87.03,"PHEV (CO2<25 g/km, e-range>=70 km)",1600-1800 cc,0,1350000,85,CK 10115 (above 1.35m falls back to ICE/HEV lines),VERIFIED
+87.03,BEV,motor <=160 kW,0,1650000,25,CK 10115,VERIFIED
+87.03,BEV,motor <=160 kW,1650000,,55,CK 10115,VERIFIED
+87.03,BEV,motor >160 kW,0,1650000,65,CK 10115,VERIFIED
+87.03,BEV,motor >160 kW,1650000,,75,CK 10115,VERIFIED
+87.03,Minimum specific OTV (asgari maktu),"all 87.03 except L-class ICE, L-class EV <4 kW, T-class",,,"100,000 TL floor (L-class: 30,000 TL); indexed yearly by VUK revaluation rate; President may x10 or 0","Law 7590 a.14, RG 31.07.2026 No.33326",VERIFIED
+87.03,"Goods-type M1/N1 vans: payload <=850kg & <2000cc, or >850kg & <2800cc",ICE,,,15,(II) list,VERIFIED
+87.03,Goods-type vans,BEV,,,10,(II) list,VERIFIED
+87.03,9-seat (incl. driver) vans,<=3200 cc,,,15,(II) list,VERIFIED
+87.03,9-seat (incl. driver) vans,BEV,,,10,(II) list,VERIFIED
+87.03,ATV/UTV,,,,25,(II) list,VERIFIED
+87.03,Motorhomes,,,,45,(II) list,VERIFIED
+8703.10.11/18,"Snow vehicles, golf carts",,,,6.7,(II) list,VERIFIED
+87.04,GVW<=4700kg with rear seats or side windows (excl. open-bed <=3200cc),<=3000 cc,,,10,(II) list,VERIFIED
+87.04,same,3000-4000 cc,,,52,(II) list,VERIFIED
+87.04,same,>4000 cc,,,75,(II) list,VERIFIED
+87.04,"same, BEV",<=85 kW / 85-120 kW / >120 kW,,,10 / 52 / 75,(II) list,VERIFIED
+87.04,"Closed box, payload <620 kg",ICE or BEV,,,10,(II) list,VERIFIED
+87.04,Other: off-road (arazi) GVW<=3500kg,,,,50,(II) list,VERIFIED
+87.04,"Other (panel vans, pickups, trucks), ICE or BEV",,,,4,(II) list,VERIFIED
+8701.20,Road tractors for semi-trailers,,,,4,(II) list,VERIFIED
+87.02,Bus / midibus / minibus,,,,1 / 4 / 9,(II) list,VERIFIED
+87.11,Motorcycles,<=250 cc / >250 cc,,,8 / 37,(II) list,VERIFIED
+8711.60,Electric two-wheelers,pedelec <=250W / <=20 kW / >20 kW,,,3 / 3 / 37,(II) list,VERIFIED

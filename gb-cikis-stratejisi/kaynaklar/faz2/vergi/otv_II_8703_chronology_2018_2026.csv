@@ -1,0 +1,16 @@
+in_force,instrument,RG_date_no,ICE_<=1600cc_(TL matrah: rate%),ICE_1600-2000cc,ICE_>2000cc,"HEV_(e-motor>50kW,<=1800cc)",BEV,notes,tag
+2018-09-24,CK 132,24.09.2018 / 30545,<=70k:45; 70-120k:50; >120k:60,<=170k:100; >170k:110,160,<=85k:45; 85-135k:50; >135k:60,<=85kW:3; 85-120kW:7; >120kW:15,threshold update,VERIFIED
+2018-10-31,"CK 287 (temporary, to 31.12.2018)",31.10.2018 (mük.) / 30581,<=70k:30; 70-120k:35; >120k:60,unchanged,160,<=85k:30; 85-135k:35; >135k:60,unchanged,"origin-neutral; also white goods OTV 0%, LCV KDV 1%, furniture KDV 8%",VERIFIED
+2019-03-21,CK 843 (extension to 30.06.2019),21.03.2019 / 30721,30/35 retained,,,,,earlier extension to 31.03.2019 (instrument not identified),PARTIAL
+2019-07-01,expiry of temporary cut,-,<=70k:45; 70-120k:50; >120k:60,,,,,,VERIFIED
+2020-08-30,CK 2912,30.08.2020 / 31229,<=85k:45; 85-130k:50; >130k:80,<=170k:130; >170k:150,220,<=85k:45; 85-135k:50; >135k:80,3/7/15,top rates raised,VERIFIED
+2021-02-02,CK 3471,02.02.2021 / 31383,unchanged,,,,<=85kW:10; 85-120kW:25; >120kW:60,EV rates raised,VERIFIED
+2021-08-13,CK 4373,13.08.2021 / 31567,<=92k:45; 92-150k:50; >150k:80,,,<=114k:45; 114-170k:50; >170k:80,,threshold update,VERIFIED
+2022-01-13,CK 5096,13.01.2022 / 31718,<=120k:45; 120-150k:50; 150-175k:60; 175-200k:70; >200k:80,,,<=130k:45; 130-210k:50; >210k:80,,new brackets,VERIFIED
+2022-07-05,Law 7417 art.44,05.07.2022 / 31887,,,,,"<=160kW: <=700k:10, >700k:40; >160kW: <=750k:50, >750k:60",160 kW threshold (Togg T10X RWD = 160 kW); AKP group deputy chair: aim to protect domestic production,VERIFIED
+2022-11-24,CK 6417,24.11.2022 / 32023,<=184k:45; 184-220k:50; 220-250k:60; 250-280k:70; >280k:80,,,<=228k:45; 228-350k:50; >350k:80,,thresholds then frozen to Jul-2025 (inflation pushed most cars to top bracket),VERIFIED
+2023-03-03,CK 6885,03.03.2023 / 32121,,,,,"<=160kW: <=1.25m:10, else 40; >160kW: <=1.35m:50, else 60",just before Togg deliveries,VERIFIED
+2023-11-18,CK 7803,18.11.2023 / 32373,,,,,<=160kW 10% threshold 1.45m,,VERIFIED
+2024-07-26,Law 7521 art.11,26.07.2024 / 32613,"PHEV line added: <=1600cc <=1.35m:30, else 60; 1600-1800cc <=1.35m:70",,,,,,VERIFIED
+2025-07-24,CK 10115 (dated 23.07.2025),24.07.2025 / 32965,<=1400cc: 70/75/80/90 (650k/900k/1.1m); 1400-1600cc: 75/80/90/100 (850k/1.1m/1.65m),<=1.65m:150; >1.65m:170,"220 (HEV >100kW,<=2500cc: 150/170)",<=1.25m:70; >1.25m:80,"<=160kW: <=1.65m:25, else 55; >160kW: <=1.65m:65, else 75",PHEV 45/75/85; in force on publication,VERIFIED
+2026-07-31,Law 7590 art.14,31.07.2026 / 33326,"minimum specific OTV 100,000 TL per vehicle (L-class 30,000)",same,same,same,same,drivetrain (2WD/4WD) added as differentiation criterion,VERIFIED

@@ -1,0 +1,13 @@
+product_group,KDV_rate_pct,legal_basis,tag
+"General rate (all goods not listed): cars (new), white goods, electronics, phones, computers, cosmetics",20,Decision 2007/13033 art.1(a) as amended by CK 7346 (in force 10.07.2023),VERIFIED
+"Most foods (HS ch.1-23 items in List I-A: dairy, eggs, vegetables, fruit, cereals, flour, bread/pasta, oils, sugar, cocoa, preparations)",1,"List (I)-A (since 14.02.2022, CK 5189)",VERIFIED
+"Foods in List I-A that are subject to OTV (e.g., sugared/cola drinks)",10,Decision art.1(3),VERIFIED
+"Clothing and home textiles (List II item 5), fabrics (item 4), leather garments (6)",10,List (II),VERIFIED
+"Footwear (item 7), bags/luggage (8), carpets (9)",10,List (II),VERIFIED
+Furniture (listed 94.01/94.03/94.04 items),10,"List (II) item 33 (CK 1951, 2019)",VERIFIED
+"Human medicinal products, special medical foods, APIs",10,"List (II) item 18 (CK 9126, 15.11.2024)",VERIFIED
+Medical devices (excl. OTV goods and 85.17 phones),10,List (II) item 22,VERIFIED
+Used cars not subject to OTV (non-dealer sales); dealers use margin scheme,1,List (I)-B item 9,VERIFIED
+Refurbished mobile phones (certified),1,List (I)-B item 21,VERIFIED
+"Books, school supplies",10,List (II) item 14 (e-books/tablets 20%),VERIFIED
+No 2026 rate change found; HMB denied a KDV hike plan (19.03.2026),,Gazete Oksijen report,PARTIAL

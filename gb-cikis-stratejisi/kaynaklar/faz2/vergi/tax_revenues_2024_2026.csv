@@ -1,0 +1,20 @@
+item,2024_actual_bnTL_gross,2025_actual_bnTL_gross,2025_share_of_gross_tax_pct,2025_share_of_OTV_pct,2025_budget_estimate_bnTL,2026_budget_bnTL_gross,2026_share_of_gross_tax_pct
+Total tax revenue (gross),8386.9,12401.6,100.0,,12651.5,15681.078653,100.0
+OTV total,1462.3,2040.0,16.45,100.0,2146.0,2549.288172,16.26
+OTV (I) petroleum & natural gas,400.9,527.1,4.25,25.8,538.2,662.134642,4.22
+OTV (II) motor vehicles,543.4,796.1,6.42,39.0,818.8,959.98466,6.12
+OTV (III) alcohol,105.9,146.0,1.18,7.2,170.8,191.615236,1.22
+OTV (III) tobacco,309.3,428.9,3.46,21.0,455.7,563.002771,3.59
+OTV (III) cola drinks,11.9,17.7,0.14,0.9,17.7,23.546736,0.15
+OTV (IV) durables & other,91.0,124.3,1.0,6.1,144.9,149.004127,0.95
+OTV (III) subtotal,427.0,592.6,4.78,29.0,,778.2,4.96
+KDV domestic,1992.6,2753.1,22.2,,2884.1,3589.217226,22.89
+KDV on imports,1334.3,1726.8,13.92,,2103.2,2096.431746,13.37
+"Customs duties (incl. additional duties IGV, not shown separately)",228.9,321.8,2.59,,341.3,402.636875,2.57
+Other foreign-trade revenue,4.2,5.8,0.05,,6.4,,
+"Motor vehicles tax (MTV, annual)",67.1,106.0,0.85,,106.6,,
+"Memo: refunds (red ve iade) total, 2026 budget",,,,,,1891.772756,
+"Memo: refunds of domestic KDV, 2026 budget",,,,,,1638.691,
+"Memo: net central-govt tax revenue 2025 (HMB, 15.01.2026, via press)",,11049.467,,,,,
+
+"Sources: GIB Table 28 (Merkezi Yonetim Gelirleri Tahsilati, brut, 2006-2025; thousand TL; incl. local-govt shares and refunds) and Table 38 (budget vs collection) https://cdn.gib.gov.tr/api/gibportal-file/file/getFileResources?objectKey=arsiv/kurumsal/3/Tablo_28.xls ; 2026: SBB ""Genel Butceli Kamu Idarelerinin 2026 Yili Gelirleri"" https://www.sbb.gov.tr/wp-content/uploads/2025/12/3a-Genel-Butceli-Kamu-Idarelerinin-2026-Yili-Gelirleri-ile-2027-2028-Donemi-Gelir-Tahminleri.pdf"
