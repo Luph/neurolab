@@ -113,7 +113,7 @@ Kaynaklar sondadır; ham metinler ve çıkarılmış tablolar araştırma notlar
     - Bağlı oranları 2027–2029'da yeniden müzakere edebilmek için Türkiye bu çekinceyi **31.12.2026'dan önce** bildirmeli.
     - Bildirilmezse bu dönemde değişiklik ancak DTÖ'nün özel izniyle (XXVIII:4) yapılabilir. Olağan bir sonraki fırsat 1.1.2030.
     - Bedeli: diğer üyeler de aynı dönemde Türkiye ile ilk müzakere ettikleri tavizleri değiştirebilir.
-    - DS629 panel raporu 27.10.2026'da DSB gündeminde.
+    - DS629 panel raporu 27.10.2026'da DSB gündeminde. Güncelleme (Faz 2C): taraflar 16.10.2026'da kabul ya da temyiz süresinin 24.11.2026'ya uzatılmasını istedi (WT/DS629/6).
     - `[V]` Güven: Yüksek.
 12. **Türkiye'nin mevcut iç vergi düzenlemelerinde, çıkıştan önce temizlenmesi gereken DTÖ riskleri var.** Bunlar çıkıştan sonra AB'nin ilk hedefleri olur:
     - Engelli araç alımındaki ÖTV istisnasının %40 yerli katkı şartı.
@@ -914,7 +914,7 @@ S0–S5 ana promptun senaryolarıdır. Aşağıda bunların yanında melez ve ge
 | VB-23 | Beyaz eşya ve TV'de ürün düzeyinde iç satış ve ithalat payı (TÜRKBESD ve Ticaret Bakanlığı sitelerine erişilemedi) | Yerli pay (PRODTR'den hesaplandı) | TÜRKBESD; Ticaret Bakanlığı sektör raporu |
 | VB-24 | Giyim ve ayakkabıda kayıt dışı ve fason üretimin iç pazar payı | Yerli pay (I-O ve YSHİ'den) | TÜİK, sektör dernekleri |
 | VB-25 | Otomobil ÖTV matrahına gümrük vergisinin dahil olup olmadığı (4760 md. 11/3 → KDV matrahı) | Dilim sıçraması (§1.7.3) | GİB özelgesi; mevzuat |
-| VB-26 | DS629'un 27.10.2026 DSB kararı | §7 eylem 2 | DSB toplantısı |
+| VB-26 | DS629'un DSB kararı (27.10.2026; 24.11.2026'ya uzatılması istendi) | §7 eylem 2 | DSB toplantısı |
 | VB-27 | ABD telafi edici vergi soruşturmalarında Türk programları hakkındaki son kararlar (arazi, YEKDEM, bölgesel teşvik, imalatçı vergi indirimi, kur) | D2 riskinin büyüklüğü | ABD Ticaret Bakanlığı karar memorandumları |
 
 Faz 1'den süren boşluklar [`01_teshis.md`](01_teshis.md) §8'de.

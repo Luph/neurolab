@@ -6,8 +6,8 @@
 \begingroup\gbtablo\small
 
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.1348}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.8652}}@{}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.1290}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.8710}}@{}}
 \toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\raggedright
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
@@ -17,7 +17,7 @@
 \bottomrule\noalign{}
 \endlastfoot
 Tarih & 17 Ekim 2026 (çalışma ortamının tarihi) \\
-Faz & 0 / 9: tamamlandı; Revizyon 1 ile kullanıcı yanıtları işlendi. Faz 1'de §1 erişim tablosu, §3 V-06/V-07 ve §4 veri envanteri doğrulanmış erişime göre güncellendi. Güncel faz: \belgebag{01_teshis}{}{\kod{01\_\allowbreak{}teshis.\allowbreak{}md}} \\
+Faz & 0 / 9: tamamlandı; Revizyon 1 ile kullanıcı yanıtları işlendi. Faz 1'de §1 erişim tablosu, §3 V-06/V-07 ve §4 veri envanteri doğrulanmış erişime göre güncellendi. Faz 2 (2A, 2B, 2C) 18.10.2026'da tamamlandı: \belgebag{02a_politika_uzayi}{}{\kod{02a\_\allowbreak{}politika\_\allowbreak{}uzayi.\allowbreak{}md}}, \belgebag{02b_secenekler_hukuk}{}{\kod{02b\_\allowbreak{}secenekler\_\allowbreak{}hukuk.\allowbreak{}md}}, \belgebag{02c_hazirlik}{}{\kod{02c\_\allowbreak{}hazirlik.\allowbreak{}md}}. Sonraki: Faz 3 \\
 Bu fazın çıktıları & \kod{00\_\allowbreak{}plan.\allowbreak{}md} (bu belge); \kod{veri/\allowbreak{}nace\_\allowbreak{}kapsam.\allowbreak{}csv}, \kod{veri/\allowbreak{}nace\_\allowbreak{}kapsam\_\allowbreak{}bolum\_\allowbreak{}ozeti.\allowbreak{}csv}, \kod{veri/\allowbreak{}nace\_\allowbreak{}r2\_\allowbreak{}r21\_\allowbreak{}kopru.\allowbreak{}csv}, \kod{veri/\allowbreak{}cn2025\_\allowbreak{}nace\_\allowbreak{}rejim.\allowbreak{}csv}, \kod{veri/\allowbreak{}akct\_\allowbreak{}1996\_\allowbreak{}cn8.\allowbreak{}txt}; \kod{kod/\allowbreak{}f0\_\allowbreak{}nace\_\allowbreak{}kapsam.\allowbreak{}py}; \kod{defter.\allowbreak{}md}; \kod{DURUM\_\allowbreak{}OZETI.\allowbreak{}md} \\
 Kanıt etiketleri & \etiketV{} doğrulanmış veri (kaynak, dönem) · \etiketT{} tahmin (yöntem, P10--P50--P90) · \etiketD{} doğrulanması gereken · \etiketH{} hipotez veya uzman yargısı. Güven: \textbf{Y}üksek / \textbf{O}rta / \textbf{D}üşük \\
 Para birimi & Aksi belirtilmedikçe cari ABD doları; AB kaynaklı veriler avro olarak verilir. 2025 ortalama kuru: 1 € = 1,1300 \$ \etiketV{} (ECB, EXR.A.USD.EUR) \\
@@ -168,10 +168,10 @@ ticaret.gov.tr & Kesintili (502) & 2026 tarife ekleri yeniden denemeyle indirild
 
 \begin{longtable}[]{@{}
   >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.0430}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.3591}}
-  >{\raggedleft\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1112}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2069}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2799}}@{}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.4394}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1089}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1733}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2354}}@{}}
 \toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\raggedright
 \textbf{Faz}
@@ -191,7 +191,8 @@ ticaret.gov.tr & Kesintili (502) & 2026 tarife ekleri yeniden denemeyle indirild
 0 & Plan, araçlar, varsayımlar, veri envanteri, NACE kapsamı, \etiketD{} doğrulaması & 1 & bu belge; \kod{veri/\allowbreak{}nace\_\allowbreak{}kapsam.\allowbreak{}csv}; köprü ve eşleştirme tabloları & Eurostat, ShowVoc, GİB \\
 1 & Teşhis: GB'nin 30 yıllık fayda-maliyet bilançosu, asimetriler, makro tablo, cari denge ayrıştırması & 2 & \kod{01\_\allowbreak{}teshis.\allowbreak{}md}, \kod{veri/\allowbreak{}teshis\_\allowbreak{}*.\allowbreak{}csv} & Comext 1995--2025, UN Comtrade/BACI, TCMB ödemeler dengesi, OVP 2027--29 \\
 2 & S0--S5 karşılaştırması, önerilen bitiş durumu, hukuki yol haritası (AB, DTÖ, iç hukuk) & 2 & \kod{02\_\allowbreak{}secenekler\_\allowbreak{}hukuk.\allowbreak{}md} & Faz 0 hukuk doğrulaması, literatür \\
-3 & NACE analizi: bölüm bölüm ana matris satırları, 230 sınıf kartı, B/D/E ve hizmetler; her yanıtın sonunda kümülatif defter & 22--26 & \kod{nace\_\allowbreak{}matris.\allowbreak{}csv}, \kod{nace\_\allowbreak{}kartlar\_\allowbreak{}[bölüm].\allowbreak{}md}, \kod{defter.\allowbreak{}md} & Comext CN8, CN 2026 tarifesi, bağlı oranlar, BACI, OECD ICIO \\
+2C & Karar öncesi hazırlık (kullanıcı talebiyle eklendi, 18.10.2026): GB kararından önce sessizce uygulanabilecek, çıkışta faydayı artıran hamleler; dokuz çerçeve; kırmızı liste; devreye alma sırası & 1 & \kod{02c\_\allowbreak{}hazirlik.\allowbreak{}md}, \kod{veri/\allowbreak{}hazirlik\_\allowbreak{}*.\allowbreak{}csv} & Faz 2B GE modülü, TÜİK G-Ç, Komisyon SKDM dosyaları, TCMB EVDS3 \\
+3 & NACE analizi: bölüm bölüm ana matris satırları, 230 sınıf kartı (Faz 2C'den gelen hazırlık alanlarıyla: menşe riski, onaylanmış kuruluş bağımlılığı, SKDM maruziyeti, çapa yatırımcı), B/D/E ve hizmetler; her yanıtın sonunda kümülatif defter & 22--26 & \kod{nace\_\allowbreak{}matris.\allowbreak{}csv}, \kod{nace\_\allowbreak{}kartlar\_\allowbreak{}[bölüm].\allowbreak{}md}, \kod{defter.\allowbreak{}md} & Comext CN8, CN 2026 tarifesi, bağlı oranlar, BACI, OECD ICIO \\
 4 & Segmentasyon (KS×AME, EDE×CKE); 30--40 derin analiz (her yanıtta 2--4 sınıf) & 1 + 12 & \kod{04\_\allowbreak{}segmentasyon.\allowbreak{}md}, \kod{04\_\allowbreak{}derin\_\allowbreak{}[kod].\allowbreak{}md} & Firma ve çapa yatırımcı verileri, ürün ağacı (BOM) menşe simülasyonları \\
 5 & Yatay araçlar; GB sonrası tarife cetveli taslağı & 3 & \kod{05\_\allowbreak{}araclar.\allowbreak{}md}, \kod{tarife\_\allowbreak{}cetveli\_\allowbreak{}taslak.\allowbreak{}csv} & CN 2026 / GTİP, bağlı oranlar, ITA listesi \\
 6 & Makro entegrasyon: cari denge köprüsü, enflasyon yolu, bütçe optimizasyonu, tutarlılık testleri & 3 & \kod{06\_\allowbreak{}makro.\allowbreak{}md}, \kod{kod/\allowbreak{}f6\_\allowbreak{}*.\allowbreak{}py} & Girdi-çıktı (TÜİK 2023 veya OECD ICIO 2022), TCMB \\

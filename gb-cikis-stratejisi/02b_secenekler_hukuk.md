@@ -454,7 +454,7 @@ Bu tasarım ITA'yı AB'nin tek başına yetkili olduğu bir anlaşma olarak tuta
 | Adım | Dayanak | Zamanlama |
 |---|---|---|
 | XXVIII:5 çekincesi: Cetvel XXXVII'yi 2027–2029'da değiştirme hakkı | GATT XXVIII:5 | **31.12.2026'dan önce** (02a §7) |
-| DS629 kararına uyum | DSU md. 21 | DSB 27.10.2026; makul süre içinde |
+| DS629 kararına uyum | DSU md. 21 | DSB 27.10.2026 (24.11.2026'ya uzatılması istendi; WT/DS629/6); makul süre içinde |
 | Geçici anlaşma (dondurma) bildirimi: "plan ve takvim" ile | GATT XXIV:5(c), XXIV:7(a); XXIV Mutabakatı para. 3 (makul süre en fazla 10 yıl) | İmzayı izleyen ilk fırsatta |
 | STA (ITA) bildirimi | XXIV:7(a); Şeffaflık Mekanizması (WT/L/671): müzakere başlarken erken duyuru, onay veya uygulamadan hemen sonra ve tercihler uygulanmadan önce bildirim; Bölgesel Ticaret Anlaşmaları Komitesi bir yıl içinde Sekretarya'nın olgusal sunumu üzerinden görüşür | Uygulamadan önce |
 | GB'nin sona erdiğinin ve Türk uygulanan tarifesinin bildirimi | XXIV:7; Entegre Veri Tabanı bildirimleri | Çıkış günü |
@@ -581,7 +581,7 @@ Faz 0'daki öznel olasılıklar (V-11, hasmane AB) üç yeni bilgiyle güncellen
 - **Aktif S4 (c2 + girdide sıfır + geniş takas).**
   - TÜFE 3,3 bp (pasif: 78); mali +%0,05 GSYH.
   - Net imalat istihdamı ≈ −35 bin (yalnızca MFN'de −117 bin); çekirdek giyim −59 bin.
-- **Zaman kritik.** XXVIII:5 çekincesi 31.12.2026'dan önce. DS629 DSB toplantısı 27.10.2026. Mevcut DTÖ risklerinin temizlenmesi (%40 yerli katkı şartı, md. 32/7, rakı, 160 kW).
+- **Zaman kritik.** XXVIII:5 çekincesi 31.12.2026'dan önce. DS629 DSB toplantısı 27.10.2026 (24.11.2026'ya uzatılması istendi). Mevcut DTÖ risklerinin temizlenmesi (%40 yerli katkı şartı, md. 32/7, rakı, 160 kW).
 
 **Faz 2B — seçenekler (çekim modeli, PPML + GE)**
 - **S4:**
@@ -670,7 +670,7 @@ Faz 0'daki öznel olasılıklar (V-11, hasmane AB) üç yeni bilgiyle güncellen
 
 **Türk mevzuatı**
 - Anayasa md. 90; 4760, 3065, 4734, 5520 ve 7590 sayılı Kanunlar (https://www.mevzuat.gov.tr).
-- 244, 474, 2976 ve 3577 sayılı Kanunlar `[D?]`.
+- 474 sayılı Gümrük Giriş Tarife Cetveli Hakkında Kanun, 2976 ve 3577 sayılı Kanunlar `[V]` (Faz 2C araştırma notu; `02c_hazirlik.md` §2.4). 244 sayılı Kanun `[D?]`.
 
 ---
 

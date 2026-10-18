@@ -9,6 +9,11 @@
   f2_net_istihdam      S4 net istihdam, NACE bölümü: yalnızca MFN ve rejim c2 (politika_s4_net_istihdam_sinif.csv)
   f2_cekim_senaryo     Çekim modeli: S2, S3, S4'ün Türkiye'nin AB'ye ihracatına etkisi, %90 GA (politika_cekim_senaryolar.csv)
   f2_cekim_zaman_yolu  GB ve derin STA etkisinin zaman yolu, M2 (politika_cekim_katsayilar.csv)
+  f2c_sta_ge           AB'nin STA ortaklarıyla Türkiye'nin kendi STA'ları: genel denge (hazirlik_sta_ge.csv)
+  f2c_pem              Sanayi kollarında PEM bölgesi dışından ithal ara girdi payı (hazirlik_pem_mense.csv)
+  f2c_skdm             SKDM: AB'ye yıllık ödeme ve Türkiye'de kalan kısım, 2026–2034; 2028 sektör kırılımı (hazirlik_skdm.csv)
+  f2c_rezerv           TCMB rezervleri, ilan şokuna karşı gerekli tampon ve iki K tarihi (hazirlik_makro_*.csv)
+  f2c_takvim           Hazırlık süreleri ve iki takvim (hazirlik_hamleler_oncelik.csv)
 Kullanım: python3 sekiller.py [--veri ../veri] [--cikti ../sekiller]
 """
 
@@ -32,7 +37,8 @@ plt.rcParams.update({"font.family": "DejaVu Sans", "font.size": 9, "axes.spines.
 def kaydet(fig, cikti, ad):
     fig.tight_layout()
     for uzanti in ("png", "pdf"):
-        fig.savefig(os.path.join(cikti, f"{ad}.{uzanti}"), dpi=200 if uzanti == "png" else None, bbox_inches="tight")
+        fig.savefig(os.path.join(cikti, f"{ad}.{uzanti}"), dpi=200 if uzanti == "png" else None, bbox_inches="tight",
+                    metadata={"CreationDate": None} if uzanti == "pdf" else None)   # PDF'ler yeniden üretimde aynı kalsın
     plt.close(fig)
 
 
@@ -233,6 +239,157 @@ def f2_cekim_zaman_yolu(v, c):
     kaydet(fig, c, "f2_cekim_zaman_yolu")
 
 
+def f2c_sta_ge(v, c):
+    s = pd.read_csv(os.path.join(v, "hazirlik_sta_ge.csv"))
+    s = s[s.olcu == "TR reel GSYH (refah vekili)"]
+    sira = [("S4", "S4 (anlaşmasız çıkış)"), ("S4+STA_hepsi_pazar", "S4 + 33 STA,\nyalnız pazar erişimi"),
+            ("S4+STA_ileri", "S4 + STA: ileri\nekonomiler (4)"), ("S4+STA_yukselen", "S4 + STA: yükselen\npazarlar (9)"),
+            ("S4+STA_hepsi", "S4 + 33 STA\n(sanayi, karşılıklı)"), ("S4+STA_hepsi_tumu", "S4 + 33 STA\n(bütün ürünler)"),
+            ("S0+STA_hepsi_pazar", "GB içinde + 33 STA,\nyalnız pazar erişimi"), ("S0+STA_hepsi", "GB içinde + 33 STA\n(karşılıklı)")]
+    fig, ax = plt.subplots(figsize=(8.6, 3.6))
+    y = np.arange(len(sira))
+    for j, (sigma, renk) in enumerate([(5, RENK["acik"]), (7, RENK["ab"])]):
+        g = s[s.sigma == sigma].set_index("senaryo")
+        for i, (sen, _) in enumerate(sira):
+            r = g.loc[sen]
+            yy = i + (j - 0.5) * 0.32
+            if pd.notna(r.ci90_alt_yuzde):
+                ax.errorbar(r.degisim_yuzde, yy, xerr=[[r.degisim_yuzde - r.ci90_alt_yuzde], [r.ci90_ust_yuzde - r.degisim_yuzde]],
+                            fmt="o", color=renk, capsize=2.5, lw=1, ms=4.5, label=f"σ = {sigma}" if i == 0 else None)
+            else:
+                ax.plot(r.degisim_yuzde, yy, "D", color=renk, ms=4.5)
+    ax.axvline(0, color="black", lw=0.6)
+    ax.set_yticks(y, [a for _, a in sira], fontsize=7.5)
+    ax.invert_yaxis()
+    ax.set_xlabel("Türkiye reel GSYH (refah vekili), GB'ye (S0) göre % değişim; S4 için %90 GA")
+    ax.set_title("AB'nin STA ortaklarıyla Türkiye'nin kendi STA'ları: genel denge (2019 kesiti, tarife kanalı)", fontsize=9)
+    ax.legend(frameon=False, fontsize=7.5, loc="lower right")
+    fig.text(0.01, -0.03, "Kaynak: kod/f2g_hazirlik_sta_ge.py; veri/hazirlik_sta_ge.csv. Karşılıklı senaryolarda ithalat "
+             "serbestleşmesinin refah etkisi gümrük geliri kaybı hesaba katılmadığı için üst sınırdır.", fontsize=7, color="#555555")
+    kaydet(fig, c, "f2c_sta_ge")
+
+
+def f2c_pem(v, c):
+    t = pd.read_csv(os.path.join(v, "hazirlik_pem_mense.csv"))
+    t = t[t.tr_ihr_ab_2025_musd.fillna(0) > 300].sort_values("nom_pem_disi_dogrudan")
+    fig, ax = plt.subplots(figsize=(8.6, 3.6))
+    y = np.arange(len(t))
+    ax.barh(y, 100 * t.nom_pem_disi_dogrudan, color=RENK["ab"], label="PEM dışı ithal ara girdi / üretim (doğrudan)")
+    ax.scatter(100 * t.nom_pem_disi_butunlesik, y, marker="|", s=90, color=RENK["vurgu"],
+               label="Bütünleşik (yurt içi girdilerin ithal içeriği dahil; üst sınır)")
+    for esik, et in ((40, "MaxNOM %40"), (50, "MaxNOM %50")):
+        ax.axvline(esik, color=RENK["dunya"], lw=0.8, ls="--")
+        ax.text(esik + 0.5, -0.65, et, fontsize=7, color=RENK["dunya"], va="center")
+    ax.set_yticks(y, [f"{a} ({b:,.0f} mn $)".replace(",", ".") for a, b in zip(t.io, t.tr_ihr_ab_2025_musd)], fontsize=7.5)
+    ax.set_xlabel("% (sektör ortalaması); parantez içinde 2025 AB ihracatı")
+    ax.set_title("Menşe hazırlığı: sanayi kollarında PEM bölgesi dışından ithal ara girdi payı", fontsize=9)
+    ax.legend(frameon=False, fontsize=7, loc="center right")
+    fig.text(0.01, -0.03, "Kaynak: kod/f2h_mense_pem.py (TÜİK G-Ç 2023, BACI 2024); veri/hazirlik_pem_mense.csv. C19: rafinaj "
+             "özel işlem kuralıyla menşe kazandırır. Tekstil-giyimde kural işlem esaslıdır.", fontsize=7, color="#555555")
+    kaydet(fig, c, "f2c_pem")
+
+
+def f2c_skdm(v, c):
+    t = pd.read_csv(os.path.join(v, "hazirlik_skdm.csv"))
+    t = t[(t.faktor == "yasa") & t.yogunluk.isin(["—", "merkez"])]
+    yil = t.groupby(["senaryo", "fiyat", "yil"], as_index=False)[["ab_odeme_meur", "tr_kalan_meur", "ihracat_meur"]].sum()
+    fig, ax = plt.subplots(1, 2, figsize=(8.6, 3.5), gridspec_kw={"width_ratios": [1.15, 1]})
+    cizgi = [("V", "Varsayılan değerler", RENK["vurgu"], "-"), ("D", "Doğrulanmış gerçek değerler", RENK["ab"], "-"),
+             ("D+TR50", "Doğrulanmış + yurt içi 50 €/t", RENK["turuncu"], "--"),
+             ("D+TRAB", "Doğrulanmış + yurt içi fiyat = AB", RENK["yesil"], "--")]
+    for sk, ad, renk, ls in cizgi:
+        g = yil[yil.senaryo == sk].pivot(index="yil", columns="fiyat", values="ab_odeme_meur") / 1e3
+        ax[0].plot(g.index, g.merkez, color=renk, ls=ls, lw=1.6, label=ad)
+        if sk in ("V", "D"):
+            ax[0].fill_between(g.index, g.dusuk, g.yuksek, color=renk, alpha=0.12, lw=0)
+    k = yil[(yil.senaryo == "D+TRAB") & (yil.fiyat == "merkez")]
+    ax[0].plot(k.yil, k.tr_kalan_meur / 1e3, color=RENK["yesil"], ls=":", lw=1.4, label="Türkiye'de kalan (fiyat = AB)")
+    ax[0].set_ylabel("Milyar €; 2025 ticaret hacmiyle")
+    ax[0].set_title("AB'ye yıllık SKDM ödemesi (merkez fiyat;\ngölge: 70–140 €/t)", fontsize=8.5)
+    ax[0].legend(frameon=False, fontsize=6.6, loc="upper left")
+    ax[0].set_ylim(0, None)
+    s28 = t[(t.yil == 2028) & (t.fiyat == "merkez") & t.senaryo.isin(["V", "D"])]
+    g = s28.pivot_table(index="grup", columns="senaryo", values="ab_odeme_meur", aggfunc="sum")
+    deger = s28[s28.senaryo == "V"].groupby("grup").ihracat_meur.sum()
+    g = g.loc[g.V[deger.reindex(g.index) > 1].sort_values().index]      # hidrojen (≈0) dışarıda
+    ad = {"Demir-çelik: uzun": "Çelik: uzun ürün", "Demir-çelik: yassi": "Çelik: yassı", "Demir-çelik: boru_esya":
+          "Çelik: boru, konstrüksiyon, eşya", "Demir-çelik: diger": "Çelik: paslanmaz, ferroalyaj"}
+    y = np.arange(len(g))
+    ax[1].barh(y + 0.18, g.V, height=0.36, color=RENK["vurgu"], label="Varsayılan")
+    ax[1].barh(y - 0.18, g.D, height=0.36, color=RENK["ab"], label="Doğrulanmış")
+    for i, (grup, r) in enumerate(g.iterrows()):
+        ax[1].text(r.V + 15, i + 0.18, f"%{virgul(100 * r.V / deger[grup])}", fontsize=6.5, va="center", color=RENK["vurgu"])
+    ax[1].set_yticks(y, [ad.get(x, x) for x in g.index], fontsize=7.2)
+    ax[1].set_xlabel("Milyon € (2028; yüzde: ihracat değerine oran)")
+    ax[1].set_title("2028: sektör kırılımı", fontsize=8.5)
+    ax[1].legend(frameon=False, fontsize=6.8, loc="lower right")
+    fig.text(0.01, -0.03, "Kaynak: kod/f2i_skdm.py (IR 2026/1740 varsayılan değerleri, IR 2025/2620 kıyasları, Comext 2025); "
+             "veri/hazirlik_skdm.csv. Mevcut hukuk (SKDM faktörü 2034'te sıfır); davranış tepkisi yok (üst sınır).",
+             fontsize=6.8, color="#555555")
+    kaydet(fig, c, "f2c_skdm")
+
+
+def f2c_rezerv(v, c):
+    r = pd.read_csv(os.path.join(v, "hazirlik_makro_rezerv.csv"), parse_dates=["tarih"]).set_index("tarih")
+    k = pd.read_csv(os.path.join(v, "hazirlik_makro_kapi.csv"))
+    fig, ax = plt.subplots(figsize=(8.6, 4.0))
+    h = r.brut_haftalik.dropna().loc["2024":]
+    n = r.sablon_neti.dropna().loc["2024":]
+    ax.plot(h.index, h, color=RENK["dunya"], lw=1.2, label="Brüt resmî rezerv (haftalık)")
+    ax.plot(n.index, n, color=RENK["ab"], lw=1.6, marker="o", ms=2.5,
+            label="Net rezerv (IMF şablonu: 12 aylık döviz çıkışları, swaplar ve zorunlu karşılıklar düşülmüş)")
+    for bas, son in (("2025-03-14", "2025-05-02"), ("2026-02-27", "2026-04-30")):
+        ax.axvspan(pd.Timestamp(bas), pd.Timestamp(son), color=RENK["vurgu"], alpha=0.08, lw=0)
+    ax.text(pd.Timestamp("2025-03-20"), 228, "Mart 2025\nsiyasi şok", fontsize=6.5, color=RENK["vurgu"], va="top")
+    ax.text(pd.Timestamp("2026-03-03"), 228, "Mart 2026\nİran savaşı", fontsize=6.5, color=RENK["vurgu"], va="top")
+    son_t, son_n = n.index[-1], n.iloc[-1]
+    gelecek = pd.date_range(son_t, "2027-03-31", freq="ME")
+    adim = np.arange(len(gelecek))
+    guclu = (r.sablon_neti.dropna().loc["2026-08"].iloc[0] - r.sablon_neti.dropna().loc["2026-03"].iloc[0]) / 5
+    ort = (son_n - r.sablon_neti.dropna().iloc[0]) / (len(r.sablon_neti.dropna()) - 1)
+    ax.plot(gelecek, son_n + guclu * adim, color=RENK["ab"], ls="--", lw=1, label=f"Projeksiyon: güçlü giriş ({virgul(guclu, 1)} mlr $/ay)")
+    ax.plot(gelecek, son_n + ort * adim, color=RENK["ab"], ls=":", lw=1, label=f"Projeksiyon: 2023–2026 ortalaması ({virgul(ort, 1)} mlr $/ay)")
+    for _, s in k.iterrows():
+        et = "kurallı ilan" if "kurall" in s.kalem else "düzensiz (anlaşmasız çıkış beklentisi)"
+        renk = RENK["turuncu"] if "kurall" in s.kalem else RENK["vurgu"]
+        ax.axhline(s.deger, color=renk, lw=0.9, ls="-.")
+        ax.text(pd.Timestamp("2024-01-10"), s.deger + 3, f"Gerekli net rezerv, {et}: {virgul(s.deger)} mlr $", fontsize=6.6, color=renk)
+    for ad, t in (("K (T2028)", "2026-11-30"), ("K (T2029)", "2027-03-31")):
+        ax.axvline(pd.Timestamp(t), color="black", lw=0.8, ls=":")
+        ax.text(pd.Timestamp(t), -72, ad, fontsize=6.6, ha="center", va="bottom")
+    ax.axhline(0, color="black", lw=0.5)
+    ax.set_ylim(-75, 235)
+    ax.set_ylabel("Milyar $")
+    ax.set_title("TCMB rezervleri ve çıkış ilanı şokuna karşı gerekli tampon", fontsize=9)
+    ax.legend(frameon=False, fontsize=6.4, loc="upper center", bbox_to_anchor=(0.5, -0.1), ncol=2)
+    fig.text(0.01, -0.035, "Kaynak: TCMB EVDS3 (TP.AB.TOPLAM; IMF rezerv şablonu); kod/f2k_makro_tampon.py; veri/hazirlik_makro_*.csv. "
+             "Gerekli tampon = 12 aylık çıkışın üst ucu + 20 mlr $ taban [H].", fontsize=6.8, color="#555555")
+    kaydet(fig, c, "f2c_rezerv")
+
+
+def f2c_takvim(v, c):
+    h = pd.read_csv(os.path.join(v, "hazirlik_hamleler_oncelik.csv"))
+    h = h[h.oncelik.isin(["A", "B"])].sort_values(["oncelik", "sure_ay_ust"], ascending=[True, False]).head(22)
+    fig, ax = plt.subplots(figsize=(8.6, 5.2))
+    y = np.arange(len(h))
+    renk = {"A": RENK["vurgu"], "B": RENK["ab"]}
+    for i, r in enumerate(h.itertuples()):
+        ax.barh(i, r.sure_ay_alt, color=renk[r.oncelik], alpha=0.9, height=0.6)
+        ax.barh(i, r.sure_ay_ust - r.sure_ay_alt, left=r.sure_ay_alt, color=renk[r.oncelik], alpha=0.3, height=0.6)
+    for ay, et, ls in ((1, "K\n(T2028)", ":"), (5, "K\n(T2029)", ":"), (14.5, "T2028", "--"), (26.5, "T2029", "--")):
+        ax.axvline(ay, color="black", lw=0.8, ls=ls)
+        ax.text(ay + 0.3, len(h) + 0.1, et, fontsize=7, va="top")
+    etiket = [f"{r.no} {r.hamle[:58]}{'…' if len(r.hamle) > 58 else ''}" for r in h.itertuples()]
+    ax.set_yticks(y, etiket, fontsize=6.6)
+    ax.set_ylim(len(h) + 1.4, -0.7)
+    ax.set_xlim(0, 50)
+    ax.set_xlabel("Bugünden (18.10.2026) itibaren ay; koyu: hazırlık süresinin alt sınırı, açık: üst sınırı")
+    ax.set_title("Hazırlık süreleri ve iki takvim: A (kırmızı) ve B (mavi) öncelikli hamleler", fontsize=9)
+    fig.text(0.01, -0.02, "Kaynak: veri/hazirlik_hamleler.csv, kod/f2j_hamle_tablosu.py. K: iç karar ve AB'ye resmî bildirim (02b §5.8).",
+             fontsize=7, color="#555555")
+    kaydet(fig, c, "f2c_takvim")
+
+
 def main():
     kok = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
     ap = argparse.ArgumentParser()
@@ -241,7 +398,7 @@ def main():
     a = ap.parse_args()
     os.makedirs(a.cikti, exist_ok=True)
     for f in (f1_ab_ticaret, f1_cari_denge, f1_bolum_maruziyet, f2_takas_tasarim, f2_s4_paket_siniri, f2_net_istihdam,
-              f2_cekim_senaryo, f2_cekim_zaman_yolu):
+              f2_cekim_senaryo, f2_cekim_zaman_yolu, f2c_sta_ge, f2c_pem, f2c_skdm, f2c_rezerv, f2c_takvim):
         f(a.veri, a.cikti)
         print("şekil:", f.__name__)
 

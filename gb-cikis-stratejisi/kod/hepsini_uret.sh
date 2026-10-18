@@ -6,8 +6,8 @@
 #   kod/hepsini_uret.sh --cikti /tmp/gb_veri     çıktılar başka klasöre yazılır, sonra veri/ ile karşılaştırılır
 #   kod/hepsini_uret.sh --cevrimdisi ...         ağ erişimi yok: eksik girdi varsa betik hata verir
 #
-# Adımlar betiklerin bağımlılık sırasıyla çalışır (Faz 0 → 1 → 2A → 2B → şekiller). Süre: ≈15–25 dk;
-# çoğu çekim modelinde (f2f: 19 PPML spesifikasyonu ve 1.000 çekilişli genel denge).
+# Adımlar betiklerin bağımlılık sırasıyla çalışır (Faz 0 → 1 → 2A → 2B → 2C → şekiller). Süre: ≈20–30 dk;
+# çoğu çekim modelinde (f2f: 19 PPML spesifikasyonu ve genel denge; f2g: STA ağı genel dengesi).
 set -euo pipefail
 KOD="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PAKET="$(dirname "$KOD")"
@@ -22,7 +22,9 @@ done
 cd "$KOD"
 if [[ "$CIKTI" != "$PAKET/veri" ]]; then
   # Elle derlenmiş girdiler (kaynakları satır içinde): betikler bunları çıktı klasöründen okur
-  cp "$PAKET/veri/vergi_oranlari_2026.csv" "$PAKET/veri/vergi_gelirleri_2024_2026.csv" "$CIKTI/"
+  cp "$PAKET/veri/vergi_oranlari_2026.csv" "$PAKET/veri/vergi_gelirleri_2024_2026.csv" \
+     "$PAKET/veri/skdm_ek1_kn.csv" "$PAKET/veri/skdm_asagi_kn.csv" "$PAKET/veri/skdm_parametre.csv" \
+     "$PAKET/veri/hazirlik_hamleler.csv" "$CIKTI/"
 fi
 
 adim() {
@@ -55,6 +57,12 @@ adim f2d_s4_net_istihdam.py
 adim f2e_s4_aktif.py
 echo "Faz 2B"
 adim f2f_cekim_modeli.py
+echo "Faz 2C"
+adim f2g_hazirlik_sta_ge.py
+adim f2h_mense_pem.py
+adim f2i_skdm.py
+adim f2k_makro_tampon.py
+adim f2j_hamle_tablosu.py
 echo "Şekiller"
 python3 sekiller.py --veri "$CIKTI" --cikti "$CIKTI/sekiller" >/dev/null && echo "sekiller.py                  tamam"
 

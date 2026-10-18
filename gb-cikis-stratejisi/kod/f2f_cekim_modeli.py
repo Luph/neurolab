@@ -748,8 +748,8 @@ def ic_ticaret(c, t, ulkeler_secili, ulke_bilgi, yil, gsyh_cepii):
     return sonuc, eksik, bu
 
 
-def ge_modulu(c, t, sec, ulke_bilgi, sonuclar, gsyh_cepii, yil=2019, cekilis=1000, tohum=20261018):
-    """2019 kesitinde S2/S3/S4 için koşullu ve tam GE; parametrik bootstrap ile %90 aralık."""
+def ge_matrisi(c, t, sec, ulke_bilgi, gsyh_cepii, yil=2019):
+    """GE ticaret matrisi (milyon $): ülkeler arası IMF akımları, köşegende ülke içi satışlar."""
     ulke = [u for u in sec]
     ic, eksik, _ = ic_ticaret(c, t, ulke, ulke_bilgi, yil, gsyh_cepii)
     ic = ic.dropna()
@@ -758,6 +758,12 @@ def ge_modulu(c, t, sec, ulke_bilgi, sonuclar, gsyh_cepii, yil=2019, cekilis=100
     X = s.pivot_table(index="o", columns="d", values="x_imf", aggfunc="sum").reindex(index=ulke, columns=ulke)
     X = X.fillna(0.0).to_numpy() / 1e3
     np.fill_diagonal(X, ic[ulke].to_numpy())
+    return X, ulke, eksik
+
+
+def ge_modulu(c, t, sec, ulke_bilgi, sonuclar, gsyh_cepii, yil=2019, cekilis=1000, tohum=20261018):
+    """2019 kesitinde S2/S3/S4 için koşullu ve tam GE; parametrik bootstrap ile %90 aralık."""
+    X, ulke, eksik = ge_matrisi(c, t, sec, ulke_bilgi, gsyh_cepii, yil)
     idx = {u: k for k, u in enumerate(ulke)}
     ab = [u for u in ulke if u in AB_UYELIK and u != "GBR"]   # karşı-olgu AB27 ile; BK 2021'den beri GB dışında
     tr = idx[TR]

@@ -1,0 +1,91 @@
+kn,ex,sektor,kapsam,aciklama
+25070080,1,Çimento,dahil,"Other kaolinic clays, except non-calcined kaolinic clays (i.e. calcined clay)"
+25231000,0,Çimento,dahil,Cement clinkers
+25232100,0,Çimento,dahil,"White Portland cement, whether or not artificially coloured"
+25232900,0,Çimento,dahil,Other Portland cement
+25233000,0,Çimento,dahil,Aluminous cement
+25239000,0,Çimento,dahil,Other hydraulic cements
+27160000,0,Elektrik,dahil,Electrical energy
+28080000,0,Gübre,dahil,Nitric acid; sulphonitric acids
+2814,0,Gübre,dahil,"Ammonia, anhydrous or in aqueous solution"
+28342100,0,Gübre,dahil,Nitrates of potassium
+3102,0,Gübre,dahil,"Mineral or chemical fertilisers, nitrogenous"
+3105,0,Gübre,dahil,"Mineral or chemical fertilisers containing two or three of the fertilising elements N, P and K; other fertilisers; goods of Ch. 31 in tablets or similar forms or in packages of gross weight <= 10 kg"
+31056000,0,Gübre,haric,Mineral or chemical fertilisers containing the two fertilising elements phosphorus and potassium
+26011200,0,Demir-çelik,dahil,"Agglomerated iron ores and concentrates, other than roasted iron pyrites"
+72,0,Demir-çelik,dahil,Iron and steel (whole Chapter 72)
+7201,0,Demir-çelik,dahil,"Pig iron and spiegeleisen, in pigs, blocks or other primary forms"
+720211,0,Demir-çelik,dahil,"Ferro-manganese, containing by weight > 2 % of carbon"
+720219,0,Demir-çelik,dahil,"Ferro-manganese, other (<= 2 % carbon)"
+720221,0,Demir-çelik,haric,"Ferro-silicon, containing by weight > 55 % of silicon"
+720229,0,Demir-çelik,haric,"Ferro-silicon, other"
+72023000,0,Demir-çelik,haric,Ferro-silico-manganese
+720241,0,Demir-çelik,dahil,"Ferro-chromium, containing by weight > 4 % of carbon"
+720249,0,Demir-çelik,dahil,"Ferro-chromium, other (<= 4 % carbon)"
+72025000,0,Demir-çelik,haric,Ferro-silico-chromium
+72026000,0,Demir-çelik,dahil,Ferro-nickel
+72027000,0,Demir-çelik,haric,Ferro-molybdenum
+72028000,0,Demir-çelik,haric,Ferro-tungsten and ferro-silico-tungsten
+72029100,0,Demir-çelik,haric,Ferro-titanium and ferro-silico-titanium
+72029200,0,Demir-çelik,haric,Ferro-vanadium
+72029300,0,Demir-çelik,haric,Ferro-niobium
+72029910,0,Demir-çelik,haric,Ferro-phosphorus
+72029930,0,Demir-çelik,haric,Ferro-silico-magnesium
+72029980,0,Demir-çelik,haric,Other ferro-alloys
+7203,0,Demir-çelik,dahil,"Ferrous products obtained by direct reduction of iron ore (DRI) and other spongy ferrous products; iron of purity >= 99,94 %"
+7204,0,Demir-çelik,haric,Ferrous waste and scrap; remelting scrap ingots of iron or steel
+7205,0,Demir-çelik,dahil,"Granules and powders of pig iron, spiegeleisen, iron or steel"
+7206,0,Demir-çelik,dahil,Iron and non-alloy steel in ingots or other primary forms (excl. iron of heading 7203)
+7207,0,Demir-çelik,dahil,Semi-finished products of iron or non-alloy steel
+7208,0,Demir-çelik,dahil,"Flat-rolled products of iron or non-alloy steel, width >= 600 mm, hot-rolled, not clad, plated or coated"
+7209,0,Demir-çelik,dahil,"Flat-rolled products of iron or non-alloy steel, width >= 600 mm, cold-rolled, not clad, plated or coated"
+7210,0,Demir-çelik,dahil,"Flat-rolled products of iron or non-alloy steel, width >= 600 mm, clad, plated or coated"
+7211,0,Demir-çelik,dahil,"Flat-rolled products of iron or non-alloy steel, width < 600 mm, not clad, plated or coated"
+7212,0,Demir-çelik,dahil,"Flat-rolled products of iron or non-alloy steel, width < 600 mm, clad, plated or coated"
+7213,0,Demir-çelik,dahil,"Bars and rods of iron or non-alloy steel, hot-rolled, in irregularly wound coils (wire rod)"
+7214,0,Demir-çelik,dahil,"Other bars and rods of iron or non-alloy steel, not further worked than forged, hot-rolled, hot-drawn or hot-extruded (incl. rebar 7214 20 00, 7214 99 10)"
+7215,0,Demir-çelik,dahil,Other bars and rods of iron or non-alloy steel (cold-formed/cold-finished or further worked)
+7216,0,Demir-çelik,dahil,"Angles, shapes and sections of iron or non-alloy steel"
+7217,0,Demir-çelik,dahil,Wire of iron or non-alloy steel
+7218,0,Demir-çelik,dahil,Stainless steel in ingots or other primary forms; semi-finished products of stainless steel
+7219,0,Demir-çelik,dahil,"Flat-rolled products of stainless steel, width >= 600 mm"
+7220,0,Demir-çelik,dahil,"Flat-rolled products of stainless steel, width < 600 mm"
+7221,0,Demir-çelik,dahil,"Bars and rods of stainless steel, hot-rolled, in irregularly wound coils"
+7222,0,Demir-çelik,dahil,"Other bars and rods of stainless steel; angles, shapes and sections of stainless steel"
+7223,0,Demir-çelik,dahil,Wire of stainless steel
+7224,0,Demir-çelik,dahil,Other alloy steel in ingots or other primary forms; semi-finished products of other alloy steel
+7225,0,Demir-çelik,dahil,"Flat-rolled products of other alloy steel, width >= 600 mm"
+7226,0,Demir-çelik,dahil,"Flat-rolled products of other alloy steel, width < 600 mm"
+7227,0,Demir-çelik,dahil,"Bars and rods of other alloy steel, hot-rolled, in irregularly wound coils"
+7228,0,Demir-çelik,dahil,"Other bars and rods of other alloy steel; angles, shapes and sections of other alloy steel; hollow drill bars and rods"
+7229,0,Demir-çelik,dahil,Wire of other alloy steel
+7301,0,Demir-çelik,dahil,"Sheet piling of iron or steel; welded angles, shapes and sections, of iron or steel"
+7302,0,Demir-çelik,dahil,"Railway or tramway track construction material of iron or steel (rails, check-rails, switch blades, sleepers, fish-plates, etc.)"
+730300,0,Demir-çelik,dahil,"Tubes, pipes and hollow profiles, of cast iron"
+7304,0,Demir-çelik,dahil,"Tubes, pipes and hollow profiles, seamless, of iron (other than cast iron) or steel"
+7305,0,Demir-çelik,dahil,"Other tubes and pipes (e.g. welded, riveted), circular cross-section, external diameter > 406,4 mm, of iron or steel"
+7306,0,Demir-çelik,dahil,"Other tubes, pipes and hollow profiles (e.g. open seam or welded, riveted), of iron or steel"
+7307,0,Demir-çelik,dahil,"Tube or pipe fittings (e.g. couplings, elbows, sleeves), of iron or steel"
+7308,0,Demir-çelik,dahil,"Structures (excl. prefabricated buildings of 9406) and parts of structures, of iron or steel; plates, rods, angles, shapes, sections, tubes and the like prepared for use in structures"
+730900,0,Demir-çelik,dahil,"Reservoirs, tanks, vats and similar containers of iron or steel, capacity > 300 l, not fitted with mechanical or thermal equipment"
+7310,0,Demir-çelik,dahil,"Tanks, casks, drums, cans, boxes and similar containers of iron or steel, capacity <= 300 l, not fitted with mechanical or thermal equipment"
+731100,0,Demir-çelik,dahil,"Containers for compressed or liquefied gas, of iron or steel"
+7318,0,Demir-çelik,dahil,"Screws, bolts, nuts, coach screws, screw hooks, rivets, cotters, cotter pins, washers and similar articles, of iron or steel"
+7326,0,Demir-çelik,dahil,Other articles of iron or steel
+7601,0,Alüminyum,dahil,Unwrought aluminium
+7603,0,Alüminyum,dahil,Aluminium powders and flakes
+7604,0,Alüminyum,dahil,"Aluminium bars, rods and profiles"
+7605,0,Alüminyum,dahil,Aluminium wire
+7606,0,Alüminyum,dahil,"Aluminium plates, sheets and strip, of a thickness exceeding 0,2 mm"
+7607,0,Alüminyum,dahil,"Aluminium foil of a thickness (excl. any backing) not exceeding 0,2 mm"
+7608,0,Alüminyum,dahil,Aluminium tubes and pipes
+76090000,0,Alüminyum,dahil,"Aluminium tube or pipe fittings (e.g. couplings, elbows, sleeves)"
+7610,0,Alüminyum,dahil,"Aluminium structures (excl. prefabricated buildings of 9406) and parts of structures; aluminium plates, rods, profiles, tubes and the like prepared for use in structures"
+76110000,0,Alüminyum,dahil,"Aluminium reservoirs, tanks, vats and similar containers, capacity > 300 litres, not fitted with mechanical or thermal equipment"
+7612,0,Alüminyum,dahil,"Aluminium casks, drums, cans, boxes and similar containers, capacity <= 300 litres"
+76130000,0,Alüminyum,dahil,Aluminium containers for compressed or liquefied gas
+7614,0,Alüminyum,dahil,"Stranded wire, cables, plaited bands and the like, of aluminium, not electrically insulated"
+7616,0,Alüminyum,dahil,Other articles of aluminium
+7602,0,Alüminyum,kapsam_disi,Aluminium waste and scrap
+7615,0,Alüminyum,kapsam_disi,"Table, kitchen or other household articles and parts thereof, of aluminium; sanitary ware"
+28041000,0,Hidrojen,dahil,Hydrogen

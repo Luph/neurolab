@@ -44,8 +44,15 @@ KAYNAKLAR = [
      "https://showvoc.op.europa.eu", "f0_nace_kapsam"),
     ("cpa22_cn2025.tsv*", "AB Yayın Ofisi (ShowVoc)", "CPA 2.2 – CN 2025 karşılık tablosu",
      "https://showvoc.op.europa.eu", "f0_nace_kapsam"),
-    ("comext_eu_tr_*", "Eurostat Comext", "AB27–Türkiye ticareti, CN8, 2025 (DS-045409, akış 1/2)",
-     "https://ec.europa.eu/eurostat/api/comext/dissemination/sdmx/2.1/data/DS-045409", "f0_nace_kapsam"),
+    ("comext_eu_tr_*", "Eurostat Comext", "AB27–Türkiye ticareti, CN8, 2025 (DS-045409, akış 1/2; değer, 100 kg "
+     "ve elektrikte MWh)", "https://ec.europa.eu/eurostat/api/comext/dissemination/sdmx/2.1/data/DS-045409",
+     "f0_nace_kapsam, f2i_skdm"),
+    ("skdm/varsayilan_degerler_*", "Avrupa Komisyonu (DG TAXUD)", "SKDM varsayılan değerleri, ülke tabloları "
+     "(Uygulama Tüzüğü 2026/1740; bilgi dosyası, 6.8.2026)",
+     "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en", "f2i_skdm"),
+    ("skdm/kiyas_degerleri_*", "Avrupa Komisyonu (DG TAXUD)", "SKDM kıyas değerleri, A ve B sütunları ve üretim rotaları "
+     "(Uygulama Tüzüğü 2025/2620)",
+     "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en", "f2i_skdm"),
     ("gib_sinif4.xls", "Gelir İdaresi Başkanlığı", "NACE Rev. 2.1 dört haneli sınıf listesi (Türkçe adlar)",
      "https://www.gib.gov.tr", "f0_nace_kapsam"),
     ("tuik_DF_YAPISAL_EFGTG*", "TÜİK Dağıtım Yönetim Sistemi", "Yıllık Sanayi ve Hizmet İstatistikleri (NACE Rev. 2 / 2.1)",
@@ -68,8 +75,8 @@ KAYNAKLAR = [
      "https://ec.europa.eu/eurostat/api/comext/dissemination/sdmx/2.1/data/DS-045409", "f1a_ab_ticaret"),
     ("f1/wits/*", "Dünya Bankası WITS (TRAINS)", "Ortak ülkelerin MFN tarifeleri, HS6",
      "https://wits.worldbank.org/API/V1/SDMX/V21/datasource/TRN", "f1c_sta_asimetrisi"),
-    ("evds3/*", "TCMB EVDS3", "Ödemeler dengesi, GSYH, kurlar, reel kur, UYP (anlık görüntü, 18.10.2026)",
-     "https://evds3.tcmb.gov.tr", "f1b_odemeler_dengesi (evds3.py)"),
+    ("evds3/*", "TCMB EVDS3", "Ödemeler dengesi, GSYH, kurlar, reel kur, UYP; resmî rezervler ve IMF rezerv şablonu "
+     "(anlık görüntü, 18.10.2026)", "https://evds3.tcmb.gov.tr", "f1b_odemeler_dengesi, f2k_makro_tampon (evds3.py)"),
     ("tuik_DF_UHTI_HIZMET_COGRAFI_C*", "TÜİK Dağıtım Yönetim Sistemi", "Uluslararası hizmet ticareti, ortak ülke × hizmet türü",
      "https://databrowser2.tuik.gov.tr", "f1b_odemeler_dengesi"),
     ("sgk_yillik_*", "SGK", "SGK istatistik yıllığı 2025 (il × NACE sigortalı)", "https://www.sgk.gov.tr",

@@ -86,6 +86,9 @@
 \setlength{\lightrulewidth}{0.05em}
 \arrayrulecolor{gbmavi}
 % gb.lua her tablonun önüne \begingroup\gbtablo\<boyut> yazar
+% Tablo hücresinde madde: hücre başında yeni satır açmaz, sonrakilerde açar (gb.lua: <li>)
+\RequirePackage{needspace}   % tablo başlığı ile tablo aynı sayfada (gb.lua)
+\newcommand*{\gbli}{\ifvmode\else\par\fi\noindent\hangindent=0.9em\hangafter=1\makebox[0.9em][l]{\textbullet}}
 \newcommand*{\gbtablo}{%
   \setlength{\tabcolsep}{4pt}%
   \renewcommand*{\arraystretch}{1.12}%

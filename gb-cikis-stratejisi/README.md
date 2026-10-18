@@ -12,6 +12,7 @@ belgelerini, verileri ve kodu içerir. Her faz sonunda çalışma durur ve **DEV
 | 1 | Teşhis: GB'nin 30 yıllık bilançosu, asimetriler, makro tablo ve cari denge ayrıştırması, maruziyet haritası | Tamamlandı (17.10.2026) | [`01_teshis.md`](01_teshis.md) |
 | 2A | Politika uzayı: kullanıcının önerisi (tarife + ÖTV takası), araç evreni, bağlı oranlar, aktif S4, dış rejim evreni | Tamamlandı (18.10.2026) | [`02a_politika_uzayi.md`](02a_politika_uzayi.md) |
 | 2B | Seçenekler (S0–S5, R7, ITA, aktif S4), çekim modeli, bitiş durumu ve hukuki yol haritası (AB, DTÖ, Türk iç hukuku), iki takvim | Tamamlandı (18.10.2026) | [`02b_secenekler_hukuk.md`](02b_secenekler_hukuk.md) |
+| 2C | Karar öncesi hazırlık: dokuz çerçevede 51 sessiz, pişmanlıksız hamle; STA ağının genel dengesi, menşe riski, SKDM yükü, makro tampon; kırmızı liste ve devreye alma sırası | Tamamlandı (18.10.2026) | [`02c_hazirlik.md`](02c_hazirlik.md) |
 | 3–9 | NACE kartları → derin analizler → araçlar ve tarife cetveli → makro → müzakere → uygulama → risk ve yönetici özeti | Planlandı | bkz. `00_plan.md` §2 |
 
 Yeni bir sohbette devam etmek için: ana prompt + [`DURUM_OZETI.md`](DURUM_OZETI.md).
@@ -22,8 +23,8 @@ Belgeler LaTeX'te dizilir ve PDF olarak üretilir (LuaLaTeX; Markdown → pandoc
 
 | PDF | İçerik |
 |---|---|
-| [`pdf/GB_Cikis_Stratejisi_Faz0-2.pdf`](pdf/GB_Cikis_Stratejisi_Faz0-2.pdf) | **Birleşik cilt:** durum özeti, Faz 0, 1, 2A, 2B; Ek A defter; Ek B çalışma paketi. İçindekiler ve şekil listesi |
-| `pdf/00_plan.pdf`, `pdf/01_teshis.pdf`, `pdf/02a_politika_uzayi.pdf`, `pdf/02b_secenekler_hukuk.pdf` | Faz belgeleri tek tek |
+| [`pdf/GB_Cikis_Stratejisi_Faz0-2.pdf`](pdf/GB_Cikis_Stratejisi_Faz0-2.pdf) | **Birleşik cilt:** durum özeti, Faz 0, 1, 2A, 2B, 2C; Ek A defter; Ek B çalışma paketi. İçindekiler ve şekil listesi |
+| `pdf/00_plan.pdf`, `pdf/01_teshis.pdf`, `pdf/02a_politika_uzayi.pdf`, `pdf/02b_secenekler_hukuk.pdf`, `pdf/02c_hazirlik.pdf` | Faz belgeleri tek tek |
 | `pdf/DURUM_OZETI.pdf`, `pdf/defter.pdf`, `pdf/README.pdf` | Durum özeti, defter, paket açıklaması |
 
 Kanıt etiketleri PDF'te renkli kutudur: V doğrulanmış veri, T tahmin (P10–P90), D? doğrulanacak, H hipotez/yargı.
@@ -38,8 +39,8 @@ Bütün kod, ham veri, ara ve nihai hesaplar pakettedir. Hesaplar ağ erişimi o
 | [`pdf/`](pdf/) | Dizilmiş PDF'ler |
 | [`latex/`](latex/) | Stil (`gbstil.sty`), pandoc filtresi (`gb.lua`), cilt ve belge sarmalayıcıları, üretilmiş LaTeX gövdeleri, derleme betiği (`derle.sh`) |
 | [`kod/`](kod/) | Bütün betikler; `hepsini_uret.sh` hepsini sırayla çalıştırır, `dogrula.py` sonuçları karşılaştırır |
-| [`girdi/`](girdi/) | Ham girdiler (174 dosya, ≈122 MB): TÜİK, TCMB, Eurostat, Comtrade, WITS, CEPII, Ticaret Bakanlığı, SGK, DESTA, BM. Kaynak, adres ve SHA-256: [`girdi/MANIFEST.csv`](girdi/MANIFEST.csv); açıklama: [`girdi/README.md`](girdi/README.md) |
-| [`veri/`](veri/) | Hesap sonuçları (CSV) ve elle derlenmiş üç girdi (`vergi_oranlari_2026.csv`, `vergi_gelirleri_2024_2026.csv`, `akct_1996_cn8.txt`; kaynakları satır içinde) |
+| [`girdi/`](girdi/) | Ham girdiler (180 dosya, ≈123 MB): TÜİK, TCMB, Eurostat, Comtrade, WITS, CEPII, Ticaret Bakanlığı, SGK, DESTA, BM, Avrupa Komisyonu (SKDM). Kaynak, adres ve SHA-256: [`girdi/MANIFEST.csv`](girdi/MANIFEST.csv); açıklama: [`girdi/README.md`](girdi/README.md) |
+| [`veri/`](veri/) | Hesap sonuçları (CSV) ve elle derlenmiş girdiler (`vergi_oranlari_2026.csv`, `vergi_gelirleri_2024_2026.csv`, `akct_1996_cn8.txt`, `skdm_ek1_kn.csv`, `skdm_asagi_kn.csv`, `skdm_parametre.csv`, `hazirlik_hamleler.csv`; kaynakları satır içinde) |
 | [`sekiller/`](sekiller/) | Şekiller (PNG ve PDF), `kod/sekiller.py` ile `veri/`den |
 | [`kaynaklar/`](kaynaklar/) | Hukuki ve kurumsal bulguların araştırma notları |
 
@@ -51,6 +52,7 @@ Bütün kod, ham veri, ara ve nihai hesaplar pakettedir. Hesaplar ağ erişimi o
 | `02a_politika_uzayi.md` | Faz 2A çıktısı: tarife + ÖTV/KDV takası (dört tasarım, on ürün grubu), DTÖ hukuku ve emsaller, araç evreni A–K, bağlı oranlar, tahsilat oranı, aktif S4 paket sınırı (İGV rejimi × P1 × takas), net istihdam, AB'nin maliyeti, zaman kritik eylemler |
 | `02b_secenekler_hukuk.md` | Faz 2B çıktısı: seçeneklerin tanımı, çekim modeli sonuçları (PPML ve genel denge), karşılaştırma matrisi, kısıt testleri, önerilen bitiş durumu ve geçiş sırası (T2028, T2029), hukuki yol haritası, olasılıklar, riskler |
 | `01_teshis.md` | Faz 1 çıktısı: ticaret ve kompozisyon (1991–2025), sektör tarihçeleri, literatür, bilanço tablosu, STA ve diğer asimetriler, ödemeler dengesi, OVP tabanı ve T+5 boşluğu, NACE bölümü ve İBBS-2 maruziyeti, kısıt çatışmaları, veri boşlukları |
+| `02c_hazirlik.md` | Faz 2C çıktısı: karar öncesi sessiz hamleler (hukuk, DTÖ, iç hukuk, STA, menşe ve gümrük, kalite altyapısı, sanayi ve yatırım, SKDM, makro-finans, diplomasi, firma düzeyi), kırmızı liste, öncelik tablosu, iki takvim için sıra |
 | `DURUM_OZETI.md` | Son fazın durum özeti (≤500 kelime) |
 | `defter.md` | Kümülatif defter (enflasyon bütçesi, cari denge, mali maliyet, istihdam) |
 | `veri/nace_kapsam.csv` | 230 C sınıfı + B, D, E, A ve hizmet kapsamı; GB statü etiketi, rejim payları, AB–TR ticareti (2025), Rev. 2.1 karşılığı |
@@ -85,11 +87,17 @@ Bütün kod, ham veri, ara ve nihai hesaplar pakettedir. Hesaplar ağ erişimi o
 | `kod/f2d_s4_net_istihdam.py` | S4 net istihdam, NACE sınıfı; iki ithalat rejimi (yalnızca MFN, c2) → `veri/politika_s4_net_istihdam_*.csv` |
 | `kod/f2e_s4_aktif.py` | Aktif S4 paketleri: İGV rejimi (a, b, c, c2, d) × P1 × takas kapsamı, ayrıca S3 menşe maliyeti senaryoları; yasal ve tahsil edilebilir mali bilanço → `veri/politika_s4_aktif.csv`, `veri/politika_s4_aktif_urun.csv` |
 | `kod/f2f_cekim_modeli.py` | Yapısal çekim modeli (PPML; ihracatçı-yıl, ithalatçı-yıl, ikili sabit etkiler): GB ve AB STA etkileri, S2/S3/S4 senaryoları, 19 sağlamlık spesifikasyonu, genel denge (kesin şapka cebiri) → `veri/politika_cekim_katsayilar.csv`, `veri/politika_cekim_senaryolar.csv` |
+| `kod/f2g_hazirlik_sta_ge.py` | AB'nin STA ortaklarıyla Türkiye'nin kendi STA'ları: S0 ve S4 üzerine genel denge (f2f modülü), WITS ve 2026 Türk tarifesi → `veri/hazirlik_sta_ge.csv`, `veri/hazirlik_sta_tarife.csv` |
+| `kod/f2h_mense_pem.py` | Sanayi kollarında ve kilit ürünlerde PEM dışı girdi payı (TÜİK G-Ç 2023, BACI 2024, PRODTR) → `veri/hazirlik_pem_mense.csv`, `veri/hazirlik_pem_urun.csv` |
+| `kod/f2i_skdm.py` | SKDM yükü: Komisyonun varsayılan değer ve kıyas dosyaları, Comext 2025; varsayılan ve doğrulanmış değer, yurt içi karbon fiyatı, aşağı akış önerisi → `veri/hazirlik_skdm*.csv` |
+| `kod/f2k_makro_tampon.py` | TCMB rezervleri (IMF şablonu), ilan şoku senaryoları, gerekli tampon ve zamanlama kapısı → `veri/hazirlik_makro_*.csv` |
+| `kod/f2j_hamle_tablosu.py` | 51 hamlenin puanı, öncelik sırası ve duyarlılık → `veri/hazirlik_hamleler_oncelik.csv` |
+| `veri/skdm_*.csv`, `veri/hazirlik_hamleler.csv` | SKDM Ek I ve aşağı akış KN listeleri, SKDM parametreleri (kaynaklı); hamle tablosu (gerekçe, hukuki dayanak, süre, sorumlu, Pazartesi sabahı) |
 | `veri/vergi_oranlari_2026.csv`, `veri/vergi_gelirleri_2024_2026.csv` | Ürün grubu ÖTV/KDV oranları ve yerli pay (kaynaklı); ÖTV, KDV ve gümrük vergisi tahsilatı (GİB, 2024–2026) |
 | `kod/yollar.py` | Paket içi yollar (`girdi/`, `veri/`) ve çevrimdışı kip (`GB_CEVRIMDISI=1`) |
 | `kod/hepsini_uret.sh`, `kod/dogrula.py` | Bütün hesapları sırayla yeniden üretir; sonuçları `veri/` ile karşılaştırır |
 | `kod/girdi_hazirla.py` | BACI özetleri, büyük dosyaların sıkıştırılması, `girdi/MANIFEST.csv` |
-| `kod/sekiller.py` | Sekiz şekil (`sekiller/`) |
+| `kod/sekiller.py` | On üç şekil (`sekiller/`) |
 | `latex/derle.sh`, `latex/gb.lua`, `latex/gbstil.sty`, `latex/cilt.tex` | PDF üretimi |
 
 ## Yeniden üretme
@@ -101,7 +109,7 @@ kod/hepsini_uret.sh --cevrimdisi --cikti /tmp/gb_veri   # ağsız sınama: başk
 latex/derle.sh                                          # şekiller, LaTeX gövdeleri ve bütün PDF'ler → pdf/
 ```
 
-- **Süre.** Hesaplar ≈15–25 dakika sürer; çoğu çekim modelinde (19 PPML spesifikasyonu, 1.000 çekilişli genel denge). PDF'ler ≈4 dakika.
+- **Süre.** Hesaplar ≈20–30 dakika sürer; çoğu çekim modelinde (19 PPML spesifikasyonu, 1.000 çekilişli genel denge) ve STA ağı genel dengesinde. PDF'ler ≈4 dakika.
 - **Sınama sonucu (18.10.2026).** Çevrimdışı kipte bütün betikler paketteki girdilerle çalıştı. `veri/` klasöründeki sonuçlar bayt bayt aynı üretildi (`kod/dogrula.py`).
 - **Tek tek çalıştırma.** Betikler `kod/` içinden argümansız çalışır. Varsayılan girdi `girdi/`, çıktı `veri/`. Örnek: `python3 f2e_s4_aktif.py`. Sıra `hepsini_uret.sh` içinde.
 - **PDF için gerekenler.** pandoc ≥ 3.1, TeX Live 2023 (LuaLaTeX, latexmk, KOMA-Script, polyglossia), TeX Gyre ve DejaVu yazı tipleri. Ubuntu'da: `apt-get install pandoc texlive-luatex texlive-latex-extra texlive-fonts-extra texlive-lang-european latexmk fonts-dejavu`.

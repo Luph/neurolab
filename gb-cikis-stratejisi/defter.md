@@ -2,7 +2,7 @@
 
 Her NACE grubu tamamlandığında güncellenir. Toplamlar Faz 6'daki makro mutabakatta kullanılır.
 
-**Son güncelleme:** Faz 2 sonu, 18 Ekim 2026. Faz 3 başlamadığı için sınıf düzeyinde katkı yok.
+**Son güncelleme:** Faz 2 sonu (2A, 2B, 2C), 18 Ekim 2026. Faz 3 başlamadığı için sınıf düzeyinde katkı yok.
 
 | Kalem | Değer | Not |
 |---|---|---|
@@ -61,3 +61,21 @@ S0'a (GB) göre yerleşmiş etkiler. Ayrıntı: [`02b_secenekler_hukuk.md`](02b_
 | TÜFE birinci tur (bp) | +2 ile +12 (menşe maliyeti) | +2 ile +12 | 2,5–4,1 (aktif) | `[T]` 02a, f2e |
 | Net imalat istihdamı (bin) | ≈ −33 (kaba, GE kanalı) | −54 ile +12 | ≈ −35 (aktif, sınıf düzeyi) | `[T]` |
 
+## Hazırlık tabanı (Faz 2C)
+
+Karar öncesi hamlelerin değer ölçüleri ve zamanlama kısıtları. Ayrıntı: [`02c_hazirlik.md`](02c_hazirlik.md).
+
+| Gösterge | Değer | Kaynak ve etiket |
+|---|---|---|
+| Hamleler | 51: 11 A, 26 B, 14 C. Hiçbirinin çıkış olmazsa değeri negatif değil | `[H]` `veri/hazirlik_hamleler_oncelik.csv` |
+| Sessiz pencere (bugün → K) | T2028 ≈1 ay (K Kasım 2026); T2029 ≈5 ay (K Mart 2027) | `[H]` §13 |
+| 33 pazarla STA: S4 GSYH kaybının telafisi (σ = 5 / 7) | Pazar erişimi %14 / %23; karşılıklı %42 / %69. GB içinde GSYH +%0,08–0,30 | `[T]` `veri/hazirlik_sta_ge.csv` |
+| STA'ların statik gümrük geliri kaybı | Yılda $1,9 mlr sanayi (GSYH'nin %0,12'si); bütün ürünler $3,2 mlr | `[T]` `veri/hazirlik_sta_tarife.csv` |
+| PEM dışı ithal ara girdi payı (AB ihracatı ağırlıklı) | %13,1 (bütünleşik üst sınır ≈%21). Otomobil göstergesi %36 (kural %45) | `[T]` `veri/hazirlik_pem_*.csv` |
+| SKDM: AB'ye ödeme, 2028 (merkez fiyat) | Varsayılan €2.593 mn; doğrulanmış €676 mn; yurt içi fiyat AB'ye eşitse AB'ye €81 mn ve Türkiye'de €595 mn | `[T]` `veri/hazirlik_skdm.csv` |
+| SKDM: AB'ye ödeme, 2034 | Varsayılan €3.795 mn; doğrulanmış €1.398 mn | `[T]` |
+| SKDM aşağı akış önerisi (1.1.2028) | €10,9 mlr ihracat; yük 2028'de €245 mn (varsayılan) / €77 mn (doğrulanmış) | `[T]` `veri/hazirlik_skdm_asagi.csv` |
+| Net rezerv (IMF şablonu, Eylül 2026) | $41,6 mlr; brüt $171,6 mlr (9.10.2026) | `[V]`/`[T]` `veri/hazirlik_makro_rezerv.csv` |
+| İlan şokunun 12 aylık rezerv etkisi | Kurallı $30–48 mlr; düzensiz $67–90 mlr | `[H]` `veri/hazirlik_makro_tampon.csv` |
+| Gerekli net rezerv (makro kapı) | Kurallı ilan $68 mlr; düzensiz $110 mlr. Açık $27 / $69 mlr | `[T]` `veri/hazirlik_makro_kapi.csv` |
+| Zaman kritik tarihler | XXVIII:5 31.12.2026; DS629 kabul ya da temyiz 24.11.2026 (WT/DS629/6; 02a'daki 27.10.2026 uzatıldı); ETS izleme planları 27.10.2026; ilk SKDM beyanı 30.9.2027 | `[V]` §1.3 |

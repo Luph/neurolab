@@ -251,6 +251,7 @@ local function bloklar(blocks)
       out:insert(b)
       i = i + 1 -- GitHub için yazılmış altyazı satırını atla
     elseif tablo_basligi_mi(b) and blocks[i + 1] and blocks[i + 1].t == "Table" then
+      out:insert(pandoc.RawBlock("latex", "\\Needspace{7\\baselineskip}")) -- başlık tablosuz sayfa sonunda kalmasın (\\needspace longtable ile çakışır)
       out:insert(b)
       out:insert(pandoc.RawBlock("latex", "\\nopagebreak[4]"))
     elseif ilerleme_mi(b) then
@@ -328,9 +329,44 @@ local function resim(el)
   return el
 end
 
+-- Tablo hücrelerindeki HTML satır sonu ve madde listeleri (GitHub'da da aynı görünür)
+local function ham_html(el)
+  if el.format ~= "html" then return nil end
+  local t = el.text:lower():gsub("%s", "")
+  if t == "<br>" or t == "<br/>" then
+    return pandoc.RawInline("latex", "\\newline{}")
+  elseif t == "<li>" then
+    return pandoc.RawInline("latex", "\\gbli{}")
+  elseif t == "<ul>" or t == "</ul>" or t == "</li>" then
+    return {}
+  end
+  return nil
+end
+
+-- Yatay tablolarda başlık paragrafı landscape ortamının içine alınır; yoksa başlık bir önceki sayfada kalır.
+local function yatay_baslik(blocks)
+  local out = pandoc.List()
+  local i = 1
+  while i <= #blocks do
+    local b, n1, n2, n3 = blocks[i], blocks[i + 1], blocks[i + 2], blocks[i + 3]
+    if b.t == "RawBlock" and b.text:match("Needspace") and n1 and tablo_basligi_mi(n1) and n2 and n2.t == "RawBlock"
+        and n2.text:match("nopagebreak") and n3 and n3.t == "RawBlock" and n3.text == "\\begin{landscape}" then
+      out:insert(n3)
+      out:insert(n1)
+      out:insert(n2)
+      i = i + 4
+    else
+      out:insert(b)
+      i = i + 1
+    end
+  end
+  return out
+end
+
 return {
   { Meta = meta_oku },
   { Blocks = bloklar },
   { Table = tablo, CodeBlock = kod_blogu, Header = baslik },
-  { Code = kod, Link = baglanti, Image = resim },
+  { Code = kod, Link = baglanti, Image = resim, RawInline = ham_html },
+  { Blocks = yatay_baslik },
 }

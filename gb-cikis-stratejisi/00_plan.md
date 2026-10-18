@@ -5,7 +5,7 @@
 | | |
 |---|---|
 | Tarih | 17 Ekim 2026 (çalışma ortamının tarihi) |
-| Faz | 0 / 9: tamamlandı; Revizyon 1 ile kullanıcı yanıtları işlendi. Faz 1'de §1 erişim tablosu, §3 V-06/V-07 ve §4 veri envanteri doğrulanmış erişime göre güncellendi. Güncel faz: [`01_teshis.md`](01_teshis.md) |
+| Faz | 0 / 9: tamamlandı; Revizyon 1 ile kullanıcı yanıtları işlendi. Faz 1'de §1 erişim tablosu, §3 V-06/V-07 ve §4 veri envanteri doğrulanmış erişime göre güncellendi. Faz 2 (2A, 2B, 2C) 18.10.2026'da tamamlandı: [`02a_politika_uzayi.md`](02a_politika_uzayi.md), [`02b_secenekler_hukuk.md`](02b_secenekler_hukuk.md), [`02c_hazirlik.md`](02c_hazirlik.md). Sonraki: Faz 3 |
 | Bu fazın çıktıları | `00_plan.md` (bu belge); `veri/nace_kapsam.csv`, `veri/nace_kapsam_bolum_ozeti.csv`, `veri/nace_r2_r21_kopru.csv`, `veri/cn2025_nace_rejim.csv`, `veri/akct_1996_cn8.txt`; `kod/f0_nace_kapsam.py`; `defter.md`; `DURUM_OZETI.md` |
 | Kanıt etiketleri | `[V]` doğrulanmış veri (kaynak, dönem) · `[T]` tahmin (yöntem, P10–P50–P90) · `[D?]` doğrulanması gereken · `[H]` hipotez veya uzman yargısı. Güven: **Y**üksek / **O**rta / **D**üşük |
 | Para birimi | Aksi belirtilmedikçe cari ABD doları; AB kaynaklı veriler avro olarak verilir. 2025 ortalama kuru: 1 € = 1,1300 $ `[V]` (ECB, EXR.A.USD.EUR) |
@@ -79,7 +79,8 @@ Bu bulgular strateji tasarımını daha ilk fazda etkiliyor; ayrıntıları ve k
 | 0 | Plan, araçlar, varsayımlar, veri envanteri, NACE kapsamı, `[D?]` doğrulaması | 1 | bu belge; `veri/nace_kapsam.csv`; köprü ve eşleştirme tabloları | Eurostat, ShowVoc, GİB |
 | 1 | Teşhis: GB'nin 30 yıllık fayda-maliyet bilançosu, asimetriler, makro tablo, cari denge ayrıştırması | 2 | `01_teshis.md`, `veri/teshis_*.csv` | Comext 1995–2025, UN Comtrade/BACI, TCMB ödemeler dengesi, OVP 2027–29 |
 | 2 | S0–S5 karşılaştırması, önerilen bitiş durumu, hukuki yol haritası (AB, DTÖ, iç hukuk) | 2 | `02_secenekler_hukuk.md` | Faz 0 hukuk doğrulaması, literatür |
-| 3 | NACE analizi: bölüm bölüm ana matris satırları, 230 sınıf kartı, B/D/E ve hizmetler; her yanıtın sonunda kümülatif defter | 22–26 | `nace_matris.csv`, `nace_kartlar_[bölüm].md`, `defter.md` | Comext CN8, CN 2026 tarifesi, bağlı oranlar, BACI, OECD ICIO |
+| 2C | Karar öncesi hazırlık (kullanıcı talebiyle eklendi, 18.10.2026): GB kararından önce sessizce uygulanabilecek, çıkışta faydayı artıran hamleler; dokuz çerçeve; kırmızı liste; devreye alma sırası | 1 | `02c_hazirlik.md`, `veri/hazirlik_*.csv` | Faz 2B GE modülü, TÜİK G-Ç, Komisyon SKDM dosyaları, TCMB EVDS3 |
+| 3 | NACE analizi: bölüm bölüm ana matris satırları, 230 sınıf kartı (Faz 2C'den gelen hazırlık alanlarıyla: menşe riski, onaylanmış kuruluş bağımlılığı, SKDM maruziyeti, çapa yatırımcı), B/D/E ve hizmetler; her yanıtın sonunda kümülatif defter | 22–26 | `nace_matris.csv`, `nace_kartlar_[bölüm].md`, `defter.md` | Comext CN8, CN 2026 tarifesi, bağlı oranlar, BACI, OECD ICIO |
 | 4 | Segmentasyon (KS×AME, EDE×CKE); 30–40 derin analiz (her yanıtta 2–4 sınıf) | 1 + 12 | `04_segmentasyon.md`, `04_derin_[kod].md` | Firma ve çapa yatırımcı verileri, ürün ağacı (BOM) menşe simülasyonları |
 | 5 | Yatay araçlar; GB sonrası tarife cetveli taslağı | 3 | `05_araclar.md`, `tarife_cetveli_taslak.csv` | CN 2026 / GTİP, bağlı oranlar, ITA listesi |
 | 6 | Makro entegrasyon: cari denge köprüsü, enflasyon yolu, bütçe optimizasyonu, tutarlılık testleri | 3 | `06_makro.md`, `kod/f6_*.py` | Girdi-çıktı (TÜİK 2023 veya OECD ICIO 2022), TCMB |

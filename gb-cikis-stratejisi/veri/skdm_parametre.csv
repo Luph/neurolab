@@ -1,0 +1,69 @@
+tur,anahtar,senaryo,deger,kaynak
+skdm_faktoru,2026,yasa,0.975,Direktif 2003/87/AT md. 10a(1a) (2023/959 ile) [V]
+skdm_faktoru,2027,yasa,0.95,aynı
+skdm_faktoru,2028,yasa,0.90,aynı
+skdm_faktoru,2029,yasa,0.775,aynı
+skdm_faktoru,2030,yasa,0.515,aynı
+skdm_faktoru,2031,yasa,0.39,aynı
+skdm_faktoru,2032,yasa,0.265,aynı
+skdm_faktoru,2033,yasa,0.14,aynı
+skdm_faktoru,2034,yasa,0.0,aynı
+skdm_faktoru,2026,oneri,0.975,COM(2026) 616 (17.7.2026; kabul edilmedi) [V]
+skdm_faktoru,2027,oneri,0.95,aynı
+skdm_faktoru,2028,oneri,0.915,aynı
+skdm_faktoru,2029,oneri,0.81,aynı
+skdm_faktoru,2030,oneri,0.59,aynı
+skdm_faktoru,2031,oneri,0.48,aynı
+skdm_faktoru,2032,oneri,0.375,aynı
+skdm_faktoru,2033,oneri,0.27,aynı
+skdm_faktoru,2034,oneri,0.15,aynı (2034–2037 %15; 2038'den 0)
+sektorler_arasi_duzeltme,hepsi,merkez,1.0,Uygulama Kararı 2026/1862 (2026–2030 %100) [V]; 2031 sonrası varsayım
+isaret,2026,genel,0.10,Uygulama Tüzüğü 2026/1740 Ek I giriş paragrafı (çimento; demir-çelik; alüminyum; hidrojen) [V]
+isaret,2027,genel,0.20,aynı
+isaret,2028,genel,0.30,aynı (2028 ve sonrası; Aralık 2027'de gözden geçirilecek)
+isaret,2026,gubre,0.01,aynı (gübre: 2026 ve sonrası %1)
+ets_fiyati,2026,hepsi,79.5,Komisyon: Ç1 75.36; Ç2 75.28; Ç3 82.32 [V]; Ç4 ≈85 (Ekim 2026 piyasası) [T]
+ets_fiyati,2027,dusuk,70,Senaryo (tahmin değil) [H]
+ets_fiyati,2027,merkez,85,Ekim 2026 vadeli fiyatı ≈85–88 [T]; sabit reel
+ets_fiyati,2027,yuksek,140,Senaryo; resmî 2023 çalışmasının 150 €/t senaryosuyla uyumlu [H]
+tr_karbon_fiyati,yok,hepsi,0,Yurt içi fiyat yok ya da tamamen ücretsiz tahsisli pilot
+tr_karbon_fiyati,tr20,hepsi,20,Yurt içi ETS fiyatı 20 €/t; ücretsiz tahsis AB'ninkiyle aynı (md. 9 mahsubu tam) [H]
+tr_karbon_fiyati,tr50,hepsi,50,aynı; 50 €/t [H]
+tr_karbon_fiyati,trab,hepsi,-1,aynı; AB fiyatına eşit (−1 = AB ETS fiyatı) [H]
+gercek_yogunluk,celik_eaf,dusuk,0.25,Hurda-EAF doğrudan emisyon (CBAM sınırı: yalnız doğrudan + öncüller) [H]; AB süreç kıyası 0.065 + 0.038
+gercek_yogunluk,celik_eaf,merkez,0.40,Hurdaya pik demir/DRI katkısı ve ısıl işlem dahil [H]
+gercek_yogunluk,celik_eaf,yuksek,0.70,worldsteel hurda-EAF 0.69 (elektrik dahil; üst sınır) [V]/[H]
+gercek_yogunluk,celik_yf,dusuk,1.95,Yüksek fırın-BOF doğrudan [H]
+gercek_yogunluk,celik_yf,merkez,2.10,worldsteel YF-BOF 2.34 (elektrik dahil) [V]; doğrudan ≈2.1 [H]
+gercek_yogunluk,celik_yf,yuksek,2.31,Türkiye varsayılan değeri (işaretsiz) [V]
+eaf_payi,uzun,merkez,0.95,Uzun ürün ve yarı mamul ihracatı (TÇÜD: üretimin %72'si EAF) [V]/[H]
+eaf_payi,yassi,merkez,0.45,"Yassı ürün: YF-BOF (Erdemir, İsdemir) ile EAF yassı üreticileri [H]"
+eaf_payi,boru_esya,merkez,0.60,Boru ve çelik eşya: yurt içi yassı ve uzun ürün karışımı [H]
+celik_verim,uzun,hepsi,1.00,Ham çelikten ürüne verim kaybı (öncül çelik/ton ürün) [H]
+celik_verim,yassi,hepsi,1.03,Soğuk haddeleme ve kaplama dahil [H]
+celik_verim,boru_esya,hepsi,1.10,"Boru, konstrüksiyon ve eşya imalatında fire [H]"
+aluminyum,birincil_dogrudan,dusuk,1.50,Birincil alüminyum doğrudan + PFC [H]
+aluminyum,birincil_dogrudan,merkez,1.70,Türkiye 7601 varsayılan değeri (birincil rota K) [V]
+aluminyum,birincil_dogrudan,yuksek,2.00,[H]
+aluminyum,ikincil_dogrudan,hepsi,0.30,Hurdadan ergitme (doğalgaz) [H]
+aluminyum,isleme_dogrudan,hepsi,0.10,"Döküm, ekstrüzyon ve haddeleme ısıl işlemleri; 7601 dışı [H]"
+aluminyum,ikincil_payi,dusuk,0.60,Yarı mamulde hurda payı [H]
+aluminyum,ikincil_payi,merkez,0.40,[H]
+aluminyum,ikincil_payi,yuksek,0.20,[H]
+gercek_yogunluk,klinker,dusuk,0.86,Gri klinker; Türkçimento ≈0.88 doğrudan [V] + dolaylı ≈0.03 [H]
+gercek_yogunluk,klinker,merkez,0.91,aynı
+gercek_yogunluk,klinker,yuksek,0.97,aynı
+gercek_yogunluk,cimento_gri,dusuk,0.72,Gri Portland çimentosu: klinker oranı ≈0.85 × klinker + öğütme elektriği [H]
+gercek_yogunluk,cimento_gri,merkez,0.80,aynı
+gercek_yogunluk,cimento_gri,yuksek,0.88,aynı
+oran,cimento_diger,dusuk,0.58,"Beyaz, alüminli ve diğer çimentolar: gerçek / yedek varsayılan; gri klinkerde 0.88 / 1.41 = 0.62 [H]"
+oran,cimento_diger,merkez,0.62,aynı
+oran,cimento_diger,yuksek,0.68,aynı
+oran,gubre,dusuk,0.70,Gerçek / Türkiye varsayılanı; N2O azaltımı olan tesisler [H]
+oran,gubre,merkez,0.85,[H]
+oran,gubre,yuksek,1.00,[H]
+oran,hidrojen,hepsi,1.00,Veri yok [H]
+cimento_klinker_orani,hepsi,merkez,0.85,Çimentoda klinker oranı (gerçek değer yolunda ücretsiz tahsis düzeltmesi öncül klinkerden) [H]
+elektrik,varsayilan,hepsi,0.718,Uygulama Tüzüğü 2025/2621 Ek III (Türkiye; fosil kaynaklı) [V]
+elektrik,oneri,hepsi,0.503,COM(2025) 989: bütün kaynaklar ortalaması; Ticaret Bakanlığı: ≈%30 düşüş [V]/[T]
+asagi,metal_payi,merkez,0.79,Ticaret Bakanlığı sunumu (5.1.2026): 180 üründe ortalama %79 demir-çelik ve alüminyum girdisi [V]

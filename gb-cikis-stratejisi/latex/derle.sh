@@ -25,6 +25,7 @@ BELGELER=(
   "01_teshis|Faz 1 — Teşhis|Gümrük Birliği'nin 30 yıllık bilançosu, asimetriler ve makro tablo.|"
   "02a_politika_uzayi|Faz 2A — Politika uzayı|Tek taraflı araçlar, iç vergiler ve dış rejim seçenekleri.|"
   "02b_secenekler_hukuk|Faz 2B — Seçenekler ve hukuk|Seçenekler matrisi, bitiş durumu, çekim modeli ve hukuki yol haritası.|"
+  "02c_hazirlik|Faz 2C — Karar öncesi hazırlık|Sessiz, pişmanlıksız hamleler: hukuk, STA, menşe, kalite, SKDM, makro-finans, diplomasi.|"
   "defter|Ek A — Kümülatif defter|Fazlar boyunca taşınan referans değerler ve bütçeler.|Ek A — Kümülatif defter"
   "README|Ek B — Çalışma paketi|Paketin yapısı, kod, veri ve yeniden üretim adımları.|Ek B — Çalışma paketi: kod, veri ve yeniden üretim"
 )
