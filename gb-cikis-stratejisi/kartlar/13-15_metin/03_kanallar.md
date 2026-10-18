@@ -34,7 +34,7 @@ Kanalın üç politika sonucu var. Birincisi, S2 ve S3'ün menşe protokolü PEM
 
 Gümrük Birliği'nde AB'ye satılan bir Türk giysisinin kumaşının nereden geldiği sorulmuyor. Serbest ticaret anlaşmasında ise giysinin tercihli tarifeden yararlanması menşe kuralına bağlı. AB'nin Türkiye'yle yapacağı her anlaşmada bu kuralın revize PEM kuralları olacağını varsaymak gerçekçi; AB'nin Akdeniz ve Balkan ortaklarıyla bütün anlaşmaları bunlara atıf yapıyor. Revize kurallar 2025'ten beri uygulanıyor ve tekstilde eski kurallara göre belirgin biçimde esnek `[V]`. Tablo 3.4 bu parçanın sınıflarına uygulanacak kuralları özetliyor.
 
-**Tablo 3.4 — Revize PEM kuralları: tekstil, giyim ve deri (PEM Ortak Komitesi Kararı 1/2023, Ek I Ek II)**
+**Tablo 3.4 — Revize PEM kuralları: tekstil, giyim ve deri (PEM Ortak Komitesi Kararı 1/2023)**
 
 | Ürün (fasıl) | Menşe kazandıran işlem | Türk ihracatı için anlamı |
 |---|---|---|
@@ -79,6 +79,6 @@ AB'nin tekstil ve giyime yönelik yeni düzenlemeleri çıkıştan bağımsız v
 
 Bu düzenlemeler Türk ihracatçısını AB'li ve Asyalı rakipleriyle aynı yükün altına sokuyor. Türkiye'nin üstünlüğü, kumaştan dikime kadar zinciri kendi içinde tutması; izlenebilirlik verisi bu yüzden Türk tedarikçi için Asyalı rakibe göre daha kolay üretilebilir. Ama hasmane bir AB'de uygulamanın sıkılığı ve denetimlerin hedefi bir baskı aracına dönüşebilir `[H]`. Önerilen yanıt, menşe kanıtı, pamuk izlenebilirliği ve dijital ürün pasaportu için tek bir veri altyapısı (E-13-02). Bu altyapı çıkış hiç gerçekleşmese de gerekli; pişmanlık yaratmayan bir eylem.
 
-Ticaret savunması ikinci risk. AB geçmişte pamuklu nevresim ithalatına damping önlemleri uyguladı `[D?]`; Türk ev tekstili bugün bu önlemlerin dışında. Hasmane bir AB'de Türk ev tekstili ve sentetik iplik muhtemel hedefler arasında `[H]`. Bu yüzden ilk parçada su ürünleri için kurulan ticaret savunması hazırlığının (E-10-04) kapsamı ev tekstilini de içerecek biçimde genişletiliyor (E-13.92-01).
+Ticaret savunması ikinci risk. AB 1997'de Mısır, Hindistan ve Pakistan menşeli pamuklu nevresime damping vergisi koydu (Tüzük 2398/97). Hindistan'ın DTÖ'ye taşıdığı dava (DS141) AB yöntemine önemli sınırlar getirdi `[V]`. Türk ev tekstili bugün bu tür önlemlerin dışında. Hasmane bir AB'de Türk ev tekstili ve sentetik iplik muhtemel hedefler arasında `[H]`. Bu yüzden ilk parçada su ürünleri için kurulan ticaret savunması hazırlığının (E-10-04) kapsamı ev tekstilini de içerecek biçimde genişletiliyor (E-13.92-01).
 
 Sektörün kendi dinamiği ise çıkıştan daha güçlü. Bölüm 2'de anlatılan 2025 daralması sürerse, giyimde T+5'e kadar yalnızca maliyet kaynaklı istihdam kaybı, S4'ün çıkış kaynaklı kaybından büyük olabilir `[H]`. Bu, çıkışın etkisini küçültmüyor; ama politika açısından iki kaybın aynı yerde birleştiğini gösteriyor. Mısır'a kayan bir firma için S4, kararı öne çeken bir neden olur. S2 ise Türkiye'de kalmanın en güçlü gerekçesi olan AB pazarına tarifesiz erişimi korur. Önerilen dönüşüm programı (E-14.13-01) bu yüzden çıkıştan bağımsız tasarlandı.

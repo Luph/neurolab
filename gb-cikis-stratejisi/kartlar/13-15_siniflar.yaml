@@ -61,7 +61,7 @@ siniflar:
     capa: Zorlu Tekstil (Taç), Özdilek; Denizli, Bursa ve Uşak havlu ve nevresim üreticileri `[H]`
     girdi_hs4: ['5205', '5208', '5209']
     eylemler:
-    - [Ticaret savunması hazırlığı (ev tekstili), 'AB''nin pamuklu nevresim ve havlu ithalatına olası damping soruşturmalarına hazırlık (AB''nin geçmişte Mısır, Hindistan ve Pakistan nevresimine uyguladığı önlemler emsal `[D?]`); maliyet ve fiyat dosyası; E-10-04 ekibine katılım', 'Ticaret Bakanlığı (İthalat GM, İhracat GM), İTHİB', Bakanlık iç talimatı, İdari, T−12 → T+36, —, T+36, Soruşturma açılırsa 30 gün içinde tam yanıt]
+    - [Ticaret savunması hazırlığı (ev tekstili), 'AB''nin pamuklu nevresim ve havlu ithalatına olası damping soruşturmalarına hazırlık (emsal: AB''nin 1997''de Mısır, Hindistan ve Pakistan nevresimine uyguladığı damping vergisi ve DTÖ''deki DS141 davası `[V]`); maliyet ve fiyat dosyası; E-10-04 ekibine katılım', 'Ticaret Bakanlığı (İthalat GM, İhracat GM), İTHİB', Bakanlık iç talimatı, İdari, T−12 → T+36, —, T+36, Soruşturma açılırsa 30 gün içinde tam yanıt]
     tetikler:
     - [AB'ye nevresim ve havlu ihracatı (KN 6302; aylık), Yıllık −%15, 'E-13-03 ve E-13-05; AB Resmî Gazetesi''nde soruşturma ilanı izlenir']
     defter: {tufe_s2: 0, tufe_s4: 0, mali_s2: 0, mali_s4: 0, ca_s2: 0, ca_s4: 0}
