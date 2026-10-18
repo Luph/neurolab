@@ -113,7 +113,7 @@ Hukuki bulgular Faz 2'nin AB hukuku ve DTÖ hukuku araştırma notlarından alı
 | GB: Türkiye → AB | +0,246 (0,130) | +%28 | +0,04 ile +0,36. 1996 öncesi ortaklık rejimine göre artış: AB sanayide 1971'den beri Türk mallarına tarife uygulamıyordu |
 | GB: AB → Türkiye | +0,142 (0,120) | +%15 | −0,08 ile +0,44 |
 | AB'nin derin STA'ları | +0,100 (0,039) | +%11 | +0,01 ile +0,13; 2020'ye ve uzaklık × yıl kontrolüne duyarlı |
-| AB'nin temel STA'ları | −0,167 (0,056) | −%15 | −0,21 ile −0,07. Avrupa-Akdeniz ortaklarının anlaşmadan önce de tercihli erişimi vardı; bu katsayı "STA'nın etkisi" olarak okunmamalı |
+| AB'nin temel STA'ları | −0,167 (0,056) | −%15 | −0,21 ile −0,07. **Kullanılamaz:** anlaşma öncesinde anlamlı bir eğilim var (4 yıl önceki öncül katsayı −0,19, p < 0,01). Avrupa-Akdeniz ortaklarının anlaşmadan önce de tercihli erişimi vardı. Bu yüzden S3 için Türkiye'nin kendi GB ↔ STA geçişleri kullanıldı |
 
 **Tablo 2.1b — Senaryolar: S0'a (GB) göre Türkiye'nin AB'ye ihracatı ve diğer göstergeler**
 
@@ -128,14 +128,29 @@ Hukuki bulgular Faz 2'nin AB hukuku ve DTÖ hukuku araştırma notlarından alı
 
 *Kaynak ve etiketler:*
 - `[T]` `veri/politika_cekim_katsayilar.csv`, `veri/politika_cekim_senaryolar.csv`.
-- GE, ülke içi ticaretle kesin şapka cebiri; %90 GA 1.000 çekilişli parametrik bootstrap.
-- Etkinin yerleşmesi: GB etkisi ilk 0–3 yılda zirve yapıyor; derin STA etkisi 8. yılda.
+- Örnek: 150 ekonomi; 1988–2020, 4 yıllık aralık. N = 185.003, 21.480 çift.
+- Tahminde ülke içi ticaret yok (USITC ITPD-E erişilemedi). Etkiler üçüncü ülkelerle ticarete göredir; yaratma ve saptırmayı birlikte içerir.
+- GE: 2019 kesiti; ülke içi satışlar UN AMA katma değerinden türetildi; kesin şapka cebiri; %90 GA 1.000 çekilişli parametrik bootstrap.
+- **Etkinin zaman yolu (M2).** GB etkisi hemen ortaya çıkıyor, sonra sönümleniyor:
+  - Türkiye → AB: 0–3 yılda +%44, 4–7 yılda +%25, 8–11 yılda +%34, 12+ yılda +%21 (anlamsız).
+  - AB → Türkiye: +%55, +%40, +%16, −%3.
+
+  Derin STA etkisi ilk 8 yılda ≈+%9.
+- **Kırılganlık.** Derin STA katsayısı 2020'ye (2020 hariç 0,012; BACI 2024 uzatmasıyla yine 0,099) ve uzaklık × yıl kontrolüne (0,014) duyarlı.
+  - Yalnızca DCFTA'lar alındığında (M6; Rusya ile ticaret kırılması kontrol edilerek) S2: Türkiye → AB −%9,8 (−31 ile +18).
+  - GB katsayısı veri kaynağına ve aralığa duyarlı: 5 yıllık aralıkta 1995 taban yılı zaten "tedavi edilmiş", çünkü Türkiye 1993–95'te tarifelerini önceden indirdi.
+- **Literatürle uyum.** Aytuğ vd. (2017) +%38 buluyor; bizim ilk on yıl tahminimiz +%34–44. Dünya Bankası (2014) ikili etkiyi anlamsız buluyor; bu, AB → Türkiye sonucumuzla ve 5 yıllık ve BACI varyantlarıyla uyumlu. Dursun (2023) sönümlenmeyi buluyor; bizde de var.
 - Güven: Orta (S4), Düşük–Orta (S2, S3).
 
 **Okuma.**
-1. **S4'ün ticaret kaybı sağlam.** Kısmi denge, genel denge ve tarife duvarı hesabı aynı bölgeye düşüyor: Türkiye'nin AB'ye ihracatında −%19 ile −%23. Bu bir alt sınır, çünkü 1971'den beri süren tercihler ikili sabit etkide kalıyor. Reel GSYH kaybının GA'sı sıfırı dışlıyor.
+1. **S4'ün ticaret kaybı sağlam.**
+   - Kısmi denge, genel denge ve tarife duvarı hesabı aynı bölgeye düşüyor: Türkiye'nin AB'ye ihracatında −%19 ile −%23.
+   - Bu bir alt sınır, çünkü 1971'den beri süren tercihler ve Türkiye'nin 1993–95 tarife indirimleri ikili sabit etkide kalıyor.
+   - Reel GSYH kaybının GA'sı sıfırı dışlıyor.
+   - AB → Türkiye için tarife duvarı çapraz kontrolü: İGV hariç −%12 ile −%27, İGV dahil −%22 ile −%42.
 2. **S2'nin kaybı belirsiz.** Merkez tahmin −%11, ama GA sıfırı içeriyor.
    - GB katsayısı muhtemelen 1996'da kalkan tekstil kotalarının etkisini de içeriyor `[H]`. Bir STA bu kotaları geri getirmez; bu yüzden S2'nin kaybı muhtemelen merkez tahminden küçük.
+   - GB etkisi zamanla sönümleniyor. Uzun vadede (12+ yıl, M2) S2'nin S0'a göre etkisi ≈0 (+%0,1; GA −28 ile +40).
    - Dünya Bankası'nın −%3 ile −%7 aralığı bu okumayla uyumlu.
 3. **S3'ün sonucu tasarıma bağlı.**
    - İhtiyatlı tahmin S4'e yakın: −%18. Bu tahmin AB katılımının kendi etkisiyle karışıyor; kayıp için üst sınır.
