@@ -1,0 +1,207 @@
+# 13–15 sınıflarının yapısal alanları. Metin kartlar/13-15_metin/'de; f3g_kartlar.py ve f3f_skor_matris.py okur.
+# kisa: tablolardaki kısa ad. arketip/durus/tarife_yolu/ana_araclar/ab_muzakere: matristeki kural tabanlı öneriyi
+# uzman muhakemesiyle düzeltir `[H]`; guven: metindeki değerlendirmeye göre güven düzeyi (kural tabanlı veri tamlığını
+# düzeltir). capa: çapa yatırımcılar (veri sayfası). girdi_hs4: kritik girdiler.
+# eylemler: [araç, parametre, sorumlu, hukuki araç, bütçe, başlangıç → bitiş, performans koşulu, sunset, KPI].
+# tetikler: [gösterge, eşik, tetiklenecek önlem].
+# defter: sınıf paketinin T+5'teki yıllık etkisi (P50), yola göre — tufe_s2 / tufe_s4 (bp; negatif dezenflasyonist),
+# mali_s2 / mali_s4 (mlr TL/yıl, bugüne göre), ca_s2 / ca_s4 (mn $/yıl, senaryoya ek katkı). "-sok_s4": KDV takası
+# (E-13-04) sınıfın S4 TÜFE şokunu siler; değer veriden çözülür.
+siniflar:
+  '13.10':
+    kisa: İplik
+    tarife_yolu: AB ile karşılıklı %0 (S2); ithal pamuk ve lifte MFN %0 sürer; S4'te AB'ye c2
+    ana_araclar: Pamuk izlenebilirliği (Tüzük 2024/3015); menşe verisi (E-13-02); pazar çeşitlendirme
+    ab_muzakere: savunma
+    capa: Sanko, Kipaş, İskur (pamuk ipliği; Gaziantep ve Kahramanmaraş), Korteks (polyester tekstüre; Bursa) `[H]`
+    girdi_hs4: ['5201', '5402', '5503']
+    eylemler:
+    - [Pamuk izlenebilirliği, 'İthal pamuk ve iplikte (Özbekistan, Türkmenistan, Hindistan) kaynak beyanı ve ithalatçı veri havuzu; E-13-02 altyapısında', 'Ticaret Bakanlığı (İthalat GM), TOB, İTHİB', Bakanlık genelgesi, '≈ 0,02 mlr TL/yıl `[T]`', Hemen → T+24, Kaynak beyanı veren ithalatçı sayısı, T+24, 'Tüzük 2024/3015 kapsamında Türk ipliğine yönelik AB soruşturması sıfır']
+    tetikler:
+    - [AB'nin zorla çalıştırma risk veritabanında Türk tedarik zincirine ilişkin bildirim, Bildirim, 'E-13-02: izlenebilirlik paketi; AB ithalatçılarıyla ortak savunma']
+    defter: {tufe_s2: 0, tufe_s4: 0, mali_s2: 0.02, mali_s4: 0.02, ca_s2: 0, ca_s4: 0}
+  '13.20':
+    kisa: Dokuma kumaş
+    guven: Orta
+    tarife_yolu: AB ile karşılıklı %0 (S2); S4'te AB'ye c2; PEM kümülasyonu S2 metninde
+    ana_araclar: PEM kümülasyonunun sürekliliği (E-13-01); ortakta baskı + konfeksiyon yolu; pazar çeşitlendirme
+    ab_muzakere: savunma
+    capa: İsko (Sanko), Bossa, Çalık Denim, Kipaş Denim (denim); Bursa ve Denizli dokuma kümeleri `[H]`
+    girdi_hs4: ['5205', '5402', '5509']
+    eylemler:
+    - [Kümülasyon kaybı tamponu (yalnız S4), 'PEM ortaklarına kumaş satan ihracatçılar için ortakta baskı + konfeksiyon yolu rehberi; Fas, Tunus ve Mısır''daki alıcılarla menşe danışma masası; Eximbank''ın piyasa primli kredi sigortası', 'Ticaret Bakanlığı (İhracat GM), Türk Eximbank, İTHİB', Eximbank programı; bakanlık genelgesi, '≈ 0,05 mlr TL/yıl `[T]`', T → T+36, Kapsamdaki ihracatçıların PEM ortaklarına ihracatı, T+36, 'PEM ortaklarına kumaş ihracatı T+3''te ≥ T−12 düzeyinin %70''i']
+    tetikler:
+    - [PEM ortaklarına dokuma ve örme kumaş ihracatı (aylık), Yıllık −%20, 'E-13.20-01''in genişletilmesi; S3 ya da S2 müzakeresinde kümülasyonun öne alınması']
+    defter: {tufe_s2: 0, tufe_s4: 0, mali_s2: 0, mali_s4: 0.05, ca_s2: 0, ca_s4: 0}
+  '13.30':
+    kisa: Bitirme (boya, baskı, apre)
+    guven: Düşük
+    tarife_yolu: Değişiklik yok (hizmet; ticareti yok)
+    ana_araclar: Baskı kapasitesi (tek başına baskı menşe kazandırıyor; E-13-02); enerji ve su verimliliği
+    ab_muzakere: nötr
+    capa: İstanbul, Bursa ve Çorlu'daki fason boya, baskı ve apre işletmeleri; büyük çoğunluğu KOBİ `[H]`
+    defter: {tufe_s2: 0, tufe_s4: 0, mali_s2: 0, mali_s4: 0, ca_s2: 0, ca_s4: 0}
+  '13.91':
+    kisa: Örme kumaş
+    guven: Orta
+    tarife_yolu: AB ile karşılıklı %0 (S2); S4'te AB'ye c2; PEM kümülasyonu S2 metninde
+    ana_araclar: PEM kümülasyonunun sürekliliği (E-13-01); menşe verisi (E-13-02); Belarus ve Rusya pazar riskinin izlenmesi
+    ab_muzakere: savunma
+    capa: İstanbul, Bursa ve Kahramanmaraş örme kumaş üreticileri `[H]`
+    girdi_hs4: ['5205', '5402']
+    tetikler:
+    - [Belarus ve Rusya'ya örme kumaş ihracatı (aylık), Yıllık −%25, Pazar çeşitlendirme (E-13-05)]
+    defter: {tufe_s2: 0, tufe_s4: 0, mali_s2: 0, mali_s4: 0, ca_s2: 0, ca_s4: 0}
+  '13.92':
+    kisa: Ev tekstili
+    guven: Orta
+    tarife_yolu: AB ile karşılıklı %0 (S2); S4'te AB'ye c2
+    ana_araclar: Dokuma + konfeksiyon entegrasyonunda menşe; ticaret savunması hazırlığı; ABD ve BK pazarları (E-13-05)
+    ab_muzakere: savunma
+    capa: Zorlu Tekstil (Taç), Özdilek; Denizli, Bursa ve Uşak havlu ve nevresim üreticileri `[H]`
+    girdi_hs4: ['5205', '5208', '5209']
+    eylemler:
+    - [Ticaret savunması hazırlığı (ev tekstili), 'AB''nin pamuklu nevresim ve havlu ithalatına olası damping soruşturmalarına hazırlık (AB''nin geçmişte Mısır, Hindistan ve Pakistan nevresimine uyguladığı önlemler emsal `[D?]`); maliyet ve fiyat dosyası; E-10-04 ekibine katılım', 'Ticaret Bakanlığı (İthalat GM, İhracat GM), İTHİB', Bakanlık iç talimatı, İdari, T−12 → T+36, —, T+36, Soruşturma açılırsa 30 gün içinde tam yanıt]
+    tetikler:
+    - [AB'ye nevresim ve havlu ihracatı (KN 6302; aylık), Yıllık −%15, 'E-13-03 ve E-13-05; AB Resmî Gazetesi''nde soruşturma ilanı izlenir']
+    defter: {tufe_s2: 0, tufe_s4: 0, mali_s2: 0, mali_s4: 0, ca_s2: 0, ca_s4: 0}
+  '13.93':
+    kisa: Halı
+    tarife_yolu: AB ile karşılıklı %0 (S2); S4'te AB'ye c2; iplik girdisinde mevcut rejim
+    ana_araclar: ABD ve Körfez pazarları (E-13-05); iplik çekimi entegrasyonuyla menşe uyumu
+    ab_muzakere: nötr
+    capa: Merinos, Royal Halı, Atlas Halı, Dinarsu, Sanko Halı (Gaziantep kümesi) `[H]`
+    girdi_hs4: ['3902', '5402', '5503']
+    defter: {tufe_s2: 0, tufe_s4: 0, mali_s2: 0, mali_s4: 0, ca_s2: 0, ca_s4: 0}
+  '13.94':
+    kisa: Halat ve ağ
+    tarife_yolu: AB ile karşılıklı %0 (S2); S4'te AB'ye c2; yeni koruma yok
+    ana_araclar: İzleme
+    ab_muzakere: nötr
+    capa: Balıkesir ve İstanbul'daki halat ve balık ağı üreticileri `[H]`
+    defter: {tufe_s2: 0, tufe_s4: 0, mali_s2: 0, mali_s4: 0, ca_s2: 0, ca_s4: 0}
+  '13.95':
+    kisa: Dokusuz kumaş
+    tarife_yolu: AB ile karşılıklı %0 (S2); S4'te AB'ye c2; polimer girdisinde mevcut rejim
+    ana_araclar: Sağlık arz güvenliği (kriz kapasite envanteri); hijyen ürünlerinde pazar çeşitlendirme
+    ab_muzakere: savunma
+    capa: Gaziantep ve Tekirdağ'daki spunbond ve spunlace üreticileri (Mogul, Gülsan) `[H]`
+    girdi_hs4: ['3902', '5503']
+    eylemler:
+    - [Kriz kapasite envanteri, 'Tıbbi dokusuz kumaş (meltblown, SMS) kapasitesi ve stok envanteri; salgın ve afet planına bağlanması', 'Sağlık Bakanlığı (TİTCK), Sanayi ve Teknoloji Bakanlığı', Bakanlık genelgesi, İdari, Hemen → T+12, Envanter yayımlandı, —, Krizde 30 günlük maske ve önlük girdisinin yurt içinden karşılanması]
+    defter: {tufe_s2: 0, tufe_s4: 0, mali_s2: 0, mali_s4: 0, ca_s2: 0, ca_s4: 0}
+  '13.96':
+    kisa: Teknik tekstil
+    tarife_yolu: AB ile karşılıklı %0 (S2); S4'te AB'ye c2; aramid ve cam elyafı girdisinde %0 adayı
+    ana_araclar: SSB yerlileştirme ve kamu alımı; Ar-Ge; otomotiv tedarik zincirinde menşe
+    ab_muzakere: savunma
+    capa: Kordsa (Sabancı; lastik kordu ve kompozit); İstanbul ve Bursa'daki balistik ve endüstriyel tekstil üreticileri `[H]`
+    girdi_hs4: ['5402', '7019']
+    eylemler:
+    - [Savunma ve tıbbi teknik tekstil programı, 'SSB yerlileştirme listesinde balistik, aramid ve yangına dayanıklı tekstil; TÜBİTAK sanayi Ar-Ge destekleri; kamu alımında performans şartnamesi (menşe şartı olmadan)', 'Savunma Sanayii Başkanlığı, TÜBİTAK, Sağlık Bakanlığı', SSB yerlileştirme programı; TÜBİTAK çağrıları, '≈ 0,1 mlr TL/yıl `[T]`', T−12 → T+60, Yerli tedarikle karşılanan kamu ihtiyacı, T+60, Teknik tekstil ihracatı T+5'te +%25]
+    defter: {tufe_s2: 0, tufe_s4: 0, mali_s2: 0.1, mali_s4: 0.1, ca_s2: 0, ca_s4: 0}
+  '13.99':
+    kisa: Diğer tekstil (şerit, dantel, keçe)
+    capa: Bursa ve İstanbul'daki şerit, etiket ve dantel üreticileri `[H]`
+    defter: {tufe_s2: 0, tufe_s4: 0, mali_s2: 0, mali_s4: 0, ca_s2: 0, ca_s4: 0}
+  '14.11':
+    kisa: Deri giyim
+    capa: İstanbul (Zeytinburnu) ve İzmir deri konfeksiyonu `[H]`
+    defter: {tufe_s2: 0, tufe_s4: -sok_s4, mali_s2: 0, mali_s4: 0, ca_s2: 0, ca_s4: 0}
+  '14.12':
+    kisa: İş giysisi
+    capa: Kamu ve güvenlik güçlerinin tedarikçileri; Kastamonu ve İstanbul üreticileri `[H]`
+    defter: {tufe_s2: 0, tufe_s4: -sok_s4, mali_s2: 0, mali_s4: 0, ca_s2: 0, ca_s4: 0}
+  '14.13':
+    kisa: Dış giyim
+    guven: Orta
+    arketip: [A, F]
+    durus: Dönüştür
+    tarife_yolu: AB ile karşılıklı %0 (S2); S4'te AB'ye c2 ve KDV takası (E-13-04)
+    ana_araclar: Dönüşüm programı (tasarım, hızlı tedarik, otomasyon); menşe verisi (E-13-02); S4'te kısa çalışma (E-13-03) ve KDV takası
+    ab_muzakere: savunma
+    capa: LC Waikiki, Koton, DeFacto, Mavi (marka); Inditex, H&M, Primark ve Alman markalarının fason tedarik ağları `[H]`
+    girdi_hs4: ['5208', '5209', '5407', '6006']
+    eylemler:
+    - [Dönüşüm programı, 'Tasarım, ürün geliştirme ve hızlı tedarik hizmeti (küçük parti, kısa termin); kesim ve dikimde otomasyon; dijital ürün pasaportu hazırlığı; yatırım teşvik sisteminde katma değer ölçütlü destek (menşe şartı yok)', 'Sanayi ve Teknoloji Bakanlığı, Ticaret Bakanlığı, İHKİB', Yatırım teşvik mevzuatı; İhracat Destekleri Kararı, '≈ 0,5 mlr TL/yıl `[T]`', Hemen → T+60, Proje bazında kişi başı katma değer artışı, T+60, 'Kişi başı katma değer (AB27 = 1) 0,31 → 0,40 (T+5)']
+    tetikler:
+    - [AB'ye dış giyim ihracatı (Comext; aylık), Yıllık −%15, 'E-13-03''ün devreye girmesi; E-13-05 hızlandırılır']
+    - [Bangladeş'in LDC'den çıkış tarihi ve AB'nin EBA geçiş kararı, Karar, S2 müzakeresinde menşe kotası talebinin (E-13-06) güçlendirilmesi]
+    defter: {tufe_s2: 0, tufe_s4: -sok_s4, mali_s2: 0.5, mali_s4: 0.5, ca_s2: 0, ca_s4: 0}
+  '14.14':
+    kisa: İç giyim ve tişört
+    guven: Orta
+    tarife_yolu: AB ile karşılıklı %0 (S2); S4'te AB'ye c2 ve KDV takası (E-13-04)
+    ana_araclar: Yönetilen uyum (işgücü uyumu, bölgesel program); örme ve konfeksiyon entegrasyonunda menşe; BK pazarı
+    ab_muzakere: savunma
+    capa: İzmir, İstanbul ve Denizli'deki entegre örme ve konfeksiyon üreticileri; Penti, Koton (marka) `[H]`
+    girdi_hs4: ['6004', '6006', '5205']
+    eylemler:
+    - [Bölgesel işgücü uyum programı, 'Mardin–Batman, Şanlıurfa–Diyarbakır ve İstanbul''da İŞKUR mesleki eğitimi, işbaşı eğitimi ve yeniden yerleştirme; giyimden ayrılan işçiler için bölge içi sanayi istihdamıyla eşleştirme', 'Çalışma ve Sosyal Güvenlik Bakanlığı, İŞKUR, kalkınma ajansları (Dicle, Karacadağ, İstanbul)', İŞKUR Yönetim Kurulu kararı, '≈ 0,4 mlr TL/yıl (yalnız S4) `[T]`', T → T+36, Yeniden yerleştirme oranı, T+36, Programdaki işçilerin %60'ı 12 ay içinde yeniden istihdamda]
+    tetikler:
+    - [Giyimde SGK sigortalı sayısı (aylık; Mardin–Batman ve İstanbul), Yıllık −%10, E-14.14-01'in kapsamının genişletilmesi]
+    defter: {tufe_s2: 0, tufe_s4: -sok_s4, mali_s2: 0, mali_s4: 0.4, ca_s2: 0, ca_s4: 0}
+  '14.19':
+    kisa: Diğer giyim ve aksesuar
+    guven: Orta
+    tarife_yolu: AB ile karşılıklı %0 (S2); S4'te AB'ye c2 ve KDV takası (E-13-04)
+    ana_araclar: Yönetilen uyum (E-14.14-01); bebek giyiminde menşe; pazar çeşitlendirme
+    ab_muzakere: savunma
+    capa: İstanbul ve Bursa'daki bebek giyimi ve aksesuar üreticileri `[H]`
+    defter: {tufe_s2: 0, tufe_s4: -sok_s4, mali_s2: 0, mali_s4: 0, ca_s2: 0, ca_s4: 0}
+  '14.20':
+    kisa: Kürk
+    capa: İstanbul (Kapalıçarşı ve Zeytinburnu) kürk atölyeleri `[H]`
+    defter: {tufe_s2: 0, tufe_s4: -sok_s4, mali_s2: 0, mali_s4: 0, ca_s2: 0, ca_s4: 0}
+  '14.31':
+    kisa: Çorap
+    tarife_yolu: AB ile karşılıklı %0 (S2); S4'te AB'ye c2 ve KDV takası (E-13-04)
+    ana_araclar: BK pazarı ve AB–TR–BK kümülasyonu (E-13-05); otomasyon; S4'te kısa çalışma (E-13-03)
+    ab_muzakere: savunma
+    capa: Çorlu–Çerkezköy ve İstanbul çorap kümesi; Avrupa marka ve perakendecilerinin tedarikçileri `[H]`
+    girdi_hs4: ['5402', '5205']
+    tetikler:
+    - [AB'ye çorap ihracatı (KN 6115; aylık), Yıllık −%15, 'E-13-03; BK ve ABD''de pazar geliştirme (E-13-05)']
+    defter: {tufe_s2: 0, tufe_s4: -sok_s4, mali_s2: 0, mali_s4: 0, ca_s2: 0, ca_s4: 0}
+  '14.39':
+    kisa: Triko (kazak, hırka)
+    guven: Orta
+    tarife_yolu: AB ile karşılıklı %0 (S2); S4'te AB'ye c2 ve KDV takası (E-13-04)
+    ana_araclar: Yönetilen uyum (E-14.14-01); tam kalıp örme otomasyonu; BK pazarı
+    ab_muzakere: savunma
+    capa: İstanbul triko kümesi; Hatay ve Mardin–Batman'daki fason atölyeler `[H]`
+    girdi_hs4: ['5509', '5205', '5108']
+    tetikler:
+    - [AB'ye triko ihracatı (KN 6110; aylık), Yıllık −%20, E-13-03 ve E-14.14-01]
+    defter: {tufe_s2: 0, tufe_s4: -sok_s4, mali_s2: 0, mali_s4: 0, ca_s2: 0, ca_s4: 0}
+  '15.11':
+    kisa: Deri tabaklama
+    guven: Orta
+    arketip: [A, G]
+    durus: Dönüştür
+    tarife_yolu: AB ile karşılıklı %0 (S2); ham deride MFN %0 sürer; S4'te AB'ye c2
+    ana_araclar: Organize deri sanayi bölgelerinde arıtma ve krom azaltımı; LWG sertifikası; AB alıcılarının özen yükümlülüğüne uyum
+    ab_muzakere: nötr
+    capa: Tuzla, Çorlu, Menemen ve Gerede organize deri sanayi bölgeleri; KOBİ ağırlıklı `[H]`
+    girdi_hs4: ['4101', '4104', '4105']
+    eylemler:
+    - [Yeşil dönüşüm, 'Organize deri sanayi bölgelerinde ortak arıtma kapasitesinin yenilenmesi; krom azaltımı ve kromsuz tabaklama; LWG sertifikası için danışmanlık', 'Çevre, Şehircilik ve İklim Değişikliği Bakanlığı; Sanayi ve Teknoloji Bakanlığı; organize sanayi bölgeleri', Kalkınma ajansı ve yeşil dönüşüm destek programları, '≈ 0,05 mlr TL/yıl `[T]`', T−12 → T+36, Sertifikalı tabakhane sayısı, T+36, AB'ye ihracatta LWG sertifikalı payı ≥ %60]
+    defter: {tufe_s2: 0, tufe_s4: 0, mali_s2: 0.05, mali_s4: 0.05, ca_s2: 0, ca_s4: 0}
+  '15.12':
+    kisa: Bavul ve çanta
+    tarife_yolu: AB ile karşılıklı %0 (S2); S4'te AB'ye c2 (iç ikame)
+    ana_araclar: Tasarım ve marka; S4'te iç ikame; TÜFE izleme
+    ab_muzakere: savunma
+    capa: Derimod, Desa (deri çanta); İstanbul çanta kümesi `[H]`
+    girdi_hs4: ['4107', '3921', '5407']
+    defter: {tufe_s2: 0, tufe_s4: 0, mali_s2: 0, mali_s4: 0, ca_s2: 0, ca_s4: 0}
+  '15.20':
+    kisa: Ayakkabı
+    tarife_yolu: AB ile karşılıklı %0 (S2); S4'te AB'ye c2 ve KDV takası (E-13-04)
+    ana_araclar: KDV takası (E-13-04); S2'de menşe (saya kuralı); Körfez ve Irak pazarları
+    ab_muzakere: nötr
+    capa: Flo, Hotiç, Greyder (marka); İstanbul, Konya ve İzmir ayakkabı kümeleri `[H]`
+    girdi_hs4: ['6406', '4107', '3921']
+    tetikler:
+    - [Ayakkabı TÜFE alt endeksi (aylık), 3 ay üst üste genel TÜFE'nin 5 puan üstünde, E-13-04'teki KDV indiriminin genişletilmesi (takas tavanı içinde)]
+    defter: {tufe_s2: 0, tufe_s4: -sok_s4, mali_s2: 0, mali_s4: 0, ca_s2: 0, ca_s4: 0}

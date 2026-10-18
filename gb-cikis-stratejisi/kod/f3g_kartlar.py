@@ -24,14 +24,25 @@ Satır içi yer tutucular ({{...}}; bayraklar: abs, pct (×100), pctabs, isaret 
   {{say:kod[|sütun=değer]}}                      sınıf sayısı (isteğe bağlı koşulla, ör. durus=Koru)
   {{defter:[kod:]anahtar|ondalık}}              eylem kayıtlarının toplamı ya da tek sınıfın kaydı (tufe_s2, tufe_s4, mali_s2,
                                                  mali_s4, ca_s2, ca_s4); aski: için pay=sütun bayrağı: 100 × değer ÷ Σ sütun
-  {{tufe_net:senaryo|ondalık}}                   parçanın TÜFE şoku (grup P50) + önlemler
+  {{defterk:anahtar|ondalık}}                    kümülatif defter (tamamlanan bütün parçaların eylem kayıtları)
+  {{tufe_net:senaryo|ondalık}}                   parçanın TÜFE şoku (grup P50) + önlemler; tufe_netk: kümülatif
+  {{s:kod:senaryo|değişken|p10/p50/p90|ondalık}}  f3_senaryo_sinif (sınıf; ör. dx_kum, dl_kum: PEM kümülasyonu kanalı)
+  {{pem:ISO3|giyim/toplam|ondalık}}              PEM ortağının AB'ye ihracat payı (%; f3_pem_ortak_ab_payi)
+  {{pemx:ISO3|x/kum|ondalık}}                    TR'nin ortağa κ > 0 sınıflardaki ihracatı ya da kümülasyon maruziyeti ($ mn);
+                                                 ISO3 = TOPLAM bütün ortaklar
+  {{gpay:grup:senaryo|değişken|p50|payda_grup[:senaryo]|ondalık}}  100 × grup yüzdeliği ÷ payda grubun yüzdeliği
+  {{bolge:İBBS2|l/pay/s2/s4|ondalık}}            parçanın bölgedeki çalışanı, bölge imalatındaki payı (%), S2/S4 istihdamı
+  {{ortak:kod|ab/abd/ith/rakip|ISO3|ondalık}}    sınıfın ilk beş listesindeki ortağın payı (%; f3_ortaklar_sinif)
+  {{bp:kod|İBBS2|ondalık}}                       sınıf istihdamının bölgedeki payı (%; f3_bolge_sinif)
   {{eylem:ortak}} {{eylem:sinif}} {{eylem:sinifsayisi}}   eylem sayıları (YAML)
 Blok işaretleri (tek başına bir satır): {{TABLO:ad[:kodlar]|no[|n]}}, {{KUNYE:kod}}, {{VERI_SAYFALARI|harf}},
   {{DEFTER|no}}, {{ILERLEME}}. Tablo adları: ozet, bolum, rejim, aski, itu, tufe, durus, eylem_ortak, eylem_sinif, tetik,
-  senaryo:kod, kucuk:kodlar, matris_a, matris_b, varsayim, vb.
+  senaryo:kod, kucuk:kodlar, matris_a, matris_b, varsayim, vb, bolge, kum_ortak, kum_sinif.
+Parça: belge.parca (numara) YAML'dan; etiket bölüm aralığından (10–12). Kümülatif defter, kartlar/ altındaki bütün parça
+  YAML'larından (son bölümü bu parçanınkinden büyük olmayanlar) ve 10–[son bölüm] grubunun senaryo dağılımından derlenir.
 
-Kullanım: python3 f3g_kartlar.py --yaml ../kartlar/10-12.yaml --yaml ../kartlar/10-12_siniflar.yaml \\
-            --metin ../kartlar/10-12_metin --cikti ../nace_kartlar_10-12.md
+Kullanım: python3 f3g_kartlar.py --yaml ../kartlar/13-15.yaml --yaml ../kartlar/13-15_siniflar.yaml \\
+            --metin ../kartlar/13-15_metin --cikti ../nace_kartlar_13-15.md
 """
 
 import argparse
@@ -87,6 +98,16 @@ def yuzde(x, nd=0):
     return f"−%{tr(-v, nd)}" if round(v, nd) < 0 else f"%{tr(abs(v) if round(v, nd) == 0 else v, nd)}"
 
 
+def yonelme(etiket):
+    """Sayıyla biten etikete yönelme eki: 10–12 → 10–12'ye, 13–15 → 13–15'e, 24 → 24'e (son sayının okunuşuna göre)."""
+    n = int(re.findall(r"\d+", etiket)[-1])
+    birler = {1: "bir", 2: "iki", 3: "üç", 4: "dört", 5: "beş", 6: "altı", 7: "yedi", 8: "sekiz", 9: "dokuz"}
+    sozcuk = birler.get(n % 10) or {10: "on", 20: "yirmi", 30: "otuz", 40: "kırk"}.get(n % 100 - n % 10 or 10, "on")
+    unlu = [c for c in sozcuk if c in "aıoueiöü"][-1]
+    ek = "a" if unlu in "aıou" else "e"
+    return f"{etiket}'{'y' if sozcuk[-1] in 'aıoueiöü' else ''}{ek}"
+
+
 def hucre(s):
     return str(s).replace("|", "/").replace("\n", " ")
 
@@ -127,6 +148,8 @@ class Veri:
         self.tab = {"m": self.m, "t": self.t, "y": self.y, "ab": self.ab, "mk": self.mk, "p": self.p}
         h = oku("politika_tarife_hs6.csv", dtype={"hs6": str})
         ag = f3a.hs6_nace_agirlik(os.path.join(v, "cn2025_nace_rejim.csv"))
+        self.ag = ag
+        self.pem = oku("f3_pem_ortak_ab_payi.csv").set_index("ortak")
         h["w_mfn"], h["w_tam"] = h.m_toplam_musd * h.t_mfn.fillna(0), h.m_toplam_musd * h.t_tam.fillna(0)
         h["tic"] = h.m_toplam_musd + h.x_musd
         for k in ("ara", "sermaye", "tuketim"):
@@ -145,6 +168,11 @@ class Veri:
         d = pd.read_csv(yollar.girdi("baci", "baci_hs17_world_exports_exporter_hs6_2024.csv.gz"), dtype={"hs6": str})
         d["hs6"] = d.hs6.str.zfill(6)
         self.d = d
+        k = bt[(bt.flow == "X") & bt.partner_iso3.isin(f3a.PEM_KUM)]
+        kn, _ = f3a.nace_dagit(k[["hs6", "partner_iso3", "value_kusd"]], ag, ["value_kusd"], ["partner_iso3"])
+        kn["value_musd"] = kn.value_kusd / 1e3
+        self.pem_x = kn                                           # TR → PEM ortağı ihracatı, sınıf × ortak (2024)
+        self.etiket, self.parca, self.Y, self.Ykum, self.grup, self.grup_kum = "", 1, {}, {}, "", ""
 
     # --- seçim ve yer tutucular ---------------------------------------------------------------------------------------
     def c_kodlari(self, idx):
@@ -260,6 +288,38 @@ class Veri:
             e = {k: (v or {}).get("eylemler", []) for k, v in self.Y["siniflar"].items()}
             return str({"ortak": len(self.Y["belge"].get("ortak_eylemler", [])), "sinif": sum(len(x) for x in e.values()),
                         "sinifsayisi": sum(1 for x in e.values() if x)}[bas[6:]])
+        if bas.startswith("defterk:"):            # kümülatif defter (bütün tamamlanan parçalar)
+            return bicim(toplamlar(self.Ykum)[bas[8:]], int(p[1]), p[2:])
+        if bas.startswith("s:"):                  # sınıf senaryo yüzdeliği: s:kod:senaryo|değişken|p50|nd
+            _, kod, sc = bas.split(":")
+            return bicim(self.sn.loc[(kod, sc, p[1]), p[2]], int(p[3]), p[4:])
+        if bas.startswith("pem:"):
+            return bicim(100 * self.pem.at[bas[4:], f"ab_payi_{p[1]}_2024"], int(p[2]), p[3:])
+        if bas.startswith("pemx:"):
+            iso = bas[5:]
+            g = self.pem_maruziyet()
+            return bicim((g.sum() if iso == "TOPLAM" else g.loc[iso])[p[1]], int(p[2]), p[3:])
+        if bas.startswith("gpay:"):              # payda: grup ya da grup:senaryo
+            _, grup, sc = bas.split(":")
+            pg, psc = (p[3].split(":") + [sc])[:2]
+            v = 100 * self.g.loc[(grup, sc, p[1]), p[2]] / self.g.loc[(pg, psc, p[1]), p[2]]
+            return bicim(v, int(p[4]), p[5:])
+        if bas.startswith("tufe_netk:"):         # kümülatif: 10–[son bölüm] grubunun şoku + bütün parçaların önlemleri
+            sc = bas[10:]
+            v = self.g.loc[(self.grup_kum, sc, "dtufe")].p50 + toplamlar(self.Ykum)[f"tufe_{sc.lower()}"]
+            return bicim(v, int(p[1]), p[2:])
+        if bas.startswith("bp:"):
+            b = self.b[(self.b.kod == bas[3:]) & (self.b.ibbs2 == p[1])]
+            return bicim(100 * b.pay.iloc[0], int(p[2]), p[3:])
+        if bas.startswith("bolge:"):
+            return bicim(self.bolge_deger(bas[6:], p[1]), int(p[2]), p[3:])
+        if bas.startswith("ortak:"):
+            tur = {"ab": "AB pazarı", "abd": "AB dışı pazar", "ith": "İthalat kaynağı",
+                   "rakip": "AB pazarında rakip (AB dışı)"}[p[1]]
+            o = self.o[(self.o.nace2 == bas[6:]) & (self.o.tur == tur) & (self.o.partner_iso3 == p[2])]
+            if o.empty:
+                raise KeyError(f"{bas[6:]}: {p[2]} ilk beşte değil ({tur})")
+            return bicim(100 * o.pay.iloc[0], int(p[3]), p[4:])
         if bas.startswith("tufe_net:"):
             sc = bas[9:]
             v = self.g.loc[(self.grup, sc, "dtufe")].p50 + toplamlar(self.Y)[f"tufe_{sc.lower()}"]
@@ -316,6 +376,32 @@ class Veri:
         ilk = ", ".join(f"{self.ulke_adi(a)} {yuzde(v / top)}" for a, v in k.head(3).items())
         return f"${tr(top)} mn (AB {yuzde(ab / top)}; {ilk})"
 
+    def bolge_deger(self, ibbs2, ne):
+        """Parçanın (self.grup) bölgedeki çalışanı, bölge imalatındaki payı ve S2/S4 istihdam etkisi (sınıf P50 × bölge payı)."""
+        c = self.c_kodlari(self.m.index)
+        b = self.b[self.b.kod.isin(c) & self.b.ibbs2.eq(ibbs2)].copy()
+        if b.empty:
+            raise KeyError(ibbs2)
+        parca = b.kod.isin(self.secim(self.m, self.grup))
+        l_ = b.kod.map(self.m.l) * b.pay
+        if ne == "l":
+            return l_[parca].sum()
+        if ne == "pay":
+            return 100 * l_[parca].sum() / l_.sum()
+        if ne in ("s2", "s4"):
+            return (b.kod.map(self.m[f"{ne}_istihdam_p50"]) * b.pay)[parca].sum()
+        raise KeyError(ne)
+
+    def pem_maruziyet(self, iso=None):
+        """κ > 0 sınıflarda TR → PEM ortağı ihracatı (x) ve kümülasyon maruziyeti (kum = Σ κ · X · ortağın AB payı)."""
+        kap = self.mk.kumulasyon[self.mk.kumulasyon > 0]
+        k = self.pem_x[self.pem_x.nace2.isin(kap.index)].copy()
+        k["kappa"] = k.nace2.map(kap)
+        k["s"] = k.partner_iso3.map(self.pem.ab_payi_giyim_2024).fillna(0)
+        k["kum"] = k.value_musd * k.kappa * k.s
+        g = k.groupby("partner_iso3")[["value_musd", "kum"]].sum().rename(columns={"value_musd": "x"})
+        return g.loc[iso] if iso is not None else g
+
     def ortaklar(self, kod, tur, tercih=False):
         o = self.o[(self.o.nace2 == kod) & (self.o.tur == tur)]
         return "; ".join(f"{self.ulke_adi(r.partner_iso3)} {yuzde(r.pay)}"
@@ -330,27 +416,46 @@ def senaryo_hucre(r, nd=0, olcek=1.0):
     return f"{tr(r.p50 * olcek, nd, True)} ({tr(r.p10 * olcek, nd, True)} / {tr(r.p90 * olcek, nd, True)})"
 
 
+def tarim_payi(V, kodlar):
+    ab = V.ab.reindex(kodlar)
+    w = ab.x_ab_meur_2025.fillna(0)
+    return float((ab.pay_TARIM.fillna(0) * w).sum() / w.sum()) if w.sum() > 0 else 0.0
+
+
 def t_ozet(V, Y, kodlar, no, grup):
     t = toplamlar(Y)
     g = lambda sc, dg: V.g.loc[(grup, sc, dg)]  # noqa: E731
+    aski = tarim_payi(V, kodlar) >= 0.2              # 1/98 askısı yalnız tarım rejimi ağırlıklı parçalarda gösterilir
+    kum = (grup, "S4", "dx_kum") in V.g.index and abs(g("S4", "dx_kum").p50) >= 1
     satir = []
-    for dg, ad_, nd in (("dx_ab", "AB'ye ihracat ($ mn)", 0), ("dl", "İstihdam (kişi)", 0),
-                        ("dca", "Cari denge ($ mn)", 0), ("dtufe", "TÜFE, birinci tur (bp)", 1)):
+    sat = [("dx_ab", "AB'ye ihracat ($ mn)", 0)]
+    if kum:
+        sat.append(("dx_kum", "PEM kümülasyonu kaybı: AB dışı ihracat ($ mn)", 0))
+    sat += [("dl", "İstihdam (kişi)", 0), ("dca", "Cari denge ($ mn)", 0), ("dtufe", "TÜFE, birinci tur (bp)", 1)]
+    for dg, ad_, nd in sat:
         r2, r4 = g("S2", dg), g("S4", dg)
         isr = dg != "dtufe"
-        ak = tr(V.aski.loc[(grup, dg)].aski_ort, nd, True) if isr else tr(r4.p50, nd)
-        satir.append([ad_, tr(r2.p50, nd, isr), f"{tr(r2.p10, nd, isr)} / {tr(r2.p90, nd, isr)}", tr(r4.p50, nd, isr),
-                      f"{tr(r4.p10, nd, isr)} / {tr(r4.p90, nd, isr)}", ak])
+        r = [ad_, tr(r2.p50, nd, isr), f"{tr(r2.p10, nd, isr)} / {tr(r2.p90, nd, isr)}", tr(r4.p50, nd, isr),
+             f"{tr(r4.p10, nd, isr)} / {tr(r4.p90, nd, isr)}"]
+        if aski:
+            r.append(tr(V.aski.loc[(grup, dg)].aski_ort, nd, True) if isr and (grup, dg) in V.aski.index else tr(r4.p50, nd))
+        satir.append(r)
     s2, s4 = g("S2", "dtufe").p50, g("S4", "dtufe").p50
-    satir.append(["TÜFE, önerilen önlemlerle (bp)", tr(s2 + t["tufe_s2"], 1), "—", tr(s4 + t["tufe_s4"], 1), "—",
-                  tr(s4 + t["tufe_s4"], 1)])
-    satir.append(["Önlemlerin mali maliyeti (mlr TL/yıl)", tr(t["mali_s2"], 2), "—", tr(t["mali_s4"], 2), "—",
-                  tr(t["mali_s4"], 2)])
-    return tablo(f"Tablo {no} — Çıkışın 10–12'ye etkisi (T+5'te yıllık; bugüne göre fark)",
-                 ["Gösterge", "S2: P50", "S2: P10 / P90", "S4: P50", "S4: P10 / P90", "S4, 1/98 askıya alınırsa (ortalama)"],
-                 satir, "`[T]` f3e Monte Carlo (N = 2.000; yüzdelikler bölüm toplamının dağılımından). S2: derin ve kapsamlı "
-                        "STA; S4: anlaşmasız çıkış ve tek taraflı paket. Son sütun, AB'nin 1/98'i askıya aldığı çekilişlerin "
-                        "ortalaması (olasılık 0,25 varsayıldı). Önlemler ve mali maliyet Bölüm 4'teki eylemlerden.")
+    ek = [tr(s4 + t["tufe_s4"], 1)] if aski else []
+    satir.append(["TÜFE, önerilen önlemlerle (bp)", tr(s2 + t["tufe_s2"], 1), "—", tr(s4 + t["tufe_s4"], 1), "—"] + ek)
+    ek = [tr(t["mali_s4"], 2)] if aski else []
+    satir.append(["Önlemlerin mali maliyeti (mlr TL/yıl)", tr(t["mali_s2"], 2), "—", tr(t["mali_s4"], 2), "—"] + ek)
+    sut = ["Gösterge", "S2: P50", "S2: P10 / P90", "S4: P50", "S4: P10 / P90"]
+    not_ = ("`[T]` f3e Monte Carlo (N = 2.000; yüzdelikler bölüm toplamının dağılımından). S2: derin ve kapsamlı STA; S4: "
+            "anlaşmasız çıkış ve tek taraflı paket.")
+    if aski:
+        sut.append("S4, 1/98 askıya alınırsa (ortalama)")
+        not_ += " Son sütun, AB'nin 1/98'i askıya aldığı çekilişlerin ortalaması (olasılık 0,25 varsayıldı)."
+    if kum:
+        not_ += (" PEM kümülasyonu kaybı: Türk kumaşının PEM ortaklarında AB'ye giden giyimde menşe kazandırmaması "
+                 "(yalnız S4; ihracat, istihdam ve cari denge satırlarına dahil).")
+    return tablo(f"Tablo {no} — Çıkışın {yonelme(V.etiket)} etkisi (T+5'te yıllık; bugüne göre fark)", sut, satir,
+                 not_ + " Önlemler ve mali maliyet Bölüm 4'teki eylemlerden.")
 
 
 def t_bolum(V, Y, kodlar, no):
@@ -358,7 +463,7 @@ def t_bolum(V, Y, kodlar, no):
     c = V.c_kodlari(m.index)
     cy = V.c_kodlari(y.index)
     satir = []
-    for bl, ad_ in list(Y["bolumler"].items()) + [("hepsi", "10–12 toplamı")]:
+    for bl, ad_ in list(Y["bolumler"].items()) + [("hepsi", f"{V.etiket} toplamı")]:
         s = [k for k in kodlar if bl == "hepsi" or k[:2] == bl]
         ys = [k for k in s if k in y.index]
         r = [f"{bl} {ad_}" if bl != "hepsi" else ad_, str(len(s)), tr(y.calisan[ys].sum() / 1e3, 1),
@@ -379,8 +484,11 @@ def t_bolum(V, Y, kodlar, no):
 
 def t_rejim(V, Y, kodlar, no):
     ab = V.ab
+    w_ = ab.x_ab_meur_2025.reindex(kodlar).fillna(0)
+    if ((ab.pay_TARIM.reindex(kodlar).fillna(0) + ab.pay_ITU.reindex(kodlar).fillna(0)) * w_).sum() < 0.05 * w_.sum():
+        return t_rejim_sanayi(V, Y, kodlar, no)
     satir = []
-    gruplar = [(bl, f"{bl} {ad_}") for bl, ad_ in Y["bolumler"].items()] + [("hepsi", "10–12 toplamı"), ("C", "İmalat (C)")]
+    gruplar = [(bl, f"{bl} {ad_}") for bl, ad_ in Y["bolumler"].items()] + [("hepsi", f"{V.etiket} toplamı"), ("C", "İmalat (C)")]
     for bl, ad_ in gruplar:
         s = V.c_kodlari(ab.index) if bl == "C" else [k for k in kodlar if (bl == "hepsi" or k[:2] == bl) and k in ab.index]
         w = ab.x_ab_meur_2025[s].fillna(0)
@@ -394,6 +502,26 @@ def t_rejim(V, Y, kodlar, no):
                  "Eurostat Comext 2025 (TR→AB27, KN8), AB Kombine Nomenklatürü 2026; `kod/f3d_ab_tarife.py`. Tarifeler TR→AB "
                  "ihracatı ağırlıklı; spesifik vergiler ad valorem eşdeğerine çevrildi `[T]`. İTÜ satırında S4 artışı yalnız "
                  "sanayi bileşeni; tarım satırında 1/98 sürerse artış yok.")
+
+
+def t_rejim_sanayi(V, Y, kodlar, no):
+    """Bütün ihracatı sanayi rejiminde (GB) olan parçalar için: tarife düzeyi ve tepe satırlar."""
+    ab = V.ab
+    satir = []
+    gruplar = [(bl, f"{bl} {ad_}") for bl, ad_ in Y["bolumler"].items()] + [("hepsi", f"{V.etiket} toplamı"), ("C", "İmalat (C)")]
+    for bl, ad_ in gruplar:
+        s = V.c_kodlari(ab.index) if bl == "C" else [k for k in kodlar if (bl == "hepsi" or k[:2] == bl) and k in ab.index]
+        w = ab.x_ab_meur_2025[s].fillna(0)
+        o = lambda c: (ab[c][s].fillna(0) * w).sum() / w.sum()  # noqa: E731
+        r = [ad_, tr(w.sum()), yuzde(o("pay_GB")), f"%{tr(o('tau_ab_s4'), 1)}", f"%{tr(o('tau_ab_mfn'), 1)}",
+             yuzde(o("tepe_ihracat_payi")), tr(ab.kn8_satir[s].sum())]
+        satir.append(kalin(r) if bl == "hepsi" else r)
+    return tablo(f"Tablo {no} — AB'ye ihracatın rejimi ve S4'te eklenecek AB tarifesi (2025)",
+                 ["Bölüm", "AB'ye ihracat (€ mn)", "GB (sanayi) payı", "S4'te eklenecek tarife", "AB MFN ortalaması",
+                  "Tarifesi ≥ %10 olan satırların payı", "KN8 satırı"], satir,
+                 "Eurostat Comext 2025 (TR→AB27, KN8), AB Kombine Nomenklatürü 2026; `kod/f3d_ab_tarife.py`. Tarifeler TR→AB "
+                 "ihracatı ağırlıklı `[T]`. Bu parçanın sınıflarında tarım ve işlenmiş tarım ürünü rejimi yok; S4'te AB'nin "
+                 "MFN tarifesi bütün ihracata ekleniyor.")
 
 
 def t_aski(V, Y, kodlar, no, grup, n=8):
@@ -412,7 +540,7 @@ def t_aski(V, Y, kodlar, no, grup, n=8):
                   tr(ds("dx_ab", "askisiz_ort"), 0, True), tr(ds("dx_ab", "aski_ort"), 0, True), tr(ds("dl", "aski_ort"), 0, True),
                   "—"])
     x, l_ = a.loc[(grup, "dx_ab")], a.loc[(grup, "dl")]
-    satir.append(kalin(["10–12 toplamı", tr(ab.x_ab_meur_2025.reindex(kodlar).sum()), "—", "—", tr(x.askisiz_ort, 0, True),
+    satir.append(kalin([f"{V.etiket} toplamı", tr(ab.x_ab_meur_2025.reindex(kodlar).sum()), "—", "—", tr(x.askisiz_ort, 0, True),
                         tr(x.aski_ort, 0, True), tr(l_.aski_ort, 0, True), yuzde(l_.aski_ort / V.m.l[kodlar].sum(), 1)]))
     return tablo(f"Tablo {no} — S4'te 1/98'in askıya alınması: en çok etkilenen sınıflar (T+5)",
                  ["Sınıf", "AB'ye ihracat (€ mn, 2025)", "Tarım payı", "Askıda AB tarifesi", "AB'ye ihracat: askı yok ($ mn)",
@@ -435,7 +563,7 @@ def t_itu(V, Y, kodlar, no):
     t2, t4 = m.s2_ab_ihracat_musd_p50[s].sum(), m.s4_ab_ihracat_musd_p50[s].sum()
     satir.append(kalin(["Toplam", tr(ab.x_ab_meur_2025[s].sum()), "—", "—", "—", tr(t2, 0, True), tr(t4, 0, True), yuzde(t2 / t4),
                         tr(m.s4_istihdam_p50[s].sum(), 0, True)]))
-    return tablo(f"Tablo {no} — GB'ye bağlı sınıflar: S4'te sanayi bileşeni ve S2'de menşe (T+5, P50)",
+    return tablo(f"Tablo {no} — GB ve İTÜ rejimindeki sınıflar: S4'te AB tarifesi ve S2'de menşe (T+5, P50)",
                  ["Sınıf", "AB'ye ihracat (€ mn, 2025)", "GB ve İTÜ payı", "S4'te AB tarifesi", "Menşe riski S2/S3",
                   "AB'ye ihracat S2 ($ mn)", "AB'ye ihracat S4 ($ mn)", "S2 ÷ S4", "İstihdam S4 (kişi)"], satir,
                  "`[T]` f3d, f3e. Menşe riski D/O/Y: düşük, orta, yüksek (`veri/f3_sinif_varsayim.csv`, `[H]`). Seçim: AB'ye "
@@ -458,14 +586,14 @@ def t_tufe(V, Y, kodlar, no, grup, n=8):
                   tr(m.s4_tufe_bp_p50[diger].sum() + od, 2)])
     g2, g4 = V.g.loc[(grup, "S2", "dtufe")].p50, V.g.loc[(grup, "S4", "dtufe")].p50
     ot = sum(onlem.values())
-    satir.append(kalin(["10–12 toplamı", f"%{tr(m.tufe_agirlik_yuzde[kodlar].sum(), 2)}", "—", "—", "—", tr(g2, 2), tr(g4, 2),
+    satir.append(kalin([f"{V.etiket} toplamı", f"%{tr(m.tufe_agirlik_yuzde[kodlar].sum(), 2)}", "—", "—", "—", tr(g2, 2), tr(g4, 2),
                         tr(ot, 2, True), tr(g4 + ot, 2)]))
     return tablo(f"Tablo {no} — İthalat tarafı: TÜFE'ye birinci tur etkisi en büyük sınıflar (bp, P50)",
                  ["Sınıf", "TÜFE ağırlığı", "Tüketimde ithal pay", "İthalatta AB payı", "S4'te AB'ye tarife (c2)", "S2",
                   "S4", "Önlem (S4)", "S4, önlemle"], satir,
                  "`[T]` f3e (doğrudan kanal COICOP 2018 sepeti, dolaylı kanal I-O 2023 Leontief fiyat modeli). c2: S4'te AB "
                  "menşeli mala uygulanacak MFN + İGV (İGV, AB'nin baskın, yerli üretimin zayıf olduğu satırlarda herkes için "
-                 "kalkar; Faz 2A). Önlemler Tablo 4.3'te.")
+                 "kalkar; Faz 2A). Önlemler Bölüm 4'te.")
 
 
 def t_durus(V, Y, kodlar, no):
@@ -487,9 +615,9 @@ EYLEM_SUTUN = ["Eylem", "Araç", "Parametre", "Sorumlu", "Hukuki araç", "Bütç
 
 def t_eylem_ortak(V, Y, kodlar, no):
     satir = [list(e) for e in Y["belge"].get("ortak_eylemler", [])]
-    return tablo(f"Tablo {no} — Bölüm düzeyi ortak eylemler (10–12)", EYLEM_SUTUN, satir,
+    return tablo(f"Tablo {no} — Bölüm düzeyi ortak eylemler ({V.etiket})", EYLEM_SUTUN, satir,
                  "Bütçeler `[T]`, 2026 fiyatlarıyla; kurumsal sorumluluk mevcut görev dağılımına göre. Mali yükler ve cari "
-                 "denge katkıları defterde (Tablo 6.1) toplanıyor.")
+                 "denge katkıları kümülatif defterde (Bölüm 6) toplanıyor.")
 
 
 def t_eylem_sinif(V, Y, kodlar, no):
@@ -515,12 +643,14 @@ def t_senaryo(V, Y, kod, no):
     x_ab, l_ = m.x_ab[kod], m.l[kod]
     aski = (V.ab.pay_TARIM.get(kod, 0) or 0) >= 0.2
     satir = []
-    for dg, ad_, nd, olc in (("dx_ab", "AB'ye ihracat ($ mn)", 0, 1.0),
+    for dg, ad_, nd, olc in [("dx_ab", "AB'ye ihracat ($ mn)", 0, 1.0),
                              ("dx_ab", "AB'ye ihracat (%)", 1, 100 / x_ab if x_ab else np.nan),
-                             ("dx", "Toplam ihracat ($ mn)", 0, 1.0), ("dm", "Nihai mal ithalatı ($ mn)", 0, 1.0),
+                             ("dx", "Toplam ihracat ($ mn)", 0, 1.0)] + \
+            ([("dx_kum", "Bunun içinde PEM kümülasyonu ($ mn)", 0, 1.0)] if V.mk.kumulasyon.get(kod, 0) > 0 else []) + \
+            [("dm", "Nihai mal ithalatı ($ mn)", 0, 1.0),
                              ("dq", "Üretim ($ mn)", 0, 1.0), ("dl", "İstihdam (kişi)", 0, 1.0),
                              ("dl", "İstihdam (%)", 1, 100 / l_ if l_ else np.nan), ("dca", "Cari denge ($ mn)", 0, 1.0),
-                             ("dtufe", "TÜFE (bp)", 2, 1.0)):
+                             ("dtufe", "TÜFE (bp)", 2, 1.0)]:
         r = [ad_] + [senaryo_hucre(V.sn_deger(kod, sc, dg), nd, olc) if not np.isnan(olc) else "—" for sc in SEN]
         if aski:
             a = V.aski.loc[(kod, dg)].aski_ort if (kod, dg) in V.aski.index else np.nan
@@ -533,15 +663,23 @@ def t_senaryo(V, Y, kod, no):
 
 def t_kucuk(V, Y, kodlar, no):
     m, ab = V.m, V.ab
+    aski_var = tarim_payi(V, V.secim(V.m, V.grup)) >= 0.2      # 1/98 sütunları yalnız tarım ağırlıklı parçalarda
     satir = []
     for k in kodlar:
-        aski = V.aski.loc[(k, "dx_ab")].aski_ort if (k, "dx_ab") in V.aski.index else np.nan
-        satir.append([V.ad(k, Y), tr(m.l[k]), tr(m.x[k]), yuzde(m.ab_ihracat_payi[k]), m.gb_statusu[k],
-                      f"%{tr(ab.tau_ab_s4.get(k, np.nan), 1)} / %{tr(ab.tau_ab_s4_tarim_kaybi.get(k, np.nan), 1)}",
-                      tr(m.s4_ab_ihracat_musd_p50[k], 1, True), tr(aski, 1, True), tr(m.s4_tufe_bp_p50[k], 2)])
-    return tablo(f"Tablo {no} — Etkisi sınırlı sınıflar: temel göstergeler",
-                 ["Sınıf", "Çalışan", "İhracat ($ mn)", "AB payı", "GB statüsü", "S4 AB tarifesi: 1/98 sürer / askıda",
-                  "AB'ye ihracat S4 P50 ($ mn)", "1/98 askıda (ort., $ mn)", "TÜFE S4 (bp)"], satir,
+        r = [V.ad(k, Y), tr(m.l[k]), tr(m.x[k]), yuzde(m.ab_ihracat_payi[k]), m.gb_statusu[k]]
+        if aski_var:
+            aski = V.aski.loc[(k, "dx_ab")].aski_ort if (k, "dx_ab") in V.aski.index else np.nan
+            r += [f"%{tr(ab.tau_ab_s4.get(k, np.nan), 1)} / %{tr(ab.tau_ab_s4_tarim_kaybi.get(k, np.nan), 1)}",
+                  tr(m.s4_ab_ihracat_musd_p50[k], 1, True), tr(aski, 1, True)]
+        else:
+            ta = ab.tau_ab_s4.get(k, np.nan)
+            r += [f"%{tr(ta, 1)}" if not np.isnan(ta) else "—", tr(m.s4_ab_ihracat_musd_p50[k], 1, True),
+                  tr(m.s4_istihdam_p50[k], 0, True)]
+        satir.append(r + [tr(m.s4_tufe_bp_p50[k], 2)])
+    sut = ["Sınıf", "Çalışan", "İhracat ($ mn)", "AB payı", "GB statüsü"]
+    sut += (["S4 AB tarifesi: 1/98 sürer / askıda", "AB'ye ihracat S4 P50 ($ mn)", "1/98 askıda (ort., $ mn)"] if aski_var
+            else ["S4 AB tarifesi", "AB'ye ihracat S4 P50 ($ mn)", "İstihdam S4 P50 (kişi)"])
+    return tablo(f"Tablo {no} — Etkisi sınırlı sınıflar: temel göstergeler", sut + ["TÜFE S4 (bp)"], satir,
                  "TÜİK YSHİ 2024, BACI 2024 `[V]`; senaryolar `[T]` f3e. Veri sayfaları Ek C'de.")
 
 
@@ -565,6 +703,71 @@ def t_matris(V, Y, kodlar, no, parca):
                   "S2 cari P50", "S2 TÜFE P50", "İstihdam riski", "Güven"], satir,
                  "Skorlar 0–100 (C sınıfları içinde yüzdelik); EDE bp/puan; S2 cari denge $ mn; TÜFE bp. Arketip ve duruş "
                  "kural tabanlı öneri ve uzman düzeltmesi.")
+
+
+def t_bolge(V, Y, kodlar, no, n=10):
+    """Bölgeler (İBBS-2): parçanın çalışanı, imalattaki payı ve S2/S4 istihdam etkisi (sınıf P50'lerinin bölge payıyla dağılımı)."""
+    b, m = V.b, V.m
+    c = V.c_kodlari(m.index)
+    t = b[b.kod.isin(c)].copy()
+    t["l"] = t.kod.map(m.l) * t.pay
+    t["s2"] = t.kod.map(m.s2_istihdam_p50) * t.pay
+    t["s4"] = t.kod.map(m.s4_istihdam_p50) * t.pay
+    t["parca"] = t.kod.isin(kodlar)
+    imalat = t.groupby("bolge").l.sum()
+    p_ = t[t.parca].groupby("bolge")[["l", "s2", "s4"]].sum()
+    p_["imalat"] = imalat.reindex(p_.index)
+    p_ = p_.sort_values("s4").head(n)
+    satir = []
+    for bolge, r in p_.iterrows():
+        kd = t[t.parca & t.bolge.eq(bolge)].sort_values("s4").head(2)
+        bas = ", ".join(f"{k.kod} ({tr(k.s4, 0, True)})" for k in kd.itertuples())
+        satir.append([bolge, tr(r.l / 1e3, 1), yuzde(r.l / r.imalat), tr(r.s2, 0, True), tr(r.s4, 0, True),
+                      yuzde(r.s4 / r.l, 1), bas])
+    top = t[t.parca][["l", "s2", "s4"]].sum()
+    satir.append(kalin([f"{V.etiket} toplamı (bütün bölgeler)", tr(top.l / 1e3, 1), yuzde(top.l / imalat.sum()),
+                        tr(top.s2, 0, True), tr(top.s4, 0, True), yuzde(top.s4 / top.l, 1), "—"]))
+    return tablo(f"Tablo {no} — Bölgeler: S4'te istihdam kaybının en büyük olduğu {n} İBBS-2 bölgesi (T+5, P50)",
+                 ["Bölge (İBBS-2)", f"{V.etiket} çalışanı (bin)", "Bölge imalatındaki payı", "S2 (kişi)", "S4 (kişi)",
+                  "S4 ÷ çalışan", "En çok etkilenen sınıflar (S4)"], satir,
+                 "`[T]` f3b (YSHİ 2024 sınıf çalışanı, SGK 2025 bölüm × il sigortalısıyla RAS) ve f3e. Bölge değerleri sınıf "
+                 "P50'lerinin bölge paylarıyla dağıtılmasından; toplam, sınıf P50'lerinin toplamıdır (grup yüzdeliği değil).")
+
+
+def t_kum_ortak(V, Y, kodlar, no, n=8):
+    g = V.pem_maruziyet().sort_values("kum", ascending=False)
+    g = g[g.x > 0]
+    satir = []
+    for iso, r in g.head(n).iterrows():
+        satir.append([V.ulke_adi(iso), tr(r.x), yuzde(V.pem.at[iso, "ab_payi_giyim_2024"]), tr(r.kum)])
+    d = g.iloc[n:]
+    if len(d):
+        satir.append([f"Diğer {len(d)} ortak", tr(d.x.sum()), "—", tr(d.kum.sum())])
+    satir.append(kalin(["Toplam", tr(g.x.sum()), "—", tr(g.kum.sum())]))
+    return tablo(f"Tablo {no} — PEM kümülasyonu: Türk kumaşının AB'ye ortaklar üzerinden ulaşan kısmı (2024)",
+                 ["PEM ortağı", "Türkiye'nin kumaş ve teknik tekstil ihracatı ($ mn)", "Ortağın giyim ihracatında AB payı",
+                  "Kümülasyon maruziyeti ($ mn)"], satir,
+                 "BACI HS17 2024 `[V]`; `kod/f3a_ticaret.py` `[T]`. Kumaş: κ > 0 sınıflar (13.20, 13.91 κ = 1; 13.96, 13.99 "
+                 "κ = 0,3 `[H]`). Maruziyet = κ × ihracat × ortağın Fasıl 61–63 ihracatında AB payı; Türk kumaşının ortağın "
+                 "AB'ye giden üretiminde orantılı kullanıldığı varsayımıyla üst sınır. Ortaklar hem Türkiye hem AB ile tercihli "
+                 "anlaşması olan PEM tarafları.")
+
+
+def t_kum_sinif(V, Y, kodlar, no):
+    mk = V.mk
+    s = sorted([k for k in kodlar if mk.kumulasyon.get(k, 0) > 0], key=lambda k: -mk.x_kum[k] * mk.kumulasyon[k])
+    satir = []
+    for k in s:
+        x, l_ = V.sn_deger(k, "S4", "dx_kum"), V.sn_deger(k, "S4", "dl_kum")
+        satir.append([V.ad(k, Y), tr(mk.x_pem[k]), tr(mk.x_kum[k]), tr(mk.kumulasyon[k], 1), senaryo_hucre(x),
+                      tr(l_.p50, 0, True), tr(V.m.s4_istihdam_p50[k], 0, True)])
+    return tablo(f"Tablo {no} — PEM kümülasyonu kanalı: sınıflar (S4, T+5)",
+                 ["Sınıf", "PEM ortaklarına ihracat ($ mn, 2024)", "Maruziyet ($ mn)", "κ", "S4 kaybı ($ mn; P50, P10 / P90)",
+                  "Kanalın istihdam etkisi (kişi, P50)", "Sınıfın S4 istihdam etkisi, kanal dahil (P50)"], satir,
+                 "`[T]` f3a, f3e. κ: Türk girdisinin ortağın AB'ye tercihli ürününde menşe kazandıran adım olma derecesi "
+                 "(`veri/f3_sinif_varsayim.csv`, `[H]`). κ = 0 olan sınıflarda kanal yok: iplikte ortakta yapılan dokuma "
+                 "ya da örme, giyim ve ayakkabıda ortağın kendi üretimi menşe kazandırıyor. Kayıp oranı λ ~ üçgen(0,3; "
+                 "0,6; 0,9) `[H]`. Sınıf toplamında kanalın etkisi iç ikame ve diğer kanallarla birlikte.")
 
 
 def t_liste(baslik, sutunlar, ogeler):
@@ -644,6 +847,8 @@ def veri_sayfasi(V, Y, kod, no, senaryo_no=None):
                                                        f"{tr(m.p_uyum_s2, 2)} / {tr(m.p_uyum_s3, 2)} `[H]`"],
         ["", "Değer zincirindeki rol; DİR bağımlılığı", f"{yn(va.get('deger_zinciri'))}; {yn(va.get('dir_bagimliligi'))}"],
         ["", "EUDR ve SKDM kapsamındaki AB'ye ihracat payı", f"{yuzde(ab.get('eudr_payi', 0))}; {yuzde(ab.get('skdm_payi', 0))}"],
+        ["", "PEM ortaklarına ihracat; kümülasyon maruziyeti; κ", f"${tr(mk.get('x_pem', 0))} mn; ${tr(mk.get('x_kum', 0))} mn; "
+                                                               f"{tr(mk.get('kumulasyon', 0), 1)} `[H]`"],
         ["5 Türkiye tarafı", "Uygulanan tarife 2026 (ithalat ağırlıklı): MFN; İGV dahil",
          f"{yuzde(tm / 100, 1)}; {yuzde(tt / 100, 1)}"],
         ["", "S4'te AB menşeline tarife (c2)", yuzde(m.tau_tr_c2 / 100, 1)],
@@ -691,6 +896,8 @@ def defter(V, kodlar, Y, no, grup):
     sok = {sc: g(sc.upper(), "dtufe").p50 for sc in ("s2", "s4")}
     c_toplam, diger = int((k.kapsam_grubu == "C").sum()), int((k.kapsam_grubu != "C").sum())
     asan = m[m.s4_istihdam_pay_p10 <= -0.05]
+    tp, gp = toplamlar(V.Y), lambda sc, dg: V.g.loc[(V.grup, sc, dg)]  # noqa: E731
+    kum = (grup, "S4", "dl_kum") in V.g.index and abs(g("S4", "dl_kum").p50) >= 1
     satir = [
         ["Tamamlanan / kalan sınıf", f"{len(kodlar)} / {c_toplam - len(kodlar)} C sınıfı; ek kapsam (B, D, E, hizmet) 0 / {diger}"],
         ["Kullanılan / kalan enflasyon bütçesi (bp; birinci tur, P50)",
@@ -708,18 +915,25 @@ def defter(V, kodlar, Y, no, grup):
          f"S2 P50 {tr(g('S2', 'dl').p50, 0, True)}; S4 P50 {tr(g('S4', 'dl').p50, 0, True)}, P10 {tr(g('S4', 'dl').p10, 0, True)}; "
          f"1/98 askısında ortalama {tr(V.aski.loc[(grup, 'dl')].aski_ort, 0, True)}. S4 P10'da kaybı %5'i aşan sınıf: "
          + (", ".join(f"{kd} ({yuzde(r.s4_istihdam_pay_p10, 1)})" for kd, r in asan.iterrows()) or "yok")],
+        [f"Bu parçanın ({V.etiket}) katkısı",
+         f"TÜFE şoku S2 {tr(gp('S2', 'dtufe').p50, 1)}, S4 {tr(gp('S4', 'dtufe').p50, 1)} bp; önlemler S2 "
+         f"{tr(tp['tufe_s2'], 2, True)}, S4 {tr(tp['tufe_s4'], 2, True)} bp. İstihdam S2 P50 {tr(gp('S2', 'dl').p50, 0, True)}, "
+         f"S4 P50 {tr(gp('S4', 'dl').p50, 0, True)} (P10 {tr(gp('S4', 'dl').p10, 0, True)}). Mali maliyet S2 {tr(tp['mali_s2'], 2)}, "
+         f"S4 {tr(tp['mali_s4'], 2)} mlr TL/yıl. Cari denge önlem katkısı S2 {tr(tp['ca_s2'] / 1e3, 3, True)}, "
+         f"S4 {tr(tp['ca_s4'] / 1e3, 3, True)} $ mlr"
+         + (f"; S4'te PEM kümülasyonu kanalı istihdamda {tr(gp('S4', 'dl_kum').p50, 0, True)}" if kum else "")],
         ["Açık kalan veri boşlukları", "; ".join(Y["belge"].get("veri_bosluklari", []))],
         ["Varsayım kaydına eklenen yeni maddeler", "; ".join(Y["belge"].get("varsayimlar", []))],
     ]
-    return tablo(f"Tablo {no} — Kümülatif defter (Faz 3, parça 1 sonrası)", ["Kalem", "Değer"], satir,
+    return tablo(f"Tablo {no} — Kümülatif defter (Faz 3, parça {V.parca} sonrası)", ["Kalem", "Değer"], satir,
                  "`kod/f3g_kartlar.py`; matris, grup senaryoları (`veri/f3_senaryo_grup.csv`) ve eylem kayıtlarından. Senaryo "
                  "şokları politika seçimi değil, çıkışın kendisi; önlemler Bölüm 4'teki eylemlerden. Makro mutabakat Faz 6'da.")
 
 
 def ilerleme(V, kodlar, Y):
     c_toplam = int((V.k.kapsam_grubu == "C").sum())
-    return (f"İLERLEME: Faz 3 parça 1 / 16 tamamlandı ({len(kodlar)} / {c_toplam} C sınıfı kartı) — SONRAKİ ADIM: "
-            f"{Y['belge'].get('sonraki', 'Faz 3 parça 2 (13–15: tekstil, giyim, deri)')}; DEVAM bekleniyor.")
+    return (f"İLERLEME: Faz 3 parça {V.parca} / 16 tamamlandı ({len(kodlar)} / {c_toplam} C sınıfı kartı) — SONRAKİ ADIM: "
+            f"{Y['belge'].get('sonraki', '—')}; DEVAM bekleniyor.")
 
 
 def bloklar(metin, V, Y, kodlar, grup):
@@ -734,9 +948,9 @@ def bloklar(metin, V, Y, kodlar, grup):
         bas, no = g[0], (g[1] if len(g) > 1 else "")
         n = int(g[2]) if len(g) > 2 else 8
         if bas == "ILERLEME":
-            return ilerleme(V, kodlar, Y)
+            return ilerleme(V, V.kodlar_kum, Y)
         if bas == "DEFTER":
-            return defter(V, kodlar, Y, no, grup)
+            return defter(V, V.kodlar_kum, V.Ykum, no, V.grup_kum)
         if bas.startswith("KUNYE:"):
             kod = bas[6:]
             return kunye(V, Y, kod, f"C.{kodlar.index(kod) + 1}")
@@ -757,11 +971,51 @@ def bloklar(metin, V, Y, kodlar, grup):
              "itu": lambda: t_itu(V, Y, kodlar, no), "tufe": lambda: t_tufe(V, Y, kodlar, no, grup, n),
              "durus": lambda: t_durus(V, Y, kodlar, no), "eylem_ortak": lambda: t_eylem_ortak(V, Y, kodlar, no),
              "eylem_sinif": lambda: t_eylem_sinif(V, Y, kodlar, no), "tetik": lambda: t_tetik(V, Y, kodlar, no),
-             "matris_a": lambda: t_matris(V, Y, kodlar, no, "a"), "matris_b": lambda: t_matris(V, Y, kodlar, no, "b")}
+             "matris_a": lambda: t_matris(V, Y, kodlar, no, "a"), "matris_b": lambda: t_matris(V, Y, kodlar, no, "b"),
+             "bolge": lambda: t_bolge(V, Y, kodlar, no, n), "kum_ortak": lambda: t_kum_ortak(V, Y, kodlar, no, n),
+             "kum_sinif": lambda: t_kum_sinif(V, Y, kodlar, no)}
         if ad_ not in f:
             raise ValueError(f"tanımsız tablo: {ad_}")
         return f[ad_]()
     return BLOK.sub(bir, metin)
+
+
+def yaml_birlestir(yollar_, liste_birlestir=False):
+    """YAML dosyalarını sırayla birleştirir. liste_birlestir: belge altındaki listeler (veri boşlukları, varsayımlar, ortak
+    eylemler) ve defter_ortak birikir; aynı kimlikli madde (\"VB-06: ...\") sonrakiyle değişir; belge.kapanan_vb düşer."""
+    Y = {"belge": {}, "siniflar": {}, "bolumler": {}}
+    kapanan = set()
+    for yol in yollar_:
+        y_ = yaml.safe_load(open(yol, encoding="utf-8")) or {}
+        for anahtar in Y:
+            yeni = y_.get(anahtar) or {}
+            if anahtar == "belge" and liste_birlestir:
+                for k, v in yeni.items():
+                    if isinstance(v, list) and isinstance(Y["belge"].get(k), list):
+                        kim = lambda e: (e.split(":", 1)[0].split(" ")[0] if isinstance(e, str) else e[0])  # noqa: E731
+                        eski = {kim(e): e for e in Y["belge"][k]}
+                        eski.update({kim(e): e for e in v})
+                        Y["belge"][k] = list(eski.values())
+                    elif isinstance(v, dict) and isinstance(Y["belge"].get(k), dict):
+                        Y["belge"][k] = {**Y["belge"][k], **v}
+                    else:
+                        Y["belge"][k] = v
+                kapanan |= set(yeni.get("kapanan_vb") or [])
+            else:
+                Y[anahtar].update(yeni)
+    if kapanan:
+        Y["belge"]["veri_bosluklari"] = [e for e in Y["belge"].get("veri_bosluklari", [])
+                                         if e.split(":", 1)[0].split(" ")[0] not in kapanan]
+    return Y
+
+
+def defter_coz(V, Y):
+    """Sınıf defterindeki "-sok_s2" / "-sok_s4" değerlerini çözer: önlem sınıfın S2/S4 TÜFE şokunu (P50) siler."""
+    for kod, kayit in (Y.get("siniflar") or {}).items():
+        d = (kayit or {}).get("defter") or {}
+        for k, v in list(d.items()):
+            if isinstance(v, str) and v.strip() in ("-sok_s2", "-sok_s4"):
+                d[k] = -float(V.m.at[kod, f"{v.strip()[-2:]}_tufe_bp_p50"])
 
 
 def main():
@@ -770,17 +1024,28 @@ def main():
     ap.add_argument("--metin", required=True, help="şablon klasörü (*.md, ad sırasıyla) ya da tek dosya")
     ap.add_argument("--cikti", required=True)
     ap.add_argument("--out", default=yollar.VERI)
+    ap.add_argument("--kartlar", default=None, help="parça YAML klasörü (kümülatif defter); varsayılan: ilk --yaml'ın klasörü")
     a = ap.parse_args()
-    Y = {"belge": {}, "siniflar": {}, "bolumler": {}}
-    for yol in a.yaml:
-        y_ = yaml.safe_load(open(yol, encoding="utf-8")) or {}
-        for anahtar in Y:
-            Y[anahtar].update(y_.get(anahtar) or {})
+    Y = yaml_birlestir(a.yaml)
     V = Veri(a.out)
     kodlar = [k for k in V.m.index if k[:2] in Y["bolumler"]]
     bl = sorted(Y["bolumler"])
     grup = bl[0] if len(bl) == 1 else f"{bl[0]}-{bl[-1]}"
-    V.Y, V.grup = Y, grup
+    V.Y, V.grup, V.etiket, V.parca = Y, grup, grup.replace("-", "–"), int(Y["belge"].get("parca", 1))
+    # kümülatif defter: son bölümü bu parçanınkinden büyük olmayan bütün parçalar
+    klasor = a.kartlar or os.path.dirname(os.path.abspath(a.yaml[0]))
+    parcalar = sorted(f for f in glob.glob(os.path.join(klasor, "*.yaml"))
+                      if re.fullmatch(r"\d\d(-\d\d)?\.yaml", os.path.basename(f)))
+    yollar_kum = []
+    for f in parcalar:
+        son = os.path.basename(f)[:-5].split("-")[-1]
+        if son <= bl[-1]:
+            yollar_kum += [f] + [x for x in [f[:-5] + "_siniflar.yaml"] if os.path.exists(x)]
+    V.Ykum = yaml_birlestir(yollar_kum, liste_birlestir=True) if yollar_kum else Y
+    V.kodlar_kum = [k for k in V.c_kodlari(V.m.index) if "10" <= k[:2] <= bl[-1]]
+    defter_coz(V, Y)
+    defter_coz(V, V.Ykum)
+    V.grup_kum = f"10-{bl[-1]}"
     dosyalar = sorted(glob.glob(os.path.join(a.metin, "*.md"))) if os.path.isdir(a.metin) else [a.metin]
     metin = "\n\n".join(open(f, encoding="utf-8").read().strip() for f in dosyalar)
     metin = bloklar(metin, V, Y, kodlar, grup)

@@ -13,7 +13,9 @@ Göstergeler (sınıf × yıl):
   AB pazar payı = X_TR→AB,i / M_AB←AB dışı,i   ve   X_TR→AB,i / M_AB,i (AB içi dahil)
   Birim değer oranı = Σ_k w_k × (UV_TR→AB,k / UV_AB dışı→AB,k); w_k sınıf içindeki TR→AB payı; oranlar [0,2; 5]'e kırpılır
 AB pazarındaki tercihli rakipler: AB dışı ilk 5 tedarikçi ve AB'deki tercih durumları (f2f.AB_ANLASMA; GSP+ ve EBA ayrı).
-Çıktı: veri/f3_ticaret_sinif.csv, veri/f3_ortaklar_sinif.csv (ilk 5: AB pazarı, AB dışı pazar, ithalat kaynağı, AB'deki rakip).
+PEM çapraz kümülasyonu maruziyeti (PEM_KUM): x_pem (TR→PEM ortağı ihracatı) ve x_kum (ortağın AB'ye ihracat payıyla ağırlıklı).
+Çıktı: veri/f3_ticaret_sinif.csv, veri/f3_ortaklar_sinif.csv (ilk 5: AB pazarı, AB dışı pazar, ithalat kaynağı, AB'deki rakip),
+       veri/f3_pem_ortak_ab_payi.csv (PEM ortaklarının AB'ye ihracat payı: giyim Fasıl 61–63 ve toplam).
 """
 
 import argparse
@@ -30,6 +32,16 @@ AB27 = {"AUT", "BEL", "BGR", "HRV", "CYP", "CZE", "DNK", "EST", "FIN", "FRA", "D
 GSP_ARTI = {"PAK", "LKA", "PHL", "BOL", "CPV", "KGZ", "MNG", "UZB", "TJK"}
 EBA = {"BGD", "KHM", "MMR", "ETH", "TZA", "UGA", "SEN", "MLI", "BFA", "NPL", "LAO", "HTI", "YEM", "AFG", "SOM", "SDN"}
 YILLAR = (2020, 2024)
+# PEM çapraz kümülasyonu: hem Türkiye hem AB ile tercihli anlaşması olan PEM tarafları (2026; İsrail ticareti askıda,
+# Ürdün STA'sı 2018'de sona erdi, Cezayir ve Lübnan'la TR anlaşması yürürlükte değil) `[V]`. Türk girdisi bu ülkelerde
+# işlenip AB'ye tercihli satıldığında kümülasyon, Türkiye ile AB arasında GATT XXIV anlaşması ister (PEM Ek I md. 8(1)(a)):
+# S4'te Türk girdisi menşesiz sayılır. Maruziyet = Σ TR→ortak ihracatı × ortağın aşağı yön ürünlerinde AB'ye ihracat payı
+# (13. bölüm için Fasıl 61–63, diğerlerinde ortağın toplam ihracatı); Türk girdisinin ortağın AB'ye giden üretiminde
+# orantılı kullanıldığı varsayımıyla üst sınır `[T]`
+PEM_KUM = {"MAR", "TUN", "EGY", "ALB", "BIH", "MNE", "MKD", "SRB", "XKX", "GEO", "MDA", "UKR", "CHE", "NOR", "ISL", "LIE",
+           "FRO"}
+ASAGI_GIYIM = ("61", "62", "63")
+ASAGI_GIYIM_BOLUM = ("13",)
 
 
 def hs6_nace_agirlik(eslem_yolu):
@@ -187,6 +199,27 @@ def main():
     gen["tercihli_rakip_payi_2024"] = gen.nace2.map(
         b24.assign(tercihli=b24.iso3.map(tercih_durumu).isin(["STA/EPA", "AEA/STA", "TCA", "GSP+", "EBA"]))
         .query("tercihli and iso3 != 'TUR'").groupby("nace2").value_musd.sum() / b24.groupby("nace2").value_musd.sum())
+
+    # --- PEM çapraz kümülasyonu maruziyeti (2024): ortağın AB'ye ihracatı ağırlıklı TR→ortak ihracatı
+    dw = pd.read_csv(g("baci", "baci_hs17_world_exports_exporter_hs6_2024.csv.gz"), dtype={"hs6": str})
+    dw["fasil"] = dw.hs6.str.zfill(6).str[:2]
+    ab24k = ab[ab.year == 2024].assign(fasil=lambda x: x.hs6.astype(str).str.zfill(6).str[:2])
+    oran_ab = {}
+    for ad_, fasillar in (("giyim", ASAGI_GIYIM), ("toplam", None)):
+        sw = dw if fasillar is None else dw[dw.fasil.isin(fasillar)]
+        sa = ab24k if fasillar is None else ab24k[ab24k.fasil.isin(fasillar)]
+        oran_ab[ad_] = (sa.groupby("iso3").value_kusd.sum() / sw.groupby("exporter_iso3").value_kusd.sum()) \
+            .reindex(sorted(PEM_KUM)).fillna(0).clip(upper=1)
+    k24 = t24[(t24.flow == "X") & t24.partner_iso3.isin(PEM_KUM)]
+    gen["x_pem_musd_2024"] = gen.nace2.map(k24.groupby("nace2").value_musd.sum()).fillna(0)
+    for ad_ in ("giyim", "toplam"):
+        gen[f"x_kum_{ad_}_musd_2024"] = gen.nace2.map(
+            k24.assign(w=k24.value_musd * k24.partner_iso3.map(oran_ab[ad_])).groupby("nace2").w.sum()).fillna(0)
+    gen["x_kum_musd_2024"] = np.where(gen.nace2.str[:2].isin(ASAGI_GIYIM_BOLUM), gen.x_kum_giyim_musd_2024,
+                                      gen.x_kum_toplam_musd_2024)
+    pd.DataFrame({"ortak": oran_ab["giyim"].index, "ortak_adi": oran_ab["giyim"].index.map(ad),
+                  "ab_payi_giyim_2024": oran_ab["giyim"].values, "ab_payi_toplam_2024": oran_ab["toplam"].values}) \
+        .round(4).to_csv(v("f3_pem_ortak_ab_payi.csv"), index=False)
     gen.round(5).to_csv(v("f3_ticaret_sinif.csv"), index=False)
     print(f"Eşleşmeyen TR ticaret payı: %{100 * kayip_tr:.2f}; sınıf sayısı {gen.nace2.nunique()}")
     c = gen[gen.nace2.str.match(r"^(1[0-9]|2[0-9]|3[0-3])\.")]

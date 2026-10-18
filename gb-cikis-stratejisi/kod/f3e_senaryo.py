@@ -10,7 +10,10 @@ Kısmi denge (ana prompt 1.1), sınıf i ve senaryo s için (değerler $ mn, BAC
      S4:    τ_m = τ_TR,c2 + NTM_sınır          (c2: 02a §4.1, AB baskın ve yurt içi kabiliyet zayıfsa İGV kalkar)
      S2/S3: τ_m = (1 − p_AB)·τ_TR,c2 + p_AB·c_AB + NTM_sınır
   İç ikame         ΔD = −ΔM_AB · D/(D + M_AB-dışı),  D = max(YSHİ üretim − ihracat, 0)
-  Üretim, istihdam ΔQ = ΔX_AB + ΔX_diğer + ΔD;   ΔL = ΔQ · L/Q · (1 − θ)
+  PEM kümülasyonu  ΔX_kum = −λ · κ_i · X_kum,i   (yalnız S4; X_kum: PEM ortağına ihracat × ortağın aşağı yönde AB payı,
+                   f3a; κ_i: Türk girdisinin ortağın AB'ye tercihli ürününde menşe kazandıran adım olup olmadığı,
+                   veri/f3_sinif_varsayim.csv; λ: üçgen(0,3; 0,6; 0,9) [H]). GE toplamına eklenir (GE'de yok).
+  Üretim, istihdam ΔQ = ΔX_AB + ΔX_diğer + ΔX_kum + ΔD;   ΔL = ΔQ · L/Q · (1 − θ)
   Cari denge       ΔCA = ΔQ · (1 − m^X)        m^X: I-O 2023 toplam (doğrudan + dolaylı) ithal girdi içeriği
   TÜFE (bp)        ΔTÜFE = EDE_AB,i · τ_m(puan) · ρ
 σ_i: CEPII ProTEE (Fontagné, Guimbard ve Orefice 2022) HS6 ticaret esneklikleri; sınıf içinde TR→AB ihracatı ağırlıklı
@@ -36,6 +39,7 @@ CKE (5 yıl, birikimli; yatırım ithalatı ve ithal girdi düşülmüş) [T]:
           CKE_mali = CA_5 / maliyet (mlr TL, 2026 ort. kur)   [$ mn / mlr TL]
 
 Çıktı: veri/f3_senaryo_sinif.csv (sınıf × senaryo × değişken, P10/P50/P90), veri/f3_senaryo_ozet.csv,
+       (dx_kum, dl_kum, dca_kum: PEM kümülasyonu kanalının kendisi, S4),
        veri/f3_senaryo_grup.csv (bölüm, Faz 3 parçası ve kümülatif parça toplamları; yüzdelikler çekilişlerin toplamından,
        sınıf yüzdeliklerinin toplamı değil), veri/f3_senaryo_aski.csv (S4'te 1/98'in askıya alındığı ve alınmadığı
        çekilişlerde koşullu ortalama ve yüzdelikler; sınıf ve grup), veri/f3_makro_sinif.csv (σ, m^X, EDE, TÜFE ağırlığı, CKE)
@@ -183,14 +187,17 @@ def main():
     # menşe varsayımları: sınıf tablosu, yoksa I-O sektörü PEM riski (Faz 2C)
     pem = pd.read_csv(v("hazirlik_pem_mense.csv")).set_index("io").risk
     va = pd.read_csv(v("f3_sinif_varsayim.csv"), dtype={"kod": str}).set_index("kod")
-    for c in ("risk_s2", "c_roo_s2", "p_uyum_s2", "risk_s3", "c_roo_s3", "p_uyum_s3", "vz_carpani"):
-        d[c] = va[c].reindex(d.index)
+    for c in ("risk_s2", "c_roo_s2", "p_uyum_s2", "risk_s3", "c_roo_s3", "p_uyum_s3", "vz_carpani", "kumulasyon"):
+        d[c] = va[c].reindex(d.index) if c in va else np.nan
     vars_ = d.io.map(pem).fillna("düşük").map(VARSAYILAN_MENSE)
     d["mense_kaynak"] = np.where(d.c_roo_s2.notna(), "sınıf", "varsayılan (I-O PEM riski)")
     for j, c in enumerate(("risk_s2", "c_roo_s2", "p_uyum_s2", "c_roo_s3", "p_uyum_s3")):
         d[c] = d[c].fillna(vars_.str[j])
     d["risk_s3"] = d.risk_s3.fillna(d.risk_s2)
     d["vz_carpani"] = d.vz_carpani.fillna(1.0)
+    d["kumulasyon"] = d.kumulasyon.fillna(0.0)
+    d["x_pem"] = t.x_pem_musd_2024.reindex(d.index).fillna(0)
+    d["x_kum"] = t.x_kum_musd_2024.reindex(d.index).fillna(0)
 
     # I-O: ithal girdi içeriği ve EDE
     m_tot, m_dog = ithal_icerik(a.cache)
@@ -237,7 +244,7 @@ def main():
     sinif_c = rng.lognormal(0, 0.30, (n, K))
     V = {c_: d[c_].to_numpy(float) for c_ in ("x_ab", "m_ab", "sigma", "tau_ab_s4", "tau_ab_s4_tarim_kaybi", "q_gb_itu",
                                               "cabuk_pay", "ce_pay", "tau_tr_c2", "q_gb_itu_m", "yerli_pay", "l_q", "m_x", "ede_ab_bp",
-                                              "c_roo_s2", "p_uyum_s2", "c_roo_s3", "p_uyum_s3")}
+                                              "c_roo_s2", "p_uyum_s2", "c_roo_s3", "p_uyum_s3", "x_kum", "kumulasyon")}
     for k_ in ("x_ab", "m_ab"):
         V[k_] = np.nan_to_num(V[k_])
 
@@ -245,7 +252,7 @@ def main():
         """Ölçeksiz kısmi denge: AB ihracatı ve ithalatı değişimi, fiyat kamaları ve ortak parametreler."""
         if merkez:
             o = dict(sig=np.ones(1), ntm=np.ones(1), ntm_c=np.ones(1), ce=np.full(1, 2.0), pu=np.zeros(1), dl=np.zeros(1),
-                     rho=np.full(1, 0.8), theta=np.full(1, 0.3), tarim=np.zeros(1, bool))
+                     rho=np.full(1, 0.8), theta=np.full(1, 0.3), tarim=np.zeros(1, bool), kum=np.full(1, 0.6))
             ss, sp, sc = np.ones((1, K)), np.zeros((1, K)), np.ones((1, K))
         else:
             o, ss, sp, sc = ortak, sinif_sig, sinif_pu, sinif_c
@@ -254,7 +261,9 @@ def main():
         ntm = f * (V["q_gb_itu"] * o["ntm"][:, None] + V["cabuk_pay"] * o["ntm_c"][:, None]) / 100
         ntm_m = f * V["q_gb_itu_m"] * o["ntm"][:, None] / 100
         ek = np.zeros((len(o["sig"]), K))
+        kum = np.zeros((len(o["sig"]), K))
         if s == "S4":
+            kum = -V["kumulasyon"] * V["x_kum"] * o["kum"][:, None]      # PEM kümülasyonu kaybı (AB dışı ihracat)
             ce = V["ce_pay"] * o["ce"][:, None] / 100
             te = V["tau_ab_s4"] / 100 + ntm + ce
             te_t = np.where(o["tarim"][:, None], V["tau_ab_s4_tarim_kaybi"] / 100 + ntm + ce, te)
@@ -268,7 +277,7 @@ def main():
             te = (1 - pu) * V["tau_ab_s4"] / 100 + V["q_gb_itu"] * pu * cr + ntm + ce
             p_ab, c_ab = PAYLAR[s]["p_ab"], PAYLAR[s]["c_ab"] / 100
             tm = (1 - p_ab) * V["tau_tr_c2"] / 100 + V["q_gb_itu_m"] * p_ab * c_ab + ntm_m
-        return dict(px=V["x_ab"] * ((1 + te) ** (-sg) - 1), pm=V["m_ab"] * ((1 + tm) ** (-sg) - 1), ek=ek,
+        return dict(px=V["x_ab"] * ((1 + te) ** (-sg) - 1), pm=V["m_ab"] * ((1 + tm) ** (-sg) - 1), ek=ek, kum=kum,
                     dlt=np.clip(delta[s] + o["dl"][:, None], 0, 0.6), rho=o["rho"][:, None], theta=o["theta"][:, None],
                     te=te, tm=tm)
 
@@ -284,15 +293,18 @@ def main():
         kj = np.where(gx < 0, gx * V["x_ab"].sum() / np.where(top < 0, top, -1e-9), k_merkez)
         dx_ab = dagit(p["px"], gx, V["x_ab"]) + kj[:, None] * p["ek"]
         dm_ab = dagit(p["pm"], gm, V["m_ab"])
-        dx = dx_ab * (1 - p["dlt"])
+        dx = dx_ab * (1 - p["dlt"]) + p["kum"]
         dd = -dm_ab * V["yerli_pay"]
         dq = dx + dd
-        return dict(dx_ab=dx_ab, dx=dx, dm_ab=dm_ab, dm=dm_ab * V["yerli_pay"], dd=dd, dq=dq,
+        kum = p["kum"] + 0 * dx
+        return dict(dx_ab=dx_ab, dx=dx, dx_kum=kum, dl_kum=kum * V["l_q"] * (1 - p["theta"]), dca_kum=kum * (1 - V["m_x"]),
+                    dm_ab=dm_ab, dm=dm_ab * V["yerli_pay"], dd=dd, dq=dq,
                     dl=dq * V["l_q"] * (1 - p["theta"]), dca=dq * (1 - V["m_x"]),
                     dtufe=V["ede_ab_bp"] * p["tm"] * 100 * p["rho"], te=p["te"] + 0 * dq, tm=p["tm"] + 0 * dq)
 
     # GE çekilişleri: ortak z (S2, S4; ihracat ve ithalat), SH = (üst − alt) / (2 × 1,645); S3 kısmi denge yapısıyla ara değer
     z = rng.standard_normal(n)
+    ortak["kum"] = ucgen(rng, 0.3, 0.6, 0.9, n)     # z'den sonra çekilir: önceki çekilişler değişmez
     hedef, merkez_hedef = {}, {}
     for s_ in ("S2", "S4"):
         for yon, ad in (("TR→AB", "x"), ("AB→TR", "m")):
@@ -317,7 +329,7 @@ def main():
     gruplar.update({f"10-{g[-2:]}": aralik(f"10-{g[-2:]}") for g in PARCALAR})
     gruplar["C"] = np.ones(len(d), bool)
     satirlar, ozet, grup_satir, aski_satir = [], [], [], []
-    deg = ["dx_ab", "dx", "dm_ab", "dm", "dd", "dq", "dl", "dca", "dtufe", "te", "tm"]
+    deg = ["dx_ab", "dx", "dx_kum", "dl_kum", "dca_kum", "dm_ab", "dm", "dd", "dq", "dl", "dca", "dtufe", "te", "tm"]
     for s in ("S2", "S3", "S4"):
         r = sonuc(pe(s), hedef[(s, "x")], hedef[(s, "m")], olcek[s][0])
         rm = sonuc(pm_[s], merkez_hedef[(s, "x")], merkez_hedef[(s, "m")], olcek[s][0])
@@ -327,7 +339,7 @@ def main():
                 satirlar.append(dict(kod=kod, senaryo=s, degisken=dg, p10=q[0, i], p50=q[1, i], p90=q[2, i],
                                      merkez=rm[dg][0, i]))
         for g, sec in gruplar.items():
-            for dg in ("dx_ab", "dx", "dm_ab", "dm", "dq", "dl", "dca", "dtufe"):
+            for dg in ("dx_ab", "dx", "dx_kum", "dl_kum", "dca_kum", "dm_ab", "dm", "dq", "dl", "dca", "dtufe"):
                 q = np.percentile(r[dg][:, sec].sum(axis=1), [10, 50, 90])
                 grup_satir.append(dict(grup=g, senaryo=s, degisken=dg, p10=q[0], p50=q[1], p90=q[2]))
         if s == "S4":   # 1/98 askısına koşullu dağılım (ortalamalar toplanabilir: payları kesin verir)

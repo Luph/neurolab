@@ -13,7 +13,8 @@ S4 artışı (rota A, P50; AB'nin 2026 MFN'si, 2025 TR→AB ticaret ağırlığ�
   TARIM (1/98) satırı → 0 (1/98 sürer); "1/98 kaybı" varyantında tam MFN (bugünkü tercih 0 sayılır: üst sınır, VB-06)
   AKÇT satırı         → 0 (1996 AKÇT Anlaşması sürer)
 S2/S3: sanayi ve İTÜ sanayi bileşeni 0; menşe uyumsuz pay S4 artışını öder (f3e).
-Ek bayraklar: EUDR (Tüzük 2023/1115 Ek I başlıkları), SKDM (veri/skdm_ek1_kn.csv).
+Ek bayraklar: EUDR (Tüzük 2023/1115 Ek I, 2026/2102 ile değişik; 30.12.2027'den eklenen satırlar ayrıca eudr_2027),
+SKDM (veri/skdm_ek1_kn.csv).
 
 Çıktı: veri/f3_ab_tarife_kn8.csv, veri/f3_ab_tarife_sinif.csv
 """
@@ -30,14 +31,23 @@ import yollar
 USD_EUR_2024 = 1.0824                     # ECB yıllık ortalama referans kur ($/€), 2024 [V]
 ALKOL = {"2204": 12, "2205": 15, "2206": 8, "2207": 95, "2208": 40}
 AVE_TAVAN = 200.0
-# EUDR Ek I (Tüzük 2023/1115), HS önekleri [V]
-EUDR = ("010221", "010229", "0201", "0202", "020610", "020622", "020629", "160250", "4101", "4104", "4107",
+# EUDR Ek I (Tüzük 2023/1115), Yetki Devrine Dayanan Tüzük (AB) 2026/2102 ile değişik hâli (RG L 17.9.2026; 18.9.2026'dan),
+# HS/KN önekleri [V]. 2026/2102 sığır derisini (ex 4101, ex 4104, ex 4107) ve ex 4010, ex 4016 kauçuk eşyayı çıkardı; 4012'yi
+# 4012 90 30'a, 1201'i 1201 90 00'a, 9401'i ahşap oturma yerlerine daralttı. "ex" kayıtların istisnaları (ambalaj,
+# geri kazanılmış kâğıt, kullanılmış eşya) öneklerle ayrılamaz: pay üst sınırdır.
+EUDR = ("010221", "010229", "0201", "0202", "020610", "020622", "020629", "160250",
         "1801", "1802", "1803", "1804", "1805", "1806", "0901",
-        "120710", "1511", "151321", "151329", "230660", "290545", "291570", "291590", "291615", "3401",
+        "120710", "1511", "151321", "151329", "230660", "290545", "291570", "291590",
         "382311", "382312", "382319", "382370",
-        "4001", "4005", "4006", "4007", "4008", "4010", "4011", "4012", "4013", "4015", "4016", "4017",
-        "1201", "120810", "1507", "2304",
-        "44", "47", "48", "49", "9401", "940330", "940340", "940350", "940360", "940391", "940610")
+        "4001", "4005", "4006", "4007", "4008", "4011", "40129030", "4013", "4015", "4017",
+        "12019000", "120810", "1507", "2304",
+        "44", "47", "48", "49", "940131", "940141", "940161", "940169", "940180", "940191",
+        "940330", "940340", "940350", "940360", "940391", "940610")
+# 2026/2102'nin eklediği satırlar 30.12.2027'den uygulanır (T2028 ve T2029'da yürürlükte) [V]: dondurulmuş sığır dili, hazır
+# kahve (2101 11 00) ve palm türevleri. Palm türevleri "ex" (yalnız palm kökenli) olduğundan pay üst sınırdır; kalıntı
+# başlıklar ex 3824 99 ve ex 3907 29 hesaba katılmadı [H].
+EUDR_2027 = ("02062100", "21011100", "151620", "151800", "152000", "290516", "29051700", "29051900", "291539", "291615",
+             "29161910", "292119", "29239000", "29241900", "34011100", "340120")
 SAYI = r"(\d+(?:[.,]\d+)?)"
 
 
@@ -151,13 +161,14 @@ def main():
     mfn = t.mfn_ave.fillna(t.adval)                    # AVE çevrilemeyen satırda ad valorem kısım (alt sınır)
     t["artis_s4"] = np.select([t.rejim.eq("GB"), t.rejim.eq("ITU")], [mfn, t.adval], 0.0)
     t["artis_s4_tarim_kaybi"] = np.where(t.rejim.eq("TARIM"), mfn, t.artis_s4)
-    t["eudr"] = t.cn8.apply(lambda k: any(k.startswith(p) for p in EUDR))
+    t["eudr_2027"] = t.cn8.apply(lambda k: any(k.startswith(p) for p in EUDR_2027))
+    t["eudr"] = t.cn8.apply(lambda k: any(k.startswith(p) for p in EUDR)) | t.eudr_2027
     sk = pd.read_csv(v("skdm_ek1_kn.csv"), dtype={"kn": str})
     t["skdm"] = t.cn8.apply(lambda k: any(k.startswith(p) for p in sk.kn))
     t["ave_eksik"] = t.mfn_ave.isna() & ~t.duty_type.isin(["compound_EA"]) & t.duty_type.ne("adval")
 
     sut = ["cn8", "nace2", "rejim", "agirlik_f3", "x_ab_meur", "q_100kg", "uv", "uv_kaynak", "duty_type", "duty_text",
-           "tarife_kaynak", "adval", "ozgul_ave", "mfn_ave", "artis_s4", "artis_s4_tarim_kaybi", "eudr", "skdm"]
+           "tarife_kaynak", "adval", "ozgul_ave", "mfn_ave", "artis_s4", "artis_s4_tarim_kaybi", "eudr", "eudr_2027", "skdm"]
     t[sut].round(4).to_csv(v("f3_ab_tarife_kn8.csv"), index=False)
 
     satirlar = []
@@ -182,6 +193,7 @@ def main():
             ust = ust[ust.artis_s4 >= 10].head(3)
             r["tepe_satirlar"] = "; ".join(f"{s.cn8} %{s.artis_s4:.1f} (€{s.x_ab_meur:.1f} mn)" for s in ust.itertuples())
             r["eudr_payi"] = x[d.eudr].sum() / w
+            r["eudr_2027_payi"] = x[d.eudr_2027].sum() / w
             r["skdm_payi"] = x[d.skdm].sum() / w
         satirlar.append(r)
     s = pd.DataFrame(satirlar).set_index("kod")

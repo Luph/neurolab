@@ -233,6 +233,10 @@ Sınırlamalar: AB'nin spesifik vergileri ve tarım bileşenleri dahil değil (t
 | V-37 | KN8 → NACE eşlemesi (Faz 3) | Birden çok sınıfa düşen KN8'de CPA 2.2 kodunun CPA 2.1'de aynen sürdüğü bağlantı; yoksa aynı bölümdeki hedefler; yoksa eşit pay (`agirlik_f3`). Faz 0–2 eşit pay kullandı (düzeltme D-1) | `[T]` Faz 3 |
 | V-38 | Grup toplamlarının dağılımı (Faz 3) | Bölüm, parça ve kümülatif parça toplamlarının P10–P50–P90 değerleri her çekilişteki toplamın dağılımından (`veri/f3_senaryo_grup.csv`); sınıf yüzdelikleri toplanmıyor. S4'te 1/98 askısının etkisi, askı çekilişlerinin koşullu ortalamasıyla raporlanıyor (`veri/f3_senaryo_aski.csv`) | `[T]` Faz 3 |
 | V-39 | Eylem takvimi (Faz 3) | Tarihler T'ye göre; T2028'de T−18 (1.7.2026) geçmişte kaldığı için hazırlık eylemleri "hemen", 2026'nın son çeyreğinde başlıyor | `[H]` Faz 3 |
+| V-40 | PEM kümülasyonu kanalı (Faz 3, parça 2) | Yalnız S4'te: kayıp = λ · κ · maruziyet; maruziyet = TR'nin PEM ortaklarına ihracatı × ortağın aşağı yönde (tekstilde Fasıl 61–63) AB'ye ihracat payı; λ ~ üçgen(0,3; 0,6; 0,9); κ: dokuma ve örme kumaş 1, teknik ve diğer tekstil 0,3, diğerleri 0. Genel denge toplamının üstüne eklenir (PEM Ek I md. 8(1)(a)) | `[H]` parametreler; maruziyet `[T]` |
+| V-41 | Tekstil, giyim ve deride menşe (Faz 3, parça 2) | Revize PEM ürüne özgü kuralları (Karar 1/2023); giyimde p_uyum 0,85–0,88 (Asya kumaşı payı %10–15), c_RoO %2–2,5; kumaş, iplik, deri ve ayakkabıda 0,92 ve %1,5 | `[H]`; kurallar `[V]` |
+| V-42 | Geri ödeme yasağı (Faz 3, parça 2) | PEM Ek I md. 16 (50–63. fasıllar) S2'de ek maliyet sayılmadı: AB'ye A.TR ihracatında DİR girdisine bugün de telafi edici vergi alınıyor | `[V]`/`[H]` |
+| V-43 | Giyim ve ayakkabıda KDV takası (Faz 3, parça 2) | S4'te KDV giyimde %10 → %8,7, ayakkabıda %5,6 (bütün menşeler); TÜFE şokunu tasarım gereği siler; net mali maliyet Faz 2A merkez değeri (laspeyres, c2): $319 mn + $63 mn ≈ 17,5 mlr TL/yıl | `[T]` Faz 2A |
 
 ---
 

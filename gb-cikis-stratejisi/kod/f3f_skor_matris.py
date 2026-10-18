@@ -251,8 +251,9 @@ def main():
             degisen = []
             if "arketip" in alan:
                 ark_ = list(alan["arketip"]) + [""]
-                if (d.at[kd, "arketip_birincil"], d.at[kd, "arketip_ikincil"] or "") != (ark_[0], ark_[1]):
-                    degisen.append(f"arketip {d.at[kd, 'arketip_birincil']}→{ark_[0]}")
+                eski = (d.at[kd, "arketip_birincil"], d.at[kd, "arketip_ikincil"] if isinstance(d.at[kd, "arketip_ikincil"], str) else "")
+                if eski != (ark_[0], ark_[1]):
+                    degisen.append(f"arketip {'/'.join(x for x in eski if x)}→{'/'.join(x for x in ark_[:2] if x)}")
                 d.at[kd, "arketip_birincil"], d.at[kd, "arketip_ikincil"] = ark_[0], ark_[1]
             for c in ("durus", "tarife_yolu", "ana_araclar", "ab_muzakere"):
                 if c in alan:

@@ -1,0 +1,90 @@
+# 13–15 bölüm belgesinin yapısal alanları. Metin kartlar/13-15_metin/'de; f3g_kartlar.py okur.
+# ortak_eylemler: [kimlik, araç, parametre, sorumlu, hukuki araç, bütçe, başlangıç → bitiş, performans koşulu, sunset, KPI].
+# defter_ortak: ortak eylemlerin T+5'teki yıllık etkisi (sınıf defteriyle aynı birimler). E-13-04'ün TÜFE etkisi sınıf
+# defterlerinde ("-sok_s4": sınıfın S4 TÜFE şokunu siler; f3g veriden çözer), net mali maliyeti burada.
+bolumler:
+  "13": Tekstil ürünleri
+  "14": Giyim eşyaları
+  "15": Deri ve ilgili ürünler
+belge:
+  parca: 2
+  sonraki: "Faz 3 parça 3 (16–18: ağaç, kağıt, basım)"
+  ortak_eylemler:
+    - - E-13-01
+      - PEM kümülasyonunun sürekliliği
+      - "(i) S2 ve S3 metninde PEM Sözleşmesi'ne dinamik atıf ve AB–Türkiye–PEM ortakları kümülasyon bildiriminin (PEM Ek I md. 8(2)) T'de yayımlanması; (ii) Fas ve Tunus ile STA'ların revize PEM kurallarına taşınması (H-M8); (iii) S4'te kümülasyon kaybına karşı ortakta baskı + konfeksiyon yolu (dokuma giyim) için ihracatçı rehberi"
+      - "Ticaret Bakanlığı (AB GM, Anlaşmalar GM), Dışişleri Bakanlığı (AB Başkanlığı)"
+      - "S2 menşe protokolü; TR–Fas ve TR–Tunus Ortak Komite kararları"
+      - İdari
+      - Hemen → T
+      - Kümülasyon bildirimi T'de yürürlükte; Fas ve Tunus ile revize kurallar
+      - Yok (anlaşmayla kalıcı)
+      - "PEM ortaklarına kumaş ihracatı T+1'de T−12 düzeyinin en az %95'i (S2)"
+    - - E-13-02
+      - "Menşe ve izlenebilirlik veri altyapısı"
+      - "Firma bazında kumaş menşe haritası ve uzun dönemli tedarikçi beyanı (H-M6); Asya kumaşıyla yapılan ihracat için PEM kumaşına geçiş ve Türkiye'de baskı kapasitesi; aynı altyapıda pamuk izlenebilirliği (zorla çalıştırma yasağı, Tüzük 2024/3015) ve dijital ürün pasaportu hazırlığı"
+      - "Ticaret Bakanlığı (İhracat GM, Gümrükler GM), İHKİB, İTHİB, TİM"
+      - "Bakanlık genelgesi; ihracatçı birlikleri programı"
+      - "≈ 0,05 mlr TL/yıl `[T]`"
+      - Hemen → T+24
+      - Menşe haritası tamamlanan ihracatçı sayısı
+      - T+24
+      - "S2'de AB'ye giyim ihracatının menşe ispatlı payı ≥ %90"
+    - - E-13-03
+      - "S4 geçiş tamponu: kısa çalışma ve işgücü uyumu (yalnız S4)"
+      - "AB'ye ihracatı yıllık %15'ten fazla düşen giyim ve ev tekstili firmalarında kısa çalışma ödeneği (en çok 6 ay; bölgesel kriz kararı: İstanbul, Mardin–Batman, Şanlıurfa–Diyarbakır, Tekirdağ); İŞKUR mesleki eğitim ve yeniden yerleştirme; Eximbank'ın piyasa primli kredi sigortası"
+      - "Çalışma ve Sosyal Güvenlik Bakanlığı, İŞKUR, Türk Eximbank"
+      - "4447 sayılı Kanun ek md. 2 (sektörel ve bölgesel kriz); İŞKUR Yönetim Kurulu kararı"
+      - "≈ 2,3 mlr TL/yıl × 2 yıl `[T]`"
+      - T → T+24
+      - Ödeneğin sürdüğü firmada istihdamın korunması
+      - T+24
+      - "Kapsamdaki firmalarda T+2'de istihdam ≥ T−12 düzeyinin %90'ı"
+    - - E-13-04
+      - "Giyim ve ayakkabıda KDV takası (yalnız S4)"
+      - "KDV giyimde %10 → %8,7, ayakkabıda %10 → %5,6; bütün menşelere eşit (Faz 2A, T-A). AB menşeli ürüne gelen c2 tarifesinin geliri indirimi finanse eder"
+      - "Hazine ve Maliye Bakanlığı (Gelir Politikaları GM), Ticaret Bakanlığı"
+      - "Cumhurbaşkanı Kararı (3065 sayılı Kanun md. 28)"
+      - "Net ≈ 17,5 mlr TL/yıl (c2 gümrük geliri düşülü) `[T]`"
+      - T → T+36
+      - Giyim ve ayakkabı TÜFE alt endekslerinin yıllık artışı ≤ genel TÜFE
+      - T+36 (S2'ye geçişte kalkar)
+      - "S4'te 13–15'in TÜFE etkisi ≤ 4 bp"
+    - - E-13-05
+      - Pazar çeşitlendirme
+      - "Birleşik Krallık STA'sının yükseltilmesi ve AB–TR–BK kümülasyonu (H-T4); giyimde yakın tedarik ve marka programı (H-Y4): BK, ABD, Körfez ve Orta Asya'da ürüne özgü olmayan pazar geliştirme"
+      - "Ticaret Bakanlığı (Anlaşmalar GM, İhracat GM), TİM"
+      - "STA müzakeresi; İhracat Destekleri Kararı"
+      - "≈ 0,1 mlr TL/yıl `[T]`"
+      - Hemen → T+36
+      - Yeni pazarlarda alıcı sayısı
+      - T+36
+      - "Giyim ihracatında AB dışı pazarların payı T+3'te +5 puan"
+    - - E-13-06
+      - "Tekstil ve giyimde S2 hücum gündemi"
+      - "(i) PEM dışı kumaşla üretilen giyim için menşe kotası (yıllık AB'ye giyim ihracatının ≈ %10'u kadar; CETA'daki menşe kotası emsal `[D?]`); (ii) örme giyimde de baskı + konfeksiyon seçeneği; (iii) ev tekstili ve sentetik iplikte ticaret savunması öncesi istişare mekanizması"
+      - "Ticaret Bakanlığı"
+      - "S2 anlaşma metni (menşe protokolü, ticaret savunması bölümü)"
+      - İdari
+      - Hemen → T
+      - S2 metninde menşe kotası
+      - —
+      - "Kota kapsamındaki giyimin AB'ye ihracatı T+5'te ≥ T−12 düzeyi"
+  defter_ortak:
+    E-13-02: {mali_s2: 0.05, mali_s4: 0.05, ca_s2: 50, ca_s4: 0}
+    E-13-03: {mali_s2: 0, mali_s4: 2.3}
+    E-13-04: {mali_s2: 0, mali_s4: 17.5}
+    E-13-05: {mali_s2: 0.1, mali_s4: 0.1}
+    E-13-06: {ca_s2: 100, ca_s4: 0}
+  veri_bosluklari:
+    - "VB-36: firma düzeyinde kumaş menşei (giyim ihracatında PEM dışı kumaşın payı; p_uyum'un kalibrasyonu)"
+    - "VB-37: PEM ortaklarında Türk kumaşının AB'ye giden üretimdeki gerçek payı (kümülasyon maruziyeti üst sınır; κ ve λ `[H]`)"
+    - "VB-38: tekstil ve giyimde 2025 istihdam daralmasının sınıf düzeyinde dağılımı (SGK yalnız bölüm düzeyinde)"
+    - "VB-39: deri eşya ve çantada KDV oranı (takasın kapsamı); hızlı modada sınır gecikmesinin maliyeti"
+    - "VB-32 (sürüyor): DTÖ bağlı oranları, satır düzeyi. 13–15'te bağlayıcı değil: c2 uygulanan MFN oranlarını değiştirmiyor, yalnız AB tercihini kaldırıyor (giyimde satırların %3,7'si bağlı)"
+  varsayimlar:
+    - "V-35 (güncellendi): SS boyut puanları ve ağırlıkları `[H]` (veri/f3_ss_boyutlar.csv; 10–15 gözden geçirildi, diğerleri ilk tahmin)"
+    - "V-40: PEM kümülasyonu kanalı yalnız S4'te; kayıp = λ · κ · maruziyet, λ ~ üçgen(0,3; 0,6; 0,9), κ: kumaş 1, teknik ve diğer tekstil 0,3, diğerleri 0 `[H]`; genel denge toplamına eklenir"
+    - "V-41: tekstil, giyim ve deride menşe parametreleri revize PEM kurallarından (Karar 1/2023): giyimde p_uyum 0,85–0,88 (Asya kumaşı payı %10–15), kumaşta 0,92 `[H]`"
+    - "V-42: geri ödeme yasağı (PEM Ek I md. 16) bugün AB'ye A.TR ihracatında telafi edici vergi olarak uygulandığından S2'de ek maliyet sayılmadı"
+    - "V-43: KDV takası (E-13-04) giyim ve ayakkabının S4 TÜFE şokunu tasarım gereği siler; net mali maliyet Faz 2A merkez değeri (laspeyres, c2)"

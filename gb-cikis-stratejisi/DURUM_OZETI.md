@@ -1,34 +1,37 @@
-# Durum özeti — Faz 3, parça 1 sonu (18 Ekim 2026)
+# Durum özeti — Faz 3, parça 2 sonu (18 Ekim 2026)
 
-Yeni bir sohbette devam etmek için ana prompt ile bu dosyayı birlikte verin. Ayrıntılar: [`nace_kartlar_10-12.md`](nace_kartlar_10-12.md), [`02c_hazirlik.md`](02c_hazirlik.md), [`02b_secenekler_hukuk.md`](02b_secenekler_hukuk.md), [`02a_politika_uzayi.md`](02a_politika_uzayi.md), [`01_teshis.md`](01_teshis.md).
+Yeni bir sohbette devam etmek için ana prompt ile bu dosyayı birlikte verin. Ayrıntılar: [`nace_kartlar_13-15.md`](nace_kartlar_13-15.md), [`nace_kartlar_10-12.md`](nace_kartlar_10-12.md), [`02c_hazirlik.md`](02c_hazirlik.md), [`02b_secenekler_hukuk.md`](02b_secenekler_hukuk.md), [`02a_politika_uzayi.md`](02a_politika_uzayi.md), [`01_teshis.md`](01_teshis.md).
 
-**Çerçeve (değişmedi).** Çıkış yönü veri; AB hasmane; üyelik perspektifi yok. İki takvim: T2028 ve T2029.
+**Çerçeve (değişmedi).** Çıkış yönü veri; AB hasmane; üyelik perspektifi yok. İki takvim: T2028 ve T2029. Önerilen bitiş durumu S2.
 
-**Faz 2 (özet)**
-- 2A: Yerliye özgü ÖTV indirimi GATT III:2 ihlali; eşdeğeri, bütün menşelere eşit ÖTV/KDV takası. Aktif S4 (c2 + girdide sıfır + takas): TÜFE 3,3 bp.
-- 2B (genel denge): S4'te AB'ye ihracat −%19 (−32/−5); S2'de −%11. Öneri: bitiş durumu S2. T2029'da ITA geçici uygulamada; T2028'de karar ve dondurma.
-- 2C: 51 sessiz hamle. Son tarihler: XXVIII:5 31.12.2026, DS629 24.11.2026. Makro kapı: net rezerv $41,6 mlr; kurallı ilan için $68 mlr gerekli.
+**Faz 2 (özet).** Yerliye özgü ÖTV indirimi GATT III:2 ihlali; eşdeğeri bütün menşelere eşit ÖTV/KDV takası. Genel dengede S4'te AB'ye ihracat −%19, S2'de −%11. 51 sessiz hamle; son tarihler XXVIII:5 31.12.2026, DS629 24.11.2026.
 
-**Faz 3 altyapısı (230 sınıfın hepsi için).**
-- Ticaret, yapı, PCI, AB tarifesi (KN8, spesifik vergilerin AVE'si), senaryolar (Monte Carlo; toplamlar genel denge sonucuna kalibre), skorlar ve ana matris (`veri/nace_matris.csv`).
-- Yeni: bölüm ve parça toplamlarının yüzdelikleri çekilişlerin toplamından; 1/98 askısına koşullu sonuçlar (V-38).
-- Belge üretimi: elle yazılmış Türkçe metin (`kartlar/10-12_metin/`), sayılar ve tablolar veriden (`kod/f3g_kartlar.py`). Sonraki parçalar aynı yapıyla yazılacak.
-- İmalat geneli (geçici): S4'te AB'ye ihracat −%19,1, net istihdam −41 bin (P10 −65 bin), TÜFE 69 bp; S2'de −22 bin, 11 bp.
-- Düzeltmeler: D-1 KN8 ağırlıkları, D-2 KKTC akımları AB dışı, D-3 kaybı %5'i aşan sınıf P50'de 9, P10'da 15.
+**Faz 3 altyapısı (230 sınıf).** Ticaret, yapı, PCI, AB tarifesi, Monte Carlo senaryoları, skorlar, ana matris. Yeni: PEM kümülasyonu kanalı (yalnız S4), bölge tablosu, parçalar arası kümülatif defter. İmalat geneli (geçici): S4'te istihdam −46 bin (P10 −70 bin), TÜFE 69 bp; S2'de −24 bin, 11 bp.
 
-**Parça 1: 10–12 (33 sınıf; belge düzyazı olarak yeniden yazıldı).**
-- AB'ye ihracatın %75'i tarım rejiminde (1/98), %24'ü İTÜ'de; S4'te AB tarifesi ortalama %3,3, 1/98 askıdaysa %11,5.
-- Medyan etkiler küçük: S2'de AB'ye ihracat −$202 mn, istihdam −299; S4'te −$406 mn ve −106 (iç ikame dengeliyor).
-- Asıl risk 1/98'in askıya alınması (olasılık 0,25): AB'ye ihracat −$1,72 mlr, istihdam −3,7 bin, cari denge −$0,86 mlr; ek kaybın %77'si 10.39'da (fındık, kuru meyve). Öncelik E-10-01.
-- İTÜ'de maliyet sanayi bileşeni (%7,7–14,2; sigarada %57,6). S2'de menşe kuralı bisküvi, ekmek ve şekerlemede kaybın üçte ikisini bırakıyor; çözüm DİR'de eşdeğer eşya ve PSR (E-10-02).
-- Özerklik temettüsü: kakao ara ürünlerinde bütün menşelere MFN %0. S4'te bebek maması ve ısıtılmış tütünde %0.
-- Defter: TÜFE S2 0,8, S4 4,7 bp (50 bp bütçe); mali S2 0,83, S4 1,69 mlr TL/yıl; cari denge önlem katkısı S2 +$0,07 mlr.
-- Olumsuz bulgular: sigarada AB pazarı S4'te kapanıyor, S2 de çözmüyor; fındık kaldıracı tarife değil arz güvenliği.
+**Parça 1: 10–12 (33 sınıf).** Asıl risk 1/98'in askıya alınması (olasılık 0,25): AB'ye ihracat −$1,7 mlr. S4 medyan etkileri küçük.
+
+**Parça 2: 13–15 (21 sınıf).**
+- 1,24 milyon çalışan (imalatın %25'i); ihracat $35,9 mlr, %48'i AB'ye; tamamı GB sanayi rejiminde. S4'te AB tarifesi %10,2, giyimde %11,8.
+- S4: istihdam −39 bin (P10 −61 bin), imalattaki S4 kaybının %85'i; dış giyim −11,9 bin, iç giyim −9,4 bin. Cari denge −$2,6 mlr. S2'de −14 bin.
+- Yeni kanal: PEM ortaklarına (Fas, Tunus, Balkanlar) kumaş ihracatı $1,7 mlr, AB'ye dönen maruziyet $1,1 mlr. S4'te kümülasyon düşüyor (PEM md. 8): −$0,67 mlr, −4,8 bin istihdam. E-13-01 ilk müzakere talebi.
+- S2'de menşe: çift dönüşüm; Asya kumaşlı giyim (%10–15) tercih dışı. Geri ödeme yasağı yeni maliyet değil (TEV bugün de var). Hücum: menşe kotası, örme giyimde baskı seçeneği.
+- TÜFE: c2 ile S4 şoku 15,6 bp; giyim ve ayakkabıda KDV takasıyla 3,6 bp. Takasın net maliyeti 17,5 mlr TL/yıl.
+- Bölgeler: Mardin–Batman–Şırnak–Siirt'te 13–15 imalat istihdamının %78'i.
+- Duruşlar: 11 Geliştir, 2 Dönüştür (dış giyim, tabaklama), 3 Yönetilen uyum (iç giyim, diğer giyim, triko), 5 Koru.
+- Olumsuz bulgular: S4'te giyim kaybı önlenemiyor, ancak yumuşatılabiliyor. Kümülasyon tahmini üst sınır (κ, λ `[H]`).
+
+**Kümülatif defter (10–15, 54 sınıf).** TÜFE S2 2,4, S4 8,2 bp (50 bp bütçe). Mali S2 1,65, S4 22,8 mlr TL/yıl (%0,03 GSYH). Cari denge S4 P50 −$2,75 mlr. İstihdam S4 P50 −40 bin.
+
+**Düzeltmeler.**
+- D-4: Tüzük 2026/2102 sığır derisini EUDR'den çıkardı; parça 1 metni düzeltildi.
+- D-5: parça 1'in S2 sayıları çok az değişti.
+- D-6: Faz 2'nin giyim tahmini (−59 bin) geçersiz.
 
 **Açık konular.**
-- Veri boşlukları: VB-02, 04, 06, 08–12, 14–17, 21–27, 30–35. Satır düzeyi bağlı oranlar (VB-32) 13. bölümden itibaren gerekli.
-- Arketip kuralları 13–33 için ilk öneri; her parçada gözden geçirilecek.
+- Veri boşlukları: VB-02, 04, 06, 08–12, 14–17, 21–27, 30–39. Önemlileri: VB-36 firma kumaş menşei; VB-37 kümülasyon maruziyeti.
+- VB-32 (bağlı oranlar) 13–15'te bağlayıcı değil.
+- 23.11 ve 23.14'te istihdam payı tanımsız; parça 5'te bakılacak.
 
-**Sonraki adım.** Faz 3 parça 2: 13 Tekstil, 14 Giyim, 15 Deri (21 sınıf). Öncelik giyim: menşe (çift dönüşüm), S4'te en büyük istihdam kaybı ve takas.
+**Sonraki adım.** Faz 3 parça 3: 16 Ağaç, 17 Kağıt, 18 Basım (EUDR ahşap ve kâğıt; SKDM yok).
 
-İLERLEME: Faz 3 parça 1 / 16 tamamlandı (33 / 230 sınıf) — SONRAKİ ADIM: Faz 3 parça 2 (13–15); DEVAM bekleniyor.
+İLERLEME: Faz 3 parça 2 / 16 tamamlandı (54 / 230 sınıf) — SONRAKİ ADIM: Faz 3 parça 3 (16–18); DEVAM bekleniyor.

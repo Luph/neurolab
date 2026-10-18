@@ -1,34 +1,55 @@
-kod,mense_kurali,risk_s2,c_roo_s2,p_uyum_s2,risk_s3,c_roo_s3,p_uyum_s3,vz_carpani,deger_zinciri,dir_bagimliligi,not
-10.11,"Fasıl 2: Fasıl 1–2 malzemeleri tamamen elde edilmiş; ithal canlı hayvandan et menşe kazanmaz (1/98 rejiminde bugün de geçerli)",D,1.5,0.90,D,2.0,0.85,1.0,nihai,orta,"AB'ye ihracat SPS izniyle sınırlı; TARIM payı %80, menşe kuralı bugün de uygulanıyor"
-10.12,"Fasıl 2 (0207): tamamen elde edilmiş",D,1.5,0.90,D,2.0,0.85,1.0,nihai,düşük,"AB'ye kanatlı eti ihracatı SPS nedeniyle yok denecek kadar az"
-10.13,"1601–1602: Fasıl 1, 2 ve 16 malzemeleri tamamen elde edilmiş",D,1.5,0.90,D,2.0,0.85,1.0,nihai,düşük,
-10.20,"Fasıl 3 ve 1604–1605: tamamen elde edilmiş (yetiştiricilikte yumurta/yavru TR'de)",D,1.5,0.90,D,2.0,0.85,1.1,nihai,düşük,"Çabuk bozulan; AB perakende zincirlerine bağımlı. 1/98 balıkçılık tavizleri"
-10.31,"2004–2005: Fasıl 7 malzemesi tamamen elde edilmiş",D,1.5,0.90,D,2.0,0.85,1.0,nihai,düşük,
-10.32,"2009: aynı başlık dışı; meyve tamamen elde edilmiş",D,1.5,0.90,D,2.0,0.85,1.1,ara,düşük,"Konsantre AB dolumcularına ara girdi"
-10.39,"Fasıl 8 ve 20: meyve/fındık tamamen elde edilmiş; şeker ağırlık sınırı (2008)",D,1.5,0.90,D,2.0,0.85,1.1,ara,düşük,"Fındık AB şekerleme sanayisine ara girdi; alıcı yoğunlaşması yüksek (karşılıklı bağımlılık)"
-10.41,"1507–1515: aynı alt başlık dışı malzemeden; ham yağ ithalatından rafine yağ menşe kazanır",D,1.5,0.90,O,3.0,0.80,1.0,ara,yüksek,"DİR ile ithal ham ayçiçeği yağı ve tohum; AB payı küçük"
-10.42,"1517: Fasıl 15 ve 4 malzemeleri ağırlık sınırı",O,2.5,0.85,O,3.5,0.75,1.0,ara,orta,
-10.51,"Fasıl 4: Fasıl 4 malzemeleri tamamen elde edilmiş",D,1.5,0.90,D,2.0,0.85,1.0,nihai,düşük,"Peynir AB'ye sınırlı (SPS ve 1/98 kotaları)"
-10.52,"2105: başlık değişikliği; Fasıl 4 ve şeker ağırlık sınırları",D,1.5,0.90,O,2.5,0.85,1.0,nihai,düşük,
-10.61,"Fasıl 11 ve 1904: tahıl tamamen elde edilmiş (makarnalık buğday istisnası 1904'te)",O,2.5,0.85,O,3.5,0.75,1.0,ara,yüksek,"Un ve bulgur ihracatı DİR'de ithal (Rus) buğdayla; AB'ye giden pay %8"
-10.62,"1108: tahıl tamamen elde edilmiş; 1702 glikoz: başlık değişikliği (ithal mısırdan nişasta → glikoz menşe kazanır)",D,1.5,0.90,O,2.5,0.85,1.1,ara,orta,"Glikoz şurubu AB gıda sanayisine ara girdi; AB MFN %16"
-10.71,"1905: Fasıl 11 malzemesi kullanılamaz (un menşeli olmalı; DİR'deki Rus buğdayı unu menşesiz)",O,3.0,0.80,O,3.5,0.75,1.0,nihai,yüksek,"Yerli buğdaya geçiş maliyeti c_RoO'nun ana bileşeni"
-10.72,"1905: Fasıl 11 malzemesi kullanılamaz (un menşeli olmalı); şeker ağırlık sınırı",O,3.0,0.80,O,3.5,0.75,1.0,nihai,yüksek,"Bisküvi ihracatı DİR buğdayı ve şekeriyle; AB için yerli buğday ve şeker gerekir"
-10.73,"1902: tahıl tamamen elde edilmiş, makarnalık buğday ve türevleri hariç (ithal durum serbest)",D,1.5,0.90,D,2.0,0.85,1.0,nihai,yüksek,"Kural ithal makarnalık buğdaya izin veriyor; AB payı %3"
-10.81,"1701: Fasıl 17 malzemesi menşeli",D,1.5,0.90,D,2.0,0.85,1.0,ara,düşük,"Pancar şekeri yerli; ihracat kotalı ve küçük"
-10.82,"1704 ve 1806: başlık değişikliği; menşesiz şeker ve Fasıl 4 malzemesi ağırlıkça %40 (birlikte %60) sınırı",O,2.5,0.85,O,3.5,0.75,1.0,nihai,yüksek,"DİR'de ithal ham şeker kullanan şekerlemede sınır aşılır; kakao (Fasıl 18) serbest. EUDR kakao özen yükümlülüğü ayrıca"
-10.83,"0901 ve 2101: başlık değişikliği; ithal kahve çekirdeğinden kavrulmuş/hazır kahve menşe kazanır",D,1.5,0.90,D,2.0,0.85,1.0,nihai,orta,"EUDR kahve özen yükümlülüğü"
-10.84,"2103 ve 2209: başlık değişikliği (hardal unu istisnası)",D,1.5,0.90,D,2.5,0.85,1.0,nihai,orta,
-10.85,"1902 20 ve 2104: Fasıl 2, 3 ve 16 malzemeleri tamamen elde edilmiş; tahıl kuralı",O,3.0,0.80,O,4.0,0.70,1.0,nihai,orta,
-10.86,"1901 10 ve 2104 20: Fasıl 4 ve tahıl malzemeleri ağırlık/menşe sınırları",O,2.5,0.85,O,3.5,0.75,1.0,nihai,orta,
-10.89,"2106 ve 2102: başlık değişikliği; şeker ve Fasıl 4 ağırlık sınırları",D,2.0,0.85,O,3.0,0.80,1.0,ara,orta,"En büyük kalem 2106 90 92 (AB MFN %12,8)"
-10.91,"2309: tahıl, şeker pancarı ve Fasıl 2–4 malzemeleri tamamen elde edilmiş; ağırlık sınırı",D,1.5,0.90,D,2.0,0.85,1.0,ara,yüksek,"AB'ye ihracat çok küçük; ithal soya küspesi ve mısıra bağımlı"
-10.92,"2309 10: aynı",D,1.5,0.90,D,2.0,0.85,1.0,nihai,orta,
-11.01,"2208: başlık değişikliği (2207–2208 hariç); üzüm türevleri tamamen elde edilmiş (rakı: yerli suma)",D,1.5,0.90,D,2.0,0.85,1.0,nihai,düşük,"AB MFN çoğu alkollü içkide sıfır"
-11.02,"2204: üzüm ve türevleri tamamen elde edilmiş",D,1.5,0.90,D,2.0,0.85,1.0,nihai,düşük,
-11.03,"2206: başlık değişikliği; meyve tamamen elde edilmiş",D,1.5,0.90,D,2.0,0.85,1.0,nihai,düşük,
-11.04,"2205: başlık değişikliği; üzüm türevleri tamamen elde edilmiş",D,1.5,0.90,D,2.0,0.85,1.0,nihai,düşük,
-11.05,"2203: başlık değişikliği (ithal malttan bira menşe kazanır)",D,1.5,0.90,D,2.0,0.85,1.0,nihai,düşük,"AB MFN sıfır"
-11.06,"1107: tahıl tamamen elde edilmiş",D,1.5,0.90,D,2.0,0.85,1.0,ara,orta,
-11.07,"2201–2202: başlık değişikliği; şeker %40 ağırlık sınırı; meyve suyu menşeli",D,1.5,0.90,O,2.5,0.85,1.0,nihai,düşük,
-12.00,"2402: başlık 2401 tütününün ağırlıkça en az %70'i menşeli (Amerikan harmanı ithal Virginia/Burley içerir)",Y,5.0,0.40,Y,6.0,0.30,1.2,nihai,yüksek,"Çok uluslu üretim üssü; AB arzını AB fabrikalarına kaydırma seçeneği var"
+kod,mense_kurali,risk_s2,c_roo_s2,p_uyum_s2,risk_s3,c_roo_s3,p_uyum_s3,vz_carpani,deger_zinciri,dir_bagimliligi,not,kumulasyon
+10.11,Fasıl 2: Fasıl 1–2 malzemeleri tamamen elde edilmiş; ithal canlı hayvandan et menşe kazanmaz (1/98 rejiminde bugün de geçerli),D,1.5,0.9,D,2.0,0.85,1.0,nihai,orta,"AB'ye ihracat SPS izniyle sınırlı; TARIM payı %80, menşe kuralı bugün de uygulanıyor",
+10.12,Fasıl 2 (0207): tamamen elde edilmiş,D,1.5,0.9,D,2.0,0.85,1.0,nihai,düşük,AB'ye kanatlı eti ihracatı SPS nedeniyle yok denecek kadar az,
+10.13,"1601–1602: Fasıl 1, 2 ve 16 malzemeleri tamamen elde edilmiş",D,1.5,0.9,D,2.0,0.85,1.0,nihai,düşük,,
+10.20,Fasıl 3 ve 1604–1605: tamamen elde edilmiş (yetiştiricilikte yumurta/yavru TR'de),D,1.5,0.9,D,2.0,0.85,1.1,nihai,düşük,Çabuk bozulan; AB perakende zincirlerine bağımlı. 1/98 balıkçılık tavizleri,
+10.31,2004–2005: Fasıl 7 malzemesi tamamen elde edilmiş,D,1.5,0.9,D,2.0,0.85,1.0,nihai,düşük,,
+10.32,2009: aynı başlık dışı; meyve tamamen elde edilmiş,D,1.5,0.9,D,2.0,0.85,1.1,ara,düşük,Konsantre AB dolumcularına ara girdi,
+10.39,Fasıl 8 ve 20: meyve/fındık tamamen elde edilmiş; şeker ağırlık sınırı (2008),D,1.5,0.9,D,2.0,0.85,1.1,ara,düşük,Fındık AB şekerleme sanayisine ara girdi; alıcı yoğunlaşması yüksek (karşılıklı bağımlılık),
+10.41,1507–1515: aynı alt başlık dışı malzemeden; ham yağ ithalatından rafine yağ menşe kazanır,D,1.5,0.9,O,3.0,0.8,1.0,ara,yüksek,DİR ile ithal ham ayçiçeği yağı ve tohum; AB payı küçük,
+10.42,1517: Fasıl 15 ve 4 malzemeleri ağırlık sınırı,O,2.5,0.85,O,3.5,0.75,1.0,ara,orta,,
+10.51,Fasıl 4: Fasıl 4 malzemeleri tamamen elde edilmiş,D,1.5,0.9,D,2.0,0.85,1.0,nihai,düşük,Peynir AB'ye sınırlı (SPS ve 1/98 kotaları),
+10.52,2105: başlık değişikliği; Fasıl 4 ve şeker ağırlık sınırları,D,1.5,0.9,O,2.5,0.85,1.0,nihai,düşük,,
+10.61,Fasıl 11 ve 1904: tahıl tamamen elde edilmiş (makarnalık buğday istisnası 1904'te),O,2.5,0.85,O,3.5,0.75,1.0,ara,yüksek,Un ve bulgur ihracatı DİR'de ithal (Rus) buğdayla; AB'ye giden pay %8,
+10.62,1108: tahıl tamamen elde edilmiş; 1702 glikoz: başlık değişikliği (ithal mısırdan nişasta → glikoz menşe kazanır),D,1.5,0.9,O,2.5,0.85,1.1,ara,orta,Glikoz şurubu AB gıda sanayisine ara girdi; AB MFN %16,
+10.71,1905: Fasıl 11 malzemesi kullanılamaz (un menşeli olmalı; DİR'deki Rus buğdayı unu menşesiz),O,3.0,0.8,O,3.5,0.75,1.0,nihai,yüksek,Yerli buğdaya geçiş maliyeti c_RoO'nun ana bileşeni,
+10.72,1905: Fasıl 11 malzemesi kullanılamaz (un menşeli olmalı); şeker ağırlık sınırı,O,3.0,0.8,O,3.5,0.75,1.0,nihai,yüksek,Bisküvi ihracatı DİR buğdayı ve şekeriyle; AB için yerli buğday ve şeker gerekir,
+10.73,"1902: tahıl tamamen elde edilmiş, makarnalık buğday ve türevleri hariç (ithal durum serbest)",D,1.5,0.9,D,2.0,0.85,1.0,nihai,yüksek,Kural ithal makarnalık buğdaya izin veriyor; AB payı %3,
+10.81,1701: Fasıl 17 malzemesi menşeli,D,1.5,0.9,D,2.0,0.85,1.0,ara,düşük,Pancar şekeri yerli; ihracat kotalı ve küçük,
+10.82,1704 ve 1806: başlık değişikliği; menşesiz şeker ve Fasıl 4 malzemesi ağırlıkça %40 (birlikte %60) sınırı,O,2.5,0.85,O,3.5,0.75,1.0,nihai,yüksek,DİR'de ithal ham şeker kullanan şekerlemede sınır aşılır; kakao (Fasıl 18) serbest. EUDR kakao özen yükümlülüğü ayrıca,
+10.83,0901 ve 2101: başlık değişikliği; ithal kahve çekirdeğinden kavrulmuş/hazır kahve menşe kazanır,D,1.5,0.9,D,2.0,0.85,1.0,nihai,orta,EUDR kahve özen yükümlülüğü,
+10.84,2103 ve 2209: başlık değişikliği (hardal unu istisnası),D,1.5,0.9,D,2.5,0.85,1.0,nihai,orta,,
+10.85,"1902 20 ve 2104: Fasıl 2, 3 ve 16 malzemeleri tamamen elde edilmiş; tahıl kuralı",O,3.0,0.8,O,4.0,0.7,1.0,nihai,orta,,
+10.86,1901 10 ve 2104 20: Fasıl 4 ve tahıl malzemeleri ağırlık/menşe sınırları,O,2.5,0.85,O,3.5,0.75,1.0,nihai,orta,,
+10.89,2106 ve 2102: başlık değişikliği; şeker ve Fasıl 4 ağırlık sınırları,D,2.0,0.85,O,3.0,0.8,1.0,ara,orta,"En büyük kalem 2106 90 92 (AB MFN %12,8)",
+10.91,"2309: tahıl, şeker pancarı ve Fasıl 2–4 malzemeleri tamamen elde edilmiş; ağırlık sınırı",D,1.5,0.9,D,2.0,0.85,1.0,ara,yüksek,AB'ye ihracat çok küçük; ithal soya küspesi ve mısıra bağımlı,
+10.92,2309 10: aynı,D,1.5,0.9,D,2.0,0.85,1.0,nihai,orta,,
+11.01,2208: başlık değişikliği (2207–2208 hariç); üzüm türevleri tamamen elde edilmiş (rakı: yerli suma),D,1.5,0.9,D,2.0,0.85,1.0,nihai,düşük,AB MFN çoğu alkollü içkide sıfır,
+11.02,2204: üzüm ve türevleri tamamen elde edilmiş,D,1.5,0.9,D,2.0,0.85,1.0,nihai,düşük,,
+11.03,2206: başlık değişikliği; meyve tamamen elde edilmiş,D,1.5,0.9,D,2.0,0.85,1.0,nihai,düşük,,
+11.04,2205: başlık değişikliği; üzüm türevleri tamamen elde edilmiş,D,1.5,0.9,D,2.0,0.85,1.0,nihai,düşük,,
+11.05,2203: başlık değişikliği (ithal malttan bira menşe kazanır),D,1.5,0.9,D,2.0,0.85,1.0,nihai,düşük,AB MFN sıfır,
+11.06,1107: tahıl tamamen elde edilmiş,D,1.5,0.9,D,2.0,0.85,1.0,ara,orta,,
+11.07,2201–2202: başlık değişikliği; şeker %40 ağırlık sınırı; meyve suyu menşeli,D,1.5,0.9,O,2.5,0.85,1.0,nihai,düşük,,
+12.00,2402: başlık 2401 tütününün ağırlıkça en az %70'i menşeli (Amerikan harmanı ithal Virginia/Burley içerir),Y,5.0,0.4,Y,6.0,0.3,1.2,nihai,yüksek,Çok uluslu üretim üssü; AB arzını AB fabrikalarına kaydırma seçeneği var,
+13.10,"50–55 iplik: doğal liflerin eğrilmesi, sentetik lif çekimi + eğirme ya da büküm + mekanik işlem (ithal pamuk ve POY serbest)",D,1.5,0.92,D,2.0,0.88,1.1,ara,orta,Geri ödeme yasağı (PEM Ek I md. 16) bugün AB'ye A.TR ihracatında TEV olarak uygulanıyor; S2'de yeni maliyet değil. Ortakta dokuma/örme menşe kazandırdığından Türk ipliği kümülasyona bağlı değil,0.0
+13.20,"50–55 dokuma kumaş: dokuma + boyama, baskı ya da kaplama; iplik boyama + dokuma; tek başına baskı (ithal iplik serbest)",D,1.5,0.92,D,2.0,0.88,1.1,ara,orta,"Fas, Tunus ve Mısır konfeksiyonu Türk kumaşını PEM çapraz kümülasyonuyla AB'ye satıyor; S4'te Türk kumaşı menşesiz sayılır (md. 8(1)(a))",1.0
+13.30,"Hizmet (fason boya, baskı, apre); ticareti yok. Revize PEM'de tek başına baskı dokuma kumaşa menşe kazandırıyor",D,1.5,0.9,D,2.0,0.85,1.0,ara,düşük,Baskı kapasitesi S2'de Asya kumaşına menşe kazandırma aracı (H-M6),0.0
+13.91,"Fasıl 60: örme + boyama, baskı, kaplama ya da laminasyon; iplik boyama + örme (ithal iplik serbest)",D,1.5,0.92,D,2.0,0.88,1.1,ara,orta,Örme kumaş giyimde çift dönüşümün ilk adımı; PEM ortaklarına ihracatı kümülasyona bağlı,1.0
+13.92,6301–6304: dokuma ya da örme + konfeksiyon (çift dönüşüm); 6307: menşesiz malzeme ≤ %40,O,2.0,0.88,O,2.5,0.85,1.0,nihai,orta,"Havlu ve nevresimde dokuma ile konfeksiyon çoğunlukla entegre (Denizli, Bursa, Uşak); ithal ham bezle üretim tercih dışı kalır `[H]`",0.0
+13.93,Fasıl 57: eğirme ya da filament çekimi + dokuma veya tufting; tufting + boyama ya da baskı; jüt astar serbest,D,2.0,0.88,O,2.5,0.85,1.0,nihai,orta,Gaziantep'te iplik çekimi entegre; ithal polyester iplikle dokunan halı tercih dışı `[H]`. AB payı küçük,0.0
+13.94,Fasıl 56: eğirme ya da sentetik lif çekimi + eğirme (ithal iplikten halat menşe kazanmaz),O,2.5,0.85,O,3.0,0.8,1.0,ara,orta,,0.0
+13.95,"5603: lif ya da polimerden bağlama (spunbond, meltblown; ithal polimer serbest)",D,1.5,0.92,D,2.0,0.88,1.0,ara,düşük,,0.0
+13.96,"5902–5911: dokuma + emdirme, kaplama ya da laminasyon; lastik kordu (> %90 tekstil): lif çekimi + dokuma",D,1.5,0.9,D,2.0,0.85,1.1,ara,orta,Otomotiv ve lastik tedarik zincirine ara girdi; kaplamalı kumaşın bir kısmı ortakta giyim ve çantaya `[H]`,0.3
+13.99,"Fasıl 58: dokuma veya tufting + boyama, kaplama; nakış: menşesiz malzeme ≤ %50; keçe: lif çekimi + kumaş oluşumu",D,2.0,0.88,O,2.5,0.85,1.0,ara,orta,"Şerit, dantel ve etiket ortakta giyimde süsleme; çoğu %15 tolerans içinde (Not 7.1) `[H]`",0.3
+14.11,Fasıl 42: başlık değişikliği ya da menşesiz malzeme ≤ %50,D,1.5,0.92,D,2.0,0.88,1.0,nihai,düşük,,0.0
+14.12,Fasıl 62: dokuma + konfeksiyon ya da baskı + konfeksiyon; yangına dayanıklı alüminyum kaplı giysi: kaplama + konfeksiyon (kumaş ≤ %40),O,2.5,0.85,O,3.0,0.8,1.0,nihai,orta,,0.0
+14.13,Fasıl 61: örme + konfeksiyon; Fasıl 62: dokuma + konfeksiyon ya da baskı + konfeksiyon; kurala uymayan tekstil ≤ %15 (Not 7.1),O,2.5,0.86,O,3.0,0.82,1.0,nihai,orta,"PEM dışı (Asya) kumaşla üretilen ihracat (≈ %10–15, 02c §4.3) tercih dışı kalır; Türkiye'de baskı seçeneği bir kısmını kurtarır",0.0
+14.14,"Fasıl 61: örme + konfeksiyon; 6212 (sütyen, korse): örme + konfeksiyon ya da baskı + konfeksiyon",D,2.0,0.88,O,2.5,0.85,1.0,nihai,orta,Tişört ve iç giyimde yerli örme kumaş baskın; dantel ve elastik kumaşlı iç çamaşırında Asya kumaşı riski `[H]`,0.0
+14.19,Fasıl 61–62 kuralları; şal ve atkıda baskı + konfeksiyon; 6217: dokuma + konfeksiyon,O,2.5,0.85,O,3.0,0.8,1.0,nihai,orta,,0.0
+14.20,"4303: birleştirilmemiş, tabaklanmış ya da işlenmiş kürkten imalat",D,1.5,0.92,D,2.0,0.88,1.0,nihai,düşük,,0.0
+14.31,Fasıl 61 (biçimine göre örülmüş): eğirme ya da filament çekimi + örme veya örme ile konfeksiyon tek işlemde (ithal iplik serbest),D,1.5,0.92,D,2.0,0.88,1.0,nihai,orta,İthal naylon ve elastan iplik serbest,0.0
+14.39,Fasıl 61: örme + konfeksiyon ya da tam kalıp örme (ithal iplik serbest),D,1.5,0.92,D,2.0,0.88,1.0,nihai,orta,,0.0
+15.11,4104–4106: yeniden tabaklama ya da başlık değişikliği; 4107: başlık değişikliği (ithal wet-blue'dan bitmiş deri menşe kazanır),D,1.5,0.92,D,2.0,0.88,1.0,ara,orta,Sığır derisi 18.9.2026'da EUDR kapsamından çıktı (Tüzük 2026/2102) `[V]`. Geri ödeme yasağı Fasıl 41'de yok,0.0
+15.12,Fasıl 42: başlık değişikliği ya da menşesiz malzeme ≤ %50,D,1.5,0.92,D,2.0,0.88,1.0,nihai,orta,,0.0
+15.20,Fasıl 64: her başlıktan; yalnız 6406'daki saya + iç taban birleşimleri kullanılamaz,D,1.5,0.92,D,2.0,0.88,1.0,nihai,orta,Geri ödeme yasağı Fasıl 64'te yok,0.0

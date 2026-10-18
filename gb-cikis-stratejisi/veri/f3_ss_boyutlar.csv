@@ -32,9 +32,27 @@ kod,savunma,enerji,saglik,gida,dijital,hammadde,ikili,gerekce,gozden_gecirildi
 11.06,0,0,0,20,0,0,0,Malt; bira ve gıda girdisi,1
 11.07,0,0,10,40,0,0,0,İçme suyu arzı (afet ve kriz),1
 12.00,0,0,0,0,0,0,0,,1
-13.96,40,0,40,0,0,0,40,Teknik tekstil: balistik ve tıbbi tekstil,0
-14.12,30,0,0,0,0,0,0,İş ve askerî kıyafet,0
-15.20,10,0,0,0,0,0,0,Askerî bot,0
+13.10,0,0,0,0,0,0,0,,1
+13.20,10,0,0,0,0,0,0,Üniforma ve kamuflaj kumaşı,1
+13.30,0,0,0,0,0,0,0,,1
+13.91,0,0,0,0,0,0,0,,1
+13.92,0,0,0,0,0,0,0,,1
+13.93,0,0,0,0,0,0,0,,1
+13.94,0,0,0,10,0,0,0,Halat ve balık ağı: su ürünleri ve denizcilik,1
+13.95,0,0,50,0,0,0,0,"Dokusuz kumaş: tıbbi maske, önlük, hijyen ve filtre ürünlerinin girdisi; salgında arz güvenliği",1
+13.96,40,0,40,0,0,0,40,"Teknik tekstil: balistik, tıbbi ve çift kullanımlı tekstil (aramid, cam elyafı)",1
+13.99,0,0,0,0,0,0,0,,1
+14.11,0,0,0,0,0,0,0,,1
+14.12,30,0,0,0,0,0,0,İş ve askerî kıyafet; güvenlik güçleri tedariki,1
+14.13,0,0,0,0,0,0,0,,1
+14.14,0,0,0,0,0,0,0,,1
+14.19,0,0,0,0,0,0,0,,1
+14.20,0,0,0,0,0,0,0,,1
+14.31,0,0,0,0,0,0,0,,1
+14.39,0,0,0,0,0,0,0,,1
+15.11,0,0,0,0,0,0,0,,1
+15.12,0,0,0,0,0,0,0,,1
+15.20,10,0,0,0,0,0,0,Askerî bot,1
 17.12,0,0,10,0,0,20,0,Kâğıt hamuru ithalatı,0
 17.22,0,0,20,0,0,0,0,Hijyen kâğıtları,0
 19.10,0,30,0,0,0,40,0,Kok: çelik zinciri,0

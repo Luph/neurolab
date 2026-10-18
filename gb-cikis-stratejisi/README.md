@@ -13,7 +13,7 @@ belgelerini, verileri ve kodu içerir. Her faz sonunda çalışma durur ve **DEV
 | 2A | Politika uzayı: kullanıcının önerisi (tarife + ÖTV takası), araç evreni, bağlı oranlar, aktif S4, dış rejim evreni | Tamamlandı (18.10.2026) | [`02a_politika_uzayi.md`](02a_politika_uzayi.md) |
 | 2B | Seçenekler (S0–S5, R7, ITA, aktif S4), çekim modeli, bitiş durumu ve hukuki yol haritası (AB, DTÖ, Türk iç hukuku), iki takvim | Tamamlandı (18.10.2026) | [`02b_secenekler_hukuk.md`](02b_secenekler_hukuk.md) |
 | 2C | Karar öncesi hazırlık: dokuz çerçevede 51 sessiz, pişmanlıksız hamle; STA ağının genel dengesi, menşe riski, SKDM yükü, makro tampon; kırmızı liste ve devreye alma sırası | Tamamlandı (18.10.2026) | [`02c_hazirlik.md`](02c_hazirlik.md) |
-| 3 | NACE sınıf analizi (16 parça). Parça 1: 10 Gıda, 11 İçecekler, 12 Tütün; 33 sınıfın düzyazı incelemesi ve veri sayfası; ana matris 230 sınıfın tamamı için | Parça 1 / 16 tamamlandı (18.10.2026) | [`nace_kartlar_10-12.md`](nace_kartlar_10-12.md), [`veri/nace_matris.csv`](veri/nace_matris.csv) |
+| 3 | NACE sınıf analizi (16 parça). Parça 1: 10 Gıda, 11 İçecekler, 12 Tütün (33 sınıf); parça 2: 13 Tekstil, 14 Giyim, 15 Deri (21 sınıf); düzyazı incelemeler ve veri sayfaları; ana matris 230 sınıfın tamamı için | Parça 2 / 16 tamamlandı (18.10.2026) | [`nace_kartlar_10-12.md`](nace_kartlar_10-12.md), [`nace_kartlar_13-15.md`](nace_kartlar_13-15.md), [`veri/nace_matris.csv`](veri/nace_matris.csv) |
 | 4–9 | Derin analizler → araçlar ve tarife cetveli → makro → müzakere → uygulama → risk ve yönetici özeti | Planlandı | bkz. `00_plan.md` §2 |
 
 Yeni bir sohbette devam etmek için: ana prompt + [`DURUM_OZETI.md`](DURUM_OZETI.md).
@@ -24,8 +24,8 @@ Belgeler LaTeX'te dizilir ve PDF olarak üretilir (LuaLaTeX; Markdown → pandoc
 
 | PDF | İçerik |
 |---|---|
-| [`pdf/GB_Cikis_Stratejisi_Faz0-3.pdf`](pdf/GB_Cikis_Stratejisi_Faz0-3.pdf) | **Birleşik cilt:** durum özeti, Faz 0, 1, 2A, 2B, 2C, Faz 3 kartları (şimdilik 10–12); Ek A defter; Ek B çalışma paketi. İçindekiler ve şekil listesi |
-| `pdf/00_plan.pdf`, `pdf/01_teshis.pdf`, `pdf/02a_politika_uzayi.pdf`, `pdf/02b_secenekler_hukuk.pdf`, `pdf/02c_hazirlik.pdf`, `pdf/nace_kartlar_10-12.pdf` | Faz belgeleri tek tek |
+| [`pdf/GB_Cikis_Stratejisi_Faz0-3.pdf`](pdf/GB_Cikis_Stratejisi_Faz0-3.pdf) | **Birleşik cilt:** durum özeti, Faz 0, 1, 2A, 2B, 2C, Faz 3 kartları (şimdilik 10–12 ve 13–15); Ek A defter; Ek B çalışma paketi. İçindekiler ve şekil listesi |
+| `pdf/00_plan.pdf`, `pdf/01_teshis.pdf`, `pdf/02a_politika_uzayi.pdf`, `pdf/02b_secenekler_hukuk.pdf`, `pdf/02c_hazirlik.pdf`, `pdf/nace_kartlar_10-12.pdf`, `pdf/nace_kartlar_13-15.pdf` | Faz belgeleri tek tek |
 | `pdf/DURUM_OZETI.pdf`, `pdf/defter.pdf`, `pdf/README.pdf` | Durum özeti, defter, paket açıklaması |
 
 Kanıt etiketleri PDF'te renkli kutudur: V doğrulanmış veri, T tahmin (P10–P90), D? doğrulanacak, H hipotez/yargı.
@@ -100,13 +100,14 @@ Bütün kod, ham veri, ara ve nihai hesaplar pakettedir. Hesaplar ağ erişimi o
 | `kod/hepsini_uret.sh`, `kod/dogrula.py` | Bütün hesapları sırayla yeniden üretir; sonuçları `veri/` ile karşılaştırır |
 | `kod/girdi_hazirla.py` | BACI özetleri, büyük dosyaların sıkıştırılması, `girdi/MANIFEST.csv` |
 | `nace_kartlar_10-12.md` | Faz 3 parça 1: yönetici özeti, çıkışın beş kanalı, strateji ve eylem paketi, 33 sınıfın incelemesi (15 alanlı kart: metin + Ek C veri sayfası + Bölüm 4 eylem ve tetik tabloları), kümülatif defter, ekler |
-| `kod/f3a_ticaret.py` | Sınıf düzeyi ticaret: ihracat/ithalat, AB ve Çin payları, RCA (dünya, AB pazarı), AB pazar payı, birim değer, ilk 5 pazar/kaynak/rakip ve AB tercih durumu (BACI 2020, 2024; KKTC akımları AB dışı) → `veri/f3_ticaret_sinif.csv`, `veri/f3_ortaklar_sinif.csv` |
+| `nace_kartlar_13-15.md` | Faz 3 parça 2: tarife duvarı ve tercihli rakipler, PEM kümülasyonu kanalı, S2 menşe kuralları, c2 ve vergi takası, bölgesel dağılım; 21 sınıfın incelemesi, 10–15 kümülatif defteri, ekler |
+| `kod/f3a_ticaret.py` | Sınıf düzeyi ticaret: ihracat/ithalat, AB ve Çin payları, RCA (dünya, AB pazarı), AB pazar payı, birim değer, ilk 5 pazar/kaynak/rakip ve AB tercih durumu (BACI 2020, 2024; KKTC akımları AB dışı), PEM kümülasyonu maruziyeti → `veri/f3_ticaret_sinif.csv`, `veri/f3_ortaklar_sinif.csv`, `veri/f3_pem_ortak_ab_payi.csv` |
 | `kod/f3b_yapi.py` | Üretim, KD, istihdam, ölçek, İBBS-2 bölge payları (iş kayıtları + SGK, RAS), AB'ye göre verimlilik (Eurostat SBS) → `veri/f3_yapi_sinif.csv`, `veri/f3_bolge_sinif.csv` |
 | `kod/f3c_karmasiklik.py` | PCI ve ECI (yansımalar yöntemi, özvektör), ürün uzayı yoğunluğu, karmaşıklık kazancı, atlanabilir ürünler → `veri/f3_pci_*.csv`, `veri/f3_eci_ulke.csv` |
-| `kod/f3d_ab_tarife.py` | AB MFN'si KN8 düzeyinde: spesifik vergilerin AVE'si, rejime göre S4 artışı (GB, İTÜ, 1/98), tepe satırlar, EUDR ve SKDM payları → `veri/f3_ab_tarife_kn8.csv`, `veri/f3_ab_tarife_sinif.csv` |
-| `kod/f3e_senaryo.py` | S2/S3/S4 sınıf etkileri, P10–P50–P90 (Monte Carlo; toplamlar Faz 2B genel dengesine kalibre), bölüm ve parça toplamlarının dağılımı, S4'te 1/98 askısına koşullu sonuçlar, EDE, CKE → `veri/f3_senaryo_sinif.csv`, `veri/f3_senaryo_ozet.csv`, `veri/f3_senaryo_grup.csv`, `veri/f3_senaryo_aski.csv`, `veri/f3_makro_sinif.csv` |
+| `kod/f3d_ab_tarife.py` | AB MFN'si KN8 düzeyinde: spesifik vergilerin AVE'si, rejime göre S4 artışı (GB, İTÜ, 1/98), tepe satırlar, EUDR (Tüzük 2026/2102 ile değişik) ve SKDM payları → `veri/f3_ab_tarife_kn8.csv`, `veri/f3_ab_tarife_sinif.csv` |
+| `kod/f3e_senaryo.py` | S2/S3/S4 sınıf etkileri, P10–P50–P90 (Monte Carlo; toplamlar Faz 2B genel dengesine kalibre), bölüm ve parça toplamlarının dağılımı, S4'te 1/98 askısına koşullu sonuçlar, S4'te PEM kümülasyonu kanalı, EDE, CKE → `veri/f3_senaryo_sinif.csv`, `veri/f3_senaryo_ozet.csv`, `veri/f3_senaryo_grup.csv`, `veri/f3_senaryo_aski.csv`, `veri/f3_makro_sinif.csv` |
 | `kod/f3f_skor_matris.py` | KS, SS, AME, EDE, CKE puanları, arketip ve duruş (kural + `kartlar/` düzeltmeleri), ağırlık duyarlılığı → `veri/nace_matris.csv`, `veri/f3_ks_duyarlilik.csv` |
-| `kod/f3g_kartlar.py` | Bölüm belgesi `nace_kartlar_[bölüm].md`: `kartlar/[bölüm]_metin/` şablonlarındaki yer tutucuları (matris ve f3 tabloları, grup yüzdelikleri, 1/98 askısı, dünya ihracat payları, ithalat kalemleri, KN8 tarifeleri) ve tablo işaretlerini doldurur; Türkçe ülke adları `veri/ulke_adlari_tr.csv` |
+| `kod/f3g_kartlar.py` | Bölüm belgesi `nace_kartlar_[bölüm].md`: `kartlar/[bölüm]_metin/` şablonlarındaki yer tutucuları (matris ve f3 tabloları, grup yüzdelikleri, 1/98 askısı, dünya ihracat payları, ithalat kalemleri, KN8 tarifeleri) ve tablo işaretlerini doldurur; kümülatif defteri bütün parça YAML'larından derler; Türkçe ülke adları `veri/ulke_adlari_tr.csv` |
 | `kod/sekiller.py` | On üç şekil (`sekiller/`) |
 | `latex/derle.sh`, `latex/gb.lua`, `latex/gbstil.sty`, `latex/cilt.tex` | PDF üretimi |
 

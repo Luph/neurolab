@@ -7,6 +7,7 @@ bolumler:
   "11": İçecekler
   "12": Tütün ürünleri
 belge:
+  parca: 1
   sonraki: "Faz 3 parça 2 (13–15: tekstil, giyim, deri)"
   ortak_eylemler:
     - - E-10-01
@@ -31,7 +32,7 @@ belge:
       - "Bisküvi, ekmek ve şekerlemede AB'ye ihracatın menşe ispatlı payı ≥ %85"
     - - E-10-03
       - EUDR uyum masası
-      - "Kakao (10.82), kahve (10.83), soya ve palm türevleri (10.41, 10.91) ve sığır derisi (10.11, 15.11) için coğrafi konum verisi ve özen beyanı desteği; ithalatçılarla ortak veri havuzu"
+      - "Kakao (10.82), kahve (10.83; hazır kahve 30.12.2027'den), soya ve palm türevleri (10.41, 10.91) ve sığır eti (10.11) için coğrafi konum verisi ve özen beyanı desteği; ithalatçılarla ortak veri havuzu. Sığır derisi 18.9.2026'dan kapsam dışı (Tüzük 2026/2102)"
       - "TOB, Ticaret Bakanlığı, TİM (ilgili ihracatçı birlikleri)"
       - "Bakanlık genelgesi; TİM yönetim kurulu kararı"
       - "≈ 0,05 mlr TL/yıl `[T]`"
