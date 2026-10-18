@@ -25,6 +25,7 @@ import re
 import urllib.parse
 import urllib.request
 
+import numpy as np
 import pandas as pd
 
 import yollar
@@ -373,9 +374,17 @@ def main():
     m.loc[m.CPA_Ver_22_Code == "00.00.00", "nace2"] = "00.00"  # kullanılmış eşya
     # NACE'de karşılığı olmayan CPA sınıfı: 31.00 (oturmalık ve mobilya parçaları) -> 31.09 [H]
     m.loc[m.nace2 == "31.00", "nace2"] = "31.09"
-    # CN8 birden çok NACE sınıfına düşüyorsa eşit paylaştır
+    # CN8 birden çok NACE sınıfına düşüyorsa eşit paylaştır (Faz 0–2: agirlik)
+    # Faz 3 (agirlik_f3): CPA 2.2 kodunun CPA 2.1'de aynen sürdüğü bağlantı (kimlik) varsa yalnız o; yoksa CPA 2.2
+    # koduyla aynı bölümdeki hedefler; hiçbiri yoksa eşit pay [T]. Örnek: 29.10.23 (hibrit otomobil) → 27.11 ve
+    # 29.10 eşit bölünüyordu; Faz 3'te 29.10.
+    m["kimlik"] = m.CPA_Ver_21_Code.eq(m.CPA_Ver_22_Code).groupby([m.cn8, m.nace2]).transform("any")
+    m["ayni_bolum"] = m.nace2.str[:2].eq(m.CPA_Ver_22_Code.str[:2])
     m = m.drop_duplicates(["cn8", "nace2"])
     m["agirlik"] = 1 / m.groupby("cn8").nace2.transform("count")
+    oncelik = np.where(m.kimlik, 2, np.where(m.ayni_bolum, 1, 0))
+    m["agirlik_f3"] = (oncelik == pd.Series(oncelik, index=m.index).groupby(m.cn8).transform("max")).astype(float)
+    m["agirlik_f3"] /= m.groupby("cn8").agirlik_f3.transform("sum")
 
     # --- Comext: AB'nin Türkiye'den ithalatı (=TR'nin AB'ye ihracatı) ve AB'nin TR'ye ihracatı
     def comext(fl):
@@ -399,17 +408,20 @@ def main():
         rj, kural = rejim(kod)
         if kod in mi.groups:
             g = mi.get_group(kod)
-            hedefler = list(zip(g.nace2, g.agirlik, g.CPA_Ver_22_Code, g.CPA_Ver_21_Code))
+            hedefler = list(zip(g.nace2, g.agirlik, g.agirlik_f3, g.CPA_Ver_22_Code, g.CPA_Ver_21_Code))
         else:
-            hedefler = [(gizli_nace(kod), 1.0, "", "")]
-        for n2, w, c22, c21 in hedefler:
-            satirlar.append(dict(cn8=kod, cpa22=c22, cpa21=c21, nace2=n2, agirlik=w, rejim=rj,
+            hedefler = [(gizli_nace(kod), 1.0, 1.0, "", "")]
+        for n2, w, w3, c22, c21 in hedefler:
+            satirlar.append(dict(cn8=kod, cpa22=c22, cpa21=c21, nace2=n2, agirlik=w, agirlik_f3=w3, rejim=rj,
                                  kural=kural, tr_ihr_ab=ihr.get(kod, 0.0) * w,
                                  tr_ith_ab=ith.get(kod, 0.0) * w))
     cnm = pd.DataFrame(satirlar)
     aciklama = cn.drop_duplicates("cn8").set_index("cn8").CN2025_Self_Text
     cnm["cn_aciklama_en"] = cnm.cn8.map(aciklama).fillna("(gizli / CN2025 dışı kod)")
-    cnm.to_csv(os.path.join(a.out, "cn2025_nace_rejim.csv"), index=False, float_format="%.0f")
+    # ağırlık 4 haneyle yazılır (önceki "%.0f" biçimi 0,5 ve 0,33 paylarını 0'a yuvarlıyordu; değerler tam sayı)
+    yaz = cnm.assign(agirlik=cnm.agirlik.round(4), agirlik_f3=cnm.agirlik_f3.round(4), tr_ihr_ab=cnm.tr_ihr_ab.round().astype("int64"),
+                     tr_ith_ab=cnm.tr_ith_ab.round().astype("int64"))
+    yaz.to_csv(os.path.join(a.out, "cn2025_nace_rejim.csv"), index=False)
 
     # --- NACE sınıfı düzeyinde rejim payları
     REJ = ["GB", "AKCT", "ITU", "TARIM"]

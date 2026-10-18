@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
-# hepsini_uret.sh — Faz 0–2'nin bütün hesaplarını paketteki ham girdilerden (girdi/) yeniden üretir.
+# hepsini_uret.sh — Faz 0–3'ün bütün hesaplarını paketteki ham girdilerden (girdi/) yeniden üretir.
 #
 # Kullanım (paket kökünden ya da herhangi bir yerden):
 #   kod/hepsini_uret.sh                          çıktılar veri/ klasörüne yazılır
 #   kod/hepsini_uret.sh --cikti /tmp/gb_veri     çıktılar başka klasöre yazılır, sonra veri/ ile karşılaştırılır
 #   kod/hepsini_uret.sh --cevrimdisi ...         ağ erişimi yok: eksik girdi varsa betik hata verir
 #
-# Adımlar betiklerin bağımlılık sırasıyla çalışır (Faz 0 → 1 → 2A → 2B → 2C → şekiller). Süre: ≈20–30 dk;
+# Adımlar betiklerin bağımlılık sırasıyla çalışır (Faz 0 → 1 → 2A → 2B → 2C → 3 → şekiller). Süre: ≈20–30 dk;
 # çoğu çekim modelinde (f2f: 19 PPML spesifikasyonu ve genel denge; f2g: STA ağı genel dengesi).
 set -euo pipefail
 KOD="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
@@ -24,7 +24,8 @@ if [[ "$CIKTI" != "$PAKET/veri" ]]; then
   # Elle derlenmiş girdiler (kaynakları satır içinde): betikler bunları çıktı klasöründen okur
   cp "$PAKET/veri/vergi_oranlari_2026.csv" "$PAKET/veri/vergi_gelirleri_2024_2026.csv" \
      "$PAKET/veri/skdm_ek1_kn.csv" "$PAKET/veri/skdm_asagi_kn.csv" "$PAKET/veri/skdm_parametre.csv" \
-     "$PAKET/veri/hazirlik_hamleler.csv" "$CIKTI/"
+     "$PAKET/veri/hazirlik_hamleler.csv" "$PAKET/veri/f3_sinif_varsayim.csv" "$PAKET/veri/f3_ss_boyutlar.csv" \
+     "$PAKET/veri/f3_coicop_nace.csv" "$CIKTI/"
 fi
 
 adim() {
@@ -63,10 +64,25 @@ adim f2h_mense_pem.py
 adim f2i_skdm.py
 adim f2k_makro_tampon.py
 adim f2j_hamle_tablosu.py
+echo "Faz 3"
+adim f3a_ticaret.py
+adim f3b_yapi.py
+adim f3c_karmasiklik.py
+adim f3d_ab_tarife.py
+adim f3e_senaryo.py
+adim f3f_skor_matris.py
+KARTLAR="$PAKET"; [[ "$CIKTI" != "$PAKET/veri" ]] && KARTLAR="$CIKTI"
+for y in "$PAKET"/kartlar/*_siniflar.yaml; do
+  bol="$(basename "$y" _siniflar.yaml)"
+  adim f3g_kartlar.py --yaml "$PAKET/kartlar/$bol.yaml" --yaml "$y" --cikti "$KARTLAR/nace_kartlar_$bol.md"
+done
 echo "Şekiller"
 python3 sekiller.py --veri "$CIKTI" --cikti "$CIKTI/sekiller" >/dev/null && echo "sekiller.py                  tamam"
 
 if [[ "$CIKTI" != "$PAKET/veri" ]]; then
   echo "Karşılaştırma: $CIKTI ↔ veri/"
   python3 dogrula.py "$CIKTI" "$PAKET/veri"
+  for k in "$CIKTI"/nace_kartlar_*.md; do
+    cmp -s "$k" "$PAKET/$(basename "$k")" && echo "  TAMAM   $(basename "$k"): aynı" || echo "  FARKLI  $(basename "$k")"
+  done
 fi

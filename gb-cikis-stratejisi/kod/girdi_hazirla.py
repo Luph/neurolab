@@ -93,11 +93,23 @@ KAYNAKLAR = [
      "https://www.cepii.fr/DATA_DOWNLOAD/baci/data/BACI_HS17_V202601.zip", "f2f_cekim_modeli"),
     ("baci/baci_hs17_tur_bilateral_*", "CEPII BACI HS17 V202601 (özet: baci_ozet.py)",
      "Türkiye'nin ihracatı ve ithalatı, HS6 × ortak, 2020–2024",
-     "https://www.cepii.fr/DATA_DOWNLOAD/baci/data/BACI_HS17_V202601.zip", "f2a, f2b, f2c0, f2d"),
+     "https://www.cepii.fr/DATA_DOWNLOAD/baci/data/BACI_HS17_V202601.zip", "f2a, f2b, f2c0, f2d, f3a, f3g"),
     ("baci/baci_hs17_world_exports_*", "CEPII BACI HS17 V202601 (özet: baci_ozet.py)",
      "İhracatçı × HS6 dünya ihracatı ve RCA, 2024",
-     "https://www.cepii.fr/DATA_DOWNLOAD/baci/data/BACI_HS17_V202601.zip", "f2b_tarife_politikasi"),
-    ("baci/*", "CEPII BACI HS17 V202601", "Ülke ve ürün kodları", "https://www.cepii.fr", "f1c, f2f"),
+     "https://www.cepii.fr/DATA_DOWNLOAD/baci/data/BACI_HS17_V202601.zip", "f2b_tarife_politikasi, f3c_karmasiklik"),
+    ("baci/baci_hs17_ab27_ithalat_*", "CEPII BACI HS17 V202601 (özet: girdi_hazirla.py baci-ozet-f3)",
+     "AB27'nin ihracatçı × HS6 ithalatı, değer (bin $) ve miktar (ton), 2020 ve 2024",
+     "https://www.cepii.fr/DATA_DOWNLOAD/baci/data/BACI_HS17_V202601.zip", "f3a_ticaret"),
+    ("baci/baci_hs17_dunya_ihracat_hs6_*", "CEPII BACI HS17 V202601 (özet: girdi_hazirla.py baci-ozet-f3)",
+     "Dünya ihracatı, HS6, 2020 ve 2024", "https://www.cepii.fr/DATA_DOWNLOAD/baci/data/BACI_HS17_V202601.zip",
+     "f3a_ticaret"),
+    ("baci/*", "CEPII BACI HS17 V202601", "Ülke ve ürün kodları", "https://www.cepii.fr", "f1c, f2f, f3a, f3c"),
+    ("cepii/ProTEE_0_1.csv", "CEPII ProTEE 0.1 (Fontagné, Guimbard ve Orefice 2022)",
+     "HS6 ürün düzeyi ticaret esneklikleri (2001–2016 tahmini; Etalab 2.0)",
+     "https://www.cepii.fr/DATA_DOWNLOAD/ProTEE/ProTEE_0_1.csv", "f3e_senaryo"),
+    ("eurostat/sbs_ovw_act_eu27_2022_2023.json", "Eurostat SBS (sbs_ovw_act)",
+     "AB27 NACE sınıfı düzeyinde kişi başı katma değer, istihdam, katma değer ve girişim, 2022–2023",
+     "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/sbs_ovw_act", "f3b_yapi"),
     ("comtrade/*", "BM Comtrade (comtrade_tr_hs6.py)", "Türkiye'nin dünyaya ihracatı ve ithalatı, HS6, 2025",
      "https://comtradeapi.un.org/public/v1/preview/C/A/HS", "f1d_maruziyet"),
     ("f2_cekim/gravity_V202211_1980_v4.parquet", "CEPII Gravity V202211 (özet: f2f_cekim_modeli.gravity_oku)",
@@ -131,6 +143,33 @@ def baci_ozet(baci_dizin):
         print(f"ikili toplam {y}:", len(t), "çift")
     for ad in ("country_codes_V202601.csv", "product_codes_HS17_V202601.csv"):
         shutil.copy2(os.path.join(baci_dizin, ad), os.path.join(hedef_dizin, ad))
+    baci_ozet_f3(baci_dizin)
+
+
+AB27 = {"AUT", "BEL", "BGR", "HRV", "CYP", "CZE", "DNK", "EST", "FIN", "FRA", "DEU", "GRC", "HUN", "IRL", "ITA", "LVA",
+        "LTU", "LUX", "MLT", "NLD", "POL", "PRT", "ROU", "SVK", "SVN", "ESP", "SWE"}
+
+
+def baci_ozet_f3(baci_dizin):
+    """Faz 3 özetleri: AB27'nin ihracatçı × HS6 ithalatı (değer, miktar) ve dünya ihracatı (HS6), 2020 ve 2024."""
+    hedef_dizin = yollar.girdi("baci")
+    uk = pd.read_csv(os.path.join(baci_dizin, "country_codes_V202601.csv"), dtype={"country_code": int})
+    ab = set(uk[uk.country_iso3.isin(AB27)].country_code)
+    tam = lambda y: os.path.join(baci_dizin, "all_countries", f"BACI_HS17_Y{y}_V202601.parquet")  # noqa: E731
+    parcalar, dunya = [], []
+    for y in (2020, 2024):
+        b = pd.read_parquet(tam(y), columns=["i", "j", "k", "v", "q"])
+        a = b[b.j.isin(ab)].groupby(["i", "k"], as_index=False)[["v", "q"]].sum()
+        a.insert(0, "t", y)
+        parcalar.append(a)
+        d = b.groupby("k", as_index=False)[["v", "q"]].sum()
+        d.insert(0, "t", y)
+        dunya.append(d)
+        print(f"AB27 ithalatı {y}:", len(a), "satır; dünya HS6:", len(d))
+    pd.concat(parcalar).to_parquet(os.path.join(hedef_dizin, "baci_hs17_ab27_ithalat_ihracatci_hs6_2020_2024.parquet"),
+                                   compression="zstd", index=False)
+    pd.concat(dunya).to_parquet(os.path.join(hedef_dizin, "baci_hs17_dunya_ihracat_hs6_2020_2024.parquet"),
+                                compression="zstd", index=False)
 
 
 def sikistir(esik=1 << 20):
@@ -168,11 +207,13 @@ def manifest():
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("is_", choices=["baci-ozet", "sikistir", "manifest"])
+    ap.add_argument("is_", choices=["baci-ozet", "baci-ozet-f3", "sikistir", "manifest"])
     ap.add_argument("--baci-dizin")
     a = ap.parse_args()
     if a.is_ == "baci-ozet":
         baci_ozet(a.baci_dizin)
+    elif a.is_ == "baci-ozet-f3":
+        baci_ozet_f3(a.baci_dizin)
     elif a.is_ == "sikistir":
         sikistir()
     else:

@@ -1,0 +1,165 @@
+bolumler:
+  "10": Gıda ürünleri
+  "11": İçecekler
+  "12": Tütün ürünleri
+belge:
+  baslik: "# Faz 3 — NACE sınıf kartları, parça 1: 10 Gıda, 11 İçecekler, 12 Tütün ürünleri"
+  giris: |
+    **Durum:** Faz 3 / 9, parça 1 / 16 tamamlandı (18 Ekim 2026); DEVAM bekleniyor. Önceki fazlar: [`01_teshis.md`](01_teshis.md), [`02a_politika_uzayi.md`](02a_politika_uzayi.md), [`02b_secenekler_hukuk.md`](02b_secenekler_hukuk.md), [`02c_hazirlik.md`](02c_hazirlik.md). Defter: [`defter.md`](defter.md). Ana matris (230 sınıfın tamamı): [`veri/nace_matris.csv`](veri/nace_matris.csv).
+
+    **Bu belge ne yapıyor?**
+    - 10–12 bölümlerinin 33 sınıfı için ana promptun 15 alanlı kartını dolduruyor.
+    - Bölümlerin kısa genel görünümünü ve ana matris satırlarını veriyor.
+    - Kartlara temel olan Faz 3 hesap altyapısını, bütün 230 C sınıfı için bir kez kuruyor. Bu altyapı ticaret, yapı, karmaşıklık, AB tarifesi, senaryolar ve skorları kapsıyor. Sonraki parçalar aynı tabloları kullanacak.
+    - Kümülatif defteri güncelliyor.
+
+    **Takvim gösterimi.** Eylem tablolarında tarihler `T`'ye göre yazılıyor. T2028'de `T` = 1.1.2028, T2029'da `T` = 1.1.2029; örneğin `T−12` T2028'de Ocak 2027'ye, T2029'da Ocak 2028'e denk geliyor. Kanıt etiketleri (`[V]`, `[T]`, `[D?]`, `[H]`) ve güven düzeyleri önceki fazlardaki gibi.
+
+    **Ana bulgu: 10–12 GB çıkışından en az etkilenen büyük sanayi grubu, ama üç ince nokta var.**
+    1. **AB'ye ihracatın dörtte üçü tarım rejiminde (1/98).** Bu ihracat zaten menşe kuralına tabi ve GB'ye bağlı değil.
+       - Rota A'da (1/98 sürer) S4'ün getirdiği ortalama AB tarifesi %3,3. Bu oran yalnızca işlenmiş tarım ürünlerinin sanayi bileşeninden ve sigaradan geliyor.
+       - 1/98 da kaybedilirse oran %11,5'e çıkıyor.
+       - Riskin asıl kaynağı GB değil, hasmane bir AB'nin 1/98'i askıya alması. Bu durumda S4'ün P10 değerlerinde AB'ye ihracat −${{10-12|s4_ab_ihracat_musd_p10|0|abs}} mn, istihdam −{{10-12|s4_istihdam_p10|0|abs}} kişi oluyor. Kaybın yarıdan fazlası 10.39'da (kuru meyve, fındık, işlenmiş sebze).
+    2. **İşlenmiş tarım ürünlerinde (İTÜ) S4'ün maliyeti sanayi bileşeni kadar.** Tarım bileşeni bugün de ödeniyor.
+       - Sanayi bileşeni: bisküvi ve ekmek %9; çikolata %8,4; makarna %7,7; glikoz %14; gıda müstahzarları %12,8; sigara %57,6.
+       - En büyük mutlak kayıplar: bisküvi, gıda müstahzarları, glikoz ve sigara.
+    3. **S2'de menşe kuralı tarifeden daha bağlayıcı olabilir.** Bisküvi ve ekmek ihracatçıları Dahilde İşleme Rejimi (DİR) ile ithal (çoğunlukla Rus) buğday kullanıyor. PEM'in Fasıl 11–19 kuralları ise unun menşeli olmasını istiyor.
+       - Bisküvide S2'nin kaybı (−${{10.72|s2_ab_ihracat_musd_p50|0|abs}} mn AB ihracatı) S4'ünkinin (−${{10.72|s4_ab_ihracat_musd_p50|0|abs}} mn) üçte ikisinden fazla.
+       - Çözüm tarifede değil, DİR'deki "eşdeğer eşya" mekanizmasında ve ürüne özgü menşe kuralı (PSR) müzakeresinde (E-10-02).
+
+    **Olumsuz bulgular (dürüst rapor).**
+    - Sigarada (12.00) S2'de bile kayıp büyük. Kural "tütünün %70'i menşeli" diyor ve Amerikan harmanı bunu karşılamıyor. AB'ye yönelik üretim büyük olasılıkla AB fabrikalarına kayar.
+    - Fındık ve kuru meyvede Türkiye dünya ihracatının %30–75'ini yapıyor. Bu, AB'ye karşı bir müzakere kaldıracı. Ama 1/98 kaybında bile fındık içinin AB MFN'si yalnızca %3,2. Kaldıraç tarife tehdidinden değil, arz güvenliğinden geliyor.
+  on_bolumler:
+    - |
+      ## 0. Faz 3 yöntemi (bütün parçalar için)
+
+      **Tablo 0.1 — Faz 3 hesap zinciri**
+
+      | Betik | Ne üretiyor | Ana kaynak | Etiket |
+      |---|---|---|---|
+      | `kod/f3a_ticaret.py` | Sınıf düzeyi ihracat, ithalat, AB ve Çin payları, RCA (dünya ve AB pazarı), AB pazar payı, birim değer, ilk 5 pazar/kaynak/rakip | BACI HS17 2020 ve 2024 (TR ikili; AB27 ithalatı; dünya ihracatı) | `[V]` veri, `[T]` eşleme |
+      | `kod/f3b_yapi.py` | Üretim, KD, istihdam, ölçek dağılımı, İBBS-2 bölge payları, AB'ye göre verimlilik | TÜİK YSHİ 2024, İş Kayıtları 2024, SGK 2025, Eurostat SBS 2023 | `[V]`; bölge ve gizli hücre `[T]` |
+      | `kod/f3c_karmasiklik.py` | PCI, ECI, ürün uzayı yoğunluğu, karmaşıklık kazancı, atlanabilir ürünler | BACI 2024 ihracatçı × HS6 (157 ülke, 4.858 ürün) | `[T]` |
+      | `kod/f3d_ab_tarife.py` | KN8 düzeyinde AB MFN'si, spesifik vergilerin ad valorem eşdeğeri, rejime göre S4 artışı, tepe satırlar, EUDR/SKDM payları | AB KN 2026, Comext 2025 (değer ve miktar) | `[V]`; AVE `[T]` |
+      | `kod/f3e_senaryo.py` | S2/S3/S4 sınıf etkileri (P10–P50–P90), EDE, CKE | f3a–f3d, I-O 2023, ProTEE esneklikleri, Faz 2B GE | `[T]` |
+      | `kod/f3f_skor_matris.py` | KS, SS, AME, EDE ve CKE puanları, arketip, duruş, ağırlık duyarlılığı, `veri/nace_matris.csv` | f3a–f3e, `veri/f3_ss_boyutlar.csv` | `[T]`; SS `[H]` |
+      | `kod/f3g_kartlar.py` | Bu belge (kartların sayısal alanları; nitel alanlar `kartlar/10-12*.yaml`) | — | — |
+
+      **Ölçümün beş kuralı.**
+      1. **Senaryolar genel dengeye bağlı.** Her Monte Carlo çekilişinde (N = 2.000) AB'ye toplam ihracat ve ithalat değişimi Faz 2B'nin genel denge dağılımından alınıyor. S4: −%18,9 (GA90 −32/−5); S2: −%11,1 (−27/+6). Kısmi denge modeli (`ΔX = X[(1+τ_etkin)^(−σ) − 1]`) yalnızca bu toplamı sınıflara dağıtıyor; S3 iki senaryonun kısmi denge yapısıyla ara değer alıyor. Kalibrasyon ölçeği S2'de 0,65, S4'te 0,54: ürün düzeyi esnekliklerle kısmi denge, genel dengenin yaklaşık iki katı kayıp üretiyor (`V-30`).
+      2. **Esneklikler ürün düzeyinde.** CEPII ProTEE (Fontagné, Guimbard ve Orefice 2022) HS6 esneklikleri sınıf içinde AB ihracatıyla ağırlıklandırılıp [2, 15] aralığına kırpıldı; medyan 7,8 (`V-32`).
+      3. **Tarife rejime göre ayrıştırılıyor.** S4'te GB satırına tam MFN, İTÜ satırına yalnızca sanayi bileşeni ekleniyor; tarım satırı (1/98) değişmiyor. Hasmane AB varsayımıyla (`V-11`) S4'te 1/98'in askıya alınma olasılığı 0,25 (`V-31`). 1/98 kaybı genel denge toplamına ekleniyor, yeniden dağıtılmıyor.
+      4. **Sürtünme ve menşe ayrı kalemler.** Sınır sürtünmesi %0,5–2 ve yalnızca GB ve İTÜ satırlarına uygulanıyor; S2'de AEO karşılıklı tanıma ve tek pencereyle yarıya iniyor (`V-33`). Menşe maliyeti `c_RoO` ve uyum olasılığı `p_uyum` sınıf varsayım tablosundan geliyor (`veri/f3_sinif_varsayim.csv`, `[H]`). Tarım satırları 1/98'de bugün de menşe kuralına tabi olduğundan onlara ek menşe maliyeti eklenmiyor.
+      5. **TÜFE etkisi birinci tur ve I-O ile tutarlı.** Doğrudan kanal: COICOP 2018 sepetinden sınıfa eşlenen ağırlık × tüketimdeki ithal pay. Dolaylı kanal: I-O 2023 Leontief fiyat modeli (`kod/f2a_io_fiyat.py`). 230 sınıfın EDE toplamı 22,0 bp; I-O ürün toplamı 23,5 bp. S4'te AB'ye uygulanacak c2 tarifesinin imalat toplamı birinci turda 69 bp (Faz 2A'daki 73 bp ile tutarlı).
+
+      **Skorlar.**
+      - KS'nin yedi bileşeni, ağırlıkları ana prompttaki gibi, C sınıfları içinde yüzdelik sıraya çevrildi. Ar-Ge bileşeni OECD sınıflamasından geliyor (Türkiye'ye özgü sınıf düzeyi Ar-Ge verisi yok: VB-31).
+      - Ağırlık duyarlılığı: varsayılan sıranın Spearman korelasyonu eşit ağırlıkta 0,93, ticaret ağırlıklı setle 0,92, yapı ağırlıklı setle 0,75; Dirichlet çekilişlerinin P10'unda 0,71. Sıralama ticaret ağırlıklarına karşı sağlam, yapısal ağırlıklara karşı orta derecede sağlam. Kartlarda her sınıfın sıra aralığı (P10–P90) veriliyor.
+      - SS yedi boyutta, elle ve gerekçeli puanlandı `[H]`. SS = 0,7 × en yüksek boyut + 0,3 × ağırlıklı ortalama.
+      - AME = AB ihracat payı × (beklenen `τ_AB` + `c_RoO` + sınır sürtünmesi) × değer zinciri çarpanı. Beklenen τ, 1/98 kaybını 0,25 olasılıkla içeriyor.
+      - CKE: STA dışı ithalata 1 puanlık tarifenin ya da iç satışa %1 üretim desteğinin 5 yıllık net cari denge getirisi. Getiri, sırasıyla TÜFE baz puanına ve mali maliyete bölünüyor; kapasite yatırımının ithalatı ve ithal girdi düşülüyor (`V-36`).
+      - Arketip ve duruş önce kurala göre atanıyor (`V-34`), sonra kartta uzman muhakemesiyle düzeltiliyor. Düzeltmeler `veri/nace_matris.csv`'nin `uzman_duzeltmesi` sütununda.
+    - |
+      **Düzeltme notu (Faz 0–2 sınıf tabloları).** Faz 3 hesapları iki veri hatası buldu.
+      - **D-1. KN8 → NACE ağırlıkları.** `veri/cn2025_nace_rejim.csv` yazılırken birden çok sınıfa düşen 1.251 KN8 satırının ağırlığı tam sayıya yuvarlanmış ve sıfır görünüyordu. Bu satırlar TR→AB ihracatının %12,8'ini oluşturuyor.
+        - Faz 0–2'nin toplamları doğru: değerler eşit paylaştırılmış olarak zaten yazılıydı.
+        - Sınıf dağılımı ise bazı sınıflarda yanlış. Örnek: hibrit otomobil satırları (CPA 2.2 29.10.23) 29.10 ile 27.11 arasında eşit bölünmüştü. Faz 3 eşlemesiyle 29.32'nin AB ihracatı €2,1 mlr'dan €5,6 mlr'a, 29.10'unki €16,6 mlr'dan €18,7 mlr'a çıkıyor; 27.11 (€3,3 → €1,3 mlr) ve 28.25 (€2,9 → €1,3 mlr) düşüyor.
+        - Faz 3'te CPA 2.2 kodunun CPA 2.1'de aynen sürdüğü bağlantıya öncelik veriliyor (`agirlik_f3`, `V-37`); eşleşmeyen ticaret %6,0'dan %0,3'e iniyor.
+        - Faz 0–2'deki sınıf düzeyi tablolar (`nace_kapsam.csv` ihracat sütunu, `s4_tarife_duvari_sinif.csv`, `politika_s4_net_istihdam_sinif.csv`) bu sınıflar için Faz 3 kartlarıyla geçersiz kalıyor. Sınıf düzeyi Faz 2 sayılarının Faz 3 yöntemiyle yeniden hesaplanmış hâli matriste.
+      - **D-2. Kıbrıs akımları.** BACI'deki TR→Kıbrıs ihracatı ($1,6 mlr, 2024; %31'i akaryakıt) büyük ölçüde KKTC ticareti ve AB gümrük bölgesi dışında (Protokol 10).
+        - Faz 3'te bu akımlar AB dışı sayılıyor ve AB pazarı verisinden düşülüyor. Etki: imalatın AB'ye ihracatının %1,4'ü; bazı küçük gıda sınıflarında AB payı belirgin düşüyor.
+        - Faz 1–2'de AB tarafı maruziyet Comext'ten hesaplandığı için etkilenmiyor. Yalnız BACI'ye dayanan Türkiye ithalatı AB payları (EDE) çok az yüksek kalmış.
+      - **D-3. Faz 2'deki "kaybı %5'i aşan 21 sınıf"** σ = 5 ile, kalibrasyonsuz kısmi dengeden geliyordu. Faz 3'te genel denge kalibrasyonu ve iç ikameyle S4'te kaybı %5'i aşan sınıf sayısı P50'de 9, P10'da 15 (`veri/f3_senaryo_ozet.csv`).
+  genel:
+    - |
+      ## 1. Genel görünüm
+
+      **10 Gıda ürünleri (25 sınıf).**
+      - İmalat istihdamının %12'si (610 bin), AB'ye imalat ihracatının yalnızca %5,6'sı. AB'ye ihracatın büyük kısmı tarım rejiminde (1/98): kuru meyve ve fındık, su ürünleri, meyve suyu, bitkisel yağ.
+      - Türkiye birçok üründe dünya ihracatında ilk sırada (BACI 2024) `[V]`:
+        - buğday unu (%19,6), fındık içi (%62), kuru kayısı (%75), kuru incir (%50), kuru üzüm (%30);
+        - levrek (%32), rafine ayçiçek yağı (%19), bulgur (%75), fruktoz (%35);
+        - makarna ve çipurada ikinci.
+      - Bu ihracatın çoğu AB dışına gidiyor: un ve makarnada Irak, Somali, Gana; kanatlıda Irak.
+      - Bölümün GB'ye bağlı tek parçası İTÜ: bisküvi, çikolata ve şekerleme, glikoz, gıda müstahzarları. AB'ye €1,1 mlr civarında ihracat ve S4'te %7–16 sanayi bileşeni.
+
+      **11 İçecekler (7 sınıf).**
+      - AB'nin alkollü içki ve birada MFN'si sıfır ya da çok düşük, bu yüzden çıkışın AB tarafı etkisi küçük.
+      - Alkolsüz içeceklerde (11.07) AB ihracatı $111 mn ve S4 tarifesi %6,6. İthalatta enerji içecekleri öne çıkıyor (Avusturya %42).
+      - 11.05'in ithalatı ($348 mn) aslında bira değil, ABD'den damıtma artığı yem (KN 2303 30): sınıflandırma CPA 11.05.20'ye bağlı.
+      - ÖTV ile gümrük etkileşimi: alkollü içki ve kolada ÖTV maktu ya da yüksek oranlı. S4'te AB'ye MFN, ithal ürünün ÖTV öncesi fiyatına eklenir, ama TÜFE etkisi küçük (11 için 0,9 bp).
+
+      **12 Tütün ürünleri (1 sınıf).**
+      - Çok uluslu üretim üssü (PMI ve JTI İzmir; PMI Torbalı 2024'te üretiminin %11'inden fazlasını ihraç etti) `[V]`.
+      - AB'ye ihracat $116 mn ve sigarada AB MFN'si %57,6: S4'te AB pazarı fiilen kapanır.
+      - S2'de menşe kuralı (%70 menşeli yaprak) Amerikan harmanını dışarıda bırakıyor.
+      - İthalatın %48'i AB'den. Isıtılmış tütün ve sigara Almanya, Hollanda ve Belçika'dan geliyor. S4'te c2 tarifesi TÜFE'ye 2,7 bp ekliyor; bölümün S4 TÜFE etkisinin %44'ü bu.
+  matris_giris: |
+    ## 2. Ana matris satırları
+
+    Matrisin bütün sütunları ve 230 sınıfın tamamı `veri/nace_matris.csv`'de. Aşağıdaki iki tablo ana promptun matris sütunlarını 10–12 için gösteriyor.
+  kart_giris: |
+    ## 3. Sınıf kartları
+
+    Her kartta sayısal alanlar veriden, nitel alanlar `kartlar/10-12_siniflar.yaml`'dan geliyor. Bölümler arası ortak eylemler (E-10-01 … E-10-06) §4'te; kartlar bunlara atıf yapıyor. Senaryo tablolarındaki değerler T+5'teki yıllık etki (P50, parantez içinde P10 / P90).
+  son_bolumler:
+    - |
+      ## 4. Ortak eylemler (10–12)
+
+      **Tablo 4.1 — Bölüm düzeyi eylemler**
+
+      | Eylem ID | Araç | Parametre | Sorumlu | Hukuki araç | Bütçe | Başlangıç–bitiş | Performans koşulu | Sunset | KPI |
+      |---|---|---|---|---|---|---|---|---|---|
+      | E-10-01 | 1/98 sürekliliği ve S2'ye aktarımı | (i) 1/98'in Ankara Anlaşması'na dayanan bağımsız hukuki dosyası; (ii) S2 metninde 1/98 tavizlerinin ve İTÜ rejiminin aktarımı; (iii) S4'te 1/98'i askıya alma girişimine karşı DTÖ ve Ortaklık Konseyi yolu | Ticaret Bakanlığı (Uluslararası Anlaşmalar ve AB GM), Dışişleri (AB Başkanlığı), Tarım ve Orman Bakanlığı (TOB) | Ortaklık Konseyi kararı; S2 anlaşma metni (Ek: tarım tavizleri) | İdari | T−18 → T | S2 metninde 1/98 tavizleri en az bugünkü kapsamda | Yok (anlaşmayla kalıcı) | 1/98 kapsamındaki AB ihracatı (€4,0 mlr civarı) T+1'de ≥ %95 |
+      | E-10-02 | Menşe uyumlu DİR: yerli eşdeğer eşya | AB'ye yönelik İTÜ ihracatında (Fasıl 17–21) DİR izin belgesiyle yerli (menşeli) buğday ve şeker kullanımı; ithal eşya serbest dolaşıma vergisiz girer (eşdeğer eşya). S2'de PSR talebi: Fasıl 19'da menşesiz tahıla fabrika çıkış fiyatının %15'ine kadar tolerans | Ticaret Bakanlığı (İhracat GM), TMO, Gümrükler GM | DİR Kararı ve Tebliği değişikliği; S2 menşe protokolü | Gelir etkisi ≈ 0 (vergi zaten alınmıyor) `[T]` | T−12 → T+60 | Belge sahibinin AB ihracatı ≥ yerli eşdeğer miktar | T+60 (PSR yürürlüğe girince gözden geçirilir) | Bisküvi/ekmek AB ihracatında menşe ispatlı pay ≥ %85 |
+      | E-10-03 | EUDR uyum masası | Kakao (10.82), kahve (10.83), soya/palm (10.41, 10.91) ve sığır (10.11, 15.11) için coğrafi konum verisi ve özen beyanı desteği; ithalatçı birlikleriyle ortak veri havuzu | TOB, Ticaret Bakanlığı, TİM (ilgili ihracatçı birlikleri) | Bakanlık genelgesi; TİM yönetim kurulu kararı | ≈ 0,05 mlr TL/yıl `[T]` | T−18 → T+24 | Kullanan firma sayısı | T+24 | EUDR nedeniyle AB'de reddedilen sevkiyat = 0 |
+      | E-10-04 | Ticaret savunması erken uyarı | Su ürünleri (10.20) ve işlenmiş meyve-sebzede (10.39) AB anti-damping ve sübvansiyon soruşturmalarına hazırlık: destek programlarının ASCM uyum dosyası, maliyet verisi | Ticaret Bakanlığı (İthalat GM ve İhracat GM), TOB, ilgili ihracatçı birlikleri | İç talimat | İdari | T−12 → T+36 | — | T+36 | Soruşturma açılırsa 30 gün içinde tam yanıt |
+      | E-10-05 | S4 geçiş tamponu (yalnız S4) | AB'ye İTÜ ihracatçılarına (10.62, 10.72, 10.82, 10.89, 11.07) ihracat kredi sigortası ve pazar çeşitlendirme desteği; yıllık tavan | Türk Eximbank, Ticaret Bakanlığı | Eximbank programı; İhracat Destekleri Kararı | 0,3 mlr TL/yıl × 3 yıl `[T]` | T → T+36 | AB dışı ihracat artışı | T+36 | Tampon kapsamındaki firmaların toplam ihracatı ≥ T−12 düzeyi |
+      | E-10-06 | Tarımda hücum gündemi (S2) | Meyve-sebzede giriş fiyatı sistemi istisnası, domates ve işlenmiş ürün kotalarının genişletilmesi, su ürünlerinde kota yerine sıfır tarife, kanatlı ve süt ürünlerinde SPS listelenme | Ticaret Bakanlığı, TOB | S2 anlaşma metni (tarım ve SPS bölümleri) | İdari | T−18 → T | AB'nin tarım hassas listesine karşılıklı taviz | — | Tavizli satırların AB ihracatı T+5'te +%10 |
+
+      *Kaynak:* Bütçeler `[T]`, kurumsal sorumluluk `[V]` (mevcut görev dağılımı), tutarlar 2026 fiyatlarıyla; mali yükler defterde toplanıyor.
+    - |
+      ## 5. Kümülatif defter
+
+      {{DEFTER}}
+
+      **Kontrol listesi (parça 1).**
+      1. Etiketler: her sayının etiketi, birimi ve dönemi var. Sınıf değerleri 2024, AB tarifeleri 2026, senaryolar T+5.
+      2. Toplam ve çift sayım: bölüm toplamları matristen (230 sınıf); EDE toplamı I-O ile tutarlı (22,0 / 23,5 bp). KKTC ve KN8 düzeltmeleri yapıldı (D-1, D-2).
+      3. Kısıtlar:
+         - S2 yolunda 10–12'nin birinci tur TÜFE etkisi {{10-12|s2_tufe_bp_p50|1}} bp (önlem değil, sürtünme şoku).
+         - S4 yolunda {{10-12|s4_tufe_bp_p50|1}} bp; önlemler (E-10.82-01, E-10.86-01, E-12.00-02) bunu 1,55 bp düşürüyor (Tablo 5.1).
+         - Mali kısıt: önlemler S2 yolunda 0,8, S4 yolunda 1,7 mlr TL/yıl (GSYH'nin %0,002'si; Tablo 5.1).
+         - İstihdam: S4'ün P10 değerinde 10.39 −%{{10.39|s4_istihdam_pay_p10|1|pctabs}} ile %5 eşiğine yakın; tetik tanımlandı.
+      4. Tarife önerileri: 10–12'de bağlı oranı aşan öneri yok. Öneriler ya MFN'yi koruyor ya indiriyor; ITA bu bölümleri kapsamıyor; STA kontrolü kartlarda.
+      5. DTÖ: E-10-02, DİR'in mevcut eşdeğer eşya rejimi içinde. Tarım ürünlerinde ihracat sübvansiyonu yasağına (Nairobi 2015) takılmamak için TMO satışı ihracat koşullu indirimle yapılmıyor.
+      6. "Pazartesi sabahı": eylemlerde kurum, hukuki araç, bütçe, tarih ve KPI var. Bütçe ve tarih kalibrasyonu Faz 5–8'de.
+      7. AB tepkisi: 1/98'in askıya alınması (0,25) ve ticaret savunması (10.20, 10.39) fiyatlandı.
+      8. Zaman yolu: eylemler T−18 → T+60.
+      9. Kaçınılacak hatalar: tarım satırlarına GB tarifesi eklenmedi (hata 15); spesifik vergiler AVE'ye çevrildi.
+      10. Kaçamak ifade bırakılmadı. Belirsiz olgular `[D?]` olarak işaretli.
+      11. Olumsuz bulgular girişte (sigara, fındık kaldıracının sınırı).
+
+      {{ILERLEME}}
+  defter_ortak:
+    E-10-03: {mali_s2: 0.05, mali_s4: 0.05}
+    E-10-05: {mali_s2: 0, mali_s4: 0.3}
+    E-10-06: {ca_s2: 50, ca_s4: 0}
+  veri_bosluklari:
+    - "VB-30: sınıf düzeyinde yabancı sermaye payı (TÜİK yabancı kontrollü girişim istatistikleri yalnız bölüm düzeyinde)"
+    - "VB-31: Türkiye'ye özgü sınıf düzeyi Ar-Ge yoğunluğu (OECD sınıflaması vekil)"
+    - "VB-32: DTÖ bağlı oranları, satır düzeyi (WTO CTS); 10–12'de tarife artışı önerilmediği için bağlayıcı değil, sonraki parçalarda gerekli"
+    - "VB-33: TMO yerli buğday fiyatı ile ithal paritesi farkı (menşe maliyeti c_RoO'nun kalibrasyonu)"
+    - "VB-34: EUDR kapsamındaki ihracatçıların tedarik zinciri verisi"
+    - "VB-35: YSHİ ile BACI sınıf eşlemesindeki tutarsızlık (10.86; 11.03, 11.04, 11.06'da YSHİ verisi yok)"
+    - "VB-06 (sürüyor): 1/98 tercih oranları satır düzeyinde; 1/98 kaybı varyantı bu yüzden üst sınır"
+  varsayimlar:
+    - "V-30: Faz 3 senaryoları — toplam GE'den, dağılım kısmi dengeden (ortak z, N = 2.000)"
+    - "V-31: S4'te 1/98'in askıya alınma olasılığı 0,25 (hasmane AB) `[H]`"
+    - "V-32: ticaret esnekliği σ — ProTEE HS6, sınıf içi AB ihracatı ağırlıklı medyan, [2, 15]"
+    - "V-33: sınır sürtünmesi %0,5–2 (yalnız GB ve İTÜ), S2'de × 0,5; AB ihracatçısının menşe maliyeti S2 %0,5, S3 %1"
+    - "V-34: arketip eşikleri (KS, AME, ithalat penetrasyonu, EDE ≥ 0,3 bp/puan, SS ≥ 60) `[H]`"
+    - "V-35: SS boyut puanları ve ağırlıkları `[H]` (veri/f3_ss_boyutlar.csv; 10–12 gözden geçirildi, diğerleri ilk tahmin)"
+    - "V-36: CKE tanımı — 1 puan tarife / %1 üretim desteği, 5 yıl, kapasite yatırımının ithalatı (sermaye/hasıla 1, ithal payı 0,6) düşülü"
+    - "V-37: KN8 → NACE eşlemesinde CPA 2.2 → 2.1 kimlik bağlantısı önceliği (D-1)"

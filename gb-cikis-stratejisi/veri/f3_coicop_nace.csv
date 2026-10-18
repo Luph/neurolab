@@ -1,0 +1,127 @@
+coicop,kod,pay,not
+01111,10.61,1.0,pirinç ve tahıllar (değirmencilik)
+01112,10.61,1.0,un
+01113,10.71,0.7,ekmek ve fırıncılık ürünleri
+01113,10.72,0.3,bisküvi ve kuru pasta
+01114,10.61,1.0,kahvaltılık tahıl
+01115,10.73,1.0,makarna ve kuskus
+01122,10.11,0.55,taze et (kırmızı)
+01122,10.12,0.45,taze et (kanatlı)
+01123,10.13,1.0,kurutulmuş/tütsülenmiş et
+01124,10.11,1.0,sakatat
+01125,10.13,1.0,diğer et müstahzarları
+01131,10.20,0.3,"balık (taze/dondurulmuş; çoğu A bölümü)"
+01133,10.20,1.0,işlenmiş balık
+01141,10.51,1.0,süt
+01142,10.51,1.0,süt
+01143,10.51,1.0,süt
+01145,10.51,1.0,peynir ve yoğurt
+01146,10.51,1.0,süt ürünleri
+01147,10.51,1.0,diğer süt ürünleri
+01151,10.41,1.0,bitkisel yağlar
+01152,10.51,1.0,tereyağı
+01153,10.42,1.0,margarin
+01167,10.39,1.0,kuru meyve ve kuruyemiş
+01168,10.39,0.5,"kuruyemiş (yarısı A bölümü)"
+01176,10.39,1.0,işlenmiş sebze
+01179,10.31,0.5,"patates ürünleri (yarısı A bölümü)"
+01181,10.81,1.0,şeker
+01183,10.39,0.4,"reçel (bal A bölümü)"
+01184,10.39,1.0,fındık ezmesi
+01185,10.82,1.0,çikolata ve kakao ürünleri
+01186,10.52,1.0,dondurma
+01189,10.82,1.0,şekerleme ve tatlılar
+01191,10.85,1.0,hazır yemek
+01192,10.86,1.0,bebek maması
+01193,10.84,0.8,"sos ve çeşni (tuz B bölümü)"
+01194,10.84,1.0,baharat
+01199,10.89,1.0,diğer gıda
+01210,10.32,1.0,meyve ve sebze suları
+01220,10.83,1.0,kahve
+01230,10.83,1.0,çay
+01250,11.07,1.0,su
+01260,11.07,1.0,alkolsüz içecekler
+02110,11.01,1.0,alkollü içkiler
+02121,11.02,1.0,şarap
+02130,11.05,1.0,bira
+02301,12.00,1.0,sigara ve tütün ürünleri
+03121,14.13,0.6,erkek giyim
+03121,14.39,0.2,erkek giyim (örme)
+03121,14.14,0.1,erkek iç giyim
+03121,14.19,0.1,erkek giyim diğer
+03122,14.13,0.6,kadın giyim
+03122,14.39,0.2,kadın giyim (örme)
+03122,14.14,0.1,kadın iç giyim
+03122,14.19,0.1,kadın giyim diğer
+03123,14.19,0.5,bebek giyim
+03123,14.13,0.3,bebek giyim
+03123,14.39,0.2,bebek giyim (örme)
+03124,14.13,0.6,çocuk giyim
+03124,14.39,0.2,çocuk giyim (örme)
+03124,14.14,0.1,çocuk iç giyim
+03124,14.19,0.1,çocuk giyim diğer
+03131,14.19,1.0,giyim aksesuarı
+03211,15.20,1.0,ayakkabı
+03212,15.20,1.0,ayakkabı
+03213,15.20,1.0,ayakkabı
+04311,20.30,0.4,boya
+04311,23.31,0.2,seramik karo
+04311,22.23,0.2,plastik yapı malzemesi
+04311,25.72,0.2,hırdavat
+04522,19.20,1.0,tüp gaz
+04541,05.10,1.0,kömür
+05111,31.09,0.6,mobilya
+05111,31.02,0.2,mutfak mobilyası
+05111,31.03,0.2,yatak
+05114,13.93,1.0,halı
+05211,13.92,1.0,ev tekstili
+05212,13.92,1.0,ev tekstili
+05213,13.92,1.0,ev tekstili
+05219,13.92,1.0,ev tekstili
+05311,27.51,1.0,büyük beyaz eşya
+05312,27.51,1.0,pişirici cihazlar
+05313,28.25,0.5,klima
+05313,27.51,0.5,ısıtıcı
+05314,27.51,1.0,temizlik cihazları
+05321,27.51,1.0,küçük ev aletleri
+05322,27.51,1.0,küçük ev aletleri
+05329,27.51,1.0,küçük ev aletleri
+05401,23.13,0.4,cam eşya
+05401,23.41,0.4,porselen
+05401,25.71,0.2,çatal bıçak
+05402,25.71,1.0,çatal bıçak
+05403,25.99,0.5,metal mutfak eşyası
+05403,22.29,0.5,plastik mutfak eşyası
+05522,25.73,1.0,el aletleri
+05611,20.41,1.0,temizlik ürünleri
+05619,17.22,0.5,kâğıt ev ürünleri
+05619,22.29,0.5,plastik ev ürünleri
+06111,21.20,1.0,ilaç
+06131,32.50,1.0,gözlük ve tıbbi gereç
+06133,32.50,1.0,tıbbi gereç
+07111,29.10,1.0,yeni otomobil
+07130,30.91,1.0,motosiklet
+07211,22.11,1.0,lastik
+07212,29.32,0.7,yedek parça
+07212,29.31,0.3,elektrik aksamı
+07213,29.32,1.0,aksesuar
+07221,19.20,1.0,motorin
+07222,19.20,1.0,benzin
+07223,19.20,1.0,otogaz
+08120,26.30,0.6,cep telefonu
+08120,26.20,0.4,bilgisayar
+08131,26.20,1.0,bilgisayar ekipmanı
+08132,26.20,1.0,bilgisayar ekipmanı
+08140,26.40,1.0,TV ve ses cihazları
+09212,32.20,1.0,müzik aletleri
+09322,32.40,1.0,oyuncak ve oyun
+09461,10.92,0.5,evcil hayvan maması
+09610,18.11,0.5,gazete ve kitap basımı
+13120,20.42,0.8,kozmetik ve kişisel bakım
+13120,27.51,0.1,kişisel bakım cihazları
+13120,17.22,0.1,hijyen kâğıtları
+13131,20.42,1.0,kişisel bakım ürünleri
+13132,17.22,1.0,hijyen ürünleri
+13211,32.12,0.8,mücevher
+13211,26.52,0.2,saat
+13291,15.12,1.0,çanta ve bavul

@@ -1,0 +1,158 @@
+exporter_iso3,eci,ulke,cesitlilik,sira
+JPN,2.1533,Japan,1270.0,1
+CHE,2.0413,Switzerland,622.0,2
+SGP,1.9508,Singapore,508.0,3
+KOR,1.9459,Rep. of Korea,834.0,4
+S19,1.8716,"Other Asia, nes",788.0,5
+DEU,1.8695,Germany,1999.0,6
+USA,1.6701,USA,1380.0,7
+SWE,1.5967,Sweden,1110.0,8
+CZE,1.592,Czechia,1237.0,9
+FIN,1.5779,Finland,867.0,10
+GBR,1.552,United Kingdom,1301.0,11
+AUT,1.5458,Austria,1438.0,12
+SVN,1.4425,Slovenia,810.0,13
+ISR,1.4345,Israel,665.0,14
+LUX,1.4171,Luxembourg,770.0,15
+IRL,1.404,Ireland,365.0,16
+HUN,1.3974,Hungary,861.0,17
+SVK,1.3753,Slovakia,825.0,18
+BEL,1.3157,Belgium,1329.0,19
+FRA,1.2591,France,1742.0,20
+NLD,1.1609,Netherlands,1531.0,21
+ITA,1.107,Italy,2068.0,22
+MLT,1.0864,Malta,244.0,23
+MEX,1.071,Mexico,701.0,24
+CAN,1.0703,Canada,912.0,25
+MYS,1.068,Malaysia,688.0,26
+DNK,1.0603,Denmark,1315.0,27
+EST,1.0141,Estonia,1044.0,28
+POL,0.9729,Poland,1577.0,29
+CHN,0.9626,China,2444.0,30
+NOR,0.954,Norway,389.0,31
+ROU,0.9142,Romania,984.0,32
+BLR,0.8853,Belarus,525.0,33
+HKG,0.8809,"China, Hong Kong SAR",733.0,34
+THA,0.8786,Thailand,1001.0,35
+SAU,0.8521,Saudi Arabia,266.0,36
+BHS,0.8196,Bahamas,107.0,37
+LTU,0.7753,Lithuania,1093.0,38
+HRV,0.7382,Croatia,1037.0,39
+ESP,0.7252,Spain,1891.0,40
+LVA,0.7228,Latvia,1054.0,41
+SRB,0.7218,Serbia,904.0,42
+BGR,0.6238,Bulgaria,1121.0,43
+ISL,0.617,Iceland,262.0,44
+BIH,0.6062,Bosnia Herzegovina,714.0,45
+CYM,0.5858,Cayman Isds,27.0,46
+RUS,0.5679,Russian Federation,396.0,47
+CYP,0.5632,Cyprus,438.0,48
+BHR,0.5455,Bahrain,238.0,49
+PHL,0.5433,Philippines,532.0,50
+NZL,0.5339,New Zealand,533.0,51
+IND,0.4923,India,1576.0,52
+TUR,0.4586,TÃ¼rkiye,1667.0,53
+GRC,0.4309,Greece,897.0,54
+UKR,0.3983,Ukraine,554.0,55
+PRT,0.3968,Portugal,1498.0,56
+GRL,0.3554,Greenland,78.0,57
+BRN,0.3455,Brunei Darussalam,63.0,58
+URY,0.3221,Uruguay,288.0,59
+KAZ,0.3095,Kazakhstan,249.0,60
+CRI,0.296,Costa Rica,403.0,61
+KWT,0.2818,Kuwait,101.0,62
+BRA,0.2534,Brazil,509.0,63
+ARE,0.2315,United Arab Emirates,229.0,64
+MHL,0.2007,Marshall Isds,58.0,65
+ZAF,0.176,South Africa,742.0,66
+COL,0.1727,Colombia,453.0,67
+LBN,0.1676,Lebanon,729.0,68
+AUS,0.1368,Australia,338.0,69
+SLE,0.1288,Sierra Leone,128.0,70
+QAT,0.1119,Qatar,54.0,71
+GEO,0.1112,Georgia,394.0,72
+MKD,0.0758,North Macedonia,466.0,73
+IRN,0.0662,Iran,508.0,74
+BWA,0.0631,Botswana,86.0,75
+PAN,0.0505,Panama,606.0,76
+CHL,0.0372,Chile,351.0,77
+ARG,0.008,Argentina,437.0,78
+TTO,-0.0265,Trinidad and Tobago,97.0,79
+TUN,-0.0838,Tunisia,775.0,80
+ARM,-0.1041,Armenia,306.0,81
+DOM,-0.1106,Dominican Rep.,478.0,82
+JAM,-0.1189,Jamaica,299.0,83
+IDN,-0.1331,Indonesia,817.0,84
+MDA,-0.1438,Rep. of Moldova,480.0,85
+SLV,-0.156,El Salvador,623.0,86
+NCL,-0.1666,New Caledonia,44.0,87
+MUS,-0.1704,Mauritius,660.0,88
+GTM,-0.2132,Guatemala,733.0,89
+VNM,-0.22,Viet Nam,834.0,90
+MAC,-0.2395,"China, Macao SAR",374.0,91
+SWZ,-0.2579,Eswatini,282.0,92
+EGY,-0.27,Egypt,881.0,93
+KGZ,-0.2874,Kyrgyzstan,266.0,94
+NAM,-0.3184,Namibia,264.0,95
+JOR,-0.3286,Jordan,429.0,96
+PRY,-0.3354,Paraguay,249.0,97
+OMN,-0.3423,Oman,143.0,98
+FJI,-0.3489,Fiji,460.0,99
+AZE,-0.3622,Azerbaijan,124.0,100
+ALB,-0.3749,Albania,603.0,101
+SUR,-0.4224,Suriname,120.0,102
+UZB,-0.4515,Uzbekistan,458.0,103
+NER,-0.455,Niger,116.0,104
+SEN,-0.4706,Senegal,349.0,105
+BOL,-0.4886,Bolivia (Plurinational State of),182.0,106
+KEN,-0.491,Kenya,634.0,107
+MAR,-0.4918,Morocco,534.0,108
+HND,-0.5059,Honduras,429.0,109
+NPL,-0.5679,Nepal,422.0,110
+PER,-0.5755,Peru,370.0,111
+SYR,-0.5851,Syria,394.0,112
+TGO,-0.5879,Togo,258.0,113
+LBY,-0.5926,Libya,36.0,114
+LKA,-0.6368,Sri Lanka,691.0,115
+AGO,-0.678,Angola,64.0,116
+DZA,-0.6849,Algeria,80.0,117
+PAK,-0.7095,Pakistan,787.0,118
+AFG,-0.7183,Afghanistan,180.0,119
+ZMB,-0.7488,Zambia,211.0,120
+BEN,-0.7553,Benin,188.0,121
+UGA,-0.765,Uganda,348.0,122
+IRQ,-0.8195,Iraq,16.0,123
+MWI,-0.8399,Malawi,171.0,124
+MRT,-0.8505,Mauritania,108.0,125
+ECU,-0.891,Ecuador,205.0,126
+GUY,-0.8975,Guyana,60.0,127
+MLI,-0.9036,Mali,114.0,128
+LSO,-0.9324,Lesotho,242.0,129
+ZWE,-0.9334,Zimbabwe,158.0,130
+KHM,-0.9631,Cambodia,488.0,131
+TZA,-1.0103,United Rep. of Tanzania,383.0,132
+MNG,-1.0266,Mongolia,76.0,133
+TJK,-1.0325,Tajikistan,104.0,134
+CIV,-1.0381,CÃ´te d'Ivoire,158.0,135
+TKM,-1.0412,Turkmenistan,65.0,136
+NIC,-1.0666,Nicaragua,257.0,137
+BFA,-1.1284,Burkina Faso,80.0,138
+GHA,-1.1353,Ghana,169.0,139
+LAO,-1.1618,Lao People's Dem. Rep.,198.0,140
+MOZ,-1.2454,Mozambique,188.0,141
+ETH,-1.2642,Ethiopia,239.0,142
+VEN,-1.2692,Venezuela,88.0,143
+MMR,-1.2698,Myanmar,507.0,144
+MDG,-1.3555,Madagascar,412.0,145
+CMR,-1.3791,Cameroon,105.0,146
+SDN,-1.4368,Sudan,64.0,147
+BGD,-1.4602,Bangladesh,360.0,148
+PNG,-1.5213,Papua New Guinea,58.0,149
+NGA,-1.727,Nigeria,117.0,150
+GAB,-1.7665,Gabon,33.0,151
+COG,-1.9545,Congo,55.0,152
+LBR,-1.9987,Liberia,40.0,153
+GNQ,-2.1785,Equatorial Guinea,17.0,154
+TCD,-2.1853,Chad,10.0,155
+COD,-2.1973,Dem. Rep. of the Congo,39.0,156
+GIN,-2.7433,Guinea,29.0,157

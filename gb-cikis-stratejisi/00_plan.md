@@ -5,7 +5,7 @@
 | | |
 |---|---|
 | Tarih | 17 Ekim 2026 (çalışma ortamının tarihi) |
-| Faz | 0 / 9: tamamlandı; Revizyon 1 ile kullanıcı yanıtları işlendi. Faz 1'de §1 erişim tablosu, §3 V-06/V-07 ve §4 veri envanteri doğrulanmış erişime göre güncellendi. Faz 2 (2A, 2B, 2C) 18.10.2026'da tamamlandı: [`02a_politika_uzayi.md`](02a_politika_uzayi.md), [`02b_secenekler_hukuk.md`](02b_secenekler_hukuk.md), [`02c_hazirlik.md`](02c_hazirlik.md). Sonraki: Faz 3 |
+| Faz | 0 / 9: tamamlandı; Revizyon 1 ile kullanıcı yanıtları işlendi. Faz 1'de §1 erişim tablosu, §3 V-06/V-07 ve §4 veri envanteri doğrulanmış erişime göre güncellendi. Faz 2 (2A, 2B, 2C) 18.10.2026'da tamamlandı: [`02a_politika_uzayi.md`](02a_politika_uzayi.md), [`02b_secenekler_hukuk.md`](02b_secenekler_hukuk.md), [`02c_hazirlik.md`](02c_hazirlik.md). Faz 3 parça 1 (10–12) 18.10.2026'da tamamlandı: [`nace_kartlar_10-12.md`](nace_kartlar_10-12.md). Sonraki: Faz 3 parça 2 (13–15) |
 | Bu fazın çıktıları | `00_plan.md` (bu belge); `veri/nace_kapsam.csv`, `veri/nace_kapsam_bolum_ozeti.csv`, `veri/nace_r2_r21_kopru.csv`, `veri/cn2025_nace_rejim.csv`, `veri/akct_1996_cn8.txt`; `kod/f0_nace_kapsam.py`; `defter.md`; `DURUM_OZETI.md` |
 | Kanıt etiketleri | `[V]` doğrulanmış veri (kaynak, dönem) · `[T]` tahmin (yöntem, P10–P50–P90) · `[D?]` doğrulanması gereken · `[H]` hipotez veya uzman yargısı. Güven: **Y**üksek / **O**rta / **D**üşük |
 | Para birimi | Aksi belirtilmedikçe cari ABD doları; AB kaynaklı veriler avro olarak verilir. 2025 ortalama kuru: 1 € = 1,1300 $ `[V]` (ECB, EXR.A.USD.EUR) |
@@ -95,7 +95,7 @@ Bu bulgular strateji tasarımını daha ilk fazda etkiliyor; ayrıntıları ve k
 
 | Katman | Uygulama | Fark ve gerekçe |
 |---|---|---|
-| Eşleştirme | CN2025 → CPA 2.2 → CPA 2.1 → NACE Rev. 2 (Faz 0'da tamamlandı). GTİP'in ilk 8 hanesi CN ile aynı `[H→V Faz 1]`; BEC Rev. 5 ve COICOP 2018 bağlantıları Faz 3'te eklenecek | Birden çok NACE sınıfına düşen CN satırları eşit paylaştırılır (ağırlık sütunu dosyada) |
+| Eşleştirme | CN2025 → CPA 2.2 → CPA 2.1 → NACE Rev. 2 (Faz 0'da tamamlandı). GTİP'in ilk 8 hanesi CN ile aynı `[H→V Faz 1]`; BEC Rev. 5 ve COICOP 2018 bağlantıları Faz 3'te eklenecek | Birden çok NACE sınıfına düşen CN satırları Faz 0–2'de eşit paylaştırıldı (`agirlik`); Faz 3'te kimlik bağlantısı öncelikli (`agirlik_f3`, V-37) |
 | Kısmi denge | 230 sınıfın tamamı; CN8 düzeyinde `τ_AB`, `c_RoO`, `p_uyum` ve sınıfa toplama | — |
 | Yapısal çekim | PPML, ihracatçı-yıl, ithalatçı-yıl ve ikili sabit etkilerle (pyfixest); BACI 2000–2024 | Geriye dönük sınama: 1996 GB girişi, Brexit |
 | Genel denge | GTAP veritabanı lisanslı olduğundan **GE-PPML** karşı-olgusu (Anderson, Larch ve Yotov 2018) ve literatürdeki CGE sonuçları (BKP 2016, ifo 2016) ile çapraz kontrol | GTAP-benzeri tam CGE ancak lisans sağlanırsa |
@@ -223,6 +223,14 @@ Sınırlamalar: AB'nin spesifik vergileri ve tarım bileşenleri dahil değil (t
 | V-27 | Üyelik perspektifi | **Yok.** Diplomatik çerçeve: "üyelikten bağımsız, çıkar temelli ekonomik ortaklık". Ankara Anlaşması feshedilmez: 1/80 ve Katma Protokol md. 41 hakları AB'deki Türk vatandaşları için korunur, 1/95'in sona ermesi bu hakları etkilemez (A-8). Sonuçlar: (a) AB katılım öncesi mali yardımları (IPA) sona erer; (b) müktesebata uyum hedefi kalkar, teknik mevzuat uyumu yalnızca pazar erişimi için yapılır (temel ilke 9); (c) md. 218(8)'deki aday ülke hükmü gündemden çıkar, md. 207 yolu tercih edilir | Kullanıcı yanıtı (Revizyon 1); temel ilke 2 |
 | V-28 | Görev çerçevesi | Çıkış yönü veri. S1 (modernize GB) öneri seçeneği değil, maliyet karşılaştırma ölçütü. Çıkışın net negatif kaldığı yerlerde bunu pozitife çevirecek tasarım koşulları ve gerçekçilikleri yazılır | Kullanıcı yanıtı (Revizyon 1); `<gorev>` |
 | V-29 | Veri erişimi | Bütün veriler çevrim içi kaynaklardan (API ve kazıma) alınır. TÜİK için Dağıtım Yönetim Sistemi arka ucu (anonim) ve Veri Portalı arama API'si kullanılır; erişim kodu `kod/tuik.py` | Kullanıcı yanıtı (Revizyon 1) |
+| V-30 | Faz 3 senaryo kalibrasyonu | Sınıf etkileri: her Monte Carlo çekilişinde (N = 2.000) AB'ye toplam ihracat ve ithalat değişimi Faz 2B genel denge dağılımından (ortak z; SH = GA90 / 3,29); sınıflara dağılım kısmi dengeyle `ΔX = X[(1+τ_etkin)^(−σ) − 1]`. S3, S2 ve S4'ün kısmi denge yapısıyla ara değer | Faz 3 (`kod/f3e_senaryo.py`) |
+| V-31 | 1/98'in askıya alınması | S4'te olasılık 0,25 (hasmane AB, V-11). Etki GE toplamına eklenir; bugünkü tercih oranı 0 sayıldığı için üst sınır (VB-06) | `[H]` Faz 3 |
+| V-32 | Sınıf düzeyi σ (V-17'nin uygulaması) | CEPII ProTEE HS6 esneklikleri; sınıf içinde TR→AB ihracatı ağırlıklı medyan, [2, 15] aralığı; anlamsız ve pozitif HS6'da HS4/HS2 ortalaması. Medyan 7,8 | `[T]` Faz 3 |
+| V-33 | Sınır sürtünmesi ve AB ihracatçısının menşe maliyeti | %0,5–2 (üçgen, P50 %1), yalnız GB ve İTÜ satırlarına; çabuk bozulanlarda +%0,5–2. S2'de × 0,5 (AEO, tek pencere). AB ihracatçısının TR'ye menşe maliyeti S2 %0,5, S3 %1; uyum 0,92 / 0,85 | `[H]` Faz 3 |
+| V-34 | Arketip eşikleri | A: AB payı ≥ %25, AME ≥ 60 ve KS ≥ 50 (ya da AME ≥ 70 ve KS ≥ 40; ya da AB payı ≥ %35, AB RCA ≥ 1,5, KS ≥ 45). B: AB payı < %35, RCA ≥ 1, KS ≥ 45, ihracat ≥ $50 mn ve üretimin ≥ %5'i. C: KS ≥ 40, ithalat penetrasyonu ≥ %40, EDE < 0,3 bp. D: SS ≥ 60. E: KS < 40, penetrasyon ≥ %50, EDE ≥ 0,3 bp. F: emek yoğunluğu ≥ P65, gerileme, ticaret yoğunluğu ≥ %10. G: (SKDM ya da EUDR payı) × AB payı ≥ 0,08. Kart düzeltmeleri `kartlar/*.yaml` | `[H]` Faz 3 |
+| V-35 | Stratejik skor boyutları | Yedi boyut 0–100, elle (`veri/f3_ss_boyutlar.csv`). Ağırlıklar: savunma 0,20; ikili kullanım 0,10; enerji, sağlık, gıda, kritik hammadde 0,15; dijital 0,10. SS = 0,7 × en yüksek + 0,3 × ağırlıklı ortalama | `[H]` Faz 3 |
+| V-36 | CKE tanımı | 5 yıl, birikimli. Tarife: STA dışı ithalata +1 puan. Mali: iç satışa %1 üretim desteği. Kapasite yatırımının ithalatı (sermaye/hasıla 1, ithal payı 0,6) ve ithal girdi içeriği düşülür. Tavan: üretimin %3'ü | `[T]` Faz 3 |
+| V-37 | KN8 → NACE eşlemesi (Faz 3) | Birden çok sınıfa düşen KN8'de CPA 2.2 kodunun CPA 2.1'de aynen sürdüğü bağlantı; yoksa aynı bölümdeki hedefler; yoksa eşit pay (`agirlik_f3`). Faz 0–2 eşit pay kullandı (düzeltme D-1) | `[T]` Faz 3 |
 
 ---
 

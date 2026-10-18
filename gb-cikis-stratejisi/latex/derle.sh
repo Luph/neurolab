@@ -20,12 +20,13 @@ OKU="gfm+smart+implicit_figures-tex_math_dollars-yaml_metadata_block-emoji"
 
 # kök | kapak alt başlığı | kapak açıklaması | (isteğe bağlı) bölüm başlığı
 BELGELER=(
-  "DURUM_OZETI|Durum özeti|Faz 2 sonu itibarıyla bulgular, öneri ve açık konular.|"
+  "DURUM_OZETI|Durum özeti|Faz 3 parça 1 sonu itibarıyla bulgular, öneri ve açık konular.|"
   "00_plan|Faz 0 — Plan|Çalışma planı, varsayım kaydı, veri envanteri ve NACE kapsamı.|"
   "01_teshis|Faz 1 — Teşhis|Gümrük Birliği'nin 30 yıllık bilançosu, asimetriler ve makro tablo.|"
   "02a_politika_uzayi|Faz 2A — Politika uzayı|Tek taraflı araçlar, iç vergiler ve dış rejim seçenekleri.|"
   "02b_secenekler_hukuk|Faz 2B — Seçenekler ve hukuk|Seçenekler matrisi, bitiş durumu, çekim modeli ve hukuki yol haritası.|"
   "02c_hazirlik|Faz 2C — Karar öncesi hazırlık|Sessiz, pişmanlıksız hamleler: hukuk, STA, menşe, kalite, SKDM, makro-finans, diplomasi.|"
+  "nace_kartlar_10-12|Faz 3 — NACE kartları: 10–12|Gıda, içecek ve tütün: genel görünüm, ana matris satırları, 33 sınıf kartı ve kümülatif defter.|"
   "defter|Ek A — Kümülatif defter|Fazlar boyunca taşınan referans değerler ve bütçeler.|Ek A — Kümülatif defter"
   "README|Ek B — Çalışma paketi|Paketin yapısı, kod, veri ve yeniden üretim adımları.|Ek B — Çalışma paketi: kod, veri ve yeniden üretim"
 )
@@ -64,7 +65,7 @@ derle() {
     >"_derle/$1.konsol" 2>&1 || { echo "HATA: $1 (latex/_derle/$1.log)"; tail -30 "_derle/$1.konsol"; exit 1; }
 }
 derle cilt
-cp _derle/cilt.pdf ../pdf/GB_Cikis_Stratejisi_Faz0-2.pdf
+cp _derle/cilt.pdf ../pdf/GB_Cikis_Stratejisi_Faz0-3.pdf
 if [[ "$KIP" != "--cilt" ]]; then
   for satir in "${BELGELER[@]}"; do
     IFS='|' read -r kok _ <<<"$satir"

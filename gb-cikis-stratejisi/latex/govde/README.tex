@@ -10,9 +10,9 @@ Bu klasör, ``GB Çıkış Stratejisi'' ana promptuna göre fazlar halinde üret
 
 \begin{longtable}[]{@{}
   >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.0472}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.6304}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.1662}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.1561}}@{}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.5562}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.1931}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2034}}@{}}
 \toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\raggedright
 \textbf{Faz}
@@ -32,7 +32,8 @@ Bu klasör, ``GB Çıkış Stratejisi'' ana promptuna göre fazlar halinde üret
 2A & Politika uzayı: kullanıcının önerisi (tarife + ÖTV takası), araç evreni, bağlı oranlar, aktif S4, dış rejim evreni & Tamamlandı (18.10.2026) & \belgebag{02a_politika_uzayi}{}{\kod{02a\_\allowbreak{}politika\_\allowbreak{}uzayi.\allowbreak{}md}} \\
 2B & Seçenekler (S0--S5, R7, ITA, aktif S4), çekim modeli, bitiş durumu ve hukuki yol haritası (AB, DTÖ, Türk iç hukuku), iki takvim & Tamamlandı (18.10.2026) & \belgebag{02b_secenekler_hukuk}{}{\kod{02b\_\allowbreak{}secenekler\_\allowbreak{}hukuk.\allowbreak{}md}} \\
 2C & Karar öncesi hazırlık: dokuz çerçevede 51 sessiz, pişmanlıksız hamle; STA ağının genel dengesi, menşe riski, SKDM yükü, makro tampon; kırmızı liste ve devreye alma sırası & Tamamlandı (18.10.2026) & \belgebag{02c_hazirlik}{}{\kod{02c\_\allowbreak{}hazirlik.\allowbreak{}md}} \\
-3--9 & NACE kartları → derin analizler → araçlar ve tarife cetveli → makro → müzakere → uygulama → risk ve yönetici özeti & Planlandı & bkz. \kod{00\_\allowbreak{}plan.\allowbreak{}md} §2 \\
+3 & NACE sınıf kartları (16 parça). Parça 1: 10 Gıda, 11 İçecekler, 12 Tütün (33 kart); ana matris 230 sınıfın tamamı için & Parça 1 / 16 tamamlandı (18.10.2026) & \belgebag{nace_kartlar_10-12}{}{\kod{nace\_\allowbreak{}kartlar\_\allowbreak{}10-\allowbreak{}12.\allowbreak{}md}}, \href{../veri/nace_matris.csv}{\kod{veri/\allowbreak{}nace\_\allowbreak{}matris.\allowbreak{}csv}} \\
+4--9 & Derin analizler → araçlar ve tarife cetveli → makro → müzakere → uygulama → risk ve yönetici özeti & Planlandı & bkz. \kod{00\_\allowbreak{}plan.\allowbreak{}md} §2 \\
 \end{longtable}
 
 \endgroup
@@ -47,8 +48,8 @@ Belgeler LaTeX'te dizilir ve PDF olarak üretilir (LuaLaTeX; Markdown → pandoc
 \begingroup\gbtablo\small
 
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5197}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.4803}}@{}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5126}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.4874}}@{}}
 \toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\raggedright
 \textbf{PDF}
@@ -59,8 +60,8 @@ Belgeler LaTeX'te dizilir ve PDF olarak üretilir (LuaLaTeX; Markdown → pandoc
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-\href{../pdf/GB_Cikis_Stratejisi_Faz0-2.pdf}{\kod{pdf/\allowbreak{}GB\_\allowbreak{}Cikis\_\allowbreak{}Stratejisi\_\allowbreak{}Faz0-\allowbreak{}2.\allowbreak{}pdf}} & \textbf{Birleşik cilt:} durum özeti, Faz 0, 1, 2A, 2B, 2C; Ek A defter; Ek B çalışma paketi. İçindekiler ve şekil listesi \\
-\kod{pdf/\allowbreak{}00\_\allowbreak{}plan.\allowbreak{}pdf}, \kod{pdf/\allowbreak{}01\_\allowbreak{}teshis.\allowbreak{}pdf}, \kod{pdf/\allowbreak{}02a\_\allowbreak{}politika\_\allowbreak{}uzayi.\allowbreak{}pdf}, \kod{pdf/\allowbreak{}02b\_\allowbreak{}secenekler\_\allowbreak{}hukuk.\allowbreak{}pdf}, \kod{pdf/\allowbreak{}02c\_\allowbreak{}hazirlik.\allowbreak{}pdf} & Faz belgeleri tek tek \\
+\href{../pdf/GB_Cikis_Stratejisi_Faz0-3.pdf}{\kod{pdf/\allowbreak{}GB\_\allowbreak{}Cikis\_\allowbreak{}Stratejisi\_\allowbreak{}Faz0-\allowbreak{}3.\allowbreak{}pdf}} & \textbf{Birleşik cilt:} durum özeti, Faz 0, 1, 2A, 2B, 2C, Faz 3 kartları (şimdilik 10--12); Ek A defter; Ek B çalışma paketi. İçindekiler ve şekil listesi \\
+\kod{pdf/\allowbreak{}00\_\allowbreak{}plan.\allowbreak{}pdf}, \kod{pdf/\allowbreak{}01\_\allowbreak{}teshis.\allowbreak{}pdf}, \kod{pdf/\allowbreak{}02a\_\allowbreak{}politika\_\allowbreak{}uzayi.\allowbreak{}pdf}, \kod{pdf/\allowbreak{}02b\_\allowbreak{}secenekler\_\allowbreak{}hukuk.\allowbreak{}pdf}, \kod{pdf/\allowbreak{}02c\_\allowbreak{}hazirlik.\allowbreak{}pdf}, \kod{pdf/\allowbreak{}nace\_\allowbreak{}kartlar\_\allowbreak{}10-\allowbreak{}12.\allowbreak{}pdf} & Faz belgeleri tek tek \\
 \kod{pdf/\allowbreak{}DURUM\_\allowbreak{}OZETI.\allowbreak{}pdf}, \kod{pdf/\allowbreak{}defter.\allowbreak{}pdf}, \kod{pdf/\allowbreak{}README.\allowbreak{}pdf} & Durum özeti, defter, paket açıklaması \\
 \end{longtable}
 
@@ -92,8 +93,9 @@ kök (\kod{*.\allowbreak{}md}) & Faz belgeleri (Markdown kaynak) \\
 \href{../pdf/}{\kod{pdf/\allowbreak{}}} & Dizilmiş PDF'ler \\
 \href{../latex/}{\kod{latex/\allowbreak{}}} & Stil (\kod{gbstil.\allowbreak{}sty}), pandoc filtresi (\kod{gb.\allowbreak{}lua}), cilt ve belge sarmalayıcıları, üretilmiş LaTeX gövdeleri, derleme betiği (\kod{derle.\allowbreak{}sh}) \\
 \href{../kod/}{\kod{kod/\allowbreak{}}} & Bütün betikler; \kod{hepsini\_\allowbreak{}uret.\allowbreak{}sh} hepsini sırayla çalıştırır, \kod{dogrula.\allowbreak{}py} sonuçları karşılaştırır \\
-\href{../girdi/}{\kod{girdi/\allowbreak{}}} & Ham girdiler (180 dosya, ≈123 MB): TÜİK, TCMB, Eurostat, Comtrade, WITS, CEPII, Ticaret Bakanlığı, SGK, DESTA, BM, Avrupa Komisyonu (SKDM). Kaynak, adres ve SHA-256: \href{../girdi/MANIFEST.csv}{\kod{girdi/\allowbreak{}MANIFEST.\allowbreak{}csv}}; açıklama: \belgebag{README}{}{\kod{girdi/\allowbreak{}README.\allowbreak{}md}} \\
-\href{../veri/}{\kod{veri/\allowbreak{}}} & Hesap sonuçları (CSV) ve elle derlenmiş girdiler (\kod{vergi\_\allowbreak{}oranlari\_\allowbreak{}2026.\allowbreak{}csv}, \kod{vergi\_\allowbreak{}gelirleri\_\allowbreak{}2024\_\allowbreak{}2026.\allowbreak{}csv}, \kod{akct\_\allowbreak{}1996\_\allowbreak{}cn8.\allowbreak{}txt}, \kod{skdm\_\allowbreak{}ek1\_\allowbreak{}kn.\allowbreak{}csv}, \kod{skdm\_\allowbreak{}asagi\_\allowbreak{}kn.\allowbreak{}csv}, \kod{skdm\_\allowbreak{}parametre.\allowbreak{}csv}, \kod{hazirlik\_\allowbreak{}hamleler.\allowbreak{}csv}; kaynakları satır içinde) \\
+\href{../kartlar/}{\kod{kartlar/\allowbreak{}}} & Faz 3 sınıf kartlarının nitel alanları (YAML; uzman muhakemesi, eylem tabloları, müzakere, tetikler). Sayısal alanlar veriden üretilir (\kod{kod/\allowbreak{}f3g\_\allowbreak{}kartlar.\allowbreak{}py}) \\
+\href{../girdi/}{\kod{girdi/\allowbreak{}}} & Ham girdiler (184 dosya, ≈132 MB): TÜİK, TCMB, Eurostat, Comtrade, WITS, CEPII, Ticaret Bakanlığı, SGK, DESTA, BM, Avrupa Komisyonu (SKDM). Kaynak, adres ve SHA-256: \href{../girdi/MANIFEST.csv}{\kod{girdi/\allowbreak{}MANIFEST.\allowbreak{}csv}}; açıklama: \belgebag{README}{}{\kod{girdi/\allowbreak{}README.\allowbreak{}md}} \\
+\href{../veri/}{\kod{veri/\allowbreak{}}} & Hesap sonuçları (CSV) ve elle derlenmiş girdiler (\kod{vergi\_\allowbreak{}oranlari\_\allowbreak{}2026.\allowbreak{}csv}, \kod{vergi\_\allowbreak{}gelirleri\_\allowbreak{}2024\_\allowbreak{}2026.\allowbreak{}csv}, \kod{akct\_\allowbreak{}1996\_\allowbreak{}cn8.\allowbreak{}txt}, \kod{skdm\_\allowbreak{}ek1\_\allowbreak{}kn.\allowbreak{}csv}, \kod{skdm\_\allowbreak{}asagi\_\allowbreak{}kn.\allowbreak{}csv}, \kod{skdm\_\allowbreak{}parametre.\allowbreak{}csv}, \kod{hazirlik\_\allowbreak{}hamleler.\allowbreak{}csv}, \kod{f3\_\allowbreak{}sinif\_\allowbreak{}varsayim.\allowbreak{}csv}, \kod{f3\_\allowbreak{}ss\_\allowbreak{}boyutlar.\allowbreak{}csv}, \kod{f3\_\allowbreak{}coicop\_\allowbreak{}nace.\allowbreak{}csv}; kaynakları ve gerekçeleri satır içinde) \\
 \href{../sekiller/}{\kod{sekiller/\allowbreak{}}} & Şekiller (PNG ve PDF), \kod{kod/\allowbreak{}sekiller.\allowbreak{}py} ile \kod{veri/\allowbreak{}}den \\
 \href{../kaynaklar/}{\kod{kaynaklar/\allowbreak{}}} & Hukuki ve kurumsal bulguların araştırma notları \\
 \end{longtable}
@@ -106,8 +108,8 @@ kök (\kod{*.\allowbreak{}md}) & Faz belgeleri (Markdown kaynak) \\
 \begingroup\gbtablo\small
 
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.3192}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.6808}}@{}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.3173}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.6827}}@{}}
 \toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\raggedright
 \textbf{Dosya}
@@ -167,6 +169,14 @@ kök (\kod{*.\allowbreak{}md}) & Faz belgeleri (Markdown kaynak) \\
 \kod{kod/\allowbreak{}yollar.\allowbreak{}py} & Paket içi yollar (\kod{girdi/\allowbreak{}}, \kod{veri/\allowbreak{}}) ve çevrimdışı kip (\kod{GB\_\allowbreak{}CEVRIMDISI=\allowbreak{}1}) \\
 \kod{kod/\allowbreak{}hepsini\_\allowbreak{}uret.\allowbreak{}sh}, \kod{kod/\allowbreak{}dogrula.\allowbreak{}py} & Bütün hesapları sırayla yeniden üretir; sonuçları \kod{veri/\allowbreak{}} ile karşılaştırır \\
 \kod{kod/\allowbreak{}girdi\_\allowbreak{}hazirla.\allowbreak{}py} & BACI özetleri, büyük dosyaların sıkıştırılması, \kod{girdi/\allowbreak{}MANIFEST.\allowbreak{}csv} \\
+\kod{nace\_\allowbreak{}kartlar\_\allowbreak{}10-\allowbreak{}12.\allowbreak{}md} & Faz 3 parça 1: 10--12'nin genel görünümü, ana matris satırları, 33 sınıf kartı (15 alan), ortak eylemler, kümülatif defter \\
+\kod{kod/\allowbreak{}f3a\_\allowbreak{}ticaret.\allowbreak{}py} & Sınıf düzeyi ticaret: ihracat/ithalat, AB ve Çin payları, RCA (dünya, AB pazarı), AB pazar payı, birim değer, ilk 5 pazar/kaynak/rakip ve AB tercih durumu (BACI 2020, 2024; KKTC akımları AB dışı) → \kod{veri/\allowbreak{}f3\_\allowbreak{}ticaret\_\allowbreak{}sinif.\allowbreak{}csv}, \kod{veri/\allowbreak{}f3\_\allowbreak{}ortaklar\_\allowbreak{}sinif.\allowbreak{}csv} \\
+\kod{kod/\allowbreak{}f3b\_\allowbreak{}yapi.\allowbreak{}py} & Üretim, KD, istihdam, ölçek, İBBS-2 bölge payları (iş kayıtları + SGK, RAS), AB'ye göre verimlilik (Eurostat SBS) → \kod{veri/\allowbreak{}f3\_\allowbreak{}yapi\_\allowbreak{}sinif.\allowbreak{}csv}, \kod{veri/\allowbreak{}f3\_\allowbreak{}bolge\_\allowbreak{}sinif.\allowbreak{}csv} \\
+\kod{kod/\allowbreak{}f3c\_\allowbreak{}karmasiklik.\allowbreak{}py} & PCI ve ECI (yansımalar yöntemi, özvektör), ürün uzayı yoğunluğu, karmaşıklık kazancı, atlanabilir ürünler → \kod{veri/\allowbreak{}f3\_\allowbreak{}pci\_\allowbreak{}*.\allowbreak{}csv}, \kod{veri/\allowbreak{}f3\_\allowbreak{}eci\_\allowbreak{}ulke.\allowbreak{}csv} \\
+\kod{kod/\allowbreak{}f3d\_\allowbreak{}ab\_\allowbreak{}tarife.\allowbreak{}py} & AB MFN'si KN8 düzeyinde: spesifik vergilerin AVE'si, rejime göre S4 artışı (GB, İTÜ, 1/98), tepe satırlar, EUDR ve SKDM payları → \kod{veri/\allowbreak{}f3\_\allowbreak{}ab\_\allowbreak{}tarife\_\allowbreak{}kn8.\allowbreak{}csv}, \kod{veri/\allowbreak{}f3\_\allowbreak{}ab\_\allowbreak{}tarife\_\allowbreak{}sinif.\allowbreak{}csv} \\
+\kod{kod/\allowbreak{}f3e\_\allowbreak{}senaryo.\allowbreak{}py} & S2/S3/S4 sınıf etkileri, P10--P50--P90 (Monte Carlo; toplamlar Faz 2B genel dengesine kalibre), EDE, CKE → \kod{veri/\allowbreak{}f3\_\allowbreak{}senaryo\_\allowbreak{}sinif.\allowbreak{}csv}, \kod{veri/\allowbreak{}f3\_\allowbreak{}senaryo\_\allowbreak{}ozet.\allowbreak{}csv}, \kod{veri/\allowbreak{}f3\_\allowbreak{}makro\_\allowbreak{}sinif.\allowbreak{}csv} \\
+\kod{kod/\allowbreak{}f3f\_\allowbreak{}skor\_\allowbreak{}matris.\allowbreak{}py} & KS, SS, AME, EDE, CKE puanları, arketip ve duruş (kural + \kod{kartlar/\allowbreak{}} düzeltmeleri), ağırlık duyarlılığı → \kod{veri/\allowbreak{}nace\_\allowbreak{}matris.\allowbreak{}csv}, \kod{veri/\allowbreak{}f3\_\allowbreak{}ks\_\allowbreak{}duyarlilik.\allowbreak{}csv} \\
+\kod{kod/\allowbreak{}f3g\_\allowbreak{}kartlar.\allowbreak{}py} & Sınıf kartı belgesi: \kod{nace\_\allowbreak{}kartlar\_\allowbreak{}[bölüm].\allowbreak{}md} (sayısal alanlar veriden, nitel alanlar \kod{kartlar/\allowbreak{}*.\allowbreak{}yaml}'dan) \\
 \kod{kod/\allowbreak{}sekiller.\allowbreak{}py} & On üç şekil (\kod{sekiller/\allowbreak{}}) \\
 \kod{latex/\allowbreak{}derle.\allowbreak{}sh}, \kod{latex/\allowbreak{}gb.\allowbreak{}lua}, \kod{latex/\allowbreak{}gbstil.\allowbreak{}sty}, \kod{latex/\allowbreak{}cilt.\allowbreak{}tex} & PDF üretimi \\
 \end{longtable}
@@ -188,7 +198,7 @@ latex/derle.sh                                          # şekiller, LaTeX gövd
 \item
   \textbf{Süre.} Hesaplar ≈20--30 dakika sürer; çoğu çekim modelinde (19 PPML spesifikasyonu, 1.000 çekilişli genel denge) ve STA ağı genel dengesinde. PDF'ler ≈4 dakika.
 \item
-  \textbf{Sınama sonucu (18.10.2026).} Çevrimdışı kipte bütün betikler paketteki girdilerle çalıştı. \kod{veri/\allowbreak{}} klasöründeki sonuçlar bayt bayt aynı üretildi (\kod{kod/\allowbreak{}dogrula.\allowbreak{}py}).
+  \textbf{Sınama sonucu (18.10.2026).} Çevrimdışı kipte bütün betikler paketteki girdilerle çalıştı. \kod{veri/\allowbreak{}} klasöründeki sonuçlar ve Faz 3 kart belgesi bayt bayt aynı üretildi (\kod{kod/\allowbreak{}dogrula.\allowbreak{}py}).
 \item
   \textbf{Tek tek çalıştırma.} Betikler \kod{kod/\allowbreak{}} içinden argümansız çalışır. Varsayılan girdi \kod{girdi/\allowbreak{}}, çıktı \kod{veri/\allowbreak{}}. Örnek: \kod{python3 f2e\_\allowbreak{}s4\_\allowbreak{}aktif.\allowbreak{}py}. Sıra \kod{hepsini\_\allowbreak{}uret.\allowbreak{}sh} içinde.
 \item
