@@ -10,7 +10,8 @@ belgelerini, verileri ve kodu içerir. Her faz sonunda çalışma durur ve **DEV
 |---|---|---|---|
 | 0 | Plan, varsayımlar, veri envanteri, NACE kapsamı, `[D?]` doğrulaması; Revizyon 1: kullanıcı yanıtları, T2028/T2029 takvimleri, çevrim içi veri erişimi | Tamamlandı (17.10.2026) | [`00_plan.md`](00_plan.md) |
 | 1 | Teşhis: GB'nin 30 yıllık bilançosu, asimetriler, makro tablo ve cari denge ayrıştırması, maruziyet haritası | Tamamlandı (17.10.2026) | [`01_teshis.md`](01_teshis.md) |
-| 2 | Seçenekler (S0–S5), bitiş durumu ve hukuki yol haritası | Sırada | `02_secenekler_hukuk.md` |
+| 2A | Politika uzayı: kullanıcının önerisi (tarife + ÖTV takası), araç evreni, bağlı oranlar, aktif S4, dış rejim evreni | Tamamlandı (18.10.2026) | [`02a_politika_uzayi.md`](02a_politika_uzayi.md) |
+| 2B | Seçenekler (S0–S5), bitiş durumu ve hukuki yol haritası | Sürüyor | `02b_secenekler_hukuk.md` |
 | 3–9 | NACE kartları → derin analizler → araçlar ve tarife cetveli → makro → müzakere → uygulama → risk ve yönetici özeti | Planlandı | bkz. `00_plan.md` §2 |
 
 Yeni bir sohbette devam etmek için: ana prompt + [`DURUM_OZETI.md`](DURUM_OZETI.md).
@@ -20,6 +21,7 @@ Yeni bir sohbette devam etmek için: ana prompt + [`DURUM_OZETI.md`](DURUM_OZETI
 | Dosya | İçerik |
 |---|---|
 | `00_plan.md` | Faz 0 çıktısı: araçlar, çalışma planı, varsayım kaydı (V-01…), veri envanteri, NACE kapsamı, doğrulama kaydı, netleştirme soruları |
+| `02a_politika_uzayi.md` | Faz 2A çıktısı: tarife + ÖTV/KDV takası (dört tasarım, on ürün grubu), DTÖ hukuku ve emsaller, araç evreni A–K, bağlı oranlar, tahsilat oranı, aktif S4 paket sınırı (İGV rejimi × P1 × takas), net istihdam, AB'nin maliyeti, zaman kritik eylemler |
 | `01_teshis.md` | Faz 1 çıktısı: ticaret ve kompozisyon (1991–2025), sektör tarihçeleri, literatür, bilanço tablosu, STA ve diğer asimetriler, ödemeler dengesi, OVP tabanı ve T+5 boşluğu, NACE bölümü ve İBBS-2 maruziyeti, kısıt çatışmaları, veri boşlukları |
 | `DURUM_OZETI.md` | Son fazın durum özeti (≤500 kelime) |
 | `defter.md` | Kümülatif defter (enflasyon bütçesi, cari denge, mali maliyet, istihdam) |
@@ -49,6 +51,12 @@ Yeni bir sohbette devam etmek için: ana prompt + [`DURUM_OZETI.md`](DURUM_OZETI
 | `kod/evds3.py` | TCMB EVDS3'e anahtarsız erişim |
 | `kod/f1a_ab_ticaret.py` … `kod/f1e_bolgesel.py` | Faz 1 tabloları (ticaret, ödemeler dengesi, STA asimetrisi, bölüm ve bölge maruziyeti) |
 | `kod/comtrade_tr_hs6.py`, `kod/baci_ozet.py` | Comtrade HS6 ve CEPII BACI yardımcı betikleri |
+| `kod/f2a_io_fiyat.py` | Leontief fiyat modeli (TÜİK 2023 girdi-çıktı): tarife şokunun TÜFE'ye birinci tur etkisi → `veri/politika_io_ede.csv`, `veri/politika_io_s4_tufe.csv` |
+| `kod/prodtr.py`, `kod/f2b_tarife_politikasi.py` | PRODTR (CPA 6 hane) ve tarife yapısı, BEC kullanımı, yurt içi kabiliyet, "girdide sıfır" → `veri/politika_tarife_*.csv`, `veri/prodtr_cpa6_2025.csv` |
+| `kod/f2c0_takas_parametre.py`, `kod/f2c_vergi_takasi.py` | Vergi takası modeli: on ürün grubu, dört tasarım (pasif, T-A, T-0, T-B), Armington CES → `veri/politika_takas_parametre.csv`, `veri/politika_takas_sonuc.csv`, `veri/politika_takas_ozet.csv` |
+| `kod/f2d_s4_net_istihdam.py` | S4 net istihdam, NACE sınıfı → `veri/politika_s4_net_istihdam_*.csv` |
+| `kod/f2e_s4_aktif.py` | Aktif S4 paketleri: İGV rejimi (a, b, c, c2, d) × P1 × takas kapsamı; yasal ve tahsil edilebilir mali bilanço → `veri/politika_s4_aktif.csv`, `veri/politika_s4_aktif_urun.csv` |
+| `veri/vergi_oranlari_2026.csv`, `veri/vergi_gelirleri_2024_2026.csv` | Ürün grubu ÖTV/KDV oranları ve yerli pay (kaynaklı); ÖTV, KDV ve gümrük vergisi tahsilatı (GİB, 2024–2026) |
 
 ## Yeniden üretme
 
@@ -70,6 +78,13 @@ python3 f1c_sta_asimetrisi.py --baci ~/.cache/gb_cikis/baci/all_countries/BACI_H
         --ulke-kodlari ~/.cache/gb_cikis/baci/country_codes_V202601.csv --cache ~/.cache/gb_cikis --out ../veri
 python3 f1d_maruziyet.py --comtrade-hs6 ~/.cache/gb_cikis/comtrade/comtrade_tur_hs6_world_2025.csv.gz --out ../veri
 python3 f1e_bolgesel.py --cache ~/.cache/gb_cikis --out ../veri
+# Faz 2A (BACI_TR: Türkiye ikili HS6 akışları, 2020–2024; baci_ozet.py çıktısı)
+python3 f2a_io_fiyat.py --cache ~/.cache/gb_cikis --out ../veri
+python3 f2b_tarife_politikasi.py --baci-tr $BACI_TR --baci-dunya $BACI_DUNYA --bec $BEC --cache ~/.cache/gb_cikis --out ../veri
+python3 f2c0_takas_parametre.py --baci-tr $BACI_TR --cache ~/.cache/gb_cikis --out ../veri
+python3 f2c_vergi_takasi.py --out ../veri
+python3 f2d_s4_net_istihdam.py --baci-tr $BACI_TR --out ../veri
+python3 f2e_s4_aktif.py --cache ~/.cache/gb_cikis --out ../veri
 ```
 
 Betikler Eurostat (SDMX ve Comext), EU Vocabularies (ShowVoc), GİB, TÜİK, TCMB EVDS3, UN Comtrade,

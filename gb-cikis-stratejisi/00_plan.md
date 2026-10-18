@@ -233,7 +233,7 @@ Sınırlamalar: AB'nin spesifik vergileri ve tarım bileşenleri dahil değil (t
 | 2 | TR dış ticareti, GTİP12 × ülke × rejim (DİR, serbest bölge) | TÜİK | 2025; aylık 2026 | ✓ TÜİK dış ticaret Qlik arayüzü (başsız tarayıcıyla) ve Veri Portalı bülten tabloları; **DİR rejim alanı yok** (VB-02) | Bütün sınıf kartları, ithalat yapısı, DİR etkisi | UN Comtrade (TR beyanı, HS6), BACI |
 | 3 | Dünya ticareti, HS6 | CEPII BACI | 2020–2024 (HS17, V202601) | ✓ (`kod/baci_ozet.py`) | RCA, rakip payları, PPML | UN Comtrade |
 | 4 | Yıllık Sanayi ve Hizmet İstatistikleri (NACE 4 hane: üretim, katma değer, istihdam, girişim, ölçek) | TÜİK | 2024 (sınıf); 2025 (Rev. 2.1 grup) | ✓ Dağıtım Yönetim Sistemi, anonim (`kod/f0b_tuik_yshi.py`) | Ölçek, verimlilik, KS | Eurostat SBS'de TR yok → yedek yok; İSO 500 ve Sanayi Sicil kısmi |
-| 5 | PRODTR (ürün düzeyi üretim) | TÜİK | 2024 `[D?]` | ✗ | Kabiliyet, ürün çeşitliliği | Sanayi Sicil |
+| 5 | PRODTR (ürün düzeyi üretim) | TÜİK | 2025 | ✓ Veri Portalı, bülten 58065 (`kod/prodtr.py`): CPA 2.2 6 hane, üretimden satış ve girişim sayısı, 2005–2025; gizli satırlar işaretli (Faz 2) | Kabiliyet, ürün çeşitliliği, yerli pay | Sanayi Sicil |
 | 6 | Sanayi üretim endeksi | TÜİK; Eurostat `sts_inpr_m` | Ağu 2026 | ✓ TÜİK DF_SANAYI_URETIM_ENDEKS_ALT_C (sınıf düzeyi, aylık) | Erken uyarı | — |
 | 7 | Girdi-çıktı (2023 arz-kullanım ve simetrik tablo, 64 sektör) | TÜİK | 2023 | ✓ Veri Portalı arama API'si (8 tablo indirildi) | Leontief fiyat ve miktar, EDE, ERP | OECD ICIO 2025 baskısı (TR, 2022), Eurostat FIGARO |
 | 8 | TÜFE ağırlıkları ve alt endeksler (2025=100, COICOP 2018, 428 madde) | TÜİK | Eyl 2026 | Kısmen ✓: COICOP 2018 2–5. düzey ağırlıkları (DF_TUFE_SDMX_TT04); madde ağırlıkları yok (VB-04) | EDE, enflasyon yolu | Eurostat HICP ağırlıkları (TR, 2025) ✓ |
@@ -269,8 +269,14 @@ Sınırlamalar: AB'nin spesifik vergileri ve tarım bileşenleri dahil değil (t
 | 38 | Ortak ülke MFN tarifeleri (HS6) | WITS/TRAINS SDMX API | 2022–2023 | ✓ anahtarsız (`kod/f1c_sta_asimetrisi.py`) | STA asimetrisi, yeni STA önceliklendirme | WTO IDB |
 | 39 | Hizmet ticareti, ortak ülke × EBOPS | TÜİK DF_UHTI_HIZMET_COGRAFI_C | 2016–2025 | ✓ (`kod/f1b_odemeler_dengesi.py`); seyahat ülke dağılımı yok (VB-12) | AB ile hizmet dengesi | Eurostat BOP_ITS |
 | 40 | Orta Vadeli Program makro çerçevesi (Tablo 1.1) | SBB, Resmî Gazete 6.9.2026 | 2025–2029 | ✓ | Makro taban, cari denge hedef boşluğu | — |
+| 41 | ÖTV (II), (III), (IV) listeleri ve oran tarihçesi; KDV oranları | GİB, Resmî Gazete | 31.7.2026 | ✓ (Faz 2; `veri/vergi_oranlari_2026.csv`) | Vergi takası, DTÖ risk taraması | Mevzuat Bilgi Sistemi |
+| 42 | Vergi gelirleri (ÖTV türleri, KDV, gümrük vergileri) | GİB Tablo 28; SBB 2026 bütçe gelir tahminleri | 2025; 2026 bütçe | ✓ (`veri/vergi_gelirleri_2024_2026.csv`) | Tahsilat oranı, takas maliyeti | HMB bütçe gerçekleşmeleri |
+| 43 | Otomobil ve hafif ticari pazarı (yerli/ithal, marka, güç aktarma) | ODMD, OSD | 2025 | ✓ (ODMD Aralık 2025 bülteni; OSD 19.1.2026) | Yerli pay, takas | — |
+| 44 | HICP madde ağırlıkları (Türkiye, COICOP 2018) | Eurostat prc_hicp_iw | 2026 | ✓ (559 kod) | Grup TÜFE ağırlıkları; VB-04'ün kısmi çözümü | TÜİK |
+| 45 | Onaylanmış kuruluşlar (NANDO), TÜRKAK EA MLA statüsü | Avrupa Komisyonu, EA | Eki 2026 | ✓ (95 Türk kaydı, ≈81'i yürürlükte; TÜRKAK dokuz alanda EA MLA imzacısı) | Uyum değerlendirme (H2) | Ticaret Bakanlığı |
+| 46 | DTÖ uyuşmazlık raporları ve Analitik Endeks | WTO | 2026 (DS629 panel raporu, 28.7.2026) | ✓ | Hukuki çerçeve, bağlı oranlar | — |
 
-**İlk veri boşlukları ve kapatma planı.** Bu liste her fazda güncellenir; Faz 9'da ek olarak verilir. **Güncel liste (VB-01…VB-18): [`01_teshis.md`](01_teshis.md) §8.**
+**İlk veri boşlukları ve kapatma planı.** Bu liste her fazda güncellenir; Faz 9'da ek olarak verilir. **Güncel liste: VB-01…VB-18 [`01_teshis.md`](01_teshis.md) §8; VB-21…VB-27 [`02a_politika_uzayi.md`](02a_politika_uzayi.md) §9. Faz 2'de VB-18 kapandı (NANDO ve EA statüsü).**
 
 | No | Boşluk | Etkilediği analiz | Kapatma yolu (veri, kurum, süre) |
 |---|---|---|---|

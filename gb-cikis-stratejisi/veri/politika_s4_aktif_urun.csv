@@ -1,65 +1,321 @@
-,ad,tuketici_fiyat_yuzde,tufe_katki_bp,takas,takas_maliyeti_musd
-A01,Tarım ve avcılık ürünleri ve ilgili hizmetler,0.0453,0.3203,,0.0
-A02,Orman ürünleri ve ilgili hizmetler,0.0165,0.0025,,0.0
-A03,Balık ve diğer balıkçılık ürünleri; su ürünleri; balıkçılık için destekleyici hizmetler,0.0181,0.0017,,0.0
-B,Madencilik ve taşocakçılığı,0.029,0.0163,,0.0
-C10-C12,"Gıda, içecekler ve tütün ürünleri",0.2471,4.8439,,0.0
-C13-C15,"Tekstil, giyim eşyası, deri ve ilgili ürünler",0.396,3.9605,KDV,351.8195
-C16,"Kereste, ağaç ürünleri ve mantar ürünleri (mobilya hariç); hasır ve örme malzemesinden (saz, saman vb.) ürünler",0.5183,0.0199,,0.0
-C17,Kağıt ve kağıt ürünleri,0.1007,0.1055,,0.0
-C18,Basım ve kayıt hizmetleri,0.1216,0.0032,,0.0
-C19,Kok ve rafine petrol ürünleri,-0.1844,-0.5246,,0.0
-C20,Kimyasallar ve kimyasal ürünler,0.3346,0.6905,ÖTV (IV)/KDV,61.3422
-C21,Temel eczacılık ürünleri ve müstahzarları,0.0071,0.0053,,0.0
-C22,Kauçuk ve plastik ürünler,0.7081,0.7087,,0.0
-C23,Diğer metalik olmayan mineral ürünleri,0.2275,0.1141,,0.0
-C24,Ana metaller,0.1712,0.0,,0.0
-C25,"Fabrikasyon metal ürünler, makine ve ekipmanlar hariç",0.3636,0.1504,,0.0
-C26,Bilgisayarlar ile elektronik ve optik ürünler,0.1273,0.2302,ÖTV (IV),20.4512
-C27,Elektrikli teçhizat,0.3743,0.8883,ÖTV (IV),78.9061
-C28,Başka yerde sınıflandırılmamış makine ve ekipmanlar,0.2601,0.064,,0.0
-C29,"Motorlu kara taşıtları, treyler (römork) ve yarı treyler (yarı römork)",3.3617,23.3429,ÖTV (II),2073.626
-C30,Diğer ulaşım araçları,0.0743,0.0236,,0.0
-C31_C32,Mobilya ve diğer mamul eşyalar,0.2163,0.8285,,0.0
-C33,Makine ve ekipmanların kurulumu ve onarımı,0.1267,0.0017,,0.0
-D35,"Elektrik, gaz, buhar ve iklimlendirme",0.0258,0.057,,0.0
-E36,Doğal su; suyun arıtılması ve temini hizmetleri,0.0698,0.0348,,0.0
-E37-E39,"Kanalizasyon hizmetleri, kanalizasyon çamuru; atığın toplanması, işlenmesi ve bertarafı; maddelerin geri kazanımı; iyileştirme hizmetleri ve diğer atık yönetimi hizmetleri",0.1619,0.0035,,0.0
-F,İnşaatlar ve inşaat işleri,0.1092,0.0353,,0.0
-G45,Toptan ve perakende ticaret ile motorlu kara taşıtlarının ve motosikletlerin onarım hizmetleri,0.2215,0.1927,,0.0
-G46,"Toptan ticaret, motorlu kara taşıtları ve motosikletler hariç",0.0193,0.0,,0.0
-G47,Perakende ticaret (motorlu kara taşıtları ve motosikletler hariç),0.0204,0.0,,0.0
-H49,Kara taşımacılığı ve boru hattı taşımacılığı hizmetleri,0.0365,0.1453,,0.0
-H50,Su yolu taşımacılığı hizmetleri,0.0257,0.0012,,0.0
-H51,Hava yolu taşımacılığı hizmetleri,0.0072,0.0186,,0.0
-H52,"Depolama ve destek hizmetleri, taşımacılık için",0.0296,0.0103,,0.0
-H53,Posta ve kurye hizmetleri,0.0532,0.022,,0.0
-I,Konaklama ve yiyecek hizmetleri,0.0795,0.7636,,0.0
-J58,Yayıncılık hizmetleri,0.0143,0.0062,,0.0
-J59_J60,"Sinema filmi, video ve televizyon programı yapımcılık hizmetleri, ses kaydı ve müzik yayımlama; programcılık ve yayıncılık hizmetleri",-0.0678,-0.0197,,0.0
-J61,Telekomünikasyon hizmetleri,0.0237,0.0248,,0.0
-J62_J63,"Bilgisayar programlama, danışmanlık ve ilgili hizmetler; bilgi hizmetleri",0.0,0.0,,0.0
-K64,Finansal hizmetler (sigorta ve bireysel emeklilik hariç),0.0099,0.0203,,0.0
-K65,"Sigorta, reasürans ve emeklilik fonları hizmetleri, zorunlu sosyal güvenlik hariç",0.0043,0.0034,,0.0
-K66,Finansal hizmetler ile sigorta hizmetlerine yardımcı hizmetler,0.0245,0.0154,,0.0
-L68B,Gayrimenkul hizmetleri,0.0178,0.0568,,0.0
-L68A,Kendi konutunda ikamet edenler için izafi kira,0.0199,0.0,,0.0
-M69_M70,Hukuk ve muhasebe hizmetleri; idare merkezi hizmetleri; idari danışmanlık hizmetleri,0.0323,0.0082,,0.0
-M71,Mimarlık ve mühendislik hizmetleri; teknik test ve analiz hizmetleri,0.0763,0.0011,,0.0
-M72,Bilimsel araştırma ve geliştirme hizmetleri,0.0,0.0,,0.0
-M73,Reklamcılık ve pazar araştırması hizmetleri,0.0,0.0,,0.0
-M74_M75,"Diğer mesleki, bilimsel ve teknik hizmetler; veterinerlik hizmetleri",0.054,0.0049,,0.0
-N77,Kiralama ve leasing hizmetleri,0.0722,0.0077,,0.0
-N78,İstihdam hizmetleri,0.0,0.0,,0.0
-N79,"Seyahat acentesi, tur operatörü, diğer rezervasyon hizmetleri ve ilgili hizmetler",0.0335,0.0504,,0.0
-N80-N82,"Güvenlik ve soruşturma hizmetleri; bina ve çevre düzenleme (peyzaj) hizmetleri; büro yönetimi, büro destek ve diğer iş destek hizmetleri",0.0281,0.0025,,0.0
-O84,Kamu yönetimi ve savunma hizmetleri; zorunlu sosyal güvenlik hizmetleri,0.0195,0.0075,,0.0
-P85,Eğitim hizmetleri,0.006,0.0078,,0.0
-Q86,İnsan sağlığı hizmetleri,0.026,0.0325,,0.0
-Q87_Q88,Yatılı bakım hizmetleri; barınacak yer sağlanmaksızın verilen sosyal hizmetler,0.0597,0.0181,,0.0
-R90-R92,"Yaratıcı sanatlar, gösteri sanatları ve eğlence hizmetleri; kütüphane, arşiv, müze ve diğer kültürel hizmetler; kumar ve müşterek bahis hizmetleri",0.0191,0.0408,,0.0
-R93,Spor hizmetleri ile eğlence ve dinlence hizmetleri,0.0341,0.0171,,0.0
-S94,Üye olunan kuruluşlar tarafından verilen hizmetler,0.0225,0.0001,,0.0
-S95,"Bilgisayarların, kişisel eşyaların ve ev eşyalarının onarımına ilişkin hizmetler",0.085,0.0238,,0.0
-S96,Diğer kişisel hizmetler,0.0437,0.0293,,0.0
-T,Ev içi çalışan personelin işverenleri olarak hanehalklarının hizmetleri,0.0,0.0,,0.0
+rejim,io,ad,tuketici_fiyat_yuzde,tufe_katki_bp,takas_dar,imalat,takas_maliyeti_dar_musd,takas_maliyeti_genis_musd
+a_igv_ab_dahil,A01,Tarım ve avcılık ürünleri ve ilgili hizmetler,0.1078,0.762,,False,0.0,0.0
+a_igv_ab_dahil,A02,Orman ürünleri ve ilgili hizmetler,0.0462,0.007,,False,0.0,0.0
+a_igv_ab_dahil,A03,Balık ve diğer balıkçılık ürünleri; su ürünleri; balıkçılık için destekleyici hizmetler,0.0464,0.0043,,False,0.0,0.0
+a_igv_ab_dahil,B,Madencilik ve taşocakçılığı,0.0776,0.0436,,False,0.0,0.0
+a_igv_ab_dahil,C10-C12,"Gıda, içecekler ve tütün ürünleri",0.3255,6.3824,,True,0.0,566.9703
+a_igv_ab_dahil,C13-C15,"Tekstil, giyim eşyası, deri ve ilgili ürünler",1.6453,16.4563,KDV,True,1461.8618,1461.8618
+a_igv_ab_dahil,C16,"Kereste, ağaç ürünleri ve mantar ürünleri (mobilya hariç); hasır ve örme malzemesinden (saz, saman vb.) ürünler",1.6659,0.0638,,True,0.0,5.6682
+a_igv_ab_dahil,C17,Kağıt ve kağıt ürünleri,0.5008,0.5246,,True,0.0,46.6036
+a_igv_ab_dahil,C18,Basım ve kayıt hizmetleri,0.5116,0.0134,,True,0.0,1.1932
+a_igv_ab_dahil,C19,Kok ve rafine petrol ürünleri,-0.1795,-0.5106,,True,0.0,0.0
+a_igv_ab_dahil,C20,Kimyasallar ve kimyasal ürünler,0.9444,1.949,ÖTV (IV)/KDV,True,173.133,173.133
+a_igv_ab_dahil,C21,Temel eczacılık ürünleri ve müstahzarları,0.1104,0.0819,,True,0.0,7.2746
+a_igv_ab_dahil,C22,Kauçuk ve plastik ürünler,2.2683,2.2702,,True,0.0,201.671
+a_igv_ab_dahil,C23,Diğer metalik olmayan mineral ürünleri,0.7644,0.3833,,True,0.0,34.0534
+a_igv_ab_dahil,C24,Ana metaller,0.3363,0.0,,True,0.0,0.0
+a_igv_ab_dahil,C25,"Fabrikasyon metal ürünler, makine ve ekipmanlar hariç",1.5969,0.6605,,True,0.0,58.6719
+a_igv_ab_dahil,C26,Bilgisayarlar ile elektronik ve optik ürünler,0.2657,0.4804,ÖTV (IV),True,42.6753,42.6753
+a_igv_ab_dahil,C27,Elektrikli teçhizat,1.1381,2.701,ÖTV (IV),True,239.9398,239.9398
+a_igv_ab_dahil,C28,Başka yerde sınıflandırılmamış makine ve ekipmanlar,0.6395,0.1574,,True,0.0,13.985
+a_igv_ab_dahil,C29,"Motorlu kara taşıtları, treyler (römork) ve yarı treyler (yarı römork)",3.6124,25.0836,ÖTV (II),True,2228.2521,2228.2521
+a_igv_ab_dahil,C30,Diğer ulaşım araçları,0.4084,0.1295,,True,0.0,11.5024
+a_igv_ab_dahil,C31_C32,Mobilya ve diğer mamul eşyalar,3.1295,11.9869,,True,0.0,1064.8331
+a_igv_ab_dahil,C33,Makine ve ekipmanların kurulumu ve onarımı,0.3633,0.0049,,True,0.0,0.4394
+a_igv_ab_dahil,D35,"Elektrik, gaz, buhar ve iklimlendirme",0.0754,0.1664,,False,0.0,0.0
+a_igv_ab_dahil,E36,Doğal su; suyun arıtılması ve temini hizmetleri,0.1998,0.0995,,False,0.0,0.0
+a_igv_ab_dahil,E37-E39,"Kanalizasyon hizmetleri, kanalizasyon çamuru; atığın toplanması, işlenmesi ve bertarafı; maddelerin geri kazanımı; iyileştirme hizmetleri ve diğer atık yönetimi hizmetleri",0.2868,0.0062,,False,0.0,0.0
+a_igv_ab_dahil,F,İnşaatlar ve inşaat işleri,0.3107,0.1005,,False,0.0,0.0
+a_igv_ab_dahil,G45,Toptan ve perakende ticaret ile motorlu kara taşıtlarının ve motosikletlerin onarım hizmetleri,0.3471,0.3019,,False,0.0,0.0
+a_igv_ab_dahil,G46,"Toptan ticaret, motorlu kara taşıtları ve motosikletler hariç",0.0683,0.0,,False,0.0,0.0
+a_igv_ab_dahil,G47,Perakende ticaret (motorlu kara taşıtları ve motosikletler hariç),0.0686,0.0,,False,0.0,0.0
+a_igv_ab_dahil,H49,Kara taşımacılığı ve boru hattı taşımacılığı hizmetleri,0.0794,0.3163,,False,0.0,0.0
+a_igv_ab_dahil,H50,Su yolu taşımacılığı hizmetleri,0.0722,0.0033,,False,0.0,0.0
+a_igv_ab_dahil,H51,Hava yolu taşımacılığı hizmetleri,0.0551,0.1414,,False,0.0,0.0
+a_igv_ab_dahil,H52,"Depolama ve destek hizmetleri, taşımacılık için",0.0842,0.0294,,False,0.0,0.0
+a_igv_ab_dahil,H53,Posta ve kurye hizmetleri,0.1309,0.0541,,False,0.0,0.0
+a_igv_ab_dahil,I,Konaklama ve yiyecek hizmetleri,0.134,1.2878,,False,0.0,0.0
+a_igv_ab_dahil,J58,Yayıncılık hizmetleri,0.0771,0.0335,,False,0.0,0.0
+a_igv_ab_dahil,J59_J60,"Sinema filmi, video ve televizyon programı yapımcılık hizmetleri, ses kaydı ve müzik yayımlama; programcılık ve yayıncılık hizmetleri",-0.0385,-0.0111,,False,0.0,0.0
+a_igv_ab_dahil,J61,Telekomünikasyon hizmetleri,0.0648,0.0676,,False,0.0,0.0
+a_igv_ab_dahil,J62_J63,"Bilgisayar programlama, danışmanlık ve ilgili hizmetler; bilgi hizmetleri",0.0,0.0,,False,0.0,0.0
+a_igv_ab_dahil,K64,Finansal hizmetler (sigorta ve bireysel emeklilik hariç),0.0311,0.0638,,False,0.0,0.0
+a_igv_ab_dahil,K65,"Sigorta, reasürans ve emeklilik fonları hizmetleri, zorunlu sosyal güvenlik hariç",0.011,0.0086,,False,0.0,0.0
+a_igv_ab_dahil,K66,Finansal hizmetler ile sigorta hizmetlerine yardımcı hizmetler,0.0792,0.0499,,False,0.0,0.0
+a_igv_ab_dahil,L68B,Gayrimenkul hizmetleri,0.0507,0.1619,,False,0.0,0.0
+a_igv_ab_dahil,L68A,Kendi konutunda ikamet edenler için izafi kira,0.0615,0.0,,False,0.0,0.0
+a_igv_ab_dahil,M69_M70,Hukuk ve muhasebe hizmetleri; idare merkezi hizmetleri; idari danışmanlık hizmetleri,0.0819,0.0208,,False,0.0,0.0
+a_igv_ab_dahil,M71,Mimarlık ve mühendislik hizmetleri; teknik test ve analiz hizmetleri,0.2284,0.0032,,False,0.0,0.0
+a_igv_ab_dahil,M72,Bilimsel araştırma ve geliştirme hizmetleri,0.0,0.0,,False,0.0,0.0
+a_igv_ab_dahil,M73,Reklamcılık ve pazar araştırması hizmetleri,0.0,0.0,,False,0.0,0.0
+a_igv_ab_dahil,M74_M75,"Diğer mesleki, bilimsel ve teknik hizmetler; veterinerlik hizmetleri",0.1716,0.0157,,False,0.0,0.0
+a_igv_ab_dahil,N77,Kiralama ve leasing hizmetleri,0.1474,0.0157,,False,0.0,0.0
+a_igv_ab_dahil,N78,İstihdam hizmetleri,0.0,0.0,,False,0.0,0.0
+a_igv_ab_dahil,N79,"Seyahat acentesi, tur operatörü, diğer rezervasyon hizmetleri ve ilgili hizmetler",0.0765,0.1151,,False,0.0,0.0
+a_igv_ab_dahil,N80-N82,"Güvenlik ve soruşturma hizmetleri; bina ve çevre düzenleme (peyzaj) hizmetleri; büro yönetimi, büro destek ve diğer iş destek hizmetleri",0.0785,0.0069,,False,0.0,0.0
+a_igv_ab_dahil,O84,Kamu yönetimi ve savunma hizmetleri; zorunlu sosyal güvenlik hizmetleri,0.0616,0.0235,,False,0.0,0.0
+a_igv_ab_dahil,P85,Eğitim hizmetleri,0.0224,0.0293,,False,0.0,0.0
+a_igv_ab_dahil,Q86,İnsan sağlığı hizmetleri,0.177,0.221,,False,0.0,0.0
+a_igv_ab_dahil,Q87_Q88,Yatılı bakım hizmetleri; barınacak yer sağlanmaksızın verilen sosyal hizmetler,0.1304,0.0396,,False,0.0,0.0
+a_igv_ab_dahil,R90-R92,"Yaratıcı sanatlar, gösteri sanatları ve eğlence hizmetleri; kütüphane, arşiv, müze ve diğer kültürel hizmetler; kumar ve müşterek bahis hizmetleri",0.0386,0.0824,,False,0.0,0.0
+a_igv_ab_dahil,R93,Spor hizmetleri ile eğlence ve dinlence hizmetleri,0.096,0.0482,,False,0.0,0.0
+a_igv_ab_dahil,S94,Üye olunan kuruluşlar tarafından verilen hizmetler,0.0577,0.0001,,False,0.0,0.0
+a_igv_ab_dahil,S95,"Bilgisayarların, kişisel eşyaların ve ev eşyalarının onarımına ilişkin hizmetler",0.2405,0.0672,,False,0.0,0.0
+a_igv_ab_dahil,S96,Diğer kişisel hizmetler,0.1225,0.0822,,False,0.0,0.0
+a_igv_ab_dahil,T,Ev içi çalışan personelin işverenleri olarak hanehalklarının hizmetleri,0.0,0.0,,False,0.0,0.0
+b_igv_kaldirilir,A01,Tarım ve avcılık ürünleri ve ilgili hizmetler,0.0138,0.0976,,False,0.0,0.0
+b_igv_kaldirilir,A02,Orman ürünleri ve ilgili hizmetler,-0.0054,-0.0008,,False,0.0,0.0
+b_igv_kaldirilir,A03,Balık ve diğer balıkçılık ürünleri; su ürünleri; balıkçılık için destekleyici hizmetler,-0.0245,-0.0022,,False,0.0,0.0
+b_igv_kaldirilir,B,Madencilik ve taşocakçılığı,-0.0111,-0.0062,,False,0.0,0.0
+b_igv_kaldirilir,C10-C12,"Gıda, içecekler ve tütün ürünleri",0.1967,3.856,,True,0.0,342.5396
+b_igv_kaldirilir,C13-C15,"Tekstil, giyim eşyası, deri ve ilgili ürünler",-2.0628,-20.6322,KDV,True,0.0,0.0
+b_igv_kaldirilir,C16,"Kereste, ağaç ürünleri ve mantar ürünleri (mobilya hariç); hasır ve örme malzemesinden (saz, saman vb.) ürünler",-0.8082,-0.031,,True,0.0,0.0
+b_igv_kaldirilir,C17,Kağıt ve kağıt ürünleri,-0.1342,-0.1406,,True,0.0,0.0
+b_igv_kaldirilir,C18,Basım ve kayıt hizmetleri,-0.1309,-0.0034,,True,0.0,0.0
+b_igv_kaldirilir,C19,Kok ve rafine petrol ürünleri,-0.1881,-0.5351,,True,0.0,0.0
+b_igv_kaldirilir,C20,Kimyasallar ve kimyasal ürünler,0.0606,0.125,ÖTV (IV)/KDV,True,11.1036,11.1036
+b_igv_kaldirilir,C21,Temel eczacılık ürünleri ve müstahzarları,-0.0534,-0.0396,,True,0.0,0.0
+b_igv_kaldirilir,C22,Kauçuk ve plastik ürünler,-0.1106,-0.1107,,True,0.0,0.0
+b_igv_kaldirilir,C23,Diğer metalik olmayan mineral ürünleri,-0.4851,-0.2432,,True,0.0,0.0
+b_igv_kaldirilir,C24,Ana metaller,-0.2208,-0.0,,True,0.0,0.0
+b_igv_kaldirilir,C25,"Fabrikasyon metal ürünler, makine ve ekipmanlar hariç",-0.7171,-0.2966,,True,0.0,0.0
+b_igv_kaldirilir,C26,Bilgisayarlar ile elektronik ve optik ürünler,-0.0768,-0.1389,ÖTV (IV),True,0.0,0.0
+b_igv_kaldirilir,C27,Elektrikli teçhizat,-0.6823,-1.6193,ÖTV (IV),True,0.0,0.0
+b_igv_kaldirilir,C28,Başka yerde sınıflandırılmamış makine ve ekipmanlar,-0.0594,-0.0146,,True,0.0,0.0
+b_igv_kaldirilir,C29,"Motorlu kara taşıtları, treyler (römork) ve yarı treyler (yarı römork)",3.2331,22.45,ÖTV (II),True,1994.3002,1994.3002
+b_igv_kaldirilir,C30,Diğer ulaşım araçları,-0.7048,-0.2235,,True,0.0,0.0
+b_igv_kaldirilir,C31_C32,Mobilya ve diğer mamul eşyalar,-0.2785,-1.0669,,True,0.0,0.0
+b_igv_kaldirilir,C33,Makine ve ekipmanların kurulumu ve onarımı,-0.0897,-0.0012,,True,0.0,0.0
+b_igv_kaldirilir,D35,"Elektrik, gaz, buhar ve iklimlendirme",-0.0237,-0.0524,,False,0.0,0.0
+b_igv_kaldirilir,E36,Doğal su; suyun arıtılması ve temini hizmetleri,-0.0311,-0.0155,,False,0.0,0.0
+b_igv_kaldirilir,E37-E39,"Kanalizasyon hizmetleri, kanalizasyon çamuru; atığın toplanması, işlenmesi ve bertarafı; maddelerin geri kazanımı; iyileştirme hizmetleri ve diğer atık yönetimi hizmetleri",0.0661,0.0014,,False,0.0,0.0
+b_igv_kaldirilir,F,İnşaatlar ve inşaat işleri,-0.0873,-0.0283,,False,0.0,0.0
+b_igv_kaldirilir,G45,Toptan ve perakende ticaret ile motorlu kara taşıtlarının ve motosikletlerin onarım hizmetleri,0.1288,0.1121,,False,0.0,0.0
+b_igv_kaldirilir,G46,"Toptan ticaret, motorlu kara taşıtları ve motosikletler hariç",-0.0301,-0.0,,False,0.0,0.0
+b_igv_kaldirilir,G47,Perakende ticaret (motorlu kara taşıtları ve motosikletler hariç),-0.0121,-0.0,,False,0.0,0.0
+b_igv_kaldirilir,H49,Kara taşımacılığı ve boru hattı taşımacılığı hizmetleri,0.0035,0.0139,,False,0.0,0.0
+b_igv_kaldirilir,H50,Su yolu taşımacılığı hizmetleri,-0.0135,-0.0006,,False,0.0,0.0
+b_igv_kaldirilir,H51,Hava yolu taşımacılığı hizmetleri,-0.0353,-0.0907,,False,0.0,0.0
+b_igv_kaldirilir,H52,"Depolama ve destek hizmetleri, taşımacılık için",-0.016,-0.0056,,False,0.0,0.0
+b_igv_kaldirilir,H53,Posta ve kurye hizmetleri,-0.0155,-0.0064,,False,0.0,0.0
+b_igv_kaldirilir,I,Konaklama ve yiyecek hizmetleri,0.0344,0.331,,False,0.0,0.0
+b_igv_kaldirilir,J58,Yayıncılık hizmetleri,-0.0258,-0.0112,,False,0.0,0.0
+b_igv_kaldirilir,J59_J60,"Sinema filmi, video ve televizyon programı yapımcılık hizmetleri, ses kaydı ve müzik yayımlama; programcılık ve yayıncılık hizmetleri",-0.0949,-0.0275,,False,0.0,0.0
+b_igv_kaldirilir,J61,Telekomünikasyon hizmetleri,-0.0203,-0.0212,,False,0.0,0.0
+b_igv_kaldirilir,J62_J63,"Bilgisayar programlama, danışmanlık ve ilgili hizmetler; bilgi hizmetleri",0.0,0.0,,False,0.0,0.0
+b_igv_kaldirilir,K64,Finansal hizmetler (sigorta ve bireysel emeklilik hariç),-0.0066,-0.0135,,False,0.0,0.0
+b_igv_kaldirilir,K65,"Sigorta, reasürans ve emeklilik fonları hizmetleri, zorunlu sosyal güvenlik hariç",-0.0009,-0.0007,,False,0.0,0.0
+b_igv_kaldirilir,K66,Finansal hizmetler ile sigorta hizmetlerine yardımcı hizmetler,-0.0186,-0.0117,,False,0.0,0.0
+b_igv_kaldirilir,L68B,Gayrimenkul hizmetleri,-0.0112,-0.0358,,False,0.0,0.0
+b_igv_kaldirilir,L68A,Kendi konutunda ikamet edenler için izafi kira,-0.0163,-0.0,,False,0.0,0.0
+b_igv_kaldirilir,M69_M70,Hukuk ve muhasebe hizmetleri; idare merkezi hizmetleri; idari danışmanlık hizmetleri,-0.0132,-0.0034,,False,0.0,0.0
+b_igv_kaldirilir,M71,Mimarlık ve mühendislik hizmetleri; teknik test ve analiz hizmetleri,-0.0678,-0.001,,False,0.0,0.0
+b_igv_kaldirilir,M72,Bilimsel araştırma ve geliştirme hizmetleri,0.0,0.0,,False,0.0,0.0
+b_igv_kaldirilir,M73,Reklamcılık ve pazar araştırması hizmetleri,0.0,0.0,,False,0.0,0.0
+b_igv_kaldirilir,M74_M75,"Diğer mesleki, bilimsel ve teknik hizmetler; veterinerlik hizmetleri",-0.0386,-0.0035,,False,0.0,0.0
+b_igv_kaldirilir,N77,Kiralama ve leasing hizmetleri,0.0162,0.0017,,False,0.0,0.0
+b_igv_kaldirilir,N78,İstihdam hizmetleri,0.0,0.0,,False,0.0,0.0
+b_igv_kaldirilir,N79,"Seyahat acentesi, tur operatörü, diğer rezervasyon hizmetleri ve ilgili hizmetler",-0.0048,-0.0072,,False,0.0,0.0
+b_igv_kaldirilir,N80-N82,"Güvenlik ve soruşturma hizmetleri; bina ve çevre düzenleme (peyzaj) hizmetleri; büro yönetimi, büro destek ve diğer iş destek hizmetleri",-0.0225,-0.002,,False,0.0,0.0
+b_igv_kaldirilir,O84,Kamu yönetimi ve savunma hizmetleri; zorunlu sosyal güvenlik hizmetleri,-0.0214,-0.0082,,False,0.0,0.0
+b_igv_kaldirilir,P85,Eğitim hizmetleri,-0.0047,-0.0062,,False,0.0,0.0
+b_igv_kaldirilir,Q86,İnsan sağlığı hizmetleri,-0.0201,-0.0252,,False,0.0,0.0
+b_igv_kaldirilir,Q87_Q88,Yatılı bakım hizmetleri; barınacak yer sağlanmaksızın verilen sosyal hizmetler,0.0117,0.0036,,False,0.0,0.0
+b_igv_kaldirilir,R90-R92,"Yaratıcı sanatlar, gösteri sanatları ve eğlence hizmetleri; kütüphane, arşiv, müze ve diğer kültürel hizmetler; kumar ve müşterek bahis hizmetleri",0.0038,0.0082,,False,0.0,0.0
+b_igv_kaldirilir,R93,Spor hizmetleri ile eğlence ve dinlence hizmetleri,-0.0201,-0.0101,,False,0.0,0.0
+b_igv_kaldirilir,S94,Üye olunan kuruluşlar tarafından verilen hizmetler,-0.0032,-0.0,,False,0.0,0.0
+b_igv_kaldirilir,S95,"Bilgisayarların, kişisel eşyaların ve ev eşyalarının onarımına ilişkin hizmetler",-0.0766,-0.0214,,False,0.0,0.0
+b_igv_kaldirilir,S96,Diğer kişisel hizmetler,-0.0169,-0.0114,,False,0.0,0.0
+b_igv_kaldirilir,T,Ev içi çalışan personelin işverenleri olarak hanehalklarının hizmetleri,0.0,0.0,,False,0.0,0.0
+c_igv_secici,A01,Tarım ve avcılık ürünleri ve ilgili hizmetler,0.0381,0.2694,,False,0.0,0.0
+c_igv_secici,A02,Orman ürünleri ve ilgili hizmetler,0.0127,0.0019,,False,0.0,0.0
+c_igv_secici,A03,Balık ve diğer balıkçılık ürünleri; su ürünleri; balıkçılık için destekleyici hizmetler,0.0164,0.0015,,False,0.0,0.0
+c_igv_secici,B,Madencilik ve taşocakçılığı,0.0215,0.0121,,False,0.0,0.0
+c_igv_secici,C10-C12,"Gıda, içecekler ve tütün ürünleri",0.2366,4.6385,,True,0.0,412.054
+c_igv_secici,C13-C15,"Tekstil, giyim eşyası, deri ve ilgili ürünler",0.9747,9.7484,KDV,True,865.9779,865.9779
+c_igv_secici,C16,"Kereste, ağaç ürünleri ve mantar ürünleri (mobilya hariç); hasır ve örme malzemesinden (saz, saman vb.) ürünler",0.9661,0.037,,True,0.0,3.2874
+c_igv_secici,C17,Kağıt ve kağıt ürünleri,0.0588,0.0616,,True,0.0,5.473
+c_igv_secici,C18,Basım ve kayıt hizmetleri,0.084,0.0022,,True,0.0,0.196
+c_igv_secici,C19,Kok ve rafine petrol ürünleri,-0.1853,-0.5272,,True,0.0,0.0
+c_igv_secici,C20,Kimyasallar ve kimyasal ürünler,0.2599,0.5364,ÖTV (IV)/KDV,True,47.6494,47.6494
+c_igv_secici,C21,Temel eczacılık ürünleri ve müstahzarları,0.0041,0.0031,,True,0.0,0.2723
+c_igv_secici,C22,Kauçuk ve plastik ürünler,0.3488,0.3491,,True,0.0,31.0101
+c_igv_secici,C23,Diğer metalik olmayan mineral ürünleri,0.1952,0.0979,,True,0.0,8.6975
+c_igv_secici,C24,Ana metaller,0.1524,0.0,,True,0.0,0.0
+c_igv_secici,C25,"Fabrikasyon metal ürünler, makine ve ekipmanlar hariç",0.2682,0.1109,,True,0.0,9.8548
+c_igv_secici,C26,Bilgisayarlar ile elektronik ve optik ürünler,0.172,0.3111,ÖTV (IV),True,27.6366,27.6366
+c_igv_secici,C27,Elektrikli teçhizat,0.5124,1.2162,ÖTV (IV),True,108.0381,108.0381
+c_igv_secici,C28,Başka yerde sınıflandırılmamış makine ve ekipmanlar,0.184,0.0453,,True,0.0,4.024
+c_igv_secici,C29,"Motorlu kara taşıtları, treyler (römork) ve yarı treyler (yarı römork)",3.3276,23.1057,ÖTV (II),True,2052.5551,2052.5551
+c_igv_secici,C30,Diğer ulaşım araçları,0.1301,0.0413,,True,0.0,3.665
+c_igv_secici,C31_C32,Mobilya ve diğer mamul eşyalar,0.2126,0.8142,,True,0.0,72.3267
+c_igv_secici,C33,Makine ve ekipmanların kurulumu ve onarımı,0.1046,0.0014,,True,0.0,0.1265
+c_igv_secici,D35,"Elektrik, gaz, buhar ve iklimlendirme",0.0245,0.0541,,False,0.0,0.0
+c_igv_secici,E36,Doğal su; suyun arıtılması ve temini hizmetleri,0.0587,0.0292,,False,0.0,0.0
+c_igv_secici,E37-E39,"Kanalizasyon hizmetleri, kanalizasyon çamuru; atığın toplanması, işlenmesi ve bertarafı; maddelerin geri kazanımı; iyileştirme hizmetleri ve diğer atık yönetimi hizmetleri",0.1543,0.0034,,False,0.0,0.0
+c_igv_secici,F,İnşaatlar ve inşaat işleri,0.0949,0.0307,,False,0.0,0.0
+c_igv_secici,G45,Toptan ve perakende ticaret ile motorlu kara taşıtlarının ve motosikletlerin onarım hizmetleri,0.202,0.1757,,False,0.0,0.0
+c_igv_secici,G46,"Toptan ticaret, motorlu kara taşıtları ve motosikletler hariç",0.0211,0.0,,False,0.0,0.0
+c_igv_secici,G47,Perakende ticaret (motorlu kara taşıtları ve motosikletler hariç),0.0178,0.0,,False,0.0,0.0
+c_igv_secici,H49,Kara taşımacılığı ve boru hattı taşımacılığı hizmetleri,0.0323,0.1289,,False,0.0,0.0
+c_igv_secici,H50,Su yolu taşımacılığı hizmetleri,0.0227,0.001,,False,0.0,0.0
+c_igv_secici,H51,Hava yolu taşımacılığı hizmetleri,0.0044,0.0113,,False,0.0,0.0
+c_igv_secici,H52,"Depolama ve destek hizmetleri, taşımacılık için",0.0269,0.0094,,False,0.0,0.0
+c_igv_secici,H53,Posta ve kurye hizmetleri,0.0513,0.0212,,False,0.0,0.0
+c_igv_secici,I,Konaklama ve yiyecek hizmetleri,0.0773,0.7425,,False,0.0,0.0
+c_igv_secici,J58,Yayıncılık hizmetleri,0.009,0.0039,,False,0.0,0.0
+c_igv_secici,J59_J60,"Sinema filmi, video ve televizyon programı yapımcılık hizmetleri, ses kaydı ve müzik yayımlama; programcılık ve yayıncılık hizmetleri",-0.067,-0.0194,,False,0.0,0.0
+c_igv_secici,J61,Telekomünikasyon hizmetleri,0.0263,0.0275,,False,0.0,0.0
+c_igv_secici,J62_J63,"Bilgisayar programlama, danışmanlık ve ilgili hizmetler; bilgi hizmetleri",0.0,0.0,,False,0.0,0.0
+c_igv_secici,K64,Finansal hizmetler (sigorta ve bireysel emeklilik hariç),0.0089,0.0181,,False,0.0,0.0
+c_igv_secici,K65,"Sigorta, reasürans ve emeklilik fonları hizmetleri, zorunlu sosyal güvenlik hariç",0.004,0.0031,,False,0.0,0.0
+c_igv_secici,K66,Finansal hizmetler ile sigorta hizmetlerine yardımcı hizmetler,0.0221,0.0139,,False,0.0,0.0
+c_igv_secici,L68B,Gayrimenkul hizmetleri,0.0173,0.0552,,False,0.0,0.0
+c_igv_secici,L68A,Kendi konutunda ikamet edenler için izafi kira,0.0167,0.0,,False,0.0,0.0
+c_igv_secici,M69_M70,Hukuk ve muhasebe hizmetleri; idare merkezi hizmetleri; idari danışmanlık hizmetleri,0.0328,0.0083,,False,0.0,0.0
+c_igv_secici,M71,Mimarlık ve mühendislik hizmetleri; teknik test ve analiz hizmetleri,0.0718,0.001,,False,0.0,0.0
+c_igv_secici,M72,Bilimsel araştırma ve geliştirme hizmetleri,0.0,0.0,,False,0.0,0.0
+c_igv_secici,M73,Reklamcılık ve pazar araştırması hizmetleri,0.0,0.0,,False,0.0,0.0
+c_igv_secici,M74_M75,"Diğer mesleki, bilimsel ve teknik hizmetler; veterinerlik hizmetleri",0.0529,0.0048,,False,0.0,0.0
+c_igv_secici,N77,Kiralama ve leasing hizmetleri,0.0663,0.0071,,False,0.0,0.0
+c_igv_secici,N78,İstihdam hizmetleri,0.0,0.0,,False,0.0,0.0
+c_igv_secici,N79,"Seyahat acentesi, tur operatörü, diğer rezervasyon hizmetleri ve ilgili hizmetler",0.0327,0.0492,,False,0.0,0.0
+c_igv_secici,N80-N82,"Güvenlik ve soruşturma hizmetleri; bina ve çevre düzenleme (peyzaj) hizmetleri; büro yönetimi, büro destek ve diğer iş destek hizmetleri",0.0304,0.0027,,False,0.0,0.0
+c_igv_secici,O84,Kamu yönetimi ve savunma hizmetleri; zorunlu sosyal güvenlik hizmetleri,0.0196,0.0075,,False,0.0,0.0
+c_igv_secici,P85,Eğitim hizmetleri,0.0053,0.007,,False,0.0,0.0
+c_igv_secici,Q86,İnsan sağlığı hizmetleri,0.0238,0.0297,,False,0.0,0.0
+c_igv_secici,Q87_Q88,Yatılı bakım hizmetleri; barınacak yer sağlanmaksızın verilen sosyal hizmetler,0.0558,0.0169,,False,0.0,0.0
+c_igv_secici,R90-R92,"Yaratıcı sanatlar, gösteri sanatları ve eğlence hizmetleri; kütüphane, arşiv, müze ve diğer kültürel hizmetler; kumar ve müşterek bahis hizmetleri",0.0188,0.0401,,False,0.0,0.0
+c_igv_secici,R93,Spor hizmetleri ile eğlence ve dinlence hizmetleri,0.0337,0.0169,,False,0.0,0.0
+c_igv_secici,S94,Üye olunan kuruluşlar tarafından verilen hizmetler,0.022,0.0,,False,0.0,0.0
+c_igv_secici,S95,"Bilgisayarların, kişisel eşyaların ve ev eşyalarının onarımına ilişkin hizmetler",0.0915,0.0256,,False,0.0,0.0
+c_igv_secici,S96,Diğer kişisel hizmetler,0.0428,0.0288,,False,0.0,0.0
+c_igv_secici,T,Ev içi çalışan personelin işverenleri olarak hanehalklarının hizmetleri,0.0,0.0,,False,0.0,0.0
+c2_igv_secici_kabiliyet,A01,Tarım ve avcılık ürünleri ve ilgili hizmetler,0.0826,0.584,,False,0.0,0.0
+c2_igv_secici_kabiliyet,A02,Orman ürünleri ve ilgili hizmetler,0.0371,0.0056,,False,0.0,0.0
+c2_igv_secici_kabiliyet,A03,Balık ve diğer balıkçılık ürünleri; su ürünleri; balıkçılık için destekleyici hizmetler,0.0382,0.0035,,False,0.0,0.0
+c2_igv_secici_kabiliyet,B,Madencilik ve taşocakçılığı,0.0626,0.0351,,False,0.0,0.0
+c2_igv_secici_kabiliyet,C10-C12,"Gıda, içecekler ve tütün ürünleri",0.3014,5.9092,,True,0.0,524.9332
+c2_igv_secici_kabiliyet,C13-C15,"Tekstil, giyim eşyası, deri ve ilgili ürünler",1.4852,14.855,KDV,True,1319.6127,1319.6127
+c2_igv_secici_kabiliyet,C16,"Kereste, ağaç ürünleri ve mantar ürünleri (mobilya hariç); hasır ve örme malzemesinden (saz, saman vb.) ürünler",1.6458,0.063,,True,0.0,5.5999
+c2_igv_secici_kabiliyet,C17,Kağıt ve kağıt ürünleri,0.4368,0.4576,,True,0.0,40.6461
+c2_igv_secici_kabiliyet,C18,Basım ve kayıt hizmetleri,0.4325,0.0114,,True,0.0,1.0089
+c2_igv_secici_kabiliyet,C19,Kok ve rafine petrol ürünleri,-0.1809,-0.5145,,True,0.0,0.0
+c2_igv_secici_kabiliyet,C20,Kimyasallar ve kimyasal ürünler,0.675,1.3931,ÖTV (IV)/KDV,True,123.7519,123.7519
+c2_igv_secici_kabiliyet,C21,Temel eczacılık ürünleri ve müstahzarları,0.0791,0.0586,,True,0.0,5.2083
+c2_igv_secici_kabiliyet,C22,Kauçuk ve plastik ürünler,1.8754,1.877,,True,0.0,166.7441
+c2_igv_secici_kabiliyet,C23,Diğer metalik olmayan mineral ürünleri,0.733,0.3676,,True,0.0,32.6514
+c2_igv_secici_kabiliyet,C24,Ana metaller,0.3002,0.0,,True,0.0,0.0
+c2_igv_secici_kabiliyet,C25,"Fabrikasyon metal ürünler, makine ve ekipmanlar hariç",1.2438,0.5144,,True,0.0,45.6996
+c2_igv_secici_kabiliyet,C26,Bilgisayarlar ile elektronik ve optik ürünler,0.2279,0.412,ÖTV (IV),True,36.6023,36.6023
+c2_igv_secici_kabiliyet,C27,Elektrikli teçhizat,0.9405,2.2321,ÖTV (IV),True,198.2883,198.2883
+c2_igv_secici_kabiliyet,C28,Başka yerde sınıflandırılmamış makine ve ekipmanlar,0.4689,0.1154,,True,0.0,10.2538
+c2_igv_secici_kabiliyet,C29,"Motorlu kara taşıtları, treyler (römork) ve yarı treyler (yarı römork)",3.58,24.8586,ÖTV (II),True,2208.2651,2208.2651
+c2_igv_secici_kabiliyet,C30,Diğer ulaşım araçları,0.2429,0.077,,True,0.0,6.8428
+c2_igv_secici_kabiliyet,C31_C32,Mobilya ve diğer mamul eşyalar,3.0071,11.5181,,True,0.0,1023.1895
+c2_igv_secici_kabiliyet,C33,Makine ve ekipmanların kurulumu ve onarımı,0.2797,0.0038,,True,0.0,0.3383
+c2_igv_secici_kabiliyet,D35,"Elektrik, gaz, buhar ve iklimlendirme",0.062,0.1369,,False,0.0,0.0
+c2_igv_secici_kabiliyet,E36,Doğal su; suyun arıtılması ve temini hizmetleri,0.1644,0.0819,,False,0.0,0.0
+c2_igv_secici_kabiliyet,E37-E39,"Kanalizasyon hizmetleri, kanalizasyon çamuru; atığın toplanması, işlenmesi ve bertarafı; maddelerin geri kazanımı; iyileştirme hizmetleri ve diğer atık yönetimi hizmetleri",0.2532,0.0055,,False,0.0,0.0
+c2_igv_secici_kabiliyet,F,İnşaatlar ve inşaat işleri,0.2597,0.084,,False,0.0,0.0
+c2_igv_secici_kabiliyet,G45,Toptan ve perakende ticaret ile motorlu kara taşıtlarının ve motosikletlerin onarım hizmetleri,0.3078,0.2677,,False,0.0,0.0
+c2_igv_secici_kabiliyet,G46,"Toptan ticaret, motorlu kara taşıtları ve motosikletler hariç",0.0576,0.0,,False,0.0,0.0
+c2_igv_secici_kabiliyet,G47,Perakende ticaret (motorlu kara taşıtları ve motosikletler hariç),0.0582,0.0,,False,0.0,0.0
+c2_igv_secici_kabiliyet,H49,Kara taşımacılığı ve boru hattı taşımacılığı hizmetleri,0.067,0.2671,,False,0.0,0.0
+c2_igv_secici_kabiliyet,H50,Su yolu taşımacılığı hizmetleri,0.058,0.0027,,False,0.0,0.0
+c2_igv_secici_kabiliyet,H51,Hava yolu taşımacılığı hizmetleri,0.0407,0.1045,,False,0.0,0.0
+c2_igv_secici_kabiliyet,H52,"Depolama ve destek hizmetleri, taşımacılık için",0.0681,0.0237,,False,0.0,0.0
+c2_igv_secici_kabiliyet,H53,Posta ve kurye hizmetleri,0.1113,0.0459,,False,0.0,0.0
+c2_igv_secici_kabiliyet,I,Konaklama ve yiyecek hizmetleri,0.1205,1.1576,,False,0.0,0.0
+c2_igv_secici_kabiliyet,J58,Yayıncılık hizmetleri,0.0661,0.0287,,False,0.0,0.0
+c2_igv_secici_kabiliyet,J59_J60,"Sinema filmi, video ve televizyon programı yapımcılık hizmetleri, ses kaydı ve müzik yayımlama; programcılık ve yayıncılık hizmetleri",-0.0448,-0.013,,False,0.0,0.0
+c2_igv_secici_kabiliyet,J61,Telekomünikasyon hizmetleri,0.0546,0.057,,False,0.0,0.0
+c2_igv_secici_kabiliyet,J62_J63,"Bilgisayar programlama, danışmanlık ve ilgili hizmetler; bilgi hizmetleri",0.0,0.0,,False,0.0,0.0
+c2_igv_secici_kabiliyet,K64,Finansal hizmetler (sigorta ve bireysel emeklilik hariç),0.0266,0.0544,,False,0.0,0.0
+c2_igv_secici_kabiliyet,K65,"Sigorta, reasürans ve emeklilik fonları hizmetleri, zorunlu sosyal güvenlik hariç",0.0095,0.0074,,False,0.0,0.0
+c2_igv_secici_kabiliyet,K66,Finansal hizmetler ile sigorta hizmetlerine yardımcı hizmetler,0.0673,0.0424,,False,0.0,0.0
+c2_igv_secici_kabiliyet,L68B,Gayrimenkul hizmetleri,0.0431,0.1376,,False,0.0,0.0
+c2_igv_secici_kabiliyet,L68A,Kendi konutunda ikamet edenler için izafi kira,0.0493,0.0,,False,0.0,0.0
+c2_igv_secici_kabiliyet,M69_M70,Hukuk ve muhasebe hizmetleri; idare merkezi hizmetleri; idari danışmanlık hizmetleri,0.0696,0.0177,,False,0.0,0.0
+c2_igv_secici_kabiliyet,M71,Mimarlık ve mühendislik hizmetleri; teknik test ve analiz hizmetleri,0.1877,0.0026,,False,0.0,0.0
+c2_igv_secici_kabiliyet,M72,Bilimsel araştırma ve geliştirme hizmetleri,0.0,0.0,,False,0.0,0.0
+c2_igv_secici_kabiliyet,M73,Reklamcılık ve pazar araştırması hizmetleri,0.0,0.0,,False,0.0,0.0
+c2_igv_secici_kabiliyet,M74_M75,"Diğer mesleki, bilimsel ve teknik hizmetler; veterinerlik hizmetleri",0.1476,0.0135,,False,0.0,0.0
+c2_igv_secici_kabiliyet,N77,Kiralama ve leasing hizmetleri,0.1276,0.0136,,False,0.0,0.0
+c2_igv_secici_kabiliyet,N78,İstihdam hizmetleri,0.0,0.0,,False,0.0,0.0
+c2_igv_secici_kabiliyet,N79,"Seyahat acentesi, tur operatörü, diğer rezervasyon hizmetleri ve ilgili hizmetler",0.0664,0.1,,False,0.0,0.0
+c2_igv_secici_kabiliyet,N80-N82,"Güvenlik ve soruşturma hizmetleri; bina ve çevre düzenleme (peyzaj) hizmetleri; büro yönetimi, büro destek ve diğer iş destek hizmetleri",0.0671,0.0059,,False,0.0,0.0
+c2_igv_secici_kabiliyet,O84,Kamu yönetimi ve savunma hizmetleri; zorunlu sosyal güvenlik hizmetleri,0.0513,0.0196,,False,0.0,0.0
+c2_igv_secici_kabiliyet,P85,Eğitim hizmetleri,0.0195,0.0254,,False,0.0,0.0
+c2_igv_secici_kabiliyet,Q86,İnsan sağlığı hizmetleri,0.1626,0.2031,,False,0.0,0.0
+c2_igv_secici_kabiliyet,Q87_Q88,Yatılı bakım hizmetleri; barınacak yer sağlanmaksızın verilen sosyal hizmetler,0.1132,0.0344,,False,0.0,0.0
+c2_igv_secici_kabiliyet,R90-R92,"Yaratıcı sanatlar, gösteri sanatları ve eğlence hizmetleri; kütüphane, arşiv, müze ve diğer kültürel hizmetler; kumar ve müşterek bahis hizmetleri",0.0345,0.0736,,False,0.0,0.0
+c2_igv_secici_kabiliyet,R93,Spor hizmetleri ile eğlence ve dinlence hizmetleri,0.0813,0.0408,,False,0.0,0.0
+c2_igv_secici_kabiliyet,S94,Üye olunan kuruluşlar tarafından verilen hizmetler,0.0498,0.0001,,False,0.0,0.0
+c2_igv_secici_kabiliyet,S95,"Bilgisayarların, kişisel eşyaların ve ev eşyalarının onarımına ilişkin hizmetler",0.1972,0.0551,,False,0.0,0.0
+c2_igv_secici_kabiliyet,S96,Diğer kişisel hizmetler,0.1026,0.0689,,False,0.0,0.0
+c2_igv_secici_kabiliyet,T,Ev içi çalışan personelin işverenleri olarak hanehalklarının hizmetleri,0.0,0.0,,False,0.0,0.0
+d_gecici_anlasma,A01,Tarım ve avcılık ürünleri ve ilgili hizmetler,-0.0251,-0.1777,,False,0.0,0.0
+d_gecici_anlasma,A02,Orman ürünleri ve ilgili hizmetler,-0.0056,-0.0008,,False,0.0,0.0
+d_gecici_anlasma,A03,Balık ve diğer balıkçılık ürünleri; su ürünleri; balıkçılık için destekleyici hizmetler,-0.0116,-0.0011,,False,0.0,0.0
+d_gecici_anlasma,B,Madencilik ve taşocakçılığı,-0.008,-0.0045,,False,0.0,0.0
+d_gecici_anlasma,C10-C12,"Gıda, içecekler ve tütün ürünleri",-0.0183,-0.3595,,True,0.0,0.0
+d_gecici_anlasma,C13-C15,"Tekstil, giyim eşyası, deri ve ilgili ürünler",-0.0374,-0.3744,KDV,True,0.0,0.0
+d_gecici_anlasma,C16,"Kereste, ağaç ürünleri ve mantar ürünleri (mobilya hariç); hasır ve örme malzemesinden (saz, saman vb.) ürünler",-0.0154,-0.0006,,True,0.0,0.0
+d_gecici_anlasma,C17,Kağıt ve kağıt ürünleri,-0.036,-0.0377,,True,0.0,0.0
+d_gecici_anlasma,C18,Basım ve kayıt hizmetleri,-0.0426,-0.0011,,True,0.0,0.0
+d_gecici_anlasma,C19,Kok ve rafine petrol ürünleri,-0.1954,-0.556,,True,0.0,0.0
+d_gecici_anlasma,C20,Kimyasallar ve kimyasal ürünler,-0.2619,-0.5404,ÖTV (IV)/KDV,True,0.0,0.0
+d_gecici_anlasma,C21,Temel eczacılık ürünleri ve müstahzarları,-0.0941,-0.0698,,True,0.0,0.0
+d_gecici_anlasma,C22,Kauçuk ve plastik ürünler,-0.0883,-0.0884,,True,0.0,0.0
+d_gecici_anlasma,C23,Diğer metalik olmayan mineral ürünleri,-0.0323,-0.0162,,True,0.0,0.0
+d_gecici_anlasma,C24,Ana metaller,-0.001,-0.0,,True,0.0,0.0
+d_gecici_anlasma,C25,"Fabrikasyon metal ürünler, makine ve ekipmanlar hariç",-0.0424,-0.0175,,True,0.0,0.0
+d_gecici_anlasma,C26,Bilgisayarlar ile elektronik ve optik ürünler,-0.2007,-0.363,ÖTV (IV),True,0.0,0.0
+d_gecici_anlasma,C27,Elektrikli teçhizat,-0.0323,-0.0768,ÖTV (IV),True,0.0,0.0
+d_gecici_anlasma,C28,Başka yerde sınıflandırılmamış makine ve ekipmanlar,-0.0239,-0.0059,,True,0.0,0.0
+d_gecici_anlasma,C29,"Motorlu kara taşıtları, treyler (römork) ve yarı treyler (yarı römork)",-0.0125,-0.0868,ÖTV (II),True,0.0,0.0
+d_gecici_anlasma,C30,Diğer ulaşım araçları,-0.0932,-0.0295,,True,0.0,0.0
+d_gecici_anlasma,C31_C32,Mobilya ve diğer mamul eşyalar,-0.0664,-0.2543,,True,0.0,0.0
+d_gecici_anlasma,C33,Makine ve ekipmanların kurulumu ve onarımı,-0.0173,-0.0002,,True,0.0,0.0
+d_gecici_anlasma,D35,"Elektrik, gaz, buhar ve iklimlendirme",-0.0072,-0.0158,,False,0.0,0.0
+d_gecici_anlasma,E36,Doğal su; suyun arıtılması ve temini hizmetleri,-0.0176,-0.0087,,False,0.0,0.0
+d_gecici_anlasma,E37-E39,"Kanalizasyon hizmetleri, kanalizasyon çamuru; atığın toplanması, işlenmesi ve bertarafı; maddelerin geri kazanımı; iyileştirme hizmetleri ve diğer atık yönetimi hizmetleri",-0.0181,-0.0004,,False,0.0,0.0
+d_gecici_anlasma,F,İnşaatlar ve inşaat işleri,-0.0205,-0.0066,,False,0.0,0.0
+d_gecici_anlasma,G45,Toptan ve perakende ticaret ile motorlu kara taşıtlarının ve motosikletlerin onarım hizmetleri,-0.0108,-0.0094,,False,0.0,0.0
+d_gecici_anlasma,G46,"Toptan ticaret, motorlu kara taşıtları ve motosikletler hariç",-0.0111,-0.0,,False,0.0,0.0
+d_gecici_anlasma,G47,Perakende ticaret (motorlu kara taşıtları ve motosikletler hariç),-0.0086,-0.0,,False,0.0,0.0
+d_gecici_anlasma,H49,Kara taşımacılığı ve boru hattı taşımacılığı hizmetleri,-0.0201,-0.0802,,False,0.0,0.0
+d_gecici_anlasma,H50,Su yolu taşımacılığı hizmetleri,-0.0161,-0.0007,,False,0.0,0.0
+d_gecici_anlasma,H51,Hava yolu taşımacılığı hizmetleri,-0.028,-0.0719,,False,0.0,0.0
+d_gecici_anlasma,H52,"Depolama ve destek hizmetleri, taşımacılık için",-0.0158,-0.0055,,False,0.0,0.0
+d_gecici_anlasma,H53,Posta ve kurye hizmetleri,-0.0208,-0.0086,,False,0.0,0.0
+d_gecici_anlasma,I,Konaklama ve yiyecek hizmetleri,-0.0088,-0.0844,,False,0.0,0.0
+d_gecici_anlasma,J58,Yayıncılık hizmetleri,-0.0128,-0.0056,,False,0.0,0.0
+d_gecici_anlasma,J59_J60,"Sinema filmi, video ve televizyon programı yapımcılık hizmetleri, ses kaydı ve müzik yayımlama; programcılık ve yayıncılık hizmetleri",-0.0858,-0.0249,,False,0.0,0.0
+d_gecici_anlasma,J61,Telekomünikasyon hizmetleri,-0.0116,-0.0121,,False,0.0,0.0
+d_gecici_anlasma,J62_J63,"Bilgisayar programlama, danışmanlık ve ilgili hizmetler; bilgi hizmetleri",0.0,0.0,,False,0.0,0.0
+d_gecici_anlasma,K64,Finansal hizmetler (sigorta ve bireysel emeklilik hariç),-0.0032,-0.0065,,False,0.0,0.0
+d_gecici_anlasma,K65,"Sigorta, reasürans ve emeklilik fonları hizmetleri, zorunlu sosyal güvenlik hariç",-0.0012,-0.0009,,False,0.0,0.0
+d_gecici_anlasma,K66,Finansal hizmetler ile sigorta hizmetlerine yardımcı hizmetler,-0.0091,-0.0057,,False,0.0,0.0
+d_gecici_anlasma,L68B,Gayrimenkul hizmetleri,-0.0042,-0.0133,,False,0.0,0.0
+d_gecici_anlasma,L68A,Kendi konutunda ikamet edenler için izafi kira,-0.0061,-0.0,,False,0.0,0.0
+d_gecici_anlasma,M69_M70,Hukuk ve muhasebe hizmetleri; idare merkezi hizmetleri; idari danışmanlık hizmetleri,-0.0078,-0.002,,False,0.0,0.0
+d_gecici_anlasma,M71,Mimarlık ve mühendislik hizmetleri; teknik test ve analiz hizmetleri,-0.0145,-0.0002,,False,0.0,0.0
+d_gecici_anlasma,M72,Bilimsel araştırma ve geliştirme hizmetleri,0.0,0.0,,False,0.0,0.0
+d_gecici_anlasma,M73,Reklamcılık ve pazar araştırması hizmetleri,0.0,0.0,,False,0.0,0.0
+d_gecici_anlasma,M74_M75,"Diğer mesleki, bilimsel ve teknik hizmetler; veterinerlik hizmetleri",-0.0136,-0.0012,,False,0.0,0.0
+d_gecici_anlasma,N77,Kiralama ve leasing hizmetleri,-0.0121,-0.0013,,False,0.0,0.0
+d_gecici_anlasma,N78,İstihdam hizmetleri,0.0,0.0,,False,0.0,0.0
+d_gecici_anlasma,N79,"Seyahat acentesi, tur operatörü, diğer rezervasyon hizmetleri ve ilgili hizmetler",-0.0136,-0.0204,,False,0.0,0.0
+d_gecici_anlasma,N80-N82,"Güvenlik ve soruşturma hizmetleri; bina ve çevre düzenleme (peyzaj) hizmetleri; büro yönetimi, büro destek ve diğer iş destek hizmetleri",-0.0102,-0.0009,,False,0.0,0.0
+d_gecici_anlasma,O84,Kamu yönetimi ve savunma hizmetleri; zorunlu sosyal güvenlik hizmetleri,-0.0121,-0.0046,,False,0.0,0.0
+d_gecici_anlasma,P85,Eğitim hizmetleri,-0.0034,-0.0045,,False,0.0,0.0
+d_gecici_anlasma,Q86,İnsan sağlığı hizmetleri,-0.0109,-0.0136,,False,0.0,0.0
+d_gecici_anlasma,Q87_Q88,Yatılı bakım hizmetleri; barınacak yer sağlanmaksızın verilen sosyal hizmetler,-0.012,-0.0036,,False,0.0,0.0
+d_gecici_anlasma,R90-R92,"Yaratıcı sanatlar, gösteri sanatları ve eğlence hizmetleri; kütüphane, arşiv, müze ve diğer kültürel hizmetler; kumar ve müşterek bahis hizmetleri",-0.0052,-0.0112,,False,0.0,0.0
+d_gecici_anlasma,R93,Spor hizmetleri ile eğlence ve dinlence hizmetleri,-0.0091,-0.0046,,False,0.0,0.0
+d_gecici_anlasma,S94,Üye olunan kuruluşlar tarafından verilen hizmetler,-0.0095,-0.0,,False,0.0,0.0
+d_gecici_anlasma,S95,"Bilgisayarların, kişisel eşyaların ve ev eşyalarının onarımına ilişkin hizmetler",-0.0204,-0.0057,,False,0.0,0.0
+d_gecici_anlasma,S96,Diğer kişisel hizmetler,-0.0141,-0.0095,,False,0.0,0.0
+d_gecici_anlasma,T,Ev içi çalışan personelin işverenleri olarak hanehalklarının hizmetleri,0.0,0.0,,False,0.0,0.0

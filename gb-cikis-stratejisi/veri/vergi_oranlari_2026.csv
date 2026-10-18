@@ -1,0 +1,11 @@
+grup,otv,kdv,takas,uretim_musd,yerli_pay_dis,kaynak
+binek_otomobil,0.65,0.20,otv,,0.22,"ÖTV (II) CK 10115 (24.7.2025) dilimleri: benzinli/hibrit ≤1600 cc %70–100, BEV ≤160 kW %25/55, >160 kW %65/75, >1600 cc %150–220; Kanun 7590 asgari 100.000 TL. Etkin oran [T]: 2025 ÖTV (II) tahsilatı 796 mlr TL / tahmini matrah ≈1.200–1.380 mlr TL = %58–66 → %65. Yerli pay [T]: ODMD 2025 yerli 323.223 / 1.084.496 adet (%29,8) × OSD ihracat birim değeri $19,7 bin; ithalat $22,3 mlr (Comtrade 2025) → değer payı %22"
+hafif_ticari,0.06,0.20,otv,,0.22,"ÖTV (II): 87.04 panelvan, kamyonet %4; arka koltuklu ≤3000 cc %10; 87.03 eşya tipi M1/N1 %15 → ağırlıklı ≈%6 [H]. Yerli pay: ODMD 2025 hafif ticari yerli 63.313 / 283.904 adet (%22,3)"
+beyaz_esya,0.067,0.20,otv,,,"ÖTV (IV) GİB listesi 24.10.2025 (CK 10521): 84.18, 8450.11–19, 8451.21, 8422.11 %6,7; KDV %20 (genel oran)"
+kucuk_ev_aletleri,0.067,0.20,otv,,,"ÖTV (IV): 85.09 ve 85.16 (ütüler hariç) %6,7; KDV %20"
+tv,0.067,0.20,otv,,,"ÖTV (IV): 85.28 TV alıcıları %6,7; ayrıca TRT bandrolü %16 (3093 s. Kanun; takas için ek alan); KDV %20"
+klima,0.067,0.20,otv,,,"ÖTV (IV): 84.15 (listelenen alt pozisyonlar) %6,7; KDV %20"
+kozmetik,0.20,0.20,otv,,,"ÖTV (IV): 3303 (kolonya hariç), 33.04, 3305.20/30/90, 33.07 %20 (tıraş köpüğü %6,7); KDV %20"
+giyim,0.0,0.10,kdv,,,"KDV (II) sayılı liste, giyim ve ev tekstili %10; ÖTV yok"
+ayakkabi,0.0,0.10,kdv,,,"KDV (II) sayılı liste, ayakkabı %10; ÖTV yok"
+mobilya,0.0,0.10,kdv,,,"KDV (II) sayılı liste madde 33 (94.01/94.03/94.04), %10; ÖTV yok"

@@ -1,62 +1,52 @@
-# Durum özeti — Faz 1 sonu (17 Ekim 2026)
+# Durum özeti — Faz 2A sonu (18 Ekim 2026; Faz 2B sürüyor)
 
-Yeni bir sohbette devam etmek için ana prompt ile bu dosyayı birlikte verin. Ayrıntılar: [`01_teshis.md`](01_teshis.md), [`00_plan.md`](00_plan.md).
+Yeni bir sohbette devam etmek için ana prompt ile bu dosyayı birlikte verin. Ayrıntılar: [`02a_politika_uzayi.md`](02a_politika_uzayi.md), [`01_teshis.md`](01_teshis.md), [`00_plan.md`](00_plan.md).
 
-**Çerçeve (Revizyon 1, değişmedi)**
-- Çıkış yönü veri; AB hasmane; üyelik perspektifi yok.
-- İki takvim: T2028 ve T2029.
-- Veriler çevrim içi kaynaklardan alınıyor; TÜİK, EVDS3, Comtrade ve WITS anahtarsız.
+**Çerçeve (değişmedi).** Çıkış yönü veri; AB hasmane; üyelik perspektifi yok. İki takvim: T2028 ve T2029. Veriler çevrim içi kaynaklardan.
 
-**Faz 1 bulguları**
-- **Ticaret.**
-  - AB27'ye ihracat 1995–2025'te 10,6 kat arttı ($119,5 mlr).
-  - AB'nin payı ihracatta %52,3'ten %43,7'ye, ithalatta %45,4'ten %31,7'ye indi.
-  - Kompozisyon değişti: tekstil %46,9 → %12,6; taşıtlar %3,9 → %23,8.
-  - Bölüm 29 (otomotiv) ihracatının %79'u AB'ye gidiyor.
-- **Bilanço.**
-  - GB, S4'e göre açık ara üstün: yılda €5,5 mlr AB vergisi ve €14–30 mlr statik ihracat hacmi.
-  - S2'ye göre GB'nin üstünlüğü yılda €2,4–6,7 mlr: menşe maliyeti ve tercih kullanım açığı.
-  - Sonuç: çıkış, pazar erişimi bir anlaşmayla ikame edilmezse net negatif. Olumsuz bulgu olarak raporlandı.
-- **Asimetri.** AB'nin STA'sı olup Türkiye'nin olmadığı 22 pazar grubunda:
-  - Türk ihracatı ≈$1,5 mlr MFN ödüyor;
-  - AB rakiplerinin avantajı $24,8 mlr (üst sınır);
-  - bu ortakların Türkiye'ye ihracatı $30,2 mlr; kendi STA'larımız için kaldıraç bu.
-- **Diğer asimetriler:** oy hakkı yok (üç komite), vize, karayolu kotaları, SAFE dışlaması, ABD 301 (Türkiye %12,5, AB ≤%10). IAA eşdeğerliği çıkışla kaybedilebilir.
-- **Makro.**
-  - 2025 cari denge −$30,3 mlr (VB-07 kapandı: birincil gelir revizyonu). Çekirdek denge +$37,1 mlr; 12 aylık birikimli cari açık −$42,1 mlr.
-  - Açık enerji, altın ve birincil gelirden kaynaklanıyor.
-  - Tasarruf-yatırım açığı kamu kesiminde.
-  - OVP'nin 2029 cari denge hedefi −%1,6. T+5'te ≥ %0 için ek $25–48 mlr iyileşme gerekiyor `[H]`.
-  - Reel kur 2022'den bu yana %31 değerlendi.
-- **S4'ün ilk tur sinyalleri.**
-  - İhracat kaybı: −€21,2 mlr (P10–P90 −13,8 ile −30,4).
-  - Risk altındaki istihdam: 207 bin (135–297 bin); giyimde 87 bin, otomotivde 36 bin.
-  - TÜFE'ye etki: yalnızca MFN ile 21–40 bp, İGV de eklenirse 46–86 bp.
-  - Bölgesel yük orantısız: TRC3'te %9,8, TRB2'de %8,2.
-  - S4 enflasyon, istihdam, kabiliyet ve cari denge kısıtlarını ihlal ediyor.
+**Kullanıcı geri bildirimi.** Faz 1 politika evrenini keşfetmedi; S4 pasif kaldı. Faz 2A bu evreni tarıyor.
 
-**Alınan kararlar**
-- S4 bitiş durumu olamaz; yalnızca geri dönüş planı (H1-1).
-- Faz 2'nin tasarım hedefi:
-  - T'de karşılıklı sıfır tarife korunur: STA, geçici anlaşma veya geçiş düzenlemesi.
-  - Buna ulaşılamazsa tek taraflı tampon paketi:
-    - AB menşeli mallara İGV yayılmaz;
-    - girdide herkese sıfır MFN;
-    - hedefli ve bölgesel destek;
-    - AKÇT STA'sı korunur.
-- Takvimlere göre ana seçenek: T2028'de geçiş düzenlemesi, T2029'da temel STA (S3) ve menşe kolaylıkları.
+**Faz 2A bulguları**
+- **Öneri: AB'ye tarife + yerli ürüne ÖTV indirimi.**
+  - Tarife MFN ve bağlı oran içinde mümkün. Otomobilde 18 satır %19–20 ile bağlı, diğerleri bağsız (DS629).
+  - Yalnızca yerli ürüne ÖTV indirimi GATT III:2'nin kendiliğinden ihlali; III:8(b) kurtarmaz (Brezilya–Vergilendirme).
+  - Hukuka uygun eşdeğer: tarife + bütün menşelere eşit ÖTV/KDV indirimi (T-A takas).
+- **Sayılar (on ürün grubu, TÜFE'nin %17,4'ü).**
+  - Pasif S4: +35 bp TÜFE.
+  - Takas: −2 bp; net mali −$0,46 mlr; +20 bin istihdam.
+  - Yalnızca yerliye indirim (T-0): −$3,4 mlr ve DTÖ'ye aykırı. III:8(b) ödemesi (T-B): −$4,2 mlr.
+  - Otomobil: ÖTV %65 → %56,2; AB +%4,1, yerli −%5,4; net −$0,15 mlr.
+- **Aktif S4.**
+  - Önerilen paket: İGV yalnızca kabiliyeti zayıf satırlarda kaldırılır (c2), girdide sıfır (P1) ve geniş takas.
+  - TÜFE 3,3 bp (2,5–4,1); tahsil edilebilir mali +%0,05 GSYH; Çin'e karşı koruma korunuyor.
+  - Pasif S4: 78 bp (59–98).
+- **Kısıtlar.**
+  - Enflasyon ve mali kısıt aktif tasarımla sağlanıyor.
+  - İstihdam kısıtı ihlal: net −117 bin (−77 ile −165 bin); giyim −72,6 bin; %5 eşiğini aşan 22 sınıf.
+  - İhracat tarafında yasal ve etkili tek taraflı araç yok; tam telafi ≈$38 mlr/yıl.
+- **Gelir.** Gümrük vergisi tahsilatı yasal tutarın %50'si (2025: $8,15 mlr).
+- **Pazarlık.** AB'nin S4 ihracat kaybı c2'de $28,5 mlr, yalnızca MFN'de $16,4 mlr. Aktif S4, BATNA'yı güçlendiriyor.
+- **Hukuki mekanik.**
+  - Fesih hükmü yok.
+  - Temiz yol: Ortaklık Konseyi dondurma kararı (AB tarafında nitelikli çoğunluk) + md. 207 ITA (Şili md. 33.11 emsali).
+  - T2028 için yalnızca dondurma; T2029 için en fazla mal STA'sı. Bunun için AB yetkisi 2027'nin üçüncü çeyreğinde gerekiyor.
 
-**Defter.**
-- 0/230 sınıf kartı.
-- Enflasyon bütçesi 0/50 bp (ikinci tur dahil 0/100 bp).
-- Cari denge katkısı ve mali maliyet: 0.
+**Zaman kritik eylemler**
+- GATT XXVIII:5 çekincesi: **31.12.2026**'dan önce.
+- DS629 DSB kararı: 27.10.2026; temyize gitmeme ve uyum önerisi.
+- Mevcut DTÖ risklerinin temizlenmesi:
+  - engelli ÖTV istisnasında %40 yerli katkı şartı;
+  - kurumlar vergisi md. 32/7 ihracat indirimi;
+  - rakı farkı;
+  - 160 kW eşiği.
+
+**Defter.** 0/230 sınıf kartı. Enflasyon bütçesi 0/50 bp. Politika uzayı referans değerleri `defter.md`'de.
 
 **Açık konular**
-- Veri boşlukları: VB-02, 04, 06, 08–18 (`01_teshis.md` §8).
-- Faz 2'de yapılacaklar:
-  - kendi çekim modeli tahminimiz (PPML, BACI 1996–2024);
-  - CE, NANDO ve TÜRKAK hukuki statüsü;
-  - IAA eşdeğerliği.
-- `[D?]`: Türkiye–Ukrayna STA'sının yürürlüğü, AB'nin doğrudan yatırım payı, kota maliyeti, 2025 vize verisi.
+- Faz 2B:
+  - çekim modeli (PPML, `kod/f2f_cekim_modeli.py`, sürüyor);
+  - S0–S5, R7, R8, aktif S4 ve S5 karşılaştırma matrisi;
+  - iki takvim için bitiş durumu ve hukuki yol haritası.
+- Veri boşlukları: VB-02, 04, 06, 08–17, 21–27.
 
-**Sonraki adım.** Faz 2: S0–S5 karşılaştırma matrisi, önerilen bitiş durumu ve hukuki yol haritası (AB md. 207/218, DTÖ md. XXIV, iç hukuk); iki takvim için ayrı ayrı.
+**Sonraki adım.** Faz 2B: `02b_secenekler_hukuk.md`.

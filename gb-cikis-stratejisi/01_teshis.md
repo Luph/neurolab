@@ -950,7 +950,7 @@ Güven: Orta.
 | VB-15 | AB'nin spesifik ve bileşik vergileri için ad valorem eşdeğerleri | Açık | WITS "aveestimated" (AB, 918) veya TARIC; Faz 3 |
 | VB-16 | AB'ye ihracatın taşıma şekline göre dağılımı (karayolu payı) | Açık | TÜİK dış ticaret Qlik "taşıma şekli" boyutu; 1 hafta |
 | VB-17 | İl düzeyinde ihracat bileşimi | Açık | TİM ve Ticaret Bakanlığı il bazında ihracat; Faz 3 |
-| VB-18 | Aktarılan AB teknik mevzuatı, Türk onaylanmış kuruluşları (NANDO), TÜRKAK'ın EA MLA statüsü | Açık | NANDO veya Single Market Compliance Space, EA üyelik sayfası, Ticaret Bakanlığı; Faz 2 |
+| VB-18 | Aktarılan AB teknik mevzuatı, Türk onaylanmış kuruluşları (NANDO), TÜRKAK'ın EA MLA statüsü | **Kapandı (Faz 2)** | NANDO: 95 Türk kaydı, ≈81'i yürürlükte; TÜRKAK dokuz alanda EA MLA imzacısı ([`02a_politika_uzayi.md`](02a_politika_uzayi.md) §2 H2) |
 
 ---
 
