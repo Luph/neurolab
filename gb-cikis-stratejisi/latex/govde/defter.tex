@@ -1,0 +1,148 @@
+\hypertarget{defter}{%
+\chapter{Ek A --- Kümülatif defter}\label{defter}}
+
+Her NACE grubu tamamlandığında güncellenir. Toplamlar Faz 6'daki makro mutabakatta kullanılır.
+
+\textbf{Son güncelleme:} Faz 2 sonu, 18 Ekim 2026. Faz 3 başlamadığı için sınıf düzeyinde katkı yok.
+
+\begingroup\gbtablo\small
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.1783}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.5830}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.2387}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Kalem}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Değer}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Not}
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Tamamlanan / kalan sınıf sayısı & 0 / 230 C sınıfı; 0 / 29 ek kapsam satırı (B 15, D 1, E 2, A 3, hizmet 8) & Kapsam listesi: \kod{veri/\allowbreak{}nace\_\allowbreak{}kapsam.\allowbreak{}csv} \\
+Kullanılan / kalan enflasyon bütçesi (bp) & Birinci tur: 0 / 50 (yıllık tavan 30). İkinci tur dahil: 0 / 100 & V-05 \\
+Kümülatif cari denge katkısı (milyar \$) & 0 & P10--P50--P90, Faz 3'ten itibaren \\
+Kümülatif mali maliyet (milyar TL ve GSYH \%) & 0 & Tavan: GSYH'nin \%0,5'i/yıl (2026'da ≈ \$9,1 mlr; 2028'de ≈ \$10,5 mlr) \\
+Riskteki istihdam & Teşhis tabanı (S4, statik, telafisiz): 207 bin brüt (P10--P90: 135--297 bin). Net (ithal ikamesi dahil): yalnızca MFN −117 bin (−77 ile −165 bin), \%5 eşiğini aşan 22 sınıf; aktif S4 (c2 + takas) ≈ −35 bin (−11 ile −72 bin), giyim −58,7 bin, 21 sınıf (σ = 5). Sınıf düzeyinde karar Faz 3'te & \kod{01\_\allowbreak{}teshis.\allowbreak{}md} §4.1; \kod{02a\_\allowbreak{}politika\_\allowbreak{}uzayi.\allowbreak{}md} §4.2 \\
+Açık kalan veri boşlukları & VB-02, 04, 06, 08--12, 14--17, 21--27 (kapanan: VB-01, 03, 05, 07, 13, 18) & \kod{01\_\allowbreak{}teshis.\allowbreak{}md} §8; \kod{02a\_\allowbreak{}politika\_\allowbreak{}uzayi.\allowbreak{}md} §9 \\
+Varsayım kaydına eklenen yeni maddeler & V-01 \ldots{} V-29; Faz 1'de V-06 ve V-07 baz değerleri güncellendi & \kod{00\_\allowbreak{}plan.\allowbreak{}md} §3 \\
+\end{longtable}
+
+\endgroup
+
+\hypertarget{defter-teux15fhis-tabanux131-faz-1}{%
+\section{Teşhis tabanı (Faz 1)}\label{defter-teux15fhis-tabanux131-faz-1}}
+
+Sınıf kartlarının ve makro köprünün karşılaştırılacağı başlangıç değerleri.
+
+\begingroup\gbtablo\small
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3385}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.4485}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.2130}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Gösterge}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Değer}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Kaynak ve etiket}
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Cari denge 2025 & −\$30,3 mlr (−\%1,9 GSYH) & \etiketV{} EVDS3 \\
+Altın ve enerji hariç (çekirdek) cari denge 2025 & +\$37,1 mlr (+\%2,3) & \etiketV{} EVDS3 \\
+Cari denge, 12 ay (Eyl 2025--Ağu 2026) & −\$42,1 mlr; çekirdek +\$26,0 mlr & \etiketV{} EVDS3 \\
+OVP cari denge patikası 2027 / 2028 / 2029 & −\%1,9 / −\%1,8 / −\%1,6 & \etiketV{} OVP Tablo 1.1 \\
+T+5 cari denge hedef boşluğu (2033 / 2034) & \$28--45 mlr / \$25--48 mlr & \etiketH{} \kod{01\_\allowbreak{}teshis.\allowbreak{}md} §3.6 \\
+TÜFE yıl sonu 2026 / 2027 / 2028 / 2029 & \%28,4 / \%21,0 / \%13,5 / \%9,0 & \etiketV{} OVP \\
+İmalat istihdamı & YSHİ 5,03 mn (2024); SGK 4/a 4,03 mn (2025) & \etiketV{} \\
+AB ihracatına doğrudan bağlı imalat istihdamı & 858 bin (YSHİ bazı); 675 bin (SGK bazı) & \etiketT{} §4 \\
+S4 statik ihracat kaybı (σ = 3 / 5 / 8) & −€13,8 / −21,2 / −30,4 mlr & \etiketT{} Faz 0 S4 hesabı \\
+S4 TÜFE birinci tur (pasif): yalnızca MFN / MFN + İGV & 32--42--53 bp / 59--78--98 bp (girdi-çıktı modeli; ilk kaba hesap 21--40 / 46--86 bp) & \etiketT{} \kod{veri/\allowbreak{}politika\_\allowbreak{}io\_\allowbreak{}s4\_\allowbreak{}tufe.\allowbreak{}csv} \\
+STA asimetrisi: Türk ihracatının ödediği MFN & \$1,2 mlr (yürürlükte) + \$0,3 mlr (bekleyen) & \etiketT{} §2.1 \\
+\end{longtable}
+
+\endgroup
+
+\hypertarget{defter-politika-uzayux131-tabanux131-faz-2a}{%
+\section{Politika uzayı tabanı (Faz 2A)}\label{defter-politika-uzayux131-tabanux131-faz-2a}}
+
+Faz 3--6'daki kararların karşılaştırılacağı referans değerler. Ayrıntı: \belgebag{02a_politika_uzayi}{}{\kod{02a\_\allowbreak{}politika\_\allowbreak{}uzayi.\allowbreak{}md}}.
+
+\begingroup\gbtablo\small
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.2435}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.5318}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.2246}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Gösterge}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Değer}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Kaynak ve etiket}
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+S4 TÜFE birinci tur, pasif (MFN + İGV) & 59 / 78 / 98 bp (ρ = 0,6 / 0,8 / 1,0); κ = 0,5 ile ≈182 bp & \etiketT{} \kod{veri/\allowbreak{}politika\_\allowbreak{}s4\_\allowbreak{}aktif.\allowbreak{}csv} \\
+Aktif S4 önerilen paket: c2 + P1 + geniş takas & TÜFE 2,5 / 3,3 / 4,1 bp; net mali +\%0,05 GSYH (tahsil edilebilir); takas maliyeti \$5,7 mlr; koruma kaybı 0 & \etiketT{} §4.1 \\
+Aktif S4 alternatifleri (ρ = 0,8) & c + dar 7,5 bp, −\%0,02; a + geniş 4,0 bp, +\%0,07; b 1,5 bp, −\%0,04 ve \$2,9 mlr koruma kaybı & \etiketT{} §4.1 \\
+Vergi takası, on grup (T-A, rejim c2, merkez) & TÜFE 0 bp (pasif +47); net mali −\$0,60 mlr (−0,71 ile +0,13); istihdam +31 bin (18--36). Rejim c'de pasif +35 bp, takas −\$0,46 mlr & \etiketT{} \kod{veri/\allowbreak{}politika\_\allowbreak{}takas\_\allowbreak{}ozet.\allowbreak{}csv} \\
+Otomobil takası & ÖTV \%65 → \%56,2; AB +\%4,1, yerli −\%5,4; net mali −\$0,15 mlr; T-0 (yalnızca yerli) eşdeğeri −\$3,0 mlr ve DTÖ'ye aykırı & \etiketT{} §1.5 \\
+S4 net imalat istihdamı (σ = 5) & Yalnızca MFN −117 bin; c2 −48 bin; c2 + takas ≈ −35 bin; giyim −58,7 bin & \etiketT{} \kod{veri/\allowbreak{}politika\_\allowbreak{}s4\_\allowbreak{}net\_\allowbreak{}istihdam\_\allowbreak{}ozet.\allowbreak{}csv} \\
+Gümrük vergisi tahsilat oranı & Toplam \%50 (2025: \$8,15 mlr gerçekleşme / \$16,2 mlr yasal); tüketim ve karma mallarda \%100, diğerlerinde \%38 & \etiketV{}/\etiketT{} §3.4 \\
+AB'nin S4 ihracat kaybı (σ = 5) & b \$16,4 mlr; c \$18,7 mlr; c2 \$28,5 mlr; a \$31,1 mlr & \etiketT{} §4.1 \\
+İhracat tarafı tam telafi maliyeti & Yılda ≈\$38 mlr (2028 GSYH'sinin \%1,8'i); telafi edici vergiye açık & \etiketT{} §5 \\
+Zaman kritik DTÖ eylemi & XXVIII:5 çekincesi, son tarih 31.12.2026; DS629 DSB, 27.10.2026 & \etiketV{} §7 \\
+\end{longtable}
+
+\endgroup
+
+\hypertarget{defter-seuxe7enekler-tabanux131-faz-2b}{%
+\section{Seçenekler tabanı (Faz 2B)}\label{defter-seuxe7enekler-tabanux131-faz-2b}}
+
+S0'a (GB) göre yerleşmiş etkiler. Ayrıntı: \belgebag{02b_secenekler_hukuk}{}{\kod{02b\_\allowbreak{}secenekler\_\allowbreak{}hukuk.\allowbreak{}md}} §2.
+
+\begingroup\gbtablo\footnotesize
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2190}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1676}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2275}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1680}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2179}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Gösterge}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{S2 DCFTA}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+\textbf{S3 ITA}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{S4}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Kaynak}
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+TR → AB ihracatı (GE, σ = 7; \%90 GA) & −\%11 (−27 ile +6) & −\%18 (ihtiyatlı) ile +\%1 (Türkiye--BK) & −\%19 (−32 ile −5) & \etiketT{} \kod{veri/\allowbreak{}politika\_\allowbreak{}cekim\_\allowbreak{}senaryolar.\allowbreak{}csv} \\
+Türkiye toplam ihracatı (GE) & −\%3,3 & −\%5,3 ile +\%1,1 & −\%6,2 & \etiketT{} \\
+Türkiye reel GSYH, refah vekili (GE) & −\%0,22 (−0,56 ile +0,19) & −\%0,35 ile +\%0,10 & −\%0,43 (−0,73 ile −0,10) & \etiketT{} \\
+TÜFE birinci tur (bp) & +2 ile +12 (menşe maliyeti) & +2 ile +12 & 2,5--4,1 (aktif) & \etiketT{} 02a, f2e \\
+Net imalat istihdamı (bin) & ≈ −33 (kaba, GE kanalı) & −54 ile +12 & ≈ −35 (aktif, sınıf düzeyi) & \etiketT{} \\
+\end{longtable}
+
+\endgroup

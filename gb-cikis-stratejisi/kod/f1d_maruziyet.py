@@ -24,6 +24,7 @@ import argparse
 import os
 
 import pandas as pd
+import yollar
 
 BOLUM_AD = {
     "05": "Kömür ve linyit çıkartılması", "06": "Ham petrol ve doğal gaz çıkarımı",
@@ -43,7 +44,8 @@ BOLUM_AD = {
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--comtrade-hs6", required=True, help="comtrade_tur_hs6_world_2025.csv.gz (comtrade_tr_hs6.py)")
+    ap.add_argument("--comtrade-hs6", default=yollar.girdi("comtrade", "comtrade_tur_hs6_world_2025.csv.gz"),
+                    help="comtrade_tur_hs6_world_2025.csv.gz (comtrade_tr_hs6.py)")
     ap.add_argument("--out", default=os.path.join(os.path.dirname(__file__), "..", "veri"))
     a = ap.parse_args()
     v = lambda f: os.path.join(a.out, f)  # noqa: E731

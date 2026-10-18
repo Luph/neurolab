@@ -50,6 +50,8 @@ Yeni bir sohbette devam etmek için ana prompt ile bu dosyayı birlikte verin. A
 
 **Defter.** 0/230 sınıf kartı; enflasyon bütçesi 0/50 bp. Faz 2 referans değerleri `defter.md`'de.
 
+**Çıktı ve paket.** Birleşik cilt LaTeX'te dizildi: `pdf/GB_Cikis_Stratejisi_Faz0-2.pdf`. Ham girdiler `girdi/`de. `kod/hepsini_uret.sh --cevrimdisi` bütün hesapları ağsız yeniden üretir; sonuçlar `veri/` ile aynı.
+
 **Açık konular**
 - Veri boşlukları: VB-02, 04, 06, 08–12, 14–17, 21–27.
 - Faz 3: NACE sınıfı kartları. Öncelik: S4'te kaybı %5'i aşan 21 sınıf ve otomotiv, giyim, beyaz eşya platformları.

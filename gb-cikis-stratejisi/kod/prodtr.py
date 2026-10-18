@@ -20,6 +20,9 @@ TABLOLAR = {"Sanayi Ürünleri Satış Değeri": "satis_degeri", "Sanayi Ürünl
 
 def indir(klasor, bulten=BULTEN):
     os.makedirs(klasor, exist_ok=True)
+    hazir = {ad: os.path.join(klasor, ad + ".xls") for ad in TABLOLAR.values()}
+    if all(os.path.exists(y) for y in hazir.values()):
+        return hazir
     d = json.loads(tuik._istek(f"{tuik.PORTAL}/api/tr/press/{bulten}",
                                basliklar={"X-Requested-With": "XMLHttpRequest", "Accept": "application/json"}))
     yollar = {}

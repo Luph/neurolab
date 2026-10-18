@@ -6,10 +6,15 @@ EVDS3 web uygulamasının kullandığı herkese açık arka uç:
 Frekans kodları: 1 günlük, 5 aylık, 6 üç aylık, 8 yıllık.
 """
 
+import hashlib
+import json
+import os
 import time
 
 import pandas as pd
 import requests
+
+import yollar
 
 B = "https://evds3.tcmb.gov.tr/igmevdsms-dis"
 OTURUM = requests.Session()
@@ -19,6 +24,7 @@ OTURUM.headers.update({"User-Agent": "gb-cikis-stratejisi/1.0 (kamu politikasi a
 
 
 def _istek(yontem, url, deneme=6, **kw):
+    yollar.indirme_izni(url)
     for k in range(deneme):
         try:
             r = OTURUM.request(yontem, url, timeout=120, **kw)
@@ -55,12 +61,26 @@ def _kayitlar(js):
     return next((v for v in js.values() if isinstance(v, list) and v and isinstance(v[0], dict)), [])
 
 
+def _yanit(g):
+    """POST /fe yanıtı; girdi/evds3/<özet>.json varsa oradan okunur, yoksa indirilip oraya yazılır."""
+    anahtar = hashlib.sha1(json.dumps(g, sort_keys=True).encode()).hexdigest()[:16]
+    yol = yollar.girdi("evds3", f"fe_{g['frequency']}_{anahtar}.json")
+    if os.path.exists(yol):
+        with open(yol) as f:
+            return json.load(f)
+    js = _istek("POST", f"{B}/fe", json=g).json()
+    os.makedirs(os.path.dirname(yol), exist_ok=True)
+    with open(yol, "w") as f:
+        json.dump({"_istek": g, **(js if isinstance(js, dict) else {"items": js})}, f, ensure_ascii=False)
+    return js
+
+
 def veri(kodlar, toplamalar, frekans, bas="01-01-1990", son="31-12-2026"):
     """Seri kodları -> geniş tablo (satır: dönem). Kodlar 30'luk parçalar hâlinde istenir."""
     parcalar = []
     for i in range(0, len(kodlar), 30):
         k, t = kodlar[i:i + 30], toplamalar[i:i + 30]
-        x = pd.DataFrame(_kayitlar(_istek("POST", f"{B}/fe", json=govde(k, t, frekans, bas, son)).json()))
+        x = pd.DataFrame(_kayitlar(_yanit(govde(k, t, frekans, bas, son))))
         if len(x):
             x = x.set_index(x.columns[0])
             x = x[[c for c in x.columns if c.replace("_", ".") in k or c in k]]

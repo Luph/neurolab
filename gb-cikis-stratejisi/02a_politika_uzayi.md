@@ -302,6 +302,10 @@ Bir ithalat tarifesi ekonomik olarak iki aracın toplamıdır: yerli üreticiye 
 
 *Kaynak:* `[T]` `veri/politika_takas_ozet.csv`. Rejim c için aynı tablo dosyada (pasif +34,7 bp; T-A −$462 mn; T-0 −$3.447 mn; T-B −$4.217 mn). Güven: Orta.
 
+![Şekil 2A.1 — Vergi takası: dört tasarımın TÜFE, net mali ve istihdam etkisi (on ürün grubu, rejim c2; P10–P90)](sekiller/f2_takas_tasarim.png)
+
+*Şekil 2A.1 — Vergi takası: dört tasarımın TÜFE, net mali ve istihdam etkisi (on ürün grubu, rejim c2; P10–P90)*
+
 **Okuma.**
 1. TÜFE'yi sabitleyen üç tasarımdan en ucuzu takas (T-A). Maliyeti T-0'ın altıda biri, T-B'nin yedide biri.
 2. T-0 ve T-B istihdamı daha çok artırıyor (+64–68 bin), çünkü yerliye çok daha büyük bir fiyat avantajı veriyorlar.
@@ -647,6 +651,10 @@ Faz 1, S4'ü pasif bir senaryo olarak ele aldı. Aşağıda aynı şok, Türkiye
 - Takas maliyeti, nötrlenen fiyat artışı × alıcı fiyatlarıyla hanehalkı tüketimi.
 - Güven: Orta.
 
+![Şekil 2A.2 — Aktif S4 paket sınırı: birinci tur TÜFE ve tahsil edilebilir net mali etki (girdide sıfır dahil)](sekiller/f2_s4_paket_siniri.png)
+
+*Şekil 2A.2 — Aktif S4 paket sınırı: birinci tur TÜFE ve tahsil edilebilir net mali etki (girdide sıfır dahil)*
+
 **Okuma.**
 1. **Enflasyon kısıtı aktif tasarımla karşılanabiliyor.** İlk yıl 30 bp altında kalan dört paket:
    - c + dar: 7,5 bp;
@@ -700,6 +708,10 @@ Faz 1'deki S4 risk istihdamı (207 bin) yalnızca ihracat tarafıydı. Türkiye 
 - Takasın ek etkisi f2c'den alındı (T-A − pasif, rejim c2); σ ızgarası f2c'de farklı, bu yüzden merkez değer kullanıldı.
 - Statik ve telafisiz bir hesap. Çapa yatırımcı kararları, kapasite sınırları ve girdi bağlantıları yok. Yerli kapasitenin ithal ikamesini karşılayabileceği varsayıldı; büyük İGV şoklarında bu bir üst sınırdır.
 - Güven: Orta (c2 satırları için Düşük–Orta).
+
+![Şekil 2A.3 — Anlaşmasız çıkışta NACE bölümü düzeyinde net imalat istihdamı: yalnızca MFN ve rejim c2 (σ = 5)](sekiller/f2_net_istihdam.png)
+
+*Şekil 2A.3 — Anlaşmasız çıkışta NACE bölümü düzeyinde net imalat istihdamı: yalnızca MFN ve rejim c2 (σ = 5)*
 
 **Bölüm düzeyinde net etki (σ = 5)**
 

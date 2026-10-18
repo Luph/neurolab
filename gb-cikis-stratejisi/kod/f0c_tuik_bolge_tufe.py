@@ -18,6 +18,7 @@ import os
 import pandas as pd
 
 import tuik
+import yollar
 
 BUYUKLUK = {"0": "toplam", "1T9": "g_1_9", "10T49": "g_10_49", "50T249": "g_50_249", "GE250": "g_250p"}
 
@@ -30,7 +31,7 @@ def nace_kodu(s):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--cache", default=os.path.expanduser("~/.cache/gb_cikis"))
+    ap.add_argument("--cache", default=yollar.GIRDI)
     ap.add_argument("--out", default=os.path.join(os.path.dirname(__file__), "..", "veri"))
     a = ap.parse_args()
     os.makedirs(a.cache, exist_ok=True)

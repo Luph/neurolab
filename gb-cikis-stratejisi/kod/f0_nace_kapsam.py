@@ -12,7 +12,7 @@ Kaynaklar (hepsi herkese açık, kimlik doğrulama gerektirmez):
   - GİB NACE Rev. 2.1 sınıf adları (Türkçe, 2026)
 
 Kullanım:
-  python3 f0_nace_kapsam.py --cache ~/.cache/gb_cikis --out ../veri
+  python3 f0_nace_kapsam.py --out ../veri
 
 Rejim kuralları HS fasıl/pozisyon düzeyinde yaklaşık kurallardır; kesin liste için
 1/95 sayılı Karar Ek 1 (işlenmiş tarım ürünleri) ve 1996 AKÇT Anlaşması ürün listesi
@@ -26,6 +26,8 @@ import urllib.parse
 import urllib.request
 
 import pandas as pd
+
+import yollar
 
 ESTAT_CL = "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/codelist/ESTAT/{cl}/latest?format=TSV&lang=en"
 SHOWVOC = ("https://showvoc.op.europa.eu/semanticturkey/it.uniroma2.art.semanticturkey/"
@@ -60,8 +62,10 @@ DOLAYLI_GB = {
 
 
 def indir(url, yol, headers=None):
-    if os.path.exists(yol) and os.path.getsize(yol) > 0:
-        return yol
+    bulunan = yollar.bul(yol)  # pakette .gz olarak da durabilir
+    if bulunan:
+        return bulunan
+    yollar.indirme_izni(url)
     req = urllib.request.Request(url, headers=headers or {})
     with urllib.request.urlopen(req, timeout=600) as r, open(yol, "wb") as f:
         f.write(r.read())
@@ -307,12 +311,12 @@ def rejim(cn):
 # ---------------------------------------------------------------------------
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--cache", default=os.path.expanduser("~/.cache/gb_cikis"))
+    ap.add_argument("--cache", default=yollar.GIRDI)
     ap.add_argument("--out", default=os.path.join(os.path.dirname(__file__), "..", "veri"))
     a = ap.parse_args()
     os.makedirs(a.cache, exist_ok=True)
     os.makedirs(a.out, exist_ok=True)
-    c = lambda f: os.path.join(a.cache, f)  # noqa: E731
+    c = lambda f: yollar.bul(os.path.join(a.cache, f)) or os.path.join(a.cache, f)  # noqa: E731 (.gz kopya da olur)
 
     # --- İndirmeler
     indir(ESTAT_CL.format(cl="NACE_R2"), c("nace_r2_en.tsv"))

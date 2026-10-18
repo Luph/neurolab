@@ -35,6 +35,7 @@ import pandas as pd
 
 import f2a_io_fiyat as io
 import prodtr
+import yollar
 
 STA = {"CHE", "NOR", "ISL", "LIE", "ISR", "MKD", "BIH", "PSE", "TUN", "MAR", "EGY", "ALB", "GEO", "MNE", "SRB",
        "CHL", "MUS", "KOR", "MYS", "MDA", "FRO", "SGP", "GBR", "ARE"}
@@ -126,18 +127,19 @@ def vektor(t, kod, deger):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--baci-tr", required=True)
-    ap.add_argument("--baci-dunya", required=True, help="baci_hs17_world_exports_exporter_hs6_2024.csv.gz")
-    ap.add_argument("--bec", required=True, help="WITS JobID-86_Concordance_H5_to_BE.CSV")
-    ap.add_argument("--cache", default=os.path.expanduser("~/.cache/gb_cikis"))
+    ap.add_argument("--baci-tr", default=yollar.girdi("baci", "baci_hs17_tur_bilateral_hs6_2020_2024.csv.gz"))
+    ap.add_argument("--baci-dunya", default=yollar.girdi("baci", "baci_hs17_world_exports_exporter_hs6_2024.csv.gz"))
+    ap.add_argument("--bec", default=yollar.girdi("bec", "h5be", "JobID-86_Concordance_H5_to_BE.CSV"),
+                    help="WITS JobID-86_Concordance_H5_to_BE.CSV")
+    ap.add_argument("--cache", default=yollar.GIRDI)
     ap.add_argument("--out", default=os.path.join(os.path.dirname(__file__), "..", "veri"))
     a = ap.parse_args()
     t = veri_kur(a)
 
-    yollar = io.io_indir(os.path.join(a.cache, "io2023"))
-    yd, kod = io.oku(yollar["yurtici"])
-    it, _ = io.oku(yollar["ithalat"])
-    ka, _ = io.oku(yollar["kullanim_alici"])
+    io_yollari = io.io_indir(os.path.join(a.cache, "io2023"))
+    yd, kod = io.oku(io_yollari["yurtici"])
+    it, _ = io.oku(io_yollari["ithalat"])
+    ka, _ = io.oku(io_yollari["kullanim_alici"])
     Z_d = yd.iloc[io.SATIR, io.SUTUN].astype(float).to_numpy()
     Z_m = it.iloc[io.SATIR, io.SUTUN].astype(float).to_numpy()
     x = yd.iloc[io.P1, io.SUTUN].astype(float).to_numpy()

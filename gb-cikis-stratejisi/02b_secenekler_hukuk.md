@@ -142,6 +142,14 @@ Hukuki bulgular Faz 2'nin AB hukuku ve DTÖ hukuku araştırma notlarından alı
 - **Literatürle uyum.** Aytuğ vd. (2017) +%38 buluyor; bizim ilk on yıl tahminimiz +%34–44. Dünya Bankası (2014) ikili etkiyi anlamsız buluyor; bu, AB → Türkiye sonucumuzla ve 5 yıllık ve BACI varyantlarıyla uyumlu. Dursun (2023) sönümlenmeyi buluyor; bizde de var.
 - Güven: Orta (S4), Düşük–Orta (S2, S3).
 
+![Şekil 2B.1 — Çekim modeli: S2, S3 ve S4'ün Türkiye'nin AB'ye ihracatına etkisi (S0'a göre; %90 GA)](sekiller/f2_cekim_senaryo.png)
+
+*Şekil 2B.1 — Çekim modeli: S2, S3 ve S4'ün Türkiye'nin AB'ye ihracatına etkisi (S0'a göre; %90 GA)*
+
+![Şekil 2B.2 — GB ve AB'nin derin STA'larının ticaret etkisinin zaman yolu (M2; %90 GA)](sekiller/f2_cekim_zaman_yolu.png)
+
+*Şekil 2B.2 — GB ve AB'nin derin STA'larının ticaret etkisinin zaman yolu (M2; %90 GA)*
+
 **Okuma.**
 1. **S4'ün ticaret kaybı sağlam.**
    - Kısmi denge, genel denge ve tarife duvarı hesabı aynı bölgeye düşüyor: Türkiye'nin AB'ye ihracatında −%19 ile −%23.

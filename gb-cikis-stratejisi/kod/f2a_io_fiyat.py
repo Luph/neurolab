@@ -30,6 +30,7 @@ import numpy as np
 import pandas as pd
 
 import tuik
+import yollar
 
 IO_TABLOLAR = {"yurtici": "Yurtiçi Üretim Girdi-Çıktı Tablosu 2023",
                "ithalat": "İthalat Girdi-Çıktı Tablosu 2023",
@@ -43,15 +44,15 @@ KAPPA = (0.0, 0.5)
 def io_indir(klasor):
     """TÜİK Veri Portalı aramasıyla 2023 tablolarını indirir (yoksa)."""
     os.makedirs(klasor, exist_ok=True)
-    yollar = {}
+    io_yollari = {}
     for anahtar, baslik in IO_TABLOLAR.items():
         yol = os.path.join(klasor, anahtar + ".xls")
         if not os.path.exists(yol):
             sonuc = [s for s in tuik.portal_ara(baslik) if s.get("icon") == "tablo"
                      and "2023" in s.get("title", "") and baslik.split(" 2023")[0].lower() in s["title"].lower()]
             tuik.portal_indir(sonuc[0]["url"], yol)
-        yollar[anahtar] = yol
-    return yollar
+        io_yollari[anahtar] = yol
+    return io_yollari
 
 
 def oku(yol):
@@ -111,16 +112,17 @@ def model(A_d, A_m, h_d, h_m, w, dtau, rho, kappa):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--baci-tr", required=True, help="baci_hs17_tur_bilateral_hs6_2020_2024.csv.gz (baci_ozet.py)")
-    ap.add_argument("--cache", default=os.path.expanduser("~/.cache/gb_cikis"))
+    ap.add_argument("--baci-tr", default=yollar.girdi("baci", "baci_hs17_tur_bilateral_hs6_2020_2024.csv.gz"),
+                    help="baci_hs17_tur_bilateral_hs6_2020_2024.csv.gz (baci_ozet.py)")
+    ap.add_argument("--cache", default=yollar.GIRDI)
     ap.add_argument("--out", default=os.path.join(os.path.dirname(__file__), "..", "veri"))
     a = ap.parse_args()
     v = lambda f: os.path.join(a.out, f)  # noqa: E731
-    yollar = io_indir(os.path.join(a.cache, "io2023"))
+    io_yollari = io_indir(os.path.join(a.cache, "io2023"))
 
-    yd, kod = oku(yollar["yurtici"])
-    it, kod_m = oku(yollar["ithalat"])
-    ka, kod_k = oku(yollar["kullanim_alici"])
+    yd, kod = oku(io_yollari["yurtici"])
+    it, kod_m = oku(io_yollari["ithalat"])
+    ka, kod_k = oku(io_yollari["kullanim_alici"])
     assert kod == kod_m == kod_k, "ürün sıraları farklı"
     Z_d = yd.iloc[SATIR, SUTUN].astype(float).to_numpy()
     Z_m = it.iloc[SATIR, SUTUN].astype(float).to_numpy()

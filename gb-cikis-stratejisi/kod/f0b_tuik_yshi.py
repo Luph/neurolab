@@ -6,17 +6,17 @@ Kaynak: TÜİK Dağıtım Yönetim Sistemi, veri akışları
 TL tutarlar ECB yıllık ortalama kurlarıyla (TRY/EUR ÷ USD/EUR) ABD dolarına çevrilir.
 
 Kullanım:
-  python3 f0b_tuik_yshi.py --cache ~/.cache/gb_cikis --out ../veri
+  python3 f0b_tuik_yshi.py --out ../veri
 """
 
 import argparse
-import io
 import os
 import urllib.request
 
 import pandas as pd
 
 import tuik
+import yollar
 
 GOSTERGE = {"1": "girisim", "2": "calisan", "3": "ucretli_calisan", "4": "personel_gideri_tl",
             "5": "ciro_tl", "6": "mal_hizmet_alimi_tl", "7": "stok_degisimi_tl",
@@ -25,10 +25,15 @@ TL_SUTUNLAR = [v for v in GOSTERGE.values() if v.endswith("_tl")]
 ECB = "https://data-api.ecb.europa.eu/service/data/EXR/A.{c}.EUR.SP00.A?startPeriod=2009&format=csvdata"
 
 
-def usd_try():
+def usd_try(onbellek):
     def seri(c):
-        with urllib.request.urlopen(ECB.format(c=c), timeout=120) as r:
-            x = pd.read_csv(io.BytesIO(r.read()))
+        yol = os.path.join(onbellek, "ecb", f"EXR_A_{c}_EUR.csv")
+        if not os.path.exists(yol):
+            yollar.indirme_izni(ECB.format(c=c))
+            os.makedirs(os.path.dirname(yol), exist_ok=True)
+            with urllib.request.urlopen(ECB.format(c=c), timeout=120) as r, open(yol, "wb") as f:
+                f.write(r.read())
+        x = pd.read_csv(yol)
         return x.set_index(x.TIME_PERIOD.astype(str)).OBS_VALUE
     return (seri("TRY") / seri("USD")).rename("usd_try")
 
@@ -51,7 +56,7 @@ def duzenle(ham, nace_sutun, yil_min):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--cache", default=os.path.expanduser("~/.cache/gb_cikis"))
+    ap.add_argument("--cache", default=yollar.GIRDI)
     ap.add_argument("--out", default=os.path.join(os.path.dirname(__file__), "..", "veri"))
     a = ap.parse_args()
     os.makedirs(a.cache, exist_ok=True)
@@ -60,7 +65,7 @@ def main():
                      dtype=str)
     r21 = pd.read_csv(tuik.indir_csv("DF_YAPISAL_EFGTG_NACEREV21",
                                      os.path.join(a.cache, "tuik_DF_YAPISAL_EFGTG_NACEREV21.csv")), dtype=str)
-    kur = usd_try()
+    kur = usd_try(a.cache)
 
     t2 = duzenle(r2, "ACTIVITY_NACE_REV2", 2015)
     sec = t2.kod.str.fullmatch(r"(0[5-9]|[1-2]\d|3[0-3])(\.\d\d)?|35(\.\d\d?)?|38(\.\d\d?)?")

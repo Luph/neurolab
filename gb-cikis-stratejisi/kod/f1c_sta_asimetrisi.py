@@ -24,12 +24,14 @@ Notlar:
 """
 
 import argparse
+import gzip
 import os
 import xml.etree.ElementTree as ET
 
 import pandas as pd
 
 import nazik_http
+import yollar
 
 WITS = ("https://wits.worldbank.org/API/V1/SDMX/V21/datasource/TRN/reporter/{r}/partner/000/product/all/"
         "year/{y}/datatype/reported")
@@ -82,14 +84,19 @@ def wits_mfn(kod, onbellek):
     """Ortağın en son yıl MFN tarifesi (HS6 basit ortalama). Bulunamazsa boş tablo."""
     for y in YILLAR:
         yol = os.path.join(onbellek, f"wits_{kod}_{y}.xml")
-        if not os.path.exists(yol):
+        if not yollar.bul(yol):
+            if yollar.cevrimdisi():
+                continue  # pakette yalnızca WITS'in 200 döndürdüğü yıllar var; eksik yıl = yanıt yoktu
             r = nazik_http.get(WITS.format(r=kod, y=y), timeout=600)
             if r.status_code != 200:
                 continue
             with open(yol, "wb") as f:
                 f.write(r.content)
+        yol = yollar.bul(yol)  # pakette .xml.gz olarak durur
+        with (gzip.open(yol) if yol.endswith(".gz") else open(yol, "rb")) as fh:
+            kok = ET.parse(fh).getroot()
         satirlar = []
-        for s in ET.parse(yol).getroot().iter():
+        for s in kok.iter():
             if s.tag.endswith("Series"):
                 for o in s:
                     if o.tag.endswith("Obs"):
@@ -103,9 +110,11 @@ def wits_mfn(kod, onbellek):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--baci", required=True, help="BACI_HS17_Y2024_V202601.parquet")
-    ap.add_argument("--ulke-kodlari", required=True, help="BACI country_codes_V202601.csv")
-    ap.add_argument("--cache", default=os.path.expanduser("~/.cache/gb_cikis"))
+    ap.add_argument("--baci", default=yollar.girdi("baci", "baci_hs17_2024_f1c_ozet.parquet"),
+                    help="BACI_HS17_Y2024_V202601.parquet ya da pakette onun f1c özeti (kod/girdi_hazirla.py)")
+    ap.add_argument("--ulke-kodlari", default=yollar.girdi("baci", "country_codes_V202601.csv"),
+                    help="BACI country_codes_V202601.csv")
+    ap.add_argument("--cache", default=yollar.GIRDI)
     ap.add_argument("--out", default=os.path.join(os.path.dirname(__file__), "..", "veri"))
     a = ap.parse_args()
     c = os.path.join(a.cache, "f1", "wits")

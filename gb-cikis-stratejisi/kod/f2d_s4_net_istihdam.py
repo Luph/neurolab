@@ -25,13 +25,14 @@ import os
 
 import numpy as np
 import pandas as pd
+import yollar
 
 SIGMALAR = (3, 5, 8)
 
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--baci-tr", required=True)
+    ap.add_argument("--baci-tr", default=yollar.girdi("baci", "baci_hs17_tur_bilateral_hs6_2020_2024.csv.gz"))
     ap.add_argument("--out", default=os.path.join(os.path.dirname(__file__), "..", "veri"))
     a = ap.parse_args()
     v = lambda f: os.path.join(a.out, f)  # noqa: E731

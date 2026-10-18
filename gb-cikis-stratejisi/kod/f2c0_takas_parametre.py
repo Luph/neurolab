@@ -38,6 +38,7 @@ import pandas as pd
 
 import f2a_io_fiyat as io
 import prodtr
+import yollar
 
 STA = {"CHE", "NOR", "ISL", "LIE", "ISR", "MKD", "BIH", "PSE", "TUN", "MAR", "EGY", "ALB", "GEO", "MNE", "SRB",
        "CHL", "MUS", "KOR", "MYS", "MDA", "FRO", "SGP", "GBR", "ARE"}
@@ -81,8 +82,8 @@ def io_yerli_paylari(cache):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--baci-tr", required=True)
-    ap.add_argument("--cache", default=os.path.expanduser("~/.cache/gb_cikis"))
+    ap.add_argument("--baci-tr", default=yollar.girdi("baci", "baci_hs17_tur_bilateral_hs6_2020_2024.csv.gz"))
+    ap.add_argument("--cache", default=yollar.GIRDI)
     ap.add_argument("--out", default=os.path.join(os.path.dirname(__file__), "..", "veri"))
     a = ap.parse_args()
     v = lambda f: os.path.join(a.out, f)  # noqa: E731

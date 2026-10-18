@@ -15,6 +15,7 @@ import os
 
 import tarife_ab
 import tarife_tr
+import yollar
 
 TR_SUTUN = ["gtip12", "hs6", "list", "law474_rate", "mfn_rate", "mfn_text", "igv_rate", "emy_rate_IV",
             "mfn_igv_emy", "in_tgtc_only", "in_irk_only"]
@@ -22,16 +23,16 @@ TR_SUTUN = ["gtip12", "hs6", "list", "law474_rate", "mfn_rate", "mfn_text", "igv
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--cache", default=os.path.expanduser("~/.cache/gb_cikis"))
+    ap.add_argument("--cache", default=yollar.GIRDI)
     ap.add_argument("--out", default=os.path.join(os.path.dirname(__file__), "..", "veri"))
     a = ap.parse_args()
     zipler = os.path.join(a.cache, "tarife_tr")
     os.makedirs(zipler, exist_ok=True)
 
-    yollar = {k: os.path.join(zipler, k + ".zip") for k in tarife_tr.PAGES}
-    if not all(os.path.exists(p) for p in yollar.values()):
-        yollar = tarife_tr.download_zips(zipler)
-    tr = tarife_tr.build(yollar, os.path.join(a.cache, "tarife_tr_2026_tam.csv"))
+    zip_yollari = {k: os.path.join(zipler, k + ".zip") for k in tarife_tr.PAGES}
+    if not all(os.path.exists(p) for p in zip_yollari.values()):
+        zip_yollari = tarife_tr.download_zips(zipler)
+    tr = tarife_tr.build(zip_yollari, os.path.join(a.cache, "tarife_tr_2026_tam.csv"))
     tr[TR_SUTUN].to_csv(os.path.join(a.out, "tarife_tr_2026_gtip12.csv"), index=False)
 
     ab = tarife_ab.fetch_cn(zip_path=os.path.join(a.cache, "cn2026_fmx4.zip"))

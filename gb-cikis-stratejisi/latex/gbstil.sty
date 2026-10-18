@@ -1,0 +1,177 @@
+% gbstil.sty — GB'den kontrollü çıkış stratejisi belgeleri için LuaLaTeX stili.
+% Sınıf: scrreprt (KOMA-Script). Gövde metinleri pandoc + gb.lua ile Markdown'dan üretilir (latex/govde/).
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{gbstil}[2026/10/18 GB cikis stratejisi belge stili]
+
+% ---------------------------------------------------------------- Sayfa düzeni
+\RequirePackage[a4paper, top=2.5cm, bottom=2.6cm, left=2.2cm, right=2.2cm,
+  headheight=14pt, headsep=0.7cm, footskip=1.0cm]{geometry}
+
+% ---------------------------------------------------------------- Yazı tipleri ve dil
+\RequirePackage{fontspec}
+% TeX Gyre Pagella'da bulunmayan birkaç karakter (✗, ₂, ₹) için yedek yazı tipi
+\directlua{luaotfload.add_fallback("gbyedek", {"DejaVu Sans:mode=node;", "FreeSerif:mode=node;"})}
+\setmainfont{TeX Gyre Pagella}[RawFeature={fallback=gbyedek}]
+\setsansfont{TeX Gyre Heros}[Scale=MatchLowercase, RawFeature={fallback=gbyedek}]
+\setmonofont{Latin Modern Mono}[Scale=MatchLowercase, RawFeature={fallback=gbyedek}]
+\RequirePackage{polyglossia}
+\setdefaultlanguage{turkish}
+\setotherlanguage{english}
+\linespread{1.06}
+\RequirePackage[protrusion=true, expansion=true, tracking=false, kerning=false, spacing=false]{microtype}
+\setlength{\emergencystretch}{2.5em}
+\tolerance=1500
+\hbadness=3000
+
+% ---------------------------------------------------------------- Renkler
+\RequirePackage{xcolor}
+\definecolor{gbmavi}{HTML}{1F4E79}
+\definecolor{gbkirmizi}{HTML}{C00000}
+\definecolor{gbyesil}{HTML}{2E7D32}
+\definecolor{gbturuncu}{HTML}{D46A00}
+\definecolor{gbmor}{HTML}{6A3D9A}
+\definecolor{gbgri}{HTML}{5F5F5F}
+\definecolor{gbzemin}{HTML}{EEF3F8}
+
+% ---------------------------------------------------------------- Başlıklar (KOMA)
+\setcounter{secnumdepth}{-1}% Başlıklar Markdown'da zaten numaralı
+\setkomafont{disposition}{\sffamily\bfseries\color{gbmavi}}
+\setkomafont{chapter}{\Huge}
+\setkomafont{section}{\Large}
+\setkomafont{subsection}{\large}
+\setkomafont{subsubsection}{\normalsize}
+\setkomafont{paragraph}{\normalsize}
+\RedeclareSectionCommand[beforeskip=0pt, afterskip=1.4\baselineskip]{chapter}
+\RedeclareSectionCommand[beforeskip=-1.6\baselineskip, afterskip=0.6\baselineskip]{section}
+\RedeclareSectionCommand[beforeskip=-1.2\baselineskip, afterskip=0.4\baselineskip]{subsection}
+\RedeclareSectionCommand[beforeskip=-1.0\baselineskip, afterskip=0.3\baselineskip]{subsubsection}
+\renewcommand*{\chapterheadendvskip}{%
+  \vspace{-0.6\baselineskip}{\color{gbmavi}\rule{\linewidth}{0.8pt}}\par\vspace{1.0\baselineskip}}
+
+% ---------------------------------------------------------------- Üst ve alt bilgi
+\RequirePackage[automark]{scrlayer-scrpage}
+\clearpairofpagestyles
+\automark{chapter}
+\ihead{\sffamily\footnotesize\color{gbgri}\headmark}
+\ohead{\sffamily\footnotesize\color{gbgri}\pagemark}
+\ifoot{\sffamily\scriptsize\color{gbgri}\gbaltbilgi}
+\ofoot{\sffamily\scriptsize\color{gbgri}\gbsurum}
+\setkomafont{pageheadfoot}{\normalfont}
+\setkomafont{pagenumber}{\normalfont}
+\renewcommand*{\chapterpagestyle}{scrheadings}
+\newcommand*{\gbaltbilgi}{Gümrük Birliği'nden kontrollü çıkış — ulusal strateji çalışması}
+\newcommand*{\gbsurum}{Çalışma taslağı · 18 Ekim 2026}
+\KOMAoptions{headsepline=0.4pt}
+\addtokomafont{headsepline}{\color{gbgri!50}}
+
+% ---------------------------------------------------------------- Paragraflar ve listeler
+\KOMAoptions{parskip=half-}
+\RequirePackage{enumitem}
+\setlist{itemsep=1pt, parsep=1pt, topsep=2pt, partopsep=0pt}
+\setlist[itemize,1]{label={\color{gbmavi}\textbullet}}
+\setlist[itemize,2]{label={\color{gbmavi}\textendash}}
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+% ---------------------------------------------------------------- Tablolar
+\RequirePackage{longtable, booktabs, array, calc, etoolbox, colortbl}
+\RequirePackage{pdflscape}
+\RequirePackage{footnotehyper}
+\makesavenoteenv{longtable}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+\setlength{\LTpre}{0.5\baselineskip}
+\setlength{\LTpost}{0.6\baselineskip}
+\setlength{\heavyrulewidth}{0.08em}
+\setlength{\lightrulewidth}{0.05em}
+\arrayrulecolor{gbmavi}
+% gb.lua her tablonun önüne \begingroup\gbtablo\<boyut> yazar
+\newcommand*{\gbtablo}{%
+  \setlength{\tabcolsep}{4pt}%
+  \renewcommand*{\arraystretch}{1.12}%
+  \tolerance=3000\emergencystretch=1.5em\hbadness=10000}
+
+% ---------------------------------------------------------------- Şekiller
+\RequirePackage{graphicx}
+\graphicspath{{../}}
+\setkeys{Gin}{keepaspectratio}% pandoc genişlik ve yükseklik birlikte verir; oran korunsun
+\RequirePackage[font=small, labelfont={bf,sf,color=gbmavi}, labelformat=empty, labelsep=none,
+  listformat=empty, justification=centering, skip=4pt]{caption}
+% Tablo ve şekil sayaçları bölüme bağlı olmasın: numarasız bölümlerde hyperref çapaları çakışmasın
+\counterwithout{table}{chapter}
+\counterwithout{figure}{chapter}
+\makeatletter
+\def\fps@figure{!htbp}
+\makeatother
+
+% ---------------------------------------------------------------- Kod
+\RequirePackage{fvextra}
+\DefineVerbatimEnvironment{gbkod}{Verbatim}{breaklines, breakanywhere, fontsize=\small,
+  frame=leftline, rulecolor=\color{gbmavi}, framesep=6pt, xleftmargin=4pt}
+\DeclareRobustCommand{\kod}[1]{\texttt{#1}}
+
+% ---------------------------------------------------------------- Kanıt etiketleri
+% V: doğrulanmış veri; T: tahmin (P10–P90); D?: doğrulanacak; H: hipotez/yargı
+\makeatletter
+\newcommand*{\gb@etiketboyut}{\fontsize{\fpeval{0.8*\f@size}}{\fpeval{0.9*\f@size}}\selectfont}
+\newcommand*{\gb@etiket}[2]{{\setlength{\fboxsep}{1pt}%
+  \colorbox{#1}{\textcolor{white}{\sffamily\bfseries\gb@etiketboyut\vphantom{Ag}\kern0.7pt#2\kern0.7pt}}}}
+\DeclareRobustCommand{\etiketV}{\gb@etiket{gbyesil}{V}}
+\DeclareRobustCommand{\etiketT}{\gb@etiket{gbmavi}{T}}
+\DeclareRobustCommand{\etiketD}{\gb@etiket{gbturuncu}{D?}}
+\DeclareRobustCommand{\etiketH}{\gb@etiket{gbmor}{H}}
+\makeatother
+
+% ---------------------------------------------------------------- Kutular
+\RequirePackage[most]{tcolorbox}
+\tcbset{gbtemel/.style={enhanced, breakable, colback=gbzemin, colframe=gbmavi, boxrule=0pt,
+  leftrule=2.5pt, arc=0pt, outer arc=0pt, left=6pt, right=6pt, top=4pt, bottom=4pt,
+  before skip=6pt, after skip=6pt}}
+\renewenvironment{quote}{\begin{tcolorbox}[gbtemel]}{\end{tcolorbox}}
+\newenvironment{gbilerleme}{\begin{tcolorbox}[gbtemel, colback=gbmavi!8, fontupper=\sffamily\small]}{\end{tcolorbox}}
+
+% ---------------------------------------------------------------- Bağlantılar
+\RequirePackage{hyperref}
+\hypersetup{colorlinks=true, linkcolor=gbmavi, urlcolor=gbmavi!80!black, citecolor=gbmavi,
+  filecolor=gbmavi, pdfborder={0 0 0}, unicode=true, bookmarksnumbered=false, breaklinks=true,
+  pdfcreator={LuaLaTeX + pandoc + gb.lua}, pdflang=tr-TR}
+\RequirePackage{xurl}
+\urlstyle{same}
+\RequirePackage{bookmark}
+% Başka belgeye bağlantı: \belgebag{dosya kökü}{parça}{metin}. Ciltte bölüme, tek belgede PDF'ye gider.
+\newif\ifgbcilt
+\newcommand{\belgebag}[3]{%
+  \ifgbcilt\hyperref[\ifstrempty{#2}{#1}{#1-#2}]{#3}\else\href{#1.pdf}{#3}\fi}
+
+% ---------------------------------------------------------------- İçindekiler
+\setcounter{tocdepth}{1}
+\RedeclareSectionCommand[tocentryformat=\bfseries\sffamily\color{gbmavi}, tocbeforeskip=0.6em]{chapter}
+
+% ---------------------------------------------------------------- Kapak
+% \gbkapak{alt başlık}{açıklama}
+\newcommand{\gbkapak}[2]{%
+  \begin{titlepage}
+    \newgeometry{top=3.2cm, bottom=2.6cm, left=2.6cm, right=2.6cm}
+    {\color{gbmavi}\rule{\linewidth}{2pt}}\par\vspace{0.8cm}
+    {\sffamily\color{gbgri}\large Ulusal strateji çalışması — analitik taslak\par}\vspace{1.2cm}
+    {\sffamily\bfseries\color{gbmavi}\fontsize{28}{34}\selectfont Gümrük Birliği'nden\\[2pt] kontrollü çıkış\par}
+    \vspace{0.6cm}
+    {\sffamily\Large AB–Türkiye Gümrük Birliği'nden NACE 4 hane düzeyinde kontrollü çıkış için\\ ulusal strateji\par}
+    \vspace{1.4cm}
+    {\sffamily\bfseries\LARGE #1\par}\vspace{0.5cm}
+    {\large #2\par}
+    \vfill
+    {\small\sffamily
+    \begin{tabular}{@{}ll@{}}
+      \textbf{Sürüm} & Çalışma taslağı, 18 Ekim 2026 \\
+      \textbf{Durum} & Faz 2 / 9 tamamlandı; Faz 3 DEVAM bekliyor \\
+      \textbf{Kanıt etiketleri} & \etiketV\ doğrulanmış veri\quad \etiketT\ tahmin (P10–P90)\quad
+                                 \etiketD\ doğrulanacak\quad \etiketH\ hipotez/yargı \\
+      \textbf{Paket} & Kod, veri ve hesaplar: \kod{gb-cikis-stratejisi/} (README, Ek B) \\
+    \end{tabular}\par}
+    \vspace{0.6cm}
+    {\color{gbmavi}\rule{\linewidth}{2pt}}
+    \restoregeometry
+  \end{titlepage}}
+
+\endinput

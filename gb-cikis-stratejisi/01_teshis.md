@@ -135,6 +135,10 @@ Literatür, sektör ve hukuk bulguları Faz 1 araştırma ajanının birincil ka
 - Tam yıllık seri `veri/teshis_ab_ticaret_1991_2025.csv` dosyasında.
 - Güven: Yüksek.
 
+![Şekil 1.1 — Türkiye'nin AB27 ile ticareti ve AB27'nin payı, 1991–2025 (Comtrade, Türkiye beyanı)](sekiller/f1_ab_ticaret.png)
+
+*Şekil 1.1 — Türkiye'nin AB27 ile ticareti ve AB27'nin payı, 1991–2025 (Comtrade, Türkiye beyanı)*
+
 **Okuma notları**
 - **Büyüme dönemleri.** Türkiye'nin AB27'ye ihracatı ile dünya ihracatının yıllık büyümesi:
 
@@ -599,6 +603,10 @@ Tutarlar milyar $; son üç sütun yüzde ve endeks.
 - Tam seri ve finans hesabı `veri/teshis_odemeler_dengesi.csv` dosyasında.
 - Güven: Yüksek.
 
+![Şekil 1.2 — Cari denge, enerji, parasal olmayan altın ve çekirdek denge, 2010–2025 (GSYH'nin %'si)](sekiller/f1_cari_denge.png)
+
+*Şekil 1.2 — Cari denge, enerji, parasal olmayan altın ve çekirdek denge, 2010–2025 (GSYH'nin %'si)*
+
 **Okuma notları**
 1. **2025 revizyonu (VB-07 kapandı).**
    - EVDS3'teki güncel 2025 cari açığı −$30,276 mn. Bu, OVP'nin −$30,3 mlr'ı ile aynı.
@@ -804,6 +812,10 @@ Tutarlar milyar $; son üç sütun yüzde ve endeks.
 - "Doğrudan maruz istihdam" = çalışan × AB ihracat yoğunluğu; girdi bağlantıları hariç, Faz 6'da Leontief miktar modeliyle genişletilecek.
 - "S4 risk istihdamı" = çalışan × kayıp/üretim; telafi, yeniden yönlendirme ve kur tepkisi içermeyen statik bir üst sınır.
 - Güven: Orta.
+
+![Şekil 1.3 — NACE bölümleri: ihracatta AB27 payı ve S4 risk istihdamı (σ = 5; en yüksek 15 bölüm)](sekiller/f1_bolum_maruziyet.png)
+
+*Şekil 1.3 — NACE bölümleri: ihracatta AB27 payı ve S4 risk istihdamı (σ = 5; en yüksek 15 bölüm)*
 
 **Okuma notları**
 - **Toplam risk.**

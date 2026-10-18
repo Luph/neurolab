@@ -59,6 +59,7 @@ import pandas as pd
 import pyfixest as pf
 
 import nazik_http
+import yollar
 
 GRAVITY_URL = "https://www.cepii.fr/DATA_DOWNLOAD/gravity/data/Gravity_csv_V202211.zip"
 DESTA = "https://www.designoftradeagreements.org/media/filer_public/"
@@ -188,8 +189,10 @@ Z90 = 1.6448536269514722
 # ----------------------------------------------------------------------------------------------- indirme
 def indir(url, yol, akis=False):
     """Önbellekte yoksa indirir; büyük dosyalar parça parça (yarım kalan .part dosyası sürdürülür)."""
-    if os.path.exists(yol):
-        return yol
+    bulunan = yollar.bul(yol)  # pakette .gz olarak da durabilir
+    if bulunan:
+        return bulunan
+    yollar.indirme_izni(url)
     os.makedirs(os.path.dirname(yol), exist_ok=True)
     if not akis:
         r = nazik_http.get(url, timeout=600)
@@ -462,8 +465,12 @@ def baci_oku(dizin, yil):
     import pyarrow.parquet as pq
     kod = pd.read_csv(os.path.join(dizin, "country_codes_V202601.csv"), dtype=str, keep_default_na=False)
     iso = dict(zip(kod.country_code.astype(int), kod.country_iso3.replace({"S19": "TWN"}).replace(ESLE)))
-    b = pq.read_table(os.path.join(dizin, "all_countries", f"BACI_HS17_Y{yil}_V202601.parquet"),
-                      columns=["i", "j", "v"]).to_pandas()
+    ozet = os.path.join(dizin, f"baci_hs17_ikili_toplam_{yil}.parquet")  # pakette: kod/girdi_hazirla.py
+    if os.path.exists(ozet):
+        b = pd.read_parquet(ozet)
+    else:
+        b = pq.read_table(os.path.join(dizin, "all_countries", f"BACI_HS17_Y{yil}_V202601.parquet"),
+                          columns=["i", "j", "v"]).to_pandas()
     b = b.groupby(["i", "j"], as_index=False).v.sum()
     b["o"], b["d"] = b.i.map(iso), b.j.map(iso)
     b = b[b.o != b.d].groupby(["o", "d"], as_index=False).v.sum()
@@ -879,7 +886,7 @@ def turetilmis(satir0, ad, deger, se):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--cache", default=os.path.expanduser("~/.cache/gb_cikis"))
+    ap.add_argument("--cache", default=yollar.GIRDI)
     ap.add_argument("--out", default=os.path.join(os.path.dirname(__file__), "..", "veri"))
     ap.add_argument("--baci-dizin", default=None,
                     help="BACI HS17 V202601 klasörü (all_countries/*.parquet ve country_codes_V202601.csv; "
@@ -903,7 +910,8 @@ def main():
     rs = rta_suresi(t)
     uz, kontrol, rs_uz = None, None, None
     a.baci_dizin = a.baci_dizin or os.path.join(a.cache, "baci")   # README: baci_ozet.py çıktısı
-    if os.path.exists(os.path.join(a.baci_dizin, "all_countries", "BACI_HS17_Y2024_V202601.parquet")):
+    if any(os.path.exists(os.path.join(a.baci_dizin, *p)) for p in
+           (("baci_hs17_ikili_toplam_2024.parquet",), ("all_countries", "BACI_HS17_Y2024_V202601.parquet"))):
         uz, kontrol = tabloyu_uzat(t, a.baci_dizin)
         rs_uz = rta_suresi(uz)
         print("BACI 2020 sürüm tutarlılığı (HS17 V202601 / CEPII Gravity BACI):", kontrol)

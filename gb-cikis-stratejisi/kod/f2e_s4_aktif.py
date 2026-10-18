@@ -36,6 +36,7 @@ import numpy as np
 import pandas as pd
 
 import f2a_io_fiyat as io
+import yollar
 
 TAKAS_URUNLERI = {"C29": "ÖTV (II)", "C26": "ÖTV (IV)", "C27": "ÖTV (IV)", "C13-C15": "KDV", "C20": "ÖTV (IV)/KDV"}
 
@@ -48,15 +49,15 @@ def vektor(t, kod, deger):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--cache", default=os.path.expanduser("~/.cache/gb_cikis"))
+    ap.add_argument("--cache", default=yollar.GIRDI)
     ap.add_argument("--out", default=os.path.join(os.path.dirname(__file__), "..", "veri"))
     a = ap.parse_args()
     v = lambda f: os.path.join(a.out, f)  # noqa: E731
 
-    yollar = io.io_indir(os.path.join(a.cache, "io2023"))
-    yd, kod = io.oku(yollar["yurtici"])
-    it, _ = io.oku(yollar["ithalat"])
-    ka, _ = io.oku(yollar["kullanim_alici"])
+    io_yollari = io.io_indir(os.path.join(a.cache, "io2023"))
+    yd, kod = io.oku(io_yollari["yurtici"])
+    it, _ = io.oku(io_yollari["ithalat"])
+    ka, _ = io.oku(io_yollari["kullanim_alici"])
     Z_d = yd.iloc[io.SATIR, io.SUTUN].astype(float).to_numpy()
     Z_m = it.iloc[io.SATIR, io.SUTUN].astype(float).to_numpy()
     x = yd.iloc[io.P1, io.SUTUN].astype(float).to_numpy()

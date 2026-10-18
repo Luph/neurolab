@@ -27,6 +27,7 @@ import os
 import pandas as pd
 
 import nazik_http
+import yollar
 
 COMTRADE = "https://comtradeapi.un.org/public/v1/preview/C/A/HS"
 COMEXT = ("https://ec.europa.eu/eurostat/api/comext/dissemination/sdmx/2.1/data/DS-045409/"
@@ -104,7 +105,7 @@ def bolum(fasil):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--cache", default=os.path.expanduser("~/.cache/gb_cikis"))
+    ap.add_argument("--cache", default=yollar.GIRDI)
     ap.add_argument("--out", default=os.path.join(os.path.dirname(__file__), "..", "veri"))
     a = ap.parse_args()
     c = os.path.join(a.cache, "f1")

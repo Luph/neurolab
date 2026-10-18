@@ -12,10 +12,11 @@ yeniden denenir.
 """
 
 import json
-import os
 import time
 import urllib.parse
 import urllib.request
+
+import yollar
 
 DB = "https://databrowser2.tuik.gov.tr/api/core"
 PORTAL = "https://veriportali.tuik.gov.tr"
@@ -25,6 +26,7 @@ NODE = 1  # TÜİK düğümü
 
 
 def _istek(url, veri=None, basliklar=None, deneme=6, zaman_asimi=900):
+    yollar.indirme_izni(url)
     h = {"User-Agent": UA, "Accept": "*/*", "Accept-Language": "tr"}
     h.update(basliklar or {})
     govde = None
@@ -71,8 +73,9 @@ def indir_csv(veri_akisi, hedef, surum="1.0", kriter=None):
 
     kriter: [{"id": "REF_AREA", "filterValues": ["TR"], "type": "CodeValues"}, ...]
     """
-    if os.path.exists(hedef) and os.path.getsize(hedef) > 0:
-        return hedef
+    bulunan = yollar.bul(hedef)  # pakette sıkıştırılmış (.gz) olarak da durabilir
+    if bulunan:
+        return bulunan
     url = f"{DB}/nodes/{NODE}/datasets/{_ds(veri_akisi, surum)}/download/csv"
     icerik = _istek(url, veri=kriter or [])
     with open(hedef, "wb") as f:

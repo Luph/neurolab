@@ -23,6 +23,7 @@ import pandas as pd
 
 import evds3
 import tuik
+import yollar
 
 ODEME = {  # EVDS3 kodu -> sütun adı (milyon ABD doları)
     "TP.ODEAYRSUNUM6.Q1": "cari_denge",
@@ -76,7 +77,7 @@ def yillik(kodlar, frekans=8, toplama=None, bas="01-01-1990"):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--cache", default=os.path.expanduser("~/.cache/gb_cikis"))
+    ap.add_argument("--cache", default=yollar.GIRDI)
     ap.add_argument("--out", default=os.path.join(os.path.dirname(__file__), "..", "veri"))
     a = ap.parse_args()
     os.makedirs(a.cache, exist_ok=True)

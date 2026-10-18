@@ -1,10 +1,12 @@
 """Nazik HTTP yardımcısı: en fazla ~2 istek/sn, 429/5xx ve bağlantı hatalarında üstel geri çekilmeyle yeniden deneme.
 TLS doğrulaması her zaman açık."""
 import time, requests
+import yollar
 _last = [0.0]
 SESSION = requests.Session()
 SESSION.headers["User-Agent"] = "gb-cikis-stratejisi/1.0 (kamu politikasi arastirmasi)"
 def get(url, params=None, min_interval=0.6, retries=6, timeout=300, **kw):
+    yollar.indirme_izni(url)
     for attempt in range(retries):
         wait = min_interval - (time.time() - _last[0])
         if wait > 0:

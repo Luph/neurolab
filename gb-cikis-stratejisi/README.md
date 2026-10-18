@@ -16,6 +16,33 @@ belgelerini, verileri ve kodu içerir. Her faz sonunda çalışma durur ve **DEV
 
 Yeni bir sohbette devam etmek için: ana prompt + [`DURUM_OZETI.md`](DURUM_OZETI.md).
 
+## Nihai çıktı: PDF
+
+Belgeler LaTeX'te dizilir ve PDF olarak üretilir (LuaLaTeX; Markdown → pandoc + `latex/gb.lua` → `latex/govde/*.tex`).
+
+| PDF | İçerik |
+|---|---|
+| [`pdf/GB_Cikis_Stratejisi_Faz0-2.pdf`](pdf/GB_Cikis_Stratejisi_Faz0-2.pdf) | **Birleşik cilt:** durum özeti, Faz 0, 1, 2A, 2B; Ek A defter; Ek B çalışma paketi. İçindekiler ve şekil listesi |
+| `pdf/00_plan.pdf`, `pdf/01_teshis.pdf`, `pdf/02a_politika_uzayi.pdf`, `pdf/02b_secenekler_hukuk.pdf` | Faz belgeleri tek tek |
+| `pdf/DURUM_OZETI.pdf`, `pdf/defter.pdf`, `pdf/README.pdf` | Durum özeti, defter, paket açıklaması |
+
+Kanıt etiketleri PDF'te renkli kutudur: V doğrulanmış veri, T tahmin (P10–P90), D? doğrulanacak, H hipotez/yargı.
+
+## Paket yapısı
+
+Bütün kod, ham veri, ara ve nihai hesaplar pakettedir. Hesaplar ağ erişimi olmadan baştan üretilebilir (aşağıda).
+
+| Klasör | İçerik |
+|---|---|
+| kök (`*.md`) | Faz belgeleri (Markdown kaynak) |
+| [`pdf/`](pdf/) | Dizilmiş PDF'ler |
+| [`latex/`](latex/) | Stil (`gbstil.sty`), pandoc filtresi (`gb.lua`), cilt ve belge sarmalayıcıları, üretilmiş LaTeX gövdeleri, derleme betiği (`derle.sh`) |
+| [`kod/`](kod/) | Bütün betikler; `hepsini_uret.sh` hepsini sırayla çalıştırır, `dogrula.py` sonuçları karşılaştırır |
+| [`girdi/`](girdi/) | Ham girdiler (174 dosya, ≈122 MB): TÜİK, TCMB, Eurostat, Comtrade, WITS, CEPII, Ticaret Bakanlığı, SGK, DESTA, BM. Kaynak, adres ve SHA-256: [`girdi/MANIFEST.csv`](girdi/MANIFEST.csv); açıklama: [`girdi/README.md`](girdi/README.md) |
+| [`veri/`](veri/) | Hesap sonuçları (CSV) ve elle derlenmiş üç girdi (`vergi_oranlari_2026.csv`, `vergi_gelirleri_2024_2026.csv`, `akct_1996_cn8.txt`; kaynakları satır içinde) |
+| [`sekiller/`](sekiller/) | Şekiller (PNG ve PDF), `kod/sekiller.py` ile `veri/`den |
+| [`kaynaklar/`](kaynaklar/) | Hukuki ve kurumsal bulguların araştırma notları |
+
 ## Dosyalar
 
 | Dosya | İçerik |
@@ -59,38 +86,27 @@ Yeni bir sohbette devam etmek için: ana prompt + [`DURUM_OZETI.md`](DURUM_OZETI
 | `kod/f2e_s4_aktif.py` | Aktif S4 paketleri: İGV rejimi (a, b, c, c2, d) × P1 × takas kapsamı, ayrıca S3 menşe maliyeti senaryoları; yasal ve tahsil edilebilir mali bilanço → `veri/politika_s4_aktif.csv`, `veri/politika_s4_aktif_urun.csv` |
 | `kod/f2f_cekim_modeli.py` | Yapısal çekim modeli (PPML; ihracatçı-yıl, ithalatçı-yıl, ikili sabit etkiler): GB ve AB STA etkileri, S2/S3/S4 senaryoları, 19 sağlamlık spesifikasyonu, genel denge (kesin şapka cebiri) → `veri/politika_cekim_katsayilar.csv`, `veri/politika_cekim_senaryolar.csv` |
 | `veri/vergi_oranlari_2026.csv`, `veri/vergi_gelirleri_2024_2026.csv` | Ürün grubu ÖTV/KDV oranları ve yerli pay (kaynaklı); ÖTV, KDV ve gümrük vergisi tahsilatı (GİB, 2024–2026) |
+| `kod/yollar.py` | Paket içi yollar (`girdi/`, `veri/`) ve çevrimdışı kip (`GB_CEVRIMDISI=1`) |
+| `kod/hepsini_uret.sh`, `kod/dogrula.py` | Bütün hesapları sırayla yeniden üretir; sonuçları `veri/` ile karşılaştırır |
+| `kod/girdi_hazirla.py` | BACI özetleri, büyük dosyaların sıkıştırılması, `girdi/MANIFEST.csv` |
+| `kod/sekiller.py` | Sekiz şekil (`sekiller/`) |
+| `latex/derle.sh`, `latex/gb.lua`, `latex/gbstil.sty`, `latex/cilt.tex` | PDF üretimi |
 
 ## Yeniden üretme
 
 ```bash
 pip install -r kod/requirements.txt
-cd kod
-python3 f0_nace_kapsam.py --cache ~/.cache/gb_cikis --out ../veri
-python3 f0b_tuik_yshi.py --cache ~/.cache/gb_cikis --out ../veri
-python3 f0c_tuik_bolge_tufe.py --cache ~/.cache/gb_cikis --out ../veri
-python3 f0e_tarifeler.py --cache ~/.cache/gb_cikis --out ../veri
-python3 f0d_s4_tarife_duvari.py --out ../veri
-# Faz 1
-python3 f1a_ab_ticaret.py --cache ~/.cache/gb_cikis --out ../veri
-python3 f1b_odemeler_dengesi.py --cache ~/.cache/gb_cikis --out ../veri
-python3 -I comtrade_tr_hs6.py ~/.cache/gb_cikis/comtrade 2025          # Türkiye HS6 dış ticareti
-curl -L -C - -o ~/.cache/gb_cikis/BACI_HS17_V202601.zip https://www.cepii.fr/DATA_DOWNLOAD/baci/data/BACI_HS17_V202601.zip
-python3 -I baci_ozet.py ~/.cache/gb_cikis/BACI_HS17_V202601.zip ~/.cache/gb_cikis/baci
-python3 f1c_sta_asimetrisi.py --baci ~/.cache/gb_cikis/baci/all_countries/BACI_HS17_Y2024_V202601.parquet \
-        --ulke-kodlari ~/.cache/gb_cikis/baci/country_codes_V202601.csv --cache ~/.cache/gb_cikis --out ../veri
-python3 f1d_maruziyet.py --comtrade-hs6 ~/.cache/gb_cikis/comtrade/comtrade_tur_hs6_world_2025.csv.gz --out ../veri
-python3 f1e_bolgesel.py --cache ~/.cache/gb_cikis --out ../veri
-# Faz 2A (BACI_TR: Türkiye ikili HS6 akışları, 2020–2024; baci_ozet.py çıktısı)
-python3 f2a_io_fiyat.py --cache ~/.cache/gb_cikis --out ../veri
-python3 f2b_tarife_politikasi.py --baci-tr $BACI_TR --baci-dunya $BACI_DUNYA --bec $BEC --cache ~/.cache/gb_cikis --out ../veri
-python3 f2c0_takas_parametre.py --baci-tr $BACI_TR --cache ~/.cache/gb_cikis --out ../veri
-python3 f2c_vergi_takasi.py --out ../veri
-python3 f2d_s4_net_istihdam.py --baci-tr $BACI_TR --out ../veri
-python3 f2e_s4_aktif.py --cache ~/.cache/gb_cikis --out ../veri
-# Faz 2B (CEPII Gravity ve DESTA'yı indirir; BACI 2024 uzatması için baci_ozet.py çıktısı)
-python3 f2f_cekim_modeli.py --cache ~/.cache/gb_cikis --out ../veri --baci-dizin ~/.cache/gb_cikis/baci
+kod/hepsini_uret.sh                                     # bütün hesaplar → veri/ (girdi/'deki ham verilerden)
+kod/hepsini_uret.sh --cevrimdisi --cikti /tmp/gb_veri   # ağsız sınama: başka klasöre üret, veri/ ile karşılaştır
+latex/derle.sh                                          # şekiller, LaTeX gövdeleri ve bütün PDF'ler → pdf/
 ```
 
-Betikler Eurostat (SDMX ve Comext), EU Vocabularies (ShowVoc), GİB, TÜİK, TCMB EVDS3, UN Comtrade,
-WITS, CEPII, SGK, Ticaret Bakanlığı, AB Yayın Ofisi ve ECB'den herkese açık dosyaları indirir;
-kimlik doğrulama gerekmez. İndirilen ham dosyalar depoya eklenmez.
+- **Süre.** Hesaplar ≈15–25 dakika sürer; çoğu çekim modelinde (19 PPML spesifikasyonu, 1.000 çekilişli genel denge). PDF'ler ≈4 dakika.
+- **Sınama sonucu (18.10.2026).** Çevrimdışı kipte bütün betikler paketteki girdilerle çalıştı. `veri/` klasöründeki sonuçlar bayt bayt aynı üretildi (`kod/dogrula.py`).
+- **Tek tek çalıştırma.** Betikler `kod/` içinden argümansız çalışır. Varsayılan girdi `girdi/`, çıktı `veri/`. Örnek: `python3 f2e_s4_aktif.py`. Sıra `hepsini_uret.sh` içinde.
+- **PDF için gerekenler.** pandoc ≥ 3.1, TeX Live 2023 (LuaLaTeX, latexmk, KOMA-Script, polyglossia), TeX Gyre ve DejaVu yazı tipleri. Ubuntu'da: `apt-get install pandoc texlive-luatex texlive-latex-extra texlive-fonts-extra texlive-lang-european latexmk fonts-dejavu`.
+
+**Ham verinin kaynakları.** Betikler Eurostat (SDMX ve Comext), EU Vocabularies (ShowVoc), GİB, TÜİK, TCMB EVDS3, UN Comtrade, WITS, CEPII, SGK, Ticaret Bakanlığı, AB Yayın Ofisi, ECB, DESTA ve BM'den herkese açık dosyaları kullanır; kimlik doğrulama gerekmez.
+- Bu dosyalar `girdi/` klasöründedir.
+- Bir dosya silinirse betik onu kaynağından yeniden indirir.
+- Pakete sığmayan üç kaynak (BACI tam dosyaları, CEPII Gravity zip'i, TÜİK iş kayıtlarının ham CSV'si) için betiklerin okuduğu özetler konuldu. Ayrıntı: [`girdi/README.md`](girdi/README.md).

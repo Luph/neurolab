@@ -21,6 +21,7 @@ import zipfile
 import pandas as pd
 
 import nazik_http
+import yollar
 
 SGK_SAYFA = "https://www.sgk.gov.tr/Istatistik/Yillik/fcd5e59b-6af9-4d90-a451-ee7500eb1cb4/"
 SGK_DOSYA = "YILLIK BÖLÜM 1 Sigortalı ve İş Yeri İstatistikleri_{y}.xlsx"
@@ -96,7 +97,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--sgk-xlsx", help="SGK yıllığı Bölüm 1 xlsx (verilmezse indirilir)")
     ap.add_argument("--yil", default="2025")
-    ap.add_argument("--cache", default=os.path.expanduser("~/.cache/gb_cikis"))
+    ap.add_argument("--cache", default=yollar.GIRDI)
     ap.add_argument("--out", default=os.path.join(os.path.dirname(__file__), "..", "veri"))
     a = ap.parse_args()
     os.makedirs(a.cache, exist_ok=True)

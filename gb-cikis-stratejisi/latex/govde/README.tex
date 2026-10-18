@@ -1,0 +1,200 @@
+\hypertarget{README}{%
+\chapter{Ek B --- Çalışma paketi: kod, veri ve yeniden üretim}\label{README}}
+
+Bu klasör, ``GB Çıkış Stratejisi'' ana promptuna göre fazlar halinde üretilen çalışma belgelerini, verileri ve kodu içerir. Her faz sonunda çalışma durur ve \textbf{DEVAM} komutu beklenir. \textbf{HEPSİNİ OTOMATİK} komutu verilirse fazlar durmadan dosyalara yazılır.
+
+\hypertarget{README-durum}{%
+\section{Durum}\label{README-durum}}
+
+\begingroup\gbtablo\small
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.0472}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.6181}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.1723}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.1623}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Faz}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{İçerik}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Durum}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Dosya}
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+0 & Plan, varsayımlar, veri envanteri, NACE kapsamı, \etiketD{} doğrulaması; Revizyon 1: kullanıcı yanıtları, T2028/T2029 takvimleri, çevrim içi veri erişimi & Tamamlandı (17.10.2026) & \belgebag{00_plan}{}{\kod{00\_\allowbreak{}plan.\allowbreak{}md}} \\
+1 & Teşhis: GB'nin 30 yıllık bilançosu, asimetriler, makro tablo ve cari denge ayrıştırması, maruziyet haritası & Tamamlandı (17.10.2026) & \belgebag{01_teshis}{}{\kod{01\_\allowbreak{}teshis.\allowbreak{}md}} \\
+2A & Politika uzayı: kullanıcının önerisi (tarife + ÖTV takası), araç evreni, bağlı oranlar, aktif S4, dış rejim evreni & Tamamlandı (18.10.2026) & \belgebag{02a_politika_uzayi}{}{\kod{02a\_\allowbreak{}politika\_\allowbreak{}uzayi.\allowbreak{}md}} \\
+2B & Seçenekler (S0--S5, R7, ITA, aktif S4), çekim modeli, bitiş durumu ve hukuki yol haritası (AB, DTÖ, Türk iç hukuku), iki takvim & Tamamlandı (18.10.2026) & \belgebag{02b_secenekler_hukuk}{}{\kod{02b\_\allowbreak{}secenekler\_\allowbreak{}hukuk.\allowbreak{}md}} \\
+3--9 & NACE kartları → derin analizler → araçlar ve tarife cetveli → makro → müzakere → uygulama → risk ve yönetici özeti & Planlandı & bkz. \kod{00\_\allowbreak{}plan.\allowbreak{}md} §2 \\
+\end{longtable}
+
+\endgroup
+
+Yeni bir sohbette devam etmek için: ana prompt + \belgebag{DURUM_OZETI}{}{\kod{DURUM\_\allowbreak{}OZETI.\allowbreak{}md}}.
+
+\hypertarget{README-nihai-uxe7ux131ktux131-pdf}{%
+\section{Nihai çıktı: PDF}\label{README-nihai-uxe7ux131ktux131-pdf}}
+
+Belgeler LaTeX'te dizilir ve PDF olarak üretilir (LuaLaTeX; Markdown → pandoc + \kod{latex/\allowbreak{}gb.\allowbreak{}lua} → \kod{latex/\allowbreak{}govde/\allowbreak{}*.\allowbreak{}tex}).
+
+\begingroup\gbtablo\small
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.4824}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5176}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{PDF}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{İçerik}
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\href{../pdf/GB_Cikis_Stratejisi_Faz0-2.pdf}{\kod{pdf/\allowbreak{}GB\_\allowbreak{}Cikis\_\allowbreak{}Stratejisi\_\allowbreak{}Faz0-\allowbreak{}2.\allowbreak{}pdf}} & \textbf{Birleşik cilt:} durum özeti, Faz 0, 1, 2A, 2B; Ek A defter; Ek B çalışma paketi. İçindekiler ve şekil listesi \\
+\kod{pdf/\allowbreak{}00\_\allowbreak{}plan.\allowbreak{}pdf}, \kod{pdf/\allowbreak{}01\_\allowbreak{}teshis.\allowbreak{}pdf}, \kod{pdf/\allowbreak{}02a\_\allowbreak{}politika\_\allowbreak{}uzayi.\allowbreak{}pdf}, \kod{pdf/\allowbreak{}02b\_\allowbreak{}secenekler\_\allowbreak{}hukuk.\allowbreak{}pdf} & Faz belgeleri tek tek \\
+\kod{pdf/\allowbreak{}DURUM\_\allowbreak{}OZETI.\allowbreak{}pdf}, \kod{pdf/\allowbreak{}defter.\allowbreak{}pdf}, \kod{pdf/\allowbreak{}README.\allowbreak{}pdf} & Durum özeti, defter, paket açıklaması \\
+\end{longtable}
+
+\endgroup
+
+Kanıt etiketleri PDF'te renkli kutudur: V doğrulanmış veri, T tahmin (P10--P90), D? doğrulanacak, H hipotez/yargı.
+
+\hypertarget{README-paket-yapux131sux131}{%
+\section{Paket yapısı}\label{README-paket-yapux131sux131}}
+
+Bütün kod, ham veri, ara ve nihai hesaplar pakettedir. Hesaplar ağ erişimi olmadan baştan üretilebilir (aşağıda).
+
+\begingroup\gbtablo\small
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.1013}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.8987}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Klasör}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{İçerik}
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+kök (\kod{*.\allowbreak{}md}) & Faz belgeleri (Markdown kaynak) \\
+\href{../pdf/}{\kod{pdf/\allowbreak{}}} & Dizilmiş PDF'ler \\
+\href{../latex/}{\kod{latex/\allowbreak{}}} & Stil (\kod{gbstil.\allowbreak{}sty}), pandoc filtresi (\kod{gb.\allowbreak{}lua}), cilt ve belge sarmalayıcıları, üretilmiş LaTeX gövdeleri, derleme betiği (\kod{derle.\allowbreak{}sh}) \\
+\href{../kod/}{\kod{kod/\allowbreak{}}} & Bütün betikler; \kod{hepsini\_\allowbreak{}uret.\allowbreak{}sh} hepsini sırayla çalıştırır, \kod{dogrula.\allowbreak{}py} sonuçları karşılaştırır \\
+\href{../girdi/}{\kod{girdi/\allowbreak{}}} & Ham girdiler (174 dosya, ≈122 MB): TÜİK, TCMB, Eurostat, Comtrade, WITS, CEPII, Ticaret Bakanlığı, SGK, DESTA, BM. Kaynak, adres ve SHA-256: \href{../girdi/MANIFEST.csv}{\kod{girdi/\allowbreak{}MANIFEST.\allowbreak{}csv}}; açıklama: \belgebag{README}{}{\kod{girdi/\allowbreak{}README.\allowbreak{}md}} \\
+\href{../veri/}{\kod{veri/\allowbreak{}}} & Hesap sonuçları (CSV) ve elle derlenmiş üç girdi (\kod{vergi\_\allowbreak{}oranlari\_\allowbreak{}2026.\allowbreak{}csv}, \kod{vergi\_\allowbreak{}gelirleri\_\allowbreak{}2024\_\allowbreak{}2026.\allowbreak{}csv}, \kod{akct\_\allowbreak{}1996\_\allowbreak{}cn8.\allowbreak{}txt}; kaynakları satır içinde) \\
+\href{../sekiller/}{\kod{sekiller/\allowbreak{}}} & Şekiller (PNG ve PDF), \kod{kod/\allowbreak{}sekiller.\allowbreak{}py} ile \kod{veri/\allowbreak{}}den \\
+\href{../kaynaklar/}{\kod{kaynaklar/\allowbreak{}}} & Hukuki ve kurumsal bulguların araştırma notları \\
+\end{longtable}
+
+\endgroup
+
+\hypertarget{README-dosyalar}{%
+\section{Dosyalar}\label{README-dosyalar}}
+
+\begingroup\gbtablo\small
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.3192}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.6808}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Dosya}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{İçerik}
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\kod{00\_\allowbreak{}plan.\allowbreak{}md} & Faz 0 çıktısı: araçlar, çalışma planı, varsayım kaydı (V-01\ldots), veri envanteri, NACE kapsamı, doğrulama kaydı, netleştirme soruları \\
+\kod{02a\_\allowbreak{}politika\_\allowbreak{}uzayi.\allowbreak{}md} & Faz 2A çıktısı: tarife + ÖTV/KDV takası (dört tasarım, on ürün grubu), DTÖ hukuku ve emsaller, araç evreni A--K, bağlı oranlar, tahsilat oranı, aktif S4 paket sınırı (İGV rejimi × P1 × takas), net istihdam, AB'nin maliyeti, zaman kritik eylemler \\
+\kod{02b\_\allowbreak{}secenekler\_\allowbreak{}hukuk.\allowbreak{}md} & Faz 2B çıktısı: seçeneklerin tanımı, çekim modeli sonuçları (PPML ve genel denge), karşılaştırma matrisi, kısıt testleri, önerilen bitiş durumu ve geçiş sırası (T2028, T2029), hukuki yol haritası, olasılıklar, riskler \\
+\kod{01\_\allowbreak{}teshis.\allowbreak{}md} & Faz 1 çıktısı: ticaret ve kompozisyon (1991--2025), sektör tarihçeleri, literatür, bilanço tablosu, STA ve diğer asimetriler, ödemeler dengesi, OVP tabanı ve T+5 boşluğu, NACE bölümü ve İBBS-2 maruziyeti, kısıt çatışmaları, veri boşlukları \\
+\kod{DURUM\_\allowbreak{}OZETI.\allowbreak{}md} & Son fazın durum özeti (≤500 kelime) \\
+\kod{defter.\allowbreak{}md} & Kümülatif defter (enflasyon bütçesi, cari denge, mali maliyet, istihdam) \\
+\kod{veri/\allowbreak{}nace\_\allowbreak{}kapsam.\allowbreak{}csv} & 230 C sınıfı + B, D, E, A ve hizmet kapsamı; GB statü etiketi, rejim payları, AB--TR ticareti (2025), Rev. 2.1 karşılığı \\
+\kod{veri/\allowbreak{}nace\_\allowbreak{}kapsam\_\allowbreak{}bolum\_\allowbreak{}ozeti.\allowbreak{}csv} & NACE bölümü (2 hane) özeti \\
+\kod{veri/\allowbreak{}nace\_\allowbreak{}r2\_\allowbreak{}r21\_\allowbreak{}kopru.\allowbreak{}csv} & Resmî Eurostat NACE Rev. 2 ↔ Rev. 2.1 köprüsü (C bölümü ve ek kapsam) \\
+\kod{veri/\allowbreak{}cn2025\_\allowbreak{}nace\_\allowbreak{}rejim.\allowbreak{}csv} & CN2025 (8 hane) → CPA 2.2 → CPA 2.1 → NACE Rev. 2 eşleştirmesi, satır bazında ticaret rejimi ve 2025 AB--TR ticareti \\
+\kod{veri/\allowbreak{}akct\_\allowbreak{}1996\_\allowbreak{}cn8.\allowbreak{}txt} & 1996 AKÇT--Türkiye Anlaşması Ek I ürün listesi (CN 1996, 280 satır) \\
+\kod{veri/\allowbreak{}tuik\_\allowbreak{}yshi\_\allowbreak{}nace2.\allowbreak{}csv} & TÜİK Yıllık Sanayi ve Hizmet İstatistikleri, NACE Rev. 2 bölüm ve sınıf düzeyi, 2015--2024 (girişim, çalışan, ciro, üretim değeri, faktör maliyetiyle katma değer; TL ve milyon \$) \\
+\kod{veri/\allowbreak{}tuik\_\allowbreak{}yshi\_\allowbreak{}nace21\_\allowbreak{}2025.\allowbreak{}csv} & Aynı istatistiklerin 2025 ön sonuçları, NACE Rev. 2.1 grup düzeyi \\
+\kod{veri/\allowbreak{}tuik\_\allowbreak{}girisim\_\allowbreak{}ibbs2\_\allowbreak{}nace2.\allowbreak{}csv} & İBBS-2 bölgesi × NACE sınıfı × büyüklük grubu girişim sayıları (2024) \\
+\kod{veri/\allowbreak{}tuik\_\allowbreak{}tufe\_\allowbreak{}agirlik\_\allowbreak{}2026.\allowbreak{}csv} & TÜFE ağırlıkları, 2026 (COICOP 2018, 2--5. düzeyler) \\
+\kod{veri/\allowbreak{}tuik\_\allowbreak{}sue\_\allowbreak{}sinif\_\allowbreak{}aylik.\allowbreak{}csv} & Sanayi üretim endeksi, sınıf düzeyi, aylık (2023--) \\
+\kod{veri/\allowbreak{}tarife\_\allowbreak{}tr\_\allowbreak{}2026\_\allowbreak{}gtip12.\allowbreak{}csv}, \kod{veri/\allowbreak{}tarife\_\allowbreak{}ab\_\allowbreak{}cn2026\_\allowbreak{}cn8.\allowbreak{}csv} & Türkiye 2026 uygulanan tarifesi (MFN, İGV, EMY; GTİP12) ve AB CN 2026 konvansiyonel vergileri (CN8) \\
+\kod{veri/\allowbreak{}s4\_\allowbreak{}tarife\_\allowbreak{}duvari\_\allowbreak{}ozet.\allowbreak{}csv}, \kod{veri/\allowbreak{}s4\_\allowbreak{}tarife\_\allowbreak{}duvari\_\allowbreak{}bolum.\allowbreak{}csv}, \kod{veri/\allowbreak{}s4\_\allowbreak{}tarife\_\allowbreak{}duvari\_\allowbreak{}sinif.\allowbreak{}csv} & Anlaşmasız çıkışta (S4) iki yönlü statik gümrük vergisi ve kısmi denge hacim etkisi (ön hesap) \\
+\kod{veri/\allowbreak{}teshis\_\allowbreak{}ab\_\allowbreak{}ticaret\_\allowbreak{}1991\_\allowbreak{}2025.\allowbreak{}csv} & AB27--Türkiye ticareti: Türkiye beyanı (Comtrade, \$) ve AB ayna verisi (Comext, €); AB payları, ikili denge \\
+\kod{veri/\allowbreak{}teshis\_\allowbreak{}ab\_\allowbreak{}ticaret\_\allowbreak{}fasil.\allowbreak{}csv}, \kod{veri/\allowbreak{}teshis\_\allowbreak{}ab\_\allowbreak{}ticaret\_\allowbreak{}bolum.\allowbreak{}csv} & HS fasıl ve bölüm kompozisyonu (1995, 2025; Comext 1999--2025) \\
+\kod{veri/\allowbreak{}teshis\_\allowbreak{}sektor\_\allowbreak{}tarihceleri.\allowbreak{}csv} & Seçilmiş sektörlerin AB ticareti, 1999--2025 \\
+\kod{veri/\allowbreak{}teshis\_\allowbreak{}sta\_\allowbreak{}asimetrisi.\allowbreak{}csv} & AB'nin STA'sı olup Türkiye'nin olmadığı 33 pazar: Türk ihracatı, ödenen MFN, AB'nin tercih avantajı \\
+\kod{veri/\allowbreak{}teshis\_\allowbreak{}odemeler\_\allowbreak{}dengesi.\allowbreak{}csv}, \kod{veri/\allowbreak{}teshis\_\allowbreak{}cari\_\allowbreak{}denge\_\allowbreak{}12ay.\allowbreak{}csv} & Ödemeler dengesi bileşenleri, GSYH, reel kur, UYP (2002--2026); 12 aylık birikimli cari denge \\
+\kod{veri/\allowbreak{}teshis\_\allowbreak{}hizmet\_\allowbreak{}ticareti\_\allowbreak{}ab27.\allowbreak{}csv} & AB27 ile hizmet ticareti, hizmet türüne göre (2016--2025) \\
+\kod{veri/\allowbreak{}teshis\_\allowbreak{}bolum\_\allowbreak{}maruziyet.\allowbreak{}csv}, \kod{veri/\allowbreak{}teshis\_\allowbreak{}bolgesel\_\allowbreak{}maruziyet.\allowbreak{}csv} & NACE bölümü ve İBBS-2 düzeyinde AB maruziyeti ve S4 risk istihdamı \\
+\kod{kod/\allowbreak{}f0\_\allowbreak{}nace\_\allowbreak{}kapsam.\allowbreak{}py} & NACE kapsam ve eşleştirme dosyalarını resmî kaynaklardan yeniden üreten betik \\
+\kod{kod/\allowbreak{}tuik.\allowbreak{}py} & TÜİK'e anonim erişim: Dağıtım Yönetim Sistemi (SDMX-CSV indirme, kod listeleri) ve Veri Portalı arama API'si \\
+\kod{kod/\allowbreak{}f0b\_\allowbreak{}tuik\_\allowbreak{}yshi.\allowbreak{}py}, \kod{kod/\allowbreak{}f0c\_\allowbreak{}tuik\_\allowbreak{}bolge\_\allowbreak{}tufe.\allowbreak{}py} & TÜİK tablolarını üreten betikler \\
+\kod{kod/\allowbreak{}f0d\_\allowbreak{}s4\_\allowbreak{}tarife\_\allowbreak{}duvari.\allowbreak{}py}, \kod{kod/\allowbreak{}f0e\_\allowbreak{}tarifeler.\allowbreak{}py} & S4 tarife duvarı; 2026 tarifelerinin indirilmesi (\kod{kod/\allowbreak{}tarife\_\allowbreak{}tr.\allowbreak{}py}, \kod{kod/\allowbreak{}tarife\_\allowbreak{}ab.\allowbreak{}py}, \kod{kod/\allowbreak{}nazik\_\allowbreak{}http.\allowbreak{}py}) \\
+\kod{kod/\allowbreak{}evds3.\allowbreak{}py} & TCMB EVDS3'e anahtarsız erişim \\
+\kod{kod/\allowbreak{}f1a\_\allowbreak{}ab\_\allowbreak{}ticaret.\allowbreak{}py} \ldots{} \kod{kod/\allowbreak{}f1e\_\allowbreak{}bolgesel.\allowbreak{}py} & Faz 1 tabloları (ticaret, ödemeler dengesi, STA asimetrisi, bölüm ve bölge maruziyeti) \\
+\kod{kod/\allowbreak{}comtrade\_\allowbreak{}tr\_\allowbreak{}hs6.\allowbreak{}py}, \kod{kod/\allowbreak{}baci\_\allowbreak{}ozet.\allowbreak{}py} & Comtrade HS6 ve CEPII BACI yardımcı betikleri \\
+\kod{kod/\allowbreak{}f2a\_\allowbreak{}io\_\allowbreak{}fiyat.\allowbreak{}py} & Leontief fiyat modeli (TÜİK 2023 girdi-çıktı): tarife şokunun TÜFE'ye birinci tur etkisi → \kod{veri/\allowbreak{}politika\_\allowbreak{}io\_\allowbreak{}ede.\allowbreak{}csv}, \kod{veri/\allowbreak{}politika\_\allowbreak{}io\_\allowbreak{}s4\_\allowbreak{}tufe.\allowbreak{}csv} \\
+\kod{kod/\allowbreak{}prodtr.\allowbreak{}py}, \kod{kod/\allowbreak{}f2b\_\allowbreak{}tarife\_\allowbreak{}politikasi.\allowbreak{}py} & PRODTR (CPA 6 hane) ve tarife yapısı, BEC kullanımı, yurt içi kabiliyet, ``girdide sıfır'' → \kod{veri/\allowbreak{}politika\_\allowbreak{}tarife\_\allowbreak{}*.\allowbreak{}csv}, \kod{veri/\allowbreak{}prodtr\_\allowbreak{}cpa6\_\allowbreak{}2025.\allowbreak{}csv} \\
+\kod{kod/\allowbreak{}f2c0\_\allowbreak{}takas\_\allowbreak{}parametre.\allowbreak{}py}, \kod{kod/\allowbreak{}f2c\_\allowbreak{}vergi\_\allowbreak{}takasi.\allowbreak{}py} & Vergi takası modeli: on ürün grubu, dört tasarım (pasif, T-A, T-0, T-B), Armington CES → \kod{veri/\allowbreak{}politika\_\allowbreak{}takas\_\allowbreak{}parametre.\allowbreak{}csv}, \kod{veri/\allowbreak{}politika\_\allowbreak{}takas\_\allowbreak{}sonuc.\allowbreak{}csv}, \kod{veri/\allowbreak{}politika\_\allowbreak{}takas\_\allowbreak{}ozet.\allowbreak{}csv} \\
+\kod{kod/\allowbreak{}f2d\_\allowbreak{}s4\_\allowbreak{}net\_\allowbreak{}istihdam.\allowbreak{}py} & S4 net istihdam, NACE sınıfı; iki ithalat rejimi (yalnızca MFN, c2) → \kod{veri/\allowbreak{}politika\_\allowbreak{}s4\_\allowbreak{}net\_\allowbreak{}istihdam\_\allowbreak{}*.\allowbreak{}csv} \\
+\kod{kod/\allowbreak{}f2e\_\allowbreak{}s4\_\allowbreak{}aktif.\allowbreak{}py} & Aktif S4 paketleri: İGV rejimi (a, b, c, c2, d) × P1 × takas kapsamı, ayrıca S3 menşe maliyeti senaryoları; yasal ve tahsil edilebilir mali bilanço → \kod{veri/\allowbreak{}politika\_\allowbreak{}s4\_\allowbreak{}aktif.\allowbreak{}csv}, \kod{veri/\allowbreak{}politika\_\allowbreak{}s4\_\allowbreak{}aktif\_\allowbreak{}urun.\allowbreak{}csv} \\
+\kod{kod/\allowbreak{}f2f\_\allowbreak{}cekim\_\allowbreak{}modeli.\allowbreak{}py} & Yapısal çekim modeli (PPML; ihracatçı-yıl, ithalatçı-yıl, ikili sabit etkiler): GB ve AB STA etkileri, S2/S3/S4 senaryoları, 19 sağlamlık spesifikasyonu, genel denge (kesin şapka cebiri) → \kod{veri/\allowbreak{}politika\_\allowbreak{}cekim\_\allowbreak{}katsayilar.\allowbreak{}csv}, \kod{veri/\allowbreak{}politika\_\allowbreak{}cekim\_\allowbreak{}senaryolar.\allowbreak{}csv} \\
+\kod{veri/\allowbreak{}vergi\_\allowbreak{}oranlari\_\allowbreak{}2026.\allowbreak{}csv}, \kod{veri/\allowbreak{}vergi\_\allowbreak{}gelirleri\_\allowbreak{}2024\_\allowbreak{}2026.\allowbreak{}csv} & Ürün grubu ÖTV/KDV oranları ve yerli pay (kaynaklı); ÖTV, KDV ve gümrük vergisi tahsilatı (GİB, 2024--2026) \\
+\kod{kod/\allowbreak{}yollar.\allowbreak{}py} & Paket içi yollar (\kod{girdi/\allowbreak{}}, \kod{veri/\allowbreak{}}) ve çevrimdışı kip (\kod{GB\_\allowbreak{}CEVRIMDISI=\allowbreak{}1}) \\
+\kod{kod/\allowbreak{}hepsini\_\allowbreak{}uret.\allowbreak{}sh}, \kod{kod/\allowbreak{}dogrula.\allowbreak{}py} & Bütün hesapları sırayla yeniden üretir; sonuçları \kod{veri/\allowbreak{}} ile karşılaştırır \\
+\kod{kod/\allowbreak{}girdi\_\allowbreak{}hazirla.\allowbreak{}py} & BACI özetleri, büyük dosyaların sıkıştırılması, \kod{girdi/\allowbreak{}MANIFEST.\allowbreak{}csv} \\
+\kod{kod/\allowbreak{}sekiller.\allowbreak{}py} & Sekiz şekil (\kod{sekiller/\allowbreak{}}) \\
+\kod{latex/\allowbreak{}derle.\allowbreak{}sh}, \kod{latex/\allowbreak{}gb.\allowbreak{}lua}, \kod{latex/\allowbreak{}gbstil.\allowbreak{}sty}, \kod{latex/\allowbreak{}cilt.\allowbreak{}tex} & PDF üretimi \\
+\end{longtable}
+
+\endgroup
+
+\hypertarget{README-yeniden-uxfcretme}{%
+\section{Yeniden üretme}\label{README-yeniden-uxfcretme}}
+
+\begin{gbkod}
+pip install -r kod/requirements.txt
+kod/hepsini_uret.sh                                     # bütün hesaplar → veri/ (girdi/'deki ham verilerden)
+kod/hepsini_uret.sh --cevrimdisi --cikti /tmp/gb_veri   # ağsız sınama: başka klasöre üret, veri/ ile karşılaştır
+latex/derle.sh                                          # şekiller, LaTeX gövdeleri ve bütün PDF'ler → pdf/
+\end{gbkod}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Süre.} Hesaplar ≈15--25 dakika sürer; çoğu çekim modelinde (19 PPML spesifikasyonu, 1.000 çekilişli genel denge). PDF'ler ≈4 dakika.
+\item
+  \textbf{Sınama sonucu (18.10.2026).} Çevrimdışı kipte bütün betikler paketteki girdilerle çalıştı. \kod{veri/\allowbreak{}} klasöründeki sonuçlar bayt bayt aynı üretildi (\kod{kod/\allowbreak{}dogrula.\allowbreak{}py}).
+\item
+  \textbf{Tek tek çalıştırma.} Betikler \kod{kod/\allowbreak{}} içinden argümansız çalışır. Varsayılan girdi \kod{girdi/\allowbreak{}}, çıktı \kod{veri/\allowbreak{}}. Örnek: \kod{python3 f2e\_\allowbreak{}s4\_\allowbreak{}aktif.\allowbreak{}py}. Sıra \kod{hepsini\_\allowbreak{}uret.\allowbreak{}sh} içinde.
+\item
+  \textbf{PDF için gerekenler.} pandoc ≥ 3.1, TeX Live 2023 (LuaLaTeX, latexmk, KOMA-Script, polyglossia), TeX Gyre ve DejaVu yazı tipleri. Ubuntu'da: \kod{apt-\allowbreak{}get install pandoc texlive-\allowbreak{}luatex texlive-\allowbreak{}latex-\allowbreak{}extra texlive-\allowbreak{}fonts-\allowbreak{}extra texlive-\allowbreak{}lang-\allowbreak{}european latexmk fonts-\allowbreak{}dejavu}.
+\end{itemize}
+
+\textbf{Ham verinin kaynakları.} Betikler Eurostat (SDMX ve Comext), EU Vocabularies (ShowVoc), GİB, TÜİK, TCMB EVDS3, UN Comtrade, WITS, CEPII, SGK, Ticaret Bakanlığı, AB Yayın Ofisi, ECB, DESTA ve BM'den herkese açık dosyaları kullanır; kimlik doğrulama gerekmez.
+
+\begin{itemize}
+\tightlist
+\item
+  Bu dosyalar \kod{girdi/\allowbreak{}} klasöründedir.
+\item
+  Bir dosya silinirse betik onu kaynağından yeniden indirir.
+\item
+  Pakete sığmayan üç kaynak (BACI tam dosyaları, CEPII Gravity zip'i, TÜİK iş kayıtlarının ham CSV'si) için betiklerin okuduğu özetler konuldu. Ayrıntı: \belgebag{README}{}{\kod{girdi/\allowbreak{}README.\allowbreak{}md}}.
+\end{itemize}
