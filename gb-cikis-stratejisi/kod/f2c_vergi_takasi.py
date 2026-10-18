@@ -153,7 +153,7 @@ def main():
             for kural in ("ces", "laspeyres"):
                 s = coz(r, sigma, eta, rho, kural)
                 pazar = r.pazar_musd
-                satirlar.append(dict(grup=r.grup, senaryo=r.senaryo, sigma=sigma, eta=eta, rho=rho, kural=kural,
+                satirlar.append(dict(grup=r.grup, rejim=r.rejim, senaryo=r.senaryo, sigma=sigma, eta=eta, rho=rho, kural=kural,
                                      pazar_musd=pazar, **{k: v for k, v in s.items() if not k.startswith("d_")},
                                      **{k + "_musd": v * pazar for k, v in s.items() if k.startswith("d_")},
                                      # yerli üreticinin satış geliri: üretici fiyatı sabit, değişim = hacim
@@ -190,7 +190,7 @@ def main():
                              p10=x[o].quantile(0.1), p90=x[o].quantile(0.9)))
     oz = pd.DataFrame(ozet)
     oz.round(5).to_csv(os.path.join(a.out, "politika_takas_ozet.csv"), index=False)
-    m = t[(t.sigma == 4.0) & (t.eta == 1.0) & (t.rho == 1.0) & (t.kural == "laspeyres")]
+    m = t[(t.sigma == 4.0) & (t.eta == 1.0) & (t.rho == 1.0) & (t.kural == "laspeyres") & (t.rejim == "c2")]
     pd.set_option("display.width", 250)
     sut = ["grup", "senaryo", "otv1", "otv1_yerli", "kdv1", "kdv1_yerli", "destek_orani", "fiyat_degisimi_laspeyres",
            "fiyat_ab", "fiyat_yerli", "yerli_fiyat_avantaji", "hacim_yerli", "hacim_ab", "d_gumruk_musd", "d_otv_musd",

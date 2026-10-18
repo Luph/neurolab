@@ -10,6 +10,9 @@ MFN uygular; AB'den ithalatın bir kısmı yurt içi üretime kayar. Bu betik ik
                      − ihracat (BACI 2024), ≥ 0 (PRODTR gizli satırları ve küçük girişimleri kapsamaz)
   İstihdam           ΔL_c = (ΔX_c + ΔD_c) × çalışan_c / üretim değeri_c (TÜİK YSHİ 2024)
 σ ∈ {3, 5, 8}. Statik, telafisiz; çapa yatırımcı kararları, girdi bağlantıları ve kur tepkisi yok.
+İki ithalat rejimi: "mfn" (AB'ye yalnızca MFN) ve "c2" (02a §4.1: İGV, AB'nin baskın ve yurt içi kabiliyetin
+zayıf olduğu satırlarda herkes için kalkar, diğer satırlarda AB'ye de uygulanır; τ_TR,c HS6 satırlarının AB
+ithalatı ağırlıklı ortalaması, f2b'nin politika_tarife_hs6.csv'si).
 İthalat tarafında enflasyonu önleyen vergi takası (f2c) yerli satışları ayrıca artırır; burada yok.
 
 Girdiler: veri/s4_tarife_duvari_sinif.csv, veri/prodtr_cpa6_2025.csv (f2b), veri/tuik_yshi_nace2.csv,
@@ -69,6 +72,15 @@ def main():
     t["ab_ithalat_musd"] = s4.ab_tr_ihracat_meur * eurusd
     t["tau_ab"] = s4.ab_oran_yuzde / 100
     t["tau_tr"] = s4.tr_oran_igv_haric_yuzde / 100
+    # c2 rejimi: HS6 düzeyinde oran → sınıf (AB ithalatı ağırlıklı); GB ve İTÜ dışı satırlar 0
+    h = pd.read_csv(v("politika_tarife_hs6.csv"), dtype={"hs6": str})
+    baskin = (h.m_ab_musd / (h.m_ab_musd + h.m_diger_musd).replace(0, np.nan)).fillna(0) >= 0.5
+    guclu = h.gizli.astype(bool) | (h.uretim_ithalat_orani >= 1.0)
+    h["oran_c2"] = np.where(baskin & ~guclu, h.t_mfn, h.t_tam) * h.rejim.isin(["GB", "ITU"]) / 100
+    h["sinif"] = h.hs6.map(hs6_sinif)
+    g = h.groupby("sinif")
+    t["tau_tr_c2"] = (g.apply(lambda d: (d.m_ab_musd * d.oran_c2).sum() / d.m_ab_musd.sum()
+                              if d.m_ab_musd.sum() > 0 else np.nan, include_groups=False))
     t["prodtr_satis_musd"] = uretim
     t["prodtr_gizli"] = gizli
     t["ihracat_dunya_musd"] = x
@@ -80,26 +92,29 @@ def main():
     t["yerli_pay_ikame"] = pay_d.fillna(0)
     for s in SIGMALAR:
         dx = t.ab_ihracat_musd * ((1 + t.tau_ab.fillna(0)) ** (-s) - 1)
-        dm = t.ab_ithalat_musd * ((1 + t.tau_tr.fillna(0)) ** (-s) - 1)
-        dd = -dm * t.yerli_pay_ikame
+        for rejim, tau in (("", t.tau_tr), ("_c2", t.tau_tr_c2.fillna(t.tau_tr))):
+            dm = t.ab_ithalat_musd * ((1 + tau.fillna(0)) ** (-s) - 1)
+            dd = -dm * t.yerli_pay_ikame
+            t[f"ithal_ikamesi{rejim}_s{s}_musd"] = dd
+            t[f"istihdam_ikame{rejim}_s{s}"] = dd * t.l_per_musd
+            t[f"istihdam_net{rejim}_s{s}"] = (dx + dd) * t.l_per_musd
+            t[f"net_pay{rejim}_s{s}"] = t[f"istihdam_net{rejim}_s{s}"] / t.calisan
         t[f"ihracat_kaybi_s{s}_musd"] = dx
-        t[f"ithal_ikamesi_s{s}_musd"] = dd
         t[f"istihdam_ihracat_s{s}"] = dx * t.l_per_musd
-        t[f"istihdam_ikame_s{s}"] = dd * t.l_per_musd
-        t[f"istihdam_net_s{s}"] = (dx + dd) * t.l_per_musd
-        t[f"net_pay_s{s}"] = t[f"istihdam_net_s{s}"] / t.calisan
     t = t.replace([np.inf, -np.inf], np.nan)
     t.round(4).to_csv(v("politika_s4_net_istihdam_sinif.csv"))
 
     ozet = []
-    for s in SIGMALAR:
-        k = t[t.calisan.notna()]
-        ozet.append(dict(sigma=s, ihracat_kaybi_musd=k[f"ihracat_kaybi_s{s}_musd"].sum(),
-                         ithal_ikamesi_musd=k[f"ithal_ikamesi_s{s}_musd"].sum(),
-                         istihdam_ihracat=k[f"istihdam_ihracat_s{s}"].sum(), istihdam_ikame=k[f"istihdam_ikame_s{s}"].sum(),
-                         istihdam_net=k[f"istihdam_net_s{s}"].sum(),
-                         sinif_5yuzde_ustu_kayip=int((k[f"net_pay_s{s}"] < -0.05).sum()),
-                         sinif_net_kazanc=int((k[f"net_pay_s{s}"] > 0).sum())))
+    for rejim, ad in (("", "mfn"), ("_c2", "c2")):
+        for s in SIGMALAR:
+            k = t[t.calisan.notna()]
+            ozet.append(dict(rejim=ad, sigma=s, ihracat_kaybi_musd=k[f"ihracat_kaybi_s{s}_musd"].sum(),
+                             ithal_ikamesi_musd=k[f"ithal_ikamesi{rejim}_s{s}_musd"].sum(),
+                             istihdam_ihracat=k[f"istihdam_ihracat_s{s}"].sum(),
+                             istihdam_ikame=k[f"istihdam_ikame{rejim}_s{s}"].sum(),
+                             istihdam_net=k[f"istihdam_net{rejim}_s{s}"].sum(),
+                             sinif_5yuzde_ustu_kayip=int((k[f"net_pay{rejim}_s{s}"] < -0.05).sum()),
+                             sinif_net_kazanc=int((k[f"net_pay{rejim}_s{s}"] > 0).sum())))
     oz = pd.DataFrame(ozet)
     oz.round(1).to_csv(v("politika_s4_net_istihdam_ozet.csv"), index=False)
     pd.set_option("display.width", 220)

@@ -14,8 +14,11 @@ Her ürün grubu için:
               kapsanmıyor), YSHİ ise fason zincirini mükerrer sayıyor
       dis     dış kaynak (veri/vergi_oranlari_2026.csv "yerli_pay_dis"; otomobilde ODMD adet payları)
   - Tarifeler: τ0 (bugün): AB ve STA 0, diğer = 2026 MFN + İGV + EMY (STA dışı ithalat ağırlıklı).
-    τ1 (S4, seçici İGV rejimi "c"): AB'nin baskın olduğu satırlarda (AB / (AB + diğer) ≥ %50) AB ve
-    diğerlerine yalnızca MFN; öteki satırlarda AB'ye de MFN + İGV + EMY
+    τ1, iki S4 İGV rejimi (02a §4.1):
+      c   AB'nin baskın olduğu satırlarda (AB / (AB + diğer) ≥ %50) AB ve diğerlerine yalnızca MFN; öteki
+          satırlarda AB'ye de MFN + İGV + EMY
+      c2  c'de İGV yalnızca yurt içi üretimi zayıf satırlarda kalkar (PRODTR üretimi < ithalat; gizli satırlar
+          güçlü sayılır; f2b'nin politika_tarife_hs6.csv'si); güçlü satırlarda AB'ye de uygulanır
   - ÖTV ve KDV: veri/vergi_oranlari_2026.csv (grup, otv, kdv, takas türü, kaynak)
   - İstihdam: grubun NACE sınıflarında çalışan / üretim değeri (YSHİ 2024)
   - TÜFE ağırlığı: 2026 TÜFE (COICOP 2018) kalemleri. Beyaz eşya 05.3.1.1 (büyük mutfak aletleri; fırın
@@ -23,8 +26,8 @@ Her ürün grubu için:
     yarısı [H]; TV 08.1.4; kozmetik 13.1.2'nin %75'i [H] (kalem sabun, diş macunu ve kâğıt ürünlerini de
     içeriyor). Hafif ticari araç hanehalkı sepetinde yok (0)
   - HS 2017 kodu 2026 tarifesinde (HS 2022) bulunamazsa aynı HS4 başlığının ortalama oranı kullanılır
-Çıktı: veri/politika_takas_parametre.csv (f2c_vergi_takasi.py girdisi). Senaryolar: S4_c_TA_takas, S4_c_yok,
-S4_c_T0_yalniz_yerli, S4_c_TB_uretim_destegi
+Çıktı: veri/politika_takas_parametre.csv (f2c_vergi_takasi.py girdisi). Senaryolar: rejim (c, c2) × tasarım
+(TA_takas, yok, T0_yalniz_yerli, TB_uretim_destegi), ör. S4_c2_TA_takas
 """
 
 import argparse
@@ -95,6 +98,8 @@ def main():
     mfn4 = tr.groupby(tr.hs6.str[:4]).mfn_rate.mean() / 100
     tam4 = tr.groupby(tr.hs6.str[:4]).mfn_igv_emy.mean() / 100
     tufe = pd.read_csv(v("tuik_tufe_agirlik_2026.csv"), dtype={"coicop_2018": str}).set_index("coicop_2018")
+    h = pd.read_csv(v("politika_tarife_hs6.csv"), dtype={"hs6": str}).set_index("hs6")
+    guclu_hs6 = h.gizli.astype(bool) | (h.uretim_ithalat_orani >= 1.0)
     y = pd.read_csv(v("tuik_yshi_nace2.csv"), dtype={"kod": str})
     y = y[y.yil == 2024].set_index("kod")
     usd_try = pd.read_csv(v("teshis_odemeler_dengesi.csv"), index_col=0).loc[2024, "usd_try"]
@@ -116,9 +121,13 @@ def main():
         M["mfn"] = M.mfn.fillna(pd.Series(M.index.str[:4].map(mfn4), index=M.index)).fillna(0)
         M["tam"] = M.tam.fillna(pd.Series(M.index.str[:4].map(tam4), index=M.index)).fillna(0)
         baskin = M.ab / (M.ab + M.diger).replace(0, np.nan) >= 0.5
+        guclu = pd.Series(M.index.map(guclu_hs6), index=M.index).fillna(False).astype(bool)
         tau0_diger = (M.diger * M.tam).sum() / M.diger.sum() if M.diger.sum() else 0.0
-        tau1_ab = (M.ab * np.where(baskin, M.mfn, M.tam)).sum() / M.ab.sum() if M.ab.sum() else 0.0
-        tau1_diger = (M.diger * np.where(baskin, M.mfn, M.tam)).sum() / M.diger.sum() if M.diger.sum() else 0.0
+        tau1 = {}
+        for rejim, kaldir in (("c", baskin), ("c2", baskin & ~guclu)):
+            oran = np.where(kaldir, M.mfn, M.tam)
+            tau1[rejim] = ((M.ab * oran).sum() / M.ab.sum() if M.ab.sum() else 0.0,
+                           (M.diger * oran).sum() / M.diger.sum() if M.diger.sum() else 0.0)
         r = vo[vo.grup == grup].iloc[0]
 
         # yerli pay: üç yöntem (iç satış, $ mn) ve dış kaynak
@@ -139,30 +148,31 @@ def main():
         yontem = g["yontem"] if g["yontem"] in yerli else "io"
         harcama["yerli"] = yerli[yontem]
         toplam = sum(harcama.values())
-        satirlar.append(dict(
-            grup=grup, senaryo="S4_c_TA_takas", pazar_musd=toplam * (1 + r.otv) * (1 + r.kdv),
-            **{f"pay_{o}": harcama[o] / toplam for o in ("yerli", "ab", "sta", "diger")},
-            tau0_yerli=0.0, tau0_ab=0.0, tau0_sta=0.0, tau0_diger=tau0_diger,
-            tau1_yerli=0.0, tau1_ab=tau1_ab, tau1_sta=0.0, tau1_diger=tau1_diger,
-            otv0=r.otv, kdv=r.kdv, takas=r.takas, calisan_per_musd=calisan / uretim_yshi,
-            tufe_agirlik_yuzde=g["tufe_pay"] * sum(tufe.loc[c, "agirlik_yuzde"] for c in g["tufe"]),
-            yerli_yontem=yontem, **{f"yerli_pay_{k}": yerli[k] / (yerli[k] + ithal_harcama) for k in yerli},
-            uretim_prodtr_musd=uretim_prodtr, prodtr_gizli_kod=gizli_kod, uretim_yshi_musd=uretim_yshi,
-            ihracat_musd=X, ithalat_ab_musd=ithal["ab"], ithalat_sta_musd=ithal["sta"],
-            ithalat_diger_musd=ithal["diger"], hs4_ortalamasi_kullanilan_ithalat_musd=eslesmeyen,
-            ab_baskin_ithalat_payi=float(M.ab[baskin].sum() / M.ab.sum()) if M.ab.sum() else 0.0,
-            kaynak=r.kaynak))
+        for rejim, (tau1_ab, tau1_diger) in tau1.items():
+            satirlar.append(dict(
+                grup=grup, rejim=rejim, senaryo=f"S4_{rejim}_TA_takas", pazar_musd=toplam * (1 + r.otv) * (1 + r.kdv),
+                **{f"pay_{o}": harcama[o] / toplam for o in ("yerli", "ab", "sta", "diger")},
+                tau0_yerli=0.0, tau0_ab=0.0, tau0_sta=0.0, tau0_diger=tau0_diger,
+                tau1_yerli=0.0, tau1_ab=tau1_ab, tau1_sta=0.0, tau1_diger=tau1_diger,
+                otv0=r.otv, kdv=r.kdv, takas=r.takas, calisan_per_musd=calisan / uretim_yshi,
+                tufe_agirlik_yuzde=g["tufe_pay"] * sum(tufe.loc[c, "agirlik_yuzde"] for c in g["tufe"]),
+                yerli_yontem=yontem, **{f"yerli_pay_{k}": yerli[k] / (yerli[k] + ithal_harcama) for k in yerli},
+                uretim_prodtr_musd=uretim_prodtr, prodtr_gizli_kod=gizli_kod, uretim_yshi_musd=uretim_yshi,
+                ihracat_musd=X, ithalat_ab_musd=ithal["ab"], ithalat_sta_musd=ithal["sta"],
+                ithalat_diger_musd=ithal["diger"], hs4_ortalamasi_kullanilan_ithalat_musd=eslesmeyen,
+                ab_baskin_ithalat_payi=float(M.ab[baskin].sum() / M.ab.sum()) if M.ab.sum() else 0.0,
+                kaynak=r.kaynak))
     t = pd.DataFrame(satirlar)
     # karşılaştırma tasarımları: pasif (yok), T-0 (yalnızca yerli ürüne indirim), T-B (III:8(b) yerli desteği)
-    turevler = [t.assign(senaryo="S4_c_yok", takas="yok"),
-                t.assign(senaryo="S4_c_T0_yalniz_yerli", takas=t.takas + "_yerli"),
-                t.assign(senaryo="S4_c_TB_uretim_destegi", takas="destek_yerli")]
+    turevler = [t.assign(senaryo="S4_" + t.rejim + "_yok", takas="yok"),
+                t.assign(senaryo="S4_" + t.rejim + "_T0_yalniz_yerli", takas=t.takas + "_yerli"),
+                t.assign(senaryo="S4_" + t.rejim + "_TB_uretim_destegi", takas="destek_yerli")]
     pd.concat([t] + turevler).round(5).to_csv(v("politika_takas_parametre.csv"), index=False)
     pd.set_option("display.width", 250)
     sut = ["grup", "pazar_musd", "pay_yerli", "pay_ab", "pay_sta", "pay_diger", "tau0_diger", "tau1_ab", "tau1_diger",
            "otv0", "kdv", "yerli_yontem", "yerli_pay_prodtr", "yerli_pay_yshi", "yerli_pay_io", "prodtr_gizli_kod",
            "ihracat_musd", "hs4_ortalamasi_kullanilan_ithalat_musd", "tufe_agirlik_yuzde"]
-    print(t[[c for c in sut if c in t]].round(3).to_string(index=False))
+    print(t[["rejim"] + [c for c in sut if c in t]].round(3).to_string(index=False))
 
 
 if __name__ == "__main__":

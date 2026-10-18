@@ -54,8 +54,8 @@ Yeni bir sohbette devam etmek için: ana prompt + [`DURUM_OZETI.md`](DURUM_OZETI
 | `kod/f2a_io_fiyat.py` | Leontief fiyat modeli (TÜİK 2023 girdi-çıktı): tarife şokunun TÜFE'ye birinci tur etkisi → `veri/politika_io_ede.csv`, `veri/politika_io_s4_tufe.csv` |
 | `kod/prodtr.py`, `kod/f2b_tarife_politikasi.py` | PRODTR (CPA 6 hane) ve tarife yapısı, BEC kullanımı, yurt içi kabiliyet, "girdide sıfır" → `veri/politika_tarife_*.csv`, `veri/prodtr_cpa6_2025.csv` |
 | `kod/f2c0_takas_parametre.py`, `kod/f2c_vergi_takasi.py` | Vergi takası modeli: on ürün grubu, dört tasarım (pasif, T-A, T-0, T-B), Armington CES → `veri/politika_takas_parametre.csv`, `veri/politika_takas_sonuc.csv`, `veri/politika_takas_ozet.csv` |
-| `kod/f2d_s4_net_istihdam.py` | S4 net istihdam, NACE sınıfı → `veri/politika_s4_net_istihdam_*.csv` |
-| `kod/f2e_s4_aktif.py` | Aktif S4 paketleri: İGV rejimi (a, b, c, c2, d) × P1 × takas kapsamı; yasal ve tahsil edilebilir mali bilanço → `veri/politika_s4_aktif.csv`, `veri/politika_s4_aktif_urun.csv` |
+| `kod/f2d_s4_net_istihdam.py` | S4 net istihdam, NACE sınıfı; iki ithalat rejimi (yalnızca MFN, c2) → `veri/politika_s4_net_istihdam_*.csv` |
+| `kod/f2e_s4_aktif.py` | Aktif S4 paketleri: İGV rejimi (a, b, c, c2, d) × P1 × takas kapsamı, ayrıca S3 menşe maliyeti senaryoları; yasal ve tahsil edilebilir mali bilanço → `veri/politika_s4_aktif.csv`, `veri/politika_s4_aktif_urun.csv` |
 | `veri/vergi_oranlari_2026.csv`, `veri/vergi_gelirleri_2024_2026.csv` | Ürün grubu ÖTV/KDV oranları ve yerli pay (kaynaklı); ÖTV, KDV ve gümrük vergisi tahsilatı (GİB, 2024–2026) |
 
 ## Yeniden üretme

@@ -10,6 +10,9 @@ Paket bileşenleri (her biri ayrı raporlanır):
              diğer satırlarda AB'ye de uygulanır
         P2c2 kabiliyete duyarlı seçici: P2c'de İGV yalnızca yurt içi üretimi zayıf satırlarda (PRODTR
              üretimi < ithalat; gizli satırlar güçlü sayılır) kaldırılır; güçlü satırlarda AB'ye de uygulanır
+  Karşılaştırma: S3 (AB ile STA). AB malları menşe şartıyla vergisiz; menşe uyum maliyeti c (ad valorem,
+             %1 / 2 / 3). İthalatçı satır başına ucuz olanı seçer: tercih (fiyat etkisi c) veya MFN (fiyat ve
+             gelir etkisi t). Fiyat şoku min(c, t); gümrük geliri yalnızca t ≤ c olan satırlarda
   P3  Vergi takası: tüketici fiyatı, menşeden bağımsız ÖTV/KDV indirimiyle nötrlenen ürünler. İki kapsam:
         dar   I-O ürünleri C29 otomobil [ÖTV II], C26 ve C27 elektronik ve beyaz eşya [ÖTV IV], C13-C15 giyim
               ve tekstil [KDV], C20 kozmetik ve temizlik [ÖTV IV/KDV]
@@ -88,6 +91,7 @@ def main():
         "c_igv_secici": (np.where(ab_baskin, t.t_mfn, t.t_tam), -igv_diger.where(ab_baskin, 0.0)),
         "c2_igv_secici_kabiliyet": (np.where(kaldir_c2, t.t_mfn, t.t_tam), -igv_diger.where(kaldir_c2, 0.0)),
         "d_gecici_anlasma": (0.0 * t.t_mfn, 0.0 * igv_diger),                             # XXIV:5; S4 değil
+        **{f"s3_sta_mense_{c}": (np.minimum(t.t_mfn, c), 0.0 * igv_diger) for c in (1, 2, 3)},  # S3, c (%)
     }
     kodlar = np.array(kod)
     imalat = np.array([k.startswith("C") for k in kod])
@@ -98,9 +102,14 @@ def main():
         for P1 in (False, True):
             maske = gb & ~p1 if P1 else gb
             ab_vergi = (t.m_ab_musd * pd.Series(oran_ab, index=t.index) / 100).where(maske, 0.0)
+            ab_fiyat = ab_vergi
+            if rejim.startswith("s3_"):
+                # menşe maliyeti fiyatı etkiler ama gelir değildir; gelir yalnızca MFN'nin seçildiği satırlarda
+                c = float(rejim.rsplit("_", 1)[1])
+                ab_vergi = ab_vergi.where(t.t_mfn <= c, 0.0)
             p1_kayip = t.gelir_mevcut_musd.where(p1, 0.0) if P1 else 0.0 * t.gelir_mevcut_musd
             d_igv_p = pd.Series(d_igv, index=t.index).where(~p1, 0.0) if P1 else pd.Series(d_igv, index=t.index)
-            dtau = vektor(t, kod, ab_vergi) + vektor(t, kod, d_igv_p) - vektor(t, kod, p1_kayip)
+            dtau = vektor(t, kod, ab_fiyat) + vektor(t, kod, d_igv_p) - vektor(t, kod, p1_kayip)
             gelir = ab_vergi.sum() + d_igv_p.sum() - p1_kayip.sum()
             gelir_tahsil = ((ab_vergi + d_igv_p - p1_kayip) * t.tahsilat).sum()
             # koruma göstergesi: güçlü yerli üretimli satırlarda kaldırılan İGV (STA dışı ithalattan, yasal)

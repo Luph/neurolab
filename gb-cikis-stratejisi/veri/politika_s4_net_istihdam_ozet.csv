@@ -1,4 +1,7 @@
-sigma,ihracat_kaybi_musd,ithal_ikamesi_musd,istihdam_ihracat,istihdam_ikame,istihdam_net,sinif_5yuzde_ustu_kayip,sinif_net_kazanc
-3,-15197.6,8027.2,-123434.7,46694.8,-76739.8,14,61
-5,-23456.6,12448.6,-189978.3,72853.7,-117124.6,22,61
-8,-33680.9,17998.3,-271631.8,106212.9,-165418.9,32,61
+rejim,sigma,ihracat_kaybi_musd,ithal_ikamesi_musd,istihdam_ihracat,istihdam_ikame,istihdam_net,sinif_5yuzde_ustu_kayip,sinif_net_kazanc
+mfn,3,-15197.6,8027.2,-123434.7,46694.8,-76739.8,14,61
+mfn,5,-23456.6,12448.6,-189978.3,72853.7,-117124.6,22,61
+mfn,8,-33680.9,17998.3,-271631.8,106212.9,-165418.9,32,61
+c2,3,-15197.6,12924.8,-123434.7,99844.9,-23589.7,11,99
+c2,5,-23456.6,19133.1,-189978.3,142170.0,-47808.4,21,95
+c2,8,-33680.9,26235.3,-271631.8,187327.9,-84303.9,28,88

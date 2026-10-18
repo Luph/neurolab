@@ -12,9 +12,10 @@ Yeni bir sohbette devam etmek için ana prompt ile bu dosyayı birlikte verin. A
   - Yalnızca yerli ürüne ÖTV indirimi GATT III:2'nin kendiliğinden ihlali; III:8(b) kurtarmaz (Brezilya–Vergilendirme).
   - Hukuka uygun eşdeğer: tarife + bütün menşelere eşit ÖTV/KDV indirimi (T-A takas).
 - **Sayılar (on ürün grubu, TÜFE'nin %17,4'ü).**
-  - Pasif S4: +35 bp TÜFE.
-  - Takas: −2 bp; net mali −$0,46 mlr; +20 bin istihdam.
-  - Yalnızca yerliye indirim (T-0): −$3,4 mlr ve DTÖ'ye aykırı. III:8(b) ödemesi (T-B): −$4,2 mlr.
+  - Önerilen İGV rejimi c2 altında hesaplandı.
+  - Pasif S4: +47 bp TÜFE.
+  - Takas: 0 bp; net mali −$0,60 mlr; +31 bin istihdam.
+  - Yalnızca yerliye indirim (T-0): −$3,75 mlr ve DTÖ'ye aykırı. III:8(b) ödemesi (T-B): −$4,6 mlr.
   - Otomobil: ÖTV %65 → %56,2; AB +%4,1, yerli −%5,4; net −$0,15 mlr.
 - **Aktif S4.**
   - Önerilen paket: İGV yalnızca kabiliyeti zayıf satırlarda kaldırılır (c2), girdide sıfır (P1) ve geniş takas.
@@ -22,7 +23,8 @@ Yeni bir sohbette devam etmek için ana prompt ile bu dosyayı birlikte verin. A
   - Pasif S4: 78 bp (59–98).
 - **Kısıtlar.**
   - Enflasyon ve mali kısıt aktif tasarımla sağlanıyor.
-  - İstihdam kısıtı ihlal: net −117 bin (−77 ile −165 bin); giyim −72,6 bin; %5 eşiğini aşan 22 sınıf.
+  - İstihdam kısıtı ihlal ama dar. Net etki yalnızca MFN'de −117 bin; c2 + takasla ≈ −35 bin (−11 ile −72 bin).
+  - Çekirdek giyim: −58,7 bin. %5 eşiğini aşan sınıf: 21.
   - İhracat tarafında yasal ve etkili tek taraflı araç yok; tam telafi ≈$38 mlr/yıl.
 - **Gelir.** Gümrük vergisi tahsilatı yasal tutarın %50'si (2025: $8,15 mlr).
 - **Pazarlık.** AB'nin S4 ihracat kaybı c2'de $28,5 mlr, yalnızca MFN'de $16,4 mlr. Aktif S4, BATNA'yı güçlendiriyor.

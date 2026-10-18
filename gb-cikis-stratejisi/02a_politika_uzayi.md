@@ -57,14 +57,16 @@ Kaynaklar sondadır; ham metinler ve çıkarılmış tablolar araştırma notlar
    - Takas yapılmazsa otomobil tek başına TÜFE'ye +26 bp ekler.
    - `[T]` Güven: Orta.
 3. **Önerinin ilk biçimi (T-0) yalnızca hukuka aykırı değil, pahalı da.**
-   - Otomobil pazarının ancak %22'si yerli. TÜFE'yi sabit tutmak için yerli otomobilde ÖTV'nin %65'ten %22,5'e inmesi gerekir. Bunun maliyeti yılda ≈$3,0 mlr; on grupta ≈$3,4 mlr. Takasta (T-A) maliyet ≈$0,46 mlr.
+   - Otomobil pazarının ancak %22'si yerli. TÜFE'yi sabit tutmak için yerli otomobilde ÖTV'nin %65'ten %22,5'e inmesi gerekir. Bunun maliyeti yılda ≈$3,0 mlr; on grupta ≈$3,75 mlr. Takasta (T-A) maliyet ≈$0,60 mlr.
    - T-A'daki 8,8 puanlık indirim yalnızca yerliye uygulanırsa ucuz kalır, ama otomobilin TÜFE etkisinin ≈%80'i yerinde durur.
    - Yerli üreticiye doğrudan ödeme (T-B, III:8(b)) ekonomik olarak T-0 ile aynıdır. GATT md. III'e uygundur, ama Sübvansiyonlar ve Telafi Edici Önlemler Anlaşması (ASCM) kapsamında dava edilebilir.
    - `[T]` Güven: Orta.
 4. **On ürün grubunda takasın bilançosu.**
    - Kapsam: otomobil, hafif ticari, beyaz eşya, küçük ev aletleri, TV, klima, kozmetik, giyim, ayakkabı, mobilya; TÜFE'nin %17,4'ü.
-   - Pasif S4: +35 bp TÜFE, +$1,45 mlr mali, +11 bin istihdam.
-   - Takas (T-A): −2 bp, −$0,46 mlr (P10–P90: −0,56 ile +0,10), +20 bin istihdam (12–22 bin).
+   - Sonuçlar önerilen İGV rejimi c2 altında (§4.1).
+   - Pasif S4: +47 bp TÜFE (P10–P90: 38–47), +$1,65 mlr mali, +19 bin istihdam.
+   - Takas (T-A): 0 bp; −$0,60 mlr (−0,71 ile +0,13); +31 bin istihdam (18–36 bin).
+   - Rejim c'de pasif S4 +35 bp; takasla −$0,46 mlr ve +20 bin istihdam.
    - `[T]` Güven: Orta.
 5. **Anlaşmasız çıkışın enflasyon sorunu Türkiye'nin kendi araçlarıyla çözülebiliyor.**
    - Pasif S4'te birinci tur TÜFE etkisi 78 bp (P10–P90: 59–98). Bunu ilk yılda 30 bp altına indiren dört paket bulundu.
@@ -74,10 +76,13 @@ Kaynaklar sondadır; ham metinler ve çıkarılmış tablolar araştırma notlar
      - imalat ürünlerinde menşeden bağımsız ÖTV/KDV takası yapılır.
    - Sonuç: TÜFE 3,3 bp (2,5–4,1). Tahsil edilebilir net mali etki GSYH'nin +%0,05'i. Çin ve diğer kaynaklara karşı mevcut koruma korunuyor.
    - `[T]` Güven: Orta.
-6. **İstihdam ve kabiliyet kısıtları ise Türkiye'nin kontrolünde değil.**
-   - S4'te imalatta net istihdam etkisi: −117 bin (P10–P90: −77 ile −165 bin).
-   - Kaybın çekirdeği giyim: −72,6 bin, bölümün %10,9'u.
-   - Kayıp AB pazarında oluşuyor. İç pazardaki hiçbir araç, AB'nin Türk ürünlerine uygulayacağı MFN'yi telafi etmiyor.
+6. **İstihdam kısıtı aktif pakette daralıyor ama kapanmıyor; çekirdek giyim.**
+   - S4'te imalatta net istihdam etkisi (σ = 5):
+     - AB mallarına yalnızca MFN uygulanırsa −117 bin (P10–P90: −77 ile −165 bin);
+     - önerilen pakette (c2 + takas) ≈ −35 bin (≈ −11 ile −72 bin).
+   - Farkın nedeni: İGV yurt içi üretimi güçlü satırlarda AB'ye de uygulanıyor; bu, ithal ikamesini ikiye katlıyor.
+   - Kaybın çekirdeği giyim: c2'de −58,7 bin (bölümün %8,8'i). Diğer imalat bölümleri toplamda ≈ +11 bin.
+   - Giyimdeki kayıp AB pazarında oluşuyor. İç pazardaki hiçbir araç, AB'nin Türk ürünlerine uygulayacağı %12'lik MFN'yi telafi etmiyor.
    - `[T]` Güven: Orta.
 7. **İhracat tarafında yasal ve etkili bir tek taraflı araç yok.**
    - İhracat sübvansiyonu yasak.
@@ -218,7 +223,7 @@ Bir ithalat tarifesi ekonomik olarak iki aracın toplamıdır: yerli üreticiye 
   - ikame esnekliği σ ∈ {2, 4, 6};
   - grup talebinin fiyat esnekliği η ∈ {0,5; 1; 1,5};
   - tarifenin fiyata geçişkenliği ρ ∈ {0,8; 1}.
-- S4 tarife rejimi "c": AB'nin baskın olduğu satırlarda İGV herkes için kalkar (§4.1).
+- S4 tarife rejimi: önerilen c2 (§4.1). İGV, AB'nin baskın ve yurt içi kabiliyetin zayıf olduğu satırlarda herkes için kalkar; diğer satırlarda AB'ye de uygulanır. Rejim c sonuçları karşılaştırma için verildi.
 - Takas kuralı: grubun **ölçülen** fiyat endeksi (Laspeyres; TÜFE ağırlıkları yıl içinde sabit) değişmez. Refah açısından tam fiyat endeksi (CES) ayrıca raporlandı.
 - Merkez tahmin σ = 4, η = 1, ρ = 1. Aralık, 18 parametre bileşiminin P10–P90'ı.
 
@@ -228,32 +233,37 @@ Bir ithalat tarifesi ekonomik olarak iki aracın toplamıdır: yerli üreticiye 
 - ÖTV ve KDV: GİB listeleri, 2026.
 - TÜFE ağırlıkları: 2026, COICOP 2018.
 
-**Tablo 1.5a — Takas (T-A) ve pasif S4, ürün grubu başına (merkez)**
+**Tablo 1.5a — Takas (T-A) ve pasif S4, ürün grubu başına (rejim c2, merkez)**
 
 | Grup | TÜFE ağırlığı (%) | Yerli pay | ÖTV/KDV: bugün → takasla | Pasif S4: grup fiyatı | Pasif S4: TÜFE katkısı (bp) | Takasla AB ürünü / yerli ürün fiyatı | Takasla yerli satış ($ mn) | Takasla istihdam | Takasla net mali ($ mn) |
 |---|---|---|---|---|---|---|---|---|---|
 | Binek otomobil | 4,59 | %22 | ÖTV %65 → %56,2 | +%5,7 | 26,0 | +%4,1 / −%5,4 | +1.189 | +2.300 | −153 |
 | Hafif ticari | 0 | %22 | ÖTV %6 → %0 (yetmiyor; kalan +%1,5) | +%7,6 | 0 | +%7,1 / −%5,7 | +161 | +312 | +7 |
-| Beyaz eşya | 1,06 | %86 | ÖTV %6,7 → %6,6 | +%0,1 | 0,1 | +%3,1 / −%0,1 | +4 | +18 | +2 |
-| Küçük ev aletleri | 0,19 | %33 | ÖTV %6,7 → %5,6 | +%1,1 | 0,2 | +%11,5 / −%1,1 | +16 | +81 | +10 |
+| Beyaz eşya | 1,06 | %86 | ÖTV %6,7 → %5,7 | +%1,0 | 1,0 | +%9,8 / −%1,0 | +96 | +491 | −9 |
+| Küçük ev aletleri | 0,19 | %33 | ÖTV %6,7 → %3,1 | +%3,5 | 0,7 | +%16,9 / −%3,4 | +73 | +374 | −10 |
 | TV | 0,26 | %74 | ÖTV %6,7 → %6,0 | +%0,7 | 0,2 | +%13,2 / −%0,7 | +15 | +80 | −2 |
 | Klima | 0,16 | %77 | ÖTV değişmez | +%0,0 | 0,0 | +%2,0 / 0 | +2 | +17 | 0 |
-| Kozmetik | 0,92 | %39 | Değişmez (fiyat düşüyor) | −%1,4 | −1,2 | +%0,4 / 0 | −49 | −419 | −26 |
-| Giyim | 6,51 | %87 | KDV %10 → %8,9 | +%1,0 | 6,5 | +%42,0 / −%1,0 | +797 | +17.102 | −241 |
-| Ayakkabı | 1,11 | %45 | KDV %10 → %6,3 | +%3,5 | 3,9 | +%37,8 / −%3,4 | +177 | +2.958 | −44 |
-| Mobilya | 2,62 | %91 | Değişmez (fiyat düşüyor) | −%0,3 | −0,8 | +%2,9 / 0 | −117 | −2.384 | −15 |
-| **Toplam** | **17,41** | | | | **34,7 (27,6–34,7)** | | **+2.195 (1.112–2.694)** | **+20.066 (12.417–21.841)** | **−462 (−555 ile +99)** |
+| Kozmetik | 0,92 | %39 | ÖTV %20 → %13,4 | +%5,8 | 5,3 | +%8,2 / −%5,5 | +159 | +1.353 | −27 |
+| Giyim | 6,51 | %87 | KDV %10 → %8,7 | +%1,2 | 7,7 | +%47,5 / −%1,2 | +949 | +20.360 | −319 |
+| Ayakkabı | 1,11 | %45 | KDV %10 → %5,6 | +%4,1 | 4,6 | +%43,7 / −%4,0 | +202 | +3.368 | −63 |
+| Mobilya | 2,62 | %91 | KDV %10 → %9,3 | +%0,6 | 1,7 | +%15,8 / −%0,6 | +137 | +2.792 | −19 |
+| **Toplam** | **17,41** | | | | **47,2 (38–47)** | | **+2.984** | **+31.447 (17.708–35.726)** | **−596 (−706 ile +127)** |
 
 *Kaynak ve etiketler:*
 - `[T]` `veri/politika_takas_ozet.csv`, `veri/politika_takas_parametre.csv`.
 - Yerli payın kaynağı: otomobil ve hafif ticaride ODMD 2025 adet payı × OSD ihracat birim değeri; beyaz eşya, küçük ev aletleri, TV, klima ve kozmetikte PRODTR 2024; ayakkabı ve mobilyada YSHİ 2024; giyimde 2023 girdi-çıktı tablosundaki hanehalkı yurt içi payı.
 - Üç yöntem arasındaki fark parametre dosyasında raporlandı. Otomobilde I-O payı %39, YSHİ payı %54; ikisi de hafif ticari ve parça üretimini karıştırıyor.
+- Rejim c'de toplamlar: pasif S4 +34,7 bp; takasla −$462 mn net mali ve +20.066 istihdam.
 - Güven: Orta.
 
 **Okuma.**
-- Kozmetik ve mobilyada fiyat düşüyor. Bunun nedeni rejim "c": AB'nin baskın olduğu satırlarda İGV herkes için kalkıyor. Bu iki grupta yerli üretici kaybediyor: mobilyada −2,4 bin istihdam.
-- Rejim "c"nin bu yan etkisini, İGV'yi yalnızca kabiliyeti zayıf satırlarda kaldıran rejim "c2" önlüyor (§4.1).
-- Giyim ve ayakkabıda AB ürününün fiyatı %38–42 artıyor. Bu satırlarda AB tedarikçi olarak baskın değil, bu yüzden İGV AB'ye de uygulanıyor. Ama iç pazardaki payı küçük (%2–8); TÜFE etkisini KDV indirimi küçük bir maliyetle siliyor.
+- **Kozmetik ve mobilyada rejim seçimi işaret değiştiriyor.**
+  - Rejim c'de AB'nin baskın olduğu satırlarda İGV herkes için kalkıyordu. Fiyatlar düşüyor, yerli üretici kaybediyordu: mobilyada −2,4 bin, kozmetikte −0,4 bin istihdam.
+  - c2'de yurt içi üretimi güçlü satırlarda İGV korunuyor. AB ve diğer ithal ürünler pahalanıyor, takas bu artışı ÖTV/KDV indirimiyle siliyor. Yerli üretici kazanıyor: mobilyada +2,8 bin, kozmetikte +1,4 bin.
+- **Giyim ve ayakkabıda AB ürününün fiyatı %44–48 artıyor**, çünkü İGV AB'ye de uygulanıyor.
+  - AB'nin iç pazardaki payı küçük (%2–8). TÜFE etkisini küçük bir KDV indirimi siliyor.
+  - Bu iki grup takasın istihdam getirisinin ≈%75'ini oluşturuyor.
+- **Küçük ev aletlerinde yerli pay düşük (%33).** TÜFE'yi sabit tutmak için ÖTV'nin %6,7'den %3,1'e inmesi gerekiyor.
 
 **Tablo 1.5b — Otomobilde dört tasarım (merkez; aralık P10–P90)**
 
@@ -278,27 +288,27 @@ Bir ithalat tarifesi ekonomik olarak iki aracın toplamıdır: yerli üreticiye 
 - Mali maliyet küçük kalır (≈+$0,7 mlr net), ama hukuka aykırılık aynıdır.
 - Kısacası T-0 ya pahalıdır ya da enflasyonu durdurmaz. `[T]`
 
-**Tablo 1.5c — On grubun toplamı, dört tasarım (merkez; aralık P10–P90)**
+**Tablo 1.5c — On grubun toplamı, dört tasarım (rejim c2; merkez; aralık P10–P90)**
 
 | | Pasif S4 | T-A takas | T-0 | T-B |
 |---|---|---|---|---|
-| TÜFE katkısı (bp) | +34,7 (27,6–34,7) | −2,1 | −2,1 | −2,1 |
-| Gümrük geliri ($ mn) | +1.446 | +1.576 | +937 | +871 |
-| ÖTV + KDV ($ mn) | 0 | −2.039 | −4.383 | 0 |
-| Yerli üreticiye ödeme ($ mn) | — | — | — | −5.089 |
-| **Net mali ($ mn)** | **+1.446** (874–2.154) | **−462** (−555 ile +99) | **−3.447** (−4.781 ile −739) | **−4.217** (−5.870 ile −1.019) |
-| Yerli satış ($ mn) | +1.398 | +2.195 | +11.036 | +12.405 |
-| İstihdam | +11.000 | +20.066 (12.417–21.841) | +46.662 | +49.309 |
+| TÜFE katkısı (bp) | +47,2 (38–47) | 0 | ≈0 (+0,3) | 0 |
+| Gümrük geliri ($ mn) | +1.645 | +1.796 | +1.073 | +994 |
+| ÖTV + KDV ($ mn) | 0 | −2.393 | −4.824 | 0 |
+| Yerli üreticiye ödeme ($ mn) | — | — | — | −5.583 |
+| **Net mali ($ mn)** | **+1.645** (1.014–2.429) | **−596** (−706 ile +127) | **−3.751** (−5.213 ile −777) | **−4.589** (−6.383 ile −1.081) |
+| Yerli satış ($ mn) | +1.963 | +2.984 | +12.433 | +13.929 |
+| İstihdam | +19.074 (6.300–24.661) | +31.447 (17.708–35.726) | +64.269 (29.441–83.339) | +67.576 (30.382–87.857) |
 
-*Kaynak:* `[T]` `veri/politika_takas_ozet.csv`. Güven: Orta.
+*Kaynak:* `[T]` `veri/politika_takas_ozet.csv`. Rejim c için aynı tablo dosyada (pasif +34,7 bp; T-A −$462 mn; T-0 −$3.447 mn; T-B −$4.217 mn). Güven: Orta.
 
 **Okuma.**
-1. TÜFE'yi sabitleyen üç tasarımdan en ucuzu takas (T-A). Maliyeti T-0'ın yedide biri, T-B'nin dokuzda biri.
-2. T-0 ve T-B istihdamı daha çok artırıyor (+47–49 bin), çünkü yerliye çok daha büyük bir fiyat avantajı veriyorlar.
+1. TÜFE'yi sabitleyen üç tasarımdan en ucuzu takas (T-A). Maliyeti T-0'ın altıda biri, T-B'nin yedide biri.
+2. T-0 ve T-B istihdamı daha çok artırıyor (+64–68 bin), çünkü yerliye çok daha büyük bir fiyat avantajı veriyorlar.
    - Bu avantaj iç pazarda AB ürününün yerinden edilmesidir. ASCM md. 6.3(a)'nın tanımladığı "ciddi zarar" tam olarak budur.
    - T-0 zaten III:2 ihlali. T-B, GATT'a uygun olsa da ASCM davasına ve telafi edici vergiye açık.
    - Ayrıca ek istihdamın büyük kısmı otomobilde kapasite sınırına takılır.
-3. Takasın getirdiği +20 bin istihdam, S4'ün net istihdam kaybını (−117 bin) kapatmaya yetmez (§4.2). Ama takas, enflasyon kısıtını istihdam kısıtıyla takas etmeden çözer.
+3. Takasın getirdiği istihdam (pasife göre +12 bin) S4'ün net istihdam kaybını kapatmaya yetmez (§4.2). Ama takas, enflasyon kısıtını istihdam kısıtıyla takas etmeden çözer.
 
 ### 1.6 Fiyat geçişkenliği: model varsayımları kanıtla uyumlu mu?
 
@@ -648,7 +658,7 @@ Faz 1, S4'ü pasif bir senaryo olarak ele aldı. Aşağıda aynı şok, Türkiye
 2. **Paketler arasında gerçek bir seçim var.** Bedel üç yerden ödeniyor: bütçe, koruma ve AB'ye verilen sinyal.
    - **b** en ucuz enflasyon çözümü. Ama Çin ve diğer kaynaklara karşı $2,9 mlr'lık İGV korumasını yurt içi üretimi güçlü satırlarda kaldırır. Bu, Faz 3'teki kabiliyet kısıtıyla çatışır.
    - **c** (Faz 2 ara raporundaki öneri) korumanın $0,7 mlr'ını kaldırır ve mobilya ile kozmetikte yerli üreticiye zarar verir (§1.5). Mali olarak hafif negatif.
-   - **c2 + geniş** korumayı tamamen korur, TÜFE'yi 3,3 bp'de tutar ve tahsil edilebilir gelirle bile hafif pozitif kalır. Bedeli daha geniş bir vergi takası ($5,7 mlr ÖTV/KDV indirimi) ve daha karmaşık bir uygulama.
+   - **c2 + geniş** korumayı tamamen korur, TÜFE'yi 3,3 bp'de tutar ve tahsil edilebilir gelirle bile hafif pozitif kalır. Ayrıca S4'ün net istihdam kaybını −117 binden ≈ −35 bine indirir (§4.2). Bedeli daha geniş bir vergi takası ($5,7 mlr ÖTV/KDV indirimi) ve daha karmaşık bir uygulama.
    - **a + geniş**: c2'den farkı, İGV'nin kabiliyeti zayıf satırlarda da AB'ye uygulanması. Mali olarak biraz daha iyi, ama AB'den gelen ve yurt içinde üretilmeyen girdileri gereksiz yere pahalılaştırır.
 3. **Öneri: c2 + P1 + geniş takas.**
    - "Geniş" kapsamın pratik karşılığı şöyle: dar kapsama mobilya (KDV), gıda ve içecek (KDV) ve plastik ürünler eklenir.
@@ -661,63 +671,77 @@ Faz 1, S4'ü pasif bir senaryo olarak ele aldı. Aşağıda aynı şok, Türkiye
 
 ### 4.2 Net istihdam: ihracat kaybı ve ithal ikamesi
 
-Faz 1'deki S4 risk istihdamı (207 bin) yalnızca ihracat tarafıydı. Türkiye de AB mallarına MFN uyguladığında AB'den ithalatın bir kısmı yurt içi üretime kayar.
+Faz 1'deki S4 risk istihdamı (207 bin) yalnızca ihracat tarafıydı. Türkiye de AB mallarına tarife uyguladığında AB'den ithalatın bir kısmı yurt içi üretime kayar. İthal ikamesinin büyüklüğü İGV rejimine bağlı. Aşağıda iki rejim var:
+- AB'ye yalnızca MFN;
+- önerilen c2: İGV yurt içi üretimi güçlü satırlarda AB'ye de uygulanır.
 
 | | σ = 3 | σ = 5 | σ = 8 |
 |---|---|---|---|
 | İhracat kaybı ($ mlr) | −15,2 | −23,5 | −33,7 |
-| İthal ikamesiyle yurt içi satış artışı ($ mlr) | +8,0 | +12,4 | +18,0 |
 | İstihdam: ihracat tarafı | −123 bin | −190 bin | −272 bin |
+| ***AB'ye yalnızca MFN*** | | | |
+| İthal ikamesiyle yurt içi satış artışı ($ mlr) | +8,0 | +12,4 | +18,0 |
 | İstihdam: ithal ikamesi | +47 bin | +73 bin | +106 bin |
 | **Net imalat istihdamı** | **−77 bin** | **−117 bin** | **−165 bin** |
-| Net kaybı %5'i aşan sınıf sayısı | 14 | 22 | 32 |
-| Net kazanan sınıf sayısı | 61 | 61 | 61 |
+| Net kaybı %5'i aşan / net kazanan sınıf | 14 / 61 | 22 / 61 | 32 / 61 |
+| ***Rejim c2 (önerilen)*** | | | |
+| İthal ikamesiyle yurt içi satış artışı ($ mlr) | +12,9 | +19,1 | +26,2 |
+| İstihdam: ithal ikamesi | +100 bin | +142 bin | +187 bin |
+| **Net imalat istihdamı** | **−24 bin** | **−48 bin** | **−84 bin** |
+| Net kaybı %5'i aşan / net kazanan sınıf | 11 / 99 | 21 / 95 | 28 / 88 |
+| Vergi takasının on gruptaki ek etkisi (merkez; §1.5) | +12 bin | +12 bin | +12 bin |
+| **Net, c2 + takas** | **≈ −11 bin** | **≈ −35 bin** | **≈ −72 bin** |
 
 *Kaynak ve etiketler:*
 - `[T]` `kod/f2d_s4_net_istihdam.py`, NACE sınıfı düzeyinde.
 - İhracat kaybı: Faz 0 S4 tarife duvarı (CN8).
-- İthal ikamesi: AB'den ithalatın kaybı (2026 MFN, İGV hariç), yerli ürünün iç pazardaki Armington payıyla yurt içine dağıtıldı. İç satış = max(PRODTR 2025, YSHİ 2024) − ihracat (BACI 2024).
+- İthal ikamesi: AB'den ithalatın kaybı. MFN satırında 2026 MFN (İGV hariç); c2 satırında HS6 düzeyinde rejim oranının AB ithalatı ağırlıklı ortalaması. Kaybı yerli ürünün iç pazardaki Armington payıyla yurt içine dağıttım. İç satış = max(PRODTR 2025, YSHİ 2024) − ihracat (BACI 2024).
 - İstihdam: YSHİ 2024 sınıf düzeyi çalışan/üretim oranı.
-- Statik ve telafisiz bir hesap; çapa yatırımcı kararları ve girdi bağlantıları yok.
-- İGV'nin AB'ye uygulandığı rejimlerde (a, c2) ve vergi takasıyla ithal ikamesi daha büyük. On grupta takas +9 bin ek istihdam getiriyor (§1.5), ama net tablo değişmiyor.
-- Güven: Orta.
+- Takasın ek etkisi f2c'den alındı (T-A − pasif, rejim c2); σ ızgarası f2c'de farklı, bu yüzden merkez değer kullanıldı.
+- Statik ve telafisiz bir hesap. Çapa yatırımcı kararları, kapasite sınırları ve girdi bağlantıları yok. Yerli kapasitenin ithal ikamesini karşılayabileceği varsayıldı; büyük İGV şoklarında bu bir üst sınırdır.
+- Güven: Orta (c2 satırları için Düşük–Orta).
 
 **Bölüm düzeyinde net etki (σ = 5)**
 
-| NACE | Bölüm | Çalışan (bin) | İhracat tarafı (bin) | İthal ikamesi (bin) | Net (bin) | Net (% bölüm) |
-|---|---|---|---|---|---|---|
-| 14 | Giyim | 668,7 | −86,2 | +13,6 | **−72,6** | **−10,9** |
-| 13 | Tekstil | 493,4 | −16,7 | +3,4 | −13,3 | −2,7 |
-| 29 | Motorlu taşıtlar | 255,3 | −19,9 | +12,5 | −7,4 | −2,9 |
-| 27 | Elektrikli teçhizat | 231,6 | −11,2 | +5,1 | −6,1 | −2,6 |
-| 25 | Fabrikasyon metal | 474,7 | −8,5 | +2,7 | −5,8 | −1,2 |
-| 22 | Kauçuk ve plastik | 283,5 | −10,8 | +5,9 | −4,9 | −1,7 |
-| 28 | Makine | 319,0 | −11,8 | +7,3 | −4,6 | −1,4 |
-| 24 | Ana metal | 194,1 | −4,2 | +0,8 | −3,5 | −1,8 |
-| 15 | Deri ve ayakkabı | 75,8 | −2,8 | +5,2 | **+2,4** | +3,1 |
-| 30 | Diğer ulaşım araçları | 86,9 | −1,2 | +2,0 | +0,8 | +0,9 |
-| 10 | Gıda | 610,3 | −3,1 | +3,7 | +0,6 | +0,1 |
-| 20 | Kimya | 128,0 | −3,3 | +3,6 | +0,3 | +0,2 |
+| NACE | Bölüm | Çalışan (bin) | İhracat tarafı (bin) | İthal ikamesi, MFN (bin) | Net, MFN (bin) | İthal ikamesi, c2 (bin) | **Net, c2 (bin)** | Net, c2 (% bölüm) |
+|---|---|---|---|---|---|---|---|---|
+| 14 | Giyim | 668,7 | −86,2 | +13,6 | −72,6 | +27,5 | **−58,7** | **−8,8** |
+| 13 | Tekstil | 493,4 | −16,7 | +3,4 | −13,3 | +7,8 | −8,9 | −1,8 |
+| 29 | Motorlu taşıtlar | 255,3 | −19,9 | +12,5 | −7,4 | +14,2 | −5,6 | −2,2 |
+| 27 | Elektrikli teçhizat | 231,6 | −11,2 | +5,1 | −6,1 | +7,7 | −3,5 | −1,5 |
+| 24 | Ana metal | 194,1 | −4,2 | +0,8 | −3,5 | +1,3 | −2,9 | −1,5 |
+| 25 | Fabrikasyon metal | 474,7 | −8,5 | +2,7 | −5,8 | +7,9 | −0,6 | −0,1 |
+| 22 | Kauçuk ve plastik | 283,5 | −10,8 | +5,9 | −4,9 | +11,9 | +1,1 | +0,4 |
+| 28 | Makine | 319,0 | −11,8 | +7,3 | −4,6 | +15,7 | +3,9 | +1,2 |
+| 30 | Diğer ulaşım araçları | 86,9 | −1,2 | +2,0 | +0,8 | +2,4 | +1,2 | +1,4 |
+| 10 | Gıda | 610,3 | −3,1 | +3,7 | +0,6 | +4,4 | +1,3 | +0,2 |
+| 31 | Mobilya | 252,8 | −1,0 | +0,3 | −0,6 | +6,0 | +5,0 | +2,0 |
+| 20 | Kimya | 128,0 | −3,3 | +3,6 | +0,3 | +8,4 | +5,1 | +4,0 |
+| 15 | Deri ve ayakkabı | 75,8 | −2,8 | +5,2 | +2,4 | +10,7 | **+7,9** | +10,5 |
 
 *Kaynak:* `[T]` `veri/politika_s4_net_istihdam_sinif.csv`.
 
-Net kaybı %5'i aşan 22 sınıf (σ = 5):
-- 10.86; 13.92;
-- giyim: 14.13, 14.14, 14.19, 14.31, 14.39;
-- 20.14, 23.42, 24.42, 25.99;
-- 26.52, 26.70, 27.11, 27.90;
-- 28.11, 28.15, 28.24;
-- 29.10, 30.92, 32.13, 32.20.
+**Net kaybı %5'i aşan sınıflar (σ = 5).**
+- MFN'de 22 sınıf:
+  - 10.86; 13.92;
+  - giyim: 14.13, 14.14, 14.19, 14.31, 14.39;
+  - 20.14, 23.42, 24.42, 25.99;
+  - 26.52, 26.70, 27.11, 27.90;
+  - 28.11, 28.15, 28.24;
+  - 29.10, 30.92, 32.13, 32.20.
+- c2'de 21 sınıf: 23.42 ve 25.99 listeden çıkıyor, 26.30 giriyor.
 
 Bu sınıflar ana promptun destek tetikleyicisini (>%5 kayıp) çalıştırır ve Faz 3'te ayrı ayrı ele alınacak.
 
 **Okuma.**
-- İthal ikamesi, ihracat kaybının yaklaşık %38'ini istihdam olarak geri kazandırıyor.
-- Ama kaybın yapısı farklı:
-  - Otomotiv (29.10) iç pazarda AB ithalatının yerini alabiliyor: −14,8 bin ihracat tarafı, +10,0 bin ikame. Takasla bu +12,3 bine çıkıyor.
+- **İGV rejimi istihdam için de belirleyici.**
+  - Yalnızca MFN'de ithal ikamesi ihracat kaybının %38'ini geri kazandırıyor; c2'de %75'ini.
+  - Nedeni: İGV yurt içi üretimi güçlü satırlarda AB'ye de uygulanınca AB ithalatının yerini büyük ölçüde yerli üretim alıyor. Bu satırlar giyim, ayakkabı, mobilya, kimya ve plastik.
+- **Kaybın yapısı ise değişmiyor.**
+  - Otomotivde (29.10) iç pazar AB ithalatının yerini alabiliyor: ihracat tarafı −14,8 bin, ikame +9,9 bin. Takasla birlikte ikame +10,6 bine çıkıyor.
   - Giyim (14) bunu yapamıyor. İç pazarda AB'nin payı küçük (≈%2–5); kayıp AB pazarında.
-- **Giyim, S4'te istihdam kısıtının çözülemeyen çekirdeği.**
-  - AB'nin %12'lik MFN'sine karşı Bangladeş ("Silah Hariç Her Şey" rejimi, EBA), Fas, Tunus ve Vietnam sıfır tarifeyle giriyor; Fas, Tunus ve Vietnam'ın AB ile STA'sı var.
+- **Giyim, S4'te istihdam kısıtının çözülemeyen çekirdeği:** c2 ve takasla bile ≈ −50 bin.
+  - AB'nin %12'lik MFN'sine karşı rakipler sıfır tarifeyle giriyor: Bangladeş ("Silah Hariç Her Şey" rejimi, EBA) ile AB'nin STA ortakları Fas, Tunus ve Vietnam.
   - Türkiye'nin AB giyim ithalatındaki payı zaten düşüşte (Faz 1).
   - Bu sınıflar S4'te F arketipine (yönetilen uyum) girer. S2/S3'te ise menşe kuralı belirleyici olur (giyimde çift dönüşüm).
 
@@ -769,12 +793,12 @@ Bu sınıflar ana promptun destek tetikleyicisini (>%5 kayıp) çalıştırır v
 |---|---|---|---|
 | Enflasyon (≤30 bp/yıl, ≤50 bp kümülatif) | 59–98 bp: ihlal | 2,5–4,1 bp: **sağlanıyor** | Takas ve İGV tasarımı yeterli |
 | Mali (≤ GSYH %0,5/yıl) | Gelir artışı | +%0,05 (tahsil edilebilir) | Sağlanıyor |
-| İstihdam (T+3'te net sıfır) | −207 bin (brüt) | ≈ −105 ile −110 bin (net; takas dahil; P10–P90 ≈ −65 ile −155 bin) | **İhlal**; giyimde çekirdek kayıp |
+| İstihdam (T+3'te net sıfır) | −207 bin (brüt); −117 bin (net, yalnızca MFN) | ≈ −35 bin (net, σ = 5; ≈ −11 ile −72 bin) | **İhlal**, ama dar: giyim −58,7 bin, diğer bölümler toplamda ≈ +11 bin |
 | Kabiliyet | Otomotiv, giyim ve beyaz eşya ihracat platformlarında risk | İç pazarda koruma korunuyor; ihracat platformu riski değişmiyor | **İhlal riski** |
 | Cari denge | İlk yıllarda −0,6 ile −0,8 puan | Değişmiyor | Tamamlayıcı politikalar şart |
 | DTÖ uyumu | — | Uyumlu: MFN, bağlı oran içinde, menşeden bağımsız vergi; XXVIII:5 çekincesiyle esneklik | Sağlanıyor |
 
-*Not:* Aktif S4'ün istihdam sütunu yaklaşıktır `[T]`. f2d'nin MFN hesabına takasın on gruptaki ek etkisi (+9 bin) eklendi. İGV'nin AB'ye de uygulanmasından gelen ek ithal ikamesi hesaplanmadı; bu, kaybı birkaç bin azaltabilir.
+*Not:* Aktif S4'ün istihdam sütunu f2d'nin c2 hesabıdır; takasın on gruptaki ek etkisi (+12 bin) eklendi `[T]`. Kapasite sınırları ve çapa yatırımcı kararları dahil değil (§4.2).
 
 **Teşhisin yeni hali.**
 - S4'ün enflasyon sorunu, Türkiye'nin kendi araçlarıyla çözülebilen bir tasarım sorunudur.

@@ -10,7 +10,7 @@ Her NACE grubu tamamlandığında güncellenir. Toplamlar Faz 6'daki makro mutab
 | Kullanılan / kalan enflasyon bütçesi (bp) | Birinci tur: 0 / 50 (yıllık tavan 30). İkinci tur dahil: 0 / 100 | V-05 |
 | Kümülatif cari denge katkısı (milyar $) | 0 | P10–P50–P90, Faz 3'ten itibaren |
 | Kümülatif mali maliyet (milyar TL ve GSYH %) | 0 | Tavan: GSYH'nin %0,5'i/yıl (2026'da ≈ $9,1 mlr; 2028'de ≈ $10,5 mlr) |
-| Riskteki istihdam | Teşhis tabanı (S4, statik, telafisiz): 207 bin brüt (P10–P90: 135–297 bin). Net (ithal ikamesi dahil): −117 bin (−77 ile −165 bin); %5 eşiğini aşan 22 sınıf (σ = 5). Sınıf düzeyinde karar Faz 3'te | `01_teshis.md` §4.1; `02a_politika_uzayi.md` §4.2 |
+| Riskteki istihdam | Teşhis tabanı (S4, statik, telafisiz): 207 bin brüt (P10–P90: 135–297 bin). Net (ithal ikamesi dahil): yalnızca MFN −117 bin (−77 ile −165 bin), %5 eşiğini aşan 22 sınıf; aktif S4 (c2 + takas) ≈ −35 bin (−11 ile −72 bin), giyim −58,7 bin, 21 sınıf (σ = 5). Sınıf düzeyinde karar Faz 3'te | `01_teshis.md` §4.1; `02a_politika_uzayi.md` §4.2 |
 | Açık kalan veri boşlukları | VB-02, 04, 06, 08–17, 21–27 (kapanan: VB-01, 03, 05, 07, 18) | `01_teshis.md` §8; `02a_politika_uzayi.md` §9 |
 | Varsayım kaydına eklenen yeni maddeler | V-01 … V-29; Faz 1'de V-06 ve V-07 baz değerleri güncellendi | `00_plan.md` §3 |
 
@@ -41,8 +41,9 @@ Faz 3–6'daki kararların karşılaştırılacağı referans değerler. Ayrınt
 | S4 TÜFE birinci tur, pasif (MFN + İGV) | 59 / 78 / 98 bp (ρ = 0,6 / 0,8 / 1,0); κ = 0,5 ile ≈182 bp | `[T]` `veri/politika_s4_aktif.csv` |
 | Aktif S4 önerilen paket: c2 + P1 + geniş takas | TÜFE 2,5 / 3,3 / 4,1 bp; net mali +%0,05 GSYH (tahsil edilebilir); takas maliyeti $5,7 mlr; koruma kaybı 0 | `[T]` §4.1 |
 | Aktif S4 alternatifleri (ρ = 0,8) | c + dar 7,5 bp, −%0,02; a + geniş 4,0 bp, +%0,07; b 1,5 bp, −%0,04 ve $2,9 mlr koruma kaybı | `[T]` §4.1 |
-| Vergi takası, on grup (T-A, merkez) | TÜFE −2 bp (pasif +35); net mali −$0,46 mlr (−0,56 ile +0,10); istihdam +20 bin (12–22) | `[T]` `veri/politika_takas_ozet.csv` |
+| Vergi takası, on grup (T-A, rejim c2, merkez) | TÜFE 0 bp (pasif +47); net mali −$0,60 mlr (−0,71 ile +0,13); istihdam +31 bin (18–36). Rejim c'de pasif +35 bp, takas −$0,46 mlr | `[T]` `veri/politika_takas_ozet.csv` |
 | Otomobil takası | ÖTV %65 → %56,2; AB +%4,1, yerli −%5,4; net mali −$0,15 mlr; T-0 (yalnızca yerli) eşdeğeri −$3,0 mlr ve DTÖ'ye aykırı | `[T]` §1.5 |
+| S4 net imalat istihdamı (σ = 5) | Yalnızca MFN −117 bin; c2 −48 bin; c2 + takas ≈ −35 bin; giyim −58,7 bin | `[T]` `veri/politika_s4_net_istihdam_ozet.csv` |
 | Gümrük vergisi tahsilat oranı | Toplam %50 (2025: $8,15 mlr gerçekleşme / $16,2 mlr yasal); tüketim ve karma mallarda %100, diğerlerinde %38 | `[V]`/`[T]` §3.4 |
 | AB'nin S4 ihracat kaybı (σ = 5) | b $16,4 mlr; c $18,7 mlr; c2 $28,5 mlr; a $31,1 mlr | `[T]` §4.1 |
 | İhracat tarafı tam telafi maliyeti | Yılda ≈$38 mlr (2028 GSYH'sinin %1,8'i); telafi edici vergiye açık | `[T]` §5 |
