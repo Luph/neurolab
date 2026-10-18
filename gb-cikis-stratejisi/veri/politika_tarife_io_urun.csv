@@ -1,0 +1,65 @@
+,ad,S4_pasif_mfn_uretici_fiyat_yuzde,S4_pasif_mfn_tufe_katki_bp,S4_pasif_tam_uretici_fiyat_yuzde,S4_pasif_tam_tufe_katki_bp,P1_uretici_fiyat_yuzde,P1_tufe_katki_bp,S4_P1_mfn_uretici_fiyat_yuzde,S4_P1_mfn_tufe_katki_bp,S4_P1_tam_uretici_fiyat_yuzde,S4_P1_tam_tufe_katki_bp
+A01,Tarım ve avcılık ürünleri ve ilgili hizmetler,0.0835,0.5435,0.1519,0.9887,-0.0273,-0.1777,0.0492,0.3203,0.1171,0.762
+A02,Orman ürünleri ve ilgili hizmetler,0.0236,0.0035,0.0541,0.0081,-0.0056,-0.0008,0.0168,0.0025,0.0469,0.007
+A03,Balık ve diğer balıkçılık ürünleri; su ürünleri; balıkçılık için destekleyici hizmetler,0.0325,0.0028,0.0628,0.0055,-0.0122,-0.0011,0.0191,0.0017,0.049,0.0043
+B,Madencilik ve taşocakçılığı,0.0762,0.0218,0.1685,0.0494,-0.0165,-0.0045,0.0558,0.0163,0.1473,0.0436
+C10-C12,"Gıda, içecekler ve tütün ürünleri",0.1326,5.2976,0.2152,6.8522,-0.0198,-0.3595,0.1076,4.8439,0.1893,6.3824
+C13-C15,"Tekstil, giyim eşyası, deri ve ilgili ürünler",0.2367,4.459,0.7558,17.0218,-0.0402,-0.3743,0.1848,3.9605,0.7005,16.4563
+C16,"Kereste, ağaç ürünleri ve mantar ürünleri (mobilya hariç); hasır ve örme malzemesinden (saz, saman vb.) ürünler",0.1603,0.0208,0.4008,0.0648,-0.0428,-0.0006,0.1062,0.0199,0.3433,0.0638
+C17,Kağıt ve kağıt ürünleri,0.1461,0.151,0.5177,0.5859,-0.035,-0.0377,0.1034,0.1055,0.4626,0.5246
+C18,Basım ve kayıt hizmetleri,0.1748,0.0046,0.5748,0.0151,-0.0426,-0.0011,0.1216,0.0032,0.5116,0.0134
+C19,Kok ve rafine petrol ürünleri,0.0189,0.037,0.0408,0.0511,-0.0076,-0.556,0.0101,-0.5246,0.0319,-0.5106
+C20,Kimyasallar ve kimyasal ürünler,0.4523,1.3792,0.8788,2.6471,-0.1762,-0.5404,0.2288,0.6905,0.652,1.949
+C21,Temel eczacılık ürünleri ve müstahzarları,0.1868,0.1125,0.412,0.1898,-0.0646,-0.0698,0.1019,0.0053,0.3252,0.0819
+C22,Kauçuk ve plastik ürünler,0.3721,0.8228,0.804,2.3926,-0.1011,-0.0884,0.2429,0.7087,0.6714,2.2702
+C23,Diğer metalik olmayan mineral ürünleri,0.1073,0.1344,0.2613,0.4042,-0.0249,-0.0162,0.0773,0.1141,0.23,0.3833
+C24,Ana metaller,0.1822,0.0,0.3025,0.0,-0.0118,-0.0,0.1675,0.0,0.2866,0.0
+C25,"Fabrikasyon metal ürünler, makine ve ekipmanlar hariç",0.1353,0.1691,0.3341,0.6796,-0.016,-0.0175,0.1153,0.1504,0.3126,0.6605
+C26,Bilgisayarlar ile elektronik ve optik ürünler,0.189,0.8638,0.3888,1.1451,-0.0528,-0.363,0.1058,0.2302,0.3009,0.4804
+C27,Elektrikli teçhizat,0.269,0.9909,0.5821,2.8294,-0.0305,-0.0768,0.2283,0.8882,0.5379,2.701
+C28,Başka yerde sınıflandırılmamış makine ve ekipmanlar,0.2641,0.072,0.5674,0.1666,-0.022,-0.0059,0.2342,0.064,0.5343,0.1574
+C29,"Motorlu kara taşıtları, treyler (römork) ve yarı treyler (yarı römork)",0.5673,23.7149,0.8762,25.4619,-0.0229,-0.0868,0.5337,23.3429,0.8402,25.0836
+C30,Diğer ulaşım araçları,0.1343,0.1174,0.3162,0.2238,-0.0164,-0.0295,0.111,0.0236,0.291,0.1295
+C31_C32,Mobilya ve diğer mamul eşyalar,0.137,1.1047,0.4197,12.3287,-0.0185,-0.2543,0.1136,0.8285,0.3942,11.9869
+C33,Makine ve ekipmanların kurulumu ve onarımı,0.1501,0.002,0.3895,0.0053,-0.0173,-0.0002,0.1267,0.0017,0.3633,0.0049
+D35,"Elektrik, gaz, buhar ve iklimlendirme",0.0351,0.0774,0.0852,0.188,-0.0072,-0.0158,0.0258,0.057,0.0754,0.1664
+E36,Doğal su; suyun arıtılması ve temini hizmetleri,0.0917,0.0457,0.2229,0.111,-0.0176,-0.0087,0.0698,0.0348,0.1998,0.0995
+E37-E39,"Kanalizasyon hizmetleri, kanalizasyon çamuru; atığın toplanması, işlenmesi ve bertarafı; maddelerin geri kazanımı; iyileştirme hizmetleri ve diğer atık yönetimi hizmetleri",0.1854,0.004,0.3121,0.0068,-0.0181,-0.0004,0.1619,0.0035,0.2868,0.0062
+F,İnşaatlar ve inşaat işleri,0.1346,0.0435,0.3376,0.1092,-0.0205,-0.0066,0.1092,0.0353,0.3107,0.1005
+G45,Toptan ve perakende ticaret ile motorlu kara taşıtlarının ve motosikletlerin onarım hizmetleri,0.2369,0.2061,0.3636,0.3162,-0.0108,-0.0094,0.2215,0.1927,0.3471,0.3019
+G46,"Toptan ticaret, motorlu kara taşıtları ve motosikletler hariç",0.0322,0.0,0.0819,0.0,-0.0111,-0.0,0.0193,0.0,0.0683,0.0
+G47,Perakende ticaret (motorlu kara taşıtları ve motosikletler hariç),0.0309,0.0,0.0798,0.0,-0.0086,-0.0,0.0204,0.0,0.0686,0.0
+H49,Kara taşımacılığı ve boru hattı taşımacılığı hizmetleri,0.0586,0.2334,0.102,0.406,-0.0202,-0.0802,0.0365,0.1453,0.0795,0.3163
+H50,Su yolu taşımacılığı hizmetleri,0.0446,0.0021,0.0917,0.0042,-0.0161,-0.0007,0.0257,0.0012,0.0722,0.0033
+H51,Hava yolu taşımacılığı hizmetleri,0.0375,0.0964,0.086,0.2208,-0.028,-0.0719,0.0072,0.0186,0.0551,0.1414
+H52,"Depolama ve destek hizmetleri, taşımacılık için",0.0484,0.0169,0.1036,0.0361,-0.0158,-0.0055,0.0296,0.0103,0.0842,0.0294
+H53,Posta ve kurye hizmetleri,0.0777,0.0321,0.1563,0.0645,-0.0208,-0.0086,0.0532,0.022,0.1309,0.0541
+I,Konaklama ve yiyecek hizmetleri,0.0916,0.871,0.1474,1.4014,-0.0089,-0.0844,0.0803,0.7636,0.1355,1.2878
+J58,Yayıncılık hizmetleri,0.067,0.0156,0.2117,0.0438,-0.0174,-0.0056,0.0431,0.0062,0.1834,0.0335
+J59_J60,"Sinema filmi, video ve televizyon programı yapımcılık hizmetleri, ses kaydı ve müzik yayımlama; programcılık ve yayıncılık hizmetleri",0.0483,0.0239,0.0799,0.0326,-0.0399,-0.0249,-0.0208,-0.0197,0.0104,-0.0112
+J61,Telekomünikasyon hizmetleri,0.0417,0.0435,0.0837,0.0874,-0.0116,-0.0121,0.0237,0.0248,0.0648,0.0676
+J62_J63,"Bilgisayar programlama, danışmanlık ve ilgili hizmetler; bilgi hizmetleri",0.0167,0.0,0.033,0.0,-0.0054,-0.0,0.0079,0.0,0.0237,0.0
+K64,Finansal hizmetler (sigorta ve bireysel emeklilik hariç),0.0143,0.0292,0.0359,0.0736,-0.0032,-0.0065,0.0099,0.0203,0.0311,0.0638
+K65,"Sigorta, reasürans ve emeklilik fonları hizmetleri, zorunlu sosyal güvenlik hariç",0.0059,0.0046,0.0128,0.0099,-0.0012,-0.0009,0.0043,0.0034,0.011,0.0086
+K66,Finansal hizmetler ile sigorta hizmetlerine yardımcı hizmetler,0.0362,0.0228,0.092,0.058,-0.0091,-0.0057,0.0245,0.0154,0.0792,0.0499
+L68B,Gayrimenkul hizmetleri,0.0232,0.0742,0.0565,0.1803,-0.0042,-0.0133,0.0178,0.0568,0.0507,0.1619
+L68A,Kendi konutunda ikamet edenler için izafi kira,0.0277,0.0,0.0696,0.0,-0.0061,-0.0,0.0199,0.0,0.0615,0.0
+M69_M70,Hukuk ve muhasebe hizmetleri; idare merkezi hizmetleri; idari danışmanlık hizmetleri,0.0428,0.0109,0.093,0.0236,-0.0078,-0.002,0.0323,0.0082,0.0819,0.0208
+M71,Mimarlık ve mühendislik hizmetleri; teknik test ve analiz hizmetleri,0.0958,0.0013,0.2496,0.0035,-0.0145,-0.0002,0.0763,0.0011,0.2284,0.0032
+M72,Bilimsel araştırma ve geliştirme hizmetleri,0.0375,0.0,0.102,0.0,-0.0075,-0.0,0.0269,0.0,0.0906,0.0
+M73,Reklamcılık ve pazar araştırması hizmetleri,0.066,0.0,0.1651,0.0,-0.0228,-0.0,0.0299,0.0,0.1275,0.0
+M74_M75,"Diğer mesleki, bilimsel ve teknik hizmetler; veterinerlik hizmetleri",0.0723,0.0066,0.1913,0.0175,-0.0136,-0.0012,0.054,0.0049,0.1716,0.0157
+N77,Kiralama ve leasing hizmetleri,0.0897,0.0095,0.1656,0.0176,-0.0121,-0.0013,0.0722,0.0077,0.1474,0.0157
+N78,İstihdam hizmetleri,0.0055,0.0,0.0126,0.0,-0.0009,-0.0,0.0043,0.0,0.0114,0.0
+N79,"Seyahat acentesi, tur operatörü, diğer rezervasyon hizmetleri ve ilgili hizmetler",0.0493,0.0741,0.0927,0.1396,-0.0136,-0.0204,0.0335,0.0504,0.0765,0.1151
+N80-N82,"Güvenlik ve soruşturma hizmetleri; bina ve çevre düzenleme (peyzaj) hizmetleri; büro yönetimi, büro destek ve diğer iş destek hizmetleri",0.0414,0.0036,0.0925,0.0081,-0.0102,-0.0009,0.0281,0.0025,0.0785,0.0069
+O84,Kamu yönetimi ve savunma hizmetleri; zorunlu sosyal güvenlik hizmetleri,0.033,0.0126,0.0754,0.0288,-0.0121,-0.0046,0.0195,0.0075,0.0616,0.0235
+P85,Eğitim hizmetleri,0.01,0.0131,0.0267,0.0349,-0.0034,-0.0045,0.006,0.0078,0.0224,0.0293
+Q86,İnsan sağlığı hizmetleri,0.0401,0.0501,0.1922,0.2401,-0.0109,-0.0136,0.026,0.0325,0.177,0.221
+Q87_Q88,Yatılı bakım hizmetleri; barınacak yer sağlanmaksızın verilen sosyal hizmetler,0.0743,0.0226,0.1458,0.0443,-0.012,-0.0036,0.0597,0.0181,0.1304,0.0396
+R90-R92,"Yaratıcı sanatlar, gösteri sanatları ve eğlence hizmetleri; kütüphane, arşiv, müze ve diğer kültürel hizmetler; kumar ve müşterek bahis hizmetleri",0.0269,0.0573,0.0468,0.0997,-0.0052,-0.0112,0.0191,0.0408,0.0386,0.0824
+R93,Spor hizmetleri ile eğlence ve dinlence hizmetleri,0.0458,0.023,0.1084,0.0544,-0.0091,-0.0046,0.0341,0.0171,0.096,0.0482
+S94,Üye olunan kuruluşlar tarafından verilen hizmetler,0.0349,0.0001,0.0706,0.0002,-0.0095,-0.0,0.0225,0.0001,0.0577,0.0001
+S95,"Bilgisayarların, kişisel eşyaların ve ev eşyalarının onarımına ilişkin hizmetler",0.1171,0.0327,0.2753,0.0769,-0.0204,-0.0057,0.085,0.0238,0.2405,0.0672
+S96,Diğer kişisel hizmetler,0.0618,0.0415,0.1413,0.0949,-0.0141,-0.0095,0.0437,0.0293,0.1225,0.0822
+T,Ev içi çalışan personelin işverenleri olarak hanehalklarının hizmetleri,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0

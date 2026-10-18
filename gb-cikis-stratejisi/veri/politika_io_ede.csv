@@ -1,0 +1,129 @@
+io,ad,m_dunya_musd,m_ab_musd,s_ab,t_mfn_i,t_igv_i,t_mfn_ii,t_igv_ii,agirlik_tufe,ithal_payi_hh,ithal_girdi_payi,ede_tum_bp,ede_ab_bp,s4_katki_bp_mfn_i,s4_uretici_fiyat_yuzde_mfn_i,s4_katki_bp_igv_i,s4_uretici_fiyat_yuzde_igv_i,s4_katki_bp_mfn_ii,s4_uretici_fiyat_yuzde_mfn_ii,s4_katki_bp_igv_ii,s4_uretici_fiyat_yuzde_igv_ii
+A01,"Tarım ve avcılık ürünleri ve ilgili hizmetler
+ Products of agriculture, hunting and related services",10692.84488,1066.8787,0.09978,0.00031,0.00036,14.45604,14.45621,0.07071,0.07989,0.07915,2.39059,0.23852,0.54345,0.08352,0.98867,0.15195,1.67561,0.15733,2.12152,0.22587
+A02,"Orman ürünleri ve ilgili hizmetler 
+Products of forestry, logging and related services",35.53893,17.00855,0.47859,0.0,0.0,2.10073,2.10073,0.00152,0.01338,0.01879,0.00472,0.00226,0.00353,0.02359,0.00809,0.05406,0.00565,0.02687,0.01021,0.05734
+A03,"Balık ve diğer balıkçılık ürünleri; su ürünleri; balıkçılık için destekleyici hizmetler
+Fish and other fishing products; aquaculture products; support services to fishing",77.76725,5.60024,0.07201,0.0,0.00112,19.50166,27.50382,0.00092,0.05144,0.04806,0.00478,0.00034,0.00283,0.03255,0.00546,0.06276,0.01146,0.07096,0.01629,0.10143
+B,"Madencilik ve taşocakçılığı
+Mining and quarrying",11077.49164,386.77612,0.03492,0.12807,0.41874,0.12807,0.41874,0.00561,0.51368,0.09213,3.28681,0.11476,0.02183,0.07617,0.04939,0.16853,0.02402,0.08418,0.05158,0.17656
+C10-C12,"Gıda, içecekler ve tütün ürünleri
+Food, beverages and tobacco products",13289.74756,4323.90959,0.32536,7.51931,7.66735,26.95654,27.17184,0.19606,0.07541,0.10476,2.49425,0.81152,5.29761,0.1326,6.85224,0.21522,17.42676,0.38904,19.01807,0.47225
+C13-C15,"Tekstil, giyim eşyası, deri ve ilgili ürünler
+Textiles, wearing apparel, leather and related products",10245.07406,2845.39529,0.27773,8.15715,35.49094,8.15715,35.49094,0.10002,0.13269,0.10637,1.93871,0.53845,4.45898,0.23674,17.0218,0.75582,4.65824,0.25971,17.2214,0.77883
+C16,"Kereste, ağaç ürünleri ve mantar ürünleri (mobilya hariç); hasır ve örme malzemesinden (saz, saman vb.) ürünler
+Wood and of products of wood and cork, except furniture; articles of straw and plaiting materials",804.692,236.23351,0.29357,3.13161,9.95431,3.17082,9.99353,0.00038,0.66688,0.10626,0.06883,0.02021,0.02083,0.1603,0.06483,0.40076,0.02123,0.17298,0.06523,0.41345
+C17,"Kağıt ve kağıt ürünleri
+Paper and paper products",4111.20218,2319.95667,0.5643,0.16465,4.5769,0.16465,4.5769,0.01048,0.02685,0.15155,0.36394,0.20537,0.15104,0.14611,0.58593,0.51775,0.17387,0.1685,0.60882,0.5402
+C18,"Basım ve kayıt hizmetleri
+Printing and recording services",17.33297,9.08568,0.52418,1.7,1.7,1.7,1.7,0.00026,0.0,0.13156,0.00125,0.00065,0.00459,0.17481,0.01509,0.57476,0.00497,0.18918,0.01547,0.58917
+C19,"Kok ve rafine petrol ürünleri
+Coke and refined petroleum products",3213.14916,139.997,0.04357,0.32422,0.32422,0.32422,0.32422,0.02845,0.77496,0.60369,3.47623,0.15146,0.03701,0.01889,0.05106,0.04084,0.03809,0.02058,0.05214,0.04253
+C20,"Kimyasallar ve kimyasal ürünler
+Chemicals and chemical products",24690.47935,8785.41085,0.35582,4.17468,7.92274,4.23052,7.97859,0.02064,0.29343,0.3412,3.58357,1.27511,1.37918,0.45234,2.64706,0.87879,1.40963,0.46663,2.67755,0.8931
+C21,"Temel eczacılık ürünleri ve müstahzarları
+Basic pharmaceutical products and pharmaceutical preparations",5937.47292,3060.44404,0.51545,0.30443,0.33661,0.30443,0.33661,0.00742,0.57137,0.16037,0.50929,0.26251,0.11255,0.18675,0.18976,0.41198,0.11753,0.2024,0.19475,0.42768
+C22,"Kauçuk ve plastik ürünler
+Rubber and plastic products",6513.1153,3664.89294,0.56269,5.0979,16.84377,5.0979,16.84377,0.01001,0.23406,0.21959,0.54306,0.30558,0.82283,0.37208,2.39258,0.80399,0.83429,0.38702,2.40405,0.81896
+C23,"Diğer metalik olmayan mineral ürünleri
+Other non-metallic mineral products",2513.52648,1028.38474,0.40914,3.28585,10.82155,3.28585,10.82155,0.00501,0.16606,0.09931,0.15123,0.06187,0.13443,0.1073,0.40421,0.26128,0.13784,0.11546,0.40763,0.26946
+C24,"Ana metaller
+Basic metals",45101.25012,6477.30553,0.14362,1.50476,2.95596,1.50476,2.95596,0.0,0.0,0.35141,1.83184,0.26308,0.0,0.18222,0.0,0.30255,0.0,0.18596,0.0,0.3063
+C25,"Fabrikasyon metal ürünler, makine ve ekipmanlar hariç
+Fabricated metal products, except machinery and equipment",5957.91246,2956.90966,0.4963,2.78275,12.52915,2.78275,12.52915,0.00414,0.28211,0.22222,0.25507,0.12659,0.1691,0.13534,0.67962,0.33406,0.1708,0.14105,0.68132,0.3398
+C26,"Bilgisayarlar ile elektronik ve optik ürünler
+Computer, electronic and optical products",14293.68883,4319.08208,0.30217,2.32574,2.91564,2.32574,2.91564,0.01808,0.77347,0.17783,1.67065,0.50482,0.86378,0.18901,1.14506,0.38875,0.86564,0.19354,1.14692,0.3933
+C27,"Elektrikli teçhizat
+Electrical equipment",14783.37294,6241.80789,0.42222,2.40791,8.34224,2.40791,8.34224,0.02373,0.27288,0.252,1.01683,0.42932,0.99095,0.26901,2.82936,0.58209,0.99925,0.27382,2.83768,0.58692
+C28,"Başka yerde sınıflandırılmamış makine ve ekipmanlar
+Machinery and equipment n.e.c.",36936.66474,19838.7083,0.5371,2.2996,7.77461,2.2996,7.77461,0.00246,0.03938,0.18883,0.24965,0.13409,0.07203,0.26411,0.16656,0.56742,0.07364,0.2709,0.16817,0.57422
+C29,"Motorlu kara taşıtları, treyler (römork) ve yarı treyler (yarı römork)
+Motor vehicles, trailers and semi-trailers",27063.40532,18732.16707,0.69216,9.39298,9.78247,9.39298,9.78247,0.06944,0.6146,0.22468,4.67899,3.2386,23.71492,0.56735,25.4619,0.87622,23.72954,0.57281,25.47656,0.8817
+C30,"Diğer ulaşım araçları
+Other transport equipment",9341.23374,4815.1564,0.51547,2.67488,4.64451,2.67488,4.64451,0.00317,0.24359,0.10388,0.07871,0.04057,0.11742,0.13434,0.22377,0.31617,0.11894,0.14066,0.22529,0.3225
+C31_C32,"Mobilya ve diğer mamul eşyalar
+Furniture and other manufactured goods",11401.43509,7724.62221,0.67751,2.23269,37.37584,2.23269,37.37584,0.0383,0.14109,0.15744,0.58189,0.39424,1.10467,0.13699,12.32865,0.41974,1.13,0.14469,12.35405,0.42746
+C33,"Makine ve ekipmanların kurulumu ve onarımı
+Repair and installation services of machinery and equipment",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.00014,0.0,0.10923,0.01858,0.0,0.00204,0.15006,0.0053,0.38954,0.00215,0.15788,0.00541,0.39738
+D35,"Elektrik, gaz, buhar ve iklimlendirme
+Electricity, gas, steam and air conditioning",114.84286,35.09783,0.30562,0.0,0.0,0.0,0.0,0.02207,0.0,0.17884,0.04296,0.01313,0.07738,0.03505,0.18803,0.08518,0.08818,0.03995,0.19886,0.09009
+E36,"Doğal su; suyun arıtılması ve temini hizmetleri
+Natural water; water treatment and supply services",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.00498,0.0,0.06197,0.0,0.0,0.04566,0.09169,0.11101,0.22291,0.05153,0.10346,0.11689,0.23471
+E37-E39,"Kanalizasyon hizmetleri, kanalizasyon çamuru; atığın toplanması, işlenmesi ve bertarafı; maddelerin geri kazanımı; iyileştirme hizmetleri ve diğer atık yönetimi hizmetleri
+Sewerage services; sewage sludge; waste collection, treatment and disposal services; materials recovery services; remediation services and other wa...",20293.61303,8727.75507,0.43007,2.38761,2.43163,2.38761,2.43163,0.00022,0.0,0.15041,0.23708,0.10196,0.00403,0.18543,0.00678,0.31211,0.00423,0.19462,0.00698,0.32133
+F,"İnşaatlar ve inşaat işleri
+Constructions and construction works",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.00323,0.0,0.11845,0.0003,0.0,0.04354,0.13459,0.10921,0.33762,0.04951,0.15305,0.1152,0.35614
+G45,"Toptan ve perakende ticaret ile motorlu kara taşıtlarının ve motosikletlerin onarım hizmetleri
+Wholesale and retail trade and repair services of motor vehicles and motorcycles",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0087,0.0,0.07671,0.0,0.0,0.20605,0.23692,0.3162,0.36357,0.21357,0.24557,0.32373,0.37224
+G46,"Toptan ticaret, motorlu kara taşıtları ve motosikletler hariç
+Wholesale trade services, except of motor vehicles and motorcycles",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.04828,0.05336,0.0,0.0,0.03222,0.0,0.0819,0.0,0.04028,0.0,0.08999
+G47,"Perakende ticaret (motorlu kara taşıtları ve motosikletler hariç)
+Retail trade services, except of motor vehicles and motorcycles",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.02924,0.0,0.0,0.0,0.03089,0.0,0.07977,0.0,0.03657,0.0,0.08547
+H49,"Kara taşımacılığı ve boru hattı taşımacılığı hizmetleri
+Land transport services and transport services via pipelines",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.03985,0.00105,0.09464,0.03759,0.0,0.23339,0.05863,0.40596,0.10198,0.27086,0.06804,0.44352,0.11141
+H50,"Su yolu taşımacılığı hizmetleri
+Water transport services",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.00046,0.0,0.08374,0.00669,0.0,0.00206,0.04465,0.00422,0.0917,0.00248,0.05393,0.00465,0.10099
+H51,"Hava yolu taşımacılığı hizmetleri
+Air transport services",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.02568,0.0,0.13565,0.05471,0.0,0.0964,0.03753,0.22079,0.08596,0.11412,0.04443,0.23857,0.09289
+H52,"Depolama ve destek hizmetleri, taşımacılık için
+Warehousing and support services for transportation",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.00349,0.0,0.07057,0.23975,0.0,0.01687,0.04839,0.03614,0.10365,0.02133,0.0612,0.04061,0.11649
+H53,"Posta ve kurye hizmetleri
+Postal and courier services",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.00413,0.0,0.0851,0.00176,0.0,0.03207,0.07767,0.06454,0.15632,0.0387,0.09373,0.07119,0.17243
+I,"Konaklama ve yiyecek hizmetleri
+Accommodation and food services",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0961,0.01099,0.05045,0.19228,0.0,0.87097,0.09163,1.40137,0.14744,2.35495,0.24776,2.89,0.30406
+J58,"Yayıncılık hizmetleri
+Publishing services",128.05849,60.83112,0.47503,0.02853,0.02853,0.02853,0.02853,0.00435,0.55212,0.09051,0.34766,0.16515,0.01563,0.06696,0.0438,0.21168,0.01843,0.08131,0.0466,0.22607
+J59_J60,"Sinema filmi, video ve televizyon programı yapımcılık hizmetleri, ses kaydı ve müzik yayımlama; programcılık ve yayıncılık hizmetleri
+Motion picture, video and television programme production services, sound recording and music publishing; programming and broadcasting services",97.88413,31.8561,0.32545,2.38378,2.38378,2.38378,2.38378,0.0029,0.06001,0.07453,0.05387,0.01753,0.02395,0.04829,0.03257,0.07994,0.02623,0.05667,0.03486,0.08834
+J61,"Telekomünikasyon hizmetleri
+Telecommunications services",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.01044,0.0,0.04539,0.01981,0.0,0.04353,0.04171,0.08739,0.08373,0.05052,0.0484,0.0944,0.09044
+J62_J63,"Bilgisayar programlama, danışmanlık ve ilgili hizmetler; bilgi hizmetleri
+Computer programming, consultancy and related services; Information services",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.04369,0.13293,0.0,0.0,0.01673,0.0,0.03304,0.0,0.01986,0.0,0.03617
+K64,"Finansal hizmetler (sigorta ve bireysel emeklilik hariç)
+Financial services, except insurance and pension funding",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.02048,0.0,0.0339,0.13718,0.0,0.02919,0.01425,0.0736,0.03594,0.03695,0.01804,0.08137,0.03973
+K65,"Sigorta, reasürans ve emeklilik fonları hizmetleri, zorunlu sosyal güvenlik hariç
+Insurance, reinsurance and pension funding services, except compulsory social security",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0078,0.0,0.05481,0.15224,0.0,0.00463,0.00593,0.00995,0.01275,0.00561,0.00719,0.01093,0.01402
+K66,"Finansal hizmetler ile sigorta hizmetlerine yardımcı hizmetler
+Services auxiliary to financial services and insurance services",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0063,0.0,0.05658,0.00711,0.0,0.02282,0.03623,0.05795,0.09201,0.02765,0.0439,0.06279,0.0997
+L68B,"Gayrimenkul hizmetleri
+Real estate services excluding imputed rents",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.03193,0.0,0.01497,0.00087,0.0,0.07417,0.02323,0.18034,0.05648,0.09865,0.0309,0.2049,0.06417
+L68A,"Kendi konutunda ikamet edenler için izafi kira
+Imputed rents of owner-occupied dwellings",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.01649,0.0,0.0,0.0,0.0277,0.0,0.0696,0.0,0.02877,0.0,0.07067
+M69_M70,"Hukuk ve muhasebe hizmetleri; idare merkezi hizmetleri; idari danışmanlık hizmetleri
+Legal and accounting services;Services of head offices; management consulting services",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.00254,0.0,0.04385,0.11078,0.0,0.01088,0.04278,0.02363,0.09295,0.01561,0.06141,0.02838,0.11164
+M71,"Mimarlık ve mühendislik hizmetleri; teknik test ve analiz hizmetleri
+Architectural and engineering services; technical testing and analysis services",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.00014,0.0,0.07744,0.05678,0.0,0.00135,0.09584,0.00351,0.24957,0.00152,0.10796,0.00368,0.26173
+M72,"Bilimsel araştırma ve geliştirme hizmetleri
+Scientific research and development services",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.03203,0.0,0.0,0.0,0.03752,0.0,0.102,0.0,0.04029,0.0,0.10477
+M73,"Reklamcılık ve pazar araştırması hizmetleri
+Advertising and market research services",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.09188,0.07222,0.0,0.0,0.06603,0.0,0.16506,0.0,0.084,0.0,0.18309
+M74_M75,"Diğer mesleki, bilimsel ve teknik hizmetler; veterinerlik hizmetleri
+Other professional, scientific and technical services and veterinary services",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.00091,0.0,0.06101,0.0415,0.0,0.0066,0.07227,0.01749,0.19133,0.00938,0.10259,0.02027,0.22173
+N77,"Kiralama ve leasing hizmetleri
+Rental and leasing services",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.00106,0.0,0.07919,0.23069,0.0,0.00954,0.08973,0.01761,0.1656,0.01106,0.10397,0.01913,0.17988
+N78,"İstihdam hizmetleri
+Employment services",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.00628,0.01062,0.0,0.0,0.00548,0.0,0.01263,0.0,0.00751,0.0,0.01466
+N79,"Seyahat acentesi, tur operatörü, diğer rezervasyon hizmetleri ve ilgili hizmetler
+Travel agency, tour operator and other reservation services and related services",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.01505,0.0,0.07362,0.04863,0.0,0.07414,0.04925,0.13957,0.09272,0.15389,0.10224,0.21957,0.14587
+N80-N82,"Güvenlik ve soruşturma hizmetleri; bina ve çevre düzenleme (peyzaj) hizmetleri; büro yönetimi, büro destek ve diğer iş destek hizmetleri
+Security and investigation services; services to buildings and landscape; office administrative, office support and other business support services",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.00088,0.0,0.04298,0.0,0.0,0.00365,0.04145,0.00814,0.09253,0.00556,0.06325,0.01007,0.1144
+O84,"Kamu yönetimi ve savunma hizmetleri; zorunlu sosyal güvenlik hizmetleri
+Public administration and defence services; compulsory social security services",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.00382,0.0,0.04836,0.0,0.0,0.01261,0.03301,0.02881,0.07543,0.02011,0.05265,0.03633,0.09513
+P85,"Eğitim hizmetleri
+Education services",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.01306,2e-05,0.01548,0.00134,0.0,0.01306,0.01,0.03489,0.02672,0.02067,0.01582,0.04252,0.03256
+Q86,"İnsan sağlığı hizmetleri
+Human health services",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.01249,0.0,0.04187,0.00022,0.0,0.05007,0.04009,0.24008,0.19221,0.05793,0.04638,0.24796,0.19852
+Q87_Q88,"Yatılı bakım hizmetleri; barınacak yer sağlanmaksızın verilen sosyal hizmetler
+Residential care services; social work services without accommodation",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.00304,0.0,0.05268,-0.0,0.0,0.02256,0.07426,0.04429,0.1458,0.0458,0.15079,0.0676,0.22256
+R90-R92,"Yaratıcı sanatlar, gösteri sanatları ve eğlence hizmetleri; kütüphane, arşiv, müze ve diğer kültürel hizmetler; kumar ve müşterek bahis hizmetleri
+Creative, arts, entertainment, library, archive, museum, other cultural services; gambling and betting services",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.02135,0.00116,0.02224,0.00248,0.0,0.05732,0.02688,0.09971,0.04676,0.09961,0.04672,0.14213,0.06666
+R93,"Spor hizmetleri ile eğlence ve dinlence hizmetleri
+Sporting services and amusement and recreation services",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.00502,0.0,0.03627,0.00276,0.0,0.02298,0.04578,0.05439,0.10836,0.03493,0.06959,0.06638,0.13224
+S94,"Üye olunan kuruluşlar tarafından verilen hizmetler
+Services furnished by membership organisations",0.0,0.0,0.0,0.0,0.0,0.0,0.0,2e-05,0.0,0.03649,0.0,0.0,8e-05,0.0349,0.00016,0.07057,0.00015,0.06494,0.00023,0.10071
+S95,"Bilgisayarların, kişisel eşyaların ve ev eşyalarının onarımına ilişkin hizmetler
+Repair services of computers and personal and household goods",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.00279,0.0,0.09386,0.0,0.0,0.03272,0.11709,0.07693,0.2753,0.03479,0.1245,0.07901,0.28272
+S96,"Diğer kişisel hizmetler
+Other personal services",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.00671,0.0,0.04175,0.0,0.0,0.04145,0.06175,0.09488,0.14134,0.05744,0.08556,0.11091,0.16522
+T,"Ev içi çalışan personelin işverenleri olarak hanehalklarının hizmetleri
+Services of households as employers; undifferentiated goods and services produced by households for own use",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.00105,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0

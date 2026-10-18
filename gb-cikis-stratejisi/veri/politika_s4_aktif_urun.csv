@@ -1,0 +1,65 @@
+,ad,tuketici_fiyat_yuzde,tufe_katki_bp,takas,takas_maliyeti_musd
+A01,Tarım ve avcılık ürünleri ve ilgili hizmetler,0.0453,0.3203,,0.0
+A02,Orman ürünleri ve ilgili hizmetler,0.0165,0.0025,,0.0
+A03,Balık ve diğer balıkçılık ürünleri; su ürünleri; balıkçılık için destekleyici hizmetler,0.0181,0.0017,,0.0
+B,Madencilik ve taşocakçılığı,0.029,0.0163,,0.0
+C10-C12,"Gıda, içecekler ve tütün ürünleri",0.2471,4.8439,,0.0
+C13-C15,"Tekstil, giyim eşyası, deri ve ilgili ürünler",0.396,3.9605,KDV,351.8195
+C16,"Kereste, ağaç ürünleri ve mantar ürünleri (mobilya hariç); hasır ve örme malzemesinden (saz, saman vb.) ürünler",0.5183,0.0199,,0.0
+C17,Kağıt ve kağıt ürünleri,0.1007,0.1055,,0.0
+C18,Basım ve kayıt hizmetleri,0.1216,0.0032,,0.0
+C19,Kok ve rafine petrol ürünleri,-0.1844,-0.5246,,0.0
+C20,Kimyasallar ve kimyasal ürünler,0.3346,0.6905,ÖTV (IV)/KDV,61.3422
+C21,Temel eczacılık ürünleri ve müstahzarları,0.0071,0.0053,,0.0
+C22,Kauçuk ve plastik ürünler,0.7081,0.7087,,0.0
+C23,Diğer metalik olmayan mineral ürünleri,0.2275,0.1141,,0.0
+C24,Ana metaller,0.1712,0.0,,0.0
+C25,"Fabrikasyon metal ürünler, makine ve ekipmanlar hariç",0.3636,0.1504,,0.0
+C26,Bilgisayarlar ile elektronik ve optik ürünler,0.1273,0.2302,ÖTV (IV),20.4512
+C27,Elektrikli teçhizat,0.3743,0.8883,ÖTV (IV),78.9061
+C28,Başka yerde sınıflandırılmamış makine ve ekipmanlar,0.2601,0.064,,0.0
+C29,"Motorlu kara taşıtları, treyler (römork) ve yarı treyler (yarı römork)",3.3617,23.3429,ÖTV (II),2073.626
+C30,Diğer ulaşım araçları,0.0743,0.0236,,0.0
+C31_C32,Mobilya ve diğer mamul eşyalar,0.2163,0.8285,,0.0
+C33,Makine ve ekipmanların kurulumu ve onarımı,0.1267,0.0017,,0.0
+D35,"Elektrik, gaz, buhar ve iklimlendirme",0.0258,0.057,,0.0
+E36,Doğal su; suyun arıtılması ve temini hizmetleri,0.0698,0.0348,,0.0
+E37-E39,"Kanalizasyon hizmetleri, kanalizasyon çamuru; atığın toplanması, işlenmesi ve bertarafı; maddelerin geri kazanımı; iyileştirme hizmetleri ve diğer atık yönetimi hizmetleri",0.1619,0.0035,,0.0
+F,İnşaatlar ve inşaat işleri,0.1092,0.0353,,0.0
+G45,Toptan ve perakende ticaret ile motorlu kara taşıtlarının ve motosikletlerin onarım hizmetleri,0.2215,0.1927,,0.0
+G46,"Toptan ticaret, motorlu kara taşıtları ve motosikletler hariç",0.0193,0.0,,0.0
+G47,Perakende ticaret (motorlu kara taşıtları ve motosikletler hariç),0.0204,0.0,,0.0
+H49,Kara taşımacılığı ve boru hattı taşımacılığı hizmetleri,0.0365,0.1453,,0.0
+H50,Su yolu taşımacılığı hizmetleri,0.0257,0.0012,,0.0
+H51,Hava yolu taşımacılığı hizmetleri,0.0072,0.0186,,0.0
+H52,"Depolama ve destek hizmetleri, taşımacılık için",0.0296,0.0103,,0.0
+H53,Posta ve kurye hizmetleri,0.0532,0.022,,0.0
+I,Konaklama ve yiyecek hizmetleri,0.0795,0.7636,,0.0
+J58,Yayıncılık hizmetleri,0.0143,0.0062,,0.0
+J59_J60,"Sinema filmi, video ve televizyon programı yapımcılık hizmetleri, ses kaydı ve müzik yayımlama; programcılık ve yayıncılık hizmetleri",-0.0678,-0.0197,,0.0
+J61,Telekomünikasyon hizmetleri,0.0237,0.0248,,0.0
+J62_J63,"Bilgisayar programlama, danışmanlık ve ilgili hizmetler; bilgi hizmetleri",0.0,0.0,,0.0
+K64,Finansal hizmetler (sigorta ve bireysel emeklilik hariç),0.0099,0.0203,,0.0
+K65,"Sigorta, reasürans ve emeklilik fonları hizmetleri, zorunlu sosyal güvenlik hariç",0.0043,0.0034,,0.0
+K66,Finansal hizmetler ile sigorta hizmetlerine yardımcı hizmetler,0.0245,0.0154,,0.0
+L68B,Gayrimenkul hizmetleri,0.0178,0.0568,,0.0
+L68A,Kendi konutunda ikamet edenler için izafi kira,0.0199,0.0,,0.0
+M69_M70,Hukuk ve muhasebe hizmetleri; idare merkezi hizmetleri; idari danışmanlık hizmetleri,0.0323,0.0082,,0.0
+M71,Mimarlık ve mühendislik hizmetleri; teknik test ve analiz hizmetleri,0.0763,0.0011,,0.0
+M72,Bilimsel araştırma ve geliştirme hizmetleri,0.0,0.0,,0.0
+M73,Reklamcılık ve pazar araştırması hizmetleri,0.0,0.0,,0.0
+M74_M75,"Diğer mesleki, bilimsel ve teknik hizmetler; veterinerlik hizmetleri",0.054,0.0049,,0.0
+N77,Kiralama ve leasing hizmetleri,0.0722,0.0077,,0.0
+N78,İstihdam hizmetleri,0.0,0.0,,0.0
+N79,"Seyahat acentesi, tur operatörü, diğer rezervasyon hizmetleri ve ilgili hizmetler",0.0335,0.0504,,0.0
+N80-N82,"Güvenlik ve soruşturma hizmetleri; bina ve çevre düzenleme (peyzaj) hizmetleri; büro yönetimi, büro destek ve diğer iş destek hizmetleri",0.0281,0.0025,,0.0
+O84,Kamu yönetimi ve savunma hizmetleri; zorunlu sosyal güvenlik hizmetleri,0.0195,0.0075,,0.0
+P85,Eğitim hizmetleri,0.006,0.0078,,0.0
+Q86,İnsan sağlığı hizmetleri,0.026,0.0325,,0.0
+Q87_Q88,Yatılı bakım hizmetleri; barınacak yer sağlanmaksızın verilen sosyal hizmetler,0.0597,0.0181,,0.0
+R90-R92,"Yaratıcı sanatlar, gösteri sanatları ve eğlence hizmetleri; kütüphane, arşiv, müze ve diğer kültürel hizmetler; kumar ve müşterek bahis hizmetleri",0.0191,0.0408,,0.0
+R93,Spor hizmetleri ile eğlence ve dinlence hizmetleri,0.0341,0.0171,,0.0
+S94,Üye olunan kuruluşlar tarafından verilen hizmetler,0.0225,0.0001,,0.0
+S95,"Bilgisayarların, kişisel eşyaların ve ev eşyalarının onarımına ilişkin hizmetler",0.085,0.0238,,0.0
+S96,Diğer kişisel hizmetler,0.0437,0.0293,,0.0
+T,Ev içi çalışan personelin işverenleri olarak hanehalklarının hizmetleri,0.0,0.0,,0.0

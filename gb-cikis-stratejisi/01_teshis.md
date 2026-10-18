@@ -92,7 +92,7 @@ Literatür, sektör ve hukuk bulguları Faz 1 araştırma ajanının birincil ka
 11. **S4'ün ilk tur sinyalleri kısıtlarla çatışıyor.**
     - İhracat kaybı: −€21,2 mlr (σ = 5). P10–P90 aralığı −€13,8 ile −€30,4 mlr; 2028 GSYH'sinin ≈%1,1'i. `[T]`
     - İmalatta risk altındaki istihdam: 207 bin (P10–P90: 135–297 bin). En büyük paylar giyimde (87 bin) ve otomotivde (36 bin). `[T]`
-    - AB mallarına MFN uygulanırsa TÜFE'ye birinci tur etki 21–40 bp, İGV de eklenirse 46–86 bp. `[T]`
+    - AB mallarına MFN uygulanırsa TÜFE'ye birinci tur etki 32–53 bp (P50 42), İGV de eklenirse 59–98 bp (P50 78). Faz 2'deki girdi-çıktı modeliyle düzeltildi; ilk kaba hesap 21–40 ve 46–86 bp idi. `[T]`
     - Bölgesel yük orantısız: TRC3'te imalat istihdamının %9,8'i, TRB2'de %8,2'si risk altında.
     - Güven: Orta.
 12. **Takvimlerin ikisinde de S4 kısıtlarla bağdaşmıyor.**
@@ -753,12 +753,12 @@ Tutarlar milyar $; son üç sütun yüzde ve endeks.
 | Türk ihracatına AB vergisi | €5,5 mlr/yıl (ortalama %5,85) | 2025 ticareti × CN 2026 MFN, CN8 | `[T]` Orta |
 | İhracat hacmi kaybı | P10–P50–P90: −€13,8 / −21,2 / −30,4 mlr (σ = 3/5/8); 2028 GSYH'sinin %0,7–1,6'sı | Kısmi denge, tek σ | `[T]` Orta |
 | AB mallarına Türkiye vergisi | €4,9 mlr (İGV hariç) / €10,7 mlr (İGV dahil) | 2025 ticareti × 2026 Türk tarifesi | `[T]` Orta |
-| TÜFE'ye birinci tur etki: yalnızca MFN | P10–P50–P90: 21 / 28 / 40 bp | ΔTÜFE ≈ vergi × α × β / hanehalkı tüketimi. α (tüketime ulaşan pay) = 0,50 / 0,55 / 0,65; β (geçişkenlik) = 0,70 / 0,85 / 1,00. Hanehalkı tüketimi = GSYH'nin %57'si ≈ €806 mlr (2025) | `[T]` Düşük |
-| TÜFE'ye birinci tur etki: MFN + İGV | P10–P50–P90: 46 / 62 / 86 bp | Aynı | `[T]` Düşük |
+| TÜFE'ye birinci tur etki: yalnızca MFN | **Faz 2 düzeltmesi (girdi-çıktı modeli):** P10–P50–P90: 32 / 42 / 53 bp. İlk kaba hesap 21 / 28 / 40 bp idi | Leontief fiyat modeli, TÜİK 2023 yurt içi ve ithal girdi-çıktı tabloları; geçişkenlik ρ = 0,6 / 0,8 / 1,0 (`kod/f2a_io_fiyat.py`, `veri/politika_io_s4_tufe.csv`). En büyük kalem otomobil (C29): 24 bp | `[T]` Orta |
+| TÜFE'ye birinci tur etki: MFN + İGV | **Faz 2 düzeltmesi:** 59 / 78 / 98 bp. İlk kaba hesap 46 / 62 / 86 bp idi. Yurt içi rakipler fiyatlarını ithal fiyatına yarı yarıya uydurursa (κ = 0,5) 182 bp | Aynı | `[T]` Orta |
 | Cari dengeye ilk etki | Faz 6'da (ihracat kaybı ile ithalatın sapma ve daralma payı birlikte). İlk iki yılda GSYH'nin −0,5 ile −1,1 puanı aralığında olası | Kısmi denge; reel kur tepkisi yok | `[H]` Düşük |
 
 **Okuma.**
-- **İGV dahil senaryo enflasyon kısıtını aşıyor.** Birinci turda kümülatif tavan 50 bp, yıllık tavan 30 bp. MFN'nin tek başına etkisi bile tek bir yılda 30 bp tavanının üzerinde kalabilir.
+- **İGV dahil senaryo enflasyon kısıtını aşıyor.** Birinci turda kümülatif tavan 50 bp, yıllık tavan 30 bp. Girdi-çıktı modeline göre (Faz 2) MFN'nin tek başına etkisi de (P50 42 bp) yıllık tavanı aşıyor. Bu tablo S4'ü pasif kabul eder; vergi takası, girdi tarifeleri ve İGV tasarımıyla nasıl değiştiği [`02a_politika_uzayi.md`](02a_politika_uzayi.md) belgesinde.
 - Dolayısıyla AB mallarına İGV'nin yayılmasını önleyen ve girdi tarifelerini düşüren bir tarife cetveli T'den önce kabul edilmeli.
 - Ancak DTÖ'nün en çok kayrılan ulus (MFN) ilkesi, STA olmadan yalnızca AB'ye indirim yapılmasına izin vermez (GATT md. I ve XXIV). İndirim herkese uygulanmak zorunda; bu da Çin ve diğer kaynaklara karşı korumayı azaltır. Bu, kabiliyet hedefiyle bir çatışmadır (§5).
 - Güven: Orta.
@@ -876,7 +876,7 @@ Ana prompt olumsuz bulguların açıkça yazılmasını ve onları pozitife çev
 
 | Kısıt (varsayım kaydı) | S4'teki ilk sinyal | Değerlendirme | Pozitife çevirme koşulu | Gerçekçilik `[H]` |
 |---|---|---|---|---|
-| Enflasyon: birinci tur ≤50 bp, ≤30 bp/yıl (V-05) | AB mallarına MFN: 21–40 bp; MFN + İGV: 46–86 bp | MFN tek başına yıllık tavanı zorluyor; İGV'li senaryo tavanı aşıyor | (1) AB menşeli mallara İGV'nin yayılmaması (İGV Kararı değişikliği, T−6). (2) Yurt içinde üretilmeyen girdilerde MFN'nin herkese sıfırlanması (dezenflasyonist, bütçeye alan açar). (3) AB ile STA (S2/S3) veya geçiş düzenlemesiyle karşılıklı sıfır tarifenin korunması | (1) ve (2) Türkiye'nin elinde: yüksek. (3) AB'nin tutumuna bağlı: T2028'de düşük, T2029'da orta |
+| Enflasyon: birinci tur ≤50 bp, ≤30 bp/yıl (V-05) | Pasif S4'te AB mallarına MFN: 32–53 bp; MFN + İGV: 59–98 bp (girdi-çıktı modeli, Faz 2) | Pasif tasarımda MFN de yıllık tavanı aşıyor. Aktif tasarım (vergi takası, İGV) `02a_politika_uzayi.md` belgesinde | (1) AB menşeli mallara İGV'nin yayılmaması (İGV Kararı değişikliği, T−6). (2) Yurt içinde üretilmeyen girdilerde MFN'nin herkese sıfırlanması (dezenflasyonist, bütçeye alan açar). (3) AB ile STA (S2/S3) veya geçiş düzenlemesiyle karşılıklı sıfır tarifenin korunması | (1) ve (2) Türkiye'nin elinde: yüksek. (3) AB'nin tutumuna bağlı: T2028'de düşük, T2029'da orta |
 | Cari denge: T+5'te ≥ %0 (V-06) | Taban patikada 2029'da −%1,6; S4'te ilk yıllarda ek −0,5 ile −1,1 puan | GB paketi boşluğu tek başına kapatamaz; S4 boşluğu büyütür | Enerji ithalatında yapısal düşüş, kamu tasarrufu ve S4'ten kaçınma. Özerklik temettüsü ve STA ağı ihracat kapasitesini artırırsa katkı | Orta; tamamlayıcı politikalara bağlı |
 | İstihdam: T+3'te net imalat kaybı sıfır; sınıfta %5 tetiği (V-07) | 207 bin (P10–P90: 135–297 bin) statik risk; 14, 29 ve 27 bölümleri %5 eşiğinin üstünde | S4'te kısıt telafisiz sağlanamaz | Anlaşmalı çıkış (S2/S3) veya geçiş süresi; giyim ve otomotivde hedefli ihracat ve istihdam desteği (DTÖ uyumlu: ASCM yasaklı sübvansiyon değil); yeni pazar (STA) | S2 ile yüksek; S4'te düşük |
 | Kabiliyet: hiçbir sınıfta kabiliyet kaybı yok (V-08) | Otomotivde çapa yatırımcıların yeniden konumlanma riski; giyimde firma çıkışı | S4'te risk yüksek | Çapa yatırımcılarla T öncesi bağlayıcı yatırım ve tutma sözleşmeleri; AB pazarına erişimin STA ile güvence altına alınması | Orta |
