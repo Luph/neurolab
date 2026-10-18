@@ -1,54 +1,59 @@
-# Durum özeti — Faz 2A sonu (18 Ekim 2026; Faz 2B sürüyor)
+# Durum özeti — Faz 2 sonu (18 Ekim 2026)
 
-Yeni bir sohbette devam etmek için ana prompt ile bu dosyayı birlikte verin. Ayrıntılar: [`02a_politika_uzayi.md`](02a_politika_uzayi.md), [`01_teshis.md`](01_teshis.md), [`00_plan.md`](00_plan.md).
+Yeni bir sohbette devam etmek için ana prompt ile bu dosyayı birlikte verin. Ayrıntılar: [`02a_politika_uzayi.md`](02a_politika_uzayi.md), [`02b_secenekler_hukuk.md`](02b_secenekler_hukuk.md), [`01_teshis.md`](01_teshis.md).
 
-**Çerçeve (değişmedi).** Çıkış yönü veri; AB hasmane; üyelik perspektifi yok. İki takvim: T2028 ve T2029. Veriler çevrim içi kaynaklardan.
+**Çerçeve (değişmedi).** Çıkış yönü veri; AB hasmane; üyelik perspektifi yok. İki takvim: T2028 ve T2029.
 
-**Kullanıcı geri bildirimi.** Faz 1 politika evrenini keşfetmedi; S4 pasif kaldı. Faz 2A bu evreni tarıyor.
-
-**Faz 2A bulguları**
+**Faz 2A — politika uzayı**
 - **Öneri: AB'ye tarife + yerli ürüne ÖTV indirimi.**
-  - Tarife MFN ve bağlı oran içinde mümkün. Otomobilde 18 satır %19–20 ile bağlı, diğerleri bağsız (DS629).
-  - Yalnızca yerli ürüne ÖTV indirimi GATT III:2'nin kendiliğinden ihlali; III:8(b) kurtarmaz (Brezilya–Vergilendirme).
-  - Hukuka uygun eşdeğer: tarife + bütün menşelere eşit ÖTV/KDV indirimi (T-A takas).
-- **Sayılar (on ürün grubu, TÜFE'nin %17,4'ü).**
-  - Önerilen İGV rejimi c2 altında hesaplandı.
-  - Pasif S4: +47 bp TÜFE.
-  - Takas: 0 bp; net mali −$0,60 mlr; +31 bin istihdam.
-  - Yalnızca yerliye indirim (T-0): −$3,75 mlr ve DTÖ'ye aykırı. III:8(b) ödemesi (T-B): −$4,6 mlr.
-  - Otomobil: ÖTV %65 → %56,2; AB +%4,1, yerli −%5,4; net −$0,15 mlr.
-- **Aktif S4.**
-  - Önerilen paket: İGV yalnızca kabiliyeti zayıf satırlarda kaldırılır (c2), girdide sıfır (P1) ve geniş takas.
-  - TÜFE 3,3 bp (2,5–4,1); tahsil edilebilir mali +%0,05 GSYH; Çin'e karşı koruma korunuyor.
-  - Pasif S4: 78 bp (59–98).
-- **Kısıtlar.**
-  - Enflasyon ve mali kısıt aktif tasarımla sağlanıyor.
-  - İstihdam kısıtı ihlal ama dar. Net etki yalnızca MFN'de −117 bin; c2 + takasla ≈ −35 bin (−11 ile −72 bin).
-  - Çekirdek giyim: −58,7 bin. %5 eşiğini aşan sınıf: 21.
-  - İhracat tarafında yasal ve etkili tek taraflı araç yok; tam telafi ≈$38 mlr/yıl.
-- **Gelir.** Gümrük vergisi tahsilatı yasal tutarın %50'si (2025: $8,15 mlr).
-- **Pazarlık.** AB'nin S4 ihracat kaybı c2'de $28,5 mlr, yalnızca MFN'de $16,4 mlr. Aktif S4, BATNA'yı güçlendiriyor.
-- **Hukuki mekanik.**
-  - Fesih hükmü yok.
-  - Temiz yol: Ortaklık Konseyi dondurma kararı (AB tarafında nitelikli çoğunluk) + md. 207 ITA (Şili md. 33.11 emsali).
-  - T2028 için yalnızca dondurma; T2029 için en fazla mal STA'sı. Bunun için AB yetkisi 2027'nin üçüncü çeyreğinde gerekiyor.
+  - Tarife MFN ve bağlı oran içinde mümkün.
+  - Yerli ürüne özgü ÖTV indirimi GATT III:2 ihlali.
+  - Hukuka uygun eşdeğer: bütün menşelere eşit ÖTV/KDV indirimi (takas).
+- **On ürün grubunda takas (rejim c2).**
+  - TÜFE 0 (pasif +47 bp); net mali −$0,60 mlr; +31 bin istihdam.
+  - Yerliye özgü indirim −$3,75 mlr; üretim desteği −$4,6 mlr.
+- **Aktif S4 (c2 + girdide sıfır + geniş takas).**
+  - TÜFE 3,3 bp (pasif: 78); mali +%0,05 GSYH.
+  - Net imalat istihdamı ≈ −35 bin (yalnızca MFN'de −117 bin); çekirdek giyim −59 bin.
+- **Zaman kritik.** XXVIII:5 çekincesi 31.12.2026'dan önce. DS629 DSB toplantısı 27.10.2026. Mevcut DTÖ risklerinin temizlenmesi (%40 yerli katkı şartı, md. 32/7, rakı, 160 kW).
 
-**Zaman kritik eylemler**
-- GATT XXVIII:5 çekincesi: **31.12.2026**'dan önce.
-- DS629 DSB kararı: 27.10.2026; temyize gitmeme ve uyum önerisi.
-- Mevcut DTÖ risklerinin temizlenmesi:
-  - engelli ÖTV istisnasında %40 yerli katkı şartı;
-  - kurumlar vergisi md. 32/7 ihracat indirimi;
-  - rakı farkı;
-  - 160 kW eşiği.
+**Faz 2B — seçenekler (çekim modeli, PPML + GE)**
+- **S4:**
+  - AB'ye ihracat −%19 (GA −%32 ile −%5);
+  - toplam ihracat −%6,2;
+  - GSYH −%0,43. Sağlam ve alt sınır.
+- **S2 (DCFTA):**
+  - AB'ye ihracat −%11;
+  - GSYH −%0,22;
+  - GA sıfırı içeriyor. Dünya Bankası: −%3 ile −%7.
+- **S3 (ITA):** −%18 ile +%1. Türkiye–BK geçişinde (2021) kayıp sıfır. Menşe tasarımı belirleyici.
+- **Kısıtlar.** TÜFE ve mali kısıtlar her seçenekte tasarımla sağlanıyor. İstihdam kısıtı hiçbir çıkış seçeneğinde kendiliğinden sağlanmıyor.
 
-**Defter.** 0/230 sınıf kartı. Enflasyon bütçesi 0/50 bp. Politika uzayı referans değerleri `defter.md`'de.
+**Öneri `[H]`**
+- **Bitiş durumu:** S2, 2030–2031.
+- **T2029:** ITA 1.1.2029'da geçici uygulamada. AB yetkisi Eylül 2027'ye kadar gerekli.
+- **T2028:** çıkış kararı + Ortaklık Konseyi dondurma kararı; ITA 2029–2030'da. Ortaklık Konseyi GB'yi kaldıramaz; hukuki sona eriş ITA'yla olur (Şili md. 33.11).
+- **Geri dönüş:** aktif S4. Pazarlık aracı; bitiş durumu değil.
+- **Kapılar:** K1'de dondurma veya yetki yoksa T ertelenir.
+
+**Hukuk**
+- AB pozisyonu nitelikli çoğunlukla belirleniyor (md. 207, 218(9); C-81/13). Faz 0'daki oybirliği varsayımı düzeltildi.
+- Yunanistan ve GKRY'nin hukuki vetosu yok; siyasi vetoları var. Belirleyici başkentler Berlin ve Roma.
+- Risk: Görüş 1/26.
+- Onaylanmış kuruluş sürekliliği (95 kayıt) dondurma kararına ve ITA'ya yazılmalı.
+
+**Olasılıklar (kapılar işletilmeden)**
+- T2028'de anlaşmasız çıkış %55–68.
+- T2029'da %30–50.
+
+**En büyük risk.** Kur: %10 değer kaybı ≈ +250 bp TÜFE.
+
+**Defter.** 0/230 sınıf kartı; enflasyon bütçesi 0/50 bp. Faz 2 referans değerleri `defter.md`'de.
 
 **Açık konular**
-- Faz 2B:
-  - çekim modeli (PPML, `kod/f2f_cekim_modeli.py`, sürüyor);
-  - S0–S5, R7, R8, aktif S4 ve S5 karşılaştırma matrisi;
-  - iki takvim için bitiş durumu ve hukuki yol haritası.
-- Veri boşlukları: VB-02, 04, 06, 08–17, 21–27.
+- Veri boşlukları: VB-02, 04, 06, 08–12, 14–17, 21–27.
+- Faz 3: NACE sınıfı kartları. Öncelik: S4'te kaybı %5'i aşan 21 sınıf ve otomotiv, giyim, beyaz eşya platformları.
 
-**Sonraki adım.** Faz 2B: `02b_secenekler_hukuk.md`.
+**Sonraki adım.** Faz 3: 230 C sınıfı ve ek kapsam için sınıf kartları. İki takvimde S3/S2 ve aktif S4 altında sınıf etkileri; destek tetikleyicileri.
+
+İLERLEME: Faz 2 / 9 tamamlandı — SONRAKİ ADIM: Faz 3 (NACE sınıfı kartları); DEVAM bekleniyor.

@@ -945,7 +945,7 @@ Güven: Orta.
 | VB-10 | DTÖ bağlı oranları, HS2022 satır düzeyi | Kısmen | HS2002 sertifikalı ve UR94 cetvelleri indirildi (WTO e-Kütüphane); HS2022 aktarımı için WTO TTD (e-posta ve captcha) veya ücretsiz WTO API anahtarı; Faz 5 |
 | VB-11 | OECD ICIO / TiVA | Açık | Betikle erişimde 403; elle indirme, 1 gün; Faz 6 (yedek: TÜİK 2023 girdi-çıktı) |
 | VB-12 | Seyahat gelirinin ülkelere dağılımı (AB27 payı) | Açık | TÜİK Turizm İstatistikleri (çıkış yapan ziyaretçi anketi) Veri Portalı tabloları; 1 hafta; Faz 6 |
-| VB-13 | Kendi çekim modeli tahminimiz (GB etkisi, senaryolar) | Açık | BACI 1996–2024 ve PPML; Faz 2 |
+| VB-13 | Kendi çekim modeli tahminimiz (GB etkisi, senaryolar) | **Kapandı (Faz 2)** | `kod/f2f_cekim_modeli.py`: CEPII Gravity 1988–2020 + BACI 2024, PPML ve genel denge ([`02b_secenekler_hukuk.md`](02b_secenekler_hukuk.md) §2) |
 | VB-14 | Doğrudan yatırımın nihai yatırımcı ülkeye göre dağılımı | Açık | TCMB doğrudan yatırım ülke tabloları; Faz 4 |
 | VB-15 | AB'nin spesifik ve bileşik vergileri için ad valorem eşdeğerleri | Açık | WITS "aveestimated" (AB, 918) veya TARIC; Faz 3 |
 | VB-16 | AB'ye ihracatın taşıma şekline göre dağılımı (karayolu payı) | Açık | TÜİK dış ticaret Qlik "taşıma şekli" boyutu; 1 hafta |

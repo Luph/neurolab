@@ -105,7 +105,7 @@ Kaynaklar sondadır; ham metinler ve çıkarılmış tablolar araştırma notlar
    - Hasmane AB bu anlaşmayı önermeyebilir. Pazarlık, kozun kimde olduğuna bağlı.
    - `[V]`/`[H]` Güven: Orta.
 10. **İki takvim için gerçekçilik.**
-    - 1.1.2028 için gerçekçi olan yalnızca dondurma veya mevcut rejimin uzatılması.
+    - 1.1.2028 için gerçekçi olan yalnızca çıkış kararı ve dondurma (geçiş dönemi). Ortaklık Konseyi kararı GB'yi kaldıramaz; GB'nin hukuken sona ermesi ITA'nın yürürlüğüyle olur.
     - 1.1.2029 için en fazla mal ağırlıklı bir serbest ticaret anlaşması (STA). Bunun için AB müzakere yetkisinin en geç 2027'nin üçüncü çeyreğinde verilmesi gerekir.
     - Derin ve kapsamlı STA (DCFTA) 2030 sonrası bir projedir.
     - `[H]` Güven: Orta.
@@ -596,7 +596,7 @@ GB'den çıkınca Türkiye'nin AB mallarına uygulayabileceği tarifenin üst s�
 
 **Okuma.**
 - S4'te AB mallarından alınacak yasal gümrük geliri (MFN, $4,3 mlr; MFN + İGV, $10,8 mlr) aynı oranlarla düşer.
-- Rejim "a"nın tahsil edilebilir geliri ≈$7,6 mlr, rejim "c"ninki ≈$2,7–3,0 mlr.
+- Tahsil edilebilir gelir rejime göre değişiyor: a ≈$7,6 mlr, c2 ≈$6,5–6,8 mlr, c ≈$2,7–3,0 mlr.
 - Mali bilançolar §4.1'de hem yasal hem tahsil edilebilir olarak verildi. Karar için ikincisi esas alınmalı.
 - Takasın maliyeti, yani ÖTV ve KDV indirimi, ise tam gerçekleşir. Bu yüzden tahsilat düzeltmesi takaslı paketlerin mali bilançosunu yasal hesaba göre 0,1–0,2 puan kötüleştirir.
 

@@ -275,8 +275,9 @@ Sınırlamalar: AB'nin spesifik vergileri ve tarım bileşenleri dahil değil (t
 | 44 | HICP madde ağırlıkları (Türkiye, COICOP 2018) | Eurostat prc_hicp_iw | 2026 | ✓ (559 kod) | Grup TÜFE ağırlıkları; VB-04'ün kısmi çözümü | TÜİK |
 | 45 | Onaylanmış kuruluşlar (NANDO), TÜRKAK EA MLA statüsü | Avrupa Komisyonu, EA | Eki 2026 | ✓ (95 Türk kaydı, ≈81'i yürürlükte; TÜRKAK dokuz alanda EA MLA imzacısı) | Uyum değerlendirme (H2) | Ticaret Bakanlığı |
 | 46 | DTÖ uyuşmazlık raporları ve Analitik Endeks | WTO | 2026 (DS629 panel raporu, 28.7.2026) | ✓ | Hukuki çerçeve, bağlı oranlar | — |
+| 47 | Çekim modeli verisi: CEPII Gravity V202211, DESTA v2.3, UN AMA | CEPII, DESTA, BM | 1980–2020 (BACI ile 2024) | ✓ anahtarsız (`kod/f2f_cekim_modeli.py`) | GB ve STA etkileri, S2/S3/S4 senaryoları | ITPD-E |
 
-**İlk veri boşlukları ve kapatma planı.** Bu liste her fazda güncellenir; Faz 9'da ek olarak verilir. **Güncel liste: VB-01…VB-18 [`01_teshis.md`](01_teshis.md) §8; VB-21…VB-27 [`02a_politika_uzayi.md`](02a_politika_uzayi.md) §9. Faz 2'de VB-18 kapandı (NANDO ve EA statüsü).**
+**İlk veri boşlukları ve kapatma planı.** Bu liste her fazda güncellenir; Faz 9'da ek olarak verilir. **Güncel liste: VB-01…VB-18 [`01_teshis.md`](01_teshis.md) §8; VB-21…VB-27 [`02a_politika_uzayi.md`](02a_politika_uzayi.md) §9. Faz 2'de VB-13 (çekim modeli) ve VB-18 (NANDO ve EA statüsü) kapandı.**
 
 | No | Boşluk | Etkilediği analiz | Kapatma yolu (veri, kurum, süre) |
 |---|---|---|---|

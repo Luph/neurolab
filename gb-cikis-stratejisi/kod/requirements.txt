@@ -3,5 +3,7 @@ openpyxl>=3.1
 xlrd>=2.0
 requests>=2.31
 pyarrow>=15
+numpy>=2.0
+pyfixest>=0.60        # Faz 2: PPML çekim modeli (f2f)
 # Sonraki fazlar için (Faz 3–6):
-# numpy, scipy, statsmodels, pyfixest (PPML), pulp (tamsayı programlama)
+# scipy, statsmodels, pulp (tamsayı programlama)

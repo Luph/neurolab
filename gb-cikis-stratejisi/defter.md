@@ -2,7 +2,7 @@
 
 Her NACE grubu tamamlandığında güncellenir. Toplamlar Faz 6'daki makro mutabakatta kullanılır.
 
-**Son güncelleme:** Faz 2A, 18 Ekim 2026. Faz 3 başlamadığı için sınıf düzeyinde katkı yok.
+**Son güncelleme:** Faz 2 sonu, 18 Ekim 2026. Faz 3 başlamadığı için sınıf düzeyinde katkı yok.
 
 | Kalem | Değer | Not |
 |---|---|---|
@@ -11,7 +11,7 @@ Her NACE grubu tamamlandığında güncellenir. Toplamlar Faz 6'daki makro mutab
 | Kümülatif cari denge katkısı (milyar $) | 0 | P10–P50–P90, Faz 3'ten itibaren |
 | Kümülatif mali maliyet (milyar TL ve GSYH %) | 0 | Tavan: GSYH'nin %0,5'i/yıl (2026'da ≈ $9,1 mlr; 2028'de ≈ $10,5 mlr) |
 | Riskteki istihdam | Teşhis tabanı (S4, statik, telafisiz): 207 bin brüt (P10–P90: 135–297 bin). Net (ithal ikamesi dahil): yalnızca MFN −117 bin (−77 ile −165 bin), %5 eşiğini aşan 22 sınıf; aktif S4 (c2 + takas) ≈ −35 bin (−11 ile −72 bin), giyim −58,7 bin, 21 sınıf (σ = 5). Sınıf düzeyinde karar Faz 3'te | `01_teshis.md` §4.1; `02a_politika_uzayi.md` §4.2 |
-| Açık kalan veri boşlukları | VB-02, 04, 06, 08–17, 21–27 (kapanan: VB-01, 03, 05, 07, 18) | `01_teshis.md` §8; `02a_politika_uzayi.md` §9 |
+| Açık kalan veri boşlukları | VB-02, 04, 06, 08–12, 14–17, 21–27 (kapanan: VB-01, 03, 05, 07, 13, 18) | `01_teshis.md` §8; `02a_politika_uzayi.md` §9 |
 | Varsayım kaydına eklenen yeni maddeler | V-01 … V-29; Faz 1'de V-06 ve V-07 baz değerleri güncellendi | `00_plan.md` §3 |
 
 ## Teşhis tabanı (Faz 1)
@@ -48,4 +48,16 @@ Faz 3–6'daki kararların karşılaştırılacağı referans değerler. Ayrınt
 | AB'nin S4 ihracat kaybı (σ = 5) | b $16,4 mlr; c $18,7 mlr; c2 $28,5 mlr; a $31,1 mlr | `[T]` §4.1 |
 | İhracat tarafı tam telafi maliyeti | Yılda ≈$38 mlr (2028 GSYH'sinin %1,8'i); telafi edici vergiye açık | `[T]` §5 |
 | Zaman kritik DTÖ eylemi | XXVIII:5 çekincesi, son tarih 31.12.2026; DS629 DSB, 27.10.2026 | `[V]` §7 |
+
+## Seçenekler tabanı (Faz 2B)
+
+S0'a (GB) göre yerleşmiş etkiler. Ayrıntı: [`02b_secenekler_hukuk.md`](02b_secenekler_hukuk.md) §2.
+
+| Gösterge | S2 DCFTA | S3 ITA | S4 | Kaynak |
+|---|---|---|---|---|
+| TR → AB ihracatı (GE, σ = 7; %90 GA) | −%11 (−27 ile +6) | −%18 (ihtiyatlı) ile +%1 (Türkiye–BK) | −%19 (−32 ile −5) | `[T]` `veri/politika_cekim_senaryolar.csv` |
+| Türkiye toplam ihracatı (GE) | −%3,3 | −%5,3 ile +%1,1 | −%6,2 | `[T]` |
+| Türkiye reel GSYH, refah vekili (GE) | −%0,22 (−0,56 ile +0,19) | −%0,35 ile +%0,10 | −%0,43 (−0,73 ile −0,10) | `[T]` |
+| TÜFE birinci tur (bp) | +2 ile +12 (menşe maliyeti) | +2 ile +12 | 2,5–4,1 (aktif) | `[T]` 02a, f2e |
+| Net imalat istihdamı (bin) | ≈ −33 (kaba, GE kanalı) | −54 ile +12 | ≈ −35 (aktif, sınıf düzeyi) | `[T]` |
 
