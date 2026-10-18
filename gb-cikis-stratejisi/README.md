@@ -120,7 +120,7 @@ latex/derle.sh                                          # şekiller, LaTeX gövd
 ```
 
 - **Süre.** Hesaplar ≈20–30 dakika sürer; çoğu çekim modelinde (19 PPML spesifikasyonu, 1.000 çekilişli genel denge) ve STA ağı genel dengesinde. PDF'ler ≈4 dakika.
-- **Sınama (18.10.2026).** Faz 3 parça 1'in düzyazı sürümü (yeni şablon, grup yüzdelikleri, 1/98 askısı çıktıları) için çevrimdışı yeniden üretim sınaması sürüyor; sonuç bu satıra yazılacak. Önceki sürümde `veri/` ve `nace_kartlar_10-12.md` bayt bayt aynı üretilmişti (`kod/dogrula.py`).
+- **Sınama sonucu (18.10.2026).** Çevrimdışı kipte Faz 0–3'ün bütün betikleri (31 adım) paketteki girdilerle çalıştı. `veri/` klasöründeki 77 dosya (Faz 3'ün grup yüzdelikleri ve 1/98 askısı çıktıları dahil) ve düzyazı belgesi `nace_kartlar_10-12.md` bayt bayt aynı üretildi (`kod/dogrula.py`). Faz 3 hesapları ≈1,5 dakika sürüyor.
 - **Tek tek çalıştırma.** Betikler `kod/` içinden argümansız çalışır. Varsayılan girdi `girdi/`, çıktı `veri/`. Örnek: `python3 f2e_s4_aktif.py`. Sıra `hepsini_uret.sh` içinde.
 - **PDF için gerekenler.** pandoc ≥ 3.1, TeX Live 2023 (LuaLaTeX, latexmk, KOMA-Script, polyglossia), TeX Gyre ve DejaVu yazı tipleri. Ubuntu'da: `apt-get install pandoc texlive-luatex texlive-latex-extra texlive-fonts-extra texlive-lang-european latexmk fonts-dejavu`.
 
