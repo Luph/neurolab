@@ -198,7 +198,7 @@ latex/derle.sh                                          # şekiller, LaTeX gövd
 \item
   \textbf{Süre.} Hesaplar ≈20--30 dakika sürer; çoğu çekim modelinde (19 PPML spesifikasyonu, 1.000 çekilişli genel denge) ve STA ağı genel dengesinde. PDF'ler ≈4 dakika.
 \item
-  \textbf{Sınama sonucu (18.10.2026).} Çevrimdışı kipte bütün betikler paketteki girdilerle çalıştı. \kod{veri/\allowbreak{}} klasöründeki sonuçlar ve Faz 3 kart belgesi bayt bayt aynı üretildi (\kod{kod/\allowbreak{}dogrula.\allowbreak{}py}).
+  \textbf{Sınama sonucu (18.10.2026).} Çevrimdışı kipte Faz 0--3'ün bütün betikleri (31 adım) paketteki girdilerle çalıştı. \kod{veri/\allowbreak{}} klasöründeki sonuçlar ve \kod{nace\_\allowbreak{}kartlar\_\allowbreak{}10-\allowbreak{}12.\allowbreak{}md} bayt bayt aynı üretildi (\kod{kod/\allowbreak{}dogrula.\allowbreak{}py}). Faz 3 hesapları ≈1,5 dakika sürüyor.
 \item
   \textbf{Tek tek çalıştırma.} Betikler \kod{kod/\allowbreak{}} içinden argümansız çalışır. Varsayılan girdi \kod{girdi/\allowbreak{}}, çıktı \kod{veri/\allowbreak{}}. Örnek: \kod{python3 f2e\_\allowbreak{}s4\_\allowbreak{}aktif.\allowbreak{}py}. Sıra \kod{hepsini\_\allowbreak{}uret.\allowbreak{}sh} içinde.
 \item

@@ -120,7 +120,7 @@ latex/derle.sh                                          # şekiller, LaTeX gövd
 ```
 
 - **Süre.** Hesaplar ≈20–30 dakika sürer; çoğu çekim modelinde (19 PPML spesifikasyonu, 1.000 çekilişli genel denge) ve STA ağı genel dengesinde. PDF'ler ≈4 dakika.
-- **Sınama sonucu (18.10.2026).** Faz 0–2: çevrimdışı kipte bütün betikler paketteki girdilerle çalıştı; `veri/` klasöründeki sonuçlar bayt bayt aynı üretildi (`kod/dogrula.py`). Faz 3 betiklerini de kapsayan sınama sürüyor; sonucu bir sonraki güncellemede bu satıra yazılacak.
+- **Sınama sonucu (18.10.2026).** Çevrimdışı kipte Faz 0–3'ün bütün betikleri (31 adım) paketteki girdilerle çalıştı. `veri/` klasöründeki sonuçlar ve `nace_kartlar_10-12.md` bayt bayt aynı üretildi (`kod/dogrula.py`). Faz 3 hesapları ≈1,5 dakika sürüyor.
 - **Tek tek çalıştırma.** Betikler `kod/` içinden argümansız çalışır. Varsayılan girdi `girdi/`, çıktı `veri/`. Örnek: `python3 f2e_s4_aktif.py`. Sıra `hepsini_uret.sh` içinde.
 - **PDF için gerekenler.** pandoc ≥ 3.1, TeX Live 2023 (LuaLaTeX, latexmk, KOMA-Script, polyglossia), TeX Gyre ve DejaVu yazı tipleri. Ubuntu'da: `apt-get install pandoc texlive-luatex texlive-latex-extra texlive-fonts-extra texlive-lang-european latexmk fonts-dejavu`.
 
