@@ -3,14 +3,14 @@
 
 Her NACE grubu tamamlandığında güncellenir. Toplamlar Faz 6'daki makro mutabakatta kullanılır.
 
-\textbf{Son güncelleme:} Faz 3 parça 1 (10 Gıda, 11 İçecekler, 12 Tütün), 18 Ekim 2026. Sınıf düzeyi değerler \kod{veri/\allowbreak{}nace\_\allowbreak{}matris.\allowbreak{}csv}'den; parça ayrıntısı \belgebag{nace_kartlar_10-12}{}{\kod{nace\_\allowbreak{}kartlar\_\allowbreak{}10-\allowbreak{}12.\allowbreak{}md}} Bölüm 6. Bölüm toplamlarının yüzdelikleri çekilişlerin toplamından (V-38).
+\textbf{Son güncelleme:} Faz 3 parça 2 (13 Tekstil, 14 Giyim, 15 Deri), 18 Ekim 2026. Değerler 10--15'in kümülatif toplamı (54 sınıf). Sınıf düzeyi değerler \kod{veri/\allowbreak{}nace\_\allowbreak{}matris.\allowbreak{}csv}'den; parça ayrıntısı \belgebag{nace_kartlar_13-15}{}{\kod{nace\_\allowbreak{}kartlar\_\allowbreak{}13-\allowbreak{}15.\allowbreak{}md}} ve \belgebag{nace_kartlar_10-12}{}{\kod{nace\_\allowbreak{}kartlar\_\allowbreak{}10-\allowbreak{}12.\allowbreak{}md}} Bölüm 6. Grup toplamlarının yüzdelikleri çekilişlerin toplamından (V-38).
 
 \begingroup\gbtablo\small
 
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.1616}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.6502}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.1882}}@{}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.1592}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.6566}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.1841}}@{}}
 \toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\raggedright
 \textbf{Kalem}
@@ -23,13 +23,13 @@ Her NACE grubu tamamlandığında güncellenir. Toplamlar Faz 6'daki makro mutab
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-Tamamlanan / kalan sınıf sayısı & 33 / 197 C sınıfı (10--12 tamam); 0 / 29 ek kapsam satırı (B 15, D 1, E 2, A 3, hizmet 8) & Kapsam listesi: \kod{veri/\allowbreak{}nace\_\allowbreak{}kapsam.\allowbreak{}csv} \\
-Kullanılan / kalan enflasyon bütçesi (bp) & Birinci tur, 10--12. Önlemler: S2 yolu −0,11, S4 yolu −1,55. Çıkış şokları (önlem değil): S2 +0,9, S4 +6,2 (c2). Net: S2 0,8 / 50; S4 4,7 / 50 (yıllık tavan 30). İkinci tur dahil Faz 6'da & V-05; \kod{nace\_\allowbreak{}kartlar\_\allowbreak{}10-\allowbreak{}12.\allowbreak{}md} Tablo 6.1 \\
-Kümülatif cari denge katkısı (milyar \$) & 10--12, T+5, yıllık. Senaryo P50: S2 −0,044, S4 +0,008 (S4 P10 −0,93; 1/98 askısında ortalama −0,86). Önlemler: S2 +0,071, S4 +0,010 \etiketT{}/\etiketH{} & \kod{veri/\allowbreak{}f3\_\allowbreak{}senaryo\_\allowbreak{}grup.\allowbreak{}csv}, \kod{veri/\allowbreak{}f3\_\allowbreak{}senaryo\_\allowbreak{}aski.\allowbreak{}csv} \\
-Kümülatif mali maliyet (milyar TL ve GSYH \%) & 10--12: S2 yolu 0,83 mlr TL/yıl, S4 yolu 1,69 mlr TL/yıl (GSYH'nin \%0,001--0,002'si) & Tavan: GSYH'nin \%0,5'i/yıl (2026'da ≈ \$9,1 mlr; 2028'de ≈ \$10,5 mlr) \\
-Riskteki istihdam & 10--12: S2 P50 −299; S4 P50 −106, P10 −3.982; 1/98 askısında ortalama −3.736 (10.39 −2.960, sınıf istihdamının \%4,5'i; sınıfın P10'u −\%4,9). Faz 3 yöntemiyle imalatın tamamı (geçici, diğer parçalarda kartlarla gözden geçirilecek): S2 P50 −22,5 bin (P10 −38,7); S3 −30,4 bin; S4 −41,2 bin (P10 −64,6), kaybı \%5'i aşan sınıf S4 P50'de 9, P10'da 15. Teşhis tabanı (S4, statik, telafisiz): 207 bin brüt & \kod{veri/\allowbreak{}f3\_\allowbreak{}senaryo\_\allowbreak{}ozet.\allowbreak{}csv}; \kod{01\_\allowbreak{}teshis.\allowbreak{}md} §4.1 \\
-Açık kalan veri boşlukları & VB-02, 04, 06, 08--12, 14--17, 21--27, 30--35 (kapanan: VB-01, 03, 05, 07, 13, 18) & \kod{01\_\allowbreak{}teshis.\allowbreak{}md} §8; \kod{nace\_\allowbreak{}kartlar\_\allowbreak{}10-\allowbreak{}12.\allowbreak{}md} Ek E \\
-Varsayım kaydına eklenen yeni maddeler & V-01 \ldots{} V-39 (Faz 3: V-30--V-39 senaryo kalibrasyonu, 1/98 askı olasılığı, ProTEE σ, sınır sürtünmesi, arketip eşikleri, SS, CKE, KN8 eşlemesi, grup yüzdelikleri ve askının koşullu raporlanması, eylem takvimi) & \kod{00\_\allowbreak{}plan.\allowbreak{}md} §3 \\
+Tamamlanan / kalan sınıf sayısı & 54 / 176 C sınıfı (10--12 ve 13--15 tamam); 0 / 29 ek kapsam satırı (B 15, D 1, E 2, A 3, hizmet 8) & Kapsam listesi: \kod{veri/\allowbreak{}nace\_\allowbreak{}kapsam.\allowbreak{}csv} \\
+Kullanılan / kalan enflasyon bütçesi (bp) & Birinci tur, 10--15. Çıkış şokları (önlem değil): S2 +2,6, S4 +21,8 (c2; 13--15'in payı 15,6). Önlemler: S2 yolu −0,11, S4 yolu −13,56 (13--15'te giyim ve ayakkabıda KDV takası −12,0). Net: S2 2,4 / 50; S4 8,2 / 50 (yıllık tavan 30). İkinci tur dahil Faz 6'da & V-05, V-43; \kod{nace\_\allowbreak{}kartlar\_\allowbreak{}13-\allowbreak{}15.\allowbreak{}md} Tablo 6.1 \\
+Kümülatif cari denge katkısı (milyar \$) & 10--15, T+5, yıllık. Senaryo P50: S2 −0,93, S4 −2,75 (S4 P10 −4,15; 1/98 askısında ortalama −3,46). Önlemler: S2 +0,22, S4 +0,01 \etiketT{}/\etiketH{} & \kod{veri/\allowbreak{}f3\_\allowbreak{}senaryo\_\allowbreak{}grup.\allowbreak{}csv}, \kod{veri/\allowbreak{}f3\_\allowbreak{}senaryo\_\allowbreak{}aski.\allowbreak{}csv} \\
+Kümülatif mali maliyet (milyar TL ve GSYH \%) & 10--15: S2 yolu 1,65 mlr TL/yıl (\%0,002), S4 yolu 22,76 mlr TL/yıl (\%0,031); S4'ün 17,5'i KDV takasının net maliyeti & Tavan: GSYH'nin \%0,5'i/yıl (2026'da ≈ \$9,1 mlr; 2028'de ≈ \$10,5 mlr) \\
+Riskteki istihdam & 10--15: S2 P50 −14.630; S4 P50 −40.241, P10 −62.512; 1/98 askısında ortalama −42.977. S4 P10'da kaybı \%5'i aşan sınıflar: 13.20, 13.91, 13.92, 14.13, 14.14, 14.19, 14.31, 14.39 (trikoda −\%19,2). PEM kümülasyonu kanalı S4'te −4.750. Faz 3 yöntemiyle imalatın tamamı (geçici): S2 P50 −24,3 bin (P10 −42,5); S3 −29,1 bin; S4 −46,1 bin (P10 −70,1), kaybı \%5'i aşan sınıf S4 P50'de 9, P10'da 17. Teşhis tabanı (S4, statik, telafisiz): 207 bin brüt & \kod{veri/\allowbreak{}f3\_\allowbreak{}senaryo\_\allowbreak{}ozet.\allowbreak{}csv}; \kod{01\_\allowbreak{}teshis.\allowbreak{}md} §4.1 \\
+Açık kalan veri boşlukları & VB-02, 04, 06, 08--12, 14--17, 21--27, 30--39 (kapanan: VB-01, 03, 05, 07, 13, 18). VB-32 13--15'te bağlayıcı değil & \kod{01\_\allowbreak{}teshis.\allowbreak{}md} §8; \kod{nace\_\allowbreak{}kartlar\_\allowbreak{}13-\allowbreak{}15.\allowbreak{}md} Ek E \\
+Varsayım kaydına eklenen yeni maddeler & V-01 \ldots{} V-43 (Faz 3: V-30--V-39 senaryo kalibrasyonu, 1/98 askı olasılığı, ProTEE σ, sınır sürtünmesi, arketip eşikleri, SS, CKE, KN8 eşlemesi, grup yüzdelikleri, eylem takvimi; parça 2: V-40 PEM kümülasyonu kanalı, V-41 tekstil ve giyim menşe parametreleri, V-42 geri ödeme yasağı, V-43 KDV takası) & \kod{00\_\allowbreak{}plan.\allowbreak{}md} §3 \\
 \end{longtable}
 
 \endgroup
@@ -194,9 +194,9 @@ Sınıf kartlarının toplamları. Faz 3 yöntemi: toplamlar Faz 2B genel denges
 \begingroup\gbtablo\small
 
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.2355}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.5444}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.2202}}@{}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.2350}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.5453}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.2198}}@{}}
 \toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\raggedright
 \textbf{Gösterge}
@@ -214,11 +214,46 @@ AB'ye ihracatın rejimi (10--12) & Tarım (1/98) \%75, İTÜ \%24, GB \%1 & \eti
 S4'te AB tarifesi artışı (rota A / 1/98 kaybıyla) & \%3,3 / \%11,5 (10--12); imalat \%5,6 / \%6,0 & \etiketT{} \kod{veri/\allowbreak{}f3\_\allowbreak{}ab\_\allowbreak{}tarife\_\allowbreak{}sinif.\allowbreak{}csv} \\
 10--12, bölüm toplamı P50 (P10 / P90), T+5 & S2: AB'ye ihracat −\$202 mn (−446 / +125), istihdam −299, cari denge −\$44 mn. S4: AB'ye ihracat −\$406 mn (−1.840 / −171), istihdam −106 (−3.982 / +258), cari denge +\$8 mn (−934 / +104) & \etiketT{} \kod{veri/\allowbreak{}f3\_\allowbreak{}senaryo\_\allowbreak{}grup.\allowbreak{}csv} (V-38) \\
 10--12, S4'te 1/98 askısı (koşullu ortalama; olasılık 0,25) & AB'ye ihracat −\$1,72 mlr (askı olmadan −\$0,34 mlr), cari denge −\$0,86 mlr, istihdam −3,7 bin (P90 / P10: −2,0 / −5,7 bin); askıdan doğan ek kaybın \%77'si 10.39'da & \etiketT{} \kod{veri/\allowbreak{}f3\_\allowbreak{}senaryo\_\allowbreak{}aski.\allowbreak{}csv} \\
-İmalat (230 sınıf), AB'ye ihracat değişimi P50 (P10 / P90) & S2 −\%11,0 (−23,4 / +2,0); S3 −\%14,9 (−26,4 / −2,9); S4 −\%19,1 (−29,7 / −7,9) & \etiketT{} GE kalibrasyonu \\
-İmalat, cari denge P50 (P10 / P90), T+5, yıllık & S2 −\$2,7 mlr (−4,2 / −2,0); S3 −\$3,5 mlr; S4 −\$4,2 mlr (−6,3 / −2,9) & \etiketT{} geçici \\
+İmalat (230 sınıf), AB'ye ihracat değişimi P50 (P10 / P90) & S2 −\%11,0 (−23,4 / +2,0); S3 −\%14,7 (−26,2 / −2,6); S4 −\%19,1 (−29,7 / −7,9) & \etiketT{} GE kalibrasyonu \\
+İmalat, cari denge P50 (P10 / P90), T+5, yıllık & S2 −\$2,7 mlr (−4,2 / −2,0); S3 −\$3,4 mlr; S4 −\$4,7 mlr (−6,9 / −3,4); S4'e PEM kümülasyonu kanalı dahil & \etiketT{} geçici \\
 İmalat, birinci tur TÜFE (c2 ve sürtünme), P50 & S2 10,9 bp; S3 20,7 bp; S4 69,1 bp (59--79) & \etiketT{} Faz 2A ile tutarlı (73 bp) \\
-Arketip dağılımı (kural + 10--12 düzeltmesi) & A 53, --- 49, B 39, G 33, C 30, D 17, F 8, E 1 & \etiketH{} \kod{veri/\allowbreak{}nace\_\allowbreak{}matris.\allowbreak{}csv}; diğer parçalarda düzeltilecek \\
-Düzeltmeler & D-1 KN8 → NACE ağırlıkları; D-2 KKTC akımları; D-3 ``\%5'i aşan 21 sınıf'' yerine 9 (P50) / 15 (P10) & \kod{nace\_\allowbreak{}kartlar\_\allowbreak{}10-\allowbreak{}12.\allowbreak{}md} Ek D \\
+Arketip dağılımı (kural + 10--15 düzeltmesi) & A 55, --- 49, B 39, G 31, C 30, D 17, F 8, E 1 & \etiketH{} \kod{veri/\allowbreak{}nace\_\allowbreak{}matris.\allowbreak{}csv}; diğer parçalarda düzeltilecek \\
+Düzeltmeler & D-1 KN8 → NACE ağırlıkları; D-2 KKTC akımları; D-3 ``\%5'i aşan 21 sınıf'' yerine 9 (P50) / 17 (P10) & \kod{nace\_\allowbreak{}kartlar\_\allowbreak{}10-\allowbreak{}12.\allowbreak{}md} Ek D \\
+\end{longtable}
+
+\endgroup
+
+\hypertarget{defter-faz-3-tabanux131-paruxe7a-2-1315}{%
+\section{Faz 3 tabanı (parça 2: 13--15)}\label{defter-faz-3-tabanux131-paruxe7a-2-1315}}
+
+Ayrıntı: \belgebag{nace_kartlar_13-15}{}{\kod{nace\_\allowbreak{}kartlar\_\allowbreak{}13-\allowbreak{}15.\allowbreak{}md}}.
+
+\begingroup\gbtablo\small
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.1726}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.6521}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.1753}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Gösterge}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Değer}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Kaynak ve etiket}
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+13--15 ağırlığı & İstihdam 1.238 bin (imalatın \%24,6'sı); KD \$22,5 mlr; ihracat \$35,9 mlr (\%14,3); AB'ye ihracat \$17,3 mlr (\%16,4) & \etiketV{} YSHİ 2024, BACI 2024 \\
+AB'ye ihracatın rejimi ve S4 tarifesi & GB \%100; S4'te AB tarifesi \%10,2 (tekstil \%7,3, giyim \%11,8, deri \%7,4); giyimde AB'ye ihracatın \%98'i ≥ \%10 tarifeli satırlarda & \etiketV{}/\etiketT{} Comext 2025, KN 2026 \\
+13--15, grup toplamı P50 (P10 / P90), T+5 & S2: AB'ye ihracat −\$1.854 mn (−4.010 / +347), istihdam −14.419 (−30.880 / +1.234), cari denge −\$893 mn. S4: AB'ye ihracat −\$4.104 mn (−6.394 / −1.698), istihdam −39.397 (−60.851 / −20.019), cari denge −\$2.634 mn (−3.841 / −1.473) & \etiketT{} \kod{veri/\allowbreak{}f3\_\allowbreak{}senaryo\_\allowbreak{}grup.\allowbreak{}csv} \\
+PEM kümülasyonu (S4) & Ortaklara kumaş ve teknik tekstil ihracatı \$1.736 mn; maruziyet \$1.131 mn (Fas 613); S4 kaybı −\$673 mn (−858 / −483), istihdam −4.750 & \etiketT{} \kod{veri/\allowbreak{}f3\_\allowbreak{}pem\_\allowbreak{}ortak\_\allowbreak{}ab\_\allowbreak{}payi.\allowbreak{}csv}; V-40 \etiketH{} \\
+TÜFE (birinci tur, P50) & S2 1,7 bp; S4 15,6 bp (dış giyim 4,3, ayakkabı 3,9); KDV takasıyla S4 3,6 bp & \etiketT{} f3e; Faz 2A Tablo 1.5a \\
+Bölgeler (S4 P50) & İstanbul −12.209; Mardin--Batman--Şırnak--Siirt −3.388 (13--15 bölge imalatının \%78'i); Bursa −2.873; Tekirdağ −2.341; Gaziantep −2.228 & \etiketT{} f3b bölge payları \\
+Duruşlar & Geliştir 11, Dönüştür 2 (14.13, 15.11), Yönetilen uyum 3 (14.14, 14.19, 14.39), Koru 5 & \etiketH{} \\
+Düzeltmeler & D-4 EUDR (Tüzük 2026/2102: sığır derisi kapsam dışı); D-5 10--12'nin S2 sayıları; D-6 Faz 2'nin giyim tahmini (−59 bin) geçersiz & \kod{nace\_\allowbreak{}kartlar\_\allowbreak{}13-\allowbreak{}15.\allowbreak{}md} Ek D \\
 \end{longtable}
 
 \endgroup
