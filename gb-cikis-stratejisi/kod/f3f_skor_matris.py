@@ -241,8 +241,9 @@ def main():
     d["tarife_yolu"] = d.arketip_birincil.map(TARIFE)
     d["ana_araclar"] = d.arketip_birincil.map(ARAC)
     d["ab_muzakere"] = d.arketip_birincil.map(MUZAKERE)
-    # uzman düzeltmeleri (kartlar/*.yaml: arketip, durus, tarife_yolu, ana_araclar, ab_muzakere)
+    # uzman düzeltmeleri (kartlar/*.yaml: arketip, durus, tarife_yolu, ana_araclar, ab_muzakere; guven aşağıda)
     d["uzman_duzeltmesi"] = ""
+    guven_duz = {}
     for yol in sorted(glob.glob(os.path.join(os.path.dirname(__file__), "..", "kartlar", "*.yaml"))):
         for kd, alan in (yaml.safe_load(open(yol, encoding="utf-8")).get("siniflar") or {}).items():
             if kd not in d.index or not alan:
@@ -258,10 +259,19 @@ def main():
                     if c == "durus" and d.at[kd, c] != alan[c]:
                         degisen.append(f"duruş {d.at[kd, c]}→{alan[c]}")
                     d.at[kd, c] = alan[c]
+            if alan.get("guven") in ("Yüksek", "Orta", "Düşük"):
+                guven_duz[kd] = alan["guven"]
             d.at[kd, "uzman_duzeltmesi"] = "; ".join(degisen) if degisen else "metin"
     eksik = d.gizli_tahmin.fillna(True).astype(bool).astype(int) + (d.mense_kaynak != "sınıf").astype(int) + \
         (d.ks_bilesen < 7).astype(int)
     d["guven"] = np.select([eksik == 0, eksik == 1], ["Yüksek", "Orta"], "Düşük")
+    # güven: kural veri tamlığını ölçer; kart metnindeki değerlendirme (tutarlılık, [D?] olgular) onu düzeltir
+    for kd, g in guven_duz.items():
+        if d.at[kd, "guven"] != g:
+            not_ = f"güven {d.at[kd, 'guven']}→{g}"
+            d.at[kd, "uzman_duzeltmesi"] = not_ if d.at[kd, "uzman_duzeltmesi"] in ("", "metin") else \
+                f"{d.at[kd, 'uzman_duzeltmesi']}; {not_}"
+            d.at[kd, "guven"] = g
     d["mense_riski"] = d.risk_s2 + "/" + d.risk_s3
     d.index.name = "kod"
     d.round(4).to_csv(v("nace_matris.csv"))

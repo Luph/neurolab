@@ -36,7 +36,9 @@ CKE (5 yıl, birikimli; yatırım ithalatı ve ithal girdi düşülmüş) [T]:
           CKE_mali = CA_5 / maliyet (mlr TL, 2026 ort. kur)   [$ mn / mlr TL]
 
 Çıktı: veri/f3_senaryo_sinif.csv (sınıf × senaryo × değişken, P10/P50/P90), veri/f3_senaryo_ozet.csv,
-       veri/f3_makro_sinif.csv (σ, m^X, EDE, TÜFE ağırlığı, CKE)
+       veri/f3_senaryo_grup.csv (bölüm, Faz 3 parçası ve kümülatif parça toplamları; yüzdelikler çekilişlerin toplamından,
+       sınıf yüzdeliklerinin toplamı değil), veri/f3_senaryo_aski.csv (S4'te 1/98'in askıya alındığı ve alınmadığı
+       çekilişlerde koşullu ortalama ve yüzdelikler; sınıf ve grup), veri/f3_makro_sinif.csv (σ, m^X, EDE, TÜFE ağırlığı, CKE)
 """
 
 import argparse
@@ -51,6 +53,8 @@ import yollar
 
 N = 2000
 TOHUM = 20261018
+# Faz 3 parçaları (ana prompt sırası); grup toplamları bölüm, parça ve kümülatif parça için yazılır
+PARCALAR = ["10-12", "13-15", "16-18", "19-21", "22-23", "24", "25", "26", "27", "28", "29", "30", "31-33"]
 PAYLAR = {"S2": dict(p_ab=0.92, c_ab=0.5, ntm=0.5), "S3": dict(p_ab=0.85, c_ab=1.0, ntm=1.0), "S4": dict(ntm=1.0)}
 VARSAYILAN_MENSE = {"düşük": ("D", 1.5, 0.90, 2.5, 0.80), "orta": ("O", 3.0, 0.80, 4.0, 0.70),
                     "yüksek": ("Y", 5.0, 0.65, 6.0, 0.55)}
@@ -306,7 +310,13 @@ def main():
     olcek = {s_: (merkez_hedef[(s_, "x")][0] * V["x_ab"].sum() / pm_[s_]["px"].sum(),
                   merkez_hedef[(s_, "m")][0] * V["m_ab"].sum() / pm_[s_]["pm"].sum()) for s_ in pm_}
 
-    satirlar, ozet = [], []
+    bolum = d.index.str[:2]
+    aralik = lambda g: (bolum >= g[:2]) & (bolum <= g[-2:])  # noqa: E731
+    gruplar = {b: bolum == b for b in sorted(bolum.unique())}
+    gruplar.update({g: aralik(g) for g in PARCALAR})
+    gruplar.update({f"10-{g[-2:]}": aralik(f"10-{g[-2:]}") for g in PARCALAR})
+    gruplar["C"] = np.ones(len(d), bool)
+    satirlar, ozet, grup_satir, aski_satir = [], [], [], []
     deg = ["dx_ab", "dx", "dm_ab", "dm", "dd", "dq", "dl", "dca", "dtufe", "te", "tm"]
     for s in ("S2", "S3", "S4"):
         r = sonuc(pe(s), hedef[(s, "x")], hedef[(s, "m")], olcek[s][0])
@@ -316,6 +326,21 @@ def main():
             for i, kod in enumerate(d.index):
                 satirlar.append(dict(kod=kod, senaryo=s, degisken=dg, p10=q[0, i], p50=q[1, i], p90=q[2, i],
                                      merkez=rm[dg][0, i]))
+        for g, sec in gruplar.items():
+            for dg in ("dx_ab", "dx", "dm_ab", "dm", "dq", "dl", "dca", "dtufe"):
+                q = np.percentile(r[dg][:, sec].sum(axis=1), [10, 50, 90])
+                grup_satir.append(dict(grup=g, senaryo=s, degisken=dg, p10=q[0], p50=q[1], p90=q[2]))
+        if s == "S4":   # 1/98 askısına koşullu dağılım (ortalamalar toplanabilir: payları kesin verir)
+            ask = ortak["tarim"]
+            birimler = [("sinif", kd, np.arange(len(d)) == i) for i, kd in enumerate(d.index)] + \
+                       [("grup", g, sec) for g, sec in gruplar.items()]
+            for tur, ad, sec in birimler:
+                for dg in ("dx_ab", "dx", "dq", "dl", "dca"):
+                    t_ = r[dg][:, sec].sum(axis=1)
+                    q = np.percentile(t_[ask], [10, 50, 90])
+                    aski_satir.append(dict(tur=tur, birim=ad, degisken=dg, aski_ort=t_[ask].mean(), aski_p10=q[0],
+                                           aski_p50=q[1], aski_p90=q[2], askisiz_ort=t_[~ask].mean(),
+                                           askisiz_p50=np.median(t_[~ask])))
         istihdam_pay = r["dl"] / d.l.to_numpy(float)
         toplam = {dg: np.percentile(r[dg].sum(axis=1), [10, 50, 90]) for dg in ("dx_ab", "dx", "dm_ab", "dq", "dl", "dca",
                                                                                 "dtufe")}
@@ -331,6 +356,8 @@ def main():
     sn.round(4).to_csv(v("f3_senaryo_sinif.csv"), index=False)
     oz = pd.DataFrame(ozet)
     oz.round(4).to_csv(v("f3_senaryo_ozet.csv"), index=False)
+    pd.DataFrame(grup_satir).round(4).to_csv(v("f3_senaryo_grup.csv"), index=False)
+    pd.DataFrame(aski_satir).round(4).to_csv(v("f3_senaryo_aski.csv"), index=False)
 
     # CKE
     sgm = d.sigma

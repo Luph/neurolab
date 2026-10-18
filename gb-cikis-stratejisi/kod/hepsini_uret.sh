@@ -25,7 +25,7 @@ if [[ "$CIKTI" != "$PAKET/veri" ]]; then
   cp "$PAKET/veri/vergi_oranlari_2026.csv" "$PAKET/veri/vergi_gelirleri_2024_2026.csv" \
      "$PAKET/veri/skdm_ek1_kn.csv" "$PAKET/veri/skdm_asagi_kn.csv" "$PAKET/veri/skdm_parametre.csv" \
      "$PAKET/veri/hazirlik_hamleler.csv" "$PAKET/veri/f3_sinif_varsayim.csv" "$PAKET/veri/f3_ss_boyutlar.csv" \
-     "$PAKET/veri/f3_coicop_nace.csv" "$CIKTI/"
+     "$PAKET/veri/f3_coicop_nace.csv" "$PAKET/veri/ulke_adlari_tr.csv" "$CIKTI/"
 fi
 
 adim() {
@@ -74,7 +74,8 @@ adim f3f_skor_matris.py
 KARTLAR="$PAKET"; [[ "$CIKTI" != "$PAKET/veri" ]] && KARTLAR="$CIKTI"
 for y in "$PAKET"/kartlar/*_siniflar.yaml; do
   bol="$(basename "$y" _siniflar.yaml)"
-  adim f3g_kartlar.py --yaml "$PAKET/kartlar/$bol.yaml" --yaml "$y" --cikti "$KARTLAR/nace_kartlar_$bol.md"
+  adim f3g_kartlar.py --yaml "$PAKET/kartlar/$bol.yaml" --yaml "$y" --metin "$PAKET/kartlar/${bol}_metin" \
+    --cikti "$KARTLAR/nace_kartlar_$bol.md"
 done
 echo "Şekiller"
 python3 sekiller.py --veri "$CIKTI" --cikti "$CIKTI/sekiller" >/dev/null && echo "sekiller.py                  tamam"

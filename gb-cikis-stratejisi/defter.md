@@ -2,17 +2,17 @@
 
 Her NACE grubu tamamlandığında güncellenir. Toplamlar Faz 6'daki makro mutabakatta kullanılır.
 
-**Son güncelleme:** Faz 3 parça 1 (10 Gıda, 11 İçecekler, 12 Tütün), 18 Ekim 2026. Sınıf düzeyi değerler `veri/nace_matris.csv`'den; parça ayrıntısı [`nace_kartlar_10-12.md`](nace_kartlar_10-12.md) §5.
+**Son güncelleme:** Faz 3 parça 1 (10 Gıda, 11 İçecekler, 12 Tütün), 18 Ekim 2026. Sınıf düzeyi değerler `veri/nace_matris.csv`'den; parça ayrıntısı [`nace_kartlar_10-12.md`](nace_kartlar_10-12.md) Bölüm 6. Bölüm toplamlarının yüzdelikleri çekilişlerin toplamından (V-38).
 
 | Kalem | Değer | Not |
 |---|---|---|
 | Tamamlanan / kalan sınıf sayısı | 33 / 197 C sınıfı (10–12 tamam); 0 / 29 ek kapsam satırı (B 15, D 1, E 2, A 3, hizmet 8) | Kapsam listesi: `veri/nace_kapsam.csv` |
-| Kullanılan / kalan enflasyon bütçesi (bp) | Birinci tur, 10–12. Önlemler: S2 yolu −0,11, S4 yolu −1,55. Çıkış şokları (önlem değil): S2 +0,9, S4 +6,2 (c2). Net: S2 0,8 / 50; S4 4,7 / 50 (yıllık tavan 30). İkinci tur dahil Faz 6'da | V-05; `nace_kartlar_10-12.md` Tablo 5.1 |
-| Kümülatif cari denge katkısı (milyar $) | 10–12, T+5, yıllık. Senaryo P50: S2 −0,044, S4 +0,030 (S4 P10 −1,06; 1/98 askısı). Önlemler: S2 +0,071, S4 +0,010 `[T]`/`[H]` | P10–P50–P90 kartlarda |
+| Kullanılan / kalan enflasyon bütçesi (bp) | Birinci tur, 10–12. Önlemler: S2 yolu −0,11, S4 yolu −1,55. Çıkış şokları (önlem değil): S2 +0,9, S4 +6,2 (c2). Net: S2 0,8 / 50; S4 4,7 / 50 (yıllık tavan 30). İkinci tur dahil Faz 6'da | V-05; `nace_kartlar_10-12.md` Tablo 6.1 |
+| Kümülatif cari denge katkısı (milyar $) | 10–12, T+5, yıllık. Senaryo P50: S2 −0,044, S4 +0,008 (S4 P10 −0,93; 1/98 askısında ortalama −0,86). Önlemler: S2 +0,071, S4 +0,010 `[T]`/`[H]` | `veri/f3_senaryo_grup.csv`, `veri/f3_senaryo_aski.csv` |
 | Kümülatif mali maliyet (milyar TL ve GSYH %) | 10–12: S2 yolu 0,83 mlr TL/yıl, S4 yolu 1,69 mlr TL/yıl (GSYH'nin %0,001–0,002'si) | Tavan: GSYH'nin %0,5'i/yıl (2026'da ≈ $9,1 mlr; 2028'de ≈ $10,5 mlr) |
-| Riskteki istihdam | 10–12: S2 P50 −284; S4 P50 −15, P10 −4.698 (10.39 −3.215; P10'da −%4,9). Faz 3 yöntemiyle imalatın tamamı (geçici, diğer parçalarda kartlarla gözden geçirilecek): S2 P50 −22,5 bin (P10 −38,7); S3 −30,4 bin; S4 −41,2 bin (P10 −64,6), kaybı %5'i aşan sınıf S4 P50'de 9, P10'da 15. Teşhis tabanı (S4, statik, telafisiz): 207 bin brüt | `veri/f3_senaryo_ozet.csv`; `01_teshis.md` §4.1 |
-| Açık kalan veri boşlukları | VB-02, 04, 06, 08–12, 14–17, 21–27, 30–35 (kapanan: VB-01, 03, 05, 07, 13, 18) | `01_teshis.md` §8; `nace_kartlar_10-12.md` Tablo 5.1 |
-| Varsayım kaydına eklenen yeni maddeler | V-01 … V-37 (Faz 3: V-30–V-37 senaryo kalibrasyonu, 1/98 askı olasılığı, ProTEE σ, sınır sürtünmesi, arketip eşikleri, SS, CKE, KN8 eşlemesi) | `00_plan.md` §3 |
+| Riskteki istihdam | 10–12: S2 P50 −299; S4 P50 −106, P10 −3.982; 1/98 askısında ortalama −3.736 (10.39 −2.960, sınıf istihdamının %4,5'i; sınıfın P10'u −%4,9). Faz 3 yöntemiyle imalatın tamamı (geçici, diğer parçalarda kartlarla gözden geçirilecek): S2 P50 −22,5 bin (P10 −38,7); S3 −30,4 bin; S4 −41,2 bin (P10 −64,6), kaybı %5'i aşan sınıf S4 P50'de 9, P10'da 15. Teşhis tabanı (S4, statik, telafisiz): 207 bin brüt | `veri/f3_senaryo_ozet.csv`; `01_teshis.md` §4.1 |
+| Açık kalan veri boşlukları | VB-02, 04, 06, 08–12, 14–17, 21–27, 30–35 (kapanan: VB-01, 03, 05, 07, 13, 18) | `01_teshis.md` §8; `nace_kartlar_10-12.md` Ek E |
+| Varsayım kaydına eklenen yeni maddeler | V-01 … V-39 (Faz 3: V-30–V-39 senaryo kalibrasyonu, 1/98 askı olasılığı, ProTEE σ, sınır sürtünmesi, arketip eşikleri, SS, CKE, KN8 eşlemesi, grup yüzdelikleri ve askının koşullu raporlanması, eylem takvimi) | `00_plan.md` §3 |
 
 ## Teşhis tabanı (Faz 1)
 
@@ -89,10 +89,11 @@ Sınıf kartlarının toplamları. Faz 3 yöntemi: toplamlar Faz 2B genel denges
 | 10–12 ağırlığı | İstihdam 636 bin (imalatın %12,6'sı); KD $23,3 mlr; ihracat $24,1 mlr (%9,6); AB'ye ihracat $6,2 mlr (%5,9) | `[V]` YSHİ 2024, BACI 2024 |
 | AB'ye ihracatın rejimi (10–12) | Tarım (1/98) %75, İTÜ %24, GB %1 | `[V]`/`[T]` Comext 2025 |
 | S4'te AB tarifesi artışı (rota A / 1/98 kaybıyla) | %3,3 / %11,5 (10–12); imalat %5,6 / %6,0 | `[T]` `veri/f3_ab_tarife_sinif.csv` |
-| 10–12 S4 kuyruk riski (1/98 askısı, P10) | AB'ye ihracat −$2,0 mlr, cari denge −$1,06 mlr, istihdam −4,7 bin; yarıdan fazlası 10.39 | `[T]` |
+| 10–12, bölüm toplamı P50 (P10 / P90), T+5 | S2: AB'ye ihracat −$202 mn (−446 / +125), istihdam −299, cari denge −$44 mn. S4: AB'ye ihracat −$406 mn (−1.840 / −171), istihdam −106 (−3.982 / +258), cari denge +$8 mn (−934 / +104) | `[T]` `veri/f3_senaryo_grup.csv` (V-38) |
+| 10–12, S4'te 1/98 askısı (koşullu ortalama; olasılık 0,25) | AB'ye ihracat −$1,72 mlr (askı olmadan −$0,34 mlr), cari denge −$0,86 mlr, istihdam −3,7 bin (P90 / P10: −2,0 / −5,7 bin); askıdan doğan ek kaybın %77'si 10.39'da | `[T]` `veri/f3_senaryo_aski.csv` |
 | İmalat (230 sınıf), AB'ye ihracat değişimi P50 (P10 / P90) | S2 −%11,0 (−23,4 / +2,0); S3 −%14,9 (−26,4 / −2,9); S4 −%19,1 (−29,7 / −7,9) | `[T]` GE kalibrasyonu |
 | İmalat, cari denge P50 (P10 / P90), T+5, yıllık | S2 −$2,7 mlr (−4,2 / −2,0); S3 −$3,5 mlr; S4 −$4,2 mlr (−6,3 / −2,9) | `[T]` geçici |
 | İmalat, birinci tur TÜFE (c2 ve sürtünme), P50 | S2 10,9 bp; S3 20,7 bp; S4 69,1 bp (59–79) | `[T]` Faz 2A ile tutarlı (73 bp) |
 | Arketip dağılımı (kural + 10–12 düzeltmesi) | A 53, — 49, B 39, G 33, C 30, D 17, F 8, E 1 | `[H]` `veri/nace_matris.csv`; diğer parçalarda düzeltilecek |
-| Düzeltmeler | D-1 KN8 → NACE ağırlıkları; D-2 KKTC akımları; D-3 "%5'i aşan 21 sınıf" yerine 9 (P50) / 15 (P10) | `nace_kartlar_10-12.md` §0 |
+| Düzeltmeler | D-1 KN8 → NACE ağırlıkları; D-2 KKTC akımları; D-3 "%5'i aşan 21 sınıf" yerine 9 (P50) / 15 (P10) | `nace_kartlar_10-12.md` Ek D |
 

@@ -13,7 +13,7 @@ belgelerini, verileri ve kodu içerir. Her faz sonunda çalışma durur ve **DEV
 | 2A | Politika uzayı: kullanıcının önerisi (tarife + ÖTV takası), araç evreni, bağlı oranlar, aktif S4, dış rejim evreni | Tamamlandı (18.10.2026) | [`02a_politika_uzayi.md`](02a_politika_uzayi.md) |
 | 2B | Seçenekler (S0–S5, R7, ITA, aktif S4), çekim modeli, bitiş durumu ve hukuki yol haritası (AB, DTÖ, Türk iç hukuku), iki takvim | Tamamlandı (18.10.2026) | [`02b_secenekler_hukuk.md`](02b_secenekler_hukuk.md) |
 | 2C | Karar öncesi hazırlık: dokuz çerçevede 51 sessiz, pişmanlıksız hamle; STA ağının genel dengesi, menşe riski, SKDM yükü, makro tampon; kırmızı liste ve devreye alma sırası | Tamamlandı (18.10.2026) | [`02c_hazirlik.md`](02c_hazirlik.md) |
-| 3 | NACE sınıf kartları (16 parça). Parça 1: 10 Gıda, 11 İçecekler, 12 Tütün (33 kart); ana matris 230 sınıfın tamamı için | Parça 1 / 16 tamamlandı (18.10.2026) | [`nace_kartlar_10-12.md`](nace_kartlar_10-12.md), [`veri/nace_matris.csv`](veri/nace_matris.csv) |
+| 3 | NACE sınıf analizi (16 parça). Parça 1: 10 Gıda, 11 İçecekler, 12 Tütün; 33 sınıfın düzyazı incelemesi ve veri sayfası; ana matris 230 sınıfın tamamı için | Parça 1 / 16 tamamlandı (18.10.2026) | [`nace_kartlar_10-12.md`](nace_kartlar_10-12.md), [`veri/nace_matris.csv`](veri/nace_matris.csv) |
 | 4–9 | Derin analizler → araçlar ve tarife cetveli → makro → müzakere → uygulama → risk ve yönetici özeti | Planlandı | bkz. `00_plan.md` §2 |
 
 Yeni bir sohbette devam etmek için: ana prompt + [`DURUM_OZETI.md`](DURUM_OZETI.md).
@@ -40,9 +40,9 @@ Bütün kod, ham veri, ara ve nihai hesaplar pakettedir. Hesaplar ağ erişimi o
 | [`pdf/`](pdf/) | Dizilmiş PDF'ler |
 | [`latex/`](latex/) | Stil (`gbstil.sty`), pandoc filtresi (`gb.lua`), cilt ve belge sarmalayıcıları, üretilmiş LaTeX gövdeleri, derleme betiği (`derle.sh`) |
 | [`kod/`](kod/) | Bütün betikler; `hepsini_uret.sh` hepsini sırayla çalıştırır, `dogrula.py` sonuçları karşılaştırır |
-| [`kartlar/`](kartlar/) | Faz 3 sınıf kartlarının nitel alanları (YAML; uzman muhakemesi, eylem tabloları, müzakere, tetikler). Sayısal alanlar veriden üretilir (`kod/f3g_kartlar.py`) |
+| [`kartlar/`](kartlar/) | Faz 3 belgelerinin kaynağı. `[bölüm]_metin/*.md`: elle yazılmış Türkçe metin; içindeki `{{…}}` yer tutucuları ve tablo işaretleri `kod/f3g_kartlar.py` ile veriden doldurulur. `[bölüm].yaml` ve `[bölüm]_siniflar.yaml`: yapısal alanlar (eylem ve tetik tabloları, çapa yatırımcılar, kritik girdiler, arketip/duruş/güven düzeltmeleri, defter kayıtları) |
 | [`girdi/`](girdi/) | Ham girdiler (184 dosya, ≈132 MB): TÜİK, TCMB, Eurostat, Comtrade, WITS, CEPII, Ticaret Bakanlığı, SGK, DESTA, BM, Avrupa Komisyonu (SKDM). Kaynak, adres ve SHA-256: [`girdi/MANIFEST.csv`](girdi/MANIFEST.csv); açıklama: [`girdi/README.md`](girdi/README.md) |
-| [`veri/`](veri/) | Hesap sonuçları (CSV) ve elle derlenmiş girdiler (`vergi_oranlari_2026.csv`, `vergi_gelirleri_2024_2026.csv`, `akct_1996_cn8.txt`, `skdm_ek1_kn.csv`, `skdm_asagi_kn.csv`, `skdm_parametre.csv`, `hazirlik_hamleler.csv`, `f3_sinif_varsayim.csv`, `f3_ss_boyutlar.csv`, `f3_coicop_nace.csv`; kaynakları ve gerekçeleri satır içinde) |
+| [`veri/`](veri/) | Hesap sonuçları (CSV) ve elle derlenmiş girdiler (`vergi_oranlari_2026.csv`, `vergi_gelirleri_2024_2026.csv`, `akct_1996_cn8.txt`, `skdm_ek1_kn.csv`, `skdm_asagi_kn.csv`, `skdm_parametre.csv`, `hazirlik_hamleler.csv`, `f3_sinif_varsayim.csv`, `f3_ss_boyutlar.csv`, `f3_coicop_nace.csv`, `ulke_adlari_tr.csv`; kaynakları ve gerekçeleri satır içinde) |
 | [`sekiller/`](sekiller/) | Şekiller (PNG ve PDF), `kod/sekiller.py` ile `veri/`den |
 | [`kaynaklar/`](kaynaklar/) | Hukuki ve kurumsal bulguların araştırma notları |
 
@@ -99,14 +99,14 @@ Bütün kod, ham veri, ara ve nihai hesaplar pakettedir. Hesaplar ağ erişimi o
 | `kod/yollar.py` | Paket içi yollar (`girdi/`, `veri/`) ve çevrimdışı kip (`GB_CEVRIMDISI=1`) |
 | `kod/hepsini_uret.sh`, `kod/dogrula.py` | Bütün hesapları sırayla yeniden üretir; sonuçları `veri/` ile karşılaştırır |
 | `kod/girdi_hazirla.py` | BACI özetleri, büyük dosyaların sıkıştırılması, `girdi/MANIFEST.csv` |
-| `nace_kartlar_10-12.md` | Faz 3 parça 1: 10–12'nin genel görünümü, ana matris satırları, 33 sınıf kartı (15 alan), ortak eylemler, kümülatif defter |
+| `nace_kartlar_10-12.md` | Faz 3 parça 1: yönetici özeti, çıkışın beş kanalı, strateji ve eylem paketi, 33 sınıfın incelemesi (15 alanlı kart: metin + Ek C veri sayfası + Bölüm 4 eylem ve tetik tabloları), kümülatif defter, ekler |
 | `kod/f3a_ticaret.py` | Sınıf düzeyi ticaret: ihracat/ithalat, AB ve Çin payları, RCA (dünya, AB pazarı), AB pazar payı, birim değer, ilk 5 pazar/kaynak/rakip ve AB tercih durumu (BACI 2020, 2024; KKTC akımları AB dışı) → `veri/f3_ticaret_sinif.csv`, `veri/f3_ortaklar_sinif.csv` |
 | `kod/f3b_yapi.py` | Üretim, KD, istihdam, ölçek, İBBS-2 bölge payları (iş kayıtları + SGK, RAS), AB'ye göre verimlilik (Eurostat SBS) → `veri/f3_yapi_sinif.csv`, `veri/f3_bolge_sinif.csv` |
 | `kod/f3c_karmasiklik.py` | PCI ve ECI (yansımalar yöntemi, özvektör), ürün uzayı yoğunluğu, karmaşıklık kazancı, atlanabilir ürünler → `veri/f3_pci_*.csv`, `veri/f3_eci_ulke.csv` |
 | `kod/f3d_ab_tarife.py` | AB MFN'si KN8 düzeyinde: spesifik vergilerin AVE'si, rejime göre S4 artışı (GB, İTÜ, 1/98), tepe satırlar, EUDR ve SKDM payları → `veri/f3_ab_tarife_kn8.csv`, `veri/f3_ab_tarife_sinif.csv` |
-| `kod/f3e_senaryo.py` | S2/S3/S4 sınıf etkileri, P10–P50–P90 (Monte Carlo; toplamlar Faz 2B genel dengesine kalibre), EDE, CKE → `veri/f3_senaryo_sinif.csv`, `veri/f3_senaryo_ozet.csv`, `veri/f3_makro_sinif.csv` |
+| `kod/f3e_senaryo.py` | S2/S3/S4 sınıf etkileri, P10–P50–P90 (Monte Carlo; toplamlar Faz 2B genel dengesine kalibre), bölüm ve parça toplamlarının dağılımı, S4'te 1/98 askısına koşullu sonuçlar, EDE, CKE → `veri/f3_senaryo_sinif.csv`, `veri/f3_senaryo_ozet.csv`, `veri/f3_senaryo_grup.csv`, `veri/f3_senaryo_aski.csv`, `veri/f3_makro_sinif.csv` |
 | `kod/f3f_skor_matris.py` | KS, SS, AME, EDE, CKE puanları, arketip ve duruş (kural + `kartlar/` düzeltmeleri), ağırlık duyarlılığı → `veri/nace_matris.csv`, `veri/f3_ks_duyarlilik.csv` |
-| `kod/f3g_kartlar.py` | Sınıf kartı belgesi: `nace_kartlar_[bölüm].md` (sayısal alanlar veriden, nitel alanlar `kartlar/*.yaml`'dan) |
+| `kod/f3g_kartlar.py` | Bölüm belgesi `nace_kartlar_[bölüm].md`: `kartlar/[bölüm]_metin/` şablonlarındaki yer tutucuları (matris ve f3 tabloları, grup yüzdelikleri, 1/98 askısı, dünya ihracat payları, ithalat kalemleri, KN8 tarifeleri) ve tablo işaretlerini doldurur; Türkçe ülke adları `veri/ulke_adlari_tr.csv` |
 | `kod/sekiller.py` | On üç şekil (`sekiller/`) |
 | `latex/derle.sh`, `latex/gb.lua`, `latex/gbstil.sty`, `latex/cilt.tex` | PDF üretimi |
 
@@ -120,7 +120,7 @@ latex/derle.sh                                          # şekiller, LaTeX gövd
 ```
 
 - **Süre.** Hesaplar ≈20–30 dakika sürer; çoğu çekim modelinde (19 PPML spesifikasyonu, 1.000 çekilişli genel denge) ve STA ağı genel dengesinde. PDF'ler ≈4 dakika.
-- **Sınama sonucu (18.10.2026).** Çevrimdışı kipte Faz 0–3'ün bütün betikleri (31 adım) paketteki girdilerle çalıştı. `veri/` klasöründeki sonuçlar ve `nace_kartlar_10-12.md` bayt bayt aynı üretildi (`kod/dogrula.py`). Faz 3 hesapları ≈1,5 dakika sürüyor.
+- **Sınama (18.10.2026).** Faz 3 parça 1'in düzyazı sürümü (yeni şablon, grup yüzdelikleri, 1/98 askısı çıktıları) için çevrimdışı yeniden üretim sınaması sürüyor; sonuç bu satıra yazılacak. Önceki sürümde `veri/` ve `nace_kartlar_10-12.md` bayt bayt aynı üretilmişti (`kod/dogrula.py`).
 - **Tek tek çalıştırma.** Betikler `kod/` içinden argümansız çalışır. Varsayılan girdi `girdi/`, çıktı `veri/`. Örnek: `python3 f2e_s4_aktif.py`. Sıra `hepsini_uret.sh` içinde.
 - **PDF için gerekenler.** pandoc ≥ 3.1, TeX Live 2023 (LuaLaTeX, latexmk, KOMA-Script, polyglossia), TeX Gyre ve DejaVu yazı tipleri. Ubuntu'da: `apt-get install pandoc texlive-luatex texlive-latex-extra texlive-fonts-extra texlive-lang-european latexmk fonts-dejavu`.
 

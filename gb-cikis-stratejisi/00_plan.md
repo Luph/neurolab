@@ -231,6 +231,8 @@ Sınırlamalar: AB'nin spesifik vergileri ve tarım bileşenleri dahil değil (t
 | V-35 | Stratejik skor boyutları | Yedi boyut 0–100, elle (`veri/f3_ss_boyutlar.csv`). Ağırlıklar: savunma 0,20; ikili kullanım 0,10; enerji, sağlık, gıda, kritik hammadde 0,15; dijital 0,10. SS = 0,7 × en yüksek + 0,3 × ağırlıklı ortalama | `[H]` Faz 3 |
 | V-36 | CKE tanımı | 5 yıl, birikimli. Tarife: STA dışı ithalata +1 puan. Mali: iç satışa %1 üretim desteği. Kapasite yatırımının ithalatı (sermaye/hasıla 1, ithal payı 0,6) ve ithal girdi içeriği düşülür. Tavan: üretimin %3'ü | `[T]` Faz 3 |
 | V-37 | KN8 → NACE eşlemesi (Faz 3) | Birden çok sınıfa düşen KN8'de CPA 2.2 kodunun CPA 2.1'de aynen sürdüğü bağlantı; yoksa aynı bölümdeki hedefler; yoksa eşit pay (`agirlik_f3`). Faz 0–2 eşit pay kullandı (düzeltme D-1) | `[T]` Faz 3 |
+| V-38 | Grup toplamlarının dağılımı (Faz 3) | Bölüm, parça ve kümülatif parça toplamlarının P10–P50–P90 değerleri her çekilişteki toplamın dağılımından (`veri/f3_senaryo_grup.csv`); sınıf yüzdelikleri toplanmıyor. S4'te 1/98 askısının etkisi, askı çekilişlerinin koşullu ortalamasıyla raporlanıyor (`veri/f3_senaryo_aski.csv`) | `[T]` Faz 3 |
+| V-39 | Eylem takvimi (Faz 3) | Tarihler T'ye göre; T2028'de T−18 (1.7.2026) geçmişte kaldığı için hazırlık eylemleri "hemen", 2026'nın son çeyreğinde başlıyor | `[H]` Faz 3 |
 
 ---
 
