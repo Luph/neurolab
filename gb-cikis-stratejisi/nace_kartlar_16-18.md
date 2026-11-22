@@ -451,7 +451,7 @@ Dokuz sınıfta çıkışın etkisi küçük ya da ölçülemiyor. Hepsinin veri
 
 *Kaynak:* TÜİK YSHİ 2024, BACI 2024 `[V]`; senaryolar `[T]` f3e. Veri sayfaları Ek C'de.
 
-Ahşap döşeme (16.22) küçük ama rekabetçi bir sınıf; AB'ye ihracatı yapı ürünü olarak CE işaretine ve AB'de tanınan deneye bağlı. Palet ve ahşap ambalaj (16.24) ağırlıkla ihracat ambalajı; başka bir ürünü taşımak için kullanıldığında ormansızlaşma tüzüğünün kapsamı dışında. S4'te c2, AB'den gelen paleti pahalandırdığı için sınıfın istihdamı +20 kişi değişiyor. Diğer ağaç ürünlerinin (16.29) ve kırtasiyenin (17.23) AB'ye ihracatı küçük. Duvar kâğıdı (17.24) çok küçük bir sınıf. Gazete basımı (18.11), ciltçilik (18.14) ve kayıtlı ortamların çoğaltılması (18.20) hizmet sınıfları; dış ticaretleri ölçülemiyor ve çıkıştan etkilenmeleri beklenmiyor. Baskı öncesi hizmetler (18.13) baskı kalıbı ve klişe ihraç ediyor; ilk pazarı Almanya (%43).
+Ahşap döşeme (16.22) küçük ama rekabetçi bir sınıf; AB'ye ihracatı yapı ürünü olarak CE işaretine ve AB'de tanınan deneye bağlı. Palet ve ahşap ambalaj (16.24) ağırlıkla ihracat ambalajı; başka bir ürünü taşımak için kullanıldığında ormansızlaşma tüzüğünün kapsamı dışında. S4'te c2 AB'den gelen paleti pahalandırıyor ve sınıfın istihdam etkisi +20 kişi. Diğer ağaç ürünlerinin (16.29) ve kırtasiyenin (17.23) AB'ye ihracatı küçük. Duvar kâğıdı (17.24) çok küçük bir sınıf. Gazete basımı (18.11), ciltçilik (18.14) ve kayıtlı ortamların çoğaltılması (18.20) hizmet sınıfları; dış ticaretleri ölçülemiyor ve çıkıştan etkilenmeleri beklenmiyor. Baskı öncesi hizmetler (18.13) baskı kalıbı ve klişe ihraç ediyor; ilk pazarı Almanya (%43).
 
 ## 6. Defter, kısıtlar ve kalite kontrolü
 
