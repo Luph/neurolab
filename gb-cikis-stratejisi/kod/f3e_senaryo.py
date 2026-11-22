@@ -3,13 +3,15 @@
 Kısmi denge (ana prompt 1.1), sınıf i ve senaryo s için (değerler $ mn, BACI 2024):
   AB'ye ihracat    ΔX_AB = k_s · X_AB · [(1 + τ_etkin)^(−σ_i) − 1]
      S4:    τ_etkin = τ_AB,S4 + NTM_sınır + CE
-     S2/S3: τ_etkin = (1 − p_uyum)·τ_AB,S4 + q·p_uyum·c_RoO + NTM_sınır + CE_s
+     S2/S3: τ_etkin = (1 − p_uyum)·τ_AB,S4 + q·p_uyum·min(c_RoO, τ_AB,S4) + NTM_sınır + CE_s
+            (menşe maliyetine yalnız tarifeden kurtaracaksa katlanılır: MFN'si sıfır üründe tercih istenmez)
             q = GB + İTÜ payı (tarım satırları 1/98'de bugün de menşe kuralına tabi; ek maliyet yok)
   Saptırma         ΔX_diğer = −δ_s · ΔX_AB
   AB'den ithalat   ΔM_AB = k^M_s · M_AB · [(1 + τ_m)^(−σ_i) − 1]
      S4:    τ_m = τ_TR,c2 + NTM_sınır          (c2: 02a §4.1, AB baskın ve yurt içi kabiliyet zayıfsa İGV kalkar)
-     S2/S3: τ_m = (1 − p_AB)·τ_TR,c2 + p_AB·c_AB + NTM_sınır
-  İç ikame         ΔD = −ΔM_AB · D/(D + M_AB-dışı),  D = max(YSHİ üretim − ihracat, 0)
+     S2/S3: τ_m = (1 − p_AB)·τ_TR,c2 + p_AB·min(c_AB, τ_TR,c2) + NTM_sınır
+  İç ikame         ΔD = −ΔM_AB · D/(D + M_AB-dışı),  D = max(YSHİ üretim − ihracat, 0); yerli üretimi AB ithalatının
+                   yerini alamayan sınıflarda tavanla sınırlı (veri/f3_sinif_varsayim.csv: ikame_tavani, ör. kâğıt hamuru 0)
   PEM kümülasyonu  ΔX_kum = −λ · κ_i · X_kum,i   (yalnız S4; X_kum: PEM ortağına ihracat × ortağın aşağı yönde AB payı,
                    f3a; κ_i: Türk girdisinin ortağın AB'ye tercihli ürününde menşe kazandıran adım olup olmadığı,
                    veri/f3_sinif_varsayim.csv; λ: üçgen(0,3; 0,6; 0,9) [H]). GE toplamına eklenir (GE'de yok).
@@ -23,7 +25,7 @@ k_s, k^M_s: merkez parametrelerle toplam AB ihracatı (ithalatı) değişimini F
 δ_s: GE'de toplam ihracat ile AB ihracatı değişiminin oranından (2024 AB payıyla).
 Monte Carlo (N = 2000), ortak çarpanlar + sınıf gürültüsü [T]:
   σ: ortak lognormal(0; 0,25) × sınıf lognormal(0; 0,15);  NTM_sınır: üçgen(0,5; 1; 2)% (+ çabuk bozulan pay × üçgen(0,5; 1; 2)%);
-  CE: CE payı × üçgen(1; 2; 4)% (S2'de ACAA ile × 0,25);  p_uyum: ±0,10 sınıf + ±0,05 ortak;  c_RoO: × lognormal(0; 0,3);
+  CE: CE payı (veri/f3_sinif_varsayim.csv: ce_payi; yoksa 0) × üçgen(1; 2; 4)% (S2'de ACAA ile × 0,25);  p_uyum: ±0,10 sınıf + ±0,05 ortak;  c_RoO: × lognormal(0; 0,3);
   S2'de sınır sürtünmesi × 0,5 (AEO karşılıklı tanıma, tek pencere); AB ihracatçısının TR'ye menşe maliyeti c_AB:
   S2 %0,5, S3 %1, uyum p_AB 0,92 / 0,85;  δ: ±0,10;  ρ: üçgen(0,6; 0,8; 1,0);  θ: üçgen(0,1; 0,3; 0,5);  S4'te 1/98 kaybı olasılığı 0,25 (AB hasmane, V-11) [H];
   1/98 kaybının kısmi denge etkisi GE toplamına eklenir (GE ölçeğiyle), yeniden dağıtılmaz.
@@ -177,7 +179,6 @@ def main():
     cb = kn8.groupby("nace2").apply(lambda g: (g.x_ab_meur * g.cabuk).sum() / max(g.x_ab_meur.sum(), 1e-9),
                                     include_groups=False)
     d["cabuk_pay"] = cb.reindex(d.index).fillna(0)
-    d["ce_pay"] = 0.0          # CE/onaylanmış kuruluş bağımlılığı: 10–12'de yok; diğer bölümler kendi parçalarında
     d["q_gb_itu"] = d.pay_GB + d.pay_ITU
 
     # σ
@@ -196,6 +197,12 @@ def main():
     d["risk_s3"] = d.risk_s3.fillna(d.risk_s2)
     d["vz_carpani"] = d.vz_carpani.fillna(1.0)
     d["kumulasyon"] = d.kumulasyon.fillna(0.0)
+    # CE/onaylanmış kuruluş bağımlılığı (AB'ye ihracatta üçüncü taraf uygunluk değerlendirmesi gereken pay) ve iç ikame
+    # tavanı (yerli üretimi AB ithalatının yerini alamayan sınıflar, ör. kâğıt hamuru): sınıf tablosundan, yoksa 0 / tavansız
+    d["ce_pay"] = va.ce_payi.reindex(d.index).fillna(0.0) if "ce_payi" in va else 0.0
+    if "ikame_tavani" in va:
+        tav = va.ikame_tavani.reindex(d.index)
+        d["yerli_pay"] = np.where(tav.notna(), np.fmin(d.yerli_pay, tav), d.yerli_pay)
     d["x_pem"] = t.x_pem_musd_2024.reindex(d.index).fillna(0)
     d["x_kum"] = t.x_kum_musd_2024.reindex(d.index).fillna(0)
 
@@ -274,9 +281,11 @@ def main():
             pu = np.clip(V[f"p_uyum_s{j}"] + o["pu"][:, None] + sp, 0.05, 0.98)
             cr = V[f"c_roo_s{j}"] * sc / 100
             ce = V["ce_pay"] * o["ce"][:, None] / 100 * (0.25 if s == "S2" else 1.0)
-            te = (1 - pu) * V["tau_ab_s4"] / 100 + V["q_gb_itu"] * pu * cr + ntm + ce
+            # menşe maliyetine yalnız tercih bir tarifeden kurtarıyorsa katlanılır: MFN'si sıfır ya da c_RoO'dan düşük
+            # üründe ihracatçı tercih istemez, MFN'yi öder (sınıf ortalaması düzeyinde yaklaşık)
+            te = (1 - pu) * V["tau_ab_s4"] / 100 + V["q_gb_itu"] * pu * np.minimum(cr, V["tau_ab_s4"] / 100) + ntm + ce
             p_ab, c_ab = PAYLAR[s]["p_ab"], PAYLAR[s]["c_ab"] / 100
-            tm = (1 - p_ab) * V["tau_tr_c2"] / 100 + V["q_gb_itu_m"] * p_ab * c_ab + ntm_m
+            tm = (1 - p_ab) * V["tau_tr_c2"] / 100 + V["q_gb_itu_m"] * p_ab * np.minimum(c_ab, V["tau_tr_c2"] / 100) + ntm_m
         return dict(px=V["x_ab"] * ((1 + te) ** (-sg) - 1), pm=V["m_ab"] * ((1 + tm) ** (-sg) - 1), ek=ek, kum=kum,
                     dlt=np.clip(delta[s] + o["dl"][:, None], 0, 0.6), rho=o["rho"][:, None], theta=o["theta"][:, None],
                     te=te, tm=tm)

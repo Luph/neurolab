@@ -1,0 +1,81 @@
+# 16–18 bölüm belgesinin yapısal alanları. Metin kartlar/16-18_metin/'de; f3g_kartlar.py okur.
+# ortak_eylemler: [kimlik, araç, parametre, sorumlu, hukuki araç, bütçe, başlangıç → bitiş, performans koşulu, sunset, KPI].
+# defter_ortak: ortak eylemlerin T+5'teki yıllık etkisi (sınıf defteriyle aynı birimler).
+bolumler:
+  "16": Ağaç ve ağaç ürünleri
+  "17": Kâğıt ve kâğıt ürünleri
+  "18": Basım ve kayıt ortamlarının çoğaltılması
+belge:
+  parca: 3
+  sonraki: "Faz 3 parça 4 (19–21: kok ve rafine petrol, kimyasallar, eczacılık)"
+  ortak_eylemler:
+    - - E-16-01
+      - "EUDR ahşap ve kâğıt veri hizmeti"
+      - "OGM'nin amenajman planlarındaki bölme ve bölmecik sınırlarının, her dikili ve istif satışında alıcıya EUDR'ye uygun coğrafi konum ve yasallık verisi olarak verilmesi; ithal odun ve kâğıt hamurunda tedarikçiden coğrafi konum verisinin ithalat beyannamesine eklenmesi; ilk parçadaki EUDR uyum masasının (E-10-03) ahşap, kâğıt ve mobilyaya genişletilmesi"
+      - "Tarım ve Orman Bakanlığı (OGM), Ticaret Bakanlığı (Gümrükler GM, İhracat GM), TİM"
+      - "OGM genelgesi (satış şartnamesi); Ticaret Bakanlığı genelgesi"
+      - "≈ 0,1 mlr TL/yıl `[T]`"
+      - "Hemen → T−12 (EUDR 30.12.2026'da uygulanmaya başlıyor)"
+      - "OGM satışlarının EUDR verisiyle yapılan payı"
+      - Yok (kalıcı altyapı)
+      - "EUDR gerekçesiyle AB'de reddedilen Türk orman ürünü sevkiyatı sıfır; Türkiye'nin düşük risk sınıfında kalması"
+    - - E-16-02
+      - "Rus ve Belarus odunundan ayrışmış tedarik"
+      - "Levha, kontrplak ve kereste ihracatçıları için firma düzeyinde odun menşe beyanı (ithalat kayıtlarıyla doğrulanan); AB'ye ihracat hatlarında Rus ve Belarus odunu kullanılmaması; huş kontrplağındaki süre sonu gözden geçirmesine (AB, 6.11.2026) katılım ve Türk üreticilerin muafiyet başvurularına teknik destek"
+      - "Ticaret Bakanlığı (İthalat GM, Ticaret Savunması), TİM (orman ürünleri ihracatçı birlikleri)"
+      - "Bakanlık genelgesi; AB Temel Anti-Damping Tüzüğü md. 11(2) ve 13(4) çerçevesinde başvuru"
+      - "≈ 0,02 mlr TL/yıl `[T]`"
+      - Hemen → T+24
+      - "Menşe beyanı veren ihracatçıların AB'ye levha ve kontrplak ihracatındaki payı"
+      - T+24
+      - "Türkiye'den gönderilen ürüne yeni anti-damping genişletmesi sıfır; gözden geçirmede Türk üreticiler için muafiyet"
+    - - E-16-03
+      - "Ambalajda PPWR uyumu"
+      - "AB'ye ambalaj ve gıdayla temas eden kâğıt satan ihracatçılar için PFAS'sız kaplamaya geçiş, uygunluk beyanı ve teknik dosya şablonu; üye devletlerde genişletilmiş üretici sorumluluğu kaydı için rehber; Türkiye'nin ambalaj atığı mevzuatının PPWR ile uyumu (geri dönüştürülebilirlik ve etiketleme)"
+      - "Ticaret Bakanlığı, Çevre, Şehircilik ve İklim Değişikliği Bakanlığı, TSE, TİM"
+      - "Bakanlık rehberi; Ambalaj Atıklarının Kontrolü Yönetmeliği değişikliği"
+      - "≈ 0,05 mlr TL/yıl `[T]`"
+      - Hemen → T
+      - "Uygunluk dosyası hazır ihracatçı sayısı"
+      - T+12
+      - "PPWR gerekçesiyle AB pazar gözetiminde Türk ambalajına ilişkin bildirim sıfır"
+    - - E-16-04
+      - "Ticaret savunmasında karşılıklılık ve aşağı akışın gözetilmesi"
+      - "(i) S2 metninde ticaret savunması soruşturmasından önce zorunlu istişare ve anti-damping genişletmelerinde (md. 13) taraflar arası bilgi paylaşımı; (ii) Türkiye'nin kâğıt korunma önlemlerinde (testliner ve fluting, 2027'de sona eriyor; kaplamalı kâğıt soruşturması, Tebliğ 2026/3) ambalaj ve matbaacılık kullanıcılarının ve tüketicinin çıkarının kararda ayrıca tartılması"
+      - "Ticaret Bakanlığı (İthalat GM)"
+      - "S2 anlaşma metni (ticaret savunması bölümü); İthalatta Korunma Önlemleri Yönetmeliği uygulaması"
+      - İdari
+      - Hemen → T
+      - "S2 metninde istişare maddesi"
+      - —
+      - "Önlem kararlarında aşağı akış etkisinin yayımlanan soruşturma raporunda yer alması"
+    - - E-16-05
+      - "Odun ve lif hammaddesi güvenliği"
+      - "Hızlı gelişen türlerle (kavak, okaliptüs, kızılçam) endüstriyel ağaçlandırma ve özel ağaçlandırma kredisi; belediye atık kâğıt toplamasının genişletilmesi (depozito ve genişletilmiş üretici sorumluluğu); kâğıt hamuru ve kerestede tedarik kaynaklarının çeşitlendirilmesi"
+      - "Tarım ve Orman Bakanlığı (OGM), Çevre, Şehircilik ve İklim Değişikliği Bakanlığı, belediyeler"
+      - "OGM ağaçlandırma programı; Sıfır Atık mevzuatı"
+      - "≈ 0,2 mlr TL/yıl (mevcut programlara ek) `[T]`"
+      - Hemen → T+60
+      - "Yıllık endüstriyel ağaçlandırma alanı; atık kâğıt toplama oranı"
+      - T+60
+      - "Odun ithalatında Rusya ve Belarus payı T+3'te ≤ %10; atık kâğıt toplama oranı T+5'te +10 puan"
+  defter_ortak:
+    E-16-01: {mali_s2: 0.1, mali_s4: 0.1}
+    E-16-02: {mali_s2: 0.02, mali_s4: 0.02}
+    E-16-03: {mali_s2: 0.05, mali_s4: 0.05}
+    E-16-05: {mali_s2: 0.2, mali_s4: 0.2}
+  veri_bosluklari:
+    - "VB-40: levha, kontrplak ve kâğıtta ithal odun ve kâğıt hamurunun firma düzeyinde menşe dağılımı (Rusya ve Belarus payı; EUDR ve anti-damping riski)"
+    - "VB-41: tamamen geri dönüştürülmüş lifle üretilen kâğıt ve ambalajın ihracattaki payı (EUDR kapsamı dışında; sınıfların EUDR payı bu yüzden üst sınır)"
+    - "VB-42: basılı ürün ve baskı hizmeti ihracatının sınıf eşlemesi (Fasıl 49 yayıncılık sınıflarına, 58.xx, gidiyor; 18.11, 18.12, 18.14 ve 18.20'nin dış ticareti ölçülemiyor)"
+    - "VB-43: c2 rejiminde yurt içi kabiliyet bayrağı HS6 düzeyinde hesaplanıyor; sıvı ambalaj kartonu (4811 59) ve kraftliner (4804 11) gibi kalitelerde yanlış sınıflama, 8–12 haneli üretim verisi gerekir"
+    - "VB-44: kâğıt hamuru (17.11) YSHİ verisi gizli; sınıfın çalışanı ve üretimi bilinmiyor"
+    - "VB-32 (sürüyor): DTÖ bağlı oranları, satır düzeyi. 13–18'de bağlayıcı değil: c2 uygulanan MFN oranlarını değiştirmiyor, yalnız AB tercihini kaldırıyor; 16–18'deki tek tarife önerisi (E-17.12-01) bir indirim"
+  varsayimlar:
+    - "V-35 (güncellendi): SS boyut puanları ve ağırlıkları `[H]` (veri/f3_ss_boyutlar.csv; 10–18 gözden geçirildi, diğerleri ilk tahmin)"
+    - "V-44: iç ikame tavanı (veri/f3_sinif_varsayim.csv, ikame_tavani): yerli üretimi AB ithalatının yerini alamayan sınıflarda iç ikame payı sınırlanır; kâğıt hamurunda (17.11) 0 `[H]`"
+    - "V-45: CE ve onaylanmış kuruluş bağımlılığı (ce_payi): ahşap levhada 0,15, ahşap döşemede 0,5, doğramada 0,3 (AB Yapı Ürünleri Tüzüğü; AB'ye ihracatta üçüncü taraf deneyi gereken pay) `[H]`"
+    - "V-46: ağaç, kâğıt ve basımda menşe: Fasıl 44, 47–49 ve 4818'de başlık değişikliği; S2'de risk düşük (c_RoO %1, p_uyum 0,95), S3'te %1,5 ve 0,92 `[H]`; kurallar `[V]`"
+    - "V-47: EUDR payı KN koduna göre (f3d); tamamen geri dönüştürülmüş ürün ve yalnız taşıma amaçlı ambalaj istisnası payı hesaba katılmadı (üst sınır, VB-41)"
+    - "V-48: E-17.12-01'in (ambalaj kâğıdında c2 düzeltmesi) etkisi: TÜFE −0,2 bp, mali maliyet AB dışı menşelerin İGV kaybı (≈ $16 mn ≈ 0,7 mlr TL/yıl); AB menşeli ürünün c2 geliri bugün olmadığı için maliyet sayılmadı `[T]`"
+    - "V-49: S2 ve S3'te menşe maliyeti yalnız tercihin kurtardığı tarife kadar: τ_etkin = (1 − p_uyum)·τ + q·p_uyum·min(c_RoO, τ); ithalatta min(c_AB, τ_TR,c2). MFN'si sıfır üründe ihracatçı tercih istemez. Sınıf ortalaması düzeyinde yaklaşık `[T]`"

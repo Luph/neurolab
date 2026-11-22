@@ -53,8 +53,24 @@ kod,savunma,enerji,saglik,gida,dijital,hammadde,ikili,gerekce,gozden_gecirildi
 15.11,0,0,0,0,0,0,0,,1
 15.12,0,0,0,0,0,0,0,,1
 15.20,10,0,0,0,0,0,0,Askerî bot,1
-17.12,0,0,10,0,0,20,0,Kâğıt hamuru ithalatı,0
-17.22,0,0,20,0,0,0,0,Hijyen kâğıtları,0
+16.10,0,0,0,0,0,0,0,,1
+16.21,0,0,0,0,0,0,0,,1
+16.22,0,0,0,0,0,0,0,,1
+16.23,0,0,0,0,0,0,0,,1
+16.24,0,0,0,10,0,0,0,Ahşap palet ve sandık: gıda ve ihracat lojistiği,1
+16.29,0,0,0,0,0,0,0,,1
+17.11,0,0,20,0,0,40,0,Kâğıt hamuru: hijyen ürünlerinin ve ambalaj kâğıdının tamamen ithal hammaddesi,1
+17.12,0,0,10,10,0,30,0,Kâğıt ve karton: gıda ambalajının ve hijyen ürünlerinin girdisi; hamur ve atık kâğıt ithalatına bağımlı,1
+17.21,0,0,10,30,0,0,0,Oluklu ambalaj: gıda ve ilaç tedarik zincirinin girdisi; salgında temel sektör sayıldı,1
+17.22,0,0,40,0,0,0,0,"Tuvalet kâğıdı, bebek ve hasta bezi: salgın ve afette temel ihtiyaç",1
+17.23,0,0,0,0,0,0,0,,1
+17.24,0,0,0,0,0,0,0,,1
+17.29,0,0,10,10,0,0,0,"Filtre, etiket ve gıdayla temas eden ambalaj kâğıtları",1
+18.11,0,0,0,0,0,0,0,,1
+18.12,20,0,0,0,0,0,0,"Güvenlikli basım: banknot, değerli kâğıt, kimlik belgesi ve oy pusulası",1
+18.13,0,0,0,0,0,0,0,,1
+18.14,0,0,0,0,0,0,0,,1
+18.20,0,0,0,0,0,0,0,,1
 19.10,0,30,0,0,0,40,0,Kok: çelik zinciri,0
 19.20,60,90,0,0,0,50,0,Akaryakıt arzı; askerî yakıt,0
 20.11,30,20,60,0,0,0,0,Tıbbi oksijen ve endüstriyel gazlar,0

@@ -237,6 +237,12 @@ Sınırlamalar: AB'nin spesifik vergileri ve tarım bileşenleri dahil değil (t
 | V-41 | Tekstil, giyim ve deride menşe (Faz 3, parça 2) | Revize PEM ürüne özgü kuralları (Karar 1/2023); giyimde p_uyum 0,85–0,88 (Asya kumaşı payı %10–15), c_RoO %2–2,5; kumaş, iplik, deri ve ayakkabıda 0,92 ve %1,5 | `[H]`; kurallar `[V]` |
 | V-42 | Geri ödeme yasağı (Faz 3, parça 2) | PEM Ek I md. 16 (50–63. fasıllar) S2'de ek maliyet sayılmadı: AB'ye A.TR ihracatında DİR girdisine bugün de telafi edici vergi alınıyor | `[V]`/`[H]` |
 | V-43 | Giyim ve ayakkabıda KDV takası (Faz 3, parça 2) | S4'te KDV giyimde %10 → %8,7, ayakkabıda %5,6 (bütün menşeler); TÜFE şokunu tasarım gereği siler; net mali maliyet Faz 2A merkez değeri (laspeyres, c2): $319 mn + $63 mn ≈ 17,5 mlr TL/yıl | `[T]` Faz 2A |
+| V-44 | İç ikame tavanı (Faz 3, parça 3) | Yerli üretimi AB ithalatının yerini alamayan sınıflarda iç ikame payı tavanla sınırlanır (`veri/f3_sinif_varsayim.csv`, `ikame_tavani`); kâğıt hamurunda (17.11) 0 | `[H]` |
+| V-45 | CE ve onaylanmış kuruluş bağımlılığı (Faz 3, parça 3) | AB'ye satışta üçüncü taraf deneyi ya da belgesi gereken ihracat payı (`ce_payi`): ahşap levha 0,15, ahşap döşeme 0,5, doğrama 0,3; S4'te değerin %1–4'ü, S2'de dörtte biri. Diğer sınıflar kendi parçalarında | `[H]` |
+| V-46 | Ağaç, kâğıt ve basımda menşe (Faz 3, parça 3) | Fasıl 44, 47–49 ve 4818'de başlık değişikliği; S2'de c_RoO %1, p_uyum 0,95; S3'te %1,5 ve 0,92 | `[H]`; kurallar `[V]` |
+| V-47 | EUDR payı (Faz 3, parça 3) | KN koduna göre; tamamen geri dönüştürülmüş ürün ve yalnız taşıma amaçlı ambalaj istisnası ayrılamadığı için üst sınır (VB-41) | `[T]` |
+| V-48 | Ambalaj kâğıdında c2 düzeltmesi (Faz 3, parça 3) | E-17.12-01: sıvı ambalaj kartonu (4811 59) ve kraftliner (4804 11) gibi yerli üretimi olmayan kalitelerde İGV bütün menşelere sıfır (yalnız S4); TÜFE −0,2 bp; mali maliyet AB dışı menşelerin İGV kaybı ≈ 0,7 mlr TL/yıl | `[T]` |
+| V-49 | S2 ve S3'te menşe maliyeti (Faz 3, parça 3; düzeltme) | τ_etkin = (1 − p_uyum)·τ + q·p_uyum·min(c_RoO, τ) + NTM + CE; ithalatta min(c_AB, τ_TR,c2). MFN'si sıfır üründe tercih istenmez, menşe maliyetine katlanılmaz. Toplam AB ihracatı kaybı GE'den geldiği için dağılımı değiştirir; ilk iki parçanın S2 sonuçları güncellendi (D-8) | `[T]` |
 
 ---
 

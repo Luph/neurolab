@@ -6,13 +6,13 @@
 
 Gıda, içecek ve tütün sanayisi Türkiye imalatının en büyük işverenlerinden biri. Bu üç bölümün 33 sınıfında 636 bin kişi çalışıyor; bu, imalat istihdamının %12,6 kadarı. Yıllık ihracat 24,1 milyar dolar. Buna karşılık sektörün Gümrük Birliği'ne bağlılığı imalatın geri kalanıyla kıyaslanmayacak kadar zayıf. AB'ye ihracat 6,2 milyar dolar, yani toplam ihracatın ancak dörtte biri. Bu ihracatın da büyük kısmı Gümrük Birliği'nin değil, tarım ürünlerinde karşılıklı tavizleri düzenleyen 1/98 sayılı Ortaklık Konseyi Kararı'nın kapsamında: 2025'te AB'ye satılan gıda, içecek ve tütünde tarım rejiminin payı %75. Gümrük Birliği'ne bağlı kısım neredeyse tümüyle işlenmiş tarım ürünlerinden (İTÜ) oluşuyor: bisküvi, çikolata ve şekerleme, glikoz, gıda müstahzarları ve sigara.
 
-Bu yapı çıkışın beklenen maliyetini küçültüyor. Önerilen bitiş durumu olan derin ve kapsamlı serbest ticaret anlaşmasında (S2) bölümün AB'ye ihracatı T+5'te yılda yaklaşık 199 milyon dolar, istihdamı 286 kişi azalıyor; cari dengeye etkisi 42 milyon dolarlık bir kötüleşme. Anlaşmasız çıkışta (S4) AB'ye ihracat kaybı 406 milyon dolara çıkıyor. Ancak AB'den gelen ürünlerin tarifeyle pahalanması iç pazarda yerli üreticiye pay kazandırıyor ve bu, kaybın büyük kısmını dengeliyor: medyan senaryoda istihdam etkisi −106 kişi, cari denge etkisi +8 milyon dolar. Bu değerler, aynı senaryoda imalatın bütününde beklenen 46,1 bin kişilik istihdam kaybının yanında çok küçük.
+Bu yapı çıkışın beklenen maliyetini küçültüyor. Önerilen bitiş durumu olan derin ve kapsamlı serbest ticaret anlaşmasında (S2) bölümün AB'ye ihracatı T+5'te yılda yaklaşık 210 milyon dolar, istihdamı 318 kişi azalıyor; cari dengeye etkisi 47 milyon dolarlık bir kötüleşme. Anlaşmasız çıkışta (S4) AB'ye ihracat kaybı 406 milyon dolara çıkıyor. Ancak AB'den gelen ürünlerin tarifeyle pahalanması iç pazarda yerli üreticiye pay kazandırıyor ve bu, kaybın büyük kısmını dengeliyor: medyan senaryoda istihdam etkisi −106 kişi, cari denge etkisi +8 milyon dolar. Bu değerler, aynı senaryoda imalatın bütününde beklenen 46,2 bin kişilik istihdam kaybının yanında çok küçük.
 
 Dağılımın kuyruğu ise kalın ve bu kuyruk Gümrük Birliği'nden değil, 1/98'den geliyor. 1/98 hukuken Gümrük Birliği'ni kuran 1/95 sayılı Karar'dan bağımsız; çıkış onu kendiliğinden sona erdirmiyor. Ama hasmane bir AB'nin, anlaşmasız çıkışın ardından bu tavizleri de askıya alabileceğini dışlamak gerçekçi olmaz; analizde bunun olasılığı 0,25 alındı `[H]`. Askı durumunda bölümün AB'ye ihracatı ortalama 1,72 milyar dolar azalıyor (askı olmadan 0,34 milyar dolar). Yaklaşık 3,7 bin kişi işini kaybediyor, cari denge 0,86 milyar dolar kötüleşiyor. Askıdan doğan ek ihracat kaybının %77 kadarı tek bir sınıfta, fındık ve kuru meyveyi de kapsayan 10.39'da toplanıyor. Bu yüzden gıda sanayisi için stratejik öncelik tarife cetveli değil; 1/98'in hukuki dayanıklılığı ve S2 metnine eksiksiz aktarılması (E-10-01).
 
 İkinci bulgu işlenmiş tarım ürünlerine ilişkin. Gümrük Birliği'nde AB, Türk İTÜ'lerinden yalnızca tarım bileşenini alıyor; sanayi bileşeni sıfır. Anlaşmasız çıkışta bu sıfır kalkıyor, yani çıkışın maliyeti sanayi bileşeni kadar. Sınıf ortalaması olarak bu oran bisküvide %9,0, çikolata ve şekerlemede %8,4, makarnada %7,7, gıda müstahzarlarında %11,8, nişasta ve glikozda %14,2, tütün ürünlerinde ise %51,3 (sigarada %57,6). En büyük mutlak kayıplar çikolata ve şekerleme, bisküvi, tütün ürünleri, glikoz ve gıda müstahzarlarında. Bu ürünlerin hepsinde AB pazarındaki AB dışı rakipler (Birleşik Krallık, Ukrayna, Sırbistan, İsviçre, Batı Afrika ülkeleri) tercihli erişime sahip. Anlaşmasız çıkışta Türkiye bu pazarda tam tarife ödeyen tek büyük tedarikçi konumuna düşer.
 
-Üçüncü bulgu, S2'de menşe kuralının tarifeden daha bağlayıcı olabileceği. Gümrük Birliği'nde serbest dolaşım için A.TR dolaşım belgesi yeterli; bu yüzden bisküvi, ekmek ve şekerleme ihracatçıları Dahilde İşleme Rejimi (DİR) ile vergisiz ithal ettikleri buğdayı ve ham şekeri rahatça kullanabiliyor. Pan-Avrupa-Akdeniz (PEM) menşe kuralları ise bu ürünlerde unun menşeli olmasını, menşesiz şekerin de belirli bir ağırlık sınırını aşmamasını istiyor. Sonuçta bisküvide S2'nin getirdiği kayıp (34 milyon dolar) S4'ün kaybının (51 milyon dolar) üçte ikisinden fazla. Bu sorunun çözümü tarifede değil: DİR'deki eşdeğer eşya mekanizmasıyla AB'ye yönelik üretimde yerli buğday ve şekerin kullanılması ve S2 müzakeresinde Fasıl 19 için toleranslı bir ürüne özgü menşe kuralı (E-10-02).
+Üçüncü bulgu, S2'de menşe kuralının tarifeden daha bağlayıcı olabileceği. Gümrük Birliği'nde serbest dolaşım için A.TR dolaşım belgesi yeterli; bu yüzden bisküvi, ekmek ve şekerleme ihracatçıları Dahilde İşleme Rejimi (DİR) ile vergisiz ithal ettikleri buğdayı ve ham şekeri rahatça kullanabiliyor. Pan-Avrupa-Akdeniz (PEM) menşe kuralları ise bu ürünlerde unun menşeli olmasını, menşesiz şekerin de belirli bir ağırlık sınırını aşmamasını istiyor. Sonuçta bisküvide S2'nin getirdiği kayıp (36 milyon dolar) S4'ün kaybının (51 milyon dolar) üçte ikisinden fazla. Bu sorunun çözümü tarifede değil: DİR'deki eşdeğer eşya mekanizmasıyla AB'ye yönelik üretimde yerli buğday ve şekerin kullanılması ve S2 müzakeresinde Fasıl 19 için toleranslı bir ürüne özgü menşe kuralı (E-10-02).
 
 Dördüncü bulgu ithalat tarafında. Anlaşmasız çıkışta AB menşeli ürünlere tarife uygulanması (Faz 2A'da önerilen c2 rejimi) bölümün TÜFE'ye birinci tur etkisini 6,2 baz puana çıkarıyor. S2'de bu etki 0,9 baz puan ve tümüyle sınır sürtünmesinden ve menşe maliyetinden kaynaklanıyor. S4 etkisinin yaklaşık %44 kadarı tütün ürünlerinden, özellikle AB'den gelen ısıtılmış tütünden; geri kalanın çoğu alkolsüz içecek, gıda müstahzarları, çikolata ve kahvede. Üç hedefli önlem bu etkiyi 1,55 baz puan azaltıyor: kakao ara ürünlerinde (kakao yağı, tozu ve hamuru) bütün menşelere sıfır tarife, S4'te bebek mamasında sıfır tarife ve yine S4'te ısıtılmış tütünde sıfır tarife. Kakao önlemi Gümrük Birliği'nin dışında kalmanın sağladığı bir "özerklik temettüsü". Türkiye bugün Ortak Gümrük Tarifesi'ne bağlı olduğu için ihracatçısının bu girdilerinde %7,7–9,6 tarife uyguluyor; oysa AB'nin dünyanın en büyük iki kakao üreticisi Fildişi Sahili ve Gana ile ekonomik ortaklık anlaşması var, Türkiye'nin yok.
 
@@ -26,9 +26,9 @@ Duruş ve müzakere açısından tablo sade. 33 sınıfın 19 tanesi için öner
 
 | Gösterge | S2: P50 | S2: P10 / P90 | S4: P50 | S4: P10 / P90 | S4, 1/98 askıya alınırsa (ortalama) |
 |---|---|---|---|---|---|
-| AB'ye ihracat ($ mn) | −199 | −438 / +125 | −406 | −1.840 / −171 | −1.721 |
-| İstihdam (kişi) | −286 | −500 / −59 | −106 | −3.982 / +258 | −3.736 |
-| Cari denge ($ mn) | −42 | −128 / +11 | +8 | −934 / +104 | −857 |
+| AB'ye ihracat ($ mn) | −210 | −463 / +125 | −406 | −1.840 / −171 | −1.720 |
+| İstihdam (kişi) | −318 | −523 / −107 | −106 | −3.981 / +258 | −3.735 |
+| Cari denge ($ mn) | −47 | −128 / +4 | +8 | −934 / +104 | −857 |
 | TÜFE, birinci tur (bp) | 0,9 | 0,8 / 1,0 | 6,2 | 5,3 / 7,1 | 6,2 |
 | TÜFE, önerilen önlemlerle (bp) | 0,8 | — | 4,7 | — | 4,7 |
 | Önlemlerin mali maliyeti (mlr TL/yıl) | 0,83 | — | 1,69 | — | 1,69 |
@@ -104,17 +104,17 @@ Tütün ürünleri (12) ise tek sınıflı ama özel bir bölüm. Türkiye, Phil
 | 10.39 Meyve-sebze işleme, fındık, kuru meyve | 3.071 | %100 | %9,5 | −1 | −1.060 | −2.960 | −%4,5 |
 | 10.20 Su ürünleri | 518 | %100 | %16,3 | 0 | −128 | −386 | −%2,7 |
 | 10.41 Sıvı ve katı yağlar | 88 | %100 | %12,4 | 0 | −95 | −131 | −%0,7 |
-| 10.32 Meyve ve sebze suyu | 165 | %100 | %24,0 | 0 | −69 | −145 | −%1,9 |
+| 10.32 Meyve ve sebze suyu | 165 | %100 | %24,0 | 0 | −69 | −144 | −%1,9 |
 | 10.61 Un, bulgur, öğütülmüş ürünler | 108 | %36 | %10,3 | −22 | −35 | −61 | −%0,2 |
 | 10.51 Süt ürünleri | 12 | %98 | %22,5 | 0 | −9 | −22 | %0,0 |
 | 10.84 Baharat, sos, sirke | 60 | %33 | %7,4 | −14 | −18 | −43 | −%0,6 |
 | 10.13 Et ürünleri | 1 | %100 | %53,0 | 0 | −2 | −7 | −%0,1 |
 | Diğer 25 sınıf | 1.374 | — | — | −302 | −304 | +19 | — |
-| **10–12 toplamı** | **5.396** | — | — | **−339** | **−1.721** | **−3.736** | **−%0,6** |
+| **10–12 toplamı** | **5.396** | — | — | **−339** | **−1.720** | **−3.735** | **−%0,6** |
 
 *Kaynak:* `[T]` f3e; S4 çekilişlerinin 1/98 askısına göre koşullu ortalaması (`veri/f3_senaryo_aski.csv`). Askıda AB tarifesi: tarım satırlarına tam MFN (1/98 tercihleri satır düzeyinde bilinmediği için üst sınır, VB-06).
 
-Tablo 3.1 askının etkisini sınıflara dağıtıyor. Askı durumunda bölümün AB'ye ihracatı ortalama 1.721 milyon dolar azalıyor; askı olmayan çekilişlerde kayıp 339 milyon dolar. Aradaki farkın, yani yalnızca askıdan doğan kaybın %77 kadarı 10.39'da, %9 kadarı su ürünlerinde, %7 kadarı yağlarda, %5 kadarı meyve suyunda. İstihdam kaybı ortalama 3.736 kişi; P10–P90 aralığı 1.953 ile 5.683 kişi. En ağır yük 10.39'da: askı durumunda sınıfın 2.960 kişilik, yani istihdamının %4,5 kadarına denk gelen bir kayıp yaşaması bekleniyor. Bu kaybın bölgesel yoğunluğu da yüksek; Bölüm 4.5'te ele alınıyor.
+Tablo 3.1 askının etkisini sınıflara dağıtıyor. Askı durumunda bölümün AB'ye ihracatı ortalama 1.720 milyon dolar azalıyor; askı olmayan çekilişlerde kayıp 339 milyon dolar. Aradaki farkın, yani yalnızca askıdan doğan kaybın %77 kadarı 10.39'da, %9 kadarı su ürünlerinde, %7 kadarı yağlarda, %5 kadarı meyve suyunda. İstihdam kaybı ortalama 3.735 kişi; P10–P90 aralığı 1.953 ile 5.682 kişi. En ağır yük 10.39'da: askı durumunda sınıfın 2.960 kişilik, yani istihdamının %4,5 kadarına denk gelen bir kayıp yaşaması bekleniyor. Bu kaybın bölgesel yoğunluğu da yüksek; Bölüm 4.5'te ele alınıyor.
 
 Askı kaybının boyutunu belirleyen şey tarifenin satıra göre çok farklı olması. AB'nin MFN tarifesi fındık içinde yalnızca %3,2, kuru kayısıda %5,6, kuru incirde %7,2. Buna karşılık işlenmiş meyve ve sebzede (KN 2001–2008) ağırlıklı ortalama %15,4, taze balıkta %14,9, meyve sularında %24,0. Zeytinyağında tarife spesifik (100 kilogram başına 124,5 avro) ve ad valorem eşdeğeri %24 civarında. Yani askı en çok işlenmiş meyve-sebze, balık ve meyve suyu ihracatçılarını vuruyor; Türkiye'nin AB'ye en büyük tarım ihracat kalemi olan fındık içi ise görece korunaklı.
 
@@ -130,18 +130,18 @@ Bu nedenle gıda sanayisi için ilk öncelik 1/98'in hukuki dayanıklılığı (
 
 | Sınıf | AB'ye ihracat (€ mn, 2025) | GB ve İTÜ payı | S4'te AB tarifesi | Menşe riski S2/S3 | AB'ye ihracat S2 ($ mn) | AB'ye ihracat S4 ($ mn) | S2 ÷ S4 | İstihdam S4 (kişi) |
 |---|---|---|---|---|---|---|---|---|
-| 10.82 Kakao, çikolata, şekerleme | 357 | %100 | %8,4 | O/O | −51 | −84 | %61 | +233 |
-| 10.72 Bisküvi, dayanıklı unlu mamuller | 165 | %100 | %9,0 | O/O | −34 | −51 | %67 | −135 |
-| 12.00 Tütün ürünleri | 133 | %95 | %51,3 | Y/Y | −34 | −39 | %89 | +20 |
-| 10.62 Nişasta ve glikoz | 81 | %95 | %14,2 | D/O | −11 | −31 | %35 | −14 |
-| 10.89 Diğer gıda (müstahzar, maya) | 237 | %99 | %11,8 | D/O | −12 | −30 | %39 | +2 |
-| 10.61 Un, bulgur, öğütülmüş ürünler | 108 | %64 | %4,9 | O/O | −12 | −24 | %48 | −39 |
-| 11.07 Alkolsüz içecek ve su | 97 | %100 | %6,6 | D/O | −10 | −23 | %44 | +52 |
-| 10.71 Ekmek, taze pastane ürünleri | 54 | %100 | %9,0 | O/O | −11 | −16 | %67 | −189 |
-| 10.84 Baharat, sos, sirke | 60 | %67 | %4,9 | D/D | −5 | −14 | %38 | −31 |
-| 10.86 Bebek maması, diyet gıdaları | 44 | %86 | %7,7 | O/O | −7 | −13 | %55 | +45 |
-| 10.73 Makarna | 19 | %100 | %7,7 | D/D | −2 | −4 | %41 | −1 |
-| **Toplam** | **1.354** | — | — | — | **−189** | **−328** | **%58** | **−58** |
+| 10.82 Kakao, çikolata, şekerleme | 357 | %100 | %8,4 | O/O | −55 | −84 | %65 | +233 |
+| 10.72 Bisküvi, dayanıklı unlu mamuller | 165 | %100 | %9,0 | O/O | −36 | −51 | %72 | −135 |
+| 12.00 Tütün ürünleri | 133 | %95 | %51,3 | Y/Y | −37 | −39 | %95 | +20 |
+| 10.62 Nişasta ve glikoz | 81 | %95 | %14,2 | D/O | −11 | −31 | %37 | −14 |
+| 10.89 Diğer gıda (müstahzar, maya) | 237 | %99 | %11,8 | D/O | −12 | −30 | %42 | +2 |
+| 10.61 Un, bulgur, öğütülmüş ürünler | 108 | %64 | %4,9 | O/O | −13 | −24 | %52 | −39 |
+| 11.07 Alkolsüz içecek ve su | 97 | %100 | %6,6 | D/O | −11 | −23 | %48 | +52 |
+| 10.71 Ekmek, taze pastane ürünleri | 54 | %100 | %9,0 | O/O | −11 | −16 | %71 | −189 |
+| 10.84 Baharat, sos, sirke | 60 | %67 | %4,9 | D/D | −6 | −14 | %40 | −31 |
+| 10.86 Bebek maması, diyet gıdaları | 44 | %86 | %7,7 | O/O | −8 | −13 | %59 | +45 |
+| 10.73 Makarna | 19 | %100 | %7,7 | D/D | −2 | −4 | %44 | −1 |
+| **Toplam** | **1.354** | — | — | — | **−201** | **−328** | **%61** | **−58** |
 
 *Kaynak:* `[T]` f3d, f3e. Menşe riski D/O/Y: düşük, orta, yüksek (`veri/f3_sinif_varsayim.csv`, `[H]`). Seçim: AB'ye ihracatının en az yarısı GB veya İTÜ rejiminde, €10 mn üzerinde ve S4'te AB tarifesi en az %1 olan sınıflar.
 
@@ -157,7 +157,7 @@ Gümrük Birliği'nde Türk malları AB'de serbest dolaşımda; tercihli erişim
 
 S2'de ve S3'te bu düzen değişiyor. Tercihli erişim Pan-Avrupa-Akdeniz (PEM) menşe kurallarına bağlanıyor ve gıda ürünlerinde bu kurallar katı. Bisküvi ve ekmekte (KN 1905) kural, Fasıl 11 malzemelerinin, yani unun menşeli olmasını istiyor; DİR'de ithal Rus buğdayından üretilen un menşe kazanmıyor. Şekerleme ve çikolatada (1704 ve 1806) başlık değişikliğine ek olarak menşesiz şekerin ve süt ürünlerinin ağırlıkça %40'ı, birlikte %60'ı aşmaması gerekiyor; ithal ham şekerle yapılan şekerlemelerde bu sınır kolayca aşılıyor. Sigarada (2402) tütünün ağırlıkça en az %70'inin menşeli olması isteniyor. Buna karşılık makarnada kural ithal makarnalık buğdaya izin veriyor, glikozda ithal mısırdan nişasta ve glikoz üretimi başlık değişikliğiyle menşe kazanıyor; bu iki sınıfta menşe sorunu yok.
 
-Model bu kuralları her sınıf için bir uyum olasılığına ve bir uyum maliyetine çeviriyor `[H]`. Sonuç Tablo 3.2'nin "S2 ÷ S4" sütununda görülüyor. Bisküvide S2'nin kaybı S4'ünkinin %67, ekmek ve taze pastane ürünlerinde %67, çikolata ve şekerlemede %61, tütün ürünlerinde %89 düzeyinde. Bu sınıflarda anlaşma yapmak kaybı sınırlı ölçüde azaltıyor; çünkü engel tarifede değil, menşede. Üstelik bu maliyet geçici değil: S2 kalıcı bitiş durumu olduğu için menşe maliyeti de kalıcı.
+Model bu kuralları her sınıf için bir uyum olasılığına ve bir uyum maliyetine çeviriyor `[H]`. Sonuç Tablo 3.2'nin "S2 ÷ S4" sütununda görülüyor. Bisküvide S2'nin kaybı S4'ünkinin %72, ekmek ve taze pastane ürünlerinde %71, çikolata ve şekerlemede %65, tütün ürünlerinde %95 düzeyinde. Bu sınıflarda anlaşma yapmak kaybı sınırlı ölçüde azaltıyor; çünkü engel tarifede değil, menşede. Üstelik bu maliyet geçici değil: S2 kalıcı bitiş durumu olduğu için menşe maliyeti de kalıcı.
 
 Çözümün üç ayağı var. İlki Türkiye'nin kendi elinde: DİR'deki eşdeğer eşya mekanizması (E-10-02). İhracatçı AB'ye yönelik üretimde yerli, yani menşeli buğday ve şeker kullanır; buna karşılık DİR kapsamında ithal ettiği eşdeğer miktardaki buğday ve şeker vergisiz serbest dolaşıma girer. Gümrük vergisi DİR'de zaten alınmadığı için gelir etkisi sıfıra yakın; yurt içi piyasada da toplam buğday arzı değişmiyor, yalnızca yerli ve ithal buğdayın kullanım yeri yer değiştiriyor. Mekanizmanın maliyeti, yerli buğdayın ithal paritesinin üzerindeki fiyatı kadar; bu fark ölçülmeli (VB-33) ve TMO'nun satış politikasıyla birlikte tasarlanmalı. İkincisi müzakere: S2'nin menşe protokolünde Fasıl 19 için menşesiz tahıl ve una fabrika çıkış fiyatının %15'ine kadar tolerans tanıyan ürüne özgü bir kural (PSR) talebi (E-10.72-01) ve şekerleme için şeker ağırlık sınırında benzer bir tolerans. Üçüncüsü kaynak çeşitlendirmesi: PEM'de çapraz kümülasyon sayesinde AB ve Ukrayna buğdayı menşeli sayılabilir. Türkiye–Ukrayna STA'sı 1 Ekim 2026'da yürürlüğe girdi; çapraz kümülasyonun işlemesi için üç tarafın da aynı menşe kurallarını uygulaması ve gerekli bildirimleri yapması gerekiyor `[D?]`.
 
@@ -177,8 +177,8 @@ Anlaşmasız çıkışta Türkiye AB menşeli mallara kendi tarifesini uygulamay
 | 10.71 Ekmek, taze pastane ürünleri | %2,37 | %2 | %61 | %7,1 | 0,04 | 0,21 | — | 0,21 |
 | 10.72 Bisküvi, dayanıklı unlu mamuller | %1,02 | %2 | %75 | %9,8 | 0,03 | 0,17 | — | 0,17 |
 | 10.86 Bebek maması, diyet gıdaları | %0,09 | %9 | %91 | %7,5 | 0,03 | 0,13 | −0,12 | 0,01 |
-| Diğer 25 sınıf | %13,07 | — | — | — | 0,09 | 0,37 | — | 0,37 |
-| **10–12 toplamı** | **%21,53** | — | — | — | **0,89** | **6,20** | **−1,55** | **4,65** |
+| Diğer 25 sınıf | %13,07 | — | — | — | 0,08 | 0,37 | — | 0,37 |
+| **10–12 toplamı** | **%21,53** | — | — | — | **0,88** | **6,20** | **−1,55** | **4,65** |
 
 *Kaynak:* `[T]` f3e (doğrudan kanal COICOP 2018 sepeti, dolaylı kanal I-O 2023 Leontief fiyat modeli). c2: S4'te AB menşeli mala uygulanacak MFN + İGV (İGV, AB'nin baskın, yerli üretimin zayıf olduğu satırlarda herkes için kalkar; Faz 2A). Önlemler Bölüm 4'te.
 
@@ -367,7 +367,7 @@ Kaybedenler yalnızca 1/98 askısı durumunda ortaya çıkıyor: Muğla (Milas, 
 
 Meyve suyu sınıfı, Türkiye'nin dünya pazarında öne çıktığı bir ara ürün sanayisi. Türkiye konsantre elma suyunda dünya ihracatının %15,5 kadarını yapıyor ve ikinci sırada; Döhler, Konfrut, Elmasu, Aroma, Dimes ve Tat sınıfın başlıca üreticileri `[H]`. 7.460 kişinin çalıştığı sınıfta üretim 1.980 milyon dolar ve istihdam Adana–Mersin, İstanbul, Bursa ve Samsun–Tokat–Çorum–Amasya bölgelerine yayılıyor. İhracat 2020'den bu yana neredeyse iki katına çıktı (770 milyon dolar) ve dünya pazarındaki göreli üstünlük güçleniyor (2,55 → 3,21). Ana pazar ABD: AB dışı ihracatın üçte ikisi oraya gidiyor. AB'ye ihracat (205 milyon dolar) ağırlıkla Hollanda'daki karıştırıcı ve dolumculara; Türkiye AB pazarındaki AB dışı tedarikte Brezilya'nın ardından ikinci.
 
-AB'ye ihracatın tamamı tarım rejiminde ve çıkışın tek başına etkisi yok. 1/98 askıya alınırsa ise meyve sularında AB'nin MFN tarifesi %24 dolayında; giriş fiyatı sistemi bu orana dahil değil. Askı durumunda AB'ye ihracat ortalama 69 milyon dolar, istihdam 145 kişi azalıyor. Sınıfın ikinci riski ABD'de: ana pazardaki bir ticaret savunması soruşturması (ABD geçmişte Çin'in elma suyu konsantresine anti-damping vergisi uyguladı) AB askısından daha büyük bir kayıp yaratabilir `[H]`.
+AB'ye ihracatın tamamı tarım rejiminde ve çıkışın tek başına etkisi yok. 1/98 askıya alınırsa ise meyve sularında AB'nin MFN tarifesi %24 dolayında; giriş fiyatı sistemi bu orana dahil değil. Askı durumunda AB'ye ihracat ortalama 69 milyon dolar, istihdam 144 kişi azalıyor. Sınıfın ikinci riski ABD'de: ana pazardaki bir ticaret savunması soruşturması (ABD geçmişte Çin'in elma suyu konsantresine anti-damping vergisi uyguladı) AB askısından daha büyük bir kayıp yaratabilir `[H]`.
 
 **Tablo 5.2 — 10.32 Meyve ve sebze suyu: senaryo etkileri (T+5'te yıllık; P50, parantez içinde P10 / P90)**
 
@@ -378,7 +378,7 @@ AB'ye ihracatın tamamı tarım rejiminde ve çıkışın tek başına etkisi yo
 | Toplam ihracat ($ mn) | 0 (0 / +3) | 0 (0 / 0) | 0 (−60 / 0) | −55 |
 | Nihai mal ithalatı ($ mn) | 0 (0 / +1) | 0 (0 / 0) | 0 (0 / 0) | — |
 | Üretim ($ mn) | 0 (0 / +2) | 0 (0 / 0) | 0 (−60 / 0) | −55 |
-| İstihdam (kişi) | 0 (0 / +6) | 0 (0 / 0) | 0 (−156 / 0) | −145 |
+| İstihdam (kişi) | 0 (0 / +6) | 0 (0 / 0) | 0 (−156 / 0) | −144 |
 | İstihdam (%) | 0,0 (0,0 / +0,1) | 0,0 (0,0 / 0,0) | 0,0 (−2,1 / 0,0) | −1,9 |
 | Cari denge ($ mn) | 0 (0 / +2) | 0 (0 / 0) | 0 (−48 / 0) | −44 |
 | TÜFE (bp) | 0,00 (0,00 / 0,00) | 0,00 (0,00 / 0,00) | 0,00 (0,00 / 0,00) | — |
@@ -395,18 +395,18 @@ Bu sınıf, Türkiye gıda ihracatının ve bu belgenin merkezinde duruyor. Fın
 
 Sınıfın dış ticaret profili istisnai. İhracat 6,5 milyar dolar ve AB'ye ihracat 3,6 milyar dolarla bütün 10–12'nin AB'ye ihracatının yarısından fazlası. Türkiye fındık içinde dünya ihracatının %62, kuru kayısıda %75, kuru incirde %50, kuru üzümde %30 kadarını yapıyor; fındık ezmesi ve kavrulmuş fındığı da kapsayan sert kabuklu meyve hazırlıklarında da dünya birincisi. Fındık ihracatının (1.440 milyon dolar) %71 kadarı AB'ye gidiyor; Almanya ve İtalya en büyük alıcılar. Kuru üzümde Birleşik Krallık (%27), kuru kayısı ve incirde ABD önemli pazarlar. Birim değer AB pazarı ortalamasının %123 kadarı, yani Türk ürünü primli satılıyor; AB pazarında AB dışı tedarikteki pay %18,6 ve yükseliyor. İthalat (1.177 milyon dolar) ise başka sert kabuklulardan oluşuyor: ABD'den badem, İran'dan antep fıstığı, Vietnam'dan kaju.
 
-AB'ye ihracatın tamamı tarım rejiminde. Gümrük Birliği'nden çıkış bu ihracatı doğrudan etkilemiyor: 1/98 sürdükçe S2'de de S4'te de tarife değişmiyor ve medyan etki sıfıra yakın. Sınıfın bütün riski 1/98'in askıya alınmasında toplanıyor. Askı durumunda AB'ye ihracat ortalama 1.060 milyon dolar azalıyor; bu, bölümün askıdan doğan ek kaybının %77 kadarı. İstihdam kaybı 2.960 kişi (%4,5), cari denge kaybı 675 milyon dolar. Senaryo dağılımının alt ucunda (P10) istihdam kaybı %4,9 ile %5 eşiğine yaklaşıyor; bölümde bu eşiğe en çok yaklaşan sınıf bu. Kaybın boyutu satıra göre değişiyor. Fındık içinde AB tarifesi %3,2, kuru kayısıda %5,6, kuru incirde %7,2; işlenmiş meyve ve sebzede ise ortalama %15,4. Askı en çok salça, konserve ve meyve hazırlığı üreticilerini vuruyor.
+AB'ye ihracatın tamamı tarım rejiminde. Gümrük Birliği'nden çıkış bu ihracatı doğrudan etkilemiyor: 1/98 sürdükçe S2'de de S4'te de tarife değişmiyor ve medyan etki sıfıra yakın. Sınıfın bütün riski 1/98'in askıya alınmasında toplanıyor. Askı durumunda AB'ye ihracat ortalama 1.060 milyon dolar azalıyor; bu, bölümün askıdan doğan ek kaybının %77 kadarı. İstihdam kaybı 2.960 kişi (%4,5), cari denge kaybı 675 milyon dolar. Senaryo dağılımının alt ucunda (P10) istihdam kaybı %4,8 ile %5 eşiğine yaklaşıyor; bölümde bu eşiğe en çok yaklaşan sınıf bu. Kaybın boyutu satıra göre değişiyor. Fındık içinde AB tarifesi %3,2, kuru kayısıda %5,6, kuru incirde %7,2; işlenmiş meyve ve sebzede ise ortalama %15,4. Askı en çok salça, konserve ve meyve hazırlığı üreticilerini vuruyor.
 
 **Tablo 5.3 — 10.39 Meyve-sebze işleme, fındık, kuru meyve: senaryo etkileri (T+5'te yıllık; P50, parantez içinde P10 / P90)**
 
 | Değişken | S2 | S3 | S4 | S4, 1/98 askıda (ort.) |
 |---|---|---|---|---|
-| AB'ye ihracat ($ mn) | −1 (−2 / +72) | −1 (−2 / 0) | −3 (−1.141 / −1) | −1.060 |
-| AB'ye ihracat (%) | 0,0 (−0,1 / +2,0) | 0,0 (−0,1 / 0,0) | −0,1 (−31,5 / 0,0) | −29,3 |
-| Toplam ihracat ($ mn) | −1 (−2 / +49) | −1 (−2 / 0) | −2 (−940 / −1) | −848 |
+| AB'ye ihracat ($ mn) | 0 (−1 / +72) | −1 (−1 / 0) | −3 (−1.141 / −1) | −1.060 |
+| AB'ye ihracat (%) | 0,0 (0,0 / +2,0) | 0,0 (0,0 / 0,0) | −0,1 (−31,5 / 0,0) | −29,3 |
+| Toplam ihracat ($ mn) | 0 (−1 / +49) | 0 (−1 / 0) | −2 (−940 / −1) | −848 |
 | Nihai mal ithalatı ($ mn) | 0 (−1 / +6) | 0 (−1 / +4) | −1 (−2 / 0) | — |
-| Üretim ($ mn) | 0 (−2 / +43) | 0 (−2 / 0) | −1 (−939 / −1) | −847 |
-| İstihdam (kişi) | −2 (−6 / +160) | −2 (−6 / −1) | −4 (−3.215 / −2) | −2.960 |
+| Üretim ($ mn) | 0 (−2 / +43) | 0 (−1 / 0) | −1 (−939 / −1) | −847 |
+| İstihdam (kişi) | 0 (−6 / +160) | −1 (−5 / 0) | −4 (−3.215 / −2) | −2.960 |
 | İstihdam (%) | 0,0 (0,0 / +0,2) | 0,0 (0,0 / 0,0) | 0,0 (−4,8 / 0,0) | −4,5 |
 | Cari denge ($ mn) | 0 (−1 / +34) | 0 (−1 / 0) | −1 (−748 / −1) | −675 |
 | TÜFE (bp) | 0,00 (0,00 / 0,00) | 0,00 (0,00 / 0,00) | 0,00 (0,00 / 0,00) | — |
@@ -436,11 +436,11 @@ AB tarafında sınıfın maruziyeti küçük. AB'ye ihracat (283 milyon dolar) a
 | Değişken | S2 | S3 | S4 | S4, 1/98 askıda (ort.) |
 |---|---|---|---|---|
 | AB'ye ihracat ($ mn) | 0 (0 / +6) | 0 (0 / 0) | 0 (−102 / 0) | −95 |
-| AB'ye ihracat (%) | 0,0 (−0,1 / +2,0) | −0,1 (−0,1 / 0,0) | 0,0 (−35,9 / 0,0) | −33,7 |
+| AB'ye ihracat (%) | 0,0 (0,0 / +2,0) | 0,0 (0,0 / 0,0) | 0,0 (−35,9 / 0,0) | −33,7 |
 | Toplam ihracat ($ mn) | 0 (0 / +4) | 0 (0 / 0) | 0 (−82 / 0) | −76 |
 | Nihai mal ithalatı ($ mn) | 0 (0 / +3) | 0 (0 / +2) | 0 (0 / 0) | — |
 | Üretim ($ mn) | 0 (−1 / +1) | 0 (−1 / 0) | 0 (−82 / 0) | −76 |
-| İstihdam (kişi) | 0 (−2 / +1) | 0 (−2 / 0) | 0 (−137 / 0) | −131 |
+| İstihdam (kişi) | 0 (−2 / +1) | 0 (−1 / 0) | 0 (−137 / 0) | −131 |
 | İstihdam (%) | 0,0 (0,0 / 0,0) | 0,0 (0,0 / 0,0) | 0,0 (−0,8 / 0,0) | −0,7 |
 | Cari denge ($ mn) | 0 (−1 / +1) | 0 (−1 / 0) | 0 (−65 / 0) | −61 |
 | TÜFE (bp) | 0,00 (0,00 / 0,00) | 0,00 (0,00 / 0,00) | 0,00 (0,00 / 0,00) | — |
@@ -469,14 +469,14 @@ AB'ye ihracat küçük (139 milyon dolar) ve iki parçalı: bulgur ve kahvaltıl
 
 | Değişken | S2 | S3 | S4 | S4, 1/98 askıda (ort.) |
 |---|---|---|---|---|
-| AB'ye ihracat ($ mn) | −12 (−28 / +3) | −16 (−30 / −3) | −24 (−43 / −10) | −35 |
-| AB'ye ihracat (%) | −8,5 (−20,2 / +2,0) | −11,2 (−21,7 / −2,1) | −17,6 (−30,7 / −7,5) | −25,5 |
-| Toplam ihracat ($ mn) | −9 (−20 / +2) | −11 (−21 / −2) | −19 (−34 / −8) | −28 |
+| AB'ye ihracat ($ mn) | −13 (−30 / +3) | −16 (−31 / −2) | −24 (−43 / −10) | −35 |
+| AB'ye ihracat (%) | −9,1 (−21,7 / +2,0) | −11,6 (−22,5 / −1,7) | −17,6 (−30,7 / −7,5) | −25,5 |
+| Toplam ihracat ($ mn) | −9 (−21 / +2) | −11 (−22 / −2) | −19 (−34 / −8) | −28 |
 | Nihai mal ithalatı ($ mn) | −1 (−2 / +8) | −1 (−3 / +5) | −2 (−4 / −1) | — |
-| Üretim ($ mn) | −8 (−18 / −5) | −10 (−19 / −6) | −17 (−30 / −8) | −26 |
-| İstihdam (kişi) | −19 (−42 / −11) | −23 (−44 / −13) | −39 (−71 / −18) | −61 |
+| Üretim ($ mn) | −8 (−19 / −5) | −10 (−20 / −6) | −17 (−30 / −8) | −26 |
+| İstihdam (kişi) | −20 (−45 / −11) | −24 (−46 / −13) | −39 (−71 / −18) | −61 |
 | İstihdam (%) | −0,1 (−0,2 / 0,0) | −0,1 (−0,2 / −0,1) | −0,2 (−0,3 / −0,1) | −0,2 |
-| Cari denge ($ mn) | −6 (−14 / −4) | −8 (−15 / −5) | −13 (−24 / −6) | −21 |
+| Cari denge ($ mn) | −7 (−15 / −4) | −8 (−16 / −5) | −13 (−24 / −6) | −21 |
 | TÜFE (bp) | 0,00 (0,00 / 0,00) | +0,01 (0,00 / +0,01) | +0,01 (+0,01 / +0,02) | — |
 
 *Kaynak:* `[T]` f3e; toplamlar Faz 2B genel denge dağılımına kalibre. Yüzdeler 2024 düzeyine göre.
@@ -497,14 +497,14 @@ Sınıf çıkıştan bölümün en çok etkilenenlerinden biri. AB'nin glikoz ve
 
 | Değişken | S2 | S3 | S4 |
 |---|---|---|---|
-| AB'ye ihracat ($ mn) | −11 (−25 / +2) | −15 (−28 / −3) | −31 (−49 / −13) |
-| AB'ye ihracat (%) | −11,2 (−26,7 / +2,0) | −15,6 (−29,7 / −2,8) | −32,4 (−51,5 / −13,3) |
-| Toplam ihracat ($ mn) | −8 (−18 / +1) | −11 (−21 / −2) | −25 (−39 / −10) |
+| AB'ye ihracat ($ mn) | −11 (−27 / +2) | −16 (−30 / −2) | −31 (−49 / −13) |
+| AB'ye ihracat (%) | −12,0 (−28,6 / +2,0) | −16,3 (−31,4 / −2,4) | −32,4 (−51,5 / −13,3) |
+| Toplam ihracat ($ mn) | −8 (−19 / +1) | −11 (−22 / −2) | −25 (−39 / −10) |
 | Nihai mal ithalatı ($ mn) | −4 (−13 / +10) | −6 (−15 / +6) | −14 (−25 / −3) |
-| Üretim ($ mn) | −5 (−10 / −1) | −5 (−9 / −2) | −11 (−17 / −7) |
-| İstihdam (kişi) | −7 (−13 / −2) | −7 (−12 / −3) | −14 (−23 / −9) |
+| Üretim ($ mn) | −6 (−10 / −2) | −6 (−10 / −3) | −11 (−17 / −7) |
+| İstihdam (kişi) | −7 (−14 / −2) | −7 (−13 / −3) | −14 (−23 / −9) |
 | İstihdam (%) | −0,2 (−0,4 / −0,1) | −0,2 (−0,4 / −0,1) | −0,4 (−0,7 / −0,3) |
-| Cari denge ($ mn) | −4 (−8 / −1) | −4 (−7 / −2) | −9 (−13 / −6) |
+| Cari denge ($ mn) | −4 (−8 / −1) | −5 (−8 / −2) | −9 (−13 / −6) |
 | TÜFE (bp) | +0,01 (+0,01 / +0,01) | +0,02 (+0,01 / +0,02) | +0,05 (+0,04 / +0,06) |
 
 *Kaynak:* `[T]` f3e; toplamlar Faz 2B genel denge dağılımına kalibre. Yüzdeler 2024 düzeyine göre.
@@ -523,14 +523,14 @@ Sınıf iç pazara dönük, ama küçük ve hızla büyüyen bir ihracat kolu va
 
 | Değişken | S2 | S3 | S4 |
 |---|---|---|---|
-| AB'ye ihracat ($ mn) | −11 (−24 / +1) | −11 (−22 / −2) | −16 (−25 / −7) |
-| AB'ye ihracat (%) | −21,2 (−48,8 / +2,0) | −23,1 (−43,8 / −4,1) | −31,7 (−50,8 / −13,1) |
-| Toplam ihracat ($ mn) | −8 (−18 / +1) | −8 (−16 / −1) | −12 (−20 / −5) |
+| AB'ye ihracat ($ mn) | −11 (−26 / +1) | −12 (−23 / −2) | −16 (−25 / −7) |
+| AB'ye ihracat (%) | −22,6 (−52,4 / +2,0) | −24,1 (−46,5 / −3,5) | −31,7 (−50,7 / −13,1) |
+| Toplam ihracat ($ mn) | −8 (−19 / +1) | −9 (−17 / −1) | −12 (−20 / −5) |
 | Nihai mal ithalatı ($ mn) | −1 (−4 / +1) | −2 (−4 / +1) | −3 (−5 / −1) |
-| Üretim ($ mn) | −6 (−14 / −1) | −6 (−12 / −2) | −9 (−15 / −5) |
-| İstihdam (kişi) | −129 (−287 / −12) | −130 (−239 / −45) | −189 (−310 / −92) |
+| Üretim ($ mn) | −7 (−15 / −1) | −7 (−13 / −2) | −9 (−15 / −5) |
+| İstihdam (kişi) | −138 (−309 / −12) | −136 (−257 / −41) | −189 (−309 / −92) |
 | İstihdam (%) | −0,1 (−0,2 / 0,0) | −0,1 (−0,1 / 0,0) | −0,1 (−0,2 / 0,0) |
-| Cari denge ($ mn) | −5 (−11 / 0) | −5 (−9 / −2) | −8 (−12 / −4) |
+| Cari denge ($ mn) | −6 (−12 / 0) | −5 (−10 / −2) | −8 (−12 / −4) |
 | TÜFE (bp) | +0,04 (+0,03 / +0,05) | +0,08 (+0,06 / +0,09) | +0,21 (+0,18 / +0,24) |
 
 *Kaynak:* `[T]` f3e; toplamlar Faz 2B genel denge dağılımına kalibre. Yüzdeler 2024 düzeyine göre.
@@ -549,19 +549,19 @@ Anlaşmasız çıkışta bisküvinin AB tarifesi sanayi bileşeni kadar artıyor
 
 | Değişken | S2 | S3 | S4 |
 |---|---|---|---|
-| AB'ye ihracat ($ mn) | −34 (−77 / +3) | −37 (−69 / −7) | −51 (−81 / −21) |
-| AB'ye ihracat (%) | −20,9 (−47,2 / +2,0) | −22,8 (−42,6 / −4,2) | −31,1 (−49,8 / −13,0) |
-| Toplam ihracat ($ mn) | −25 (−57 / +2) | −26 (−50 / −5) | −40 (−66 / −17) |
+| AB'ye ihracat ($ mn) | −36 (−82 / +3) | −39 (−73 / −6) | −51 (−81 / −21) |
+| AB'ye ihracat (%) | −22,3 (−50,3 / +2,0) | −23,8 (−45,1 / −3,4) | −31,1 (−49,8 / −13,0) |
+| Toplam ihracat ($ mn) | −26 (−60 / +2) | −28 (−53 / −4) | −40 (−66 / −17) |
 | Nihai mal ithalatı ($ mn) | −5 (−15 / +5) | −7 (−17 / +3) | −13 (−24 / −3) |
-| Üretim ($ mn) | −20 (−42 / −3) | −20 (−34 / −8) | −27 (−43 / −14) |
-| İstihdam (kişi) | −102 (−212 / −13) | −99 (−176 / −39) | −135 (−221 / −70) |
-| İstihdam (%) | −0,2 (−0,5 / 0,0) | −0,2 (−0,4 / −0,1) | −0,3 (−0,5 / −0,2) |
-| Cari denge ($ mn) | −16 (−33 / −2) | −16 (−27 / −6) | −21 (−34 / −11) |
+| Üretim ($ mn) | −21 (−45 / −3) | −21 (−36 / −7) | −27 (−43 / −14) |
+| İstihdam (kişi) | −110 (−231 / −13) | −104 (−189 / −36) | −135 (−221 / −70) |
+| İstihdam (%) | −0,3 (−0,5 / 0,0) | −0,2 (−0,4 / −0,1) | −0,3 (−0,5 / −0,2) |
+| Cari denge ($ mn) | −17 (−36 / −2) | −16 (−29 / −6) | −21 (−34 / −11) |
 | TÜFE (bp) | +0,03 (+0,02 / +0,03) | +0,05 (+0,05 / +0,06) | +0,17 (+0,15 / +0,19) |
 
 *Kaynak:* `[T]` f3e; toplamlar Faz 2B genel denge dağılımına kalibre. Yüzdeler 2024 düzeyine göre.
 
-Bisküvi, S2'deki menşe sorununun en açık örneği. Kural (KN 1905) Fasıl 11 malzemesinin, yani unun menşeli olmasını istiyor ve menşesiz şeker için bir ağırlık sınırı koyuyor. İhracatçılar bugün DİR ile ithal buğday ve ham şeker kullanıyor; Gümrük Birliği'nde A.TR belgesi yeterli olduğu için bu sorun değil. S2'de ise bu ürünler menşe kazanamıyor ve S2'nin kaybı (34 milyon dolar) S4'ünkinin üçte ikisinden fazla. Çözüm, E-10-02'deki menşe uyumlu DİR ile Fasıl 19 için müzakere edilecek %15'lik tolerans (E-10.72-01). İkisi birlikte S2'de kaybın büyük kısmını geri kazandırıyor; defterde yılda 8 milyon dolarlık katkı olarak yer alıyor. Kakao ara ürünlerinde önerilen sıfır tarife (E-10.82-01) bu sınıfın girdi maliyetini de düşürüyor.
+Bisküvi, S2'deki menşe sorununun en açık örneği. Kural (KN 1905) Fasıl 11 malzemesinin, yani unun menşeli olmasını istiyor ve menşesiz şeker için bir ağırlık sınırı koyuyor. İhracatçılar bugün DİR ile ithal buğday ve ham şeker kullanıyor; Gümrük Birliği'nde A.TR belgesi yeterli olduğu için bu sorun değil. S2'de ise bu ürünler menşe kazanamıyor ve S2'nin kaybı (36 milyon dolar) S4'ünkinin üçte ikisinden fazla. Çözüm, E-10-02'deki menşe uyumlu DİR ile Fasıl 19 için müzakere edilecek %15'lik tolerans (E-10.72-01). İkisi birlikte S2'de kaybın büyük kısmını geri kazandırıyor; defterde yılda 8 milyon dolarlık katkı olarak yer alıyor. Kakao ara ürünlerinde önerilen sıfır tarife (E-10.82-01) bu sınıfın girdi maliyetini de düşürüyor.
 
 Sınıfın kırmızı çizgi yetkinlikleri marka ve ambalaj tasarımı, raf ömrü teknolojisi ve Irak ile Körfez'deki dağıtım ağları. Hedef, menşe çözümüyle T+5'te AB'ye ihracatı çıkış öncesi düzeyde tutmak ve 2035'e kadar Kuzey Amerika'da marka payı kazanmak. Müzakerede Türkiye savunmada: sanayi bileşeninin sıfırı sürmeli, Fasıl 19 toleransı ya da eşdeğer eşya kabulü elde edilmeli; üçüncü ülkelerde Körfez STA'sında bisküvi ve şekerlemede sıfır tarife öncelikli. S2'den sonra AB'ye bisküvi ihracatında menşe ispatlı pay %80'in altına düşerse menşe uyumlu DİR'in kapsamı genişletilmeli ve TMO yerli buğday arzını artırmalı; S4'te AB'ye ihracat yıllık %20 düşerse geçiş tamponu devreye girmeli. Sınıfın en büyük riski, Yıldız Holding'in AB içindeki pladis tesislerinin AB pazarını Türkiye'den devralması `[H]`. Değerlendirmenin güveni orta; menşe maliyeti ve yerli buğdayın ithal paritesine göre fiyat farkı (VB-33) tahmin.
 
@@ -585,21 +585,21 @@ Anlaşmasız çıkışta AB tarifesi ortalama %8,4 artıyor ve AB'ye ihracat 84 
 
 | Değişken | S2 | S3 | S4 |
 |---|---|---|---|
-| AB'ye ihracat ($ mn) | −51 (−120 / +5) | −64 (−122 / −12) | −84 (−137 / −36) |
-| AB'ye ihracat (%) | −18,7 (−43,9 / +2,0) | −23,2 (−44,3 / −4,2) | −30,6 (−49,9 / −13,0) |
-| Toplam ihracat ($ mn) | −37 (−88 / +4) | −45 (−87 / −8) | −67 (−110 / −28) |
-| Nihai mal ithalatı ($ mn) | −44 (−147 / +48) | −63 (−164 / +28) | −123 (−225 / −26) |
-| Üretim ($ mn) | +4 (−44 / +64) | +16 (−37 / +80) | +56 (−2 / +117) |
-| İstihdam (kişi) | +18 (−185 / +273) | +71 (−156 / +339) | +233 (−11 / +494) |
+| AB'ye ihracat ($ mn) | −55 (−129 / +5) | −66 (−129 / −10) | −84 (−137 / −36) |
+| AB'ye ihracat (%) | −19,9 (−47,2 / +2,0) | −24,1 (−47,0 / −3,6) | −30,5 (−49,9 / −13,0) |
+| Toplam ihracat ($ mn) | −39 (−93 / +4) | −47 (−92 / −7) | −67 (−110 / −28) |
+| Nihai mal ithalatı ($ mn) | −44 (−150 / +48) | −64 (−168 / +29) | −123 (−225 / −26) |
+| Üretim ($ mn) | +3 (−44 / +61) | +15 (−36 / +78) | +56 (−2 / +117) |
+| İstihdam (kişi) | +12 (−185 / +261) | +66 (−154 / +333) | +233 (−11 / +494) |
 | İstihdam (%) | 0,0 (−0,5 / +0,7) | +0,2 (−0,4 / +0,9) | +0,6 (0,0 / +1,3) |
-| Cari denge ($ mn) | +3 (−35 / +51) | +13 (−29 / +64) | +44 (−2 / +94) |
+| Cari denge ($ mn) | +2 (−35 / +49) | +12 (−29 / +62) | +44 (−2 / +94) |
 | TÜFE (bp) | +0,11 (+0,10 / +0,14) | +0,22 (+0,18 / +0,26) | +0,64 (+0,55 / +0,73) |
 
 *Kaynak:* `[T]` f3e; toplamlar Faz 2B genel denge dağılımına kalibre. Yüzdeler 2024 düzeyine göre.
 
 Bu sınıf için doğru politika girdide sıfır tarife (E-10.82-01). Kakao hamuru, yağı ve tozunda (KN 1803–1805) bugün %7,7–9,6 olan tarife bütün menşelere sıfırlanırsa, hem ihracatçının maliyeti düşüyor hem de S4'te AB'den gelen girdilerin pahalanması önleniyor. Batı Afrika'dan doğrudan alım da AB'nin elde ettiği tercih avantajına yaklaşıyor. Önlem iki yolda da uygulanıyor. TÜFE'yi S2'de 0,11, S4'te 0,36 baz puan azaltıyor, yılda yaklaşık 0,55 milyar TL gelir kaybına yol açıyor ve cari dengeye 10 milyon dolar katkı yapıyor. Yerli kakao öğütücüleri için bir geçiş dönemi düşünülebilir: oran T+12'ye kadar %4'te tutulup sonra sıfırlanabilir.
 
-Sınıfı Gümrük Birliği'nden bağımsız iki konu daha bekliyor. İlki menşe. Şekerleme ve çikolatada kural, menşesiz şekerin ve süt ürünlerinin ağırlıkça %40'ı, birlikte %60'ı aşmamasını istiyor; DİR'deki ham şekerle yapılan şekerlemelerde bu sınır aşılıyor ve S2'nin kaybı (51 milyon dolar) S4'ünkinin yarısından fazla. Çözüm burada da menşe uyumlu DİR'de yerli pancar şekerinin eşdeğer eşya olarak kullanılması (E-10.82-02) ve müzakerede şeker ağırlık sınırına tolerans. İkincisi ormansızlaşma tüzüğü. AB'ye ihracatın %62 kadarı kapsamda ve Türk üreticisi parsel verisini Batı Afrikalı tedarikçisinden almak zorunda (E-10-03).
+Sınıfı Gümrük Birliği'nden bağımsız iki konu daha bekliyor. İlki menşe. Şekerleme ve çikolatada kural, menşesiz şekerin ve süt ürünlerinin ağırlıkça %40'ı, birlikte %60'ı aşmamasını istiyor; DİR'deki ham şekerle yapılan şekerlemelerde bu sınır aşılıyor ve S2'nin kaybı (55 milyon dolar) S4'ünkinin yarısından fazla. Çözüm burada da menşe uyumlu DİR'de yerli pancar şekerinin eşdeğer eşya olarak kullanılması (E-10.82-02) ve müzakerede şeker ağırlık sınırına tolerans. İkincisi ormansızlaşma tüzüğü. AB'ye ihracatın %62 kadarı kapsamda ve Türk üreticisi parsel verisini Batı Afrikalı tedarikçisinden almak zorunda (E-10-03).
 
 Sınıfın kırmızı çizgi yetkinlikleri fındık ve kakao harman bilgisi, marka, kalıplama ve kaplama hatları ile Körfez'deki dağıtım ağı. Hedefler, T+5'e kadar kakaoyu doğrudan Batı Afrika'dan alarak maliyeti %3 düşürmek ve 2035'e kadar ABD ve Körfez'de premium segmentte marka payı kazanmak. Müzakerede AB ile savunma (sanayi bileşeninin sıfırı, şeker ağırlık sınırına %15 tolerans), üçüncü ülkelerle ise Fildişi Sahili ve Gana ile kakao ürünlerinde sıfır tarifeli bir STA ve Körfez STA'sında çikolata öncelikli. Kazananlar S4'te kakao öğütücüleri ve iç pazara satan üreticiler, kaybedenler AB'ye ihracatçılar. AB'ye çikolata ve şekerleme ihracatı yıllık %15 düşerse geçiş tamponu, EUDR nedeniyle AB'de üç ya da daha fazla sevkiyat bekletilirse tedarikçi veri havuzu devreye girmeli. Değerlendirmenin güveni orta: iç ikamenin kapasite sınırı `[D?]` ve EUDR'nin uygulama sıkılığı `[H]` belirleyici. Nestlé ve Mondelez'in AB'ye yönelik üretim kararlarının S2'nin zamanlamasına duyarlı olduğu da unutulmamalı `[H]`.
 
@@ -631,13 +631,13 @@ Anlaşmasız çıkışta AB'den gelen bebek mamasına c2 tarifesi (%7,5) uygulan
 
 | Değişken | S2 | S3 | S4 |
 |---|---|---|---|
-| AB'ye ihracat ($ mn) | −7 (−16 / +1) | −9 (−17 / −2) | −13 (−21 / −5) |
-| AB'ye ihracat (%) | −16,9 (−38,4 / +2,0) | −21,1 (−39,6 / −4,0) | −30,4 (−48,9 / −12,5) |
-| Toplam ihracat ($ mn) | −5 (−12 / +1) | −6 (−12 / −1) | −10 (−17 / −4) |
+| AB'ye ihracat ($ mn) | −8 (−18 / +1) | −9 (−18 / −1) | −13 (−21 / −5) |
+| AB'ye ihracat (%) | −17,9 (−40,9 / +2,0) | −22,0 (−42,0 / −3,3) | −30,4 (−48,8 / −12,5) |
+| Toplam ihracat ($ mn) | −6 (−13 / +1) | −7 (−13 / −1) | −10 (−17 / −4) |
 | Nihai mal ithalatı ($ mn) | −7 (−23 / +8) | −10 (−26 / +5) | −19 (−34 / −4) |
-| Üretim ($ mn) | +1 (−7 / +11) | +3 (−6 / +14) | +9 (0 / +18) |
-| İstihdam (kişi) | +8 (−39 / +61) | +18 (−31 / +76) | +45 (−2 / +96) |
-| İstihdam (%) | +0,6 (−2,9 / +4,6) | +1,4 (−2,3 / +5,7) | +3,4 (−0,2 / +7,2) |
+| Üretim ($ mn) | +1 (−7 / +11) | +3 (−6 / +13) | +9 (0 / +18) |
+| İstihdam (kişi) | +6 (−39 / +60) | +18 (−31 / +74) | +45 (−2 / +96) |
+| İstihdam (%) | +0,5 (−2,9 / +4,5) | +1,3 (−2,3 / +5,6) | +3,4 (−0,2 / +7,2) |
 | Cari denge ($ mn) | +1 (−6 / +9) | +3 (−5 / +11) | +7 (0 / +14) |
 | TÜFE (bp) | +0,03 (+0,02 / +0,03) | +0,05 (+0,04 / +0,06) | +0,13 (+0,12 / +0,15) |
 
@@ -657,14 +657,14 @@ Bu sınıf bir "diğer" sınıfı, ama Türkiye için önemli: gıda müstahzarl
 
 | Değişken | S2 | S3 | S4 |
 |---|---|---|---|
-| AB'ye ihracat ($ mn) | −12 (−28 / +5) | −15 (−30 / −3) | −30 (−49 / −13) |
-| AB'ye ihracat (%) | −4,4 (−10,4 / +2,0) | −5,7 (−11,2 / −1,0) | −11,2 (−18,4 / −4,7) |
-| Toplam ihracat ($ mn) | −8 (−20 / +4) | −11 (−22 / −2) | −24 (−40 / −10) |
-| Nihai mal ithalatı ($ mn) | −5 (−17 / +15) | −8 (−20 / +9) | −25 (−45 / −5) |
-| Üretim ($ mn) | −4 (−11 / 0) | −4 (−11 / +1) | 0 (−5 / +7) |
-| İstihdam (kişi) | −24 (−62 / +1) | −20 (−62 / +5) | +2 (−28 / +37) |
-| İstihdam (%) | −0,2 (−0,6 / 0,0) | −0,2 (−0,6 / 0,0) | 0,0 (−0,3 / +0,3) |
-| Cari denge ($ mn) | −3 (−9 / 0) | −3 (−9 / +1) | 0 (−4 / +5) |
+| AB'ye ihracat ($ mn) | −12 (−30 / +5) | −16 (−32 / −2) | −30 (−49 / −13) |
+| AB'ye ihracat (%) | −4,6 (−11,1 / +2,0) | −6,0 (−11,9 / −0,9) | −11,2 (−18,4 / −4,7) |
+| Toplam ihracat ($ mn) | −9 (−21 / +4) | −11 (−23 / −2) | −24 (−40 / −10) |
+| Nihai mal ithalatı ($ mn) | −5 (−18 / +15) | −8 (−21 / +9) | −25 (−45 / −5) |
+| Üretim ($ mn) | −5 (−11 / 0) | −4 (−11 / 0) | 0 (−5 / +7) |
+| İstihdam (kişi) | −27 (−63 / −2) | −23 (−62 / +2) | +2 (−28 / +37) |
+| İstihdam (%) | −0,3 (−0,6 / 0,0) | −0,2 (−0,6 / 0,0) | 0,0 (−0,3 / +0,3) |
+| Cari denge ($ mn) | −4 (−9 / 0) | −3 (−9 / 0) | 0 (−4 / +5) |
 | TÜFE (bp) | +0,08 (+0,07 / +0,09) | +0,15 (+0,13 / +0,18) | +0,71 (+0,61 / +0,80) |
 
 *Kaynak:* `[T]` f3e; toplamlar Faz 2B genel denge dağılımına kalibre. Yüzdeler 2024 düzeyine göre.
@@ -699,12 +699,12 @@ Sınıfın maruziyeti iki yönlü. İhracat tarafında anlaşmasız çıkış AB
 
 | Değişken | S2 | S3 | S4 |
 |---|---|---|---|
-| AB'ye ihracat ($ mn) | −10 (−24 / +2) | −14 (−28 / −3) | −23 (−38 / −10) |
-| AB'ye ihracat (%) | −9,2 (−22,0 / +2,0) | −13,1 (−25,4 / −2,4) | −20,7 (−33,8 / −8,8) |
-| Toplam ihracat ($ mn) | −7 (−18 / +2) | −10 (−20 / −2) | −18 (−30 / −8) |
-| Nihai mal ithalatı ($ mn) | −12 (−39 / +18) | −18 (−44 / +11) | −37 (−67 / −8) |
-| Üretim ($ mn) | +4 (−17 / +22) | +7 (−13 / +25) | +18 (0 / +38) |
-| İstihdam (kişi) | +11 (−46 / +63) | +19 (−36 / +72) | +52 (0 / +106) |
+| AB'ye ihracat ($ mn) | −11 (−26 / +2) | −15 (−30 / −2) | −23 (−38 / −10) |
+| AB'ye ihracat (%) | −9,8 (−23,5 / +2,0) | −13,6 (−26,9 / −2,1) | −20,7 (−33,8 / −8,8) |
+| Toplam ihracat ($ mn) | −8 (−19 / +2) | −11 (−22 / −2) | −18 (−30 / −8) |
+| Nihai mal ithalatı ($ mn) | −12 (−39 / +18) | −18 (−45 / +11) | −37 (−67 / −8) |
+| Üretim ($ mn) | +4 (−17 / +22) | +6 (−13 / +25) | +18 (0 / +38) |
+| İstihdam (kişi) | +10 (−46 / +63) | +18 (−36 / +71) | +52 (0 / +106) |
 | İstihdam (%) | +0,1 (−0,3 / +0,4) | +0,1 (−0,2 / +0,5) | +0,4 (0,0 / +0,7) |
 | Cari denge ($ mn) | +3 (−13 / +18) | +5 (−10 / +20) | +15 (0 / +30) |
 | TÜFE (bp) | +0,14 (+0,12 / +0,17) | +0,27 (+0,23 / +0,33) | +0,81 (+0,70 / +0,93) |
@@ -719,20 +719,20 @@ Sınıfın maruziyeti iki yönlü. İhracat tarafında anlaşmasız çıkış AB
 
 Tütün ürünleri, bu parçanın en çok uluslu ve en sorunlu sınıfı. Philip Morris'in ve JTI'ın İzmir Torbalı'daki fabrikaları sınıfın omurgası; PMI'ın tesisi 2024'te üretiminin %11'inden fazlasını ihraç etti `[V]`. BAT'ın Türkiye'deki üretim durumu ise doğrulanmalı `[D?]`. Sınıfta 5.769 kişi çalışıyor ve istihdamın %59 kadarı İzmir'de. NACE 12.00 yaprak tütünün işlenmesini (sapından ayırma ve kurutma) de kapsıyor; Türkiye işlenmemiş şark tütününde dünya ihracatının %12,4 kadarını yapıyor ve birinci. Sigara ihracatı (543 milyon dolar) ağırlıkla Irak, Kuveyt ve diğer Orta Doğu pazarlarına; Türkiye sigarada dünya ihracatında 10. sırada. AB'ye ihracat 116 milyon dolar ve en büyük AB pazarı Romanya.
 
-Anlaşmasız çıkışta AB'nin sigaradaki MFN tarifesi %57,6, sınıf ortalaması %51,3. Bu oran AB pazarını fiilen kapatıyor ve S4'te AB'ye ihracat 39 milyon dolar azalıyor. Asıl sorun ise S2'de bile çözülmüyor. Menşe kuralı (KN 2402) sigaradaki tütünün ağırlıkça en az %70'inin menşeli olmasını istiyor. Türk sigaralarında şark tütünü yerli, ama Amerikan harmanının Virginia ve Burley tütünleri ithal (2024'te yaprak tütün ithalatı 519 milyon dolar). Kurala uyum olasılığı bu yüzden düşük `[H]` ve S2'nin kaybı S4'ünkinin %89 kadarı. Çok uluslu şirketler AB pazarını AB'deki fabrikalarından besleyebilir. PMI'ın Yunanistan'daki Papastratos fabrikasını 2018'de ısıtılmış tütün üretimine dönüştürmesi `[V]`, bu esnekliğin bir örneği.
+Anlaşmasız çıkışta AB'nin sigaradaki MFN tarifesi %57,6, sınıf ortalaması %51,3. Bu oran AB pazarını fiilen kapatıyor ve S4'te AB'ye ihracat 39 milyon dolar azalıyor. Asıl sorun ise S2'de bile çözülmüyor. Menşe kuralı (KN 2402) sigaradaki tütünün ağırlıkça en az %70'inin menşeli olmasını istiyor. Türk sigaralarında şark tütünü yerli, ama Amerikan harmanının Virginia ve Burley tütünleri ithal (2024'te yaprak tütün ithalatı 519 milyon dolar). Kurala uyum olasılığı bu yüzden düşük `[H]` ve S2'nin kaybı S4'ünkinin %95 kadarı. Çok uluslu şirketler AB pazarını AB'deki fabrikalarından besleyebilir. PMI'ın Yunanistan'daki Papastratos fabrikasını 2018'de ısıtılmış tütün üretimine dönüştürmesi `[V]`, bu esnekliğin bir örneği.
 
 **Tablo 5.13 — 12.00 Tütün ürünleri: senaryo etkileri (T+5'te yıllık; P50, parantez içinde P10 / P90)**
 
 | Değişken | S2 | S3 | S4 |
 |---|---|---|---|
-| AB'ye ihracat ($ mn) | −34 (−76 / +2) | −34 (−63 / −6) | −39 (−62 / −16) |
-| AB'ye ihracat (%) | −29,7 (−65,6 / +2,0) | −29,6 (−54,6 / −5,5) | −33,3 (−53,3 / −14,1) |
-| Toplam ihracat ($ mn) | −25 (−56 / +2) | −24 (−46 / −5) | −31 (−50 / −13) |
-| Nihai mal ithalatı ($ mn) | −9 (−30 / +26) | −14 (−36 / +15) | −46 (−84 / −10) |
-| Üretim ($ mn) | −18 (−32 / −12) | −11 (−21 / −7) | +14 (−3 / +35) |
-| İstihdam (kişi) | −26 (−47 / −17) | −16 (−30 / −9) | +20 (−5 / +49) |
-| İstihdam (%) | −0,4 (−0,8 / −0,3) | −0,3 (−0,5 / −0,2) | +0,3 (−0,1 / +0,9) |
-| Cari denge ($ mn) | −14 (−26 / −10) | −9 (−16 / −5) | +11 (−3 / +28) |
+| AB'ye ihracat ($ mn) | −37 (−81 / +2) | −36 (−67 / −5) | −39 (−62 / −16) |
+| AB'ye ihracat (%) | −31,7 (−70,1 / +2,0) | −30,8 (−57,9 / −4,7) | −33,3 (−53,3 / −14,1) |
+| Toplam ihracat ($ mn) | −27 (−60 / +2) | −25 (−49 / −4) | −31 (−50 / −13) |
+| Nihai mal ithalatı ($ mn) | −9 (−31 / +26) | −14 (−36 / +16) | −46 (−84 / −10) |
+| Üretim ($ mn) | −19 (−35 / −13) | −12 (−21 / −8) | +14 (−3 / +35) |
+| İstihdam (kişi) | −28 (−50 / −18) | −18 (−31 / −11) | +20 (−5 / +49) |
+| İstihdam (%) | −0,5 (−0,9 / −0,3) | −0,3 (−0,5 / −0,2) | +0,3 (−0,1 / +0,9) |
+| Cari denge ($ mn) | −15 (−28 / −11) | −10 (−17 / −6) | +11 (−3 / +28) |
 | TÜFE (bp) | +0,29 (+0,25 / +0,33) | +0,55 (+0,47 / +0,63) | +2,73 (+2,34 / +3,09) |
 
 *Kaynak:* `[T]` f3e; toplamlar Faz 2B genel denge dağılımına kalibre. Yüzdeler 2024 düzeyine göre.
@@ -792,16 +792,16 @@ Kümülatif defter, her parçanın sonunda çıkışın şokunu ve önerilen ön
 |---|---|
 | Tamamlanan / kalan sınıf | 33 / 197 C sınıfı; ek kapsam (B, D, E, hizmet) 0 / 29 |
 | Kullanılan / kalan enflasyon bütçesi (bp; birinci tur, P50) | S2 yolu: şok 0,9 + önlem −0,11 = 0,8 bp; S4 yolu: şok 6,2 + önlem −1,55 = 4,7 bp. Kümülatif 50 bp bütçeden kalan: S2 49,2, S4 45,3 bp |
-| Kümülatif cari denge katkısı ($ mlr/yıl, T+5) | Senaryo P50: S2 −0,042, S4 +0,008 (S4 P10 −0,93; 1/98 askısında ortalama −0,86); önlemler: S2 +0,071, S4 +0,010 `[T]`/`[H]` |
+| Kümülatif cari denge katkısı ($ mlr/yıl, T+5) | Senaryo P50: S2 −0,047, S4 +0,008 (S4 P10 −0,93; 1/98 askısında ortalama −0,86); önlemler: S2 +0,071, S4 +0,010 `[T]`/`[H]` |
 | Kümülatif mali maliyet (mlr TL/yıl; GSYH %) | S2 yolu 0,83 (%0,001); S4 yolu 1,69 (%0,002) |
-| Riskteki istihdam (kişi, T+5) | S2 P50 −286; S4 P50 −106, P10 −3.982; 1/98 askısında ortalama −3.736. S4 P10'da kaybı %5'i aşan sınıf: yok |
-| Bu parçanın (10–12) katkısı | TÜFE şoku S2 0,9, S4 6,2 bp; önlemler S2 −0,11, S4 −1,55 bp. İstihdam S2 P50 −286, S4 P50 −106 (P10 −3.982). Mali maliyet S2 0,83, S4 1,69 mlr TL/yıl. Cari denge önlem katkısı S2 +0,071, S4 +0,010 $ mlr |
+| Riskteki istihdam (kişi, T+5) | S2 P50 −318; S4 P50 −106, P10 −3.981; 1/98 askısında ortalama −3.735. S4 P10'da kaybı %5'i aşan sınıf: yok |
+| Bu parçanın (10–12) katkısı | TÜFE şoku S2 0,9, S4 6,2 bp; önlemler S2 −0,11, S4 −1,55 bp. İstihdam S2 P50 −318, S4 P50 −106 (P10 −3.981). Mali maliyet S2 0,83, S4 1,69 mlr TL/yıl. Cari denge önlem katkısı S2 +0,071, S4 +0,010 $ mlr |
 | Açık kalan veri boşlukları | VB-30: sınıf düzeyinde yabancı sermaye payı (TÜİK yabancı kontrollü girişim istatistikleri yalnız bölüm düzeyinde); VB-31: Türkiye'ye özgü sınıf düzeyi Ar-Ge yoğunluğu (OECD sınıflaması vekil); VB-32: DTÖ bağlı oranları, satır düzeyi (WTO CTS); 10–12'de tarife artışı önerilmediği için bağlayıcı değil, sonraki parçalarda gerekli; VB-33: TMO yerli buğday fiyatı ile ithal paritesi farkı (menşe maliyeti c_RoO'nun kalibrasyonu); VB-34: EUDR kapsamındaki ihracatçıların tedarik zinciri verisi; VB-35: YSHİ ile BACI sınıf eşlemesindeki tutarsızlık (10.86; 11.03, 11.04, 11.06'da YSHİ verisi yok); VB-06 (sürüyor): 1/98 tercih oranları satır düzeyinde; 1/98 askısı varyantı bu yüzden üst sınır |
 | Varsayım kaydına eklenen yeni maddeler | V-30: Faz 3 senaryoları — toplam genel dengeden, sınıf dağılımı kısmi dengeden (ortak z, N = 2.000); V-31: S4'te 1/98'in askıya alınma olasılığı 0,25 (hasmane AB) `[H]`; V-32: ticaret esnekliği σ — ProTEE HS6, sınıf içi AB'ye ihracat ağırlıklı medyan, [2, 15] aralığında; V-33: sınır sürtünmesi %0,5–2 (yalnız GB ve İTÜ), S2'de × 0,5; AB ihracatçısının menşe maliyeti S2'de %0,5, S3'te %1; V-34: arketip eşikleri (KS, AME, ithalat penetrasyonu, EDE ≥ 0,3 bp/puan, SS ≥ 60) `[H]`; V-35: SS boyut puanları ve ağırlıkları `[H]` (veri/f3_ss_boyutlar.csv; 10–12 gözden geçirildi, diğerleri ilk tahmin); V-36: CKE tanımı — 1 puan tarife ya da %1 üretim desteği, 5 yıl, kapasite yatırımının ithalatı (sermaye/hasıla 1, ithal payı 0,6) düşülü; V-37: KN8 → NACE eşlemesinde CPA 2.2 → 2.1 kimlik bağlantısı önceliği (D-1); V-38: Grup toplamlarının yüzdelikleri çekilişlerin toplamından hesaplanır (sınıf yüzdeliklerinin toplamı değil); 1/98 askısının etkisi askı çekilişlerinin koşullu ortalamasıyla raporlanır; V-39: Eylem takvimi T'ye göre; T2028'de T−18 geçmişte kaldığından hazırlık eylemleri 2026'nın son çeyreğinde başlar |
 
 *Kaynak:* `kod/f3g_kartlar.py`; matris, grup senaryoları (`veri/f3_senaryo_grup.csv`) ve eylem kayıtlarından. Senaryo şokları politika seçimi değil, çıkışın kendisi; önlemler Bölüm 4'teki eylemlerden. Makro mutabakat Faz 6'da.
 
-Defterin söylediği şu. Enflasyon tarafında 10–12, S2 yolunda kümülatif bütçenin 0,8, S4 yolunda 4,7 baz puanını kullanıyor. Bölümün TÜFE sepetindeki ağırlığı (eşlenen sınıflar toplamında yaklaşık beşte bir) düşünüldüğünde bu, bütçenin orantılı payının altında; önerilen üç tarife indirimi S4'te şokun yaklaşık dörtte birini siliyor. Mali tarafta önlemlerin yıllık maliyeti S2 yolunda 0,83, S4 yolunda 1,69 milyar TL; bu, yıllık tavanın çok altında. Cari denge tarafında medyan etkiler küçük: S2'de yılda 42 milyon dolarlık kötüleşme, önlemlerin katkısıyla (71 milyon dolar) dengeleniyor. S4'te medyan etki sıfıra yakın. Bölümün cari dengeye yönelik tek ciddi riski 1/98'in askıya alınması: bu durumda kayıp ortalama 0,86 milyar dolar. İstihdam tarafında S4'ün P10 değerinde bölüm 3.982 kişi kaybediyor ve hiçbir sınıf %5 eşiğini aşmıyor; 10.39 bu eşiğe en çok yaklaşan sınıf ve bunun için bir tetik tanımlandı.
+Defterin söylediği şu. Enflasyon tarafında 10–12, S2 yolunda kümülatif bütçenin 0,8, S4 yolunda 4,7 baz puanını kullanıyor. Bölümün TÜFE sepetindeki ağırlığı (eşlenen sınıflar toplamında yaklaşık beşte bir) düşünüldüğünde bu, bütçenin orantılı payının altında; önerilen üç tarife indirimi S4'te şokun yaklaşık dörtte birini siliyor. Mali tarafta önlemlerin yıllık maliyeti S2 yolunda 0,83, S4 yolunda 1,69 milyar TL; bu, yıllık tavanın çok altında. Cari denge tarafında medyan etkiler küçük: S2'de yılda 47 milyon dolarlık kötüleşme, önlemlerin katkısıyla (71 milyon dolar) dengeleniyor. S4'te medyan etki sıfıra yakın. Bölümün cari dengeye yönelik tek ciddi riski 1/98'in askıya alınması: bu durumda kayıp ortalama 0,86 milyar dolar. İstihdam tarafında S4'ün P10 değerinde bölüm 3.981 kişi kaybediyor ve hiçbir sınıf %5 eşiğini aşmıyor; 10.39 bu eşiğe en çok yaklaşan sınıf ve bunun için bir tetik tanımlandı.
 
 Belgenin kalite kontrolü şu noktaları kapsıyor. Her sayının birimi ve dönemi belirtildi. Sınıf verileri 2024, AB'ye ihracatın rejim dağılımı ve AB tarifeleri 2025–2026, senaryolar T+5'teki yıllık fark. Bölüm toplamları matrisin bütün 230 sınıfı üzerinden tutarlı hesaplandı ve yüzdelikler bölüm toplamının dağılımından alındı. Sınıf yüzdeliklerinin toplanması özellikle dağılımın alt ucunda kaybı abartıyor; önceki sürüme göre değişen sayıların bir kısmı bu düzeltmeden kaynaklanıyor (V-38). 230 sınıfın enflasyon duyarlılık endekslerinin toplamı (22,0 baz puan) girdi-çıktı tablosunun ürün düzeyindeki toplamıyla (23,5 baz puan) tutarlı. Kıbrıs akımları ve KN8 eşlemesindeki hata önceki fazlarda düzeltildi (Ek D).
 
@@ -858,38 +858,38 @@ Ana matrisin bütün sütunları ve 230 imalat sınıfının tamamı `veri/nace_
 | Kod | KS | SS | AME | EDE | CKE | Arketip | Duruş | Tarife yolu | Ana araçlar | AB müzakere | S2 cari P50 | S2 TÜFE P50 | İstihdam riski | Güven |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | 10.11 | 41 | 53 | 17 | 0,46 | 34 | — | Koru | Değişiklik yok (tarım ürünü; 1/98) | ESK ithalat kaynağı çeşitlendirme; SPS; EUDR (sığır izlenebilirliği) | nötr | +0,2 | 0,01 | Düşük | Yüksek |
-| 10.12 | 46 | 60 | 11 | 0,05 | 25 | B/D | Geliştir | Değişiklik yok (tarım); yem girdilerinde mevcut rejim | Pazar çeşitlendirme; AB SPS listelenme talebi; yem arz güvenliği | hücum | +0,1 | 0,00 | Düşük | Yüksek |
-| 10.13 | 54 | 30 | 18 | 0,05 | 16 | — | Koru | Değişiklik yok (tarım) | İzleme | nötr | 0,0 | 0,00 | Düşük | Yüksek |
+| 10.12 | 46 | 60 | 11 | 0,05 | 25 | B/D | Geliştir | Değişiklik yok (tarım); yem girdilerinde mevcut rejim | Pazar çeşitlendirme; AB SPS listelenme talebi; yem arz güvenliği | hücum | +0,3 | 0,00 | Düşük | Yüksek |
+| 10.13 | 54 | 30 | 19 | 0,05 | 16 | — | Koru | Değişiklik yok (tarım) | İzleme | nötr | 0,0 | 0,00 | Düşük | Yüksek |
 | 10.20 | 47 | 38 | 62 | 0,05 | 42 | A | Koru | 1/98 balıkçılık tavizleri korunur; S2'de kota yerine %0 | 1/98 sürekliliği (E-10-01); ticaret savunması hazırlığı (E-10-04); yem ve yavru arzı | hücum | 0,0 | 0,00 | Orta | Orta |
 | 10.31 | 50 | 22 | 13 | 0,01 | 33 | — | Koru | Değişiklik yok | İzleme | nötr | 0,0 | 0,00 | Düşük | Yüksek |
 | 10.32 | 52 | 15 | 62 | 0,02 | 32 | B/A | Geliştir | Değişiklik yok (tarım; 1/98) | 1/98 sürekliliği (E-10-01); AB dışı pazar; giriş fiyatı istisnası (E-10-06) | hücum | 0,0 | 0,00 | Orta | Orta |
-| 10.39 | 50 | 37 | 54 | 0,12 | 51 | A | Koru | 1/98 korunur; S2'de tavizler ve giriş fiyatı istisnası; TR tarifesi değişmez | 1/98 sürekliliği (E-10-01); arz güvenliği kaldıracı (fındık); SPS kontrol sıklığının azaltılması | hücum | −0,4 | 0,00 | Orta | Orta |
-| 10.41 | 46 | 63 | 18 | 0,39 | 63 | D/B | Geliştir | Tarım tarifeleri değişmez; DİR sürer | Yağlı tohum üretimi; stratejik ham yağ stoku; kaynak çeşitlendirme | nötr | −0,1 | 0,00 | Düşük | Orta |
+| 10.39 | 50 | 37 | 55 | 0,12 | 51 | A | Koru | 1/98 korunur; S2'de tavizler ve giriş fiyatı istisnası; TR tarifesi değişmez | 1/98 sürekliliği (E-10-01); arz güvenliği kaldıracı (fındık); SPS kontrol sıklığının azaltılması | hücum | −0,1 | 0,00 | Orta | Orta |
+| 10.41 | 46 | 63 | 18 | 0,39 | 63 | D/B | Geliştir | Tarım tarifeleri değişmez; DİR sürer | Yağlı tohum üretimi; stratejik ham yağ stoku; kaynak çeşitlendirme | nötr | 0,0 | 0,00 | Düşük | Orta |
 | 10.42 | 42 | 30 | 17 | 0,01 | 26 | B | Geliştir | Değişiklik yok | Pazar çeşitlendirme | nötr | 0,0 | 0,00 | Düşük | Orta |
-| 10.51 | 46 | 57 | 19 | 0,14 | 12 | — | Koru | Değişiklik yok (tarım) | İzleme; S2'de süt ürünleri SPS listelenmesi | nötr | 0,0 | 0,00 | Düşük | Orta |
+| 10.51 | 46 | 57 | 20 | 0,14 | 12 | — | Koru | Değişiklik yok (tarım) | İzleme; S2'de süt ürünleri SPS listelenmesi | nötr | 0,0 | 0,00 | Düşük | Orta |
 | 10.52 | 52 | 4 | 15 | 0,00 | 15 | — | Koru | Değişiklik yok | İzleme | nötr | 0,0 | 0,00 | Düşük | Orta |
-| 10.61 | 48 | 71 | 27 | 0,11 | 37 | B/D | Geliştir | Tarım tarifeleri değişmez; İTÜ satırlarında (bulgur, karışımlar) AB'de S4'te %4,9 | Buğday arz güvenliği (TMO stoku, kaynak çeşitlendirme); DİR eşdeğer eşya (E-10-02); Afrika ve Körfez STA'ları | nötr | −6,3 | 0,00 | Düşük | Yüksek |
-| 10.62 | 53 | 30 | 83 | 0,02 | 50 | B | Geliştir | Değişiklik yok; S2'de AB'ye %0 (İTÜ sanayi bileşeni) | S2'de İTÜ sanayi bileşeninin sıfırı; nişasta bazlı şeker kotası; mısır arzı | savunma | −4,0 | 0,01 | Düşük | Orta |
-| 10.71 | 56 | 67 | 72 | 0,05 | 13 | —/D | Koru | Değişiklik yok | Buğday ve un arz güvenliği; menşe uyumlu DİR (E-10-02) | savunma | −5,1 | 0,04 | Düşük | Orta |
-| 10.72 | 55 | 22 | 63 | 0,03 | 25 | B | Geliştir | Değişiklik yok; S2'de AB'ye %0 | Menşe uyumlu DİR (E-10-02); Fasıl 19 PSR toleransı; S4 tamponu (E-10-05) | savunma | −15,9 | 0,03 | Düşük | Orta |
-| 10.73 | 42 | 52 | 16 | 0,01 | 20 | B/D | Geliştir | Değişiklik yok | Afrika, Latin Amerika ve Japonya STA'ları; makarnalık buğday arzı | nötr | −0,4 | 0,01 | Düşük | Yüksek |
+| 10.61 | 48 | 71 | 27 | 0,11 | 37 | B/D | Geliştir | Tarım tarifeleri değişmez; İTÜ satırlarında (bulgur, karışımlar) AB'de S4'te %4,9 | Buğday arz güvenliği (TMO stoku, kaynak çeşitlendirme); DİR eşdeğer eşya (E-10-02); Afrika ve Körfez STA'ları | nötr | −6,8 | 0,00 | Düşük | Yüksek |
+| 10.62 | 53 | 30 | 83 | 0,02 | 50 | B | Geliştir | Değişiklik yok; S2'de AB'ye %0 (İTÜ sanayi bileşeni) | S2'de İTÜ sanayi bileşeninin sıfırı; nişasta bazlı şeker kotası; mısır arzı | savunma | −4,4 | 0,01 | Düşük | Orta |
+| 10.71 | 56 | 67 | 72 | 0,05 | 13 | —/D | Koru | Değişiklik yok | Buğday ve un arz güvenliği; menşe uyumlu DİR (E-10-02) | savunma | −5,5 | 0,04 | Düşük | Orta |
+| 10.72 | 55 | 22 | 63 | 0,03 | 25 | B | Geliştir | Değişiklik yok; S2'de AB'ye %0 | Menşe uyumlu DİR (E-10-02); Fasıl 19 PSR toleransı; S4 tamponu (E-10-05) | savunma | −17,1 | 0,03 | Düşük | Orta |
+| 10.73 | 42 | 52 | 16 | 0,01 | 20 | B/D | Geliştir | Değişiklik yok | Afrika, Latin Amerika ve Japonya STA'ları; makarnalık buğday arzı | nötr | −0,5 | 0,01 | Düşük | Yüksek |
 | 10.81 | 34 | 53 | 10 | 0,09 | 20 | — | Koru | Değişiklik yok (tarım; kota rejimi) | İzleme; S2'de şeker hassas listesi | savunma | 0,0 | 0,00 | Düşük | Yüksek |
-| 10.82 | 56 | 7 | 57 | 0,11 | 57 | B/G | Geliştir | Kakao ara ürünlerinde (1803–1805) MFN %0, tüm menşeler; nihai üründe MFN korunur | Girdide sıfır (kakao); EUDR uyumu (E-10-03); menşe uyumlu DİR (şeker) | savunma | +3,4 | 0,11 | Düşük | Orta |
+| 10.82 | 56 | 7 | 57 | 0,11 | 57 | B/G | Geliştir | Kakao ara ürünlerinde (1803–1805) MFN %0, tüm menşeler; nihai üründe MFN korunur | Girdide sıfır (kakao); EUDR uyumu (E-10-03); menşe uyumlu DİR (şeker) | savunma | +2,2 | 0,11 | Düşük | Orta |
 | 10.83 | 44 | 22 | 39 | 0,18 | 25 | — | Koru | Değişiklik yok | EUDR (kahve; E-10-03); izleme | nötr | +2,8 | 0,08 | Düşük | Yüksek |
-| 10.84 | 42 | 22 | 73 | 0,02 | 30 | A | Geliştir | S2'de AB'ye %0 (İTÜ); baharatta 1/98 | S2'de İTÜ sıfırı; SPS kontrol sıklığı (2019/1793); izleme | savunma | −2,0 | 0,01 | Düşük | Orta |
+| 10.84 | 42 | 22 | 73 | 0,02 | 30 | A | Geliştir | S2'de AB'ye %0 (İTÜ); baharatta 1/98 | S2'de İTÜ sıfırı; SPS kontrol sıklığı (2019/1793); izleme | savunma | −2,2 | 0,01 | Düşük | Orta |
 | 10.85 | 38 | 24 | 41 | 0,01 | 8 | — | Koru | Değişiklik yok | İzleme; afet ve askerî tayın tedariki | nötr | −0,3 | 0,01 | Düşük | Yüksek |
-| 10.86 | 50 | 55 | 69 | 0,02 | 72 | D/C | Geliştir | S4'te bebek mamasında (1901 10) MFN %0, tüm menşeler; diğerlerinde MFN | S4'te 1901 10 MFN %0; yatırım teşviki (bebek maması tesisi); stok izleme | nötr | +1,1 | 0,03 | Düşük | Düşük |
-| 10.89 | 53 | 38 | 84 | 0,05 | 36 | A/C | Geliştir | S2'de AB'ye %0; S4'te 2106 90'da AB'ye MFN (c2), TÜFE izlenir | S2'de İTÜ sıfırı; maya ihracatında pazar çeşitlendirme; S4 tamponu (E-10-05) | savunma | −3,5 | 0,08 | Düşük | Orta |
+| 10.86 | 50 | 55 | 69 | 0,02 | 72 | D/C | Geliştir | S4'te bebek mamasında (1901 10) MFN %0, tüm menşeler; diğerlerinde MFN | S4'te 1901 10 MFN %0; yatırım teşviki (bebek maması tesisi); stok izleme | nötr | +1,0 | 0,03 | Düşük | Düşük |
+| 10.89 | 53 | 38 | 84 | 0,05 | 36 | A/C | Geliştir | S2'de AB'ye %0; S4'te 2106 90'da AB'ye MFN (c2), TÜFE izlenir | S2'de İTÜ sıfırı; maya ihracatında pazar çeşitlendirme; S4 tamponu (E-10-05) | savunma | −3,9 | 0,08 | Düşük | Orta |
 | 10.91 | 49 | 63 | 12 | 0,02 | 30 | D/B | Geliştir | Tarım tarifeleri değişmez | Soya küspesi ve mısır kaynak çeşitlendirme; EUDR (soya); stok | nötr | 0,0 | 0,00 | Düşük | Yüksek |
 | 10.92 | 48 | 4 | 15 | 0,04 | 41 | C | Geliştir | Değişiklik yok (tarım) | Yatırım teşviki (yerlileştirme); izleme | nötr | 0,0 | 0,00 | Düşük | Orta |
-| 11.01 | 41 | 0 | 45 | 0,08 | 23 | — | Koru | Değişiklik yok (AB MFN ≈ %0) | Coğrafi işaret (Türk Rakısı) korunması; izleme | hücum | +0,2 | 0,02 | Düşük | Düşük |
+| 11.01 | 41 | 0 | 46 | 0,08 | 23 | — | Koru | Değişiklik yok (AB MFN ≈ %0) | Coğrafi işaret (Türk Rakısı) korunması; izleme | hücum | +0,5 | 0,02 | Düşük | Düşük |
 | 11.02 | 50 | 0 | 13 | 0,01 | 33 | — | Koru | Değişiklik yok | İzleme | nötr | 0,0 | 0,00 | Düşük | Yüksek |
 | 11.03 | 42 | 0 | 11 | 0,00 | 3 | — | Koru | Değişiklik yok | İzleme | nötr | 0,0 | 0,00 | Düşük | Düşük |
 | 11.04 | 43 | 0 | 20 | 0,00 | — | — | Koru | Değişiklik yok | İzleme | nötr | 0,0 | 0,00 | Düşük | Düşük |
-| 11.05 | 42 | 0 | 16 | 0,08 | 33 | — | Koru | Değişiklik yok (AB MFN %0) | İzleme | nötr | 0,0 | 0,01 | Düşük | Orta |
+| 11.05 | 42 | 0 | 16 | 0,08 | 33 | — | Koru | Değişiklik yok (AB MFN %0) | İzleme | nötr | +0,1 | 0,01 | Düşük | Orta |
 | 11.06 | 44 | 15 | 12 | 0,01 | 3 | — | Koru | Değişiklik yok (tarım) | İzleme | nötr | 0,0 | 0,00 | Düşük | Düşük |
-| 11.07 | 41 | 30 | 74 | 0,13 | 29 | — | Koru | S2'de AB'ye %0; S4'te AB'ye c2 (%8,6) | İzleme; S4'te enerji içeceklerinde TÜFE izleme | savunma | +3,1 | 0,14 | Düşük | Düşük |
-| 12.00 | 40 | 0 | 98 | 0,31 | 26 | B | Koru | Tütün ürünlerinde MFN korunur; S4'te ısıtılmış tütünde MFN %0 | AB dışı pazar; S2'de PSR talebi (%50 menşeli yaprak); S4'te ısıtılmış tütünde MFN %0 | savunma | −14,4 | 0,29 | Düşük | Orta |
+| 11.07 | 41 | 30 | 74 | 0,13 | 29 | — | Koru | S2'de AB'ye %0; S4'te AB'ye c2 (%8,6) | İzleme; S4'te enerji içeceklerinde TÜFE izleme | savunma | +2,9 | 0,14 | Düşük | Düşük |
+| 12.00 | 40 | 0 | 98 | 0,31 | 26 | B | Koru | Tütün ürünlerinde MFN korunur; S4'te ısıtılmış tütünde MFN %0 | AB dışı pazar; S2'de PSR talebi (%50 menşeli yaprak); S4'te ısıtılmış tütünde MFN %0 | savunma | −15,4 | 0,29 | Düşük | Orta |
 
 *Kaynak:* Skorlar 0–100 (C sınıfları içinde yüzdelik); EDE bp/puan; S2 cari denge $ mn; TÜFE bp. Arketip ve duruş kural tabanlı öneri ve uzman düzeltmesi.
 
@@ -909,7 +909,7 @@ Faz 3'ün hesap altyapısı bütün 230 imalat sınıfı için bir kez kuruldu; 
 | `kod/f3f_skor_matris.py` | KS, SS, AME, EDE ve CKE puanları, arketip, duruş, ağırlık duyarlılığı, ana matris | f3a–f3e, `veri/f3_ss_boyutlar.csv`, kartların uzman düzeltmeleri | `[T]`; SS `[H]` |
 | `kod/f3g_kartlar.py` | Bu belge: `kartlar/10-12_metin/` şablonları, yer tutucular veriden doldurularak | f3a–f3f, `kartlar/10-12*.yaml` | — |
 
-**Senaryo modeli.** Modelin toplamları Faz 2B'nin genel denge (GE) sonuçlarından geliyor. Her Monte Carlo çekilişinde (N = 2.000; tohum 20261018) AB'ye toplam ihracat ve ithalattaki değişim, GE dağılımından ortak bir standart normal çekilişle alınıyor. S4'te AB'ye ihracat −%18,9 (%90 güven aralığı −32,4 ile −4,6), S2'de −%11,1 (−26,7 ile +6,1). Bu toplam, sınıflara kısmi denge yapısıyla dağıtılıyor: her sınıfın AB'ye ihracatındaki kısmi denge değişimi X[(1 + τ)^(−σ) − 1] ile hesaplanıyor. Burada τ, sınıfın etkin ticaret maliyeti artışı (tarife, sınır sürtünmesi ve menşe maliyeti), σ ise ürün düzeyindeki ikame esnekliği. Toplam kayıp kısmi denge kayıp paylarıyla dağıtılıyor. S3, iki senaryonun kısmi denge yapısıyla ara değer alıyor. Kalibrasyon ölçeği, yani genel denge toplamının kısmi denge toplamına oranı, S2'de 0,63, S3'te 0,57, S4'te 0,53. Ürün düzeyindeki esnekliklerle kısmi denge, genel dengenin yaklaşık iki katı kayıp üretiyor; ölçek bu farkı düzeltiyor.
+**Senaryo modeli.** Modelin toplamları Faz 2B'nin genel denge (GE) sonuçlarından geliyor. Her Monte Carlo çekilişinde (N = 2.000; tohum 20261018) AB'ye toplam ihracat ve ithalattaki değişim, GE dağılımından ortak bir standart normal çekilişle alınıyor. S4'te AB'ye ihracat −%18,9 (%90 güven aralığı −32,4 ile −4,6), S2'de −%11,1 (−26,7 ile +6,1). Bu toplam, sınıflara kısmi denge yapısıyla dağıtılıyor: her sınıfın AB'ye ihracatındaki kısmi denge değişimi X[(1 + τ)^(−σ) − 1] ile hesaplanıyor. Burada τ, sınıfın etkin ticaret maliyeti artışı (tarife, sınır sürtünmesi ve menşe maliyeti), σ ise ürün düzeyindeki ikame esnekliği. Toplam kayıp kısmi denge kayıp paylarıyla dağıtılıyor. S3, iki senaryonun kısmi denge yapısıyla ara değer alıyor. Kalibrasyon ölçeği, yani genel denge toplamının kısmi denge toplamına oranı, S2'de 0,67, S3'te 0,59, S4'te 0,53. Ürün düzeyindeki esnekliklerle kısmi denge, genel dengenin yaklaşık iki katı kayıp üretiyor; ölçek bu farkı düzeltiyor.
 
 S4'te 1/98'in askıya alınması her çekilişte 0,25 olasılıkla gerçekleşiyor ve tarım satırlarına AB'nin tam MFN tarifesi ekleniyor. Bu ek kayıp genel denge toplamının üstüne konuyor, yeniden dağıtılmıyor. Sınır sürtünmesi %0,5–2 arasında üçgen dağılımla çekiliyor ve yalnızca Gümrük Birliği'ne bağlı (GB ve İTÜ) satırlara uygulanıyor; S2'de yetkilendirilmiş yükümlü statüsünün karşılıklı tanınması ve tek pencereyle yarıya iniyor. Menşe maliyeti ve uyum olasılığı her sınıf için varsayım tablosundan (`veri/f3_sinif_varsayim.csv`) geliyor `[H]`; tarım satırları bugün de menşe kuralına tabi olduğu için onlara ek menşe maliyeti eklenmiyor. İthalat tarafında AB ihracatçısının menşe maliyeti S2'de %0,5, S3'te %1; uyum olasılığı 0,92 ve 0,85. Ticaretin yön değiştirmesiyle AB dışı pazarlara kayan ihracat payı (δ) S2'de 0,28, S4'te 0,20. Üretim değişimi, ihracat değişimi ile iç pazarda yerli ürünün AB ithalatından kazandığı payın toplamı. İstihdam etkisi, üretim değişiminin sınıfın çalışan/üretim oranıyla çarpılmasından ve istihdama yansımayan payın (θ; 0,1–0,5 arasında üçgen dağılım, tepe değeri 0,3) düşülmesinden; cari denge etkisi ise üretim değişiminden ithal girdi içeriğinin düşülmesinden geliyor. Bölüm ve parça toplamlarının yüzdelikleri, sınıf yüzdeliklerinin toplanmasıyla değil, her çekilişteki toplamın dağılımından alınıyor (V-38).
 
@@ -977,15 +977,15 @@ Her veri sayfası, çalışma çerçevesinin sınıf kartındaki sayısal alanla
 
 | Değişken | S2 | S3 | S4 | S4, 1/98 askıda (ort.) |
 |---|---|---|---|---|
-| AB'ye ihracat ($ mn) | −1 (−2 / +1) | −1 (−2 / 0) | −1 (−1 / 0) | −1 |
-| AB'ye ihracat (%) | −1,3 (−3,2 / +2,0) | −1,8 (−3,6 / −0,3) | −0,8 (−1,8 / −0,3) | −1,5 |
-| Toplam ihracat ($ mn) | −1 (−2 / +1) | −1 (−2 / 0) | 0 (−1 / 0) | −1 |
-| Nihai mal ithalatı ($ mn) | −1 (−3 / +43) | −1 (−4 / +25) | −1 (−2 / 0) | — |
-| Üretim ($ mn) | 0 (−42 / +2) | +1 (−26 / +2) | 0 (0 / +1) | −1 |
-| İstihdam (kişi) | 0 (−78 / +3) | +1 (−47 / +4) | 0 (0 / +1) | −2 |
+| AB'ye ihracat ($ mn) | 0 (−1 / +1) | 0 (−1 / 0) | −1 (−1 / 0) | −1 |
+| AB'ye ihracat (%) | −0,4 (−1,0 / +2,0) | −0,7 (−1,6 / −0,1) | −0,8 (−1,8 / −0,3) | −1,5 |
+| Toplam ihracat ($ mn) | 0 (0 / +1) | 0 (−1 / 0) | 0 (−1 / 0) | −1 |
+| Nihai mal ithalatı ($ mn) | 0 (−2 / +43) | −1 (−2 / +26) | −1 (−2 / 0) | — |
+| Üretim ($ mn) | 0 (−42 / +1) | 0 (−26 / +2) | 0 (0 / +1) | −1 |
+| İstihdam (kişi) | +1 (−78 / +2) | +1 (−47 / +3) | 0 (0 / +1) | −2 |
 | İstihdam (%) | 0,0 (−0,7 / 0,0) | 0,0 (−0,4 / 0,0) | 0,0 (0,0 / 0,0) | 0,0 |
-| Cari denge ($ mn) | 0 (−34 / +1) | 0 (−20 / +2) | 0 (0 / +1) | −1 |
-| TÜFE (bp) | +0,01 (+0,01 / +0,02) | +0,03 (+0,02 / +0,04) | +0,02 (+0,01 / +0,02) | — |
+| Cari denge ($ mn) | 0 (−34 / +1) | 0 (−21 / +1) | 0 (0 / +1) | −1 |
+| TÜFE (bp) | +0,01 (+0,01 / +0,01) | +0,02 (+0,01 / +0,02) | +0,02 (+0,01 / +0,02) | — |
 
 *Kaynak:* `[T]` f3e; toplamlar Faz 2B genel denge dağılımına kalibre. Yüzdeler 2024 düzeyine göre.
 
@@ -1043,15 +1043,15 @@ Her veri sayfası, çalışma çerçevesinin sınıf kartındaki sayısal alanla
 
 | Değişken | S2 | S3 | S4 |
 |---|---|---|---|
-| AB'ye ihracat ($ mn) | 0 (−1 / 0) | −1 (−1 / 0) | 0 (0 / 0) |
-| AB'ye ihracat (%) | −14,8 (−34,2 / +2,0) | −18,6 (−35,2 / −3,6) | −7,8 (−14,4 / −3,3) |
-| Toplam ihracat ($ mn) | 0 (−1 / 0) | 0 (−1 / 0) | 0 (0 / 0) |
-| Nihai mal ithalatı ($ mn) | 0 (−2 / +1) | −1 (−2 / 0) | 0 (−1 / 0) |
+| AB'ye ihracat ($ mn) | 0 (0 / 0) | 0 (−1 / 0) | 0 (0 / 0) |
+| AB'ye ihracat (%) | −5,0 (−12,0 / +2,0) | −8,3 (−17,3 / −1,4) | −7,8 (−14,4 / −3,3) |
+| Toplam ihracat ($ mn) | 0 (0 / 0) | 0 (0 / 0) | 0 (0 / 0) |
+| Nihai mal ithalatı ($ mn) | 0 (−2 / +1) | −1 (−1 / 0) | 0 (−1 / 0) |
 | Üretim ($ mn) | 0 (−1 / +1) | 0 (0 / +1) | 0 (0 / +1) |
-| İstihdam (kişi) | 0 (−2 / +3) | +1 (−1 / +4) | +1 (0 / +2) |
+| İstihdam (kişi) | +1 (−2 / +5) | +1 (−1 / +4) | +1 (0 / +2) |
 | İstihdam (%) | 0,0 (0,0 / 0,0) | 0,0 (0,0 / 0,0) | 0,0 (0,0 / 0,0) |
 | Cari denge ($ mn) | 0 (0 / +1) | 0 (0 / +1) | 0 (0 / 0) |
-| TÜFE (bp) | 0,00 (0,00 / 0,00) | +0,01 (+0,01 / +0,01) | +0,01 (0,00 / +0,01) |
+| TÜFE (bp) | 0,00 (0,00 / 0,00) | +0,01 (0,00 / +0,01) | +0,01 (0,00 / +0,01) |
 
 *Kaynak:* `[T]` f3e; toplamlar Faz 2B genel denge dağılımına kalibre. Yüzdeler 2024 düzeyine göre.
 
@@ -1085,7 +1085,7 @@ Her veri sayfası, çalışma çerçevesinin sınıf kartındaki sayısal alanla
 |  | S4'te AB tarifesi: 1/98 sürerse / askıda / tam MFN ortalaması | %0,0 / %53,0 / %53,0 |
 |  | Tepe satırlar (S4 artışı ≥ %10) | yok |
 |  | AB pazarında AB dışı rakipler (AB tercihi) | Brezilya %33 (MFN/GSP); Tayland %31 (MFN/GSP); Birleşik Krallık %14 (TCA); Çin %13 (MFN/GSP); İsviçre %3 (AEA/STA) |
-|  | Tercihli rakiplerin payı; AME (puan; ham) | %20; 18 (0,29) |
+|  | Tercihli rakiplerin payı; AME (puan; ham) | %20; 19 (0,29) |
 |  | Menşe kuralı (PEM) | 1601–1602: Fasıl 1, 2 ve 16 malzemeleri tamamen elde edilmiş |
 |  | Menşe riski S2 / S3; c_RoO (%); p_uyum | D/D; 1,5 / 2,0; 0,90 / 0,85 `[H]` |
 |  | Değer zincirindeki rol; DİR bağımlılığı | nihai; düşük |
@@ -1114,7 +1114,7 @@ Her veri sayfası, çalışma çerçevesinin sınıf kartındaki sayısal alanla
 | Toplam ihracat ($ mn) | 0 (0 / 0) | 0 (0 / 0) | 0 (−2 / 0) | −2 |
 | Nihai mal ithalatı ($ mn) | 0 (0 / +3) | 0 (0 / +2) | 0 (0 / 0) | — |
 | Üretim ($ mn) | 0 (−2 / 0) | 0 (−2 / 0) | 0 (−2 / 0) | −2 |
-| İstihdam (kişi) | 0 (−9 / 0) | 0 (−5 / 0) | 0 (−7 / 0) | −7 |
+| İstihdam (kişi) | 0 (−9 / 0) | 0 (−6 / 0) | 0 (−7 / 0) | −7 |
 | İstihdam (%) | 0,0 (−0,1 / 0,0) | 0,0 (0,0 / 0,0) | 0,0 (−0,1 / 0,0) | −0,1 |
 | Cari denge ($ mn) | 0 (−2 / 0) | 0 (−1 / 0) | 0 (−2 / 0) | −1 |
 | TÜFE (bp) | 0,00 (0,00 / 0,00) | 0,00 (0,00 / 0,00) | 0,00 (0,00 / 0,00) | — |
@@ -1226,11 +1226,11 @@ Her veri sayfası, çalışma çerçevesinin sınıf kartındaki sayısal alanla
 | Değişken | S2 | S3 | S4 | S4, 1/98 askıda (ort.) |
 |---|---|---|---|---|
 | AB'ye ihracat ($ mn) | 0 (0 / 0) | 0 (0 / 0) | 0 (−2 / 0) | −1 |
-| AB'ye ihracat (%) | 0,0 (−0,1 / +2,0) | −0,1 (−0,1 / 0,0) | −0,2 (−42,8 / −0,1) | −40,5 |
+| AB'ye ihracat (%) | 0,0 (−0,1 / +2,0) | 0,0 (−0,1 / 0,0) | −0,2 (−42,8 / −0,1) | −40,5 |
 | Toplam ihracat ($ mn) | 0 (0 / 0) | 0 (0 / 0) | 0 (−1 / 0) | −1 |
 | Nihai mal ithalatı ($ mn) | 0 (0 / +1) | 0 (0 / +1) | 0 (0 / 0) | — |
 | Üretim ($ mn) | 0 (−1 / 0) | 0 (−1 / 0) | 0 (−1 / 0) | −1 |
-| İstihdam (kişi) | 0 (−5 / +1) | 0 (−3 / +1) | 0 (−5 / 0) | −4 |
+| İstihdam (kişi) | 0 (−5 / 0) | 0 (−3 / +1) | 0 (−5 / 0) | −4 |
 | İstihdam (%) | 0,0 (−0,2 / 0,0) | 0,0 (−0,1 / 0,0) | 0,0 (−0,2 / 0,0) | −0,2 |
 | Cari denge ($ mn) | 0 (−1 / 0) | 0 (−1 / 0) | 0 (−1 / 0) | −1 |
 | TÜFE (bp) | 0,00 (0,00 / 0,00) | 0,00 (0,00 / 0,00) | 0,00 (0,00 / 0,00) | — |
@@ -1317,7 +1317,7 @@ Her veri sayfası, çalışma çerçevesinin sınıf kartındaki sayısal alanla
 |  | S4'te AB tarifesi: 1/98 sürerse / askıda / tam MFN ortalaması | %0,0 / %9,5 / %9,5 |
 |  | Tepe satırlar (S4 artışı ≥ %10) | 1 satır, AB'ye ihracatın %0'i: KN 2008 11 10 %12,8 (€1,0 mn) |
 |  | AB pazarında AB dışı rakipler (AB tercihi) | ABD %12 (MFN/GSP); Çin %9 (MFN/GSP); Ekvador %5 (STA/EPA); Vietnam %5 (STA/EPA); Arjantin %5 (MFN/GSP) |
-|  | Tercihli rakiplerin payı; AME (puan; ham) | %44; 54 (1,46) |
+|  | Tercihli rakiplerin payı; AME (puan; ham) | %44; 55 (1,46) |
 |  | Menşe kuralı (PEM) | Fasıl 8 ve 20: meyve/fındık tamamen elde edilmiş; şeker ağırlık sınırı (2008) |
 |  | Menşe riski S2 / S3; c_RoO (%); p_uyum | D/D; 1,5 / 2,0; 0,90 / 0,85 `[H]` |
 |  | Değer zincirindeki rol; DİR bağımlılığı | ara; düşük |
@@ -1446,7 +1446,7 @@ Her veri sayfası, çalışma çerçevesinin sınıf kartındaki sayısal alanla
 | Toplam ihracat ($ mn) | 0 (0 / 0) | 0 (0 / 0) | 0 (−1 / 0) | −1 |
 | Nihai mal ithalatı ($ mn) | 0 (0 / +2) | 0 (0 / +1) | 0 (0 / 0) | — |
 | Üretim ($ mn) | 0 (−2 / 0) | 0 (−1 / 0) | 0 (−1 / 0) | −1 |
-| İstihdam (kişi) | 0 (−2 / 0) | 0 (−1 / 0) | 0 (−2 / 0) | −2 |
+| İstihdam (kişi) | 0 (−2 / 0) | 0 (−2 / 0) | 0 (−2 / 0) | −2 |
 | İstihdam (%) | 0,0 (−0,3 / 0,0) | 0,0 (−0,2 / 0,0) | 0,0 (−0,2 / 0,0) | −0,2 |
 | Cari denge ($ mn) | 0 (−1 / 0) | 0 (−1 / 0) | 0 (−1 / 0) | −1 |
 | TÜFE (bp) | 0,00 (0,00 / 0,00) | 0,00 (0,00 / 0,00) | 0,00 (0,00 / 0,00) | — |
@@ -1483,7 +1483,7 @@ Her veri sayfası, çalışma çerçevesinin sınıf kartındaki sayısal alanla
 |  | S4'te AB tarifesi: 1/98 sürerse / askıda / tam MFN ortalaması | %0,2 / %22,5 / %22,6 |
 |  | Tepe satırlar (S4 artışı ≥ %10) | yok |
 |  | AB pazarında AB dışı rakipler (AB tercihi) | Birleşik Krallık %55 (TCA); İsviçre %24 (AEA/STA); Yeni Zelanda %7 (STA/EPA); Ukrayna %4 (STA/EPA); ABD %2 (MFN/GSP) |
-|  | Tercihli rakiplerin payı; AME (puan; ham) | %93; 19 (0,35) |
+|  | Tercihli rakiplerin payı; AME (puan; ham) | %93; 20 (0,35) |
 |  | Menşe kuralı (PEM) | Fasıl 4: Fasıl 4 malzemeleri tamamen elde edilmiş |
 |  | Menşe riski S2 / S3; c_RoO (%); p_uyum | D/D; 1,5 / 2,0; 0,90 / 0,85 `[H]` |
 |  | Değer zincirindeki rol; DİR bağımlılığı | nihai; düşük |
@@ -1508,7 +1508,7 @@ Her veri sayfası, çalışma çerçevesinin sınıf kartındaki sayısal alanla
 | Değişken | S2 | S3 | S4 | S4, 1/98 askıda (ort.) |
 |---|---|---|---|---|
 | AB'ye ihracat ($ mn) | 0 (0 / +1) | 0 (0 / 0) | 0 (−9 / 0) | −9 |
-| AB'ye ihracat (%) | −0,2 (−0,5 / +2,0) | −0,3 (−0,5 / −0,1) | −0,7 (−35,0 / −0,3) | −32,7 |
+| AB'ye ihracat (%) | −0,1 (−0,3 / +2,0) | −0,2 (−0,4 / 0,0) | −0,7 (−35,0 / −0,3) | −32,7 |
 | Toplam ihracat ($ mn) | 0 (0 / 0) | 0 (0 / 0) | 0 (−7 / 0) | −7 |
 | Nihai mal ithalatı ($ mn) | 0 (0 / +4) | 0 (0 / +2) | 0 (0 / 0) | — |
 | Üretim ($ mn) | 0 (−3 / 0) | 0 (−2 / 0) | 0 (−7 / 0) | −7 |
@@ -1574,7 +1574,7 @@ Her veri sayfası, çalışma çerçevesinin sınıf kartındaki sayısal alanla
 | Değişken | S2 | S3 | S4 |
 |---|---|---|---|
 | AB'ye ihracat ($ mn) | 0 (0 / 0) | 0 (0 / 0) | 0 (−1 / 0) |
-| AB'ye ihracat (%) | −13,6 (−31,8 / +2,0) | −18,9 (−35,8 / −3,7) | −30,9 (−49,1 / −12,9) |
+| AB'ye ihracat (%) | −14,5 (−34,0 / +2,0) | −19,6 (−38,1 / −3,1) | −30,9 (−49,1 / −12,9) |
 | Toplam ihracat ($ mn) | 0 (0 / 0) | 0 (0 / 0) | 0 (0 / 0) |
 | Nihai mal ithalatı ($ mn) | 0 (−1 / 0) | 0 (−1 / 0) | 0 (−1 / 0) |
 | Üretim ($ mn) | 0 (0 / 0) | 0 (0 / 0) | 0 (0 / 0) |
@@ -1840,10 +1840,10 @@ Her veri sayfası, çalışma çerçevesinin sınıf kartındaki sayısal alanla
 | Değişken | S2 | S3 | S4 |
 |---|---|---|---|
 | AB'ye ihracat ($ mn) | −2 (−4 / 0) | −2 (−4 / 0) | −4 (−6 / −2) |
-| AB'ye ihracat (%) | −7,8 (−18,3 / +2,0) | −10,1 (−19,7 / −1,8) | −18,8 (−30,9 / −7,8) |
+| AB'ye ihracat (%) | −8,3 (−19,5 / +2,0) | −10,6 (−20,9 / −1,5) | −18,8 (−30,9 / −7,8) |
 | Toplam ihracat ($ mn) | −1 (−3 / 0) | −1 (−3 / 0) | −3 (−5 / −1) |
 | Nihai mal ithalatı ($ mn) | −1 (−2 / +1) | −1 (−3 / +1) | −2 (−4 / −1) |
-| Üretim ($ mn) | −1 (−1 / 0) | 0 (−1 / 0) | −1 (−1 / 0) |
+| Üretim ($ mn) | −1 (−1 / 0) | −1 (−1 / 0) | −1 (−1 / 0) |
 | İstihdam (kişi) | −1 (−2 / 0) | −1 (−2 / 0) | −1 (−2 / 0) |
 | İstihdam (%) | 0,0 (0,0 / 0,0) | 0,0 (0,0 / 0,0) | 0,0 (0,0 / 0,0) |
 | Cari denge ($ mn) | 0 (−1 / 0) | 0 (−1 / 0) | 0 (−1 / 0) |
@@ -2021,14 +2021,14 @@ Her veri sayfası, çalışma çerçevesinin sınıf kartındaki sayısal alanla
 
 | Değişken | S2 | S3 | S4 | S4, 1/98 askıda (ort.) |
 |---|---|---|---|---|
-| AB'ye ihracat ($ mn) | −1 (−3 / +1) | −2 (−4 / 0) | −4 (−7 / −2) | −5 |
-| AB'ye ihracat (%) | −3,6 (−8,5 / +2,0) | −4,8 (−9,4 / −0,9) | −10,5 (−17,6 / −4,4) | −13,2 |
-| Toplam ihracat ($ mn) | −1 (−2 / +1) | −1 (−3 / 0) | −3 (−6 / −1) | −4 |
-| Nihai mal ithalatı ($ mn) | −5 (−15 / +15) | −7 (−18 / +9) | −17 (−31 / −4) | — |
+| AB'ye ihracat ($ mn) | −2 (−4 / +1) | −2 (−4 / 0) | −4 (−7 / −2) | −5 |
+| AB'ye ihracat (%) | −3,8 (−9,0 / +2,0) | −5,0 (−9,9 / −0,8) | −10,5 (−17,6 / −4,4) | −13,2 |
+| Toplam ihracat ($ mn) | −1 (−3 / +1) | −1 (−3 / 0) | −3 (−6 / −1) | −4 |
+| Nihai mal ithalatı ($ mn) | −5 (−16 / +15) | −7 (−19 / +9) | −17 (−31 / −4) | — |
 | Üretim ($ mn) | +4 (−15 / +13) | +6 (−9 / +16) | +13 (+2 / +25) | +12 |
-| İstihdam (kişi) | +13 (−54 / +47) | +21 (−33 / +56) | +49 (+8 / +93) | +44 |
+| İstihdam (kişi) | +13 (−54 / +48) | +21 (−34 / +57) | +49 (+8 / +93) | +44 |
 | İstihdam (%) | +0,1 (−0,3 / +0,2) | +0,1 (−0,2 / +0,3) | +0,2 (0,0 / +0,5) | +0,2 |
-| Cari denge ($ mn) | +3 (−12 / +10) | +5 (−7 / +12) | +11 (+2 / +20) | +10 |
+| Cari denge ($ mn) | +3 (−12 / +10) | +5 (−7 / +13) | +11 (+2 / +20) | +10 |
 | TÜFE (bp) | +0,08 (+0,07 / +0,09) | +0,15 (+0,13 / +0,18) | +0,44 (+0,38 / +0,50) | — |
 
 *Kaynak:* `[T]` f3e; toplamlar Faz 2B genel denge dağılımına kalibre. Yüzdeler 2024 düzeyine göre.
@@ -2087,14 +2087,14 @@ Her veri sayfası, çalışma çerçevesinin sınıf kartındaki sayısal alanla
 
 | Değişken | S2 | S3 | S4 | S4, 1/98 askıda (ort.) |
 |---|---|---|---|---|
-| AB'ye ihracat ($ mn) | −5 (−13 / +2) | −8 (−16 / −2) | −14 (−24 / −6) | −18 |
-| AB'ye ihracat (%) | −6,5 (−16,0 / +2,0) | −9,5 (−18,7 / −1,9) | −17,3 (−28,7 / −7,2) | −21,2 |
-| Toplam ihracat ($ mn) | −4 (−10 / +1) | −6 (−11 / −1) | −11 (−19 / −5) | −14 |
+| AB'ye ihracat ($ mn) | −6 (−14 / +2) | −8 (−17 / −1) | −14 (−24 / −6) | −18 |
+| AB'ye ihracat (%) | −7,0 (−17,0 / +2,0) | −9,9 (−19,9 / −1,6) | −17,3 (−28,7 / −7,2) | −21,2 |
+| Toplam ihracat ($ mn) | −4 (−10 / +1) | −6 (−12 / −1) | −11 (−19 / −5) | −14 |
 | Nihai mal ithalatı ($ mn) | −1 (−4 / +2) | −2 (−5 / +1) | −3 (−6 / −1) | — |
 | Üretim ($ mn) | −3 (−6 / −1) | −4 (−7 / −2) | −8 (−13 / −4) | −11 |
-| İstihdam (kişi) | −10 (−23 / −5) | −14 (−26 / −8) | −31 (−54 / −16) | −43 |
-| İstihdam (%) | −0,1 (−0,3 / −0,1) | −0,2 (−0,4 / −0,1) | −0,4 (−0,7 / −0,2) | −0,6 |
-| Cari denge ($ mn) | −2 (−5 / −1) | −3 (−5 / −2) | −6 (−10 / −3) | −9 |
+| İstihdam (kişi) | −11 (−25 / −5) | −15 (−29 / −8) | −31 (−54 / −16) | −43 |
+| İstihdam (%) | −0,2 (−0,3 / −0,1) | −0,2 (−0,4 / −0,1) | −0,4 (−0,7 / −0,2) | −0,6 |
+| Cari denge ($ mn) | −2 (−5 / −1) | −3 (−6 / −2) | −6 (−10 / −3) | −9 |
 | TÜFE (bp) | +0,01 (+0,01 / +0,01) | +0,02 (+0,02 / +0,02) | +0,04 (+0,04 / +0,05) | — |
 
 *Kaynak:* `[T]` f3e; toplamlar Faz 2B genel denge dağılımına kalibre. Yüzdeler 2024 düzeyine göre.
@@ -2154,11 +2154,11 @@ Her veri sayfası, çalışma çerçevesinin sınıf kartındaki sayısal alanla
 | Değişken | S2 | S3 | S4 |
 |---|---|---|---|
 | AB'ye ihracat ($ mn) | −1 (−1 / 0) | −1 (−1 / 0) | −1 (−1 / 0) |
-| AB'ye ihracat (%) | −5,8 (−13,2 / +2,0) | −7,1 (−13,5 / −1,4) | −8,9 (−14,5 / −3,7) |
+| AB'ye ihracat (%) | −6,2 (−14,1 / +2,0) | −7,4 (−14,2 / −1,2) | −8,9 (−14,5 / −3,7) |
 | Toplam ihracat ($ mn) | 0 (−1 / 0) | −1 (−1 / 0) | −1 (−1 / 0) |
 | Nihai mal ithalatı ($ mn) | 0 (0 / 0) | 0 (0 / 0) | 0 (0 / 0) |
 | Üretim ($ mn) | 0 (−1 / 0) | 0 (−1 / 0) | −1 (−1 / 0) |
-| İstihdam (kişi) | −3 (−7 / 0) | −4 (−7 / −1) | −5 (−8 / −2) |
+| İstihdam (kişi) | −3 (−8 / 0) | −4 (−8 / −1) | −5 (−8 / −2) |
 | İstihdam (%) | 0,0 (−0,1 / 0,0) | 0,0 (−0,1 / 0,0) | 0,0 (−0,1 / 0,0) |
 | Cari denge ($ mn) | 0 (−1 / 0) | 0 (−1 / 0) | 0 (−1 / 0) |
 | TÜFE (bp) | +0,01 (+0,01 / +0,01) | +0,01 (+0,01 / +0,02) | +0,07 (+0,06 / +0,07) |
@@ -2390,7 +2390,7 @@ Her veri sayfası, çalışma çerçevesinin sınıf kartındaki sayısal alanla
 | Toplam ihracat ($ mn) | 0 (0 / 0) | 0 (0 / 0) | 0 (−2 / 0) | −2 |
 | Nihai mal ithalatı ($ mn) | 0 (0 / +12) | 0 (0 / +7) | 0 (0 / 0) | — |
 | Üretim ($ mn) | 0 (−11 / 0) | 0 (−7 / 0) | 0 (−2 / 0) | −2 |
-| İstihdam (kişi) | 0 (−41 / 0) | 0 (−24 / 0) | 0 (−7 / 0) | −7 |
+| İstihdam (kişi) | 0 (−41 / 0) | 0 (−25 / 0) | 0 (−7 / 0) | −7 |
 | İstihdam (%) | 0,0 (−2,3 / 0,0) | 0,0 (−1,4 / 0,0) | 0,0 (−0,4 / 0,0) | −0,4 |
 | Cari denge ($ mn) | 0 (−9 / 0) | 0 (−6 / 0) | 0 (−2 / 0) | −2 |
 | TÜFE (bp) | 0,00 (0,00 / 0,00) | 0,00 (0,00 / 0,00) | 0,00 (0,00 / 0,00) | — |
@@ -2427,7 +2427,7 @@ Her veri sayfası, çalışma çerçevesinin sınıf kartındaki sayısal alanla
 |  | S4'te AB tarifesi: 1/98 sürerse / askıda / tam MFN ortalaması | %0,0 / %0,4 / %0,4 |
 |  | Tepe satırlar (S4 artışı ≥ %10) | yok |
 |  | AB pazarında AB dışı rakipler (AB tercihi) | Birleşik Krallık %54 (TCA); ABD %23 (MFN/GSP); Meksika %4 (STA/EPA); Japonya %2 (STA/EPA); Çin %2 (MFN/GSP) |
-|  | Tercihli rakiplerin payı; AME (puan; ham) | %70; 45 (1,25) |
+|  | Tercihli rakiplerin payı; AME (puan; ham) | %70; 46 (1,25) |
 |  | Menşe kuralı (PEM) | 2208: başlık değişikliği (2207–2208 hariç); üzüm türevleri tamamen elde edilmiş (rakı: yerli suma) |
 |  | Menşe riski S2 / S3; c_RoO (%); p_uyum | D/D; 1,5 / 2,0; 0,90 / 0,85 `[H]` |
 |  | Değer zincirindeki rol; DİR bağımlılığı | nihai; düşük |
@@ -2451,15 +2451,15 @@ Her veri sayfası, çalışma çerçevesinin sınıf kartındaki sayısal alanla
 
 | Değişken | S2 | S3 | S4 |
 |---|---|---|---|
-| AB'ye ihracat ($ mn) | −1 (−2 / +1) | −1 (−2 / 0) | 0 (−1 / 0) |
-| AB'ye ihracat (%) | −2,1 (−5,2 / +2,0) | −2,8 (−5,8 / −0,5) | −1,2 (−2,2 / −0,5) |
-| Toplam ihracat ($ mn) | −1 (−1 / 0) | −1 (−1 / 0) | 0 (−1 / 0) |
+| AB'ye ihracat ($ mn) | 0 (−1 / +1) | 0 (−1 / 0) | 0 (−1 / 0) |
+| AB'ye ihracat (%) | −0,7 (−1,7 / +2,0) | −1,2 (−2,5 / −0,2) | −1,2 (−2,2 / −0,5) |
+| Toplam ihracat ($ mn) | 0 (0 / 0) | 0 (−1 / 0) | 0 (−1 / 0) |
 | Nihai mal ithalatı ($ mn) | −1 (−3 / +6) | −1 (−3 / +4) | −1 (−2 / 0) |
-| Üretim ($ mn) | 0 (−5 / +1) | 0 (−4 / +2) | +1 (0 / +1) |
-| İstihdam (kişi) | 0 (−7 / +2) | +1 (−5 / +2) | +1 (0 / +2) |
+| Üretim ($ mn) | +1 (−5 / +2) | +1 (−4 / +2) | +1 (0 / +1) |
+| İstihdam (kişi) | +1 (−7 / +3) | +1 (−5 / +3) | +1 (0 / +2) |
 | İstihdam (%) | 0,0 (−0,3 / +0,1) | 0,0 (−0,2 / +0,1) | 0,0 (0,0 / +0,1) |
-| Cari denge ($ mn) | 0 (−4 / +1) | 0 (−3 / +1) | 0 (0 / +1) |
-| TÜFE (bp) | +0,02 (+0,01 / +0,02) | +0,03 (+0,03 / +0,04) | +0,03 (+0,02 / +0,04) |
+| Cari denge ($ mn) | 0 (−4 / +2) | +1 (−3 / +2) | 0 (0 / +1) |
+| TÜFE (bp) | +0,02 (+0,01 / +0,02) | +0,03 (+0,02 / +0,04) | +0,03 (+0,02 / +0,04) |
 
 *Kaynak:* `[T]` f3e; toplamlar Faz 2B genel denge dağılımına kalibre. Yüzdeler 2024 düzeyine göre.
 
@@ -2524,7 +2524,7 @@ Her veri sayfası, çalışma çerçevesinin sınıf kartındaki sayısal alanla
 | Üretim ($ mn) | 0 (−3 / 0) | 0 (−2 / 0) | 0 (0 / 0) | 0 |
 | İstihdam (kişi) | 0 (−15 / 0) | 0 (−9 / 0) | 0 (−1 / 0) | −1 |
 | İstihdam (%) | 0,0 (−0,7 / 0,0) | 0,0 (−0,5 / 0,0) | 0,0 (0,0 / 0,0) | 0,0 |
-| Cari denge ($ mn) | 0 (−2 / 0) | 0 (−1 / 0) | 0 (0 / 0) | 0 |
+| Cari denge ($ mn) | 0 (−2 / 0) | 0 (−2 / 0) | 0 (0 / 0) | 0 |
 | TÜFE (bp) | 0,00 (0,00 / 0,00) | 0,00 (0,00 / 0,00) | 0,00 (0,00 / 0,00) | — |
 
 *Kaynak:* `[T]` f3e; toplamlar Faz 2B genel denge dağılımına kalibre. Yüzdeler 2024 düzeyine göre.
@@ -2650,7 +2650,7 @@ Her veri sayfası, çalışma çerçevesinin sınıf kartındaki sayısal alanla
 | Değişken | S2 | S3 | S4 |
 |---|---|---|---|
 | AB'ye ihracat ($ mn) | 0 (0 / 0) | 0 (0 / 0) | 0 (0 / 0) |
-| AB'ye ihracat (%) | −2,2 (−5,4 / +2,2) | −3,3 (−5,4 / −1,1) | −1,1 (−2,2 / 0,0) |
+| AB'ye ihracat (%) | −1,1 (−2,2 / +2,2) | −1,1 (−2,2 / 0,0) | −1,1 (−2,2 / 0,0) |
 | Toplam ihracat ($ mn) | 0 (0 / 0) | 0 (0 / 0) | 0 (0 / 0) |
 | Nihai mal ithalatı ($ mn) | 0 (0 / 0) | 0 (0 / 0) | 0 (0 / 0) |
 | Üretim ($ mn) | 0 (0 / 0) | 0 (0 / 0) | 0 (0 / 0) |
@@ -2716,12 +2716,12 @@ Her veri sayfası, çalışma çerçevesinin sınıf kartındaki sayısal alanla
 | Değişken | S2 | S3 | S4 |
 |---|---|---|---|
 | AB'ye ihracat ($ mn) | 0 (0 / 0) | 0 (0 / 0) | 0 (0 / 0) |
-| AB'ye ihracat (%) | −2,6 (−6,4 / +2,0) | −3,6 (−7,0 / −0,7) | −1,4 (−2,6 / −0,6) |
+| AB'ye ihracat (%) | −0,9 (−2,1 / +2,0) | −1,5 (−3,1 / −0,2) | −1,4 (−2,6 / −0,6) |
 | Toplam ihracat ($ mn) | 0 (0 / 0) | 0 (0 / 0) | 0 (0 / 0) |
 | Nihai mal ithalatı ($ mn) | 0 (−1 / +1) | 0 (−1 / 0) | −1 (−1 / 0) |
 | Üretim ($ mn) | 0 (−1 / 0) | 0 (0 / 0) | +1 (0 / +1) |
-| İstihdam (kişi) | 0 (−1 / 0) | 0 (−1 / 0) | +1 (0 / +2) |
-| İstihdam (%) | 0,0 (−0,2 / +0,1) | 0,0 (−0,2 / +0,1) | +0,2 (0,0 / +0,4) |
+| İstihdam (kişi) | 0 (−1 / +1) | 0 (−1 / +1) | +1 (0 / +2) |
+| İstihdam (%) | 0,0 (−0,2 / +0,2) | +0,1 (−0,2 / +0,2) | +0,2 (0,0 / +0,4) |
 | Cari denge ($ mn) | 0 (−1 / 0) | 0 (0 / 0) | 0 (0 / +1) |
 | TÜFE (bp) | +0,01 (+0,01 / +0,01) | +0,02 (+0,01 / +0,02) | +0,06 (+0,05 / +0,06) |
 

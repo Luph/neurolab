@@ -16,7 +16,7 @@ Satır içi yer tutucular ({{...}}; bayraklar: abs, pct (×100), pctabs, isaret 
   {{aski:birim|değişken|sütun|ondalık}}          f3_senaryo_aski (S4, 1/98 askısına koşullu); sütun: aski_ort, aski_p10,
                                                  aski_p50, aski_p90, askisiz_ort, askisiz_p50, fark (aski_ort − askisiz_ort)
   {{askipay:birim|payda_birim|değişken|ondalık}}   askı farkındaki pay (%; ortalamalar toplanabilir)
-  {{dunya:HS[+HS]|pay/sira/deger/ton_pay|ondalık}}  Türkiye'nin dünya ihracatındaki payı ve sırası (BACI 2024)
+  {{dunya:HS[+HS]|pay/sira/deger/ton_pay|ondalık}}  Türkiye'nin dünya ihracatındaki payı ve sırası (BACI 2024; HS 2, 4 ya da 6 hane)
   {{ith:HS[+HS]|grup|ondalık}} {{ihr:...}}       Türkiye'nin 2024 ithalatı/ihracatı ($ mn); grup: top, ab, abpay, ISO3, ISO3pay
   {{kn8:önek|sütun|ondalık}}                     AB tarifesi, KN8 (TR→AB 2025 ağırlıklı ortalama; x_ab_meur için toplam)
   {{oz:senaryo|sütun|ondalık}}                   f3_senaryo_ozet (imalat geneli)
@@ -37,7 +37,8 @@ Satır içi yer tutucular ({{...}}; bayraklar: abs, pct (×100), pctabs, isaret 
   {{eylem:ortak}} {{eylem:sinif}} {{eylem:sinifsayisi}}   eylem sayıları (YAML)
 Blok işaretleri (tek başına bir satır): {{TABLO:ad[:kodlar]|no[|n]}}, {{KUNYE:kod}}, {{VERI_SAYFALARI|harf}},
   {{DEFTER|no}}, {{ILERLEME}}. Tablo adları: ozet, bolum, rejim, aski, itu, tufe, durus, eylem_ortak, eylem_sinif, tetik,
-  senaryo:kod, kucuk:kodlar, matris_a, matris_b, varsayim, vb, bolge, kum_ortak, kum_sinif.
+  senaryo:kod, kucuk:kodlar, matris_a, matris_b, varsayim, vb, bolge (S4 kaybına göre), bolge_l (çalışana göre),
+  kum_ortak, kum_sinif.
 Parça: belge.parca (numara) YAML'dan; etiket bölüm aralığından (10–12). Kümülatif defter, kartlar/ altındaki bütün parça
   YAML'larından (son bölümü bu parçanınkinden büyük olmayanlar) ve 10–[son bölüm] grubunun senaryo dağılımından derlenir.
 
@@ -197,7 +198,8 @@ class Veri:
 
     def hs_sec(self, df, kodlar):
         kod = kodlar.split("+")
-        return df[df.hs6.isin([k for k in kod if len(k) == 6]) | df.hs6.str[:4].isin([k for k in kod if len(k) == 4])]
+        return df[df.hs6.isin([k for k in kod if len(k) == 6]) | df.hs6.str[:4].isin([k for k in kod if len(k) == 4])
+                  | df.hs6.str[:2].isin([k for k in kod if len(k) == 2])]
 
     def dunya(self, kodlar, ne):
         s = self.hs_sec(self.d, kodlar)
@@ -479,7 +481,7 @@ def t_bolum(V, Y, kodlar, no):
                  ["Bölüm", "Sınıf", "Çalışan (bin)", "Katma değer ($ mlr)", "İhracat ($ mlr)", "AB'ye ihracat ($ mlr)",
                   "AB payı", "İthalat ($ mlr)", "Denge ($ mlr)"], satir,
                  "TÜİK Yıllık Sanayi ve Hizmet İstatistikleri 2024 (çalışan, katma değer); BACI HS17 2024 (dış ticaret; "
-                 "Kıbrıs akımları AB dışı, Ek D). `[V]`; HS6 → NACE eşlemesi `[T]`.")
+                 f"Kıbrıs akımları AB dışı, {'Ek D' if V.parca == 1 else 'ilk parçanın Ek D-2'}). `[V]`; HS6 → NACE eşlemesi `[T]`.")
 
 
 def t_rejim(V, Y, kodlar, no):
@@ -688,7 +690,7 @@ def t_matris(V, Y, kodlar, no, parca):
     ark = lambda r: "/".join(x for x in [r.arketip_birincil, r.arketip_ikincil] if isinstance(x, str) and x)  # noqa: E731
     if parca == "a":
         satir = [[kd, (Y["siniflar"].get(kd) or {}).get("kisa", V.k.ad_tr[kd][:38]), r.gb_statusu, tr(r.kd_musd), tr(r.l),
-                  tr(r.x), yuzde(r.ab_ihracat_payi), tr(r.m), yuzde(r.ab_ithalat_payi), f"%{tr(r.tau_ab_s4, 1)}", r.mense_riski,
+                  tr(r.x), yuzde(r.ab_ihracat_payi), tr(r.m), yuzde(r.ab_ithalat_payi), yuzde(r.tau_ab_s4 / 100, 1), r.mense_riski,
                   yuzde(r.m_x), tr(r.rca_dunya_2024, 2), tr(r.pci, 2)] for kd, r in m.iterrows()]
         return tablo(f"Tablo {no} — Ana matris: kimlik, ticaret ve maruziyet",
                      ["Kod", "Ad", "GB statüsü", "KD", "İstihdam", "İhracat", "AB payı", "İthalat", "AB ithalat payı",
@@ -705,8 +707,9 @@ def t_matris(V, Y, kodlar, no, parca):
                  "kural tabanlı öneri ve uzman düzeltmesi.")
 
 
-def t_bolge(V, Y, kodlar, no, n=10):
-    """Bölgeler (İBBS-2): parçanın çalışanı, imalattaki payı ve S2/S4 istihdam etkisi (sınıf P50'lerinin bölge payıyla dağılımı)."""
+def t_bolge(V, Y, kodlar, no, n=10, sira="s4"):
+    """Bölgeler (İBBS-2): parçanın çalışanı, imalattaki payı ve S2/S4 istihdam etkisi (sınıf P50'lerinin bölge payıyla dağılımı).
+    sira: "s4" (S4 kaybının en büyük olduğu bölgeler) ya da "l" (parçanın çalışanının en çok olduğu bölgeler)."""
     b, m = V.b, V.m
     c = V.c_kodlari(m.index)
     t = b[b.kod.isin(c)].copy()
@@ -717,7 +720,7 @@ def t_bolge(V, Y, kodlar, no, n=10):
     imalat = t.groupby("bolge").l.sum()
     p_ = t[t.parca].groupby("bolge")[["l", "s2", "s4"]].sum()
     p_["imalat"] = imalat.reindex(p_.index)
-    p_ = p_.sort_values("s4").head(n)
+    p_ = p_.sort_values("l", ascending=False).head(n) if sira == "l" else p_.sort_values("s4").head(n)
     satir = []
     for bolge, r in p_.iterrows():
         kd = t[t.parca & t.bolge.eq(bolge)].sort_values("s4").head(2)
@@ -727,7 +730,9 @@ def t_bolge(V, Y, kodlar, no, n=10):
     top = t[t.parca][["l", "s2", "s4"]].sum()
     satir.append(kalin([f"{V.etiket} toplamı (bütün bölgeler)", tr(top.l / 1e3, 1), yuzde(top.l / imalat.sum()),
                         tr(top.s2, 0, True), tr(top.s4, 0, True), yuzde(top.s4 / top.l, 1), "—"]))
-    return tablo(f"Tablo {no} — Bölgeler: S4'te istihdam kaybının en büyük olduğu {n} İBBS-2 bölgesi (T+5, P50)",
+    baslik = (f"{V.etiket} istihdamının en yoğun olduğu {n} İBBS-2 bölgesi" if sira == "l"
+              else f"S4'te istihdam kaybının en büyük olduğu {n} İBBS-2 bölgesi")
+    return tablo(f"Tablo {no} — Bölgeler: {baslik} (T+5, P50)",
                  ["Bölge (İBBS-2)", f"{V.etiket} çalışanı (bin)", "Bölge imalatındaki payı", "S2 (kişi)", "S4 (kişi)",
                   "S4 ÷ çalışan", "En çok etkilenen sınıflar (S4)"], satir,
                  "`[T]` f3b (YSHİ 2024 sınıf çalışanı, SGK 2025 bölüm × il sigortalısıyla RAS) ve f3e. Bölge değerleri sınıf "
@@ -921,7 +926,8 @@ def defter(V, kodlar, Y, no, grup):
          f"S4 P50 {tr(gp('S4', 'dl').p50, 0, True)} (P10 {tr(gp('S4', 'dl').p10, 0, True)}). Mali maliyet S2 {tr(tp['mali_s2'], 2)}, "
          f"S4 {tr(tp['mali_s4'], 2)} mlr TL/yıl. Cari denge önlem katkısı S2 {tr(tp['ca_s2'] / 1e3, 3, True)}, "
          f"S4 {tr(tp['ca_s4'] / 1e3, 3, True)} $ mlr"
-         + (f"; S4'te PEM kümülasyonu kanalı istihdamda {tr(gp('S4', 'dl_kum').p50, 0, True)}" if kum else "")],
+         + (f"; S4'te PEM kümülasyonu kanalı istihdamda {tr(gp('S4', 'dl_kum').p50, 0, True)}"
+            if kum and abs(gp("S4", "dl_kum").p50) >= 1 else "")],
         ["Açık kalan veri boşlukları", "; ".join(Y["belge"].get("veri_bosluklari", []))],
         ["Varsayım kaydına eklenen yeni maddeler", "; ".join(Y["belge"].get("varsayimlar", []))],
     ]
@@ -972,7 +978,8 @@ def bloklar(metin, V, Y, kodlar, grup):
              "durus": lambda: t_durus(V, Y, kodlar, no), "eylem_ortak": lambda: t_eylem_ortak(V, Y, kodlar, no),
              "eylem_sinif": lambda: t_eylem_sinif(V, Y, kodlar, no), "tetik": lambda: t_tetik(V, Y, kodlar, no),
              "matris_a": lambda: t_matris(V, Y, kodlar, no, "a"), "matris_b": lambda: t_matris(V, Y, kodlar, no, "b"),
-             "bolge": lambda: t_bolge(V, Y, kodlar, no, n), "kum_ortak": lambda: t_kum_ortak(V, Y, kodlar, no, n),
+             "bolge": lambda: t_bolge(V, Y, kodlar, no, n), "bolge_l": lambda: t_bolge(V, Y, kodlar, no, n, sira="l"),
+             "kum_ortak": lambda: t_kum_ortak(V, Y, kodlar, no, n),
              "kum_sinif": lambda: t_kum_sinif(V, Y, kodlar, no)}
         if ad_ not in f:
             raise ValueError(f"tanımsız tablo: {ad_}")

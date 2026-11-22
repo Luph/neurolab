@@ -1,0 +1,198 @@
+# 16–18 sınıflarının yapısal alanları. Metin kartlar/16-18_metin/'de; f3g_kartlar.py ve f3f_skor_matris.py okur.
+# kisa: tablolardaki kısa ad. arketip/durus/tarife_yolu/ana_araclar/ab_muzakere: matristeki kural tabanlı öneriyi
+# uzman muhakemesiyle düzeltir `[H]`; guven: metindeki değerlendirmeye göre güven düzeyi (kural tabanlı veri tamlığını
+# düzeltir). capa: çapa yatırımcılar (veri sayfası). girdi_hs4: kritik girdiler.
+# eylemler: [araç, parametre, sorumlu, hukuki araç, bütçe, başlangıç → bitiş, performans koşulu, sunset, KPI].
+# tetikler: [gösterge, eşik, tetiklenecek önlem].
+# defter: sınıf paketinin T+5'teki yıllık etkisi (P50), yola göre — tufe_s2 / tufe_s4 (bp; negatif dezenflasyonist),
+# mali_s2 / mali_s4 (mlr TL/yıl, bugüne göre), ca_s2 / ca_s4 (mn $/yıl, senaryoya ek katkı).
+# Kural tabanlı sınıflama EUDR payı yüksek sınıfları "Yeşil Mutabakat'a maruz" (G) olarak işaretliyor; EUDR bütün
+# menşelere ve bütün senaryolarda uygulandığı için G, AB'ye ihracatı küçük sınıflarda birincil arketip olmaktan çıkarıldı.
+siniflar:
+  '16.10':
+    kisa: Kereste
+    guven: Orta
+    arketip: [—]
+    durus: Koru
+    tarife_yolu: AB ile karşılıklı %0 (S2); S4'te AB'ye c2; tomruk ve kerestede MFN %0 sürer (P1)
+    ana_araclar: EUDR veri hizmeti (E-16-01); Rus ve Belarus odunundan ayrışma (E-16-02); hammadde güvenliği (E-16-05)
+    ab_muzakere: nötr
+    capa: OGM'den tomruk alan küçük ve orta ölçekli bıçkıhaneler; Karadeniz (Kastamonu, Bolu, Düzce, Samsun) ve Kocaeli–Sakarya kümeleri `[H]`
+    girdi_hs4: ['4403', '4407']
+    defter: {tufe_s2: 0, tufe_s4: 0, mali_s2: 0, mali_s4: 0, ca_s2: 0, ca_s4: 0}
+  '16.21':
+    kisa: Ahşap levha ve kontrplak
+    guven: Orta
+    arketip: [B, G]
+    durus: Geliştir
+    tarife_yolu: AB ile karşılıklı %0 (S2); S4'te AB'ye c2; yonga, lif, tomruk ve kaplamada %0 (P1)
+    ana_araclar: EUDR veri hizmeti (E-16-01); Rus ve Belarus odunundan ayrışma ve ticaret savunması hazırlığı (E-16-02); Körfez, Orta Asya ve Afrika pazarları
+    ab_muzakere: savunma
+    capa: Kastamonu Entegre, AGT, Yıldız Entegre, Starwood ve Çamsan (MDF ve yonga levha); Kocaeli, Kastamonu, Antalya, Ordu ve İnegöl `[H]`
+    girdi_hs4: ['4401', '4403', '4408', '3909']
+    eylemler:
+    - [Çevresel ürün beyanı ve karbon verisi, 'MDF, yonga levha ve kontrplakta EN 15804 uyumlu çevresel ürün beyanı (EPD); yeni Yapı Ürünleri Tüzüğü''nün (2024/3110) çevresel beyan yükümlülüğüne hazırlık', 'Sanayi ve Teknoloji Bakanlığı, TSE, TİM', Bakanlık programı, '≈ 0,02 mlr TL/yıl `[T]`', Hemen → T+36, EPD'si olan ürün sayısı, T+36, 'AB''ye levha ihracatının EPD''li payı ≥ %80']
+    tetikler:
+    - [AB'nin Türk levha ya da kontrplağına yönelik yeni ticaret savunması soruşturması, Soruşturma açılışı, 'E-16-02 hızlandırılır; S2 müzakeresinde istişare maddesi öne alınır']
+    - [EUDR kontrollerinde Türk orman ürününe ilişkin ret ya da yüksek risk bildirimi, İlk bildirim, 'E-16-01 veri hizmetinin genişletilmesi; Komisyonla teknik görüşme']
+    defter: {tufe_s2: 0, tufe_s4: 0, mali_s2: 0.02, mali_s4: 0.02, ca_s2: 0, ca_s4: 0}
+  '16.22':
+    kisa: Ahşap döşeme (parke)
+    arketip: [B]
+    durus: Geliştir
+    tarife_yolu: AB ile karşılıklı %0 (S2); S4'te AB'ye c2
+    ana_araclar: CE işareti için AB'de tanınan deney (S2'de ACAA); yeni pazarlar
+    ab_muzakere: nötr
+    capa: Masif ve çok katmanlı parke üreticileri; levha gruplarının döşeme hatları `[H]`
+    defter: {tufe_s2: 0, tufe_s4: 0, mali_s2: 0, mali_s4: 0, ca_s2: 0, ca_s4: 0}
+  '16.23':
+    kisa: Doğrama ve ahşap yapı
+    guven: Orta
+    arketip: [—]
+    durus: Koru
+    tarife_yolu: AB ile karşılıklı %0 (S2); S4'te AB'ye c2
+    ana_araclar: CE işareti (pencere ve dış kapı) için AB'de tanınan deney; EUDR verisi (E-16-01)
+    ab_muzakere: nötr
+    capa: Ahşap kapı, pencere ve prefabrik ahşap yapı üreticileri; çoğu on kişiden az çalışanlı atölyeler `[H]`
+    defter: {tufe_s2: 0, tufe_s4: 0, mali_s2: 0, mali_s4: 0, ca_s2: 0, ca_s4: 0}
+  '16.24':
+    kisa: Palet ve ahşap ambalaj
+    arketip: [—]
+    durus: Koru
+    tarife_yolu: Değişiklik yok (çoğunlukla ihracat ambalajı)
+    ana_araclar: ISPM 15 ısıl işlem sertifikası; taşıma ambalajı olarak kullanıldığında EUDR kapsamı dışında
+    ab_muzakere: nötr
+    capa: Lojistik merkezlerine yakın palet üreticileri (Kocaeli, İstanbul, Bursa, Mersin) `[H]`
+    defter: {tufe_s2: 0, tufe_s4: 0, mali_s2: 0, mali_s4: 0, ca_s2: 0, ca_s4: 0}
+  '16.29':
+    kisa: Diğer ağaç ürünleri
+    arketip: [—]
+    durus: Koru
+    tarife_yolu: AB ile karşılıklı %0 (S2); S4'te AB'ye c2
+    ana_araclar: İzleme; EUDR verisi (E-16-01)
+    ab_muzakere: nötr
+    defter: {tufe_s2: 0, tufe_s4: 0, mali_s2: 0, mali_s4: 0, ca_s2: 0, ca_s4: 0}
+  '17.11':
+    kisa: Kâğıt hamuru
+    guven: Düşük
+    arketip: [—]
+    durus: Koru
+    tarife_yolu: Bugün de bütün menşelere %0 (P1); değişiklik yok
+    ana_araclar: Tedarik çeşitlendirme ve EUDR verisi (E-16-01); lif hammaddesi güvenliği (E-16-05)
+    ab_muzakere: nötr
+    capa: Yerli kâğıt hamuru üretimi yok denecek kadar az; ithalatçılar entegre hijyen ve kâğıt üreticileri `[H]`
+    girdi_hs4: ['4401', '4707']
+    defter: {tufe_s2: 0, tufe_s4: 0, mali_s2: 0, mali_s4: 0, ca_s2: 0, ca_s4: 0}
+  '17.12':
+    kisa: Kâğıt ve karton
+    guven: Orta
+    arketip: [C, G]
+    durus: Geliştir
+    tarife_yolu: AB ile karşılıklı %0 (S2); S4'te c2, yurt içi üretimi olmayan ambalaj girdisi kalitelerinde İGV yok (E-17.12-01); hamur ve atık kâğıtta %0
+    ana_araclar: Geri dönüştürülmüş lifle kaplamalı karton ve testliner kapasitesi; atık kâğıt toplama (E-16-05); korunma önlemlerinde aşağı akışın gözetilmesi (E-16-04)
+    ab_muzakere: nötr
+    capa: Kartonsan, Modern Karton (Eren Holding), Mondi Tire Kutsan, Kipaş Kağıt ve Hayat Kağıt; Kocaeli, Tekirdağ, İzmir ve Kahramanmaraş `[H]`
+    girdi_hs4: ['4703', '4707']
+    eylemler:
+    - [Ambalaj kâğıdında c2 düzeltmesi (yalnız S4), 'Yurt içi üretimi olmayan ya da sınırlı ambalaj girdisi kalitelerinde (sıvı ambalaj kartonu 4811 59, ağartılmamış kraftliner 4804 11) İGV bütün menşeler için sıfırlanır; c2 satır listesi 8–12 haneli üretim verisiyle gözden geçirilir (VB-43)', 'Ticaret Bakanlığı, Hazine ve Maliye Bakanlığı', İthalat Rejimi Kararı eki (Cumhurbaşkanı Kararı), '≈ 0,7 mlr TL/yıl (AB dışı menşelerin İGV kaybı) `[T]`', T → T+36, Bu kalitelerde ithalat birim fiyatı, T+36 (yurt içi kapasite oluşursa gözden geçirilir), 'Oluklu ambalaj ve sıvı gıda ambalajı üreticilerinin girdi maliyeti artışı ≤ %1']
+    tetikler:
+    - [AB'den kâğıt ve karton ithalatının birim fiyatı (aylık), Yıllık +%15 (S4), E-17.12-01 kapsamının genişletilmesi]
+    defter: {tufe_s2: 0, tufe_s4: -0.2, mali_s2: 0, mali_s4: 0.7, ca_s2: 0, ca_s4: 0}
+  '17.21':
+    kisa: Oluklu ambalaj
+    guven: Orta
+    arketip: [A, G]
+    durus: Koru
+    tarife_yolu: AB ile karşılıklı %0 (S2); AB'nin MFN'si zaten %0; S4'te AB'ye c2
+    ana_araclar: PPWR uyumu (E-16-03); girdide c2 düzeltmesi (E-17.12-01)
+    ab_muzakere: nötr
+    capa: Mondi Tire Kutsan, Dentaş ve entegre karton gruplarının oluklu ambalaj tesisleri; Bursa, İzmir, Kocaeli ve Gaziantep kümeleri `[H]`
+    girdi_hs4: ['4804', '4805']
+    tetikler:
+    - [AB'ye oluklu ambalaj ihracatı (aylık), Yıllık −%15, 'E-16-03 hızlandırılır; Balkan ve Kafkasya pazarları']
+    defter: {tufe_s2: 0, tufe_s4: 0, mali_s2: 0, mali_s4: 0, ca_s2: 0, ca_s4: 0}
+  '17.22':
+    kisa: Hijyen kâğıtları ve bezler
+    guven: Orta
+    arketip: [B, G]
+    durus: Geliştir
+    tarife_yolu: AB ile karşılıklı %0 (S2); S4'te AB'ye c2; kâğıt hamuru ve süper emicide %0 (P1)
+    ana_araclar: Kâğıt hamurunda tedarik çeşitlendirme ve EUDR verisi (E-16-01); Orta Doğu, Afrika ve Orta Asya pazarları
+    ab_muzakere: nötr
+    capa: Hayat Kimya (Molfix, Papia) ve Eczacıbaşı (Selpak) başta olmak üzere entegre hijyen üreticileri; Kocaeli, Sakarya ve İstanbul `[H]`
+    girdi_hs4: ['4703', '3906']
+    tetikler:
+    - [Kâğıt hamuru ithal birim fiyatı (aylık), 3 ayda +%25, 'İthalatçı stok bildirimi; tedarik çeşitlendirme (E-16-05)']
+    defter: {tufe_s2: 0, tufe_s4: 0, mali_s2: 0, mali_s4: 0, ca_s2: 0, ca_s4: 0}
+  '17.23':
+    kisa: Kâğıt kırtasiye
+    arketip: [—]
+    durus: Koru
+    tarife_yolu: AB ile karşılıklı %0 (S2); S4'te AB'ye c2
+    ana_araclar: İzleme
+    ab_muzakere: nötr
+    defter: {tufe_s2: 0, tufe_s4: 0, mali_s2: 0, mali_s4: 0, ca_s2: 0, ca_s4: 0}
+  '17.24':
+    kisa: Duvar kâğıdı
+    arketip: [—]
+    durus: Koru
+    tarife_yolu: AB ile karşılıklı %0 (S2); S4'te AB'ye c2
+    ana_araclar: İzleme
+    ab_muzakere: nötr
+    defter: {tufe_s2: 0, tufe_s4: 0, mali_s2: 0, mali_s4: 0, ca_s2: 0, ca_s4: 0}
+  '17.29':
+    kisa: Diğer kâğıt ürünleri
+    guven: Orta
+    arketip: [G]
+    durus: Koru
+    tarife_yolu: AB ile karşılıklı %0 (S2); S4'te AB'ye c2
+    ana_araclar: PPWR uyumu, gıdayla temas eden kâğıtta PFAS'sız kaplama (E-16-03)
+    ab_muzakere: nötr
+    capa: Etiket, filtre ve gıda ambalajı kâğıdı üreticileri (İstanbul, Kocaeli, İzmir) `[H]`
+    defter: {tufe_s2: 0, tufe_s4: 0, mali_s2: 0, mali_s4: 0, ca_s2: 0, ca_s4: 0}
+  '18.11':
+    kisa: Gazete basımı
+    guven: Düşük
+    arketip: [—]
+    durus: Koru
+    tarife_yolu: Değişiklik yok (hizmet; mal ticareti yok)
+    ana_araclar: İzleme
+    ab_muzakere: nötr
+    defter: {tufe_s2: 0, tufe_s4: 0, mali_s2: 0, mali_s4: 0, ca_s2: 0, ca_s4: 0}
+  '18.12':
+    kisa: Matbaacılık
+    guven: Düşük
+    arketip: [—]
+    durus: Koru
+    tarife_yolu: Değişiklik yok (hizmet); kâğıt girdisinde E-17.12-01
+    ana_araclar: Kaplamalı kâğıt korunma önleminde aşağı akış değerlendirmesi (E-16-04); güvenlikli basım kapasitesi
+    ab_muzakere: nötr
+    capa: Ofset, kitap ve ambalaj matbaaları (İstanbul'da Bağcılar ve Topkapı matbaacılar siteleri, Ankara, İzmir); güvenlikli basımda TCMB Banknot Matbaası `[H]`
+    girdi_hs4: ['4802', '4810', '3215']
+    defter: {tufe_s2: 0, tufe_s4: 0, mali_s2: 0, mali_s4: 0, ca_s2: 0, ca_s4: 0}
+  '18.13':
+    kisa: Baskı öncesi hizmetler
+    arketip: [B]
+    durus: Geliştir
+    tarife_yolu: AB ile karşılıklı %0 (S2); S4'te AB'ye c2
+    ana_araclar: İzleme
+    ab_muzakere: nötr
+    defter: {tufe_s2: 0, tufe_s4: 0, mali_s2: 0, mali_s4: 0, ca_s2: 0, ca_s4: 0}
+  '18.14':
+    kisa: Ciltçilik
+    guven: Düşük
+    arketip: [—]
+    durus: Koru
+    tarife_yolu: Değişiklik yok (hizmet)
+    ana_araclar: İzleme
+    ab_muzakere: nötr
+    defter: {tufe_s2: 0, tufe_s4: 0, mali_s2: 0, mali_s4: 0, ca_s2: 0, ca_s4: 0}
+  '18.20':
+    kisa: Kayıtlı ortam çoğaltma
+    guven: Düşük
+    arketip: [—]
+    durus: Koru
+    tarife_yolu: Değişiklik yok
+    ana_araclar: İzleme
+    ab_muzakere: nötr
+    defter: {tufe_s2: 0, tufe_s4: 0, mali_s2: 0, mali_s4: 0, ca_s2: 0, ca_s4: 0}
