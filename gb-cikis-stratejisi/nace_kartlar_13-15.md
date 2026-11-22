@@ -914,21 +914,9 @@ Her veri sayfası sınıf kartının sayısal alanlarını bir arada veriyor. Se
 |  | İstihdam değişimi, 2015–2024 | %18 |
 |  | İlk üç bölge (İBBS-2) | İstanbul %23; Bursa, Eskişehir, Bilecik %19; Tekirdağ, Edirne, Kırklareli %11 |
 |  | Çapa yatırımcılar | İstanbul, Bursa ve Çorlu'daki fason boya, baskı ve apre işletmeleri; büyük çoğunluğu KOBİ `[H]` |
-| 3 Dış ticaret | İhracat 2024; 2020–2024 değişimi | $— mn; — |
-|  | AB payı; ilk beş AB pazarı | —; — |
-|  | İlk beş AB dışı pazar | — |
-|  | İthalat 2024; AB ve Çin payı | $— mn; AB —, Çin — |
-|  | İlk beş ithalat kaynağı | — |
-|  | Dış ticaret dengesi | +$— mn |
+| 3 Dış ticaret | İhracat ve ithalat 2024 | Mal ticareti yok (hizmet sınıfı ya da ürünleri başka sınıflara eşleniyor) |
 |  | İthal girdi içeriği (I-O); KD ÷ üretim | %23; %31 |
-|  | RCA: dünya 2020 → 2024; AB pazarı 2024 | — → —; — |
-|  | Birim değer ÷ AB pazarı ortalaması | — |
-|  | AB pazarındaki pay (AB dışı tedarik içinde) 2020 → 2024; Türkiye'nin sırası | — → —; —. |
-| 4 AB tarafı | AB'ye ihracat 2025; rejim payları (GB / İTÜ / tarım) | €— mn; — / — / — |
-|  | S4'te AB tarifesi: 1/98 sürerse / askıda / tam MFN ortalaması | — / — / — |
-|  | Tepe satırlar (S4 artışı ≥ %10) | yok |
-|  | AB pazarında AB dışı rakipler (AB tercihi) | — |
-|  | Tercihli rakiplerin payı; AME (puan; ham) | —; 5 (0,00) |
+| 4 AB tarafı | AB'ye ihracat ve S4 tarifesi | AB'ye mal ihracatı yok |
 |  | Menşe kuralı (PEM) | Hizmet (fason boya, baskı, apre); ticareti yok. Revize PEM'de tek başına baskı dokuma kumaşa menşe kazandırıyor |
 |  | Menşe riski S2 / S3; c_RoO (%); p_uyum | D/D; 1,5 / 2,0; 0,90 / 0,85 `[H]` |
 |  | Değer zincirindeki rol; DİR bağımlılığı | ara; düşük |

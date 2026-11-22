@@ -876,6 +876,18 @@ def veri_sayfasi(V, Y, kod, no, senaryo_no=None):
                                                                    f"{tr(m.cke_puan)}"],
         ["9 Senaryolar", "Senaryo tablosu", f"Tablo {senaryo_no}" if senaryo_no else f"Tablo {no}b (aşağıda)"],
     ]
+    # mal ticareti olmayan sınıflar (hizmet sınıfları; ör. basım, boya-baskı hizmeti): ticaret satırları tek satıra iner
+    if not (np.nan_to_num(t.get("x_musd_2024", np.nan)) > 0 or np.nan_to_num(t.get("m_musd_2024", np.nan)) > 0):
+        ticaret = {"İhracat 2024; 2020–2024 değişimi": ["3 Dış ticaret", "İhracat ve ithalat 2024",
+                                                         "Mal ticareti yok (hizmet sınıfı ya da ürünleri başka sınıflara eşleniyor)"],
+                   "AB'ye ihracat 2025; rejim payları (GB / İTÜ / tarım)": ["4 AB tarafı", "AB'ye ihracat ve S4 tarifesi",
+                                                                            "AB'ye mal ihracatı yok"]}
+        cikar = {"AB payı; ilk beş AB pazarı", "İlk beş AB dışı pazar", "İthalat 2024; AB ve Çin payı", "İlk beş ithalat kaynağı",
+                 "Dış ticaret dengesi", "RCA: dünya 2020 → 2024; AB pazarı 2024", "Birim değer ÷ AB pazarı ortalaması",
+                 "AB pazarındaki pay (AB dışı tedarik içinde) 2020 → 2024; Türkiye'nin sırası",
+                 "S4'te AB tarifesi: 1/98 sürerse / askıda / tam MFN ortalaması", "Tepe satırlar (S4 artışı ≥ %10)",
+                 "AB pazarında AB dışı rakipler (AB tercihi)", "Tercihli rakiplerin payı; AME (puan; ham)"}
+        satir = [ticaret.get(r[1], r) for r in satir if r[1] not in cikar]
     out = [f"### {no} {V.ad(kod)}", "", tablo(f"Tablo {no} — {kod}: veri sayfası", ["Alan", "Gösterge", "Değer"], satir)]
     if not senaryo_no:
         out += ["", t_senaryo(V, Y, kod, f"{no}b")]
