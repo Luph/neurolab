@@ -10,9 +10,9 @@ Bu klasör, ``GB Çıkış Stratejisi'' ana promptuna göre fazlar halinde üret
 
 \begin{longtable}[]{@{}
   >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.0472}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.5391}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.1789}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2348}}@{}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.5357}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.1679}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2492}}@{}}
 \toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\raggedright
 \textbf{Faz}
@@ -32,7 +32,7 @@ Bu klasör, ``GB Çıkış Stratejisi'' ana promptuna göre fazlar halinde üret
 2A & Politika uzayı: kullanıcının önerisi (tarife + ÖTV takası), araç evreni, bağlı oranlar, aktif S4, dış rejim evreni & Tamamlandı (18.10.2026) & \belgebag{02a_politika_uzayi}{}{\kod{02a\_\allowbreak{}politika\_\allowbreak{}uzayi.\allowbreak{}md}} \\
 2B & Seçenekler (S0--S5, R7, ITA, aktif S4), çekim modeli, bitiş durumu ve hukuki yol haritası (AB, DTÖ, Türk iç hukuku), iki takvim & Tamamlandı (18.10.2026) & \belgebag{02b_secenekler_hukuk}{}{\kod{02b\_\allowbreak{}secenekler\_\allowbreak{}hukuk.\allowbreak{}md}} \\
 2C & Karar öncesi hazırlık: dokuz çerçevede 51 sessiz, pişmanlıksız hamle; STA ağının genel dengesi, menşe riski, SKDM yükü, makro tampon; kırmızı liste ve devreye alma sırası & Tamamlandı (18.10.2026) & \belgebag{02c_hazirlik}{}{\kod{02c\_\allowbreak{}hazirlik.\allowbreak{}md}} \\
-3 & NACE sınıf analizi (16 parça). Parça 1: 10 Gıda, 11 İçecekler, 12 Tütün (33 sınıf); parça 2: 13 Tekstil, 14 Giyim, 15 Deri (21 sınıf); düzyazı incelemeler ve veri sayfaları; ana matris 230 sınıfın tamamı için & Parça 2 / 16 tamamlandı (18.10.2026) & \belgebag{nace_kartlar_10-12}{}{\kod{nace\_\allowbreak{}kartlar\_\allowbreak{}10-\allowbreak{}12.\allowbreak{}md}}, \belgebag{nace_kartlar_13-15}{}{\kod{nace\_\allowbreak{}kartlar\_\allowbreak{}13-\allowbreak{}15.\allowbreak{}md}}, \href{../veri/nace_matris.csv}{\kod{veri/\allowbreak{}nace\_\allowbreak{}matris.\allowbreak{}csv}} \\
+3 & NACE sınıf analizi (16 parça). Parça 1: 10 Gıda, 11 İçecekler, 12 Tütün (33 sınıf); parça 2: 13 Tekstil, 14 Giyim, 15 Deri (21 sınıf); parça 3: 16 Ağaç, 17 Kâğıt, 18 Basım (18 sınıf); düzyazı incelemeler ve veri sayfaları; ana matris 230 sınıfın tamamı için & Parça 3 / 16 tamamlandı (22.11.2026) & \belgebag{nace_kartlar_10-12}{}{\kod{nace\_\allowbreak{}kartlar\_\allowbreak{}10-\allowbreak{}12.\allowbreak{}md}}, \belgebag{nace_kartlar_13-15}{}{\kod{nace\_\allowbreak{}kartlar\_\allowbreak{}13-\allowbreak{}15.\allowbreak{}md}}, \belgebag{nace_kartlar_16-18}{}{\kod{nace\_\allowbreak{}kartlar\_\allowbreak{}16-\allowbreak{}18.\allowbreak{}md}}, \href{../veri/nace_matris.csv}{\kod{veri/\allowbreak{}nace\_\allowbreak{}matris.\allowbreak{}csv}} \\
 4--9 & Derin analizler → araçlar ve tarife cetveli → makro → müzakere → uygulama → risk ve yönetici özeti & Planlandı & bkz. \kod{00\_\allowbreak{}plan.\allowbreak{}md} §2 \\
 \end{longtable}
 
@@ -48,8 +48,8 @@ Belgeler LaTeX'te dizilir ve PDF olarak üretilir (LuaLaTeX; Markdown → pandoc
 \begingroup\gbtablo\small
 
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5376}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.4624}}@{}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5595}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.4405}}@{}}
 \toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\raggedright
 \textbf{PDF}
@@ -60,8 +60,8 @@ Belgeler LaTeX'te dizilir ve PDF olarak üretilir (LuaLaTeX; Markdown → pandoc
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-\href{../pdf/GB_Cikis_Stratejisi_Faz0-3.pdf}{\kod{pdf/\allowbreak{}GB\_\allowbreak{}Cikis\_\allowbreak{}Stratejisi\_\allowbreak{}Faz0-\allowbreak{}3.\allowbreak{}pdf}} & \textbf{Birleşik cilt:} durum özeti, Faz 0, 1, 2A, 2B, 2C, Faz 3 kartları (şimdilik 10--12 ve 13--15); Ek A defter; Ek B çalışma paketi. İçindekiler ve şekil listesi \\
-\kod{pdf/\allowbreak{}00\_\allowbreak{}plan.\allowbreak{}pdf}, \kod{pdf/\allowbreak{}01\_\allowbreak{}teshis.\allowbreak{}pdf}, \kod{pdf/\allowbreak{}02a\_\allowbreak{}politika\_\allowbreak{}uzayi.\allowbreak{}pdf}, \kod{pdf/\allowbreak{}02b\_\allowbreak{}secenekler\_\allowbreak{}hukuk.\allowbreak{}pdf}, \kod{pdf/\allowbreak{}02c\_\allowbreak{}hazirlik.\allowbreak{}pdf}, \kod{pdf/\allowbreak{}nace\_\allowbreak{}kartlar\_\allowbreak{}10-\allowbreak{}12.\allowbreak{}pdf}, \kod{pdf/\allowbreak{}nace\_\allowbreak{}kartlar\_\allowbreak{}13-\allowbreak{}15.\allowbreak{}pdf} & Faz belgeleri tek tek \\
+\href{../pdf/GB_Cikis_Stratejisi_Faz0-3.pdf}{\kod{pdf/\allowbreak{}GB\_\allowbreak{}Cikis\_\allowbreak{}Stratejisi\_\allowbreak{}Faz0-\allowbreak{}3.\allowbreak{}pdf}} & \textbf{Birleşik cilt:} durum özeti, Faz 0, 1, 2A, 2B, 2C, Faz 3 kartları (şimdilik 10--12, 13--15 ve 16--18); Ek A defter; Ek B çalışma paketi. İçindekiler ve şekil listesi \\
+\kod{pdf/\allowbreak{}00\_\allowbreak{}plan.\allowbreak{}pdf}, \kod{pdf/\allowbreak{}01\_\allowbreak{}teshis.\allowbreak{}pdf}, \kod{pdf/\allowbreak{}02a\_\allowbreak{}politika\_\allowbreak{}uzayi.\allowbreak{}pdf}, \kod{pdf/\allowbreak{}02b\_\allowbreak{}secenekler\_\allowbreak{}hukuk.\allowbreak{}pdf}, \kod{pdf/\allowbreak{}02c\_\allowbreak{}hazirlik.\allowbreak{}pdf}, \kod{pdf/\allowbreak{}nace\_\allowbreak{}kartlar\_\allowbreak{}10-\allowbreak{}12.\allowbreak{}pdf}, \kod{pdf/\allowbreak{}nace\_\allowbreak{}kartlar\_\allowbreak{}13-\allowbreak{}15.\allowbreak{}pdf}, \kod{pdf/\allowbreak{}nace\_\allowbreak{}kartlar\_\allowbreak{}16-\allowbreak{}18.\allowbreak{}pdf} & Faz belgeleri tek tek \\
 \kod{pdf/\allowbreak{}DURUM\_\allowbreak{}OZETI.\allowbreak{}pdf}, \kod{pdf/\allowbreak{}defter.\allowbreak{}pdf}, \kod{pdf/\allowbreak{}README.\allowbreak{}pdf} & Durum özeti, defter, paket açıklaması \\
 \end{longtable}
 
@@ -108,8 +108,8 @@ kök (\kod{*.\allowbreak{}md}) & Faz belgeleri (Markdown kaynak) \\
 \begingroup\gbtablo\small
 
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.2786}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.7214}}@{}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.2588}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.7412}}@{}}
 \toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\raggedright
 \textbf{Dosya}
@@ -171,11 +171,12 @@ kök (\kod{*.\allowbreak{}md}) & Faz belgeleri (Markdown kaynak) \\
 \kod{kod/\allowbreak{}girdi\_\allowbreak{}hazirla.\allowbreak{}py} & BACI özetleri, büyük dosyaların sıkıştırılması, \kod{girdi/\allowbreak{}MANIFEST.\allowbreak{}csv} \\
 \kod{nace\_\allowbreak{}kartlar\_\allowbreak{}10-\allowbreak{}12.\allowbreak{}md} & Faz 3 parça 1: yönetici özeti, çıkışın beş kanalı, strateji ve eylem paketi, 33 sınıfın incelemesi (15 alanlı kart: metin + Ek C veri sayfası + Bölüm 4 eylem ve tetik tabloları), kümülatif defter, ekler \\
 \kod{nace\_\allowbreak{}kartlar\_\allowbreak{}13-\allowbreak{}15.\allowbreak{}md} & Faz 3 parça 2: tarife duvarı ve tercihli rakipler, PEM kümülasyonu kanalı, S2 menşe kuralları, c2 ve vergi takası, bölgesel dağılım; 21 sınıfın incelemesi, 10--15 kümülatif defteri, ekler \\
+\kod{nace\_\allowbreak{}kartlar\_\allowbreak{}16-\allowbreak{}18.\allowbreak{}md} & Faz 3 parça 3: alçak tarife duvarı, ticaret savunması ve Rus odunu, EUDR ve PPWR, c2 ve Türkiye'nin kâğıt korunma önlemleri; 18 sınıfın incelemesi, 10--18 kümülatif defteri, ekler \\
 \kod{kod/\allowbreak{}f3a\_\allowbreak{}ticaret.\allowbreak{}py} & Sınıf düzeyi ticaret: ihracat/ithalat, AB ve Çin payları, RCA (dünya, AB pazarı), AB pazar payı, birim değer, ilk 5 pazar/kaynak/rakip ve AB tercih durumu (BACI 2020, 2024; KKTC akımları AB dışı), PEM kümülasyonu maruziyeti → \kod{veri/\allowbreak{}f3\_\allowbreak{}ticaret\_\allowbreak{}sinif.\allowbreak{}csv}, \kod{veri/\allowbreak{}f3\_\allowbreak{}ortaklar\_\allowbreak{}sinif.\allowbreak{}csv}, \kod{veri/\allowbreak{}f3\_\allowbreak{}pem\_\allowbreak{}ortak\_\allowbreak{}ab\_\allowbreak{}payi.\allowbreak{}csv} \\
 \kod{kod/\allowbreak{}f3b\_\allowbreak{}yapi.\allowbreak{}py} & Üretim, KD, istihdam, ölçek, İBBS-2 bölge payları (iş kayıtları + SGK, RAS), AB'ye göre verimlilik (Eurostat SBS) → \kod{veri/\allowbreak{}f3\_\allowbreak{}yapi\_\allowbreak{}sinif.\allowbreak{}csv}, \kod{veri/\allowbreak{}f3\_\allowbreak{}bolge\_\allowbreak{}sinif.\allowbreak{}csv} \\
 \kod{kod/\allowbreak{}f3c\_\allowbreak{}karmasiklik.\allowbreak{}py} & PCI ve ECI (yansımalar yöntemi, özvektör), ürün uzayı yoğunluğu, karmaşıklık kazancı, atlanabilir ürünler → \kod{veri/\allowbreak{}f3\_\allowbreak{}pci\_\allowbreak{}*.\allowbreak{}csv}, \kod{veri/\allowbreak{}f3\_\allowbreak{}eci\_\allowbreak{}ulke.\allowbreak{}csv} \\
 \kod{kod/\allowbreak{}f3d\_\allowbreak{}ab\_\allowbreak{}tarife.\allowbreak{}py} & AB MFN'si KN8 düzeyinde: spesifik vergilerin AVE'si, rejime göre S4 artışı (GB, İTÜ, 1/98), tepe satırlar, EUDR (Tüzük 2026/2102 ile değişik) ve SKDM payları → \kod{veri/\allowbreak{}f3\_\allowbreak{}ab\_\allowbreak{}tarife\_\allowbreak{}kn8.\allowbreak{}csv}, \kod{veri/\allowbreak{}f3\_\allowbreak{}ab\_\allowbreak{}tarife\_\allowbreak{}sinif.\allowbreak{}csv} \\
-\kod{kod/\allowbreak{}f3e\_\allowbreak{}senaryo.\allowbreak{}py} & S2/S3/S4 sınıf etkileri, P10--P50--P90 (Monte Carlo; toplamlar Faz 2B genel dengesine kalibre), bölüm ve parça toplamlarının dağılımı, S4'te 1/98 askısına koşullu sonuçlar, S4'te PEM kümülasyonu kanalı, EDE, CKE → \kod{veri/\allowbreak{}f3\_\allowbreak{}senaryo\_\allowbreak{}sinif.\allowbreak{}csv}, \kod{veri/\allowbreak{}f3\_\allowbreak{}senaryo\_\allowbreak{}ozet.\allowbreak{}csv}, \kod{veri/\allowbreak{}f3\_\allowbreak{}senaryo\_\allowbreak{}grup.\allowbreak{}csv}, \kod{veri/\allowbreak{}f3\_\allowbreak{}senaryo\_\allowbreak{}aski.\allowbreak{}csv}, \kod{veri/\allowbreak{}f3\_\allowbreak{}makro\_\allowbreak{}sinif.\allowbreak{}csv} \\
+\kod{kod/\allowbreak{}f3e\_\allowbreak{}senaryo.\allowbreak{}py} & S2/S3/S4 sınıf etkileri, P10--P50--P90 (Monte Carlo; toplamlar Faz 2B genel dengesine kalibre), bölüm ve parça toplamlarının dağılımı, S4'te 1/98 askısına koşullu sonuçlar, S4'te PEM kümülasyonu kanalı, iç ikame tavanı ve CE payı, S2'de menşe maliyeti yalnız tarifeli üründe, EDE, CKE → \kod{veri/\allowbreak{}f3\_\allowbreak{}senaryo\_\allowbreak{}sinif.\allowbreak{}csv}, \kod{veri/\allowbreak{}f3\_\allowbreak{}senaryo\_\allowbreak{}ozet.\allowbreak{}csv}, \kod{veri/\allowbreak{}f3\_\allowbreak{}senaryo\_\allowbreak{}grup.\allowbreak{}csv}, \kod{veri/\allowbreak{}f3\_\allowbreak{}senaryo\_\allowbreak{}aski.\allowbreak{}csv}, \kod{veri/\allowbreak{}f3\_\allowbreak{}makro\_\allowbreak{}sinif.\allowbreak{}csv} \\
 \kod{kod/\allowbreak{}f3f\_\allowbreak{}skor\_\allowbreak{}matris.\allowbreak{}py} & KS, SS, AME, EDE, CKE puanları, arketip ve duruş (kural + \kod{kartlar/\allowbreak{}} düzeltmeleri), ağırlık duyarlılığı → \kod{veri/\allowbreak{}nace\_\allowbreak{}matris.\allowbreak{}csv}, \kod{veri/\allowbreak{}f3\_\allowbreak{}ks\_\allowbreak{}duyarlilik.\allowbreak{}csv} \\
 \kod{kod/\allowbreak{}f3g\_\allowbreak{}kartlar.\allowbreak{}py} & Bölüm belgesi \kod{nace\_\allowbreak{}kartlar\_\allowbreak{}[bölüm].\allowbreak{}md}: \kod{kartlar/\allowbreak{}[bölüm]\_\allowbreak{}metin/\allowbreak{}} şablonlarındaki yer tutucuları (matris ve f3 tabloları, grup yüzdelikleri, 1/98 askısı, dünya ihracat payları, ithalat kalemleri, KN8 tarifeleri) ve tablo işaretlerini doldurur; kümülatif defteri bütün parça YAML'larından derler; Türkçe ülke adları \kod{veri/\allowbreak{}ulke\_\allowbreak{}adlari\_\allowbreak{}tr.\allowbreak{}csv} \\
 \kod{kod/\allowbreak{}sekiller.\allowbreak{}py} & On üç şekil (\kod{sekiller/\allowbreak{}}) \\
@@ -199,7 +200,7 @@ latex/derle.sh                                          # şekiller, LaTeX gövd
 \item
   \textbf{Süre.} Hesaplar ≈20--30 dakika sürer; çoğu çekim modelinde (19 PPML spesifikasyonu, 1.000 çekilişli genel denge) ve STA ağı genel dengesinde. PDF'ler ≈4 dakika.
 \item
-  \textbf{Sınama sonucu (18.10.2026).} Çevrimdışı kipte Faz 0--3'ün bütün betikleri paketteki girdilerle çalıştı (31 adım; \kod{f3g\_\allowbreak{}kartlar.\allowbreak{}py} her parça için ayrı çalışıyor). \kod{veri/\allowbreak{}} klasöründeki üretilen 78 dosyanın tamamı (Faz 3'ün grup yüzdelikleri, 1/98 askısı ve PEM ortaklarının AB payı çıktıları dahil) ve iki düzyazı belgesi, \kod{nace\_\allowbreak{}kartlar\_\allowbreak{}10-\allowbreak{}12.\allowbreak{}md} ile \kod{nace\_\allowbreak{}kartlar\_\allowbreak{}13-\allowbreak{}15.\allowbreak{}md}, bayt bayt aynı üretildi (\kod{kod/\allowbreak{}dogrula.\allowbreak{}py}). Faz 3 hesapları ≈1,7 dakika sürüyor.
+  \textbf{Sınama sonucu (22.11.2026).} Yeni bir çalışma ortamında, çevrimdışı kipte Faz 0--3'ün bütün betikleri paketteki girdilerle çalıştı (32 adım; \kod{f3g\_\allowbreak{}kartlar.\allowbreak{}py} her parça için ayrı çalışıyor). \kod{veri/\allowbreak{}} klasöründeki üretilen 78 dosyanın tamamı ve üç düzyazı belgesi, \kod{nace\_\allowbreak{}kartlar\_\allowbreak{}10-\allowbreak{}12.\allowbreak{}md}, \kod{nace\_\allowbreak{}kartlar\_\allowbreak{}13-\allowbreak{}15.\allowbreak{}md} ve \kod{nace\_\allowbreak{}kartlar\_\allowbreak{}16-\allowbreak{}18.\allowbreak{}md}, bayt bayt aynı üretildi (\kod{kod/\allowbreak{}dogrula.\allowbreak{}py}). pyfixest 0.70, f2f'nin kullandığı bir parametreyi kaldırdığı için sürüm 0.60.0'a sabitlendi (\kod{kod/\allowbreak{}requirements.\allowbreak{}txt}). Faz 3 hesapları ≈1,5 dakika sürüyor.
 \item
   \textbf{Tek tek çalıştırma.} Betikler \kod{kod/\allowbreak{}} içinden argümansız çalışır. Varsayılan girdi \kod{girdi/\allowbreak{}}, çıktı \kod{veri/\allowbreak{}}. Örnek: \kod{python3 f2e\_\allowbreak{}s4\_\allowbreak{}aktif.\allowbreak{}py}. Sıra \kod{hepsini\_\allowbreak{}uret.\allowbreak{}sh} içinde.
 \item
