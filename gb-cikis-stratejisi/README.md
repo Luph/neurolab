@@ -122,7 +122,7 @@ latex/derle.sh                                          # şekiller, LaTeX gövd
 ```
 
 - **Süre.** Hesaplar ≈20–30 dakika sürer; çoğu çekim modelinde (19 PPML spesifikasyonu, 1.000 çekilişli genel denge) ve STA ağı genel dengesinde. PDF'ler ≈4 dakika.
-- **Sınama sonucu (18.10.2026).** Çevrimdışı kipte Faz 0–3'ün bütün betikleri paketteki girdilerle çalıştı (31 adım; `f3g_kartlar.py` her parça için ayrı çalışıyor). `veri/` klasöründeki üretilen 78 dosyanın tamamı (Faz 3'ün grup yüzdelikleri, 1/98 askısı ve PEM ortaklarının AB payı çıktıları dahil) ve iki düzyazı belgesi, `nace_kartlar_10-12.md` ile `nace_kartlar_13-15.md`, bayt bayt aynı üretildi (`kod/dogrula.py`). Faz 3 hesapları ≈1,7 dakika sürüyor.
+- **Sınama sonucu (22.11.2026).** Yeni bir çalışma ortamında, çevrimdışı kipte Faz 0–3'ün bütün betikleri paketteki girdilerle çalıştı (32 adım; `f3g_kartlar.py` her parça için ayrı çalışıyor). `veri/` klasöründeki üretilen 78 dosyanın tamamı ve üç düzyazı belgesi, `nace_kartlar_10-12.md`, `nace_kartlar_13-15.md` ve `nace_kartlar_16-18.md`, bayt bayt aynı üretildi (`kod/dogrula.py`). pyfixest 0.70, f2f'nin kullandığı bir parametreyi kaldırdığı için sürüm 0.60.0'a sabitlendi (`kod/requirements.txt`). Faz 3 hesapları ≈1,5 dakika sürüyor.
 - **Tek tek çalıştırma.** Betikler `kod/` içinden argümansız çalışır. Varsayılan girdi `girdi/`, çıktı `veri/`. Örnek: `python3 f2e_s4_aktif.py`. Sıra `hepsini_uret.sh` içinde.
 - **PDF için gerekenler.** pandoc ≥ 3.1, TeX Live 2023 (LuaLaTeX, latexmk, KOMA-Script, polyglossia), TeX Gyre ve DejaVu yazı tipleri. Ubuntu'da: `apt-get install pandoc texlive-luatex texlive-latex-extra texlive-fonts-extra texlive-lang-european latexmk fonts-dejavu`.
 
